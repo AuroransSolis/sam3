@@ -1,0 +1,14 @@
+[build]
+target = "thumbv7m-none-eabi"
+
+[target.thumbv7m-none-eabi]
+runner = 'arm-none-eabi-gdb'
+
+
+rustflags = [
+    "-C", "target-cpu=cortex-m3",
+
+    # Unsure if these are necessary.
+    "-C", "link-arg=--nmagic",
+    "-C", "link-arg=-Tlink.x",
+]

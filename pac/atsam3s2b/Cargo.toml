@@ -1,0 +1,22 @@
+[package]
+name = "atsam3s2b"
+description = "Peripheral access API for ATSAM3S2B microcontrollers (generated using svd2rust)"
+version = "0.1.0"
+authors = ["Aurorans Solis <primalucegd@gmail.com>"]
+keywords = ["no-std", "arm", "cortex-m"]
+categories = ["embedded", "hardware-support", "no-std"]
+license = "EUPL-1.2"
+repository = "https://github.com/AuroransSolis/sam3"
+readme = "README.md"
+edition = "2021"
+
+[dependencies]
+cortex-m = "0.7"
+vcell = "0.1"
+
+[dependencies.cortex-m-rt]
+version = "0.7"
+optional = true
+
+[features]
+rt = ["cortex-m-rt/device"]

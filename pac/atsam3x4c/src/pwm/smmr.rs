@@ -1,0 +1,442 @@
+#[doc = "Register `SMMR` reader"]
+pub struct R(crate::R<SMMR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SMMR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<SMMR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SMMR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SMMR` writer"]
+pub struct W(crate::W<SMMR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SMMR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SMMR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SMMR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `GCEN0` reader - Gray Count ENable"]
+pub struct GCEN0_R(crate::FieldReader<bool, bool>);
+impl GCEN0_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        GCEN0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GCEN0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GCEN0` writer - Gray Count ENable"]
+pub struct GCEN0_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> GCEN0_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w
+    }
+}
+#[doc = "Field `GCEN1` reader - Gray Count ENable"]
+pub struct GCEN1_R(crate::FieldReader<bool, bool>);
+impl GCEN1_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        GCEN1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GCEN1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GCEN1` writer - Gray Count ENable"]
+pub struct GCEN1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> GCEN1_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w
+    }
+}
+#[doc = "Field `GCEN2` reader - Gray Count ENable"]
+pub struct GCEN2_R(crate::FieldReader<bool, bool>);
+impl GCEN2_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        GCEN2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GCEN2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GCEN2` writer - Gray Count ENable"]
+pub struct GCEN2_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> GCEN2_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w
+    }
+}
+#[doc = "Field `GCEN3` reader - Gray Count ENable"]
+pub struct GCEN3_R(crate::FieldReader<bool, bool>);
+impl GCEN3_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        GCEN3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GCEN3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GCEN3` writer - Gray Count ENable"]
+pub struct GCEN3_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> GCEN3_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
+        self.w
+    }
+}
+#[doc = "Field `DOWN0` reader - DOWN Count"]
+pub struct DOWN0_R(crate::FieldReader<bool, bool>);
+impl DOWN0_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        DOWN0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DOWN0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DOWN0` writer - DOWN Count"]
+pub struct DOWN0_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DOWN0_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
+        self.w
+    }
+}
+#[doc = "Field `DOWN1` reader - DOWN Count"]
+pub struct DOWN1_R(crate::FieldReader<bool, bool>);
+impl DOWN1_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        DOWN1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DOWN1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DOWN1` writer - DOWN Count"]
+pub struct DOWN1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DOWN1_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
+        self.w
+    }
+}
+#[doc = "Field `DOWN2` reader - DOWN Count"]
+pub struct DOWN2_R(crate::FieldReader<bool, bool>);
+impl DOWN2_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        DOWN2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DOWN2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DOWN2` writer - DOWN Count"]
+pub struct DOWN2_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DOWN2_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
+        self.w
+    }
+}
+#[doc = "Field `DOWN3` reader - DOWN Count"]
+pub struct DOWN3_R(crate::FieldReader<bool, bool>);
+impl DOWN3_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        DOWN3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DOWN3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DOWN3` writer - DOWN Count"]
+pub struct DOWN3_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DOWN3_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bit 0 - Gray Count ENable"]
+    #[inline(always)]
+    pub fn gcen0(&self) -> GCEN0_R {
+        GCEN0_R::new((self.bits & 0x01) != 0)
+    }
+    #[doc = "Bit 1 - Gray Count ENable"]
+    #[inline(always)]
+    pub fn gcen1(&self) -> GCEN1_R {
+        GCEN1_R::new(((self.bits >> 1) & 0x01) != 0)
+    }
+    #[doc = "Bit 2 - Gray Count ENable"]
+    #[inline(always)]
+    pub fn gcen2(&self) -> GCEN2_R {
+        GCEN2_R::new(((self.bits >> 2) & 0x01) != 0)
+    }
+    #[doc = "Bit 3 - Gray Count ENable"]
+    #[inline(always)]
+    pub fn gcen3(&self) -> GCEN3_R {
+        GCEN3_R::new(((self.bits >> 3) & 0x01) != 0)
+    }
+    #[doc = "Bit 16 - DOWN Count"]
+    #[inline(always)]
+    pub fn down0(&self) -> DOWN0_R {
+        DOWN0_R::new(((self.bits >> 16) & 0x01) != 0)
+    }
+    #[doc = "Bit 17 - DOWN Count"]
+    #[inline(always)]
+    pub fn down1(&self) -> DOWN1_R {
+        DOWN1_R::new(((self.bits >> 17) & 0x01) != 0)
+    }
+    #[doc = "Bit 18 - DOWN Count"]
+    #[inline(always)]
+    pub fn down2(&self) -> DOWN2_R {
+        DOWN2_R::new(((self.bits >> 18) & 0x01) != 0)
+    }
+    #[doc = "Bit 19 - DOWN Count"]
+    #[inline(always)]
+    pub fn down3(&self) -> DOWN3_R {
+        DOWN3_R::new(((self.bits >> 19) & 0x01) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 0 - Gray Count ENable"]
+    #[inline(always)]
+    pub fn gcen0(&mut self) -> GCEN0_W {
+        GCEN0_W { w: self }
+    }
+    #[doc = "Bit 1 - Gray Count ENable"]
+    #[inline(always)]
+    pub fn gcen1(&mut self) -> GCEN1_W {
+        GCEN1_W { w: self }
+    }
+    #[doc = "Bit 2 - Gray Count ENable"]
+    #[inline(always)]
+    pub fn gcen2(&mut self) -> GCEN2_W {
+        GCEN2_W { w: self }
+    }
+    #[doc = "Bit 3 - Gray Count ENable"]
+    #[inline(always)]
+    pub fn gcen3(&mut self) -> GCEN3_W {
+        GCEN3_W { w: self }
+    }
+    #[doc = "Bit 16 - DOWN Count"]
+    #[inline(always)]
+    pub fn down0(&mut self) -> DOWN0_W {
+        DOWN0_W { w: self }
+    }
+    #[doc = "Bit 17 - DOWN Count"]
+    #[inline(always)]
+    pub fn down1(&mut self) -> DOWN1_W {
+        DOWN1_W { w: self }
+    }
+    #[doc = "Bit 18 - DOWN Count"]
+    #[inline(always)]
+    pub fn down2(&mut self) -> DOWN2_W {
+        DOWN2_W { w: self }
+    }
+    #[doc = "Bit 19 - DOWN Count"]
+    #[inline(always)]
+    pub fn down3(&mut self) -> DOWN3_W {
+        DOWN3_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "PWM Stepper Motor Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [smmr](index.html) module"]
+pub struct SMMR_SPEC;
+impl crate::RegisterSpec for SMMR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [smmr::R](R) reader structure"]
+impl crate::Readable for SMMR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [smmr::W](W) writer structure"]
+impl crate::Writable for SMMR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SMMR to value 0"]
+impl crate::Resettable for SMMR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
+}
