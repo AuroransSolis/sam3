@@ -1,9 +1,4 @@
-use crate::{
-    pac::{
-        pmc::pmc_mckr::PRES_A,
-        PMC,
-    },
-};
+use crate::pac::{pmc::pmc_mckr::PRES_A, PMC};
 
 pub fn set_master_clk_prescaler(pmc: &mut PMC, prescaler: PRES_A) {
     // Set prescaler bits
