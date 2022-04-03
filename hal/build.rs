@@ -1,42 +1,33 @@
-use std::{env, fs::{File, read_to_string}, io::Write, path::PathBuf};
+use std::{
+    env,
+    fs::{read_to_string, File},
+    io::Write,
+    path::PathBuf,
+};
 
 fn main() {
-    // let out = &PathBuf::from(env::var_os("OUT_DIR").unwrap());
-    // File::create(out.join("ayy.lmao"))
-    //     .unwrap()
-    //     .write_all(format!("{:?}", env::var_os("CARGO_FEATURE_SAM3X8E_RT")).as_bytes())
-    //     .unwrap();
-    // if env::var_os("CARGO_FEATURE_RT").is_some() {
-    //     let out = &PathBuf::from(env::var_os("OUT_DIR").unwrap());
-    //     
-    //     File::create(out.join("memory.x"))
-    //         .unwrap()
-    //         .write_all(include_bytes!("memory.x"))
-    //         .unwrap();
-    //     println!("cargo:rustc-link-search={}", out.display());
-    //     println!("cargo:rerun-if-changed=memory.x");
-    // }
-    // println!("cargo:rerun-if-changed=build.rs");
     let mut memory_files = Vec::new();
     FEATURE_TO_FILE
         .into_iter()
         .filter_map(|[chip, memory_file]| env::var_os(chip).map(|_| memory_file))
         .for_each(|memory_file| memory_files.push(memory_file));
     if memory_files.is_empty() {
-        println!("cargo:warning='No device specified.'");
+        println!("cargo:warning=No target device specified.");
     } else if memory_files.len() > 1 {
-        let mut msg = format!("cargo:warning='Multiple devices enabled: [{}", memory_files[0]);
+        let mut msg = format!(
+            "cargo:warning=Multiple devices enabled: [{}",
+            memory_files[0]
+        );
         memory_files.into_iter().for_each(|memory_file| {
             msg.push_str(", ");
             msg.push_str(memory_file);
         });
-        msg.push_str("]'");
+        msg.push_str("]");
         println!("{msg}");
         panic!();
     } else {
         let memory_file = memory_files.pop().unwrap();
         let out = &PathBuf::from(env::var_os("OUT_DIR").unwrap());
-        
         File::create(out.join("memory.x"))
             .unwrap()
             .write_all(read_to_string(memory_file).unwrap().as_bytes())
@@ -45,12 +36,6 @@ fn main() {
         println!("cargo:rerun-if-changed={memory_file}");
     }
 }
-
-// fn get_memory_file() -> Option<&str> {
-//     FEATURE_TO_FILE
-//         .into_iter()
-//         .filter_map(|[feature, _])
-// }
 
 const FEATURE_TO_FILE: [[&str; 2]; 40] = [
     ["CARGO_FEATURE_SAM3A4C_RT", "memory/atsam3a4c.x"],
