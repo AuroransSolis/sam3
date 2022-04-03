@@ -17,11 +17,12 @@ edition = "2021"
 
 [dependencies]
 
-
 # It may be useful in the future to add in extra features to group together smaller groups of MCUs,
 # for instance adding the feature `sam3n2` to group together `sam3n2a`, `sam3n2b`, and `sam3n2c` so
 # that common functionality between them is gated behind only a single feature.
 [features]
+unproven = []
+
 device = []
 
 sam3a = ["device"]
