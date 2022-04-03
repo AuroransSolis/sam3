@@ -131,6 +131,8 @@ pub mod dacc;
 #[cfg(feature = "device")]
 pub mod peripheral_id;
 #[cfg(feature = "device")]
+pub mod pio;
+#[cfg(feature = "device")]
 mod pmc;
 
 #[cfg(all(feature = "device", feature = "unproven"))]
