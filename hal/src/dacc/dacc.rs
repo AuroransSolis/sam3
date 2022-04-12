@@ -131,28 +131,66 @@
 //! ASCII code (corresponding to `0x444143`), otherwise the register write is cancelled.
 //!
 //! The protected registers are:
-//!     - DACC Mode Register
-//!     - DACC Channel Enable Register
-//!     - DACC Channel Disable Register
-//!     - DACC Analog Current Register
+//!     - Mode Register (`MR`)
+//!     - Channel Enable Register (`CHER`)
+//!     - Channel Disable Register (`CHDR`)
+//!     - Analog Current Register (`ACR`)
 
 use super::cdr_data::CdrData;
 use crate::{
     pac::{dacc::mr::*, DACC, PMC},
     peripheral_id::PeripheralId,
     pmc::*,
+    WriteProtection,
 };
 
 pub const DACC_PID: u32 = PeripheralId::DACC as u32;
 
-const WPKEY: u32 = {
-    let [b0, b1, b2] = *b"DAC";
-    u32::from_be_bytes([0, b0, b1, b2])
-}; // DAC in ASCII
-
 /// Digital to analog converter controller
 pub struct Dacc {
     dacc: DACC,
+}
+
+/// The digital to analog converter controller has write protection for the following regiters:
+///
+///   - Mode register (`MR`)
+///   - Channel enable register (`CHER`)
+///   - Channel disable register (`CHDR`)
+///   - Analog current register (`ACR`)
+impl WriteProtection for Dacc {
+    /// `DAC` in ASCII with leading null byte. The key is only supposed to be 24 bits, so the
+    /// leading null byte is ignored.
+    const WPKEY: u32 = {
+        let [b0, b1, b2] = *b"DAC";
+        u32::from_be_bytes([0, b0, b1, b2])
+    };
+
+    #[rustfmt::skip]
+    fn enable_writeprotect(&mut self) {
+        self.dacc.wpmr.write(|wpmr| unsafe {
+            wpmr
+                .wpkey().bits(WPKEY)
+                .wpen().set_bit()
+        });
+    }
+
+    fn disable_writeprotect(&mut self) {
+        self.dacc
+            .wpmr
+            .write(|wpmr| unsafe { wpmr.wpkey().bits(WPKEY).wpen().clear_bit() });
+    }
+
+    fn writeprotect_enabled(&self) -> bool {
+        self.dacc.wpmr.read().wpen().bit()
+    }
+
+    fn writeprotect_error(&self) -> bool {
+        self.dacc.wpsr.read().wproterr().bit()
+    }
+
+    unsafe fn writeprotect_error_addr_unchecked(&self) -> u8 {
+        self.dacc.wpsr.read().wprotaddr().bits()
+    }
 }
 
 impl Dacc {
@@ -398,44 +436,6 @@ impl Dacc {
     /// DACC FIFO.
     pub unsafe fn write_conversion_data_unchecked<D: CdrData>(&mut self, data: D) {
         self.dacc.cdr.write(|cdr| cdr.bits(data.bits()));
-    }
-
-    /// Enables write protection for the following registers:
-    ///
-    ///   - Mode register (`MR`)
-    ///   - Channel enable register (`CHER`)
-    ///   - Channel disable register (`CHDR`)
-    ///   - Analog current register (`ACR`)
-    #[rustfmt::skip]
-    pub fn enable_writeprotect(&mut self) {
-        self.dacc.wpmr.write(|wpmr| unsafe {
-            wpmr
-                .wpkey().bits(WPKEY)
-                .wpen().set_bit()
-        });
-    }
-
-    /// Disables write protection for the protectable registers (listed under
-    /// [`enable_writeprotect`](`crate::dacc::Dacc::enable_writeprotect`)).
-    pub fn disable_writeprotect(&mut self) {
-        self.dacc
-            .wpmr
-            .write(|wpmr| unsafe { wpmr.wpkey().bits(WPKEY).wpen().clear_bit() });
-    }
-
-    /// Check whether write protection is currently enabled.
-    pub fn writeprotect_enabled(&self) -> bool {
-        self.dacc.wpmr.read().wpen().bit()
-    }
-
-    /// Get the address of the register write request that last generated an error, if one exists.
-    pub fn writeprotect_status(&self) -> Option<u8> {
-        let wpsr = self.dacc.wpsr.read();
-        if wpsr.wproterr().bit() {
-            Some(wpsr.wprotaddr().bits())
-        } else {
-            None
-        }
     }
 
     /// Attempt to set startup time. Fails if write protection is enabled.
