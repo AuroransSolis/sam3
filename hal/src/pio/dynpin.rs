@@ -1,8 +1,6 @@
 use crate::pio::IsPioc;
 use core::marker::PhantomData;
 
-pub trait PinId {}
-
 pub struct DynPin<Pioc, Pid>
 where
     Pioc: IsPioc,
@@ -23,9 +21,4 @@ where
             id: PhantomData,
         }
     }
-}
-
-pub struct Pin {
-    pioc: Pioc,
-    id: PinId,
 }
