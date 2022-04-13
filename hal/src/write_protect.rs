@@ -17,7 +17,8 @@ pub trait WriteProtection {
     ///
     /// The value held in this register may be nonsensical if the `WPROTERR` flag is not indicating
     /// that a write protection error has occured, thus it is recommended to use the
-    /// [`writeprotect_error_addr`] method instead.
+    /// [`writeprotect_error_addr`](crate::write_protect::WriteProtection::writeprotect_error_addr)
+    /// method instead.
     unsafe fn writeprotect_error_addr_unchecked(&self) -> u8;
 
     /// Check if the write protect status register of a peripheral with write protection capability

@@ -1,7 +1,16 @@
-use super::Pioc;
-use core::marker::PhantomData;
+#[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
+use crate::pio::piod::PioD;
+use crate::pio::{pioa::PioA, piob::PioB, pioc::PioC, IsPio};
+#[cfg(feature = "sam3x8h")]
+use crate::pio::{pioe::PioE, piof::PioF};
 
-pub trait PinId {}
+use core::marker::PhantomData;
+use paste::paste;
+
+pub trait PinId {
+    type Controller: IsPio;
+    const MASK: u32;
+}
 pub trait LineCfg {}
 pub trait OutputWriteCfg {}
 pub trait OutputCfg {}
@@ -33,7 +42,7 @@ pub struct Pin<
     Edlv = DetectEdges,
     Frlh = DetectRisingEdgeHighLevel,
 > where
-    Pio: Pioc,
+    Pio: IsPio,
     Pid: PinId,
     Line: LineCfg,
     Outw: OutputWriteCfg,
@@ -168,11 +177,147 @@ make_cfg_types! {
     },
 }
 
+// LOOK AT ME GO
+macro_rules! pin_mutations {
+    ($(
+        $(#[$meta:meta])?
+        $pio:ty
+    ),+$(,)?) => {$(
+        $(#[$meta])?
+        impl<Pid, Line, Outw, Otpt, Pupr, Irpt, Mdvr, Absl, Odta, Filt, Flck, Aint, Edlv, Frlh>
+            Pin<
+                $pio,
+                Pid,
+                Line,
+                Outw,
+                Otpt,
+                Pupr,
+                Irpt,
+                Mdvr,
+                Absl,
+                Odta,
+                Filt,
+                Flck,
+                Aint,
+                Edlv,
+                Frlh
+            >
+        where
+            Pid: PinId<Controller = $pio>,
+            Line: LineCfg,
+            Outw: OutputWriteCfg,
+            Otpt: OutputCfg,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Mdvr: MultiDriverCfg,
+            Absl: ABSelectCfg,
+            Odta: OutputDataCfg,
+            Filt: InputFilterCfg,
+            Flck: InputFilterClockCfg,
+            Aint: AdditionalInterruptModesCfg,
+            Edlv: EdgeLevelCfg,
+            Frlh: FallLowRiseHighCfg,
+        {
+            pin_mutations! {
+                @defmuts $pio {
+                    [],
+                    [
+                        [Line, PeripheralControlled, pdr, PioControlled, per],
+                        [Outw, OutputWriteEnabled, ower, OutputWriteDisabled, owdr],
+                        [Otpt, OutputEnabled, oer, OutputDisabled, odr],
+                        [Pupr, PullUpEnabled, puer, PullUpDisabled, pudr],
+                        [Irpt, InterruptEnabled, ier, InterruptDisabled, idr],
+                        [Mdvr, MultiDriverEnabled, mder, MultiDriverDisabled, mddr],
+                        [Absl, PeripheralB, absr, PeripheralA, absr],
+                        [Odta, SetOutput, sodr, ClearOutput, codr],
+                        [Filt, InputFilterEnabled, ifer, InputFilterDisabled, ifdr],
+                        [Flck, SystemClockGlitchFilter, scifsr, DebouncingFilter, difsr],
+                        [
+                            Aint,
+                            AdditionalInterruptModesEnabled,
+                            aimer,
+                            AdditionalInterruptModesDisabled,
+                            aimdr
+                        ],
+                        [Edlv, DetectEdges, esr, DetectLevels, lsr],
+                        [
+                            Frlh,
+                            DetectFallingEdgeLowLevel,
+                            fellsr,
+                            DetectRisingEdgeHighLevel,
+                            rehlsr
+                        ],
+                    ],
+                }
+            }
+        }
+    )+};
+    (
+        @defmuts $pio:ty {
+            [$($done:tt,)*],
+            [[$g:tt, $s0:tt, $f0:tt, $s1:tt, $f1:tt], $([$a:tt, $b:tt, $c:tt, $d:tt, $e:tt],)+],
+        }
+    ) => {
+        pin_mutations! {
+            @fundef $s0, [$pio, Pid, $($done,)* $s0], $pio, $f0
+        }
+
+        pin_mutations! {
+            @fundef $s1, [$pio, Pid, $($done,)* $s1], $pio, $f1
+        }
+
+        pin_mutations! {
+            @defmuts $pio {
+                [$($done,)* $g,],
+                [$([$a, $b, $c, $d, $e],)+],
+            }
+        }
+    };
+    (
+        @defmuts $pio:ty {
+            [$($done:tt,)*],
+            [[$g:tt, $s0:tt, $f0:tt, $s1:tt, $f1:tt],],
+        }
+    ) => {
+        pin_mutations! {
+            @fundef $s0, [$pio, Pid, $($done,)* $s0], $pio, $f0
+        }
+
+        pin_mutations! {
+            @fundef $s1, [$pio, Pid, $($done,)* $s1], $pio, $f1
+        }
+    };
+    (@fundef $s:ident, [$($ty:tt),+], $pio:ty, $f:tt) => {
+        paste!{
+            pub fn [<$s:snake>](self) -> Pin<$($ty,)+> {
+                unsafe {
+                    (*<$pio as IsPio>::PTR)
+                        .$f
+                        .write_with_zero(|$f| $f.bits(<Pid as PinId>::MASK));
+                    Pin::new()
+                }
+            }
+        }
+    }
+}
+
+pin_mutations! {
+    PioA,
+    PioB,
+    PioC,
+    #[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
+    PioD,
+    #[cfg(feature = "sam3x8h")]
+    PioE,
+    #[cfg(feature = "sam3x8h")]
+    PioF,
+}
+
 impl<Pio, Pid, Line, Outw, Otpt, Pupr, Irpt, Mdvr, Absl, Odta, Filt, Flck, Aint, Edlv, Frlh>
     Pin<Pio, Pid, Line, Outw, Otpt, Pupr, Irpt, Mdvr, Absl, Odta, Filt, Flck, Aint, Edlv, Frlh>
 where
-    Pio: Pioc,
-    Pid: PinId,
+    Pio: IsPio,
+    Pid: PinId<Controller = Pio>,
     Line: LineCfg,
     Outw: OutputWriteCfg,
     Otpt: OutputCfg,
@@ -187,5 +332,23 @@ where
     Edlv: EdgeLevelCfg,
     Frlh: FallLowRiseHighCfg,
 {
-    // Define methods to change pin configurations here.
+    pub(crate) unsafe fn new() -> Self {
+        Pin {
+            _pio: PhantomData,
+            _pid: PhantomData,
+            _line: PhantomData,
+            _outw: PhantomData,
+            _otpt: PhantomData,
+            _pupr: PhantomData,
+            _irpt: PhantomData,
+            _mdvr: PhantomData,
+            _absl: PhantomData,
+            _odta: PhantomData,
+            _filt: PhantomData,
+            _flck: PhantomData,
+            _aint: PhantomData,
+            _edlv: PhantomData,
+            _frlh: PhantomData,
+        }
+    }
 }
