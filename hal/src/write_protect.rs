@@ -1,8 +1,10 @@
 #[cfg(feature = "device")]
-pub trait WriteProtection {
+pub trait WriteProtect {
     /// `const` value to insert into the `WPKEY` field of the write protection register of a
     /// peripheral with write protection capability.
     const WPKEY: u32;
+
+    type AddrType;
 
     fn enable_writeprotect(&mut self);
     fn disable_writeprotect(&mut self);
@@ -17,14 +19,14 @@ pub trait WriteProtection {
     ///
     /// The value held in this register may be nonsensical if the `WPROTERR` flag is not indicating
     /// that a write protection error has occured, thus it is recommended to use the
-    /// [`writeprotect_error_addr`](crate::write_protect::WriteProtection::writeprotect_error_addr)
+    /// [`writeprotect_error_addr`](crate::write_protect::WriteProtect::writeprotect_error_addr)
     /// method instead.
-    unsafe fn writeprotect_error_addr_unchecked(&self) -> u8;
+    unsafe fn writeprotect_error_addr_unchecked(&self) -> Self::AddrType;
 
     /// Check if the write protect status register of a peripheral with write protection capability
     /// is indicating that a write protection error has occurred, and if it has, return the address
     /// of the register write request that generated the error. Otherwise, `None` is returned.
-    fn writeprotect_error_addr(&self) -> Option<u8> {
+    fn writeprotect_error_addr(&self) -> Option<Self::AddrType> {
         if self.writeprotect_error() {
             unsafe { Some(self.writeprotect_error_addr_unchecked()) }
         } else {
@@ -36,21 +38,23 @@ pub trait WriteProtection {
 macro_rules! wp_impl {
     ($(
         $(#[$fields:meta])+
-        $type:ty: $key:literal
+        $type:ty => $field:ident($err:ident, $addr:ident<$addrty:ty>): $key:literal
     ),+$(,)?) => {$(
         paste::paste! {
             #[doc = "`" $type "` has write protection for the following registers:"]
             #[doc = ""]
             $(#[$fields])+
-            impl crate::write_protect::WriteProtection for $type {
+            impl crate::write_protect::WriteProtect for $type {
                 const WPKEY: u32 = {
                     let [b0, b1, b2] = *$key;
                     u32::from_be_bytes([0, b0, b1, b2])
                 };
 
+                type AddrType = $addrty;
+
                 #[rustfmt::skip]
                 fn enable_writeprotect(&mut self) {
-                    self.[<$type:lower>].wpmr.write(|wpmr| unsafe {
+                    self.$field.wpmr.write(|wpmr| unsafe {
                         wpmr
                             .wpkey().bits(Self::WPKEY)
                             .wpen().set_bit()
@@ -59,7 +63,7 @@ macro_rules! wp_impl {
 
                 #[rustfmt::skip]
                 fn disable_writeprotect(&mut self) {
-                    self.[<$type:lower>].wpmr.write(|wpmr| unsafe {
+                    self.$field.wpmr.write(|wpmr| unsafe {
                         wpmr
                             .wpkey().bits(Self::WPKEY)
                             .wpen().clear_bit()
@@ -67,15 +71,15 @@ macro_rules! wp_impl {
                 }
 
                 fn writeprotect_enabled(&self) -> bool {
-                    self.[<$type:lower>].wpmr.read().wpen().bit()
+                    self.$field.wpmr.read().wpen().bit()
                 }
 
                 fn writeprotect_error(&self) -> bool {
-                    self.[<$type:lower>].wpsr.read().wproterr().bit()
+                    self.$field.wpsr.read().$err().bit()
                 }
 
-                unsafe fn writeprotect_error_addr_unchecked(&self) -> u8 {
-                    self.[<$type:lower>].wpsr.read().wprotaddr().bits()
+                unsafe fn writeprotect_error_addr_unchecked(&self) -> $addrty {
+                    self.$field.wpsr.read().$addr().bits()
                 }
             }
         }

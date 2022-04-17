@@ -141,7 +141,7 @@ use crate::{
     pac::{dacc::mr::*, DACC, PMC},
     peripheral_id::PeripheralId,
     pmc::*,
-    write_protect::{wp_impl, WriteProtection},
+    write_protect::{wp_impl, WriteProtect},
 };
 
 pub const DACC_PID: u32 = PeripheralId::DACC as u32;
@@ -152,11 +152,11 @@ pub struct Dacc {
 }
 
 wp_impl! {
-    ///   - Mode register (`MR`)
-    ///   - Channel enable register (`CHER`)
-    ///   - Channel disable register (`CHDR`)
-    ///   - Analog current register (`ACR`)
-    Dacc: b"DAC",
+    ///   - Mode register (`DACC_MR`)
+    ///   - Channel enable register (`DACC_CHER`)
+    ///   - Channel disable register (`DACC_CHDR`)
+    ///   - Analog current register (`DACC_ACR`)
+    Dacc => dacc(wproterr, wprotaddr<u8>): b"DAC",
 }
 
 impl Dacc {
