@@ -26,6 +26,7 @@ function build_pac() {
         | svd2rust --nightly --const_generic --target cortex-m --output-dir ${pac_dir}
     form -i ${pac_dir}/lib.rs -o ${pac_dir}/src/
     rm ${pac_dir}/lib.rs
+    rm ${pac_dir}/${1}
 
     pushd ${pac_dir}
     cargo +nightly fmt
