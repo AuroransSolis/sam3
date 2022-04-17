@@ -1,9 +1,4 @@
-#[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
-use crate::pio::piod::PioD;
-use crate::pio::{pioa::PioA, piob::PioB, pioc::PioC, IsPio};
-#[cfg(feature = "sam3x8h")]
-use crate::pio::{pioe::PioE, piof::PioF};
-
+use crate::{pac::pioa::RegisterBlock, pio::IsPio};
 use core::marker::PhantomData;
 use paste::paste;
 
@@ -43,7 +38,7 @@ pub struct Pin<
     Frlh = DetectRisingEdgeHighLevel,
 > where
     Pio: IsPio,
-    Pid: PinId,
+    Pid: PinId<Controller = Pio>,
     Line: LineCfg,
     Outw: OutputWriteCfg,
     Otpt: OutputCfg,
@@ -178,139 +173,86 @@ make_cfg_types! {
 }
 
 // LOOK AT ME GO
-macro_rules! pin_mutations {
-    ($(
-        $(#[$meta:meta])?
-        $pio:ty
-    ),+$(,)?) => {$(
-        $(#[$meta])?
-        impl<Pid, Line, Outw, Otpt, Pupr, Irpt, Mdvr, Absl, Odta, Filt, Flck, Aint, Edlv, Frlh>
-            Pin<
-                $pio,
-                Pid,
-                Line,
-                Outw,
-                Otpt,
-                Pupr,
-                Irpt,
-                Mdvr,
-                Absl,
-                Odta,
-                Filt,
-                Flck,
-                Aint,
-                Edlv,
-                Frlh
-            >
-        where
-            Pid: PinId<Controller = $pio>,
-            Line: LineCfg,
-            Outw: OutputWriteCfg,
-            Otpt: OutputCfg,
-            Pupr: PullupResistorCfg,
-            Irpt: InterruptCfg,
-            Mdvr: MultiDriverCfg,
-            Absl: ABSelectCfg,
-            Odta: OutputDataCfg,
-            Filt: InputFilterCfg,
-            Flck: InputFilterClockCfg,
-            Aint: AdditionalInterruptModesCfg,
-            Edlv: EdgeLevelCfg,
-            Frlh: FallLowRiseHighCfg,
-        {
-            pin_mutations! {
-                @defmuts $pio {
-                    [],
-                    [
-                        [Line, PeripheralControlled, pdr, PioControlled, per],
-                        [Outw, OutputWriteEnabled, ower, OutputWriteDisabled, owdr],
-                        [Otpt, OutputEnabled, oer, OutputDisabled, odr],
-                        [Pupr, PullUpEnabled, puer, PullUpDisabled, pudr],
-                        [Irpt, InterruptEnabled, ier, InterruptDisabled, idr],
-                        [Mdvr, MultiDriverEnabled, mder, MultiDriverDisabled, mddr],
-                        [Absl, PeripheralB, absr, PeripheralA, absr],
-                        [Odta, SetOutput, sodr, ClearOutput, codr],
-                        [Filt, InputFilterEnabled, ifer, InputFilterDisabled, ifdr],
-                        [Flck, SystemClockGlitchFilter, scifsr, DebouncingFilter, difsr],
-                        [
-                            Aint,
-                            AdditionalInterruptModesEnabled,
-                            aimer,
-                            AdditionalInterruptModesDisabled,
-                            aimdr
-                        ],
-                        [Edlv, DetectEdges, esr, DetectLevels, lsr],
-                        [
-                            Frlh,
-                            DetectFallingEdgeLowLevel,
-                            fellsr,
-                            DetectRisingEdgeHighLevel,
-                            rehlsr
-                        ],
-                    ],
-                }
-            }
-        }
-    )+};
+macro_rules! line_cfg_mutations {
     (
-        @defmuts $pio:ty {
+        @defmuts {
             [$($done:tt,)*],
-            [[$g:tt, $s0:tt, $f0:tt, $s1:tt, $f1:tt], $([$a:tt, $b:tt, $c:tt, $d:tt, $e:tt],)+],
+            [[$g:tt, $s0:tt, $f0:tt, $s1:tt, $f1:tt$(, $p0:tt)?], $([$a:tt, $b:tt, $c:tt, $d:tt, $e:tt$(, $f:tt)?],)+],
         }
     ) => {
-        pin_mutations! {
-            @fundef $s0, [$pio, Pid, $($done,)* $s0], $pio, $f0
+        line_cfg_mutations! {
+            @fundef $($p0)? $s0, [Pio, Pid, $($done,)* $s0], $f0
         }
 
-        pin_mutations! {
-            @fundef $s1, [$pio, Pid, $($done,)* $s1], $pio, $f1
+        line_cfg_mutations! {
+            @fundef $($p0)? $s1, [Pio, Pid, $($done,)* $s1], $f1
         }
 
-        pin_mutations! {
-            @defmuts $pio {
+        line_cfg_mutations! {
+            @defmuts {
                 [$($done,)* $g,],
                 [$([$a, $b, $c, $d, $e],)+],
             }
         }
     };
     (
-        @defmuts $pio:ty {
+        @defmuts {
             [$($done:tt,)*],
             [[$g:tt, $s0:tt, $f0:tt, $s1:tt, $f1:tt],],
         }
     ) => {
-        pin_mutations! {
-            @fundef $s0, [$pio, Pid, $($done,)* $s0], $pio, $f0
+        line_cfg_mutations! {
+            @fundef $s0, [Pio, Pid, $($done,)* $s0], $f0
         }
 
-        pin_mutations! {
-            @fundef $s1, [$pio, Pid, $($done,)* $s1], $pio, $f1
+        line_cfg_mutations! {
+            @fundef $s1, [Pio, Pid, $($done,)* $s1], $f1
         }
     };
-    (@fundef $s:ident, [$($ty:tt),+], $pio:ty, $f:tt) => {
-        paste!{
+    (@fundef $s:ident, [$($ty:tt),+], $f:tt) => {
+        paste! {
             pub fn [<$s:snake>](self) -> Pin<$($ty,)+> {
                 unsafe {
-                    (*<$pio as IsPio>::PTR)
+                    (&*(<Pio as IsPio>::PTR as *const RegisterBlock))
                         .$f
-                        .write_with_zero(|$f| $f.bits(<Pid as PinId>::MASK));
+                        .write_with_zero(|$f| $f.bits(<Pid as crate::pio::pin::PinId>::MASK));
                     Pin::new()
                 }
             }
         }
-    }
-}
+    };
+    (@fundef wp $s:ident, [$($ty:tt),+], $f:tt) => {
+        paste! {
+            pub fn [<$s:snake>](self) -> Pin<$($ty,)+> {
+                unsafe {
+                    let rb = &*(<Pio as IsPio>::PTR as *const RegisterBlock);
+                    if rb.wpmr.read().wpen().bit() {
+                        rb.wpmr.write(|wpmr| {
+                            wpmr
+                                .wpkey().bits(<Pio as crate::write_protect::WriteProtect>::WPKEY)
+                                .wpen().clear_bit()
+                        });
+                        rb.$f.write_with_zero(|$f| $f.bits(<Pid as crate::pio::pin::PinId>::MASK));
+                        rb.wpmr.write(|wpmr| {
+                            wpmr
+                                .wpen().set_bit()
+                                .wpkey().bits(0)
+                        });
+                        Pin::new()
+                    } else {
+                        self.[<$s:snake _unchecked>]()
+                    }
+                }
+            }
 
-pin_mutations! {
-    PioA,
-    PioB,
-    PioC,
-    #[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
-    PioD,
-    #[cfg(feature = "sam3x8h")]
-    PioE,
-    #[cfg(feature = "sam3x8h")]
-    PioF,
+            pub unsafe fn [<$s:snake _unchecked>](self) -> Pin<$($ty,)+> {
+                (&*(<Pio as IsPio>::PTR as *const crate::pac::pioa::RegisterBlock))
+                    .$f
+                    .write_with_zero(|$f| $f.bits(<Pid as crate::pio::pin::PinId>::MASK));
+                Pin::new()
+            }
+        }
+    };
 }
 
 impl<Pio, Pid, Line, Outw, Otpt, Pupr, Irpt, Mdvr, Absl, Odta, Filt, Flck, Aint, Edlv, Frlh>
@@ -332,6 +274,39 @@ where
     Edlv: EdgeLevelCfg,
     Frlh: FallLowRiseHighCfg,
 {
+    line_cfg_mutations! {
+        @defmuts {
+            [],
+            [
+                [Line, PeripheralControlled, pdr, PioControlled, per, wp],
+                [Outw, OutputWriteEnabled, ower, OutputWriteDisabled, owdr, wp],
+                [Otpt, OutputEnabled, oer, OutputDisabled, odr, wp],
+                [Pupr, PullUpEnabled, puer, PullUpDisabled, pudr, wp],
+                [Irpt, InterruptEnabled, ier, InterruptDisabled, idr],
+                [Mdvr, MultiDriverEnabled, mder, MultiDriverDisabled, mddr, wp],
+                [Absl, PeripheralB, absr, PeripheralA, absr, wp],
+                [Odta, SetOutput, sodr, ClearOutput, codr],
+                [Filt, InputFilterEnabled, ifer, InputFilterDisabled, ifdr, wp],
+                [Flck, SystemClockGlitchFilter, scifsr, DebouncingFilter, difsr],
+                [
+                    Aint,
+                    AdditionalInterruptModesEnabled,
+                    aimer,
+                    AdditionalInterruptModesDisabled,
+                    aimdr
+                ],
+                [Edlv, DetectEdges, esr, DetectLevels, lsr],
+                [
+                    Frlh,
+                    DetectFallingEdgeLowLevel,
+                    fellsr,
+                    DetectRisingEdgeHighLevel,
+                    rehlsr
+                ],
+            ],
+        }
+    }
+
     pub(crate) unsafe fn new() -> Self {
         Pin {
             _pio: PhantomData,
