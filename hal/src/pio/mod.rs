@@ -11,6 +11,7 @@ pub mod pioe;
 #[cfg(feature = "sam3x8h")]
 pub mod piof;
 
+use crate::{pac::pioa::RegisterBlock, write_protect::WriteProtect};
 use pioa::PioA;
 use piob::PioB;
 use pioc::PioC;
@@ -21,7 +22,7 @@ use pioe::PioE;
 #[cfg(feature = "sam3x8h")]
 use piof::PioF;
 
-pub trait IsPio {
+pub trait IsPio: WriteProtect {
     type RegType;
     const PTR: *const Self::RegType;
 }
@@ -58,7 +59,7 @@ macro_rules! def_pioc {
             )+
 
             pub struct $pio {
-                [<$pio:snake>]: $inner,
+                [<$pio:lower>]: $inner,
                 $(
                     $(#[$meta])*
                     [<$pio_abbv:snake $num:snake>]: [<$pio_abbv:camel $num:camel>],
@@ -69,8 +70,36 @@ macro_rules! def_pioc {
                 type RegType = crate::pac::[<$pio:lower>]::RegisterBlock;
                 const PTR: *const Self::RegType = crate::pac::[<$pio:upper>]::PTR;
             }
+
+            crate::write_protect::wp_impl! {
+                ///   - PIO Enable Register (`PIO_PER`)
+                ///   - PIO Disable Register (`PIO_PDR`)
+                ///   - Output Enable Register (`PIO_OER`)
+                ///   - Output Disable Register (`PIO_ODR`)
+                ///   - Input Filter Enable Register (`PIO_IFER`)
+                ///   - Input Filter Disable Register (`PIO_IDER`)
+                ///   - Multi-driver Enable Register (`PIO_MDER`)
+                ///   - Multi-driver Disable Register (`PIO_MDDR`)
+                ///   - Pull Up Enable Register (`PIO_PUER`)
+                ///   - Pull Up Disable Register (`PIO_PUDR`)
+                ///   - Peripheral AB Select Register (`PIO_ABSR`)
+                ///   - Output Write Enable Register (`PIO_OWER`)
+                ///   - Output Write Disable Register (`PIO_OWDR`)
+                $pio => [<$pio:lower>](wpvs, wpvsrc<u16>): b"PIO",
+            }
         }
     )+};
 }
 
 pub(crate) use def_pioc;
+
+// impl<Pio: IsPio> Pio {
+//     pub fn status_reg(&self) -> u32 {
+//         unsafe {
+//             (&*(<Pio as IsPio>::PTR as *const RegisterBlock))
+//                 .psr
+//                 .read()
+//                 .bits()
+//         }
+//     }
+// }
