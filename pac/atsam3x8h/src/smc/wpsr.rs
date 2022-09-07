@@ -14,35 +14,9 @@ impl From<crate::R<WPSR_SPEC>> for R {
     }
 }
 #[doc = "Field `WP_VS` reader - Write Protection Violation Status"]
-pub struct WP_VS_R(crate::FieldReader<u8, u8>);
-impl WP_VS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WP_VS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WP_VS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WP_VS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `WP_VSRC` reader - Write Protection Violation Source"]
-pub struct WP_VSRC_R(crate::FieldReader<u16, u16>);
-impl WP_VSRC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        WP_VSRC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WP_VSRC_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WP_VSRC_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:3 - Write Protection Violation Status"]
     #[inline(always)]

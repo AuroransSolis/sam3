@@ -20,194 +20,54 @@ impl From<crate::W<DEVICR_SPEC>> for W {
     }
 }
 #[doc = "Field `SUSPC` writer - Suspend Interrupt Clear"]
-pub struct SUSPC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SUSPC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type SUSPC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVICR_SPEC, bool, O>;
 #[doc = "Field `MSOFC` writer - Micro Start of Frame Interrupt Clear"]
-pub struct MSOFC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MSOFC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type MSOFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVICR_SPEC, bool, O>;
 #[doc = "Field `SOFC` writer - Start of Frame Interrupt Clear"]
-pub struct SOFC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SOFC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type SOFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVICR_SPEC, bool, O>;
 #[doc = "Field `EORSTC` writer - End of Reset Interrupt Clear"]
-pub struct EORSTC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EORSTC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type EORSTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVICR_SPEC, bool, O>;
 #[doc = "Field `WAKEUPC` writer - Wake-Up Interrupt Clear"]
-pub struct WAKEUPC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAKEUPC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type WAKEUPC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVICR_SPEC, bool, O>;
 #[doc = "Field `EORSMC` writer - End of Resume Interrupt Clear"]
-pub struct EORSMC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EORSMC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type EORSMC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVICR_SPEC, bool, O>;
 #[doc = "Field `UPRSMC` writer - Upstream Resume Interrupt Clear"]
-pub struct UPRSMC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UPRSMC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type UPRSMC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVICR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Suspend Interrupt Clear"]
     #[inline(always)]
-    pub fn suspc(&mut self) -> SUSPC_W {
-        SUSPC_W { w: self }
+    pub fn suspc(&mut self) -> SUSPC_W<0> {
+        SUSPC_W::new(self)
     }
     #[doc = "Bit 1 - Micro Start of Frame Interrupt Clear"]
     #[inline(always)]
-    pub fn msofc(&mut self) -> MSOFC_W {
-        MSOFC_W { w: self }
+    pub fn msofc(&mut self) -> MSOFC_W<1> {
+        MSOFC_W::new(self)
     }
     #[doc = "Bit 2 - Start of Frame Interrupt Clear"]
     #[inline(always)]
-    pub fn sofc(&mut self) -> SOFC_W {
-        SOFC_W { w: self }
+    pub fn sofc(&mut self) -> SOFC_W<2> {
+        SOFC_W::new(self)
     }
     #[doc = "Bit 3 - End of Reset Interrupt Clear"]
     #[inline(always)]
-    pub fn eorstc(&mut self) -> EORSTC_W {
-        EORSTC_W { w: self }
+    pub fn eorstc(&mut self) -> EORSTC_W<3> {
+        EORSTC_W::new(self)
     }
     #[doc = "Bit 4 - Wake-Up Interrupt Clear"]
     #[inline(always)]
-    pub fn wakeupc(&mut self) -> WAKEUPC_W {
-        WAKEUPC_W { w: self }
+    pub fn wakeupc(&mut self) -> WAKEUPC_W<4> {
+        WAKEUPC_W::new(self)
     }
     #[doc = "Bit 5 - End of Resume Interrupt Clear"]
     #[inline(always)]
-    pub fn eorsmc(&mut self) -> EORSMC_W {
-        EORSMC_W { w: self }
+    pub fn eorsmc(&mut self) -> EORSMC_W<5> {
+        EORSMC_W::new(self)
     }
     #[doc = "Bit 6 - Upstream Resume Interrupt Clear"]
     #[inline(always)]
-    pub fn uprsmc(&mut self) -> UPRSMC_W {
-        UPRSMC_W { w: self }
+    pub fn uprsmc(&mut self) -> UPRSMC_W<6> {
+        UPRSMC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

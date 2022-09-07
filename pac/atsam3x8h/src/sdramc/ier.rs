@@ -20,32 +20,12 @@ impl From<crate::W<IER_SPEC>> for W {
     }
 }
 #[doc = "Field `RES` writer - Refresh Error Status"]
-pub struct RES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type RES_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Refresh Error Status"]
     #[inline(always)]
-    pub fn res(&mut self) -> RES_W {
-        RES_W { w: self }
+    pub fn res(&mut self) -> RES_W<0> {
+        RES_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

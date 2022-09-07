@@ -20,86 +20,26 @@ impl From<crate::W<PMC_PCER1_SPEC>> for W {
     }
 }
 #[doc = "Field `PID32` writer - Peripheral Clock 32 Enable"]
-pub struct PID32_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PID32_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type PID32_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_PCER1_SPEC, bool, O>;
 #[doc = "Field `PID33` writer - Peripheral Clock 33 Enable"]
-pub struct PID33_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PID33_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type PID33_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_PCER1_SPEC, bool, O>;
 #[doc = "Field `PID34` writer - Peripheral Clock 34 Enable"]
-pub struct PID34_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PID34_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type PID34_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_PCER1_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Peripheral Clock 32 Enable"]
     #[inline(always)]
-    pub fn pid32(&mut self) -> PID32_W {
-        PID32_W { w: self }
+    pub fn pid32(&mut self) -> PID32_W<0> {
+        PID32_W::new(self)
     }
     #[doc = "Bit 1 - Peripheral Clock 33 Enable"]
     #[inline(always)]
-    pub fn pid33(&mut self) -> PID33_W {
-        PID33_W { w: self }
+    pub fn pid33(&mut self) -> PID33_W<1> {
+        PID33_W::new(self)
     }
     #[doc = "Bit 2 - Peripheral Clock 34 Enable"]
     #[inline(always)]
-    pub fn pid34(&mut self) -> PID34_W {
-        PID34_W { w: self }
+    pub fn pid34(&mut self) -> PID34_W<2> {
+        PID34_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

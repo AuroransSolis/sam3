@@ -35,153 +35,23 @@ impl From<crate::W<CSR_SPEC>> for W {
     }
 }
 #[doc = "Field `CPOL` reader - Clock Polarity"]
-pub struct CPOL_R(crate::FieldReader<bool, bool>);
-impl CPOL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CPOL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CPOL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CPOL_R = crate::BitReader<bool>;
 #[doc = "Field `CPOL` writer - Clock Polarity"]
-pub struct CPOL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPOL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSR_SPEC, bool, O>;
 #[doc = "Field `NCPHA` reader - Clock Phase"]
-pub struct NCPHA_R(crate::FieldReader<bool, bool>);
-impl NCPHA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        NCPHA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NCPHA_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NCPHA_R = crate::BitReader<bool>;
 #[doc = "Field `NCPHA` writer - Clock Phase"]
-pub struct NCPHA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NCPHA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type NCPHA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSR_SPEC, bool, O>;
 #[doc = "Field `CSNAAT` reader - Chip Select Not Active After Transfer (Ignored if CSAAT = 1)"]
-pub struct CSNAAT_R(crate::FieldReader<bool, bool>);
-impl CSNAAT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CSNAAT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CSNAAT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CSNAAT_R = crate::BitReader<bool>;
 #[doc = "Field `CSNAAT` writer - Chip Select Not Active After Transfer (Ignored if CSAAT = 1)"]
-pub struct CSNAAT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSNAAT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CSNAAT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSR_SPEC, bool, O>;
 #[doc = "Field `CSAAT` reader - Chip Select Active After Transfer"]
-pub struct CSAAT_R(crate::FieldReader<bool, bool>);
-impl CSAAT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CSAAT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CSAAT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CSAAT_R = crate::BitReader<bool>;
 #[doc = "Field `CSAAT` writer - Chip Select Active After Transfer"]
-pub struct CSAAT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSAAT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CSAAT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSR_SPEC, bool, O>;
+#[doc = "Field `BITS` reader - Bits Per Transfer"]
+pub type BITS_R = crate::FieldReader<u8, BITS_A>;
 #[doc = "Bits Per Transfer"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -211,14 +81,8 @@ impl From<BITS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `BITS` reader - Bits Per Transfer"]
-pub struct BITS_R(crate::FieldReader<u8, BITS_A>);
 impl BITS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        BITS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<BITS_A> {
         match self.bits {
@@ -237,66 +101,52 @@ impl BITS_R {
     #[doc = "Checks if the value of the field is `_8_BIT`"]
     #[inline(always)]
     pub fn is_8_bit(&self) -> bool {
-        **self == BITS_A::_8_BIT
+        *self == BITS_A::_8_BIT
     }
     #[doc = "Checks if the value of the field is `_9_BIT`"]
     #[inline(always)]
     pub fn is_9_bit(&self) -> bool {
-        **self == BITS_A::_9_BIT
+        *self == BITS_A::_9_BIT
     }
     #[doc = "Checks if the value of the field is `_10_BIT`"]
     #[inline(always)]
     pub fn is_10_bit(&self) -> bool {
-        **self == BITS_A::_10_BIT
+        *self == BITS_A::_10_BIT
     }
     #[doc = "Checks if the value of the field is `_11_BIT`"]
     #[inline(always)]
     pub fn is_11_bit(&self) -> bool {
-        **self == BITS_A::_11_BIT
+        *self == BITS_A::_11_BIT
     }
     #[doc = "Checks if the value of the field is `_12_BIT`"]
     #[inline(always)]
     pub fn is_12_bit(&self) -> bool {
-        **self == BITS_A::_12_BIT
+        *self == BITS_A::_12_BIT
     }
     #[doc = "Checks if the value of the field is `_13_BIT`"]
     #[inline(always)]
     pub fn is_13_bit(&self) -> bool {
-        **self == BITS_A::_13_BIT
+        *self == BITS_A::_13_BIT
     }
     #[doc = "Checks if the value of the field is `_14_BIT`"]
     #[inline(always)]
     pub fn is_14_bit(&self) -> bool {
-        **self == BITS_A::_14_BIT
+        *self == BITS_A::_14_BIT
     }
     #[doc = "Checks if the value of the field is `_15_BIT`"]
     #[inline(always)]
     pub fn is_15_bit(&self) -> bool {
-        **self == BITS_A::_15_BIT
+        *self == BITS_A::_15_BIT
     }
     #[doc = "Checks if the value of the field is `_16_BIT`"]
     #[inline(always)]
     pub fn is_16_bit(&self) -> bool {
-        **self == BITS_A::_16_BIT
-    }
-}
-impl core::ops::Deref for BITS_R {
-    type Target = crate::FieldReader<u8, BITS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BITS_A::_16_BIT
     }
 }
 #[doc = "Field `BITS` writer - Bits Per Transfer"]
-pub struct BITS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BITS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BITS_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type BITS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CSR_SPEC, u8, BITS_A, 4, O>;
+impl<'a, const O: u8> BITS_W<'a, O> {
     #[doc = "8 bits for transfer"]
     #[inline(always)]
     pub fn _8_bit(self) -> &'a mut W {
@@ -342,114 +192,39 @@ impl<'a> BITS_W<'a> {
     pub fn _16_bit(self) -> &'a mut W {
         self.variant(BITS_A::_16_BIT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
 }
 #[doc = "Field `SCBR` reader - Serial Clock Baud Rate"]
-pub struct SCBR_R(crate::FieldReader<u8, u8>);
-impl SCBR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SCBR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCBR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCBR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SCBR` writer - Serial Clock Baud Rate"]
-pub struct SCBR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCBR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type SCBR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CSR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `DLYBS` reader - Delay Before SPCK"]
-pub struct DLYBS_R(crate::FieldReader<u8, u8>);
-impl DLYBS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DLYBS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DLYBS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DLYBS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DLYBS` writer - Delay Before SPCK"]
-pub struct DLYBS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DLYBS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type DLYBS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CSR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `DLYBCT` reader - Delay Between Consecutive Transfers"]
-pub struct DLYBCT_R(crate::FieldReader<u8, u8>);
-impl DLYBCT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DLYBCT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DLYBCT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DLYBCT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DLYBCT` writer - Delay Between Consecutive Transfers"]
-pub struct DLYBCT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DLYBCT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type DLYBCT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CSR_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bit 0 - Clock Polarity"]
     #[inline(always)]
     pub fn cpol(&self) -> CPOL_R {
-        CPOL_R::new((self.bits & 0x01) != 0)
+        CPOL_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Clock Phase"]
     #[inline(always)]
     pub fn ncpha(&self) -> NCPHA_R {
-        NCPHA_R::new(((self.bits >> 1) & 0x01) != 0)
+        NCPHA_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Chip Select Not Active After Transfer (Ignored if CSAAT = 1)"]
     #[inline(always)]
     pub fn csnaat(&self) -> CSNAAT_R {
-        CSNAAT_R::new(((self.bits >> 2) & 0x01) != 0)
+        CSNAAT_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Chip Select Active After Transfer"]
     #[inline(always)]
     pub fn csaat(&self) -> CSAAT_R {
-        CSAAT_R::new(((self.bits >> 3) & 0x01) != 0)
+        CSAAT_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:7 - Bits Per Transfer"]
     #[inline(always)]
@@ -475,43 +250,43 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Clock Polarity"]
     #[inline(always)]
-    pub fn cpol(&mut self) -> CPOL_W {
-        CPOL_W { w: self }
+    pub fn cpol(&mut self) -> CPOL_W<0> {
+        CPOL_W::new(self)
     }
     #[doc = "Bit 1 - Clock Phase"]
     #[inline(always)]
-    pub fn ncpha(&mut self) -> NCPHA_W {
-        NCPHA_W { w: self }
+    pub fn ncpha(&mut self) -> NCPHA_W<1> {
+        NCPHA_W::new(self)
     }
     #[doc = "Bit 2 - Chip Select Not Active After Transfer (Ignored if CSAAT = 1)"]
     #[inline(always)]
-    pub fn csnaat(&mut self) -> CSNAAT_W {
-        CSNAAT_W { w: self }
+    pub fn csnaat(&mut self) -> CSNAAT_W<2> {
+        CSNAAT_W::new(self)
     }
     #[doc = "Bit 3 - Chip Select Active After Transfer"]
     #[inline(always)]
-    pub fn csaat(&mut self) -> CSAAT_W {
-        CSAAT_W { w: self }
+    pub fn csaat(&mut self) -> CSAAT_W<3> {
+        CSAAT_W::new(self)
     }
     #[doc = "Bits 4:7 - Bits Per Transfer"]
     #[inline(always)]
-    pub fn bits_(&mut self) -> BITS_W {
-        BITS_W { w: self }
+    pub fn bits_(&mut self) -> BITS_W<4> {
+        BITS_W::new(self)
     }
     #[doc = "Bits 8:15 - Serial Clock Baud Rate"]
     #[inline(always)]
-    pub fn scbr(&mut self) -> SCBR_W {
-        SCBR_W { w: self }
+    pub fn scbr(&mut self) -> SCBR_W<8> {
+        SCBR_W::new(self)
     }
     #[doc = "Bits 16:23 - Delay Before SPCK"]
     #[inline(always)]
-    pub fn dlybs(&mut self) -> DLYBS_W {
-        DLYBS_W { w: self }
+    pub fn dlybs(&mut self) -> DLYBS_W<16> {
+        DLYBS_W::new(self)
     }
     #[doc = "Bits 24:31 - Delay Between Consecutive Transfers"]
     #[inline(always)]
-    pub fn dlybct(&mut self) -> DLYBCT_W {
-        DLYBCT_W { w: self }
+    pub fn dlybct(&mut self) -> DLYBCT_W<24> {
+        DLYBCT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

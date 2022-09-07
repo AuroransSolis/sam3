@@ -35,74 +35,18 @@ impl From<crate::W<PMC_WPMR_SPEC>> for W {
     }
 }
 #[doc = "Field `WPEN` reader - Write Protect Enable"]
-pub struct WPEN_R(crate::FieldReader<bool, bool>);
-impl WPEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WPEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WPEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WPEN_R = crate::BitReader<bool>;
 #[doc = "Field `WPEN` writer - Write Protect Enable"]
-pub struct WPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WPEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type WPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_WPMR_SPEC, bool, O>;
 #[doc = "Field `WPKEY` reader - Write Protect KEY"]
-pub struct WPKEY_R(crate::FieldReader<u32, u32>);
-impl WPKEY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        WPKEY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WPKEY_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WPKEY_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `WPKEY` writer - Write Protect KEY"]
-pub struct WPKEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WPKEY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x00ff_ffff << 8)) | ((value as u32 & 0x00ff_ffff) << 8);
-        self.w
-    }
-}
+pub type WPKEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PMC_WPMR_SPEC, u32, u32, 24, O>;
 impl R {
     #[doc = "Bit 0 - Write Protect Enable"]
     #[inline(always)]
     pub fn wpen(&self) -> WPEN_R {
-        WPEN_R::new((self.bits & 0x01) != 0)
+        WPEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 8:31 - Write Protect KEY"]
     #[inline(always)]
@@ -113,13 +57,13 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Write Protect Enable"]
     #[inline(always)]
-    pub fn wpen(&mut self) -> WPEN_W {
-        WPEN_W { w: self }
+    pub fn wpen(&mut self) -> WPEN_W<0> {
+        WPEN_W::new(self)
     }
     #[doc = "Bits 8:31 - Write Protect KEY"]
     #[inline(always)]
-    pub fn wpkey(&mut self) -> WPKEY_W {
-        WPKEY_W { w: self }
+    pub fn wpkey(&mut self) -> WPKEY_W<8> {
+        WPKEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -20,113 +20,33 @@ impl From<crate::W<DIS_SPEC>> for W {
     }
 }
 #[doc = "Field `CHID0` writer - Channel ID"]
-pub struct CHID0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHID0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CHID0_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIS_SPEC, bool, O>;
 #[doc = "Field `CHID1` writer - Channel ID"]
-pub struct CHID1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHID1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CHID1_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIS_SPEC, bool, O>;
 #[doc = "Field `CHID2` writer - Channel ID"]
-pub struct CHID2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHID2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CHID2_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIS_SPEC, bool, O>;
 #[doc = "Field `CHID3` writer - Channel ID"]
-pub struct CHID3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHID3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CHID3_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIS_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Channel ID"]
     #[inline(always)]
-    pub fn chid0(&mut self) -> CHID0_W {
-        CHID0_W { w: self }
+    pub fn chid0(&mut self) -> CHID0_W<0> {
+        CHID0_W::new(self)
     }
     #[doc = "Bit 1 - Channel ID"]
     #[inline(always)]
-    pub fn chid1(&mut self) -> CHID1_W {
-        CHID1_W { w: self }
+    pub fn chid1(&mut self) -> CHID1_W<1> {
+        CHID1_W::new(self)
     }
     #[doc = "Bit 2 - Channel ID"]
     #[inline(always)]
-    pub fn chid2(&mut self) -> CHID2_W {
-        CHID2_W { w: self }
+    pub fn chid2(&mut self) -> CHID2_W<2> {
+        CHID2_W::new(self)
     }
     #[doc = "Bit 3 - Channel ID"]
     #[inline(always)]
-    pub fn chid3(&mut self) -> CHID3_W {
-        CHID3_W { w: self }
+    pub fn chid3(&mut self) -> CHID3_W<3> {
+        CHID3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

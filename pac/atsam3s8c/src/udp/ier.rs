@@ -20,356 +20,96 @@ impl From<crate::W<IER_SPEC>> for W {
     }
 }
 #[doc = "Field `EP0INT` writer - Enable Endpoint 0 Interrupt"]
-pub struct EP0INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EP0INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EP0INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `EP1INT` writer - Enable Endpoint 1 Interrupt"]
-pub struct EP1INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EP1INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type EP1INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `EP2INT` writer - Enable Endpoint 2Interrupt"]
-pub struct EP2INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EP2INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type EP2INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `EP3INT` writer - Enable Endpoint 3 Interrupt"]
-pub struct EP3INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EP3INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type EP3INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `EP4INT` writer - Enable Endpoint 4 Interrupt"]
-pub struct EP4INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EP4INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type EP4INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `EP5INT` writer - Enable Endpoint 5 Interrupt"]
-pub struct EP5INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EP5INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type EP5INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `EP6INT` writer - Enable Endpoint 6 Interrupt"]
-pub struct EP6INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EP6INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type EP6INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `EP7INT` writer - Enable Endpoint 7 Interrupt"]
-pub struct EP7INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EP7INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type EP7INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `RXSUSP` writer - Enable UDP Suspend Interrupt"]
-pub struct RXSUSP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXSUSP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type RXSUSP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `RXRSM` writer - Enable UDP Resume Interrupt"]
-pub struct RXRSM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXRSM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type RXRSM_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `EXTRSM` writer - "]
-pub struct EXTRSM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTRSM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type EXTRSM_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `SOFINT` writer - Enable Start Of Frame Interrupt"]
-pub struct SOFINT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SOFINT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type SOFINT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `WAKEUP` writer - Enable UDP bus Wakeup Interrupt"]
-pub struct WAKEUP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAKEUP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type WAKEUP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Enable Endpoint 0 Interrupt"]
     #[inline(always)]
-    pub fn ep0int(&mut self) -> EP0INT_W {
-        EP0INT_W { w: self }
+    pub fn ep0int(&mut self) -> EP0INT_W<0> {
+        EP0INT_W::new(self)
     }
     #[doc = "Bit 1 - Enable Endpoint 1 Interrupt"]
     #[inline(always)]
-    pub fn ep1int(&mut self) -> EP1INT_W {
-        EP1INT_W { w: self }
+    pub fn ep1int(&mut self) -> EP1INT_W<1> {
+        EP1INT_W::new(self)
     }
     #[doc = "Bit 2 - Enable Endpoint 2Interrupt"]
     #[inline(always)]
-    pub fn ep2int(&mut self) -> EP2INT_W {
-        EP2INT_W { w: self }
+    pub fn ep2int(&mut self) -> EP2INT_W<2> {
+        EP2INT_W::new(self)
     }
     #[doc = "Bit 3 - Enable Endpoint 3 Interrupt"]
     #[inline(always)]
-    pub fn ep3int(&mut self) -> EP3INT_W {
-        EP3INT_W { w: self }
+    pub fn ep3int(&mut self) -> EP3INT_W<3> {
+        EP3INT_W::new(self)
     }
     #[doc = "Bit 4 - Enable Endpoint 4 Interrupt"]
     #[inline(always)]
-    pub fn ep4int(&mut self) -> EP4INT_W {
-        EP4INT_W { w: self }
+    pub fn ep4int(&mut self) -> EP4INT_W<4> {
+        EP4INT_W::new(self)
     }
     #[doc = "Bit 5 - Enable Endpoint 5 Interrupt"]
     #[inline(always)]
-    pub fn ep5int(&mut self) -> EP5INT_W {
-        EP5INT_W { w: self }
+    pub fn ep5int(&mut self) -> EP5INT_W<5> {
+        EP5INT_W::new(self)
     }
     #[doc = "Bit 6 - Enable Endpoint 6 Interrupt"]
     #[inline(always)]
-    pub fn ep6int(&mut self) -> EP6INT_W {
-        EP6INT_W { w: self }
+    pub fn ep6int(&mut self) -> EP6INT_W<6> {
+        EP6INT_W::new(self)
     }
     #[doc = "Bit 7 - Enable Endpoint 7 Interrupt"]
     #[inline(always)]
-    pub fn ep7int(&mut self) -> EP7INT_W {
-        EP7INT_W { w: self }
+    pub fn ep7int(&mut self) -> EP7INT_W<7> {
+        EP7INT_W::new(self)
     }
     #[doc = "Bit 8 - Enable UDP Suspend Interrupt"]
     #[inline(always)]
-    pub fn rxsusp(&mut self) -> RXSUSP_W {
-        RXSUSP_W { w: self }
+    pub fn rxsusp(&mut self) -> RXSUSP_W<8> {
+        RXSUSP_W::new(self)
     }
     #[doc = "Bit 9 - Enable UDP Resume Interrupt"]
     #[inline(always)]
-    pub fn rxrsm(&mut self) -> RXRSM_W {
-        RXRSM_W { w: self }
+    pub fn rxrsm(&mut self) -> RXRSM_W<9> {
+        RXRSM_W::new(self)
     }
     #[doc = "Bit 10"]
     #[inline(always)]
-    pub fn extrsm(&mut self) -> EXTRSM_W {
-        EXTRSM_W { w: self }
+    pub fn extrsm(&mut self) -> EXTRSM_W<10> {
+        EXTRSM_W::new(self)
     }
     #[doc = "Bit 11 - Enable Start Of Frame Interrupt"]
     #[inline(always)]
-    pub fn sofint(&mut self) -> SOFINT_W {
-        SOFINT_W { w: self }
+    pub fn sofint(&mut self) -> SOFINT_W<11> {
+        SOFINT_W::new(self)
     }
     #[doc = "Bit 13 - Enable UDP bus Wakeup Interrupt"]
     #[inline(always)]
-    pub fn wakeup(&mut self) -> WAKEUP_W {
-        WAKEUP_W { w: self }
+    pub fn wakeup(&mut self) -> WAKEUP_W<13> {
+        WAKEUP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

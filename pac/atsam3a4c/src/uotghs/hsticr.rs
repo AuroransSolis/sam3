@@ -20,194 +20,54 @@ impl From<crate::W<HSTICR_SPEC>> for W {
     }
 }
 #[doc = "Field `DCONNIC` writer - Device Connection Interrupt Clear"]
-pub struct DCONNIC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DCONNIC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type DCONNIC_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSTICR_SPEC, bool, O>;
 #[doc = "Field `DDISCIC` writer - Device Disconnection Interrupt Clear"]
-pub struct DDISCIC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DDISCIC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type DDISCIC_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSTICR_SPEC, bool, O>;
 #[doc = "Field `RSTIC` writer - USB Reset Sent Interrupt Clear"]
-pub struct RSTIC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RSTIC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type RSTIC_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSTICR_SPEC, bool, O>;
 #[doc = "Field `RSMEDIC` writer - Downstream Resume Sent Interrupt Clear"]
-pub struct RSMEDIC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RSMEDIC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type RSMEDIC_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSTICR_SPEC, bool, O>;
 #[doc = "Field `RXRSMIC` writer - Upstream Resume Received Interrupt Clear"]
-pub struct RXRSMIC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXRSMIC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type RXRSMIC_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSTICR_SPEC, bool, O>;
 #[doc = "Field `HSOFIC` writer - Host Start of Frame Interrupt Clear"]
-pub struct HSOFIC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HSOFIC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type HSOFIC_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSTICR_SPEC, bool, O>;
 #[doc = "Field `HWUPIC` writer - Host Wake-Up Interrupt Clear"]
-pub struct HWUPIC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HWUPIC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type HWUPIC_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSTICR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Device Connection Interrupt Clear"]
     #[inline(always)]
-    pub fn dconnic(&mut self) -> DCONNIC_W {
-        DCONNIC_W { w: self }
+    pub fn dconnic(&mut self) -> DCONNIC_W<0> {
+        DCONNIC_W::new(self)
     }
     #[doc = "Bit 1 - Device Disconnection Interrupt Clear"]
     #[inline(always)]
-    pub fn ddiscic(&mut self) -> DDISCIC_W {
-        DDISCIC_W { w: self }
+    pub fn ddiscic(&mut self) -> DDISCIC_W<1> {
+        DDISCIC_W::new(self)
     }
     #[doc = "Bit 2 - USB Reset Sent Interrupt Clear"]
     #[inline(always)]
-    pub fn rstic(&mut self) -> RSTIC_W {
-        RSTIC_W { w: self }
+    pub fn rstic(&mut self) -> RSTIC_W<2> {
+        RSTIC_W::new(self)
     }
     #[doc = "Bit 3 - Downstream Resume Sent Interrupt Clear"]
     #[inline(always)]
-    pub fn rsmedic(&mut self) -> RSMEDIC_W {
-        RSMEDIC_W { w: self }
+    pub fn rsmedic(&mut self) -> RSMEDIC_W<3> {
+        RSMEDIC_W::new(self)
     }
     #[doc = "Bit 4 - Upstream Resume Received Interrupt Clear"]
     #[inline(always)]
-    pub fn rxrsmic(&mut self) -> RXRSMIC_W {
-        RXRSMIC_W { w: self }
+    pub fn rxrsmic(&mut self) -> RXRSMIC_W<4> {
+        RXRSMIC_W::new(self)
     }
     #[doc = "Bit 5 - Host Start of Frame Interrupt Clear"]
     #[inline(always)]
-    pub fn hsofic(&mut self) -> HSOFIC_W {
-        HSOFIC_W { w: self }
+    pub fn hsofic(&mut self) -> HSOFIC_W<5> {
+        HSOFIC_W::new(self)
     }
     #[doc = "Bit 6 - Host Wake-Up Interrupt Clear"]
     #[inline(always)]
-    pub fn hwupic(&mut self) -> HWUPIC_W {
-        HWUPIC_W { w: self }
+    pub fn hwupic(&mut self) -> HWUPIC_W<6> {
+        HWUPIC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

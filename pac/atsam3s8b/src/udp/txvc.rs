@@ -35,101 +35,35 @@ impl From<crate::W<TXVC_SPEC>> for W {
     }
 }
 #[doc = "Field `TXVDIS` reader - Transceiver Disable"]
-pub struct TXVDIS_R(crate::FieldReader<bool, bool>);
-impl TXVDIS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TXVDIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXVDIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXVDIS_R = crate::BitReader<bool>;
 #[doc = "Field `TXVDIS` writer - Transceiver Disable"]
-pub struct TXVDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXVDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type TXVDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, TXVC_SPEC, bool, O>;
 #[doc = "Field `PUON` reader - Pull-up On"]
-pub struct PUON_R(crate::FieldReader<bool, bool>);
-impl PUON_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PUON_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PUON_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PUON_R = crate::BitReader<bool>;
 #[doc = "Field `PUON` writer - Pull-up On"]
-pub struct PUON_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PUON_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type PUON_W<'a, const O: u8> = crate::BitWriter<'a, u32, TXVC_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 8 - Transceiver Disable"]
     #[inline(always)]
     pub fn txvdis(&self) -> TXVDIS_R {
-        TXVDIS_R::new(((self.bits >> 8) & 0x01) != 0)
+        TXVDIS_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Pull-up On"]
     #[inline(always)]
     pub fn puon(&self) -> PUON_R {
-        PUON_R::new(((self.bits >> 9) & 0x01) != 0)
+        PUON_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 8 - Transceiver Disable"]
     #[inline(always)]
-    pub fn txvdis(&mut self) -> TXVDIS_W {
-        TXVDIS_W { w: self }
+    pub fn txvdis(&mut self) -> TXVDIS_W<8> {
+        TXVDIS_W::new(self)
     }
     #[doc = "Bit 9 - Pull-up On"]
     #[inline(always)]
-    pub fn puon(&mut self) -> PUON_W {
-        PUON_W { w: self }
+    pub fn puon(&mut self) -> PUON_W<9> {
+        PUON_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

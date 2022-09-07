@@ -35,128 +35,49 @@ impl From<crate::W<MAM7_SPEC>> for W {
     }
 }
 #[doc = "Field `MIDvB` reader - Complementary bits for identifier in extended frame mode"]
-pub struct MIDVB_R(crate::FieldReader<u32, u32>);
-impl MIDVB_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        MIDVB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MIDVB_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MIDV_B_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `MIDvB` writer - Complementary bits for identifier in extended frame mode"]
-pub struct MIDVB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MIDVB_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0003_ffff) | (value as u32 & 0x0003_ffff);
-        self.w
-    }
-}
+pub type MIDV_B_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAM7_SPEC, u32, u32, 18, O>;
 #[doc = "Field `MIDvA` reader - Identifier for standard frame mode"]
-pub struct MIDVA_R(crate::FieldReader<u16, u16>);
-impl MIDVA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        MIDVA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MIDVA_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MIDV_A_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MIDvA` writer - Identifier for standard frame mode"]
-pub struct MIDVA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MIDVA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07ff << 18)) | ((value as u32 & 0x07ff) << 18);
-        self.w
-    }
-}
+pub type MIDV_A_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAM7_SPEC, u16, u16, 11, O>;
 #[doc = "Field `MIDE` reader - Identifier Version"]
-pub struct MIDE_R(crate::FieldReader<bool, bool>);
-impl MIDE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MIDE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MIDE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MIDE_R = crate::BitReader<bool>;
 #[doc = "Field `MIDE` writer - Identifier Version"]
-pub struct MIDE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MIDE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
-        self.w
-    }
-}
+pub type MIDE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MAM7_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:17 - Complementary bits for identifier in extended frame mode"]
     #[inline(always)]
-    pub fn midv_b(&self) -> MIDVB_R {
-        MIDVB_R::new((self.bits & 0x0003_ffff) as u32)
+    pub fn midv_b(&self) -> MIDV_B_R {
+        MIDV_B_R::new((self.bits & 0x0003_ffff) as u32)
     }
     #[doc = "Bits 18:28 - Identifier for standard frame mode"]
     #[inline(always)]
-    pub fn midv_a(&self) -> MIDVA_R {
-        MIDVA_R::new(((self.bits >> 18) & 0x07ff) as u16)
+    pub fn midv_a(&self) -> MIDV_A_R {
+        MIDV_A_R::new(((self.bits >> 18) & 0x07ff) as u16)
     }
     #[doc = "Bit 29 - Identifier Version"]
     #[inline(always)]
     pub fn mide(&self) -> MIDE_R {
-        MIDE_R::new(((self.bits >> 29) & 0x01) != 0)
+        MIDE_R::new(((self.bits >> 29) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:17 - Complementary bits for identifier in extended frame mode"]
     #[inline(always)]
-    pub fn midv_b(&mut self) -> MIDVB_W {
-        MIDVB_W { w: self }
+    pub fn midv_b(&mut self) -> MIDV_B_W<0> {
+        MIDV_B_W::new(self)
     }
     #[doc = "Bits 18:28 - Identifier for standard frame mode"]
     #[inline(always)]
-    pub fn midv_a(&mut self) -> MIDVA_W {
-        MIDVA_W { w: self }
+    pub fn midv_a(&mut self) -> MIDV_A_W<18> {
+        MIDV_A_W::new(self)
     }
     #[doc = "Bit 29 - Identifier Version"]
     #[inline(always)]
-    pub fn mide(&mut self) -> MIDE_W {
-        MIDE_W { w: self }
+    pub fn mide(&mut self) -> MIDE_W<29> {
+        MIDE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

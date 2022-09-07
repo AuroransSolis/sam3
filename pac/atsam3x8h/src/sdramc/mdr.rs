@@ -34,6 +34,8 @@ impl From<crate::W<MDR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MD` reader - Memory Device Type"]
+pub type MD_R = crate::FieldReader<u8, MD_A>;
 #[doc = "Memory Device Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -49,14 +51,8 @@ impl From<MD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MD` reader - Memory Device Type"]
-pub struct MD_R(crate::FieldReader<u8, MD_A>);
 impl MD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<MD_A> {
         match self.bits {
@@ -68,31 +64,17 @@ impl MD_R {
     #[doc = "Checks if the value of the field is `SDRAM`"]
     #[inline(always)]
     pub fn is_sdram(&self) -> bool {
-        **self == MD_A::SDRAM
+        *self == MD_A::SDRAM
     }
     #[doc = "Checks if the value of the field is `LPSDRAM`"]
     #[inline(always)]
     pub fn is_lpsdram(&self) -> bool {
-        **self == MD_A::LPSDRAM
-    }
-}
-impl core::ops::Deref for MD_R {
-    type Target = crate::FieldReader<u8, MD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MD_A::LPSDRAM
     }
 }
 #[doc = "Field `MD` writer - Memory Device Type"]
-pub struct MD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MD_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type MD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MDR_SPEC, u8, MD_A, 2, O>;
+impl<'a, const O: u8> MD_W<'a, O> {
     #[doc = "SDRAM"]
     #[inline(always)]
     pub fn sdram(self) -> &'a mut W {
@@ -103,25 +85,19 @@ impl<'a> MD_W<'a> {
     pub fn lpsdram(self) -> &'a mut W {
         self.variant(MD_A::LPSDRAM)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Memory Device Type"]
     #[inline(always)]
     pub fn md(&self) -> MD_R {
-        MD_R::new((self.bits & 0x03) as u8)
+        MD_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Memory Device Type"]
     #[inline(always)]
-    pub fn md(&mut self) -> MD_W {
-        MD_W { w: self }
+    pub fn md(&mut self) -> MD_W<0> {
+        MD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

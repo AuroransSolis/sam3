@@ -35,195 +35,63 @@ impl From<crate::W<CFG_SPEC>> for W {
     }
 }
 #[doc = "Field `FIFOMODE` reader - HSMCI Internal FIFO control mode"]
-pub struct FIFOMODE_R(crate::FieldReader<bool, bool>);
-impl FIFOMODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FIFOMODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FIFOMODE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FIFOMODE_R = crate::BitReader<bool>;
 #[doc = "Field `FIFOMODE` writer - HSMCI Internal FIFO control mode"]
-pub struct FIFOMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIFOMODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type FIFOMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 #[doc = "Field `FERRCTRL` reader - Flow Error flag reset control mode"]
-pub struct FERRCTRL_R(crate::FieldReader<bool, bool>);
-impl FERRCTRL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FERRCTRL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FERRCTRL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FERRCTRL_R = crate::BitReader<bool>;
 #[doc = "Field `FERRCTRL` writer - Flow Error flag reset control mode"]
-pub struct FERRCTRL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FERRCTRL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type FERRCTRL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 #[doc = "Field `HSMODE` reader - High Speed Mode"]
-pub struct HSMODE_R(crate::FieldReader<bool, bool>);
-impl HSMODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HSMODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HSMODE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HSMODE_R = crate::BitReader<bool>;
 #[doc = "Field `HSMODE` writer - High Speed Mode"]
-pub struct HSMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HSMODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type HSMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 #[doc = "Field `LSYNC` reader - Synchronize on the last block"]
-pub struct LSYNC_R(crate::FieldReader<bool, bool>);
-impl LSYNC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LSYNC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LSYNC_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LSYNC_R = crate::BitReader<bool>;
 #[doc = "Field `LSYNC` writer - Synchronize on the last block"]
-pub struct LSYNC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LSYNC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type LSYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - HSMCI Internal FIFO control mode"]
     #[inline(always)]
     pub fn fifomode(&self) -> FIFOMODE_R {
-        FIFOMODE_R::new((self.bits & 0x01) != 0)
+        FIFOMODE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 4 - Flow Error flag reset control mode"]
     #[inline(always)]
     pub fn ferrctrl(&self) -> FERRCTRL_R {
-        FERRCTRL_R::new(((self.bits >> 4) & 0x01) != 0)
+        FERRCTRL_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 8 - High Speed Mode"]
     #[inline(always)]
     pub fn hsmode(&self) -> HSMODE_R {
-        HSMODE_R::new(((self.bits >> 8) & 0x01) != 0)
+        HSMODE_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 12 - Synchronize on the last block"]
     #[inline(always)]
     pub fn lsync(&self) -> LSYNC_R {
-        LSYNC_R::new(((self.bits >> 12) & 0x01) != 0)
+        LSYNC_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - HSMCI Internal FIFO control mode"]
     #[inline(always)]
-    pub fn fifomode(&mut self) -> FIFOMODE_W {
-        FIFOMODE_W { w: self }
+    pub fn fifomode(&mut self) -> FIFOMODE_W<0> {
+        FIFOMODE_W::new(self)
     }
     #[doc = "Bit 4 - Flow Error flag reset control mode"]
     #[inline(always)]
-    pub fn ferrctrl(&mut self) -> FERRCTRL_W {
-        FERRCTRL_W { w: self }
+    pub fn ferrctrl(&mut self) -> FERRCTRL_W<4> {
+        FERRCTRL_W::new(self)
     }
     #[doc = "Bit 8 - High Speed Mode"]
     #[inline(always)]
-    pub fn hsmode(&mut self) -> HSMODE_W {
-        HSMODE_W { w: self }
+    pub fn hsmode(&mut self) -> HSMODE_W<8> {
+        HSMODE_W::new(self)
     }
     #[doc = "Bit 12 - Synchronize on the last block"]
     #[inline(always)]
-    pub fn lsync(&mut self) -> LSYNC_W {
-        LSYNC_W { w: self }
+    pub fn lsync(&mut self) -> LSYNC_W<12> {
+        LSYNC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

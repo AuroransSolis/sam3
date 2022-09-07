@@ -14,20 +14,7 @@ impl From<crate::R<MFID1_SPEC>> for R {
     }
 }
 #[doc = "Field `MFID` reader - Family ID"]
-pub struct MFID_R(crate::FieldReader<u32, u32>);
-impl MFID_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        MFID_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MFID_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MFID_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:28 - Family ID"]
     #[inline(always)]

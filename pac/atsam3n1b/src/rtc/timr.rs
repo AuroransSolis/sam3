@@ -35,123 +35,21 @@ impl From<crate::W<TIMR_SPEC>> for W {
     }
 }
 #[doc = "Field `SEC` reader - Current Second"]
-pub struct SEC_R(crate::FieldReader<u8, u8>);
-impl SEC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SEC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SEC_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SEC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SEC` writer - Current Second"]
-pub struct SEC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SEC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
-        self.w
-    }
-}
+pub type SEC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMR_SPEC, u8, u8, 7, O>;
 #[doc = "Field `MIN` reader - Current Minute"]
-pub struct MIN_R(crate::FieldReader<u8, u8>);
-impl MIN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MIN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MIN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MIN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MIN` writer - Current Minute"]
-pub struct MIN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MIN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 8)) | ((value as u32 & 0x7f) << 8);
-        self.w
-    }
-}
+pub type MIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMR_SPEC, u8, u8, 7, O>;
 #[doc = "Field `HOUR` reader - Current Hour"]
-pub struct HOUR_R(crate::FieldReader<u8, u8>);
-impl HOUR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        HOUR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HOUR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HOUR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HOUR` writer - Current Hour"]
-pub struct HOUR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HOUR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 16)) | ((value as u32 & 0x3f) << 16);
-        self.w
-    }
-}
+pub type HOUR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMR_SPEC, u8, u8, 6, O>;
 #[doc = "Field `AMPM` reader - Ante Meridiem Post Meridiem Indicator"]
-pub struct AMPM_R(crate::FieldReader<bool, bool>);
-impl AMPM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        AMPM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AMPM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AMPM_R = crate::BitReader<bool>;
 #[doc = "Field `AMPM` writer - Ante Meridiem Post Meridiem Indicator"]
-pub struct AMPM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AMPM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
-        self.w
-    }
-}
+pub type AMPM_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIMR_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:6 - Current Second"]
     #[inline(always)]
@@ -171,29 +69,29 @@ impl R {
     #[doc = "Bit 22 - Ante Meridiem Post Meridiem Indicator"]
     #[inline(always)]
     pub fn ampm(&self) -> AMPM_R {
-        AMPM_R::new(((self.bits >> 22) & 0x01) != 0)
+        AMPM_R::new(((self.bits >> 22) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:6 - Current Second"]
     #[inline(always)]
-    pub fn sec(&mut self) -> SEC_W {
-        SEC_W { w: self }
+    pub fn sec(&mut self) -> SEC_W<0> {
+        SEC_W::new(self)
     }
     #[doc = "Bits 8:14 - Current Minute"]
     #[inline(always)]
-    pub fn min(&mut self) -> MIN_W {
-        MIN_W { w: self }
+    pub fn min(&mut self) -> MIN_W<8> {
+        MIN_W::new(self)
     }
     #[doc = "Bits 16:21 - Current Hour"]
     #[inline(always)]
-    pub fn hour(&mut self) -> HOUR_W {
-        HOUR_W { w: self }
+    pub fn hour(&mut self) -> HOUR_W<16> {
+        HOUR_W::new(self)
     }
     #[doc = "Bit 22 - Ante Meridiem Post Meridiem Indicator"]
     #[inline(always)]
-    pub fn ampm(&mut self) -> AMPM_W {
-        AMPM_W { w: self }
+    pub fn ampm(&mut self) -> AMPM_W<22> {
+        AMPM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -20,22 +20,12 @@ impl From<crate::W<FCR_SPEC>> for W {
     }
 }
 #[doc = "Field `FCLR` writer - Fault Clear (fault input bit varies from 0 to 5)"]
-pub struct FCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCLR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type FCLR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FCR_SPEC, u8, u8, 8, O>;
 impl W {
     #[doc = "Bits 0:7 - Fault Clear (fault input bit varies from 0 to 5)"]
     #[inline(always)]
-    pub fn fclr(&mut self) -> FCLR_W {
-        FCLR_W { w: self }
+    pub fn fclr(&mut self) -> FCLR_W<0> {
+        FCLR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

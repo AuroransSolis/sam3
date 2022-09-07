@@ -35,143 +35,21 @@ impl From<crate::W<MR_SPEC>> for W {
     }
 }
 #[doc = "Field `RTPRES` reader - Real-time Timer Prescaler Value"]
-pub struct RTPRES_R(crate::FieldReader<u16, u16>);
-impl RTPRES_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        RTPRES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTPRES_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RTPRES_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `RTPRES` writer - Real-time Timer Prescaler Value"]
-pub struct RTPRES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTPRES_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type RTPRES_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u16, u16, 16, O>;
 #[doc = "Field `ALMIEN` reader - Alarm Interrupt Enable"]
-pub struct ALMIEN_R(crate::FieldReader<bool, bool>);
-impl ALMIEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ALMIEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ALMIEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ALMIEN_R = crate::BitReader<bool>;
 #[doc = "Field `ALMIEN` writer - Alarm Interrupt Enable"]
-pub struct ALMIEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALMIEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type ALMIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 #[doc = "Field `RTTINCIEN` reader - Real-time Timer Increment Interrupt Enable"]
-pub struct RTTINCIEN_R(crate::FieldReader<bool, bool>);
-impl RTTINCIEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RTTINCIEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTTINCIEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RTTINCIEN_R = crate::BitReader<bool>;
 #[doc = "Field `RTTINCIEN` writer - Real-time Timer Increment Interrupt Enable"]
-pub struct RTTINCIEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTTINCIEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type RTTINCIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 #[doc = "Field `RTTRST` reader - Real-time Timer Restart"]
-pub struct RTTRST_R(crate::FieldReader<bool, bool>);
-impl RTTRST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RTTRST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTTRST_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RTTRST_R = crate::BitReader<bool>;
 #[doc = "Field `RTTRST` writer - Real-time Timer Restart"]
-pub struct RTTRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTTRST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
+pub type RTTRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:15 - Real-time Timer Prescaler Value"]
     #[inline(always)]
@@ -181,39 +59,39 @@ impl R {
     #[doc = "Bit 16 - Alarm Interrupt Enable"]
     #[inline(always)]
     pub fn almien(&self) -> ALMIEN_R {
-        ALMIEN_R::new(((self.bits >> 16) & 0x01) != 0)
+        ALMIEN_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Real-time Timer Increment Interrupt Enable"]
     #[inline(always)]
     pub fn rttincien(&self) -> RTTINCIEN_R {
-        RTTINCIEN_R::new(((self.bits >> 17) & 0x01) != 0)
+        RTTINCIEN_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Real-time Timer Restart"]
     #[inline(always)]
     pub fn rttrst(&self) -> RTTRST_R {
-        RTTRST_R::new(((self.bits >> 18) & 0x01) != 0)
+        RTTRST_R::new(((self.bits >> 18) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Real-time Timer Prescaler Value"]
     #[inline(always)]
-    pub fn rtpres(&mut self) -> RTPRES_W {
-        RTPRES_W { w: self }
+    pub fn rtpres(&mut self) -> RTPRES_W<0> {
+        RTPRES_W::new(self)
     }
     #[doc = "Bit 16 - Alarm Interrupt Enable"]
     #[inline(always)]
-    pub fn almien(&mut self) -> ALMIEN_W {
-        ALMIEN_W { w: self }
+    pub fn almien(&mut self) -> ALMIEN_W<16> {
+        ALMIEN_W::new(self)
     }
     #[doc = "Bit 17 - Real-time Timer Increment Interrupt Enable"]
     #[inline(always)]
-    pub fn rttincien(&mut self) -> RTTINCIEN_W {
-        RTTINCIEN_W { w: self }
+    pub fn rttincien(&mut self) -> RTTINCIEN_W<17> {
+        RTTINCIEN_W::new(self)
     }
     #[doc = "Bit 18 - Real-time Timer Restart"]
     #[inline(always)]
-    pub fn rttrst(&mut self) -> RTTRST_W {
-        RTTRST_W { w: self }
+    pub fn rttrst(&mut self) -> RTTRST_W<18> {
+        RTTRST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

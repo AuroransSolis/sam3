@@ -14,35 +14,9 @@ impl From<crate::R<FSR_SPEC>> for R {
     }
 }
 #[doc = "Field `FIV` reader - Fault Input Value (fault input bit varies from 0 to 5)"]
-pub struct FIV_R(crate::FieldReader<u8, u8>);
-impl FIV_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FS` reader - Fault Status (fault input bit varies from 0 to 5)"]
-pub struct FS_R(crate::FieldReader<u8, u8>);
-impl FS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FS_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Fault Input Value (fault input bit varies from 0 to 5)"]
     #[inline(always)]

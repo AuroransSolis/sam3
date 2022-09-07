@@ -35,113 +35,21 @@ impl From<crate::W<FPE2_SPEC>> for W {
     }
 }
 #[doc = "Field `FPE4` reader - Fault Protection Enable for channel 4 (fault input bit varies from 0 to 5)"]
-pub struct FPE4_R(crate::FieldReader<u8, u8>);
-impl FPE4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FPE4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FPE4_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FPE4_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FPE4` writer - Fault Protection Enable for channel 4 (fault input bit varies from 0 to 5)"]
-pub struct FPE4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPE4_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type FPE4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FPE2_SPEC, u8, u8, 8, O>;
 #[doc = "Field `FPE5` reader - Fault Protection Enable for channel 5 (fault input bit varies from 0 to 5)"]
-pub struct FPE5_R(crate::FieldReader<u8, u8>);
-impl FPE5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FPE5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FPE5_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FPE5_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FPE5` writer - Fault Protection Enable for channel 5 (fault input bit varies from 0 to 5)"]
-pub struct FPE5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPE5_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type FPE5_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FPE2_SPEC, u8, u8, 8, O>;
 #[doc = "Field `FPE6` reader - Fault Protection Enable for channel 6 (fault input bit varies from 0 to 5)"]
-pub struct FPE6_R(crate::FieldReader<u8, u8>);
-impl FPE6_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FPE6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FPE6_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FPE6_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FPE6` writer - Fault Protection Enable for channel 6 (fault input bit varies from 0 to 5)"]
-pub struct FPE6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPE6_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type FPE6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FPE2_SPEC, u8, u8, 8, O>;
 #[doc = "Field `FPE7` reader - Fault Protection Enable for channel 7 (fault input bit varies from 0 to 5)"]
-pub struct FPE7_R(crate::FieldReader<u8, u8>);
-impl FPE7_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FPE7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FPE7_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FPE7_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FPE7` writer - Fault Protection Enable for channel 7 (fault input bit varies from 0 to 5)"]
-pub struct FPE7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPE7_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type FPE7_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FPE2_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Fault Protection Enable for channel 4 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
@@ -167,23 +75,23 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Fault Protection Enable for channel 4 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
-    pub fn fpe4(&mut self) -> FPE4_W {
-        FPE4_W { w: self }
+    pub fn fpe4(&mut self) -> FPE4_W<0> {
+        FPE4_W::new(self)
     }
     #[doc = "Bits 8:15 - Fault Protection Enable for channel 5 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
-    pub fn fpe5(&mut self) -> FPE5_W {
-        FPE5_W { w: self }
+    pub fn fpe5(&mut self) -> FPE5_W<8> {
+        FPE5_W::new(self)
     }
     #[doc = "Bits 16:23 - Fault Protection Enable for channel 6 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
-    pub fn fpe6(&mut self) -> FPE6_W {
-        FPE6_W { w: self }
+    pub fn fpe6(&mut self) -> FPE6_W<16> {
+        FPE6_W::new(self)
     }
     #[doc = "Bits 24:31 - Fault Protection Enable for channel 7 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
-    pub fn fpe7(&mut self) -> FPE7_W {
-        FPE7_W { w: self }
+    pub fn fpe7(&mut self) -> FPE7_W<24> {
+        FPE7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

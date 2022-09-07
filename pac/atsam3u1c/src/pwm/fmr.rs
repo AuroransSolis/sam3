@@ -35,86 +35,17 @@ impl From<crate::W<FMR_SPEC>> for W {
     }
 }
 #[doc = "Field `FPOL` reader - Fault Polarity (fault input bit varies from 0 to 3)"]
-pub struct FPOL_R(crate::FieldReader<u8, u8>);
-impl FPOL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FPOL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FPOL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FPOL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FPOL` writer - Fault Polarity (fault input bit varies from 0 to 3)"]
-pub struct FPOL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPOL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type FPOL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FMR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `FMOD` reader - Fault Activation Mode (fault input bit varies from 0 to 3)"]
-pub struct FMOD_R(crate::FieldReader<u8, u8>);
-impl FMOD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FMOD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FMOD_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FMOD_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FMOD` writer - Fault Activation Mode (fault input bit varies from 0 to 3)"]
-pub struct FMOD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FMOD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type FMOD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FMR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `FFIL` reader - Fault Filtering (fault input bit varies from 0 to 3)"]
-pub struct FFIL_R(crate::FieldReader<u8, u8>);
-impl FFIL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FFIL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FFIL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FFIL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FFIL` writer - Fault Filtering (fault input bit varies from 0 to 3)"]
-pub struct FFIL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FFIL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type FFIL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FMR_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Fault Polarity (fault input bit varies from 0 to 3)"]
     #[inline(always)]
@@ -135,18 +66,18 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Fault Polarity (fault input bit varies from 0 to 3)"]
     #[inline(always)]
-    pub fn fpol(&mut self) -> FPOL_W {
-        FPOL_W { w: self }
+    pub fn fpol(&mut self) -> FPOL_W<0> {
+        FPOL_W::new(self)
     }
     #[doc = "Bits 8:15 - Fault Activation Mode (fault input bit varies from 0 to 3)"]
     #[inline(always)]
-    pub fn fmod(&mut self) -> FMOD_W {
-        FMOD_W { w: self }
+    pub fn fmod(&mut self) -> FMOD_W<8> {
+        FMOD_W::new(self)
     }
     #[doc = "Bits 16:23 - Fault Filtering (fault input bit varies from 0 to 3)"]
     #[inline(always)]
-    pub fn ffil(&mut self) -> FFIL_W {
-        FFIL_W { w: self }
+    pub fn ffil(&mut self) -> FFIL_W<16> {
+        FFIL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

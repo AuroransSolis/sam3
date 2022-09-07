@@ -35,116 +35,19 @@ impl From<crate::W<HSTCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `SOFE` reader - Start of Frame Generation Enable"]
-pub struct SOFE_R(crate::FieldReader<bool, bool>);
-impl SOFE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SOFE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SOFE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SOFE_R = crate::BitReader<bool>;
 #[doc = "Field `SOFE` writer - Start of Frame Generation Enable"]
-pub struct SOFE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SOFE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type SOFE_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSTCTRL_SPEC, bool, O>;
 #[doc = "Field `RESET` reader - Send USB Reset"]
-pub struct RESET_R(crate::FieldReader<bool, bool>);
-impl RESET_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RESET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RESET_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RESET_R = crate::BitReader<bool>;
 #[doc = "Field `RESET` writer - Send USB Reset"]
-pub struct RESET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESET_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type RESET_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSTCTRL_SPEC, bool, O>;
 #[doc = "Field `RESUME` reader - Send USB Resume"]
-pub struct RESUME_R(crate::FieldReader<bool, bool>);
-impl RESUME_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RESUME_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RESUME_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RESUME_R = crate::BitReader<bool>;
 #[doc = "Field `RESUME` writer - Send USB Resume"]
-pub struct RESUME_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESUME_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type RESUME_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSTCTRL_SPEC, bool, O>;
+#[doc = "Field `SPDCONF` reader - Mode Configuration"]
+pub type SPDCONF_R = crate::FieldReader<u8, SPDCONF_A>;
 #[doc = "Mode Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -164,14 +67,8 @@ impl From<SPDCONF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SPDCONF` reader - Mode Configuration"]
-pub struct SPDCONF_R(crate::FieldReader<u8, SPDCONF_A>);
 impl SPDCONF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SPDCONF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SPDCONF_A {
         match self.bits {
@@ -185,41 +82,28 @@ impl SPDCONF_R {
     #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        **self == SPDCONF_A::NORMAL
+        *self == SPDCONF_A::NORMAL
     }
     #[doc = "Checks if the value of the field is `LOW_POWER`"]
     #[inline(always)]
     pub fn is_low_power(&self) -> bool {
-        **self == SPDCONF_A::LOW_POWER
+        *self == SPDCONF_A::LOW_POWER
     }
     #[doc = "Checks if the value of the field is `HIGH_SPEED`"]
     #[inline(always)]
     pub fn is_high_speed(&self) -> bool {
-        **self == SPDCONF_A::HIGH_SPEED
+        *self == SPDCONF_A::HIGH_SPEED
     }
     #[doc = "Checks if the value of the field is `FORCED_FS`"]
     #[inline(always)]
     pub fn is_forced_fs(&self) -> bool {
-        **self == SPDCONF_A::FORCED_FS
-    }
-}
-impl core::ops::Deref for SPDCONF_R {
-    type Target = crate::FieldReader<u8, SPDCONF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SPDCONF_A::FORCED_FS
     }
 }
 #[doc = "Field `SPDCONF` writer - Mode Configuration"]
-pub struct SPDCONF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SPDCONF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SPDCONF_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type SPDCONF_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, HSTCTRL_SPEC, u8, SPDCONF_A, 2, O>;
+impl<'a, const O: u8> SPDCONF_W<'a, O> {
     #[doc = "The host starts in full-speed mode and performs a high-speed reset to switch to the high-speed mode if the downstream peripheral is high-speed capable."]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -240,55 +124,49 @@ impl<'a> SPDCONF_W<'a> {
     pub fn forced_fs(self) -> &'a mut W {
         self.variant(SPDCONF_A::FORCED_FS)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 8 - Start of Frame Generation Enable"]
     #[inline(always)]
     pub fn sofe(&self) -> SOFE_R {
-        SOFE_R::new(((self.bits >> 8) & 0x01) != 0)
+        SOFE_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Send USB Reset"]
     #[inline(always)]
     pub fn reset(&self) -> RESET_R {
-        RESET_R::new(((self.bits >> 9) & 0x01) != 0)
+        RESET_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Send USB Resume"]
     #[inline(always)]
     pub fn resume(&self) -> RESUME_R {
-        RESUME_R::new(((self.bits >> 10) & 0x01) != 0)
+        RESUME_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bits 12:13 - Mode Configuration"]
     #[inline(always)]
     pub fn spdconf(&self) -> SPDCONF_R {
-        SPDCONF_R::new(((self.bits >> 12) & 0x03) as u8)
+        SPDCONF_R::new(((self.bits >> 12) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 8 - Start of Frame Generation Enable"]
     #[inline(always)]
-    pub fn sofe(&mut self) -> SOFE_W {
-        SOFE_W { w: self }
+    pub fn sofe(&mut self) -> SOFE_W<8> {
+        SOFE_W::new(self)
     }
     #[doc = "Bit 9 - Send USB Reset"]
     #[inline(always)]
-    pub fn reset(&mut self) -> RESET_W {
-        RESET_W { w: self }
+    pub fn reset(&mut self) -> RESET_W<9> {
+        RESET_W::new(self)
     }
     #[doc = "Bit 10 - Send USB Resume"]
     #[inline(always)]
-    pub fn resume(&mut self) -> RESUME_W {
-        RESUME_W { w: self }
+    pub fn resume(&mut self) -> RESUME_W<10> {
+        RESUME_W::new(self)
     }
     #[doc = "Bits 12:13 - Mode Configuration"]
     #[inline(always)]
-    pub fn spdconf(&mut self) -> SPDCONF_W {
-        SPDCONF_W { w: self }
+    pub fn spdconf(&mut self) -> SPDCONF_W<12> {
+        SPDCONF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

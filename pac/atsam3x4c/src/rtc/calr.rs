@@ -35,140 +35,25 @@ impl From<crate::W<CALR_SPEC>> for W {
     }
 }
 #[doc = "Field `CENT` reader - Current Century"]
-pub struct CENT_R(crate::FieldReader<u8, u8>);
-impl CENT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CENT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CENT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CENT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CENT` writer - Current Century"]
-pub struct CENT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CENT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
-        self.w
-    }
-}
+pub type CENT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALR_SPEC, u8, u8, 7, O>;
 #[doc = "Field `YEAR` reader - Current Year"]
-pub struct YEAR_R(crate::FieldReader<u8, u8>);
-impl YEAR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        YEAR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for YEAR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type YEAR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `YEAR` writer - Current Year"]
-pub struct YEAR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> YEAR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type YEAR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `MONTH` reader - Current Month"]
-pub struct MONTH_R(crate::FieldReader<u8, u8>);
-impl MONTH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MONTH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MONTH_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MONTH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MONTH` writer - Current Month"]
-pub struct MONTH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MONTH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 16)) | ((value as u32 & 0x1f) << 16);
-        self.w
-    }
-}
+pub type MONTH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALR_SPEC, u8, u8, 5, O>;
 #[doc = "Field `DAY` reader - Current Day in Current Week"]
-pub struct DAY_R(crate::FieldReader<u8, u8>);
-impl DAY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DAY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DAY_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DAY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DAY` writer - Current Day in Current Week"]
-pub struct DAY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DAY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 21)) | ((value as u32 & 0x07) << 21);
-        self.w
-    }
-}
+pub type DAY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALR_SPEC, u8, u8, 3, O>;
 #[doc = "Field `DATE` reader - Current Day in Current Month"]
-pub struct DATE_R(crate::FieldReader<u8, u8>);
-impl DATE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DATE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DATE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DATE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DATE` writer - Current Day in Current Month"]
-pub struct DATE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 24)) | ((value as u32 & 0x3f) << 24);
-        self.w
-    }
-}
+pub type DATE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALR_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bits 0:6 - Current Century"]
     #[inline(always)]
@@ -188,7 +73,7 @@ impl R {
     #[doc = "Bits 21:23 - Current Day in Current Week"]
     #[inline(always)]
     pub fn day(&self) -> DAY_R {
-        DAY_R::new(((self.bits >> 21) & 0x07) as u8)
+        DAY_R::new(((self.bits >> 21) & 7) as u8)
     }
     #[doc = "Bits 24:29 - Current Day in Current Month"]
     #[inline(always)]
@@ -199,28 +84,28 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - Current Century"]
     #[inline(always)]
-    pub fn cent(&mut self) -> CENT_W {
-        CENT_W { w: self }
+    pub fn cent(&mut self) -> CENT_W<0> {
+        CENT_W::new(self)
     }
     #[doc = "Bits 8:15 - Current Year"]
     #[inline(always)]
-    pub fn year(&mut self) -> YEAR_W {
-        YEAR_W { w: self }
+    pub fn year(&mut self) -> YEAR_W<8> {
+        YEAR_W::new(self)
     }
     #[doc = "Bits 16:20 - Current Month"]
     #[inline(always)]
-    pub fn month(&mut self) -> MONTH_W {
-        MONTH_W { w: self }
+    pub fn month(&mut self) -> MONTH_W<16> {
+        MONTH_W::new(self)
     }
     #[doc = "Bits 21:23 - Current Day in Current Week"]
     #[inline(always)]
-    pub fn day(&mut self) -> DAY_W {
-        DAY_W { w: self }
+    pub fn day(&mut self) -> DAY_W<21> {
+        DAY_W::new(self)
     }
     #[doc = "Bits 24:29 - Current Day in Current Month"]
     #[inline(always)]
-    pub fn date(&mut self) -> DATE_W {
-        DATE_W { w: self }
+    pub fn date(&mut self) -> DATE_W<24> {
+        DATE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

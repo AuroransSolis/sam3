@@ -20,32 +20,12 @@ impl From<crate::W<DMA_EN_SPEC>> for W {
     }
 }
 #[doc = "Field `DMAEN` writer - DMA Enable Register"]
-pub struct DMAEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMAEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type DMAEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DMA_EN_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - DMA Enable Register"]
     #[inline(always)]
-    pub fn dmaen(&mut self) -> DMAEN_W {
-        DMAEN_W { w: self }
+    pub fn dmaen(&mut self) -> DMAEN_W<0> {
+        DMAEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

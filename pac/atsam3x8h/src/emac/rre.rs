@@ -35,32 +35,9 @@ impl From<crate::W<RRE_SPEC>> for W {
     }
 }
 #[doc = "Field `RRE` reader - Receive Resource Errors"]
-pub struct RRE_R(crate::FieldReader<u16, u16>);
-impl RRE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        RRE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RRE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RRE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `RRE` writer - Receive Resource Errors"]
-pub struct RRE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RRE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type RRE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RRE_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Receive Resource Errors"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Receive Resource Errors"]
     #[inline(always)]
-    pub fn rre(&mut self) -> RRE_W {
-        RRE_W { w: self }
+    pub fn rre(&mut self) -> RRE_W<0> {
+        RRE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

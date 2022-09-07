@@ -14,25 +14,12 @@ impl From<crate::R<DMA_ISR_SPEC>> for R {
     }
 }
 #[doc = "Field `DMAISR` reader - Interrupt Status register"]
-pub struct DMAISR_R(crate::FieldReader<bool, bool>);
-impl DMAISR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DMAISR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMAISR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMAISR_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Interrupt Status register"]
     #[inline(always)]
     pub fn dmaisr(&self) -> DMAISR_R {
-        DMAISR_R::new((self.bits & 0x01) != 0)
+        DMAISR_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "CRCCU DMA Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_isr](index.html) module"]

@@ -14,55 +14,16 @@ impl From<crate::R<W8BIT_ECC_PR7_W8BIT_SPEC>> for R {
     }
 }
 #[doc = "Field `BITADDR` reader - Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes"]
-pub struct BITADDR_R(crate::FieldReader<u8, u8>);
-impl BITADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        BITADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BITADDR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BITADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `WORDADDR` reader - Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes"]
-pub struct WORDADDR_R(crate::FieldReader<u8, u8>);
-impl WORDADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WORDADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WORDADDR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WORDADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NPARITY` reader - Parity N"]
-pub struct NPARITY_R(crate::FieldReader<u16, u16>);
-impl NPARITY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        NPARITY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NPARITY_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NPARITY_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:2 - Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes"]
     #[inline(always)]
     pub fn bitaddr(&self) -> BITADDR_R {
-        BITADDR_R::new((self.bits & 0x07) as u8)
+        BITADDR_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 3:10 - Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes"]
     #[inline(always)]

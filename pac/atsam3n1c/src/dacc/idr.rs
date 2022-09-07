@@ -20,86 +20,26 @@ impl From<crate::W<IDR_SPEC>> for W {
     }
 }
 #[doc = "Field `TXRDY` writer - Transmission Ready Interrupt Disable"]
-pub struct TXRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXRDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type TXRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `ENDTX` writer - End of PDC Interrupt Disable"]
-pub struct ENDTX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENDTX_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type ENDTX_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `TXBUFE` writer - Buffer Empty Interrupt Disable"]
-pub struct TXBUFE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXBUFE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type TXBUFE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Transmission Ready Interrupt Disable"]
     #[inline(always)]
-    pub fn txrdy(&mut self) -> TXRDY_W {
-        TXRDY_W { w: self }
+    pub fn txrdy(&mut self) -> TXRDY_W<0> {
+        TXRDY_W::new(self)
     }
     #[doc = "Bit 1 - End of PDC Interrupt Disable"]
     #[inline(always)]
-    pub fn endtx(&mut self) -> ENDTX_W {
-        ENDTX_W { w: self }
+    pub fn endtx(&mut self) -> ENDTX_W<1> {
+        ENDTX_W::new(self)
     }
     #[doc = "Bit 2 - Buffer Empty Interrupt Disable"]
     #[inline(always)]
-    pub fn txbufe(&mut self) -> TXBUFE_W {
-        TXBUFE_W { w: self }
+    pub fn txbufe(&mut self) -> TXBUFE_W<2> {
+        TXBUFE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,281 +35,37 @@ impl From<crate::W<MR_SPEC>> for W {
     }
 }
 #[doc = "Field `WDV` reader - Watchdog Counter Value"]
-pub struct WDV_R(crate::FieldReader<u16, u16>);
-impl WDV_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        WDV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDV_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDV_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `WDV` writer - Watchdog Counter Value"]
-pub struct WDV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
-        self.w
-    }
-}
+pub type WDV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u16, u16, 12, O>;
 #[doc = "Field `WDFIEN` reader - Watchdog Fault Interrupt Enable"]
-pub struct WDFIEN_R(crate::FieldReader<bool, bool>);
-impl WDFIEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDFIEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDFIEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDFIEN_R = crate::BitReader<bool>;
 #[doc = "Field `WDFIEN` writer - Watchdog Fault Interrupt Enable"]
-pub struct WDFIEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDFIEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type WDFIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 #[doc = "Field `WDRSTEN` reader - Watchdog Reset Enable"]
-pub struct WDRSTEN_R(crate::FieldReader<bool, bool>);
-impl WDRSTEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDRSTEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDRSTEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDRSTEN_R = crate::BitReader<bool>;
 #[doc = "Field `WDRSTEN` writer - Watchdog Reset Enable"]
-pub struct WDRSTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDRSTEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type WDRSTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 #[doc = "Field `WDRPROC` reader - Watchdog Reset Processor"]
-pub struct WDRPROC_R(crate::FieldReader<bool, bool>);
-impl WDRPROC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDRPROC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDRPROC_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDRPROC_R = crate::BitReader<bool>;
 #[doc = "Field `WDRPROC` writer - Watchdog Reset Processor"]
-pub struct WDRPROC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDRPROC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type WDRPROC_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 #[doc = "Field `WDDIS` reader - Watchdog Disable"]
-pub struct WDDIS_R(crate::FieldReader<bool, bool>);
-impl WDDIS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDDIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDDIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDDIS_R = crate::BitReader<bool>;
 #[doc = "Field `WDDIS` writer - Watchdog Disable"]
-pub struct WDDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type WDDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 #[doc = "Field `WDD` reader - Watchdog Delta Value"]
-pub struct WDD_R(crate::FieldReader<u16, u16>);
-impl WDD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        WDD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDD_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDD_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `WDD` writer - Watchdog Delta Value"]
-pub struct WDD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0fff << 16)) | ((value as u32 & 0x0fff) << 16);
-        self.w
-    }
-}
+pub type WDD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u16, u16, 12, O>;
 #[doc = "Field `WDDBGHLT` reader - Watchdog Debug Halt"]
-pub struct WDDBGHLT_R(crate::FieldReader<bool, bool>);
-impl WDDBGHLT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDDBGHLT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDDBGHLT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDDBGHLT_R = crate::BitReader<bool>;
 #[doc = "Field `WDDBGHLT` writer - Watchdog Debug Halt"]
-pub struct WDDBGHLT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDDBGHLT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
-        self.w
-    }
-}
+pub type WDDBGHLT_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 #[doc = "Field `WDIDLEHLT` reader - Watchdog Idle Halt"]
-pub struct WDIDLEHLT_R(crate::FieldReader<bool, bool>);
-impl WDIDLEHLT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDIDLEHLT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDIDLEHLT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDIDLEHLT_R = crate::BitReader<bool>;
 #[doc = "Field `WDIDLEHLT` writer - Watchdog Idle Halt"]
-pub struct WDIDLEHLT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDIDLEHLT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
-        self.w
-    }
-}
+pub type WDIDLEHLT_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:11 - Watchdog Counter Value"]
     #[inline(always)]
@@ -319,22 +75,22 @@ impl R {
     #[doc = "Bit 12 - Watchdog Fault Interrupt Enable"]
     #[inline(always)]
     pub fn wdfien(&self) -> WDFIEN_R {
-        WDFIEN_R::new(((self.bits >> 12) & 0x01) != 0)
+        WDFIEN_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Watchdog Reset Enable"]
     #[inline(always)]
     pub fn wdrsten(&self) -> WDRSTEN_R {
-        WDRSTEN_R::new(((self.bits >> 13) & 0x01) != 0)
+        WDRSTEN_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Watchdog Reset Processor"]
     #[inline(always)]
     pub fn wdrproc(&self) -> WDRPROC_R {
-        WDRPROC_R::new(((self.bits >> 14) & 0x01) != 0)
+        WDRPROC_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Watchdog Disable"]
     #[inline(always)]
     pub fn wddis(&self) -> WDDIS_R {
-        WDDIS_R::new(((self.bits >> 15) & 0x01) != 0)
+        WDDIS_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:27 - Watchdog Delta Value"]
     #[inline(always)]
@@ -344,54 +100,54 @@ impl R {
     #[doc = "Bit 28 - Watchdog Debug Halt"]
     #[inline(always)]
     pub fn wddbghlt(&self) -> WDDBGHLT_R {
-        WDDBGHLT_R::new(((self.bits >> 28) & 0x01) != 0)
+        WDDBGHLT_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 29 - Watchdog Idle Halt"]
     #[inline(always)]
     pub fn wdidlehlt(&self) -> WDIDLEHLT_R {
-        WDIDLEHLT_R::new(((self.bits >> 29) & 0x01) != 0)
+        WDIDLEHLT_R::new(((self.bits >> 29) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:11 - Watchdog Counter Value"]
     #[inline(always)]
-    pub fn wdv(&mut self) -> WDV_W {
-        WDV_W { w: self }
+    pub fn wdv(&mut self) -> WDV_W<0> {
+        WDV_W::new(self)
     }
     #[doc = "Bit 12 - Watchdog Fault Interrupt Enable"]
     #[inline(always)]
-    pub fn wdfien(&mut self) -> WDFIEN_W {
-        WDFIEN_W { w: self }
+    pub fn wdfien(&mut self) -> WDFIEN_W<12> {
+        WDFIEN_W::new(self)
     }
     #[doc = "Bit 13 - Watchdog Reset Enable"]
     #[inline(always)]
-    pub fn wdrsten(&mut self) -> WDRSTEN_W {
-        WDRSTEN_W { w: self }
+    pub fn wdrsten(&mut self) -> WDRSTEN_W<13> {
+        WDRSTEN_W::new(self)
     }
     #[doc = "Bit 14 - Watchdog Reset Processor"]
     #[inline(always)]
-    pub fn wdrproc(&mut self) -> WDRPROC_W {
-        WDRPROC_W { w: self }
+    pub fn wdrproc(&mut self) -> WDRPROC_W<14> {
+        WDRPROC_W::new(self)
     }
     #[doc = "Bit 15 - Watchdog Disable"]
     #[inline(always)]
-    pub fn wddis(&mut self) -> WDDIS_W {
-        WDDIS_W { w: self }
+    pub fn wddis(&mut self) -> WDDIS_W<15> {
+        WDDIS_W::new(self)
     }
     #[doc = "Bits 16:27 - Watchdog Delta Value"]
     #[inline(always)]
-    pub fn wdd(&mut self) -> WDD_W {
-        WDD_W { w: self }
+    pub fn wdd(&mut self) -> WDD_W<16> {
+        WDD_W::new(self)
     }
     #[doc = "Bit 28 - Watchdog Debug Halt"]
     #[inline(always)]
-    pub fn wddbghlt(&mut self) -> WDDBGHLT_W {
-        WDDBGHLT_W { w: self }
+    pub fn wddbghlt(&mut self) -> WDDBGHLT_W<28> {
+        WDDBGHLT_W::new(self)
     }
     #[doc = "Bit 29 - Watchdog Idle Halt"]
     #[inline(always)]
-    pub fn wdidlehlt(&mut self) -> WDIDLEHLT_W {
-        WDIDLEHLT_W { w: self }
+    pub fn wdidlehlt(&mut self) -> WDIDLEHLT_W<29> {
+        WDIDLEHLT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

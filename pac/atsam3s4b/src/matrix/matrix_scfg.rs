@@ -35,113 +35,24 @@ impl From<crate::W<MATRIX_SCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `SLOT_CYCLE` reader - Maximum Number of Allowed Cycles for a Burst"]
-pub struct SLOT_CYCLE_R(crate::FieldReader<u8, u8>);
-impl SLOT_CYCLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SLOT_CYCLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLOT_CYCLE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLOT_CYCLE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SLOT_CYCLE` writer - Maximum Number of Allowed Cycles for a Burst"]
-pub struct SLOT_CYCLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLOT_CYCLE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type SLOT_CYCLE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, MATRIX_SCFG_SPEC, u8, u8, 8, O>;
 #[doc = "Field `DEFMSTR_TYPE` reader - Default Master Type"]
-pub struct DEFMSTR_TYPE_R(crate::FieldReader<u8, u8>);
-impl DEFMSTR_TYPE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DEFMSTR_TYPE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEFMSTR_TYPE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEFMSTR_TYPE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DEFMSTR_TYPE` writer - Default Master Type"]
-pub struct DEFMSTR_TYPE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEFMSTR_TYPE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
-        self.w
-    }
-}
+pub type DEFMSTR_TYPE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, MATRIX_SCFG_SPEC, u8, u8, 2, O>;
 #[doc = "Field `FIXED_DEFMSTR` reader - Fixed Default Master"]
-pub struct FIXED_DEFMSTR_R(crate::FieldReader<u8, u8>);
-impl FIXED_DEFMSTR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FIXED_DEFMSTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FIXED_DEFMSTR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FIXED_DEFMSTR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FIXED_DEFMSTR` writer - Fixed Default Master"]
-pub struct FIXED_DEFMSTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIXED_DEFMSTR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 18)) | ((value as u32 & 0x07) << 18);
-        self.w
-    }
-}
+pub type FIXED_DEFMSTR_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, MATRIX_SCFG_SPEC, u8, u8, 3, O>;
 #[doc = "Field `ARBT` reader - Arbitration Type"]
-pub struct ARBT_R(crate::FieldReader<u8, u8>);
-impl ARBT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ARBT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ARBT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ARBT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ARBT` writer - Arbitration Type"]
-pub struct ARBT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ARBT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 24)) | ((value as u32 & 0x03) << 24);
-        self.w
-    }
-}
+pub type ARBT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MATRIX_SCFG_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 0:7 - Maximum Number of Allowed Cycles for a Burst"]
     #[inline(always)]
@@ -151,39 +62,39 @@ impl R {
     #[doc = "Bits 16:17 - Default Master Type"]
     #[inline(always)]
     pub fn defmstr_type(&self) -> DEFMSTR_TYPE_R {
-        DEFMSTR_TYPE_R::new(((self.bits >> 16) & 0x03) as u8)
+        DEFMSTR_TYPE_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 18:20 - Fixed Default Master"]
     #[inline(always)]
     pub fn fixed_defmstr(&self) -> FIXED_DEFMSTR_R {
-        FIXED_DEFMSTR_R::new(((self.bits >> 18) & 0x07) as u8)
+        FIXED_DEFMSTR_R::new(((self.bits >> 18) & 7) as u8)
     }
     #[doc = "Bits 24:25 - Arbitration Type"]
     #[inline(always)]
     pub fn arbt(&self) -> ARBT_R {
-        ARBT_R::new(((self.bits >> 24) & 0x03) as u8)
+        ARBT_R::new(((self.bits >> 24) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Maximum Number of Allowed Cycles for a Burst"]
     #[inline(always)]
-    pub fn slot_cycle(&mut self) -> SLOT_CYCLE_W {
-        SLOT_CYCLE_W { w: self }
+    pub fn slot_cycle(&mut self) -> SLOT_CYCLE_W<0> {
+        SLOT_CYCLE_W::new(self)
     }
     #[doc = "Bits 16:17 - Default Master Type"]
     #[inline(always)]
-    pub fn defmstr_type(&mut self) -> DEFMSTR_TYPE_W {
-        DEFMSTR_TYPE_W { w: self }
+    pub fn defmstr_type(&mut self) -> DEFMSTR_TYPE_W<16> {
+        DEFMSTR_TYPE_W::new(self)
     }
     #[doc = "Bits 18:20 - Fixed Default Master"]
     #[inline(always)]
-    pub fn fixed_defmstr(&mut self) -> FIXED_DEFMSTR_W {
-        FIXED_DEFMSTR_W { w: self }
+    pub fn fixed_defmstr(&mut self) -> FIXED_DEFMSTR_W<18> {
+        FIXED_DEFMSTR_W::new(self)
     }
     #[doc = "Bits 24:25 - Arbitration Type"]
     #[inline(always)]
-    pub fn arbt(&mut self) -> ARBT_W {
-        ARBT_W { w: self }
+    pub fn arbt(&mut self) -> ARBT_W<24> {
+        ARBT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

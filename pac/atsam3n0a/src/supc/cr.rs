@@ -34,15 +34,8 @@ impl From<VROFF_AW> for bool {
     }
 }
 #[doc = "Field `VROFF` writer - Voltage Regulator Off"]
-pub struct VROFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VROFF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: VROFF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type VROFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, VROFF_AW, O>;
+impl<'a, const O: u8> VROFF_W<'a, O> {
     #[doc = "no effect."]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -52,22 +45,6 @@ impl<'a> VROFF_W<'a> {
     #[inline(always)]
     pub fn stop_vreg(self) -> &'a mut W {
         self.variant(VROFF_AW::STOP_VREG)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
     }
 }
 #[doc = "Crystal Oscillator Select"]
@@ -85,15 +62,8 @@ impl From<XTALSEL_AW> for bool {
     }
 }
 #[doc = "Field `XTALSEL` writer - Crystal Oscillator Select"]
-pub struct XTALSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XTALSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: XTALSEL_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type XTALSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, XTALSEL_AW, O>;
+impl<'a, const O: u8> XTALSEL_W<'a, O> {
     #[doc = "no effect."]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -104,50 +74,24 @@ impl<'a> XTALSEL_W<'a> {
     pub fn crystal_sel(self) -> &'a mut W {
         self.variant(XTALSEL_AW::CRYSTAL_SEL)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
 #[doc = "Field `KEY` writer - Password"]
-pub struct KEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KEY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type KEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CR_SPEC, u8, u8, 8, O>;
 impl W {
     #[doc = "Bit 2 - Voltage Regulator Off"]
     #[inline(always)]
-    pub fn vroff(&mut self) -> VROFF_W {
-        VROFF_W { w: self }
+    pub fn vroff(&mut self) -> VROFF_W<2> {
+        VROFF_W::new(self)
     }
     #[doc = "Bit 3 - Crystal Oscillator Select"]
     #[inline(always)]
-    pub fn xtalsel(&mut self) -> XTALSEL_W {
-        XTALSEL_W { w: self }
+    pub fn xtalsel(&mut self) -> XTALSEL_W<3> {
+        XTALSEL_W::new(self)
     }
     #[doc = "Bits 24:31 - Password"]
     #[inline(always)]
-    pub fn key(&mut self) -> KEY_W {
-        KEY_W { w: self }
+    pub fn key(&mut self) -> KEY_W<24> {
+        KEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

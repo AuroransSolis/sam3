@@ -14,65 +14,26 @@ impl From<crate::R<QIMR_SPEC>> for R {
     }
 }
 #[doc = "Field `IDX` reader - Index"]
-pub struct IDX_R(crate::FieldReader<bool, bool>);
-impl IDX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        IDX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IDX_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IDX_R = crate::BitReader<bool>;
 #[doc = "Field `DIRCHG` reader - Direction Change"]
-pub struct DIRCHG_R(crate::FieldReader<bool, bool>);
-impl DIRCHG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DIRCHG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIRCHG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIRCHG_R = crate::BitReader<bool>;
 #[doc = "Field `QERR` reader - Quadrature Error"]
-pub struct QERR_R(crate::FieldReader<bool, bool>);
-impl QERR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        QERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for QERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type QERR_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Index"]
     #[inline(always)]
     pub fn idx(&self) -> IDX_R {
-        IDX_R::new((self.bits & 0x01) != 0)
+        IDX_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Direction Change"]
     #[inline(always)]
     pub fn dirchg(&self) -> DIRCHG_R {
-        DIRCHG_R::new(((self.bits >> 1) & 0x01) != 0)
+        DIRCHG_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Quadrature Error"]
     #[inline(always)]
     pub fn qerr(&self) -> QERR_R {
-        QERR_R::new(((self.bits >> 2) & 0x01) != 0)
+        QERR_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 #[doc = "QDEC Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [qimr](index.html) module"]

@@ -14,45 +14,19 @@ impl From<crate::R<SR_SPEC>> for R {
     }
 }
 #[doc = "Field `ALMS` reader - Real-time Alarm Status"]
-pub struct ALMS_R(crate::FieldReader<bool, bool>);
-impl ALMS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ALMS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ALMS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ALMS_R = crate::BitReader<bool>;
 #[doc = "Field `RTTINC` reader - Real-time Timer Increment"]
-pub struct RTTINC_R(crate::FieldReader<bool, bool>);
-impl RTTINC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RTTINC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTTINC_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RTTINC_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Real-time Alarm Status"]
     #[inline(always)]
     pub fn alms(&self) -> ALMS_R {
-        ALMS_R::new((self.bits & 0x01) != 0)
+        ALMS_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Real-time Timer Increment"]
     #[inline(always)]
     pub fn rttinc(&self) -> RTTINC_R {
-        RTTINC_R::new(((self.bits >> 1) & 0x01) != 0)
+        RTTINC_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 #[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]

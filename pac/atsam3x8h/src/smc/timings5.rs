@@ -35,241 +35,37 @@ impl From<crate::W<TIMINGS5_SPEC>> for W {
     }
 }
 #[doc = "Field `TCLR` reader - CLE to REN Low Delay"]
-pub struct TCLR_R(crate::FieldReader<u8, u8>);
-impl TCLR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TCLR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TCLR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TCLR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TCLR` writer - CLE to REN Low Delay"]
-pub struct TCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TCLR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
-}
+pub type TCLR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMINGS5_SPEC, u8, u8, 4, O>;
 #[doc = "Field `TADL` reader - ALE to Data Start"]
-pub struct TADL_R(crate::FieldReader<u8, u8>);
-impl TADL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TADL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TADL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TADL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TADL` writer - ALE to Data Start"]
-pub struct TADL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TADL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
-}
+pub type TADL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMINGS5_SPEC, u8, u8, 4, O>;
 #[doc = "Field `TAR` reader - ALE to REN Low Delay"]
-pub struct TAR_R(crate::FieldReader<u8, u8>);
-impl TAR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TAR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TAR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TAR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TAR` writer - ALE to REN Low Delay"]
-pub struct TAR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type TAR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMINGS5_SPEC, u8, u8, 4, O>;
 #[doc = "Field `OCMS` reader - Off Chip Memory Scrambling Enable"]
-pub struct OCMS_R(crate::FieldReader<bool, bool>);
-impl OCMS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OCMS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OCMS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OCMS_R = crate::BitReader<bool>;
 #[doc = "Field `OCMS` writer - Off Chip Memory Scrambling Enable"]
-pub struct OCMS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OCMS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type OCMS_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIMINGS5_SPEC, bool, O>;
 #[doc = "Field `TRR` reader - Ready to REN Low Delay"]
-pub struct TRR_R(crate::FieldReader<u8, u8>);
-impl TRR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TRR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TRR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TRR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TRR` writer - Ready to REN Low Delay"]
-pub struct TRR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
-        self.w
-    }
-}
+pub type TRR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMINGS5_SPEC, u8, u8, 4, O>;
 #[doc = "Field `TWB` reader - WEN High to REN to Busy"]
-pub struct TWB_R(crate::FieldReader<u8, u8>);
-impl TWB_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TWB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TWB_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TWB_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TWB` writer - WEN High to REN to Busy"]
-pub struct TWB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TWB_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
-        self.w
-    }
-}
+pub type TWB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMINGS5_SPEC, u8, u8, 4, O>;
 #[doc = "Field `RBNSEL` reader - Ready/Busy Line Selection"]
-pub struct RBNSEL_R(crate::FieldReader<u8, u8>);
-impl RBNSEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RBNSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RBNSEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RBNSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RBNSEL` writer - Ready/Busy Line Selection"]
-pub struct RBNSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RBNSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 28)) | ((value as u32 & 0x07) << 28);
-        self.w
-    }
-}
+pub type RBNSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMINGS5_SPEC, u8, u8, 3, O>;
 #[doc = "Field `NFSEL` reader - NAND Flash Selection"]
-pub struct NFSEL_R(crate::FieldReader<bool, bool>);
-impl NFSEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        NFSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NFSEL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NFSEL_R = crate::BitReader<bool>;
 #[doc = "Field `NFSEL` writer - NAND Flash Selection"]
-pub struct NFSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NFSEL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type NFSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIMINGS5_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:3 - CLE to REN Low Delay"]
     #[inline(always)]
@@ -289,7 +85,7 @@ impl R {
     #[doc = "Bit 12 - Off Chip Memory Scrambling Enable"]
     #[inline(always)]
     pub fn ocms(&self) -> OCMS_R {
-        OCMS_R::new(((self.bits >> 12) & 0x01) != 0)
+        OCMS_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bits 16:19 - Ready to REN Low Delay"]
     #[inline(always)]
@@ -304,54 +100,54 @@ impl R {
     #[doc = "Bits 28:30 - Ready/Busy Line Selection"]
     #[inline(always)]
     pub fn rbnsel(&self) -> RBNSEL_R {
-        RBNSEL_R::new(((self.bits >> 28) & 0x07) as u8)
+        RBNSEL_R::new(((self.bits >> 28) & 7) as u8)
     }
     #[doc = "Bit 31 - NAND Flash Selection"]
     #[inline(always)]
     pub fn nfsel(&self) -> NFSEL_R {
-        NFSEL_R::new(((self.bits >> 31) & 0x01) != 0)
+        NFSEL_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - CLE to REN Low Delay"]
     #[inline(always)]
-    pub fn tclr(&mut self) -> TCLR_W {
-        TCLR_W { w: self }
+    pub fn tclr(&mut self) -> TCLR_W<0> {
+        TCLR_W::new(self)
     }
     #[doc = "Bits 4:7 - ALE to Data Start"]
     #[inline(always)]
-    pub fn tadl(&mut self) -> TADL_W {
-        TADL_W { w: self }
+    pub fn tadl(&mut self) -> TADL_W<4> {
+        TADL_W::new(self)
     }
     #[doc = "Bits 8:11 - ALE to REN Low Delay"]
     #[inline(always)]
-    pub fn tar(&mut self) -> TAR_W {
-        TAR_W { w: self }
+    pub fn tar(&mut self) -> TAR_W<8> {
+        TAR_W::new(self)
     }
     #[doc = "Bit 12 - Off Chip Memory Scrambling Enable"]
     #[inline(always)]
-    pub fn ocms(&mut self) -> OCMS_W {
-        OCMS_W { w: self }
+    pub fn ocms(&mut self) -> OCMS_W<12> {
+        OCMS_W::new(self)
     }
     #[doc = "Bits 16:19 - Ready to REN Low Delay"]
     #[inline(always)]
-    pub fn trr(&mut self) -> TRR_W {
-        TRR_W { w: self }
+    pub fn trr(&mut self) -> TRR_W<16> {
+        TRR_W::new(self)
     }
     #[doc = "Bits 24:27 - WEN High to REN to Busy"]
     #[inline(always)]
-    pub fn twb(&mut self) -> TWB_W {
-        TWB_W { w: self }
+    pub fn twb(&mut self) -> TWB_W<24> {
+        TWB_W::new(self)
     }
     #[doc = "Bits 28:30 - Ready/Busy Line Selection"]
     #[inline(always)]
-    pub fn rbnsel(&mut self) -> RBNSEL_W {
-        RBNSEL_W { w: self }
+    pub fn rbnsel(&mut self) -> RBNSEL_W<28> {
+        RBNSEL_W::new(self)
     }
     #[doc = "Bit 31 - NAND Flash Selection"]
     #[inline(always)]
-    pub fn nfsel(&mut self) -> NFSEL_W {
-        NFSEL_W { w: self }
+    pub fn nfsel(&mut self) -> NFSEL_W<31> {
+        NFSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

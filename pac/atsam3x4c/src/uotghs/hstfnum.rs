@@ -35,91 +35,22 @@ impl From<crate::W<HSTFNUM_SPEC>> for W {
     }
 }
 #[doc = "Field `MFNUM` reader - Micro Frame Number"]
-pub struct MFNUM_R(crate::FieldReader<u8, u8>);
-impl MFNUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MFNUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MFNUM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MFNUM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MFNUM` writer - Micro Frame Number"]
-pub struct MFNUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MFNUM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
-}
+pub type MFNUM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HSTFNUM_SPEC, u8, u8, 3, O>;
 #[doc = "Field `FNUM` reader - Frame Number"]
-pub struct FNUM_R(crate::FieldReader<u16, u16>);
-impl FNUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        FNUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FNUM_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FNUM_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `FNUM` writer - Frame Number"]
-pub struct FNUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FNUM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07ff << 3)) | ((value as u32 & 0x07ff) << 3);
-        self.w
-    }
-}
+pub type FNUM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HSTFNUM_SPEC, u16, u16, 11, O>;
 #[doc = "Field `FLENHIGH` reader - Frame Length"]
-pub struct FLENHIGH_R(crate::FieldReader<u8, u8>);
-impl FLENHIGH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FLENHIGH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FLENHIGH_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FLENHIGH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FLENHIGH` writer - Frame Length"]
-pub struct FLENHIGH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLENHIGH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type FLENHIGH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HSTFNUM_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:2 - Micro Frame Number"]
     #[inline(always)]
     pub fn mfnum(&self) -> MFNUM_R {
-        MFNUM_R::new((self.bits & 0x07) as u8)
+        MFNUM_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 3:13 - Frame Number"]
     #[inline(always)]
@@ -135,18 +66,18 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Micro Frame Number"]
     #[inline(always)]
-    pub fn mfnum(&mut self) -> MFNUM_W {
-        MFNUM_W { w: self }
+    pub fn mfnum(&mut self) -> MFNUM_W<0> {
+        MFNUM_W::new(self)
     }
     #[doc = "Bits 3:13 - Frame Number"]
     #[inline(always)]
-    pub fn fnum(&mut self) -> FNUM_W {
-        FNUM_W { w: self }
+    pub fn fnum(&mut self) -> FNUM_W<3> {
+        FNUM_W::new(self)
     }
     #[doc = "Bits 16:23 - Frame Length"]
     #[inline(always)]
-    pub fn flenhigh(&mut self) -> FLENHIGH_W {
-        FLENHIGH_W { w: self }
+    pub fn flenhigh(&mut self) -> FLENHIGH_W<16> {
+        FLENHIGH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

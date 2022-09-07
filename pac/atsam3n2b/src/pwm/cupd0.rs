@@ -20,22 +20,12 @@ impl From<crate::W<CUPD0_SPEC>> for W {
     }
 }
 #[doc = "Field `CUPD` writer - "]
-pub struct CUPD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CUPD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type CUPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CUPD0_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31"]
     #[inline(always)]
-    pub fn cupd(&mut self) -> CUPD_W {
-        CUPD_W { w: self }
+    pub fn cupd(&mut self) -> CUPD_W<0> {
+        CUPD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

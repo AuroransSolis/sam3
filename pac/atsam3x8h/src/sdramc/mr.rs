@@ -34,6 +34,8 @@ impl From<crate::W<MR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE` reader - SDRAMC Command Mode"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "SDRAMC Command Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -59,14 +61,8 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE` reader - SDRAMC Command Mode"]
-pub struct MODE_R(crate::FieldReader<u8, MODE_A>);
 impl MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<MODE_A> {
         match self.bits {
@@ -83,56 +79,42 @@ impl MODE_R {
     #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        **self == MODE_A::NORMAL
+        *self == MODE_A::NORMAL
     }
     #[doc = "Checks if the value of the field is `NOP`"]
     #[inline(always)]
     pub fn is_nop(&self) -> bool {
-        **self == MODE_A::NOP
+        *self == MODE_A::NOP
     }
     #[doc = "Checks if the value of the field is `ALLBANKS_PRECHARGE`"]
     #[inline(always)]
     pub fn is_allbanks_precharge(&self) -> bool {
-        **self == MODE_A::ALLBANKS_PRECHARGE
+        *self == MODE_A::ALLBANKS_PRECHARGE
     }
     #[doc = "Checks if the value of the field is `LOAD_MODEREG`"]
     #[inline(always)]
     pub fn is_load_modereg(&self) -> bool {
-        **self == MODE_A::LOAD_MODEREG
+        *self == MODE_A::LOAD_MODEREG
     }
     #[doc = "Checks if the value of the field is `AUTO_REFRESH`"]
     #[inline(always)]
     pub fn is_auto_refresh(&self) -> bool {
-        **self == MODE_A::AUTO_REFRESH
+        *self == MODE_A::AUTO_REFRESH
     }
     #[doc = "Checks if the value of the field is `EXT_LOAD_MODEREG`"]
     #[inline(always)]
     pub fn is_ext_load_modereg(&self) -> bool {
-        **self == MODE_A::EXT_LOAD_MODEREG
+        *self == MODE_A::EXT_LOAD_MODEREG
     }
     #[doc = "Checks if the value of the field is `DEEP_POWERDOWN`"]
     #[inline(always)]
     pub fn is_deep_powerdown(&self) -> bool {
-        **self == MODE_A::DEEP_POWERDOWN
-    }
-}
-impl core::ops::Deref for MODE_R {
-    type Target = crate::FieldReader<u8, MODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MODE_A::DEEP_POWERDOWN
     }
 }
 #[doc = "Field `MODE` writer - SDRAMC Command Mode"]
-pub struct MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, MODE_A, 3, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Normal mode. Any access to the SDRAM is decoded normally. To activate this mode, command must be followed by a write to the SDRAM."]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -168,25 +150,19 @@ impl<'a> MODE_W<'a> {
     pub fn deep_powerdown(self) -> &'a mut W {
         self.variant(MODE_A::DEEP_POWERDOWN)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - SDRAMC Command Mode"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new((self.bits & 0x07) as u8)
+        MODE_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - SDRAMC Command Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
-        MODE_W { w: self }
+    pub fn mode(&mut self) -> MODE_W<0> {
+        MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

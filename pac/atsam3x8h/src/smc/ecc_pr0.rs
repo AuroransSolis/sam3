@@ -14,35 +14,9 @@ impl From<crate::R<ECC_PR0_SPEC>> for R {
     }
 }
 #[doc = "Field `BITADDR` reader - Bit Address"]
-pub struct BITADDR_R(crate::FieldReader<u8, u8>);
-impl BITADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        BITADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BITADDR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BITADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `WORDADDR` reader - Word Address"]
-pub struct WORDADDR_R(crate::FieldReader<u16, u16>);
-impl WORDADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        WORDADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WORDADDR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WORDADDR_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:3 - Bit Address"]
     #[inline(always)]

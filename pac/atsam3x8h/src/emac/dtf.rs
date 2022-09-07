@@ -35,32 +35,9 @@ impl From<crate::W<DTF_SPEC>> for W {
     }
 }
 #[doc = "Field `DTF` reader - Deferred Transmission Frames"]
-pub struct DTF_R(crate::FieldReader<u16, u16>);
-impl DTF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        DTF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTF_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTF_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DTF` writer - Deferred Transmission Frames"]
-pub struct DTF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTF_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type DTF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTF_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Deferred Transmission Frames"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Deferred Transmission Frames"]
     #[inline(always)]
-    pub fn dtf(&mut self) -> DTF_W {
-        DTF_W { w: self }
+    pub fn dtf(&mut self) -> DTF_W<0> {
+        DTF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

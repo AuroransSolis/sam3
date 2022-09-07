@@ -13,6 +13,8 @@ impl From<crate::R<WPSR_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `WPVS` reader - Write Protection Violation Status"]
+pub type WPVS_R = crate::FieldReader<u8, WPVS_A>;
 #[doc = "Write Protection Violation Status"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -32,14 +34,8 @@ impl From<WPVS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WPVS` reader - Write Protection Violation Status"]
-pub struct WPVS_R(crate::FieldReader<u8, WPVS_A>);
 impl WPVS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WPVS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<WPVS_A> {
         match self.bits {
@@ -53,46 +49,26 @@ impl WPVS_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        **self == WPVS_A::NONE
+        *self == WPVS_A::NONE
     }
     #[doc = "Checks if the value of the field is `WRITE`"]
     #[inline(always)]
     pub fn is_write(&self) -> bool {
-        **self == WPVS_A::WRITE
+        *self == WPVS_A::WRITE
     }
     #[doc = "Checks if the value of the field is `RESET`"]
     #[inline(always)]
     pub fn is_reset(&self) -> bool {
-        **self == WPVS_A::RESET
+        *self == WPVS_A::RESET
     }
     #[doc = "Checks if the value of the field is `BOTH`"]
     #[inline(always)]
     pub fn is_both(&self) -> bool {
-        **self == WPVS_A::BOTH
-    }
-}
-impl core::ops::Deref for WPVS_R {
-    type Target = crate::FieldReader<u8, WPVS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WPVS_A::BOTH
     }
 }
 #[doc = "Field `WPVSRC` reader - Write Protection Violation SouRCe"]
-pub struct WPVSRC_R(crate::FieldReader<u16, u16>);
-impl WPVSRC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        WPVSRC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WPVSRC_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WPVSRC_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:3 - Write Protection Violation Status"]
     #[inline(always)]

@@ -35,32 +35,9 @@ impl From<crate::W<ECOL_SPEC>> for W {
     }
 }
 #[doc = "Field `EXCOL` reader - Excessive Collisions"]
-pub struct EXCOL_R(crate::FieldReader<u8, u8>);
-impl EXCOL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        EXCOL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXCOL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EXCOL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `EXCOL` writer - Excessive Collisions"]
-pub struct EXCOL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXCOL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type EXCOL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ECOL_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Excessive Collisions"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Excessive Collisions"]
     #[inline(always)]
-    pub fn excol(&mut self) -> EXCOL_W {
-        EXCOL_W { w: self }
+    pub fn excol(&mut self) -> EXCOL_W<0> {
+        EXCOL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

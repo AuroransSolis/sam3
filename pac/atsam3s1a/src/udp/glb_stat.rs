@@ -35,242 +35,77 @@ impl From<crate::W<GLB_STAT_SPEC>> for W {
     }
 }
 #[doc = "Field `FADDEN` reader - Function Address Enable"]
-pub struct FADDEN_R(crate::FieldReader<bool, bool>);
-impl FADDEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FADDEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FADDEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FADDEN_R = crate::BitReader<bool>;
 #[doc = "Field `FADDEN` writer - Function Address Enable"]
-pub struct FADDEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FADDEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type FADDEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLB_STAT_SPEC, bool, O>;
 #[doc = "Field `CONFG` reader - Configured"]
-pub struct CONFG_R(crate::FieldReader<bool, bool>);
-impl CONFG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CONFG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CONFG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CONFG_R = crate::BitReader<bool>;
 #[doc = "Field `CONFG` writer - Configured"]
-pub struct CONFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CONFG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CONFG_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLB_STAT_SPEC, bool, O>;
 #[doc = "Field `ESR` reader - Enable Send Resume"]
-pub struct ESR_R(crate::FieldReader<bool, bool>);
-impl ESR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ESR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ESR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ESR_R = crate::BitReader<bool>;
 #[doc = "Field `ESR` writer - Enable Send Resume"]
-pub struct ESR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ESR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type ESR_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLB_STAT_SPEC, bool, O>;
 #[doc = "Field `RSMINPR` reader - "]
-pub struct RSMINPR_R(crate::FieldReader<bool, bool>);
-impl RSMINPR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RSMINPR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RSMINPR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RSMINPR_R = crate::BitReader<bool>;
 #[doc = "Field `RSMINPR` writer - "]
-pub struct RSMINPR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RSMINPR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type RSMINPR_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLB_STAT_SPEC, bool, O>;
 #[doc = "Field `RMWUPE` reader - Remote Wake Up Enable"]
-pub struct RMWUPE_R(crate::FieldReader<bool, bool>);
-impl RMWUPE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RMWUPE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RMWUPE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RMWUPE_R = crate::BitReader<bool>;
 #[doc = "Field `RMWUPE` writer - Remote Wake Up Enable"]
-pub struct RMWUPE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RMWUPE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type RMWUPE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLB_STAT_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Function Address Enable"]
     #[inline(always)]
     pub fn fadden(&self) -> FADDEN_R {
-        FADDEN_R::new((self.bits & 0x01) != 0)
+        FADDEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Configured"]
     #[inline(always)]
     pub fn confg(&self) -> CONFG_R {
-        CONFG_R::new(((self.bits >> 1) & 0x01) != 0)
+        CONFG_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Enable Send Resume"]
     #[inline(always)]
     pub fn esr(&self) -> ESR_R {
-        ESR_R::new(((self.bits >> 2) & 0x01) != 0)
+        ESR_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     pub fn rsminpr(&self) -> RSMINPR_R {
-        RSMINPR_R::new(((self.bits >> 3) & 0x01) != 0)
+        RSMINPR_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Remote Wake Up Enable"]
     #[inline(always)]
     pub fn rmwupe(&self) -> RMWUPE_R {
-        RMWUPE_R::new(((self.bits >> 4) & 0x01) != 0)
+        RMWUPE_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Function Address Enable"]
     #[inline(always)]
-    pub fn fadden(&mut self) -> FADDEN_W {
-        FADDEN_W { w: self }
+    pub fn fadden(&mut self) -> FADDEN_W<0> {
+        FADDEN_W::new(self)
     }
     #[doc = "Bit 1 - Configured"]
     #[inline(always)]
-    pub fn confg(&mut self) -> CONFG_W {
-        CONFG_W { w: self }
+    pub fn confg(&mut self) -> CONFG_W<1> {
+        CONFG_W::new(self)
     }
     #[doc = "Bit 2 - Enable Send Resume"]
     #[inline(always)]
-    pub fn esr(&mut self) -> ESR_W {
-        ESR_W { w: self }
+    pub fn esr(&mut self) -> ESR_W<2> {
+        ESR_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
-    pub fn rsminpr(&mut self) -> RSMINPR_W {
-        RSMINPR_W { w: self }
+    pub fn rsminpr(&mut self) -> RSMINPR_W<3> {
+        RSMINPR_W::new(self)
     }
     #[doc = "Bit 4 - Remote Wake Up Enable"]
     #[inline(always)]
-    pub fn rmwupe(&mut self) -> RMWUPE_W {
-        RMWUPE_W { w: self }
+    pub fn rmwupe(&mut self) -> RMWUPE_W<4> {
+        RMWUPE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -20,22 +20,12 @@ impl From<crate::W<THR_SPEC>> for W {
     }
 }
 #[doc = "Field `TDAT` writer - Transmit Data"]
-pub struct TDAT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TDAT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type TDAT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, THR_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - Transmit Data"]
     #[inline(always)]
-    pub fn tdat(&mut self) -> TDAT_W {
-        TDAT_W { w: self }
+    pub fn tdat(&mut self) -> TDAT_W<0> {
+        TDAT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

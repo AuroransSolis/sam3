@@ -20,49 +20,19 @@ impl From<crate::W<CMPVUPD6_SPEC>> for W {
     }
 }
 #[doc = "Field `CVUPD` writer - Comparison x Value Update"]
-pub struct CVUPD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CVUPD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type CVUPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMPVUPD6_SPEC, u32, u32, 24, O>;
 #[doc = "Field `CVMUPD` writer - Comparison x Value Mode Update"]
-pub struct CVMUPD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CVMUPD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type CVMUPD_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMPVUPD6_SPEC, bool, O>;
 impl W {
     #[doc = "Bits 0:23 - Comparison x Value Update"]
     #[inline(always)]
-    pub fn cvupd(&mut self) -> CVUPD_W {
-        CVUPD_W { w: self }
+    pub fn cvupd(&mut self) -> CVUPD_W<0> {
+        CVUPD_W::new(self)
     }
     #[doc = "Bit 24 - Comparison x Value Mode Update"]
     #[inline(always)]
-    pub fn cvmupd(&mut self) -> CVMUPD_W {
-        CVMUPD_W { w: self }
+    pub fn cvmupd(&mut self) -> CVMUPD_W<24> {
+        CVMUPD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

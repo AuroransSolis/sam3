@@ -14,25 +14,12 @@ impl From<crate::R<DMA_IMR_SPEC>> for R {
     }
 }
 #[doc = "Field `DMAIMR` reader - Interrupt Mask Register"]
-pub struct DMAIMR_R(crate::FieldReader<bool, bool>);
-impl DMAIMR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DMAIMR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMAIMR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMAIMR_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Interrupt Mask Register"]
     #[inline(always)]
     pub fn dmaimr(&self) -> DMAIMR_R {
-        DMAIMR_R::new((self.bits & 0x01) != 0)
+        DMAIMR_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "CRCCU DMA Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_imr](index.html) module"]

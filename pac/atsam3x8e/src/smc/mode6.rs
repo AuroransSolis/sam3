@@ -34,6 +34,8 @@ impl From<crate::W<MODE6_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `READ_MODE` reader - Selection of the Control Signal for Read Operation"]
+pub type READ_MODE_R = crate::BitReader<READ_MODE_A>;
 #[doc = "Selection of the Control Signal for Read Operation\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum READ_MODE_A {
@@ -48,14 +50,8 @@ impl From<READ_MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `READ_MODE` reader - Selection of the Control Signal for Read Operation"]
-pub struct READ_MODE_R(crate::FieldReader<bool, READ_MODE_A>);
 impl READ_MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        READ_MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> READ_MODE_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl READ_MODE_R {
     #[doc = "Checks if the value of the field is `NCS_CTRL`"]
     #[inline(always)]
     pub fn is_ncs_ctrl(&self) -> bool {
-        **self == READ_MODE_A::NCS_CTRL
+        *self == READ_MODE_A::NCS_CTRL
     }
     #[doc = "Checks if the value of the field is `NRD_CTRL`"]
     #[inline(always)]
     pub fn is_nrd_ctrl(&self) -> bool {
-        **self == READ_MODE_A::NRD_CTRL
-    }
-}
-impl core::ops::Deref for READ_MODE_R {
-    type Target = crate::FieldReader<bool, READ_MODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == READ_MODE_A::NRD_CTRL
     }
 }
 #[doc = "Field `READ_MODE` writer - Selection of the Control Signal for Read Operation"]
-pub struct READ_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> READ_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: READ_MODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type READ_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE6_SPEC, READ_MODE_A, O>;
+impl<'a, const O: u8> READ_MODE_W<'a, O> {
     #[doc = "The Read operation is controlled by the NCS signal."]
     #[inline(always)]
     pub fn ncs_ctrl(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> READ_MODE_W<'a> {
     pub fn nrd_ctrl(self) -> &'a mut W {
         self.variant(READ_MODE_A::NRD_CTRL)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `WRITE_MODE` reader - Selection of the Control Signal for Write Operation"]
+pub type WRITE_MODE_R = crate::BitReader<WRITE_MODE_A>;
 #[doc = "Selection of the Control Signal for Write Operation\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WRITE_MODE_A {
@@ -132,14 +100,8 @@ impl From<WRITE_MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WRITE_MODE` reader - Selection of the Control Signal for Write Operation"]
-pub struct WRITE_MODE_R(crate::FieldReader<bool, WRITE_MODE_A>);
 impl WRITE_MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WRITE_MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WRITE_MODE_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl WRITE_MODE_R {
     #[doc = "Checks if the value of the field is `NCS_CTRL`"]
     #[inline(always)]
     pub fn is_ncs_ctrl(&self) -> bool {
-        **self == WRITE_MODE_A::NCS_CTRL
+        *self == WRITE_MODE_A::NCS_CTRL
     }
     #[doc = "Checks if the value of the field is `NWE_CTRL`"]
     #[inline(always)]
     pub fn is_nwe_ctrl(&self) -> bool {
-        **self == WRITE_MODE_A::NWE_CTRL
-    }
-}
-impl core::ops::Deref for WRITE_MODE_R {
-    type Target = crate::FieldReader<bool, WRITE_MODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WRITE_MODE_A::NWE_CTRL
     }
 }
 #[doc = "Field `WRITE_MODE` writer - Selection of the Control Signal for Write Operation"]
-pub struct WRITE_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WRITE_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WRITE_MODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type WRITE_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE6_SPEC, WRITE_MODE_A, O>;
+impl<'a, const O: u8> WRITE_MODE_W<'a, O> {
     #[doc = "The Write operation is controller by the NCS signal."]
     #[inline(always)]
     pub fn ncs_ctrl(self) -> &'a mut W {
@@ -185,23 +133,9 @@ impl<'a> WRITE_MODE_W<'a> {
     pub fn nwe_ctrl(self) -> &'a mut W {
         self.variant(WRITE_MODE_A::NWE_CTRL)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `EXNW_MODE` reader - NWAIT Mode"]
+pub type EXNW_MODE_R = crate::FieldReader<u8, EXNW_MODE_A>;
 #[doc = "NWAIT Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -219,14 +153,8 @@ impl From<EXNW_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EXNW_MODE` reader - NWAIT Mode"]
-pub struct EXNW_MODE_R(crate::FieldReader<u8, EXNW_MODE_A>);
 impl EXNW_MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        EXNW_MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<EXNW_MODE_A> {
         match self.bits {
@@ -239,36 +167,23 @@ impl EXNW_MODE_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == EXNW_MODE_A::DISABLED
+        *self == EXNW_MODE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `FROZEN`"]
     #[inline(always)]
     pub fn is_frozen(&self) -> bool {
-        **self == EXNW_MODE_A::FROZEN
+        *self == EXNW_MODE_A::FROZEN
     }
     #[doc = "Checks if the value of the field is `READY`"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
-        **self == EXNW_MODE_A::READY
-    }
-}
-impl core::ops::Deref for EXNW_MODE_R {
-    type Target = crate::FieldReader<u8, EXNW_MODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EXNW_MODE_A::READY
     }
 }
 #[doc = "Field `EXNW_MODE` writer - NWAIT Mode"]
-pub struct EXNW_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXNW_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EXNW_MODE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type EXNW_MODE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, MODE6_SPEC, u8, EXNW_MODE_A, 2, O>;
+impl<'a, const O: u8> EXNW_MODE_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -284,50 +199,13 @@ impl<'a> EXNW_MODE_W<'a> {
     pub fn ready(self) -> &'a mut W {
         self.variant(EXNW_MODE_A::READY)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
-    }
 }
 #[doc = "Field `BAT` reader - Byte Access Type"]
-pub struct BAT_R(crate::FieldReader<bool, bool>);
-impl BAT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BAT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BAT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BAT_R = crate::BitReader<bool>;
 #[doc = "Field `BAT` writer - Byte Access Type"]
-pub struct BAT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BAT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type BAT_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE6_SPEC, bool, O>;
+#[doc = "Field `DBW` reader - Data Bus Width"]
+pub type DBW_R = crate::BitReader<DBW_A>;
 #[doc = "Data Bus Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBW_A {
@@ -342,14 +220,8 @@ impl From<DBW_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DBW` reader - Data Bus Width"]
-pub struct DBW_R(crate::FieldReader<bool, DBW_A>);
 impl DBW_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DBW_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DBW_A {
         match self.bits {
@@ -360,31 +232,17 @@ impl DBW_R {
     #[doc = "Checks if the value of the field is `BIT_8`"]
     #[inline(always)]
     pub fn is_bit_8(&self) -> bool {
-        **self == DBW_A::BIT_8
+        *self == DBW_A::BIT_8
     }
     #[doc = "Checks if the value of the field is `BIT_16`"]
     #[inline(always)]
     pub fn is_bit_16(&self) -> bool {
-        **self == DBW_A::BIT_16
-    }
-}
-impl core::ops::Deref for DBW_R {
-    type Target = crate::FieldReader<bool, DBW_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DBW_A::BIT_16
     }
 }
 #[doc = "Field `DBW` writer - Data Bus Width"]
-pub struct DBW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DBW_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DBW_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DBW_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE6_SPEC, DBW_A, O>;
+impl<'a, const O: u8> DBW_W<'a, O> {
     #[doc = "8-bit bus"]
     #[inline(always)]
     pub fn bit_8(self) -> &'a mut W {
@@ -395,112 +253,40 @@ impl<'a> DBW_W<'a> {
     pub fn bit_16(self) -> &'a mut W {
         self.variant(DBW_A::BIT_16)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
 }
 #[doc = "Field `TDF_CYCLES` reader - Data Float Time"]
-pub struct TDF_CYCLES_R(crate::FieldReader<u8, u8>);
-impl TDF_CYCLES_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TDF_CYCLES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TDF_CYCLES_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TDF_CYCLES_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TDF_CYCLES` writer - Data Float Time"]
-pub struct TDF_CYCLES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TDF_CYCLES_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
-        self.w
-    }
-}
+pub type TDF_CYCLES_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODE6_SPEC, u8, u8, 4, O>;
 #[doc = "Field `TDF_MODE` reader - TDF Optimization"]
-pub struct TDF_MODE_R(crate::FieldReader<bool, bool>);
-impl TDF_MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TDF_MODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TDF_MODE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TDF_MODE_R = crate::BitReader<bool>;
 #[doc = "Field `TDF_MODE` writer - TDF Optimization"]
-pub struct TDF_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TDF_MODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
-        self.w
-    }
-}
+pub type TDF_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE6_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Selection of the Control Signal for Read Operation"]
     #[inline(always)]
     pub fn read_mode(&self) -> READ_MODE_R {
-        READ_MODE_R::new((self.bits & 0x01) != 0)
+        READ_MODE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Selection of the Control Signal for Write Operation"]
     #[inline(always)]
     pub fn write_mode(&self) -> WRITE_MODE_R {
-        WRITE_MODE_R::new(((self.bits >> 1) & 0x01) != 0)
+        WRITE_MODE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 4:5 - NWAIT Mode"]
     #[inline(always)]
     pub fn exnw_mode(&self) -> EXNW_MODE_R {
-        EXNW_MODE_R::new(((self.bits >> 4) & 0x03) as u8)
+        EXNW_MODE_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 8 - Byte Access Type"]
     #[inline(always)]
     pub fn bat(&self) -> BAT_R {
-        BAT_R::new(((self.bits >> 8) & 0x01) != 0)
+        BAT_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 12 - Data Bus Width"]
     #[inline(always)]
     pub fn dbw(&self) -> DBW_R {
-        DBW_R::new(((self.bits >> 12) & 0x01) != 0)
+        DBW_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bits 16:19 - Data Float Time"]
     #[inline(always)]
@@ -510,44 +296,44 @@ impl R {
     #[doc = "Bit 20 - TDF Optimization"]
     #[inline(always)]
     pub fn tdf_mode(&self) -> TDF_MODE_R {
-        TDF_MODE_R::new(((self.bits >> 20) & 0x01) != 0)
+        TDF_MODE_R::new(((self.bits >> 20) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Selection of the Control Signal for Read Operation"]
     #[inline(always)]
-    pub fn read_mode(&mut self) -> READ_MODE_W {
-        READ_MODE_W { w: self }
+    pub fn read_mode(&mut self) -> READ_MODE_W<0> {
+        READ_MODE_W::new(self)
     }
     #[doc = "Bit 1 - Selection of the Control Signal for Write Operation"]
     #[inline(always)]
-    pub fn write_mode(&mut self) -> WRITE_MODE_W {
-        WRITE_MODE_W { w: self }
+    pub fn write_mode(&mut self) -> WRITE_MODE_W<1> {
+        WRITE_MODE_W::new(self)
     }
     #[doc = "Bits 4:5 - NWAIT Mode"]
     #[inline(always)]
-    pub fn exnw_mode(&mut self) -> EXNW_MODE_W {
-        EXNW_MODE_W { w: self }
+    pub fn exnw_mode(&mut self) -> EXNW_MODE_W<4> {
+        EXNW_MODE_W::new(self)
     }
     #[doc = "Bit 8 - Byte Access Type"]
     #[inline(always)]
-    pub fn bat(&mut self) -> BAT_W {
-        BAT_W { w: self }
+    pub fn bat(&mut self) -> BAT_W<8> {
+        BAT_W::new(self)
     }
     #[doc = "Bit 12 - Data Bus Width"]
     #[inline(always)]
-    pub fn dbw(&mut self) -> DBW_W {
-        DBW_W { w: self }
+    pub fn dbw(&mut self) -> DBW_W<12> {
+        DBW_W::new(self)
     }
     #[doc = "Bits 16:19 - Data Float Time"]
     #[inline(always)]
-    pub fn tdf_cycles(&mut self) -> TDF_CYCLES_W {
-        TDF_CYCLES_W { w: self }
+    pub fn tdf_cycles(&mut self) -> TDF_CYCLES_W<16> {
+        TDF_CYCLES_W::new(self)
     }
     #[doc = "Bit 20 - TDF Optimization"]
     #[inline(always)]
-    pub fn tdf_mode(&mut self) -> TDF_MODE_W {
-        TDF_MODE_W { w: self }
+    pub fn tdf_mode(&mut self) -> TDF_MODE_W<20> {
+        TDF_MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

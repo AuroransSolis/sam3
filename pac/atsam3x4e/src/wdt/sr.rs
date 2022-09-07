@@ -14,45 +14,19 @@ impl From<crate::R<SR_SPEC>> for R {
     }
 }
 #[doc = "Field `WDUNF` reader - Watchdog Underflow"]
-pub struct WDUNF_R(crate::FieldReader<bool, bool>);
-impl WDUNF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDUNF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDUNF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDUNF_R = crate::BitReader<bool>;
 #[doc = "Field `WDERR` reader - Watchdog Error"]
-pub struct WDERR_R(crate::FieldReader<bool, bool>);
-impl WDERR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDERR_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Watchdog Underflow"]
     #[inline(always)]
     pub fn wdunf(&self) -> WDUNF_R {
-        WDUNF_R::new((self.bits & 0x01) != 0)
+        WDUNF_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Watchdog Error"]
     #[inline(always)]
     pub fn wderr(&self) -> WDERR_R {
-        WDERR_R::new(((self.bits >> 1) & 0x01) != 0)
+        WDERR_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 #[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]

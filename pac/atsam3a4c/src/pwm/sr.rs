@@ -14,165 +14,61 @@ impl From<crate::R<SR_SPEC>> for R {
     }
 }
 #[doc = "Field `CHID0` reader - Channel ID"]
-pub struct CHID0_R(crate::FieldReader<bool, bool>);
-impl CHID0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CHID0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHID0_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHID0_R = crate::BitReader<bool>;
 #[doc = "Field `CHID1` reader - Channel ID"]
-pub struct CHID1_R(crate::FieldReader<bool, bool>);
-impl CHID1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CHID1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHID1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHID1_R = crate::BitReader<bool>;
 #[doc = "Field `CHID2` reader - Channel ID"]
-pub struct CHID2_R(crate::FieldReader<bool, bool>);
-impl CHID2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CHID2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHID2_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHID2_R = crate::BitReader<bool>;
 #[doc = "Field `CHID3` reader - Channel ID"]
-pub struct CHID3_R(crate::FieldReader<bool, bool>);
-impl CHID3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CHID3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHID3_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHID3_R = crate::BitReader<bool>;
 #[doc = "Field `CHID4` reader - Channel ID"]
-pub struct CHID4_R(crate::FieldReader<bool, bool>);
-impl CHID4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CHID4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHID4_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHID4_R = crate::BitReader<bool>;
 #[doc = "Field `CHID5` reader - Channel ID"]
-pub struct CHID5_R(crate::FieldReader<bool, bool>);
-impl CHID5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CHID5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHID5_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHID5_R = crate::BitReader<bool>;
 #[doc = "Field `CHID6` reader - Channel ID"]
-pub struct CHID6_R(crate::FieldReader<bool, bool>);
-impl CHID6_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CHID6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHID6_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHID6_R = crate::BitReader<bool>;
 #[doc = "Field `CHID7` reader - Channel ID"]
-pub struct CHID7_R(crate::FieldReader<bool, bool>);
-impl CHID7_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CHID7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHID7_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHID7_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Channel ID"]
     #[inline(always)]
     pub fn chid0(&self) -> CHID0_R {
-        CHID0_R::new((self.bits & 0x01) != 0)
+        CHID0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Channel ID"]
     #[inline(always)]
     pub fn chid1(&self) -> CHID1_R {
-        CHID1_R::new(((self.bits >> 1) & 0x01) != 0)
+        CHID1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Channel ID"]
     #[inline(always)]
     pub fn chid2(&self) -> CHID2_R {
-        CHID2_R::new(((self.bits >> 2) & 0x01) != 0)
+        CHID2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Channel ID"]
     #[inline(always)]
     pub fn chid3(&self) -> CHID3_R {
-        CHID3_R::new(((self.bits >> 3) & 0x01) != 0)
+        CHID3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Channel ID"]
     #[inline(always)]
     pub fn chid4(&self) -> CHID4_R {
-        CHID4_R::new(((self.bits >> 4) & 0x01) != 0)
+        CHID4_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Channel ID"]
     #[inline(always)]
     pub fn chid5(&self) -> CHID5_R {
-        CHID5_R::new(((self.bits >> 5) & 0x01) != 0)
+        CHID5_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Channel ID"]
     #[inline(always)]
     pub fn chid6(&self) -> CHID6_R {
-        CHID6_R::new(((self.bits >> 6) & 0x01) != 0)
+        CHID6_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Channel ID"]
     #[inline(always)]
     pub fn chid7(&self) -> CHID7_R {
-        CHID7_R::new(((self.bits >> 7) & 0x01) != 0)
+        CHID7_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 #[doc = "PWM Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]

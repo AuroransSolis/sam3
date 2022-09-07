@@ -34,6 +34,8 @@ impl From<crate::W<CMR5_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CPRE` reader - Channel Pre-scaler"]
+pub type CPRE_R = crate::FieldReader<u8, CPRE_A>;
 #[doc = "Channel Pre-scaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -71,14 +73,8 @@ impl From<CPRE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CPRE` reader - Channel Pre-scaler"]
-pub struct CPRE_R(crate::FieldReader<u8, CPRE_A>);
 impl CPRE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CPRE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CPRE_A> {
         match self.bits {
@@ -101,86 +97,72 @@ impl CPRE_R {
     #[doc = "Checks if the value of the field is `MCK`"]
     #[inline(always)]
     pub fn is_mck(&self) -> bool {
-        **self == CPRE_A::MCK
+        *self == CPRE_A::MCK
     }
     #[doc = "Checks if the value of the field is `MCK_DIV_2`"]
     #[inline(always)]
     pub fn is_mck_div_2(&self) -> bool {
-        **self == CPRE_A::MCK_DIV_2
+        *self == CPRE_A::MCK_DIV_2
     }
     #[doc = "Checks if the value of the field is `MCK_DIV_4`"]
     #[inline(always)]
     pub fn is_mck_div_4(&self) -> bool {
-        **self == CPRE_A::MCK_DIV_4
+        *self == CPRE_A::MCK_DIV_4
     }
     #[doc = "Checks if the value of the field is `MCK_DIV_8`"]
     #[inline(always)]
     pub fn is_mck_div_8(&self) -> bool {
-        **self == CPRE_A::MCK_DIV_8
+        *self == CPRE_A::MCK_DIV_8
     }
     #[doc = "Checks if the value of the field is `MCK_DIV_16`"]
     #[inline(always)]
     pub fn is_mck_div_16(&self) -> bool {
-        **self == CPRE_A::MCK_DIV_16
+        *self == CPRE_A::MCK_DIV_16
     }
     #[doc = "Checks if the value of the field is `MCK_DIV_32`"]
     #[inline(always)]
     pub fn is_mck_div_32(&self) -> bool {
-        **self == CPRE_A::MCK_DIV_32
+        *self == CPRE_A::MCK_DIV_32
     }
     #[doc = "Checks if the value of the field is `MCK_DIV_64`"]
     #[inline(always)]
     pub fn is_mck_div_64(&self) -> bool {
-        **self == CPRE_A::MCK_DIV_64
+        *self == CPRE_A::MCK_DIV_64
     }
     #[doc = "Checks if the value of the field is `MCK_DIV_128`"]
     #[inline(always)]
     pub fn is_mck_div_128(&self) -> bool {
-        **self == CPRE_A::MCK_DIV_128
+        *self == CPRE_A::MCK_DIV_128
     }
     #[doc = "Checks if the value of the field is `MCK_DIV_256`"]
     #[inline(always)]
     pub fn is_mck_div_256(&self) -> bool {
-        **self == CPRE_A::MCK_DIV_256
+        *self == CPRE_A::MCK_DIV_256
     }
     #[doc = "Checks if the value of the field is `MCK_DIV_512`"]
     #[inline(always)]
     pub fn is_mck_div_512(&self) -> bool {
-        **self == CPRE_A::MCK_DIV_512
+        *self == CPRE_A::MCK_DIV_512
     }
     #[doc = "Checks if the value of the field is `MCK_DIV_1024`"]
     #[inline(always)]
     pub fn is_mck_div_1024(&self) -> bool {
-        **self == CPRE_A::MCK_DIV_1024
+        *self == CPRE_A::MCK_DIV_1024
     }
     #[doc = "Checks if the value of the field is `CLKA`"]
     #[inline(always)]
     pub fn is_clka(&self) -> bool {
-        **self == CPRE_A::CLKA
+        *self == CPRE_A::CLKA
     }
     #[doc = "Checks if the value of the field is `CLKB`"]
     #[inline(always)]
     pub fn is_clkb(&self) -> bool {
-        **self == CPRE_A::CLKB
-    }
-}
-impl core::ops::Deref for CPRE_R {
-    type Target = crate::FieldReader<u8, CPRE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CPRE_A::CLKB
     }
 }
 #[doc = "Field `CPRE` writer - Channel Pre-scaler"]
-pub struct CPRE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPRE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPRE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CPRE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMR5_SPEC, u8, CPRE_A, 4, O>;
+impl<'a, const O: u8> CPRE_W<'a, O> {
     #[doc = "Master clock"]
     #[inline(always)]
     pub fn mck(self) -> &'a mut W {
@@ -246,235 +228,31 @@ impl<'a> CPRE_W<'a> {
     pub fn clkb(self) -> &'a mut W {
         self.variant(CPRE_A::CLKB)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
 }
 #[doc = "Field `CALG` reader - Channel Alignment"]
-pub struct CALG_R(crate::FieldReader<bool, bool>);
-impl CALG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CALG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CALG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CALG_R = crate::BitReader<bool>;
 #[doc = "Field `CALG` writer - Channel Alignment"]
-pub struct CALG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CALG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type CALG_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMR5_SPEC, bool, O>;
 #[doc = "Field `CPOL` reader - Channel Polarity"]
-pub struct CPOL_R(crate::FieldReader<bool, bool>);
-impl CPOL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CPOL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CPOL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CPOL_R = crate::BitReader<bool>;
 #[doc = "Field `CPOL` writer - Channel Polarity"]
-pub struct CPOL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPOL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type CPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMR5_SPEC, bool, O>;
 #[doc = "Field `CES` reader - Counter Event Selection"]
-pub struct CES_R(crate::FieldReader<bool, bool>);
-impl CES_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CES_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CES_R = crate::BitReader<bool>;
 #[doc = "Field `CES` writer - Counter Event Selection"]
-pub struct CES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type CES_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMR5_SPEC, bool, O>;
 #[doc = "Field `DTE` reader - Dead-Time Generator Enable"]
-pub struct DTE_R(crate::FieldReader<bool, bool>);
-impl DTE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DTE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTE_R = crate::BitReader<bool>;
 #[doc = "Field `DTE` writer - Dead-Time Generator Enable"]
-pub struct DTE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type DTE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMR5_SPEC, bool, O>;
 #[doc = "Field `DTHI` reader - Dead-Time PWMHx Output Inverted"]
-pub struct DTHI_R(crate::FieldReader<bool, bool>);
-impl DTHI_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DTHI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTHI_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTHI_R = crate::BitReader<bool>;
 #[doc = "Field `DTHI` writer - Dead-Time PWMHx Output Inverted"]
-pub struct DTHI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTHI_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type DTHI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMR5_SPEC, bool, O>;
 #[doc = "Field `DTLI` reader - Dead-Time PWMLx Output Inverted"]
-pub struct DTLI_R(crate::FieldReader<bool, bool>);
-impl DTLI_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DTLI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTLI_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTLI_R = crate::BitReader<bool>;
 #[doc = "Field `DTLI` writer - Dead-Time PWMLx Output Inverted"]
-pub struct DTLI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTLI_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
+pub type DTLI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMR5_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:3 - Channel Pre-scaler"]
     #[inline(always)]
@@ -484,69 +262,69 @@ impl R {
     #[doc = "Bit 8 - Channel Alignment"]
     #[inline(always)]
     pub fn calg(&self) -> CALG_R {
-        CALG_R::new(((self.bits >> 8) & 0x01) != 0)
+        CALG_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Channel Polarity"]
     #[inline(always)]
     pub fn cpol(&self) -> CPOL_R {
-        CPOL_R::new(((self.bits >> 9) & 0x01) != 0)
+        CPOL_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Counter Event Selection"]
     #[inline(always)]
     pub fn ces(&self) -> CES_R {
-        CES_R::new(((self.bits >> 10) & 0x01) != 0)
+        CES_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 16 - Dead-Time Generator Enable"]
     #[inline(always)]
     pub fn dte(&self) -> DTE_R {
-        DTE_R::new(((self.bits >> 16) & 0x01) != 0)
+        DTE_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Dead-Time PWMHx Output Inverted"]
     #[inline(always)]
     pub fn dthi(&self) -> DTHI_R {
-        DTHI_R::new(((self.bits >> 17) & 0x01) != 0)
+        DTHI_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Dead-Time PWMLx Output Inverted"]
     #[inline(always)]
     pub fn dtli(&self) -> DTLI_R {
-        DTLI_R::new(((self.bits >> 18) & 0x01) != 0)
+        DTLI_R::new(((self.bits >> 18) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Channel Pre-scaler"]
     #[inline(always)]
-    pub fn cpre(&mut self) -> CPRE_W {
-        CPRE_W { w: self }
+    pub fn cpre(&mut self) -> CPRE_W<0> {
+        CPRE_W::new(self)
     }
     #[doc = "Bit 8 - Channel Alignment"]
     #[inline(always)]
-    pub fn calg(&mut self) -> CALG_W {
-        CALG_W { w: self }
+    pub fn calg(&mut self) -> CALG_W<8> {
+        CALG_W::new(self)
     }
     #[doc = "Bit 9 - Channel Polarity"]
     #[inline(always)]
-    pub fn cpol(&mut self) -> CPOL_W {
-        CPOL_W { w: self }
+    pub fn cpol(&mut self) -> CPOL_W<9> {
+        CPOL_W::new(self)
     }
     #[doc = "Bit 10 - Counter Event Selection"]
     #[inline(always)]
-    pub fn ces(&mut self) -> CES_W {
-        CES_W { w: self }
+    pub fn ces(&mut self) -> CES_W<10> {
+        CES_W::new(self)
     }
     #[doc = "Bit 16 - Dead-Time Generator Enable"]
     #[inline(always)]
-    pub fn dte(&mut self) -> DTE_W {
-        DTE_W { w: self }
+    pub fn dte(&mut self) -> DTE_W<16> {
+        DTE_W::new(self)
     }
     #[doc = "Bit 17 - Dead-Time PWMHx Output Inverted"]
     #[inline(always)]
-    pub fn dthi(&mut self) -> DTHI_W {
-        DTHI_W { w: self }
+    pub fn dthi(&mut self) -> DTHI_W<17> {
+        DTHI_W::new(self)
     }
     #[doc = "Bit 18 - Dead-Time PWMLx Output Inverted"]
     #[inline(always)]
-    pub fn dtli(&mut self) -> DTLI_W {
-        DTLI_W { w: self }
+    pub fn dtli(&mut self) -> DTLI_W<18> {
+        DTLI_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

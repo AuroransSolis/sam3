@@ -20,22 +20,12 @@ impl From<crate::W<SCUPUPD_SPEC>> for W {
     }
 }
 #[doc = "Field `UPRUPD` writer - Update Period Update"]
-pub struct UPRUPD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UPRUPD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
-}
+pub type UPRUPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCUPUPD_SPEC, u8, u8, 4, O>;
 impl W {
     #[doc = "Bits 0:3 - Update Period Update"]
     #[inline(always)]
-    pub fn uprupd(&mut self) -> UPRUPD_W {
-        UPRUPD_W { w: self }
+    pub fn uprupd(&mut self) -> UPRUPD_W<0> {
+        UPRUPD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -20,83 +20,33 @@ impl From<crate::W<CMPMUPD3_SPEC>> for W {
     }
 }
 #[doc = "Field `CENUPD` writer - Comparison x Enable Update"]
-pub struct CENUPD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CENUPD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CENUPD_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMPMUPD3_SPEC, bool, O>;
 #[doc = "Field `CTRUPD` writer - Comparison x Trigger Update"]
-pub struct CTRUPD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTRUPD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
-}
+pub type CTRUPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMPMUPD3_SPEC, u8, u8, 4, O>;
 #[doc = "Field `CPRUPD` writer - Comparison x Period Update"]
-pub struct CPRUPD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPRUPD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type CPRUPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMPMUPD3_SPEC, u8, u8, 4, O>;
 #[doc = "Field `CUPRUPD` writer - Comparison x Update Period Update"]
-pub struct CUPRUPD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CUPRUPD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
-        self.w
-    }
-}
+pub type CUPRUPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMPMUPD3_SPEC, u8, u8, 4, O>;
 impl W {
     #[doc = "Bit 0 - Comparison x Enable Update"]
     #[inline(always)]
-    pub fn cenupd(&mut self) -> CENUPD_W {
-        CENUPD_W { w: self }
+    pub fn cenupd(&mut self) -> CENUPD_W<0> {
+        CENUPD_W::new(self)
     }
     #[doc = "Bits 4:7 - Comparison x Trigger Update"]
     #[inline(always)]
-    pub fn ctrupd(&mut self) -> CTRUPD_W {
-        CTRUPD_W { w: self }
+    pub fn ctrupd(&mut self) -> CTRUPD_W<4> {
+        CTRUPD_W::new(self)
     }
     #[doc = "Bits 8:11 - Comparison x Period Update"]
     #[inline(always)]
-    pub fn cprupd(&mut self) -> CPRUPD_W {
-        CPRUPD_W { w: self }
+    pub fn cprupd(&mut self) -> CPRUPD_W<8> {
+        CPRUPD_W::new(self)
     }
     #[doc = "Bits 16:19 - Comparison x Update Period Update"]
     #[inline(always)]
-    pub fn cuprupd(&mut self) -> CUPRUPD_W {
-        CUPRUPD_W { w: self }
+    pub fn cuprupd(&mut self) -> CUPRUPD_W<16> {
+        CUPRUPD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

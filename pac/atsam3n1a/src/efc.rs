@@ -2,27 +2,27 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - EEFC Flash Mode Register"]
-    pub fmr: crate::Reg<fmr::FMR_SPEC>,
+    pub fmr: FMR,
     #[doc = "0x04 - EEFC Flash Command Register"]
-    pub fcr: crate::Reg<fcr::FCR_SPEC>,
+    pub fcr: FCR,
     #[doc = "0x08 - EEFC Flash Status Register"]
-    pub fsr: crate::Reg<fsr::FSR_SPEC>,
+    pub fsr: FSR,
     #[doc = "0x0c - EEFC Flash Result Register"]
-    pub frr: crate::Reg<frr::FRR_SPEC>,
+    pub frr: FRR,
 }
-#[doc = "FMR register accessor: an alias for `Reg<FMR_SPEC>`"]
+#[doc = "FMR (rw) register accessor: an alias for `Reg<FMR_SPEC>`"]
 pub type FMR = crate::Reg<fmr::FMR_SPEC>;
 #[doc = "EEFC Flash Mode Register"]
 pub mod fmr;
-#[doc = "FCR register accessor: an alias for `Reg<FCR_SPEC>`"]
+#[doc = "FCR (w) register accessor: an alias for `Reg<FCR_SPEC>`"]
 pub type FCR = crate::Reg<fcr::FCR_SPEC>;
 #[doc = "EEFC Flash Command Register"]
 pub mod fcr;
-#[doc = "FSR register accessor: an alias for `Reg<FSR_SPEC>`"]
+#[doc = "FSR (r) register accessor: an alias for `Reg<FSR_SPEC>`"]
 pub type FSR = crate::Reg<fsr::FSR_SPEC>;
 #[doc = "EEFC Flash Status Register"]
 pub mod fsr;
-#[doc = "FRR register accessor: an alias for `Reg<FRR_SPEC>`"]
+#[doc = "FRR (r) register accessor: an alias for `Reg<FRR_SPEC>`"]
 pub type FRR = crate::Reg<frr::FRR_SPEC>;
 #[doc = "EEFC Flash Result Register"]
 pub mod frr;

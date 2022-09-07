@@ -35,86 +35,17 @@ impl From<crate::W<CWGR_SPEC>> for W {
     }
 }
 #[doc = "Field `CLDIV` reader - Clock Low Divider"]
-pub struct CLDIV_R(crate::FieldReader<u8, u8>);
-impl CLDIV_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLDIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLDIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLDIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CLDIV` writer - Clock Low Divider"]
-pub struct CLDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLDIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type CLDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CWGR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `CHDIV` reader - Clock High Divider"]
-pub struct CHDIV_R(crate::FieldReader<u8, u8>);
-impl CHDIV_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CHDIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHDIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHDIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CHDIV` writer - Clock High Divider"]
-pub struct CHDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHDIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type CHDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CWGR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `CKDIV` reader - Clock Divider"]
-pub struct CKDIV_R(crate::FieldReader<u8, u8>);
-impl CKDIV_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CKDIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CKDIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CKDIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CKDIV` writer - Clock Divider"]
-pub struct CKDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CKDIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | ((value as u32 & 0x07) << 16);
-        self.w
-    }
-}
+pub type CKDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CWGR_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 0:7 - Clock Low Divider"]
     #[inline(always)]
@@ -129,24 +60,24 @@ impl R {
     #[doc = "Bits 16:18 - Clock Divider"]
     #[inline(always)]
     pub fn ckdiv(&self) -> CKDIV_R {
-        CKDIV_R::new(((self.bits >> 16) & 0x07) as u8)
+        CKDIV_R::new(((self.bits >> 16) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Clock Low Divider"]
     #[inline(always)]
-    pub fn cldiv(&mut self) -> CLDIV_W {
-        CLDIV_W { w: self }
+    pub fn cldiv(&mut self) -> CLDIV_W<0> {
+        CLDIV_W::new(self)
     }
     #[doc = "Bits 8:15 - Clock High Divider"]
     #[inline(always)]
-    pub fn chdiv(&mut self) -> CHDIV_W {
-        CHDIV_W { w: self }
+    pub fn chdiv(&mut self) -> CHDIV_W<8> {
+        CHDIV_W::new(self)
     }
     #[doc = "Bits 16:18 - Clock Divider"]
     #[inline(always)]
-    pub fn ckdiv(&mut self) -> CKDIV_W {
-        CKDIV_W { w: self }
+    pub fn ckdiv(&mut self) -> CKDIV_W<16> {
+        CKDIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,59 +35,15 @@ impl From<crate::W<MMR3_SPEC>> for W {
     }
 }
 #[doc = "Field `MTIMEMARK` reader - Mailbox Timemark"]
-pub struct MTIMEMARK_R(crate::FieldReader<u16, u16>);
-impl MTIMEMARK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        MTIMEMARK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MTIMEMARK_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MTIMEMARK_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MTIMEMARK` writer - Mailbox Timemark"]
-pub struct MTIMEMARK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MTIMEMARK_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type MTIMEMARK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MMR3_SPEC, u16, u16, 16, O>;
 #[doc = "Field `PRIOR` reader - Mailbox Priority"]
-pub struct PRIOR_R(crate::FieldReader<u8, u8>);
-impl PRIOR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PRIOR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRIOR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRIOR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PRIOR` writer - Mailbox Priority"]
-pub struct PRIOR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRIOR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
-        self.w
-    }
-}
+pub type PRIOR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MMR3_SPEC, u8, u8, 4, O>;
+#[doc = "Field `MOT` reader - Mailbox Object Type"]
+pub type MOT_R = crate::FieldReader<u8, MOT_A>;
 #[doc = "Mailbox Object Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -111,14 +67,8 @@ impl From<MOT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MOT` reader - Mailbox Object Type"]
-pub struct MOT_R(crate::FieldReader<u8, MOT_A>);
 impl MOT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MOT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<MOT_A> {
         match self.bits {
@@ -134,51 +84,37 @@ impl MOT_R {
     #[doc = "Checks if the value of the field is `MB_DISABLED`"]
     #[inline(always)]
     pub fn is_mb_disabled(&self) -> bool {
-        **self == MOT_A::MB_DISABLED
+        *self == MOT_A::MB_DISABLED
     }
     #[doc = "Checks if the value of the field is `MB_RX`"]
     #[inline(always)]
     pub fn is_mb_rx(&self) -> bool {
-        **self == MOT_A::MB_RX
+        *self == MOT_A::MB_RX
     }
     #[doc = "Checks if the value of the field is `MB_RX_OVERWRITE`"]
     #[inline(always)]
     pub fn is_mb_rx_overwrite(&self) -> bool {
-        **self == MOT_A::MB_RX_OVERWRITE
+        *self == MOT_A::MB_RX_OVERWRITE
     }
     #[doc = "Checks if the value of the field is `MB_TX`"]
     #[inline(always)]
     pub fn is_mb_tx(&self) -> bool {
-        **self == MOT_A::MB_TX
+        *self == MOT_A::MB_TX
     }
     #[doc = "Checks if the value of the field is `MB_CONSUMER`"]
     #[inline(always)]
     pub fn is_mb_consumer(&self) -> bool {
-        **self == MOT_A::MB_CONSUMER
+        *self == MOT_A::MB_CONSUMER
     }
     #[doc = "Checks if the value of the field is `MB_PRODUCER`"]
     #[inline(always)]
     pub fn is_mb_producer(&self) -> bool {
-        **self == MOT_A::MB_PRODUCER
-    }
-}
-impl core::ops::Deref for MOT_R {
-    type Target = crate::FieldReader<u8, MOT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MOT_A::MB_PRODUCER
     }
 }
 #[doc = "Field `MOT` writer - Mailbox Object Type"]
-pub struct MOT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MOT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MOT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type MOT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MMR3_SPEC, u8, MOT_A, 3, O>;
+impl<'a, const O: u8> MOT_W<'a, O> {
     #[doc = "Mailbox is disabled. This prevents receiving or transmitting any messages with this mailbox."]
     #[inline(always)]
     pub fn mb_disabled(self) -> &'a mut W {
@@ -209,12 +145,6 @@ impl<'a> MOT_W<'a> {
     pub fn mb_producer(self) -> &'a mut W {
         self.variant(MOT_A::MB_PRODUCER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 24)) | ((value as u32 & 0x07) << 24);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:15 - Mailbox Timemark"]
@@ -230,24 +160,24 @@ impl R {
     #[doc = "Bits 24:26 - Mailbox Object Type"]
     #[inline(always)]
     pub fn mot(&self) -> MOT_R {
-        MOT_R::new(((self.bits >> 24) & 0x07) as u8)
+        MOT_R::new(((self.bits >> 24) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Mailbox Timemark"]
     #[inline(always)]
-    pub fn mtimemark(&mut self) -> MTIMEMARK_W {
-        MTIMEMARK_W { w: self }
+    pub fn mtimemark(&mut self) -> MTIMEMARK_W<0> {
+        MTIMEMARK_W::new(self)
     }
     #[doc = "Bits 16:19 - Mailbox Priority"]
     #[inline(always)]
-    pub fn prior(&mut self) -> PRIOR_W {
-        PRIOR_W { w: self }
+    pub fn prior(&mut self) -> PRIOR_W<16> {
+        PRIOR_W::new(self)
     }
     #[doc = "Bits 24:26 - Mailbox Object Type"]
     #[inline(always)]
-    pub fn mot(&mut self) -> MOT_W {
-        MOT_W { w: self }
+    pub fn mot(&mut self) -> MOT_W<24> {
+        MOT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

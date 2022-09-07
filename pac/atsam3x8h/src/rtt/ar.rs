@@ -35,32 +35,9 @@ impl From<crate::W<AR_SPEC>> for W {
     }
 }
 #[doc = "Field `ALMV` reader - Alarm Value"]
-pub struct ALMV_R(crate::FieldReader<u32, u32>);
-impl ALMV_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        ALMV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ALMV_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ALMV_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `ALMV` writer - Alarm Value"]
-pub struct ALMV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALMV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type ALMV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AR_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Alarm Value"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Alarm Value"]
     #[inline(always)]
-    pub fn almv(&mut self) -> ALMV_W {
-        ALMV_W { w: self }
+    pub fn almv(&mut self) -> ALMV_W<0> {
+        ALMV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

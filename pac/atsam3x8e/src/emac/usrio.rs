@@ -35,101 +35,35 @@ impl From<crate::W<USRIO_SPEC>> for W {
     }
 }
 #[doc = "Field `RMII` reader - Reduce MII"]
-pub struct RMII_R(crate::FieldReader<bool, bool>);
-impl RMII_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RMII_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RMII_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RMII_R = crate::BitReader<bool>;
 #[doc = "Field `RMII` writer - Reduce MII"]
-pub struct RMII_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RMII_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type RMII_W<'a, const O: u8> = crate::BitWriter<'a, u32, USRIO_SPEC, bool, O>;
 #[doc = "Field `CLKEN` reader - Clock Enable"]
-pub struct CLKEN_R(crate::FieldReader<bool, bool>);
-impl CLKEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CLKEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLKEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLKEN_R = crate::BitReader<bool>;
 #[doc = "Field `CLKEN` writer - Clock Enable"]
-pub struct CLKEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CLKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, USRIO_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Reduce MII"]
     #[inline(always)]
     pub fn rmii(&self) -> RMII_R {
-        RMII_R::new((self.bits & 0x01) != 0)
+        RMII_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Clock Enable"]
     #[inline(always)]
     pub fn clken(&self) -> CLKEN_R {
-        CLKEN_R::new(((self.bits >> 1) & 0x01) != 0)
+        CLKEN_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Reduce MII"]
     #[inline(always)]
-    pub fn rmii(&mut self) -> RMII_W {
-        RMII_W { w: self }
+    pub fn rmii(&mut self) -> RMII_W<0> {
+        RMII_W::new(self)
     }
     #[doc = "Bit 1 - Clock Enable"]
     #[inline(always)]
-    pub fn clken(&mut self) -> CLKEN_W {
-        CLKEN_W { w: self }
+    pub fn clken(&mut self) -> CLKEN_W<1> {
+        CLKEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

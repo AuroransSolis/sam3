@@ -20,59 +20,19 @@ impl From<crate::W<ECC_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `RST` writer - Reset ECC"]
-pub struct RST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, ECC_CTRL_SPEC, bool, O>;
 #[doc = "Field `SWRST` writer - Software Reset"]
-pub struct SWRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWRST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type SWRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, ECC_CTRL_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Reset ECC"]
     #[inline(always)]
-    pub fn rst(&mut self) -> RST_W {
-        RST_W { w: self }
+    pub fn rst(&mut self) -> RST_W<0> {
+        RST_W::new(self)
     }
     #[doc = "Bit 1 - Software Reset"]
     #[inline(always)]
-    pub fn swrst(&mut self) -> SWRST_W {
-        SWRST_W { w: self }
+    pub fn swrst(&mut self) -> SWRST_W<1> {
+        SWRST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

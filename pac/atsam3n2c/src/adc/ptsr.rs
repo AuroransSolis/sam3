@@ -14,45 +14,19 @@ impl From<crate::R<PTSR_SPEC>> for R {
     }
 }
 #[doc = "Field `RXTEN` reader - Receiver Transfer Enable"]
-pub struct RXTEN_R(crate::FieldReader<bool, bool>);
-impl RXTEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RXTEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXTEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXTEN_R = crate::BitReader<bool>;
 #[doc = "Field `TXTEN` reader - Transmitter Transfer Enable"]
-pub struct TXTEN_R(crate::FieldReader<bool, bool>);
-impl TXTEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TXTEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXTEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXTEN_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Receiver Transfer Enable"]
     #[inline(always)]
     pub fn rxten(&self) -> RXTEN_R {
-        RXTEN_R::new((self.bits & 0x01) != 0)
+        RXTEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 8 - Transmitter Transfer Enable"]
     #[inline(always)]
     pub fn txten(&self) -> TXTEN_R {
-        TXTEN_R::new(((self.bits >> 8) & 0x01) != 0)
+        TXTEN_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 #[doc = "Transfer Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ptsr](index.html) module"]

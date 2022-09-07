@@ -35,32 +35,9 @@ impl From<crate::W<FTO_SPEC>> for W {
     }
 }
 #[doc = "Field `FTOK` reader - Frames Transmitted OK"]
-pub struct FTOK_R(crate::FieldReader<u32, u32>);
-impl FTOK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        FTOK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FTOK_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FTOK_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `FTOK` writer - Frames Transmitted OK"]
-pub struct FTOK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FTOK_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type FTOK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FTO_SPEC, u32, u32, 24, O>;
 impl R {
     #[doc = "Bits 0:23 - Frames Transmitted OK"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:23 - Frames Transmitted OK"]
     #[inline(always)]
-    pub fn ftok(&mut self) -> FTOK_W {
-        FTOK_W { w: self }
+    pub fn ftok(&mut self) -> FTOK_W<0> {
+        FTOK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

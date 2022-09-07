@@ -35,32 +35,9 @@ impl From<crate::W<SCF_SPEC>> for W {
     }
 }
 #[doc = "Field `SCF` reader - Single Collision Frames"]
-pub struct SCF_R(crate::FieldReader<u16, u16>);
-impl SCF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        SCF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCF_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCF_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `SCF` writer - Single Collision Frames"]
-pub struct SCF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCF_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type SCF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCF_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Single Collision Frames"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Single Collision Frames"]
     #[inline(always)]
-    pub fn scf(&mut self) -> SCF_W {
-        SCF_W { w: self }
+    pub fn scf(&mut self) -> SCF_W<0> {
+        SCF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

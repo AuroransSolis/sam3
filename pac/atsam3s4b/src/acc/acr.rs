@@ -34,6 +34,8 @@ impl From<crate::W<ACR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ISEL` reader - Current SELection"]
+pub type ISEL_R = crate::BitReader<ISEL_A>;
 #[doc = "Current SELection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ISEL_A {
@@ -48,14 +50,8 @@ impl From<ISEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ISEL` reader - Current SELection"]
-pub struct ISEL_R(crate::FieldReader<bool, ISEL_A>);
 impl ISEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ISEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ISEL_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl ISEL_R {
     #[doc = "Checks if the value of the field is `LOPW`"]
     #[inline(always)]
     pub fn is_lopw(&self) -> bool {
-        **self == ISEL_A::LOPW
+        *self == ISEL_A::LOPW
     }
     #[doc = "Checks if the value of the field is `HISP`"]
     #[inline(always)]
     pub fn is_hisp(&self) -> bool {
-        **self == ISEL_A::HISP
-    }
-}
-impl core::ops::Deref for ISEL_R {
-    type Target = crate::FieldReader<bool, ISEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ISEL_A::HISP
     }
 }
 #[doc = "Field `ISEL` writer - Current SELection"]
-pub struct ISEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ISEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ISEL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ISEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACR_SPEC, ISEL_A, O>;
+impl<'a, const O: u8> ISEL_W<'a, O> {
     #[doc = "low power option."]
     #[inline(always)]
     pub fn lopw(self) -> &'a mut W {
@@ -101,72 +83,33 @@ impl<'a> ISEL_W<'a> {
     pub fn hisp(self) -> &'a mut W {
         self.variant(ISEL_A::HISP)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 #[doc = "Field `HYST` reader - HYSTeresis selection"]
-pub struct HYST_R(crate::FieldReader<u8, u8>);
-impl HYST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        HYST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HYST_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HYST_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HYST` writer - HYSTeresis selection"]
-pub struct HYST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HYST_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 1)) | ((value as u32 & 0x03) << 1);
-        self.w
-    }
-}
+pub type HYST_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ACR_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bit 0 - Current SELection"]
     #[inline(always)]
     pub fn isel(&self) -> ISEL_R {
-        ISEL_R::new((self.bits & 0x01) != 0)
+        ISEL_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:2 - HYSTeresis selection"]
     #[inline(always)]
     pub fn hyst(&self) -> HYST_R {
-        HYST_R::new(((self.bits >> 1) & 0x03) as u8)
+        HYST_R::new(((self.bits >> 1) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Current SELection"]
     #[inline(always)]
-    pub fn isel(&mut self) -> ISEL_W {
-        ISEL_W { w: self }
+    pub fn isel(&mut self) -> ISEL_W<0> {
+        ISEL_W::new(self)
     }
     #[doc = "Bits 1:2 - HYSTeresis selection"]
     #[inline(always)]
-    pub fn hyst(&mut self) -> HYST_W {
-        HYST_W { w: self }
+    pub fn hyst(&mut self) -> HYST_W<1> {
+        HYST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

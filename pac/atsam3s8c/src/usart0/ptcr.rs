@@ -20,113 +20,33 @@ impl From<crate::W<PTCR_SPEC>> for W {
     }
 }
 #[doc = "Field `RXTEN` writer - Receiver Transfer Enable"]
-pub struct RXTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXTEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type RXTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PTCR_SPEC, bool, O>;
 #[doc = "Field `RXTDIS` writer - Receiver Transfer Disable"]
-pub struct RXTDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXTDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type RXTDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PTCR_SPEC, bool, O>;
 #[doc = "Field `TXTEN` writer - Transmitter Transfer Enable"]
-pub struct TXTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXTEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type TXTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PTCR_SPEC, bool, O>;
 #[doc = "Field `TXTDIS` writer - Transmitter Transfer Disable"]
-pub struct TXTDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXTDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type TXTDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PTCR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Receiver Transfer Enable"]
     #[inline(always)]
-    pub fn rxten(&mut self) -> RXTEN_W {
-        RXTEN_W { w: self }
+    pub fn rxten(&mut self) -> RXTEN_W<0> {
+        RXTEN_W::new(self)
     }
     #[doc = "Bit 1 - Receiver Transfer Disable"]
     #[inline(always)]
-    pub fn rxtdis(&mut self) -> RXTDIS_W {
-        RXTDIS_W { w: self }
+    pub fn rxtdis(&mut self) -> RXTDIS_W<1> {
+        RXTDIS_W::new(self)
     }
     #[doc = "Bit 8 - Transmitter Transfer Enable"]
     #[inline(always)]
-    pub fn txten(&mut self) -> TXTEN_W {
-        TXTEN_W { w: self }
+    pub fn txten(&mut self) -> TXTEN_W<8> {
+        TXTEN_W::new(self)
     }
     #[doc = "Bit 9 - Transmitter Transfer Disable"]
     #[inline(always)]
-    pub fn txtdis(&mut self) -> TXTDIS_W {
-        TXTDIS_W { w: self }
+    pub fn txtdis(&mut self) -> TXTDIS_W<9> {
+        TXTDIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

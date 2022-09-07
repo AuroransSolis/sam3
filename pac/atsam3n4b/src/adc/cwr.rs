@@ -35,59 +35,13 @@ impl From<crate::W<CWR_SPEC>> for W {
     }
 }
 #[doc = "Field `LOWTHRES` reader - Low Threshold"]
-pub struct LOWTHRES_R(crate::FieldReader<u16, u16>);
-impl LOWTHRES_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        LOWTHRES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LOWTHRES_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LOWTHRES_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `LOWTHRES` writer - Low Threshold"]
-pub struct LOWTHRES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOWTHRES_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
-        self.w
-    }
-}
+pub type LOWTHRES_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CWR_SPEC, u16, u16, 12, O>;
 #[doc = "Field `HIGHTHRES` reader - High Threshold"]
-pub struct HIGHTHRES_R(crate::FieldReader<u16, u16>);
-impl HIGHTHRES_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        HIGHTHRES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HIGHTHRES_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HIGHTHRES_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `HIGHTHRES` writer - High Threshold"]
-pub struct HIGHTHRES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HIGHTHRES_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0fff << 16)) | ((value as u32 & 0x0fff) << 16);
-        self.w
-    }
-}
+pub type HIGHTHRES_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CWR_SPEC, u16, u16, 12, O>;
 impl R {
     #[doc = "Bits 0:11 - Low Threshold"]
     #[inline(always)]
@@ -103,13 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Low Threshold"]
     #[inline(always)]
-    pub fn lowthres(&mut self) -> LOWTHRES_W {
-        LOWTHRES_W { w: self }
+    pub fn lowthres(&mut self) -> LOWTHRES_W<0> {
+        LOWTHRES_W::new(self)
     }
     #[doc = "Bits 16:27 - High Threshold"]
     #[inline(always)]
-    pub fn highthres(&mut self) -> HIGHTHRES_W {
-        HIGHTHRES_W { w: self }
+    pub fn highthres(&mut self) -> HIGHTHRES_W<16> {
+        HIGHTHRES_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

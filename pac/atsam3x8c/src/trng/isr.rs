@@ -14,25 +14,12 @@ impl From<crate::R<ISR_SPEC>> for R {
     }
 }
 #[doc = "Field `DATRDY` reader - Data Ready"]
-pub struct DATRDY_R(crate::FieldReader<bool, bool>);
-impl DATRDY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DATRDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DATRDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DATRDY_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Data Ready"]
     #[inline(always)]
     pub fn datrdy(&self) -> DATRDY_R {
-        DATRDY_R::new((self.bits & 0x01) != 0)
+        DATRDY_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [isr](index.html) module"]

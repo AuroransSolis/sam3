@@ -35,32 +35,10 @@ impl From<crate::W<HSTDMANXTDSC7_SPEC>> for W {
     }
 }
 #[doc = "Field `NXT_DSC_ADD` reader - Next Descriptor Address"]
-pub struct NXT_DSC_ADD_R(crate::FieldReader<u32, u32>);
-impl NXT_DSC_ADD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        NXT_DSC_ADD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NXT_DSC_ADD_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NXT_DSC_ADD_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `NXT_DSC_ADD` writer - Next Descriptor Address"]
-pub struct NXT_DSC_ADD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NXT_DSC_ADD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type NXT_DSC_ADD_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HSTDMANXTDSC7_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Next Descriptor Address"]
     #[inline(always)]
@@ -71,8 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Next Descriptor Address"]
     #[inline(always)]
-    pub fn nxt_dsc_add(&mut self) -> NXT_DSC_ADD_W {
-        NXT_DSC_ADD_W { w: self }
+    pub fn nxt_dsc_add(&mut self) -> NXT_DSC_ADD_W<0> {
+        NXT_DSC_ADD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

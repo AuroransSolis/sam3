@@ -14,20 +14,7 @@ impl From<crate::R<CCNT1_SPEC>> for R {
     }
 }
 #[doc = "Field `CNT` reader - Channel Counter Register"]
-pub struct CNT_R(crate::FieldReader<u32, u32>);
-impl CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CNT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CNT_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:23 - Channel Counter Register"]
     #[inline(always)]

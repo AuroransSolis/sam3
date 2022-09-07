@@ -20,329 +20,89 @@ impl From<crate::W<EBCIDR_SPEC>> for W {
     }
 }
 #[doc = "Field `BTC0` writer - Buffer Transfer Completed \\[3:0\\]"]
-pub struct BTC0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BTC0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type BTC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, EBCIDR_SPEC, bool, O>;
 #[doc = "Field `BTC1` writer - Buffer Transfer Completed \\[3:0\\]"]
-pub struct BTC1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BTC1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type BTC1_W<'a, const O: u8> = crate::BitWriter<'a, u32, EBCIDR_SPEC, bool, O>;
 #[doc = "Field `BTC2` writer - Buffer Transfer Completed \\[3:0\\]"]
-pub struct BTC2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BTC2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type BTC2_W<'a, const O: u8> = crate::BitWriter<'a, u32, EBCIDR_SPEC, bool, O>;
 #[doc = "Field `BTC3` writer - Buffer Transfer Completed \\[3:0\\]"]
-pub struct BTC3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BTC3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type BTC3_W<'a, const O: u8> = crate::BitWriter<'a, u32, EBCIDR_SPEC, bool, O>;
 #[doc = "Field `CBTC0` writer - Chained Buffer Transfer Completed \\[3:0\\]"]
-pub struct CBTC0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CBTC0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type CBTC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, EBCIDR_SPEC, bool, O>;
 #[doc = "Field `CBTC1` writer - Chained Buffer Transfer Completed \\[3:0\\]"]
-pub struct CBTC1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CBTC1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type CBTC1_W<'a, const O: u8> = crate::BitWriter<'a, u32, EBCIDR_SPEC, bool, O>;
 #[doc = "Field `CBTC2` writer - Chained Buffer Transfer Completed \\[3:0\\]"]
-pub struct CBTC2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CBTC2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type CBTC2_W<'a, const O: u8> = crate::BitWriter<'a, u32, EBCIDR_SPEC, bool, O>;
 #[doc = "Field `CBTC3` writer - Chained Buffer Transfer Completed \\[3:0\\]"]
-pub struct CBTC3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CBTC3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type CBTC3_W<'a, const O: u8> = crate::BitWriter<'a, u32, EBCIDR_SPEC, bool, O>;
 #[doc = "Field `ERR0` writer - Access Error \\[3:0\\]"]
-pub struct ERR0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERR0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type ERR0_W<'a, const O: u8> = crate::BitWriter<'a, u32, EBCIDR_SPEC, bool, O>;
 #[doc = "Field `ERR1` writer - Access Error \\[3:0\\]"]
-pub struct ERR1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERR1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type ERR1_W<'a, const O: u8> = crate::BitWriter<'a, u32, EBCIDR_SPEC, bool, O>;
 #[doc = "Field `ERR2` writer - Access Error \\[3:0\\]"]
-pub struct ERR2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERR2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
+pub type ERR2_W<'a, const O: u8> = crate::BitWriter<'a, u32, EBCIDR_SPEC, bool, O>;
 #[doc = "Field `ERR3` writer - Access Error \\[3:0\\]"]
-pub struct ERR3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERR3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
-}
+pub type ERR3_W<'a, const O: u8> = crate::BitWriter<'a, u32, EBCIDR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Buffer Transfer Completed \\[3:0\\]"]
     #[inline(always)]
-    pub fn btc0(&mut self) -> BTC0_W {
-        BTC0_W { w: self }
+    pub fn btc0(&mut self) -> BTC0_W<0> {
+        BTC0_W::new(self)
     }
     #[doc = "Bit 1 - Buffer Transfer Completed \\[3:0\\]"]
     #[inline(always)]
-    pub fn btc1(&mut self) -> BTC1_W {
-        BTC1_W { w: self }
+    pub fn btc1(&mut self) -> BTC1_W<1> {
+        BTC1_W::new(self)
     }
     #[doc = "Bit 2 - Buffer Transfer Completed \\[3:0\\]"]
     #[inline(always)]
-    pub fn btc2(&mut self) -> BTC2_W {
-        BTC2_W { w: self }
+    pub fn btc2(&mut self) -> BTC2_W<2> {
+        BTC2_W::new(self)
     }
     #[doc = "Bit 3 - Buffer Transfer Completed \\[3:0\\]"]
     #[inline(always)]
-    pub fn btc3(&mut self) -> BTC3_W {
-        BTC3_W { w: self }
+    pub fn btc3(&mut self) -> BTC3_W<3> {
+        BTC3_W::new(self)
     }
     #[doc = "Bit 8 - Chained Buffer Transfer Completed \\[3:0\\]"]
     #[inline(always)]
-    pub fn cbtc0(&mut self) -> CBTC0_W {
-        CBTC0_W { w: self }
+    pub fn cbtc0(&mut self) -> CBTC0_W<8> {
+        CBTC0_W::new(self)
     }
     #[doc = "Bit 9 - Chained Buffer Transfer Completed \\[3:0\\]"]
     #[inline(always)]
-    pub fn cbtc1(&mut self) -> CBTC1_W {
-        CBTC1_W { w: self }
+    pub fn cbtc1(&mut self) -> CBTC1_W<9> {
+        CBTC1_W::new(self)
     }
     #[doc = "Bit 10 - Chained Buffer Transfer Completed \\[3:0\\]"]
     #[inline(always)]
-    pub fn cbtc2(&mut self) -> CBTC2_W {
-        CBTC2_W { w: self }
+    pub fn cbtc2(&mut self) -> CBTC2_W<10> {
+        CBTC2_W::new(self)
     }
     #[doc = "Bit 11 - Chained Buffer Transfer Completed \\[3:0\\]"]
     #[inline(always)]
-    pub fn cbtc3(&mut self) -> CBTC3_W {
-        CBTC3_W { w: self }
+    pub fn cbtc3(&mut self) -> CBTC3_W<11> {
+        CBTC3_W::new(self)
     }
     #[doc = "Bit 16 - Access Error \\[3:0\\]"]
     #[inline(always)]
-    pub fn err0(&mut self) -> ERR0_W {
-        ERR0_W { w: self }
+    pub fn err0(&mut self) -> ERR0_W<16> {
+        ERR0_W::new(self)
     }
     #[doc = "Bit 17 - Access Error \\[3:0\\]"]
     #[inline(always)]
-    pub fn err1(&mut self) -> ERR1_W {
-        ERR1_W { w: self }
+    pub fn err1(&mut self) -> ERR1_W<17> {
+        ERR1_W::new(self)
     }
     #[doc = "Bit 18 - Access Error \\[3:0\\]"]
     #[inline(always)]
-    pub fn err2(&mut self) -> ERR2_W {
-        ERR2_W { w: self }
+    pub fn err2(&mut self) -> ERR2_W<18> {
+        ERR2_W::new(self)
     }
     #[doc = "Bit 19 - Access Error \\[3:0\\]"]
     #[inline(always)]
-    pub fn err3(&mut self) -> ERR3_W {
-        ERR3_W { w: self }
+    pub fn err3(&mut self) -> ERR3_W<19> {
+        ERR3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

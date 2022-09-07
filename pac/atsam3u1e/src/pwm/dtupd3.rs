@@ -20,39 +20,19 @@ impl From<crate::W<DTUPD3_SPEC>> for W {
     }
 }
 #[doc = "Field `DTHUPD` writer - Dead-Time Value Update for PWMHx Output"]
-pub struct DTHUPD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTHUPD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type DTHUPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTUPD3_SPEC, u16, u16, 16, O>;
 #[doc = "Field `DTLUPD` writer - Dead-Time Value Update for PWMLx Output"]
-pub struct DTLUPD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTLUPD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type DTLUPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTUPD3_SPEC, u16, u16, 16, O>;
 impl W {
     #[doc = "Bits 0:15 - Dead-Time Value Update for PWMHx Output"]
     #[inline(always)]
-    pub fn dthupd(&mut self) -> DTHUPD_W {
-        DTHUPD_W { w: self }
+    pub fn dthupd(&mut self) -> DTHUPD_W<0> {
+        DTHUPD_W::new(self)
     }
     #[doc = "Bits 16:31 - Dead-Time Value Update for PWMLx Output"]
     #[inline(always)]
-    pub fn dtlupd(&mut self) -> DTLUPD_W {
-        DTLUPD_W { w: self }
+    pub fn dtlupd(&mut self) -> DTLUPD_W<16> {
+        DTLUPD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

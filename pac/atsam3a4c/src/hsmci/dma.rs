@@ -35,32 +35,11 @@ impl From<crate::W<DMA_SPEC>> for W {
     }
 }
 #[doc = "Field `OFFSET` reader - DMA Write Buffer Offset"]
-pub struct OFFSET_R(crate::FieldReader<u8, u8>);
-impl OFFSET_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        OFFSET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OFFSET_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OFFSET_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OFFSET` writer - DMA Write Buffer Offset"]
-pub struct OFFSET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OFFSET_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
-}
+pub type OFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DMA_SPEC, u8, u8, 2, O>;
+#[doc = "Field `CHKSIZE` reader - DMA Channel Read and Write Chunk Size"]
+pub type CHKSIZE_R = crate::BitReader<CHKSIZE_A>;
 #[doc = "DMA Channel Read and Write Chunk Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHKSIZE_A {
@@ -75,14 +54,8 @@ impl From<CHKSIZE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CHKSIZE` reader - DMA Channel Read and Write Chunk Size"]
-pub struct CHKSIZE_R(crate::FieldReader<bool, CHKSIZE_A>);
 impl CHKSIZE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CHKSIZE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHKSIZE_A {
         match self.bits {
@@ -93,31 +66,17 @@ impl CHKSIZE_R {
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == CHKSIZE_A::_1
+        *self == CHKSIZE_A::_1
     }
     #[doc = "Checks if the value of the field is `_4`"]
     #[inline(always)]
     pub fn is_4(&self) -> bool {
-        **self == CHKSIZE_A::_4
-    }
-}
-impl core::ops::Deref for CHKSIZE_R {
-    type Target = crate::FieldReader<bool, CHKSIZE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CHKSIZE_A::_4
     }
 }
 #[doc = "Field `CHKSIZE` writer - DMA Channel Read and Write Chunk Size"]
-pub struct CHKSIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHKSIZE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CHKSIZE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CHKSIZE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DMA_SPEC, CHKSIZE_A, O>;
+impl<'a, const O: u8> CHKSIZE_W<'a, O> {
     #[doc = "1 data available"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
@@ -128,139 +87,57 @@ impl<'a> CHKSIZE_W<'a> {
     pub fn _4(self) -> &'a mut W {
         self.variant(CHKSIZE_A::_4)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
 #[doc = "Field `DMAEN` reader - DMA Hardware Handshaking Enable"]
-pub struct DMAEN_R(crate::FieldReader<bool, bool>);
-impl DMAEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DMAEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMAEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMAEN_R = crate::BitReader<bool>;
 #[doc = "Field `DMAEN` writer - DMA Hardware Handshaking Enable"]
-pub struct DMAEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMAEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type DMAEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DMA_SPEC, bool, O>;
 #[doc = "Field `ROPT` reader - Read Optimization with padding"]
-pub struct ROPT_R(crate::FieldReader<bool, bool>);
-impl ROPT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ROPT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ROPT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ROPT_R = crate::BitReader<bool>;
 #[doc = "Field `ROPT` writer - Read Optimization with padding"]
-pub struct ROPT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ROPT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type ROPT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DMA_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:1 - DMA Write Buffer Offset"]
     #[inline(always)]
     pub fn offset(&self) -> OFFSET_R {
-        OFFSET_R::new((self.bits & 0x03) as u8)
+        OFFSET_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 4 - DMA Channel Read and Write Chunk Size"]
     #[inline(always)]
     pub fn chksize(&self) -> CHKSIZE_R {
-        CHKSIZE_R::new(((self.bits >> 4) & 0x01) != 0)
+        CHKSIZE_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 8 - DMA Hardware Handshaking Enable"]
     #[inline(always)]
     pub fn dmaen(&self) -> DMAEN_R {
-        DMAEN_R::new(((self.bits >> 8) & 0x01) != 0)
+        DMAEN_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 12 - Read Optimization with padding"]
     #[inline(always)]
     pub fn ropt(&self) -> ROPT_R {
-        ROPT_R::new(((self.bits >> 12) & 0x01) != 0)
+        ROPT_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - DMA Write Buffer Offset"]
     #[inline(always)]
-    pub fn offset(&mut self) -> OFFSET_W {
-        OFFSET_W { w: self }
+    pub fn offset(&mut self) -> OFFSET_W<0> {
+        OFFSET_W::new(self)
     }
     #[doc = "Bit 4 - DMA Channel Read and Write Chunk Size"]
     #[inline(always)]
-    pub fn chksize(&mut self) -> CHKSIZE_W {
-        CHKSIZE_W { w: self }
+    pub fn chksize(&mut self) -> CHKSIZE_W<4> {
+        CHKSIZE_W::new(self)
     }
     #[doc = "Bit 8 - DMA Hardware Handshaking Enable"]
     #[inline(always)]
-    pub fn dmaen(&mut self) -> DMAEN_W {
-        DMAEN_W { w: self }
+    pub fn dmaen(&mut self) -> DMAEN_W<8> {
+        DMAEN_W::new(self)
     }
     #[doc = "Bit 12 - Read Optimization with padding"]
     #[inline(always)]
-    pub fn ropt(&mut self) -> ROPT_W {
-        ROPT_W { w: self }
+    pub fn ropt(&mut self) -> ROPT_W<12> {
+        ROPT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

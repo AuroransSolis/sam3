@@ -14,20 +14,7 @@ impl From<crate::R<TIMESTP_SPEC>> for R {
     }
 }
 #[doc = "Field `MTIMESTAMP` reader - Timestamp"]
-pub struct MTIMESTAMP_R(crate::FieldReader<u16, u16>);
-impl MTIMESTAMP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        MTIMESTAMP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MTIMESTAMP_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MTIMESTAMP_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Timestamp"]
     #[inline(always)]

@@ -35,217 +35,29 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `DEV_ADDR` reader - UDPHS Address"]
-pub struct DEV_ADDR_R(crate::FieldReader<u8, u8>);
-impl DEV_ADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DEV_ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEV_ADDR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEV_ADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DEV_ADDR` writer - UDPHS Address"]
-pub struct DEV_ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEV_ADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
-        self.w
-    }
-}
+pub type DEV_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 7, O>;
 #[doc = "Field `FADDR_EN` reader - Function Address Enable"]
-pub struct FADDR_EN_R(crate::FieldReader<bool, bool>);
-impl FADDR_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FADDR_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FADDR_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FADDR_EN_R = crate::BitReader<bool>;
 #[doc = "Field `FADDR_EN` writer - Function Address Enable"]
-pub struct FADDR_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FADDR_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type FADDR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `EN_UDPHS` reader - UDPHS Enable"]
-pub struct EN_UDPHS_R(crate::FieldReader<bool, bool>);
-impl EN_UDPHS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        EN_UDPHS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EN_UDPHS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EN_UDPHS_R = crate::BitReader<bool>;
 #[doc = "Field `EN_UDPHS` writer - UDPHS Enable"]
-pub struct EN_UDPHS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN_UDPHS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type EN_UDPHS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `DETACH` reader - Detach Command"]
-pub struct DETACH_R(crate::FieldReader<bool, bool>);
-impl DETACH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DETACH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DETACH_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DETACH_R = crate::BitReader<bool>;
 #[doc = "Field `DETACH` writer - Detach Command"]
-pub struct DETACH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DETACH_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type DETACH_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `REWAKEUP` reader - Send Remote Wake Up"]
-pub struct REWAKEUP_R(crate::FieldReader<bool, bool>);
-impl REWAKEUP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REWAKEUP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for REWAKEUP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type REWAKEUP_R = crate::BitReader<bool>;
 #[doc = "Field `REWAKEUP` writer - Send Remote Wake Up"]
-pub struct REWAKEUP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REWAKEUP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type REWAKEUP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `PULLD_DIS` reader - Pull-Down Disable"]
-pub struct PULLD_DIS_R(crate::FieldReader<bool, bool>);
-impl PULLD_DIS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PULLD_DIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PULLD_DIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PULLD_DIS_R = crate::BitReader<bool>;
 #[doc = "Field `PULLD_DIS` writer - Pull-Down Disable"]
-pub struct PULLD_DIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PULLD_DIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type PULLD_DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:6 - UDPHS Address"]
     #[inline(always)]
@@ -255,59 +67,59 @@ impl R {
     #[doc = "Bit 7 - Function Address Enable"]
     #[inline(always)]
     pub fn faddr_en(&self) -> FADDR_EN_R {
-        FADDR_EN_R::new(((self.bits >> 7) & 0x01) != 0)
+        FADDR_EN_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - UDPHS Enable"]
     #[inline(always)]
     pub fn en_udphs(&self) -> EN_UDPHS_R {
-        EN_UDPHS_R::new(((self.bits >> 8) & 0x01) != 0)
+        EN_UDPHS_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Detach Command"]
     #[inline(always)]
     pub fn detach(&self) -> DETACH_R {
-        DETACH_R::new(((self.bits >> 9) & 0x01) != 0)
+        DETACH_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Send Remote Wake Up"]
     #[inline(always)]
     pub fn rewakeup(&self) -> REWAKEUP_R {
-        REWAKEUP_R::new(((self.bits >> 10) & 0x01) != 0)
+        REWAKEUP_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Pull-Down Disable"]
     #[inline(always)]
     pub fn pulld_dis(&self) -> PULLD_DIS_R {
-        PULLD_DIS_R::new(((self.bits >> 11) & 0x01) != 0)
+        PULLD_DIS_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:6 - UDPHS Address"]
     #[inline(always)]
-    pub fn dev_addr(&mut self) -> DEV_ADDR_W {
-        DEV_ADDR_W { w: self }
+    pub fn dev_addr(&mut self) -> DEV_ADDR_W<0> {
+        DEV_ADDR_W::new(self)
     }
     #[doc = "Bit 7 - Function Address Enable"]
     #[inline(always)]
-    pub fn faddr_en(&mut self) -> FADDR_EN_W {
-        FADDR_EN_W { w: self }
+    pub fn faddr_en(&mut self) -> FADDR_EN_W<7> {
+        FADDR_EN_W::new(self)
     }
     #[doc = "Bit 8 - UDPHS Enable"]
     #[inline(always)]
-    pub fn en_udphs(&mut self) -> EN_UDPHS_W {
-        EN_UDPHS_W { w: self }
+    pub fn en_udphs(&mut self) -> EN_UDPHS_W<8> {
+        EN_UDPHS_W::new(self)
     }
     #[doc = "Bit 9 - Detach Command"]
     #[inline(always)]
-    pub fn detach(&mut self) -> DETACH_W {
-        DETACH_W { w: self }
+    pub fn detach(&mut self) -> DETACH_W<9> {
+        DETACH_W::new(self)
     }
     #[doc = "Bit 10 - Send Remote Wake Up"]
     #[inline(always)]
-    pub fn rewakeup(&mut self) -> REWAKEUP_W {
-        REWAKEUP_W { w: self }
+    pub fn rewakeup(&mut self) -> REWAKEUP_W<10> {
+        REWAKEUP_W::new(self)
     }
     #[doc = "Bit 11 - Pull-Down Disable"]
     #[inline(always)]
-    pub fn pulld_dis(&mut self) -> PULLD_DIS_W {
-        PULLD_DIS_W { w: self }
+    pub fn pulld_dis(&mut self) -> PULLD_DIS_W<11> {
+        PULLD_DIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

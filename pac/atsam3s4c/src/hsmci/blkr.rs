@@ -35,59 +35,13 @@ impl From<crate::W<BLKR_SPEC>> for W {
     }
 }
 #[doc = "Field `BCNT` reader - MMC/SDIO Block Count - SDIO Byte Count"]
-pub struct BCNT_R(crate::FieldReader<u16, u16>);
-impl BCNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        BCNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BCNT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BCNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `BCNT` writer - MMC/SDIO Block Count - SDIO Byte Count"]
-pub struct BCNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BCNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type BCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BLKR_SPEC, u16, u16, 16, O>;
 #[doc = "Field `BLKLEN` reader - Data Block Length"]
-pub struct BLKLEN_R(crate::FieldReader<u16, u16>);
-impl BLKLEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        BLKLEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BLKLEN_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BLKLEN_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `BLKLEN` writer - Data Block Length"]
-pub struct BLKLEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BLKLEN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type BLKLEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BLKR_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - MMC/SDIO Block Count - SDIO Byte Count"]
     #[inline(always)]
@@ -103,13 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - MMC/SDIO Block Count - SDIO Byte Count"]
     #[inline(always)]
-    pub fn bcnt(&mut self) -> BCNT_W {
-        BCNT_W { w: self }
+    pub fn bcnt(&mut self) -> BCNT_W<0> {
+        BCNT_W::new(self)
     }
     #[doc = "Bits 16:31 - Data Block Length"]
     #[inline(always)]
-    pub fn blklen(&mut self) -> BLKLEN_W {
-        BLKLEN_W { w: self }
+    pub fn blklen(&mut self) -> BLKLEN_W<16> {
+        BLKLEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

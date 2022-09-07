@@ -20,248 +20,68 @@ impl From<crate::W<DEVEPTIFR_SPEC>> for W {
     }
 }
 #[doc = "Field `TXINIS` writer - Transmitted IN Data Interrupt Set"]
-pub struct TXINIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXINIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type TXINIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVEPTIFR_SPEC, bool, O>;
 #[doc = "Field `RXOUTIS` writer - Received OUT Data Interrupt Set"]
-pub struct RXOUTIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXOUTIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type RXOUTIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVEPTIFR_SPEC, bool, O>;
 #[doc = "Field `RXSTPIS` writer - Received SETUP Interrupt Set"]
-pub struct RXSTPIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXSTPIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type RXSTPIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVEPTIFR_SPEC, bool, O>;
 #[doc = "Field `NAKOUTIS` writer - NAKed OUT Interrupt Set"]
-pub struct NAKOUTIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NAKOUTIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type NAKOUTIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVEPTIFR_SPEC, bool, O>;
 #[doc = "Field `NAKINIS` writer - NAKed IN Interrupt Set"]
-pub struct NAKINIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NAKINIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type NAKINIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVEPTIFR_SPEC, bool, O>;
 #[doc = "Field `OVERFIS` writer - Overflow Interrupt Set"]
-pub struct OVERFIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OVERFIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type OVERFIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVEPTIFR_SPEC, bool, O>;
 #[doc = "Field `STALLEDIS` writer - STALLed Interrupt Set"]
-pub struct STALLEDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STALLEDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type STALLEDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVEPTIFR_SPEC, bool, O>;
 #[doc = "Field `SHORTPACKETS` writer - Short Packet Interrupt Set"]
-pub struct SHORTPACKETS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SHORTPACKETS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type SHORTPACKETS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVEPTIFR_SPEC, bool, O>;
 #[doc = "Field `NBUSYBKS` writer - Number of Busy Banks Interrupt Set"]
-pub struct NBUSYBKS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NBUSYBKS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type NBUSYBKS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVEPTIFR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Transmitted IN Data Interrupt Set"]
     #[inline(always)]
-    pub fn txinis(&mut self) -> TXINIS_W {
-        TXINIS_W { w: self }
+    pub fn txinis(&mut self) -> TXINIS_W<0> {
+        TXINIS_W::new(self)
     }
     #[doc = "Bit 1 - Received OUT Data Interrupt Set"]
     #[inline(always)]
-    pub fn rxoutis(&mut self) -> RXOUTIS_W {
-        RXOUTIS_W { w: self }
+    pub fn rxoutis(&mut self) -> RXOUTIS_W<1> {
+        RXOUTIS_W::new(self)
     }
     #[doc = "Bit 2 - Received SETUP Interrupt Set"]
     #[inline(always)]
-    pub fn rxstpis(&mut self) -> RXSTPIS_W {
-        RXSTPIS_W { w: self }
+    pub fn rxstpis(&mut self) -> RXSTPIS_W<2> {
+        RXSTPIS_W::new(self)
     }
     #[doc = "Bit 3 - NAKed OUT Interrupt Set"]
     #[inline(always)]
-    pub fn nakoutis(&mut self) -> NAKOUTIS_W {
-        NAKOUTIS_W { w: self }
+    pub fn nakoutis(&mut self) -> NAKOUTIS_W<3> {
+        NAKOUTIS_W::new(self)
     }
     #[doc = "Bit 4 - NAKed IN Interrupt Set"]
     #[inline(always)]
-    pub fn nakinis(&mut self) -> NAKINIS_W {
-        NAKINIS_W { w: self }
+    pub fn nakinis(&mut self) -> NAKINIS_W<4> {
+        NAKINIS_W::new(self)
     }
     #[doc = "Bit 5 - Overflow Interrupt Set"]
     #[inline(always)]
-    pub fn overfis(&mut self) -> OVERFIS_W {
-        OVERFIS_W { w: self }
+    pub fn overfis(&mut self) -> OVERFIS_W<5> {
+        OVERFIS_W::new(self)
     }
     #[doc = "Bit 6 - STALLed Interrupt Set"]
     #[inline(always)]
-    pub fn stalledis(&mut self) -> STALLEDIS_W {
-        STALLEDIS_W { w: self }
+    pub fn stalledis(&mut self) -> STALLEDIS_W<6> {
+        STALLEDIS_W::new(self)
     }
     #[doc = "Bit 7 - Short Packet Interrupt Set"]
     #[inline(always)]
-    pub fn shortpackets(&mut self) -> SHORTPACKETS_W {
-        SHORTPACKETS_W { w: self }
+    pub fn shortpackets(&mut self) -> SHORTPACKETS_W<7> {
+        SHORTPACKETS_W::new(self)
     }
     #[doc = "Bit 12 - Number of Busy Banks Interrupt Set"]
     #[inline(always)]
-    pub fn nbusybks(&mut self) -> NBUSYBKS_W {
-        NBUSYBKS_W { w: self }
+    pub fn nbusybks(&mut self) -> NBUSYBKS_W<12> {
+        NBUSYBKS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

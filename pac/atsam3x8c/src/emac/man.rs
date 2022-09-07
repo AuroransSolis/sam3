@@ -35,167 +35,29 @@ impl From<crate::W<MAN_SPEC>> for W {
     }
 }
 #[doc = "Field `DATA` reader - "]
-pub struct DATA_R(crate::FieldReader<u16, u16>);
-impl DATA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        DATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DATA_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DATA_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DATA` writer - "]
-pub struct DATA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type DATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAN_SPEC, u16, u16, 16, O>;
 #[doc = "Field `CODE` reader - "]
-pub struct CODE_R(crate::FieldReader<u8, u8>);
-impl CODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CODE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CODE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CODE` writer - "]
-pub struct CODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CODE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
-        self.w
-    }
-}
+pub type CODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAN_SPEC, u8, u8, 2, O>;
 #[doc = "Field `REGA` reader - Register Address"]
-pub struct REGA_R(crate::FieldReader<u8, u8>);
-impl REGA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        REGA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for REGA_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type REGA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `REGA` writer - Register Address"]
-pub struct REGA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 18)) | ((value as u32 & 0x1f) << 18);
-        self.w
-    }
-}
+pub type REGA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAN_SPEC, u8, u8, 5, O>;
 #[doc = "Field `PHYA` reader - PHY Address"]
-pub struct PHYA_R(crate::FieldReader<u8, u8>);
-impl PHYA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PHYA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PHYA_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PHYA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PHYA` writer - PHY Address"]
-pub struct PHYA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PHYA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 23)) | ((value as u32 & 0x1f) << 23);
-        self.w
-    }
-}
+pub type PHYA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAN_SPEC, u8, u8, 5, O>;
 #[doc = "Field `RW` reader - Read-write"]
-pub struct RW_R(crate::FieldReader<u8, u8>);
-impl RW_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RW_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RW_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RW_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RW` writer - Read-write"]
-pub struct RW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RW_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 28)) | ((value as u32 & 0x03) << 28);
-        self.w
-    }
-}
+pub type RW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAN_SPEC, u8, u8, 2, O>;
 #[doc = "Field `SOF` reader - Start of frame"]
-pub struct SOF_R(crate::FieldReader<u8, u8>);
-impl SOF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SOF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SOF_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SOF_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SOF` writer - Start of frame"]
-pub struct SOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SOF_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 30)) | ((value as u32 & 0x03) << 30);
-        self.w
-    }
-}
+pub type SOF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAN_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 0:15"]
     #[inline(always)]
@@ -205,7 +67,7 @@ impl R {
     #[doc = "Bits 16:17"]
     #[inline(always)]
     pub fn code(&self) -> CODE_R {
-        CODE_R::new(((self.bits >> 16) & 0x03) as u8)
+        CODE_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 18:22 - Register Address"]
     #[inline(always)]
@@ -220,44 +82,44 @@ impl R {
     #[doc = "Bits 28:29 - Read-write"]
     #[inline(always)]
     pub fn rw(&self) -> RW_R {
-        RW_R::new(((self.bits >> 28) & 0x03) as u8)
+        RW_R::new(((self.bits >> 28) & 3) as u8)
     }
     #[doc = "Bits 30:31 - Start of frame"]
     #[inline(always)]
     pub fn sof(&self) -> SOF_R {
-        SOF_R::new(((self.bits >> 30) & 0x03) as u8)
+        SOF_R::new(((self.bits >> 30) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
-    pub fn data(&mut self) -> DATA_W {
-        DATA_W { w: self }
+    pub fn data(&mut self) -> DATA_W<0> {
+        DATA_W::new(self)
     }
     #[doc = "Bits 16:17"]
     #[inline(always)]
-    pub fn code(&mut self) -> CODE_W {
-        CODE_W { w: self }
+    pub fn code(&mut self) -> CODE_W<16> {
+        CODE_W::new(self)
     }
     #[doc = "Bits 18:22 - Register Address"]
     #[inline(always)]
-    pub fn rega(&mut self) -> REGA_W {
-        REGA_W { w: self }
+    pub fn rega(&mut self) -> REGA_W<18> {
+        REGA_W::new(self)
     }
     #[doc = "Bits 23:27 - PHY Address"]
     #[inline(always)]
-    pub fn phya(&mut self) -> PHYA_W {
-        PHYA_W { w: self }
+    pub fn phya(&mut self) -> PHYA_W<23> {
+        PHYA_W::new(self)
     }
     #[doc = "Bits 28:29 - Read-write"]
     #[inline(always)]
-    pub fn rw(&mut self) -> RW_W {
-        RW_W { w: self }
+    pub fn rw(&mut self) -> RW_W<28> {
+        RW_W::new(self)
     }
     #[doc = "Bits 30:31 - Start of frame"]
     #[inline(always)]
-    pub fn sof(&mut self) -> SOF_W {
-        SOF_W { w: self }
+    pub fn sof(&mut self) -> SOF_W<30> {
+        SOF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

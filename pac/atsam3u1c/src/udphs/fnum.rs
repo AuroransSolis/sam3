@@ -14,55 +14,16 @@ impl From<crate::R<FNUM_SPEC>> for R {
     }
 }
 #[doc = "Field `MICRO_FRAME_NUM` reader - Microframe Number"]
-pub struct MICRO_FRAME_NUM_R(crate::FieldReader<u8, u8>);
-impl MICRO_FRAME_NUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MICRO_FRAME_NUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MICRO_FRAME_NUM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MICRO_FRAME_NUM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FRAME_NUMBER` reader - Frame Number as defined in the Packet Field Formats"]
-pub struct FRAME_NUMBER_R(crate::FieldReader<u16, u16>);
-impl FRAME_NUMBER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        FRAME_NUMBER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FRAME_NUMBER_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FRAME_NUMBER_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `FNUM_ERR` reader - Frame Number CRC Error"]
-pub struct FNUM_ERR_R(crate::FieldReader<bool, bool>);
-impl FNUM_ERR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FNUM_ERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FNUM_ERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FNUM_ERR_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bits 0:2 - Microframe Number"]
     #[inline(always)]
     pub fn micro_frame_num(&self) -> MICRO_FRAME_NUM_R {
-        MICRO_FRAME_NUM_R::new((self.bits & 0x07) as u8)
+        MICRO_FRAME_NUM_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 3:13 - Frame Number as defined in the Packet Field Formats"]
     #[inline(always)]
@@ -72,7 +33,7 @@ impl R {
     #[doc = "Bit 31 - Frame Number CRC Error"]
     #[inline(always)]
     pub fn fnum_err(&self) -> FNUM_ERR_R {
-        FNUM_ERR_R::new(((self.bits >> 31) & 0x01) != 0)
+        FNUM_ERR_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 #[doc = "UDPHS Frame Number Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fnum](index.html) module"]

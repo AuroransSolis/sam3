@@ -14,305 +14,110 @@ impl From<crate::R<DEVEPTIMR_SPEC>> for R {
     }
 }
 #[doc = "Field `TXINE` reader - Transmitted IN Data Interrupt"]
-pub struct TXINE_R(crate::FieldReader<bool, bool>);
-impl TXINE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TXINE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXINE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXINE_R = crate::BitReader<bool>;
 #[doc = "Field `RXOUTE` reader - Received OUT Data Interrupt"]
-pub struct RXOUTE_R(crate::FieldReader<bool, bool>);
-impl RXOUTE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RXOUTE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXOUTE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXOUTE_R = crate::BitReader<bool>;
 #[doc = "Field `RXSTPE` reader - Received SETUP Interrupt"]
-pub struct RXSTPE_R(crate::FieldReader<bool, bool>);
-impl RXSTPE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RXSTPE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXSTPE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXSTPE_R = crate::BitReader<bool>;
 #[doc = "Field `NAKOUTE` reader - NAKed OUT Interrupt"]
-pub struct NAKOUTE_R(crate::FieldReader<bool, bool>);
-impl NAKOUTE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        NAKOUTE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NAKOUTE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NAKOUTE_R = crate::BitReader<bool>;
 #[doc = "Field `NAKINE` reader - NAKed IN Interrupt"]
-pub struct NAKINE_R(crate::FieldReader<bool, bool>);
-impl NAKINE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        NAKINE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NAKINE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NAKINE_R = crate::BitReader<bool>;
 #[doc = "Field `OVERFE` reader - Overflow Interrupt"]
-pub struct OVERFE_R(crate::FieldReader<bool, bool>);
-impl OVERFE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OVERFE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OVERFE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OVERFE_R = crate::BitReader<bool>;
 #[doc = "Field `STALLEDE` reader - STALLed Interrupt"]
-pub struct STALLEDE_R(crate::FieldReader<bool, bool>);
-impl STALLEDE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        STALLEDE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STALLEDE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STALLEDE_R = crate::BitReader<bool>;
 #[doc = "Field `SHORTPACKETE` reader - Short Packet Interrupt"]
-pub struct SHORTPACKETE_R(crate::FieldReader<bool, bool>);
-impl SHORTPACKETE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SHORTPACKETE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SHORTPACKETE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SHORTPACKETE_R = crate::BitReader<bool>;
 #[doc = "Field `NBUSYBKE` reader - Number of Busy Banks Interrupt"]
-pub struct NBUSYBKE_R(crate::FieldReader<bool, bool>);
-impl NBUSYBKE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        NBUSYBKE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NBUSYBKE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NBUSYBKE_R = crate::BitReader<bool>;
 #[doc = "Field `KILLBK` reader - Kill IN Bank"]
-pub struct KILLBK_R(crate::FieldReader<bool, bool>);
-impl KILLBK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        KILLBK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for KILLBK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type KILLBK_R = crate::BitReader<bool>;
 #[doc = "Field `FIFOCON` reader - FIFO Control"]
-pub struct FIFOCON_R(crate::FieldReader<bool, bool>);
-impl FIFOCON_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FIFOCON_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FIFOCON_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FIFOCON_R = crate::BitReader<bool>;
 #[doc = "Field `EPDISHDMA` reader - Endpoint Interrupts Disable HDMA Request"]
-pub struct EPDISHDMA_R(crate::FieldReader<bool, bool>);
-impl EPDISHDMA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        EPDISHDMA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EPDISHDMA_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EPDISHDMA_R = crate::BitReader<bool>;
 #[doc = "Field `NYETDIS` reader - NYET Token Disable"]
-pub struct NYETDIS_R(crate::FieldReader<bool, bool>);
-impl NYETDIS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        NYETDIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NYETDIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NYETDIS_R = crate::BitReader<bool>;
 #[doc = "Field `RSTDT` reader - Reset Data Toggle"]
-pub struct RSTDT_R(crate::FieldReader<bool, bool>);
-impl RSTDT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RSTDT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RSTDT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RSTDT_R = crate::BitReader<bool>;
 #[doc = "Field `STALLRQ` reader - STALL Request"]
-pub struct STALLRQ_R(crate::FieldReader<bool, bool>);
-impl STALLRQ_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        STALLRQ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STALLRQ_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STALLRQ_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Transmitted IN Data Interrupt"]
     #[inline(always)]
     pub fn txine(&self) -> TXINE_R {
-        TXINE_R::new((self.bits & 0x01) != 0)
+        TXINE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Received OUT Data Interrupt"]
     #[inline(always)]
     pub fn rxoute(&self) -> RXOUTE_R {
-        RXOUTE_R::new(((self.bits >> 1) & 0x01) != 0)
+        RXOUTE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Received SETUP Interrupt"]
     #[inline(always)]
     pub fn rxstpe(&self) -> RXSTPE_R {
-        RXSTPE_R::new(((self.bits >> 2) & 0x01) != 0)
+        RXSTPE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - NAKed OUT Interrupt"]
     #[inline(always)]
     pub fn nakoute(&self) -> NAKOUTE_R {
-        NAKOUTE_R::new(((self.bits >> 3) & 0x01) != 0)
+        NAKOUTE_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - NAKed IN Interrupt"]
     #[inline(always)]
     pub fn nakine(&self) -> NAKINE_R {
-        NAKINE_R::new(((self.bits >> 4) & 0x01) != 0)
+        NAKINE_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Overflow Interrupt"]
     #[inline(always)]
     pub fn overfe(&self) -> OVERFE_R {
-        OVERFE_R::new(((self.bits >> 5) & 0x01) != 0)
+        OVERFE_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - STALLed Interrupt"]
     #[inline(always)]
     pub fn stallede(&self) -> STALLEDE_R {
-        STALLEDE_R::new(((self.bits >> 6) & 0x01) != 0)
+        STALLEDE_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Short Packet Interrupt"]
     #[inline(always)]
     pub fn shortpackete(&self) -> SHORTPACKETE_R {
-        SHORTPACKETE_R::new(((self.bits >> 7) & 0x01) != 0)
+        SHORTPACKETE_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 12 - Number of Busy Banks Interrupt"]
     #[inline(always)]
     pub fn nbusybke(&self) -> NBUSYBKE_R {
-        NBUSYBKE_R::new(((self.bits >> 12) & 0x01) != 0)
+        NBUSYBKE_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Kill IN Bank"]
     #[inline(always)]
     pub fn killbk(&self) -> KILLBK_R {
-        KILLBK_R::new(((self.bits >> 13) & 0x01) != 0)
+        KILLBK_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - FIFO Control"]
     #[inline(always)]
     pub fn fifocon(&self) -> FIFOCON_R {
-        FIFOCON_R::new(((self.bits >> 14) & 0x01) != 0)
+        FIFOCON_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 16 - Endpoint Interrupts Disable HDMA Request"]
     #[inline(always)]
     pub fn epdishdma(&self) -> EPDISHDMA_R {
-        EPDISHDMA_R::new(((self.bits >> 16) & 0x01) != 0)
+        EPDISHDMA_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - NYET Token Disable"]
     #[inline(always)]
     pub fn nyetdis(&self) -> NYETDIS_R {
-        NYETDIS_R::new(((self.bits >> 17) & 0x01) != 0)
+        NYETDIS_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Reset Data Toggle"]
     #[inline(always)]
     pub fn rstdt(&self) -> RSTDT_R {
-        RSTDT_R::new(((self.bits >> 18) & 0x01) != 0)
+        RSTDT_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - STALL Request"]
     #[inline(always)]
     pub fn stallrq(&self) -> STALLRQ_R {
-        STALLRQ_R::new(((self.bits >> 19) & 0x01) != 0)
+        STALLRQ_R::new(((self.bits >> 19) & 1) != 0)
     }
 }
 #[doc = "Device Endpoint Mask Register (n = 0)\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [deveptimr](index.html) module"]

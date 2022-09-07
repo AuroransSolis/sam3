@@ -14,35 +14,9 @@ impl From<crate::R<CKGR_MCFR_SPEC>> for R {
     }
 }
 #[doc = "Field `MAINF` reader - Main Clock Frequency"]
-pub struct MAINF_R(crate::FieldReader<u16, u16>);
-impl MAINF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        MAINF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MAINF_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MAINF_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MAINFRDY` reader - Main Clock Ready"]
-pub struct MAINFRDY_R(crate::FieldReader<bool, bool>);
-impl MAINFRDY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MAINFRDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MAINFRDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MAINFRDY_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bits 0:15 - Main Clock Frequency"]
     #[inline(always)]
@@ -52,7 +26,7 @@ impl R {
     #[doc = "Bit 16 - Main Clock Ready"]
     #[inline(always)]
     pub fn mainfrdy(&self) -> MAINFRDY_R {
-        MAINFRDY_R::new(((self.bits >> 16) & 0x01) != 0)
+        MAINFRDY_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 #[doc = "Main Clock Frequency Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ckgr_mcfr](index.html) module"]

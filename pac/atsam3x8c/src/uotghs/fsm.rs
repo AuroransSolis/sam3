@@ -13,6 +13,8 @@ impl From<crate::R<FSM_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `DRDSTATE` reader - Dual Role Device State"]
+pub type DRDSTATE_R = crate::FieldReader<u8, DRDSTATE_A>;
 #[doc = "Dual Role Device State\n\nValue on reset: 9"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -56,14 +58,8 @@ impl From<DRDSTATE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DRDSTATE` reader - Dual Role Device State"]
-pub struct DRDSTATE_R(crate::FieldReader<u8, DRDSTATE_A>);
 impl DRDSTATE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DRDSTATE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DRDSTATE_A {
         match self.bits {
@@ -89,89 +85,82 @@ impl DRDSTATE_R {
     #[doc = "Checks if the value of the field is `A_IDLESTATE`"]
     #[inline(always)]
     pub fn is_a_idlestate(&self) -> bool {
-        **self == DRDSTATE_A::A_IDLESTATE
+        *self == DRDSTATE_A::A_IDLESTATE
     }
     #[doc = "Checks if the value of the field is `A_WAIT_VRISE`"]
     #[inline(always)]
     pub fn is_a_wait_vrise(&self) -> bool {
-        **self == DRDSTATE_A::A_WAIT_VRISE
+        *self == DRDSTATE_A::A_WAIT_VRISE
     }
     #[doc = "Checks if the value of the field is `A_WAIT_BCON`"]
     #[inline(always)]
     pub fn is_a_wait_bcon(&self) -> bool {
-        **self == DRDSTATE_A::A_WAIT_BCON
+        *self == DRDSTATE_A::A_WAIT_BCON
     }
     #[doc = "Checks if the value of the field is `A_HOST`"]
     #[inline(always)]
     pub fn is_a_host(&self) -> bool {
-        **self == DRDSTATE_A::A_HOST
+        *self == DRDSTATE_A::A_HOST
     }
     #[doc = "Checks if the value of the field is `A_SUSPEND`"]
     #[inline(always)]
     pub fn is_a_suspend(&self) -> bool {
-        **self == DRDSTATE_A::A_SUSPEND
+        *self == DRDSTATE_A::A_SUSPEND
     }
     #[doc = "Checks if the value of the field is `A_PERIPHERAL`"]
     #[inline(always)]
     pub fn is_a_peripheral(&self) -> bool {
-        **self == DRDSTATE_A::A_PERIPHERAL
+        *self == DRDSTATE_A::A_PERIPHERAL
     }
     #[doc = "Checks if the value of the field is `A_WAIT_VFALL`"]
     #[inline(always)]
     pub fn is_a_wait_vfall(&self) -> bool {
-        **self == DRDSTATE_A::A_WAIT_VFALL
+        *self == DRDSTATE_A::A_WAIT_VFALL
     }
     #[doc = "Checks if the value of the field is `A_VBUS_ERR`"]
     #[inline(always)]
     pub fn is_a_vbus_err(&self) -> bool {
-        **self == DRDSTATE_A::A_VBUS_ERR
+        *self == DRDSTATE_A::A_VBUS_ERR
     }
     #[doc = "Checks if the value of the field is `A_WAIT_DISCHARGE`"]
     #[inline(always)]
     pub fn is_a_wait_discharge(&self) -> bool {
-        **self == DRDSTATE_A::A_WAIT_DISCHARGE
+        *self == DRDSTATE_A::A_WAIT_DISCHARGE
     }
     #[doc = "Checks if the value of the field is `B_IDLE`"]
     #[inline(always)]
     pub fn is_b_idle(&self) -> bool {
-        **self == DRDSTATE_A::B_IDLE
+        *self == DRDSTATE_A::B_IDLE
     }
     #[doc = "Checks if the value of the field is `B_PERIPHERAL`"]
     #[inline(always)]
     pub fn is_b_peripheral(&self) -> bool {
-        **self == DRDSTATE_A::B_PERIPHERAL
+        *self == DRDSTATE_A::B_PERIPHERAL
     }
     #[doc = "Checks if the value of the field is `B_WAIT_BEGIN_HNP`"]
     #[inline(always)]
     pub fn is_b_wait_begin_hnp(&self) -> bool {
-        **self == DRDSTATE_A::B_WAIT_BEGIN_HNP
+        *self == DRDSTATE_A::B_WAIT_BEGIN_HNP
     }
     #[doc = "Checks if the value of the field is `B_WAIT_DISCHARGE`"]
     #[inline(always)]
     pub fn is_b_wait_discharge(&self) -> bool {
-        **self == DRDSTATE_A::B_WAIT_DISCHARGE
+        *self == DRDSTATE_A::B_WAIT_DISCHARGE
     }
     #[doc = "Checks if the value of the field is `B_WAIT_ACON`"]
     #[inline(always)]
     pub fn is_b_wait_acon(&self) -> bool {
-        **self == DRDSTATE_A::B_WAIT_ACON
+        *self == DRDSTATE_A::B_WAIT_ACON
     }
     #[doc = "Checks if the value of the field is `B_HOST`"]
     #[inline(always)]
     pub fn is_b_host(&self) -> bool {
-        **self == DRDSTATE_A::B_HOST
+        *self == DRDSTATE_A::B_HOST
     }
     #[doc = "Checks if the value of the field is `B_SRP_INIT`"]
     #[inline(always)]
     pub fn is_b_srp_init(&self) -> bool {
-        **self == DRDSTATE_A::B_SRP_INIT
-    }
-}
-impl core::ops::Deref for DRDSTATE_R {
-    type Target = crate::FieldReader<u8, DRDSTATE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DRDSTATE_A::B_SRP_INIT
     }
 }
 impl R {

@@ -13,6 +13,8 @@ impl From<crate::R<SR_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `FWUPS` reader - FWUP Wake-up Status"]
+pub type FWUPS_R = crate::BitReader<FWUPS_A>;
 #[doc = "FWUP Wake-up Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FWUPS_A {
@@ -27,14 +29,8 @@ impl From<FWUPS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FWUPS` reader - FWUP Wake-up Status"]
-pub struct FWUPS_R(crate::FieldReader<bool, FWUPS_A>);
 impl FWUPS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FWUPS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FWUPS_A {
         match self.bits {
@@ -45,21 +41,16 @@ impl FWUPS_R {
     #[doc = "Checks if the value of the field is `NO`"]
     #[inline(always)]
     pub fn is_no(&self) -> bool {
-        **self == FWUPS_A::NO
+        *self == FWUPS_A::NO
     }
     #[doc = "Checks if the value of the field is `PRESENT`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        **self == FWUPS_A::PRESENT
+        *self == FWUPS_A::PRESENT
     }
 }
-impl core::ops::Deref for FWUPS_R {
-    type Target = crate::FieldReader<bool, FWUPS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `WKUPS` reader - WKUP Wake-up Status"]
+pub type WKUPS_R = crate::BitReader<WKUPS_A>;
 #[doc = "WKUP Wake-up Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPS_A {
@@ -74,14 +65,8 @@ impl From<WKUPS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKUPS` reader - WKUP Wake-up Status"]
-pub struct WKUPS_R(crate::FieldReader<bool, WKUPS_A>);
 impl WKUPS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WKUPS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKUPS_A {
         match self.bits {
@@ -92,21 +77,16 @@ impl WKUPS_R {
     #[doc = "Checks if the value of the field is `NO`"]
     #[inline(always)]
     pub fn is_no(&self) -> bool {
-        **self == WKUPS_A::NO
+        *self == WKUPS_A::NO
     }
     #[doc = "Checks if the value of the field is `PRESENT`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        **self == WKUPS_A::PRESENT
+        *self == WKUPS_A::PRESENT
     }
 }
-impl core::ops::Deref for WKUPS_R {
-    type Target = crate::FieldReader<bool, WKUPS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `SMWS` reader - Supply Monitor Detection Wake-up Status"]
+pub type SMWS_R = crate::BitReader<SMWS_A>;
 #[doc = "Supply Monitor Detection Wake-up Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMWS_A {
@@ -121,14 +101,8 @@ impl From<SMWS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SMWS` reader - Supply Monitor Detection Wake-up Status"]
-pub struct SMWS_R(crate::FieldReader<bool, SMWS_A>);
 impl SMWS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SMWS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SMWS_A {
         match self.bits {
@@ -139,21 +113,16 @@ impl SMWS_R {
     #[doc = "Checks if the value of the field is `NO`"]
     #[inline(always)]
     pub fn is_no(&self) -> bool {
-        **self == SMWS_A::NO
+        *self == SMWS_A::NO
     }
     #[doc = "Checks if the value of the field is `PRESENT`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        **self == SMWS_A::PRESENT
+        *self == SMWS_A::PRESENT
     }
 }
-impl core::ops::Deref for SMWS_R {
-    type Target = crate::FieldReader<bool, SMWS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `BODRSTS` reader - Brownout Detector Reset Status"]
+pub type BODRSTS_R = crate::BitReader<BODRSTS_A>;
 #[doc = "Brownout Detector Reset Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BODRSTS_A {
@@ -168,14 +137,8 @@ impl From<BODRSTS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BODRSTS` reader - Brownout Detector Reset Status"]
-pub struct BODRSTS_R(crate::FieldReader<bool, BODRSTS_A>);
 impl BODRSTS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BODRSTS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BODRSTS_A {
         match self.bits {
@@ -186,21 +149,16 @@ impl BODRSTS_R {
     #[doc = "Checks if the value of the field is `NO`"]
     #[inline(always)]
     pub fn is_no(&self) -> bool {
-        **self == BODRSTS_A::NO
+        *self == BODRSTS_A::NO
     }
     #[doc = "Checks if the value of the field is `PRESENT`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        **self == BODRSTS_A::PRESENT
+        *self == BODRSTS_A::PRESENT
     }
 }
-impl core::ops::Deref for BODRSTS_R {
-    type Target = crate::FieldReader<bool, BODRSTS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `SMRSTS` reader - Supply Monitor Reset Status"]
+pub type SMRSTS_R = crate::BitReader<SMRSTS_A>;
 #[doc = "Supply Monitor Reset Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMRSTS_A {
@@ -215,14 +173,8 @@ impl From<SMRSTS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SMRSTS` reader - Supply Monitor Reset Status"]
-pub struct SMRSTS_R(crate::FieldReader<bool, SMRSTS_A>);
 impl SMRSTS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SMRSTS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SMRSTS_A {
         match self.bits {
@@ -233,21 +185,16 @@ impl SMRSTS_R {
     #[doc = "Checks if the value of the field is `NO`"]
     #[inline(always)]
     pub fn is_no(&self) -> bool {
-        **self == SMRSTS_A::NO
+        *self == SMRSTS_A::NO
     }
     #[doc = "Checks if the value of the field is `PRESENT`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        **self == SMRSTS_A::PRESENT
+        *self == SMRSTS_A::PRESENT
     }
 }
-impl core::ops::Deref for SMRSTS_R {
-    type Target = crate::FieldReader<bool, SMRSTS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `SMS` reader - Supply Monitor Status"]
+pub type SMS_R = crate::BitReader<SMS_A>;
 #[doc = "Supply Monitor Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMS_A {
@@ -262,14 +209,8 @@ impl From<SMS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SMS` reader - Supply Monitor Status"]
-pub struct SMS_R(crate::FieldReader<bool, SMS_A>);
 impl SMS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SMS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SMS_A {
         match self.bits {
@@ -280,21 +221,16 @@ impl SMS_R {
     #[doc = "Checks if the value of the field is `NO`"]
     #[inline(always)]
     pub fn is_no(&self) -> bool {
-        **self == SMS_A::NO
+        *self == SMS_A::NO
     }
     #[doc = "Checks if the value of the field is `PRESENT`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        **self == SMS_A::PRESENT
+        *self == SMS_A::PRESENT
     }
 }
-impl core::ops::Deref for SMS_R {
-    type Target = crate::FieldReader<bool, SMS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `SMOS` reader - Supply Monitor Output Status"]
+pub type SMOS_R = crate::BitReader<SMOS_A>;
 #[doc = "Supply Monitor Output Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMOS_A {
@@ -309,14 +245,8 @@ impl From<SMOS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SMOS` reader - Supply Monitor Output Status"]
-pub struct SMOS_R(crate::FieldReader<bool, SMOS_A>);
 impl SMOS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SMOS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SMOS_A {
         match self.bits {
@@ -327,21 +257,16 @@ impl SMOS_R {
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == SMOS_A::HIGH
+        *self == SMOS_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == SMOS_A::LOW
+        *self == SMOS_A::LOW
     }
 }
-impl core::ops::Deref for SMOS_R {
-    type Target = crate::FieldReader<bool, SMOS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `OSCSEL` reader - 32-kHz Oscillator Selection Status"]
+pub type OSCSEL_R = crate::BitReader<OSCSEL_A>;
 #[doc = "32-kHz Oscillator Selection Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OSCSEL_A {
@@ -356,14 +281,8 @@ impl From<OSCSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OSCSEL` reader - 32-kHz Oscillator Selection Status"]
-pub struct OSCSEL_R(crate::FieldReader<bool, OSCSEL_A>);
 impl OSCSEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OSCSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OSCSEL_A {
         match self.bits {
@@ -374,21 +293,16 @@ impl OSCSEL_R {
     #[doc = "Checks if the value of the field is `RC`"]
     #[inline(always)]
     pub fn is_rc(&self) -> bool {
-        **self == OSCSEL_A::RC
+        *self == OSCSEL_A::RC
     }
     #[doc = "Checks if the value of the field is `CRYST`"]
     #[inline(always)]
     pub fn is_cryst(&self) -> bool {
-        **self == OSCSEL_A::CRYST
+        *self == OSCSEL_A::CRYST
     }
 }
-impl core::ops::Deref for OSCSEL_R {
-    type Target = crate::FieldReader<bool, OSCSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `FWUPIS` reader - FWUP Input Status"]
+pub type FWUPIS_R = crate::BitReader<FWUPIS_A>;
 #[doc = "FWUP Input Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FWUPIS_A {
@@ -403,14 +317,8 @@ impl From<FWUPIS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FWUPIS` reader - FWUP Input Status"]
-pub struct FWUPIS_R(crate::FieldReader<bool, FWUPIS_A>);
 impl FWUPIS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FWUPIS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FWUPIS_A {
         match self.bits {
@@ -421,21 +329,16 @@ impl FWUPIS_R {
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == FWUPIS_A::LOW
+        *self == FWUPIS_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == FWUPIS_A::HIGH
+        *self == FWUPIS_A::HIGH
     }
 }
-impl core::ops::Deref for FWUPIS_R {
-    type Target = crate::FieldReader<bool, FWUPIS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `WKUPIS0` reader - WKUP Input Status 0"]
+pub type WKUPIS0_R = crate::BitReader<WKUPIS0_A>;
 #[doc = "WKUP Input Status 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS0_A {
@@ -450,14 +353,8 @@ impl From<WKUPIS0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKUPIS0` reader - WKUP Input Status 0"]
-pub struct WKUPIS0_R(crate::FieldReader<bool, WKUPIS0_A>);
 impl WKUPIS0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WKUPIS0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS0_A {
         match self.bits {
@@ -468,21 +365,16 @@ impl WKUPIS0_R {
     #[doc = "Checks if the value of the field is `DIS`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        **self == WKUPIS0_A::DIS
+        *self == WKUPIS0_A::DIS
     }
     #[doc = "Checks if the value of the field is `EN`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        **self == WKUPIS0_A::EN
+        *self == WKUPIS0_A::EN
     }
 }
-impl core::ops::Deref for WKUPIS0_R {
-    type Target = crate::FieldReader<bool, WKUPIS0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `WKUPIS1` reader - WKUP Input Status 1"]
+pub type WKUPIS1_R = crate::BitReader<WKUPIS1_A>;
 #[doc = "WKUP Input Status 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS1_A {
@@ -497,14 +389,8 @@ impl From<WKUPIS1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKUPIS1` reader - WKUP Input Status 1"]
-pub struct WKUPIS1_R(crate::FieldReader<bool, WKUPIS1_A>);
 impl WKUPIS1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WKUPIS1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS1_A {
         match self.bits {
@@ -515,21 +401,16 @@ impl WKUPIS1_R {
     #[doc = "Checks if the value of the field is `DIS`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        **self == WKUPIS1_A::DIS
+        *self == WKUPIS1_A::DIS
     }
     #[doc = "Checks if the value of the field is `EN`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        **self == WKUPIS1_A::EN
+        *self == WKUPIS1_A::EN
     }
 }
-impl core::ops::Deref for WKUPIS1_R {
-    type Target = crate::FieldReader<bool, WKUPIS1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `WKUPIS2` reader - WKUP Input Status 2"]
+pub type WKUPIS2_R = crate::BitReader<WKUPIS2_A>;
 #[doc = "WKUP Input Status 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS2_A {
@@ -544,14 +425,8 @@ impl From<WKUPIS2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKUPIS2` reader - WKUP Input Status 2"]
-pub struct WKUPIS2_R(crate::FieldReader<bool, WKUPIS2_A>);
 impl WKUPIS2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WKUPIS2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS2_A {
         match self.bits {
@@ -562,21 +437,16 @@ impl WKUPIS2_R {
     #[doc = "Checks if the value of the field is `DIS`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        **self == WKUPIS2_A::DIS
+        *self == WKUPIS2_A::DIS
     }
     #[doc = "Checks if the value of the field is `EN`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        **self == WKUPIS2_A::EN
+        *self == WKUPIS2_A::EN
     }
 }
-impl core::ops::Deref for WKUPIS2_R {
-    type Target = crate::FieldReader<bool, WKUPIS2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `WKUPIS3` reader - WKUP Input Status 3"]
+pub type WKUPIS3_R = crate::BitReader<WKUPIS3_A>;
 #[doc = "WKUP Input Status 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS3_A {
@@ -591,14 +461,8 @@ impl From<WKUPIS3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKUPIS3` reader - WKUP Input Status 3"]
-pub struct WKUPIS3_R(crate::FieldReader<bool, WKUPIS3_A>);
 impl WKUPIS3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WKUPIS3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS3_A {
         match self.bits {
@@ -609,21 +473,16 @@ impl WKUPIS3_R {
     #[doc = "Checks if the value of the field is `DIS`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        **self == WKUPIS3_A::DIS
+        *self == WKUPIS3_A::DIS
     }
     #[doc = "Checks if the value of the field is `EN`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        **self == WKUPIS3_A::EN
+        *self == WKUPIS3_A::EN
     }
 }
-impl core::ops::Deref for WKUPIS3_R {
-    type Target = crate::FieldReader<bool, WKUPIS3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `WKUPIS4` reader - WKUP Input Status 4"]
+pub type WKUPIS4_R = crate::BitReader<WKUPIS4_A>;
 #[doc = "WKUP Input Status 4\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS4_A {
@@ -638,14 +497,8 @@ impl From<WKUPIS4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKUPIS4` reader - WKUP Input Status 4"]
-pub struct WKUPIS4_R(crate::FieldReader<bool, WKUPIS4_A>);
 impl WKUPIS4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WKUPIS4_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS4_A {
         match self.bits {
@@ -656,21 +509,16 @@ impl WKUPIS4_R {
     #[doc = "Checks if the value of the field is `DIS`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        **self == WKUPIS4_A::DIS
+        *self == WKUPIS4_A::DIS
     }
     #[doc = "Checks if the value of the field is `EN`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        **self == WKUPIS4_A::EN
+        *self == WKUPIS4_A::EN
     }
 }
-impl core::ops::Deref for WKUPIS4_R {
-    type Target = crate::FieldReader<bool, WKUPIS4_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `WKUPIS5` reader - WKUP Input Status 5"]
+pub type WKUPIS5_R = crate::BitReader<WKUPIS5_A>;
 #[doc = "WKUP Input Status 5\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS5_A {
@@ -685,14 +533,8 @@ impl From<WKUPIS5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKUPIS5` reader - WKUP Input Status 5"]
-pub struct WKUPIS5_R(crate::FieldReader<bool, WKUPIS5_A>);
 impl WKUPIS5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WKUPIS5_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS5_A {
         match self.bits {
@@ -703,21 +545,16 @@ impl WKUPIS5_R {
     #[doc = "Checks if the value of the field is `DIS`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        **self == WKUPIS5_A::DIS
+        *self == WKUPIS5_A::DIS
     }
     #[doc = "Checks if the value of the field is `EN`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        **self == WKUPIS5_A::EN
+        *self == WKUPIS5_A::EN
     }
 }
-impl core::ops::Deref for WKUPIS5_R {
-    type Target = crate::FieldReader<bool, WKUPIS5_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `WKUPIS6` reader - WKUP Input Status 6"]
+pub type WKUPIS6_R = crate::BitReader<WKUPIS6_A>;
 #[doc = "WKUP Input Status 6\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS6_A {
@@ -732,14 +569,8 @@ impl From<WKUPIS6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKUPIS6` reader - WKUP Input Status 6"]
-pub struct WKUPIS6_R(crate::FieldReader<bool, WKUPIS6_A>);
 impl WKUPIS6_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WKUPIS6_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS6_A {
         match self.bits {
@@ -750,21 +581,16 @@ impl WKUPIS6_R {
     #[doc = "Checks if the value of the field is `DIS`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        **self == WKUPIS6_A::DIS
+        *self == WKUPIS6_A::DIS
     }
     #[doc = "Checks if the value of the field is `EN`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        **self == WKUPIS6_A::EN
+        *self == WKUPIS6_A::EN
     }
 }
-impl core::ops::Deref for WKUPIS6_R {
-    type Target = crate::FieldReader<bool, WKUPIS6_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `WKUPIS7` reader - WKUP Input Status 7"]
+pub type WKUPIS7_R = crate::BitReader<WKUPIS7_A>;
 #[doc = "WKUP Input Status 7\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS7_A {
@@ -779,14 +605,8 @@ impl From<WKUPIS7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKUPIS7` reader - WKUP Input Status 7"]
-pub struct WKUPIS7_R(crate::FieldReader<bool, WKUPIS7_A>);
 impl WKUPIS7_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WKUPIS7_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS7_A {
         match self.bits {
@@ -797,21 +617,16 @@ impl WKUPIS7_R {
     #[doc = "Checks if the value of the field is `DIS`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        **self == WKUPIS7_A::DIS
+        *self == WKUPIS7_A::DIS
     }
     #[doc = "Checks if the value of the field is `EN`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        **self == WKUPIS7_A::EN
+        *self == WKUPIS7_A::EN
     }
 }
-impl core::ops::Deref for WKUPIS7_R {
-    type Target = crate::FieldReader<bool, WKUPIS7_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `WKUPIS8` reader - WKUP Input Status 8"]
+pub type WKUPIS8_R = crate::BitReader<WKUPIS8_A>;
 #[doc = "WKUP Input Status 8\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS8_A {
@@ -826,14 +641,8 @@ impl From<WKUPIS8_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKUPIS8` reader - WKUP Input Status 8"]
-pub struct WKUPIS8_R(crate::FieldReader<bool, WKUPIS8_A>);
 impl WKUPIS8_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WKUPIS8_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS8_A {
         match self.bits {
@@ -844,21 +653,16 @@ impl WKUPIS8_R {
     #[doc = "Checks if the value of the field is `DIS`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        **self == WKUPIS8_A::DIS
+        *self == WKUPIS8_A::DIS
     }
     #[doc = "Checks if the value of the field is `EN`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        **self == WKUPIS8_A::EN
+        *self == WKUPIS8_A::EN
     }
 }
-impl core::ops::Deref for WKUPIS8_R {
-    type Target = crate::FieldReader<bool, WKUPIS8_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `WKUPIS9` reader - WKUP Input Status 9"]
+pub type WKUPIS9_R = crate::BitReader<WKUPIS9_A>;
 #[doc = "WKUP Input Status 9\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS9_A {
@@ -873,14 +677,8 @@ impl From<WKUPIS9_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKUPIS9` reader - WKUP Input Status 9"]
-pub struct WKUPIS9_R(crate::FieldReader<bool, WKUPIS9_A>);
 impl WKUPIS9_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WKUPIS9_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS9_A {
         match self.bits {
@@ -891,21 +689,16 @@ impl WKUPIS9_R {
     #[doc = "Checks if the value of the field is `DIS`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        **self == WKUPIS9_A::DIS
+        *self == WKUPIS9_A::DIS
     }
     #[doc = "Checks if the value of the field is `EN`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        **self == WKUPIS9_A::EN
+        *self == WKUPIS9_A::EN
     }
 }
-impl core::ops::Deref for WKUPIS9_R {
-    type Target = crate::FieldReader<bool, WKUPIS9_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `WKUPIS10` reader - WKUP Input Status 10"]
+pub type WKUPIS10_R = crate::BitReader<WKUPIS10_A>;
 #[doc = "WKUP Input Status 10\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS10_A {
@@ -920,14 +713,8 @@ impl From<WKUPIS10_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKUPIS10` reader - WKUP Input Status 10"]
-pub struct WKUPIS10_R(crate::FieldReader<bool, WKUPIS10_A>);
 impl WKUPIS10_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WKUPIS10_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS10_A {
         match self.bits {
@@ -938,21 +725,16 @@ impl WKUPIS10_R {
     #[doc = "Checks if the value of the field is `DIS`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        **self == WKUPIS10_A::DIS
+        *self == WKUPIS10_A::DIS
     }
     #[doc = "Checks if the value of the field is `EN`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        **self == WKUPIS10_A::EN
+        *self == WKUPIS10_A::EN
     }
 }
-impl core::ops::Deref for WKUPIS10_R {
-    type Target = crate::FieldReader<bool, WKUPIS10_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `WKUPIS11` reader - WKUP Input Status 11"]
+pub type WKUPIS11_R = crate::BitReader<WKUPIS11_A>;
 #[doc = "WKUP Input Status 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS11_A {
@@ -967,14 +749,8 @@ impl From<WKUPIS11_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKUPIS11` reader - WKUP Input Status 11"]
-pub struct WKUPIS11_R(crate::FieldReader<bool, WKUPIS11_A>);
 impl WKUPIS11_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WKUPIS11_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS11_A {
         match self.bits {
@@ -985,21 +761,16 @@ impl WKUPIS11_R {
     #[doc = "Checks if the value of the field is `DIS`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        **self == WKUPIS11_A::DIS
+        *self == WKUPIS11_A::DIS
     }
     #[doc = "Checks if the value of the field is `EN`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        **self == WKUPIS11_A::EN
+        *self == WKUPIS11_A::EN
     }
 }
-impl core::ops::Deref for WKUPIS11_R {
-    type Target = crate::FieldReader<bool, WKUPIS11_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `WKUPIS12` reader - WKUP Input Status 12"]
+pub type WKUPIS12_R = crate::BitReader<WKUPIS12_A>;
 #[doc = "WKUP Input Status 12\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS12_A {
@@ -1014,14 +785,8 @@ impl From<WKUPIS12_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKUPIS12` reader - WKUP Input Status 12"]
-pub struct WKUPIS12_R(crate::FieldReader<bool, WKUPIS12_A>);
 impl WKUPIS12_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WKUPIS12_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS12_A {
         match self.bits {
@@ -1032,21 +797,16 @@ impl WKUPIS12_R {
     #[doc = "Checks if the value of the field is `DIS`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        **self == WKUPIS12_A::DIS
+        *self == WKUPIS12_A::DIS
     }
     #[doc = "Checks if the value of the field is `EN`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        **self == WKUPIS12_A::EN
+        *self == WKUPIS12_A::EN
     }
 }
-impl core::ops::Deref for WKUPIS12_R {
-    type Target = crate::FieldReader<bool, WKUPIS12_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `WKUPIS13` reader - WKUP Input Status 13"]
+pub type WKUPIS13_R = crate::BitReader<WKUPIS13_A>;
 #[doc = "WKUP Input Status 13\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS13_A {
@@ -1061,14 +821,8 @@ impl From<WKUPIS13_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKUPIS13` reader - WKUP Input Status 13"]
-pub struct WKUPIS13_R(crate::FieldReader<bool, WKUPIS13_A>);
 impl WKUPIS13_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WKUPIS13_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS13_A {
         match self.bits {
@@ -1079,21 +833,16 @@ impl WKUPIS13_R {
     #[doc = "Checks if the value of the field is `DIS`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        **self == WKUPIS13_A::DIS
+        *self == WKUPIS13_A::DIS
     }
     #[doc = "Checks if the value of the field is `EN`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        **self == WKUPIS13_A::EN
+        *self == WKUPIS13_A::EN
     }
 }
-impl core::ops::Deref for WKUPIS13_R {
-    type Target = crate::FieldReader<bool, WKUPIS13_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `WKUPIS14` reader - WKUP Input Status 14"]
+pub type WKUPIS14_R = crate::BitReader<WKUPIS14_A>;
 #[doc = "WKUP Input Status 14\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS14_A {
@@ -1108,14 +857,8 @@ impl From<WKUPIS14_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKUPIS14` reader - WKUP Input Status 14"]
-pub struct WKUPIS14_R(crate::FieldReader<bool, WKUPIS14_A>);
 impl WKUPIS14_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WKUPIS14_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS14_A {
         match self.bits {
@@ -1126,21 +869,16 @@ impl WKUPIS14_R {
     #[doc = "Checks if the value of the field is `DIS`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        **self == WKUPIS14_A::DIS
+        *self == WKUPIS14_A::DIS
     }
     #[doc = "Checks if the value of the field is `EN`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        **self == WKUPIS14_A::EN
+        *self == WKUPIS14_A::EN
     }
 }
-impl core::ops::Deref for WKUPIS14_R {
-    type Target = crate::FieldReader<bool, WKUPIS14_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `WKUPIS15` reader - WKUP Input Status 15"]
+pub type WKUPIS15_R = crate::BitReader<WKUPIS15_A>;
 #[doc = "WKUP Input Status 15\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS15_A {
@@ -1155,14 +893,8 @@ impl From<WKUPIS15_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKUPIS15` reader - WKUP Input Status 15"]
-pub struct WKUPIS15_R(crate::FieldReader<bool, WKUPIS15_A>);
 impl WKUPIS15_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WKUPIS15_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS15_A {
         match self.bits {
@@ -1173,146 +905,139 @@ impl WKUPIS15_R {
     #[doc = "Checks if the value of the field is `DIS`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        **self == WKUPIS15_A::DIS
+        *self == WKUPIS15_A::DIS
     }
     #[doc = "Checks if the value of the field is `EN`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        **self == WKUPIS15_A::EN
-    }
-}
-impl core::ops::Deref for WKUPIS15_R {
-    type Target = crate::FieldReader<bool, WKUPIS15_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WKUPIS15_A::EN
     }
 }
 impl R {
     #[doc = "Bit 0 - FWUP Wake-up Status"]
     #[inline(always)]
     pub fn fwups(&self) -> FWUPS_R {
-        FWUPS_R::new((self.bits & 0x01) != 0)
+        FWUPS_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - WKUP Wake-up Status"]
     #[inline(always)]
     pub fn wkups(&self) -> WKUPS_R {
-        WKUPS_R::new(((self.bits >> 1) & 0x01) != 0)
+        WKUPS_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Supply Monitor Detection Wake-up Status"]
     #[inline(always)]
     pub fn smws(&self) -> SMWS_R {
-        SMWS_R::new(((self.bits >> 2) & 0x01) != 0)
+        SMWS_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Brownout Detector Reset Status"]
     #[inline(always)]
     pub fn bodrsts(&self) -> BODRSTS_R {
-        BODRSTS_R::new(((self.bits >> 3) & 0x01) != 0)
+        BODRSTS_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Supply Monitor Reset Status"]
     #[inline(always)]
     pub fn smrsts(&self) -> SMRSTS_R {
-        SMRSTS_R::new(((self.bits >> 4) & 0x01) != 0)
+        SMRSTS_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Supply Monitor Status"]
     #[inline(always)]
     pub fn sms(&self) -> SMS_R {
-        SMS_R::new(((self.bits >> 5) & 0x01) != 0)
+        SMS_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Supply Monitor Output Status"]
     #[inline(always)]
     pub fn smos(&self) -> SMOS_R {
-        SMOS_R::new(((self.bits >> 6) & 0x01) != 0)
+        SMOS_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - 32-kHz Oscillator Selection Status"]
     #[inline(always)]
     pub fn oscsel(&self) -> OSCSEL_R {
-        OSCSEL_R::new(((self.bits >> 7) & 0x01) != 0)
+        OSCSEL_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 12 - FWUP Input Status"]
     #[inline(always)]
     pub fn fwupis(&self) -> FWUPIS_R {
-        FWUPIS_R::new(((self.bits >> 12) & 0x01) != 0)
+        FWUPIS_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 16 - WKUP Input Status 0"]
     #[inline(always)]
     pub fn wkupis0(&self) -> WKUPIS0_R {
-        WKUPIS0_R::new(((self.bits >> 16) & 0x01) != 0)
+        WKUPIS0_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - WKUP Input Status 1"]
     #[inline(always)]
     pub fn wkupis1(&self) -> WKUPIS1_R {
-        WKUPIS1_R::new(((self.bits >> 17) & 0x01) != 0)
+        WKUPIS1_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - WKUP Input Status 2"]
     #[inline(always)]
     pub fn wkupis2(&self) -> WKUPIS2_R {
-        WKUPIS2_R::new(((self.bits >> 18) & 0x01) != 0)
+        WKUPIS2_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - WKUP Input Status 3"]
     #[inline(always)]
     pub fn wkupis3(&self) -> WKUPIS3_R {
-        WKUPIS3_R::new(((self.bits >> 19) & 0x01) != 0)
+        WKUPIS3_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 20 - WKUP Input Status 4"]
     #[inline(always)]
     pub fn wkupis4(&self) -> WKUPIS4_R {
-        WKUPIS4_R::new(((self.bits >> 20) & 0x01) != 0)
+        WKUPIS4_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - WKUP Input Status 5"]
     #[inline(always)]
     pub fn wkupis5(&self) -> WKUPIS5_R {
-        WKUPIS5_R::new(((self.bits >> 21) & 0x01) != 0)
+        WKUPIS5_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 22 - WKUP Input Status 6"]
     #[inline(always)]
     pub fn wkupis6(&self) -> WKUPIS6_R {
-        WKUPIS6_R::new(((self.bits >> 22) & 0x01) != 0)
+        WKUPIS6_R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 23 - WKUP Input Status 7"]
     #[inline(always)]
     pub fn wkupis7(&self) -> WKUPIS7_R {
-        WKUPIS7_R::new(((self.bits >> 23) & 0x01) != 0)
+        WKUPIS7_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 24 - WKUP Input Status 8"]
     #[inline(always)]
     pub fn wkupis8(&self) -> WKUPIS8_R {
-        WKUPIS8_R::new(((self.bits >> 24) & 0x01) != 0)
+        WKUPIS8_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - WKUP Input Status 9"]
     #[inline(always)]
     pub fn wkupis9(&self) -> WKUPIS9_R {
-        WKUPIS9_R::new(((self.bits >> 25) & 0x01) != 0)
+        WKUPIS9_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - WKUP Input Status 10"]
     #[inline(always)]
     pub fn wkupis10(&self) -> WKUPIS10_R {
-        WKUPIS10_R::new(((self.bits >> 26) & 0x01) != 0)
+        WKUPIS10_R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bit 27 - WKUP Input Status 11"]
     #[inline(always)]
     pub fn wkupis11(&self) -> WKUPIS11_R {
-        WKUPIS11_R::new(((self.bits >> 27) & 0x01) != 0)
+        WKUPIS11_R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bit 28 - WKUP Input Status 12"]
     #[inline(always)]
     pub fn wkupis12(&self) -> WKUPIS12_R {
-        WKUPIS12_R::new(((self.bits >> 28) & 0x01) != 0)
+        WKUPIS12_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 29 - WKUP Input Status 13"]
     #[inline(always)]
     pub fn wkupis13(&self) -> WKUPIS13_R {
-        WKUPIS13_R::new(((self.bits >> 29) & 0x01) != 0)
+        WKUPIS13_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 30 - WKUP Input Status 14"]
     #[inline(always)]
     pub fn wkupis14(&self) -> WKUPIS14_R {
-        WKUPIS14_R::new(((self.bits >> 30) & 0x01) != 0)
+        WKUPIS14_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - WKUP Input Status 15"]
     #[inline(always)]
     pub fn wkupis15(&self) -> WKUPIS15_R {
-        WKUPIS15_R::new(((self.bits >> 31) & 0x01) != 0)
+        WKUPIS15_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 #[doc = "Supply Controller Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]

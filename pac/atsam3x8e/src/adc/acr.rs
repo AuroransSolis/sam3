@@ -35,91 +35,35 @@ impl From<crate::W<ACR_SPEC>> for W {
     }
 }
 #[doc = "Field `TSON` reader - Temperature Sensor On"]
-pub struct TSON_R(crate::FieldReader<bool, bool>);
-impl TSON_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TSON_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TSON_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TSON_R = crate::BitReader<bool>;
 #[doc = "Field `TSON` writer - Temperature Sensor On"]
-pub struct TSON_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSON_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type TSON_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACR_SPEC, bool, O>;
 #[doc = "Field `IBCTL` reader - ADC Bias Current Control"]
-pub struct IBCTL_R(crate::FieldReader<u8, u8>);
-impl IBCTL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        IBCTL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IBCTL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IBCTL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `IBCTL` writer - ADC Bias Current Control"]
-pub struct IBCTL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IBCTL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
-    }
-}
+pub type IBCTL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ACR_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bit 4 - Temperature Sensor On"]
     #[inline(always)]
     pub fn tson(&self) -> TSON_R {
-        TSON_R::new(((self.bits >> 4) & 0x01) != 0)
+        TSON_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 8:9 - ADC Bias Current Control"]
     #[inline(always)]
     pub fn ibctl(&self) -> IBCTL_R {
-        IBCTL_R::new(((self.bits >> 8) & 0x03) as u8)
+        IBCTL_R::new(((self.bits >> 8) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 4 - Temperature Sensor On"]
     #[inline(always)]
-    pub fn tson(&mut self) -> TSON_W {
-        TSON_W { w: self }
+    pub fn tson(&mut self) -> TSON_W<4> {
+        TSON_W::new(self)
     }
     #[doc = "Bits 8:9 - ADC Bias Current Control"]
     #[inline(always)]
-    pub fn ibctl(&mut self) -> IBCTL_W {
-        IBCTL_W { w: self }
+    pub fn ibctl(&mut self) -> IBCTL_W<8> {
+        IBCTL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

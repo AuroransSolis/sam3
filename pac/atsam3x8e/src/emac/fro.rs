@@ -35,32 +35,9 @@ impl From<crate::W<FRO_SPEC>> for W {
     }
 }
 #[doc = "Field `FROK` reader - Frames Received OK"]
-pub struct FROK_R(crate::FieldReader<u32, u32>);
-impl FROK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        FROK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FROK_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FROK_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `FROK` writer - Frames Received OK"]
-pub struct FROK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FROK_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type FROK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FRO_SPEC, u32, u32, 24, O>;
 impl R {
     #[doc = "Bits 0:23 - Frames Received OK"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:23 - Frames Received OK"]
     #[inline(always)]
-    pub fn frok(&mut self) -> FROK_W {
-        FROK_W { w: self }
+    pub fn frok(&mut self) -> FROK_W<0> {
+        FROK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -14,20 +14,7 @@ impl From<crate::R<VR_SPEC>> for R {
     }
 }
 #[doc = "Field `CRTV` reader - Current Real-time Value"]
-pub struct CRTV_R(crate::FieldReader<u32, u32>);
-impl CRTV_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CRTV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CRTV_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CRTV_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Current Real-time Value"]
     #[inline(always)]

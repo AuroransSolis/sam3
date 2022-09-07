@@ -34,6 +34,8 @@ impl From<crate::W<EMR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CMPMODE` reader - Comparison Mode"]
+pub type CMPMODE_R = crate::FieldReader<u8, CMPMODE_A>;
 #[doc = "Comparison Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,14 +55,8 @@ impl From<CMPMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CMPMODE` reader - Comparison Mode"]
-pub struct CMPMODE_R(crate::FieldReader<u8, CMPMODE_A>);
 impl CMPMODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CMPMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CMPMODE_A {
         match self.bits {
@@ -74,41 +70,28 @@ impl CMPMODE_R {
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == CMPMODE_A::LOW
+        *self == CMPMODE_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == CMPMODE_A::HIGH
+        *self == CMPMODE_A::HIGH
     }
     #[doc = "Checks if the value of the field is `IN`"]
     #[inline(always)]
     pub fn is_in(&self) -> bool {
-        **self == CMPMODE_A::IN
+        *self == CMPMODE_A::IN
     }
     #[doc = "Checks if the value of the field is `OUT`"]
     #[inline(always)]
     pub fn is_out(&self) -> bool {
-        **self == CMPMODE_A::OUT
-    }
-}
-impl core::ops::Deref for CMPMODE_R {
-    type Target = crate::FieldReader<u8, CMPMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CMPMODE_A::OUT
     }
 }
 #[doc = "Field `CMPMODE` writer - Comparison Mode"]
-pub struct CMPMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CMPMODE_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type CMPMODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, EMR_SPEC, u8, CMPMODE_A, 2, O>;
+impl<'a, const O: u8> CMPMODE_W<'a, O> {
     #[doc = "Generates an event when the converted data is lower than the low threshold of the window."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
@@ -129,119 +112,24 @@ impl<'a> CMPMODE_W<'a> {
     pub fn out(self) -> &'a mut W {
         self.variant(CMPMODE_A::OUT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 #[doc = "Field `CMPSEL` reader - Comparison Selected Channel"]
-pub struct CMPSEL_R(crate::FieldReader<u8, u8>);
-impl CMPSEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CMPSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CMPSEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CMPSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CMPSEL` writer - Comparison Selected Channel"]
-pub struct CMPSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
-}
+pub type CMPSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMR_SPEC, u8, u8, 4, O>;
 #[doc = "Field `CMPALL` reader - Compare All Channels"]
-pub struct CMPALL_R(crate::FieldReader<bool, bool>);
-impl CMPALL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CMPALL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CMPALL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CMPALL_R = crate::BitReader<bool>;
 #[doc = "Field `CMPALL` writer - Compare All Channels"]
-pub struct CMPALL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPALL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type CMPALL_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMR_SPEC, bool, O>;
 #[doc = "Field `TAG` reader - TAG of the ADC_LDCR register"]
-pub struct TAG_R(crate::FieldReader<bool, bool>);
-impl TAG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TAG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TAG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TAG_R = crate::BitReader<bool>;
 #[doc = "Field `TAG` writer - TAG of the ADC_LDCR register"]
-pub struct TAG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type TAG_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMR_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:1 - Comparison Mode"]
     #[inline(always)]
     pub fn cmpmode(&self) -> CMPMODE_R {
-        CMPMODE_R::new((self.bits & 0x03) as u8)
+        CMPMODE_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 4:7 - Comparison Selected Channel"]
     #[inline(always)]
@@ -251,34 +139,34 @@ impl R {
     #[doc = "Bit 9 - Compare All Channels"]
     #[inline(always)]
     pub fn cmpall(&self) -> CMPALL_R {
-        CMPALL_R::new(((self.bits >> 9) & 0x01) != 0)
+        CMPALL_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 24 - TAG of the ADC_LDCR register"]
     #[inline(always)]
     pub fn tag(&self) -> TAG_R {
-        TAG_R::new(((self.bits >> 24) & 0x01) != 0)
+        TAG_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Comparison Mode"]
     #[inline(always)]
-    pub fn cmpmode(&mut self) -> CMPMODE_W {
-        CMPMODE_W { w: self }
+    pub fn cmpmode(&mut self) -> CMPMODE_W<0> {
+        CMPMODE_W::new(self)
     }
     #[doc = "Bits 4:7 - Comparison Selected Channel"]
     #[inline(always)]
-    pub fn cmpsel(&mut self) -> CMPSEL_W {
-        CMPSEL_W { w: self }
+    pub fn cmpsel(&mut self) -> CMPSEL_W<4> {
+        CMPSEL_W::new(self)
     }
     #[doc = "Bit 9 - Compare All Channels"]
     #[inline(always)]
-    pub fn cmpall(&mut self) -> CMPALL_W {
-        CMPALL_W { w: self }
+    pub fn cmpall(&mut self) -> CMPALL_W<9> {
+        CMPALL_W::new(self)
     }
     #[doc = "Bit 24 - TAG of the ADC_LDCR register"]
     #[inline(always)]
-    pub fn tag(&mut self) -> TAG_W {
-        TAG_W { w: self }
+    pub fn tag(&mut self) -> TAG_W<24> {
+        TAG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

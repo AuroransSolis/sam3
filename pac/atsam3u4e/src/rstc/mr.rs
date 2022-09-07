@@ -35,143 +35,31 @@ impl From<crate::W<MR_SPEC>> for W {
     }
 }
 #[doc = "Field `URSTEN` reader - User Reset Enable"]
-pub struct URSTEN_R(crate::FieldReader<bool, bool>);
-impl URSTEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        URSTEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for URSTEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type URSTEN_R = crate::BitReader<bool>;
 #[doc = "Field `URSTEN` writer - User Reset Enable"]
-pub struct URSTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> URSTEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type URSTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 #[doc = "Field `URSTIEN` reader - User Reset Interrupt Enable"]
-pub struct URSTIEN_R(crate::FieldReader<bool, bool>);
-impl URSTIEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        URSTIEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for URSTIEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type URSTIEN_R = crate::BitReader<bool>;
 #[doc = "Field `URSTIEN` writer - User Reset Interrupt Enable"]
-pub struct URSTIEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> URSTIEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type URSTIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 #[doc = "Field `ERSTL` reader - External Reset Length"]
-pub struct ERSTL_R(crate::FieldReader<u8, u8>);
-impl ERSTL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ERSTL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ERSTL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ERSTL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ERSTL` writer - External Reset Length"]
-pub struct ERSTL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERSTL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type ERSTL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, u8, 4, O>;
 #[doc = "Field `KEY` reader - Password"]
-pub struct KEY_R(crate::FieldReader<u8, u8>);
-impl KEY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        KEY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for KEY_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type KEY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `KEY` writer - Password"]
-pub struct KEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KEY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type KEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bit 0 - User Reset Enable"]
     #[inline(always)]
     pub fn ursten(&self) -> URSTEN_R {
-        URSTEN_R::new((self.bits & 0x01) != 0)
+        URSTEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 4 - User Reset Interrupt Enable"]
     #[inline(always)]
     pub fn urstien(&self) -> URSTIEN_R {
-        URSTIEN_R::new(((self.bits >> 4) & 0x01) != 0)
+        URSTIEN_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 8:11 - External Reset Length"]
     #[inline(always)]
@@ -187,23 +75,23 @@ impl R {
 impl W {
     #[doc = "Bit 0 - User Reset Enable"]
     #[inline(always)]
-    pub fn ursten(&mut self) -> URSTEN_W {
-        URSTEN_W { w: self }
+    pub fn ursten(&mut self) -> URSTEN_W<0> {
+        URSTEN_W::new(self)
     }
     #[doc = "Bit 4 - User Reset Interrupt Enable"]
     #[inline(always)]
-    pub fn urstien(&mut self) -> URSTIEN_W {
-        URSTIEN_W { w: self }
+    pub fn urstien(&mut self) -> URSTIEN_W<4> {
+        URSTIEN_W::new(self)
     }
     #[doc = "Bits 8:11 - External Reset Length"]
     #[inline(always)]
-    pub fn erstl(&mut self) -> ERSTL_W {
-        ERSTL_W { w: self }
+    pub fn erstl(&mut self) -> ERSTL_W<8> {
+        ERSTL_W::new(self)
     }
     #[doc = "Bits 24:31 - Password"]
     #[inline(always)]
-    pub fn key(&mut self) -> KEY_W {
-        KEY_W { w: self }
+    pub fn key(&mut self) -> KEY_W<24> {
+        KEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

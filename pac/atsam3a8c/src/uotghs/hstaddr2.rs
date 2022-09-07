@@ -35,113 +35,21 @@ impl From<crate::W<HSTADDR2_SPEC>> for W {
     }
 }
 #[doc = "Field `HSTADDRP4` reader - USB Host Address"]
-pub struct HSTADDRP4_R(crate::FieldReader<u8, u8>);
-impl HSTADDRP4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        HSTADDRP4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HSTADDRP4_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HSTADDRP4_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HSTADDRP4` writer - USB Host Address"]
-pub struct HSTADDRP4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HSTADDRP4_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
-        self.w
-    }
-}
+pub type HSTADDRP4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HSTADDR2_SPEC, u8, u8, 7, O>;
 #[doc = "Field `HSTADDRP5` reader - USB Host Address"]
-pub struct HSTADDRP5_R(crate::FieldReader<u8, u8>);
-impl HSTADDRP5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        HSTADDRP5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HSTADDRP5_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HSTADDRP5_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HSTADDRP5` writer - USB Host Address"]
-pub struct HSTADDRP5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HSTADDRP5_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 8)) | ((value as u32 & 0x7f) << 8);
-        self.w
-    }
-}
+pub type HSTADDRP5_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HSTADDR2_SPEC, u8, u8, 7, O>;
 #[doc = "Field `HSTADDRP6` reader - USB Host Address"]
-pub struct HSTADDRP6_R(crate::FieldReader<u8, u8>);
-impl HSTADDRP6_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        HSTADDRP6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HSTADDRP6_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HSTADDRP6_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HSTADDRP6` writer - USB Host Address"]
-pub struct HSTADDRP6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HSTADDRP6_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 16)) | ((value as u32 & 0x7f) << 16);
-        self.w
-    }
-}
+pub type HSTADDRP6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HSTADDR2_SPEC, u8, u8, 7, O>;
 #[doc = "Field `HSTADDRP7` reader - USB Host Address"]
-pub struct HSTADDRP7_R(crate::FieldReader<u8, u8>);
-impl HSTADDRP7_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        HSTADDRP7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HSTADDRP7_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HSTADDRP7_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HSTADDRP7` writer - USB Host Address"]
-pub struct HSTADDRP7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HSTADDRP7_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 24)) | ((value as u32 & 0x7f) << 24);
-        self.w
-    }
-}
+pub type HSTADDRP7_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HSTADDR2_SPEC, u8, u8, 7, O>;
 impl R {
     #[doc = "Bits 0:6 - USB Host Address"]
     #[inline(always)]
@@ -167,23 +75,23 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - USB Host Address"]
     #[inline(always)]
-    pub fn hstaddrp4(&mut self) -> HSTADDRP4_W {
-        HSTADDRP4_W { w: self }
+    pub fn hstaddrp4(&mut self) -> HSTADDRP4_W<0> {
+        HSTADDRP4_W::new(self)
     }
     #[doc = "Bits 8:14 - USB Host Address"]
     #[inline(always)]
-    pub fn hstaddrp5(&mut self) -> HSTADDRP5_W {
-        HSTADDRP5_W { w: self }
+    pub fn hstaddrp5(&mut self) -> HSTADDRP5_W<8> {
+        HSTADDRP5_W::new(self)
     }
     #[doc = "Bits 16:22 - USB Host Address"]
     #[inline(always)]
-    pub fn hstaddrp6(&mut self) -> HSTADDRP6_W {
-        HSTADDRP6_W { w: self }
+    pub fn hstaddrp6(&mut self) -> HSTADDRP6_W<16> {
+        HSTADDRP6_W::new(self)
     }
     #[doc = "Bits 24:30 - USB Host Address"]
     #[inline(always)]
-    pub fn hstaddrp7(&mut self) -> HSTADDRP7_W {
-        HSTADDRP7_W { w: self }
+    pub fn hstaddrp7(&mut self) -> HSTADDRP7_W<24> {
+        HSTADDRP7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

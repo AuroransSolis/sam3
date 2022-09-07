@@ -20,113 +20,33 @@ impl From<crate::W<PMC_SCER_SPEC>> for W {
     }
 }
 #[doc = "Field `UDP` writer - USB Device Port Clock Enable"]
-pub struct UDP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UDP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type UDP_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_SCER_SPEC, bool, O>;
 #[doc = "Field `PCK0` writer - Programmable Clock 0 Output Enable"]
-pub struct PCK0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PCK0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type PCK0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_SCER_SPEC, bool, O>;
 #[doc = "Field `PCK1` writer - Programmable Clock 1 Output Enable"]
-pub struct PCK1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PCK1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type PCK1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_SCER_SPEC, bool, O>;
 #[doc = "Field `PCK2` writer - Programmable Clock 2 Output Enable"]
-pub struct PCK2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PCK2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type PCK2_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_SCER_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 7 - USB Device Port Clock Enable"]
     #[inline(always)]
-    pub fn udp(&mut self) -> UDP_W {
-        UDP_W { w: self }
+    pub fn udp(&mut self) -> UDP_W<7> {
+        UDP_W::new(self)
     }
     #[doc = "Bit 8 - Programmable Clock 0 Output Enable"]
     #[inline(always)]
-    pub fn pck0(&mut self) -> PCK0_W {
-        PCK0_W { w: self }
+    pub fn pck0(&mut self) -> PCK0_W<8> {
+        PCK0_W::new(self)
     }
     #[doc = "Bit 9 - Programmable Clock 1 Output Enable"]
     #[inline(always)]
-    pub fn pck1(&mut self) -> PCK1_W {
-        PCK1_W { w: self }
+    pub fn pck1(&mut self) -> PCK1_W<9> {
+        PCK1_W::new(self)
     }
     #[doc = "Bit 10 - Programmable Clock 2 Output Enable"]
     #[inline(always)]
-    pub fn pck2(&mut self) -> PCK2_W {
-        PCK2_W { w: self }
+    pub fn pck2(&mut self) -> PCK2_W<10> {
+        PCK2_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

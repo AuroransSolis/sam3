@@ -20,22 +20,12 @@ impl From<crate::W<THR_SPEC>> for W {
     }
 }
 #[doc = "Field `TXDATA` writer - Master or Slave Transmit Holding Data"]
-pub struct TXDATA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXDATA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type TXDATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, THR_SPEC, u8, u8, 8, O>;
 impl W {
     #[doc = "Bits 0:7 - Master or Slave Transmit Holding Data"]
     #[inline(always)]
-    pub fn txdata(&mut self) -> TXDATA_W {
-        TXDATA_W { w: self }
+    pub fn txdata(&mut self) -> TXDATA_W<0> {
+        TXDATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

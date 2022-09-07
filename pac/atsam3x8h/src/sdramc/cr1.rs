@@ -34,6 +34,8 @@ impl From<crate::W<CR1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `NC` reader - Number of Column Bits"]
+pub type NC_R = crate::FieldReader<u8, NC_A>;
 #[doc = "Number of Column Bits\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,14 +55,8 @@ impl From<NC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `NC` reader - Number of Column Bits"]
-pub struct NC_R(crate::FieldReader<u8, NC_A>);
 impl NC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        NC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> NC_A {
         match self.bits {
@@ -74,41 +70,27 @@ impl NC_R {
     #[doc = "Checks if the value of the field is `COL8`"]
     #[inline(always)]
     pub fn is_col8(&self) -> bool {
-        **self == NC_A::COL8
+        *self == NC_A::COL8
     }
     #[doc = "Checks if the value of the field is `COL9`"]
     #[inline(always)]
     pub fn is_col9(&self) -> bool {
-        **self == NC_A::COL9
+        *self == NC_A::COL9
     }
     #[doc = "Checks if the value of the field is `COL10`"]
     #[inline(always)]
     pub fn is_col10(&self) -> bool {
-        **self == NC_A::COL10
+        *self == NC_A::COL10
     }
     #[doc = "Checks if the value of the field is `COL11`"]
     #[inline(always)]
     pub fn is_col11(&self) -> bool {
-        **self == NC_A::COL11
-    }
-}
-impl core::ops::Deref for NC_R {
-    type Target = crate::FieldReader<u8, NC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == NC_A::COL11
     }
 }
 #[doc = "Field `NC` writer - Number of Column Bits"]
-pub struct NC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: NC_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type NC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CR1_SPEC, u8, NC_A, 2, O>;
+impl<'a, const O: u8> NC_W<'a, O> {
     #[doc = "8 column bits"]
     #[inline(always)]
     pub fn col8(self) -> &'a mut W {
@@ -129,13 +111,9 @@ impl<'a> NC_W<'a> {
     pub fn col11(self) -> &'a mut W {
         self.variant(NC_A::COL11)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
+#[doc = "Field `NR` reader - Number of Row Bits"]
+pub type NR_R = crate::FieldReader<u8, NR_A>;
 #[doc = "Number of Row Bits\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -153,14 +131,8 @@ impl From<NR_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `NR` reader - Number of Row Bits"]
-pub struct NR_R(crate::FieldReader<u8, NR_A>);
 impl NR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        NR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<NR_A> {
         match self.bits {
@@ -173,36 +145,22 @@ impl NR_R {
     #[doc = "Checks if the value of the field is `ROW11`"]
     #[inline(always)]
     pub fn is_row11(&self) -> bool {
-        **self == NR_A::ROW11
+        *self == NR_A::ROW11
     }
     #[doc = "Checks if the value of the field is `ROW12`"]
     #[inline(always)]
     pub fn is_row12(&self) -> bool {
-        **self == NR_A::ROW12
+        *self == NR_A::ROW12
     }
     #[doc = "Checks if the value of the field is `ROW13`"]
     #[inline(always)]
     pub fn is_row13(&self) -> bool {
-        **self == NR_A::ROW13
-    }
-}
-impl core::ops::Deref for NR_R {
-    type Target = crate::FieldReader<u8, NR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == NR_A::ROW13
     }
 }
 #[doc = "Field `NR` writer - Number of Row Bits"]
-pub struct NR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: NR_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type NR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CR1_SPEC, u8, NR_A, 2, O>;
+impl<'a, const O: u8> NR_W<'a, O> {
     #[doc = "11 row bits"]
     #[inline(always)]
     pub fn row11(self) -> &'a mut W {
@@ -218,13 +176,9 @@ impl<'a> NR_W<'a> {
     pub fn row13(self) -> &'a mut W {
         self.variant(NR_A::ROW13)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
-        self.w
-    }
 }
+#[doc = "Field `NB` reader - Number of Banks"]
+pub type NB_R = crate::BitReader<NB_A>;
 #[doc = "Number of Banks\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NB_A {
@@ -239,14 +193,8 @@ impl From<NB_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `NB` reader - Number of Banks"]
-pub struct NB_R(crate::FieldReader<bool, NB_A>);
 impl NB_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        NB_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> NB_A {
         match self.bits {
@@ -257,31 +205,17 @@ impl NB_R {
     #[doc = "Checks if the value of the field is `BANK2`"]
     #[inline(always)]
     pub fn is_bank2(&self) -> bool {
-        **self == NB_A::BANK2
+        *self == NB_A::BANK2
     }
     #[doc = "Checks if the value of the field is `BANK4`"]
     #[inline(always)]
     pub fn is_bank4(&self) -> bool {
-        **self == NB_A::BANK4
-    }
-}
-impl core::ops::Deref for NB_R {
-    type Target = crate::FieldReader<bool, NB_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == NB_A::BANK4
     }
 }
 #[doc = "Field `NB` writer - Number of Banks"]
-pub struct NB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NB_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: NB_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type NB_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR1_SPEC, NB_A, O>;
+impl<'a, const O: u8> NB_W<'a, O> {
     #[doc = "2 banks"]
     #[inline(always)]
     pub fn bank2(self) -> &'a mut W {
@@ -292,23 +226,9 @@ impl<'a> NB_W<'a> {
     pub fn bank4(self) -> &'a mut W {
         self.variant(NB_A::BANK4)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `CAS` reader - CAS Latency"]
+pub type CAS_R = crate::FieldReader<u8, CAS_A>;
 #[doc = "CAS Latency\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -326,14 +246,8 @@ impl From<CAS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CAS` reader - CAS Latency"]
-pub struct CAS_R(crate::FieldReader<u8, CAS_A>);
 impl CAS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CAS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CAS_A> {
         match self.bits {
@@ -346,36 +260,22 @@ impl CAS_R {
     #[doc = "Checks if the value of the field is `LATENCY1`"]
     #[inline(always)]
     pub fn is_latency1(&self) -> bool {
-        **self == CAS_A::LATENCY1
+        *self == CAS_A::LATENCY1
     }
     #[doc = "Checks if the value of the field is `LATENCY2`"]
     #[inline(always)]
     pub fn is_latency2(&self) -> bool {
-        **self == CAS_A::LATENCY2
+        *self == CAS_A::LATENCY2
     }
     #[doc = "Checks if the value of the field is `LATENCY3`"]
     #[inline(always)]
     pub fn is_latency3(&self) -> bool {
-        **self == CAS_A::LATENCY3
-    }
-}
-impl core::ops::Deref for CAS_R {
-    type Target = crate::FieldReader<u8, CAS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CAS_A::LATENCY3
     }
 }
 #[doc = "Field `CAS` writer - CAS Latency"]
-pub struct CAS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CAS_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CAS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CR1_SPEC, u8, CAS_A, 2, O>;
+impl<'a, const O: u8> CAS_W<'a, O> {
     #[doc = "1 cycle CAS latency"]
     #[inline(always)]
     pub fn latency1(self) -> &'a mut W {
@@ -391,237 +291,60 @@ impl<'a> CAS_W<'a> {
     pub fn latency3(self) -> &'a mut W {
         self.variant(CAS_A::LATENCY3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 5)) | ((value as u32 & 0x03) << 5);
-        self.w
-    }
 }
 #[doc = "Field `DBW` reader - Data Bus Width"]
-pub struct DBW_R(crate::FieldReader<bool, bool>);
-impl DBW_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DBW_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DBW_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DBW_R = crate::BitReader<bool>;
 #[doc = "Field `DBW` writer - Data Bus Width"]
-pub struct DBW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DBW_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type DBW_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR1_SPEC, bool, O>;
 #[doc = "Field `TWR` reader - Write Recovery Delay"]
-pub struct TWR_R(crate::FieldReader<u8, u8>);
-impl TWR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TWR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TWR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TWR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TWR` writer - Write Recovery Delay"]
-pub struct TWR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TWR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type TWR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CR1_SPEC, u8, u8, 4, O>;
 #[doc = "Field `TRC_TRFC` reader - Row Cycle Delay and Row Refresh Cycle"]
-pub struct TRC_TRFC_R(crate::FieldReader<u8, u8>);
-impl TRC_TRFC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TRC_TRFC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TRC_TRFC_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TRC_TRFC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TRC_TRFC` writer - Row Cycle Delay and Row Refresh Cycle"]
-pub struct TRC_TRFC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRC_TRFC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 12)) | ((value as u32 & 0x0f) << 12);
-        self.w
-    }
-}
+pub type TRC_TRFC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CR1_SPEC, u8, u8, 4, O>;
 #[doc = "Field `TRP` reader - Row Precharge Delay"]
-pub struct TRP_R(crate::FieldReader<u8, u8>);
-impl TRP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TRP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TRP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TRP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TRP` writer - Row Precharge Delay"]
-pub struct TRP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
-        self.w
-    }
-}
+pub type TRP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CR1_SPEC, u8, u8, 4, O>;
 #[doc = "Field `TRCD` reader - Row to Column Delay"]
-pub struct TRCD_R(crate::FieldReader<u8, u8>);
-impl TRCD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TRCD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TRCD_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TRCD_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TRCD` writer - Row to Column Delay"]
-pub struct TRCD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRCD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 20)) | ((value as u32 & 0x0f) << 20);
-        self.w
-    }
-}
+pub type TRCD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CR1_SPEC, u8, u8, 4, O>;
 #[doc = "Field `TRAS` reader - Active to Precharge Delay"]
-pub struct TRAS_R(crate::FieldReader<u8, u8>);
-impl TRAS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TRAS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TRAS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TRAS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TRAS` writer - Active to Precharge Delay"]
-pub struct TRAS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRAS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
-        self.w
-    }
-}
+pub type TRAS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CR1_SPEC, u8, u8, 4, O>;
 #[doc = "Field `TXSR` reader - Exit Self Refresh to Active Delay"]
-pub struct TXSR_R(crate::FieldReader<u8, u8>);
-impl TXSR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TXSR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXSR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXSR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TXSR` writer - Exit Self Refresh to Active Delay"]
-pub struct TXSR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXSR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 28)) | ((value as u32 & 0x0f) << 28);
-        self.w
-    }
-}
+pub type TXSR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CR1_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:1 - Number of Column Bits"]
     #[inline(always)]
     pub fn nc(&self) -> NC_R {
-        NC_R::new((self.bits & 0x03) as u8)
+        NC_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - Number of Row Bits"]
     #[inline(always)]
     pub fn nr(&self) -> NR_R {
-        NR_R::new(((self.bits >> 2) & 0x03) as u8)
+        NR_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bit 4 - Number of Banks"]
     #[inline(always)]
     pub fn nb(&self) -> NB_R {
-        NB_R::new(((self.bits >> 4) & 0x01) != 0)
+        NB_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 5:6 - CAS Latency"]
     #[inline(always)]
     pub fn cas(&self) -> CAS_R {
-        CAS_R::new(((self.bits >> 5) & 0x03) as u8)
+        CAS_R::new(((self.bits >> 5) & 3) as u8)
     }
     #[doc = "Bit 7 - Data Bus Width"]
     #[inline(always)]
     pub fn dbw(&self) -> DBW_R {
-        DBW_R::new(((self.bits >> 7) & 0x01) != 0)
+        DBW_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:11 - Write Recovery Delay"]
     #[inline(always)]
@@ -657,58 +380,58 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Number of Column Bits"]
     #[inline(always)]
-    pub fn nc(&mut self) -> NC_W {
-        NC_W { w: self }
+    pub fn nc(&mut self) -> NC_W<0> {
+        NC_W::new(self)
     }
     #[doc = "Bits 2:3 - Number of Row Bits"]
     #[inline(always)]
-    pub fn nr(&mut self) -> NR_W {
-        NR_W { w: self }
+    pub fn nr(&mut self) -> NR_W<2> {
+        NR_W::new(self)
     }
     #[doc = "Bit 4 - Number of Banks"]
     #[inline(always)]
-    pub fn nb(&mut self) -> NB_W {
-        NB_W { w: self }
+    pub fn nb(&mut self) -> NB_W<4> {
+        NB_W::new(self)
     }
     #[doc = "Bits 5:6 - CAS Latency"]
     #[inline(always)]
-    pub fn cas(&mut self) -> CAS_W {
-        CAS_W { w: self }
+    pub fn cas(&mut self) -> CAS_W<5> {
+        CAS_W::new(self)
     }
     #[doc = "Bit 7 - Data Bus Width"]
     #[inline(always)]
-    pub fn dbw(&mut self) -> DBW_W {
-        DBW_W { w: self }
+    pub fn dbw(&mut self) -> DBW_W<7> {
+        DBW_W::new(self)
     }
     #[doc = "Bits 8:11 - Write Recovery Delay"]
     #[inline(always)]
-    pub fn twr(&mut self) -> TWR_W {
-        TWR_W { w: self }
+    pub fn twr(&mut self) -> TWR_W<8> {
+        TWR_W::new(self)
     }
     #[doc = "Bits 12:15 - Row Cycle Delay and Row Refresh Cycle"]
     #[inline(always)]
-    pub fn trc_trfc(&mut self) -> TRC_TRFC_W {
-        TRC_TRFC_W { w: self }
+    pub fn trc_trfc(&mut self) -> TRC_TRFC_W<12> {
+        TRC_TRFC_W::new(self)
     }
     #[doc = "Bits 16:19 - Row Precharge Delay"]
     #[inline(always)]
-    pub fn trp(&mut self) -> TRP_W {
-        TRP_W { w: self }
+    pub fn trp(&mut self) -> TRP_W<16> {
+        TRP_W::new(self)
     }
     #[doc = "Bits 20:23 - Row to Column Delay"]
     #[inline(always)]
-    pub fn trcd(&mut self) -> TRCD_W {
-        TRCD_W { w: self }
+    pub fn trcd(&mut self) -> TRCD_W<20> {
+        TRCD_W::new(self)
     }
     #[doc = "Bits 24:27 - Active to Precharge Delay"]
     #[inline(always)]
-    pub fn tras(&mut self) -> TRAS_W {
-        TRAS_W { w: self }
+    pub fn tras(&mut self) -> TRAS_W<24> {
+        TRAS_W::new(self)
     }
     #[doc = "Bits 28:31 - Exit Self Refresh to Active Delay"]
     #[inline(always)]
-    pub fn txsr(&mut self) -> TXSR_W {
-        TXSR_W { w: self }
+    pub fn txsr(&mut self) -> TXSR_W<28> {
+        TXSR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

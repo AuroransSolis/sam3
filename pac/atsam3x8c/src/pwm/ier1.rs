@@ -20,437 +20,117 @@ impl From<crate::W<IER1_SPEC>> for W {
     }
 }
 #[doc = "Field `CHID0` writer - Counter Event on Channel 0 Interrupt Enable"]
-pub struct CHID0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHID0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CHID0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
 #[doc = "Field `CHID1` writer - Counter Event on Channel 1 Interrupt Enable"]
-pub struct CHID1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHID1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CHID1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
 #[doc = "Field `CHID2` writer - Counter Event on Channel 2 Interrupt Enable"]
-pub struct CHID2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHID2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CHID2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
 #[doc = "Field `CHID3` writer - Counter Event on Channel 3 Interrupt Enable"]
-pub struct CHID3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHID3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CHID3_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
 #[doc = "Field `CHID4` writer - Counter Event on Channel 4 Interrupt Enable"]
-pub struct CHID4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHID4_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CHID4_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
 #[doc = "Field `CHID5` writer - Counter Event on Channel 5 Interrupt Enable"]
-pub struct CHID5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHID5_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type CHID5_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
 #[doc = "Field `CHID6` writer - Counter Event on Channel 6 Interrupt Enable"]
-pub struct CHID6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHID6_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type CHID6_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
 #[doc = "Field `CHID7` writer - Counter Event on Channel 7 Interrupt Enable"]
-pub struct CHID7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHID7_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type CHID7_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
 #[doc = "Field `FCHID0` writer - Fault Protection Trigger on Channel 0 Interrupt Enable"]
-pub struct FCHID0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCHID0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type FCHID0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
 #[doc = "Field `FCHID1` writer - Fault Protection Trigger on Channel 1 Interrupt Enable"]
-pub struct FCHID1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCHID1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type FCHID1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
 #[doc = "Field `FCHID2` writer - Fault Protection Trigger on Channel 2 Interrupt Enable"]
-pub struct FCHID2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCHID2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
+pub type FCHID2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
 #[doc = "Field `FCHID3` writer - Fault Protection Trigger on Channel 3 Interrupt Enable"]
-pub struct FCHID3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCHID3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
-}
+pub type FCHID3_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
 #[doc = "Field `FCHID4` writer - Fault Protection Trigger on Channel 4 Interrupt Enable"]
-pub struct FCHID4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCHID4_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
-        self.w
-    }
-}
+pub type FCHID4_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
 #[doc = "Field `FCHID5` writer - Fault Protection Trigger on Channel 5 Interrupt Enable"]
-pub struct FCHID5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCHID5_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
-        self.w
-    }
-}
+pub type FCHID5_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
 #[doc = "Field `FCHID6` writer - Fault Protection Trigger on Channel 6 Interrupt Enable"]
-pub struct FCHID6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCHID6_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
-        self.w
-    }
-}
+pub type FCHID6_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
 #[doc = "Field `FCHID7` writer - Fault Protection Trigger on Channel 7 Interrupt Enable"]
-pub struct FCHID7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCHID7_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
-}
+pub type FCHID7_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Counter Event on Channel 0 Interrupt Enable"]
     #[inline(always)]
-    pub fn chid0(&mut self) -> CHID0_W {
-        CHID0_W { w: self }
+    pub fn chid0(&mut self) -> CHID0_W<0> {
+        CHID0_W::new(self)
     }
     #[doc = "Bit 1 - Counter Event on Channel 1 Interrupt Enable"]
     #[inline(always)]
-    pub fn chid1(&mut self) -> CHID1_W {
-        CHID1_W { w: self }
+    pub fn chid1(&mut self) -> CHID1_W<1> {
+        CHID1_W::new(self)
     }
     #[doc = "Bit 2 - Counter Event on Channel 2 Interrupt Enable"]
     #[inline(always)]
-    pub fn chid2(&mut self) -> CHID2_W {
-        CHID2_W { w: self }
+    pub fn chid2(&mut self) -> CHID2_W<2> {
+        CHID2_W::new(self)
     }
     #[doc = "Bit 3 - Counter Event on Channel 3 Interrupt Enable"]
     #[inline(always)]
-    pub fn chid3(&mut self) -> CHID3_W {
-        CHID3_W { w: self }
+    pub fn chid3(&mut self) -> CHID3_W<3> {
+        CHID3_W::new(self)
     }
     #[doc = "Bit 4 - Counter Event on Channel 4 Interrupt Enable"]
     #[inline(always)]
-    pub fn chid4(&mut self) -> CHID4_W {
-        CHID4_W { w: self }
+    pub fn chid4(&mut self) -> CHID4_W<4> {
+        CHID4_W::new(self)
     }
     #[doc = "Bit 5 - Counter Event on Channel 5 Interrupt Enable"]
     #[inline(always)]
-    pub fn chid5(&mut self) -> CHID5_W {
-        CHID5_W { w: self }
+    pub fn chid5(&mut self) -> CHID5_W<5> {
+        CHID5_W::new(self)
     }
     #[doc = "Bit 6 - Counter Event on Channel 6 Interrupt Enable"]
     #[inline(always)]
-    pub fn chid6(&mut self) -> CHID6_W {
-        CHID6_W { w: self }
+    pub fn chid6(&mut self) -> CHID6_W<6> {
+        CHID6_W::new(self)
     }
     #[doc = "Bit 7 - Counter Event on Channel 7 Interrupt Enable"]
     #[inline(always)]
-    pub fn chid7(&mut self) -> CHID7_W {
-        CHID7_W { w: self }
+    pub fn chid7(&mut self) -> CHID7_W<7> {
+        CHID7_W::new(self)
     }
     #[doc = "Bit 16 - Fault Protection Trigger on Channel 0 Interrupt Enable"]
     #[inline(always)]
-    pub fn fchid0(&mut self) -> FCHID0_W {
-        FCHID0_W { w: self }
+    pub fn fchid0(&mut self) -> FCHID0_W<16> {
+        FCHID0_W::new(self)
     }
     #[doc = "Bit 17 - Fault Protection Trigger on Channel 1 Interrupt Enable"]
     #[inline(always)]
-    pub fn fchid1(&mut self) -> FCHID1_W {
-        FCHID1_W { w: self }
+    pub fn fchid1(&mut self) -> FCHID1_W<17> {
+        FCHID1_W::new(self)
     }
     #[doc = "Bit 18 - Fault Protection Trigger on Channel 2 Interrupt Enable"]
     #[inline(always)]
-    pub fn fchid2(&mut self) -> FCHID2_W {
-        FCHID2_W { w: self }
+    pub fn fchid2(&mut self) -> FCHID2_W<18> {
+        FCHID2_W::new(self)
     }
     #[doc = "Bit 19 - Fault Protection Trigger on Channel 3 Interrupt Enable"]
     #[inline(always)]
-    pub fn fchid3(&mut self) -> FCHID3_W {
-        FCHID3_W { w: self }
+    pub fn fchid3(&mut self) -> FCHID3_W<19> {
+        FCHID3_W::new(self)
     }
     #[doc = "Bit 20 - Fault Protection Trigger on Channel 4 Interrupt Enable"]
     #[inline(always)]
-    pub fn fchid4(&mut self) -> FCHID4_W {
-        FCHID4_W { w: self }
+    pub fn fchid4(&mut self) -> FCHID4_W<20> {
+        FCHID4_W::new(self)
     }
     #[doc = "Bit 21 - Fault Protection Trigger on Channel 5 Interrupt Enable"]
     #[inline(always)]
-    pub fn fchid5(&mut self) -> FCHID5_W {
-        FCHID5_W { w: self }
+    pub fn fchid5(&mut self) -> FCHID5_W<21> {
+        FCHID5_W::new(self)
     }
     #[doc = "Bit 22 - Fault Protection Trigger on Channel 6 Interrupt Enable"]
     #[inline(always)]
-    pub fn fchid6(&mut self) -> FCHID6_W {
-        FCHID6_W { w: self }
+    pub fn fchid6(&mut self) -> FCHID6_W<22> {
+        FCHID6_W::new(self)
     }
     #[doc = "Bit 23 - Fault Protection Trigger on Channel 7 Interrupt Enable"]
     #[inline(always)]
-    pub fn fchid7(&mut self) -> FCHID7_W {
-        FCHID7_W { w: self }
+    pub fn fchid7(&mut self) -> FCHID7_W<23> {
+        FCHID7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

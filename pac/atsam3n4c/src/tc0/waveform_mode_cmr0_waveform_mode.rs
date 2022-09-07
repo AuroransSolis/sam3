@@ -34,6 +34,8 @@ impl From<crate::W<WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TCCLKS` reader - Clock Selection"]
+pub type TCCLKS_R = crate::FieldReader<u8, TCCLKS_A>;
 #[doc = "Clock Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -61,14 +63,8 @@ impl From<TCCLKS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TCCLKS` reader - Clock Selection"]
-pub struct TCCLKS_R(crate::FieldReader<u8, TCCLKS_A>);
 impl TCCLKS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TCCLKS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TCCLKS_A {
         match self.bits {
@@ -86,61 +82,48 @@ impl TCCLKS_R {
     #[doc = "Checks if the value of the field is `TIMER_CLOCK1`"]
     #[inline(always)]
     pub fn is_timer_clock1(&self) -> bool {
-        **self == TCCLKS_A::TIMER_CLOCK1
+        *self == TCCLKS_A::TIMER_CLOCK1
     }
     #[doc = "Checks if the value of the field is `TIMER_CLOCK2`"]
     #[inline(always)]
     pub fn is_timer_clock2(&self) -> bool {
-        **self == TCCLKS_A::TIMER_CLOCK2
+        *self == TCCLKS_A::TIMER_CLOCK2
     }
     #[doc = "Checks if the value of the field is `TIMER_CLOCK3`"]
     #[inline(always)]
     pub fn is_timer_clock3(&self) -> bool {
-        **self == TCCLKS_A::TIMER_CLOCK3
+        *self == TCCLKS_A::TIMER_CLOCK3
     }
     #[doc = "Checks if the value of the field is `TIMER_CLOCK4`"]
     #[inline(always)]
     pub fn is_timer_clock4(&self) -> bool {
-        **self == TCCLKS_A::TIMER_CLOCK4
+        *self == TCCLKS_A::TIMER_CLOCK4
     }
     #[doc = "Checks if the value of the field is `TIMER_CLOCK5`"]
     #[inline(always)]
     pub fn is_timer_clock5(&self) -> bool {
-        **self == TCCLKS_A::TIMER_CLOCK5
+        *self == TCCLKS_A::TIMER_CLOCK5
     }
     #[doc = "Checks if the value of the field is `XC0`"]
     #[inline(always)]
     pub fn is_xc0(&self) -> bool {
-        **self == TCCLKS_A::XC0
+        *self == TCCLKS_A::XC0
     }
     #[doc = "Checks if the value of the field is `XC1`"]
     #[inline(always)]
     pub fn is_xc1(&self) -> bool {
-        **self == TCCLKS_A::XC1
+        *self == TCCLKS_A::XC1
     }
     #[doc = "Checks if the value of the field is `XC2`"]
     #[inline(always)]
     pub fn is_xc2(&self) -> bool {
-        **self == TCCLKS_A::XC2
-    }
-}
-impl core::ops::Deref for TCCLKS_R {
-    type Target = crate::FieldReader<u8, TCCLKS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TCCLKS_A::XC2
     }
 }
 #[doc = "Field `TCCLKS` writer - Clock Selection"]
-pub struct TCCLKS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TCCLKS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TCCLKS_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type TCCLKS_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC, u8, TCCLKS_A, 3, O>;
+impl<'a, const O: u8> TCCLKS_W<'a, O> {
     #[doc = "Clock selected: internal MCK/2 clock signal (from PMC)"]
     #[inline(always)]
     pub fn timer_clock1(self) -> &'a mut W {
@@ -181,50 +164,14 @@ impl<'a> TCCLKS_W<'a> {
     pub fn xc2(self) -> &'a mut W {
         self.variant(TCCLKS_A::XC2)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
 #[doc = "Field `CLKI` reader - Clock Invert"]
-pub struct CLKI_R(crate::FieldReader<bool, bool>);
-impl CLKI_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CLKI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLKI_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLKI_R = crate::BitReader<bool>;
 #[doc = "Field `CLKI` writer - Clock Invert"]
-pub struct CLKI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKI_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CLKI_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC, bool, O>;
+#[doc = "Field `BURST` reader - Burst Signal Selection"]
+pub type BURST_R = crate::FieldReader<u8, BURST_A>;
 #[doc = "Burst Signal Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -244,14 +191,8 @@ impl From<BURST_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `BURST` reader - Burst Signal Selection"]
-pub struct BURST_R(crate::FieldReader<u8, BURST_A>);
 impl BURST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        BURST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BURST_A {
         match self.bits {
@@ -265,41 +206,28 @@ impl BURST_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        **self == BURST_A::NONE
+        *self == BURST_A::NONE
     }
     #[doc = "Checks if the value of the field is `XC0`"]
     #[inline(always)]
     pub fn is_xc0(&self) -> bool {
-        **self == BURST_A::XC0
+        *self == BURST_A::XC0
     }
     #[doc = "Checks if the value of the field is `XC1`"]
     #[inline(always)]
     pub fn is_xc1(&self) -> bool {
-        **self == BURST_A::XC1
+        *self == BURST_A::XC1
     }
     #[doc = "Checks if the value of the field is `XC2`"]
     #[inline(always)]
     pub fn is_xc2(&self) -> bool {
-        **self == BURST_A::XC2
-    }
-}
-impl core::ops::Deref for BURST_R {
-    type Target = crate::FieldReader<u8, BURST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BURST_A::XC2
     }
 }
 #[doc = "Field `BURST` writer - Burst Signal Selection"]
-pub struct BURST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BURST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BURST_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type BURST_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC, u8, BURST_A, 2, O>;
+impl<'a, const O: u8> BURST_W<'a, O> {
     #[doc = "The clock is not gated by an external signal."]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -320,87 +248,19 @@ impl<'a> BURST_W<'a> {
     pub fn xc2(self) -> &'a mut W {
         self.variant(BURST_A::XC2)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
-    }
 }
 #[doc = "Field `CPCSTOP` reader - Counter Clock Stopped with RC Compare"]
-pub struct CPCSTOP_R(crate::FieldReader<bool, bool>);
-impl CPCSTOP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CPCSTOP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CPCSTOP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CPCSTOP_R = crate::BitReader<bool>;
 #[doc = "Field `CPCSTOP` writer - Counter Clock Stopped with RC Compare"]
-pub struct CPCSTOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPCSTOP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type CPCSTOP_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC, bool, O>;
 #[doc = "Field `CPCDIS` reader - Counter Clock Disable with RC Compare"]
-pub struct CPCDIS_R(crate::FieldReader<bool, bool>);
-impl CPCDIS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CPCDIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CPCDIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CPCDIS_R = crate::BitReader<bool>;
 #[doc = "Field `CPCDIS` writer - Counter Clock Disable with RC Compare"]
-pub struct CPCDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPCDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type CPCDIS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC, bool, O>;
+#[doc = "Field `EEVTEDG` reader - External Event Edge Selection"]
+pub type EEVTEDG_R = crate::FieldReader<u8, EEVTEDG_A>;
 #[doc = "External Event Edge Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -420,14 +280,8 @@ impl From<EEVTEDG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EEVTEDG` reader - External Event Edge Selection"]
-pub struct EEVTEDG_R(crate::FieldReader<u8, EEVTEDG_A>);
 impl EEVTEDG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        EEVTEDG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EEVTEDG_A {
         match self.bits {
@@ -441,41 +295,28 @@ impl EEVTEDG_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        **self == EEVTEDG_A::NONE
+        *self == EEVTEDG_A::NONE
     }
     #[doc = "Checks if the value of the field is `RISING`"]
     #[inline(always)]
     pub fn is_rising(&self) -> bool {
-        **self == EEVTEDG_A::RISING
+        *self == EEVTEDG_A::RISING
     }
     #[doc = "Checks if the value of the field is `FALLING`"]
     #[inline(always)]
     pub fn is_falling(&self) -> bool {
-        **self == EEVTEDG_A::FALLING
+        *self == EEVTEDG_A::FALLING
     }
     #[doc = "Checks if the value of the field is `EDGE`"]
     #[inline(always)]
     pub fn is_edge(&self) -> bool {
-        **self == EEVTEDG_A::EDGE
-    }
-}
-impl core::ops::Deref for EEVTEDG_R {
-    type Target = crate::FieldReader<u8, EEVTEDG_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EEVTEDG_A::EDGE
     }
 }
 #[doc = "Field `EEVTEDG` writer - External Event Edge Selection"]
-pub struct EEVTEDG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EEVTEDG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EEVTEDG_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type EEVTEDG_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC, u8, EEVTEDG_A, 2, O>;
+impl<'a, const O: u8> EEVTEDG_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -496,13 +337,9 @@ impl<'a> EEVTEDG_W<'a> {
     pub fn edge(self) -> &'a mut W {
         self.variant(EEVTEDG_A::EDGE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
-    }
 }
+#[doc = "Field `EEVT` reader - External Event Selection"]
+pub type EEVT_R = crate::FieldReader<u8, EEVT_A>;
 #[doc = "External Event Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -522,14 +359,8 @@ impl From<EEVT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EEVT` reader - External Event Selection"]
-pub struct EEVT_R(crate::FieldReader<u8, EEVT_A>);
 impl EEVT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        EEVT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EEVT_A {
         match self.bits {
@@ -543,41 +374,28 @@ impl EEVT_R {
     #[doc = "Checks if the value of the field is `TIOB`"]
     #[inline(always)]
     pub fn is_tiob(&self) -> bool {
-        **self == EEVT_A::TIOB
+        *self == EEVT_A::TIOB
     }
     #[doc = "Checks if the value of the field is `XC0`"]
     #[inline(always)]
     pub fn is_xc0(&self) -> bool {
-        **self == EEVT_A::XC0
+        *self == EEVT_A::XC0
     }
     #[doc = "Checks if the value of the field is `XC1`"]
     #[inline(always)]
     pub fn is_xc1(&self) -> bool {
-        **self == EEVT_A::XC1
+        *self == EEVT_A::XC1
     }
     #[doc = "Checks if the value of the field is `XC2`"]
     #[inline(always)]
     pub fn is_xc2(&self) -> bool {
-        **self == EEVT_A::XC2
-    }
-}
-impl core::ops::Deref for EEVT_R {
-    type Target = crate::FieldReader<u8, EEVT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EEVT_A::XC2
     }
 }
 #[doc = "Field `EEVT` writer - External Event Selection"]
-pub struct EEVT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EEVT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EEVT_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type EEVT_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC, u8, EEVT_A, 2, O>;
+impl<'a, const O: u8> EEVT_W<'a, O> {
     #[doc = "TIOB"]
     #[inline(always)]
     pub fn tiob(self) -> &'a mut W {
@@ -598,50 +416,14 @@ impl<'a> EEVT_W<'a> {
     pub fn xc2(self) -> &'a mut W {
         self.variant(EEVT_A::XC2)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
-        self.w
-    }
 }
 #[doc = "Field `ENETRG` reader - External Event Trigger Enable"]
-pub struct ENETRG_R(crate::FieldReader<bool, bool>);
-impl ENETRG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ENETRG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ENETRG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ENETRG_R = crate::BitReader<bool>;
 #[doc = "Field `ENETRG` writer - External Event Trigger Enable"]
-pub struct ENETRG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENETRG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type ENETRG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC, bool, O>;
+#[doc = "Field `WAVSEL` reader - Waveform Selection"]
+pub type WAVSEL_R = crate::FieldReader<u8, WAVSEL_A>;
 #[doc = "Waveform Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -661,14 +443,8 @@ impl From<WAVSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WAVSEL` reader - Waveform Selection"]
-pub struct WAVSEL_R(crate::FieldReader<u8, WAVSEL_A>);
 impl WAVSEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WAVSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WAVSEL_A {
         match self.bits {
@@ -682,41 +458,28 @@ impl WAVSEL_R {
     #[doc = "Checks if the value of the field is `UP`"]
     #[inline(always)]
     pub fn is_up(&self) -> bool {
-        **self == WAVSEL_A::UP
+        *self == WAVSEL_A::UP
     }
     #[doc = "Checks if the value of the field is `UPDOWN`"]
     #[inline(always)]
     pub fn is_updown(&self) -> bool {
-        **self == WAVSEL_A::UPDOWN
+        *self == WAVSEL_A::UPDOWN
     }
     #[doc = "Checks if the value of the field is `UP_RC`"]
     #[inline(always)]
     pub fn is_up_rc(&self) -> bool {
-        **self == WAVSEL_A::UP_RC
+        *self == WAVSEL_A::UP_RC
     }
     #[doc = "Checks if the value of the field is `UPDOWN_RC`"]
     #[inline(always)]
     pub fn is_updown_rc(&self) -> bool {
-        **self == WAVSEL_A::UPDOWN_RC
-    }
-}
-impl core::ops::Deref for WAVSEL_R {
-    type Target = crate::FieldReader<u8, WAVSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WAVSEL_A::UPDOWN_RC
     }
 }
 #[doc = "Field `WAVSEL` writer - Waveform Selection"]
-pub struct WAVSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAVSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WAVSEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type WAVSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC, u8, WAVSEL_A, 2, O>;
+impl<'a, const O: u8> WAVSEL_W<'a, O> {
     #[doc = "UP mode without automatic trigger on RC Compare"]
     #[inline(always)]
     pub fn up(self) -> &'a mut W {
@@ -737,50 +500,14 @@ impl<'a> WAVSEL_W<'a> {
     pub fn updown_rc(self) -> &'a mut W {
         self.variant(WAVSEL_A::UPDOWN_RC)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 13)) | ((value as u32 & 0x03) << 13);
-        self.w
-    }
 }
 #[doc = "Field `WAVE` reader - Waveform Mode"]
-pub struct WAVE_R(crate::FieldReader<bool, bool>);
-impl WAVE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WAVE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WAVE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WAVE_R = crate::BitReader<bool>;
 #[doc = "Field `WAVE` writer - Waveform Mode"]
-pub struct WAVE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAVE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type WAVE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC, bool, O>;
+#[doc = "Field `ACPA` reader - RA Compare Effect on TIOA"]
+pub type ACPA_R = crate::FieldReader<u8, ACPA_A>;
 #[doc = "RA Compare Effect on TIOA\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -800,14 +527,8 @@ impl From<ACPA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ACPA` reader - RA Compare Effect on TIOA"]
-pub struct ACPA_R(crate::FieldReader<u8, ACPA_A>);
 impl ACPA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ACPA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ACPA_A {
         match self.bits {
@@ -821,41 +542,28 @@ impl ACPA_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        **self == ACPA_A::NONE
+        *self == ACPA_A::NONE
     }
     #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        **self == ACPA_A::SET
+        *self == ACPA_A::SET
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        **self == ACPA_A::CLEAR
+        *self == ACPA_A::CLEAR
     }
     #[doc = "Checks if the value of the field is `TOGGLE`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        **self == ACPA_A::TOGGLE
-    }
-}
-impl core::ops::Deref for ACPA_R {
-    type Target = crate::FieldReader<u8, ACPA_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ACPA_A::TOGGLE
     }
 }
 #[doc = "Field `ACPA` writer - RA Compare Effect on TIOA"]
-pub struct ACPA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACPA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ACPA_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type ACPA_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC, u8, ACPA_A, 2, O>;
+impl<'a, const O: u8> ACPA_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -876,13 +584,9 @@ impl<'a> ACPA_W<'a> {
     pub fn toggle(self) -> &'a mut W {
         self.variant(ACPA_A::TOGGLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
-        self.w
-    }
 }
+#[doc = "Field `ACPC` reader - RC Compare Effect on TIOA"]
+pub type ACPC_R = crate::FieldReader<u8, ACPC_A>;
 #[doc = "RC Compare Effect on TIOA\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -902,14 +606,8 @@ impl From<ACPC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ACPC` reader - RC Compare Effect on TIOA"]
-pub struct ACPC_R(crate::FieldReader<u8, ACPC_A>);
 impl ACPC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ACPC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ACPC_A {
         match self.bits {
@@ -923,41 +621,28 @@ impl ACPC_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        **self == ACPC_A::NONE
+        *self == ACPC_A::NONE
     }
     #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        **self == ACPC_A::SET
+        *self == ACPC_A::SET
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        **self == ACPC_A::CLEAR
+        *self == ACPC_A::CLEAR
     }
     #[doc = "Checks if the value of the field is `TOGGLE`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        **self == ACPC_A::TOGGLE
-    }
-}
-impl core::ops::Deref for ACPC_R {
-    type Target = crate::FieldReader<u8, ACPC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ACPC_A::TOGGLE
     }
 }
 #[doc = "Field `ACPC` writer - RC Compare Effect on TIOA"]
-pub struct ACPC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACPC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ACPC_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type ACPC_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC, u8, ACPC_A, 2, O>;
+impl<'a, const O: u8> ACPC_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -978,13 +663,9 @@ impl<'a> ACPC_W<'a> {
     pub fn toggle(self) -> &'a mut W {
         self.variant(ACPC_A::TOGGLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 18)) | ((value as u32 & 0x03) << 18);
-        self.w
-    }
 }
+#[doc = "Field `AEEVT` reader - External Event Effect on TIOA"]
+pub type AEEVT_R = crate::FieldReader<u8, AEEVT_A>;
 #[doc = "External Event Effect on TIOA\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -1004,14 +685,8 @@ impl From<AEEVT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `AEEVT` reader - External Event Effect on TIOA"]
-pub struct AEEVT_R(crate::FieldReader<u8, AEEVT_A>);
 impl AEEVT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        AEEVT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AEEVT_A {
         match self.bits {
@@ -1025,41 +700,28 @@ impl AEEVT_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        **self == AEEVT_A::NONE
+        *self == AEEVT_A::NONE
     }
     #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        **self == AEEVT_A::SET
+        *self == AEEVT_A::SET
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        **self == AEEVT_A::CLEAR
+        *self == AEEVT_A::CLEAR
     }
     #[doc = "Checks if the value of the field is `TOGGLE`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        **self == AEEVT_A::TOGGLE
-    }
-}
-impl core::ops::Deref for AEEVT_R {
-    type Target = crate::FieldReader<u8, AEEVT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == AEEVT_A::TOGGLE
     }
 }
 #[doc = "Field `AEEVT` writer - External Event Effect on TIOA"]
-pub struct AEEVT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AEEVT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: AEEVT_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type AEEVT_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC, u8, AEEVT_A, 2, O>;
+impl<'a, const O: u8> AEEVT_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -1080,13 +742,9 @@ impl<'a> AEEVT_W<'a> {
     pub fn toggle(self) -> &'a mut W {
         self.variant(AEEVT_A::TOGGLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 20)) | ((value as u32 & 0x03) << 20);
-        self.w
-    }
 }
+#[doc = "Field `ASWTRG` reader - Software Trigger Effect on TIOA"]
+pub type ASWTRG_R = crate::FieldReader<u8, ASWTRG_A>;
 #[doc = "Software Trigger Effect on TIOA\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -1106,14 +764,8 @@ impl From<ASWTRG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ASWTRG` reader - Software Trigger Effect on TIOA"]
-pub struct ASWTRG_R(crate::FieldReader<u8, ASWTRG_A>);
 impl ASWTRG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ASWTRG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ASWTRG_A {
         match self.bits {
@@ -1127,41 +779,28 @@ impl ASWTRG_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        **self == ASWTRG_A::NONE
+        *self == ASWTRG_A::NONE
     }
     #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        **self == ASWTRG_A::SET
+        *self == ASWTRG_A::SET
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        **self == ASWTRG_A::CLEAR
+        *self == ASWTRG_A::CLEAR
     }
     #[doc = "Checks if the value of the field is `TOGGLE`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        **self == ASWTRG_A::TOGGLE
-    }
-}
-impl core::ops::Deref for ASWTRG_R {
-    type Target = crate::FieldReader<u8, ASWTRG_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ASWTRG_A::TOGGLE
     }
 }
 #[doc = "Field `ASWTRG` writer - Software Trigger Effect on TIOA"]
-pub struct ASWTRG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ASWTRG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ASWTRG_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type ASWTRG_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC, u8, ASWTRG_A, 2, O>;
+impl<'a, const O: u8> ASWTRG_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -1182,13 +821,9 @@ impl<'a> ASWTRG_W<'a> {
     pub fn toggle(self) -> &'a mut W {
         self.variant(ASWTRG_A::TOGGLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 22)) | ((value as u32 & 0x03) << 22);
-        self.w
-    }
 }
+#[doc = "Field `BCPB` reader - RB Compare Effect on TIOB"]
+pub type BCPB_R = crate::FieldReader<u8, BCPB_A>;
 #[doc = "RB Compare Effect on TIOB\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -1208,14 +843,8 @@ impl From<BCPB_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `BCPB` reader - RB Compare Effect on TIOB"]
-pub struct BCPB_R(crate::FieldReader<u8, BCPB_A>);
 impl BCPB_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        BCPB_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BCPB_A {
         match self.bits {
@@ -1229,41 +858,28 @@ impl BCPB_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        **self == BCPB_A::NONE
+        *self == BCPB_A::NONE
     }
     #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        **self == BCPB_A::SET
+        *self == BCPB_A::SET
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        **self == BCPB_A::CLEAR
+        *self == BCPB_A::CLEAR
     }
     #[doc = "Checks if the value of the field is `TOGGLE`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        **self == BCPB_A::TOGGLE
-    }
-}
-impl core::ops::Deref for BCPB_R {
-    type Target = crate::FieldReader<u8, BCPB_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BCPB_A::TOGGLE
     }
 }
 #[doc = "Field `BCPB` writer - RB Compare Effect on TIOB"]
-pub struct BCPB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BCPB_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BCPB_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type BCPB_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC, u8, BCPB_A, 2, O>;
+impl<'a, const O: u8> BCPB_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -1284,13 +900,9 @@ impl<'a> BCPB_W<'a> {
     pub fn toggle(self) -> &'a mut W {
         self.variant(BCPB_A::TOGGLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 24)) | ((value as u32 & 0x03) << 24);
-        self.w
-    }
 }
+#[doc = "Field `BCPC` reader - RC Compare Effect on TIOB"]
+pub type BCPC_R = crate::FieldReader<u8, BCPC_A>;
 #[doc = "RC Compare Effect on TIOB\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -1310,14 +922,8 @@ impl From<BCPC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `BCPC` reader - RC Compare Effect on TIOB"]
-pub struct BCPC_R(crate::FieldReader<u8, BCPC_A>);
 impl BCPC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        BCPC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BCPC_A {
         match self.bits {
@@ -1331,41 +937,28 @@ impl BCPC_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        **self == BCPC_A::NONE
+        *self == BCPC_A::NONE
     }
     #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        **self == BCPC_A::SET
+        *self == BCPC_A::SET
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        **self == BCPC_A::CLEAR
+        *self == BCPC_A::CLEAR
     }
     #[doc = "Checks if the value of the field is `TOGGLE`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        **self == BCPC_A::TOGGLE
-    }
-}
-impl core::ops::Deref for BCPC_R {
-    type Target = crate::FieldReader<u8, BCPC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BCPC_A::TOGGLE
     }
 }
 #[doc = "Field `BCPC` writer - RC Compare Effect on TIOB"]
-pub struct BCPC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BCPC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BCPC_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type BCPC_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC, u8, BCPC_A, 2, O>;
+impl<'a, const O: u8> BCPC_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -1386,13 +979,9 @@ impl<'a> BCPC_W<'a> {
     pub fn toggle(self) -> &'a mut W {
         self.variant(BCPC_A::TOGGLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 26)) | ((value as u32 & 0x03) << 26);
-        self.w
-    }
 }
+#[doc = "Field `BEEVT` reader - External Event Effect on TIOB"]
+pub type BEEVT_R = crate::FieldReader<u8, BEEVT_A>;
 #[doc = "External Event Effect on TIOB\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -1412,14 +1001,8 @@ impl From<BEEVT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `BEEVT` reader - External Event Effect on TIOB"]
-pub struct BEEVT_R(crate::FieldReader<u8, BEEVT_A>);
 impl BEEVT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        BEEVT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BEEVT_A {
         match self.bits {
@@ -1433,41 +1016,28 @@ impl BEEVT_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        **self == BEEVT_A::NONE
+        *self == BEEVT_A::NONE
     }
     #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        **self == BEEVT_A::SET
+        *self == BEEVT_A::SET
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        **self == BEEVT_A::CLEAR
+        *self == BEEVT_A::CLEAR
     }
     #[doc = "Checks if the value of the field is `TOGGLE`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        **self == BEEVT_A::TOGGLE
-    }
-}
-impl core::ops::Deref for BEEVT_R {
-    type Target = crate::FieldReader<u8, BEEVT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BEEVT_A::TOGGLE
     }
 }
 #[doc = "Field `BEEVT` writer - External Event Effect on TIOB"]
-pub struct BEEVT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BEEVT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BEEVT_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type BEEVT_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC, u8, BEEVT_A, 2, O>;
+impl<'a, const O: u8> BEEVT_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -1488,13 +1058,9 @@ impl<'a> BEEVT_W<'a> {
     pub fn toggle(self) -> &'a mut W {
         self.variant(BEEVT_A::TOGGLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 28)) | ((value as u32 & 0x03) << 28);
-        self.w
-    }
 }
+#[doc = "Field `BSWTRG` reader - Software Trigger Effect on TIOB"]
+pub type BSWTRG_R = crate::FieldReader<u8, BSWTRG_A>;
 #[doc = "Software Trigger Effect on TIOB\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -1514,14 +1080,8 @@ impl From<BSWTRG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `BSWTRG` reader - Software Trigger Effect on TIOB"]
-pub struct BSWTRG_R(crate::FieldReader<u8, BSWTRG_A>);
 impl BSWTRG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        BSWTRG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BSWTRG_A {
         match self.bits {
@@ -1535,41 +1095,28 @@ impl BSWTRG_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        **self == BSWTRG_A::NONE
+        *self == BSWTRG_A::NONE
     }
     #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        **self == BSWTRG_A::SET
+        *self == BSWTRG_A::SET
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        **self == BSWTRG_A::CLEAR
+        *self == BSWTRG_A::CLEAR
     }
     #[doc = "Checks if the value of the field is `TOGGLE`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        **self == BSWTRG_A::TOGGLE
-    }
-}
-impl core::ops::Deref for BSWTRG_R {
-    type Target = crate::FieldReader<u8, BSWTRG_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BSWTRG_A::TOGGLE
     }
 }
 #[doc = "Field `BSWTRG` writer - Software Trigger Effect on TIOB"]
-pub struct BSWTRG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BSWTRG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BSWTRG_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type BSWTRG_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, WAVEFORM_MODE_CMR0_WAVEFORM_MODE_SPEC, u8, BSWTRG_A, 2, O>;
+impl<'a, const O: u8> BSWTRG_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -1590,195 +1137,189 @@ impl<'a> BSWTRG_W<'a> {
     pub fn toggle(self) -> &'a mut W {
         self.variant(BSWTRG_A::TOGGLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 30)) | ((value as u32 & 0x03) << 30);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - Clock Selection"]
     #[inline(always)]
     pub fn tcclks(&self) -> TCCLKS_R {
-        TCCLKS_R::new((self.bits & 0x07) as u8)
+        TCCLKS_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 3 - Clock Invert"]
     #[inline(always)]
     pub fn clki(&self) -> CLKI_R {
-        CLKI_R::new(((self.bits >> 3) & 0x01) != 0)
+        CLKI_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:5 - Burst Signal Selection"]
     #[inline(always)]
     pub fn burst(&self) -> BURST_R {
-        BURST_R::new(((self.bits >> 4) & 0x03) as u8)
+        BURST_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 6 - Counter Clock Stopped with RC Compare"]
     #[inline(always)]
     pub fn cpcstop(&self) -> CPCSTOP_R {
-        CPCSTOP_R::new(((self.bits >> 6) & 0x01) != 0)
+        CPCSTOP_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Counter Clock Disable with RC Compare"]
     #[inline(always)]
     pub fn cpcdis(&self) -> CPCDIS_R {
-        CPCDIS_R::new(((self.bits >> 7) & 0x01) != 0)
+        CPCDIS_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:9 - External Event Edge Selection"]
     #[inline(always)]
     pub fn eevtedg(&self) -> EEVTEDG_R {
-        EEVTEDG_R::new(((self.bits >> 8) & 0x03) as u8)
+        EEVTEDG_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - External Event Selection"]
     #[inline(always)]
     pub fn eevt(&self) -> EEVT_R {
-        EEVT_R::new(((self.bits >> 10) & 0x03) as u8)
+        EEVT_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bit 12 - External Event Trigger Enable"]
     #[inline(always)]
     pub fn enetrg(&self) -> ENETRG_R {
-        ENETRG_R::new(((self.bits >> 12) & 0x01) != 0)
+        ENETRG_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bits 13:14 - Waveform Selection"]
     #[inline(always)]
     pub fn wavsel(&self) -> WAVSEL_R {
-        WAVSEL_R::new(((self.bits >> 13) & 0x03) as u8)
+        WAVSEL_R::new(((self.bits >> 13) & 3) as u8)
     }
     #[doc = "Bit 15 - Waveform Mode"]
     #[inline(always)]
     pub fn wave(&self) -> WAVE_R {
-        WAVE_R::new(((self.bits >> 15) & 0x01) != 0)
+        WAVE_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:17 - RA Compare Effect on TIOA"]
     #[inline(always)]
     pub fn acpa(&self) -> ACPA_R {
-        ACPA_R::new(((self.bits >> 16) & 0x03) as u8)
+        ACPA_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 18:19 - RC Compare Effect on TIOA"]
     #[inline(always)]
     pub fn acpc(&self) -> ACPC_R {
-        ACPC_R::new(((self.bits >> 18) & 0x03) as u8)
+        ACPC_R::new(((self.bits >> 18) & 3) as u8)
     }
     #[doc = "Bits 20:21 - External Event Effect on TIOA"]
     #[inline(always)]
     pub fn aeevt(&self) -> AEEVT_R {
-        AEEVT_R::new(((self.bits >> 20) & 0x03) as u8)
+        AEEVT_R::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bits 22:23 - Software Trigger Effect on TIOA"]
     #[inline(always)]
     pub fn aswtrg(&self) -> ASWTRG_R {
-        ASWTRG_R::new(((self.bits >> 22) & 0x03) as u8)
+        ASWTRG_R::new(((self.bits >> 22) & 3) as u8)
     }
     #[doc = "Bits 24:25 - RB Compare Effect on TIOB"]
     #[inline(always)]
     pub fn bcpb(&self) -> BCPB_R {
-        BCPB_R::new(((self.bits >> 24) & 0x03) as u8)
+        BCPB_R::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bits 26:27 - RC Compare Effect on TIOB"]
     #[inline(always)]
     pub fn bcpc(&self) -> BCPC_R {
-        BCPC_R::new(((self.bits >> 26) & 0x03) as u8)
+        BCPC_R::new(((self.bits >> 26) & 3) as u8)
     }
     #[doc = "Bits 28:29 - External Event Effect on TIOB"]
     #[inline(always)]
     pub fn beevt(&self) -> BEEVT_R {
-        BEEVT_R::new(((self.bits >> 28) & 0x03) as u8)
+        BEEVT_R::new(((self.bits >> 28) & 3) as u8)
     }
     #[doc = "Bits 30:31 - Software Trigger Effect on TIOB"]
     #[inline(always)]
     pub fn bswtrg(&self) -> BSWTRG_R {
-        BSWTRG_R::new(((self.bits >> 30) & 0x03) as u8)
+        BSWTRG_R::new(((self.bits >> 30) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Clock Selection"]
     #[inline(always)]
-    pub fn tcclks(&mut self) -> TCCLKS_W {
-        TCCLKS_W { w: self }
+    pub fn tcclks(&mut self) -> TCCLKS_W<0> {
+        TCCLKS_W::new(self)
     }
     #[doc = "Bit 3 - Clock Invert"]
     #[inline(always)]
-    pub fn clki(&mut self) -> CLKI_W {
-        CLKI_W { w: self }
+    pub fn clki(&mut self) -> CLKI_W<3> {
+        CLKI_W::new(self)
     }
     #[doc = "Bits 4:5 - Burst Signal Selection"]
     #[inline(always)]
-    pub fn burst(&mut self) -> BURST_W {
-        BURST_W { w: self }
+    pub fn burst(&mut self) -> BURST_W<4> {
+        BURST_W::new(self)
     }
     #[doc = "Bit 6 - Counter Clock Stopped with RC Compare"]
     #[inline(always)]
-    pub fn cpcstop(&mut self) -> CPCSTOP_W {
-        CPCSTOP_W { w: self }
+    pub fn cpcstop(&mut self) -> CPCSTOP_W<6> {
+        CPCSTOP_W::new(self)
     }
     #[doc = "Bit 7 - Counter Clock Disable with RC Compare"]
     #[inline(always)]
-    pub fn cpcdis(&mut self) -> CPCDIS_W {
-        CPCDIS_W { w: self }
+    pub fn cpcdis(&mut self) -> CPCDIS_W<7> {
+        CPCDIS_W::new(self)
     }
     #[doc = "Bits 8:9 - External Event Edge Selection"]
     #[inline(always)]
-    pub fn eevtedg(&mut self) -> EEVTEDG_W {
-        EEVTEDG_W { w: self }
+    pub fn eevtedg(&mut self) -> EEVTEDG_W<8> {
+        EEVTEDG_W::new(self)
     }
     #[doc = "Bits 10:11 - External Event Selection"]
     #[inline(always)]
-    pub fn eevt(&mut self) -> EEVT_W {
-        EEVT_W { w: self }
+    pub fn eevt(&mut self) -> EEVT_W<10> {
+        EEVT_W::new(self)
     }
     #[doc = "Bit 12 - External Event Trigger Enable"]
     #[inline(always)]
-    pub fn enetrg(&mut self) -> ENETRG_W {
-        ENETRG_W { w: self }
+    pub fn enetrg(&mut self) -> ENETRG_W<12> {
+        ENETRG_W::new(self)
     }
     #[doc = "Bits 13:14 - Waveform Selection"]
     #[inline(always)]
-    pub fn wavsel(&mut self) -> WAVSEL_W {
-        WAVSEL_W { w: self }
+    pub fn wavsel(&mut self) -> WAVSEL_W<13> {
+        WAVSEL_W::new(self)
     }
     #[doc = "Bit 15 - Waveform Mode"]
     #[inline(always)]
-    pub fn wave(&mut self) -> WAVE_W {
-        WAVE_W { w: self }
+    pub fn wave(&mut self) -> WAVE_W<15> {
+        WAVE_W::new(self)
     }
     #[doc = "Bits 16:17 - RA Compare Effect on TIOA"]
     #[inline(always)]
-    pub fn acpa(&mut self) -> ACPA_W {
-        ACPA_W { w: self }
+    pub fn acpa(&mut self) -> ACPA_W<16> {
+        ACPA_W::new(self)
     }
     #[doc = "Bits 18:19 - RC Compare Effect on TIOA"]
     #[inline(always)]
-    pub fn acpc(&mut self) -> ACPC_W {
-        ACPC_W { w: self }
+    pub fn acpc(&mut self) -> ACPC_W<18> {
+        ACPC_W::new(self)
     }
     #[doc = "Bits 20:21 - External Event Effect on TIOA"]
     #[inline(always)]
-    pub fn aeevt(&mut self) -> AEEVT_W {
-        AEEVT_W { w: self }
+    pub fn aeevt(&mut self) -> AEEVT_W<20> {
+        AEEVT_W::new(self)
     }
     #[doc = "Bits 22:23 - Software Trigger Effect on TIOA"]
     #[inline(always)]
-    pub fn aswtrg(&mut self) -> ASWTRG_W {
-        ASWTRG_W { w: self }
+    pub fn aswtrg(&mut self) -> ASWTRG_W<22> {
+        ASWTRG_W::new(self)
     }
     #[doc = "Bits 24:25 - RB Compare Effect on TIOB"]
     #[inline(always)]
-    pub fn bcpb(&mut self) -> BCPB_W {
-        BCPB_W { w: self }
+    pub fn bcpb(&mut self) -> BCPB_W<24> {
+        BCPB_W::new(self)
     }
     #[doc = "Bits 26:27 - RC Compare Effect on TIOB"]
     #[inline(always)]
-    pub fn bcpc(&mut self) -> BCPC_W {
-        BCPC_W { w: self }
+    pub fn bcpc(&mut self) -> BCPC_W<26> {
+        BCPC_W::new(self)
     }
     #[doc = "Bits 28:29 - External Event Effect on TIOB"]
     #[inline(always)]
-    pub fn beevt(&mut self) -> BEEVT_W {
-        BEEVT_W { w: self }
+    pub fn beevt(&mut self) -> BEEVT_W<28> {
+        BEEVT_W::new(self)
     }
     #[doc = "Bits 30:31 - Software Trigger Effect on TIOB"]
     #[inline(always)]
-    pub fn bswtrg(&mut self) -> BSWTRG_W {
-        BSWTRG_W { w: self }
+    pub fn bswtrg(&mut self) -> BSWTRG_W<30> {
+        BSWTRG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

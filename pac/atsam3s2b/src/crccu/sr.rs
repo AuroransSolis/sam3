@@ -14,20 +14,7 @@ impl From<crate::R<SR_SPEC>> for R {
     }
 }
 #[doc = "Field `CRC` reader - Cyclic Redundancy Check Value"]
-pub struct CRC_R(crate::FieldReader<u32, u32>);
-impl CRC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CRC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CRC_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CRC_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Cyclic Redundancy Check Value"]
     #[inline(always)]

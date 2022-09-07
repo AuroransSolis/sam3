@@ -35,301 +35,46 @@ impl From<crate::W<ISOENDPT_CSR0_ISOENDPT_SPEC>> for W {
     }
 }
 #[doc = "Field `TXCOMP` reader - Generates an IN Packet with Data Previously Written in the DPR"]
-pub struct TXCOMP_R(crate::FieldReader<bool, bool>);
-impl TXCOMP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TXCOMP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXCOMP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXCOMP_R = crate::BitReader<bool>;
 #[doc = "Field `TXCOMP` writer - Generates an IN Packet with Data Previously Written in the DPR"]
-pub struct TXCOMP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXCOMP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type TXCOMP_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ISOENDPT_CSR0_ISOENDPT_SPEC, bool, O>;
 #[doc = "Field `RX_DATA_BK0` reader - Receive Data Bank 0"]
-pub struct RX_DATA_BK0_R(crate::FieldReader<bool, bool>);
-impl RX_DATA_BK0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_DATA_BK0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RX_DATA_BK0_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RX_DATA_BK0_R = crate::BitReader<bool>;
 #[doc = "Field `RX_DATA_BK0` writer - Receive Data Bank 0"]
-pub struct RX_DATA_BK0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RX_DATA_BK0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type RX_DATA_BK0_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ISOENDPT_CSR0_ISOENDPT_SPEC, bool, O>;
 #[doc = "Field `RXSETUP` reader - Received Setup"]
-pub struct RXSETUP_R(crate::FieldReader<bool, bool>);
-impl RXSETUP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RXSETUP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXSETUP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXSETUP_R = crate::BitReader<bool>;
 #[doc = "Field `RXSETUP` writer - Received Setup"]
-pub struct RXSETUP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXSETUP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type RXSETUP_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ISOENDPT_CSR0_ISOENDPT_SPEC, bool, O>;
 #[doc = "Field `ISOERROR` reader - A CRC error has been detected in an isochronous transfer"]
-pub struct ISOERROR_R(crate::FieldReader<bool, bool>);
-impl ISOERROR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ISOERROR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ISOERROR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ISOERROR_R = crate::BitReader<bool>;
 #[doc = "Field `ISOERROR` writer - A CRC error has been detected in an isochronous transfer"]
-pub struct ISOERROR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ISOERROR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type ISOERROR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ISOENDPT_CSR0_ISOENDPT_SPEC, bool, O>;
 #[doc = "Field `TXPKTRDY` reader - Transmit Packet Ready"]
-pub struct TXPKTRDY_R(crate::FieldReader<bool, bool>);
-impl TXPKTRDY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TXPKTRDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXPKTRDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXPKTRDY_R = crate::BitReader<bool>;
 #[doc = "Field `TXPKTRDY` writer - Transmit Packet Ready"]
-pub struct TXPKTRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXPKTRDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type TXPKTRDY_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ISOENDPT_CSR0_ISOENDPT_SPEC, bool, O>;
 #[doc = "Field `FORCESTALL` reader - Force Stall (used by Control, Bulk and Isochronous Endpoints)"]
-pub struct FORCESTALL_R(crate::FieldReader<bool, bool>);
-impl FORCESTALL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FORCESTALL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FORCESTALL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FORCESTALL_R = crate::BitReader<bool>;
 #[doc = "Field `FORCESTALL` writer - Force Stall (used by Control, Bulk and Isochronous Endpoints)"]
-pub struct FORCESTALL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FORCESTALL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type FORCESTALL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ISOENDPT_CSR0_ISOENDPT_SPEC, bool, O>;
 #[doc = "Field `RX_DATA_BK1` reader - Receive Data Bank 1 (only used by endpoints with ping-pong attributes)"]
-pub struct RX_DATA_BK1_R(crate::FieldReader<bool, bool>);
-impl RX_DATA_BK1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_DATA_BK1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RX_DATA_BK1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RX_DATA_BK1_R = crate::BitReader<bool>;
 #[doc = "Field `RX_DATA_BK1` writer - Receive Data Bank 1 (only used by endpoints with ping-pong attributes)"]
-pub struct RX_DATA_BK1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RX_DATA_BK1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type RX_DATA_BK1_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ISOENDPT_CSR0_ISOENDPT_SPEC, bool, O>;
 #[doc = "Field `DIR` reader - Transfer Direction (only available for control endpoints)"]
-pub struct DIR_R(crate::FieldReader<bool, bool>);
-impl DIR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DIR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIR_R = crate::BitReader<bool>;
 #[doc = "Field `DIR` writer - Transfer Direction (only available for control endpoints)"]
-pub struct DIR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type DIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISOENDPT_CSR0_ISOENDPT_SPEC, bool, O>;
+#[doc = "Field `EPTYPE` reader - Endpoint Type"]
+pub type EPTYPE_R = crate::FieldReader<u8, EPTYPE_A>;
 #[doc = "Endpoint Type"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -355,14 +100,8 @@ impl From<EPTYPE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EPTYPE` reader - Endpoint Type"]
-pub struct EPTYPE_R(crate::FieldReader<u8, EPTYPE_A>);
 impl EPTYPE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        EPTYPE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<EPTYPE_A> {
         match self.bits {
@@ -379,56 +118,43 @@ impl EPTYPE_R {
     #[doc = "Checks if the value of the field is `CTRL`"]
     #[inline(always)]
     pub fn is_ctrl(&self) -> bool {
-        **self == EPTYPE_A::CTRL
+        *self == EPTYPE_A::CTRL
     }
     #[doc = "Checks if the value of the field is `ISO_OUT`"]
     #[inline(always)]
     pub fn is_iso_out(&self) -> bool {
-        **self == EPTYPE_A::ISO_OUT
+        *self == EPTYPE_A::ISO_OUT
     }
     #[doc = "Checks if the value of the field is `ISO_IN`"]
     #[inline(always)]
     pub fn is_iso_in(&self) -> bool {
-        **self == EPTYPE_A::ISO_IN
+        *self == EPTYPE_A::ISO_IN
     }
     #[doc = "Checks if the value of the field is `BULK_OUT`"]
     #[inline(always)]
     pub fn is_bulk_out(&self) -> bool {
-        **self == EPTYPE_A::BULK_OUT
+        *self == EPTYPE_A::BULK_OUT
     }
     #[doc = "Checks if the value of the field is `BULK_IN`"]
     #[inline(always)]
     pub fn is_bulk_in(&self) -> bool {
-        **self == EPTYPE_A::BULK_IN
+        *self == EPTYPE_A::BULK_IN
     }
     #[doc = "Checks if the value of the field is `INT_OUT`"]
     #[inline(always)]
     pub fn is_int_out(&self) -> bool {
-        **self == EPTYPE_A::INT_OUT
+        *self == EPTYPE_A::INT_OUT
     }
     #[doc = "Checks if the value of the field is `INT_IN`"]
     #[inline(always)]
     pub fn is_int_in(&self) -> bool {
-        **self == EPTYPE_A::INT_IN
-    }
-}
-impl core::ops::Deref for EPTYPE_R {
-    type Target = crate::FieldReader<u8, EPTYPE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EPTYPE_A::INT_IN
     }
 }
 #[doc = "Field `EPTYPE` writer - Endpoint Type"]
-pub struct EPTYPE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EPTYPE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EPTYPE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type EPTYPE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ISOENDPT_CSR0_ISOENDPT_SPEC, u8, EPTYPE_A, 3, O>;
+impl<'a, const O: u8> EPTYPE_W<'a, O> {
     #[doc = "Control"]
     #[inline(always)]
     pub fn ctrl(self) -> &'a mut W {
@@ -464,169 +190,75 @@ impl<'a> EPTYPE_W<'a> {
     pub fn int_in(self) -> &'a mut W {
         self.variant(EPTYPE_A::INT_IN)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
-    }
 }
 #[doc = "Field `DTGLE` reader - Data Toggle"]
-pub struct DTGLE_R(crate::FieldReader<bool, bool>);
-impl DTGLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DTGLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTGLE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTGLE_R = crate::BitReader<bool>;
 #[doc = "Field `DTGLE` writer - Data Toggle"]
-pub struct DTGLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTGLE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type DTGLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISOENDPT_CSR0_ISOENDPT_SPEC, bool, O>;
 #[doc = "Field `EPEDS` reader - Endpoint Enable Disable"]
-pub struct EPEDS_R(crate::FieldReader<bool, bool>);
-impl EPEDS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        EPEDS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EPEDS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EPEDS_R = crate::BitReader<bool>;
 #[doc = "Field `EPEDS` writer - Endpoint Enable Disable"]
-pub struct EPEDS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EPEDS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type EPEDS_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISOENDPT_CSR0_ISOENDPT_SPEC, bool, O>;
 #[doc = "Field `RXBYTECNT` reader - Number of Bytes Available in the FIFO"]
-pub struct RXBYTECNT_R(crate::FieldReader<u16, u16>);
-impl RXBYTECNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        RXBYTECNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXBYTECNT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXBYTECNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `RXBYTECNT` writer - Number of Bytes Available in the FIFO"]
-pub struct RXBYTECNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXBYTECNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07ff << 16)) | ((value as u32 & 0x07ff) << 16);
-        self.w
-    }
-}
+pub type RXBYTECNT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ISOENDPT_CSR0_ISOENDPT_SPEC, u16, u16, 11, O>;
 impl R {
     #[doc = "Bit 0 - Generates an IN Packet with Data Previously Written in the DPR"]
     #[inline(always)]
     pub fn txcomp(&self) -> TXCOMP_R {
-        TXCOMP_R::new((self.bits & 0x01) != 0)
+        TXCOMP_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Receive Data Bank 0"]
     #[inline(always)]
     pub fn rx_data_bk0(&self) -> RX_DATA_BK0_R {
-        RX_DATA_BK0_R::new(((self.bits >> 1) & 0x01) != 0)
+        RX_DATA_BK0_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Received Setup"]
     #[inline(always)]
     pub fn rxsetup(&self) -> RXSETUP_R {
-        RXSETUP_R::new(((self.bits >> 2) & 0x01) != 0)
+        RXSETUP_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - A CRC error has been detected in an isochronous transfer"]
     #[inline(always)]
     pub fn isoerror(&self) -> ISOERROR_R {
-        ISOERROR_R::new(((self.bits >> 3) & 0x01) != 0)
+        ISOERROR_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Transmit Packet Ready"]
     #[inline(always)]
     pub fn txpktrdy(&self) -> TXPKTRDY_R {
-        TXPKTRDY_R::new(((self.bits >> 4) & 0x01) != 0)
+        TXPKTRDY_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Force Stall (used by Control, Bulk and Isochronous Endpoints)"]
     #[inline(always)]
     pub fn forcestall(&self) -> FORCESTALL_R {
-        FORCESTALL_R::new(((self.bits >> 5) & 0x01) != 0)
+        FORCESTALL_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Receive Data Bank 1 (only used by endpoints with ping-pong attributes)"]
     #[inline(always)]
     pub fn rx_data_bk1(&self) -> RX_DATA_BK1_R {
-        RX_DATA_BK1_R::new(((self.bits >> 6) & 0x01) != 0)
+        RX_DATA_BK1_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Transfer Direction (only available for control endpoints)"]
     #[inline(always)]
     pub fn dir(&self) -> DIR_R {
-        DIR_R::new(((self.bits >> 7) & 0x01) != 0)
+        DIR_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:10 - Endpoint Type"]
     #[inline(always)]
     pub fn eptype(&self) -> EPTYPE_R {
-        EPTYPE_R::new(((self.bits >> 8) & 0x07) as u8)
+        EPTYPE_R::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bit 11 - Data Toggle"]
     #[inline(always)]
     pub fn dtgle(&self) -> DTGLE_R {
-        DTGLE_R::new(((self.bits >> 11) & 0x01) != 0)
+        DTGLE_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 15 - Endpoint Enable Disable"]
     #[inline(always)]
     pub fn epeds(&self) -> EPEDS_R {
-        EPEDS_R::new(((self.bits >> 15) & 0x01) != 0)
+        EPEDS_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:26 - Number of Bytes Available in the FIFO"]
     #[inline(always)]
@@ -637,63 +269,63 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Generates an IN Packet with Data Previously Written in the DPR"]
     #[inline(always)]
-    pub fn txcomp(&mut self) -> TXCOMP_W {
-        TXCOMP_W { w: self }
+    pub fn txcomp(&mut self) -> TXCOMP_W<0> {
+        TXCOMP_W::new(self)
     }
     #[doc = "Bit 1 - Receive Data Bank 0"]
     #[inline(always)]
-    pub fn rx_data_bk0(&mut self) -> RX_DATA_BK0_W {
-        RX_DATA_BK0_W { w: self }
+    pub fn rx_data_bk0(&mut self) -> RX_DATA_BK0_W<1> {
+        RX_DATA_BK0_W::new(self)
     }
     #[doc = "Bit 2 - Received Setup"]
     #[inline(always)]
-    pub fn rxsetup(&mut self) -> RXSETUP_W {
-        RXSETUP_W { w: self }
+    pub fn rxsetup(&mut self) -> RXSETUP_W<2> {
+        RXSETUP_W::new(self)
     }
     #[doc = "Bit 3 - A CRC error has been detected in an isochronous transfer"]
     #[inline(always)]
-    pub fn isoerror(&mut self) -> ISOERROR_W {
-        ISOERROR_W { w: self }
+    pub fn isoerror(&mut self) -> ISOERROR_W<3> {
+        ISOERROR_W::new(self)
     }
     #[doc = "Bit 4 - Transmit Packet Ready"]
     #[inline(always)]
-    pub fn txpktrdy(&mut self) -> TXPKTRDY_W {
-        TXPKTRDY_W { w: self }
+    pub fn txpktrdy(&mut self) -> TXPKTRDY_W<4> {
+        TXPKTRDY_W::new(self)
     }
     #[doc = "Bit 5 - Force Stall (used by Control, Bulk and Isochronous Endpoints)"]
     #[inline(always)]
-    pub fn forcestall(&mut self) -> FORCESTALL_W {
-        FORCESTALL_W { w: self }
+    pub fn forcestall(&mut self) -> FORCESTALL_W<5> {
+        FORCESTALL_W::new(self)
     }
     #[doc = "Bit 6 - Receive Data Bank 1 (only used by endpoints with ping-pong attributes)"]
     #[inline(always)]
-    pub fn rx_data_bk1(&mut self) -> RX_DATA_BK1_W {
-        RX_DATA_BK1_W { w: self }
+    pub fn rx_data_bk1(&mut self) -> RX_DATA_BK1_W<6> {
+        RX_DATA_BK1_W::new(self)
     }
     #[doc = "Bit 7 - Transfer Direction (only available for control endpoints)"]
     #[inline(always)]
-    pub fn dir(&mut self) -> DIR_W {
-        DIR_W { w: self }
+    pub fn dir(&mut self) -> DIR_W<7> {
+        DIR_W::new(self)
     }
     #[doc = "Bits 8:10 - Endpoint Type"]
     #[inline(always)]
-    pub fn eptype(&mut self) -> EPTYPE_W {
-        EPTYPE_W { w: self }
+    pub fn eptype(&mut self) -> EPTYPE_W<8> {
+        EPTYPE_W::new(self)
     }
     #[doc = "Bit 11 - Data Toggle"]
     #[inline(always)]
-    pub fn dtgle(&mut self) -> DTGLE_W {
-        DTGLE_W { w: self }
+    pub fn dtgle(&mut self) -> DTGLE_W<11> {
+        DTGLE_W::new(self)
     }
     #[doc = "Bit 15 - Endpoint Enable Disable"]
     #[inline(always)]
-    pub fn epeds(&mut self) -> EPEDS_W {
-        EPEDS_W { w: self }
+    pub fn epeds(&mut self) -> EPEDS_W<15> {
+        EPEDS_W::new(self)
     }
     #[doc = "Bits 16:26 - Number of Bytes Available in the FIFO"]
     #[inline(always)]
-    pub fn rxbytecnt(&mut self) -> RXBYTECNT_W {
-        RXBYTECNT_W { w: self }
+    pub fn rxbytecnt(&mut self) -> RXBYTECNT_W<16> {
+        RXBYTECNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

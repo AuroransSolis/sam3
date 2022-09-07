@@ -35,32 +35,9 @@ impl From<crate::W<RC1R_SPEC>> for W {
     }
 }
 #[doc = "Field `CP1` reader - Receive Compare Data 1"]
-pub struct CP1_R(crate::FieldReader<u16, u16>);
-impl CP1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        CP1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CP1_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CP1_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `CP1` writer - Receive Compare Data 1"]
-pub struct CP1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CP1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type CP1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RC1R_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Receive Compare Data 1"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Receive Compare Data 1"]
     #[inline(always)]
-    pub fn cp1(&mut self) -> CP1_W {
-        CP1_W { w: self }
+    pub fn cp1(&mut self) -> CP1_W<0> {
+        CP1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

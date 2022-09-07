@@ -35,301 +35,39 @@ impl From<crate::W<NCFGR_SPEC>> for W {
     }
 }
 #[doc = "Field `SPD` reader - Speed"]
-pub struct SPD_R(crate::FieldReader<bool, bool>);
-impl SPD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SPD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SPD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SPD_R = crate::BitReader<bool>;
 #[doc = "Field `SPD` writer - Speed"]
-pub struct SPD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SPD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type SPD_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCFGR_SPEC, bool, O>;
 #[doc = "Field `FD` reader - Full Duplex"]
-pub struct FD_R(crate::FieldReader<bool, bool>);
-impl FD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FD_R = crate::BitReader<bool>;
 #[doc = "Field `FD` writer - Full Duplex"]
-pub struct FD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type FD_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCFGR_SPEC, bool, O>;
 #[doc = "Field `JFRAME` reader - Jumbo Frames"]
-pub struct JFRAME_R(crate::FieldReader<bool, bool>);
-impl JFRAME_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        JFRAME_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for JFRAME_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type JFRAME_R = crate::BitReader<bool>;
 #[doc = "Field `JFRAME` writer - Jumbo Frames"]
-pub struct JFRAME_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> JFRAME_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type JFRAME_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCFGR_SPEC, bool, O>;
 #[doc = "Field `CAF` reader - Copy All Frames"]
-pub struct CAF_R(crate::FieldReader<bool, bool>);
-impl CAF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAF_R = crate::BitReader<bool>;
 #[doc = "Field `CAF` writer - Copy All Frames"]
-pub struct CAF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CAF_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCFGR_SPEC, bool, O>;
 #[doc = "Field `NBC` reader - No Broadcast"]
-pub struct NBC_R(crate::FieldReader<bool, bool>);
-impl NBC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        NBC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NBC_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NBC_R = crate::BitReader<bool>;
 #[doc = "Field `NBC` writer - No Broadcast"]
-pub struct NBC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NBC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type NBC_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCFGR_SPEC, bool, O>;
 #[doc = "Field `MTI` reader - Multicast Hash Enable"]
-pub struct MTI_R(crate::FieldReader<bool, bool>);
-impl MTI_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MTI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MTI_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MTI_R = crate::BitReader<bool>;
 #[doc = "Field `MTI` writer - Multicast Hash Enable"]
-pub struct MTI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MTI_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type MTI_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCFGR_SPEC, bool, O>;
 #[doc = "Field `UNI` reader - Unicast Hash Enable"]
-pub struct UNI_R(crate::FieldReader<bool, bool>);
-impl UNI_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UNI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UNI_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UNI_R = crate::BitReader<bool>;
 #[doc = "Field `UNI` writer - Unicast Hash Enable"]
-pub struct UNI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UNI_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type UNI_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCFGR_SPEC, bool, O>;
 #[doc = "Field `BIG` reader - Receive 1536 bytes frames"]
-pub struct BIG_R(crate::FieldReader<bool, bool>);
-impl BIG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BIG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BIG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BIG_R = crate::BitReader<bool>;
 #[doc = "Field `BIG` writer - Receive 1536 bytes frames"]
-pub struct BIG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BIG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type BIG_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCFGR_SPEC, bool, O>;
+#[doc = "Field `CLK` reader - MDC clock divider"]
+pub type CLK_R = crate::FieldReader<u8, CLK_A>;
 #[doc = "MDC clock divider\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -349,14 +87,8 @@ impl From<CLK_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLK` reader - MDC clock divider"]
-pub struct CLK_R(crate::FieldReader<u8, CLK_A>);
 impl CLK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CLK_A {
         match self.bits {
@@ -370,41 +102,27 @@ impl CLK_R {
     #[doc = "Checks if the value of the field is `MCK_8`"]
     #[inline(always)]
     pub fn is_mck_8(&self) -> bool {
-        **self == CLK_A::MCK_8
+        *self == CLK_A::MCK_8
     }
     #[doc = "Checks if the value of the field is `MCK_16`"]
     #[inline(always)]
     pub fn is_mck_16(&self) -> bool {
-        **self == CLK_A::MCK_16
+        *self == CLK_A::MCK_16
     }
     #[doc = "Checks if the value of the field is `MCK_32`"]
     #[inline(always)]
     pub fn is_mck_32(&self) -> bool {
-        **self == CLK_A::MCK_32
+        *self == CLK_A::MCK_32
     }
     #[doc = "Checks if the value of the field is `MCK_64`"]
     #[inline(always)]
     pub fn is_mck_64(&self) -> bool {
-        **self == CLK_A::MCK_64
-    }
-}
-impl core::ops::Deref for CLK_R {
-    type Target = crate::FieldReader<u8, CLK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLK_A::MCK_64
     }
 }
 #[doc = "Field `CLK` writer - MDC clock divider"]
-pub struct CLK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLK_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type CLK_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, NCFGR_SPEC, u8, CLK_A, 2, O>;
+impl<'a, const O: u8> CLK_W<'a, O> {
     #[doc = "MCK divided by 8 (MCK up to 20 MHz)."]
     #[inline(always)]
     pub fn mck_8(self) -> &'a mut W {
@@ -425,87 +143,17 @@ impl<'a> CLK_W<'a> {
     pub fn mck_64(self) -> &'a mut W {
         self.variant(CLK_A::MCK_64)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
-        self.w
-    }
 }
 #[doc = "Field `RTY` reader - Retry test"]
-pub struct RTY_R(crate::FieldReader<bool, bool>);
-impl RTY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RTY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RTY_R = crate::BitReader<bool>;
 #[doc = "Field `RTY` writer - Retry test"]
-pub struct RTY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type RTY_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCFGR_SPEC, bool, O>;
 #[doc = "Field `PAE` reader - Pause Enable"]
-pub struct PAE_R(crate::FieldReader<bool, bool>);
-impl PAE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PAE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PAE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PAE_R = crate::BitReader<bool>;
 #[doc = "Field `PAE` writer - Pause Enable"]
-pub struct PAE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PAE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type PAE_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCFGR_SPEC, bool, O>;
+#[doc = "Field `RBOF` reader - Receive Buffer Offset"]
+pub type RBOF_R = crate::FieldReader<u8, RBOF_A>;
 #[doc = "Receive Buffer Offset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -525,14 +173,8 @@ impl From<RBOF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RBOF` reader - Receive Buffer Offset"]
-pub struct RBOF_R(crate::FieldReader<u8, RBOF_A>);
 impl RBOF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RBOF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RBOF_A {
         match self.bits {
@@ -546,41 +188,27 @@ impl RBOF_R {
     #[doc = "Checks if the value of the field is `OFFSET_0`"]
     #[inline(always)]
     pub fn is_offset_0(&self) -> bool {
-        **self == RBOF_A::OFFSET_0
+        *self == RBOF_A::OFFSET_0
     }
     #[doc = "Checks if the value of the field is `OFFSET_1`"]
     #[inline(always)]
     pub fn is_offset_1(&self) -> bool {
-        **self == RBOF_A::OFFSET_1
+        *self == RBOF_A::OFFSET_1
     }
     #[doc = "Checks if the value of the field is `OFFSET_2`"]
     #[inline(always)]
     pub fn is_offset_2(&self) -> bool {
-        **self == RBOF_A::OFFSET_2
+        *self == RBOF_A::OFFSET_2
     }
     #[doc = "Checks if the value of the field is `OFFSET_3`"]
     #[inline(always)]
     pub fn is_offset_3(&self) -> bool {
-        **self == RBOF_A::OFFSET_3
-    }
-}
-impl core::ops::Deref for RBOF_R {
-    type Target = crate::FieldReader<u8, RBOF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RBOF_A::OFFSET_3
     }
 }
 #[doc = "Field `RBOF` writer - Receive Buffer Offset"]
-pub struct RBOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RBOF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RBOF_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type RBOF_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, NCFGR_SPEC, u8, RBOF_A, 2, O>;
+impl<'a, const O: u8> RBOF_W<'a, O> {
     #[doc = "No offset from start of receive buffer."]
     #[inline(always)]
     pub fn offset_0(self) -> &'a mut W {
@@ -601,323 +229,185 @@ impl<'a> RBOF_W<'a> {
     pub fn offset_3(self) -> &'a mut W {
         self.variant(RBOF_A::OFFSET_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 14)) | ((value as u32 & 0x03) << 14);
-        self.w
-    }
 }
 #[doc = "Field `RLCE` reader - Receive Length field Checking Enable"]
-pub struct RLCE_R(crate::FieldReader<bool, bool>);
-impl RLCE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RLCE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RLCE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RLCE_R = crate::BitReader<bool>;
 #[doc = "Field `RLCE` writer - Receive Length field Checking Enable"]
-pub struct RLCE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RLCE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type RLCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCFGR_SPEC, bool, O>;
 #[doc = "Field `DRFCS` reader - Discard Receive FCS"]
-pub struct DRFCS_R(crate::FieldReader<bool, bool>);
-impl DRFCS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DRFCS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DRFCS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DRFCS_R = crate::BitReader<bool>;
 #[doc = "Field `DRFCS` writer - Discard Receive FCS"]
-pub struct DRFCS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DRFCS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type DRFCS_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCFGR_SPEC, bool, O>;
 #[doc = "Field `EFRHD` reader - "]
-pub struct EFRHD_R(crate::FieldReader<bool, bool>);
-impl EFRHD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        EFRHD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EFRHD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EFRHD_R = crate::BitReader<bool>;
 #[doc = "Field `EFRHD` writer - "]
-pub struct EFRHD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EFRHD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
+pub type EFRHD_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCFGR_SPEC, bool, O>;
 #[doc = "Field `IRXFCS` reader - Ignore RX FCS"]
-pub struct IRXFCS_R(crate::FieldReader<bool, bool>);
-impl IRXFCS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        IRXFCS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IRXFCS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IRXFCS_R = crate::BitReader<bool>;
 #[doc = "Field `IRXFCS` writer - Ignore RX FCS"]
-pub struct IRXFCS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IRXFCS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
-}
+pub type IRXFCS_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCFGR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Speed"]
     #[inline(always)]
     pub fn spd(&self) -> SPD_R {
-        SPD_R::new((self.bits & 0x01) != 0)
+        SPD_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Full Duplex"]
     #[inline(always)]
     pub fn fd(&self) -> FD_R {
-        FD_R::new(((self.bits >> 1) & 0x01) != 0)
+        FD_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 3 - Jumbo Frames"]
     #[inline(always)]
     pub fn jframe(&self) -> JFRAME_R {
-        JFRAME_R::new(((self.bits >> 3) & 0x01) != 0)
+        JFRAME_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Copy All Frames"]
     #[inline(always)]
     pub fn caf(&self) -> CAF_R {
-        CAF_R::new(((self.bits >> 4) & 0x01) != 0)
+        CAF_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - No Broadcast"]
     #[inline(always)]
     pub fn nbc(&self) -> NBC_R {
-        NBC_R::new(((self.bits >> 5) & 0x01) != 0)
+        NBC_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Multicast Hash Enable"]
     #[inline(always)]
     pub fn mti(&self) -> MTI_R {
-        MTI_R::new(((self.bits >> 6) & 0x01) != 0)
+        MTI_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Unicast Hash Enable"]
     #[inline(always)]
     pub fn uni(&self) -> UNI_R {
-        UNI_R::new(((self.bits >> 7) & 0x01) != 0)
+        UNI_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Receive 1536 bytes frames"]
     #[inline(always)]
     pub fn big(&self) -> BIG_R {
-        BIG_R::new(((self.bits >> 8) & 0x01) != 0)
+        BIG_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bits 10:11 - MDC clock divider"]
     #[inline(always)]
     pub fn clk(&self) -> CLK_R {
-        CLK_R::new(((self.bits >> 10) & 0x03) as u8)
+        CLK_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bit 12 - Retry test"]
     #[inline(always)]
     pub fn rty(&self) -> RTY_R {
-        RTY_R::new(((self.bits >> 12) & 0x01) != 0)
+        RTY_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Pause Enable"]
     #[inline(always)]
     pub fn pae(&self) -> PAE_R {
-        PAE_R::new(((self.bits >> 13) & 0x01) != 0)
+        PAE_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bits 14:15 - Receive Buffer Offset"]
     #[inline(always)]
     pub fn rbof(&self) -> RBOF_R {
-        RBOF_R::new(((self.bits >> 14) & 0x03) as u8)
+        RBOF_R::new(((self.bits >> 14) & 3) as u8)
     }
     #[doc = "Bit 16 - Receive Length field Checking Enable"]
     #[inline(always)]
     pub fn rlce(&self) -> RLCE_R {
-        RLCE_R::new(((self.bits >> 16) & 0x01) != 0)
+        RLCE_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Discard Receive FCS"]
     #[inline(always)]
     pub fn drfcs(&self) -> DRFCS_R {
-        DRFCS_R::new(((self.bits >> 17) & 0x01) != 0)
+        DRFCS_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18"]
     #[inline(always)]
     pub fn efrhd(&self) -> EFRHD_R {
-        EFRHD_R::new(((self.bits >> 18) & 0x01) != 0)
+        EFRHD_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Ignore RX FCS"]
     #[inline(always)]
     pub fn irxfcs(&self) -> IRXFCS_R {
-        IRXFCS_R::new(((self.bits >> 19) & 0x01) != 0)
+        IRXFCS_R::new(((self.bits >> 19) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Speed"]
     #[inline(always)]
-    pub fn spd(&mut self) -> SPD_W {
-        SPD_W { w: self }
+    pub fn spd(&mut self) -> SPD_W<0> {
+        SPD_W::new(self)
     }
     #[doc = "Bit 1 - Full Duplex"]
     #[inline(always)]
-    pub fn fd(&mut self) -> FD_W {
-        FD_W { w: self }
+    pub fn fd(&mut self) -> FD_W<1> {
+        FD_W::new(self)
     }
     #[doc = "Bit 3 - Jumbo Frames"]
     #[inline(always)]
-    pub fn jframe(&mut self) -> JFRAME_W {
-        JFRAME_W { w: self }
+    pub fn jframe(&mut self) -> JFRAME_W<3> {
+        JFRAME_W::new(self)
     }
     #[doc = "Bit 4 - Copy All Frames"]
     #[inline(always)]
-    pub fn caf(&mut self) -> CAF_W {
-        CAF_W { w: self }
+    pub fn caf(&mut self) -> CAF_W<4> {
+        CAF_W::new(self)
     }
     #[doc = "Bit 5 - No Broadcast"]
     #[inline(always)]
-    pub fn nbc(&mut self) -> NBC_W {
-        NBC_W { w: self }
+    pub fn nbc(&mut self) -> NBC_W<5> {
+        NBC_W::new(self)
     }
     #[doc = "Bit 6 - Multicast Hash Enable"]
     #[inline(always)]
-    pub fn mti(&mut self) -> MTI_W {
-        MTI_W { w: self }
+    pub fn mti(&mut self) -> MTI_W<6> {
+        MTI_W::new(self)
     }
     #[doc = "Bit 7 - Unicast Hash Enable"]
     #[inline(always)]
-    pub fn uni(&mut self) -> UNI_W {
-        UNI_W { w: self }
+    pub fn uni(&mut self) -> UNI_W<7> {
+        UNI_W::new(self)
     }
     #[doc = "Bit 8 - Receive 1536 bytes frames"]
     #[inline(always)]
-    pub fn big(&mut self) -> BIG_W {
-        BIG_W { w: self }
+    pub fn big(&mut self) -> BIG_W<8> {
+        BIG_W::new(self)
     }
     #[doc = "Bits 10:11 - MDC clock divider"]
     #[inline(always)]
-    pub fn clk(&mut self) -> CLK_W {
-        CLK_W { w: self }
+    pub fn clk(&mut self) -> CLK_W<10> {
+        CLK_W::new(self)
     }
     #[doc = "Bit 12 - Retry test"]
     #[inline(always)]
-    pub fn rty(&mut self) -> RTY_W {
-        RTY_W { w: self }
+    pub fn rty(&mut self) -> RTY_W<12> {
+        RTY_W::new(self)
     }
     #[doc = "Bit 13 - Pause Enable"]
     #[inline(always)]
-    pub fn pae(&mut self) -> PAE_W {
-        PAE_W { w: self }
+    pub fn pae(&mut self) -> PAE_W<13> {
+        PAE_W::new(self)
     }
     #[doc = "Bits 14:15 - Receive Buffer Offset"]
     #[inline(always)]
-    pub fn rbof(&mut self) -> RBOF_W {
-        RBOF_W { w: self }
+    pub fn rbof(&mut self) -> RBOF_W<14> {
+        RBOF_W::new(self)
     }
     #[doc = "Bit 16 - Receive Length field Checking Enable"]
     #[inline(always)]
-    pub fn rlce(&mut self) -> RLCE_W {
-        RLCE_W { w: self }
+    pub fn rlce(&mut self) -> RLCE_W<16> {
+        RLCE_W::new(self)
     }
     #[doc = "Bit 17 - Discard Receive FCS"]
     #[inline(always)]
-    pub fn drfcs(&mut self) -> DRFCS_W {
-        DRFCS_W { w: self }
+    pub fn drfcs(&mut self) -> DRFCS_W<17> {
+        DRFCS_W::new(self)
     }
     #[doc = "Bit 18"]
     #[inline(always)]
-    pub fn efrhd(&mut self) -> EFRHD_W {
-        EFRHD_W { w: self }
+    pub fn efrhd(&mut self) -> EFRHD_W<18> {
+        EFRHD_W::new(self)
     }
     #[doc = "Bit 19 - Ignore RX FCS"]
     #[inline(always)]
-    pub fn irxfcs(&mut self) -> IRXFCS_W {
-        IRXFCS_W { w: self }
+    pub fn irxfcs(&mut self) -> IRXFCS_W<19> {
+        IRXFCS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

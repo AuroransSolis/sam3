@@ -34,6 +34,8 @@ impl From<crate::W<GCFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ARB_CFG` reader - Arbiter Configuration"]
+pub type ARB_CFG_R = crate::BitReader<ARB_CFG_A>;
 #[doc = "Arbiter Configuration\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ARB_CFG_A {
@@ -48,14 +50,8 @@ impl From<ARB_CFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ARB_CFG` reader - Arbiter Configuration"]
-pub struct ARB_CFG_R(crate::FieldReader<bool, ARB_CFG_A>);
 impl ARB_CFG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ARB_CFG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ARB_CFG_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl ARB_CFG_R {
     #[doc = "Checks if the value of the field is `FIXED`"]
     #[inline(always)]
     pub fn is_fixed(&self) -> bool {
-        **self == ARB_CFG_A::FIXED
+        *self == ARB_CFG_A::FIXED
     }
     #[doc = "Checks if the value of the field is `ROUND_ROBIN`"]
     #[inline(always)]
     pub fn is_round_robin(&self) -> bool {
-        **self == ARB_CFG_A::ROUND_ROBIN
-    }
-}
-impl core::ops::Deref for ARB_CFG_R {
-    type Target = crate::FieldReader<bool, ARB_CFG_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ARB_CFG_A::ROUND_ROBIN
     }
 }
 #[doc = "Field `ARB_CFG` writer - Arbiter Configuration"]
-pub struct ARB_CFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ARB_CFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ARB_CFG_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ARB_CFG_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCFG_SPEC, ARB_CFG_A, O>;
+impl<'a, const O: u8> ARB_CFG_W<'a, O> {
     #[doc = "Fixed priority arbiter (see \"Basic Definitions\" )"]
     #[inline(always)]
     pub fn fixed(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> ARB_CFG_W<'a> {
     pub fn round_robin(self) -> &'a mut W {
         self.variant(ARB_CFG_A::ROUND_ROBIN)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 4 - Arbiter Configuration"]
     #[inline(always)]
     pub fn arb_cfg(&self) -> ARB_CFG_R {
-        ARB_CFG_R::new(((self.bits >> 4) & 0x01) != 0)
+        ARB_CFG_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 4 - Arbiter Configuration"]
     #[inline(always)]
-    pub fn arb_cfg(&mut self) -> ARB_CFG_W {
-        ARB_CFG_W { w: self }
+    pub fn arb_cfg(&mut self) -> ARB_CFG_W<4> {
+        ARB_CFG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

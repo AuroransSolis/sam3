@@ -35,32 +35,9 @@ impl From<crate::W<RCR_SPEC>> for W {
     }
 }
 #[doc = "Field `RXCTR` reader - Receive Counter Register"]
-pub struct RXCTR_R(crate::FieldReader<u16, u16>);
-impl RXCTR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        RXCTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXCTR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXCTR_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `RXCTR` writer - Receive Counter Register"]
-pub struct RXCTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXCTR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type RXCTR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RCR_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Receive Counter Register"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Receive Counter Register"]
     #[inline(always)]
-    pub fn rxctr(&mut self) -> RXCTR_W {
-        RXCTR_W { w: self }
+    pub fn rxctr(&mut self) -> RXCTR_W<0> {
+        RXCTR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

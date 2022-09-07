@@ -35,123 +35,21 @@ impl From<crate::W<CKGR_PLLAR_SPEC>> for W {
     }
 }
 #[doc = "Field `DIVA` reader - Divider"]
-pub struct DIVA_R(crate::FieldReader<u8, u8>);
-impl DIVA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DIVA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIVA_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIVA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIVA` writer - Divider"]
-pub struct DIVA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIVA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type DIVA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CKGR_PLLAR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `PLLACOUNT` reader - PLLA Counter"]
-pub struct PLLACOUNT_R(crate::FieldReader<u8, u8>);
-impl PLLACOUNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PLLACOUNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLLACOUNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLLACOUNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PLLACOUNT` writer - PLLA Counter"]
-pub struct PLLACOUNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLLACOUNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 8)) | ((value as u32 & 0x3f) << 8);
-        self.w
-    }
-}
+pub type PLLACOUNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CKGR_PLLAR_SPEC, u8, u8, 6, O>;
 #[doc = "Field `MULA` reader - PLLA Multiplier"]
-pub struct MULA_R(crate::FieldReader<u16, u16>);
-impl MULA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        MULA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MULA_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MULA_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MULA` writer - PLLA Multiplier"]
-pub struct MULA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MULA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07ff << 16)) | ((value as u32 & 0x07ff) << 16);
-        self.w
-    }
-}
+pub type MULA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CKGR_PLLAR_SPEC, u16, u16, 11, O>;
 #[doc = "Field `ONE` reader - Must Be Set to 1"]
-pub struct ONE_R(crate::FieldReader<bool, bool>);
-impl ONE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ONE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ONE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ONE_R = crate::BitReader<bool>;
 #[doc = "Field `ONE` writer - Must Be Set to 1"]
-pub struct ONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
-        self.w
-    }
-}
+pub type ONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CKGR_PLLAR_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:7 - Divider"]
     #[inline(always)]
@@ -171,29 +69,29 @@ impl R {
     #[doc = "Bit 29 - Must Be Set to 1"]
     #[inline(always)]
     pub fn one(&self) -> ONE_R {
-        ONE_R::new(((self.bits >> 29) & 0x01) != 0)
+        ONE_R::new(((self.bits >> 29) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Divider"]
     #[inline(always)]
-    pub fn diva(&mut self) -> DIVA_W {
-        DIVA_W { w: self }
+    pub fn diva(&mut self) -> DIVA_W<0> {
+        DIVA_W::new(self)
     }
     #[doc = "Bits 8:13 - PLLA Counter"]
     #[inline(always)]
-    pub fn pllacount(&mut self) -> PLLACOUNT_W {
-        PLLACOUNT_W { w: self }
+    pub fn pllacount(&mut self) -> PLLACOUNT_W<8> {
+        PLLACOUNT_W::new(self)
     }
     #[doc = "Bits 16:26 - PLLA Multiplier"]
     #[inline(always)]
-    pub fn mula(&mut self) -> MULA_W {
-        MULA_W { w: self }
+    pub fn mula(&mut self) -> MULA_W<16> {
+        MULA_W::new(self)
     }
     #[doc = "Bit 29 - Must Be Set to 1"]
     #[inline(always)]
-    pub fn one(&mut self) -> ONE_W {
-        ONE_W { w: self }
+    pub fn one(&mut self) -> ONE_W<29> {
+        ONE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

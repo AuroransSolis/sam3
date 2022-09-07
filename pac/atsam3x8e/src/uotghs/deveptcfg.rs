@@ -35,42 +35,11 @@ impl From<crate::W<DEVEPTCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `ALLOC` reader - Endpoint Memory Allocate"]
-pub struct ALLOC_R(crate::FieldReader<bool, bool>);
-impl ALLOC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ALLOC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ALLOC_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ALLOC_R = crate::BitReader<bool>;
 #[doc = "Field `ALLOC` writer - Endpoint Memory Allocate"]
-pub struct ALLOC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALLOC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type ALLOC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVEPTCFG_SPEC, bool, O>;
+#[doc = "Field `EPBK` reader - Endpoint Banks"]
+pub type EPBK_R = crate::FieldReader<u8, EPBK_A>;
 #[doc = "Endpoint Banks"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -88,14 +57,8 @@ impl From<EPBK_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EPBK` reader - Endpoint Banks"]
-pub struct EPBK_R(crate::FieldReader<u8, EPBK_A>);
 impl EPBK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        EPBK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<EPBK_A> {
         match self.bits {
@@ -108,36 +71,22 @@ impl EPBK_R {
     #[doc = "Checks if the value of the field is `_1_BANK`"]
     #[inline(always)]
     pub fn is_1_bank(&self) -> bool {
-        **self == EPBK_A::_1_BANK
+        *self == EPBK_A::_1_BANK
     }
     #[doc = "Checks if the value of the field is `_2_BANK`"]
     #[inline(always)]
     pub fn is_2_bank(&self) -> bool {
-        **self == EPBK_A::_2_BANK
+        *self == EPBK_A::_2_BANK
     }
     #[doc = "Checks if the value of the field is `_3_BANK`"]
     #[inline(always)]
     pub fn is_3_bank(&self) -> bool {
-        **self == EPBK_A::_3_BANK
-    }
-}
-impl core::ops::Deref for EPBK_R {
-    type Target = crate::FieldReader<u8, EPBK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EPBK_A::_3_BANK
     }
 }
 #[doc = "Field `EPBK` writer - Endpoint Banks"]
-pub struct EPBK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EPBK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EPBK_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type EPBK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DEVEPTCFG_SPEC, u8, EPBK_A, 2, O>;
+impl<'a, const O: u8> EPBK_W<'a, O> {
     #[doc = "Single-bank endpoint"]
     #[inline(always)]
     pub fn _1_bank(self) -> &'a mut W {
@@ -153,13 +102,9 @@ impl<'a> EPBK_W<'a> {
     pub fn _3_bank(self) -> &'a mut W {
         self.variant(EPBK_A::_3_BANK)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
-        self.w
-    }
 }
+#[doc = "Field `EPSIZE` reader - Endpoint Size"]
+pub type EPSIZE_R = crate::FieldReader<u8, EPSIZE_A>;
 #[doc = "Endpoint Size"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -187,14 +132,8 @@ impl From<EPSIZE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EPSIZE` reader - Endpoint Size"]
-pub struct EPSIZE_R(crate::FieldReader<u8, EPSIZE_A>);
 impl EPSIZE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        EPSIZE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EPSIZE_A {
         match self.bits {
@@ -212,61 +151,48 @@ impl EPSIZE_R {
     #[doc = "Checks if the value of the field is `_8_BYTE`"]
     #[inline(always)]
     pub fn is_8_byte(&self) -> bool {
-        **self == EPSIZE_A::_8_BYTE
+        *self == EPSIZE_A::_8_BYTE
     }
     #[doc = "Checks if the value of the field is `_16_BYTE`"]
     #[inline(always)]
     pub fn is_16_byte(&self) -> bool {
-        **self == EPSIZE_A::_16_BYTE
+        *self == EPSIZE_A::_16_BYTE
     }
     #[doc = "Checks if the value of the field is `_32_BYTE`"]
     #[inline(always)]
     pub fn is_32_byte(&self) -> bool {
-        **self == EPSIZE_A::_32_BYTE
+        *self == EPSIZE_A::_32_BYTE
     }
     #[doc = "Checks if the value of the field is `_64_BYTE`"]
     #[inline(always)]
     pub fn is_64_byte(&self) -> bool {
-        **self == EPSIZE_A::_64_BYTE
+        *self == EPSIZE_A::_64_BYTE
     }
     #[doc = "Checks if the value of the field is `_128_BYTE`"]
     #[inline(always)]
     pub fn is_128_byte(&self) -> bool {
-        **self == EPSIZE_A::_128_BYTE
+        *self == EPSIZE_A::_128_BYTE
     }
     #[doc = "Checks if the value of the field is `_256_BYTE`"]
     #[inline(always)]
     pub fn is_256_byte(&self) -> bool {
-        **self == EPSIZE_A::_256_BYTE
+        *self == EPSIZE_A::_256_BYTE
     }
     #[doc = "Checks if the value of the field is `_512_BYTE`"]
     #[inline(always)]
     pub fn is_512_byte(&self) -> bool {
-        **self == EPSIZE_A::_512_BYTE
+        *self == EPSIZE_A::_512_BYTE
     }
     #[doc = "Checks if the value of the field is `_1024_BYTE`"]
     #[inline(always)]
     pub fn is_1024_byte(&self) -> bool {
-        **self == EPSIZE_A::_1024_BYTE
-    }
-}
-impl core::ops::Deref for EPSIZE_R {
-    type Target = crate::FieldReader<u8, EPSIZE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EPSIZE_A::_1024_BYTE
     }
 }
 #[doc = "Field `EPSIZE` writer - Endpoint Size"]
-pub struct EPSIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EPSIZE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EPSIZE_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type EPSIZE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, DEVEPTCFG_SPEC, u8, EPSIZE_A, 3, O>;
+impl<'a, const O: u8> EPSIZE_W<'a, O> {
     #[doc = "8 bytes"]
     #[inline(always)]
     pub fn _8_byte(self) -> &'a mut W {
@@ -307,13 +233,9 @@ impl<'a> EPSIZE_W<'a> {
     pub fn _1024_byte(self) -> &'a mut W {
         self.variant(EPSIZE_A::_1024_BYTE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
-        self.w
-    }
 }
+#[doc = "Field `EPDIR` reader - Endpoint Direction"]
+pub type EPDIR_R = crate::BitReader<EPDIR_A>;
 #[doc = "Endpoint Direction"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EPDIR_A {
@@ -328,14 +250,8 @@ impl From<EPDIR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EPDIR` reader - Endpoint Direction"]
-pub struct EPDIR_R(crate::FieldReader<bool, EPDIR_A>);
 impl EPDIR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        EPDIR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EPDIR_A {
         match self.bits {
@@ -346,31 +262,17 @@ impl EPDIR_R {
     #[doc = "Checks if the value of the field is `OUT`"]
     #[inline(always)]
     pub fn is_out(&self) -> bool {
-        **self == EPDIR_A::OUT
+        *self == EPDIR_A::OUT
     }
     #[doc = "Checks if the value of the field is `IN`"]
     #[inline(always)]
     pub fn is_in(&self) -> bool {
-        **self == EPDIR_A::IN
-    }
-}
-impl core::ops::Deref for EPDIR_R {
-    type Target = crate::FieldReader<bool, EPDIR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EPDIR_A::IN
     }
 }
 #[doc = "Field `EPDIR` writer - Endpoint Direction"]
-pub struct EPDIR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EPDIR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EPDIR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type EPDIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVEPTCFG_SPEC, EPDIR_A, O>;
+impl<'a, const O: u8> EPDIR_W<'a, O> {
     #[doc = "The endpoint direction is OUT."]
     #[inline(always)]
     pub fn out(self) -> &'a mut W {
@@ -381,60 +283,13 @@ impl<'a> EPDIR_W<'a> {
     pub fn in_(self) -> &'a mut W {
         self.variant(EPDIR_A::IN)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
 #[doc = "Field `AUTOSW` reader - Automatic Switch"]
-pub struct AUTOSW_R(crate::FieldReader<bool, bool>);
-impl AUTOSW_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        AUTOSW_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AUTOSW_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AUTOSW_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOSW` writer - Automatic Switch"]
-pub struct AUTOSW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AUTOSW_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type AUTOSW_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVEPTCFG_SPEC, bool, O>;
+#[doc = "Field `EPTYPE` reader - Endpoint Type"]
+pub type EPTYPE_R = crate::FieldReader<u8, EPTYPE_A>;
 #[doc = "Endpoint Type"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -454,14 +309,8 @@ impl From<EPTYPE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EPTYPE` reader - Endpoint Type"]
-pub struct EPTYPE_R(crate::FieldReader<u8, EPTYPE_A>);
 impl EPTYPE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        EPTYPE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EPTYPE_A {
         match self.bits {
@@ -475,41 +324,28 @@ impl EPTYPE_R {
     #[doc = "Checks if the value of the field is `CTRL`"]
     #[inline(always)]
     pub fn is_ctrl(&self) -> bool {
-        **self == EPTYPE_A::CTRL
+        *self == EPTYPE_A::CTRL
     }
     #[doc = "Checks if the value of the field is `ISO`"]
     #[inline(always)]
     pub fn is_iso(&self) -> bool {
-        **self == EPTYPE_A::ISO
+        *self == EPTYPE_A::ISO
     }
     #[doc = "Checks if the value of the field is `BLK`"]
     #[inline(always)]
     pub fn is_blk(&self) -> bool {
-        **self == EPTYPE_A::BLK
+        *self == EPTYPE_A::BLK
     }
     #[doc = "Checks if the value of the field is `INTRPT`"]
     #[inline(always)]
     pub fn is_intrpt(&self) -> bool {
-        **self == EPTYPE_A::INTRPT
-    }
-}
-impl core::ops::Deref for EPTYPE_R {
-    type Target = crate::FieldReader<u8, EPTYPE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EPTYPE_A::INTRPT
     }
 }
 #[doc = "Field `EPTYPE` writer - Endpoint Type"]
-pub struct EPTYPE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EPTYPE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EPTYPE_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type EPTYPE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, DEVEPTCFG_SPEC, u8, EPTYPE_A, 2, O>;
+impl<'a, const O: u8> EPTYPE_W<'a, O> {
     #[doc = "Control"]
     #[inline(always)]
     pub fn ctrl(self) -> &'a mut W {
@@ -530,13 +366,9 @@ impl<'a> EPTYPE_W<'a> {
     pub fn intrpt(self) -> &'a mut W {
         self.variant(EPTYPE_A::INTRPT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 11)) | ((value as u32 & 0x03) << 11);
-        self.w
-    }
 }
+#[doc = "Field `NBTRANS` reader - Number of transaction per microframe for isochronous endpoint"]
+pub type NBTRANS_R = crate::FieldReader<u8, NBTRANS_A>;
 #[doc = "Number of transaction per microframe for isochronous endpoint"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -556,14 +388,8 @@ impl From<NBTRANS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `NBTRANS` reader - Number of transaction per microframe for isochronous endpoint"]
-pub struct NBTRANS_R(crate::FieldReader<u8, NBTRANS_A>);
 impl NBTRANS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        NBTRANS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> NBTRANS_A {
         match self.bits {
@@ -577,41 +403,28 @@ impl NBTRANS_R {
     #[doc = "Checks if the value of the field is `_0_TRANS`"]
     #[inline(always)]
     pub fn is_0_trans(&self) -> bool {
-        **self == NBTRANS_A::_0_TRANS
+        *self == NBTRANS_A::_0_TRANS
     }
     #[doc = "Checks if the value of the field is `_1_TRANS`"]
     #[inline(always)]
     pub fn is_1_trans(&self) -> bool {
-        **self == NBTRANS_A::_1_TRANS
+        *self == NBTRANS_A::_1_TRANS
     }
     #[doc = "Checks if the value of the field is `_2_TRANS`"]
     #[inline(always)]
     pub fn is_2_trans(&self) -> bool {
-        **self == NBTRANS_A::_2_TRANS
+        *self == NBTRANS_A::_2_TRANS
     }
     #[doc = "Checks if the value of the field is `_3_TRANS`"]
     #[inline(always)]
     pub fn is_3_trans(&self) -> bool {
-        **self == NBTRANS_A::_3_TRANS
-    }
-}
-impl core::ops::Deref for NBTRANS_R {
-    type Target = crate::FieldReader<u8, NBTRANS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == NBTRANS_A::_3_TRANS
     }
 }
 #[doc = "Field `NBTRANS` writer - Number of transaction per microframe for isochronous endpoint"]
-pub struct NBTRANS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NBTRANS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: NBTRANS_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type NBTRANS_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, DEVEPTCFG_SPEC, u8, NBTRANS_A, 2, O>;
+impl<'a, const O: u8> NBTRANS_W<'a, O> {
     #[doc = "reserved to endpoint that does not have the high-bandwidth isochronous capability."]
     #[inline(always)]
     pub fn _0_trans(self) -> &'a mut W {
@@ -632,85 +445,79 @@ impl<'a> NBTRANS_W<'a> {
     pub fn _3_trans(self) -> &'a mut W {
         self.variant(NBTRANS_A::_3_TRANS)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 13)) | ((value as u32 & 0x03) << 13);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 1 - Endpoint Memory Allocate"]
     #[inline(always)]
     pub fn alloc(&self) -> ALLOC_R {
-        ALLOC_R::new(((self.bits >> 1) & 0x01) != 0)
+        ALLOC_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 2:3 - Endpoint Banks"]
     #[inline(always)]
     pub fn epbk(&self) -> EPBK_R {
-        EPBK_R::new(((self.bits >> 2) & 0x03) as u8)
+        EPBK_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 4:6 - Endpoint Size"]
     #[inline(always)]
     pub fn epsize(&self) -> EPSIZE_R {
-        EPSIZE_R::new(((self.bits >> 4) & 0x07) as u8)
+        EPSIZE_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bit 8 - Endpoint Direction"]
     #[inline(always)]
     pub fn epdir(&self) -> EPDIR_R {
-        EPDIR_R::new(((self.bits >> 8) & 0x01) != 0)
+        EPDIR_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Automatic Switch"]
     #[inline(always)]
     pub fn autosw(&self) -> AUTOSW_R {
-        AUTOSW_R::new(((self.bits >> 9) & 0x01) != 0)
+        AUTOSW_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bits 11:12 - Endpoint Type"]
     #[inline(always)]
     pub fn eptype(&self) -> EPTYPE_R {
-        EPTYPE_R::new(((self.bits >> 11) & 0x03) as u8)
+        EPTYPE_R::new(((self.bits >> 11) & 3) as u8)
     }
     #[doc = "Bits 13:14 - Number of transaction per microframe for isochronous endpoint"]
     #[inline(always)]
     pub fn nbtrans(&self) -> NBTRANS_R {
-        NBTRANS_R::new(((self.bits >> 13) & 0x03) as u8)
+        NBTRANS_R::new(((self.bits >> 13) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 1 - Endpoint Memory Allocate"]
     #[inline(always)]
-    pub fn alloc(&mut self) -> ALLOC_W {
-        ALLOC_W { w: self }
+    pub fn alloc(&mut self) -> ALLOC_W<1> {
+        ALLOC_W::new(self)
     }
     #[doc = "Bits 2:3 - Endpoint Banks"]
     #[inline(always)]
-    pub fn epbk(&mut self) -> EPBK_W {
-        EPBK_W { w: self }
+    pub fn epbk(&mut self) -> EPBK_W<2> {
+        EPBK_W::new(self)
     }
     #[doc = "Bits 4:6 - Endpoint Size"]
     #[inline(always)]
-    pub fn epsize(&mut self) -> EPSIZE_W {
-        EPSIZE_W { w: self }
+    pub fn epsize(&mut self) -> EPSIZE_W<4> {
+        EPSIZE_W::new(self)
     }
     #[doc = "Bit 8 - Endpoint Direction"]
     #[inline(always)]
-    pub fn epdir(&mut self) -> EPDIR_W {
-        EPDIR_W { w: self }
+    pub fn epdir(&mut self) -> EPDIR_W<8> {
+        EPDIR_W::new(self)
     }
     #[doc = "Bit 9 - Automatic Switch"]
     #[inline(always)]
-    pub fn autosw(&mut self) -> AUTOSW_W {
-        AUTOSW_W { w: self }
+    pub fn autosw(&mut self) -> AUTOSW_W<9> {
+        AUTOSW_W::new(self)
     }
     #[doc = "Bits 11:12 - Endpoint Type"]
     #[inline(always)]
-    pub fn eptype(&mut self) -> EPTYPE_W {
-        EPTYPE_W { w: self }
+    pub fn eptype(&mut self) -> EPTYPE_W<11> {
+        EPTYPE_W::new(self)
     }
     #[doc = "Bits 13:14 - Number of transaction per microframe for isochronous endpoint"]
     #[inline(always)]
-    pub fn nbtrans(&mut self) -> NBTRANS_W {
-        NBTRANS_W { w: self }
+    pub fn nbtrans(&mut self) -> NBTRANS_W<13> {
+        NBTRANS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

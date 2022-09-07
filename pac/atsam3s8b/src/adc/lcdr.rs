@@ -14,35 +14,9 @@ impl From<crate::R<LCDR_SPEC>> for R {
     }
 }
 #[doc = "Field `LDATA` reader - Last Data Converted"]
-pub struct LDATA_R(crate::FieldReader<u16, u16>);
-impl LDATA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        LDATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LDATA_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LDATA_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `CHNB` reader - Channel Number"]
-pub struct CHNB_R(crate::FieldReader<u8, u8>);
-impl CHNB_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CHNB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHNB_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHNB_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:11 - Last Data Converted"]
     #[inline(always)]

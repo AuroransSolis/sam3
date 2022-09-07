@@ -20,221 +20,61 @@ impl From<crate::W<OSC_SPEC>> for W {
     }
 }
 #[doc = "Field `OSCH0` writer - Output Selection Clear for PWMH output of the channel 0"]
-pub struct OSCH0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSCH0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type OSCH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSC_SPEC, bool, O>;
 #[doc = "Field `OSCH1` writer - Output Selection Clear for PWMH output of the channel 1"]
-pub struct OSCH1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSCH1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type OSCH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSC_SPEC, bool, O>;
 #[doc = "Field `OSCH2` writer - Output Selection Clear for PWMH output of the channel 2"]
-pub struct OSCH2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSCH2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type OSCH2_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSC_SPEC, bool, O>;
 #[doc = "Field `OSCH3` writer - Output Selection Clear for PWMH output of the channel 3"]
-pub struct OSCH3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSCH3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type OSCH3_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSC_SPEC, bool, O>;
 #[doc = "Field `OSCL0` writer - Output Selection Clear for PWML output of the channel 0"]
-pub struct OSCL0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSCL0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type OSCL0_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSC_SPEC, bool, O>;
 #[doc = "Field `OSCL1` writer - Output Selection Clear for PWML output of the channel 1"]
-pub struct OSCL1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSCL1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type OSCL1_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSC_SPEC, bool, O>;
 #[doc = "Field `OSCL2` writer - Output Selection Clear for PWML output of the channel 2"]
-pub struct OSCL2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSCL2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
+pub type OSCL2_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSC_SPEC, bool, O>;
 #[doc = "Field `OSCL3` writer - Output Selection Clear for PWML output of the channel 3"]
-pub struct OSCL3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSCL3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
-}
+pub type OSCL3_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSC_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Output Selection Clear for PWMH output of the channel 0"]
     #[inline(always)]
-    pub fn osch0(&mut self) -> OSCH0_W {
-        OSCH0_W { w: self }
+    pub fn osch0(&mut self) -> OSCH0_W<0> {
+        OSCH0_W::new(self)
     }
     #[doc = "Bit 1 - Output Selection Clear for PWMH output of the channel 1"]
     #[inline(always)]
-    pub fn osch1(&mut self) -> OSCH1_W {
-        OSCH1_W { w: self }
+    pub fn osch1(&mut self) -> OSCH1_W<1> {
+        OSCH1_W::new(self)
     }
     #[doc = "Bit 2 - Output Selection Clear for PWMH output of the channel 2"]
     #[inline(always)]
-    pub fn osch2(&mut self) -> OSCH2_W {
-        OSCH2_W { w: self }
+    pub fn osch2(&mut self) -> OSCH2_W<2> {
+        OSCH2_W::new(self)
     }
     #[doc = "Bit 3 - Output Selection Clear for PWMH output of the channel 3"]
     #[inline(always)]
-    pub fn osch3(&mut self) -> OSCH3_W {
-        OSCH3_W { w: self }
+    pub fn osch3(&mut self) -> OSCH3_W<3> {
+        OSCH3_W::new(self)
     }
     #[doc = "Bit 16 - Output Selection Clear for PWML output of the channel 0"]
     #[inline(always)]
-    pub fn oscl0(&mut self) -> OSCL0_W {
-        OSCL0_W { w: self }
+    pub fn oscl0(&mut self) -> OSCL0_W<16> {
+        OSCL0_W::new(self)
     }
     #[doc = "Bit 17 - Output Selection Clear for PWML output of the channel 1"]
     #[inline(always)]
-    pub fn oscl1(&mut self) -> OSCL1_W {
-        OSCL1_W { w: self }
+    pub fn oscl1(&mut self) -> OSCL1_W<17> {
+        OSCL1_W::new(self)
     }
     #[doc = "Bit 18 - Output Selection Clear for PWML output of the channel 2"]
     #[inline(always)]
-    pub fn oscl2(&mut self) -> OSCL2_W {
-        OSCL2_W { w: self }
+    pub fn oscl2(&mut self) -> OSCL2_W<18> {
+        OSCL2_W::new(self)
     }
     #[doc = "Bit 19 - Output Selection Clear for PWML output of the channel 3"]
     #[inline(always)]
-    pub fn oscl3(&mut self) -> OSCL3_W {
-        OSCL3_W { w: self }
+    pub fn oscl3(&mut self) -> OSCL3_W<19> {
+        OSCL3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

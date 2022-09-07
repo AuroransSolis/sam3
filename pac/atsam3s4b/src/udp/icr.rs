@@ -20,167 +20,47 @@ impl From<crate::W<ICR_SPEC>> for W {
     }
 }
 #[doc = "Field `RXSUSP` writer - Clear UDP Suspend Interrupt"]
-pub struct RXSUSP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXSUSP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type RXSUSP_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `RXRSM` writer - Clear UDP Resume Interrupt"]
-pub struct RXRSM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXRSM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type RXRSM_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `EXTRSM` writer - "]
-pub struct EXTRSM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTRSM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type EXTRSM_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `SOFINT` writer - Clear Start Of Frame Interrupt"]
-pub struct SOFINT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SOFINT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type SOFINT_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `ENDBUSRES` writer - Clear End of Bus Reset Interrupt"]
-pub struct ENDBUSRES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENDBUSRES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type ENDBUSRES_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `WAKEUP` writer - Clear Wakeup Interrupt"]
-pub struct WAKEUP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAKEUP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type WAKEUP_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 8 - Clear UDP Suspend Interrupt"]
     #[inline(always)]
-    pub fn rxsusp(&mut self) -> RXSUSP_W {
-        RXSUSP_W { w: self }
+    pub fn rxsusp(&mut self) -> RXSUSP_W<8> {
+        RXSUSP_W::new(self)
     }
     #[doc = "Bit 9 - Clear UDP Resume Interrupt"]
     #[inline(always)]
-    pub fn rxrsm(&mut self) -> RXRSM_W {
-        RXRSM_W { w: self }
+    pub fn rxrsm(&mut self) -> RXRSM_W<9> {
+        RXRSM_W::new(self)
     }
     #[doc = "Bit 10"]
     #[inline(always)]
-    pub fn extrsm(&mut self) -> EXTRSM_W {
-        EXTRSM_W { w: self }
+    pub fn extrsm(&mut self) -> EXTRSM_W<10> {
+        EXTRSM_W::new(self)
     }
     #[doc = "Bit 11 - Clear Start Of Frame Interrupt"]
     #[inline(always)]
-    pub fn sofint(&mut self) -> SOFINT_W {
-        SOFINT_W { w: self }
+    pub fn sofint(&mut self) -> SOFINT_W<11> {
+        SOFINT_W::new(self)
     }
     #[doc = "Bit 12 - Clear End of Bus Reset Interrupt"]
     #[inline(always)]
-    pub fn endbusres(&mut self) -> ENDBUSRES_W {
-        ENDBUSRES_W { w: self }
+    pub fn endbusres(&mut self) -> ENDBUSRES_W<12> {
+        ENDBUSRES_W::new(self)
     }
     #[doc = "Bit 13 - Clear Wakeup Interrupt"]
     #[inline(always)]
-    pub fn wakeup(&mut self) -> WAKEUP_W {
-        WAKEUP_W { w: self }
+    pub fn wakeup(&mut self) -> WAKEUP_W<13> {
+        WAKEUP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

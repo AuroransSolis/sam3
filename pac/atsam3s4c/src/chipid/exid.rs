@@ -14,20 +14,7 @@ impl From<crate::R<EXID_SPEC>> for R {
     }
 }
 #[doc = "Field `EXID` reader - Chip ID Extension"]
-pub struct EXID_R(crate::FieldReader<u32, u32>);
-impl EXID_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        EXID_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXID_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EXID_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Chip ID Extension"]
     #[inline(always)]

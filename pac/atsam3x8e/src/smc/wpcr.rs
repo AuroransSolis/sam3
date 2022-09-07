@@ -20,27 +20,7 @@ impl From<crate::W<WPCR_SPEC>> for W {
     }
 }
 #[doc = "Field `WP_EN` writer - Write Protection Enable"]
-pub struct WP_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WP_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type WP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, WPCR_SPEC, bool, O>;
 #[doc = "Write Protection KEY Password\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -55,37 +35,24 @@ impl From<WP_KEY_AW> for u32 {
     }
 }
 #[doc = "Field `WP_KEY` writer - Write Protection KEY Password"]
-pub struct WP_KEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WP_KEY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WP_KEY_AW) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type WP_KEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WPCR_SPEC, u32, WP_KEY_AW, 24, O>;
+impl<'a, const O: u8> WP_KEY_W<'a, O> {
     #[doc = "Writing any other value in this field aborts the write operation of the WP_EN bit. Always reads as 0."]
     #[inline(always)]
     pub fn passwd(self) -> &'a mut W {
         self.variant(WP_KEY_AW::PASSWD)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x00ff_ffff << 8)) | ((value as u32 & 0x00ff_ffff) << 8);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Write Protection Enable"]
     #[inline(always)]
-    pub fn wp_en(&mut self) -> WP_EN_W {
-        WP_EN_W { w: self }
+    pub fn wp_en(&mut self) -> WP_EN_W<0> {
+        WP_EN_W::new(self)
     }
     #[doc = "Bits 8:31 - Write Protection KEY Password"]
     #[inline(always)]
-    pub fn wp_key(&mut self) -> WP_KEY_W {
-        WP_KEY_W { w: self }
+    pub fn wp_key(&mut self) -> WP_KEY_W<8> {
+        WP_KEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

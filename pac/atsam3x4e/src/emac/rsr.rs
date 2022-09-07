@@ -35,148 +35,49 @@ impl From<crate::W<RSR_SPEC>> for W {
     }
 }
 #[doc = "Field `BNA` reader - Buffer Not Available"]
-pub struct BNA_R(crate::FieldReader<bool, bool>);
-impl BNA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BNA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BNA_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BNA_R = crate::BitReader<bool>;
 #[doc = "Field `BNA` writer - Buffer Not Available"]
-pub struct BNA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BNA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type BNA_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSR_SPEC, bool, O>;
 #[doc = "Field `REC` reader - Frame Received"]
-pub struct REC_R(crate::FieldReader<bool, bool>);
-impl REC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for REC_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type REC_R = crate::BitReader<bool>;
 #[doc = "Field `REC` writer - Frame Received"]
-pub struct REC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type REC_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSR_SPEC, bool, O>;
 #[doc = "Field `OVR` reader - Receive Overrun"]
-pub struct OVR_R(crate::FieldReader<bool, bool>);
-impl OVR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OVR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OVR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OVR_R = crate::BitReader<bool>;
 #[doc = "Field `OVR` writer - Receive Overrun"]
-pub struct OVR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OVR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type OVR_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Buffer Not Available"]
     #[inline(always)]
     pub fn bna(&self) -> BNA_R {
-        BNA_R::new((self.bits & 0x01) != 0)
+        BNA_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Frame Received"]
     #[inline(always)]
     pub fn rec(&self) -> REC_R {
-        REC_R::new(((self.bits >> 1) & 0x01) != 0)
+        REC_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Receive Overrun"]
     #[inline(always)]
     pub fn ovr(&self) -> OVR_R {
-        OVR_R::new(((self.bits >> 2) & 0x01) != 0)
+        OVR_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Buffer Not Available"]
     #[inline(always)]
-    pub fn bna(&mut self) -> BNA_W {
-        BNA_W { w: self }
+    pub fn bna(&mut self) -> BNA_W<0> {
+        BNA_W::new(self)
     }
     #[doc = "Bit 1 - Frame Received"]
     #[inline(always)]
-    pub fn rec(&mut self) -> REC_W {
-        REC_W { w: self }
+    pub fn rec(&mut self) -> REC_W<1> {
+        REC_W::new(self)
     }
     #[doc = "Bit 2 - Receive Overrun"]
     #[inline(always)]
-    pub fn ovr(&mut self) -> OVR_W {
-        OVR_W { w: self }
+    pub fn ovr(&mut self) -> OVR_W<2> {
+        OVR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

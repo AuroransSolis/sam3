@@ -35,32 +35,9 @@ impl From<crate::W<LCOL_SPEC>> for W {
     }
 }
 #[doc = "Field `LCOL` reader - Late Collisions"]
-pub struct LCOL_R(crate::FieldReader<u8, u8>);
-impl LCOL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        LCOL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LCOL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LCOL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LCOL` writer - Late Collisions"]
-pub struct LCOL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCOL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type LCOL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LCOL_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Late Collisions"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Late Collisions"]
     #[inline(always)]
-    pub fn lcol(&mut self) -> LCOL_W {
-        LCOL_W { w: self }
+    pub fn lcol(&mut self) -> LCOL_W<0> {
+        LCOL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,74 +35,19 @@ impl From<crate::W<EMR_SPEC>> for W {
     }
 }
 #[doc = "Field `OFFMODES` reader - Off Mode if Sleep Bit (ADC12B_MR) = 1"]
-pub struct OFFMODES_R(crate::FieldReader<bool, bool>);
-impl OFFMODES_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OFFMODES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OFFMODES_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OFFMODES_R = crate::BitReader<bool>;
 #[doc = "Field `OFFMODES` writer - Off Mode if Sleep Bit (ADC12B_MR) = 1"]
-pub struct OFFMODES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OFFMODES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type OFFMODES_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMR_SPEC, bool, O>;
 #[doc = "Field `OFF_MODE_STARTUP_TIME` reader - Startup Time"]
-pub struct OFF_MODE_STARTUP_TIME_R(crate::FieldReader<u8, u8>);
-impl OFF_MODE_STARTUP_TIME_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        OFF_MODE_STARTUP_TIME_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OFF_MODE_STARTUP_TIME_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OFF_MODE_STARTUP_TIME_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OFF_MODE_STARTUP_TIME` writer - Startup Time"]
-pub struct OFF_MODE_STARTUP_TIME_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OFF_MODE_STARTUP_TIME_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type OFF_MODE_STARTUP_TIME_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EMR_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bit 0 - Off Mode if Sleep Bit (ADC12B_MR) = 1"]
     #[inline(always)]
     pub fn offmodes(&self) -> OFFMODES_R {
-        OFFMODES_R::new((self.bits & 0x01) != 0)
+        OFFMODES_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 16:23 - Startup Time"]
     #[inline(always)]
@@ -113,13 +58,13 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Off Mode if Sleep Bit (ADC12B_MR) = 1"]
     #[inline(always)]
-    pub fn offmodes(&mut self) -> OFFMODES_W {
-        OFFMODES_W { w: self }
+    pub fn offmodes(&mut self) -> OFFMODES_W<0> {
+        OFFMODES_W::new(self)
     }
     #[doc = "Bits 16:23 - Startup Time"]
     #[inline(always)]
-    pub fn off_mode_startup_time(&mut self) -> OFF_MODE_STARTUP_TIME_W {
-        OFF_MODE_STARTUP_TIME_W { w: self }
+    pub fn off_mode_startup_time(&mut self) -> OFF_MODE_STARTUP_TIME_W<16> {
+        OFF_MODE_STARTUP_TIME_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

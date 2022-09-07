@@ -14,35 +14,9 @@ impl From<crate::R<RDR_SPEC>> for R {
     }
 }
 #[doc = "Field `RD` reader - Receive Data"]
-pub struct RD_R(crate::FieldReader<u16, u16>);
-impl RD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        RD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RD_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RD_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PCS` reader - Peripheral Chip Select"]
-pub struct PCS_R(crate::FieldReader<u8, u8>);
-impl PCS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PCS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PCS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PCS_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:15 - Receive Data"]
     #[inline(always)]

@@ -14,65 +14,26 @@ impl From<crate::R<PMC_PCSR1_SPEC>> for R {
     }
 }
 #[doc = "Field `PID32` reader - Peripheral Clock 32 Status"]
-pub struct PID32_R(crate::FieldReader<bool, bool>);
-impl PID32_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PID32_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID32_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID32_R = crate::BitReader<bool>;
 #[doc = "Field `PID33` reader - Peripheral Clock 33 Status"]
-pub struct PID33_R(crate::FieldReader<bool, bool>);
-impl PID33_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PID33_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID33_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID33_R = crate::BitReader<bool>;
 #[doc = "Field `PID34` reader - Peripheral Clock 34 Status"]
-pub struct PID34_R(crate::FieldReader<bool, bool>);
-impl PID34_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PID34_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID34_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID34_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Peripheral Clock 32 Status"]
     #[inline(always)]
     pub fn pid32(&self) -> PID32_R {
-        PID32_R::new((self.bits & 0x01) != 0)
+        PID32_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Peripheral Clock 33 Status"]
     #[inline(always)]
     pub fn pid33(&self) -> PID33_R {
-        PID33_R::new(((self.bits >> 1) & 0x01) != 0)
+        PID33_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Peripheral Clock 34 Status"]
     #[inline(always)]
     pub fn pid34(&self) -> PID34_R {
-        PID34_R::new(((self.bits >> 2) & 0x01) != 0)
+        PID34_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 #[doc = "Peripheral Clock Status Register 1\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_pcsr1](index.html) module"]

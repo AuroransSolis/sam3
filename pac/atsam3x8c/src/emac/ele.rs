@@ -35,32 +35,9 @@ impl From<crate::W<ELE_SPEC>> for W {
     }
 }
 #[doc = "Field `EXL` reader - Excessive Length Errors"]
-pub struct EXL_R(crate::FieldReader<u8, u8>);
-impl EXL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        EXL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EXL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `EXL` writer - Excessive Length Errors"]
-pub struct EXL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type EXL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ELE_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Excessive Length Errors"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Excessive Length Errors"]
     #[inline(always)]
-    pub fn exl(&mut self) -> EXL_W {
-        EXL_W { w: self }
+    pub fn exl(&mut self) -> EXL_W<0> {
+        EXL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

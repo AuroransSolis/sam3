@@ -14,20 +14,7 @@ impl From<crate::R<ECC_PR1_SPEC>> for R {
     }
 }
 #[doc = "Field `NPARITY` reader - Parity N"]
-pub struct NPARITY_R(crate::FieldReader<u16, u16>);
-impl NPARITY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        NPARITY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NPARITY_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NPARITY_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Parity N"]
     #[inline(always)]

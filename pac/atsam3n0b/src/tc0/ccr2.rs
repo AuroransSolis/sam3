@@ -20,86 +20,26 @@ impl From<crate::W<CCR2_SPEC>> for W {
     }
 }
 #[doc = "Field `CLKEN` writer - Counter Clock Enable Command"]
-pub struct CLKEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CLKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR2_SPEC, bool, O>;
 #[doc = "Field `CLKDIS` writer - Counter Clock Disable Command"]
-pub struct CLKDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CLKDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR2_SPEC, bool, O>;
 #[doc = "Field `SWTRG` writer - Software Trigger Command"]
-pub struct SWTRG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWTRG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type SWTRG_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR2_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Counter Clock Enable Command"]
     #[inline(always)]
-    pub fn clken(&mut self) -> CLKEN_W {
-        CLKEN_W { w: self }
+    pub fn clken(&mut self) -> CLKEN_W<0> {
+        CLKEN_W::new(self)
     }
     #[doc = "Bit 1 - Counter Clock Disable Command"]
     #[inline(always)]
-    pub fn clkdis(&mut self) -> CLKDIS_W {
-        CLKDIS_W { w: self }
+    pub fn clkdis(&mut self) -> CLKDIS_W<1> {
+        CLKDIS_W::new(self)
     }
     #[doc = "Bit 2 - Software Trigger Command"]
     #[inline(always)]
-    pub fn swtrg(&mut self) -> SWTRG_W {
-        SWTRG_W { w: self }
+    pub fn swtrg(&mut self) -> SWTRG_W<2> {
+        SWTRG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

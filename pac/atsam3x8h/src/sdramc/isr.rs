@@ -14,25 +14,12 @@ impl From<crate::R<ISR_SPEC>> for R {
     }
 }
 #[doc = "Field `RES` reader - Refresh Error Status"]
-pub struct RES_R(crate::FieldReader<bool, bool>);
-impl RES_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RES_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RES_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Refresh Error Status"]
     #[inline(always)]
     pub fn res(&self) -> RES_R {
-        RES_R::new((self.bits & 0x01) != 0)
+        RES_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "SDRAMC Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [isr](index.html) module"]

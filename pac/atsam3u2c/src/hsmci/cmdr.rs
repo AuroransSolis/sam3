@@ -20,17 +20,7 @@ impl From<crate::W<CMDR_SPEC>> for W {
     }
 }
 #[doc = "Field `CMDNB` writer - Command Number"]
-pub struct CMDNB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMDNB_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
-    }
-}
+pub type CMDNB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMDR_SPEC, u8, u8, 6, O>;
 #[doc = "Response Type"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,15 +41,9 @@ impl From<RSPTYP_AW> for u8 {
     }
 }
 #[doc = "Field `RSPTYP` writer - Response Type"]
-pub struct RSPTYP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RSPTYP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RSPTYP_AW) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type RSPTYP_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CMDR_SPEC, u8, RSPTYP_AW, 2, O>;
+impl<'a, const O: u8> RSPTYP_W<'a, O> {
     #[doc = "No response."]
     #[inline(always)]
     pub fn noresp(self) -> &'a mut W {
@@ -79,12 +63,6 @@ impl<'a> RSPTYP_W<'a> {
     #[inline(always)]
     pub fn r1b(self) -> &'a mut W {
         self.variant(RSPTYP_AW::R1B)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
-        self.w
     }
 }
 #[doc = "Special Command"]
@@ -115,15 +93,8 @@ impl From<SPCMD_AW> for u8 {
     }
 }
 #[doc = "Field `SPCMD` writer - Special Command"]
-pub struct SPCMD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SPCMD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SPCMD_AW) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type SPCMD_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CMDR_SPEC, u8, SPCMD_AW, 3, O>;
+impl<'a, const O: u8> SPCMD_W<'a, O> {
     #[doc = "Not a special CMD."]
     #[inline(always)]
     pub fn std(self) -> &'a mut W {
@@ -164,12 +135,6 @@ impl<'a> SPCMD_W<'a> {
     pub fn ebo(self) -> &'a mut W {
         self.variant(SPCMD_AW::EBO)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
-    }
 }
 #[doc = "Open Drain Command"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -186,15 +151,8 @@ impl From<OPDCMD_AW> for bool {
     }
 }
 #[doc = "Field `OPDCMD` writer - Open Drain Command"]
-pub struct OPDCMD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OPDCMD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OPDCMD_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type OPDCMD_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMDR_SPEC, OPDCMD_AW, O>;
+impl<'a, const O: u8> OPDCMD_W<'a, O> {
     #[doc = "Push pull command."]
     #[inline(always)]
     pub fn pushpull(self) -> &'a mut W {
@@ -204,22 +162,6 @@ impl<'a> OPDCMD_W<'a> {
     #[inline(always)]
     pub fn opendrain(self) -> &'a mut W {
         self.variant(OPDCMD_AW::OPENDRAIN)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
     }
 }
 #[doc = "Max Latency for Command to Response"]
@@ -237,15 +179,8 @@ impl From<MAXLAT_AW> for bool {
     }
 }
 #[doc = "Field `MAXLAT` writer - Max Latency for Command to Response"]
-pub struct MAXLAT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MAXLAT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MAXLAT_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MAXLAT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMDR_SPEC, MAXLAT_AW, O>;
+impl<'a, const O: u8> MAXLAT_W<'a, O> {
     #[doc = "5-cycle max latency."]
     #[inline(always)]
     pub fn _5(self) -> &'a mut W {
@@ -255,22 +190,6 @@ impl<'a> MAXLAT_W<'a> {
     #[inline(always)]
     pub fn _64(self) -> &'a mut W {
         self.variant(MAXLAT_AW::_64)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
     }
 }
 #[doc = "Transfer Command"]
@@ -291,15 +210,8 @@ impl From<TRCMD_AW> for u8 {
     }
 }
 #[doc = "Field `TRCMD` writer - Transfer Command"]
-pub struct TRCMD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRCMD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TRCMD_AW) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type TRCMD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMDR_SPEC, u8, TRCMD_AW, 2, O>;
+impl<'a, const O: u8> TRCMD_W<'a, O> {
     #[doc = "No data transfer"]
     #[inline(always)]
     pub fn no_data(self) -> &'a mut W {
@@ -314,12 +226,6 @@ impl<'a> TRCMD_W<'a> {
     #[inline(always)]
     pub fn stop_data(self) -> &'a mut W {
         self.variant(TRCMD_AW::STOP_DATA)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
-        self.w
     }
 }
 #[doc = "Transfer Direction"]
@@ -337,15 +243,8 @@ impl From<TRDIR_AW> for bool {
     }
 }
 #[doc = "Field `TRDIR` writer - Transfer Direction"]
-pub struct TRDIR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRDIR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TRDIR_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TRDIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMDR_SPEC, TRDIR_AW, O>;
+impl<'a, const O: u8> TRDIR_W<'a, O> {
     #[doc = "Write."]
     #[inline(always)]
     pub fn write(self) -> &'a mut W {
@@ -355,22 +254,6 @@ impl<'a> TRDIR_W<'a> {
     #[inline(always)]
     pub fn read(self) -> &'a mut W {
         self.variant(TRDIR_AW::READ)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
     }
 }
 #[doc = "Transfer Type"]
@@ -395,15 +278,8 @@ impl From<TRTYP_AW> for u8 {
     }
 }
 #[doc = "Field `TRTYP` writer - Transfer Type"]
-pub struct TRTYP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRTYP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TRTYP_AW) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type TRTYP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMDR_SPEC, u8, TRTYP_AW, 3, O>;
+impl<'a, const O: u8> TRTYP_W<'a, O> {
     #[doc = "MMC/SD Card Single Block"]
     #[inline(always)]
     pub fn single(self) -> &'a mut W {
@@ -429,12 +305,6 @@ impl<'a> TRTYP_W<'a> {
     pub fn block(self) -> &'a mut W {
         self.variant(TRTYP_AW::BLOCK)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 19)) | ((value as u32 & 0x07) << 19);
-        self.w
-    }
 }
 #[doc = "SDIO Special Command"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -454,15 +324,8 @@ impl From<IOSPCMD_AW> for u8 {
     }
 }
 #[doc = "Field `IOSPCMD` writer - SDIO Special Command"]
-pub struct IOSPCMD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IOSPCMD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IOSPCMD_AW) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type IOSPCMD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMDR_SPEC, u8, IOSPCMD_AW, 2, O>;
+impl<'a, const O: u8> IOSPCMD_W<'a, O> {
     #[doc = "Not an SDIO Special Command"]
     #[inline(always)]
     pub fn std(self) -> &'a mut W {
@@ -477,12 +340,6 @@ impl<'a> IOSPCMD_W<'a> {
     #[inline(always)]
     pub fn resume(self) -> &'a mut W {
         self.variant(IOSPCMD_AW::RESUME)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 24)) | ((value as u32 & 0x03) << 24);
-        self.w
     }
 }
 #[doc = "ATA with Command Completion Signal"]
@@ -500,15 +357,8 @@ impl From<ATACS_AW> for bool {
     }
 }
 #[doc = "Field `ATACS` writer - ATA with Command Completion Signal"]
-pub struct ATACS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ATACS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ATACS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ATACS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMDR_SPEC, ATACS_AW, O>;
+impl<'a, const O: u8> ATACS_W<'a, O> {
     #[doc = "Normal operation mode."]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -519,100 +369,64 @@ impl<'a> ATACS_W<'a> {
     pub fn completion(self) -> &'a mut W {
         self.variant(ATACS_AW::COMPLETION)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
-        self.w
-    }
 }
 #[doc = "Field `BOOT_ACK` writer - Boot Operation Acknowledge."]
-pub struct BOOT_ACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BOOT_ACK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
-        self.w
-    }
-}
+pub type BOOT_ACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMDR_SPEC, bool, O>;
 impl W {
     #[doc = "Bits 0:5 - Command Number"]
     #[inline(always)]
-    pub fn cmdnb(&mut self) -> CMDNB_W {
-        CMDNB_W { w: self }
+    pub fn cmdnb(&mut self) -> CMDNB_W<0> {
+        CMDNB_W::new(self)
     }
     #[doc = "Bits 6:7 - Response Type"]
     #[inline(always)]
-    pub fn rsptyp(&mut self) -> RSPTYP_W {
-        RSPTYP_W { w: self }
+    pub fn rsptyp(&mut self) -> RSPTYP_W<6> {
+        RSPTYP_W::new(self)
     }
     #[doc = "Bits 8:10 - Special Command"]
     #[inline(always)]
-    pub fn spcmd(&mut self) -> SPCMD_W {
-        SPCMD_W { w: self }
+    pub fn spcmd(&mut self) -> SPCMD_W<8> {
+        SPCMD_W::new(self)
     }
     #[doc = "Bit 11 - Open Drain Command"]
     #[inline(always)]
-    pub fn opdcmd(&mut self) -> OPDCMD_W {
-        OPDCMD_W { w: self }
+    pub fn opdcmd(&mut self) -> OPDCMD_W<11> {
+        OPDCMD_W::new(self)
     }
     #[doc = "Bit 12 - Max Latency for Command to Response"]
     #[inline(always)]
-    pub fn maxlat(&mut self) -> MAXLAT_W {
-        MAXLAT_W { w: self }
+    pub fn maxlat(&mut self) -> MAXLAT_W<12> {
+        MAXLAT_W::new(self)
     }
     #[doc = "Bits 16:17 - Transfer Command"]
     #[inline(always)]
-    pub fn trcmd(&mut self) -> TRCMD_W {
-        TRCMD_W { w: self }
+    pub fn trcmd(&mut self) -> TRCMD_W<16> {
+        TRCMD_W::new(self)
     }
     #[doc = "Bit 18 - Transfer Direction"]
     #[inline(always)]
-    pub fn trdir(&mut self) -> TRDIR_W {
-        TRDIR_W { w: self }
+    pub fn trdir(&mut self) -> TRDIR_W<18> {
+        TRDIR_W::new(self)
     }
     #[doc = "Bits 19:21 - Transfer Type"]
     #[inline(always)]
-    pub fn trtyp(&mut self) -> TRTYP_W {
-        TRTYP_W { w: self }
+    pub fn trtyp(&mut self) -> TRTYP_W<19> {
+        TRTYP_W::new(self)
     }
     #[doc = "Bits 24:25 - SDIO Special Command"]
     #[inline(always)]
-    pub fn iospcmd(&mut self) -> IOSPCMD_W {
-        IOSPCMD_W { w: self }
+    pub fn iospcmd(&mut self) -> IOSPCMD_W<24> {
+        IOSPCMD_W::new(self)
     }
     #[doc = "Bit 26 - ATA with Command Completion Signal"]
     #[inline(always)]
-    pub fn atacs(&mut self) -> ATACS_W {
-        ATACS_W { w: self }
+    pub fn atacs(&mut self) -> ATACS_W<26> {
+        ATACS_W::new(self)
     }
     #[doc = "Bit 27 - Boot Operation Acknowledge."]
     #[inline(always)]
-    pub fn boot_ack(&mut self) -> BOOT_ACK_W {
-        BOOT_ACK_W { w: self }
+    pub fn boot_ack(&mut self) -> BOOT_ACK_W<27> {
+        BOOT_ACK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

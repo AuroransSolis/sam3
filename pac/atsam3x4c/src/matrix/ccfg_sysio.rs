@@ -35,54 +35,21 @@ impl From<crate::W<CCFG_SYSIO_SPEC>> for W {
     }
 }
 #[doc = "Field `SYSIO12` reader - PC0 or ERASE Assignment"]
-pub struct SYSIO12_R(crate::FieldReader<bool, bool>);
-impl SYSIO12_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SYSIO12_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SYSIO12_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SYSIO12_R = crate::BitReader<bool>;
 #[doc = "Field `SYSIO12` writer - PC0 or ERASE Assignment"]
-pub struct SYSIO12_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SYSIO12_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type SYSIO12_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCFG_SYSIO_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 12 - PC0 or ERASE Assignment"]
     #[inline(always)]
     pub fn sysio12(&self) -> SYSIO12_R {
-        SYSIO12_R::new(((self.bits >> 12) & 0x01) != 0)
+        SYSIO12_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 12 - PC0 or ERASE Assignment"]
     #[inline(always)]
-    pub fn sysio12(&mut self) -> SYSIO12_W {
-        SYSIO12_W { w: self }
+    pub fn sysio12(&mut self) -> SYSIO12_W<12> {
+        SYSIO12_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

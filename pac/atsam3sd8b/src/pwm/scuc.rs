@@ -35,54 +35,21 @@ impl From<crate::W<SCUC_SPEC>> for W {
     }
 }
 #[doc = "Field `UPDULOCK` reader - Synchronous Channels Update Unlock"]
-pub struct UPDULOCK_R(crate::FieldReader<bool, bool>);
-impl UPDULOCK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UPDULOCK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UPDULOCK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UPDULOCK_R = crate::BitReader<bool>;
 #[doc = "Field `UPDULOCK` writer - Synchronous Channels Update Unlock"]
-pub struct UPDULOCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UPDULOCK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type UPDULOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCUC_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Synchronous Channels Update Unlock"]
     #[inline(always)]
     pub fn updulock(&self) -> UPDULOCK_R {
-        UPDULOCK_R::new((self.bits & 0x01) != 0)
+        UPDULOCK_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Synchronous Channels Update Unlock"]
     #[inline(always)]
-    pub fn updulock(&mut self) -> UPDULOCK_W {
-        UPDULOCK_W { w: self }
+    pub fn updulock(&mut self) -> UPDULOCK_W<0> {
+        UPDULOCK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

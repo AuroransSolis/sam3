@@ -35,197 +35,29 @@ impl From<crate::W<PMC_OCR_SPEC>> for W {
     }
 }
 #[doc = "Field `CAL4` reader - RC Oscillator Calibration bits for 4 MHz"]
-pub struct CAL4_R(crate::FieldReader<u8, u8>);
-impl CAL4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CAL4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAL4_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAL4_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CAL4` writer - RC Oscillator Calibration bits for 4 MHz"]
-pub struct CAL4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAL4_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
-        self.w
-    }
-}
+pub type CAL4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PMC_OCR_SPEC, u8, u8, 7, O>;
 #[doc = "Field `SEL4` reader - Selection of RC Oscillator Calibration bits for 4 MHz"]
-pub struct SEL4_R(crate::FieldReader<bool, bool>);
-impl SEL4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SEL4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SEL4_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SEL4_R = crate::BitReader<bool>;
 #[doc = "Field `SEL4` writer - Selection of RC Oscillator Calibration bits for 4 MHz"]
-pub struct SEL4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SEL4_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type SEL4_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_OCR_SPEC, bool, O>;
 #[doc = "Field `CAL8` reader - RC Oscillator Calibration bits for 8 MHz"]
-pub struct CAL8_R(crate::FieldReader<u8, u8>);
-impl CAL8_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CAL8_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAL8_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAL8_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CAL8` writer - RC Oscillator Calibration bits for 8 MHz"]
-pub struct CAL8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAL8_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 8)) | ((value as u32 & 0x7f) << 8);
-        self.w
-    }
-}
+pub type CAL8_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PMC_OCR_SPEC, u8, u8, 7, O>;
 #[doc = "Field `SEL8` reader - Selection of RC Oscillator Calibration bits for 8 MHz"]
-pub struct SEL8_R(crate::FieldReader<bool, bool>);
-impl SEL8_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SEL8_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SEL8_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SEL8_R = crate::BitReader<bool>;
 #[doc = "Field `SEL8` writer - Selection of RC Oscillator Calibration bits for 8 MHz"]
-pub struct SEL8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SEL8_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type SEL8_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_OCR_SPEC, bool, O>;
 #[doc = "Field `CAL12` reader - RC Oscillator Calibration bits for 12 MHz"]
-pub struct CAL12_R(crate::FieldReader<u8, u8>);
-impl CAL12_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CAL12_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAL12_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAL12_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CAL12` writer - RC Oscillator Calibration bits for 12 MHz"]
-pub struct CAL12_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAL12_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 16)) | ((value as u32 & 0x7f) << 16);
-        self.w
-    }
-}
+pub type CAL12_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PMC_OCR_SPEC, u8, u8, 7, O>;
 #[doc = "Field `SEL12` reader - Selection of RC Oscillator Calibration bits for 12 MHz"]
-pub struct SEL12_R(crate::FieldReader<bool, bool>);
-impl SEL12_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SEL12_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SEL12_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SEL12_R = crate::BitReader<bool>;
 #[doc = "Field `SEL12` writer - Selection of RC Oscillator Calibration bits for 12 MHz"]
-pub struct SEL12_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SEL12_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
-}
+pub type SEL12_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_OCR_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:6 - RC Oscillator Calibration bits for 4 MHz"]
     #[inline(always)]
@@ -235,7 +67,7 @@ impl R {
     #[doc = "Bit 7 - Selection of RC Oscillator Calibration bits for 4 MHz"]
     #[inline(always)]
     pub fn sel4(&self) -> SEL4_R {
-        SEL4_R::new(((self.bits >> 7) & 0x01) != 0)
+        SEL4_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:14 - RC Oscillator Calibration bits for 8 MHz"]
     #[inline(always)]
@@ -245,7 +77,7 @@ impl R {
     #[doc = "Bit 15 - Selection of RC Oscillator Calibration bits for 8 MHz"]
     #[inline(always)]
     pub fn sel8(&self) -> SEL8_R {
-        SEL8_R::new(((self.bits >> 15) & 0x01) != 0)
+        SEL8_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:22 - RC Oscillator Calibration bits for 12 MHz"]
     #[inline(always)]
@@ -255,39 +87,39 @@ impl R {
     #[doc = "Bit 23 - Selection of RC Oscillator Calibration bits for 12 MHz"]
     #[inline(always)]
     pub fn sel12(&self) -> SEL12_R {
-        SEL12_R::new(((self.bits >> 23) & 0x01) != 0)
+        SEL12_R::new(((self.bits >> 23) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:6 - RC Oscillator Calibration bits for 4 MHz"]
     #[inline(always)]
-    pub fn cal4(&mut self) -> CAL4_W {
-        CAL4_W { w: self }
+    pub fn cal4(&mut self) -> CAL4_W<0> {
+        CAL4_W::new(self)
     }
     #[doc = "Bit 7 - Selection of RC Oscillator Calibration bits for 4 MHz"]
     #[inline(always)]
-    pub fn sel4(&mut self) -> SEL4_W {
-        SEL4_W { w: self }
+    pub fn sel4(&mut self) -> SEL4_W<7> {
+        SEL4_W::new(self)
     }
     #[doc = "Bits 8:14 - RC Oscillator Calibration bits for 8 MHz"]
     #[inline(always)]
-    pub fn cal8(&mut self) -> CAL8_W {
-        CAL8_W { w: self }
+    pub fn cal8(&mut self) -> CAL8_W<8> {
+        CAL8_W::new(self)
     }
     #[doc = "Bit 15 - Selection of RC Oscillator Calibration bits for 8 MHz"]
     #[inline(always)]
-    pub fn sel8(&mut self) -> SEL8_W {
-        SEL8_W { w: self }
+    pub fn sel8(&mut self) -> SEL8_W<15> {
+        SEL8_W::new(self)
     }
     #[doc = "Bits 16:22 - RC Oscillator Calibration bits for 12 MHz"]
     #[inline(always)]
-    pub fn cal12(&mut self) -> CAL12_W {
-        CAL12_W { w: self }
+    pub fn cal12(&mut self) -> CAL12_W<16> {
+        CAL12_W::new(self)
     }
     #[doc = "Bit 23 - Selection of RC Oscillator Calibration bits for 12 MHz"]
     #[inline(always)]
-    pub fn sel12(&mut self) -> SEL12_W {
-        SEL12_W { w: self }
+    pub fn sel12(&mut self) -> SEL12_W<23> {
+        SEL12_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<TCMR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CKS` reader - Transmit Clock Selection"]
+pub type CKS_R = crate::FieldReader<u8, CKS_A>;
 #[doc = "Transmit Clock Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,14 +53,8 @@ impl From<CKS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CKS` reader - Transmit Clock Selection"]
-pub struct CKS_R(crate::FieldReader<u8, CKS_A>);
 impl CKS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CKS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CKS_A> {
         match self.bits {
@@ -71,36 +67,22 @@ impl CKS_R {
     #[doc = "Checks if the value of the field is `MCK`"]
     #[inline(always)]
     pub fn is_mck(&self) -> bool {
-        **self == CKS_A::MCK
+        *self == CKS_A::MCK
     }
     #[doc = "Checks if the value of the field is `TK`"]
     #[inline(always)]
     pub fn is_tk(&self) -> bool {
-        **self == CKS_A::TK
+        *self == CKS_A::TK
     }
     #[doc = "Checks if the value of the field is `RK`"]
     #[inline(always)]
     pub fn is_rk(&self) -> bool {
-        **self == CKS_A::RK
-    }
-}
-impl core::ops::Deref for CKS_R {
-    type Target = crate::FieldReader<u8, CKS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CKS_A::RK
     }
 }
 #[doc = "Field `CKS` writer - Transmit Clock Selection"]
-pub struct CKS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CKS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CKS_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CKS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TCMR_SPEC, u8, CKS_A, 2, O>;
+impl<'a, const O: u8> CKS_W<'a, O> {
     #[doc = "Divided Clock"]
     #[inline(always)]
     pub fn mck(self) -> &'a mut W {
@@ -116,13 +98,9 @@ impl<'a> CKS_W<'a> {
     pub fn rk(self) -> &'a mut W {
         self.variant(CKS_A::RK)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
+#[doc = "Field `CKO` reader - Transmit Clock Output Mode Selection"]
+pub type CKO_R = crate::FieldReader<u8, CKO_A>;
 #[doc = "Transmit Clock Output Mode Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -140,14 +118,8 @@ impl From<CKO_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CKO` reader - Transmit Clock Output Mode Selection"]
-pub struct CKO_R(crate::FieldReader<u8, CKO_A>);
 impl CKO_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CKO_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CKO_A> {
         match self.bits {
@@ -160,36 +132,22 @@ impl CKO_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        **self == CKO_A::NONE
+        *self == CKO_A::NONE
     }
     #[doc = "Checks if the value of the field is `CONTINUOUS`"]
     #[inline(always)]
     pub fn is_continuous(&self) -> bool {
-        **self == CKO_A::CONTINUOUS
+        *self == CKO_A::CONTINUOUS
     }
     #[doc = "Checks if the value of the field is `TRANSFER`"]
     #[inline(always)]
     pub fn is_transfer(&self) -> bool {
-        **self == CKO_A::TRANSFER
-    }
-}
-impl core::ops::Deref for CKO_R {
-    type Target = crate::FieldReader<u8, CKO_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CKO_A::TRANSFER
     }
 }
 #[doc = "Field `CKO` writer - Transmit Clock Output Mode Selection"]
-pub struct CKO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CKO_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CKO_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CKO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TCMR_SPEC, u8, CKO_A, 3, O>;
+impl<'a, const O: u8> CKO_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -205,50 +163,13 @@ impl<'a> CKO_W<'a> {
     pub fn transfer(self) -> &'a mut W {
         self.variant(CKO_A::TRANSFER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 2)) | ((value as u32 & 0x07) << 2);
-        self.w
-    }
 }
 #[doc = "Field `CKI` reader - Transmit Clock Inversion"]
-pub struct CKI_R(crate::FieldReader<bool, bool>);
-impl CKI_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CKI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CKI_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CKI_R = crate::BitReader<bool>;
 #[doc = "Field `CKI` writer - Transmit Clock Inversion"]
-pub struct CKI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CKI_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type CKI_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCMR_SPEC, bool, O>;
+#[doc = "Field `CKG` reader - Transmit Clock Gating Selection"]
+pub type CKG_R = crate::FieldReader<u8, CKG_A>;
 #[doc = "Transmit Clock Gating Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -266,14 +187,8 @@ impl From<CKG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CKG` reader - Transmit Clock Gating Selection"]
-pub struct CKG_R(crate::FieldReader<u8, CKG_A>);
 impl CKG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CKG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CKG_A> {
         match self.bits {
@@ -286,36 +201,22 @@ impl CKG_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        **self == CKG_A::NONE
+        *self == CKG_A::NONE
     }
     #[doc = "Checks if the value of the field is `CONTINUOUS`"]
     #[inline(always)]
     pub fn is_continuous(&self) -> bool {
-        **self == CKG_A::CONTINUOUS
+        *self == CKG_A::CONTINUOUS
     }
     #[doc = "Checks if the value of the field is `TRANSFER`"]
     #[inline(always)]
     pub fn is_transfer(&self) -> bool {
-        **self == CKG_A::TRANSFER
-    }
-}
-impl core::ops::Deref for CKG_R {
-    type Target = crate::FieldReader<u8, CKG_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CKG_A::TRANSFER
     }
 }
 #[doc = "Field `CKG` writer - Transmit Clock Gating Selection"]
-pub struct CKG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CKG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CKG_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CKG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TCMR_SPEC, u8, CKG_A, 2, O>;
+impl<'a, const O: u8> CKG_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -331,13 +232,9 @@ impl<'a> CKG_W<'a> {
     pub fn transfer(self) -> &'a mut W {
         self.variant(CKG_A::TRANSFER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
-        self.w
-    }
 }
+#[doc = "Field `START` reader - Transmit Start Selection"]
+pub type START_R = crate::FieldReader<u8, START_A>;
 #[doc = "Transmit Start Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -367,14 +264,8 @@ impl From<START_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `START` reader - Transmit Start Selection"]
-pub struct START_R(crate::FieldReader<u8, START_A>);
 impl START_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        START_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<START_A> {
         match self.bits {
@@ -393,66 +284,52 @@ impl START_R {
     #[doc = "Checks if the value of the field is `CONTINUOUS`"]
     #[inline(always)]
     pub fn is_continuous(&self) -> bool {
-        **self == START_A::CONTINUOUS
+        *self == START_A::CONTINUOUS
     }
     #[doc = "Checks if the value of the field is `RECEIVE`"]
     #[inline(always)]
     pub fn is_receive(&self) -> bool {
-        **self == START_A::RECEIVE
+        *self == START_A::RECEIVE
     }
     #[doc = "Checks if the value of the field is `RF_LOW`"]
     #[inline(always)]
     pub fn is_rf_low(&self) -> bool {
-        **self == START_A::RF_LOW
+        *self == START_A::RF_LOW
     }
     #[doc = "Checks if the value of the field is `RF_HIGH`"]
     #[inline(always)]
     pub fn is_rf_high(&self) -> bool {
-        **self == START_A::RF_HIGH
+        *self == START_A::RF_HIGH
     }
     #[doc = "Checks if the value of the field is `RF_FALLING`"]
     #[inline(always)]
     pub fn is_rf_falling(&self) -> bool {
-        **self == START_A::RF_FALLING
+        *self == START_A::RF_FALLING
     }
     #[doc = "Checks if the value of the field is `RF_RISING`"]
     #[inline(always)]
     pub fn is_rf_rising(&self) -> bool {
-        **self == START_A::RF_RISING
+        *self == START_A::RF_RISING
     }
     #[doc = "Checks if the value of the field is `RF_LEVEL`"]
     #[inline(always)]
     pub fn is_rf_level(&self) -> bool {
-        **self == START_A::RF_LEVEL
+        *self == START_A::RF_LEVEL
     }
     #[doc = "Checks if the value of the field is `RF_EDGE`"]
     #[inline(always)]
     pub fn is_rf_edge(&self) -> bool {
-        **self == START_A::RF_EDGE
+        *self == START_A::RF_EDGE
     }
     #[doc = "Checks if the value of the field is `CMP_0`"]
     #[inline(always)]
     pub fn is_cmp_0(&self) -> bool {
-        **self == START_A::CMP_0
-    }
-}
-impl core::ops::Deref for START_R {
-    type Target = crate::FieldReader<u8, START_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == START_A::CMP_0
     }
 }
 #[doc = "Field `START` writer - Transmit Start Selection"]
-pub struct START_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> START_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: START_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type START_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TCMR_SPEC, u8, START_A, 4, O>;
+impl<'a, const O: u8> START_W<'a, O> {
     #[doc = "Continuous, as soon as a word is written in the SSC_THR Register (if Transmit is enabled), and immediately after the end of transfer of the previous data."]
     #[inline(always)]
     pub fn continuous(self) -> &'a mut W {
@@ -498,87 +375,35 @@ impl<'a> START_W<'a> {
     pub fn cmp_0(self) -> &'a mut W {
         self.variant(START_A::CMP_0)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
 }
 #[doc = "Field `STTDLY` reader - Transmit Start Delay"]
-pub struct STTDLY_R(crate::FieldReader<u8, u8>);
-impl STTDLY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        STTDLY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STTDLY_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STTDLY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `STTDLY` writer - Transmit Start Delay"]
-pub struct STTDLY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STTDLY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type STTDLY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TCMR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `PERIOD` reader - Transmit Period Divider Selection"]
-pub struct PERIOD_R(crate::FieldReader<u8, u8>);
-impl PERIOD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PERIOD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PERIOD_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PERIOD_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PERIOD` writer - Transmit Period Divider Selection"]
-pub struct PERIOD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PERIOD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type PERIOD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TCMR_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:1 - Transmit Clock Selection"]
     #[inline(always)]
     pub fn cks(&self) -> CKS_R {
-        CKS_R::new((self.bits & 0x03) as u8)
+        CKS_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:4 - Transmit Clock Output Mode Selection"]
     #[inline(always)]
     pub fn cko(&self) -> CKO_R {
-        CKO_R::new(((self.bits >> 2) & 0x07) as u8)
+        CKO_R::new(((self.bits >> 2) & 7) as u8)
     }
     #[doc = "Bit 5 - Transmit Clock Inversion"]
     #[inline(always)]
     pub fn cki(&self) -> CKI_R {
-        CKI_R::new(((self.bits >> 5) & 0x01) != 0)
+        CKI_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 6:7 - Transmit Clock Gating Selection"]
     #[inline(always)]
     pub fn ckg(&self) -> CKG_R {
-        CKG_R::new(((self.bits >> 6) & 0x03) as u8)
+        CKG_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 8:11 - Transmit Start Selection"]
     #[inline(always)]
@@ -599,38 +424,38 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Transmit Clock Selection"]
     #[inline(always)]
-    pub fn cks(&mut self) -> CKS_W {
-        CKS_W { w: self }
+    pub fn cks(&mut self) -> CKS_W<0> {
+        CKS_W::new(self)
     }
     #[doc = "Bits 2:4 - Transmit Clock Output Mode Selection"]
     #[inline(always)]
-    pub fn cko(&mut self) -> CKO_W {
-        CKO_W { w: self }
+    pub fn cko(&mut self) -> CKO_W<2> {
+        CKO_W::new(self)
     }
     #[doc = "Bit 5 - Transmit Clock Inversion"]
     #[inline(always)]
-    pub fn cki(&mut self) -> CKI_W {
-        CKI_W { w: self }
+    pub fn cki(&mut self) -> CKI_W<5> {
+        CKI_W::new(self)
     }
     #[doc = "Bits 6:7 - Transmit Clock Gating Selection"]
     #[inline(always)]
-    pub fn ckg(&mut self) -> CKG_W {
-        CKG_W { w: self }
+    pub fn ckg(&mut self) -> CKG_W<6> {
+        CKG_W::new(self)
     }
     #[doc = "Bits 8:11 - Transmit Start Selection"]
     #[inline(always)]
-    pub fn start(&mut self) -> START_W {
-        START_W { w: self }
+    pub fn start(&mut self) -> START_W<8> {
+        START_W::new(self)
     }
     #[doc = "Bits 16:23 - Transmit Start Delay"]
     #[inline(always)]
-    pub fn sttdly(&mut self) -> STTDLY_W {
-        STTDLY_W { w: self }
+    pub fn sttdly(&mut self) -> STTDLY_W<16> {
+        STTDLY_W::new(self)
     }
     #[doc = "Bits 24:31 - Transmit Period Divider Selection"]
     #[inline(always)]
-    pub fn period(&mut self) -> PERIOD_W {
-        PERIOD_W { w: self }
+    pub fn period(&mut self) -> PERIOD_W<24> {
+        PERIOD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

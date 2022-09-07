@@ -35,113 +35,21 @@ impl From<crate::W<CLK_SPEC>> for W {
     }
 }
 #[doc = "Field `DIVA` reader - CLKA, CLKB Divide Factor"]
-pub struct DIVA_R(crate::FieldReader<u8, u8>);
-impl DIVA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DIVA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIVA_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIVA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIVA` writer - CLKA, CLKB Divide Factor"]
-pub struct DIVA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIVA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type DIVA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLK_SPEC, u8, u8, 8, O>;
 #[doc = "Field `PREA` reader - CLKA, CLKB Source Clock Selection"]
-pub struct PREA_R(crate::FieldReader<u8, u8>);
-impl PREA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PREA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PREA_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PREA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PREA` writer - CLKA, CLKB Source Clock Selection"]
-pub struct PREA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PREA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type PREA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLK_SPEC, u8, u8, 4, O>;
 #[doc = "Field `DIVB` reader - CLKA, CLKB Divide Factor"]
-pub struct DIVB_R(crate::FieldReader<u8, u8>);
-impl DIVB_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DIVB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIVB_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIVB_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIVB` writer - CLKA, CLKB Divide Factor"]
-pub struct DIVB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIVB_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type DIVB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLK_SPEC, u8, u8, 8, O>;
 #[doc = "Field `PREB` reader - CLKA, CLKB Source Clock Selection"]
-pub struct PREB_R(crate::FieldReader<u8, u8>);
-impl PREB_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PREB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PREB_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PREB_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PREB` writer - CLKA, CLKB Source Clock Selection"]
-pub struct PREB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PREB_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
-        self.w
-    }
-}
+pub type PREB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLK_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:7 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
@@ -167,23 +75,23 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
-    pub fn diva(&mut self) -> DIVA_W {
-        DIVA_W { w: self }
+    pub fn diva(&mut self) -> DIVA_W<0> {
+        DIVA_W::new(self)
     }
     #[doc = "Bits 8:11 - CLKA, CLKB Source Clock Selection"]
     #[inline(always)]
-    pub fn prea(&mut self) -> PREA_W {
-        PREA_W { w: self }
+    pub fn prea(&mut self) -> PREA_W<8> {
+        PREA_W::new(self)
     }
     #[doc = "Bits 16:23 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
-    pub fn divb(&mut self) -> DIVB_W {
-        DIVB_W { w: self }
+    pub fn divb(&mut self) -> DIVB_W<16> {
+        DIVB_W::new(self)
     }
     #[doc = "Bits 24:27 - CLKA, CLKB Source Clock Selection"]
     #[inline(always)]
-    pub fn preb(&mut self) -> PREB_W {
-        PREB_W { w: self }
+    pub fn preb(&mut self) -> PREB_W<24> {
+        PREB_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -14,20 +14,7 @@ impl From<crate::R<RHR_SPEC>> for R {
     }
 }
 #[doc = "Field `RXCHR` reader - Received Character"]
-pub struct RXCHR_R(crate::FieldReader<u8, u8>);
-impl RXCHR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RXCHR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXCHR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXCHR_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Received Character"]
     #[inline(always)]

@@ -20,167 +20,47 @@ impl From<crate::W<SCCR_SPEC>> for W {
     }
 }
 #[doc = "Field `ACKCLR` writer - Acknowledge Clear"]
-pub struct ACKCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACKCLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type ACKCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCCR_SPEC, bool, O>;
 #[doc = "Field `ALRCLR` writer - Alarm Clear"]
-pub struct ALRCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALRCLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type ALRCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCCR_SPEC, bool, O>;
 #[doc = "Field `SECCLR` writer - Second Clear"]
-pub struct SECCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SECCLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type SECCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCCR_SPEC, bool, O>;
 #[doc = "Field `TIMCLR` writer - Time Clear"]
-pub struct TIMCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMCLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type TIMCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCCR_SPEC, bool, O>;
 #[doc = "Field `CALCLR` writer - Calendar Clear"]
-pub struct CALCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CALCLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CALCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCCR_SPEC, bool, O>;
 #[doc = "Field `TDERRCLR` writer - Time and/or Date Free Running Error Clear"]
-pub struct TDERRCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TDERRCLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type TDERRCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCCR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Acknowledge Clear"]
     #[inline(always)]
-    pub fn ackclr(&mut self) -> ACKCLR_W {
-        ACKCLR_W { w: self }
+    pub fn ackclr(&mut self) -> ACKCLR_W<0> {
+        ACKCLR_W::new(self)
     }
     #[doc = "Bit 1 - Alarm Clear"]
     #[inline(always)]
-    pub fn alrclr(&mut self) -> ALRCLR_W {
-        ALRCLR_W { w: self }
+    pub fn alrclr(&mut self) -> ALRCLR_W<1> {
+        ALRCLR_W::new(self)
     }
     #[doc = "Bit 2 - Second Clear"]
     #[inline(always)]
-    pub fn secclr(&mut self) -> SECCLR_W {
-        SECCLR_W { w: self }
+    pub fn secclr(&mut self) -> SECCLR_W<2> {
+        SECCLR_W::new(self)
     }
     #[doc = "Bit 3 - Time Clear"]
     #[inline(always)]
-    pub fn timclr(&mut self) -> TIMCLR_W {
-        TIMCLR_W { w: self }
+    pub fn timclr(&mut self) -> TIMCLR_W<3> {
+        TIMCLR_W::new(self)
     }
     #[doc = "Bit 4 - Calendar Clear"]
     #[inline(always)]
-    pub fn calclr(&mut self) -> CALCLR_W {
-        CALCLR_W { w: self }
+    pub fn calclr(&mut self) -> CALCLR_W<4> {
+        CALCLR_W::new(self)
     }
     #[doc = "Bit 5 - Time and/or Date Free Running Error Clear"]
     #[inline(always)]
-    pub fn tderrclr(&mut self) -> TDERRCLR_W {
-        TDERRCLR_W { w: self }
+    pub fn tderrclr(&mut self) -> TDERRCLR_W<5> {
+        TDERRCLR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

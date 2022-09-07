@@ -34,6 +34,8 @@ impl From<crate::W<LPR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LPCB` reader - Low-power Configuration Bits"]
+pub type LPCB_R = crate::FieldReader<u8, LPCB_A>;
 #[doc = "Low-power Configuration Bits\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,14 +55,8 @@ impl From<LPCB_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LPCB` reader - Low-power Configuration Bits"]
-pub struct LPCB_R(crate::FieldReader<u8, LPCB_A>);
 impl LPCB_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        LPCB_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LPCB_A {
         match self.bits {
@@ -74,41 +70,27 @@ impl LPCB_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == LPCB_A::DISABLED
+        *self == LPCB_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `SELF_REFRESH`"]
     #[inline(always)]
     pub fn is_self_refresh(&self) -> bool {
-        **self == LPCB_A::SELF_REFRESH
+        *self == LPCB_A::SELF_REFRESH
     }
     #[doc = "Checks if the value of the field is `POWER_DOWN`"]
     #[inline(always)]
     pub fn is_power_down(&self) -> bool {
-        **self == LPCB_A::POWER_DOWN
+        *self == LPCB_A::POWER_DOWN
     }
     #[doc = "Checks if the value of the field is `DEEP_POWER_DOWN`"]
     #[inline(always)]
     pub fn is_deep_power_down(&self) -> bool {
-        **self == LPCB_A::DEEP_POWER_DOWN
-    }
-}
-impl core::ops::Deref for LPCB_R {
-    type Target = crate::FieldReader<u8, LPCB_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LPCB_A::DEEP_POWER_DOWN
     }
 }
 #[doc = "Field `LPCB` writer - Low-power Configuration Bits"]
-pub struct LPCB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPCB_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LPCB_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type LPCB_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, LPR_SPEC, u8, LPCB_A, 2, O>;
+impl<'a, const O: u8> LPCB_W<'a, O> {
     #[doc = "Low Power Feature is inhibited: no Power-down, Self-refresh or Deep Power-down command is issued to the SDRAM device."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -129,94 +111,21 @@ impl<'a> LPCB_W<'a> {
     pub fn deep_power_down(self) -> &'a mut W {
         self.variant(LPCB_A::DEEP_POWER_DOWN)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 #[doc = "Field `PASR` reader - Partial Array Self-refresh (only for low-power SDRAM)"]
-pub struct PASR_R(crate::FieldReader<u8, u8>);
-impl PASR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PASR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PASR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PASR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PASR` writer - Partial Array Self-refresh (only for low-power SDRAM)"]
-pub struct PASR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PASR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
-        self.w
-    }
-}
+pub type PASR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LPR_SPEC, u8, u8, 3, O>;
 #[doc = "Field `TCSR` reader - Temperature Compensated Self-Refresh (only for low-power SDRAM)"]
-pub struct TCSR_R(crate::FieldReader<u8, u8>);
-impl TCSR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TCSR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TCSR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TCSR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TCSR` writer - Temperature Compensated Self-Refresh (only for low-power SDRAM)"]
-pub struct TCSR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TCSR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
-    }
-}
+pub type TCSR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LPR_SPEC, u8, u8, 2, O>;
 #[doc = "Field `DS` reader - Drive Strength (only for low-power SDRAM)"]
-pub struct DS_R(crate::FieldReader<u8, u8>);
-impl DS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DS` writer - Drive Strength (only for low-power SDRAM)"]
-pub struct DS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
-        self.w
-    }
-}
+pub type DS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LPR_SPEC, u8, u8, 2, O>;
+#[doc = "Field `TIMEOUT` reader - Time to define when low-power mode is enable"]
+pub type TIMEOUT_R = crate::FieldReader<u8, TIMEOUT_A>;
 #[doc = "Time to define when low-power mode is enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -234,14 +143,8 @@ impl From<TIMEOUT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TIMEOUT` reader - Time to define when low-power mode is enable"]
-pub struct TIMEOUT_R(crate::FieldReader<u8, TIMEOUT_A>);
 impl TIMEOUT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TIMEOUT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TIMEOUT_A> {
         match self.bits {
@@ -254,36 +157,22 @@ impl TIMEOUT_R {
     #[doc = "Checks if the value of the field is `LP_LAST_XFER`"]
     #[inline(always)]
     pub fn is_lp_last_xfer(&self) -> bool {
-        **self == TIMEOUT_A::LP_LAST_XFER
+        *self == TIMEOUT_A::LP_LAST_XFER
     }
     #[doc = "Checks if the value of the field is `LP_LAST_XFER_64`"]
     #[inline(always)]
     pub fn is_lp_last_xfer_64(&self) -> bool {
-        **self == TIMEOUT_A::LP_LAST_XFER_64
+        *self == TIMEOUT_A::LP_LAST_XFER_64
     }
     #[doc = "Checks if the value of the field is `LP_LAST_XFER_128`"]
     #[inline(always)]
     pub fn is_lp_last_xfer_128(&self) -> bool {
-        **self == TIMEOUT_A::LP_LAST_XFER_128
-    }
-}
-impl core::ops::Deref for TIMEOUT_R {
-    type Target = crate::FieldReader<u8, TIMEOUT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TIMEOUT_A::LP_LAST_XFER_128
     }
 }
 #[doc = "Field `TIMEOUT` writer - Time to define when low-power mode is enable"]
-pub struct TIMEOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMEOUT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TIMEOUT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type TIMEOUT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LPR_SPEC, u8, TIMEOUT_A, 2, O>;
+impl<'a, const O: u8> TIMEOUT_W<'a, O> {
     #[doc = "The SDRAM controller activates the SDRAM low-power mode immediately after the end of the last transfer."]
     #[inline(always)]
     pub fn lp_last_xfer(self) -> &'a mut W {
@@ -299,65 +188,59 @@ impl<'a> TIMEOUT_W<'a> {
     pub fn lp_last_xfer_128(self) -> &'a mut W {
         self.variant(TIMEOUT_A::LP_LAST_XFER_128)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Low-power Configuration Bits"]
     #[inline(always)]
     pub fn lpcb(&self) -> LPCB_R {
-        LPCB_R::new((self.bits & 0x03) as u8)
+        LPCB_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 4:6 - Partial Array Self-refresh (only for low-power SDRAM)"]
     #[inline(always)]
     pub fn pasr(&self) -> PASR_R {
-        PASR_R::new(((self.bits >> 4) & 0x07) as u8)
+        PASR_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bits 8:9 - Temperature Compensated Self-Refresh (only for low-power SDRAM)"]
     #[inline(always)]
     pub fn tcsr(&self) -> TCSR_R {
-        TCSR_R::new(((self.bits >> 8) & 0x03) as u8)
+        TCSR_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - Drive Strength (only for low-power SDRAM)"]
     #[inline(always)]
     pub fn ds(&self) -> DS_R {
-        DS_R::new(((self.bits >> 10) & 0x03) as u8)
+        DS_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bits 12:13 - Time to define when low-power mode is enable"]
     #[inline(always)]
     pub fn timeout(&self) -> TIMEOUT_R {
-        TIMEOUT_R::new(((self.bits >> 12) & 0x03) as u8)
+        TIMEOUT_R::new(((self.bits >> 12) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Low-power Configuration Bits"]
     #[inline(always)]
-    pub fn lpcb(&mut self) -> LPCB_W {
-        LPCB_W { w: self }
+    pub fn lpcb(&mut self) -> LPCB_W<0> {
+        LPCB_W::new(self)
     }
     #[doc = "Bits 4:6 - Partial Array Self-refresh (only for low-power SDRAM)"]
     #[inline(always)]
-    pub fn pasr(&mut self) -> PASR_W {
-        PASR_W { w: self }
+    pub fn pasr(&mut self) -> PASR_W<4> {
+        PASR_W::new(self)
     }
     #[doc = "Bits 8:9 - Temperature Compensated Self-Refresh (only for low-power SDRAM)"]
     #[inline(always)]
-    pub fn tcsr(&mut self) -> TCSR_W {
-        TCSR_W { w: self }
+    pub fn tcsr(&mut self) -> TCSR_W<8> {
+        TCSR_W::new(self)
     }
     #[doc = "Bits 10:11 - Drive Strength (only for low-power SDRAM)"]
     #[inline(always)]
-    pub fn ds(&mut self) -> DS_W {
-        DS_W { w: self }
+    pub fn ds(&mut self) -> DS_W<10> {
+        DS_W::new(self)
     }
     #[doc = "Bits 12:13 - Time to define when low-power mode is enable"]
     #[inline(always)]
-    pub fn timeout(&mut self) -> TIMEOUT_W {
-        TIMEOUT_W { w: self }
+    pub fn timeout(&mut self) -> TIMEOUT_W<12> {
+        TIMEOUT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

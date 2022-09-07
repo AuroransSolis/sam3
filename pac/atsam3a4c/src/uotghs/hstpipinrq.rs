@@ -35,69 +35,13 @@ impl From<crate::W<HSTPIPINRQ_SPEC>> for W {
     }
 }
 #[doc = "Field `INRQ` reader - IN Request Number before Freeze"]
-pub struct INRQ_R(crate::FieldReader<u8, u8>);
-impl INRQ_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        INRQ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INRQ_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INRQ_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `INRQ` writer - IN Request Number before Freeze"]
-pub struct INRQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INRQ_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type INRQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HSTPIPINRQ_SPEC, u8, u8, 8, O>;
 #[doc = "Field `INMODE` reader - IN Request Mode"]
-pub struct INMODE_R(crate::FieldReader<bool, bool>);
-impl INMODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        INMODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INMODE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INMODE_R = crate::BitReader<bool>;
 #[doc = "Field `INMODE` writer - IN Request Mode"]
-pub struct INMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INMODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type INMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSTPIPINRQ_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:7 - IN Request Number before Freeze"]
     #[inline(always)]
@@ -107,19 +51,19 @@ impl R {
     #[doc = "Bit 8 - IN Request Mode"]
     #[inline(always)]
     pub fn inmode(&self) -> INMODE_R {
-        INMODE_R::new(((self.bits >> 8) & 0x01) != 0)
+        INMODE_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - IN Request Number before Freeze"]
     #[inline(always)]
-    pub fn inrq(&mut self) -> INRQ_W {
-        INRQ_W { w: self }
+    pub fn inrq(&mut self) -> INRQ_W<0> {
+        INRQ_W::new(self)
     }
     #[doc = "Bit 8 - IN Request Mode"]
     #[inline(always)]
-    pub fn inmode(&mut self) -> INMODE_W {
-        INMODE_W { w: self }
+    pub fn inmode(&mut self) -> INMODE_W<8> {
+        INMODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

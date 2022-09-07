@@ -35,32 +35,9 @@ impl From<crate::W<DADDR0_SPEC>> for W {
     }
 }
 #[doc = "Field `DADDR` reader - Channel x Destination Address"]
-pub struct DADDR_R(crate::FieldReader<u32, u32>);
-impl DADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        DADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DADDR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DADDR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `DADDR` writer - Channel x Destination Address"]
-pub struct DADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type DADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DADDR0_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Channel x Destination Address"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Channel x Destination Address"]
     #[inline(always)]
-    pub fn daddr(&mut self) -> DADDR_W {
-        DADDR_W { w: self }
+    pub fn daddr(&mut self) -> DADDR_W<0> {
+        DADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

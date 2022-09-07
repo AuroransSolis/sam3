@@ -35,383 +35,119 @@ impl From<crate::W<FPV_SPEC>> for W {
     }
 }
 #[doc = "Field `FPVH0` reader - Fault Protection Value for PWMH output on channel 0"]
-pub struct FPVH0_R(crate::FieldReader<bool, bool>);
-impl FPVH0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FPVH0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FPVH0_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FPVH0_R = crate::BitReader<bool>;
 #[doc = "Field `FPVH0` writer - Fault Protection Value for PWMH output on channel 0"]
-pub struct FPVH0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPVH0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type FPVH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPV_SPEC, bool, O>;
 #[doc = "Field `FPVH1` reader - Fault Protection Value for PWMH output on channel 1"]
-pub struct FPVH1_R(crate::FieldReader<bool, bool>);
-impl FPVH1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FPVH1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FPVH1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FPVH1_R = crate::BitReader<bool>;
 #[doc = "Field `FPVH1` writer - Fault Protection Value for PWMH output on channel 1"]
-pub struct FPVH1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPVH1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type FPVH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPV_SPEC, bool, O>;
 #[doc = "Field `FPVH2` reader - Fault Protection Value for PWMH output on channel 2"]
-pub struct FPVH2_R(crate::FieldReader<bool, bool>);
-impl FPVH2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FPVH2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FPVH2_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FPVH2_R = crate::BitReader<bool>;
 #[doc = "Field `FPVH2` writer - Fault Protection Value for PWMH output on channel 2"]
-pub struct FPVH2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPVH2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type FPVH2_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPV_SPEC, bool, O>;
 #[doc = "Field `FPVH3` reader - Fault Protection Value for PWMH output on channel 3"]
-pub struct FPVH3_R(crate::FieldReader<bool, bool>);
-impl FPVH3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FPVH3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FPVH3_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FPVH3_R = crate::BitReader<bool>;
 #[doc = "Field `FPVH3` writer - Fault Protection Value for PWMH output on channel 3"]
-pub struct FPVH3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPVH3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type FPVH3_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPV_SPEC, bool, O>;
 #[doc = "Field `FPVL0` reader - Fault Protection Value for PWML output on channel 0"]
-pub struct FPVL0_R(crate::FieldReader<bool, bool>);
-impl FPVL0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FPVL0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FPVL0_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FPVL0_R = crate::BitReader<bool>;
 #[doc = "Field `FPVL0` writer - Fault Protection Value for PWML output on channel 0"]
-pub struct FPVL0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPVL0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type FPVL0_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPV_SPEC, bool, O>;
 #[doc = "Field `FPVL1` reader - Fault Protection Value for PWML output on channel 1"]
-pub struct FPVL1_R(crate::FieldReader<bool, bool>);
-impl FPVL1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FPVL1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FPVL1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FPVL1_R = crate::BitReader<bool>;
 #[doc = "Field `FPVL1` writer - Fault Protection Value for PWML output on channel 1"]
-pub struct FPVL1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPVL1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type FPVL1_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPV_SPEC, bool, O>;
 #[doc = "Field `FPVL2` reader - Fault Protection Value for PWML output on channel 2"]
-pub struct FPVL2_R(crate::FieldReader<bool, bool>);
-impl FPVL2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FPVL2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FPVL2_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FPVL2_R = crate::BitReader<bool>;
 #[doc = "Field `FPVL2` writer - Fault Protection Value for PWML output on channel 2"]
-pub struct FPVL2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPVL2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
+pub type FPVL2_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPV_SPEC, bool, O>;
 #[doc = "Field `FPVL3` reader - Fault Protection Value for PWML output on channel 3"]
-pub struct FPVL3_R(crate::FieldReader<bool, bool>);
-impl FPVL3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FPVL3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FPVL3_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FPVL3_R = crate::BitReader<bool>;
 #[doc = "Field `FPVL3` writer - Fault Protection Value for PWML output on channel 3"]
-pub struct FPVL3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPVL3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
-}
+pub type FPVL3_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPV_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Fault Protection Value for PWMH output on channel 0"]
     #[inline(always)]
     pub fn fpvh0(&self) -> FPVH0_R {
-        FPVH0_R::new((self.bits & 0x01) != 0)
+        FPVH0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Fault Protection Value for PWMH output on channel 1"]
     #[inline(always)]
     pub fn fpvh1(&self) -> FPVH1_R {
-        FPVH1_R::new(((self.bits >> 1) & 0x01) != 0)
+        FPVH1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Fault Protection Value for PWMH output on channel 2"]
     #[inline(always)]
     pub fn fpvh2(&self) -> FPVH2_R {
-        FPVH2_R::new(((self.bits >> 2) & 0x01) != 0)
+        FPVH2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Fault Protection Value for PWMH output on channel 3"]
     #[inline(always)]
     pub fn fpvh3(&self) -> FPVH3_R {
-        FPVH3_R::new(((self.bits >> 3) & 0x01) != 0)
+        FPVH3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 16 - Fault Protection Value for PWML output on channel 0"]
     #[inline(always)]
     pub fn fpvl0(&self) -> FPVL0_R {
-        FPVL0_R::new(((self.bits >> 16) & 0x01) != 0)
+        FPVL0_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Fault Protection Value for PWML output on channel 1"]
     #[inline(always)]
     pub fn fpvl1(&self) -> FPVL1_R {
-        FPVL1_R::new(((self.bits >> 17) & 0x01) != 0)
+        FPVL1_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Fault Protection Value for PWML output on channel 2"]
     #[inline(always)]
     pub fn fpvl2(&self) -> FPVL2_R {
-        FPVL2_R::new(((self.bits >> 18) & 0x01) != 0)
+        FPVL2_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Fault Protection Value for PWML output on channel 3"]
     #[inline(always)]
     pub fn fpvl3(&self) -> FPVL3_R {
-        FPVL3_R::new(((self.bits >> 19) & 0x01) != 0)
+        FPVL3_R::new(((self.bits >> 19) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Fault Protection Value for PWMH output on channel 0"]
     #[inline(always)]
-    pub fn fpvh0(&mut self) -> FPVH0_W {
-        FPVH0_W { w: self }
+    pub fn fpvh0(&mut self) -> FPVH0_W<0> {
+        FPVH0_W::new(self)
     }
     #[doc = "Bit 1 - Fault Protection Value for PWMH output on channel 1"]
     #[inline(always)]
-    pub fn fpvh1(&mut self) -> FPVH1_W {
-        FPVH1_W { w: self }
+    pub fn fpvh1(&mut self) -> FPVH1_W<1> {
+        FPVH1_W::new(self)
     }
     #[doc = "Bit 2 - Fault Protection Value for PWMH output on channel 2"]
     #[inline(always)]
-    pub fn fpvh2(&mut self) -> FPVH2_W {
-        FPVH2_W { w: self }
+    pub fn fpvh2(&mut self) -> FPVH2_W<2> {
+        FPVH2_W::new(self)
     }
     #[doc = "Bit 3 - Fault Protection Value for PWMH output on channel 3"]
     #[inline(always)]
-    pub fn fpvh3(&mut self) -> FPVH3_W {
-        FPVH3_W { w: self }
+    pub fn fpvh3(&mut self) -> FPVH3_W<3> {
+        FPVH3_W::new(self)
     }
     #[doc = "Bit 16 - Fault Protection Value for PWML output on channel 0"]
     #[inline(always)]
-    pub fn fpvl0(&mut self) -> FPVL0_W {
-        FPVL0_W { w: self }
+    pub fn fpvl0(&mut self) -> FPVL0_W<16> {
+        FPVL0_W::new(self)
     }
     #[doc = "Bit 17 - Fault Protection Value for PWML output on channel 1"]
     #[inline(always)]
-    pub fn fpvl1(&mut self) -> FPVL1_W {
-        FPVL1_W { w: self }
+    pub fn fpvl1(&mut self) -> FPVL1_W<17> {
+        FPVL1_W::new(self)
     }
     #[doc = "Bit 18 - Fault Protection Value for PWML output on channel 2"]
     #[inline(always)]
-    pub fn fpvl2(&mut self) -> FPVL2_W {
-        FPVL2_W { w: self }
+    pub fn fpvl2(&mut self) -> FPVL2_W<18> {
+        FPVL2_W::new(self)
     }
     #[doc = "Bit 19 - Fault Protection Value for PWML output on channel 3"]
     #[inline(always)]
-    pub fn fpvl3(&mut self) -> FPVL3_W {
-        FPVL3_W { w: self }
+    pub fn fpvl3(&mut self) -> FPVL3_W<19> {
+        FPVL3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

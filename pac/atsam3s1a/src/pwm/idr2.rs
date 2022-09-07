@@ -20,545 +20,145 @@ impl From<crate::W<IDR2_SPEC>> for W {
     }
 }
 #[doc = "Field `WRDY` writer - Write Ready for Synchronous Channels Update Interrupt Disable"]
-pub struct WRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WRDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type WRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `ENDTX` writer - PDC End of TX Buffer Interrupt Disable"]
-pub struct ENDTX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENDTX_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type ENDTX_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `TXBUFE` writer - PDC TX Buffer Empty Interrupt Disable"]
-pub struct TXBUFE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXBUFE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type TXBUFE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `UNRE` writer - Synchronous Channels Update Underrun Error Interrupt Disable"]
-pub struct UNRE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UNRE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type UNRE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `CMPM0` writer - Comparison 0 Match Interrupt Disable"]
-pub struct CMPM0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPM0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type CMPM0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `CMPM1` writer - Comparison 1 Match Interrupt Disable"]
-pub struct CMPM1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPM1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type CMPM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `CMPM2` writer - Comparison 2 Match Interrupt Disable"]
-pub struct CMPM2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPM2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type CMPM2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `CMPM3` writer - Comparison 3 Match Interrupt Disable"]
-pub struct CMPM3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPM3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type CMPM3_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `CMPM4` writer - Comparison 4 Match Interrupt Disable"]
-pub struct CMPM4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPM4_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type CMPM4_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `CMPM5` writer - Comparison 5 Match Interrupt Disable"]
-pub struct CMPM5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPM5_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type CMPM5_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `CMPM6` writer - Comparison 6 Match Interrupt Disable"]
-pub struct CMPM6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPM6_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type CMPM6_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `CMPM7` writer - Comparison 7 Match Interrupt Disable"]
-pub struct CMPM7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPM7_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type CMPM7_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `CMPU0` writer - Comparison 0 Update Interrupt Disable"]
-pub struct CMPU0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPU0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type CMPU0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `CMPU1` writer - Comparison 1 Update Interrupt Disable"]
-pub struct CMPU1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPU1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type CMPU1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `CMPU2` writer - Comparison 2 Update Interrupt Disable"]
-pub struct CMPU2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPU2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
+pub type CMPU2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `CMPU3` writer - Comparison 3 Update Interrupt Disable"]
-pub struct CMPU3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPU3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
-}
+pub type CMPU3_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `CMPU4` writer - Comparison 4 Update Interrupt Disable"]
-pub struct CMPU4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPU4_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
-        self.w
-    }
-}
+pub type CMPU4_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `CMPU5` writer - Comparison 5 Update Interrupt Disable"]
-pub struct CMPU5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPU5_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
-        self.w
-    }
-}
+pub type CMPU5_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `CMPU6` writer - Comparison 6 Update Interrupt Disable"]
-pub struct CMPU6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPU6_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
-        self.w
-    }
-}
+pub type CMPU6_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 #[doc = "Field `CMPU7` writer - Comparison 7 Update Interrupt Disable"]
-pub struct CMPU7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPU7_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
-}
+pub type CMPU7_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR2_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Write Ready for Synchronous Channels Update Interrupt Disable"]
     #[inline(always)]
-    pub fn wrdy(&mut self) -> WRDY_W {
-        WRDY_W { w: self }
+    pub fn wrdy(&mut self) -> WRDY_W<0> {
+        WRDY_W::new(self)
     }
     #[doc = "Bit 1 - PDC End of TX Buffer Interrupt Disable"]
     #[inline(always)]
-    pub fn endtx(&mut self) -> ENDTX_W {
-        ENDTX_W { w: self }
+    pub fn endtx(&mut self) -> ENDTX_W<1> {
+        ENDTX_W::new(self)
     }
     #[doc = "Bit 2 - PDC TX Buffer Empty Interrupt Disable"]
     #[inline(always)]
-    pub fn txbufe(&mut self) -> TXBUFE_W {
-        TXBUFE_W { w: self }
+    pub fn txbufe(&mut self) -> TXBUFE_W<2> {
+        TXBUFE_W::new(self)
     }
     #[doc = "Bit 3 - Synchronous Channels Update Underrun Error Interrupt Disable"]
     #[inline(always)]
-    pub fn unre(&mut self) -> UNRE_W {
-        UNRE_W { w: self }
+    pub fn unre(&mut self) -> UNRE_W<3> {
+        UNRE_W::new(self)
     }
     #[doc = "Bit 8 - Comparison 0 Match Interrupt Disable"]
     #[inline(always)]
-    pub fn cmpm0(&mut self) -> CMPM0_W {
-        CMPM0_W { w: self }
+    pub fn cmpm0(&mut self) -> CMPM0_W<8> {
+        CMPM0_W::new(self)
     }
     #[doc = "Bit 9 - Comparison 1 Match Interrupt Disable"]
     #[inline(always)]
-    pub fn cmpm1(&mut self) -> CMPM1_W {
-        CMPM1_W { w: self }
+    pub fn cmpm1(&mut self) -> CMPM1_W<9> {
+        CMPM1_W::new(self)
     }
     #[doc = "Bit 10 - Comparison 2 Match Interrupt Disable"]
     #[inline(always)]
-    pub fn cmpm2(&mut self) -> CMPM2_W {
-        CMPM2_W { w: self }
+    pub fn cmpm2(&mut self) -> CMPM2_W<10> {
+        CMPM2_W::new(self)
     }
     #[doc = "Bit 11 - Comparison 3 Match Interrupt Disable"]
     #[inline(always)]
-    pub fn cmpm3(&mut self) -> CMPM3_W {
-        CMPM3_W { w: self }
+    pub fn cmpm3(&mut self) -> CMPM3_W<11> {
+        CMPM3_W::new(self)
     }
     #[doc = "Bit 12 - Comparison 4 Match Interrupt Disable"]
     #[inline(always)]
-    pub fn cmpm4(&mut self) -> CMPM4_W {
-        CMPM4_W { w: self }
+    pub fn cmpm4(&mut self) -> CMPM4_W<12> {
+        CMPM4_W::new(self)
     }
     #[doc = "Bit 13 - Comparison 5 Match Interrupt Disable"]
     #[inline(always)]
-    pub fn cmpm5(&mut self) -> CMPM5_W {
-        CMPM5_W { w: self }
+    pub fn cmpm5(&mut self) -> CMPM5_W<13> {
+        CMPM5_W::new(self)
     }
     #[doc = "Bit 14 - Comparison 6 Match Interrupt Disable"]
     #[inline(always)]
-    pub fn cmpm6(&mut self) -> CMPM6_W {
-        CMPM6_W { w: self }
+    pub fn cmpm6(&mut self) -> CMPM6_W<14> {
+        CMPM6_W::new(self)
     }
     #[doc = "Bit 15 - Comparison 7 Match Interrupt Disable"]
     #[inline(always)]
-    pub fn cmpm7(&mut self) -> CMPM7_W {
-        CMPM7_W { w: self }
+    pub fn cmpm7(&mut self) -> CMPM7_W<15> {
+        CMPM7_W::new(self)
     }
     #[doc = "Bit 16 - Comparison 0 Update Interrupt Disable"]
     #[inline(always)]
-    pub fn cmpu0(&mut self) -> CMPU0_W {
-        CMPU0_W { w: self }
+    pub fn cmpu0(&mut self) -> CMPU0_W<16> {
+        CMPU0_W::new(self)
     }
     #[doc = "Bit 17 - Comparison 1 Update Interrupt Disable"]
     #[inline(always)]
-    pub fn cmpu1(&mut self) -> CMPU1_W {
-        CMPU1_W { w: self }
+    pub fn cmpu1(&mut self) -> CMPU1_W<17> {
+        CMPU1_W::new(self)
     }
     #[doc = "Bit 18 - Comparison 2 Update Interrupt Disable"]
     #[inline(always)]
-    pub fn cmpu2(&mut self) -> CMPU2_W {
-        CMPU2_W { w: self }
+    pub fn cmpu2(&mut self) -> CMPU2_W<18> {
+        CMPU2_W::new(self)
     }
     #[doc = "Bit 19 - Comparison 3 Update Interrupt Disable"]
     #[inline(always)]
-    pub fn cmpu3(&mut self) -> CMPU3_W {
-        CMPU3_W { w: self }
+    pub fn cmpu3(&mut self) -> CMPU3_W<19> {
+        CMPU3_W::new(self)
     }
     #[doc = "Bit 20 - Comparison 4 Update Interrupt Disable"]
     #[inline(always)]
-    pub fn cmpu4(&mut self) -> CMPU4_W {
-        CMPU4_W { w: self }
+    pub fn cmpu4(&mut self) -> CMPU4_W<20> {
+        CMPU4_W::new(self)
     }
     #[doc = "Bit 21 - Comparison 5 Update Interrupt Disable"]
     #[inline(always)]
-    pub fn cmpu5(&mut self) -> CMPU5_W {
-        CMPU5_W { w: self }
+    pub fn cmpu5(&mut self) -> CMPU5_W<21> {
+        CMPU5_W::new(self)
     }
     #[doc = "Bit 22 - Comparison 6 Update Interrupt Disable"]
     #[inline(always)]
-    pub fn cmpu6(&mut self) -> CMPU6_W {
-        CMPU6_W { w: self }
+    pub fn cmpu6(&mut self) -> CMPU6_W<22> {
+        CMPU6_W::new(self)
     }
     #[doc = "Bit 23 - Comparison 7 Update Interrupt Disable"]
     #[inline(always)]
-    pub fn cmpu7(&mut self) -> CMPU7_W {
-        CMPU7_W { w: self }
+    pub fn cmpu7(&mut self) -> CMPU7_W<23> {
+        CMPU7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

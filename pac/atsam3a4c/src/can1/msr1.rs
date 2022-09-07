@@ -14,95 +14,17 @@ impl From<crate::R<MSR1_SPEC>> for R {
     }
 }
 #[doc = "Field `MTIMESTAMP` reader - Timer value"]
-pub struct MTIMESTAMP_R(crate::FieldReader<u16, u16>);
-impl MTIMESTAMP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        MTIMESTAMP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MTIMESTAMP_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MTIMESTAMP_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MDLC` reader - Mailbox Data Length Code"]
-pub struct MDLC_R(crate::FieldReader<u8, u8>);
-impl MDLC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MDLC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MDLC_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MDLC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MRTR` reader - Mailbox Remote Transmission Request"]
-pub struct MRTR_R(crate::FieldReader<bool, bool>);
-impl MRTR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MRTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MRTR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MRTR_R = crate::BitReader<bool>;
 #[doc = "Field `MABT` reader - Mailbox Message Abort"]
-pub struct MABT_R(crate::FieldReader<bool, bool>);
-impl MABT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MABT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MABT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MABT_R = crate::BitReader<bool>;
 #[doc = "Field `MRDY` reader - Mailbox Ready"]
-pub struct MRDY_R(crate::FieldReader<bool, bool>);
-impl MRDY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MRDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MRDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MRDY_R = crate::BitReader<bool>;
 #[doc = "Field `MMI` reader - Mailbox Message Ignored"]
-pub struct MMI_R(crate::FieldReader<bool, bool>);
-impl MMI_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MMI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MMI_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MMI_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bits 0:15 - Timer value"]
     #[inline(always)]
@@ -117,22 +39,22 @@ impl R {
     #[doc = "Bit 20 - Mailbox Remote Transmission Request"]
     #[inline(always)]
     pub fn mrtr(&self) -> MRTR_R {
-        MRTR_R::new(((self.bits >> 20) & 0x01) != 0)
+        MRTR_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 22 - Mailbox Message Abort"]
     #[inline(always)]
     pub fn mabt(&self) -> MABT_R {
-        MABT_R::new(((self.bits >> 22) & 0x01) != 0)
+        MABT_R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 23 - Mailbox Ready"]
     #[inline(always)]
     pub fn mrdy(&self) -> MRDY_R {
-        MRDY_R::new(((self.bits >> 23) & 0x01) != 0)
+        MRDY_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 24 - Mailbox Message Ignored"]
     #[inline(always)]
     pub fn mmi(&self) -> MMI_R {
-        MMI_R::new(((self.bits >> 24) & 0x01) != 0)
+        MMI_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
 #[doc = "Mailbox Status Register (MB = 1)\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [msr1](index.html) module"]

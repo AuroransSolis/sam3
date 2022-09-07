@@ -20,140 +20,40 @@ impl From<crate::W<CR_SPEC>> for W {
     }
 }
 #[doc = "Field `MCIEN` writer - Multi-Media Interface Enable"]
-pub struct MCIEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MCIEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type MCIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `MCIDIS` writer - Multi-Media Interface Disable"]
-pub struct MCIDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MCIDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type MCIDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `PWSEN` writer - Power Save Mode Enable"]
-pub struct PWSEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PWSEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type PWSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `PWSDIS` writer - Power Save Mode Disable"]
-pub struct PWSDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PWSDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type PWSDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `SWRST` writer - Software Reset"]
-pub struct SWRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWRST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type SWRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Multi-Media Interface Enable"]
     #[inline(always)]
-    pub fn mcien(&mut self) -> MCIEN_W {
-        MCIEN_W { w: self }
+    pub fn mcien(&mut self) -> MCIEN_W<0> {
+        MCIEN_W::new(self)
     }
     #[doc = "Bit 1 - Multi-Media Interface Disable"]
     #[inline(always)]
-    pub fn mcidis(&mut self) -> MCIDIS_W {
-        MCIDIS_W { w: self }
+    pub fn mcidis(&mut self) -> MCIDIS_W<1> {
+        MCIDIS_W::new(self)
     }
     #[doc = "Bit 2 - Power Save Mode Enable"]
     #[inline(always)]
-    pub fn pwsen(&mut self) -> PWSEN_W {
-        PWSEN_W { w: self }
+    pub fn pwsen(&mut self) -> PWSEN_W<2> {
+        PWSEN_W::new(self)
     }
     #[doc = "Bit 3 - Power Save Mode Disable"]
     #[inline(always)]
-    pub fn pwsdis(&mut self) -> PWSDIS_W {
-        PWSDIS_W { w: self }
+    pub fn pwsdis(&mut self) -> PWSDIS_W<3> {
+        PWSDIS_W::new(self)
     }
     #[doc = "Bit 7 - Software Reset"]
     #[inline(always)]
-    pub fn swrst(&mut self) -> SWRST_W {
-        SWRST_W { w: self }
+    pub fn swrst(&mut self) -> SWRST_W<7> {
+        SWRST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

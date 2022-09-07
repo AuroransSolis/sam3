@@ -35,42 +35,11 @@ impl From<crate::W<PCMR_SPEC>> for W {
     }
 }
 #[doc = "Field `PCEN` reader - Parallel Capture Mode Enable"]
-pub struct PCEN_R(crate::FieldReader<bool, bool>);
-impl PCEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PCEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PCEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PCEN_R = crate::BitReader<bool>;
 #[doc = "Field `PCEN` writer - Parallel Capture Mode Enable"]
-pub struct PCEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PCEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type PCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCMR_SPEC, bool, O>;
+#[doc = "Field `DSIZE` reader - Parallel Capture Mode Data Size"]
+pub type DSIZE_R = crate::FieldReader<u8, DSIZE_A>;
 #[doc = "Parallel Capture Mode Data Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -88,14 +57,8 @@ impl From<DSIZE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DSIZE` reader - Parallel Capture Mode Data Size"]
-pub struct DSIZE_R(crate::FieldReader<u8, DSIZE_A>);
 impl DSIZE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DSIZE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DSIZE_A> {
         match self.bits {
@@ -108,36 +71,22 @@ impl DSIZE_R {
     #[doc = "Checks if the value of the field is `BYTE`"]
     #[inline(always)]
     pub fn is_byte(&self) -> bool {
-        **self == DSIZE_A::BYTE
+        *self == DSIZE_A::BYTE
     }
     #[doc = "Checks if the value of the field is `HALFWORD`"]
     #[inline(always)]
     pub fn is_halfword(&self) -> bool {
-        **self == DSIZE_A::HALFWORD
+        *self == DSIZE_A::HALFWORD
     }
     #[doc = "Checks if the value of the field is `WORD`"]
     #[inline(always)]
     pub fn is_word(&self) -> bool {
-        **self == DSIZE_A::WORD
-    }
-}
-impl core::ops::Deref for DSIZE_R {
-    type Target = crate::FieldReader<u8, DSIZE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DSIZE_A::WORD
     }
 }
 #[doc = "Field `DSIZE` writer - Parallel Capture Mode Data Size"]
-pub struct DSIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSIZE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DSIZE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type DSIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCMR_SPEC, u8, DSIZE_A, 2, O>;
+impl<'a, const O: u8> DSIZE_W<'a, O> {
     #[doc = "The reception data in the PIO_PCRHR register is a BYTE (8-bit)"]
     #[inline(always)]
     pub fn byte(self) -> &'a mut W {
@@ -153,176 +102,71 @@ impl<'a> DSIZE_W<'a> {
     pub fn word(self) -> &'a mut W {
         self.variant(DSIZE_A::WORD)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
-    }
 }
 #[doc = "Field `ALWYS` reader - Parallel Capture Mode Always Sampling"]
-pub struct ALWYS_R(crate::FieldReader<bool, bool>);
-impl ALWYS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ALWYS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ALWYS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ALWYS_R = crate::BitReader<bool>;
 #[doc = "Field `ALWYS` writer - Parallel Capture Mode Always Sampling"]
-pub struct ALWYS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALWYS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type ALWYS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCMR_SPEC, bool, O>;
 #[doc = "Field `HALFS` reader - Parallel Capture Mode Half Sampling"]
-pub struct HALFS_R(crate::FieldReader<bool, bool>);
-impl HALFS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HALFS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HALFS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HALFS_R = crate::BitReader<bool>;
 #[doc = "Field `HALFS` writer - Parallel Capture Mode Half Sampling"]
-pub struct HALFS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HALFS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type HALFS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCMR_SPEC, bool, O>;
 #[doc = "Field `FRSTS` reader - Parallel Capture Mode First Sample"]
-pub struct FRSTS_R(crate::FieldReader<bool, bool>);
-impl FRSTS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FRSTS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FRSTS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FRSTS_R = crate::BitReader<bool>;
 #[doc = "Field `FRSTS` writer - Parallel Capture Mode First Sample"]
-pub struct FRSTS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FRSTS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type FRSTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCMR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Parallel Capture Mode Enable"]
     #[inline(always)]
     pub fn pcen(&self) -> PCEN_R {
-        PCEN_R::new((self.bits & 0x01) != 0)
+        PCEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 4:5 - Parallel Capture Mode Data Size"]
     #[inline(always)]
     pub fn dsize(&self) -> DSIZE_R {
-        DSIZE_R::new(((self.bits >> 4) & 0x03) as u8)
+        DSIZE_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 9 - Parallel Capture Mode Always Sampling"]
     #[inline(always)]
     pub fn alwys(&self) -> ALWYS_R {
-        ALWYS_R::new(((self.bits >> 9) & 0x01) != 0)
+        ALWYS_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Parallel Capture Mode Half Sampling"]
     #[inline(always)]
     pub fn halfs(&self) -> HALFS_R {
-        HALFS_R::new(((self.bits >> 10) & 0x01) != 0)
+        HALFS_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Parallel Capture Mode First Sample"]
     #[inline(always)]
     pub fn frsts(&self) -> FRSTS_R {
-        FRSTS_R::new(((self.bits >> 11) & 0x01) != 0)
+        FRSTS_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Parallel Capture Mode Enable"]
     #[inline(always)]
-    pub fn pcen(&mut self) -> PCEN_W {
-        PCEN_W { w: self }
+    pub fn pcen(&mut self) -> PCEN_W<0> {
+        PCEN_W::new(self)
     }
     #[doc = "Bits 4:5 - Parallel Capture Mode Data Size"]
     #[inline(always)]
-    pub fn dsize(&mut self) -> DSIZE_W {
-        DSIZE_W { w: self }
+    pub fn dsize(&mut self) -> DSIZE_W<4> {
+        DSIZE_W::new(self)
     }
     #[doc = "Bit 9 - Parallel Capture Mode Always Sampling"]
     #[inline(always)]
-    pub fn alwys(&mut self) -> ALWYS_W {
-        ALWYS_W { w: self }
+    pub fn alwys(&mut self) -> ALWYS_W<9> {
+        ALWYS_W::new(self)
     }
     #[doc = "Bit 10 - Parallel Capture Mode Half Sampling"]
     #[inline(always)]
-    pub fn halfs(&mut self) -> HALFS_W {
-        HALFS_W { w: self }
+    pub fn halfs(&mut self) -> HALFS_W<10> {
+        HALFS_W::new(self)
     }
     #[doc = "Bit 11 - Parallel Capture Mode First Sample"]
     #[inline(always)]
-    pub fn frsts(&mut self) -> FRSTS_W {
-        FRSTS_W { w: self }
+    pub fn frsts(&mut self) -> FRSTS_W<11> {
+        FRSTS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

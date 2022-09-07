@@ -35,32 +35,10 @@ impl From<crate::W<HSTDMAADDRESS6_SPEC>> for W {
     }
 }
 #[doc = "Field `BUFF_ADD` reader - Buffer Address"]
-pub struct BUFF_ADD_R(crate::FieldReader<u32, u32>);
-impl BUFF_ADD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        BUFF_ADD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BUFF_ADD_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BUFF_ADD_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `BUFF_ADD` writer - Buffer Address"]
-pub struct BUFF_ADD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BUFF_ADD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type BUFF_ADD_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HSTDMAADDRESS6_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Buffer Address"]
     #[inline(always)]
@@ -71,8 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Buffer Address"]
     #[inline(always)]
-    pub fn buff_add(&mut self) -> BUFF_ADD_W {
-        BUFF_ADD_W { w: self }
+    pub fn buff_add(&mut self) -> BUFF_ADD_W<0> {
+        BUFF_ADD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

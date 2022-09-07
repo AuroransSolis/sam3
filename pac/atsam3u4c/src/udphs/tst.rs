@@ -34,6 +34,8 @@ impl From<crate::W<TST_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SPEED_CFG` reader - Speed Configuration"]
+pub type SPEED_CFG_R = crate::FieldReader<u8, SPEED_CFG_A>;
 #[doc = "Speed Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,14 +53,8 @@ impl From<SPEED_CFG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SPEED_CFG` reader - Speed Configuration"]
-pub struct SPEED_CFG_R(crate::FieldReader<u8, SPEED_CFG_A>);
 impl SPEED_CFG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SPEED_CFG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SPEED_CFG_A> {
         match self.bits {
@@ -71,36 +67,23 @@ impl SPEED_CFG_R {
     #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        **self == SPEED_CFG_A::NORMAL
+        *self == SPEED_CFG_A::NORMAL
     }
     #[doc = "Checks if the value of the field is `HIGH_SPEED`"]
     #[inline(always)]
     pub fn is_high_speed(&self) -> bool {
-        **self == SPEED_CFG_A::HIGH_SPEED
+        *self == SPEED_CFG_A::HIGH_SPEED
     }
     #[doc = "Checks if the value of the field is `FULL_SPEED`"]
     #[inline(always)]
     pub fn is_full_speed(&self) -> bool {
-        **self == SPEED_CFG_A::FULL_SPEED
-    }
-}
-impl core::ops::Deref for SPEED_CFG_R {
-    type Target = crate::FieldReader<u8, SPEED_CFG_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SPEED_CFG_A::FULL_SPEED
     }
 }
 #[doc = "Field `SPEED_CFG` writer - Speed Configuration"]
-pub struct SPEED_CFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SPEED_CFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SPEED_CFG_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type SPEED_CFG_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TST_SPEC, u8, SPEED_CFG_A, 2, O>;
+impl<'a, const O: u8> SPEED_CFG_W<'a, O> {
     #[doc = "Normal Mode: The macro is in Full Speed mode, ready to make a High Speed identification, if the host supports it and then to automatically switch to High Speed mode"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -116,213 +99,75 @@ impl<'a> SPEED_CFG_W<'a> {
     pub fn full_speed(self) -> &'a mut W {
         self.variant(SPEED_CFG_A::FULL_SPEED)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 #[doc = "Field `TST_J` reader - Test J Mode"]
-pub struct TST_J_R(crate::FieldReader<bool, bool>);
-impl TST_J_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TST_J_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TST_J_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TST_J_R = crate::BitReader<bool>;
 #[doc = "Field `TST_J` writer - Test J Mode"]
-pub struct TST_J_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TST_J_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type TST_J_W<'a, const O: u8> = crate::BitWriter<'a, u32, TST_SPEC, bool, O>;
 #[doc = "Field `TST_K` reader - Test K Mode"]
-pub struct TST_K_R(crate::FieldReader<bool, bool>);
-impl TST_K_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TST_K_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TST_K_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TST_K_R = crate::BitReader<bool>;
 #[doc = "Field `TST_K` writer - Test K Mode"]
-pub struct TST_K_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TST_K_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type TST_K_W<'a, const O: u8> = crate::BitWriter<'a, u32, TST_SPEC, bool, O>;
 #[doc = "Field `TST_PKT` reader - Test Packet Mode"]
-pub struct TST_PKT_R(crate::FieldReader<bool, bool>);
-impl TST_PKT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TST_PKT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TST_PKT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TST_PKT_R = crate::BitReader<bool>;
 #[doc = "Field `TST_PKT` writer - Test Packet Mode"]
-pub struct TST_PKT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TST_PKT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type TST_PKT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TST_SPEC, bool, O>;
 #[doc = "Field `OPMODE2` reader - OpMode2"]
-pub struct OPMODE2_R(crate::FieldReader<bool, bool>);
-impl OPMODE2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OPMODE2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OPMODE2_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OPMODE2_R = crate::BitReader<bool>;
 #[doc = "Field `OPMODE2` writer - OpMode2"]
-pub struct OPMODE2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OPMODE2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type OPMODE2_W<'a, const O: u8> = crate::BitWriter<'a, u32, TST_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:1 - Speed Configuration"]
     #[inline(always)]
     pub fn speed_cfg(&self) -> SPEED_CFG_R {
-        SPEED_CFG_R::new((self.bits & 0x03) as u8)
+        SPEED_CFG_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 2 - Test J Mode"]
     #[inline(always)]
     pub fn tst_j(&self) -> TST_J_R {
-        TST_J_R::new(((self.bits >> 2) & 0x01) != 0)
+        TST_J_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Test K Mode"]
     #[inline(always)]
     pub fn tst_k(&self) -> TST_K_R {
-        TST_K_R::new(((self.bits >> 3) & 0x01) != 0)
+        TST_K_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Test Packet Mode"]
     #[inline(always)]
     pub fn tst_pkt(&self) -> TST_PKT_R {
-        TST_PKT_R::new(((self.bits >> 4) & 0x01) != 0)
+        TST_PKT_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - OpMode2"]
     #[inline(always)]
     pub fn opmode2(&self) -> OPMODE2_R {
-        OPMODE2_R::new(((self.bits >> 5) & 0x01) != 0)
+        OPMODE2_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Speed Configuration"]
     #[inline(always)]
-    pub fn speed_cfg(&mut self) -> SPEED_CFG_W {
-        SPEED_CFG_W { w: self }
+    pub fn speed_cfg(&mut self) -> SPEED_CFG_W<0> {
+        SPEED_CFG_W::new(self)
     }
     #[doc = "Bit 2 - Test J Mode"]
     #[inline(always)]
-    pub fn tst_j(&mut self) -> TST_J_W {
-        TST_J_W { w: self }
+    pub fn tst_j(&mut self) -> TST_J_W<2> {
+        TST_J_W::new(self)
     }
     #[doc = "Bit 3 - Test K Mode"]
     #[inline(always)]
-    pub fn tst_k(&mut self) -> TST_K_W {
-        TST_K_W { w: self }
+    pub fn tst_k(&mut self) -> TST_K_W<3> {
+        TST_K_W::new(self)
     }
     #[doc = "Bit 4 - Test Packet Mode"]
     #[inline(always)]
-    pub fn tst_pkt(&mut self) -> TST_PKT_W {
-        TST_PKT_W { w: self }
+    pub fn tst_pkt(&mut self) -> TST_PKT_W<4> {
+        TST_PKT_W::new(self)
     }
     #[doc = "Bit 5 - OpMode2"]
     #[inline(always)]
-    pub fn opmode2(&mut self) -> OPMODE2_W {
-        OPMODE2_W { w: self }
+    pub fn opmode2(&mut self) -> OPMODE2_W<5> {
+        OPMODE2_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
