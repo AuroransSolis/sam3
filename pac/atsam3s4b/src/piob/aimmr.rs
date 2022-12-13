@@ -1,18 +1,6 @@
 #[doc = "Register `AIMMR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<AIMMR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<AIMMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<AIMMR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<AIMMR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `P0` reader - Peripheral CD Status"]
 pub type P0_R = crate::BitReader<bool>;
 #[doc = "Field `P1` reader - Peripheral CD Status"]
@@ -250,8 +238,5 @@ impl crate::Readable for AIMMR_SPEC {
 }
 #[doc = "`reset()` method sets AIMMR to value 0"]
 impl crate::Resettable for AIMMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

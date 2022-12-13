@@ -1,29 +1,12 @@
 #[doc = "Register `IDR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<IDR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IDR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IDR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `ERRIDR` writer - CRC Error Interrupt Disable"]
 pub type ERRIDR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - CRC Error Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn erridr(&mut self) -> ERRIDR_W<0> {
         ERRIDR_W::new(self)
     }
@@ -42,11 +25,10 @@ impl crate::RegisterSpec for IDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [idr::W](W) writer structure"]
 impl crate::Writable for IDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IDR to value 0"]
 impl crate::Resettable for IDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

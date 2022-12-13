@@ -1,39 +1,9 @@
 #[doc = "Register `MATRIX_MRCR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MATRIX_MRCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MATRIX_MRCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MATRIX_MRCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MATRIX_MRCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MATRIX_MRCR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<MATRIX_MRCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MATRIX_MRCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MATRIX_MRCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MATRIX_MRCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `RCB0` reader - Remap Command Bit for AHB Master 0"]
 pub type RCB0_R = crate::BitReader<bool>;
 #[doc = "Field `RCB0` writer - Remap Command Bit for AHB Master 0"]
@@ -93,31 +63,37 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Remap Command Bit for AHB Master 0"]
     #[inline(always)]
+    #[must_use]
     pub fn rcb0(&mut self) -> RCB0_W<0> {
         RCB0_W::new(self)
     }
     #[doc = "Bit 1 - Remap Command Bit for AHB Master 1"]
     #[inline(always)]
+    #[must_use]
     pub fn rcb1(&mut self) -> RCB1_W<1> {
         RCB1_W::new(self)
     }
     #[doc = "Bit 2 - Remap Command Bit for AHB Master 2"]
     #[inline(always)]
+    #[must_use]
     pub fn rcb2(&mut self) -> RCB2_W<2> {
         RCB2_W::new(self)
     }
     #[doc = "Bit 3 - Remap Command Bit for AHB Master 3"]
     #[inline(always)]
+    #[must_use]
     pub fn rcb3(&mut self) -> RCB3_W<3> {
         RCB3_W::new(self)
     }
     #[doc = "Bits 4:5 - Remap Command Bit for AHB Master 4"]
     #[inline(always)]
+    #[must_use]
     pub fn rcb4(&mut self) -> RCB4_W<4> {
         RCB4_W::new(self)
     }
     #[doc = "Bit 6 - Remap Command Bit for AHB Master 5"]
     #[inline(always)]
+    #[must_use]
     pub fn rcb5(&mut self) -> RCB5_W<6> {
         RCB5_W::new(self)
     }
@@ -140,11 +116,10 @@ impl crate::Readable for MATRIX_MRCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [matrix_mrcr::W](W) writer structure"]
 impl crate::Writable for MATRIX_MRCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MATRIX_MRCR to value 0"]
 impl crate::Resettable for MATRIX_MRCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

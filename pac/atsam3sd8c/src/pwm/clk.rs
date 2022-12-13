@@ -1,39 +1,9 @@
 #[doc = "Register `CLK` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CLK_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CLK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CLK_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CLK_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CLK` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CLK_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CLK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CLK_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CLK_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `DIVA` reader - CLKA, CLKB Divide Factor"]
 pub type DIVA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIVA` writer - CLKA, CLKB Divide Factor"]
@@ -75,21 +45,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
+    #[must_use]
     pub fn diva(&mut self) -> DIVA_W<0> {
         DIVA_W::new(self)
     }
     #[doc = "Bits 8:11 - CLKA, CLKB Source Clock Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn prea(&mut self) -> PREA_W<8> {
         PREA_W::new(self)
     }
     #[doc = "Bits 16:23 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
+    #[must_use]
     pub fn divb(&mut self) -> DIVB_W<16> {
         DIVB_W::new(self)
     }
     #[doc = "Bits 24:27 - CLKA, CLKB Source Clock Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn preb(&mut self) -> PREB_W<24> {
         PREB_W::new(self)
     }
@@ -112,11 +86,10 @@ impl crate::Readable for CLK_SPEC {
 #[doc = "`write(|w| ..)` method takes [clk::W](W) writer structure"]
 impl crate::Writable for CLK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CLK to value 0"]
 impl crate::Resettable for CLK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

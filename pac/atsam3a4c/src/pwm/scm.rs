@@ -1,39 +1,9 @@
 #[doc = "Register `SCM` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<SCM_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SCM_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SCM_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SCM_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `SCM` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<SCM_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SCM_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SCM_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SCM_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `SYNC0` reader - Synchronous Channel 0"]
 pub type SYNC0_R = crate::BitReader<bool>;
 #[doc = "Field `SYNC0` writer - Synchronous Channel 0"]
@@ -69,15 +39,15 @@ pub type SYNC7_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCM_SPEC, bool, O>
 #[doc = "Field `UPDM` reader - Synchronous Channels Update Mode"]
 pub type UPDM_R = crate::FieldReader<u8, UPDM_A>;
 #[doc = "Synchronous Channels Update Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UPDM_A {
     #[doc = "0: Manual write of double buffer registers and manual update of synchronous channels"]
-    MODE0 = 0,
+    Mode0 = 0,
     #[doc = "1: Manual write of double buffer registers and automatic update of synchronous channels"]
-    MODE1 = 1,
+    Mode1 = 1,
     #[doc = "2: Automatic write of duty-cycle update registers by the PDC and automatic update of synchronous channels"]
-    MODE2 = 2,
+    Mode2 = 2,
 }
 impl From<UPDM_A> for u8 {
     #[inline(always)]
@@ -90,26 +60,26 @@ impl UPDM_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<UPDM_A> {
         match self.bits {
-            0 => Some(UPDM_A::MODE0),
-            1 => Some(UPDM_A::MODE1),
-            2 => Some(UPDM_A::MODE2),
+            0 => Some(UPDM_A::Mode0),
+            1 => Some(UPDM_A::Mode1),
+            2 => Some(UPDM_A::Mode2),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `MODE0`"]
+    #[doc = "Checks if the value of the field is `Mode0`"]
     #[inline(always)]
     pub fn is_mode0(&self) -> bool {
-        *self == UPDM_A::MODE0
+        *self == UPDM_A::Mode0
     }
-    #[doc = "Checks if the value of the field is `MODE1`"]
+    #[doc = "Checks if the value of the field is `Mode1`"]
     #[inline(always)]
     pub fn is_mode1(&self) -> bool {
-        *self == UPDM_A::MODE1
+        *self == UPDM_A::Mode1
     }
-    #[doc = "Checks if the value of the field is `MODE2`"]
+    #[doc = "Checks if the value of the field is `Mode2`"]
     #[inline(always)]
     pub fn is_mode2(&self) -> bool {
-        *self == UPDM_A::MODE2
+        *self == UPDM_A::Mode2
     }
 }
 #[doc = "Field `UPDM` writer - Synchronous Channels Update Mode"]
@@ -118,17 +88,17 @@ impl<'a, const O: u8> UPDM_W<'a, O> {
     #[doc = "Manual write of double buffer registers and manual update of synchronous channels"]
     #[inline(always)]
     pub fn mode0(self) -> &'a mut W {
-        self.variant(UPDM_A::MODE0)
+        self.variant(UPDM_A::Mode0)
     }
     #[doc = "Manual write of double buffer registers and automatic update of synchronous channels"]
     #[inline(always)]
     pub fn mode1(self) -> &'a mut W {
-        self.variant(UPDM_A::MODE1)
+        self.variant(UPDM_A::Mode1)
     }
     #[doc = "Automatic write of duty-cycle update registers by the PDC and automatic update of synchronous channels"]
     #[inline(always)]
     pub fn mode2(self) -> &'a mut W {
-        self.variant(UPDM_A::MODE2)
+        self.variant(UPDM_A::Mode2)
     }
 }
 #[doc = "Field `PTRM` reader - PDC Transfer Request Mode"]
@@ -199,56 +169,67 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Synchronous Channel 0"]
     #[inline(always)]
+    #[must_use]
     pub fn sync0(&mut self) -> SYNC0_W<0> {
         SYNC0_W::new(self)
     }
     #[doc = "Bit 1 - Synchronous Channel 1"]
     #[inline(always)]
+    #[must_use]
     pub fn sync1(&mut self) -> SYNC1_W<1> {
         SYNC1_W::new(self)
     }
     #[doc = "Bit 2 - Synchronous Channel 2"]
     #[inline(always)]
+    #[must_use]
     pub fn sync2(&mut self) -> SYNC2_W<2> {
         SYNC2_W::new(self)
     }
     #[doc = "Bit 3 - Synchronous Channel 3"]
     #[inline(always)]
+    #[must_use]
     pub fn sync3(&mut self) -> SYNC3_W<3> {
         SYNC3_W::new(self)
     }
     #[doc = "Bit 4 - Synchronous Channel 4"]
     #[inline(always)]
+    #[must_use]
     pub fn sync4(&mut self) -> SYNC4_W<4> {
         SYNC4_W::new(self)
     }
     #[doc = "Bit 5 - Synchronous Channel 5"]
     #[inline(always)]
+    #[must_use]
     pub fn sync5(&mut self) -> SYNC5_W<5> {
         SYNC5_W::new(self)
     }
     #[doc = "Bit 6 - Synchronous Channel 6"]
     #[inline(always)]
+    #[must_use]
     pub fn sync6(&mut self) -> SYNC6_W<6> {
         SYNC6_W::new(self)
     }
     #[doc = "Bit 7 - Synchronous Channel 7"]
     #[inline(always)]
+    #[must_use]
     pub fn sync7(&mut self) -> SYNC7_W<7> {
         SYNC7_W::new(self)
     }
     #[doc = "Bits 16:17 - Synchronous Channels Update Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn updm(&mut self) -> UPDM_W<16> {
         UPDM_W::new(self)
     }
     #[doc = "Bit 20 - PDC Transfer Request Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn ptrm(&mut self) -> PTRM_W<20> {
         PTRM_W::new(self)
     }
     #[doc = "Bits 21:23 - PDC Transfer Request Comparison Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn ptrcs(&mut self) -> PTRCS_W<21> {
         PTRCS_W::new(self)
     }
@@ -271,11 +252,10 @@ impl crate::Readable for SCM_SPEC {
 #[doc = "`write(|w| ..)` method takes [scm::W](W) writer structure"]
 impl crate::Writable for SCM_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCM to value 0"]
 impl crate::Resettable for SCM_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

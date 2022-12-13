@@ -1,39 +1,9 @@
 #[doc = "Register `TXVC` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<TXVC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TXVC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TXVC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TXVC_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `TXVC` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<TXVC_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TXVC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TXVC_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TXVC_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `TXVDIS` reader - Transceiver Disable"]
 pub type TXVDIS_R = crate::BitReader<bool>;
 #[doc = "Field `TXVDIS` writer - Transceiver Disable"]
@@ -57,11 +27,13 @@ impl R {
 impl W {
     #[doc = "Bit 8 - Transceiver Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn txvdis(&mut self) -> TXVDIS_W<8> {
         TXVDIS_W::new(self)
     }
     #[doc = "Bit 9 - Pull-up On"]
     #[inline(always)]
+    #[must_use]
     pub fn puon(&mut self) -> PUON_W<9> {
         PUON_W::new(self)
     }
@@ -84,11 +56,10 @@ impl crate::Readable for TXVC_SPEC {
 #[doc = "`write(|w| ..)` method takes [txvc::W](W) writer structure"]
 impl crate::Writable for TXVC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TXVC to value 0x0100"]
 impl crate::Resettable for TXVC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0100
-    }
+    const RESET_VALUE: Self::Ux = 0x0100;
 }

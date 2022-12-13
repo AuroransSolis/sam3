@@ -1,18 +1,6 @@
 #[doc = "Register `IFSCSR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<IFSCSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<IFSCSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<IFSCSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<IFSCSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `P0` reader - Glitch or Debouncing Filter Selection Status"]
 pub type P0_R = crate::BitReader<bool>;
 #[doc = "Field `P1` reader - Glitch or Debouncing Filter Selection Status"]
@@ -250,8 +238,5 @@ impl crate::Readable for IFSCSR_SPEC {
 }
 #[doc = "`reset()` method sets IFSCSR to value 0"]
 impl crate::Resettable for IFSCSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

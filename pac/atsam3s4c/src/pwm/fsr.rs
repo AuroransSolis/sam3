@@ -1,18 +1,6 @@
 #[doc = "Register `FSR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<FSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `FIV` reader - Fault Input Value (fault input bit varies from 0 to 5)"]
 pub type FIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FS` reader - Fault Status (fault input bit varies from 0 to 5)"]
@@ -40,8 +28,5 @@ impl crate::Readable for FSR_SPEC {
 }
 #[doc = "`reset()` method sets FSR to value 0"]
 impl crate::Resettable for FSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

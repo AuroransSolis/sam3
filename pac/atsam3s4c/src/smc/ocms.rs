@@ -1,39 +1,9 @@
 #[doc = "Register `OCMS` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<OCMS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<OCMS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<OCMS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<OCMS_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `OCMS` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<OCMS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<OCMS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<OCMS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<OCMS_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `SMSE` reader - Static Memory Controller Scrambling Enable"]
 pub type SMSE_R = crate::BitReader<bool>;
 #[doc = "Field `SMSE` writer - Static Memory Controller Scrambling Enable"]
@@ -84,26 +54,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Static Memory Controller Scrambling Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn smse(&mut self) -> SMSE_W<0> {
         SMSE_W::new(self)
     }
     #[doc = "Bit 16 - Chip Select (x = 0 to 3) Scrambling Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn cs0se(&mut self) -> CS0SE_W<16> {
         CS0SE_W::new(self)
     }
     #[doc = "Bit 17 - Chip Select (x = 0 to 3) Scrambling Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn cs1se(&mut self) -> CS1SE_W<17> {
         CS1SE_W::new(self)
     }
     #[doc = "Bit 18 - Chip Select (x = 0 to 3) Scrambling Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn cs2se(&mut self) -> CS2SE_W<18> {
         CS2SE_W::new(self)
     }
     #[doc = "Bit 19 - Chip Select (x = 0 to 3) Scrambling Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn cs3se(&mut self) -> CS3SE_W<19> {
         CS3SE_W::new(self)
     }
@@ -126,11 +101,10 @@ impl crate::Readable for OCMS_SPEC {
 #[doc = "`write(|w| ..)` method takes [ocms::W](W) writer structure"]
 impl crate::Writable for OCMS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets OCMS to value 0"]
 impl crate::Resettable for OCMS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

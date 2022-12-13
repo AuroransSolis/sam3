@@ -1,39 +1,9 @@
 #[doc = "Register `NCFGR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<NCFGR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<NCFGR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<NCFGR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<NCFGR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `NCFGR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<NCFGR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<NCFGR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<NCFGR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<NCFGR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `SPD` reader - Speed"]
 pub type SPD_R = crate::BitReader<bool>;
 #[doc = "Field `SPD` writer - Speed"]
@@ -69,17 +39,17 @@ pub type BIG_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCFGR_SPEC, bool, O>
 #[doc = "Field `CLK` reader - MDC clock divider"]
 pub type CLK_R = crate::FieldReader<u8, CLK_A>;
 #[doc = "MDC clock divider\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLK_A {
     #[doc = "0: MCK divided by 8 (MCK up to 20 MHz)."]
-    MCK_8 = 0,
+    Mck8 = 0,
     #[doc = "1: MCK divided by 16 (MCK up to 40 MHz)."]
-    MCK_16 = 1,
+    Mck16 = 1,
     #[doc = "2: MCK divided by 32 (MCK up to 80 MHz)."]
-    MCK_32 = 2,
+    Mck32 = 2,
     #[doc = "3: MCK divided by 64 (MCK up to 160 MHz)."]
-    MCK_64 = 3,
+    Mck64 = 3,
 }
 impl From<CLK_A> for u8 {
     #[inline(always)]
@@ -92,32 +62,32 @@ impl CLK_R {
     #[inline(always)]
     pub fn variant(&self) -> CLK_A {
         match self.bits {
-            0 => CLK_A::MCK_8,
-            1 => CLK_A::MCK_16,
-            2 => CLK_A::MCK_32,
-            3 => CLK_A::MCK_64,
+            0 => CLK_A::Mck8,
+            1 => CLK_A::Mck16,
+            2 => CLK_A::Mck32,
+            3 => CLK_A::Mck64,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `MCK_8`"]
+    #[doc = "Checks if the value of the field is `Mck8`"]
     #[inline(always)]
     pub fn is_mck_8(&self) -> bool {
-        *self == CLK_A::MCK_8
+        *self == CLK_A::Mck8
     }
-    #[doc = "Checks if the value of the field is `MCK_16`"]
+    #[doc = "Checks if the value of the field is `Mck16`"]
     #[inline(always)]
     pub fn is_mck_16(&self) -> bool {
-        *self == CLK_A::MCK_16
+        *self == CLK_A::Mck16
     }
-    #[doc = "Checks if the value of the field is `MCK_32`"]
+    #[doc = "Checks if the value of the field is `Mck32`"]
     #[inline(always)]
     pub fn is_mck_32(&self) -> bool {
-        *self == CLK_A::MCK_32
+        *self == CLK_A::Mck32
     }
-    #[doc = "Checks if the value of the field is `MCK_64`"]
+    #[doc = "Checks if the value of the field is `Mck64`"]
     #[inline(always)]
     pub fn is_mck_64(&self) -> bool {
-        *self == CLK_A::MCK_64
+        *self == CLK_A::Mck64
     }
 }
 #[doc = "Field `CLK` writer - MDC clock divider"]
@@ -126,22 +96,22 @@ impl<'a, const O: u8> CLK_W<'a, O> {
     #[doc = "MCK divided by 8 (MCK up to 20 MHz)."]
     #[inline(always)]
     pub fn mck_8(self) -> &'a mut W {
-        self.variant(CLK_A::MCK_8)
+        self.variant(CLK_A::Mck8)
     }
     #[doc = "MCK divided by 16 (MCK up to 40 MHz)."]
     #[inline(always)]
     pub fn mck_16(self) -> &'a mut W {
-        self.variant(CLK_A::MCK_16)
+        self.variant(CLK_A::Mck16)
     }
     #[doc = "MCK divided by 32 (MCK up to 80 MHz)."]
     #[inline(always)]
     pub fn mck_32(self) -> &'a mut W {
-        self.variant(CLK_A::MCK_32)
+        self.variant(CLK_A::Mck32)
     }
     #[doc = "MCK divided by 64 (MCK up to 160 MHz)."]
     #[inline(always)]
     pub fn mck_64(self) -> &'a mut W {
-        self.variant(CLK_A::MCK_64)
+        self.variant(CLK_A::Mck64)
     }
 }
 #[doc = "Field `RTY` reader - Retry test"]
@@ -155,17 +125,17 @@ pub type PAE_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCFGR_SPEC, bool, O>
 #[doc = "Field `RBOF` reader - Receive Buffer Offset"]
 pub type RBOF_R = crate::FieldReader<u8, RBOF_A>;
 #[doc = "Receive Buffer Offset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RBOF_A {
     #[doc = "0: No offset from start of receive buffer."]
-    OFFSET_0 = 0,
+    Offset0 = 0,
     #[doc = "1: One-byte offset from start of receive buffer."]
-    OFFSET_1 = 1,
+    Offset1 = 1,
     #[doc = "2: Two-byte offset from start of receive buffer."]
-    OFFSET_2 = 2,
+    Offset2 = 2,
     #[doc = "3: Three-byte offset from start of receive buffer."]
-    OFFSET_3 = 3,
+    Offset3 = 3,
 }
 impl From<RBOF_A> for u8 {
     #[inline(always)]
@@ -178,32 +148,32 @@ impl RBOF_R {
     #[inline(always)]
     pub fn variant(&self) -> RBOF_A {
         match self.bits {
-            0 => RBOF_A::OFFSET_0,
-            1 => RBOF_A::OFFSET_1,
-            2 => RBOF_A::OFFSET_2,
-            3 => RBOF_A::OFFSET_3,
+            0 => RBOF_A::Offset0,
+            1 => RBOF_A::Offset1,
+            2 => RBOF_A::Offset2,
+            3 => RBOF_A::Offset3,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `OFFSET_0`"]
+    #[doc = "Checks if the value of the field is `Offset0`"]
     #[inline(always)]
     pub fn is_offset_0(&self) -> bool {
-        *self == RBOF_A::OFFSET_0
+        *self == RBOF_A::Offset0
     }
-    #[doc = "Checks if the value of the field is `OFFSET_1`"]
+    #[doc = "Checks if the value of the field is `Offset1`"]
     #[inline(always)]
     pub fn is_offset_1(&self) -> bool {
-        *self == RBOF_A::OFFSET_1
+        *self == RBOF_A::Offset1
     }
-    #[doc = "Checks if the value of the field is `OFFSET_2`"]
+    #[doc = "Checks if the value of the field is `Offset2`"]
     #[inline(always)]
     pub fn is_offset_2(&self) -> bool {
-        *self == RBOF_A::OFFSET_2
+        *self == RBOF_A::Offset2
     }
-    #[doc = "Checks if the value of the field is `OFFSET_3`"]
+    #[doc = "Checks if the value of the field is `Offset3`"]
     #[inline(always)]
     pub fn is_offset_3(&self) -> bool {
-        *self == RBOF_A::OFFSET_3
+        *self == RBOF_A::Offset3
     }
 }
 #[doc = "Field `RBOF` writer - Receive Buffer Offset"]
@@ -212,22 +182,22 @@ impl<'a, const O: u8> RBOF_W<'a, O> {
     #[doc = "No offset from start of receive buffer."]
     #[inline(always)]
     pub fn offset_0(self) -> &'a mut W {
-        self.variant(RBOF_A::OFFSET_0)
+        self.variant(RBOF_A::Offset0)
     }
     #[doc = "One-byte offset from start of receive buffer."]
     #[inline(always)]
     pub fn offset_1(self) -> &'a mut W {
-        self.variant(RBOF_A::OFFSET_1)
+        self.variant(RBOF_A::Offset1)
     }
     #[doc = "Two-byte offset from start of receive buffer."]
     #[inline(always)]
     pub fn offset_2(self) -> &'a mut W {
-        self.variant(RBOF_A::OFFSET_2)
+        self.variant(RBOF_A::Offset2)
     }
     #[doc = "Three-byte offset from start of receive buffer."]
     #[inline(always)]
     pub fn offset_3(self) -> &'a mut W {
-        self.variant(RBOF_A::OFFSET_3)
+        self.variant(RBOF_A::Offset3)
     }
 }
 #[doc = "Field `RLCE` reader - Receive Length field Checking Enable"]
@@ -331,81 +301,97 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Speed"]
     #[inline(always)]
+    #[must_use]
     pub fn spd(&mut self) -> SPD_W<0> {
         SPD_W::new(self)
     }
     #[doc = "Bit 1 - Full Duplex"]
     #[inline(always)]
+    #[must_use]
     pub fn fd(&mut self) -> FD_W<1> {
         FD_W::new(self)
     }
     #[doc = "Bit 3 - Jumbo Frames"]
     #[inline(always)]
+    #[must_use]
     pub fn jframe(&mut self) -> JFRAME_W<3> {
         JFRAME_W::new(self)
     }
     #[doc = "Bit 4 - Copy All Frames"]
     #[inline(always)]
+    #[must_use]
     pub fn caf(&mut self) -> CAF_W<4> {
         CAF_W::new(self)
     }
     #[doc = "Bit 5 - No Broadcast"]
     #[inline(always)]
+    #[must_use]
     pub fn nbc(&mut self) -> NBC_W<5> {
         NBC_W::new(self)
     }
     #[doc = "Bit 6 - Multicast Hash Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn mti(&mut self) -> MTI_W<6> {
         MTI_W::new(self)
     }
     #[doc = "Bit 7 - Unicast Hash Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn uni(&mut self) -> UNI_W<7> {
         UNI_W::new(self)
     }
     #[doc = "Bit 8 - Receive 1536 bytes frames"]
     #[inline(always)]
+    #[must_use]
     pub fn big(&mut self) -> BIG_W<8> {
         BIG_W::new(self)
     }
     #[doc = "Bits 10:11 - MDC clock divider"]
     #[inline(always)]
+    #[must_use]
     pub fn clk(&mut self) -> CLK_W<10> {
         CLK_W::new(self)
     }
     #[doc = "Bit 12 - Retry test"]
     #[inline(always)]
+    #[must_use]
     pub fn rty(&mut self) -> RTY_W<12> {
         RTY_W::new(self)
     }
     #[doc = "Bit 13 - Pause Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pae(&mut self) -> PAE_W<13> {
         PAE_W::new(self)
     }
     #[doc = "Bits 14:15 - Receive Buffer Offset"]
     #[inline(always)]
+    #[must_use]
     pub fn rbof(&mut self) -> RBOF_W<14> {
         RBOF_W::new(self)
     }
     #[doc = "Bit 16 - Receive Length field Checking Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rlce(&mut self) -> RLCE_W<16> {
         RLCE_W::new(self)
     }
     #[doc = "Bit 17 - Discard Receive FCS"]
     #[inline(always)]
+    #[must_use]
     pub fn drfcs(&mut self) -> DRFCS_W<17> {
         DRFCS_W::new(self)
     }
     #[doc = "Bit 18"]
     #[inline(always)]
+    #[must_use]
     pub fn efrhd(&mut self) -> EFRHD_W<18> {
         EFRHD_W::new(self)
     }
     #[doc = "Bit 19 - Ignore RX FCS"]
     #[inline(always)]
+    #[must_use]
     pub fn irxfcs(&mut self) -> IRXFCS_W<19> {
         IRXFCS_W::new(self)
     }
@@ -428,11 +414,10 @@ impl crate::Readable for NCFGR_SPEC {
 #[doc = "`write(|w| ..)` method takes [ncfgr::W](W) writer structure"]
 impl crate::Writable for NCFGR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets NCFGR to value 0x0800"]
 impl crate::Resettable for NCFGR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0800
-    }
+    const RESET_VALUE: Self::Ux = 0x0800;
 }

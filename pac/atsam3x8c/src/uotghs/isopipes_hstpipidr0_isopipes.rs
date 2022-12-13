@@ -1,24 +1,6 @@
 #[doc = "Register `HSTPIPIDR0_ISOPIPES` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<ISOPIPES_HSTPIPIDR0_ISOPIPES_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ISOPIPES_HSTPIPIDR0_ISOPIPES_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ISOPIPES_HSTPIPIDR0_ISOPIPES_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ISOPIPES_HSTPIPIDR0_ISOPIPES_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `RXINEC` writer - Received IN Data Interrupt Disable"]
 pub type RXINEC_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, ISOPIPES_HSTPIPIDR0_ISOPIPES_SPEC, bool, O>;
@@ -58,61 +40,73 @@ pub type PFREEZEC_W<'a, const O: u8> =
 impl W {
     #[doc = "Bit 0 - Received IN Data Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn rxinec(&mut self) -> RXINEC_W<0> {
         RXINEC_W::new(self)
     }
     #[doc = "Bit 1 - Transmitted OUT Data Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn txoutec(&mut self) -> TXOUTEC_W<1> {
         TXOUTEC_W::new(self)
     }
     #[doc = "Bit 2 - Underflow Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn underfiec(&mut self) -> UNDERFIEC_W<2> {
         UNDERFIEC_W::new(self)
     }
     #[doc = "Bit 3 - Pipe Error Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn perrec(&mut self) -> PERREC_W<3> {
         PERREC_W::new(self)
     }
     #[doc = "Bit 4 - NAKed Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn nakedec(&mut self) -> NAKEDEC_W<4> {
         NAKEDEC_W::new(self)
     }
     #[doc = "Bit 5 - Overflow Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn overfiec(&mut self) -> OVERFIEC_W<5> {
         OVERFIEC_W::new(self)
     }
     #[doc = "Bit 6 - CRC Error Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn crcerrec(&mut self) -> CRCERREC_W<6> {
         CRCERREC_W::new(self)
     }
     #[doc = "Bit 7 - Short Packet Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn shortpacketiec(&mut self) -> SHORTPACKETIEC_W<7> {
         SHORTPACKETIEC_W::new(self)
     }
     #[doc = "Bit 12 - Number of Busy Banks Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn nbusybkec(&mut self) -> NBUSYBKEC_W<12> {
         NBUSYBKEC_W::new(self)
     }
     #[doc = "Bit 14 - FIFO Control Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn fifoconc(&mut self) -> FIFOCONC_W<14> {
         FIFOCONC_W::new(self)
     }
     #[doc = "Bit 16 - Pipe Interrupts Disable HDMA Request Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pdishdmac(&mut self) -> PDISHDMAC_W<16> {
         PDISHDMAC_W::new(self)
     }
     #[doc = "Bit 17 - Pipe Freeze Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pfreezec(&mut self) -> PFREEZEC_W<17> {
         PFREEZEC_W::new(self)
     }
@@ -131,4 +125,6 @@ impl crate::RegisterSpec for ISOPIPES_HSTPIPIDR0_ISOPIPES_SPEC {
 #[doc = "`write(|w| ..)` method takes [isopipes_hstpipidr0_isopipes::W](W) writer structure"]
 impl crate::Writable for ISOPIPES_HSTPIPIDR0_ISOPIPES_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

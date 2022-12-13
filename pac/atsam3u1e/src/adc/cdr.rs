@@ -1,18 +1,6 @@
 #[doc = "Register `CDR[%s]` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CDR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CDR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CDR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `DATA` reader - Converted Data"]
 pub type DATA_R = crate::FieldReader<u16, u16>;
 impl R {

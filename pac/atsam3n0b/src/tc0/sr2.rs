@@ -1,18 +1,6 @@
 #[doc = "Register `SR2` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<SR2_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SR2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SR2_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SR2_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `COVFS` reader - Counter Overflow Status (cleared on read)"]
 pub type COVFS_R = crate::BitReader<bool>;
 #[doc = "Field `LOVRS` reader - Load Overrun Status (cleared on read)"]
@@ -103,8 +91,5 @@ impl crate::Readable for SR2_SPEC {
 }
 #[doc = "`reset()` method sets SR2 to value 0"]
 impl crate::Resettable for SR2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

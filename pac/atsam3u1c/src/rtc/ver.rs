@@ -1,18 +1,6 @@
 #[doc = "Register `VER` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<VER_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<VER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<VER_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<VER_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `NVTIM` reader - Non-valid Time"]
 pub type NVTIM_R = crate::BitReader<bool>;
 #[doc = "Field `NVCAL` reader - Non-valid Calendar"]
@@ -54,8 +42,5 @@ impl crate::Readable for VER_SPEC {
 }
 #[doc = "`reset()` method sets VER to value 0"]
 impl crate::Resettable for VER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

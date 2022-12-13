@@ -1,18 +1,6 @@
 #[doc = "Register `FNUM` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<FNUM_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FNUM_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FNUM_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FNUM_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `MICRO_FRAME_NUM` reader - Microframe Number"]
 pub type MICRO_FRAME_NUM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FRAME_NUMBER` reader - Frame Number as defined in the Packet Field Formats"]
@@ -47,8 +35,5 @@ impl crate::Readable for FNUM_SPEC {
 }
 #[doc = "`reset()` method sets FNUM to value 0"]
 impl crate::Resettable for FNUM_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

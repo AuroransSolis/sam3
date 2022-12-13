@@ -1,48 +1,18 @@
 #[doc = "Register `GCFG` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<GCFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GCFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GCFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `GCFG` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<GCFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<GCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<GCFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<GCFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `ARB_CFG` reader - Arbiter Configuration"]
 pub type ARB_CFG_R = crate::BitReader<ARB_CFG_A>;
 #[doc = "Arbiter Configuration\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ARB_CFG_A {
     #[doc = "0: Fixed priority arbiter (see \"Basic Definitions\" )"]
-    FIXED = 0,
+    Fixed = 0,
     #[doc = "1: Modified round robin arbiter."]
-    ROUND_ROBIN = 1,
+    RoundRobin = 1,
 }
 impl From<ARB_CFG_A> for bool {
     #[inline(always)]
@@ -55,19 +25,19 @@ impl ARB_CFG_R {
     #[inline(always)]
     pub fn variant(&self) -> ARB_CFG_A {
         match self.bits {
-            false => ARB_CFG_A::FIXED,
-            true => ARB_CFG_A::ROUND_ROBIN,
+            false => ARB_CFG_A::Fixed,
+            true => ARB_CFG_A::RoundRobin,
         }
     }
-    #[doc = "Checks if the value of the field is `FIXED`"]
+    #[doc = "Checks if the value of the field is `Fixed`"]
     #[inline(always)]
     pub fn is_fixed(&self) -> bool {
-        *self == ARB_CFG_A::FIXED
+        *self == ARB_CFG_A::Fixed
     }
-    #[doc = "Checks if the value of the field is `ROUND_ROBIN`"]
+    #[doc = "Checks if the value of the field is `RoundRobin`"]
     #[inline(always)]
     pub fn is_round_robin(&self) -> bool {
-        *self == ARB_CFG_A::ROUND_ROBIN
+        *self == ARB_CFG_A::RoundRobin
     }
 }
 #[doc = "Field `ARB_CFG` writer - Arbiter Configuration"]
@@ -76,12 +46,12 @@ impl<'a, const O: u8> ARB_CFG_W<'a, O> {
     #[doc = "Fixed priority arbiter (see \"Basic Definitions\" )"]
     #[inline(always)]
     pub fn fixed(self) -> &'a mut W {
-        self.variant(ARB_CFG_A::FIXED)
+        self.variant(ARB_CFG_A::Fixed)
     }
     #[doc = "Modified round robin arbiter."]
     #[inline(always)]
     pub fn round_robin(self) -> &'a mut W {
-        self.variant(ARB_CFG_A::ROUND_ROBIN)
+        self.variant(ARB_CFG_A::RoundRobin)
     }
 }
 impl R {
@@ -94,6 +64,7 @@ impl R {
 impl W {
     #[doc = "Bit 4 - Arbiter Configuration"]
     #[inline(always)]
+    #[must_use]
     pub fn arb_cfg(&mut self) -> ARB_CFG_W<4> {
         ARB_CFG_W::new(self)
     }
@@ -116,11 +87,10 @@ impl crate::Readable for GCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [gcfg::W](W) writer structure"]
 impl crate::Writable for GCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GCFG to value 0x10"]
 impl crate::Resettable for GCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x10
-    }
+    const RESET_VALUE: Self::Ux = 0x10;
 }

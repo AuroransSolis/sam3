@@ -1,18 +1,6 @@
 #[doc = "Register `ECC_SR1` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<ECC_SR1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ECC_SR1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ECC_SR1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ECC_SR1_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `RECERR0` reader - Recoverable Error"]
 pub type RECERR0_R = crate::BitReader<bool>;
 #[doc = "Field `ECCERR0` reader - ECC Error"]
@@ -194,8 +182,5 @@ impl crate::Readable for ECC_SR1_SPEC {
 }
 #[doc = "`reset()` method sets ECC_SR1 to value 0"]
 impl crate::Resettable for ECC_SR1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

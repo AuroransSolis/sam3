@@ -1,39 +1,9 @@
 #[doc = "Register `CPRD3` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CPRD3_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CPRD3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CPRD3_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CPRD3_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CPRD3` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CPRD3_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CPRD3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CPRD3_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CPRD3_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `CPRD` reader - Channel Period"]
 pub type CPRD_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CPRD` writer - Channel Period"]
@@ -42,12 +12,13 @@ impl R {
     #[doc = "Bits 0:23 - Channel Period"]
     #[inline(always)]
     pub fn cprd(&self) -> CPRD_R {
-        CPRD_R::new((self.bits & 0x00ff_ffff) as u32)
+        CPRD_R::new(self.bits & 0x00ff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:23 - Channel Period"]
     #[inline(always)]
+    #[must_use]
     pub fn cprd(&mut self) -> CPRD_W<0> {
         CPRD_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for CPRD3_SPEC {
 #[doc = "`write(|w| ..)` method takes [cprd3::W](W) writer structure"]
 impl crate::Writable for CPRD3_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CPRD3 to value 0"]
 impl crate::Resettable for CPRD3_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

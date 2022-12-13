@@ -32,15 +32,13 @@ pub struct RegisterBlock {
 impl RegisterBlock {
     #[doc = "0x30 - Endpoint Control and Status Register"]
     #[inline(always)]
-    pub fn isoendpt_csr0_isoendpt(&self) -> &ISOENDPT_CSR0_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(48usize) as *const ISOENDPT_CSR0_ISOENDPT)
-        }
+    pub const fn isoendpt_csr0_isoendpt(&self) -> &ISOENDPT_CSR0_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(48usize).cast() }
     }
     #[doc = "0x30..0x50 - Endpoint Control and Status Register"]
     #[inline(always)]
-    pub fn csr(&self) -> &[CSR; 8] {
-        unsafe { &*(((self as *const Self) as *const u8).add(48usize) as *const [CSR; 8]) }
+    pub const fn csr(&self) -> &[CSR; 8] {
+        unsafe { &*(self as *const Self).cast::<u8>().add(48usize).cast() }
     }
 }
 #[doc = "FRM_NUM (r) register accessor: an alias for `Reg<FRM_NUM_SPEC>`"]

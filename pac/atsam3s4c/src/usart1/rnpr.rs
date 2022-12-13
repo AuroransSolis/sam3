@@ -1,39 +1,9 @@
 #[doc = "Register `RNPR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<RNPR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RNPR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RNPR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RNPR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `RNPR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<RNPR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RNPR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RNPR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RNPR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `RXNPTR` reader - Receive Next Pointer"]
 pub type RXNPTR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `RXNPTR` writer - Receive Next Pointer"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Receive Next Pointer"]
     #[inline(always)]
+    #[must_use]
     pub fn rxnptr(&mut self) -> RXNPTR_W<0> {
         RXNPTR_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for RNPR_SPEC {
 #[doc = "`write(|w| ..)` method takes [rnpr::W](W) writer structure"]
 impl crate::Writable for RNPR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RNPR to value 0"]
 impl crate::Resettable for RNPR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

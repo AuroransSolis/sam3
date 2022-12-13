@@ -1,39 +1,9 @@
 #[doc = "Register `HSTPIP` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<HSTPIP_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HSTPIP_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HSTPIP_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HSTPIP_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `HSTPIP` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<HSTPIP_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HSTPIP_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HSTPIP_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HSTPIP_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `PEN0` reader - Pipe 0 Enable"]
 pub type PEN0_R = crate::BitReader<bool>;
 #[doc = "Field `PEN0` writer - Pipe 0 Enable"]
@@ -201,91 +171,109 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Pipe 0 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pen0(&mut self) -> PEN0_W<0> {
         PEN0_W::new(self)
     }
     #[doc = "Bit 1 - Pipe 1 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pen1(&mut self) -> PEN1_W<1> {
         PEN1_W::new(self)
     }
     #[doc = "Bit 2 - Pipe 2 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pen2(&mut self) -> PEN2_W<2> {
         PEN2_W::new(self)
     }
     #[doc = "Bit 3 - Pipe 3 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pen3(&mut self) -> PEN3_W<3> {
         PEN3_W::new(self)
     }
     #[doc = "Bit 4 - Pipe 4 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pen4(&mut self) -> PEN4_W<4> {
         PEN4_W::new(self)
     }
     #[doc = "Bit 5 - Pipe 5 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pen5(&mut self) -> PEN5_W<5> {
         PEN5_W::new(self)
     }
     #[doc = "Bit 6 - Pipe 6 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pen6(&mut self) -> PEN6_W<6> {
         PEN6_W::new(self)
     }
     #[doc = "Bit 7 - Pipe 7 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pen7(&mut self) -> PEN7_W<7> {
         PEN7_W::new(self)
     }
     #[doc = "Bit 8 - Pipe 8 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pen8(&mut self) -> PEN8_W<8> {
         PEN8_W::new(self)
     }
     #[doc = "Bit 16 - Pipe 0 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn prst0(&mut self) -> PRST0_W<16> {
         PRST0_W::new(self)
     }
     #[doc = "Bit 17 - Pipe 1 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn prst1(&mut self) -> PRST1_W<17> {
         PRST1_W::new(self)
     }
     #[doc = "Bit 18 - Pipe 2 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn prst2(&mut self) -> PRST2_W<18> {
         PRST2_W::new(self)
     }
     #[doc = "Bit 19 - Pipe 3 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn prst3(&mut self) -> PRST3_W<19> {
         PRST3_W::new(self)
     }
     #[doc = "Bit 20 - Pipe 4 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn prst4(&mut self) -> PRST4_W<20> {
         PRST4_W::new(self)
     }
     #[doc = "Bit 21 - Pipe 5 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn prst5(&mut self) -> PRST5_W<21> {
         PRST5_W::new(self)
     }
     #[doc = "Bit 22 - Pipe 6 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn prst6(&mut self) -> PRST6_W<22> {
         PRST6_W::new(self)
     }
     #[doc = "Bit 23 - Pipe 7 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn prst7(&mut self) -> PRST7_W<23> {
         PRST7_W::new(self)
     }
     #[doc = "Bit 24 - Pipe 8 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn prst8(&mut self) -> PRST8_W<24> {
         PRST8_W::new(self)
     }
@@ -308,11 +296,10 @@ impl crate::Readable for HSTPIP_SPEC {
 #[doc = "`write(|w| ..)` method takes [hstpip::W](W) writer structure"]
 impl crate::Writable for HSTPIP_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HSTPIP to value 0"]
 impl crate::Resettable for HSTPIP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,24 +1,6 @@
 #[doc = "Register `CHDR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CHDR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CHDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CHDR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CHDR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `CH0` writer - Channel 0 Disable"]
 pub type CH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHDR_SPEC, bool, O>;
 #[doc = "Field `CH1` writer - Channel 1 Disable"]
@@ -26,11 +8,13 @@ pub type CH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHDR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Channel 0 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn ch0(&mut self) -> CH0_W<0> {
         CH0_W::new(self)
     }
     #[doc = "Bit 1 - Channel 1 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn ch1(&mut self) -> CH1_W<1> {
         CH1_W::new(self)
     }
@@ -49,4 +33,6 @@ impl crate::RegisterSpec for CHDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [chdr::W](W) writer structure"]
 impl crate::Writable for CHDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

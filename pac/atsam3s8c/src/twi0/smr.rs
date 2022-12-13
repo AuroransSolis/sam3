@@ -1,39 +1,9 @@
 #[doc = "Register `SMR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<SMR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SMR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SMR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `SMR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<SMR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SMR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SMR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `SADR` reader - Slave Address"]
 pub type SADR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SADR` writer - Slave Address"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 16:22 - Slave Address"]
     #[inline(always)]
+    #[must_use]
     pub fn sadr(&mut self) -> SADR_W<16> {
         SADR_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for SMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [smr::W](W) writer structure"]
 impl crate::Writable for SMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SMR to value 0"]
 impl crate::Resettable for SMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

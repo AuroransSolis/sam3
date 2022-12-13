@@ -1,39 +1,9 @@
 #[doc = "Register `STE` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<STE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<STE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<STE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<STE_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `STE` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<STE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<STE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<STE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<STE_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `SQER` reader - SQE test errors"]
 pub type SQER_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SQER` writer - SQE test errors"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - SQE test errors"]
     #[inline(always)]
+    #[must_use]
     pub fn sqer(&mut self) -> SQER_W<0> {
         SQER_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for STE_SPEC {
 #[doc = "`write(|w| ..)` method takes [ste::W](W) writer structure"]
 impl crate::Writable for STE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets STE to value 0"]
 impl crate::Resettable for STE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,18 +1,6 @@
 #[doc = "Register `LCDR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<LCDR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LCDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LCDR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LCDR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `LDATA` reader - Last Data Converted"]
 pub type LDATA_R = crate::FieldReader<u16, u16>;
 impl R {
@@ -33,8 +21,5 @@ impl crate::Readable for LCDR_SPEC {
 }
 #[doc = "`reset()` method sets LCDR to value 0"]
 impl crate::Resettable for LCDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

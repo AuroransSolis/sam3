@@ -1,53 +1,23 @@
 #[doc = "Register `CFG` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CFG` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `PAGESIZE` reader - Page Size of the NAND Flash Device"]
 pub type PAGESIZE_R = crate::FieldReader<u8, PAGESIZE_A>;
 #[doc = "Page Size of the NAND Flash Device\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PAGESIZE_A {
     #[doc = "0: Main area 512 Bytes"]
-    PS512 = 0,
+    Ps512 = 0,
     #[doc = "1: Main area 1024 Bytes"]
-    PS1024 = 1,
+    Ps1024 = 1,
     #[doc = "2: Main area 2048 Bytes"]
-    PS2048 = 2,
+    Ps2048 = 2,
     #[doc = "3: Main area 4096 Bytes"]
-    PS4096 = 3,
+    Ps4096 = 3,
 }
 impl From<PAGESIZE_A> for u8 {
     #[inline(always)]
@@ -60,32 +30,32 @@ impl PAGESIZE_R {
     #[inline(always)]
     pub fn variant(&self) -> PAGESIZE_A {
         match self.bits {
-            0 => PAGESIZE_A::PS512,
-            1 => PAGESIZE_A::PS1024,
-            2 => PAGESIZE_A::PS2048,
-            3 => PAGESIZE_A::PS4096,
+            0 => PAGESIZE_A::Ps512,
+            1 => PAGESIZE_A::Ps1024,
+            2 => PAGESIZE_A::Ps2048,
+            3 => PAGESIZE_A::Ps4096,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `PS512`"]
+    #[doc = "Checks if the value of the field is `Ps512`"]
     #[inline(always)]
     pub fn is_ps512(&self) -> bool {
-        *self == PAGESIZE_A::PS512
+        *self == PAGESIZE_A::Ps512
     }
-    #[doc = "Checks if the value of the field is `PS1024`"]
+    #[doc = "Checks if the value of the field is `Ps1024`"]
     #[inline(always)]
     pub fn is_ps1024(&self) -> bool {
-        *self == PAGESIZE_A::PS1024
+        *self == PAGESIZE_A::Ps1024
     }
-    #[doc = "Checks if the value of the field is `PS2048`"]
+    #[doc = "Checks if the value of the field is `Ps2048`"]
     #[inline(always)]
     pub fn is_ps2048(&self) -> bool {
-        *self == PAGESIZE_A::PS2048
+        *self == PAGESIZE_A::Ps2048
     }
-    #[doc = "Checks if the value of the field is `PS4096`"]
+    #[doc = "Checks if the value of the field is `Ps4096`"]
     #[inline(always)]
     pub fn is_ps4096(&self) -> bool {
-        *self == PAGESIZE_A::PS4096
+        *self == PAGESIZE_A::Ps4096
     }
 }
 #[doc = "Field `PAGESIZE` writer - Page Size of the NAND Flash Device"]
@@ -95,22 +65,22 @@ impl<'a, const O: u8> PAGESIZE_W<'a, O> {
     #[doc = "Main area 512 Bytes"]
     #[inline(always)]
     pub fn ps512(self) -> &'a mut W {
-        self.variant(PAGESIZE_A::PS512)
+        self.variant(PAGESIZE_A::Ps512)
     }
     #[doc = "Main area 1024 Bytes"]
     #[inline(always)]
     pub fn ps1024(self) -> &'a mut W {
-        self.variant(PAGESIZE_A::PS1024)
+        self.variant(PAGESIZE_A::Ps1024)
     }
     #[doc = "Main area 2048 Bytes"]
     #[inline(always)]
     pub fn ps2048(self) -> &'a mut W {
-        self.variant(PAGESIZE_A::PS2048)
+        self.variant(PAGESIZE_A::Ps2048)
     }
     #[doc = "Main area 4096 Bytes"]
     #[inline(always)]
     pub fn ps4096(self) -> &'a mut W {
-        self.variant(PAGESIZE_A::PS4096)
+        self.variant(PAGESIZE_A::Ps4096)
     }
 }
 #[doc = "Field `WSPARE` reader - Write Spare Area"]
@@ -136,7 +106,7 @@ pub type DTOCYC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, u
 #[doc = "Field `DTOMUL` reader - Data Timeout Multiplier"]
 pub type DTOMUL_R = crate::FieldReader<u8, DTOMUL_A>;
 #[doc = "Data Timeout Multiplier\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DTOMUL_A {
     #[doc = "0: DTOCYC"]
@@ -303,36 +273,43 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Page Size of the NAND Flash Device"]
     #[inline(always)]
+    #[must_use]
     pub fn pagesize(&mut self) -> PAGESIZE_W<0> {
         PAGESIZE_W::new(self)
     }
     #[doc = "Bit 8 - Write Spare Area"]
     #[inline(always)]
+    #[must_use]
     pub fn wspare(&mut self) -> WSPARE_W<8> {
         WSPARE_W::new(self)
     }
     #[doc = "Bit 9 - Read Spare Area"]
     #[inline(always)]
+    #[must_use]
     pub fn rspare(&mut self) -> RSPARE_W<9> {
         RSPARE_W::new(self)
     }
     #[doc = "Bit 12 - Rising/Falling Edge Detection Control"]
     #[inline(always)]
+    #[must_use]
     pub fn edgectrl(&mut self) -> EDGECTRL_W<12> {
         EDGECTRL_W::new(self)
     }
     #[doc = "Bit 13 - Ready/Busy Signal Edge Detection"]
     #[inline(always)]
+    #[must_use]
     pub fn rbedge(&mut self) -> RBEDGE_W<13> {
         RBEDGE_W::new(self)
     }
     #[doc = "Bits 16:19 - Data Timeout Cycle Number"]
     #[inline(always)]
+    #[must_use]
     pub fn dtocyc(&mut self) -> DTOCYC_W<16> {
         DTOCYC_W::new(self)
     }
     #[doc = "Bits 20:22 - Data Timeout Multiplier"]
     #[inline(always)]
+    #[must_use]
     pub fn dtomul(&mut self) -> DTOMUL_W<20> {
         DTOMUL_W::new(self)
     }
@@ -355,11 +332,10 @@ impl crate::Readable for CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg::W](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG to value 0"]
 impl crate::Resettable for CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

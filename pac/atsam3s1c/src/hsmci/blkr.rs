@@ -1,39 +1,9 @@
 #[doc = "Register `BLKR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<BLKR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<BLKR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<BLKR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<BLKR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `BLKR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<BLKR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<BLKR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<BLKR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<BLKR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `BCNT` reader - MMC/SDIO Block Count - SDIO Byte Count"]
 pub type BCNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `BCNT` writer - MMC/SDIO Block Count - SDIO Byte Count"]
@@ -57,11 +27,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - MMC/SDIO Block Count - SDIO Byte Count"]
     #[inline(always)]
+    #[must_use]
     pub fn bcnt(&mut self) -> BCNT_W<0> {
         BCNT_W::new(self)
     }
     #[doc = "Bits 16:31 - Data Block Length"]
     #[inline(always)]
+    #[must_use]
     pub fn blklen(&mut self) -> BLKLEN_W<16> {
         BLKLEN_W::new(self)
     }
@@ -84,11 +56,10 @@ impl crate::Readable for BLKR_SPEC {
 #[doc = "`write(|w| ..)` method takes [blkr::W](W) writer structure"]
 impl crate::Writable for BLKR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BLKR to value 0"]
 impl crate::Resettable for BLKR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

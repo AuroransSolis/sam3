@@ -1,27 +1,15 @@
 #[doc = "Register `SR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<SR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `WKUPS` reader - WKUP Wake Up Status"]
 pub type WKUPS_R = crate::BitReader<WKUPS_A>;
 #[doc = "WKUP Wake Up Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKUPS_A {
     #[doc = "0: no wake up due to the assertion of the WKUP pins has occurred since the last read of SUPC_SR."]
-    NO = 0,
+    No = 0,
     #[doc = "1: at least one wake up due to the assertion of the WKUP pins has occurred since the last read of SUPC_SR."]
-    PRESENT = 1,
+    Present = 1,
 }
 impl From<WKUPS_A> for bool {
     #[inline(always)]
@@ -34,30 +22,30 @@ impl WKUPS_R {
     #[inline(always)]
     pub fn variant(&self) -> WKUPS_A {
         match self.bits {
-            false => WKUPS_A::NO,
-            true => WKUPS_A::PRESENT,
+            false => WKUPS_A::No,
+            true => WKUPS_A::Present,
         }
     }
-    #[doc = "Checks if the value of the field is `NO`"]
+    #[doc = "Checks if the value of the field is `No`"]
     #[inline(always)]
     pub fn is_no(&self) -> bool {
-        *self == WKUPS_A::NO
+        *self == WKUPS_A::No
     }
-    #[doc = "Checks if the value of the field is `PRESENT`"]
+    #[doc = "Checks if the value of the field is `Present`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        *self == WKUPS_A::PRESENT
+        *self == WKUPS_A::Present
     }
 }
 #[doc = "Field `SMWS` reader - Supply Monitor Detection Wake Up Status"]
 pub type SMWS_R = crate::BitReader<SMWS_A>;
 #[doc = "Supply Monitor Detection Wake Up Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SMWS_A {
     #[doc = "0: no wake up due to a supply monitor detection has occurred since the last read of SUPC_SR."]
-    NO = 0,
+    No = 0,
     #[doc = "1: at least one wake up due to a supply monitor detection has occurred since the last read of SUPC_SR."]
-    PRESENT = 1,
+    Present = 1,
 }
 impl From<SMWS_A> for bool {
     #[inline(always)]
@@ -70,30 +58,30 @@ impl SMWS_R {
     #[inline(always)]
     pub fn variant(&self) -> SMWS_A {
         match self.bits {
-            false => SMWS_A::NO,
-            true => SMWS_A::PRESENT,
+            false => SMWS_A::No,
+            true => SMWS_A::Present,
         }
     }
-    #[doc = "Checks if the value of the field is `NO`"]
+    #[doc = "Checks if the value of the field is `No`"]
     #[inline(always)]
     pub fn is_no(&self) -> bool {
-        *self == SMWS_A::NO
+        *self == SMWS_A::No
     }
-    #[doc = "Checks if the value of the field is `PRESENT`"]
+    #[doc = "Checks if the value of the field is `Present`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        *self == SMWS_A::PRESENT
+        *self == SMWS_A::Present
     }
 }
 #[doc = "Field `BODRSTS` reader - Brownout Detector Reset Status"]
 pub type BODRSTS_R = crate::BitReader<BODRSTS_A>;
 #[doc = "Brownout Detector Reset Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BODRSTS_A {
     #[doc = "0: no core brownout rising edge event has been detected since the last read of the SUPC_SR."]
-    NO = 0,
+    No = 0,
     #[doc = "1: at least one brownout output rising edge event has been detected since the last read of the SUPC_SR."]
-    PRESENT = 1,
+    Present = 1,
 }
 impl From<BODRSTS_A> for bool {
     #[inline(always)]
@@ -106,30 +94,30 @@ impl BODRSTS_R {
     #[inline(always)]
     pub fn variant(&self) -> BODRSTS_A {
         match self.bits {
-            false => BODRSTS_A::NO,
-            true => BODRSTS_A::PRESENT,
+            false => BODRSTS_A::No,
+            true => BODRSTS_A::Present,
         }
     }
-    #[doc = "Checks if the value of the field is `NO`"]
+    #[doc = "Checks if the value of the field is `No`"]
     #[inline(always)]
     pub fn is_no(&self) -> bool {
-        *self == BODRSTS_A::NO
+        *self == BODRSTS_A::No
     }
-    #[doc = "Checks if the value of the field is `PRESENT`"]
+    #[doc = "Checks if the value of the field is `Present`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        *self == BODRSTS_A::PRESENT
+        *self == BODRSTS_A::Present
     }
 }
 #[doc = "Field `SMRSTS` reader - Supply Monitor Reset Status"]
 pub type SMRSTS_R = crate::BitReader<SMRSTS_A>;
 #[doc = "Supply Monitor Reset Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SMRSTS_A {
     #[doc = "0: no supply monitor detection has generated a core reset since the last read of the SUPC_SR."]
-    NO = 0,
+    No = 0,
     #[doc = "1: at least one supply monitor detection has generated a core reset since the last read of the SUPC_SR."]
-    PRESENT = 1,
+    Present = 1,
 }
 impl From<SMRSTS_A> for bool {
     #[inline(always)]
@@ -142,30 +130,30 @@ impl SMRSTS_R {
     #[inline(always)]
     pub fn variant(&self) -> SMRSTS_A {
         match self.bits {
-            false => SMRSTS_A::NO,
-            true => SMRSTS_A::PRESENT,
+            false => SMRSTS_A::No,
+            true => SMRSTS_A::Present,
         }
     }
-    #[doc = "Checks if the value of the field is `NO`"]
+    #[doc = "Checks if the value of the field is `No`"]
     #[inline(always)]
     pub fn is_no(&self) -> bool {
-        *self == SMRSTS_A::NO
+        *self == SMRSTS_A::No
     }
-    #[doc = "Checks if the value of the field is `PRESENT`"]
+    #[doc = "Checks if the value of the field is `Present`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        *self == SMRSTS_A::PRESENT
+        *self == SMRSTS_A::Present
     }
 }
 #[doc = "Field `SMS` reader - Supply Monitor Status"]
 pub type SMS_R = crate::BitReader<SMS_A>;
 #[doc = "Supply Monitor Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SMS_A {
     #[doc = "0: no supply monitor detection since the last read of SUPC_SR."]
-    NO = 0,
+    No = 0,
     #[doc = "1: at least one supply monitor detection since the last read of SUPC_SR."]
-    PRESENT = 1,
+    Present = 1,
 }
 impl From<SMS_A> for bool {
     #[inline(always)]
@@ -178,30 +166,30 @@ impl SMS_R {
     #[inline(always)]
     pub fn variant(&self) -> SMS_A {
         match self.bits {
-            false => SMS_A::NO,
-            true => SMS_A::PRESENT,
+            false => SMS_A::No,
+            true => SMS_A::Present,
         }
     }
-    #[doc = "Checks if the value of the field is `NO`"]
+    #[doc = "Checks if the value of the field is `No`"]
     #[inline(always)]
     pub fn is_no(&self) -> bool {
-        *self == SMS_A::NO
+        *self == SMS_A::No
     }
-    #[doc = "Checks if the value of the field is `PRESENT`"]
+    #[doc = "Checks if the value of the field is `Present`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        *self == SMS_A::PRESENT
+        *self == SMS_A::Present
     }
 }
 #[doc = "Field `SMOS` reader - Supply Monitor Output Status"]
 pub type SMOS_R = crate::BitReader<SMOS_A>;
 #[doc = "Supply Monitor Output Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SMOS_A {
     #[doc = "0: the supply monitor detected VDDIO higher than its threshold at its last measurement."]
-    HIGH = 0,
+    High = 0,
     #[doc = "1: the supply monitor detected VDDIO lower than its threshold at its last measurement."]
-    LOW = 1,
+    Low = 1,
 }
 impl From<SMOS_A> for bool {
     #[inline(always)]
@@ -214,30 +202,30 @@ impl SMOS_R {
     #[inline(always)]
     pub fn variant(&self) -> SMOS_A {
         match self.bits {
-            false => SMOS_A::HIGH,
-            true => SMOS_A::LOW,
+            false => SMOS_A::High,
+            true => SMOS_A::Low,
         }
     }
-    #[doc = "Checks if the value of the field is `HIGH`"]
+    #[doc = "Checks if the value of the field is `High`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == SMOS_A::HIGH
+        *self == SMOS_A::High
     }
-    #[doc = "Checks if the value of the field is `LOW`"]
+    #[doc = "Checks if the value of the field is `Low`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == SMOS_A::LOW
+        *self == SMOS_A::Low
     }
 }
 #[doc = "Field `OSCSEL` reader - 32-kHz Oscillator Selection Status"]
 pub type OSCSEL_R = crate::BitReader<OSCSEL_A>;
 #[doc = "32-kHz Oscillator Selection Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OSCSEL_A {
     #[doc = "0: the slow clock, SLCK is generated by the embedded 32-kHz RC oscillator."]
-    RC = 0,
+    Rc = 0,
     #[doc = "1: the slow clock, SLCK is generated by the 32-kHz crystal oscillator."]
-    CRYST = 1,
+    Cryst = 1,
 }
 impl From<OSCSEL_A> for bool {
     #[inline(always)]
@@ -250,30 +238,30 @@ impl OSCSEL_R {
     #[inline(always)]
     pub fn variant(&self) -> OSCSEL_A {
         match self.bits {
-            false => OSCSEL_A::RC,
-            true => OSCSEL_A::CRYST,
+            false => OSCSEL_A::Rc,
+            true => OSCSEL_A::Cryst,
         }
     }
-    #[doc = "Checks if the value of the field is `RC`"]
+    #[doc = "Checks if the value of the field is `Rc`"]
     #[inline(always)]
     pub fn is_rc(&self) -> bool {
-        *self == OSCSEL_A::RC
+        *self == OSCSEL_A::Rc
     }
-    #[doc = "Checks if the value of the field is `CRYST`"]
+    #[doc = "Checks if the value of the field is `Cryst`"]
     #[inline(always)]
     pub fn is_cryst(&self) -> bool {
-        *self == OSCSEL_A::CRYST
+        *self == OSCSEL_A::Cryst
     }
 }
 #[doc = "Field `WKUPIS0` reader - WKUP Input Status 0"]
 pub type WKUPIS0_R = crate::BitReader<WKUPIS0_A>;
 #[doc = "WKUP Input Status 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKUPIS0_A {
     #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
-    EN = 1,
+    En = 1,
 }
 impl From<WKUPIS0_A> for bool {
     #[inline(always)]
@@ -286,30 +274,30 @@ impl WKUPIS0_R {
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS0_A {
         match self.bits {
-            false => WKUPIS0_A::DIS,
-            true => WKUPIS0_A::EN,
+            false => WKUPIS0_A::Dis,
+            true => WKUPIS0_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == WKUPIS0_A::DIS
+        *self == WKUPIS0_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == WKUPIS0_A::EN
+        *self == WKUPIS0_A::En
     }
 }
 #[doc = "Field `WKUPIS1` reader - WKUP Input Status 1"]
 pub type WKUPIS1_R = crate::BitReader<WKUPIS1_A>;
 #[doc = "WKUP Input Status 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKUPIS1_A {
     #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
-    EN = 1,
+    En = 1,
 }
 impl From<WKUPIS1_A> for bool {
     #[inline(always)]
@@ -322,30 +310,30 @@ impl WKUPIS1_R {
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS1_A {
         match self.bits {
-            false => WKUPIS1_A::DIS,
-            true => WKUPIS1_A::EN,
+            false => WKUPIS1_A::Dis,
+            true => WKUPIS1_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == WKUPIS1_A::DIS
+        *self == WKUPIS1_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == WKUPIS1_A::EN
+        *self == WKUPIS1_A::En
     }
 }
 #[doc = "Field `WKUPIS2` reader - WKUP Input Status 2"]
 pub type WKUPIS2_R = crate::BitReader<WKUPIS2_A>;
 #[doc = "WKUP Input Status 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKUPIS2_A {
     #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
-    EN = 1,
+    En = 1,
 }
 impl From<WKUPIS2_A> for bool {
     #[inline(always)]
@@ -358,30 +346,30 @@ impl WKUPIS2_R {
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS2_A {
         match self.bits {
-            false => WKUPIS2_A::DIS,
-            true => WKUPIS2_A::EN,
+            false => WKUPIS2_A::Dis,
+            true => WKUPIS2_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == WKUPIS2_A::DIS
+        *self == WKUPIS2_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == WKUPIS2_A::EN
+        *self == WKUPIS2_A::En
     }
 }
 #[doc = "Field `WKUPIS3` reader - WKUP Input Status 3"]
 pub type WKUPIS3_R = crate::BitReader<WKUPIS3_A>;
 #[doc = "WKUP Input Status 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKUPIS3_A {
     #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
-    EN = 1,
+    En = 1,
 }
 impl From<WKUPIS3_A> for bool {
     #[inline(always)]
@@ -394,30 +382,30 @@ impl WKUPIS3_R {
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS3_A {
         match self.bits {
-            false => WKUPIS3_A::DIS,
-            true => WKUPIS3_A::EN,
+            false => WKUPIS3_A::Dis,
+            true => WKUPIS3_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == WKUPIS3_A::DIS
+        *self == WKUPIS3_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == WKUPIS3_A::EN
+        *self == WKUPIS3_A::En
     }
 }
 #[doc = "Field `WKUPIS4` reader - WKUP Input Status 4"]
 pub type WKUPIS4_R = crate::BitReader<WKUPIS4_A>;
 #[doc = "WKUP Input Status 4\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKUPIS4_A {
     #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
-    EN = 1,
+    En = 1,
 }
 impl From<WKUPIS4_A> for bool {
     #[inline(always)]
@@ -430,30 +418,30 @@ impl WKUPIS4_R {
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS4_A {
         match self.bits {
-            false => WKUPIS4_A::DIS,
-            true => WKUPIS4_A::EN,
+            false => WKUPIS4_A::Dis,
+            true => WKUPIS4_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == WKUPIS4_A::DIS
+        *self == WKUPIS4_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == WKUPIS4_A::EN
+        *self == WKUPIS4_A::En
     }
 }
 #[doc = "Field `WKUPIS5` reader - WKUP Input Status 5"]
 pub type WKUPIS5_R = crate::BitReader<WKUPIS5_A>;
 #[doc = "WKUP Input Status 5\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKUPIS5_A {
     #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
-    EN = 1,
+    En = 1,
 }
 impl From<WKUPIS5_A> for bool {
     #[inline(always)]
@@ -466,30 +454,30 @@ impl WKUPIS5_R {
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS5_A {
         match self.bits {
-            false => WKUPIS5_A::DIS,
-            true => WKUPIS5_A::EN,
+            false => WKUPIS5_A::Dis,
+            true => WKUPIS5_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == WKUPIS5_A::DIS
+        *self == WKUPIS5_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == WKUPIS5_A::EN
+        *self == WKUPIS5_A::En
     }
 }
 #[doc = "Field `WKUPIS6` reader - WKUP Input Status 6"]
 pub type WKUPIS6_R = crate::BitReader<WKUPIS6_A>;
 #[doc = "WKUP Input Status 6\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKUPIS6_A {
     #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
-    EN = 1,
+    En = 1,
 }
 impl From<WKUPIS6_A> for bool {
     #[inline(always)]
@@ -502,30 +490,30 @@ impl WKUPIS6_R {
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS6_A {
         match self.bits {
-            false => WKUPIS6_A::DIS,
-            true => WKUPIS6_A::EN,
+            false => WKUPIS6_A::Dis,
+            true => WKUPIS6_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == WKUPIS6_A::DIS
+        *self == WKUPIS6_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == WKUPIS6_A::EN
+        *self == WKUPIS6_A::En
     }
 }
 #[doc = "Field `WKUPIS7` reader - WKUP Input Status 7"]
 pub type WKUPIS7_R = crate::BitReader<WKUPIS7_A>;
 #[doc = "WKUP Input Status 7\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKUPIS7_A {
     #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
-    EN = 1,
+    En = 1,
 }
 impl From<WKUPIS7_A> for bool {
     #[inline(always)]
@@ -538,30 +526,30 @@ impl WKUPIS7_R {
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS7_A {
         match self.bits {
-            false => WKUPIS7_A::DIS,
-            true => WKUPIS7_A::EN,
+            false => WKUPIS7_A::Dis,
+            true => WKUPIS7_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == WKUPIS7_A::DIS
+        *self == WKUPIS7_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == WKUPIS7_A::EN
+        *self == WKUPIS7_A::En
     }
 }
 #[doc = "Field `WKUPIS8` reader - WKUP Input Status 8"]
 pub type WKUPIS8_R = crate::BitReader<WKUPIS8_A>;
 #[doc = "WKUP Input Status 8\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKUPIS8_A {
     #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
-    EN = 1,
+    En = 1,
 }
 impl From<WKUPIS8_A> for bool {
     #[inline(always)]
@@ -574,30 +562,30 @@ impl WKUPIS8_R {
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS8_A {
         match self.bits {
-            false => WKUPIS8_A::DIS,
-            true => WKUPIS8_A::EN,
+            false => WKUPIS8_A::Dis,
+            true => WKUPIS8_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == WKUPIS8_A::DIS
+        *self == WKUPIS8_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == WKUPIS8_A::EN
+        *self == WKUPIS8_A::En
     }
 }
 #[doc = "Field `WKUPIS9` reader - WKUP Input Status 9"]
 pub type WKUPIS9_R = crate::BitReader<WKUPIS9_A>;
 #[doc = "WKUP Input Status 9\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKUPIS9_A {
     #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
-    EN = 1,
+    En = 1,
 }
 impl From<WKUPIS9_A> for bool {
     #[inline(always)]
@@ -610,30 +598,30 @@ impl WKUPIS9_R {
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS9_A {
         match self.bits {
-            false => WKUPIS9_A::DIS,
-            true => WKUPIS9_A::EN,
+            false => WKUPIS9_A::Dis,
+            true => WKUPIS9_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == WKUPIS9_A::DIS
+        *self == WKUPIS9_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == WKUPIS9_A::EN
+        *self == WKUPIS9_A::En
     }
 }
 #[doc = "Field `WKUPIS10` reader - WKUP Input Status 10"]
 pub type WKUPIS10_R = crate::BitReader<WKUPIS10_A>;
 #[doc = "WKUP Input Status 10\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKUPIS10_A {
     #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
-    EN = 1,
+    En = 1,
 }
 impl From<WKUPIS10_A> for bool {
     #[inline(always)]
@@ -646,30 +634,30 @@ impl WKUPIS10_R {
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS10_A {
         match self.bits {
-            false => WKUPIS10_A::DIS,
-            true => WKUPIS10_A::EN,
+            false => WKUPIS10_A::Dis,
+            true => WKUPIS10_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == WKUPIS10_A::DIS
+        *self == WKUPIS10_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == WKUPIS10_A::EN
+        *self == WKUPIS10_A::En
     }
 }
 #[doc = "Field `WKUPIS11` reader - WKUP Input Status 11"]
 pub type WKUPIS11_R = crate::BitReader<WKUPIS11_A>;
 #[doc = "WKUP Input Status 11\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKUPIS11_A {
     #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
-    EN = 1,
+    En = 1,
 }
 impl From<WKUPIS11_A> for bool {
     #[inline(always)]
@@ -682,30 +670,30 @@ impl WKUPIS11_R {
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS11_A {
         match self.bits {
-            false => WKUPIS11_A::DIS,
-            true => WKUPIS11_A::EN,
+            false => WKUPIS11_A::Dis,
+            true => WKUPIS11_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == WKUPIS11_A::DIS
+        *self == WKUPIS11_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == WKUPIS11_A::EN
+        *self == WKUPIS11_A::En
     }
 }
 #[doc = "Field `WKUPIS12` reader - WKUP Input Status 12"]
 pub type WKUPIS12_R = crate::BitReader<WKUPIS12_A>;
 #[doc = "WKUP Input Status 12\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKUPIS12_A {
     #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
-    EN = 1,
+    En = 1,
 }
 impl From<WKUPIS12_A> for bool {
     #[inline(always)]
@@ -718,30 +706,30 @@ impl WKUPIS12_R {
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS12_A {
         match self.bits {
-            false => WKUPIS12_A::DIS,
-            true => WKUPIS12_A::EN,
+            false => WKUPIS12_A::Dis,
+            true => WKUPIS12_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == WKUPIS12_A::DIS
+        *self == WKUPIS12_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == WKUPIS12_A::EN
+        *self == WKUPIS12_A::En
     }
 }
 #[doc = "Field `WKUPIS13` reader - WKUP Input Status 13"]
 pub type WKUPIS13_R = crate::BitReader<WKUPIS13_A>;
 #[doc = "WKUP Input Status 13\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKUPIS13_A {
     #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
-    EN = 1,
+    En = 1,
 }
 impl From<WKUPIS13_A> for bool {
     #[inline(always)]
@@ -754,30 +742,30 @@ impl WKUPIS13_R {
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS13_A {
         match self.bits {
-            false => WKUPIS13_A::DIS,
-            true => WKUPIS13_A::EN,
+            false => WKUPIS13_A::Dis,
+            true => WKUPIS13_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == WKUPIS13_A::DIS
+        *self == WKUPIS13_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == WKUPIS13_A::EN
+        *self == WKUPIS13_A::En
     }
 }
 #[doc = "Field `WKUPIS14` reader - WKUP Input Status 14"]
 pub type WKUPIS14_R = crate::BitReader<WKUPIS14_A>;
 #[doc = "WKUP Input Status 14\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKUPIS14_A {
     #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
-    EN = 1,
+    En = 1,
 }
 impl From<WKUPIS14_A> for bool {
     #[inline(always)]
@@ -790,30 +778,30 @@ impl WKUPIS14_R {
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS14_A {
         match self.bits {
-            false => WKUPIS14_A::DIS,
-            true => WKUPIS14_A::EN,
+            false => WKUPIS14_A::Dis,
+            true => WKUPIS14_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == WKUPIS14_A::DIS
+        *self == WKUPIS14_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == WKUPIS14_A::EN
+        *self == WKUPIS14_A::En
     }
 }
 #[doc = "Field `WKUPIS15` reader - WKUP Input Status 15"]
 pub type WKUPIS15_R = crate::BitReader<WKUPIS15_A>;
 #[doc = "WKUP Input Status 15\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKUPIS15_A {
     #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
-    EN = 1,
+    En = 1,
 }
 impl From<WKUPIS15_A> for bool {
     #[inline(always)]
@@ -826,19 +814,19 @@ impl WKUPIS15_R {
     #[inline(always)]
     pub fn variant(&self) -> WKUPIS15_A {
         match self.bits {
-            false => WKUPIS15_A::DIS,
-            true => WKUPIS15_A::EN,
+            false => WKUPIS15_A::Dis,
+            true => WKUPIS15_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == WKUPIS15_A::DIS
+        *self == WKUPIS15_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == WKUPIS15_A::EN
+        *self == WKUPIS15_A::En
     }
 }
 impl R {
@@ -969,8 +957,5 @@ impl crate::Readable for SR_SPEC {
 }
 #[doc = "`reset()` method sets SR to value 0x0800"]
 impl crate::Resettable for SR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0800
-    }
+    const RESET_VALUE: Self::Ux = 0x0800;
 }

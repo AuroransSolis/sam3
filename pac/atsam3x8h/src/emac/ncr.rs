@@ -1,39 +1,9 @@
 #[doc = "Register `NCR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<NCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<NCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<NCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<NCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `NCR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<NCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<NCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<NCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<NCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `LB` reader - LoopBack"]
 pub type LB_R = crate::BitReader<bool>;
 #[doc = "Field `LB` writer - LoopBack"]
@@ -138,56 +108,67 @@ impl R {
 impl W {
     #[doc = "Bit 0 - LoopBack"]
     #[inline(always)]
+    #[must_use]
     pub fn lb(&mut self) -> LB_W<0> {
         LB_W::new(self)
     }
     #[doc = "Bit 1 - Loopback local"]
     #[inline(always)]
+    #[must_use]
     pub fn llb(&mut self) -> LLB_W<1> {
         LLB_W::new(self)
     }
     #[doc = "Bit 2 - Receive enable"]
     #[inline(always)]
+    #[must_use]
     pub fn re(&mut self) -> RE_W<2> {
         RE_W::new(self)
     }
     #[doc = "Bit 3 - Transmit enable"]
     #[inline(always)]
+    #[must_use]
     pub fn te(&mut self) -> TE_W<3> {
         TE_W::new(self)
     }
     #[doc = "Bit 4 - Management port enable"]
     #[inline(always)]
+    #[must_use]
     pub fn mpe(&mut self) -> MPE_W<4> {
         MPE_W::new(self)
     }
     #[doc = "Bit 5 - Clear statistics registers"]
     #[inline(always)]
+    #[must_use]
     pub fn clrstat(&mut self) -> CLRSTAT_W<5> {
         CLRSTAT_W::new(self)
     }
     #[doc = "Bit 6 - Increment statistics registers"]
     #[inline(always)]
+    #[must_use]
     pub fn incstat(&mut self) -> INCSTAT_W<6> {
         INCSTAT_W::new(self)
     }
     #[doc = "Bit 7 - Write enable for statistics registers"]
     #[inline(always)]
+    #[must_use]
     pub fn westat(&mut self) -> WESTAT_W<7> {
         WESTAT_W::new(self)
     }
     #[doc = "Bit 8 - Back pressure"]
     #[inline(always)]
+    #[must_use]
     pub fn bp(&mut self) -> BP_W<8> {
         BP_W::new(self)
     }
     #[doc = "Bit 9 - Start transmission"]
     #[inline(always)]
+    #[must_use]
     pub fn tstart(&mut self) -> TSTART_W<9> {
         TSTART_W::new(self)
     }
     #[doc = "Bit 10 - Transmit halt"]
     #[inline(always)]
+    #[must_use]
     pub fn thalt(&mut self) -> THALT_W<10> {
         THALT_W::new(self)
     }
@@ -210,11 +191,10 @@ impl crate::Readable for NCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [ncr::W](W) writer structure"]
 impl crate::Writable for NCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets NCR to value 0"]
 impl crate::Resettable for NCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

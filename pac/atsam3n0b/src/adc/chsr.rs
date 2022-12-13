@@ -1,18 +1,6 @@
 #[doc = "Register `CHSR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CHSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CHSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CHSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CHSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `CH0` reader - Channel 0 Status"]
 pub type CH0_R = crate::BitReader<bool>;
 #[doc = "Field `CH1` reader - Channel 1 Status"]
@@ -138,8 +126,5 @@ impl crate::Readable for CHSR_SPEC {
 }
 #[doc = "`reset()` method sets CHSR to value 0"]
 impl crate::Resettable for CHSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

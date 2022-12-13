@@ -1,39 +1,9 @@
 #[doc = "Register `IEN` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<IEN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<IEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<IEN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<IEN_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `IEN` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<IEN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IEN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IEN_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `DET_SUSPD` reader - Suspend Interrupt Enable"]
 pub type DET_SUSPD_R = crate::BitReader<bool>;
 #[doc = "Field `DET_SUSPD` writer - Suspend Interrupt Enable"]
@@ -219,101 +189,121 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Suspend Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn det_suspd(&mut self) -> DET_SUSPD_W<1> {
         DET_SUSPD_W::new(self)
     }
     #[doc = "Bit 2 - Micro-SOF Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn micro_sof(&mut self) -> MICRO_SOF_W<2> {
         MICRO_SOF_W::new(self)
     }
     #[doc = "Bit 3 - SOF Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn int_sof(&mut self) -> INT_SOF_W<3> {
         INT_SOF_W::new(self)
     }
     #[doc = "Bit 4 - End Of Reset Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn endreset(&mut self) -> ENDRESET_W<4> {
         ENDRESET_W::new(self)
     }
     #[doc = "Bit 5 - Wake Up CPU Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn wake_up(&mut self) -> WAKE_UP_W<5> {
         WAKE_UP_W::new(self)
     }
     #[doc = "Bit 6 - End Of Resume Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn endofrsm(&mut self) -> ENDOFRSM_W<6> {
         ENDOFRSM_W::new(self)
     }
     #[doc = "Bit 7 - Upstream Resume Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn upstr_res(&mut self) -> UPSTR_RES_W<7> {
         UPSTR_RES_W::new(self)
     }
     #[doc = "Bit 8 - Endpoint 0 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ept_0(&mut self) -> EPT_0_W<8> {
         EPT_0_W::new(self)
     }
     #[doc = "Bit 9 - Endpoint 1 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ept_1(&mut self) -> EPT_1_W<9> {
         EPT_1_W::new(self)
     }
     #[doc = "Bit 10 - Endpoint 2 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ept_2(&mut self) -> EPT_2_W<10> {
         EPT_2_W::new(self)
     }
     #[doc = "Bit 11 - Endpoint 3 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ept_3(&mut self) -> EPT_3_W<11> {
         EPT_3_W::new(self)
     }
     #[doc = "Bit 12 - Endpoint 4 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ept_4(&mut self) -> EPT_4_W<12> {
         EPT_4_W::new(self)
     }
     #[doc = "Bit 13 - Endpoint 5 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ept_5(&mut self) -> EPT_5_W<13> {
         EPT_5_W::new(self)
     }
     #[doc = "Bit 14 - Endpoint 6 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ept_6(&mut self) -> EPT_6_W<14> {
         EPT_6_W::new(self)
     }
     #[doc = "Bit 25 - DMA Channel 1 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_1(&mut self) -> DMA_1_W<25> {
         DMA_1_W::new(self)
     }
     #[doc = "Bit 26 - DMA Channel 2 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_2(&mut self) -> DMA_2_W<26> {
         DMA_2_W::new(self)
     }
     #[doc = "Bit 27 - DMA Channel 3 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_3(&mut self) -> DMA_3_W<27> {
         DMA_3_W::new(self)
     }
     #[doc = "Bit 28 - DMA Channel 4 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_4(&mut self) -> DMA_4_W<28> {
         DMA_4_W::new(self)
     }
     #[doc = "Bit 29 - DMA Channel 5 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_5(&mut self) -> DMA_5_W<29> {
         DMA_5_W::new(self)
     }
     #[doc = "Bit 30 - DMA Channel 6 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_6(&mut self) -> DMA_6_W<30> {
         DMA_6_W::new(self)
     }
@@ -336,11 +326,10 @@ impl crate::Readable for IEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [ien::W](W) writer structure"]
 impl crate::Writable for IEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IEN to value 0x10"]
 impl crate::Resettable for IEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x10
-    }
+    const RESET_VALUE: Self::Ux = 0x10;
 }

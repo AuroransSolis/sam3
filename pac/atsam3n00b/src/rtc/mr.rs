@@ -1,39 +1,9 @@
 #[doc = "Register `MR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<MR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `HRMOD` reader - 12-/24-hour Mode"]
 pub type HRMOD_R = crate::BitReader<bool>;
 #[doc = "Field `HRMOD` writer - 12-/24-hour Mode"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - 12-/24-hour Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn hrmod(&mut self) -> HRMOD_W<0> {
         HRMOD_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for MR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
 impl crate::Writable for MR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MR to value 0"]
 impl crate::Resettable for MR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

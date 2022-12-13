@@ -80,42 +80,33 @@ pub struct RegisterBlock {
 impl RegisterBlock {
     #[doc = "0x04 - Channel Mode Register (channel = 0)"]
     #[inline(always)]
-    pub fn waveform_mode_cmr0_waveform_mode(&self) -> &WAVEFORM_MODE_CMR0_WAVEFORM_MODE {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(4usize)
-                as *const WAVEFORM_MODE_CMR0_WAVEFORM_MODE)
-        }
+    pub const fn waveform_mode_cmr0_waveform_mode(&self) -> &WAVEFORM_MODE_CMR0_WAVEFORM_MODE {
+        unsafe { &*(self as *const Self).cast::<u8>().add(4usize).cast() }
     }
     #[doc = "0x04 - Channel Mode Register (channel = 0)"]
     #[inline(always)]
-    pub fn cmr0(&self) -> &CMR0 {
-        unsafe { &*(((self as *const Self) as *const u8).add(4usize) as *const CMR0) }
+    pub const fn cmr0(&self) -> &CMR0 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(4usize).cast() }
     }
     #[doc = "0x44 - Channel Mode Register (channel = 1)"]
     #[inline(always)]
-    pub fn waveform_mode_cmr1_waveform_mode(&self) -> &WAVEFORM_MODE_CMR1_WAVEFORM_MODE {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(68usize)
-                as *const WAVEFORM_MODE_CMR1_WAVEFORM_MODE)
-        }
+    pub const fn waveform_mode_cmr1_waveform_mode(&self) -> &WAVEFORM_MODE_CMR1_WAVEFORM_MODE {
+        unsafe { &*(self as *const Self).cast::<u8>().add(68usize).cast() }
     }
     #[doc = "0x44 - Channel Mode Register (channel = 1)"]
     #[inline(always)]
-    pub fn cmr1(&self) -> &CMR1 {
-        unsafe { &*(((self as *const Self) as *const u8).add(68usize) as *const CMR1) }
+    pub const fn cmr1(&self) -> &CMR1 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(68usize).cast() }
     }
     #[doc = "0x84 - Channel Mode Register (channel = 2)"]
     #[inline(always)]
-    pub fn waveform_mode_cmr2_waveform_mode(&self) -> &WAVEFORM_MODE_CMR2_WAVEFORM_MODE {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(132usize)
-                as *const WAVEFORM_MODE_CMR2_WAVEFORM_MODE)
-        }
+    pub const fn waveform_mode_cmr2_waveform_mode(&self) -> &WAVEFORM_MODE_CMR2_WAVEFORM_MODE {
+        unsafe { &*(self as *const Self).cast::<u8>().add(132usize).cast() }
     }
     #[doc = "0x84 - Channel Mode Register (channel = 2)"]
     #[inline(always)]
-    pub fn cmr2(&self) -> &CMR2 {
-        unsafe { &*(((self as *const Self) as *const u8).add(132usize) as *const CMR2) }
+    pub const fn cmr2(&self) -> &CMR2 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(132usize).cast() }
     }
 }
 #[doc = "CCR0 (w) register accessor: an alias for `Reg<CCR0_SPEC>`"]

@@ -1,48 +1,18 @@
 #[doc = "Register `ACR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<ACR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ACR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ACR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ACR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `ACR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<ACR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ACR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ACR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ACR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `ISEL` reader - Current SELection"]
 pub type ISEL_R = crate::BitReader<ISEL_A>;
 #[doc = "Current SELection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ISEL_A {
     #[doc = "0: low power option."]
-    LOPW = 0,
+    Lopw = 0,
     #[doc = "1: high speed option."]
-    HISP = 1,
+    Hisp = 1,
 }
 impl From<ISEL_A> for bool {
     #[inline(always)]
@@ -55,19 +25,19 @@ impl ISEL_R {
     #[inline(always)]
     pub fn variant(&self) -> ISEL_A {
         match self.bits {
-            false => ISEL_A::LOPW,
-            true => ISEL_A::HISP,
+            false => ISEL_A::Lopw,
+            true => ISEL_A::Hisp,
         }
     }
-    #[doc = "Checks if the value of the field is `LOPW`"]
+    #[doc = "Checks if the value of the field is `Lopw`"]
     #[inline(always)]
     pub fn is_lopw(&self) -> bool {
-        *self == ISEL_A::LOPW
+        *self == ISEL_A::Lopw
     }
-    #[doc = "Checks if the value of the field is `HISP`"]
+    #[doc = "Checks if the value of the field is `Hisp`"]
     #[inline(always)]
     pub fn is_hisp(&self) -> bool {
-        *self == ISEL_A::HISP
+        *self == ISEL_A::Hisp
     }
 }
 #[doc = "Field `ISEL` writer - Current SELection"]
@@ -76,12 +46,12 @@ impl<'a, const O: u8> ISEL_W<'a, O> {
     #[doc = "low power option."]
     #[inline(always)]
     pub fn lopw(self) -> &'a mut W {
-        self.variant(ISEL_A::LOPW)
+        self.variant(ISEL_A::Lopw)
     }
     #[doc = "high speed option."]
     #[inline(always)]
     pub fn hisp(self) -> &'a mut W {
-        self.variant(ISEL_A::HISP)
+        self.variant(ISEL_A::Hisp)
     }
 }
 #[doc = "Field `HYST` reader - HYSTeresis selection"]
@@ -103,11 +73,13 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Current SELection"]
     #[inline(always)]
+    #[must_use]
     pub fn isel(&mut self) -> ISEL_W<0> {
         ISEL_W::new(self)
     }
     #[doc = "Bits 1:2 - HYSTeresis selection"]
     #[inline(always)]
+    #[must_use]
     pub fn hyst(&mut self) -> HYST_W<1> {
         HYST_W::new(self)
     }
@@ -130,11 +102,10 @@ impl crate::Readable for ACR_SPEC {
 #[doc = "`write(|w| ..)` method takes [acr::W](W) writer structure"]
 impl crate::Writable for ACR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ACR to value 0"]
 impl crate::Resettable for ACR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

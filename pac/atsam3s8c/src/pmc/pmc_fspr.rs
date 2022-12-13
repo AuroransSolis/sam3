@@ -1,39 +1,9 @@
 #[doc = "Register `PMC_FSPR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<PMC_FSPR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PMC_FSPR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PMC_FSPR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PMC_FSPR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `PMC_FSPR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<PMC_FSPR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PMC_FSPR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PMC_FSPR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PMC_FSPR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `FSTP0` reader - Fast Startup Input Polarityx"]
 pub type FSTP0_R = crate::BitReader<bool>;
 #[doc = "Field `FSTP0` writer - Fast Startup Input Polarityx"]
@@ -183,81 +153,97 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Fast Startup Input Polarityx"]
     #[inline(always)]
+    #[must_use]
     pub fn fstp0(&mut self) -> FSTP0_W<0> {
         FSTP0_W::new(self)
     }
     #[doc = "Bit 1 - Fast Startup Input Polarityx"]
     #[inline(always)]
+    #[must_use]
     pub fn fstp1(&mut self) -> FSTP1_W<1> {
         FSTP1_W::new(self)
     }
     #[doc = "Bit 2 - Fast Startup Input Polarityx"]
     #[inline(always)]
+    #[must_use]
     pub fn fstp2(&mut self) -> FSTP2_W<2> {
         FSTP2_W::new(self)
     }
     #[doc = "Bit 3 - Fast Startup Input Polarityx"]
     #[inline(always)]
+    #[must_use]
     pub fn fstp3(&mut self) -> FSTP3_W<3> {
         FSTP3_W::new(self)
     }
     #[doc = "Bit 4 - Fast Startup Input Polarityx"]
     #[inline(always)]
+    #[must_use]
     pub fn fstp4(&mut self) -> FSTP4_W<4> {
         FSTP4_W::new(self)
     }
     #[doc = "Bit 5 - Fast Startup Input Polarityx"]
     #[inline(always)]
+    #[must_use]
     pub fn fstp5(&mut self) -> FSTP5_W<5> {
         FSTP5_W::new(self)
     }
     #[doc = "Bit 6 - Fast Startup Input Polarityx"]
     #[inline(always)]
+    #[must_use]
     pub fn fstp6(&mut self) -> FSTP6_W<6> {
         FSTP6_W::new(self)
     }
     #[doc = "Bit 7 - Fast Startup Input Polarityx"]
     #[inline(always)]
+    #[must_use]
     pub fn fstp7(&mut self) -> FSTP7_W<7> {
         FSTP7_W::new(self)
     }
     #[doc = "Bit 8 - Fast Startup Input Polarityx"]
     #[inline(always)]
+    #[must_use]
     pub fn fstp8(&mut self) -> FSTP8_W<8> {
         FSTP8_W::new(self)
     }
     #[doc = "Bit 9 - Fast Startup Input Polarityx"]
     #[inline(always)]
+    #[must_use]
     pub fn fstp9(&mut self) -> FSTP9_W<9> {
         FSTP9_W::new(self)
     }
     #[doc = "Bit 10 - Fast Startup Input Polarityx"]
     #[inline(always)]
+    #[must_use]
     pub fn fstp10(&mut self) -> FSTP10_W<10> {
         FSTP10_W::new(self)
     }
     #[doc = "Bit 11 - Fast Startup Input Polarityx"]
     #[inline(always)]
+    #[must_use]
     pub fn fstp11(&mut self) -> FSTP11_W<11> {
         FSTP11_W::new(self)
     }
     #[doc = "Bit 12 - Fast Startup Input Polarityx"]
     #[inline(always)]
+    #[must_use]
     pub fn fstp12(&mut self) -> FSTP12_W<12> {
         FSTP12_W::new(self)
     }
     #[doc = "Bit 13 - Fast Startup Input Polarityx"]
     #[inline(always)]
+    #[must_use]
     pub fn fstp13(&mut self) -> FSTP13_W<13> {
         FSTP13_W::new(self)
     }
     #[doc = "Bit 14 - Fast Startup Input Polarityx"]
     #[inline(always)]
+    #[must_use]
     pub fn fstp14(&mut self) -> FSTP14_W<14> {
         FSTP14_W::new(self)
     }
     #[doc = "Bit 15 - Fast Startup Input Polarityx"]
     #[inline(always)]
+    #[must_use]
     pub fn fstp15(&mut self) -> FSTP15_W<15> {
         FSTP15_W::new(self)
     }
@@ -280,11 +266,10 @@ impl crate::Readable for PMC_FSPR_SPEC {
 #[doc = "`write(|w| ..)` method takes [pmc_fspr::W](W) writer structure"]
 impl crate::Writable for PMC_FSPR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PMC_FSPR to value 0"]
 impl crate::Resettable for PMC_FSPR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

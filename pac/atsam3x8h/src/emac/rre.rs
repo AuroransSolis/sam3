@@ -1,39 +1,9 @@
 #[doc = "Register `RRE` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<RRE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RRE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RRE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RRE_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `RRE` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<RRE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RRE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RRE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RRE_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `RRE` reader - Receive Resource Errors"]
 pub type RRE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `RRE` writer - Receive Resource Errors"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Receive Resource Errors"]
     #[inline(always)]
+    #[must_use]
     pub fn rre(&mut self) -> RRE_W<0> {
         RRE_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for RRE_SPEC {
 #[doc = "`write(|w| ..)` method takes [rre::W](W) writer structure"]
 impl crate::Writable for RRE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RRE to value 0"]
 impl crate::Resettable for RRE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

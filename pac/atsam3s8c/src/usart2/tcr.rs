@@ -1,39 +1,9 @@
 #[doc = "Register `TCR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<TCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `TCR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<TCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `TXCTR` reader - Transmit Counter Register"]
 pub type TXCTR_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TXCTR` writer - Transmit Counter Register"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Transmit Counter Register"]
     #[inline(always)]
+    #[must_use]
     pub fn txctr(&mut self) -> TXCTR_W<0> {
         TXCTR_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for TCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [tcr::W](W) writer structure"]
 impl crate::Writable for TCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TCR to value 0"]
 impl crate::Resettable for TCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

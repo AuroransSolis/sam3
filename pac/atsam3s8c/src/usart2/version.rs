@@ -1,18 +1,6 @@
 #[doc = "Register `VERSION` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<VERSION_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<VERSION_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<VERSION_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<VERSION_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `VERSION` reader - Harware Module Version"]
 pub type VERSION_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MFN` reader - Metal Fix Number"]

@@ -1,39 +1,9 @@
 #[doc = "Register `RST_EP` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<RST_EP_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RST_EP_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RST_EP_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RST_EP_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `RST_EP` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<RST_EP_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RST_EP_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RST_EP_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RST_EP_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `EP0` reader - Reset Endpoint 0"]
 pub type EP0_R = crate::BitReader<bool>;
 #[doc = "Field `EP0` writer - Reset Endpoint 0"]
@@ -111,41 +81,49 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Reset Endpoint 0"]
     #[inline(always)]
+    #[must_use]
     pub fn ep0(&mut self) -> EP0_W<0> {
         EP0_W::new(self)
     }
     #[doc = "Bit 1 - Reset Endpoint 1"]
     #[inline(always)]
+    #[must_use]
     pub fn ep1(&mut self) -> EP1_W<1> {
         EP1_W::new(self)
     }
     #[doc = "Bit 2 - Reset Endpoint 2"]
     #[inline(always)]
+    #[must_use]
     pub fn ep2(&mut self) -> EP2_W<2> {
         EP2_W::new(self)
     }
     #[doc = "Bit 3 - Reset Endpoint 3"]
     #[inline(always)]
+    #[must_use]
     pub fn ep3(&mut self) -> EP3_W<3> {
         EP3_W::new(self)
     }
     #[doc = "Bit 4 - Reset Endpoint 4"]
     #[inline(always)]
+    #[must_use]
     pub fn ep4(&mut self) -> EP4_W<4> {
         EP4_W::new(self)
     }
     #[doc = "Bit 5 - Reset Endpoint 5"]
     #[inline(always)]
+    #[must_use]
     pub fn ep5(&mut self) -> EP5_W<5> {
         EP5_W::new(self)
     }
     #[doc = "Bit 6 - Reset Endpoint 6"]
     #[inline(always)]
+    #[must_use]
     pub fn ep6(&mut self) -> EP6_W<6> {
         EP6_W::new(self)
     }
     #[doc = "Bit 7 - Reset Endpoint 7"]
     #[inline(always)]
+    #[must_use]
     pub fn ep7(&mut self) -> EP7_W<7> {
         EP7_W::new(self)
     }
@@ -168,11 +146,10 @@ impl crate::Readable for RST_EP_SPEC {
 #[doc = "`write(|w| ..)` method takes [rst_ep::W](W) writer structure"]
 impl crate::Writable for RST_EP_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RST_EP to value 0"]
 impl crate::Resettable for RST_EP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

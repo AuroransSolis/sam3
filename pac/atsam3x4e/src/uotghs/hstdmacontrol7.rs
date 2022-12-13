@@ -1,39 +1,9 @@
 #[doc = "Register `HSTDMACONTROL7` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<HSTDMACONTROL7_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HSTDMACONTROL7_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HSTDMACONTROL7_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HSTDMACONTROL7_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `HSTDMACONTROL7` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<HSTDMACONTROL7_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HSTDMACONTROL7_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HSTDMACONTROL7_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HSTDMACONTROL7_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `CHANN_ENB` reader - Channel Enable Command"]
 pub type CHANN_ENB_R = crate::BitReader<bool>;
 #[doc = "Field `CHANN_ENB` writer - Channel Enable Command"]
@@ -121,46 +91,55 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Channel Enable Command"]
     #[inline(always)]
+    #[must_use]
     pub fn chann_enb(&mut self) -> CHANN_ENB_W<0> {
         CHANN_ENB_W::new(self)
     }
     #[doc = "Bit 1 - Load Next Channel Transfer Descriptor Enable Command"]
     #[inline(always)]
+    #[must_use]
     pub fn ldnxt_dsc(&mut self) -> LDNXT_DSC_W<1> {
         LDNXT_DSC_W::new(self)
     }
     #[doc = "Bit 2 - End of Transfer Enable (Control)"]
     #[inline(always)]
+    #[must_use]
     pub fn end_tr_en(&mut self) -> END_TR_EN_W<2> {
         END_TR_EN_W::new(self)
     }
     #[doc = "Bit 3 - End of Buffer Enable Control"]
     #[inline(always)]
+    #[must_use]
     pub fn end_b_en(&mut self) -> END_B_EN_W<3> {
         END_B_EN_W::new(self)
     }
     #[doc = "Bit 4 - End of Transfer Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn end_tr_it(&mut self) -> END_TR_IT_W<4> {
         END_TR_IT_W::new(self)
     }
     #[doc = "Bit 5 - End of Buffer Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn end_buffit(&mut self) -> END_BUFFIT_W<5> {
         END_BUFFIT_W::new(self)
     }
     #[doc = "Bit 6 - Descriptor Loaded Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn desc_ld_it(&mut self) -> DESC_LD_IT_W<6> {
         DESC_LD_IT_W::new(self)
     }
     #[doc = "Bit 7 - Burst Lock Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn burst_lck(&mut self) -> BURST_LCK_W<7> {
         BURST_LCK_W::new(self)
     }
     #[doc = "Bits 16:31 - Buffer Byte Length (Write-only)"]
     #[inline(always)]
+    #[must_use]
     pub fn buff_length(&mut self) -> BUFF_LENGTH_W<16> {
         BUFF_LENGTH_W::new(self)
     }
@@ -183,11 +162,10 @@ impl crate::Readable for HSTDMACONTROL7_SPEC {
 #[doc = "`write(|w| ..)` method takes [hstdmacontrol7::W](W) writer structure"]
 impl crate::Writable for HSTDMACONTROL7_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HSTDMACONTROL7 to value 0"]
 impl crate::Resettable for HSTDMACONTROL7_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

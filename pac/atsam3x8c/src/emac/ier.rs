@@ -1,24 +1,6 @@
 #[doc = "Register `IER` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<IER_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IER_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IER_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `MFD` writer - Management Frame sent"]
 pub type MFD_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `RCOMP` writer - Receive Complete"]
@@ -46,61 +28,73 @@ pub type PTZ_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Management Frame sent"]
     #[inline(always)]
+    #[must_use]
     pub fn mfd(&mut self) -> MFD_W<0> {
         MFD_W::new(self)
     }
     #[doc = "Bit 1 - Receive Complete"]
     #[inline(always)]
+    #[must_use]
     pub fn rcomp(&mut self) -> RCOMP_W<1> {
         RCOMP_W::new(self)
     }
     #[doc = "Bit 2 - Receive Used Bit Read"]
     #[inline(always)]
+    #[must_use]
     pub fn rxubr(&mut self) -> RXUBR_W<2> {
         RXUBR_W::new(self)
     }
     #[doc = "Bit 3 - Transmit Used Bit Read"]
     #[inline(always)]
+    #[must_use]
     pub fn txubr(&mut self) -> TXUBR_W<3> {
         TXUBR_W::new(self)
     }
     #[doc = "Bit 4 - Ethernet Transmit Buffer Underrun"]
     #[inline(always)]
+    #[must_use]
     pub fn tund(&mut self) -> TUND_W<4> {
         TUND_W::new(self)
     }
     #[doc = "Bit 5 - Retry Limit Exceeded"]
     #[inline(always)]
+    #[must_use]
     pub fn rle(&mut self) -> RLE_W<5> {
         RLE_W::new(self)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
+    #[must_use]
     pub fn txerr(&mut self) -> TXERR_W<6> {
         TXERR_W::new(self)
     }
     #[doc = "Bit 7 - Transmit Complete"]
     #[inline(always)]
+    #[must_use]
     pub fn tcomp(&mut self) -> TCOMP_W<7> {
         TCOMP_W::new(self)
     }
     #[doc = "Bit 10 - Receive Overrun"]
     #[inline(always)]
+    #[must_use]
     pub fn rovr(&mut self) -> ROVR_W<10> {
         ROVR_W::new(self)
     }
     #[doc = "Bit 11 - Hresp not OK"]
     #[inline(always)]
+    #[must_use]
     pub fn hresp(&mut self) -> HRESP_W<11> {
         HRESP_W::new(self)
     }
     #[doc = "Bit 12 - Pause Frame Received"]
     #[inline(always)]
+    #[must_use]
     pub fn pfr(&mut self) -> PFR_W<12> {
         PFR_W::new(self)
     }
     #[doc = "Bit 13 - Pause Time Zero"]
     #[inline(always)]
+    #[must_use]
     pub fn ptz(&mut self) -> PTZ_W<13> {
         PTZ_W::new(self)
     }
@@ -119,4 +113,6 @@ impl crate::RegisterSpec for IER_SPEC {
 #[doc = "`write(|w| ..)` method takes [ier::W](W) writer structure"]
 impl crate::Writable for IER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

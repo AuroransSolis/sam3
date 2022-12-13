@@ -1,24 +1,6 @@
 #[doc = "Register `DTUPD1` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<DTUPD1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DTUPD1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DTUPD1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DTUPD1_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `DTHUPD` writer - Dead-Time Value Update for PWMHx Output"]
 pub type DTHUPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTUPD1_SPEC, u16, u16, 16, O>;
 #[doc = "Field `DTLUPD` writer - Dead-Time Value Update for PWMLx Output"]
@@ -26,11 +8,13 @@ pub type DTLUPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTUPD1_SPEC, u1
 impl W {
     #[doc = "Bits 0:15 - Dead-Time Value Update for PWMHx Output"]
     #[inline(always)]
+    #[must_use]
     pub fn dthupd(&mut self) -> DTHUPD_W<0> {
         DTHUPD_W::new(self)
     }
     #[doc = "Bits 16:31 - Dead-Time Value Update for PWMLx Output"]
     #[inline(always)]
+    #[must_use]
     pub fn dtlupd(&mut self) -> DTLUPD_W<16> {
         DTLUPD_W::new(self)
     }
@@ -49,4 +33,6 @@ impl crate::RegisterSpec for DTUPD1_SPEC {
 #[doc = "`write(|w| ..)` method takes [dtupd1::W](W) writer structure"]
 impl crate::Writable for DTUPD1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

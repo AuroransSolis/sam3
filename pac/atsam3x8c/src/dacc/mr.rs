@@ -1,48 +1,18 @@
 #[doc = "Register `MR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<MR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `TRGEN` reader - Trigger Enable"]
 pub type TRGEN_R = crate::BitReader<TRGEN_A>;
 #[doc = "Trigger Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRGEN_A {
     #[doc = "0: External trigger mode disabled. DACC in free running mode."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: External trigger mode enabled."]
-    EN = 1,
+    En = 1,
 }
 impl From<TRGEN_A> for bool {
     #[inline(always)]
@@ -55,19 +25,19 @@ impl TRGEN_R {
     #[inline(always)]
     pub fn variant(&self) -> TRGEN_A {
         match self.bits {
-            false => TRGEN_A::DIS,
-            true => TRGEN_A::EN,
+            false => TRGEN_A::Dis,
+            true => TRGEN_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == TRGEN_A::DIS
+        *self == TRGEN_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == TRGEN_A::EN
+        *self == TRGEN_A::En
     }
 }
 #[doc = "Field `TRGEN` writer - Trigger Enable"]
@@ -76,12 +46,12 @@ impl<'a, const O: u8> TRGEN_W<'a, O> {
     #[doc = "External trigger mode disabled. DACC in free running mode."]
     #[inline(always)]
     pub fn dis(self) -> &'a mut W {
-        self.variant(TRGEN_A::DIS)
+        self.variant(TRGEN_A::Dis)
     }
     #[doc = "External trigger mode enabled."]
     #[inline(always)]
     pub fn en(self) -> &'a mut W {
-        self.variant(TRGEN_A::EN)
+        self.variant(TRGEN_A::En)
     }
 }
 #[doc = "Field `TRGSEL` reader - Trigger Selection"]
@@ -91,12 +61,12 @@ pub type TRGSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, u8
 #[doc = "Field `WORD` reader - Word Transfer"]
 pub type WORD_R = crate::BitReader<WORD_A>;
 #[doc = "Word Transfer\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WORD_A {
     #[doc = "0: Half-Word transfer"]
-    HALF = 0,
+    Half = 0,
     #[doc = "1: Word Transfer"]
-    WORD = 1,
+    Word = 1,
 }
 impl From<WORD_A> for bool {
     #[inline(always)]
@@ -109,19 +79,19 @@ impl WORD_R {
     #[inline(always)]
     pub fn variant(&self) -> WORD_A {
         match self.bits {
-            false => WORD_A::HALF,
-            true => WORD_A::WORD,
+            false => WORD_A::Half,
+            true => WORD_A::Word,
         }
     }
-    #[doc = "Checks if the value of the field is `HALF`"]
+    #[doc = "Checks if the value of the field is `Half`"]
     #[inline(always)]
     pub fn is_half(&self) -> bool {
-        *self == WORD_A::HALF
+        *self == WORD_A::Half
     }
-    #[doc = "Checks if the value of the field is `WORD`"]
+    #[doc = "Checks if the value of the field is `Word`"]
     #[inline(always)]
     pub fn is_word(&self) -> bool {
-        *self == WORD_A::WORD
+        *self == WORD_A::Word
     }
 }
 #[doc = "Field `WORD` writer - Word Transfer"]
@@ -130,12 +100,12 @@ impl<'a, const O: u8> WORD_W<'a, O> {
     #[doc = "Half-Word transfer"]
     #[inline(always)]
     pub fn half(self) -> &'a mut W {
-        self.variant(WORD_A::HALF)
+        self.variant(WORD_A::Half)
     }
     #[doc = "Word Transfer"]
     #[inline(always)]
     pub fn word(self) -> &'a mut W {
-        self.variant(WORD_A::WORD)
+        self.variant(WORD_A::Word)
     }
 }
 #[doc = "Field `SLEEP` reader - Sleep Mode"]
@@ -153,13 +123,13 @@ pub type REFRESH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, u
 #[doc = "Field `USER_SEL` reader - User Channel Selection"]
 pub type USER_SEL_R = crate::FieldReader<u8, USER_SEL_A>;
 #[doc = "User Channel Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum USER_SEL_A {
     #[doc = "0: Channel 0"]
-    CHANNEL0 = 0,
+    Channel0 = 0,
     #[doc = "1: Channel 1"]
-    CHANNEL1 = 1,
+    Channel1 = 1,
 }
 impl From<USER_SEL_A> for u8 {
     #[inline(always)]
@@ -172,20 +142,20 @@ impl USER_SEL_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<USER_SEL_A> {
         match self.bits {
-            0 => Some(USER_SEL_A::CHANNEL0),
-            1 => Some(USER_SEL_A::CHANNEL1),
+            0 => Some(USER_SEL_A::Channel0),
+            1 => Some(USER_SEL_A::Channel1),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CHANNEL0`"]
+    #[doc = "Checks if the value of the field is `Channel0`"]
     #[inline(always)]
     pub fn is_channel0(&self) -> bool {
-        *self == USER_SEL_A::CHANNEL0
+        *self == USER_SEL_A::Channel0
     }
-    #[doc = "Checks if the value of the field is `CHANNEL1`"]
+    #[doc = "Checks if the value of the field is `Channel1`"]
     #[inline(always)]
     pub fn is_channel1(&self) -> bool {
-        *self == USER_SEL_A::CHANNEL1
+        *self == USER_SEL_A::Channel1
     }
 }
 #[doc = "Field `USER_SEL` writer - User Channel Selection"]
@@ -194,23 +164,23 @@ impl<'a, const O: u8> USER_SEL_W<'a, O> {
     #[doc = "Channel 0"]
     #[inline(always)]
     pub fn channel0(self) -> &'a mut W {
-        self.variant(USER_SEL_A::CHANNEL0)
+        self.variant(USER_SEL_A::Channel0)
     }
     #[doc = "Channel 1"]
     #[inline(always)]
     pub fn channel1(self) -> &'a mut W {
-        self.variant(USER_SEL_A::CHANNEL1)
+        self.variant(USER_SEL_A::Channel1)
     }
 }
 #[doc = "Field `TAG` reader - Tag Selection Mode"]
 pub type TAG_R = crate::BitReader<TAG_A>;
 #[doc = "Tag Selection Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TAG_A {
     #[doc = "0: Tag selection mode disabled. Using USER_SEL to select the channel for the conversion."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: Tag selection mode enabled"]
-    EN = 1,
+    En = 1,
 }
 impl From<TAG_A> for bool {
     #[inline(always)]
@@ -223,19 +193,19 @@ impl TAG_R {
     #[inline(always)]
     pub fn variant(&self) -> TAG_A {
         match self.bits {
-            false => TAG_A::DIS,
-            true => TAG_A::EN,
+            false => TAG_A::Dis,
+            true => TAG_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == TAG_A::DIS
+        *self == TAG_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == TAG_A::EN
+        *self == TAG_A::En
     }
 }
 #[doc = "Field `TAG` writer - Tag Selection Mode"]
@@ -244,23 +214,23 @@ impl<'a, const O: u8> TAG_W<'a, O> {
     #[doc = "Tag selection mode disabled. Using USER_SEL to select the channel for the conversion."]
     #[inline(always)]
     pub fn dis(self) -> &'a mut W {
-        self.variant(TAG_A::DIS)
+        self.variant(TAG_A::Dis)
     }
     #[doc = "Tag selection mode enabled"]
     #[inline(always)]
     pub fn en(self) -> &'a mut W {
-        self.variant(TAG_A::EN)
+        self.variant(TAG_A::En)
     }
 }
 #[doc = "Field `MAXS` reader - Max Speed Mode"]
 pub type MAXS_R = crate::BitReader<MAXS_A>;
 #[doc = "Max Speed Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MAXS_A {
     #[doc = "0: Normal Mode"]
-    NORMAL = 0,
+    Normal = 0,
     #[doc = "1: Max Speed Mode enabled"]
-    MAXIMUM = 1,
+    Maximum = 1,
 }
 impl From<MAXS_A> for bool {
     #[inline(always)]
@@ -273,19 +243,19 @@ impl MAXS_R {
     #[inline(always)]
     pub fn variant(&self) -> MAXS_A {
         match self.bits {
-            false => MAXS_A::NORMAL,
-            true => MAXS_A::MAXIMUM,
+            false => MAXS_A::Normal,
+            true => MAXS_A::Maximum,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "Checks if the value of the field is `Normal`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        *self == MAXS_A::NORMAL
+        *self == MAXS_A::Normal
     }
-    #[doc = "Checks if the value of the field is `MAXIMUM`"]
+    #[doc = "Checks if the value of the field is `Maximum`"]
     #[inline(always)]
     pub fn is_maximum(&self) -> bool {
-        *self == MAXS_A::MAXIMUM
+        *self == MAXS_A::Maximum
     }
 }
 #[doc = "Field `MAXS` writer - Max Speed Mode"]
@@ -294,18 +264,18 @@ impl<'a, const O: u8> MAXS_W<'a, O> {
     #[doc = "Normal Mode"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
-        self.variant(MAXS_A::NORMAL)
+        self.variant(MAXS_A::Normal)
     }
     #[doc = "Max Speed Mode enabled"]
     #[inline(always)]
     pub fn maximum(self) -> &'a mut W {
-        self.variant(MAXS_A::MAXIMUM)
+        self.variant(MAXS_A::Maximum)
     }
 }
 #[doc = "Field `STARTUP` reader - Startup Time Selection"]
 pub type STARTUP_R = crate::FieldReader<u8, STARTUP_A>;
 #[doc = "Startup Time Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum STARTUP_A {
     #[doc = "0: 0 periods of DACClock"]
@@ -799,51 +769,61 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Trigger Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn trgen(&mut self) -> TRGEN_W<0> {
         TRGEN_W::new(self)
     }
     #[doc = "Bits 1:3 - Trigger Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn trgsel(&mut self) -> TRGSEL_W<1> {
         TRGSEL_W::new(self)
     }
     #[doc = "Bit 4 - Word Transfer"]
     #[inline(always)]
+    #[must_use]
     pub fn word(&mut self) -> WORD_W<4> {
         WORD_W::new(self)
     }
     #[doc = "Bit 5 - Sleep Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn sleep(&mut self) -> SLEEP_W<5> {
         SLEEP_W::new(self)
     }
     #[doc = "Bit 6 - Fast Wake up Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn fastwkup(&mut self) -> FASTWKUP_W<6> {
         FASTWKUP_W::new(self)
     }
     #[doc = "Bits 8:15 - Refresh Period"]
     #[inline(always)]
+    #[must_use]
     pub fn refresh(&mut self) -> REFRESH_W<8> {
         REFRESH_W::new(self)
     }
     #[doc = "Bits 16:17 - User Channel Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn user_sel(&mut self) -> USER_SEL_W<16> {
         USER_SEL_W::new(self)
     }
     #[doc = "Bit 20 - Tag Selection Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn tag(&mut self) -> TAG_W<20> {
         TAG_W::new(self)
     }
     #[doc = "Bit 21 - Max Speed Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn maxs(&mut self) -> MAXS_W<21> {
         MAXS_W::new(self)
     }
     #[doc = "Bits 24:29 - Startup Time Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn startup(&mut self) -> STARTUP_W<24> {
         STARTUP_W::new(self)
     }
@@ -866,11 +846,10 @@ impl crate::Readable for MR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
 impl crate::Writable for MR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MR to value 0"]
 impl crate::Resettable for MR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

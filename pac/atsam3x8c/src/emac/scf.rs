@@ -1,39 +1,9 @@
 #[doc = "Register `SCF` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<SCF_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SCF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SCF_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SCF_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `SCF` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<SCF_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SCF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SCF_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SCF_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `SCF` reader - Single Collision Frames"]
 pub type SCF_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `SCF` writer - Single Collision Frames"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Single Collision Frames"]
     #[inline(always)]
+    #[must_use]
     pub fn scf(&mut self) -> SCF_W<0> {
         SCF_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for SCF_SPEC {
 #[doc = "`write(|w| ..)` method takes [scf::W](W) writer structure"]
 impl crate::Writable for SCF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCF to value 0"]
 impl crate::Resettable for SCF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

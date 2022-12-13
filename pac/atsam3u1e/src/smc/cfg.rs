@@ -1,53 +1,23 @@
 #[doc = "Register `CFG` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CFG` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `PAGESIZE` reader - "]
 pub type PAGESIZE_R = crate::FieldReader<u8, PAGESIZE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PAGESIZE_A {
     #[doc = "0: Main area 512 Bytes + Spare area 16 Bytes = 528 Bytes"]
-    PS512_16 = 0,
+    Ps51216 = 0,
     #[doc = "1: Main area 1024 Bytes + Spare area 32 Bytes = 1056 Bytes"]
-    PS1024_32 = 1,
+    Ps102432 = 1,
     #[doc = "2: Main area 2048 Bytes + Spare area 64 Bytes = 2112 Bytes"]
-    PS2048_64 = 2,
+    Ps204864 = 2,
     #[doc = "3: Main area 4096 Bytes + Spare area 128 Bytes = 4224 Bytes"]
-    PS4096_128 = 3,
+    Ps4096128 = 3,
 }
 impl From<PAGESIZE_A> for u8 {
     #[inline(always)]
@@ -60,32 +30,32 @@ impl PAGESIZE_R {
     #[inline(always)]
     pub fn variant(&self) -> PAGESIZE_A {
         match self.bits {
-            0 => PAGESIZE_A::PS512_16,
-            1 => PAGESIZE_A::PS1024_32,
-            2 => PAGESIZE_A::PS2048_64,
-            3 => PAGESIZE_A::PS4096_128,
+            0 => PAGESIZE_A::Ps51216,
+            1 => PAGESIZE_A::Ps102432,
+            2 => PAGESIZE_A::Ps204864,
+            3 => PAGESIZE_A::Ps4096128,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `PS512_16`"]
+    #[doc = "Checks if the value of the field is `Ps51216`"]
     #[inline(always)]
     pub fn is_ps512_16(&self) -> bool {
-        *self == PAGESIZE_A::PS512_16
+        *self == PAGESIZE_A::Ps51216
     }
-    #[doc = "Checks if the value of the field is `PS1024_32`"]
+    #[doc = "Checks if the value of the field is `Ps102432`"]
     #[inline(always)]
     pub fn is_ps1024_32(&self) -> bool {
-        *self == PAGESIZE_A::PS1024_32
+        *self == PAGESIZE_A::Ps102432
     }
-    #[doc = "Checks if the value of the field is `PS2048_64`"]
+    #[doc = "Checks if the value of the field is `Ps204864`"]
     #[inline(always)]
     pub fn is_ps2048_64(&self) -> bool {
-        *self == PAGESIZE_A::PS2048_64
+        *self == PAGESIZE_A::Ps204864
     }
-    #[doc = "Checks if the value of the field is `PS4096_128`"]
+    #[doc = "Checks if the value of the field is `Ps4096128`"]
     #[inline(always)]
     pub fn is_ps4096_128(&self) -> bool {
-        *self == PAGESIZE_A::PS4096_128
+        *self == PAGESIZE_A::Ps4096128
     }
 }
 #[doc = "Field `PAGESIZE` writer - "]
@@ -95,22 +65,22 @@ impl<'a, const O: u8> PAGESIZE_W<'a, O> {
     #[doc = "Main area 512 Bytes + Spare area 16 Bytes = 528 Bytes"]
     #[inline(always)]
     pub fn ps512_16(self) -> &'a mut W {
-        self.variant(PAGESIZE_A::PS512_16)
+        self.variant(PAGESIZE_A::Ps51216)
     }
     #[doc = "Main area 1024 Bytes + Spare area 32 Bytes = 1056 Bytes"]
     #[inline(always)]
     pub fn ps1024_32(self) -> &'a mut W {
-        self.variant(PAGESIZE_A::PS1024_32)
+        self.variant(PAGESIZE_A::Ps102432)
     }
     #[doc = "Main area 2048 Bytes + Spare area 64 Bytes = 2112 Bytes"]
     #[inline(always)]
     pub fn ps2048_64(self) -> &'a mut W {
-        self.variant(PAGESIZE_A::PS2048_64)
+        self.variant(PAGESIZE_A::Ps204864)
     }
     #[doc = "Main area 4096 Bytes + Spare area 128 Bytes = 4224 Bytes"]
     #[inline(always)]
     pub fn ps4096_128(self) -> &'a mut W {
-        self.variant(PAGESIZE_A::PS4096_128)
+        self.variant(PAGESIZE_A::Ps4096128)
     }
 }
 #[doc = "Field `WSPARE` reader - Write Spare Area"]
@@ -136,7 +106,7 @@ pub type DTOCYC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, u
 #[doc = "Field `DTOMUL` reader - Data Timeout Multiplier"]
 pub type DTOMUL_R = crate::FieldReader<u8, DTOMUL_A>;
 #[doc = "Data Timeout Multiplier\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DTOMUL_A {
     #[doc = "0: DTOCYC"]
@@ -303,36 +273,43 @@ impl R {
 impl W {
     #[doc = "Bits 0:1"]
     #[inline(always)]
+    #[must_use]
     pub fn pagesize(&mut self) -> PAGESIZE_W<0> {
         PAGESIZE_W::new(self)
     }
     #[doc = "Bit 8 - Write Spare Area"]
     #[inline(always)]
+    #[must_use]
     pub fn wspare(&mut self) -> WSPARE_W<8> {
         WSPARE_W::new(self)
     }
     #[doc = "Bit 9 - Read Spare Area"]
     #[inline(always)]
+    #[must_use]
     pub fn rspare(&mut self) -> RSPARE_W<9> {
         RSPARE_W::new(self)
     }
     #[doc = "Bit 12 - Rising/Falling Edge Detection Control"]
     #[inline(always)]
+    #[must_use]
     pub fn edgectrl(&mut self) -> EDGECTRL_W<12> {
         EDGECTRL_W::new(self)
     }
     #[doc = "Bit 13 - Ready/Busy Signal Edge Detection"]
     #[inline(always)]
+    #[must_use]
     pub fn rbedge(&mut self) -> RBEDGE_W<13> {
         RBEDGE_W::new(self)
     }
     #[doc = "Bits 16:19 - Data Timeout Cycle Number"]
     #[inline(always)]
+    #[must_use]
     pub fn dtocyc(&mut self) -> DTOCYC_W<16> {
         DTOCYC_W::new(self)
     }
     #[doc = "Bits 20:22 - Data Timeout Multiplier"]
     #[inline(always)]
+    #[must_use]
     pub fn dtomul(&mut self) -> DTOMUL_W<20> {
         DTOMUL_W::new(self)
     }
@@ -355,11 +332,10 @@ impl crate::Readable for CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg::W](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG to value 0"]
 impl crate::Resettable for CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

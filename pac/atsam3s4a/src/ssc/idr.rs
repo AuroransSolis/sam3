@@ -1,24 +1,6 @@
 #[doc = "Register `IDR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<IDR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IDR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IDR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `TXRDY` writer - Transmit Ready Interrupt Disable"]
 pub type TXRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `TXEMPTY` writer - Transmit Empty Interrupt Disable"]
@@ -46,61 +28,73 @@ pub type RXSYN_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>
 impl W {
     #[doc = "Bit 0 - Transmit Ready Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn txrdy(&mut self) -> TXRDY_W<0> {
         TXRDY_W::new(self)
     }
     #[doc = "Bit 1 - Transmit Empty Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn txempty(&mut self) -> TXEMPTY_W<1> {
         TXEMPTY_W::new(self)
     }
     #[doc = "Bit 2 - End of Transmission Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn endtx(&mut self) -> ENDTX_W<2> {
         ENDTX_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
+    #[must_use]
     pub fn txbufe(&mut self) -> TXBUFE_W<3> {
         TXBUFE_W::new(self)
     }
     #[doc = "Bit 4 - Receive Ready Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn rxrdy(&mut self) -> RXRDY_W<4> {
         RXRDY_W::new(self)
     }
     #[doc = "Bit 5 - Receive Overrun Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn ovrun(&mut self) -> OVRUN_W<5> {
         OVRUN_W::new(self)
     }
     #[doc = "Bit 6 - End of Reception Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn endrx(&mut self) -> ENDRX_W<6> {
         ENDRX_W::new(self)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
+    #[must_use]
     pub fn rxbuff(&mut self) -> RXBUFF_W<7> {
         RXBUFF_W::new(self)
     }
     #[doc = "Bit 8 - Compare 0 Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn cp0(&mut self) -> CP0_W<8> {
         CP0_W::new(self)
     }
     #[doc = "Bit 9 - Compare 1 Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn cp1(&mut self) -> CP1_W<9> {
         CP1_W::new(self)
     }
     #[doc = "Bit 10 - Tx Sync Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn txsyn(&mut self) -> TXSYN_W<10> {
         TXSYN_W::new(self)
     }
     #[doc = "Bit 11 - Rx Sync Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rxsyn(&mut self) -> RXSYN_W<11> {
         RXSYN_W::new(self)
     }
@@ -119,4 +113,6 @@ impl crate::RegisterSpec for IDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [idr::W](W) writer structure"]
 impl crate::Writable for IDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

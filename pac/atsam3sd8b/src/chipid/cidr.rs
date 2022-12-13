@@ -1,40 +1,28 @@
 #[doc = "Register `CIDR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CIDR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CIDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CIDR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CIDR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `VERSION` reader - Version of the Device"]
 pub type VERSION_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `EPROC` reader - Embedded Processor"]
 pub type EPROC_R = crate::FieldReader<u8, EPROC_A>;
 #[doc = "Embedded Processor"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EPROC_A {
     #[doc = "1: ARM946ES"]
-    ARM946ES = 1,
+    Arm946es = 1,
     #[doc = "2: ARM7TDMI"]
-    ARM7TDMI = 2,
+    Arm7tdmi = 2,
     #[doc = "3: Cortex-M3"]
-    CM3 = 3,
+    Cm3 = 3,
     #[doc = "4: ARM920T"]
-    ARM920T = 4,
+    Arm920t = 4,
     #[doc = "5: ARM926EJS"]
-    ARM926EJS = 5,
+    Arm926ejs = 5,
     #[doc = "6: Cortex-A5"]
-    CA5 = 6,
+    Ca5 = 6,
     #[doc = "7: Cortex-M4"]
-    CM4 = 7,
+    Cm4 = 7,
 }
 impl From<EPROC_A> for u8 {
     #[inline(always)]
@@ -47,78 +35,78 @@ impl EPROC_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<EPROC_A> {
         match self.bits {
-            1 => Some(EPROC_A::ARM946ES),
-            2 => Some(EPROC_A::ARM7TDMI),
-            3 => Some(EPROC_A::CM3),
-            4 => Some(EPROC_A::ARM920T),
-            5 => Some(EPROC_A::ARM926EJS),
-            6 => Some(EPROC_A::CA5),
-            7 => Some(EPROC_A::CM4),
+            1 => Some(EPROC_A::Arm946es),
+            2 => Some(EPROC_A::Arm7tdmi),
+            3 => Some(EPROC_A::Cm3),
+            4 => Some(EPROC_A::Arm920t),
+            5 => Some(EPROC_A::Arm926ejs),
+            6 => Some(EPROC_A::Ca5),
+            7 => Some(EPROC_A::Cm4),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `ARM946ES`"]
+    #[doc = "Checks if the value of the field is `Arm946es`"]
     #[inline(always)]
     pub fn is_arm946es(&self) -> bool {
-        *self == EPROC_A::ARM946ES
+        *self == EPROC_A::Arm946es
     }
-    #[doc = "Checks if the value of the field is `ARM7TDMI`"]
+    #[doc = "Checks if the value of the field is `Arm7tdmi`"]
     #[inline(always)]
     pub fn is_arm7tdmi(&self) -> bool {
-        *self == EPROC_A::ARM7TDMI
+        *self == EPROC_A::Arm7tdmi
     }
-    #[doc = "Checks if the value of the field is `CM3`"]
+    #[doc = "Checks if the value of the field is `Cm3`"]
     #[inline(always)]
     pub fn is_cm3(&self) -> bool {
-        *self == EPROC_A::CM3
+        *self == EPROC_A::Cm3
     }
-    #[doc = "Checks if the value of the field is `ARM920T`"]
+    #[doc = "Checks if the value of the field is `Arm920t`"]
     #[inline(always)]
     pub fn is_arm920t(&self) -> bool {
-        *self == EPROC_A::ARM920T
+        *self == EPROC_A::Arm920t
     }
-    #[doc = "Checks if the value of the field is `ARM926EJS`"]
+    #[doc = "Checks if the value of the field is `Arm926ejs`"]
     #[inline(always)]
     pub fn is_arm926ejs(&self) -> bool {
-        *self == EPROC_A::ARM926EJS
+        *self == EPROC_A::Arm926ejs
     }
-    #[doc = "Checks if the value of the field is `CA5`"]
+    #[doc = "Checks if the value of the field is `Ca5`"]
     #[inline(always)]
     pub fn is_ca5(&self) -> bool {
-        *self == EPROC_A::CA5
+        *self == EPROC_A::Ca5
     }
-    #[doc = "Checks if the value of the field is `CM4`"]
+    #[doc = "Checks if the value of the field is `Cm4`"]
     #[inline(always)]
     pub fn is_cm4(&self) -> bool {
-        *self == EPROC_A::CM4
+        *self == EPROC_A::Cm4
     }
 }
 #[doc = "Field `NVPSIZ` reader - Nonvolatile Program Memory Size"]
 pub type NVPSIZ_R = crate::FieldReader<u8, NVPSIZ_A>;
 #[doc = "Nonvolatile Program Memory Size"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum NVPSIZ_A {
     #[doc = "0: None"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: 8K bytes"]
-    _8K = 1,
+    _8k = 1,
     #[doc = "2: 16K bytes"]
-    _16K = 2,
+    _16k = 2,
     #[doc = "3: 32K bytes"]
-    _32K = 3,
+    _32k = 3,
     #[doc = "5: 64K bytes"]
-    _64K = 5,
+    _64k = 5,
     #[doc = "7: 128K bytes"]
-    _128K = 7,
+    _128k = 7,
     #[doc = "9: 256K bytes"]
-    _256K = 9,
+    _256k = 9,
     #[doc = "10: 512K bytes"]
-    _512K = 10,
+    _512k = 10,
     #[doc = "12: 1024K bytes"]
-    _1024K = 12,
+    _1024k = 12,
     #[doc = "14: 2048K bytes"]
-    _2048K = 14,
+    _2048k = 14,
 }
 impl From<NVPSIZ_A> for u8 {
     #[inline(always)]
@@ -131,96 +119,96 @@ impl NVPSIZ_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<NVPSIZ_A> {
         match self.bits {
-            0 => Some(NVPSIZ_A::NONE),
-            1 => Some(NVPSIZ_A::_8K),
-            2 => Some(NVPSIZ_A::_16K),
-            3 => Some(NVPSIZ_A::_32K),
-            5 => Some(NVPSIZ_A::_64K),
-            7 => Some(NVPSIZ_A::_128K),
-            9 => Some(NVPSIZ_A::_256K),
-            10 => Some(NVPSIZ_A::_512K),
-            12 => Some(NVPSIZ_A::_1024K),
-            14 => Some(NVPSIZ_A::_2048K),
+            0 => Some(NVPSIZ_A::None),
+            1 => Some(NVPSIZ_A::_8k),
+            2 => Some(NVPSIZ_A::_16k),
+            3 => Some(NVPSIZ_A::_32k),
+            5 => Some(NVPSIZ_A::_64k),
+            7 => Some(NVPSIZ_A::_128k),
+            9 => Some(NVPSIZ_A::_256k),
+            10 => Some(NVPSIZ_A::_512k),
+            12 => Some(NVPSIZ_A::_1024k),
+            14 => Some(NVPSIZ_A::_2048k),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Checks if the value of the field is `None`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == NVPSIZ_A::NONE
+        *self == NVPSIZ_A::None
     }
-    #[doc = "Checks if the value of the field is `_8K`"]
+    #[doc = "Checks if the value of the field is `_8k`"]
     #[inline(always)]
     pub fn is_8k(&self) -> bool {
-        *self == NVPSIZ_A::_8K
+        *self == NVPSIZ_A::_8k
     }
-    #[doc = "Checks if the value of the field is `_16K`"]
+    #[doc = "Checks if the value of the field is `_16k`"]
     #[inline(always)]
     pub fn is_16k(&self) -> bool {
-        *self == NVPSIZ_A::_16K
+        *self == NVPSIZ_A::_16k
     }
-    #[doc = "Checks if the value of the field is `_32K`"]
+    #[doc = "Checks if the value of the field is `_32k`"]
     #[inline(always)]
     pub fn is_32k(&self) -> bool {
-        *self == NVPSIZ_A::_32K
+        *self == NVPSIZ_A::_32k
     }
-    #[doc = "Checks if the value of the field is `_64K`"]
+    #[doc = "Checks if the value of the field is `_64k`"]
     #[inline(always)]
     pub fn is_64k(&self) -> bool {
-        *self == NVPSIZ_A::_64K
+        *self == NVPSIZ_A::_64k
     }
-    #[doc = "Checks if the value of the field is `_128K`"]
+    #[doc = "Checks if the value of the field is `_128k`"]
     #[inline(always)]
     pub fn is_128k(&self) -> bool {
-        *self == NVPSIZ_A::_128K
+        *self == NVPSIZ_A::_128k
     }
-    #[doc = "Checks if the value of the field is `_256K`"]
+    #[doc = "Checks if the value of the field is `_256k`"]
     #[inline(always)]
     pub fn is_256k(&self) -> bool {
-        *self == NVPSIZ_A::_256K
+        *self == NVPSIZ_A::_256k
     }
-    #[doc = "Checks if the value of the field is `_512K`"]
+    #[doc = "Checks if the value of the field is `_512k`"]
     #[inline(always)]
     pub fn is_512k(&self) -> bool {
-        *self == NVPSIZ_A::_512K
+        *self == NVPSIZ_A::_512k
     }
-    #[doc = "Checks if the value of the field is `_1024K`"]
+    #[doc = "Checks if the value of the field is `_1024k`"]
     #[inline(always)]
     pub fn is_1024k(&self) -> bool {
-        *self == NVPSIZ_A::_1024K
+        *self == NVPSIZ_A::_1024k
     }
-    #[doc = "Checks if the value of the field is `_2048K`"]
+    #[doc = "Checks if the value of the field is `_2048k`"]
     #[inline(always)]
     pub fn is_2048k(&self) -> bool {
-        *self == NVPSIZ_A::_2048K
+        *self == NVPSIZ_A::_2048k
     }
 }
 #[doc = "Field `NVPSIZ2` reader - Second Nonvolatile Program Memory Size"]
 pub type NVPSIZ2_R = crate::FieldReader<u8, NVPSIZ2_A>;
 #[doc = "Second Nonvolatile Program Memory Size"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum NVPSIZ2_A {
     #[doc = "0: None"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: 8K bytes"]
-    _8K = 1,
+    _8k = 1,
     #[doc = "2: 16K bytes"]
-    _16K = 2,
+    _16k = 2,
     #[doc = "3: 32K bytes"]
-    _32K = 3,
+    _32k = 3,
     #[doc = "5: 64K bytes"]
-    _64K = 5,
+    _64k = 5,
     #[doc = "7: 128K bytes"]
-    _128K = 7,
+    _128k = 7,
     #[doc = "9: 256K bytes"]
-    _256K = 9,
+    _256k = 9,
     #[doc = "10: 512K bytes"]
-    _512K = 10,
+    _512k = 10,
     #[doc = "12: 1024K bytes"]
-    _1024K = 12,
+    _1024k = 12,
     #[doc = "14: 2048K bytes"]
-    _2048K = 14,
+    _2048k = 14,
 }
 impl From<NVPSIZ2_A> for u8 {
     #[inline(always)]
@@ -233,108 +221,108 @@ impl NVPSIZ2_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<NVPSIZ2_A> {
         match self.bits {
-            0 => Some(NVPSIZ2_A::NONE),
-            1 => Some(NVPSIZ2_A::_8K),
-            2 => Some(NVPSIZ2_A::_16K),
-            3 => Some(NVPSIZ2_A::_32K),
-            5 => Some(NVPSIZ2_A::_64K),
-            7 => Some(NVPSIZ2_A::_128K),
-            9 => Some(NVPSIZ2_A::_256K),
-            10 => Some(NVPSIZ2_A::_512K),
-            12 => Some(NVPSIZ2_A::_1024K),
-            14 => Some(NVPSIZ2_A::_2048K),
+            0 => Some(NVPSIZ2_A::None),
+            1 => Some(NVPSIZ2_A::_8k),
+            2 => Some(NVPSIZ2_A::_16k),
+            3 => Some(NVPSIZ2_A::_32k),
+            5 => Some(NVPSIZ2_A::_64k),
+            7 => Some(NVPSIZ2_A::_128k),
+            9 => Some(NVPSIZ2_A::_256k),
+            10 => Some(NVPSIZ2_A::_512k),
+            12 => Some(NVPSIZ2_A::_1024k),
+            14 => Some(NVPSIZ2_A::_2048k),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Checks if the value of the field is `None`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == NVPSIZ2_A::NONE
+        *self == NVPSIZ2_A::None
     }
-    #[doc = "Checks if the value of the field is `_8K`"]
+    #[doc = "Checks if the value of the field is `_8k`"]
     #[inline(always)]
     pub fn is_8k(&self) -> bool {
-        *self == NVPSIZ2_A::_8K
+        *self == NVPSIZ2_A::_8k
     }
-    #[doc = "Checks if the value of the field is `_16K`"]
+    #[doc = "Checks if the value of the field is `_16k`"]
     #[inline(always)]
     pub fn is_16k(&self) -> bool {
-        *self == NVPSIZ2_A::_16K
+        *self == NVPSIZ2_A::_16k
     }
-    #[doc = "Checks if the value of the field is `_32K`"]
+    #[doc = "Checks if the value of the field is `_32k`"]
     #[inline(always)]
     pub fn is_32k(&self) -> bool {
-        *self == NVPSIZ2_A::_32K
+        *self == NVPSIZ2_A::_32k
     }
-    #[doc = "Checks if the value of the field is `_64K`"]
+    #[doc = "Checks if the value of the field is `_64k`"]
     #[inline(always)]
     pub fn is_64k(&self) -> bool {
-        *self == NVPSIZ2_A::_64K
+        *self == NVPSIZ2_A::_64k
     }
-    #[doc = "Checks if the value of the field is `_128K`"]
+    #[doc = "Checks if the value of the field is `_128k`"]
     #[inline(always)]
     pub fn is_128k(&self) -> bool {
-        *self == NVPSIZ2_A::_128K
+        *self == NVPSIZ2_A::_128k
     }
-    #[doc = "Checks if the value of the field is `_256K`"]
+    #[doc = "Checks if the value of the field is `_256k`"]
     #[inline(always)]
     pub fn is_256k(&self) -> bool {
-        *self == NVPSIZ2_A::_256K
+        *self == NVPSIZ2_A::_256k
     }
-    #[doc = "Checks if the value of the field is `_512K`"]
+    #[doc = "Checks if the value of the field is `_512k`"]
     #[inline(always)]
     pub fn is_512k(&self) -> bool {
-        *self == NVPSIZ2_A::_512K
+        *self == NVPSIZ2_A::_512k
     }
-    #[doc = "Checks if the value of the field is `_1024K`"]
+    #[doc = "Checks if the value of the field is `_1024k`"]
     #[inline(always)]
     pub fn is_1024k(&self) -> bool {
-        *self == NVPSIZ2_A::_1024K
+        *self == NVPSIZ2_A::_1024k
     }
-    #[doc = "Checks if the value of the field is `_2048K`"]
+    #[doc = "Checks if the value of the field is `_2048k`"]
     #[inline(always)]
     pub fn is_2048k(&self) -> bool {
-        *self == NVPSIZ2_A::_2048K
+        *self == NVPSIZ2_A::_2048k
     }
 }
 #[doc = "Field `SRAMSIZ` reader - Internal SRAM Size"]
 pub type SRAMSIZ_R = crate::FieldReader<u8, SRAMSIZ_A>;
 #[doc = "Internal SRAM Size"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SRAMSIZ_A {
     #[doc = "0: 48K bytes"]
-    _48K = 0,
+    _48k = 0,
     #[doc = "1: 1K bytes"]
-    _1K = 1,
+    _1k = 1,
     #[doc = "2: 2K bytes"]
-    _2K = 2,
+    _2k = 2,
     #[doc = "3: 6K bytes"]
-    _6K = 3,
+    _6k = 3,
     #[doc = "4: 24K bytes"]
-    _24K = 4,
+    _24k = 4,
     #[doc = "5: 4K bytes"]
-    _4K = 5,
+    _4k = 5,
     #[doc = "6: 80K bytes"]
-    _80K = 6,
+    _80k = 6,
     #[doc = "7: 160K bytes"]
-    _160K = 7,
+    _160k = 7,
     #[doc = "8: 8K bytes"]
-    _8K = 8,
+    _8k = 8,
     #[doc = "9: 16K bytes"]
-    _16K = 9,
+    _16k = 9,
     #[doc = "10: 32K bytes"]
-    _32K = 10,
+    _32k = 10,
     #[doc = "11: 64K bytes"]
-    _64K = 11,
+    _64k = 11,
     #[doc = "12: 128K bytes"]
-    _128K = 12,
+    _128k = 12,
     #[doc = "13: 256K bytes"]
-    _256K = 13,
+    _256k = 13,
     #[doc = "14: 96K bytes"]
-    _96K = 14,
+    _96k = 14,
     #[doc = "15: 512K bytes"]
-    _512K = 15,
+    _512k = 15,
 }
 impl From<SRAMSIZ_A> for u8 {
     #[inline(always)]
@@ -347,196 +335,196 @@ impl SRAMSIZ_R {
     #[inline(always)]
     pub fn variant(&self) -> SRAMSIZ_A {
         match self.bits {
-            0 => SRAMSIZ_A::_48K,
-            1 => SRAMSIZ_A::_1K,
-            2 => SRAMSIZ_A::_2K,
-            3 => SRAMSIZ_A::_6K,
-            4 => SRAMSIZ_A::_24K,
-            5 => SRAMSIZ_A::_4K,
-            6 => SRAMSIZ_A::_80K,
-            7 => SRAMSIZ_A::_160K,
-            8 => SRAMSIZ_A::_8K,
-            9 => SRAMSIZ_A::_16K,
-            10 => SRAMSIZ_A::_32K,
-            11 => SRAMSIZ_A::_64K,
-            12 => SRAMSIZ_A::_128K,
-            13 => SRAMSIZ_A::_256K,
-            14 => SRAMSIZ_A::_96K,
-            15 => SRAMSIZ_A::_512K,
+            0 => SRAMSIZ_A::_48k,
+            1 => SRAMSIZ_A::_1k,
+            2 => SRAMSIZ_A::_2k,
+            3 => SRAMSIZ_A::_6k,
+            4 => SRAMSIZ_A::_24k,
+            5 => SRAMSIZ_A::_4k,
+            6 => SRAMSIZ_A::_80k,
+            7 => SRAMSIZ_A::_160k,
+            8 => SRAMSIZ_A::_8k,
+            9 => SRAMSIZ_A::_16k,
+            10 => SRAMSIZ_A::_32k,
+            11 => SRAMSIZ_A::_64k,
+            12 => SRAMSIZ_A::_128k,
+            13 => SRAMSIZ_A::_256k,
+            14 => SRAMSIZ_A::_96k,
+            15 => SRAMSIZ_A::_512k,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_48K`"]
+    #[doc = "Checks if the value of the field is `_48k`"]
     #[inline(always)]
     pub fn is_48k(&self) -> bool {
-        *self == SRAMSIZ_A::_48K
+        *self == SRAMSIZ_A::_48k
     }
-    #[doc = "Checks if the value of the field is `_1K`"]
+    #[doc = "Checks if the value of the field is `_1k`"]
     #[inline(always)]
     pub fn is_1k(&self) -> bool {
-        *self == SRAMSIZ_A::_1K
+        *self == SRAMSIZ_A::_1k
     }
-    #[doc = "Checks if the value of the field is `_2K`"]
+    #[doc = "Checks if the value of the field is `_2k`"]
     #[inline(always)]
     pub fn is_2k(&self) -> bool {
-        *self == SRAMSIZ_A::_2K
+        *self == SRAMSIZ_A::_2k
     }
-    #[doc = "Checks if the value of the field is `_6K`"]
+    #[doc = "Checks if the value of the field is `_6k`"]
     #[inline(always)]
     pub fn is_6k(&self) -> bool {
-        *self == SRAMSIZ_A::_6K
+        *self == SRAMSIZ_A::_6k
     }
-    #[doc = "Checks if the value of the field is `_24K`"]
+    #[doc = "Checks if the value of the field is `_24k`"]
     #[inline(always)]
     pub fn is_24k(&self) -> bool {
-        *self == SRAMSIZ_A::_24K
+        *self == SRAMSIZ_A::_24k
     }
-    #[doc = "Checks if the value of the field is `_4K`"]
+    #[doc = "Checks if the value of the field is `_4k`"]
     #[inline(always)]
     pub fn is_4k(&self) -> bool {
-        *self == SRAMSIZ_A::_4K
+        *self == SRAMSIZ_A::_4k
     }
-    #[doc = "Checks if the value of the field is `_80K`"]
+    #[doc = "Checks if the value of the field is `_80k`"]
     #[inline(always)]
     pub fn is_80k(&self) -> bool {
-        *self == SRAMSIZ_A::_80K
+        *self == SRAMSIZ_A::_80k
     }
-    #[doc = "Checks if the value of the field is `_160K`"]
+    #[doc = "Checks if the value of the field is `_160k`"]
     #[inline(always)]
     pub fn is_160k(&self) -> bool {
-        *self == SRAMSIZ_A::_160K
+        *self == SRAMSIZ_A::_160k
     }
-    #[doc = "Checks if the value of the field is `_8K`"]
+    #[doc = "Checks if the value of the field is `_8k`"]
     #[inline(always)]
     pub fn is_8k(&self) -> bool {
-        *self == SRAMSIZ_A::_8K
+        *self == SRAMSIZ_A::_8k
     }
-    #[doc = "Checks if the value of the field is `_16K`"]
+    #[doc = "Checks if the value of the field is `_16k`"]
     #[inline(always)]
     pub fn is_16k(&self) -> bool {
-        *self == SRAMSIZ_A::_16K
+        *self == SRAMSIZ_A::_16k
     }
-    #[doc = "Checks if the value of the field is `_32K`"]
+    #[doc = "Checks if the value of the field is `_32k`"]
     #[inline(always)]
     pub fn is_32k(&self) -> bool {
-        *self == SRAMSIZ_A::_32K
+        *self == SRAMSIZ_A::_32k
     }
-    #[doc = "Checks if the value of the field is `_64K`"]
+    #[doc = "Checks if the value of the field is `_64k`"]
     #[inline(always)]
     pub fn is_64k(&self) -> bool {
-        *self == SRAMSIZ_A::_64K
+        *self == SRAMSIZ_A::_64k
     }
-    #[doc = "Checks if the value of the field is `_128K`"]
+    #[doc = "Checks if the value of the field is `_128k`"]
     #[inline(always)]
     pub fn is_128k(&self) -> bool {
-        *self == SRAMSIZ_A::_128K
+        *self == SRAMSIZ_A::_128k
     }
-    #[doc = "Checks if the value of the field is `_256K`"]
+    #[doc = "Checks if the value of the field is `_256k`"]
     #[inline(always)]
     pub fn is_256k(&self) -> bool {
-        *self == SRAMSIZ_A::_256K
+        *self == SRAMSIZ_A::_256k
     }
-    #[doc = "Checks if the value of the field is `_96K`"]
+    #[doc = "Checks if the value of the field is `_96k`"]
     #[inline(always)]
     pub fn is_96k(&self) -> bool {
-        *self == SRAMSIZ_A::_96K
+        *self == SRAMSIZ_A::_96k
     }
-    #[doc = "Checks if the value of the field is `_512K`"]
+    #[doc = "Checks if the value of the field is `_512k`"]
     #[inline(always)]
     pub fn is_512k(&self) -> bool {
-        *self == SRAMSIZ_A::_512K
+        *self == SRAMSIZ_A::_512k
     }
 }
 #[doc = "Field `ARCH` reader - Architecture Identifier"]
 pub type ARCH_R = crate::FieldReader<u8, ARCH_A>;
 #[doc = "Architecture Identifier"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ARCH_A {
     #[doc = "25: AT91SAM9xx Series"]
-    AT91SAM9XX = 25,
+    At91sam9xx = 25,
     #[doc = "41: AT91SAM9XExx Series"]
-    AT91SAM9XEXX = 41,
+    At91sam9xexx = 41,
     #[doc = "52: AT91x34 Series"]
-    AT91X34 = 52,
+    At91x34 = 52,
     #[doc = "55: CAP7 Series"]
-    CAP7 = 55,
+    Cap7 = 55,
     #[doc = "57: CAP9 Series"]
-    CAP9 = 57,
+    Cap9 = 57,
     #[doc = "59: CAP11 Series"]
-    CAP11 = 59,
+    Cap11 = 59,
     #[doc = "64: AT91x40 Series"]
-    AT91X40 = 64,
+    At91x40 = 64,
     #[doc = "66: AT91x42 Series"]
-    AT91X42 = 66,
+    At91x42 = 66,
     #[doc = "85: AT91x55 Series"]
-    AT91X55 = 85,
+    At91x55 = 85,
     #[doc = "96: AT91SAM7Axx Series"]
-    AT91SAM7AXX = 96,
+    At91sam7axx = 96,
     #[doc = "97: AT91SAM7AQxx Series"]
-    AT91SAM7AQXX = 97,
+    At91sam7aqxx = 97,
     #[doc = "99: AT91x63 Series"]
-    AT91X63 = 99,
+    At91x63 = 99,
     #[doc = "112: AT91SAM7Sxx Series"]
-    AT91SAM7SXX = 112,
+    At91sam7sxx = 112,
     #[doc = "113: AT91SAM7XCxx Series"]
-    AT91SAM7XCXX = 113,
+    At91sam7xcxx = 113,
     #[doc = "114: AT91SAM7SExx Series"]
-    AT91SAM7SEXX = 114,
+    At91sam7sexx = 114,
     #[doc = "115: AT91SAM7Lxx Series"]
-    AT91SAM7LXX = 115,
+    At91sam7lxx = 115,
     #[doc = "117: AT91SAM7Xxx Series"]
-    AT91SAM7XXX = 117,
+    At91sam7xxx = 117,
     #[doc = "118: AT91SAM7SLxx Series"]
-    AT91SAM7SLXX = 118,
+    At91sam7slxx = 118,
     #[doc = "128: SAM3UxC Series (100-pin version)"]
-    SAM3UX_C = 128,
+    Sam3uxC = 128,
     #[doc = "129: SAM3UxE Series (144-pin version)"]
-    SAM3UX_E = 129,
+    Sam3uxE = 129,
     #[doc = "131: SAM3AxC Series (100-pin version)"]
-    SAM3AX_C = 131,
+    Sam3axC = 131,
     #[doc = "131: SAM4AxC Series (100-pin version)"]
-    SAM4AX_C = 131,
+    Sam4axC = 131,
     #[doc = "132: SAM3XxC Series (100-pin version)"]
-    SAM3XX_C = 132,
+    Sam3xxC = 132,
     #[doc = "132: SAM4XxC Series (100-pin version)"]
-    SAM4XX_C = 132,
+    Sam4xxC = 132,
     #[doc = "133: SAM3XxE Series (144-pin version)"]
-    SAM3XX_E = 133,
+    Sam3xxE = 133,
     #[doc = "133: SAM4XxE Series (144-pin version)"]
-    SAM4XX_E = 133,
+    Sam4xxE = 133,
     #[doc = "134: SAM3XxG Series (208/217-pin version)"]
-    SAM3XX_G = 134,
+    Sam3xxG = 134,
     #[doc = "134: SAM4XxG Series (208/217-pin version)"]
-    SAM4XX_G = 134,
+    Sam4xxG = 134,
     #[doc = "136: SAM3SxASeries (48-pin version)"]
-    SAM3SX_A = 136,
+    Sam3sxA = 136,
     #[doc = "136: SAM4SxA Series (48-pin version)"]
-    SAM4SX_A = 136,
+    Sam4sxA = 136,
     #[doc = "137: SAM3SxB Series (64-pin version)"]
-    SAM3SX_B = 137,
+    Sam3sxB = 137,
     #[doc = "137: SAM4SxB Series (64-pin version)"]
-    SAM4SX_B = 137,
+    Sam4sxB = 137,
     #[doc = "138: SAM3SxC Series (100-pin version)"]
-    SAM3SX_C = 138,
+    Sam3sxC = 138,
     #[doc = "138: SAM4SxC Series (100-pin version)"]
-    SAM4SX_C = 138,
+    Sam4sxC = 138,
     #[doc = "146: AT91x92 Series"]
-    AT91X92 = 146,
+    At91x92 = 146,
     #[doc = "147: SAM3NxA Series (48-pin version)"]
-    SAM3NX_A = 147,
+    Sam3nxA = 147,
     #[doc = "148: SAM3NxB Series (64-pin version)"]
-    SAM3NX_B = 148,
+    Sam3nxB = 148,
     #[doc = "149: SAM3NxC Series (100-pin version)"]
-    SAM3NX_C = 149,
+    Sam3nxC = 149,
     #[doc = "153: SAM3SDxB Series (64-pin version)"]
-    SAM3SDX_B = 153,
+    Sam3sdxB = 153,
     #[doc = "154: SAM3SDxC Series (100-pin version)"]
-    SAM3SDX_C = 154,
+    Sam3sdxC = 154,
     #[doc = "165: SAM5A"]
-    SAM5A = 165,
+    Sam5a = 165,
     #[doc = "240: AT75Cxx Series"]
-    AT75CXX = 240,
+    At75cxx = 240,
 }
 impl From<ARCH_A> for u8 {
     #[inline(always)]
@@ -549,278 +537,278 @@ impl ARCH_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<ARCH_A> {
         match self.bits {
-            25 => Some(ARCH_A::AT91SAM9XX),
-            41 => Some(ARCH_A::AT91SAM9XEXX),
-            52 => Some(ARCH_A::AT91X34),
-            55 => Some(ARCH_A::CAP7),
-            57 => Some(ARCH_A::CAP9),
-            59 => Some(ARCH_A::CAP11),
-            64 => Some(ARCH_A::AT91X40),
-            66 => Some(ARCH_A::AT91X42),
-            85 => Some(ARCH_A::AT91X55),
-            96 => Some(ARCH_A::AT91SAM7AXX),
-            97 => Some(ARCH_A::AT91SAM7AQXX),
-            99 => Some(ARCH_A::AT91X63),
-            112 => Some(ARCH_A::AT91SAM7SXX),
-            113 => Some(ARCH_A::AT91SAM7XCXX),
-            114 => Some(ARCH_A::AT91SAM7SEXX),
-            115 => Some(ARCH_A::AT91SAM7LXX),
-            117 => Some(ARCH_A::AT91SAM7XXX),
-            118 => Some(ARCH_A::AT91SAM7SLXX),
-            128 => Some(ARCH_A::SAM3UX_C),
-            129 => Some(ARCH_A::SAM3UX_E),
-            131 => Some(ARCH_A::SAM3AX_C),
-            131 => Some(ARCH_A::SAM4AX_C),
-            132 => Some(ARCH_A::SAM3XX_C),
-            132 => Some(ARCH_A::SAM4XX_C),
-            133 => Some(ARCH_A::SAM3XX_E),
-            133 => Some(ARCH_A::SAM4XX_E),
-            134 => Some(ARCH_A::SAM3XX_G),
-            134 => Some(ARCH_A::SAM4XX_G),
-            136 => Some(ARCH_A::SAM3SX_A),
-            136 => Some(ARCH_A::SAM4SX_A),
-            137 => Some(ARCH_A::SAM3SX_B),
-            137 => Some(ARCH_A::SAM4SX_B),
-            138 => Some(ARCH_A::SAM3SX_C),
-            138 => Some(ARCH_A::SAM4SX_C),
-            146 => Some(ARCH_A::AT91X92),
-            147 => Some(ARCH_A::SAM3NX_A),
-            148 => Some(ARCH_A::SAM3NX_B),
-            149 => Some(ARCH_A::SAM3NX_C),
-            153 => Some(ARCH_A::SAM3SDX_B),
-            154 => Some(ARCH_A::SAM3SDX_C),
-            165 => Some(ARCH_A::SAM5A),
-            240 => Some(ARCH_A::AT75CXX),
+            25 => Some(ARCH_A::At91sam9xx),
+            41 => Some(ARCH_A::At91sam9xexx),
+            52 => Some(ARCH_A::At91x34),
+            55 => Some(ARCH_A::Cap7),
+            57 => Some(ARCH_A::Cap9),
+            59 => Some(ARCH_A::Cap11),
+            64 => Some(ARCH_A::At91x40),
+            66 => Some(ARCH_A::At91x42),
+            85 => Some(ARCH_A::At91x55),
+            96 => Some(ARCH_A::At91sam7axx),
+            97 => Some(ARCH_A::At91sam7aqxx),
+            99 => Some(ARCH_A::At91x63),
+            112 => Some(ARCH_A::At91sam7sxx),
+            113 => Some(ARCH_A::At91sam7xcxx),
+            114 => Some(ARCH_A::At91sam7sexx),
+            115 => Some(ARCH_A::At91sam7lxx),
+            117 => Some(ARCH_A::At91sam7xxx),
+            118 => Some(ARCH_A::At91sam7slxx),
+            128 => Some(ARCH_A::Sam3uxC),
+            129 => Some(ARCH_A::Sam3uxE),
+            131 => Some(ARCH_A::Sam3axC),
+            131 => Some(ARCH_A::Sam4axC),
+            132 => Some(ARCH_A::Sam3xxC),
+            132 => Some(ARCH_A::Sam4xxC),
+            133 => Some(ARCH_A::Sam3xxE),
+            133 => Some(ARCH_A::Sam4xxE),
+            134 => Some(ARCH_A::Sam3xxG),
+            134 => Some(ARCH_A::Sam4xxG),
+            136 => Some(ARCH_A::Sam3sxA),
+            136 => Some(ARCH_A::Sam4sxA),
+            137 => Some(ARCH_A::Sam3sxB),
+            137 => Some(ARCH_A::Sam4sxB),
+            138 => Some(ARCH_A::Sam3sxC),
+            138 => Some(ARCH_A::Sam4sxC),
+            146 => Some(ARCH_A::At91x92),
+            147 => Some(ARCH_A::Sam3nxA),
+            148 => Some(ARCH_A::Sam3nxB),
+            149 => Some(ARCH_A::Sam3nxC),
+            153 => Some(ARCH_A::Sam3sdxB),
+            154 => Some(ARCH_A::Sam3sdxC),
+            165 => Some(ARCH_A::Sam5a),
+            240 => Some(ARCH_A::At75cxx),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `AT91SAM9XX`"]
+    #[doc = "Checks if the value of the field is `At91sam9xx`"]
     #[inline(always)]
     pub fn is_at91sam9xx(&self) -> bool {
-        *self == ARCH_A::AT91SAM9XX
+        *self == ARCH_A::At91sam9xx
     }
-    #[doc = "Checks if the value of the field is `AT91SAM9XEXX`"]
+    #[doc = "Checks if the value of the field is `At91sam9xexx`"]
     #[inline(always)]
     pub fn is_at91sam9xexx(&self) -> bool {
-        *self == ARCH_A::AT91SAM9XEXX
+        *self == ARCH_A::At91sam9xexx
     }
-    #[doc = "Checks if the value of the field is `AT91X34`"]
+    #[doc = "Checks if the value of the field is `At91x34`"]
     #[inline(always)]
     pub fn is_at91x34(&self) -> bool {
-        *self == ARCH_A::AT91X34
+        *self == ARCH_A::At91x34
     }
-    #[doc = "Checks if the value of the field is `CAP7`"]
+    #[doc = "Checks if the value of the field is `Cap7`"]
     #[inline(always)]
     pub fn is_cap7(&self) -> bool {
-        *self == ARCH_A::CAP7
+        *self == ARCH_A::Cap7
     }
-    #[doc = "Checks if the value of the field is `CAP9`"]
+    #[doc = "Checks if the value of the field is `Cap9`"]
     #[inline(always)]
     pub fn is_cap9(&self) -> bool {
-        *self == ARCH_A::CAP9
+        *self == ARCH_A::Cap9
     }
-    #[doc = "Checks if the value of the field is `CAP11`"]
+    #[doc = "Checks if the value of the field is `Cap11`"]
     #[inline(always)]
     pub fn is_cap11(&self) -> bool {
-        *self == ARCH_A::CAP11
+        *self == ARCH_A::Cap11
     }
-    #[doc = "Checks if the value of the field is `AT91X40`"]
+    #[doc = "Checks if the value of the field is `At91x40`"]
     #[inline(always)]
     pub fn is_at91x40(&self) -> bool {
-        *self == ARCH_A::AT91X40
+        *self == ARCH_A::At91x40
     }
-    #[doc = "Checks if the value of the field is `AT91X42`"]
+    #[doc = "Checks if the value of the field is `At91x42`"]
     #[inline(always)]
     pub fn is_at91x42(&self) -> bool {
-        *self == ARCH_A::AT91X42
+        *self == ARCH_A::At91x42
     }
-    #[doc = "Checks if the value of the field is `AT91X55`"]
+    #[doc = "Checks if the value of the field is `At91x55`"]
     #[inline(always)]
     pub fn is_at91x55(&self) -> bool {
-        *self == ARCH_A::AT91X55
+        *self == ARCH_A::At91x55
     }
-    #[doc = "Checks if the value of the field is `AT91SAM7AXX`"]
+    #[doc = "Checks if the value of the field is `At91sam7axx`"]
     #[inline(always)]
     pub fn is_at91sam7axx(&self) -> bool {
-        *self == ARCH_A::AT91SAM7AXX
+        *self == ARCH_A::At91sam7axx
     }
-    #[doc = "Checks if the value of the field is `AT91SAM7AQXX`"]
+    #[doc = "Checks if the value of the field is `At91sam7aqxx`"]
     #[inline(always)]
     pub fn is_at91sam7aqxx(&self) -> bool {
-        *self == ARCH_A::AT91SAM7AQXX
+        *self == ARCH_A::At91sam7aqxx
     }
-    #[doc = "Checks if the value of the field is `AT91X63`"]
+    #[doc = "Checks if the value of the field is `At91x63`"]
     #[inline(always)]
     pub fn is_at91x63(&self) -> bool {
-        *self == ARCH_A::AT91X63
+        *self == ARCH_A::At91x63
     }
-    #[doc = "Checks if the value of the field is `AT91SAM7SXX`"]
+    #[doc = "Checks if the value of the field is `At91sam7sxx`"]
     #[inline(always)]
     pub fn is_at91sam7sxx(&self) -> bool {
-        *self == ARCH_A::AT91SAM7SXX
+        *self == ARCH_A::At91sam7sxx
     }
-    #[doc = "Checks if the value of the field is `AT91SAM7XCXX`"]
+    #[doc = "Checks if the value of the field is `At91sam7xcxx`"]
     #[inline(always)]
     pub fn is_at91sam7xcxx(&self) -> bool {
-        *self == ARCH_A::AT91SAM7XCXX
+        *self == ARCH_A::At91sam7xcxx
     }
-    #[doc = "Checks if the value of the field is `AT91SAM7SEXX`"]
+    #[doc = "Checks if the value of the field is `At91sam7sexx`"]
     #[inline(always)]
     pub fn is_at91sam7sexx(&self) -> bool {
-        *self == ARCH_A::AT91SAM7SEXX
+        *self == ARCH_A::At91sam7sexx
     }
-    #[doc = "Checks if the value of the field is `AT91SAM7LXX`"]
+    #[doc = "Checks if the value of the field is `At91sam7lxx`"]
     #[inline(always)]
     pub fn is_at91sam7lxx(&self) -> bool {
-        *self == ARCH_A::AT91SAM7LXX
+        *self == ARCH_A::At91sam7lxx
     }
-    #[doc = "Checks if the value of the field is `AT91SAM7XXX`"]
+    #[doc = "Checks if the value of the field is `At91sam7xxx`"]
     #[inline(always)]
     pub fn is_at91sam7xxx(&self) -> bool {
-        *self == ARCH_A::AT91SAM7XXX
+        *self == ARCH_A::At91sam7xxx
     }
-    #[doc = "Checks if the value of the field is `AT91SAM7SLXX`"]
+    #[doc = "Checks if the value of the field is `At91sam7slxx`"]
     #[inline(always)]
     pub fn is_at91sam7slxx(&self) -> bool {
-        *self == ARCH_A::AT91SAM7SLXX
+        *self == ARCH_A::At91sam7slxx
     }
-    #[doc = "Checks if the value of the field is `SAM3UX_C`"]
+    #[doc = "Checks if the value of the field is `Sam3uxC`"]
     #[inline(always)]
     pub fn is_sam3ux_c(&self) -> bool {
-        *self == ARCH_A::SAM3UX_C
+        *self == ARCH_A::Sam3uxC
     }
-    #[doc = "Checks if the value of the field is `SAM3UX_E`"]
+    #[doc = "Checks if the value of the field is `Sam3uxE`"]
     #[inline(always)]
     pub fn is_sam3ux_e(&self) -> bool {
-        *self == ARCH_A::SAM3UX_E
+        *self == ARCH_A::Sam3uxE
     }
-    #[doc = "Checks if the value of the field is `SAM3AX_C`"]
+    #[doc = "Checks if the value of the field is `Sam3axC`"]
     #[inline(always)]
     pub fn is_sam3ax_c(&self) -> bool {
-        *self == ARCH_A::SAM3AX_C
+        *self == ARCH_A::Sam3axC
     }
-    #[doc = "Checks if the value of the field is `SAM4AX_C`"]
+    #[doc = "Checks if the value of the field is `Sam4axC`"]
     #[inline(always)]
     pub fn is_sam4ax_c(&self) -> bool {
-        *self == ARCH_A::SAM4AX_C
+        *self == ARCH_A::Sam4axC
     }
-    #[doc = "Checks if the value of the field is `SAM3XX_C`"]
+    #[doc = "Checks if the value of the field is `Sam3xxC`"]
     #[inline(always)]
     pub fn is_sam3xx_c(&self) -> bool {
-        *self == ARCH_A::SAM3XX_C
+        *self == ARCH_A::Sam3xxC
     }
-    #[doc = "Checks if the value of the field is `SAM4XX_C`"]
+    #[doc = "Checks if the value of the field is `Sam4xxC`"]
     #[inline(always)]
     pub fn is_sam4xx_c(&self) -> bool {
-        *self == ARCH_A::SAM4XX_C
+        *self == ARCH_A::Sam4xxC
     }
-    #[doc = "Checks if the value of the field is `SAM3XX_E`"]
+    #[doc = "Checks if the value of the field is `Sam3xxE`"]
     #[inline(always)]
     pub fn is_sam3xx_e(&self) -> bool {
-        *self == ARCH_A::SAM3XX_E
+        *self == ARCH_A::Sam3xxE
     }
-    #[doc = "Checks if the value of the field is `SAM4XX_E`"]
+    #[doc = "Checks if the value of the field is `Sam4xxE`"]
     #[inline(always)]
     pub fn is_sam4xx_e(&self) -> bool {
-        *self == ARCH_A::SAM4XX_E
+        *self == ARCH_A::Sam4xxE
     }
-    #[doc = "Checks if the value of the field is `SAM3XX_G`"]
+    #[doc = "Checks if the value of the field is `Sam3xxG`"]
     #[inline(always)]
     pub fn is_sam3xx_g(&self) -> bool {
-        *self == ARCH_A::SAM3XX_G
+        *self == ARCH_A::Sam3xxG
     }
-    #[doc = "Checks if the value of the field is `SAM4XX_G`"]
+    #[doc = "Checks if the value of the field is `Sam4xxG`"]
     #[inline(always)]
     pub fn is_sam4xx_g(&self) -> bool {
-        *self == ARCH_A::SAM4XX_G
+        *self == ARCH_A::Sam4xxG
     }
-    #[doc = "Checks if the value of the field is `SAM3SX_A`"]
+    #[doc = "Checks if the value of the field is `Sam3sxA`"]
     #[inline(always)]
     pub fn is_sam3sx_a(&self) -> bool {
-        *self == ARCH_A::SAM3SX_A
+        *self == ARCH_A::Sam3sxA
     }
-    #[doc = "Checks if the value of the field is `SAM4SX_A`"]
+    #[doc = "Checks if the value of the field is `Sam4sxA`"]
     #[inline(always)]
     pub fn is_sam4sx_a(&self) -> bool {
-        *self == ARCH_A::SAM4SX_A
+        *self == ARCH_A::Sam4sxA
     }
-    #[doc = "Checks if the value of the field is `SAM3SX_B`"]
+    #[doc = "Checks if the value of the field is `Sam3sxB`"]
     #[inline(always)]
     pub fn is_sam3sx_b(&self) -> bool {
-        *self == ARCH_A::SAM3SX_B
+        *self == ARCH_A::Sam3sxB
     }
-    #[doc = "Checks if the value of the field is `SAM4SX_B`"]
+    #[doc = "Checks if the value of the field is `Sam4sxB`"]
     #[inline(always)]
     pub fn is_sam4sx_b(&self) -> bool {
-        *self == ARCH_A::SAM4SX_B
+        *self == ARCH_A::Sam4sxB
     }
-    #[doc = "Checks if the value of the field is `SAM3SX_C`"]
+    #[doc = "Checks if the value of the field is `Sam3sxC`"]
     #[inline(always)]
     pub fn is_sam3sx_c(&self) -> bool {
-        *self == ARCH_A::SAM3SX_C
+        *self == ARCH_A::Sam3sxC
     }
-    #[doc = "Checks if the value of the field is `SAM4SX_C`"]
+    #[doc = "Checks if the value of the field is `Sam4sxC`"]
     #[inline(always)]
     pub fn is_sam4sx_c(&self) -> bool {
-        *self == ARCH_A::SAM4SX_C
+        *self == ARCH_A::Sam4sxC
     }
-    #[doc = "Checks if the value of the field is `AT91X92`"]
+    #[doc = "Checks if the value of the field is `At91x92`"]
     #[inline(always)]
     pub fn is_at91x92(&self) -> bool {
-        *self == ARCH_A::AT91X92
+        *self == ARCH_A::At91x92
     }
-    #[doc = "Checks if the value of the field is `SAM3NX_A`"]
+    #[doc = "Checks if the value of the field is `Sam3nxA`"]
     #[inline(always)]
     pub fn is_sam3nx_a(&self) -> bool {
-        *self == ARCH_A::SAM3NX_A
+        *self == ARCH_A::Sam3nxA
     }
-    #[doc = "Checks if the value of the field is `SAM3NX_B`"]
+    #[doc = "Checks if the value of the field is `Sam3nxB`"]
     #[inline(always)]
     pub fn is_sam3nx_b(&self) -> bool {
-        *self == ARCH_A::SAM3NX_B
+        *self == ARCH_A::Sam3nxB
     }
-    #[doc = "Checks if the value of the field is `SAM3NX_C`"]
+    #[doc = "Checks if the value of the field is `Sam3nxC`"]
     #[inline(always)]
     pub fn is_sam3nx_c(&self) -> bool {
-        *self == ARCH_A::SAM3NX_C
+        *self == ARCH_A::Sam3nxC
     }
-    #[doc = "Checks if the value of the field is `SAM3SDX_B`"]
+    #[doc = "Checks if the value of the field is `Sam3sdxB`"]
     #[inline(always)]
     pub fn is_sam3sdx_b(&self) -> bool {
-        *self == ARCH_A::SAM3SDX_B
+        *self == ARCH_A::Sam3sdxB
     }
-    #[doc = "Checks if the value of the field is `SAM3SDX_C`"]
+    #[doc = "Checks if the value of the field is `Sam3sdxC`"]
     #[inline(always)]
     pub fn is_sam3sdx_c(&self) -> bool {
-        *self == ARCH_A::SAM3SDX_C
+        *self == ARCH_A::Sam3sdxC
     }
-    #[doc = "Checks if the value of the field is `SAM5A`"]
+    #[doc = "Checks if the value of the field is `Sam5a`"]
     #[inline(always)]
     pub fn is_sam5a(&self) -> bool {
-        *self == ARCH_A::SAM5A
+        *self == ARCH_A::Sam5a
     }
-    #[doc = "Checks if the value of the field is `AT75CXX`"]
+    #[doc = "Checks if the value of the field is `At75cxx`"]
     #[inline(always)]
     pub fn is_at75cxx(&self) -> bool {
-        *self == ARCH_A::AT75CXX
+        *self == ARCH_A::At75cxx
     }
 }
 #[doc = "Field `NVPTYP` reader - Nonvolatile Program Memory Type"]
 pub type NVPTYP_R = crate::FieldReader<u8, NVPTYP_A>;
 #[doc = "Nonvolatile Program Memory Type"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum NVPTYP_A {
     #[doc = "0: ROM"]
-    ROM = 0,
+    Rom = 0,
     #[doc = "1: ROMless or on-chip Flash"]
-    ROMLESS = 1,
+    Romless = 1,
     #[doc = "2: Embedded Flash Memory"]
-    FLASH = 2,
+    Flash = 2,
     #[doc = "3: ROM and Embedded Flash MemoryNVPSIZ is ROM size NVPSIZ2 is Flash size"]
-    ROM_FLASH = 3,
+    RomFlash = 3,
     #[doc = "4: SRAM emulating ROM"]
-    SRAM = 4,
+    Sram = 4,
 }
 impl From<NVPTYP_A> for u8 {
     #[inline(always)]
@@ -833,38 +821,38 @@ impl NVPTYP_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<NVPTYP_A> {
         match self.bits {
-            0 => Some(NVPTYP_A::ROM),
-            1 => Some(NVPTYP_A::ROMLESS),
-            2 => Some(NVPTYP_A::FLASH),
-            3 => Some(NVPTYP_A::ROM_FLASH),
-            4 => Some(NVPTYP_A::SRAM),
+            0 => Some(NVPTYP_A::Rom),
+            1 => Some(NVPTYP_A::Romless),
+            2 => Some(NVPTYP_A::Flash),
+            3 => Some(NVPTYP_A::RomFlash),
+            4 => Some(NVPTYP_A::Sram),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `ROM`"]
+    #[doc = "Checks if the value of the field is `Rom`"]
     #[inline(always)]
     pub fn is_rom(&self) -> bool {
-        *self == NVPTYP_A::ROM
+        *self == NVPTYP_A::Rom
     }
-    #[doc = "Checks if the value of the field is `ROMLESS`"]
+    #[doc = "Checks if the value of the field is `Romless`"]
     #[inline(always)]
     pub fn is_romless(&self) -> bool {
-        *self == NVPTYP_A::ROMLESS
+        *self == NVPTYP_A::Romless
     }
-    #[doc = "Checks if the value of the field is `FLASH`"]
+    #[doc = "Checks if the value of the field is `Flash`"]
     #[inline(always)]
     pub fn is_flash(&self) -> bool {
-        *self == NVPTYP_A::FLASH
+        *self == NVPTYP_A::Flash
     }
-    #[doc = "Checks if the value of the field is `ROM_FLASH`"]
+    #[doc = "Checks if the value of the field is `RomFlash`"]
     #[inline(always)]
     pub fn is_rom_flash(&self) -> bool {
-        *self == NVPTYP_A::ROM_FLASH
+        *self == NVPTYP_A::RomFlash
     }
-    #[doc = "Checks if the value of the field is `SRAM`"]
+    #[doc = "Checks if the value of the field is `Sram`"]
     #[inline(always)]
     pub fn is_sram(&self) -> bool {
-        *self == NVPTYP_A::SRAM
+        *self == NVPTYP_A::Sram
     }
 }
 #[doc = "Field `EXT` reader - Extension Flag"]

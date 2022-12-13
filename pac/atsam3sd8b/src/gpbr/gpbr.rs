@@ -1,39 +1,9 @@
 #[doc = "Register `GPBR[%s]` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<GPBR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GPBR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GPBR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GPBR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `GPBR[%s]` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<GPBR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<GPBR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<GPBR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<GPBR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `GPBR_VALUE` reader - Value of GPBR x"]
 pub type GPBR_VALUE_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `GPBR_VALUE` writer - Value of GPBR x"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Value of GPBR x"]
     #[inline(always)]
+    #[must_use]
     pub fn gpbr_value(&mut self) -> GPBR_VALUE_W<0> {
         GPBR_VALUE_W::new(self)
     }
@@ -70,4 +41,6 @@ impl crate::Readable for GPBR_SPEC {
 #[doc = "`write(|w| ..)` method takes [gpbr::W](W) writer structure"]
 impl crate::Writable for GPBR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

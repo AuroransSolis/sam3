@@ -1,24 +1,6 @@
 #[doc = "Register `PMC_IER` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<PMC_IER_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PMC_IER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PMC_IER_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PMC_IER_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `MOSCXTS` writer - Main Crystal Oscillator Status Interrupt Enable"]
 pub type MOSCXTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_IER_SPEC, bool, O>;
 #[doc = "Field `LOCKA` writer - PLLA Lock Interrupt Enable"]
@@ -42,51 +24,61 @@ pub type CFDEV_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_IER_SPEC, bool
 impl W {
     #[doc = "Bit 0 - Main Crystal Oscillator Status Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn moscxts(&mut self) -> MOSCXTS_W<0> {
         MOSCXTS_W::new(self)
     }
     #[doc = "Bit 1 - PLLA Lock Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn locka(&mut self) -> LOCKA_W<1> {
         LOCKA_W::new(self)
     }
     #[doc = "Bit 3 - Master Clock Ready Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn mckrdy(&mut self) -> MCKRDY_W<3> {
         MCKRDY_W::new(self)
     }
     #[doc = "Bit 6 - UTMI PLL Lock Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn locku(&mut self) -> LOCKU_W<6> {
         LOCKU_W::new(self)
     }
     #[doc = "Bit 8 - Programmable Clock Ready 0 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pckrdy0(&mut self) -> PCKRDY0_W<8> {
         PCKRDY0_W::new(self)
     }
     #[doc = "Bit 9 - Programmable Clock Ready 1 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pckrdy1(&mut self) -> PCKRDY1_W<9> {
         PCKRDY1_W::new(self)
     }
     #[doc = "Bit 10 - Programmable Clock Ready 2 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pckrdy2(&mut self) -> PCKRDY2_W<10> {
         PCKRDY2_W::new(self)
     }
     #[doc = "Bit 16 - Main Oscillator Selection Status Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn moscsels(&mut self) -> MOSCSELS_W<16> {
         MOSCSELS_W::new(self)
     }
     #[doc = "Bit 17 - Main On-Chip RC Status Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn moscrcs(&mut self) -> MOSCRCS_W<17> {
         MOSCRCS_W::new(self)
     }
     #[doc = "Bit 18 - Clock Failure Detector Event Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn cfdev(&mut self) -> CFDEV_W<18> {
         CFDEV_W::new(self)
     }
@@ -105,4 +97,6 @@ impl crate::RegisterSpec for PMC_IER_SPEC {
 #[doc = "`write(|w| ..)` method takes [pmc_ier::W](W) writer structure"]
 impl crate::Writable for PMC_IER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

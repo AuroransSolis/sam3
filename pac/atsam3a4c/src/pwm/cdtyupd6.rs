@@ -1,29 +1,12 @@
 #[doc = "Register `CDTYUPD6` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CDTYUPD6_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CDTYUPD6_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CDTYUPD6_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CDTYUPD6_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `CDTYUPD` writer - Channel Duty-Cycle Update"]
 pub type CDTYUPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CDTYUPD6_SPEC, u32, u32, 24, O>;
 impl W {
     #[doc = "Bits 0:23 - Channel Duty-Cycle Update"]
     #[inline(always)]
+    #[must_use]
     pub fn cdtyupd(&mut self) -> CDTYUPD_W<0> {
         CDTYUPD_W::new(self)
     }
@@ -42,4 +25,6 @@ impl crate::RegisterSpec for CDTYUPD6_SPEC {
 #[doc = "`write(|w| ..)` method takes [cdtyupd6::W](W) writer structure"]
 impl crate::Writable for CDTYUPD6_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -34,75 +34,63 @@ pub struct RegisterBlock {
 impl RegisterBlock {
     #[doc = "0x00 - Control Register"]
     #[inline(always)]
-    pub fn spi_mode_cr_spi_mode(&self) -> &SPI_MODE_CR_SPI_MODE {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(0usize) as *const SPI_MODE_CR_SPI_MODE)
-        }
+    pub const fn spi_mode_cr_spi_mode(&self) -> &SPI_MODE_CR_SPI_MODE {
+        unsafe { &*(self as *const Self).cast::<u8>().add(0usize).cast() }
     }
     #[doc = "0x00 - Control Register"]
     #[inline(always)]
-    pub fn cr(&self) -> &CR {
-        unsafe { &*(((self as *const Self) as *const u8).add(0usize) as *const CR) }
+    pub const fn cr(&self) -> &CR {
+        unsafe { &*(self as *const Self).cast::<u8>().add(0usize).cast() }
     }
     #[doc = "0x04 - Mode Register"]
     #[inline(always)]
-    pub fn spi_mode_mr_spi_mode(&self) -> &SPI_MODE_MR_SPI_MODE {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(4usize) as *const SPI_MODE_MR_SPI_MODE)
-        }
+    pub const fn spi_mode_mr_spi_mode(&self) -> &SPI_MODE_MR_SPI_MODE {
+        unsafe { &*(self as *const Self).cast::<u8>().add(4usize).cast() }
     }
     #[doc = "0x04 - Mode Register"]
     #[inline(always)]
-    pub fn mr(&self) -> &MR {
-        unsafe { &*(((self as *const Self) as *const u8).add(4usize) as *const MR) }
+    pub const fn mr(&self) -> &MR {
+        unsafe { &*(self as *const Self).cast::<u8>().add(4usize).cast() }
     }
     #[doc = "0x08 - Interrupt Enable Register"]
     #[inline(always)]
-    pub fn spi_mode_ier_spi_mode(&self) -> &SPI_MODE_IER_SPI_MODE {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(8usize) as *const SPI_MODE_IER_SPI_MODE)
-        }
+    pub const fn spi_mode_ier_spi_mode(&self) -> &SPI_MODE_IER_SPI_MODE {
+        unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
     }
     #[doc = "0x08 - Interrupt Enable Register"]
     #[inline(always)]
-    pub fn ier(&self) -> &IER {
-        unsafe { &*(((self as *const Self) as *const u8).add(8usize) as *const IER) }
+    pub const fn ier(&self) -> &IER {
+        unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
     }
     #[doc = "0x0c - Interrupt Disable Register"]
     #[inline(always)]
-    pub fn spi_mode_idr_spi_mode(&self) -> &SPI_MODE_IDR_SPI_MODE {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(12usize) as *const SPI_MODE_IDR_SPI_MODE)
-        }
+    pub const fn spi_mode_idr_spi_mode(&self) -> &SPI_MODE_IDR_SPI_MODE {
+        unsafe { &*(self as *const Self).cast::<u8>().add(12usize).cast() }
     }
     #[doc = "0x0c - Interrupt Disable Register"]
     #[inline(always)]
-    pub fn idr(&self) -> &IDR {
-        unsafe { &*(((self as *const Self) as *const u8).add(12usize) as *const IDR) }
+    pub const fn idr(&self) -> &IDR {
+        unsafe { &*(self as *const Self).cast::<u8>().add(12usize).cast() }
     }
     #[doc = "0x10 - Interrupt Mask Register"]
     #[inline(always)]
-    pub fn spi_mode_imr_spi_mode(&self) -> &SPI_MODE_IMR_SPI_MODE {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(16usize) as *const SPI_MODE_IMR_SPI_MODE)
-        }
+    pub const fn spi_mode_imr_spi_mode(&self) -> &SPI_MODE_IMR_SPI_MODE {
+        unsafe { &*(self as *const Self).cast::<u8>().add(16usize).cast() }
     }
     #[doc = "0x10 - Interrupt Mask Register"]
     #[inline(always)]
-    pub fn imr(&self) -> &IMR {
-        unsafe { &*(((self as *const Self) as *const u8).add(16usize) as *const IMR) }
+    pub const fn imr(&self) -> &IMR {
+        unsafe { &*(self as *const Self).cast::<u8>().add(16usize).cast() }
     }
     #[doc = "0x14 - Channel Status Register"]
     #[inline(always)]
-    pub fn spi_mode_csr_spi_mode(&self) -> &SPI_MODE_CSR_SPI_MODE {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(20usize) as *const SPI_MODE_CSR_SPI_MODE)
-        }
+    pub const fn spi_mode_csr_spi_mode(&self) -> &SPI_MODE_CSR_SPI_MODE {
+        unsafe { &*(self as *const Self).cast::<u8>().add(20usize).cast() }
     }
     #[doc = "0x14 - Channel Status Register"]
     #[inline(always)]
-    pub fn csr(&self) -> &CSR {
-        unsafe { &*(((self as *const Self) as *const u8).add(20usize) as *const CSR) }
+    pub const fn csr(&self) -> &CSR {
+        unsafe { &*(self as *const Self).cast::<u8>().add(20usize).cast() }
     }
 }
 #[doc = "CR (w) register accessor: an alias for `Reg<CR_SPEC>`"]

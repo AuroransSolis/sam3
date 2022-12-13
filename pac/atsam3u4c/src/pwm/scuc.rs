@@ -1,39 +1,9 @@
 #[doc = "Register `SCUC` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<SCUC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SCUC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SCUC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SCUC_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `SCUC` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<SCUC_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SCUC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SCUC_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SCUC_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `UPDULOCK` reader - Synchronous Channels Update Unlock"]
 pub type UPDULOCK_R = crate::BitReader<bool>;
 #[doc = "Field `UPDULOCK` writer - Synchronous Channels Update Unlock"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Synchronous Channels Update Unlock"]
     #[inline(always)]
+    #[must_use]
     pub fn updulock(&mut self) -> UPDULOCK_W<0> {
         UPDULOCK_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for SCUC_SPEC {
 #[doc = "`write(|w| ..)` method takes [scuc::W](W) writer structure"]
 impl crate::Writable for SCUC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCUC to value 0"]
 impl crate::Resettable for SCUC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

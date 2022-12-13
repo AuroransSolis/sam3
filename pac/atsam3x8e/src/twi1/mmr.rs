@@ -1,53 +1,23 @@
 #[doc = "Register `MMR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MMR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MMR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MMR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MMR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<MMR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MMR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MMR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `IADRSZ` reader - Internal Device Address Size"]
 pub type IADRSZ_R = crate::FieldReader<u8, IADRSZ_A>;
 #[doc = "Internal Device Address Size\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum IADRSZ_A {
     #[doc = "0: No internal device address"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: One-byte internal device address"]
-    _1_BYTE = 1,
+    _1Byte = 1,
     #[doc = "2: Two-byte internal device address"]
-    _2_BYTE = 2,
+    _2Byte = 2,
     #[doc = "3: Three-byte internal device address"]
-    _3_BYTE = 3,
+    _3Byte = 3,
 }
 impl From<IADRSZ_A> for u8 {
     #[inline(always)]
@@ -60,32 +30,32 @@ impl IADRSZ_R {
     #[inline(always)]
     pub fn variant(&self) -> IADRSZ_A {
         match self.bits {
-            0 => IADRSZ_A::NONE,
-            1 => IADRSZ_A::_1_BYTE,
-            2 => IADRSZ_A::_2_BYTE,
-            3 => IADRSZ_A::_3_BYTE,
+            0 => IADRSZ_A::None,
+            1 => IADRSZ_A::_1Byte,
+            2 => IADRSZ_A::_2Byte,
+            3 => IADRSZ_A::_3Byte,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Checks if the value of the field is `None`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == IADRSZ_A::NONE
+        *self == IADRSZ_A::None
     }
-    #[doc = "Checks if the value of the field is `_1_BYTE`"]
+    #[doc = "Checks if the value of the field is `_1Byte`"]
     #[inline(always)]
     pub fn is_1_byte(&self) -> bool {
-        *self == IADRSZ_A::_1_BYTE
+        *self == IADRSZ_A::_1Byte
     }
-    #[doc = "Checks if the value of the field is `_2_BYTE`"]
+    #[doc = "Checks if the value of the field is `_2Byte`"]
     #[inline(always)]
     pub fn is_2_byte(&self) -> bool {
-        *self == IADRSZ_A::_2_BYTE
+        *self == IADRSZ_A::_2Byte
     }
-    #[doc = "Checks if the value of the field is `_3_BYTE`"]
+    #[doc = "Checks if the value of the field is `_3Byte`"]
     #[inline(always)]
     pub fn is_3_byte(&self) -> bool {
-        *self == IADRSZ_A::_3_BYTE
+        *self == IADRSZ_A::_3Byte
     }
 }
 #[doc = "Field `IADRSZ` writer - Internal Device Address Size"]
@@ -94,22 +64,22 @@ impl<'a, const O: u8> IADRSZ_W<'a, O> {
     #[doc = "No internal device address"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
-        self.variant(IADRSZ_A::NONE)
+        self.variant(IADRSZ_A::None)
     }
     #[doc = "One-byte internal device address"]
     #[inline(always)]
     pub fn _1_byte(self) -> &'a mut W {
-        self.variant(IADRSZ_A::_1_BYTE)
+        self.variant(IADRSZ_A::_1Byte)
     }
     #[doc = "Two-byte internal device address"]
     #[inline(always)]
     pub fn _2_byte(self) -> &'a mut W {
-        self.variant(IADRSZ_A::_2_BYTE)
+        self.variant(IADRSZ_A::_2Byte)
     }
     #[doc = "Three-byte internal device address"]
     #[inline(always)]
     pub fn _3_byte(self) -> &'a mut W {
-        self.variant(IADRSZ_A::_3_BYTE)
+        self.variant(IADRSZ_A::_3Byte)
     }
 }
 #[doc = "Field `MREAD` reader - Master Read Direction"]
@@ -140,16 +110,19 @@ impl R {
 impl W {
     #[doc = "Bits 8:9 - Internal Device Address Size"]
     #[inline(always)]
+    #[must_use]
     pub fn iadrsz(&mut self) -> IADRSZ_W<8> {
         IADRSZ_W::new(self)
     }
     #[doc = "Bit 12 - Master Read Direction"]
     #[inline(always)]
+    #[must_use]
     pub fn mread(&mut self) -> MREAD_W<12> {
         MREAD_W::new(self)
     }
     #[doc = "Bits 16:22 - Device Address"]
     #[inline(always)]
+    #[must_use]
     pub fn dadr(&mut self) -> DADR_W<16> {
         DADR_W::new(self)
     }
@@ -172,11 +145,10 @@ impl crate::Readable for MMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mmr::W](W) writer structure"]
 impl crate::Writable for MMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MMR to value 0"]
 impl crate::Resettable for MMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

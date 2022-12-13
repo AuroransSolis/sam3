@@ -1,18 +1,6 @@
 #[doc = "Register `ECC_PR1` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<ECC_PR1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ECC_PR1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ECC_PR1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ECC_PR1_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `NPARITY` reader - Parity N"]
 pub type NPARITY_R = crate::FieldReader<u16, u16>;
 impl R {
@@ -33,8 +21,5 @@ impl crate::Readable for ECC_PR1_SPEC {
 }
 #[doc = "`reset()` method sets ECC_PR1 to value 0"]
 impl crate::Resettable for ECC_PR1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

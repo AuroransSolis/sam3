@@ -1,39 +1,9 @@
 #[doc = "Register `CFG` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CFG` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `FIFOMODE` reader - HSMCI Internal FIFO control mode"]
 pub type FIFOMODE_R = crate::BitReader<bool>;
 #[doc = "Field `FIFOMODE` writer - HSMCI Internal FIFO control mode"]
@@ -75,21 +45,25 @@ impl R {
 impl W {
     #[doc = "Bit 0 - HSMCI Internal FIFO control mode"]
     #[inline(always)]
+    #[must_use]
     pub fn fifomode(&mut self) -> FIFOMODE_W<0> {
         FIFOMODE_W::new(self)
     }
     #[doc = "Bit 4 - Flow Error flag reset control mode"]
     #[inline(always)]
+    #[must_use]
     pub fn ferrctrl(&mut self) -> FERRCTRL_W<4> {
         FERRCTRL_W::new(self)
     }
     #[doc = "Bit 8 - High Speed Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn hsmode(&mut self) -> HSMODE_W<8> {
         HSMODE_W::new(self)
     }
     #[doc = "Bit 12 - Synchronize on the last block"]
     #[inline(always)]
+    #[must_use]
     pub fn lsync(&mut self) -> LSYNC_W<12> {
         LSYNC_W::new(self)
     }
@@ -112,11 +86,10 @@ impl crate::Readable for CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg::W](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG to value 0"]
 impl crate::Resettable for CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

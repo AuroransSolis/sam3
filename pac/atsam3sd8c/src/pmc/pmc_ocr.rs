@@ -1,39 +1,9 @@
 #[doc = "Register `PMC_OCR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<PMC_OCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PMC_OCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PMC_OCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PMC_OCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `PMC_OCR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<PMC_OCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PMC_OCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PMC_OCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PMC_OCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `CAL4` reader - RC Oscillator Calibration bits for 4 Mhz"]
 pub type CAL4_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CAL4` writer - RC Oscillator Calibration bits for 4 Mhz"]
@@ -93,31 +63,37 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - RC Oscillator Calibration bits for 4 Mhz"]
     #[inline(always)]
+    #[must_use]
     pub fn cal4(&mut self) -> CAL4_W<0> {
         CAL4_W::new(self)
     }
     #[doc = "Bit 7 - Selection of RC Oscillator Calibration bits for 4 Mhz"]
     #[inline(always)]
+    #[must_use]
     pub fn sel4(&mut self) -> SEL4_W<7> {
         SEL4_W::new(self)
     }
     #[doc = "Bits 8:14 - RC Oscillator Calibration bits for 8 Mhz"]
     #[inline(always)]
+    #[must_use]
     pub fn cal8(&mut self) -> CAL8_W<8> {
         CAL8_W::new(self)
     }
     #[doc = "Bit 15 - Selection of RC Oscillator Calibration bits for 8 Mhz"]
     #[inline(always)]
+    #[must_use]
     pub fn sel8(&mut self) -> SEL8_W<15> {
         SEL8_W::new(self)
     }
     #[doc = "Bits 16:22 - RC Oscillator Calibration bits for 12 Mhz"]
     #[inline(always)]
+    #[must_use]
     pub fn cal12(&mut self) -> CAL12_W<16> {
         CAL12_W::new(self)
     }
     #[doc = "Bit 23 - Selection of RC Oscillator Calibration bits for 12 Mhz"]
     #[inline(always)]
+    #[must_use]
     pub fn sel12(&mut self) -> SEL12_W<23> {
         SEL12_W::new(self)
     }
@@ -140,11 +116,10 @@ impl crate::Readable for PMC_OCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [pmc_ocr::W](W) writer structure"]
 impl crate::Writable for PMC_OCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PMC_OCR to value 0x0040_4040"]
 impl crate::Resettable for PMC_OCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0040_4040
-    }
+    const RESET_VALUE: Self::Ux = 0x0040_4040;
 }

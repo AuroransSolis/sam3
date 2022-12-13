@@ -1,39 +1,9 @@
 #[doc = "Register `FMR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<FMR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FMR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FMR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `FMR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<FMR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FMR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FMR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `ENCF0` reader - ENable Compare Fault Channel 0"]
 pub type ENCF0_R = crate::BitReader<bool>;
 #[doc = "Field `ENCF0` writer - ENable Compare Fault Channel 0"]
@@ -57,11 +27,13 @@ impl R {
 impl W {
     #[doc = "Bit 0 - ENable Compare Fault Channel 0"]
     #[inline(always)]
+    #[must_use]
     pub fn encf0(&mut self) -> ENCF0_W<0> {
         ENCF0_W::new(self)
     }
     #[doc = "Bit 1 - ENable Compare Fault Channel 1"]
     #[inline(always)]
+    #[must_use]
     pub fn encf1(&mut self) -> ENCF1_W<1> {
         ENCF1_W::new(self)
     }
@@ -84,11 +56,10 @@ impl crate::Readable for FMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [fmr::W](W) writer structure"]
 impl crate::Writable for FMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FMR to value 0"]
 impl crate::Resettable for FMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

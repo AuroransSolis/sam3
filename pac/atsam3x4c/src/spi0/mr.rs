@@ -1,39 +1,9 @@
 #[doc = "Register `MR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<MR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `MSTR` reader - Master/Slave Mode"]
 pub type MSTR_R = crate::BitReader<bool>;
 #[doc = "Field `MSTR` writer - Master/Slave Mode"]
@@ -111,41 +81,49 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Master/Slave Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn mstr(&mut self) -> MSTR_W<0> {
         MSTR_W::new(self)
     }
     #[doc = "Bit 1 - Peripheral Select"]
     #[inline(always)]
+    #[must_use]
     pub fn ps(&mut self) -> PS_W<1> {
         PS_W::new(self)
     }
     #[doc = "Bit 2 - Chip Select Decode"]
     #[inline(always)]
+    #[must_use]
     pub fn pcsdec(&mut self) -> PCSDEC_W<2> {
         PCSDEC_W::new(self)
     }
     #[doc = "Bit 4 - Mode Fault Detection"]
     #[inline(always)]
+    #[must_use]
     pub fn modfdis(&mut self) -> MODFDIS_W<4> {
         MODFDIS_W::new(self)
     }
     #[doc = "Bit 5 - Wait Data Read Before Transfer"]
     #[inline(always)]
+    #[must_use]
     pub fn wdrbt(&mut self) -> WDRBT_W<5> {
         WDRBT_W::new(self)
     }
     #[doc = "Bit 7 - Local Loopback Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn llb(&mut self) -> LLB_W<7> {
         LLB_W::new(self)
     }
     #[doc = "Bits 16:19 - Peripheral Chip Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pcs(&mut self) -> PCS_W<16> {
         PCS_W::new(self)
     }
     #[doc = "Bits 24:31 - Delay Between Chip Selects"]
     #[inline(always)]
+    #[must_use]
     pub fn dlybcs(&mut self) -> DLYBCS_W<24> {
         DLYBCS_W::new(self)
     }
@@ -168,11 +146,10 @@ impl crate::Readable for MR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
 impl crate::Writable for MR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MR to value 0"]
 impl crate::Resettable for MR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

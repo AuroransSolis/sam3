@@ -1,39 +1,9 @@
 #[doc = "Register `MR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<MR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `TRGEN` reader - Trigger Enable"]
 pub type TRGEN_R = crate::BitReader<bool>;
 #[doc = "Field `TRGEN` writer - Trigger Enable"]
@@ -41,17 +11,17 @@ pub type TRGEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 #[doc = "Field `TRGSEL` reader - Trigger Selection"]
 pub type TRGSEL_R = crate::FieldReader<u8, TRGSEL_A>;
 #[doc = "Trigger Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TRGSEL_A {
     #[doc = "0: External trigger"]
-    TRGSEL0 = 0,
+    Trgsel0 = 0,
     #[doc = "1: TIO Output of the Timer Counter Channel 0"]
-    TRGSEL1 = 1,
+    Trgsel1 = 1,
     #[doc = "2: TIO Output of the Timer Counter Channel 1"]
-    TRGSEL2 = 2,
+    Trgsel2 = 2,
     #[doc = "3: TIO Output of the Timer Counter Channel 2"]
-    TRGSEL3 = 3,
+    Trgsel3 = 3,
 }
 impl From<TRGSEL_A> for u8 {
     #[inline(always)]
@@ -64,32 +34,32 @@ impl TRGSEL_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<TRGSEL_A> {
         match self.bits {
-            0 => Some(TRGSEL_A::TRGSEL0),
-            1 => Some(TRGSEL_A::TRGSEL1),
-            2 => Some(TRGSEL_A::TRGSEL2),
-            3 => Some(TRGSEL_A::TRGSEL3),
+            0 => Some(TRGSEL_A::Trgsel0),
+            1 => Some(TRGSEL_A::Trgsel1),
+            2 => Some(TRGSEL_A::Trgsel2),
+            3 => Some(TRGSEL_A::Trgsel3),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `TRGSEL0`"]
+    #[doc = "Checks if the value of the field is `Trgsel0`"]
     #[inline(always)]
     pub fn is_trgsel0(&self) -> bool {
-        *self == TRGSEL_A::TRGSEL0
+        *self == TRGSEL_A::Trgsel0
     }
-    #[doc = "Checks if the value of the field is `TRGSEL1`"]
+    #[doc = "Checks if the value of the field is `Trgsel1`"]
     #[inline(always)]
     pub fn is_trgsel1(&self) -> bool {
-        *self == TRGSEL_A::TRGSEL1
+        *self == TRGSEL_A::Trgsel1
     }
-    #[doc = "Checks if the value of the field is `TRGSEL2`"]
+    #[doc = "Checks if the value of the field is `Trgsel2`"]
     #[inline(always)]
     pub fn is_trgsel2(&self) -> bool {
-        *self == TRGSEL_A::TRGSEL2
+        *self == TRGSEL_A::Trgsel2
     }
-    #[doc = "Checks if the value of the field is `TRGSEL3`"]
+    #[doc = "Checks if the value of the field is `Trgsel3`"]
     #[inline(always)]
     pub fn is_trgsel3(&self) -> bool {
-        *self == TRGSEL_A::TRGSEL3
+        *self == TRGSEL_A::Trgsel3
     }
 }
 #[doc = "Field `TRGSEL` writer - Trigger Selection"]
@@ -98,22 +68,22 @@ impl<'a, const O: u8> TRGSEL_W<'a, O> {
     #[doc = "External trigger"]
     #[inline(always)]
     pub fn trgsel0(self) -> &'a mut W {
-        self.variant(TRGSEL_A::TRGSEL0)
+        self.variant(TRGSEL_A::Trgsel0)
     }
     #[doc = "TIO Output of the Timer Counter Channel 0"]
     #[inline(always)]
     pub fn trgsel1(self) -> &'a mut W {
-        self.variant(TRGSEL_A::TRGSEL1)
+        self.variant(TRGSEL_A::Trgsel1)
     }
     #[doc = "TIO Output of the Timer Counter Channel 1"]
     #[inline(always)]
     pub fn trgsel2(self) -> &'a mut W {
-        self.variant(TRGSEL_A::TRGSEL2)
+        self.variant(TRGSEL_A::Trgsel2)
     }
     #[doc = "TIO Output of the Timer Counter Channel 2"]
     #[inline(always)]
     pub fn trgsel3(self) -> &'a mut W {
-        self.variant(TRGSEL_A::TRGSEL3)
+        self.variant(TRGSEL_A::Trgsel3)
     }
 }
 #[doc = "Field `DACEN` reader - DAC enable"]
@@ -167,31 +137,37 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Trigger Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn trgen(&mut self) -> TRGEN_W<0> {
         TRGEN_W::new(self)
     }
     #[doc = "Bits 1:3 - Trigger Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn trgsel(&mut self) -> TRGSEL_W<1> {
         TRGSEL_W::new(self)
     }
     #[doc = "Bit 4 - DAC enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dacen(&mut self) -> DACEN_W<4> {
         DACEN_W::new(self)
     }
     #[doc = "Bit 5 - Word Transfer"]
     #[inline(always)]
+    #[must_use]
     pub fn word(&mut self) -> WORD_W<5> {
         WORD_W::new(self)
     }
     #[doc = "Bits 8:15 - Startup Time Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn startup(&mut self) -> STARTUP_W<8> {
         STARTUP_W::new(self)
     }
     #[doc = "Bits 16:31 - DAC Clock Divider for Internal Trigger"]
     #[inline(always)]
+    #[must_use]
     pub fn clkdiv(&mut self) -> CLKDIV_W<16> {
         CLKDIV_W::new(self)
     }
@@ -214,11 +190,10 @@ impl crate::Readable for MR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
 impl crate::Writable for MR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MR to value 0"]
 impl crate::Resettable for MR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

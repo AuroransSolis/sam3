@@ -1,29 +1,12 @@
 #[doc = "Register `BCR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<BCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<BCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<BCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<BCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `SYNC` writer - Synchro Command"]
 pub type SYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, BCR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Synchro Command"]
     #[inline(always)]
+    #[must_use]
     pub fn sync(&mut self) -> SYNC_W<0> {
         SYNC_W::new(self)
     }
@@ -42,4 +25,6 @@ impl crate::RegisterSpec for BCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [bcr::W](W) writer structure"]
 impl crate::Writable for BCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

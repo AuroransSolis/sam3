@@ -1,31 +1,13 @@
 #[doc = "Register `CR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Voltage Regulator Off"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VROFF_AW {
     #[doc = "0: no effect."]
-    NO_EFFECT = 0,
+    NoEffect = 0,
     #[doc = "1: if KEY is correct, asserts the vddcore_nreset and stops the voltage regulator."]
-    STOP_VREG = 1,
+    StopVreg = 1,
 }
 impl From<VROFF_AW> for bool {
     #[inline(always)]
@@ -39,21 +21,21 @@ impl<'a, const O: u8> VROFF_W<'a, O> {
     #[doc = "no effect."]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
-        self.variant(VROFF_AW::NO_EFFECT)
+        self.variant(VROFF_AW::NoEffect)
     }
     #[doc = "if KEY is correct, asserts the vddcore_nreset and stops the voltage regulator."]
     #[inline(always)]
     pub fn stop_vreg(self) -> &'a mut W {
-        self.variant(VROFF_AW::STOP_VREG)
+        self.variant(VROFF_AW::StopVreg)
     }
 }
 #[doc = "Crystal Oscillator Select"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum XTALSEL_AW {
     #[doc = "0: no effect."]
-    NO_EFFECT = 0,
+    NoEffect = 0,
     #[doc = "1: if KEY is correct, switches the slow clock on the crystal oscillator output."]
-    CRYSTAL_SEL = 1,
+    CrystalSel = 1,
 }
 impl From<XTALSEL_AW> for bool {
     #[inline(always)]
@@ -67,20 +49,20 @@ impl<'a, const O: u8> XTALSEL_W<'a, O> {
     #[doc = "no effect."]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
-        self.variant(XTALSEL_AW::NO_EFFECT)
+        self.variant(XTALSEL_AW::NoEffect)
     }
     #[doc = "if KEY is correct, switches the slow clock on the crystal oscillator output."]
     #[inline(always)]
     pub fn crystal_sel(self) -> &'a mut W {
-        self.variant(XTALSEL_AW::CRYSTAL_SEL)
+        self.variant(XTALSEL_AW::CrystalSel)
     }
 }
 #[doc = "Password"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum KEY_AW {
     #[doc = "165: Writing any other value in this field aborts the write operation."]
-    PASSWD = 165,
+    Passwd = 165,
 }
 impl From<KEY_AW> for u8 {
     #[inline(always)]
@@ -94,22 +76,25 @@ impl<'a, const O: u8> KEY_W<'a, O> {
     #[doc = "Writing any other value in this field aborts the write operation."]
     #[inline(always)]
     pub fn passwd(self) -> &'a mut W {
-        self.variant(KEY_AW::PASSWD)
+        self.variant(KEY_AW::Passwd)
     }
 }
 impl W {
     #[doc = "Bit 2 - Voltage Regulator Off"]
     #[inline(always)]
+    #[must_use]
     pub fn vroff(&mut self) -> VROFF_W<2> {
         VROFF_W::new(self)
     }
     #[doc = "Bit 3 - Crystal Oscillator Select"]
     #[inline(always)]
+    #[must_use]
     pub fn xtalsel(&mut self) -> XTALSEL_W<3> {
         XTALSEL_W::new(self)
     }
     #[doc = "Bits 24:31 - Password"]
     #[inline(always)]
+    #[must_use]
     pub fn key(&mut self) -> KEY_W<24> {
         KEY_W::new(self)
     }
@@ -128,4 +113,6 @@ impl crate::RegisterSpec for CR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cr::W](W) writer structure"]
 impl crate::Writable for CR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

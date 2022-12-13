@@ -1,24 +1,6 @@
 #[doc = "Register `CCR2` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CCR2_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CCR2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CCR2_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CCR2_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `CLKEN` writer - Counter Clock Enable Command"]
 pub type CLKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR2_SPEC, bool, O>;
 #[doc = "Field `CLKDIS` writer - Counter Clock Disable Command"]
@@ -28,16 +10,19 @@ pub type SWTRG_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR2_SPEC, bool, O
 impl W {
     #[doc = "Bit 0 - Counter Clock Enable Command"]
     #[inline(always)]
+    #[must_use]
     pub fn clken(&mut self) -> CLKEN_W<0> {
         CLKEN_W::new(self)
     }
     #[doc = "Bit 1 - Counter Clock Disable Command"]
     #[inline(always)]
+    #[must_use]
     pub fn clkdis(&mut self) -> CLKDIS_W<1> {
         CLKDIS_W::new(self)
     }
     #[doc = "Bit 2 - Software Trigger Command"]
     #[inline(always)]
+    #[must_use]
     pub fn swtrg(&mut self) -> SWTRG_W<2> {
         SWTRG_W::new(self)
     }
@@ -56,4 +41,6 @@ impl crate::RegisterSpec for CCR2_SPEC {
 #[doc = "`write(|w| ..)` method takes [ccr2::W](W) writer structure"]
 impl crate::Writable for CCR2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

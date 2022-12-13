@@ -1,18 +1,6 @@
 #[doc = "Register `EBCISR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<EBCISR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EBCISR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EBCISR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EBCISR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `BTC0` reader - Buffer Transfer Completed \\[3:0\\]"]
 pub type BTC0_R = crate::BitReader<bool>;
 #[doc = "Field `BTC1` reader - Buffer Transfer Completed \\[3:0\\]"]
@@ -110,8 +98,5 @@ impl crate::Readable for EBCISR_SPEC {
 }
 #[doc = "`reset()` method sets EBCISR to value 0"]
 impl crate::Resettable for EBCISR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,39 +1,9 @@
 #[doc = "Register `DMA` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<DMA_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DMA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DMA_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DMA_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `DMA` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<DMA_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DMA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DMA_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DMA_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `OFFSET` reader - DMA Write Buffer Offset"]
 pub type OFFSET_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OFFSET` writer - DMA Write Buffer Offset"]
@@ -75,21 +45,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - DMA Write Buffer Offset"]
     #[inline(always)]
+    #[must_use]
     pub fn offset(&mut self) -> OFFSET_W<0> {
         OFFSET_W::new(self)
     }
     #[doc = "Bits 4:6 - DMA Channel Read and Write Chunk Size"]
     #[inline(always)]
+    #[must_use]
     pub fn chksize(&mut self) -> CHKSIZE_W<4> {
         CHKSIZE_W::new(self)
     }
     #[doc = "Bit 8 - DMA Hardware Handshaking Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dmaen(&mut self) -> DMAEN_W<8> {
         DMAEN_W::new(self)
     }
     #[doc = "Bit 12 - Read Optimization with padding"]
     #[inline(always)]
+    #[must_use]
     pub fn ropt(&mut self) -> ROPT_W<12> {
         ROPT_W::new(self)
     }
@@ -112,11 +86,10 @@ impl crate::Readable for DMA_SPEC {
 #[doc = "`write(|w| ..)` method takes [dma::W](W) writer structure"]
 impl crate::Writable for DMA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DMA to value 0"]
 impl crate::Resettable for DMA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

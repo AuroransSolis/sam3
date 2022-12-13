@@ -1,18 +1,6 @@
 #[doc = "Register `INTSTA` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<INTSTA_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<INTSTA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<INTSTA_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<INTSTA_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `SPEED` reader - Speed Status"]
 pub type SPEED_R = crate::BitReader<bool>;
 #[doc = "Field `DET_SUSPD` reader - Suspend Interrupt"]
@@ -173,8 +161,5 @@ impl crate::Readable for INTSTA_SPEC {
 }
 #[doc = "`reset()` method sets INTSTA to value 0"]
 impl crate::Resettable for INTSTA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

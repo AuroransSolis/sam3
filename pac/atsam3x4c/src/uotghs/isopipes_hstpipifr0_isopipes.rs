@@ -1,24 +1,6 @@
 #[doc = "Register `HSTPIPIFR0_ISOPIPES` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<ISOPIPES_HSTPIPIFR0_ISOPIPES_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ISOPIPES_HSTPIPIFR0_ISOPIPES_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ISOPIPES_HSTPIPIFR0_ISOPIPES_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ISOPIPES_HSTPIPIFR0_ISOPIPES_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `RXINIS` writer - Received IN Data Interrupt Set"]
 pub type RXINIS_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, ISOPIPES_HSTPIPIFR0_ISOPIPES_SPEC, bool, O>;
@@ -49,46 +31,55 @@ pub type NBUSYBKS_W<'a, const O: u8> =
 impl W {
     #[doc = "Bit 0 - Received IN Data Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn rxinis(&mut self) -> RXINIS_W<0> {
         RXINIS_W::new(self)
     }
     #[doc = "Bit 1 - Transmitted OUT Data Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn txoutis(&mut self) -> TXOUTIS_W<1> {
         TXOUTIS_W::new(self)
     }
     #[doc = "Bit 2 - Underflow Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn underfis(&mut self) -> UNDERFIS_W<2> {
         UNDERFIS_W::new(self)
     }
     #[doc = "Bit 3 - Pipe Error Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn perris(&mut self) -> PERRIS_W<3> {
         PERRIS_W::new(self)
     }
     #[doc = "Bit 4 - NAKed Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn nakedis(&mut self) -> NAKEDIS_W<4> {
         NAKEDIS_W::new(self)
     }
     #[doc = "Bit 5 - Overflow Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn overfis(&mut self) -> OVERFIS_W<5> {
         OVERFIS_W::new(self)
     }
     #[doc = "Bit 6 - CRC Error Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn crcerris(&mut self) -> CRCERRIS_W<6> {
         CRCERRIS_W::new(self)
     }
     #[doc = "Bit 7 - Short Packet Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn shortpacketis(&mut self) -> SHORTPACKETIS_W<7> {
         SHORTPACKETIS_W::new(self)
     }
     #[doc = "Bit 12 - Number of Busy Banks Set"]
     #[inline(always)]
+    #[must_use]
     pub fn nbusybks(&mut self) -> NBUSYBKS_W<12> {
         NBUSYBKS_W::new(self)
     }
@@ -107,4 +98,6 @@ impl crate::RegisterSpec for ISOPIPES_HSTPIPIFR0_ISOPIPES_SPEC {
 #[doc = "`write(|w| ..)` method takes [isopipes_hstpipifr0_isopipes::W](W) writer structure"]
 impl crate::Writable for ISOPIPES_HSTPIPIFR0_ISOPIPES_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

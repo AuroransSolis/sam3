@@ -1,24 +1,6 @@
 #[doc = "Register `PMC_PCDR0` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<PMC_PCDR0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PMC_PCDR0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PMC_PCDR0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PMC_PCDR0_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `PID8` writer - Peripheral Clock 8 Disable"]
 pub type PID8_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_PCDR0_SPEC, bool, O>;
 #[doc = "Field `PID9` writer - Peripheral Clock 9 Disable"]
@@ -64,106 +46,127 @@ pub type PID29_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_PCDR0_SPEC, bo
 impl W {
     #[doc = "Bit 8 - Peripheral Clock 8 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid8(&mut self) -> PID8_W<8> {
         PID8_W::new(self)
     }
     #[doc = "Bit 9 - Peripheral Clock 9 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid9(&mut self) -> PID9_W<9> {
         PID9_W::new(self)
     }
     #[doc = "Bit 10 - Peripheral Clock 10 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid10(&mut self) -> PID10_W<10> {
         PID10_W::new(self)
     }
     #[doc = "Bit 11 - Peripheral Clock 11 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid11(&mut self) -> PID11_W<11> {
         PID11_W::new(self)
     }
     #[doc = "Bit 12 - Peripheral Clock 12 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid12(&mut self) -> PID12_W<12> {
         PID12_W::new(self)
     }
     #[doc = "Bit 13 - Peripheral Clock 13 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid13(&mut self) -> PID13_W<13> {
         PID13_W::new(self)
     }
     #[doc = "Bit 14 - Peripheral Clock 14 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid14(&mut self) -> PID14_W<14> {
         PID14_W::new(self)
     }
     #[doc = "Bit 15 - Peripheral Clock 15 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid15(&mut self) -> PID15_W<15> {
         PID15_W::new(self)
     }
     #[doc = "Bit 16 - Peripheral Clock 16 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid16(&mut self) -> PID16_W<16> {
         PID16_W::new(self)
     }
     #[doc = "Bit 18 - Peripheral Clock 18 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid18(&mut self) -> PID18_W<18> {
         PID18_W::new(self)
     }
     #[doc = "Bit 19 - Peripheral Clock 19 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid19(&mut self) -> PID19_W<19> {
         PID19_W::new(self)
     }
     #[doc = "Bit 20 - Peripheral Clock 20 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid20(&mut self) -> PID20_W<20> {
         PID20_W::new(self)
     }
     #[doc = "Bit 21 - Peripheral Clock 21 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid21(&mut self) -> PID21_W<21> {
         PID21_W::new(self)
     }
     #[doc = "Bit 22 - Peripheral Clock 22 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid22(&mut self) -> PID22_W<22> {
         PID22_W::new(self)
     }
     #[doc = "Bit 23 - Peripheral Clock 23 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid23(&mut self) -> PID23_W<23> {
         PID23_W::new(self)
     }
     #[doc = "Bit 24 - Peripheral Clock 24 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid24(&mut self) -> PID24_W<24> {
         PID24_W::new(self)
     }
     #[doc = "Bit 25 - Peripheral Clock 25 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid25(&mut self) -> PID25_W<25> {
         PID25_W::new(self)
     }
     #[doc = "Bit 26 - Peripheral Clock 26 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid26(&mut self) -> PID26_W<26> {
         PID26_W::new(self)
     }
     #[doc = "Bit 27 - Peripheral Clock 27 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid27(&mut self) -> PID27_W<27> {
         PID27_W::new(self)
     }
     #[doc = "Bit 28 - Peripheral Clock 28 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid28(&mut self) -> PID28_W<28> {
         PID28_W::new(self)
     }
     #[doc = "Bit 29 - Peripheral Clock 29 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid29(&mut self) -> PID29_W<29> {
         PID29_W::new(self)
     }
@@ -182,4 +185,6 @@ impl crate::RegisterSpec for PMC_PCDR0_SPEC {
 #[doc = "`write(|w| ..)` method takes [pmc_pcdr0::W](W) writer structure"]
 impl crate::Writable for PMC_PCDR0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

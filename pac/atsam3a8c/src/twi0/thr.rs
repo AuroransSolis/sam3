@@ -1,29 +1,12 @@
 #[doc = "Register `THR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<THR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<THR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<THR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<THR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `TXDATA` writer - Master or Slave Transmit Holding Data"]
 pub type TXDATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, THR_SPEC, u8, u8, 8, O>;
 impl W {
     #[doc = "Bits 0:7 - Master or Slave Transmit Holding Data"]
     #[inline(always)]
+    #[must_use]
     pub fn txdata(&mut self) -> TXDATA_W<0> {
         TXDATA_W::new(self)
     }
@@ -42,11 +25,10 @@ impl crate::RegisterSpec for THR_SPEC {
 #[doc = "`write(|w| ..)` method takes [thr::W](W) writer structure"]
 impl crate::Writable for THR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets THR to value 0"]
 impl crate::Resettable for THR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

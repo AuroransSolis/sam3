@@ -1,39 +1,9 @@
 #[doc = "Register `WPMR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<WPMR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<WPMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<WPMR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<WPMR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `WPMR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<WPMR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<WPMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<WPMR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<WPMR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `WPEN` reader - Write Protection Enable"]
 pub type WPEN_R = crate::BitReader<bool>;
 #[doc = "Field `WPEN` writer - Write Protection Enable"]
@@ -51,17 +21,19 @@ impl R {
     #[doc = "Bits 8:31 - SPI Write Protection Key Password"]
     #[inline(always)]
     pub fn wpkey(&self) -> WPKEY_R {
-        WPKEY_R::new(((self.bits >> 8) & 0x00ff_ffff) as u32)
+        WPKEY_R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
 impl W {
     #[doc = "Bit 0 - Write Protection Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn wpen(&mut self) -> WPEN_W<0> {
         WPEN_W::new(self)
     }
     #[doc = "Bits 8:31 - SPI Write Protection Key Password"]
     #[inline(always)]
+    #[must_use]
     pub fn wpkey(&mut self) -> WPKEY_W<8> {
         WPKEY_W::new(self)
     }
@@ -84,11 +56,10 @@ impl crate::Readable for WPMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [wpmr::W](W) writer structure"]
 impl crate::Writable for WPMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets WPMR to value 0"]
 impl crate::Resettable for WPMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

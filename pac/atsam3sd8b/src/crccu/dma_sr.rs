@@ -1,18 +1,6 @@
 #[doc = "Register `DMA_SR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<DMA_SR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DMA_SR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DMA_SR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DMA_SR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `DMASR` reader - DMA Status Register"]
 pub type DMASR_R = crate::BitReader<bool>;
 impl R {
@@ -33,8 +21,5 @@ impl crate::Readable for DMA_SR_SPEC {
 }
 #[doc = "`reset()` method sets DMA_SR to value 0"]
 impl crate::Resettable for DMA_SR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

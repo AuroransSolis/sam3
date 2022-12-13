@@ -1,24 +1,6 @@
 #[doc = "Register `IDR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<IDR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IDR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IDR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `EOC0` writer - End of Conversion Interrupt Disable 0"]
 pub type EOC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `EOC1` writer - End of Conversion Interrupt Disable 1"]
@@ -62,101 +44,121 @@ pub type RXBUFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O
 impl W {
     #[doc = "Bit 0 - End of Conversion Interrupt Disable 0"]
     #[inline(always)]
+    #[must_use]
     pub fn eoc0(&mut self) -> EOC0_W<0> {
         EOC0_W::new(self)
     }
     #[doc = "Bit 1 - End of Conversion Interrupt Disable 1"]
     #[inline(always)]
+    #[must_use]
     pub fn eoc1(&mut self) -> EOC1_W<1> {
         EOC1_W::new(self)
     }
     #[doc = "Bit 2 - End of Conversion Interrupt Disable 2"]
     #[inline(always)]
+    #[must_use]
     pub fn eoc2(&mut self) -> EOC2_W<2> {
         EOC2_W::new(self)
     }
     #[doc = "Bit 3 - End of Conversion Interrupt Disable 3"]
     #[inline(always)]
+    #[must_use]
     pub fn eoc3(&mut self) -> EOC3_W<3> {
         EOC3_W::new(self)
     }
     #[doc = "Bit 4 - End of Conversion Interrupt Disable 4"]
     #[inline(always)]
+    #[must_use]
     pub fn eoc4(&mut self) -> EOC4_W<4> {
         EOC4_W::new(self)
     }
     #[doc = "Bit 5 - End of Conversion Interrupt Disable 5"]
     #[inline(always)]
+    #[must_use]
     pub fn eoc5(&mut self) -> EOC5_W<5> {
         EOC5_W::new(self)
     }
     #[doc = "Bit 6 - End of Conversion Interrupt Disable 6"]
     #[inline(always)]
+    #[must_use]
     pub fn eoc6(&mut self) -> EOC6_W<6> {
         EOC6_W::new(self)
     }
     #[doc = "Bit 7 - End of Conversion Interrupt Disable 7"]
     #[inline(always)]
+    #[must_use]
     pub fn eoc7(&mut self) -> EOC7_W<7> {
         EOC7_W::new(self)
     }
     #[doc = "Bit 8 - Overrun Error Interrupt Disable 0"]
     #[inline(always)]
+    #[must_use]
     pub fn ovre0(&mut self) -> OVRE0_W<8> {
         OVRE0_W::new(self)
     }
     #[doc = "Bit 9 - Overrun Error Interrupt Disable 1"]
     #[inline(always)]
+    #[must_use]
     pub fn ovre1(&mut self) -> OVRE1_W<9> {
         OVRE1_W::new(self)
     }
     #[doc = "Bit 10 - Overrun Error Interrupt Disable 2"]
     #[inline(always)]
+    #[must_use]
     pub fn ovre2(&mut self) -> OVRE2_W<10> {
         OVRE2_W::new(self)
     }
     #[doc = "Bit 11 - Overrun Error Interrupt Disable 3"]
     #[inline(always)]
+    #[must_use]
     pub fn ovre3(&mut self) -> OVRE3_W<11> {
         OVRE3_W::new(self)
     }
     #[doc = "Bit 12 - Overrun Error Interrupt Disable 4"]
     #[inline(always)]
+    #[must_use]
     pub fn ovre4(&mut self) -> OVRE4_W<12> {
         OVRE4_W::new(self)
     }
     #[doc = "Bit 13 - Overrun Error Interrupt Disable 5"]
     #[inline(always)]
+    #[must_use]
     pub fn ovre5(&mut self) -> OVRE5_W<13> {
         OVRE5_W::new(self)
     }
     #[doc = "Bit 14 - Overrun Error Interrupt Disable 6"]
     #[inline(always)]
+    #[must_use]
     pub fn ovre6(&mut self) -> OVRE6_W<14> {
         OVRE6_W::new(self)
     }
     #[doc = "Bit 15 - Overrun Error Interrupt Disable 7"]
     #[inline(always)]
+    #[must_use]
     pub fn ovre7(&mut self) -> OVRE7_W<15> {
         OVRE7_W::new(self)
     }
     #[doc = "Bit 16 - Data Ready Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn drdy(&mut self) -> DRDY_W<16> {
         DRDY_W::new(self)
     }
     #[doc = "Bit 17 - General Overrun Error Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn govre(&mut self) -> GOVRE_W<17> {
         GOVRE_W::new(self)
     }
     #[doc = "Bit 18 - End of Receive Buffer Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn endrx(&mut self) -> ENDRX_W<18> {
         ENDRX_W::new(self)
     }
     #[doc = "Bit 19 - Receive Buffer Full Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn rxbuff(&mut self) -> RXBUFF_W<19> {
         RXBUFF_W::new(self)
     }
@@ -175,4 +177,6 @@ impl crate::RegisterSpec for IDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [idr::W](W) writer structure"]
 impl crate::Writable for IDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

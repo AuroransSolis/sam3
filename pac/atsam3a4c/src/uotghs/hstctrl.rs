@@ -1,39 +1,9 @@
 #[doc = "Register `HSTCTRL` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<HSTCTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HSTCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HSTCTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HSTCTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `HSTCTRL` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<HSTCTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HSTCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HSTCTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HSTCTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `SOFE` reader - Start of Frame Generation Enable"]
 pub type SOFE_R = crate::BitReader<bool>;
 #[doc = "Field `SOFE` writer - Start of Frame Generation Enable"]
@@ -49,17 +19,17 @@ pub type RESUME_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSTCTRL_SPEC, boo
 #[doc = "Field `SPDCONF` reader - Mode Configuration"]
 pub type SPDCONF_R = crate::FieldReader<u8, SPDCONF_A>;
 #[doc = "Mode Configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SPDCONF_A {
     #[doc = "0: The host starts in full-speed mode and performs a high-speed reset to switch to the high-speed mode if the downstream peripheral is high-speed capable."]
-    NORMAL = 0,
+    Normal = 0,
     #[doc = "1: For a better consumption, if high-speed is not needed."]
-    LOW_POWER = 1,
+    LowPower = 1,
     #[doc = "2: Forced high speed."]
-    HIGH_SPEED = 2,
+    HighSpeed = 2,
     #[doc = "3: The host remains to full-speed mode whatever the peripheral speed capability."]
-    FORCED_FS = 3,
+    ForcedFs = 3,
 }
 impl From<SPDCONF_A> for u8 {
     #[inline(always)]
@@ -72,32 +42,32 @@ impl SPDCONF_R {
     #[inline(always)]
     pub fn variant(&self) -> SPDCONF_A {
         match self.bits {
-            0 => SPDCONF_A::NORMAL,
-            1 => SPDCONF_A::LOW_POWER,
-            2 => SPDCONF_A::HIGH_SPEED,
-            3 => SPDCONF_A::FORCED_FS,
+            0 => SPDCONF_A::Normal,
+            1 => SPDCONF_A::LowPower,
+            2 => SPDCONF_A::HighSpeed,
+            3 => SPDCONF_A::ForcedFs,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "Checks if the value of the field is `Normal`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        *self == SPDCONF_A::NORMAL
+        *self == SPDCONF_A::Normal
     }
-    #[doc = "Checks if the value of the field is `LOW_POWER`"]
+    #[doc = "Checks if the value of the field is `LowPower`"]
     #[inline(always)]
     pub fn is_low_power(&self) -> bool {
-        *self == SPDCONF_A::LOW_POWER
+        *self == SPDCONF_A::LowPower
     }
-    #[doc = "Checks if the value of the field is `HIGH_SPEED`"]
+    #[doc = "Checks if the value of the field is `HighSpeed`"]
     #[inline(always)]
     pub fn is_high_speed(&self) -> bool {
-        *self == SPDCONF_A::HIGH_SPEED
+        *self == SPDCONF_A::HighSpeed
     }
-    #[doc = "Checks if the value of the field is `FORCED_FS`"]
+    #[doc = "Checks if the value of the field is `ForcedFs`"]
     #[inline(always)]
     pub fn is_forced_fs(&self) -> bool {
-        *self == SPDCONF_A::FORCED_FS
+        *self == SPDCONF_A::ForcedFs
     }
 }
 #[doc = "Field `SPDCONF` writer - Mode Configuration"]
@@ -107,22 +77,22 @@ impl<'a, const O: u8> SPDCONF_W<'a, O> {
     #[doc = "The host starts in full-speed mode and performs a high-speed reset to switch to the high-speed mode if the downstream peripheral is high-speed capable."]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
-        self.variant(SPDCONF_A::NORMAL)
+        self.variant(SPDCONF_A::Normal)
     }
     #[doc = "For a better consumption, if high-speed is not needed."]
     #[inline(always)]
     pub fn low_power(self) -> &'a mut W {
-        self.variant(SPDCONF_A::LOW_POWER)
+        self.variant(SPDCONF_A::LowPower)
     }
     #[doc = "Forced high speed."]
     #[inline(always)]
     pub fn high_speed(self) -> &'a mut W {
-        self.variant(SPDCONF_A::HIGH_SPEED)
+        self.variant(SPDCONF_A::HighSpeed)
     }
     #[doc = "The host remains to full-speed mode whatever the peripheral speed capability."]
     #[inline(always)]
     pub fn forced_fs(self) -> &'a mut W {
-        self.variant(SPDCONF_A::FORCED_FS)
+        self.variant(SPDCONF_A::ForcedFs)
     }
 }
 impl R {
@@ -150,21 +120,25 @@ impl R {
 impl W {
     #[doc = "Bit 8 - Start of Frame Generation Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn sofe(&mut self) -> SOFE_W<8> {
         SOFE_W::new(self)
     }
     #[doc = "Bit 9 - Send USB Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn reset(&mut self) -> RESET_W<9> {
         RESET_W::new(self)
     }
     #[doc = "Bit 10 - Send USB Resume"]
     #[inline(always)]
+    #[must_use]
     pub fn resume(&mut self) -> RESUME_W<10> {
         RESUME_W::new(self)
     }
     #[doc = "Bits 12:13 - Mode Configuration"]
     #[inline(always)]
+    #[must_use]
     pub fn spdconf(&mut self) -> SPDCONF_W<12> {
         SPDCONF_W::new(self)
     }
@@ -187,11 +161,10 @@ impl crate::Readable for HSTCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [hstctrl::W](W) writer structure"]
 impl crate::Writable for HSTCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HSTCTRL to value 0"]
 impl crate::Resettable for HSTCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

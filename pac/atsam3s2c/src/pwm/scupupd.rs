@@ -1,29 +1,12 @@
 #[doc = "Register `SCUPUPD` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<SCUPUPD_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SCUPUPD_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SCUPUPD_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SCUPUPD_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `UPRUPD` writer - Update Period Update"]
 pub type UPRUPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCUPUPD_SPEC, u8, u8, 4, O>;
 impl W {
     #[doc = "Bits 0:3 - Update Period Update"]
     #[inline(always)]
+    #[must_use]
     pub fn uprupd(&mut self) -> UPRUPD_W<0> {
         UPRUPD_W::new(self)
     }
@@ -42,11 +25,10 @@ impl crate::RegisterSpec for SCUPUPD_SPEC {
 #[doc = "`write(|w| ..)` method takes [scupupd::W](W) writer structure"]
 impl crate::Writable for SCUPUPD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCUPUPD to value 0"]
 impl crate::Resettable for SCUPUPD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

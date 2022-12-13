@@ -1,24 +1,6 @@
 #[doc = "Register `TDR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<TDR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TDR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TDR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `TD` writer - Transmit Data"]
 pub type TD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TDR_SPEC, u16, u16, 16, O>;
 #[doc = "Field `PCS` writer - Peripheral Chip Select"]
@@ -28,16 +10,19 @@ pub type LASTXFER_W<'a, const O: u8> = crate::BitWriter<'a, u32, TDR_SPEC, bool,
 impl W {
     #[doc = "Bits 0:15 - Transmit Data"]
     #[inline(always)]
+    #[must_use]
     pub fn td(&mut self) -> TD_W<0> {
         TD_W::new(self)
     }
     #[doc = "Bits 16:19 - Peripheral Chip Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pcs(&mut self) -> PCS_W<16> {
         PCS_W::new(self)
     }
     #[doc = "Bit 24 - Last Transfer"]
     #[inline(always)]
+    #[must_use]
     pub fn lastxfer(&mut self) -> LASTXFER_W<24> {
         LASTXFER_W::new(self)
     }
@@ -56,4 +41,6 @@ impl crate::RegisterSpec for TDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [tdr::W](W) writer structure"]
 impl crate::Writable for TDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

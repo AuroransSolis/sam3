@@ -1,24 +1,6 @@
 #[doc = "Register `IDR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<IDR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IDR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IDR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `EP0INT` writer - Disable Endpoint 0 Interrupt"]
 pub type EP0INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `EP1INT` writer - Disable Endpoint 1 Interrupt"]
@@ -48,66 +30,79 @@ pub type WAKEUP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O
 impl W {
     #[doc = "Bit 0 - Disable Endpoint 0 Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn ep0int(&mut self) -> EP0INT_W<0> {
         EP0INT_W::new(self)
     }
     #[doc = "Bit 1 - Disable Endpoint 1 Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn ep1int(&mut self) -> EP1INT_W<1> {
         EP1INT_W::new(self)
     }
     #[doc = "Bit 2 - Disable Endpoint 2 Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn ep2int(&mut self) -> EP2INT_W<2> {
         EP2INT_W::new(self)
     }
     #[doc = "Bit 3 - Disable Endpoint 3 Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn ep3int(&mut self) -> EP3INT_W<3> {
         EP3INT_W::new(self)
     }
     #[doc = "Bit 4 - Disable Endpoint 4 Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn ep4int(&mut self) -> EP4INT_W<4> {
         EP4INT_W::new(self)
     }
     #[doc = "Bit 5 - Disable Endpoint 5 Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn ep5int(&mut self) -> EP5INT_W<5> {
         EP5INT_W::new(self)
     }
     #[doc = "Bit 6 - Disable Endpoint 6 Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn ep6int(&mut self) -> EP6INT_W<6> {
         EP6INT_W::new(self)
     }
     #[doc = "Bit 7 - Disable Endpoint 7 Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn ep7int(&mut self) -> EP7INT_W<7> {
         EP7INT_W::new(self)
     }
     #[doc = "Bit 8 - Disable UDP Suspend Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn rxsusp(&mut self) -> RXSUSP_W<8> {
         RXSUSP_W::new(self)
     }
     #[doc = "Bit 9 - Disable UDP Resume Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn rxrsm(&mut self) -> RXRSM_W<9> {
         RXRSM_W::new(self)
     }
     #[doc = "Bit 10"]
     #[inline(always)]
+    #[must_use]
     pub fn extrsm(&mut self) -> EXTRSM_W<10> {
         EXTRSM_W::new(self)
     }
     #[doc = "Bit 11 - Disable Start Of Frame Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn sofint(&mut self) -> SOFINT_W<11> {
         SOFINT_W::new(self)
     }
     #[doc = "Bit 13 - Disable USB Bus Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn wakeup(&mut self) -> WAKEUP_W<13> {
         WAKEUP_W::new(self)
     }
@@ -126,4 +121,6 @@ impl crate::RegisterSpec for IDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [idr::W](W) writer structure"]
 impl crate::Writable for IDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

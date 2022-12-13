@@ -1,24 +1,6 @@
 #[doc = "Register `DEVIER` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<DEVIER_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DEVIER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DEVIER_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DEVIER_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `SUSPES` writer - Suspend Interrupt Enable"]
 pub type SUSPES_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVIER_SPEC, bool, O>;
 #[doc = "Field `MSOFES` writer - Micro Start of Frame Interrupt Enable"]
@@ -68,116 +50,139 @@ pub type DMA_6_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVIER_SPEC, bool,
 impl W {
     #[doc = "Bit 0 - Suspend Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn suspes(&mut self) -> SUSPES_W<0> {
         SUSPES_W::new(self)
     }
     #[doc = "Bit 1 - Micro Start of Frame Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn msofes(&mut self) -> MSOFES_W<1> {
         MSOFES_W::new(self)
     }
     #[doc = "Bit 2 - Start of Frame Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn sofes(&mut self) -> SOFES_W<2> {
         SOFES_W::new(self)
     }
     #[doc = "Bit 3 - End of Reset Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn eorstes(&mut self) -> EORSTES_W<3> {
         EORSTES_W::new(self)
     }
     #[doc = "Bit 4 - Wake-Up Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn wakeupes(&mut self) -> WAKEUPES_W<4> {
         WAKEUPES_W::new(self)
     }
     #[doc = "Bit 5 - End of Resume Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn eorsmes(&mut self) -> EORSMES_W<5> {
         EORSMES_W::new(self)
     }
     #[doc = "Bit 6 - Upstream Resume Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn uprsmes(&mut self) -> UPRSMES_W<6> {
         UPRSMES_W::new(self)
     }
     #[doc = "Bit 12 - Endpoint 0 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pep_0(&mut self) -> PEP_0_W<12> {
         PEP_0_W::new(self)
     }
     #[doc = "Bit 13 - Endpoint 1 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pep_1(&mut self) -> PEP_1_W<13> {
         PEP_1_W::new(self)
     }
     #[doc = "Bit 14 - Endpoint 2 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pep_2(&mut self) -> PEP_2_W<14> {
         PEP_2_W::new(self)
     }
     #[doc = "Bit 15 - Endpoint 3 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pep_3(&mut self) -> PEP_3_W<15> {
         PEP_3_W::new(self)
     }
     #[doc = "Bit 16 - Endpoint 4 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pep_4(&mut self) -> PEP_4_W<16> {
         PEP_4_W::new(self)
     }
     #[doc = "Bit 17 - Endpoint 5 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pep_5(&mut self) -> PEP_5_W<17> {
         PEP_5_W::new(self)
     }
     #[doc = "Bit 18 - Endpoint 6 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pep_6(&mut self) -> PEP_6_W<18> {
         PEP_6_W::new(self)
     }
     #[doc = "Bit 19 - Endpoint 7 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pep_7(&mut self) -> PEP_7_W<19> {
         PEP_7_W::new(self)
     }
     #[doc = "Bit 20 - Endpoint 8 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pep_8(&mut self) -> PEP_8_W<20> {
         PEP_8_W::new(self)
     }
     #[doc = "Bit 21 - Endpoint 9 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pep_9(&mut self) -> PEP_9_W<21> {
         PEP_9_W::new(self)
     }
     #[doc = "Bit 25 - DMA Channel 1 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_1(&mut self) -> DMA_1_W<25> {
         DMA_1_W::new(self)
     }
     #[doc = "Bit 26 - DMA Channel 2 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_2(&mut self) -> DMA_2_W<26> {
         DMA_2_W::new(self)
     }
     #[doc = "Bit 27 - DMA Channel 3 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_3(&mut self) -> DMA_3_W<27> {
         DMA_3_W::new(self)
     }
     #[doc = "Bit 28 - DMA Channel 4 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_4(&mut self) -> DMA_4_W<28> {
         DMA_4_W::new(self)
     }
     #[doc = "Bit 29 - DMA Channel 5 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_5(&mut self) -> DMA_5_W<29> {
         DMA_5_W::new(self)
     }
     #[doc = "Bit 30 - DMA Channel 6 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_6(&mut self) -> DMA_6_W<30> {
         DMA_6_W::new(self)
     }
@@ -196,4 +201,6 @@ impl crate::RegisterSpec for DEVIER_SPEC {
 #[doc = "`write(|w| ..)` method takes [devier::W](W) writer structure"]
 impl crate::Writable for DEVIER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

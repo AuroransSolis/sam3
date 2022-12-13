@@ -1,53 +1,23 @@
 #[doc = "Register `SDCR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<SDCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SDCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SDCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SDCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `SDCR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<SDCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SDCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SDCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SDCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `SDCSEL` reader - SDCard/SDIO Slot"]
 pub type SDCSEL_R = crate::FieldReader<u8, SDCSEL_A>;
 #[doc = "SDCard/SDIO Slot\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SDCSEL_A {
     #[doc = "0: Slot A is selected."]
-    SLOTA = 0,
+    Slota = 0,
     #[doc = "1: SDCARD/SDIO Slot B selected"]
-    SLOTB = 1,
+    Slotb = 1,
     #[doc = "2: -"]
-    SLOTC = 2,
+    Slotc = 2,
     #[doc = "3: -"]
-    SLOTD = 3,
+    Slotd = 3,
 }
 impl From<SDCSEL_A> for u8 {
     #[inline(always)]
@@ -60,32 +30,32 @@ impl SDCSEL_R {
     #[inline(always)]
     pub fn variant(&self) -> SDCSEL_A {
         match self.bits {
-            0 => SDCSEL_A::SLOTA,
-            1 => SDCSEL_A::SLOTB,
-            2 => SDCSEL_A::SLOTC,
-            3 => SDCSEL_A::SLOTD,
+            0 => SDCSEL_A::Slota,
+            1 => SDCSEL_A::Slotb,
+            2 => SDCSEL_A::Slotc,
+            3 => SDCSEL_A::Slotd,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `SLOTA`"]
+    #[doc = "Checks if the value of the field is `Slota`"]
     #[inline(always)]
     pub fn is_slota(&self) -> bool {
-        *self == SDCSEL_A::SLOTA
+        *self == SDCSEL_A::Slota
     }
-    #[doc = "Checks if the value of the field is `SLOTB`"]
+    #[doc = "Checks if the value of the field is `Slotb`"]
     #[inline(always)]
     pub fn is_slotb(&self) -> bool {
-        *self == SDCSEL_A::SLOTB
+        *self == SDCSEL_A::Slotb
     }
-    #[doc = "Checks if the value of the field is `SLOTC`"]
+    #[doc = "Checks if the value of the field is `Slotc`"]
     #[inline(always)]
     pub fn is_slotc(&self) -> bool {
-        *self == SDCSEL_A::SLOTC
+        *self == SDCSEL_A::Slotc
     }
-    #[doc = "Checks if the value of the field is `SLOTD`"]
+    #[doc = "Checks if the value of the field is `Slotd`"]
     #[inline(always)]
     pub fn is_slotd(&self) -> bool {
-        *self == SDCSEL_A::SLOTD
+        *self == SDCSEL_A::Slotd
     }
 }
 #[doc = "Field `SDCSEL` writer - SDCard/SDIO Slot"]
@@ -94,28 +64,28 @@ impl<'a, const O: u8> SDCSEL_W<'a, O> {
     #[doc = "Slot A is selected."]
     #[inline(always)]
     pub fn slota(self) -> &'a mut W {
-        self.variant(SDCSEL_A::SLOTA)
+        self.variant(SDCSEL_A::Slota)
     }
     #[doc = "SDCARD/SDIO Slot B selected"]
     #[inline(always)]
     pub fn slotb(self) -> &'a mut W {
-        self.variant(SDCSEL_A::SLOTB)
+        self.variant(SDCSEL_A::Slotb)
     }
     #[doc = "-"]
     #[inline(always)]
     pub fn slotc(self) -> &'a mut W {
-        self.variant(SDCSEL_A::SLOTC)
+        self.variant(SDCSEL_A::Slotc)
     }
     #[doc = "-"]
     #[inline(always)]
     pub fn slotd(self) -> &'a mut W {
-        self.variant(SDCSEL_A::SLOTD)
+        self.variant(SDCSEL_A::Slotd)
     }
 }
 #[doc = "Field `SDCBUS` reader - SDCard/SDIO Bus Width"]
 pub type SDCBUS_R = crate::FieldReader<u8, SDCBUS_A>;
 #[doc = "SDCard/SDIO Bus Width\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SDCBUS_A {
     #[doc = "0: 1 bit"]
@@ -192,11 +162,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - SDCard/SDIO Slot"]
     #[inline(always)]
+    #[must_use]
     pub fn sdcsel(&mut self) -> SDCSEL_W<0> {
         SDCSEL_W::new(self)
     }
     #[doc = "Bits 6:7 - SDCard/SDIO Bus Width"]
     #[inline(always)]
+    #[must_use]
     pub fn sdcbus(&mut self) -> SDCBUS_W<6> {
         SDCBUS_W::new(self)
     }
@@ -219,11 +191,10 @@ impl crate::Readable for SDCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [sdcr::W](W) writer structure"]
 impl crate::Writable for SDCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SDCR to value 0"]
 impl crate::Resettable for SDCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

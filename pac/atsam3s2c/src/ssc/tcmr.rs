@@ -1,51 +1,21 @@
 #[doc = "Register `TCMR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<TCMR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TCMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TCMR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TCMR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `TCMR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<TCMR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TCMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TCMR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TCMR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `CKS` reader - Transmit Clock Selection"]
 pub type CKS_R = crate::FieldReader<u8, CKS_A>;
 #[doc = "Transmit Clock Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CKS_A {
     #[doc = "0: Divided Clock"]
-    MCK = 0,
+    Mck = 0,
     #[doc = "1: RK Clock signal"]
-    RK = 1,
+    Rk = 1,
     #[doc = "2: TK pin"]
-    TK = 2,
+    Tk = 2,
 }
 impl From<CKS_A> for u8 {
     #[inline(always)]
@@ -58,26 +28,26 @@ impl CKS_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<CKS_A> {
         match self.bits {
-            0 => Some(CKS_A::MCK),
-            1 => Some(CKS_A::RK),
-            2 => Some(CKS_A::TK),
+            0 => Some(CKS_A::Mck),
+            1 => Some(CKS_A::Rk),
+            2 => Some(CKS_A::Tk),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `MCK`"]
+    #[doc = "Checks if the value of the field is `Mck`"]
     #[inline(always)]
     pub fn is_mck(&self) -> bool {
-        *self == CKS_A::MCK
+        *self == CKS_A::Mck
     }
-    #[doc = "Checks if the value of the field is `RK`"]
+    #[doc = "Checks if the value of the field is `Rk`"]
     #[inline(always)]
     pub fn is_rk(&self) -> bool {
-        *self == CKS_A::RK
+        *self == CKS_A::Rk
     }
-    #[doc = "Checks if the value of the field is `TK`"]
+    #[doc = "Checks if the value of the field is `Tk`"]
     #[inline(always)]
     pub fn is_tk(&self) -> bool {
-        *self == CKS_A::TK
+        *self == CKS_A::Tk
     }
 }
 #[doc = "Field `CKS` writer - Transmit Clock Selection"]
@@ -86,31 +56,31 @@ impl<'a, const O: u8> CKS_W<'a, O> {
     #[doc = "Divided Clock"]
     #[inline(always)]
     pub fn mck(self) -> &'a mut W {
-        self.variant(CKS_A::MCK)
+        self.variant(CKS_A::Mck)
     }
     #[doc = "RK Clock signal"]
     #[inline(always)]
     pub fn rk(self) -> &'a mut W {
-        self.variant(CKS_A::RK)
+        self.variant(CKS_A::Rk)
     }
     #[doc = "TK pin"]
     #[inline(always)]
     pub fn tk(self) -> &'a mut W {
-        self.variant(CKS_A::TK)
+        self.variant(CKS_A::Tk)
     }
 }
 #[doc = "Field `CKO` reader - Transmit Clock Output Mode Selection"]
 pub type CKO_R = crate::FieldReader<u8, CKO_A>;
 #[doc = "Transmit Clock Output Mode Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CKO_A {
     #[doc = "0: None, TK pin is an input"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: Continuous Transmit Clock, TK pin is an output"]
-    CONTINUOUS = 1,
+    Continuous = 1,
     #[doc = "2: Transmit Clock only during data transfers, TK pin is an output"]
-    TRANSFER = 2,
+    Transfer = 2,
 }
 impl From<CKO_A> for u8 {
     #[inline(always)]
@@ -123,26 +93,26 @@ impl CKO_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<CKO_A> {
         match self.bits {
-            0 => Some(CKO_A::NONE),
-            1 => Some(CKO_A::CONTINUOUS),
-            2 => Some(CKO_A::TRANSFER),
+            0 => Some(CKO_A::None),
+            1 => Some(CKO_A::Continuous),
+            2 => Some(CKO_A::Transfer),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Checks if the value of the field is `None`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == CKO_A::NONE
+        *self == CKO_A::None
     }
-    #[doc = "Checks if the value of the field is `CONTINUOUS`"]
+    #[doc = "Checks if the value of the field is `Continuous`"]
     #[inline(always)]
     pub fn is_continuous(&self) -> bool {
-        *self == CKO_A::CONTINUOUS
+        *self == CKO_A::Continuous
     }
-    #[doc = "Checks if the value of the field is `TRANSFER`"]
+    #[doc = "Checks if the value of the field is `Transfer`"]
     #[inline(always)]
     pub fn is_transfer(&self) -> bool {
-        *self == CKO_A::TRANSFER
+        *self == CKO_A::Transfer
     }
 }
 #[doc = "Field `CKO` writer - Transmit Clock Output Mode Selection"]
@@ -151,17 +121,17 @@ impl<'a, const O: u8> CKO_W<'a, O> {
     #[doc = "None, TK pin is an input"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
-        self.variant(CKO_A::NONE)
+        self.variant(CKO_A::None)
     }
     #[doc = "Continuous Transmit Clock, TK pin is an output"]
     #[inline(always)]
     pub fn continuous(self) -> &'a mut W {
-        self.variant(CKO_A::CONTINUOUS)
+        self.variant(CKO_A::Continuous)
     }
     #[doc = "Transmit Clock only during data transfers, TK pin is an output"]
     #[inline(always)]
     pub fn transfer(self) -> &'a mut W {
-        self.variant(CKO_A::TRANSFER)
+        self.variant(CKO_A::Transfer)
     }
 }
 #[doc = "Field `CKI` reader - Transmit Clock Inversion"]
@@ -171,15 +141,15 @@ pub type CKI_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCMR_SPEC, bool, O>;
 #[doc = "Field `CKG` reader - Transmit Clock Gating Selection"]
 pub type CKG_R = crate::FieldReader<u8, CKG_A>;
 #[doc = "Transmit Clock Gating Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CKG_A {
     #[doc = "0: None"]
-    CONTINUOUS = 0,
+    Continuous = 0,
     #[doc = "1: Transmit Clock enabled only if TF Low"]
-    EN_TF_LOW = 1,
+    EnTfLow = 1,
     #[doc = "2: Transmit Clock enabled only if TF High"]
-    EN_TF_HIGH = 2,
+    EnTfHigh = 2,
 }
 impl From<CKG_A> for u8 {
     #[inline(always)]
@@ -192,26 +162,26 @@ impl CKG_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<CKG_A> {
         match self.bits {
-            0 => Some(CKG_A::CONTINUOUS),
-            1 => Some(CKG_A::EN_TF_LOW),
-            2 => Some(CKG_A::EN_TF_HIGH),
+            0 => Some(CKG_A::Continuous),
+            1 => Some(CKG_A::EnTfLow),
+            2 => Some(CKG_A::EnTfHigh),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONTINUOUS`"]
+    #[doc = "Checks if the value of the field is `Continuous`"]
     #[inline(always)]
     pub fn is_continuous(&self) -> bool {
-        *self == CKG_A::CONTINUOUS
+        *self == CKG_A::Continuous
     }
-    #[doc = "Checks if the value of the field is `EN_TF_LOW`"]
+    #[doc = "Checks if the value of the field is `EnTfLow`"]
     #[inline(always)]
     pub fn is_en_tf_low(&self) -> bool {
-        *self == CKG_A::EN_TF_LOW
+        *self == CKG_A::EnTfLow
     }
-    #[doc = "Checks if the value of the field is `EN_TF_HIGH`"]
+    #[doc = "Checks if the value of the field is `EnTfHigh`"]
     #[inline(always)]
     pub fn is_en_tf_high(&self) -> bool {
-        *self == CKG_A::EN_TF_HIGH
+        *self == CKG_A::EnTfHigh
     }
 }
 #[doc = "Field `CKG` writer - Transmit Clock Gating Selection"]
@@ -220,41 +190,41 @@ impl<'a, const O: u8> CKG_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn continuous(self) -> &'a mut W {
-        self.variant(CKG_A::CONTINUOUS)
+        self.variant(CKG_A::Continuous)
     }
     #[doc = "Transmit Clock enabled only if TF Low"]
     #[inline(always)]
     pub fn en_tf_low(self) -> &'a mut W {
-        self.variant(CKG_A::EN_TF_LOW)
+        self.variant(CKG_A::EnTfLow)
     }
     #[doc = "Transmit Clock enabled only if TF High"]
     #[inline(always)]
     pub fn en_tf_high(self) -> &'a mut W {
-        self.variant(CKG_A::EN_TF_HIGH)
+        self.variant(CKG_A::EnTfHigh)
     }
 }
 #[doc = "Field `START` reader - Transmit Start Selection"]
 pub type START_R = crate::FieldReader<u8, START_A>;
 #[doc = "Transmit Start Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum START_A {
     #[doc = "0: Continuous, as soon as a word is written in the SSC_THR Register (if Transmit is enabled), and immediately after the end of transfer of the previous data"]
-    CONTINUOUS = 0,
+    Continuous = 0,
     #[doc = "1: Receive start"]
-    RECEIVE = 1,
+    Receive = 1,
     #[doc = "2: Detection of a low level on TF signal"]
-    TF_LOW = 2,
+    TfLow = 2,
     #[doc = "3: Detection of a high level on TF signal"]
-    TF_HIGH = 3,
+    TfHigh = 3,
     #[doc = "4: Detection of a falling edge on TF signal"]
-    TF_FALLING = 4,
+    TfFalling = 4,
     #[doc = "5: Detection of a rising edge on TF signal"]
-    TF_RISING = 5,
+    TfRising = 5,
     #[doc = "6: Detection of any level change on TF signal"]
-    TF_LEVEL = 6,
+    TfLevel = 6,
     #[doc = "7: Detection of any edge on TF signal"]
-    TF_EDGE = 7,
+    TfEdge = 7,
 }
 impl From<START_A> for u8 {
     #[inline(always)]
@@ -267,56 +237,56 @@ impl START_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<START_A> {
         match self.bits {
-            0 => Some(START_A::CONTINUOUS),
-            1 => Some(START_A::RECEIVE),
-            2 => Some(START_A::TF_LOW),
-            3 => Some(START_A::TF_HIGH),
-            4 => Some(START_A::TF_FALLING),
-            5 => Some(START_A::TF_RISING),
-            6 => Some(START_A::TF_LEVEL),
-            7 => Some(START_A::TF_EDGE),
+            0 => Some(START_A::Continuous),
+            1 => Some(START_A::Receive),
+            2 => Some(START_A::TfLow),
+            3 => Some(START_A::TfHigh),
+            4 => Some(START_A::TfFalling),
+            5 => Some(START_A::TfRising),
+            6 => Some(START_A::TfLevel),
+            7 => Some(START_A::TfEdge),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONTINUOUS`"]
+    #[doc = "Checks if the value of the field is `Continuous`"]
     #[inline(always)]
     pub fn is_continuous(&self) -> bool {
-        *self == START_A::CONTINUOUS
+        *self == START_A::Continuous
     }
-    #[doc = "Checks if the value of the field is `RECEIVE`"]
+    #[doc = "Checks if the value of the field is `Receive`"]
     #[inline(always)]
     pub fn is_receive(&self) -> bool {
-        *self == START_A::RECEIVE
+        *self == START_A::Receive
     }
-    #[doc = "Checks if the value of the field is `TF_LOW`"]
+    #[doc = "Checks if the value of the field is `TfLow`"]
     #[inline(always)]
     pub fn is_tf_low(&self) -> bool {
-        *self == START_A::TF_LOW
+        *self == START_A::TfLow
     }
-    #[doc = "Checks if the value of the field is `TF_HIGH`"]
+    #[doc = "Checks if the value of the field is `TfHigh`"]
     #[inline(always)]
     pub fn is_tf_high(&self) -> bool {
-        *self == START_A::TF_HIGH
+        *self == START_A::TfHigh
     }
-    #[doc = "Checks if the value of the field is `TF_FALLING`"]
+    #[doc = "Checks if the value of the field is `TfFalling`"]
     #[inline(always)]
     pub fn is_tf_falling(&self) -> bool {
-        *self == START_A::TF_FALLING
+        *self == START_A::TfFalling
     }
-    #[doc = "Checks if the value of the field is `TF_RISING`"]
+    #[doc = "Checks if the value of the field is `TfRising`"]
     #[inline(always)]
     pub fn is_tf_rising(&self) -> bool {
-        *self == START_A::TF_RISING
+        *self == START_A::TfRising
     }
-    #[doc = "Checks if the value of the field is `TF_LEVEL`"]
+    #[doc = "Checks if the value of the field is `TfLevel`"]
     #[inline(always)]
     pub fn is_tf_level(&self) -> bool {
-        *self == START_A::TF_LEVEL
+        *self == START_A::TfLevel
     }
-    #[doc = "Checks if the value of the field is `TF_EDGE`"]
+    #[doc = "Checks if the value of the field is `TfEdge`"]
     #[inline(always)]
     pub fn is_tf_edge(&self) -> bool {
-        *self == START_A::TF_EDGE
+        *self == START_A::TfEdge
     }
 }
 #[doc = "Field `START` writer - Transmit Start Selection"]
@@ -325,42 +295,42 @@ impl<'a, const O: u8> START_W<'a, O> {
     #[doc = "Continuous, as soon as a word is written in the SSC_THR Register (if Transmit is enabled), and immediately after the end of transfer of the previous data"]
     #[inline(always)]
     pub fn continuous(self) -> &'a mut W {
-        self.variant(START_A::CONTINUOUS)
+        self.variant(START_A::Continuous)
     }
     #[doc = "Receive start"]
     #[inline(always)]
     pub fn receive(self) -> &'a mut W {
-        self.variant(START_A::RECEIVE)
+        self.variant(START_A::Receive)
     }
     #[doc = "Detection of a low level on TF signal"]
     #[inline(always)]
     pub fn tf_low(self) -> &'a mut W {
-        self.variant(START_A::TF_LOW)
+        self.variant(START_A::TfLow)
     }
     #[doc = "Detection of a high level on TF signal"]
     #[inline(always)]
     pub fn tf_high(self) -> &'a mut W {
-        self.variant(START_A::TF_HIGH)
+        self.variant(START_A::TfHigh)
     }
     #[doc = "Detection of a falling edge on TF signal"]
     #[inline(always)]
     pub fn tf_falling(self) -> &'a mut W {
-        self.variant(START_A::TF_FALLING)
+        self.variant(START_A::TfFalling)
     }
     #[doc = "Detection of a rising edge on TF signal"]
     #[inline(always)]
     pub fn tf_rising(self) -> &'a mut W {
-        self.variant(START_A::TF_RISING)
+        self.variant(START_A::TfRising)
     }
     #[doc = "Detection of any level change on TF signal"]
     #[inline(always)]
     pub fn tf_level(self) -> &'a mut W {
-        self.variant(START_A::TF_LEVEL)
+        self.variant(START_A::TfLevel)
     }
     #[doc = "Detection of any edge on TF signal"]
     #[inline(always)]
     pub fn tf_edge(self) -> &'a mut W {
-        self.variant(START_A::TF_EDGE)
+        self.variant(START_A::TfEdge)
     }
 }
 #[doc = "Field `STTDLY` reader - Transmit Start Delay"]
@@ -411,36 +381,43 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Transmit Clock Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn cks(&mut self) -> CKS_W<0> {
         CKS_W::new(self)
     }
     #[doc = "Bits 2:4 - Transmit Clock Output Mode Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn cko(&mut self) -> CKO_W<2> {
         CKO_W::new(self)
     }
     #[doc = "Bit 5 - Transmit Clock Inversion"]
     #[inline(always)]
+    #[must_use]
     pub fn cki(&mut self) -> CKI_W<5> {
         CKI_W::new(self)
     }
     #[doc = "Bits 6:7 - Transmit Clock Gating Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn ckg(&mut self) -> CKG_W<6> {
         CKG_W::new(self)
     }
     #[doc = "Bits 8:11 - Transmit Start Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn start(&mut self) -> START_W<8> {
         START_W::new(self)
     }
     #[doc = "Bits 16:23 - Transmit Start Delay"]
     #[inline(always)]
+    #[must_use]
     pub fn sttdly(&mut self) -> STTDLY_W<16> {
         STTDLY_W::new(self)
     }
     #[doc = "Bits 24:31 - Transmit Period Divider Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn period(&mut self) -> PERIOD_W<24> {
         PERIOD_W::new(self)
     }
@@ -463,11 +440,10 @@ impl crate::Readable for TCMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [tcmr::W](W) writer structure"]
 impl crate::Writable for TCMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TCMR to value 0"]
 impl crate::Resettable for TCMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,18 +1,6 @@
 #[doc = "Register `SR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<SR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `TXRDY` reader - Transmit Ready"]
 pub type TXRDY_R = crate::BitReader<bool>;
 #[doc = "Field `TXEMPTY` reader - Transmit Empty"]
@@ -124,8 +112,5 @@ impl crate::Readable for SR_SPEC {
 }
 #[doc = "`reset()` method sets SR to value 0xcc"]
 impl crate::Resettable for SR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xcc
-    }
+    const RESET_VALUE: Self::Ux = 0xcc;
 }

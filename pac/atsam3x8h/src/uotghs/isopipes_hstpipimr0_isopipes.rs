@@ -1,18 +1,6 @@
 #[doc = "Register `HSTPIPIMR0_ISOPIPES` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<ISOPIPES_HSTPIPIMR0_ISOPIPES_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ISOPIPES_HSTPIPIMR0_ISOPIPES_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ISOPIPES_HSTPIPIMR0_ISOPIPES_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ISOPIPES_HSTPIPIMR0_ISOPIPES_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `RXINE` reader - Received IN Data Interrupt Enable"]
 pub type RXINE_R = crate::BitReader<bool>;
 #[doc = "Field `TXOUTE` reader - Transmitted OUT Data Interrupt Enable"]

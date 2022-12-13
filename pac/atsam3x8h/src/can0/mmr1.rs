@@ -1,39 +1,9 @@
 #[doc = "Register `MMR1` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MMR1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MMR1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MMR1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MMR1_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MMR1` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<MMR1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MMR1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MMR1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MMR1_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `MTIMEMARK` reader - Mailbox Timemark"]
 pub type MTIMEMARK_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MTIMEMARK` writer - Mailbox Timemark"]
@@ -45,21 +15,21 @@ pub type PRIOR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MMR1_SPEC, u8, u
 #[doc = "Field `MOT` reader - Mailbox Object Type"]
 pub type MOT_R = crate::FieldReader<u8, MOT_A>;
 #[doc = "Mailbox Object Type\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MOT_A {
     #[doc = "0: Mailbox is disabled. This prevents receiving or transmitting any messages with this mailbox."]
-    MB_DISABLED = 0,
+    MbDisabled = 0,
     #[doc = "1: Reception Mailbox. Mailbox is configured for reception. If a message is received while the mailbox data register is full, it is discarded."]
-    MB_RX = 1,
+    MbRx = 1,
     #[doc = "2: Reception mailbox with overwrite. Mailbox is configured for reception. If a message is received while the mailbox is full, it overwrites the previous message."]
-    MB_RX_OVERWRITE = 2,
+    MbRxOverwrite = 2,
     #[doc = "3: Transmit mailbox. Mailbox is configured for transmission."]
-    MB_TX = 3,
+    MbTx = 3,
     #[doc = "4: Consumer Mailbox. Mailbox is configured in reception but behaves as a Transmit Mailbox, i.e., it sends a remote frame and waits for an answer."]
-    MB_CONSUMER = 4,
+    MbConsumer = 4,
     #[doc = "5: Producer Mailbox. Mailbox is configured in transmission but also behaves like a reception mailbox, i.e., it waits to receive a Remote Frame before sending its contents."]
-    MB_PRODUCER = 5,
+    MbProducer = 5,
 }
 impl From<MOT_A> for u8 {
     #[inline(always)]
@@ -72,44 +42,44 @@ impl MOT_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<MOT_A> {
         match self.bits {
-            0 => Some(MOT_A::MB_DISABLED),
-            1 => Some(MOT_A::MB_RX),
-            2 => Some(MOT_A::MB_RX_OVERWRITE),
-            3 => Some(MOT_A::MB_TX),
-            4 => Some(MOT_A::MB_CONSUMER),
-            5 => Some(MOT_A::MB_PRODUCER),
+            0 => Some(MOT_A::MbDisabled),
+            1 => Some(MOT_A::MbRx),
+            2 => Some(MOT_A::MbRxOverwrite),
+            3 => Some(MOT_A::MbTx),
+            4 => Some(MOT_A::MbConsumer),
+            5 => Some(MOT_A::MbProducer),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `MB_DISABLED`"]
+    #[doc = "Checks if the value of the field is `MbDisabled`"]
     #[inline(always)]
     pub fn is_mb_disabled(&self) -> bool {
-        *self == MOT_A::MB_DISABLED
+        *self == MOT_A::MbDisabled
     }
-    #[doc = "Checks if the value of the field is `MB_RX`"]
+    #[doc = "Checks if the value of the field is `MbRx`"]
     #[inline(always)]
     pub fn is_mb_rx(&self) -> bool {
-        *self == MOT_A::MB_RX
+        *self == MOT_A::MbRx
     }
-    #[doc = "Checks if the value of the field is `MB_RX_OVERWRITE`"]
+    #[doc = "Checks if the value of the field is `MbRxOverwrite`"]
     #[inline(always)]
     pub fn is_mb_rx_overwrite(&self) -> bool {
-        *self == MOT_A::MB_RX_OVERWRITE
+        *self == MOT_A::MbRxOverwrite
     }
-    #[doc = "Checks if the value of the field is `MB_TX`"]
+    #[doc = "Checks if the value of the field is `MbTx`"]
     #[inline(always)]
     pub fn is_mb_tx(&self) -> bool {
-        *self == MOT_A::MB_TX
+        *self == MOT_A::MbTx
     }
-    #[doc = "Checks if the value of the field is `MB_CONSUMER`"]
+    #[doc = "Checks if the value of the field is `MbConsumer`"]
     #[inline(always)]
     pub fn is_mb_consumer(&self) -> bool {
-        *self == MOT_A::MB_CONSUMER
+        *self == MOT_A::MbConsumer
     }
-    #[doc = "Checks if the value of the field is `MB_PRODUCER`"]
+    #[doc = "Checks if the value of the field is `MbProducer`"]
     #[inline(always)]
     pub fn is_mb_producer(&self) -> bool {
-        *self == MOT_A::MB_PRODUCER
+        *self == MOT_A::MbProducer
     }
 }
 #[doc = "Field `MOT` writer - Mailbox Object Type"]
@@ -118,32 +88,32 @@ impl<'a, const O: u8> MOT_W<'a, O> {
     #[doc = "Mailbox is disabled. This prevents receiving or transmitting any messages with this mailbox."]
     #[inline(always)]
     pub fn mb_disabled(self) -> &'a mut W {
-        self.variant(MOT_A::MB_DISABLED)
+        self.variant(MOT_A::MbDisabled)
     }
     #[doc = "Reception Mailbox. Mailbox is configured for reception. If a message is received while the mailbox data register is full, it is discarded."]
     #[inline(always)]
     pub fn mb_rx(self) -> &'a mut W {
-        self.variant(MOT_A::MB_RX)
+        self.variant(MOT_A::MbRx)
     }
     #[doc = "Reception mailbox with overwrite. Mailbox is configured for reception. If a message is received while the mailbox is full, it overwrites the previous message."]
     #[inline(always)]
     pub fn mb_rx_overwrite(self) -> &'a mut W {
-        self.variant(MOT_A::MB_RX_OVERWRITE)
+        self.variant(MOT_A::MbRxOverwrite)
     }
     #[doc = "Transmit mailbox. Mailbox is configured for transmission."]
     #[inline(always)]
     pub fn mb_tx(self) -> &'a mut W {
-        self.variant(MOT_A::MB_TX)
+        self.variant(MOT_A::MbTx)
     }
     #[doc = "Consumer Mailbox. Mailbox is configured in reception but behaves as a Transmit Mailbox, i.e., it sends a remote frame and waits for an answer."]
     #[inline(always)]
     pub fn mb_consumer(self) -> &'a mut W {
-        self.variant(MOT_A::MB_CONSUMER)
+        self.variant(MOT_A::MbConsumer)
     }
     #[doc = "Producer Mailbox. Mailbox is configured in transmission but also behaves like a reception mailbox, i.e., it waits to receive a Remote Frame before sending its contents."]
     #[inline(always)]
     pub fn mb_producer(self) -> &'a mut W {
-        self.variant(MOT_A::MB_PRODUCER)
+        self.variant(MOT_A::MbProducer)
     }
 }
 impl R {
@@ -166,16 +136,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Mailbox Timemark"]
     #[inline(always)]
+    #[must_use]
     pub fn mtimemark(&mut self) -> MTIMEMARK_W<0> {
         MTIMEMARK_W::new(self)
     }
     #[doc = "Bits 16:19 - Mailbox Priority"]
     #[inline(always)]
+    #[must_use]
     pub fn prior(&mut self) -> PRIOR_W<16> {
         PRIOR_W::new(self)
     }
     #[doc = "Bits 24:26 - Mailbox Object Type"]
     #[inline(always)]
+    #[must_use]
     pub fn mot(&mut self) -> MOT_W<24> {
         MOT_W::new(self)
     }
@@ -198,11 +171,10 @@ impl crate::Readable for MMR1_SPEC {
 #[doc = "`write(|w| ..)` method takes [mmr1::W](W) writer structure"]
 impl crate::Writable for MMR1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MMR1 to value 0"]
 impl crate::Resettable for MMR1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

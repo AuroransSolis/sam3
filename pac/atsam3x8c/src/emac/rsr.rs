@@ -1,39 +1,9 @@
 #[doc = "Register `RSR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<RSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `RSR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<RSR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RSR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RSR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `BNA` reader - Buffer Not Available"]
 pub type BNA_R = crate::BitReader<bool>;
 #[doc = "Field `BNA` writer - Buffer Not Available"]
@@ -66,16 +36,19 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Buffer Not Available"]
     #[inline(always)]
+    #[must_use]
     pub fn bna(&mut self) -> BNA_W<0> {
         BNA_W::new(self)
     }
     #[doc = "Bit 1 - Frame Received"]
     #[inline(always)]
+    #[must_use]
     pub fn rec(&mut self) -> REC_W<1> {
         REC_W::new(self)
     }
     #[doc = "Bit 2 - Receive Overrun"]
     #[inline(always)]
+    #[must_use]
     pub fn ovr(&mut self) -> OVR_W<2> {
         OVR_W::new(self)
     }
@@ -98,11 +71,10 @@ impl crate::Readable for RSR_SPEC {
 #[doc = "`write(|w| ..)` method takes [rsr::W](W) writer structure"]
 impl crate::Writable for RSR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RSR to value 0"]
 impl crate::Resettable for RSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

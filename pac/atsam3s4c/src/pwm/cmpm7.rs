@@ -1,39 +1,9 @@
 #[doc = "Register `CMPM7` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CMPM7_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CMPM7_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CMPM7_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CMPM7_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CMPM7` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CMPM7_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CMPM7_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CMPM7_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CMPM7_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `CEN` reader - Comparison x Enable"]
 pub type CEN_R = crate::BitReader<bool>;
 #[doc = "Field `CEN` writer - Comparison x Enable"]
@@ -93,31 +63,37 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Comparison x Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn cen(&mut self) -> CEN_W<0> {
         CEN_W::new(self)
     }
     #[doc = "Bits 4:7 - Comparison x Trigger"]
     #[inline(always)]
+    #[must_use]
     pub fn ctr(&mut self) -> CTR_W<4> {
         CTR_W::new(self)
     }
     #[doc = "Bits 8:11 - Comparison x Period"]
     #[inline(always)]
+    #[must_use]
     pub fn cpr(&mut self) -> CPR_W<8> {
         CPR_W::new(self)
     }
     #[doc = "Bits 12:15 - Comparison x Period Counter"]
     #[inline(always)]
+    #[must_use]
     pub fn cprcnt(&mut self) -> CPRCNT_W<12> {
         CPRCNT_W::new(self)
     }
     #[doc = "Bits 16:19 - Comparison x Update Period"]
     #[inline(always)]
+    #[must_use]
     pub fn cupr(&mut self) -> CUPR_W<16> {
         CUPR_W::new(self)
     }
     #[doc = "Bits 20:23 - Comparison x Update Period Counter"]
     #[inline(always)]
+    #[must_use]
     pub fn cuprcnt(&mut self) -> CUPRCNT_W<20> {
         CUPRCNT_W::new(self)
     }
@@ -140,11 +116,10 @@ impl crate::Readable for CMPM7_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmpm7::W](W) writer structure"]
 impl crate::Writable for CMPM7_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMPM7 to value 0"]
 impl crate::Resettable for CMPM7_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

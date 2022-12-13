@@ -1,24 +1,6 @@
 #[doc = "Register `PCIER` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<PCIER_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PCIER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PCIER_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PCIER_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `DRDY` writer - Parallel Capture Mode Data Ready Interrupt Enable"]
 pub type DRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCIER_SPEC, bool, O>;
 #[doc = "Field `OVRE` writer - Parallel Capture Mode Overrun Error Interrupt Enable"]
@@ -30,21 +12,25 @@ pub type RXBUFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCIER_SPEC, bool,
 impl W {
     #[doc = "Bit 0 - Parallel Capture Mode Data Ready Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn drdy(&mut self) -> DRDY_W<0> {
         DRDY_W::new(self)
     }
     #[doc = "Bit 1 - Parallel Capture Mode Overrun Error Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ovre(&mut self) -> OVRE_W<1> {
         OVRE_W::new(self)
     }
     #[doc = "Bit 2 - End of Reception Transfer Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn endrx(&mut self) -> ENDRX_W<2> {
         ENDRX_W::new(self)
     }
     #[doc = "Bit 3 - Reception Buffer Full Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rxbuff(&mut self) -> RXBUFF_W<3> {
         RXBUFF_W::new(self)
     }
@@ -63,4 +49,6 @@ impl crate::RegisterSpec for PCIER_SPEC {
 #[doc = "`write(|w| ..)` method takes [pcier::W](W) writer structure"]
 impl crate::Writable for PCIER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

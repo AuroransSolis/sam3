@@ -1,39 +1,9 @@
 #[doc = "Register `CTRLA1` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CTRLA1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CTRLA1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CTRLA1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CTRLA1_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CTRLA1` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CTRLA1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CTRLA1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CTRLA1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CTRLA1_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `BTSIZE` reader - Buffer Transfer Size"]
 pub type BTSIZE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `BTSIZE` writer - Buffer Transfer Size"]
@@ -41,17 +11,17 @@ pub type BTSIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRLA1_SPEC, u1
 #[doc = "Field `SCSIZE` reader - Source Chunk Transfer Size."]
 pub type SCSIZE_R = crate::FieldReader<u8, SCSIZE_A>;
 #[doc = "Source Chunk Transfer Size.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SCSIZE_A {
     #[doc = "0: 1 data transferred"]
-    CHK_1 = 0,
+    Chk1 = 0,
     #[doc = "1: 4 data transferred"]
-    CHK_4 = 1,
+    Chk4 = 1,
     #[doc = "2: 8 data transferred"]
-    CHK_8 = 2,
+    Chk8 = 2,
     #[doc = "3: 16 data transferred"]
-    CHK_16 = 3,
+    Chk16 = 3,
 }
 impl From<SCSIZE_A> for u8 {
     #[inline(always)]
@@ -64,32 +34,32 @@ impl SCSIZE_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<SCSIZE_A> {
         match self.bits {
-            0 => Some(SCSIZE_A::CHK_1),
-            1 => Some(SCSIZE_A::CHK_4),
-            2 => Some(SCSIZE_A::CHK_8),
-            3 => Some(SCSIZE_A::CHK_16),
+            0 => Some(SCSIZE_A::Chk1),
+            1 => Some(SCSIZE_A::Chk4),
+            2 => Some(SCSIZE_A::Chk8),
+            3 => Some(SCSIZE_A::Chk16),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CHK_1`"]
+    #[doc = "Checks if the value of the field is `Chk1`"]
     #[inline(always)]
     pub fn is_chk_1(&self) -> bool {
-        *self == SCSIZE_A::CHK_1
+        *self == SCSIZE_A::Chk1
     }
-    #[doc = "Checks if the value of the field is `CHK_4`"]
+    #[doc = "Checks if the value of the field is `Chk4`"]
     #[inline(always)]
     pub fn is_chk_4(&self) -> bool {
-        *self == SCSIZE_A::CHK_4
+        *self == SCSIZE_A::Chk4
     }
-    #[doc = "Checks if the value of the field is `CHK_8`"]
+    #[doc = "Checks if the value of the field is `Chk8`"]
     #[inline(always)]
     pub fn is_chk_8(&self) -> bool {
-        *self == SCSIZE_A::CHK_8
+        *self == SCSIZE_A::Chk8
     }
-    #[doc = "Checks if the value of the field is `CHK_16`"]
+    #[doc = "Checks if the value of the field is `Chk16`"]
     #[inline(always)]
     pub fn is_chk_16(&self) -> bool {
-        *self == SCSIZE_A::CHK_16
+        *self == SCSIZE_A::Chk16
     }
 }
 #[doc = "Field `SCSIZE` writer - Source Chunk Transfer Size."]
@@ -98,38 +68,38 @@ impl<'a, const O: u8> SCSIZE_W<'a, O> {
     #[doc = "1 data transferred"]
     #[inline(always)]
     pub fn chk_1(self) -> &'a mut W {
-        self.variant(SCSIZE_A::CHK_1)
+        self.variant(SCSIZE_A::Chk1)
     }
     #[doc = "4 data transferred"]
     #[inline(always)]
     pub fn chk_4(self) -> &'a mut W {
-        self.variant(SCSIZE_A::CHK_4)
+        self.variant(SCSIZE_A::Chk4)
     }
     #[doc = "8 data transferred"]
     #[inline(always)]
     pub fn chk_8(self) -> &'a mut W {
-        self.variant(SCSIZE_A::CHK_8)
+        self.variant(SCSIZE_A::Chk8)
     }
     #[doc = "16 data transferred"]
     #[inline(always)]
     pub fn chk_16(self) -> &'a mut W {
-        self.variant(SCSIZE_A::CHK_16)
+        self.variant(SCSIZE_A::Chk16)
     }
 }
 #[doc = "Field `DCSIZE` reader - Destination Chunk Transfer Size"]
 pub type DCSIZE_R = crate::FieldReader<u8, DCSIZE_A>;
 #[doc = "Destination Chunk Transfer Size\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DCSIZE_A {
     #[doc = "0: 1 data transferred"]
-    CHK_1 = 0,
+    Chk1 = 0,
     #[doc = "1: 4 data transferred"]
-    CHK_4 = 1,
+    Chk4 = 1,
     #[doc = "2: 8 data transferred"]
-    CHK_8 = 2,
+    Chk8 = 2,
     #[doc = "3: 16 data transferred"]
-    CHK_16 = 3,
+    Chk16 = 3,
 }
 impl From<DCSIZE_A> for u8 {
     #[inline(always)]
@@ -142,32 +112,32 @@ impl DCSIZE_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<DCSIZE_A> {
         match self.bits {
-            0 => Some(DCSIZE_A::CHK_1),
-            1 => Some(DCSIZE_A::CHK_4),
-            2 => Some(DCSIZE_A::CHK_8),
-            3 => Some(DCSIZE_A::CHK_16),
+            0 => Some(DCSIZE_A::Chk1),
+            1 => Some(DCSIZE_A::Chk4),
+            2 => Some(DCSIZE_A::Chk8),
+            3 => Some(DCSIZE_A::Chk16),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CHK_1`"]
+    #[doc = "Checks if the value of the field is `Chk1`"]
     #[inline(always)]
     pub fn is_chk_1(&self) -> bool {
-        *self == DCSIZE_A::CHK_1
+        *self == DCSIZE_A::Chk1
     }
-    #[doc = "Checks if the value of the field is `CHK_4`"]
+    #[doc = "Checks if the value of the field is `Chk4`"]
     #[inline(always)]
     pub fn is_chk_4(&self) -> bool {
-        *self == DCSIZE_A::CHK_4
+        *self == DCSIZE_A::Chk4
     }
-    #[doc = "Checks if the value of the field is `CHK_8`"]
+    #[doc = "Checks if the value of the field is `Chk8`"]
     #[inline(always)]
     pub fn is_chk_8(&self) -> bool {
-        *self == DCSIZE_A::CHK_8
+        *self == DCSIZE_A::Chk8
     }
-    #[doc = "Checks if the value of the field is `CHK_16`"]
+    #[doc = "Checks if the value of the field is `Chk16`"]
     #[inline(always)]
     pub fn is_chk_16(&self) -> bool {
-        *self == DCSIZE_A::CHK_16
+        *self == DCSIZE_A::Chk16
     }
 }
 #[doc = "Field `DCSIZE` writer - Destination Chunk Transfer Size"]
@@ -176,36 +146,36 @@ impl<'a, const O: u8> DCSIZE_W<'a, O> {
     #[doc = "1 data transferred"]
     #[inline(always)]
     pub fn chk_1(self) -> &'a mut W {
-        self.variant(DCSIZE_A::CHK_1)
+        self.variant(DCSIZE_A::Chk1)
     }
     #[doc = "4 data transferred"]
     #[inline(always)]
     pub fn chk_4(self) -> &'a mut W {
-        self.variant(DCSIZE_A::CHK_4)
+        self.variant(DCSIZE_A::Chk4)
     }
     #[doc = "8 data transferred"]
     #[inline(always)]
     pub fn chk_8(self) -> &'a mut W {
-        self.variant(DCSIZE_A::CHK_8)
+        self.variant(DCSIZE_A::Chk8)
     }
     #[doc = "16 data transferred"]
     #[inline(always)]
     pub fn chk_16(self) -> &'a mut W {
-        self.variant(DCSIZE_A::CHK_16)
+        self.variant(DCSIZE_A::Chk16)
     }
 }
 #[doc = "Field `SRC_WIDTH` reader - Transfer Width for the Source"]
 pub type SRC_WIDTH_R = crate::FieldReader<u8, SRC_WIDTH_A>;
 #[doc = "Transfer Width for the Source\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SRC_WIDTH_A {
     #[doc = "0: the transfer size is set to 8-bit width"]
-    BYTE = 0,
+    Byte = 0,
     #[doc = "1: the transfer size is set to 16-bit width"]
-    HALF_WORD = 1,
+    HalfWord = 1,
     #[doc = "2: the transfer size is set to 32-bit width"]
-    WORD = 2,
+    Word = 2,
 }
 impl From<SRC_WIDTH_A> for u8 {
     #[inline(always)]
@@ -218,26 +188,26 @@ impl SRC_WIDTH_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<SRC_WIDTH_A> {
         match self.bits {
-            0 => Some(SRC_WIDTH_A::BYTE),
-            1 => Some(SRC_WIDTH_A::HALF_WORD),
-            2 => Some(SRC_WIDTH_A::WORD),
+            0 => Some(SRC_WIDTH_A::Byte),
+            1 => Some(SRC_WIDTH_A::HalfWord),
+            2 => Some(SRC_WIDTH_A::Word),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `BYTE`"]
+    #[doc = "Checks if the value of the field is `Byte`"]
     #[inline(always)]
     pub fn is_byte(&self) -> bool {
-        *self == SRC_WIDTH_A::BYTE
+        *self == SRC_WIDTH_A::Byte
     }
-    #[doc = "Checks if the value of the field is `HALF_WORD`"]
+    #[doc = "Checks if the value of the field is `HalfWord`"]
     #[inline(always)]
     pub fn is_half_word(&self) -> bool {
-        *self == SRC_WIDTH_A::HALF_WORD
+        *self == SRC_WIDTH_A::HalfWord
     }
-    #[doc = "Checks if the value of the field is `WORD`"]
+    #[doc = "Checks if the value of the field is `Word`"]
     #[inline(always)]
     pub fn is_word(&self) -> bool {
-        *self == SRC_WIDTH_A::WORD
+        *self == SRC_WIDTH_A::Word
     }
 }
 #[doc = "Field `SRC_WIDTH` writer - Transfer Width for the Source"]
@@ -247,31 +217,31 @@ impl<'a, const O: u8> SRC_WIDTH_W<'a, O> {
     #[doc = "the transfer size is set to 8-bit width"]
     #[inline(always)]
     pub fn byte(self) -> &'a mut W {
-        self.variant(SRC_WIDTH_A::BYTE)
+        self.variant(SRC_WIDTH_A::Byte)
     }
     #[doc = "the transfer size is set to 16-bit width"]
     #[inline(always)]
     pub fn half_word(self) -> &'a mut W {
-        self.variant(SRC_WIDTH_A::HALF_WORD)
+        self.variant(SRC_WIDTH_A::HalfWord)
     }
     #[doc = "the transfer size is set to 32-bit width"]
     #[inline(always)]
     pub fn word(self) -> &'a mut W {
-        self.variant(SRC_WIDTH_A::WORD)
+        self.variant(SRC_WIDTH_A::Word)
     }
 }
 #[doc = "Field `DST_WIDTH` reader - Transfer Width for the Destination"]
 pub type DST_WIDTH_R = crate::FieldReader<u8, DST_WIDTH_A>;
 #[doc = "Transfer Width for the Destination\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DST_WIDTH_A {
     #[doc = "0: the transfer size is set to 8-bit width"]
-    BYTE = 0,
+    Byte = 0,
     #[doc = "1: the transfer size is set to 16-bit width"]
-    HALF_WORD = 1,
+    HalfWord = 1,
     #[doc = "2: the transfer size is set to 32-bit width"]
-    WORD = 2,
+    Word = 2,
 }
 impl From<DST_WIDTH_A> for u8 {
     #[inline(always)]
@@ -284,26 +254,26 @@ impl DST_WIDTH_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<DST_WIDTH_A> {
         match self.bits {
-            0 => Some(DST_WIDTH_A::BYTE),
-            1 => Some(DST_WIDTH_A::HALF_WORD),
-            2 => Some(DST_WIDTH_A::WORD),
+            0 => Some(DST_WIDTH_A::Byte),
+            1 => Some(DST_WIDTH_A::HalfWord),
+            2 => Some(DST_WIDTH_A::Word),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `BYTE`"]
+    #[doc = "Checks if the value of the field is `Byte`"]
     #[inline(always)]
     pub fn is_byte(&self) -> bool {
-        *self == DST_WIDTH_A::BYTE
+        *self == DST_WIDTH_A::Byte
     }
-    #[doc = "Checks if the value of the field is `HALF_WORD`"]
+    #[doc = "Checks if the value of the field is `HalfWord`"]
     #[inline(always)]
     pub fn is_half_word(&self) -> bool {
-        *self == DST_WIDTH_A::HALF_WORD
+        *self == DST_WIDTH_A::HalfWord
     }
-    #[doc = "Checks if the value of the field is `WORD`"]
+    #[doc = "Checks if the value of the field is `Word`"]
     #[inline(always)]
     pub fn is_word(&self) -> bool {
-        *self == DST_WIDTH_A::WORD
+        *self == DST_WIDTH_A::Word
     }
 }
 #[doc = "Field `DST_WIDTH` writer - Transfer Width for the Destination"]
@@ -313,17 +283,17 @@ impl<'a, const O: u8> DST_WIDTH_W<'a, O> {
     #[doc = "the transfer size is set to 8-bit width"]
     #[inline(always)]
     pub fn byte(self) -> &'a mut W {
-        self.variant(DST_WIDTH_A::BYTE)
+        self.variant(DST_WIDTH_A::Byte)
     }
     #[doc = "the transfer size is set to 16-bit width"]
     #[inline(always)]
     pub fn half_word(self) -> &'a mut W {
-        self.variant(DST_WIDTH_A::HALF_WORD)
+        self.variant(DST_WIDTH_A::HalfWord)
     }
     #[doc = "the transfer size is set to 32-bit width"]
     #[inline(always)]
     pub fn word(self) -> &'a mut W {
-        self.variant(DST_WIDTH_A::WORD)
+        self.variant(DST_WIDTH_A::Word)
     }
 }
 #[doc = "Field `DONE` reader - Current Descriptor Stop Command and Transfer Completed Memory Indicator"]
@@ -365,31 +335,37 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Buffer Transfer Size"]
     #[inline(always)]
+    #[must_use]
     pub fn btsize(&mut self) -> BTSIZE_W<0> {
         BTSIZE_W::new(self)
     }
     #[doc = "Bits 16:18 - Source Chunk Transfer Size."]
     #[inline(always)]
+    #[must_use]
     pub fn scsize(&mut self) -> SCSIZE_W<16> {
         SCSIZE_W::new(self)
     }
     #[doc = "Bits 20:22 - Destination Chunk Transfer Size"]
     #[inline(always)]
+    #[must_use]
     pub fn dcsize(&mut self) -> DCSIZE_W<20> {
         DCSIZE_W::new(self)
     }
     #[doc = "Bits 24:25 - Transfer Width for the Source"]
     #[inline(always)]
+    #[must_use]
     pub fn src_width(&mut self) -> SRC_WIDTH_W<24> {
         SRC_WIDTH_W::new(self)
     }
     #[doc = "Bits 28:29 - Transfer Width for the Destination"]
     #[inline(always)]
+    #[must_use]
     pub fn dst_width(&mut self) -> DST_WIDTH_W<28> {
         DST_WIDTH_W::new(self)
     }
     #[doc = "Bit 31 - Current Descriptor Stop Command and Transfer Completed Memory Indicator"]
     #[inline(always)]
+    #[must_use]
     pub fn done(&mut self) -> DONE_W<31> {
         DONE_W::new(self)
     }
@@ -412,11 +388,10 @@ impl crate::Readable for CTRLA1_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrla1::W](W) writer structure"]
 impl crate::Writable for CTRLA1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRLA1 to value 0"]
 impl crate::Resettable for CTRLA1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

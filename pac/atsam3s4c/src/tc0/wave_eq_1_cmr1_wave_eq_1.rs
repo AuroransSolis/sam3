@@ -1,61 +1,31 @@
 #[doc = "Register `CMR1_WAVE_EQ_1` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<WAVE_EQ_1_CMR1_WAVE_EQ_1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<WAVE_EQ_1_CMR1_WAVE_EQ_1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<WAVE_EQ_1_CMR1_WAVE_EQ_1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<WAVE_EQ_1_CMR1_WAVE_EQ_1_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CMR1_WAVE_EQ_1` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<WAVE_EQ_1_CMR1_WAVE_EQ_1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<WAVE_EQ_1_CMR1_WAVE_EQ_1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<WAVE_EQ_1_CMR1_WAVE_EQ_1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<WAVE_EQ_1_CMR1_WAVE_EQ_1_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `TCCLKS` reader - Clock Selection"]
 pub type TCCLKS_R = crate::FieldReader<u8, TCCLKS_A>;
 #[doc = "Clock Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TCCLKS_A {
     #[doc = "0: Clock selected: TCLK1"]
-    TIMER_CLOCK1 = 0,
+    TimerClock1 = 0,
     #[doc = "1: Clock selected: TCLK2"]
-    TIMER_CLOCK2 = 1,
+    TimerClock2 = 1,
     #[doc = "2: Clock selected: TCLK3"]
-    TIMER_CLOCK3 = 2,
+    TimerClock3 = 2,
     #[doc = "3: Clock selected: TCLK4"]
-    TIMER_CLOCK4 = 3,
+    TimerClock4 = 3,
     #[doc = "4: Clock selected: TCLK5"]
-    TIMER_CLOCK5 = 4,
+    TimerClock5 = 4,
     #[doc = "5: Clock selected: XC0"]
-    XC0 = 5,
+    Xc0 = 5,
     #[doc = "6: Clock selected: XC1"]
-    XC1 = 6,
+    Xc1 = 6,
     #[doc = "7: Clock selected: XC2"]
-    XC2 = 7,
+    Xc2 = 7,
 }
 impl From<TCCLKS_A> for u8 {
     #[inline(always)]
@@ -68,56 +38,56 @@ impl TCCLKS_R {
     #[inline(always)]
     pub fn variant(&self) -> TCCLKS_A {
         match self.bits {
-            0 => TCCLKS_A::TIMER_CLOCK1,
-            1 => TCCLKS_A::TIMER_CLOCK2,
-            2 => TCCLKS_A::TIMER_CLOCK3,
-            3 => TCCLKS_A::TIMER_CLOCK4,
-            4 => TCCLKS_A::TIMER_CLOCK5,
-            5 => TCCLKS_A::XC0,
-            6 => TCCLKS_A::XC1,
-            7 => TCCLKS_A::XC2,
+            0 => TCCLKS_A::TimerClock1,
+            1 => TCCLKS_A::TimerClock2,
+            2 => TCCLKS_A::TimerClock3,
+            3 => TCCLKS_A::TimerClock4,
+            4 => TCCLKS_A::TimerClock5,
+            5 => TCCLKS_A::Xc0,
+            6 => TCCLKS_A::Xc1,
+            7 => TCCLKS_A::Xc2,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `TIMER_CLOCK1`"]
+    #[doc = "Checks if the value of the field is `TimerClock1`"]
     #[inline(always)]
     pub fn is_timer_clock1(&self) -> bool {
-        *self == TCCLKS_A::TIMER_CLOCK1
+        *self == TCCLKS_A::TimerClock1
     }
-    #[doc = "Checks if the value of the field is `TIMER_CLOCK2`"]
+    #[doc = "Checks if the value of the field is `TimerClock2`"]
     #[inline(always)]
     pub fn is_timer_clock2(&self) -> bool {
-        *self == TCCLKS_A::TIMER_CLOCK2
+        *self == TCCLKS_A::TimerClock2
     }
-    #[doc = "Checks if the value of the field is `TIMER_CLOCK3`"]
+    #[doc = "Checks if the value of the field is `TimerClock3`"]
     #[inline(always)]
     pub fn is_timer_clock3(&self) -> bool {
-        *self == TCCLKS_A::TIMER_CLOCK3
+        *self == TCCLKS_A::TimerClock3
     }
-    #[doc = "Checks if the value of the field is `TIMER_CLOCK4`"]
+    #[doc = "Checks if the value of the field is `TimerClock4`"]
     #[inline(always)]
     pub fn is_timer_clock4(&self) -> bool {
-        *self == TCCLKS_A::TIMER_CLOCK4
+        *self == TCCLKS_A::TimerClock4
     }
-    #[doc = "Checks if the value of the field is `TIMER_CLOCK5`"]
+    #[doc = "Checks if the value of the field is `TimerClock5`"]
     #[inline(always)]
     pub fn is_timer_clock5(&self) -> bool {
-        *self == TCCLKS_A::TIMER_CLOCK5
+        *self == TCCLKS_A::TimerClock5
     }
-    #[doc = "Checks if the value of the field is `XC0`"]
+    #[doc = "Checks if the value of the field is `Xc0`"]
     #[inline(always)]
     pub fn is_xc0(&self) -> bool {
-        *self == TCCLKS_A::XC0
+        *self == TCCLKS_A::Xc0
     }
-    #[doc = "Checks if the value of the field is `XC1`"]
+    #[doc = "Checks if the value of the field is `Xc1`"]
     #[inline(always)]
     pub fn is_xc1(&self) -> bool {
-        *self == TCCLKS_A::XC1
+        *self == TCCLKS_A::Xc1
     }
-    #[doc = "Checks if the value of the field is `XC2`"]
+    #[doc = "Checks if the value of the field is `Xc2`"]
     #[inline(always)]
     pub fn is_xc2(&self) -> bool {
-        *self == TCCLKS_A::XC2
+        *self == TCCLKS_A::Xc2
     }
 }
 #[doc = "Field `TCCLKS` writer - Clock Selection"]
@@ -127,42 +97,42 @@ impl<'a, const O: u8> TCCLKS_W<'a, O> {
     #[doc = "Clock selected: TCLK1"]
     #[inline(always)]
     pub fn timer_clock1(self) -> &'a mut W {
-        self.variant(TCCLKS_A::TIMER_CLOCK1)
+        self.variant(TCCLKS_A::TimerClock1)
     }
     #[doc = "Clock selected: TCLK2"]
     #[inline(always)]
     pub fn timer_clock2(self) -> &'a mut W {
-        self.variant(TCCLKS_A::TIMER_CLOCK2)
+        self.variant(TCCLKS_A::TimerClock2)
     }
     #[doc = "Clock selected: TCLK3"]
     #[inline(always)]
     pub fn timer_clock3(self) -> &'a mut W {
-        self.variant(TCCLKS_A::TIMER_CLOCK3)
+        self.variant(TCCLKS_A::TimerClock3)
     }
     #[doc = "Clock selected: TCLK4"]
     #[inline(always)]
     pub fn timer_clock4(self) -> &'a mut W {
-        self.variant(TCCLKS_A::TIMER_CLOCK4)
+        self.variant(TCCLKS_A::TimerClock4)
     }
     #[doc = "Clock selected: TCLK5"]
     #[inline(always)]
     pub fn timer_clock5(self) -> &'a mut W {
-        self.variant(TCCLKS_A::TIMER_CLOCK5)
+        self.variant(TCCLKS_A::TimerClock5)
     }
     #[doc = "Clock selected: XC0"]
     #[inline(always)]
     pub fn xc0(self) -> &'a mut W {
-        self.variant(TCCLKS_A::XC0)
+        self.variant(TCCLKS_A::Xc0)
     }
     #[doc = "Clock selected: XC1"]
     #[inline(always)]
     pub fn xc1(self) -> &'a mut W {
-        self.variant(TCCLKS_A::XC1)
+        self.variant(TCCLKS_A::Xc1)
     }
     #[doc = "Clock selected: XC2"]
     #[inline(always)]
     pub fn xc2(self) -> &'a mut W {
-        self.variant(TCCLKS_A::XC2)
+        self.variant(TCCLKS_A::Xc2)
     }
 }
 #[doc = "Field `CLKI` reader - Clock Invert"]
@@ -173,17 +143,17 @@ pub type CLKI_W<'a, const O: u8> =
 #[doc = "Field `BURST` reader - Burst Signal Selection"]
 pub type BURST_R = crate::FieldReader<u8, BURST_A>;
 #[doc = "Burst Signal Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum BURST_A {
     #[doc = "0: The clock is not gated by an external signal."]
-    NONE = 0,
+    None = 0,
     #[doc = "1: XC0 is ANDed with the selected clock."]
-    XC0 = 1,
+    Xc0 = 1,
     #[doc = "2: XC1 is ANDed with the selected clock."]
-    XC1 = 2,
+    Xc1 = 2,
     #[doc = "3: XC2 is ANDed with the selected clock."]
-    XC2 = 3,
+    Xc2 = 3,
 }
 impl From<BURST_A> for u8 {
     #[inline(always)]
@@ -196,32 +166,32 @@ impl BURST_R {
     #[inline(always)]
     pub fn variant(&self) -> BURST_A {
         match self.bits {
-            0 => BURST_A::NONE,
-            1 => BURST_A::XC0,
-            2 => BURST_A::XC1,
-            3 => BURST_A::XC2,
+            0 => BURST_A::None,
+            1 => BURST_A::Xc0,
+            2 => BURST_A::Xc1,
+            3 => BURST_A::Xc2,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Checks if the value of the field is `None`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == BURST_A::NONE
+        *self == BURST_A::None
     }
-    #[doc = "Checks if the value of the field is `XC0`"]
+    #[doc = "Checks if the value of the field is `Xc0`"]
     #[inline(always)]
     pub fn is_xc0(&self) -> bool {
-        *self == BURST_A::XC0
+        *self == BURST_A::Xc0
     }
-    #[doc = "Checks if the value of the field is `XC1`"]
+    #[doc = "Checks if the value of the field is `Xc1`"]
     #[inline(always)]
     pub fn is_xc1(&self) -> bool {
-        *self == BURST_A::XC1
+        *self == BURST_A::Xc1
     }
-    #[doc = "Checks if the value of the field is `XC2`"]
+    #[doc = "Checks if the value of the field is `Xc2`"]
     #[inline(always)]
     pub fn is_xc2(&self) -> bool {
-        *self == BURST_A::XC2
+        *self == BURST_A::Xc2
     }
 }
 #[doc = "Field `BURST` writer - Burst Signal Selection"]
@@ -231,22 +201,22 @@ impl<'a, const O: u8> BURST_W<'a, O> {
     #[doc = "The clock is not gated by an external signal."]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
-        self.variant(BURST_A::NONE)
+        self.variant(BURST_A::None)
     }
     #[doc = "XC0 is ANDed with the selected clock."]
     #[inline(always)]
     pub fn xc0(self) -> &'a mut W {
-        self.variant(BURST_A::XC0)
+        self.variant(BURST_A::Xc0)
     }
     #[doc = "XC1 is ANDed with the selected clock."]
     #[inline(always)]
     pub fn xc1(self) -> &'a mut W {
-        self.variant(BURST_A::XC1)
+        self.variant(BURST_A::Xc1)
     }
     #[doc = "XC2 is ANDed with the selected clock."]
     #[inline(always)]
     pub fn xc2(self) -> &'a mut W {
-        self.variant(BURST_A::XC2)
+        self.variant(BURST_A::Xc2)
     }
 }
 #[doc = "Field `CPCSTOP` reader - Counter Clock Stopped with RC Compare"]
@@ -262,17 +232,17 @@ pub type CPCDIS_W<'a, const O: u8> =
 #[doc = "Field `EEVTEDG` reader - External Event Edge Selection"]
 pub type EEVTEDG_R = crate::FieldReader<u8, EEVTEDG_A>;
 #[doc = "External Event Edge Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EEVTEDG_A {
     #[doc = "0: None"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: Rising edge"]
-    RISING = 1,
+    Rising = 1,
     #[doc = "2: Falling edge"]
-    FALLING = 2,
+    Falling = 2,
     #[doc = "3: Each edge"]
-    EDGE = 3,
+    Edge = 3,
 }
 impl From<EEVTEDG_A> for u8 {
     #[inline(always)]
@@ -285,32 +255,32 @@ impl EEVTEDG_R {
     #[inline(always)]
     pub fn variant(&self) -> EEVTEDG_A {
         match self.bits {
-            0 => EEVTEDG_A::NONE,
-            1 => EEVTEDG_A::RISING,
-            2 => EEVTEDG_A::FALLING,
-            3 => EEVTEDG_A::EDGE,
+            0 => EEVTEDG_A::None,
+            1 => EEVTEDG_A::Rising,
+            2 => EEVTEDG_A::Falling,
+            3 => EEVTEDG_A::Edge,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Checks if the value of the field is `None`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == EEVTEDG_A::NONE
+        *self == EEVTEDG_A::None
     }
-    #[doc = "Checks if the value of the field is `RISING`"]
+    #[doc = "Checks if the value of the field is `Rising`"]
     #[inline(always)]
     pub fn is_rising(&self) -> bool {
-        *self == EEVTEDG_A::RISING
+        *self == EEVTEDG_A::Rising
     }
-    #[doc = "Checks if the value of the field is `FALLING`"]
+    #[doc = "Checks if the value of the field is `Falling`"]
     #[inline(always)]
     pub fn is_falling(&self) -> bool {
-        *self == EEVTEDG_A::FALLING
+        *self == EEVTEDG_A::Falling
     }
-    #[doc = "Checks if the value of the field is `EDGE`"]
+    #[doc = "Checks if the value of the field is `Edge`"]
     #[inline(always)]
     pub fn is_edge(&self) -> bool {
-        *self == EEVTEDG_A::EDGE
+        *self == EEVTEDG_A::Edge
     }
 }
 #[doc = "Field `EEVTEDG` writer - External Event Edge Selection"]
@@ -320,38 +290,38 @@ impl<'a, const O: u8> EEVTEDG_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
-        self.variant(EEVTEDG_A::NONE)
+        self.variant(EEVTEDG_A::None)
     }
     #[doc = "Rising edge"]
     #[inline(always)]
     pub fn rising(self) -> &'a mut W {
-        self.variant(EEVTEDG_A::RISING)
+        self.variant(EEVTEDG_A::Rising)
     }
     #[doc = "Falling edge"]
     #[inline(always)]
     pub fn falling(self) -> &'a mut W {
-        self.variant(EEVTEDG_A::FALLING)
+        self.variant(EEVTEDG_A::Falling)
     }
     #[doc = "Each edge"]
     #[inline(always)]
     pub fn edge(self) -> &'a mut W {
-        self.variant(EEVTEDG_A::EDGE)
+        self.variant(EEVTEDG_A::Edge)
     }
 }
 #[doc = "Field `EEVT` reader - External Event Selection"]
 pub type EEVT_R = crate::FieldReader<u8, EEVT_A>;
 #[doc = "External Event Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EEVT_A {
     #[doc = "0: TIOB"]
-    TIOB = 0,
+    Tiob = 0,
     #[doc = "1: XC0"]
-    XC0 = 1,
+    Xc0 = 1,
     #[doc = "2: XC1"]
-    XC1 = 2,
+    Xc1 = 2,
     #[doc = "3: XC2"]
-    XC2 = 3,
+    Xc2 = 3,
 }
 impl From<EEVT_A> for u8 {
     #[inline(always)]
@@ -364,32 +334,32 @@ impl EEVT_R {
     #[inline(always)]
     pub fn variant(&self) -> EEVT_A {
         match self.bits {
-            0 => EEVT_A::TIOB,
-            1 => EEVT_A::XC0,
-            2 => EEVT_A::XC1,
-            3 => EEVT_A::XC2,
+            0 => EEVT_A::Tiob,
+            1 => EEVT_A::Xc0,
+            2 => EEVT_A::Xc1,
+            3 => EEVT_A::Xc2,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `TIOB`"]
+    #[doc = "Checks if the value of the field is `Tiob`"]
     #[inline(always)]
     pub fn is_tiob(&self) -> bool {
-        *self == EEVT_A::TIOB
+        *self == EEVT_A::Tiob
     }
-    #[doc = "Checks if the value of the field is `XC0`"]
+    #[doc = "Checks if the value of the field is `Xc0`"]
     #[inline(always)]
     pub fn is_xc0(&self) -> bool {
-        *self == EEVT_A::XC0
+        *self == EEVT_A::Xc0
     }
-    #[doc = "Checks if the value of the field is `XC1`"]
+    #[doc = "Checks if the value of the field is `Xc1`"]
     #[inline(always)]
     pub fn is_xc1(&self) -> bool {
-        *self == EEVT_A::XC1
+        *self == EEVT_A::Xc1
     }
-    #[doc = "Checks if the value of the field is `XC2`"]
+    #[doc = "Checks if the value of the field is `Xc2`"]
     #[inline(always)]
     pub fn is_xc2(&self) -> bool {
-        *self == EEVT_A::XC2
+        *self == EEVT_A::Xc2
     }
 }
 #[doc = "Field `EEVT` writer - External Event Selection"]
@@ -399,22 +369,22 @@ impl<'a, const O: u8> EEVT_W<'a, O> {
     #[doc = "TIOB"]
     #[inline(always)]
     pub fn tiob(self) -> &'a mut W {
-        self.variant(EEVT_A::TIOB)
+        self.variant(EEVT_A::Tiob)
     }
     #[doc = "XC0"]
     #[inline(always)]
     pub fn xc0(self) -> &'a mut W {
-        self.variant(EEVT_A::XC0)
+        self.variant(EEVT_A::Xc0)
     }
     #[doc = "XC1"]
     #[inline(always)]
     pub fn xc1(self) -> &'a mut W {
-        self.variant(EEVT_A::XC1)
+        self.variant(EEVT_A::Xc1)
     }
     #[doc = "XC2"]
     #[inline(always)]
     pub fn xc2(self) -> &'a mut W {
-        self.variant(EEVT_A::XC2)
+        self.variant(EEVT_A::Xc2)
     }
 }
 #[doc = "Field `ENETRG` reader - External Event Trigger Enable"]
@@ -425,17 +395,17 @@ pub type ENETRG_W<'a, const O: u8> =
 #[doc = "Field `WAVSEL` reader - Waveform Selection"]
 pub type WAVSEL_R = crate::FieldReader<u8, WAVSEL_A>;
 #[doc = "Waveform Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WAVSEL_A {
     #[doc = "0: UP mode without automatic trigger on RC Compare"]
-    UP = 0,
+    Up = 0,
     #[doc = "1: UPDOWN mode without automatic trigger on RC Compare"]
-    UPDOWN = 1,
+    Updown = 1,
     #[doc = "2: UP mode with automatic trigger on RC Compare"]
-    UP_RC = 2,
+    UpRc = 2,
     #[doc = "3: UPDOWN mode with automatic trigger on RC Compare"]
-    UPDOWN_RC = 3,
+    UpdownRc = 3,
 }
 impl From<WAVSEL_A> for u8 {
     #[inline(always)]
@@ -448,32 +418,32 @@ impl WAVSEL_R {
     #[inline(always)]
     pub fn variant(&self) -> WAVSEL_A {
         match self.bits {
-            0 => WAVSEL_A::UP,
-            1 => WAVSEL_A::UPDOWN,
-            2 => WAVSEL_A::UP_RC,
-            3 => WAVSEL_A::UPDOWN_RC,
+            0 => WAVSEL_A::Up,
+            1 => WAVSEL_A::Updown,
+            2 => WAVSEL_A::UpRc,
+            3 => WAVSEL_A::UpdownRc,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `UP`"]
+    #[doc = "Checks if the value of the field is `Up`"]
     #[inline(always)]
     pub fn is_up(&self) -> bool {
-        *self == WAVSEL_A::UP
+        *self == WAVSEL_A::Up
     }
-    #[doc = "Checks if the value of the field is `UPDOWN`"]
+    #[doc = "Checks if the value of the field is `Updown`"]
     #[inline(always)]
     pub fn is_updown(&self) -> bool {
-        *self == WAVSEL_A::UPDOWN
+        *self == WAVSEL_A::Updown
     }
-    #[doc = "Checks if the value of the field is `UP_RC`"]
+    #[doc = "Checks if the value of the field is `UpRc`"]
     #[inline(always)]
     pub fn is_up_rc(&self) -> bool {
-        *self == WAVSEL_A::UP_RC
+        *self == WAVSEL_A::UpRc
     }
-    #[doc = "Checks if the value of the field is `UPDOWN_RC`"]
+    #[doc = "Checks if the value of the field is `UpdownRc`"]
     #[inline(always)]
     pub fn is_updown_rc(&self) -> bool {
-        *self == WAVSEL_A::UPDOWN_RC
+        *self == WAVSEL_A::UpdownRc
     }
 }
 #[doc = "Field `WAVSEL` writer - Waveform Selection"]
@@ -483,22 +453,22 @@ impl<'a, const O: u8> WAVSEL_W<'a, O> {
     #[doc = "UP mode without automatic trigger on RC Compare"]
     #[inline(always)]
     pub fn up(self) -> &'a mut W {
-        self.variant(WAVSEL_A::UP)
+        self.variant(WAVSEL_A::Up)
     }
     #[doc = "UPDOWN mode without automatic trigger on RC Compare"]
     #[inline(always)]
     pub fn updown(self) -> &'a mut W {
-        self.variant(WAVSEL_A::UPDOWN)
+        self.variant(WAVSEL_A::Updown)
     }
     #[doc = "UP mode with automatic trigger on RC Compare"]
     #[inline(always)]
     pub fn up_rc(self) -> &'a mut W {
-        self.variant(WAVSEL_A::UP_RC)
+        self.variant(WAVSEL_A::UpRc)
     }
     #[doc = "UPDOWN mode with automatic trigger on RC Compare"]
     #[inline(always)]
     pub fn updown_rc(self) -> &'a mut W {
-        self.variant(WAVSEL_A::UPDOWN_RC)
+        self.variant(WAVSEL_A::UpdownRc)
     }
 }
 #[doc = "Field `WAVE` reader - Waveform Mode"]
@@ -509,17 +479,17 @@ pub type WAVE_W<'a, const O: u8> =
 #[doc = "Field `ACPA` reader - RA Compare Effect on TIOA"]
 pub type ACPA_R = crate::FieldReader<u8, ACPA_A>;
 #[doc = "RA Compare Effect on TIOA\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ACPA_A {
     #[doc = "0: None"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: Set"]
-    SET = 1,
+    Set = 1,
     #[doc = "2: Clear"]
-    CLEAR = 2,
+    Clear = 2,
     #[doc = "3: Toggle"]
-    TOGGLE = 3,
+    Toggle = 3,
 }
 impl From<ACPA_A> for u8 {
     #[inline(always)]
@@ -532,32 +502,32 @@ impl ACPA_R {
     #[inline(always)]
     pub fn variant(&self) -> ACPA_A {
         match self.bits {
-            0 => ACPA_A::NONE,
-            1 => ACPA_A::SET,
-            2 => ACPA_A::CLEAR,
-            3 => ACPA_A::TOGGLE,
+            0 => ACPA_A::None,
+            1 => ACPA_A::Set,
+            2 => ACPA_A::Clear,
+            3 => ACPA_A::Toggle,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Checks if the value of the field is `None`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == ACPA_A::NONE
+        *self == ACPA_A::None
     }
-    #[doc = "Checks if the value of the field is `SET`"]
+    #[doc = "Checks if the value of the field is `Set`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == ACPA_A::SET
+        *self == ACPA_A::Set
     }
-    #[doc = "Checks if the value of the field is `CLEAR`"]
+    #[doc = "Checks if the value of the field is `Clear`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == ACPA_A::CLEAR
+        *self == ACPA_A::Clear
     }
-    #[doc = "Checks if the value of the field is `TOGGLE`"]
+    #[doc = "Checks if the value of the field is `Toggle`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == ACPA_A::TOGGLE
+        *self == ACPA_A::Toggle
     }
 }
 #[doc = "Field `ACPA` writer - RA Compare Effect on TIOA"]
@@ -567,38 +537,38 @@ impl<'a, const O: u8> ACPA_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
-        self.variant(ACPA_A::NONE)
+        self.variant(ACPA_A::None)
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn set(self) -> &'a mut W {
-        self.variant(ACPA_A::SET)
+        self.variant(ACPA_A::Set)
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(ACPA_A::CLEAR)
+        self.variant(ACPA_A::Clear)
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn toggle(self) -> &'a mut W {
-        self.variant(ACPA_A::TOGGLE)
+        self.variant(ACPA_A::Toggle)
     }
 }
 #[doc = "Field `ACPC` reader - RC Compare Effect on TIOA"]
 pub type ACPC_R = crate::FieldReader<u8, ACPC_A>;
 #[doc = "RC Compare Effect on TIOA\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ACPC_A {
     #[doc = "0: None"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: Set"]
-    SET = 1,
+    Set = 1,
     #[doc = "2: Clear"]
-    CLEAR = 2,
+    Clear = 2,
     #[doc = "3: Toggle"]
-    TOGGLE = 3,
+    Toggle = 3,
 }
 impl From<ACPC_A> for u8 {
     #[inline(always)]
@@ -611,32 +581,32 @@ impl ACPC_R {
     #[inline(always)]
     pub fn variant(&self) -> ACPC_A {
         match self.bits {
-            0 => ACPC_A::NONE,
-            1 => ACPC_A::SET,
-            2 => ACPC_A::CLEAR,
-            3 => ACPC_A::TOGGLE,
+            0 => ACPC_A::None,
+            1 => ACPC_A::Set,
+            2 => ACPC_A::Clear,
+            3 => ACPC_A::Toggle,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Checks if the value of the field is `None`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == ACPC_A::NONE
+        *self == ACPC_A::None
     }
-    #[doc = "Checks if the value of the field is `SET`"]
+    #[doc = "Checks if the value of the field is `Set`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == ACPC_A::SET
+        *self == ACPC_A::Set
     }
-    #[doc = "Checks if the value of the field is `CLEAR`"]
+    #[doc = "Checks if the value of the field is `Clear`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == ACPC_A::CLEAR
+        *self == ACPC_A::Clear
     }
-    #[doc = "Checks if the value of the field is `TOGGLE`"]
+    #[doc = "Checks if the value of the field is `Toggle`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == ACPC_A::TOGGLE
+        *self == ACPC_A::Toggle
     }
 }
 #[doc = "Field `ACPC` writer - RC Compare Effect on TIOA"]
@@ -646,38 +616,38 @@ impl<'a, const O: u8> ACPC_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
-        self.variant(ACPC_A::NONE)
+        self.variant(ACPC_A::None)
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn set(self) -> &'a mut W {
-        self.variant(ACPC_A::SET)
+        self.variant(ACPC_A::Set)
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(ACPC_A::CLEAR)
+        self.variant(ACPC_A::Clear)
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn toggle(self) -> &'a mut W {
-        self.variant(ACPC_A::TOGGLE)
+        self.variant(ACPC_A::Toggle)
     }
 }
 #[doc = "Field `AEEVT` reader - External Event Effect on TIOA"]
 pub type AEEVT_R = crate::FieldReader<u8, AEEVT_A>;
 #[doc = "External Event Effect on TIOA\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AEEVT_A {
     #[doc = "0: None"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: Set"]
-    SET = 1,
+    Set = 1,
     #[doc = "2: Clear"]
-    CLEAR = 2,
+    Clear = 2,
     #[doc = "3: Toggle"]
-    TOGGLE = 3,
+    Toggle = 3,
 }
 impl From<AEEVT_A> for u8 {
     #[inline(always)]
@@ -690,32 +660,32 @@ impl AEEVT_R {
     #[inline(always)]
     pub fn variant(&self) -> AEEVT_A {
         match self.bits {
-            0 => AEEVT_A::NONE,
-            1 => AEEVT_A::SET,
-            2 => AEEVT_A::CLEAR,
-            3 => AEEVT_A::TOGGLE,
+            0 => AEEVT_A::None,
+            1 => AEEVT_A::Set,
+            2 => AEEVT_A::Clear,
+            3 => AEEVT_A::Toggle,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Checks if the value of the field is `None`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == AEEVT_A::NONE
+        *self == AEEVT_A::None
     }
-    #[doc = "Checks if the value of the field is `SET`"]
+    #[doc = "Checks if the value of the field is `Set`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == AEEVT_A::SET
+        *self == AEEVT_A::Set
     }
-    #[doc = "Checks if the value of the field is `CLEAR`"]
+    #[doc = "Checks if the value of the field is `Clear`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == AEEVT_A::CLEAR
+        *self == AEEVT_A::Clear
     }
-    #[doc = "Checks if the value of the field is `TOGGLE`"]
+    #[doc = "Checks if the value of the field is `Toggle`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == AEEVT_A::TOGGLE
+        *self == AEEVT_A::Toggle
     }
 }
 #[doc = "Field `AEEVT` writer - External Event Effect on TIOA"]
@@ -725,38 +695,38 @@ impl<'a, const O: u8> AEEVT_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
-        self.variant(AEEVT_A::NONE)
+        self.variant(AEEVT_A::None)
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn set(self) -> &'a mut W {
-        self.variant(AEEVT_A::SET)
+        self.variant(AEEVT_A::Set)
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(AEEVT_A::CLEAR)
+        self.variant(AEEVT_A::Clear)
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn toggle(self) -> &'a mut W {
-        self.variant(AEEVT_A::TOGGLE)
+        self.variant(AEEVT_A::Toggle)
     }
 }
 #[doc = "Field `ASWTRG` reader - Software Trigger Effect on TIOA"]
 pub type ASWTRG_R = crate::FieldReader<u8, ASWTRG_A>;
 #[doc = "Software Trigger Effect on TIOA\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ASWTRG_A {
     #[doc = "0: None"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: Set"]
-    SET = 1,
+    Set = 1,
     #[doc = "2: Clear"]
-    CLEAR = 2,
+    Clear = 2,
     #[doc = "3: Toggle"]
-    TOGGLE = 3,
+    Toggle = 3,
 }
 impl From<ASWTRG_A> for u8 {
     #[inline(always)]
@@ -769,32 +739,32 @@ impl ASWTRG_R {
     #[inline(always)]
     pub fn variant(&self) -> ASWTRG_A {
         match self.bits {
-            0 => ASWTRG_A::NONE,
-            1 => ASWTRG_A::SET,
-            2 => ASWTRG_A::CLEAR,
-            3 => ASWTRG_A::TOGGLE,
+            0 => ASWTRG_A::None,
+            1 => ASWTRG_A::Set,
+            2 => ASWTRG_A::Clear,
+            3 => ASWTRG_A::Toggle,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Checks if the value of the field is `None`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == ASWTRG_A::NONE
+        *self == ASWTRG_A::None
     }
-    #[doc = "Checks if the value of the field is `SET`"]
+    #[doc = "Checks if the value of the field is `Set`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == ASWTRG_A::SET
+        *self == ASWTRG_A::Set
     }
-    #[doc = "Checks if the value of the field is `CLEAR`"]
+    #[doc = "Checks if the value of the field is `Clear`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == ASWTRG_A::CLEAR
+        *self == ASWTRG_A::Clear
     }
-    #[doc = "Checks if the value of the field is `TOGGLE`"]
+    #[doc = "Checks if the value of the field is `Toggle`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == ASWTRG_A::TOGGLE
+        *self == ASWTRG_A::Toggle
     }
 }
 #[doc = "Field `ASWTRG` writer - Software Trigger Effect on TIOA"]
@@ -804,38 +774,38 @@ impl<'a, const O: u8> ASWTRG_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
-        self.variant(ASWTRG_A::NONE)
+        self.variant(ASWTRG_A::None)
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn set(self) -> &'a mut W {
-        self.variant(ASWTRG_A::SET)
+        self.variant(ASWTRG_A::Set)
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(ASWTRG_A::CLEAR)
+        self.variant(ASWTRG_A::Clear)
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn toggle(self) -> &'a mut W {
-        self.variant(ASWTRG_A::TOGGLE)
+        self.variant(ASWTRG_A::Toggle)
     }
 }
 #[doc = "Field `BCPB` reader - RB Compare Effect on TIOB"]
 pub type BCPB_R = crate::FieldReader<u8, BCPB_A>;
 #[doc = "RB Compare Effect on TIOB\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum BCPB_A {
     #[doc = "0: None"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: Set"]
-    SET = 1,
+    Set = 1,
     #[doc = "2: Clear"]
-    CLEAR = 2,
+    Clear = 2,
     #[doc = "3: Toggle"]
-    TOGGLE = 3,
+    Toggle = 3,
 }
 impl From<BCPB_A> for u8 {
     #[inline(always)]
@@ -848,32 +818,32 @@ impl BCPB_R {
     #[inline(always)]
     pub fn variant(&self) -> BCPB_A {
         match self.bits {
-            0 => BCPB_A::NONE,
-            1 => BCPB_A::SET,
-            2 => BCPB_A::CLEAR,
-            3 => BCPB_A::TOGGLE,
+            0 => BCPB_A::None,
+            1 => BCPB_A::Set,
+            2 => BCPB_A::Clear,
+            3 => BCPB_A::Toggle,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Checks if the value of the field is `None`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == BCPB_A::NONE
+        *self == BCPB_A::None
     }
-    #[doc = "Checks if the value of the field is `SET`"]
+    #[doc = "Checks if the value of the field is `Set`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == BCPB_A::SET
+        *self == BCPB_A::Set
     }
-    #[doc = "Checks if the value of the field is `CLEAR`"]
+    #[doc = "Checks if the value of the field is `Clear`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == BCPB_A::CLEAR
+        *self == BCPB_A::Clear
     }
-    #[doc = "Checks if the value of the field is `TOGGLE`"]
+    #[doc = "Checks if the value of the field is `Toggle`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == BCPB_A::TOGGLE
+        *self == BCPB_A::Toggle
     }
 }
 #[doc = "Field `BCPB` writer - RB Compare Effect on TIOB"]
@@ -883,38 +853,38 @@ impl<'a, const O: u8> BCPB_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
-        self.variant(BCPB_A::NONE)
+        self.variant(BCPB_A::None)
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn set(self) -> &'a mut W {
-        self.variant(BCPB_A::SET)
+        self.variant(BCPB_A::Set)
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(BCPB_A::CLEAR)
+        self.variant(BCPB_A::Clear)
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn toggle(self) -> &'a mut W {
-        self.variant(BCPB_A::TOGGLE)
+        self.variant(BCPB_A::Toggle)
     }
 }
 #[doc = "Field `BCPC` reader - RC Compare Effect on TIOB"]
 pub type BCPC_R = crate::FieldReader<u8, BCPC_A>;
 #[doc = "RC Compare Effect on TIOB\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum BCPC_A {
     #[doc = "0: None"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: Set"]
-    SET = 1,
+    Set = 1,
     #[doc = "2: Clear"]
-    CLEAR = 2,
+    Clear = 2,
     #[doc = "3: Toggle"]
-    TOGGLE = 3,
+    Toggle = 3,
 }
 impl From<BCPC_A> for u8 {
     #[inline(always)]
@@ -927,32 +897,32 @@ impl BCPC_R {
     #[inline(always)]
     pub fn variant(&self) -> BCPC_A {
         match self.bits {
-            0 => BCPC_A::NONE,
-            1 => BCPC_A::SET,
-            2 => BCPC_A::CLEAR,
-            3 => BCPC_A::TOGGLE,
+            0 => BCPC_A::None,
+            1 => BCPC_A::Set,
+            2 => BCPC_A::Clear,
+            3 => BCPC_A::Toggle,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Checks if the value of the field is `None`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == BCPC_A::NONE
+        *self == BCPC_A::None
     }
-    #[doc = "Checks if the value of the field is `SET`"]
+    #[doc = "Checks if the value of the field is `Set`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == BCPC_A::SET
+        *self == BCPC_A::Set
     }
-    #[doc = "Checks if the value of the field is `CLEAR`"]
+    #[doc = "Checks if the value of the field is `Clear`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == BCPC_A::CLEAR
+        *self == BCPC_A::Clear
     }
-    #[doc = "Checks if the value of the field is `TOGGLE`"]
+    #[doc = "Checks if the value of the field is `Toggle`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == BCPC_A::TOGGLE
+        *self == BCPC_A::Toggle
     }
 }
 #[doc = "Field `BCPC` writer - RC Compare Effect on TIOB"]
@@ -962,38 +932,38 @@ impl<'a, const O: u8> BCPC_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
-        self.variant(BCPC_A::NONE)
+        self.variant(BCPC_A::None)
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn set(self) -> &'a mut W {
-        self.variant(BCPC_A::SET)
+        self.variant(BCPC_A::Set)
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(BCPC_A::CLEAR)
+        self.variant(BCPC_A::Clear)
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn toggle(self) -> &'a mut W {
-        self.variant(BCPC_A::TOGGLE)
+        self.variant(BCPC_A::Toggle)
     }
 }
 #[doc = "Field `BEEVT` reader - External Event Effect on TIOB"]
 pub type BEEVT_R = crate::FieldReader<u8, BEEVT_A>;
 #[doc = "External Event Effect on TIOB\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum BEEVT_A {
     #[doc = "0: None"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: Set"]
-    SET = 1,
+    Set = 1,
     #[doc = "2: Clear"]
-    CLEAR = 2,
+    Clear = 2,
     #[doc = "3: Toggle"]
-    TOGGLE = 3,
+    Toggle = 3,
 }
 impl From<BEEVT_A> for u8 {
     #[inline(always)]
@@ -1006,32 +976,32 @@ impl BEEVT_R {
     #[inline(always)]
     pub fn variant(&self) -> BEEVT_A {
         match self.bits {
-            0 => BEEVT_A::NONE,
-            1 => BEEVT_A::SET,
-            2 => BEEVT_A::CLEAR,
-            3 => BEEVT_A::TOGGLE,
+            0 => BEEVT_A::None,
+            1 => BEEVT_A::Set,
+            2 => BEEVT_A::Clear,
+            3 => BEEVT_A::Toggle,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Checks if the value of the field is `None`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == BEEVT_A::NONE
+        *self == BEEVT_A::None
     }
-    #[doc = "Checks if the value of the field is `SET`"]
+    #[doc = "Checks if the value of the field is `Set`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == BEEVT_A::SET
+        *self == BEEVT_A::Set
     }
-    #[doc = "Checks if the value of the field is `CLEAR`"]
+    #[doc = "Checks if the value of the field is `Clear`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == BEEVT_A::CLEAR
+        *self == BEEVT_A::Clear
     }
-    #[doc = "Checks if the value of the field is `TOGGLE`"]
+    #[doc = "Checks if the value of the field is `Toggle`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == BEEVT_A::TOGGLE
+        *self == BEEVT_A::Toggle
     }
 }
 #[doc = "Field `BEEVT` writer - External Event Effect on TIOB"]
@@ -1041,38 +1011,38 @@ impl<'a, const O: u8> BEEVT_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
-        self.variant(BEEVT_A::NONE)
+        self.variant(BEEVT_A::None)
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn set(self) -> &'a mut W {
-        self.variant(BEEVT_A::SET)
+        self.variant(BEEVT_A::Set)
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(BEEVT_A::CLEAR)
+        self.variant(BEEVT_A::Clear)
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn toggle(self) -> &'a mut W {
-        self.variant(BEEVT_A::TOGGLE)
+        self.variant(BEEVT_A::Toggle)
     }
 }
 #[doc = "Field `BSWTRG` reader - Software Trigger Effect on TIOB"]
 pub type BSWTRG_R = crate::FieldReader<u8, BSWTRG_A>;
 #[doc = "Software Trigger Effect on TIOB\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum BSWTRG_A {
     #[doc = "0: None"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: Set"]
-    SET = 1,
+    Set = 1,
     #[doc = "2: Clear"]
-    CLEAR = 2,
+    Clear = 2,
     #[doc = "3: Toggle"]
-    TOGGLE = 3,
+    Toggle = 3,
 }
 impl From<BSWTRG_A> for u8 {
     #[inline(always)]
@@ -1085,32 +1055,32 @@ impl BSWTRG_R {
     #[inline(always)]
     pub fn variant(&self) -> BSWTRG_A {
         match self.bits {
-            0 => BSWTRG_A::NONE,
-            1 => BSWTRG_A::SET,
-            2 => BSWTRG_A::CLEAR,
-            3 => BSWTRG_A::TOGGLE,
+            0 => BSWTRG_A::None,
+            1 => BSWTRG_A::Set,
+            2 => BSWTRG_A::Clear,
+            3 => BSWTRG_A::Toggle,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Checks if the value of the field is `None`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == BSWTRG_A::NONE
+        *self == BSWTRG_A::None
     }
-    #[doc = "Checks if the value of the field is `SET`"]
+    #[doc = "Checks if the value of the field is `Set`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == BSWTRG_A::SET
+        *self == BSWTRG_A::Set
     }
-    #[doc = "Checks if the value of the field is `CLEAR`"]
+    #[doc = "Checks if the value of the field is `Clear`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == BSWTRG_A::CLEAR
+        *self == BSWTRG_A::Clear
     }
-    #[doc = "Checks if the value of the field is `TOGGLE`"]
+    #[doc = "Checks if the value of the field is `Toggle`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == BSWTRG_A::TOGGLE
+        *self == BSWTRG_A::Toggle
     }
 }
 #[doc = "Field `BSWTRG` writer - Software Trigger Effect on TIOB"]
@@ -1120,22 +1090,22 @@ impl<'a, const O: u8> BSWTRG_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
-        self.variant(BSWTRG_A::NONE)
+        self.variant(BSWTRG_A::None)
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn set(self) -> &'a mut W {
-        self.variant(BSWTRG_A::SET)
+        self.variant(BSWTRG_A::Set)
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(BSWTRG_A::CLEAR)
+        self.variant(BSWTRG_A::Clear)
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn toggle(self) -> &'a mut W {
-        self.variant(BSWTRG_A::TOGGLE)
+        self.variant(BSWTRG_A::Toggle)
     }
 }
 impl R {
@@ -1233,91 +1203,109 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Clock Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn tcclks(&mut self) -> TCCLKS_W<0> {
         TCCLKS_W::new(self)
     }
     #[doc = "Bit 3 - Clock Invert"]
     #[inline(always)]
+    #[must_use]
     pub fn clki(&mut self) -> CLKI_W<3> {
         CLKI_W::new(self)
     }
     #[doc = "Bits 4:5 - Burst Signal Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn burst(&mut self) -> BURST_W<4> {
         BURST_W::new(self)
     }
     #[doc = "Bit 6 - Counter Clock Stopped with RC Compare"]
     #[inline(always)]
+    #[must_use]
     pub fn cpcstop(&mut self) -> CPCSTOP_W<6> {
         CPCSTOP_W::new(self)
     }
     #[doc = "Bit 7 - Counter Clock Disable with RC Compare"]
     #[inline(always)]
+    #[must_use]
     pub fn cpcdis(&mut self) -> CPCDIS_W<7> {
         CPCDIS_W::new(self)
     }
     #[doc = "Bits 8:9 - External Event Edge Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn eevtedg(&mut self) -> EEVTEDG_W<8> {
         EEVTEDG_W::new(self)
     }
     #[doc = "Bits 10:11 - External Event Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn eevt(&mut self) -> EEVT_W<10> {
         EEVT_W::new(self)
     }
     #[doc = "Bit 12 - External Event Trigger Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn enetrg(&mut self) -> ENETRG_W<12> {
         ENETRG_W::new(self)
     }
     #[doc = "Bits 13:14 - Waveform Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn wavsel(&mut self) -> WAVSEL_W<13> {
         WAVSEL_W::new(self)
     }
     #[doc = "Bit 15 - Waveform Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn wave(&mut self) -> WAVE_W<15> {
         WAVE_W::new(self)
     }
     #[doc = "Bits 16:17 - RA Compare Effect on TIOA"]
     #[inline(always)]
+    #[must_use]
     pub fn acpa(&mut self) -> ACPA_W<16> {
         ACPA_W::new(self)
     }
     #[doc = "Bits 18:19 - RC Compare Effect on TIOA"]
     #[inline(always)]
+    #[must_use]
     pub fn acpc(&mut self) -> ACPC_W<18> {
         ACPC_W::new(self)
     }
     #[doc = "Bits 20:21 - External Event Effect on TIOA"]
     #[inline(always)]
+    #[must_use]
     pub fn aeevt(&mut self) -> AEEVT_W<20> {
         AEEVT_W::new(self)
     }
     #[doc = "Bits 22:23 - Software Trigger Effect on TIOA"]
     #[inline(always)]
+    #[must_use]
     pub fn aswtrg(&mut self) -> ASWTRG_W<22> {
         ASWTRG_W::new(self)
     }
     #[doc = "Bits 24:25 - RB Compare Effect on TIOB"]
     #[inline(always)]
+    #[must_use]
     pub fn bcpb(&mut self) -> BCPB_W<24> {
         BCPB_W::new(self)
     }
     #[doc = "Bits 26:27 - RC Compare Effect on TIOB"]
     #[inline(always)]
+    #[must_use]
     pub fn bcpc(&mut self) -> BCPC_W<26> {
         BCPC_W::new(self)
     }
     #[doc = "Bits 28:29 - External Event Effect on TIOB"]
     #[inline(always)]
+    #[must_use]
     pub fn beevt(&mut self) -> BEEVT_W<28> {
         BEEVT_W::new(self)
     }
     #[doc = "Bits 30:31 - Software Trigger Effect on TIOB"]
     #[inline(always)]
+    #[must_use]
     pub fn bswtrg(&mut self) -> BSWTRG_W<30> {
         BSWTRG_W::new(self)
     }
@@ -1340,11 +1328,10 @@ impl crate::Readable for WAVE_EQ_1_CMR1_WAVE_EQ_1_SPEC {
 #[doc = "`write(|w| ..)` method takes [wave_eq_1_cmr1_wave_eq_1::W](W) writer structure"]
 impl crate::Writable for WAVE_EQ_1_CMR1_WAVE_EQ_1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMR1_WAVE_EQ_1 to value 0"]
 impl crate::Resettable for WAVE_EQ_1_CMR1_WAVE_EQ_1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

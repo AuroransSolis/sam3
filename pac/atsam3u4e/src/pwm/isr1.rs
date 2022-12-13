@@ -1,18 +1,6 @@
 #[doc = "Register `ISR1` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<ISR1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ISR1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ISR1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ISR1_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `CHID0` reader - Counter Event on Channel 0"]
 pub type CHID0_R = crate::BitReader<bool>;
 #[doc = "Field `CHID1` reader - Counter Event on Channel 1"]
@@ -82,8 +70,5 @@ impl crate::Readable for ISR1_SPEC {
 }
 #[doc = "`reset()` method sets ISR1 to value 0"]
 impl crate::Resettable for ISR1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,39 +1,9 @@
 #[doc = "Register `FIFO[%s]` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<FIFO_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FIFO_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FIFO_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FIFO_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `FIFO[%s]` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<FIFO_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FIFO_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FIFO_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FIFO_SPEC>) -> Self {
-        W(writer)
-    }
-}
 impl W {
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -54,4 +24,6 @@ impl crate::Readable for FIFO_SPEC {
 #[doc = "`write(|w| ..)` method takes [fifo::W](W) writer structure"]
 impl crate::Writable for FIFO_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

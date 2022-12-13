@@ -1,53 +1,23 @@
 #[doc = "Register `CR1` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CR1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CR1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CR1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CR1_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CR1` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CR1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CR1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CR1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CR1_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `NC` reader - Number of Column Bits"]
 pub type NC_R = crate::FieldReader<u8, NC_A>;
 #[doc = "Number of Column Bits\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum NC_A {
     #[doc = "0: 8 column bits"]
-    COL8 = 0,
+    Col8 = 0,
     #[doc = "1: 9 column bits"]
-    COL9 = 1,
+    Col9 = 1,
     #[doc = "2: 10 column bits"]
-    COL10 = 2,
+    Col10 = 2,
     #[doc = "3: 11 column bits"]
-    COL11 = 3,
+    Col11 = 3,
 }
 impl From<NC_A> for u8 {
     #[inline(always)]
@@ -60,32 +30,32 @@ impl NC_R {
     #[inline(always)]
     pub fn variant(&self) -> NC_A {
         match self.bits {
-            0 => NC_A::COL8,
-            1 => NC_A::COL9,
-            2 => NC_A::COL10,
-            3 => NC_A::COL11,
+            0 => NC_A::Col8,
+            1 => NC_A::Col9,
+            2 => NC_A::Col10,
+            3 => NC_A::Col11,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `COL8`"]
+    #[doc = "Checks if the value of the field is `Col8`"]
     #[inline(always)]
     pub fn is_col8(&self) -> bool {
-        *self == NC_A::COL8
+        *self == NC_A::Col8
     }
-    #[doc = "Checks if the value of the field is `COL9`"]
+    #[doc = "Checks if the value of the field is `Col9`"]
     #[inline(always)]
     pub fn is_col9(&self) -> bool {
-        *self == NC_A::COL9
+        *self == NC_A::Col9
     }
-    #[doc = "Checks if the value of the field is `COL10`"]
+    #[doc = "Checks if the value of the field is `Col10`"]
     #[inline(always)]
     pub fn is_col10(&self) -> bool {
-        *self == NC_A::COL10
+        *self == NC_A::Col10
     }
-    #[doc = "Checks if the value of the field is `COL11`"]
+    #[doc = "Checks if the value of the field is `Col11`"]
     #[inline(always)]
     pub fn is_col11(&self) -> bool {
-        *self == NC_A::COL11
+        *self == NC_A::Col11
     }
 }
 #[doc = "Field `NC` writer - Number of Column Bits"]
@@ -94,36 +64,36 @@ impl<'a, const O: u8> NC_W<'a, O> {
     #[doc = "8 column bits"]
     #[inline(always)]
     pub fn col8(self) -> &'a mut W {
-        self.variant(NC_A::COL8)
+        self.variant(NC_A::Col8)
     }
     #[doc = "9 column bits"]
     #[inline(always)]
     pub fn col9(self) -> &'a mut W {
-        self.variant(NC_A::COL9)
+        self.variant(NC_A::Col9)
     }
     #[doc = "10 column bits"]
     #[inline(always)]
     pub fn col10(self) -> &'a mut W {
-        self.variant(NC_A::COL10)
+        self.variant(NC_A::Col10)
     }
     #[doc = "11 column bits"]
     #[inline(always)]
     pub fn col11(self) -> &'a mut W {
-        self.variant(NC_A::COL11)
+        self.variant(NC_A::Col11)
     }
 }
 #[doc = "Field `NR` reader - Number of Row Bits"]
 pub type NR_R = crate::FieldReader<u8, NR_A>;
 #[doc = "Number of Row Bits\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum NR_A {
     #[doc = "0: 11 row bits"]
-    ROW11 = 0,
+    Row11 = 0,
     #[doc = "1: 12 row bits"]
-    ROW12 = 1,
+    Row12 = 1,
     #[doc = "2: 13 row bits"]
-    ROW13 = 2,
+    Row13 = 2,
 }
 impl From<NR_A> for u8 {
     #[inline(always)]
@@ -136,26 +106,26 @@ impl NR_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<NR_A> {
         match self.bits {
-            0 => Some(NR_A::ROW11),
-            1 => Some(NR_A::ROW12),
-            2 => Some(NR_A::ROW13),
+            0 => Some(NR_A::Row11),
+            1 => Some(NR_A::Row12),
+            2 => Some(NR_A::Row13),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `ROW11`"]
+    #[doc = "Checks if the value of the field is `Row11`"]
     #[inline(always)]
     pub fn is_row11(&self) -> bool {
-        *self == NR_A::ROW11
+        *self == NR_A::Row11
     }
-    #[doc = "Checks if the value of the field is `ROW12`"]
+    #[doc = "Checks if the value of the field is `Row12`"]
     #[inline(always)]
     pub fn is_row12(&self) -> bool {
-        *self == NR_A::ROW12
+        *self == NR_A::Row12
     }
-    #[doc = "Checks if the value of the field is `ROW13`"]
+    #[doc = "Checks if the value of the field is `Row13`"]
     #[inline(always)]
     pub fn is_row13(&self) -> bool {
-        *self == NR_A::ROW13
+        *self == NR_A::Row13
     }
 }
 #[doc = "Field `NR` writer - Number of Row Bits"]
@@ -164,28 +134,28 @@ impl<'a, const O: u8> NR_W<'a, O> {
     #[doc = "11 row bits"]
     #[inline(always)]
     pub fn row11(self) -> &'a mut W {
-        self.variant(NR_A::ROW11)
+        self.variant(NR_A::Row11)
     }
     #[doc = "12 row bits"]
     #[inline(always)]
     pub fn row12(self) -> &'a mut W {
-        self.variant(NR_A::ROW12)
+        self.variant(NR_A::Row12)
     }
     #[doc = "13 row bits"]
     #[inline(always)]
     pub fn row13(self) -> &'a mut W {
-        self.variant(NR_A::ROW13)
+        self.variant(NR_A::Row13)
     }
 }
 #[doc = "Field `NB` reader - Number of Banks"]
 pub type NB_R = crate::BitReader<NB_A>;
 #[doc = "Number of Banks\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NB_A {
     #[doc = "0: 2 banks"]
-    BANK2 = 0,
+    Bank2 = 0,
     #[doc = "1: 4 banks"]
-    BANK4 = 1,
+    Bank4 = 1,
 }
 impl From<NB_A> for bool {
     #[inline(always)]
@@ -198,19 +168,19 @@ impl NB_R {
     #[inline(always)]
     pub fn variant(&self) -> NB_A {
         match self.bits {
-            false => NB_A::BANK2,
-            true => NB_A::BANK4,
+            false => NB_A::Bank2,
+            true => NB_A::Bank4,
         }
     }
-    #[doc = "Checks if the value of the field is `BANK2`"]
+    #[doc = "Checks if the value of the field is `Bank2`"]
     #[inline(always)]
     pub fn is_bank2(&self) -> bool {
-        *self == NB_A::BANK2
+        *self == NB_A::Bank2
     }
-    #[doc = "Checks if the value of the field is `BANK4`"]
+    #[doc = "Checks if the value of the field is `Bank4`"]
     #[inline(always)]
     pub fn is_bank4(&self) -> bool {
-        *self == NB_A::BANK4
+        *self == NB_A::Bank4
     }
 }
 #[doc = "Field `NB` writer - Number of Banks"]
@@ -219,26 +189,26 @@ impl<'a, const O: u8> NB_W<'a, O> {
     #[doc = "2 banks"]
     #[inline(always)]
     pub fn bank2(self) -> &'a mut W {
-        self.variant(NB_A::BANK2)
+        self.variant(NB_A::Bank2)
     }
     #[doc = "4 banks"]
     #[inline(always)]
     pub fn bank4(self) -> &'a mut W {
-        self.variant(NB_A::BANK4)
+        self.variant(NB_A::Bank4)
     }
 }
 #[doc = "Field `CAS` reader - CAS Latency"]
 pub type CAS_R = crate::FieldReader<u8, CAS_A>;
 #[doc = "CAS Latency\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CAS_A {
     #[doc = "1: 1 cycle CAS latency"]
-    LATENCY1 = 1,
+    Latency1 = 1,
     #[doc = "2: 2 cycle CAS latency"]
-    LATENCY2 = 2,
+    Latency2 = 2,
     #[doc = "3: 3 cycle CAS latency"]
-    LATENCY3 = 3,
+    Latency3 = 3,
 }
 impl From<CAS_A> for u8 {
     #[inline(always)]
@@ -251,26 +221,26 @@ impl CAS_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<CAS_A> {
         match self.bits {
-            1 => Some(CAS_A::LATENCY1),
-            2 => Some(CAS_A::LATENCY2),
-            3 => Some(CAS_A::LATENCY3),
+            1 => Some(CAS_A::Latency1),
+            2 => Some(CAS_A::Latency2),
+            3 => Some(CAS_A::Latency3),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `LATENCY1`"]
+    #[doc = "Checks if the value of the field is `Latency1`"]
     #[inline(always)]
     pub fn is_latency1(&self) -> bool {
-        *self == CAS_A::LATENCY1
+        *self == CAS_A::Latency1
     }
-    #[doc = "Checks if the value of the field is `LATENCY2`"]
+    #[doc = "Checks if the value of the field is `Latency2`"]
     #[inline(always)]
     pub fn is_latency2(&self) -> bool {
-        *self == CAS_A::LATENCY2
+        *self == CAS_A::Latency2
     }
-    #[doc = "Checks if the value of the field is `LATENCY3`"]
+    #[doc = "Checks if the value of the field is `Latency3`"]
     #[inline(always)]
     pub fn is_latency3(&self) -> bool {
-        *self == CAS_A::LATENCY3
+        *self == CAS_A::Latency3
     }
 }
 #[doc = "Field `CAS` writer - CAS Latency"]
@@ -279,17 +249,17 @@ impl<'a, const O: u8> CAS_W<'a, O> {
     #[doc = "1 cycle CAS latency"]
     #[inline(always)]
     pub fn latency1(self) -> &'a mut W {
-        self.variant(CAS_A::LATENCY1)
+        self.variant(CAS_A::Latency1)
     }
     #[doc = "2 cycle CAS latency"]
     #[inline(always)]
     pub fn latency2(self) -> &'a mut W {
-        self.variant(CAS_A::LATENCY2)
+        self.variant(CAS_A::Latency2)
     }
     #[doc = "3 cycle CAS latency"]
     #[inline(always)]
     pub fn latency3(self) -> &'a mut W {
-        self.variant(CAS_A::LATENCY3)
+        self.variant(CAS_A::Latency3)
     }
 }
 #[doc = "Field `DBW` reader - Data Bus Width"]
@@ -380,56 +350,67 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Number of Column Bits"]
     #[inline(always)]
+    #[must_use]
     pub fn nc(&mut self) -> NC_W<0> {
         NC_W::new(self)
     }
     #[doc = "Bits 2:3 - Number of Row Bits"]
     #[inline(always)]
+    #[must_use]
     pub fn nr(&mut self) -> NR_W<2> {
         NR_W::new(self)
     }
     #[doc = "Bit 4 - Number of Banks"]
     #[inline(always)]
+    #[must_use]
     pub fn nb(&mut self) -> NB_W<4> {
         NB_W::new(self)
     }
     #[doc = "Bits 5:6 - CAS Latency"]
     #[inline(always)]
+    #[must_use]
     pub fn cas(&mut self) -> CAS_W<5> {
         CAS_W::new(self)
     }
     #[doc = "Bit 7 - Data Bus Width"]
     #[inline(always)]
+    #[must_use]
     pub fn dbw(&mut self) -> DBW_W<7> {
         DBW_W::new(self)
     }
     #[doc = "Bits 8:11 - Write Recovery Delay"]
     #[inline(always)]
+    #[must_use]
     pub fn twr(&mut self) -> TWR_W<8> {
         TWR_W::new(self)
     }
     #[doc = "Bits 12:15 - Row Cycle Delay and Row Refresh Cycle"]
     #[inline(always)]
+    #[must_use]
     pub fn trc_trfc(&mut self) -> TRC_TRFC_W<12> {
         TRC_TRFC_W::new(self)
     }
     #[doc = "Bits 16:19 - Row Precharge Delay"]
     #[inline(always)]
+    #[must_use]
     pub fn trp(&mut self) -> TRP_W<16> {
         TRP_W::new(self)
     }
     #[doc = "Bits 20:23 - Row to Column Delay"]
     #[inline(always)]
+    #[must_use]
     pub fn trcd(&mut self) -> TRCD_W<20> {
         TRCD_W::new(self)
     }
     #[doc = "Bits 24:27 - Active to Precharge Delay"]
     #[inline(always)]
+    #[must_use]
     pub fn tras(&mut self) -> TRAS_W<24> {
         TRAS_W::new(self)
     }
     #[doc = "Bits 28:31 - Exit Self Refresh to Active Delay"]
     #[inline(always)]
+    #[must_use]
     pub fn txsr(&mut self) -> TXSR_W<28> {
         TXSR_W::new(self)
     }
@@ -452,11 +433,10 @@ impl crate::Readable for CR1_SPEC {
 #[doc = "`write(|w| ..)` method takes [cr1::W](W) writer structure"]
 impl crate::Writable for CR1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CR1 to value 0x02"]
 impl crate::Resettable for CR1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x02
-    }
+    const RESET_VALUE: Self::Ux = 0x02;
 }

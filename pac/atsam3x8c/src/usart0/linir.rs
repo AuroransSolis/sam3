@@ -1,39 +1,9 @@
 #[doc = "Register `LINIR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<LINIR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LINIR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LINIR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LINIR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `LINIR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<LINIR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LINIR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LINIR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LINIR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `IDCHR` reader - Identifier Character"]
 pub type IDCHR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `IDCHR` writer - Identifier Character"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Identifier Character"]
     #[inline(always)]
+    #[must_use]
     pub fn idchr(&mut self) -> IDCHR_W<0> {
         IDCHR_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for LINIR_SPEC {
 #[doc = "`write(|w| ..)` method takes [linir::W](W) writer structure"]
 impl crate::Writable for LINIR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets LINIR to value 0"]
 impl crate::Resettable for LINIR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,18 +1,6 @@
 #[doc = "Register `PMC_WPSR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<PMC_WPSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PMC_WPSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PMC_WPSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PMC_WPSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `WPVS` reader - Write Protect Violation Status"]
 pub type WPVS_R = crate::BitReader<bool>;
 #[doc = "Field `WPVSRC` reader - Write Protect Violation Source"]
@@ -40,8 +28,5 @@ impl crate::Readable for PMC_WPSR_SPEC {
 }
 #[doc = "`reset()` method sets PMC_WPSR to value 0"]
 impl crate::Resettable for PMC_WPSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

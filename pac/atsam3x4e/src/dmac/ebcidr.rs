@@ -1,24 +1,6 @@
 #[doc = "Register `EBCIDR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<EBCIDR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EBCIDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EBCIDR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EBCIDR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `BTC0` writer - Buffer Transfer Completed \\[5:0\\]"]
 pub type BTC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, EBCIDR_SPEC, bool, O>;
 #[doc = "Field `BTC1` writer - Buffer Transfer Completed \\[5:0\\]"]
@@ -58,91 +40,109 @@ pub type ERR5_W<'a, const O: u8> = crate::BitWriter<'a, u32, EBCIDR_SPEC, bool, 
 impl W {
     #[doc = "Bit 0 - Buffer Transfer Completed \\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn btc0(&mut self) -> BTC0_W<0> {
         BTC0_W::new(self)
     }
     #[doc = "Bit 1 - Buffer Transfer Completed \\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn btc1(&mut self) -> BTC1_W<1> {
         BTC1_W::new(self)
     }
     #[doc = "Bit 2 - Buffer Transfer Completed \\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn btc2(&mut self) -> BTC2_W<2> {
         BTC2_W::new(self)
     }
     #[doc = "Bit 3 - Buffer Transfer Completed \\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn btc3(&mut self) -> BTC3_W<3> {
         BTC3_W::new(self)
     }
     #[doc = "Bit 4 - Buffer Transfer Completed \\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn btc4(&mut self) -> BTC4_W<4> {
         BTC4_W::new(self)
     }
     #[doc = "Bit 5 - Buffer Transfer Completed \\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn btc5(&mut self) -> BTC5_W<5> {
         BTC5_W::new(self)
     }
     #[doc = "Bit 8 - Chained Buffer Transfer Completed \\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn cbtc0(&mut self) -> CBTC0_W<8> {
         CBTC0_W::new(self)
     }
     #[doc = "Bit 9 - Chained Buffer Transfer Completed \\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn cbtc1(&mut self) -> CBTC1_W<9> {
         CBTC1_W::new(self)
     }
     #[doc = "Bit 10 - Chained Buffer Transfer Completed \\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn cbtc2(&mut self) -> CBTC2_W<10> {
         CBTC2_W::new(self)
     }
     #[doc = "Bit 11 - Chained Buffer Transfer Completed \\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn cbtc3(&mut self) -> CBTC3_W<11> {
         CBTC3_W::new(self)
     }
     #[doc = "Bit 12 - Chained Buffer Transfer Completed \\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn cbtc4(&mut self) -> CBTC4_W<12> {
         CBTC4_W::new(self)
     }
     #[doc = "Bit 13 - Chained Buffer Transfer Completed \\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn cbtc5(&mut self) -> CBTC5_W<13> {
         CBTC5_W::new(self)
     }
     #[doc = "Bit 16 - Access Error \\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn err0(&mut self) -> ERR0_W<16> {
         ERR0_W::new(self)
     }
     #[doc = "Bit 17 - Access Error \\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn err1(&mut self) -> ERR1_W<17> {
         ERR1_W::new(self)
     }
     #[doc = "Bit 18 - Access Error \\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn err2(&mut self) -> ERR2_W<18> {
         ERR2_W::new(self)
     }
     #[doc = "Bit 19 - Access Error \\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn err3(&mut self) -> ERR3_W<19> {
         ERR3_W::new(self)
     }
     #[doc = "Bit 20 - Access Error \\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn err4(&mut self) -> ERR4_W<20> {
         ERR4_W::new(self)
     }
     #[doc = "Bit 21 - Access Error \\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn err5(&mut self) -> ERR5_W<21> {
         ERR5_W::new(self)
     }
@@ -161,4 +161,6 @@ impl crate::RegisterSpec for EBCIDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [ebcidr::W](W) writer structure"]
 impl crate::Writable for EBCIDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

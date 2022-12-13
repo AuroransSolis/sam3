@@ -1,18 +1,6 @@
 #[doc = "Register `LINBRR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<LINBRR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LINBRR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LINBRR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LINBRR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `LINCD` reader - Clock Divider after Synchronization"]
 pub type LINCD_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `LINFP` reader - Fractional Part after Synchronization"]
@@ -40,8 +28,5 @@ impl crate::Readable for LINBRR_SPEC {
 }
 #[doc = "`reset()` method sets LINBRR to value 0"]
 impl crate::Resettable for LINBRR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

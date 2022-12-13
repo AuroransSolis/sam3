@@ -91,40 +91,33 @@ pub struct RegisterBlock {
 impl RegisterBlock {
     #[doc = "0x04 - Channel Mode Register (channel = 0)"]
     #[inline(always)]
-    pub fn wave_eq_1_cmr0_wave_eq_1(&self) -> &WAVE_EQ_1_CMR0_WAVE_EQ_1 {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(4usize) as *const WAVE_EQ_1_CMR0_WAVE_EQ_1)
-        }
+    pub const fn wave_eq_1_cmr0_wave_eq_1(&self) -> &WAVE_EQ_1_CMR0_WAVE_EQ_1 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(4usize).cast() }
     }
     #[doc = "0x04 - Channel Mode Register (channel = 0)"]
     #[inline(always)]
-    pub fn cmr0(&self) -> &CMR0 {
-        unsafe { &*(((self as *const Self) as *const u8).add(4usize) as *const CMR0) }
+    pub const fn cmr0(&self) -> &CMR0 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(4usize).cast() }
     }
     #[doc = "0x44 - Channel Mode Register (channel = 1)"]
     #[inline(always)]
-    pub fn wave_eq_1_cmr1_wave_eq_1(&self) -> &WAVE_EQ_1_CMR1_WAVE_EQ_1 {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(68usize) as *const WAVE_EQ_1_CMR1_WAVE_EQ_1)
-        }
+    pub const fn wave_eq_1_cmr1_wave_eq_1(&self) -> &WAVE_EQ_1_CMR1_WAVE_EQ_1 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(68usize).cast() }
     }
     #[doc = "0x44 - Channel Mode Register (channel = 1)"]
     #[inline(always)]
-    pub fn cmr1(&self) -> &CMR1 {
-        unsafe { &*(((self as *const Self) as *const u8).add(68usize) as *const CMR1) }
+    pub const fn cmr1(&self) -> &CMR1 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(68usize).cast() }
     }
     #[doc = "0x84 - Channel Mode Register (channel = 2)"]
     #[inline(always)]
-    pub fn wave_eq_1_cmr2_wave_eq_1(&self) -> &WAVE_EQ_1_CMR2_WAVE_EQ_1 {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(132usize)
-                as *const WAVE_EQ_1_CMR2_WAVE_EQ_1)
-        }
+    pub const fn wave_eq_1_cmr2_wave_eq_1(&self) -> &WAVE_EQ_1_CMR2_WAVE_EQ_1 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(132usize).cast() }
     }
     #[doc = "0x84 - Channel Mode Register (channel = 2)"]
     #[inline(always)]
-    pub fn cmr2(&self) -> &CMR2 {
-        unsafe { &*(((self as *const Self) as *const u8).add(132usize) as *const CMR2) }
+    pub const fn cmr2(&self) -> &CMR2 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(132usize).cast() }
     }
 }
 #[doc = "CCR0 (w) register accessor: an alias for `Reg<CCR0_SPEC>`"]

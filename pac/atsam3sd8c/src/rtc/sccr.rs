@@ -1,24 +1,6 @@
 #[doc = "Register `SCCR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<SCCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SCCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SCCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SCCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `ACKCLR` writer - Acknowledge Clear"]
 pub type ACKCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCCR_SPEC, bool, O>;
 #[doc = "Field `ALRCLR` writer - Alarm Clear"]
@@ -34,31 +16,37 @@ pub type TDERRCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCCR_SPEC, bool
 impl W {
     #[doc = "Bit 0 - Acknowledge Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn ackclr(&mut self) -> ACKCLR_W<0> {
         ACKCLR_W::new(self)
     }
     #[doc = "Bit 1 - Alarm Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn alrclr(&mut self) -> ALRCLR_W<1> {
         ALRCLR_W::new(self)
     }
     #[doc = "Bit 2 - Second Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn secclr(&mut self) -> SECCLR_W<2> {
         SECCLR_W::new(self)
     }
     #[doc = "Bit 3 - Time Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn timclr(&mut self) -> TIMCLR_W<3> {
         TIMCLR_W::new(self)
     }
     #[doc = "Bit 4 - Calendar Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn calclr(&mut self) -> CALCLR_W<4> {
         CALCLR_W::new(self)
     }
     #[doc = "Bit 5 - Time and/or Date Free Running Error Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn tderrclr(&mut self) -> TDERRCLR_W<5> {
         TDERRCLR_W::new(self)
     }
@@ -77,4 +65,6 @@ impl crate::RegisterSpec for SCCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [sccr::W](W) writer structure"]
 impl crate::Writable for SCCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

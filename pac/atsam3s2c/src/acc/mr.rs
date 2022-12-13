@@ -1,61 +1,31 @@
 #[doc = "Register `MR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<MR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `SELMINUS` reader - SELection for MINUS comparator input"]
 pub type SELMINUS_R = crate::FieldReader<u8, SELMINUS_A>;
 #[doc = "SELection for MINUS comparator input\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SELMINUS_A {
     #[doc = "0: SelectTS"]
-    TS = 0,
+    Ts = 0,
     #[doc = "1: Select ADVREF"]
-    ADVREF = 1,
+    Advref = 1,
     #[doc = "2: Select DAC0"]
-    DAC0 = 2,
+    Dac0 = 2,
     #[doc = "3: Select DAC1"]
-    DAC1 = 3,
+    Dac1 = 3,
     #[doc = "4: Select AD0"]
-    AD0 = 4,
+    Ad0 = 4,
     #[doc = "5: Select AD1"]
-    AD1 = 5,
+    Ad1 = 5,
     #[doc = "6: Select AD2"]
-    AD2 = 6,
+    Ad2 = 6,
     #[doc = "7: Select AD3"]
-    AD3 = 7,
+    Ad3 = 7,
 }
 impl From<SELMINUS_A> for u8 {
     #[inline(always)]
@@ -68,56 +38,56 @@ impl SELMINUS_R {
     #[inline(always)]
     pub fn variant(&self) -> SELMINUS_A {
         match self.bits {
-            0 => SELMINUS_A::TS,
-            1 => SELMINUS_A::ADVREF,
-            2 => SELMINUS_A::DAC0,
-            3 => SELMINUS_A::DAC1,
-            4 => SELMINUS_A::AD0,
-            5 => SELMINUS_A::AD1,
-            6 => SELMINUS_A::AD2,
-            7 => SELMINUS_A::AD3,
+            0 => SELMINUS_A::Ts,
+            1 => SELMINUS_A::Advref,
+            2 => SELMINUS_A::Dac0,
+            3 => SELMINUS_A::Dac1,
+            4 => SELMINUS_A::Ad0,
+            5 => SELMINUS_A::Ad1,
+            6 => SELMINUS_A::Ad2,
+            7 => SELMINUS_A::Ad3,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `TS`"]
+    #[doc = "Checks if the value of the field is `Ts`"]
     #[inline(always)]
     pub fn is_ts(&self) -> bool {
-        *self == SELMINUS_A::TS
+        *self == SELMINUS_A::Ts
     }
-    #[doc = "Checks if the value of the field is `ADVREF`"]
+    #[doc = "Checks if the value of the field is `Advref`"]
     #[inline(always)]
     pub fn is_advref(&self) -> bool {
-        *self == SELMINUS_A::ADVREF
+        *self == SELMINUS_A::Advref
     }
-    #[doc = "Checks if the value of the field is `DAC0`"]
+    #[doc = "Checks if the value of the field is `Dac0`"]
     #[inline(always)]
     pub fn is_dac0(&self) -> bool {
-        *self == SELMINUS_A::DAC0
+        *self == SELMINUS_A::Dac0
     }
-    #[doc = "Checks if the value of the field is `DAC1`"]
+    #[doc = "Checks if the value of the field is `Dac1`"]
     #[inline(always)]
     pub fn is_dac1(&self) -> bool {
-        *self == SELMINUS_A::DAC1
+        *self == SELMINUS_A::Dac1
     }
-    #[doc = "Checks if the value of the field is `AD0`"]
+    #[doc = "Checks if the value of the field is `Ad0`"]
     #[inline(always)]
     pub fn is_ad0(&self) -> bool {
-        *self == SELMINUS_A::AD0
+        *self == SELMINUS_A::Ad0
     }
-    #[doc = "Checks if the value of the field is `AD1`"]
+    #[doc = "Checks if the value of the field is `Ad1`"]
     #[inline(always)]
     pub fn is_ad1(&self) -> bool {
-        *self == SELMINUS_A::AD1
+        *self == SELMINUS_A::Ad1
     }
-    #[doc = "Checks if the value of the field is `AD2`"]
+    #[doc = "Checks if the value of the field is `Ad2`"]
     #[inline(always)]
     pub fn is_ad2(&self) -> bool {
-        *self == SELMINUS_A::AD2
+        *self == SELMINUS_A::Ad2
     }
-    #[doc = "Checks if the value of the field is `AD3`"]
+    #[doc = "Checks if the value of the field is `Ad3`"]
     #[inline(always)]
     pub fn is_ad3(&self) -> bool {
-        *self == SELMINUS_A::AD3
+        *self == SELMINUS_A::Ad3
     }
 }
 #[doc = "Field `SELMINUS` writer - SELection for MINUS comparator input"]
@@ -127,66 +97,66 @@ impl<'a, const O: u8> SELMINUS_W<'a, O> {
     #[doc = "SelectTS"]
     #[inline(always)]
     pub fn ts(self) -> &'a mut W {
-        self.variant(SELMINUS_A::TS)
+        self.variant(SELMINUS_A::Ts)
     }
     #[doc = "Select ADVREF"]
     #[inline(always)]
     pub fn advref(self) -> &'a mut W {
-        self.variant(SELMINUS_A::ADVREF)
+        self.variant(SELMINUS_A::Advref)
     }
     #[doc = "Select DAC0"]
     #[inline(always)]
     pub fn dac0(self) -> &'a mut W {
-        self.variant(SELMINUS_A::DAC0)
+        self.variant(SELMINUS_A::Dac0)
     }
     #[doc = "Select DAC1"]
     #[inline(always)]
     pub fn dac1(self) -> &'a mut W {
-        self.variant(SELMINUS_A::DAC1)
+        self.variant(SELMINUS_A::Dac1)
     }
     #[doc = "Select AD0"]
     #[inline(always)]
     pub fn ad0(self) -> &'a mut W {
-        self.variant(SELMINUS_A::AD0)
+        self.variant(SELMINUS_A::Ad0)
     }
     #[doc = "Select AD1"]
     #[inline(always)]
     pub fn ad1(self) -> &'a mut W {
-        self.variant(SELMINUS_A::AD1)
+        self.variant(SELMINUS_A::Ad1)
     }
     #[doc = "Select AD2"]
     #[inline(always)]
     pub fn ad2(self) -> &'a mut W {
-        self.variant(SELMINUS_A::AD2)
+        self.variant(SELMINUS_A::Ad2)
     }
     #[doc = "Select AD3"]
     #[inline(always)]
     pub fn ad3(self) -> &'a mut W {
-        self.variant(SELMINUS_A::AD3)
+        self.variant(SELMINUS_A::Ad3)
     }
 }
 #[doc = "Field `SELPLUS` reader - SELection for PLUS comparator input"]
 pub type SELPLUS_R = crate::FieldReader<u8, SELPLUS_A>;
 #[doc = "SELection for PLUS comparator input\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SELPLUS_A {
     #[doc = "0: Select AD0"]
-    AD0 = 0,
+    Ad0 = 0,
     #[doc = "1: Select AD1"]
-    AD1 = 1,
+    Ad1 = 1,
     #[doc = "2: Select AD2"]
-    AD2 = 2,
+    Ad2 = 2,
     #[doc = "3: Select AD3"]
-    AD3 = 3,
+    Ad3 = 3,
     #[doc = "4: Select AD4"]
-    AD4 = 4,
+    Ad4 = 4,
     #[doc = "5: Select AD5"]
-    AD5 = 5,
+    Ad5 = 5,
     #[doc = "6: Select AD6"]
-    AD6 = 6,
+    Ad6 = 6,
     #[doc = "7: Select AD7"]
-    AD7 = 7,
+    Ad7 = 7,
 }
 impl From<SELPLUS_A> for u8 {
     #[inline(always)]
@@ -199,56 +169,56 @@ impl SELPLUS_R {
     #[inline(always)]
     pub fn variant(&self) -> SELPLUS_A {
         match self.bits {
-            0 => SELPLUS_A::AD0,
-            1 => SELPLUS_A::AD1,
-            2 => SELPLUS_A::AD2,
-            3 => SELPLUS_A::AD3,
-            4 => SELPLUS_A::AD4,
-            5 => SELPLUS_A::AD5,
-            6 => SELPLUS_A::AD6,
-            7 => SELPLUS_A::AD7,
+            0 => SELPLUS_A::Ad0,
+            1 => SELPLUS_A::Ad1,
+            2 => SELPLUS_A::Ad2,
+            3 => SELPLUS_A::Ad3,
+            4 => SELPLUS_A::Ad4,
+            5 => SELPLUS_A::Ad5,
+            6 => SELPLUS_A::Ad6,
+            7 => SELPLUS_A::Ad7,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `AD0`"]
+    #[doc = "Checks if the value of the field is `Ad0`"]
     #[inline(always)]
     pub fn is_ad0(&self) -> bool {
-        *self == SELPLUS_A::AD0
+        *self == SELPLUS_A::Ad0
     }
-    #[doc = "Checks if the value of the field is `AD1`"]
+    #[doc = "Checks if the value of the field is `Ad1`"]
     #[inline(always)]
     pub fn is_ad1(&self) -> bool {
-        *self == SELPLUS_A::AD1
+        *self == SELPLUS_A::Ad1
     }
-    #[doc = "Checks if the value of the field is `AD2`"]
+    #[doc = "Checks if the value of the field is `Ad2`"]
     #[inline(always)]
     pub fn is_ad2(&self) -> bool {
-        *self == SELPLUS_A::AD2
+        *self == SELPLUS_A::Ad2
     }
-    #[doc = "Checks if the value of the field is `AD3`"]
+    #[doc = "Checks if the value of the field is `Ad3`"]
     #[inline(always)]
     pub fn is_ad3(&self) -> bool {
-        *self == SELPLUS_A::AD3
+        *self == SELPLUS_A::Ad3
     }
-    #[doc = "Checks if the value of the field is `AD4`"]
+    #[doc = "Checks if the value of the field is `Ad4`"]
     #[inline(always)]
     pub fn is_ad4(&self) -> bool {
-        *self == SELPLUS_A::AD4
+        *self == SELPLUS_A::Ad4
     }
-    #[doc = "Checks if the value of the field is `AD5`"]
+    #[doc = "Checks if the value of the field is `Ad5`"]
     #[inline(always)]
     pub fn is_ad5(&self) -> bool {
-        *self == SELPLUS_A::AD5
+        *self == SELPLUS_A::Ad5
     }
-    #[doc = "Checks if the value of the field is `AD6`"]
+    #[doc = "Checks if the value of the field is `Ad6`"]
     #[inline(always)]
     pub fn is_ad6(&self) -> bool {
-        *self == SELPLUS_A::AD6
+        *self == SELPLUS_A::Ad6
     }
-    #[doc = "Checks if the value of the field is `AD7`"]
+    #[doc = "Checks if the value of the field is `Ad7`"]
     #[inline(always)]
     pub fn is_ad7(&self) -> bool {
-        *self == SELPLUS_A::AD7
+        *self == SELPLUS_A::Ad7
     }
 }
 #[doc = "Field `SELPLUS` writer - SELection for PLUS comparator input"]
@@ -257,53 +227,53 @@ impl<'a, const O: u8> SELPLUS_W<'a, O> {
     #[doc = "Select AD0"]
     #[inline(always)]
     pub fn ad0(self) -> &'a mut W {
-        self.variant(SELPLUS_A::AD0)
+        self.variant(SELPLUS_A::Ad0)
     }
     #[doc = "Select AD1"]
     #[inline(always)]
     pub fn ad1(self) -> &'a mut W {
-        self.variant(SELPLUS_A::AD1)
+        self.variant(SELPLUS_A::Ad1)
     }
     #[doc = "Select AD2"]
     #[inline(always)]
     pub fn ad2(self) -> &'a mut W {
-        self.variant(SELPLUS_A::AD2)
+        self.variant(SELPLUS_A::Ad2)
     }
     #[doc = "Select AD3"]
     #[inline(always)]
     pub fn ad3(self) -> &'a mut W {
-        self.variant(SELPLUS_A::AD3)
+        self.variant(SELPLUS_A::Ad3)
     }
     #[doc = "Select AD4"]
     #[inline(always)]
     pub fn ad4(self) -> &'a mut W {
-        self.variant(SELPLUS_A::AD4)
+        self.variant(SELPLUS_A::Ad4)
     }
     #[doc = "Select AD5"]
     #[inline(always)]
     pub fn ad5(self) -> &'a mut W {
-        self.variant(SELPLUS_A::AD5)
+        self.variant(SELPLUS_A::Ad5)
     }
     #[doc = "Select AD6"]
     #[inline(always)]
     pub fn ad6(self) -> &'a mut W {
-        self.variant(SELPLUS_A::AD6)
+        self.variant(SELPLUS_A::Ad6)
     }
     #[doc = "Select AD7"]
     #[inline(always)]
     pub fn ad7(self) -> &'a mut W {
-        self.variant(SELPLUS_A::AD7)
+        self.variant(SELPLUS_A::Ad7)
     }
 }
 #[doc = "Field `ACEN` reader - Analog Comparator ENable"]
 pub type ACEN_R = crate::BitReader<ACEN_A>;
 #[doc = "Analog Comparator ENable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ACEN_A {
     #[doc = "0: Analog Comparator Disabled."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: Analog Comparator Enabled."]
-    EN = 1,
+    En = 1,
 }
 impl From<ACEN_A> for bool {
     #[inline(always)]
@@ -316,19 +286,19 @@ impl ACEN_R {
     #[inline(always)]
     pub fn variant(&self) -> ACEN_A {
         match self.bits {
-            false => ACEN_A::DIS,
-            true => ACEN_A::EN,
+            false => ACEN_A::Dis,
+            true => ACEN_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == ACEN_A::DIS
+        *self == ACEN_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == ACEN_A::EN
+        *self == ACEN_A::En
     }
 }
 #[doc = "Field `ACEN` writer - Analog Comparator ENable"]
@@ -337,26 +307,26 @@ impl<'a, const O: u8> ACEN_W<'a, O> {
     #[doc = "Analog Comparator Disabled."]
     #[inline(always)]
     pub fn dis(self) -> &'a mut W {
-        self.variant(ACEN_A::DIS)
+        self.variant(ACEN_A::Dis)
     }
     #[doc = "Analog Comparator Enabled."]
     #[inline(always)]
     pub fn en(self) -> &'a mut W {
-        self.variant(ACEN_A::EN)
+        self.variant(ACEN_A::En)
     }
 }
 #[doc = "Field `EDGETYP` reader - EDGE TYPe"]
 pub type EDGETYP_R = crate::FieldReader<u8, EDGETYP_A>;
 #[doc = "EDGE TYPe\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EDGETYP_A {
     #[doc = "0: only rising edge of comparator output"]
-    RISING = 0,
+    Rising = 0,
     #[doc = "1: falling edge of comparator output"]
-    FALLING = 1,
+    Falling = 1,
     #[doc = "2: any edge of comparator output"]
-    ANY = 2,
+    Any = 2,
 }
 impl From<EDGETYP_A> for u8 {
     #[inline(always)]
@@ -369,26 +339,26 @@ impl EDGETYP_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<EDGETYP_A> {
         match self.bits {
-            0 => Some(EDGETYP_A::RISING),
-            1 => Some(EDGETYP_A::FALLING),
-            2 => Some(EDGETYP_A::ANY),
+            0 => Some(EDGETYP_A::Rising),
+            1 => Some(EDGETYP_A::Falling),
+            2 => Some(EDGETYP_A::Any),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `RISING`"]
+    #[doc = "Checks if the value of the field is `Rising`"]
     #[inline(always)]
     pub fn is_rising(&self) -> bool {
-        *self == EDGETYP_A::RISING
+        *self == EDGETYP_A::Rising
     }
-    #[doc = "Checks if the value of the field is `FALLING`"]
+    #[doc = "Checks if the value of the field is `Falling`"]
     #[inline(always)]
     pub fn is_falling(&self) -> bool {
-        *self == EDGETYP_A::FALLING
+        *self == EDGETYP_A::Falling
     }
-    #[doc = "Checks if the value of the field is `ANY`"]
+    #[doc = "Checks if the value of the field is `Any`"]
     #[inline(always)]
     pub fn is_any(&self) -> bool {
-        *self == EDGETYP_A::ANY
+        *self == EDGETYP_A::Any
     }
 }
 #[doc = "Field `EDGETYP` writer - EDGE TYPe"]
@@ -397,28 +367,28 @@ impl<'a, const O: u8> EDGETYP_W<'a, O> {
     #[doc = "only rising edge of comparator output"]
     #[inline(always)]
     pub fn rising(self) -> &'a mut W {
-        self.variant(EDGETYP_A::RISING)
+        self.variant(EDGETYP_A::Rising)
     }
     #[doc = "falling edge of comparator output"]
     #[inline(always)]
     pub fn falling(self) -> &'a mut W {
-        self.variant(EDGETYP_A::FALLING)
+        self.variant(EDGETYP_A::Falling)
     }
     #[doc = "any edge of comparator output"]
     #[inline(always)]
     pub fn any(self) -> &'a mut W {
-        self.variant(EDGETYP_A::ANY)
+        self.variant(EDGETYP_A::Any)
     }
 }
 #[doc = "Field `INV` reader - INVert comparator output"]
 pub type INV_R = crate::BitReader<INV_A>;
 #[doc = "INVert comparator output\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum INV_A {
     #[doc = "0: Analog Comparator output is directly processed."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: Analog Comparator output is inverted prior to being processed."]
-    EN = 1,
+    En = 1,
 }
 impl From<INV_A> for bool {
     #[inline(always)]
@@ -431,19 +401,19 @@ impl INV_R {
     #[inline(always)]
     pub fn variant(&self) -> INV_A {
         match self.bits {
-            false => INV_A::DIS,
-            true => INV_A::EN,
+            false => INV_A::Dis,
+            true => INV_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == INV_A::DIS
+        *self == INV_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == INV_A::EN
+        *self == INV_A::En
     }
 }
 #[doc = "Field `INV` writer - INVert comparator output"]
@@ -452,23 +422,23 @@ impl<'a, const O: u8> INV_W<'a, O> {
     #[doc = "Analog Comparator output is directly processed."]
     #[inline(always)]
     pub fn dis(self) -> &'a mut W {
-        self.variant(INV_A::DIS)
+        self.variant(INV_A::Dis)
     }
     #[doc = "Analog Comparator output is inverted prior to being processed."]
     #[inline(always)]
     pub fn en(self) -> &'a mut W {
-        self.variant(INV_A::EN)
+        self.variant(INV_A::En)
     }
 }
 #[doc = "Field `SELFS` reader - SELection of Fault Source"]
 pub type SELFS_R = crate::BitReader<SELFS_A>;
 #[doc = "SELection of Fault Source\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SELFS_A {
     #[doc = "0: the CF flag is used to drive the FAULT output."]
-    CF = 0,
+    Cf = 0,
     #[doc = "1: the output of the Analog Comparator flag is used to drive the FAULT output."]
-    OUTPUT = 1,
+    Output = 1,
 }
 impl From<SELFS_A> for bool {
     #[inline(always)]
@@ -481,19 +451,19 @@ impl SELFS_R {
     #[inline(always)]
     pub fn variant(&self) -> SELFS_A {
         match self.bits {
-            false => SELFS_A::CF,
-            true => SELFS_A::OUTPUT,
+            false => SELFS_A::Cf,
+            true => SELFS_A::Output,
         }
     }
-    #[doc = "Checks if the value of the field is `CF`"]
+    #[doc = "Checks if the value of the field is `Cf`"]
     #[inline(always)]
     pub fn is_cf(&self) -> bool {
-        *self == SELFS_A::CF
+        *self == SELFS_A::Cf
     }
-    #[doc = "Checks if the value of the field is `OUTPUT`"]
+    #[doc = "Checks if the value of the field is `Output`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
-        *self == SELFS_A::OUTPUT
+        *self == SELFS_A::Output
     }
 }
 #[doc = "Field `SELFS` writer - SELection of Fault Source"]
@@ -502,23 +472,23 @@ impl<'a, const O: u8> SELFS_W<'a, O> {
     #[doc = "the CF flag is used to drive the FAULT output."]
     #[inline(always)]
     pub fn cf(self) -> &'a mut W {
-        self.variant(SELFS_A::CF)
+        self.variant(SELFS_A::Cf)
     }
     #[doc = "the output of the Analog Comparator flag is used to drive the FAULT output."]
     #[inline(always)]
     pub fn output(self) -> &'a mut W {
-        self.variant(SELFS_A::OUTPUT)
+        self.variant(SELFS_A::Output)
     }
 }
 #[doc = "Field `FE` reader - Fault Enable"]
 pub type FE_R = crate::BitReader<FE_A>;
 #[doc = "Fault Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FE_A {
     #[doc = "0: the FAULT output is tied to 0."]
-    DIS = 0,
+    Dis = 0,
     #[doc = "1: the FAULT output is driven by the signal defined by SELFS."]
-    EN = 1,
+    En = 1,
 }
 impl From<FE_A> for bool {
     #[inline(always)]
@@ -531,19 +501,19 @@ impl FE_R {
     #[inline(always)]
     pub fn variant(&self) -> FE_A {
         match self.bits {
-            false => FE_A::DIS,
-            true => FE_A::EN,
+            false => FE_A::Dis,
+            true => FE_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `DIS`"]
+    #[doc = "Checks if the value of the field is `Dis`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        *self == FE_A::DIS
+        *self == FE_A::Dis
     }
-    #[doc = "Checks if the value of the field is `EN`"]
+    #[doc = "Checks if the value of the field is `En`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        *self == FE_A::EN
+        *self == FE_A::En
     }
 }
 #[doc = "Field `FE` writer - Fault Enable"]
@@ -552,12 +522,12 @@ impl<'a, const O: u8> FE_W<'a, O> {
     #[doc = "the FAULT output is tied to 0."]
     #[inline(always)]
     pub fn dis(self) -> &'a mut W {
-        self.variant(FE_A::DIS)
+        self.variant(FE_A::Dis)
     }
     #[doc = "the FAULT output is driven by the signal defined by SELFS."]
     #[inline(always)]
     pub fn en(self) -> &'a mut W {
-        self.variant(FE_A::EN)
+        self.variant(FE_A::En)
     }
 }
 impl R {
@@ -600,36 +570,43 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - SELection for MINUS comparator input"]
     #[inline(always)]
+    #[must_use]
     pub fn selminus(&mut self) -> SELMINUS_W<0> {
         SELMINUS_W::new(self)
     }
     #[doc = "Bits 4:6 - SELection for PLUS comparator input"]
     #[inline(always)]
+    #[must_use]
     pub fn selplus(&mut self) -> SELPLUS_W<4> {
         SELPLUS_W::new(self)
     }
     #[doc = "Bit 8 - Analog Comparator ENable"]
     #[inline(always)]
+    #[must_use]
     pub fn acen(&mut self) -> ACEN_W<8> {
         ACEN_W::new(self)
     }
     #[doc = "Bits 9:10 - EDGE TYPe"]
     #[inline(always)]
+    #[must_use]
     pub fn edgetyp(&mut self) -> EDGETYP_W<9> {
         EDGETYP_W::new(self)
     }
     #[doc = "Bit 12 - INVert comparator output"]
     #[inline(always)]
+    #[must_use]
     pub fn inv(&mut self) -> INV_W<12> {
         INV_W::new(self)
     }
     #[doc = "Bit 13 - SELection of Fault Source"]
     #[inline(always)]
+    #[must_use]
     pub fn selfs(&mut self) -> SELFS_W<13> {
         SELFS_W::new(self)
     }
     #[doc = "Bit 14 - Fault Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn fe(&mut self) -> FE_W<14> {
         FE_W::new(self)
     }
@@ -652,11 +629,10 @@ impl crate::Readable for MR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
 impl crate::Writable for MR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MR to value 0"]
 impl crate::Resettable for MR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

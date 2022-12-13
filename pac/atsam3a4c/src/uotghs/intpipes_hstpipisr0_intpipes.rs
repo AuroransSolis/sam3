@@ -1,18 +1,6 @@
 #[doc = "Register `HSTPIPISR0_INTPIPES` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<INTPIPES_HSTPIPISR0_INTPIPES_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<INTPIPES_HSTPIPISR0_INTPIPES_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<INTPIPES_HSTPIPISR0_INTPIPES_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<INTPIPES_HSTPIPISR0_INTPIPES_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `RXINI` reader - Received IN Data Interrupt"]
 pub type RXINI_R = crate::BitReader<bool>;
 #[doc = "Field `TXOUTI` reader - Transmitted OUT Data Interrupt"]
@@ -32,13 +20,13 @@ pub type SHORTPACKETI_R = crate::BitReader<bool>;
 #[doc = "Field `DTSEQ` reader - Data Toggle Sequence"]
 pub type DTSEQ_R = crate::FieldReader<u8, DTSEQ_A>;
 #[doc = "Data Toggle Sequence"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DTSEQ_A {
     #[doc = "0: Data0 toggle sequence"]
-    DATA0 = 0,
+    Data0 = 0,
     #[doc = "1: Data1 toggle sequence"]
-    DATA1 = 1,
+    Data1 = 1,
 }
 impl From<DTSEQ_A> for u8 {
     #[inline(always)]
@@ -51,36 +39,36 @@ impl DTSEQ_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<DTSEQ_A> {
         match self.bits {
-            0 => Some(DTSEQ_A::DATA0),
-            1 => Some(DTSEQ_A::DATA1),
+            0 => Some(DTSEQ_A::Data0),
+            1 => Some(DTSEQ_A::Data1),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DATA0`"]
+    #[doc = "Checks if the value of the field is `Data0`"]
     #[inline(always)]
     pub fn is_data0(&self) -> bool {
-        *self == DTSEQ_A::DATA0
+        *self == DTSEQ_A::Data0
     }
-    #[doc = "Checks if the value of the field is `DATA1`"]
+    #[doc = "Checks if the value of the field is `Data1`"]
     #[inline(always)]
     pub fn is_data1(&self) -> bool {
-        *self == DTSEQ_A::DATA1
+        *self == DTSEQ_A::Data1
     }
 }
 #[doc = "Field `NBUSYBK` reader - Number of Busy Banks"]
 pub type NBUSYBK_R = crate::FieldReader<u8, NBUSYBK_A>;
 #[doc = "Number of Busy Banks"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum NBUSYBK_A {
     #[doc = "0: 0 busy bank (all banks free)"]
-    _0_BUSY = 0,
+    _0Busy = 0,
     #[doc = "1: 1 busy bank"]
-    _1_BUSY = 1,
+    _1Busy = 1,
     #[doc = "2: 2 busy banks"]
-    _2_BUSY = 2,
+    _2Busy = 2,
     #[doc = "3: 3 busy banks"]
-    _3_BUSY = 3,
+    _3Busy = 3,
 }
 impl From<NBUSYBK_A> for u8 {
     #[inline(always)]
@@ -93,46 +81,46 @@ impl NBUSYBK_R {
     #[inline(always)]
     pub fn variant(&self) -> NBUSYBK_A {
         match self.bits {
-            0 => NBUSYBK_A::_0_BUSY,
-            1 => NBUSYBK_A::_1_BUSY,
-            2 => NBUSYBK_A::_2_BUSY,
-            3 => NBUSYBK_A::_3_BUSY,
+            0 => NBUSYBK_A::_0Busy,
+            1 => NBUSYBK_A::_1Busy,
+            2 => NBUSYBK_A::_2Busy,
+            3 => NBUSYBK_A::_3Busy,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_0_BUSY`"]
+    #[doc = "Checks if the value of the field is `_0Busy`"]
     #[inline(always)]
     pub fn is_0_busy(&self) -> bool {
-        *self == NBUSYBK_A::_0_BUSY
+        *self == NBUSYBK_A::_0Busy
     }
-    #[doc = "Checks if the value of the field is `_1_BUSY`"]
+    #[doc = "Checks if the value of the field is `_1Busy`"]
     #[inline(always)]
     pub fn is_1_busy(&self) -> bool {
-        *self == NBUSYBK_A::_1_BUSY
+        *self == NBUSYBK_A::_1Busy
     }
-    #[doc = "Checks if the value of the field is `_2_BUSY`"]
+    #[doc = "Checks if the value of the field is `_2Busy`"]
     #[inline(always)]
     pub fn is_2_busy(&self) -> bool {
-        *self == NBUSYBK_A::_2_BUSY
+        *self == NBUSYBK_A::_2Busy
     }
-    #[doc = "Checks if the value of the field is `_3_BUSY`"]
+    #[doc = "Checks if the value of the field is `_3Busy`"]
     #[inline(always)]
     pub fn is_3_busy(&self) -> bool {
-        *self == NBUSYBK_A::_3_BUSY
+        *self == NBUSYBK_A::_3Busy
     }
 }
 #[doc = "Field `CURRBK` reader - Current Bank"]
 pub type CURRBK_R = crate::FieldReader<u8, CURRBK_A>;
 #[doc = "Current Bank"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CURRBK_A {
     #[doc = "0: Current bank is bank0"]
-    BANK0 = 0,
+    Bank0 = 0,
     #[doc = "1: Current bank is bank1"]
-    BANK1 = 1,
+    Bank1 = 1,
     #[doc = "2: Current bank is bank2"]
-    BANK2 = 2,
+    Bank2 = 2,
 }
 impl From<CURRBK_A> for u8 {
     #[inline(always)]
@@ -145,26 +133,26 @@ impl CURRBK_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<CURRBK_A> {
         match self.bits {
-            0 => Some(CURRBK_A::BANK0),
-            1 => Some(CURRBK_A::BANK1),
-            2 => Some(CURRBK_A::BANK2),
+            0 => Some(CURRBK_A::Bank0),
+            1 => Some(CURRBK_A::Bank1),
+            2 => Some(CURRBK_A::Bank2),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `BANK0`"]
+    #[doc = "Checks if the value of the field is `Bank0`"]
     #[inline(always)]
     pub fn is_bank0(&self) -> bool {
-        *self == CURRBK_A::BANK0
+        *self == CURRBK_A::Bank0
     }
-    #[doc = "Checks if the value of the field is `BANK1`"]
+    #[doc = "Checks if the value of the field is `Bank1`"]
     #[inline(always)]
     pub fn is_bank1(&self) -> bool {
-        *self == CURRBK_A::BANK1
+        *self == CURRBK_A::Bank1
     }
-    #[doc = "Checks if the value of the field is `BANK2`"]
+    #[doc = "Checks if the value of the field is `Bank2`"]
     #[inline(always)]
     pub fn is_bank2(&self) -> bool {
-        *self == CURRBK_A::BANK2
+        *self == CURRBK_A::Bank2
     }
 }
 #[doc = "Field `RWALL` reader - Read-write Allowed"]

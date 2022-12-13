@@ -1,39 +1,9 @@
 #[doc = "Register `PMC_PCR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<PMC_PCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PMC_PCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PMC_PCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PMC_PCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `PMC_PCR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<PMC_PCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PMC_PCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PMC_PCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PMC_PCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `PID` reader - Peripheral ID"]
 pub type PID_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PID` writer - Peripheral ID"]
@@ -45,15 +15,15 @@ pub type CMD_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_PCR_SPEC, bool, 
 #[doc = "Field `DIV` reader - Divisor Value"]
 pub type DIV_R = crate::FieldReader<u8, DIV_A>;
 #[doc = "Divisor Value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DIV_A {
     #[doc = "0: Peripheral clock is MCK"]
-    PERIPH_DIV_MCK = 0,
+    PeriphDivMck = 0,
     #[doc = "1: Peripheral clock is MCK/2"]
-    PERIPH_DIV2_MCK = 1,
+    PeriphDiv2Mck = 1,
     #[doc = "2: Peripheral clock is MCK/4"]
-    PERIPH_DIV4_MCK = 2,
+    PeriphDiv4Mck = 2,
 }
 impl From<DIV_A> for u8 {
     #[inline(always)]
@@ -66,26 +36,26 @@ impl DIV_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<DIV_A> {
         match self.bits {
-            0 => Some(DIV_A::PERIPH_DIV_MCK),
-            1 => Some(DIV_A::PERIPH_DIV2_MCK),
-            2 => Some(DIV_A::PERIPH_DIV4_MCK),
+            0 => Some(DIV_A::PeriphDivMck),
+            1 => Some(DIV_A::PeriphDiv2Mck),
+            2 => Some(DIV_A::PeriphDiv4Mck),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `PERIPH_DIV_MCK`"]
+    #[doc = "Checks if the value of the field is `PeriphDivMck`"]
     #[inline(always)]
     pub fn is_periph_div_mck(&self) -> bool {
-        *self == DIV_A::PERIPH_DIV_MCK
+        *self == DIV_A::PeriphDivMck
     }
-    #[doc = "Checks if the value of the field is `PERIPH_DIV2_MCK`"]
+    #[doc = "Checks if the value of the field is `PeriphDiv2Mck`"]
     #[inline(always)]
     pub fn is_periph_div2_mck(&self) -> bool {
-        *self == DIV_A::PERIPH_DIV2_MCK
+        *self == DIV_A::PeriphDiv2Mck
     }
-    #[doc = "Checks if the value of the field is `PERIPH_DIV4_MCK`"]
+    #[doc = "Checks if the value of the field is `PeriphDiv4Mck`"]
     #[inline(always)]
     pub fn is_periph_div4_mck(&self) -> bool {
-        *self == DIV_A::PERIPH_DIV4_MCK
+        *self == DIV_A::PeriphDiv4Mck
     }
 }
 #[doc = "Field `DIV` writer - Divisor Value"]
@@ -94,17 +64,17 @@ impl<'a, const O: u8> DIV_W<'a, O> {
     #[doc = "Peripheral clock is MCK"]
     #[inline(always)]
     pub fn periph_div_mck(self) -> &'a mut W {
-        self.variant(DIV_A::PERIPH_DIV_MCK)
+        self.variant(DIV_A::PeriphDivMck)
     }
     #[doc = "Peripheral clock is MCK/2"]
     #[inline(always)]
     pub fn periph_div2_mck(self) -> &'a mut W {
-        self.variant(DIV_A::PERIPH_DIV2_MCK)
+        self.variant(DIV_A::PeriphDiv2Mck)
     }
     #[doc = "Peripheral clock is MCK/4"]
     #[inline(always)]
     pub fn periph_div4_mck(self) -> &'a mut W {
-        self.variant(DIV_A::PERIPH_DIV4_MCK)
+        self.variant(DIV_A::PeriphDiv4Mck)
     }
 }
 #[doc = "Field `EN` reader - Enable"]
@@ -136,21 +106,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Peripheral ID"]
     #[inline(always)]
+    #[must_use]
     pub fn pid(&mut self) -> PID_W<0> {
         PID_W::new(self)
     }
     #[doc = "Bit 12 - Command"]
     #[inline(always)]
+    #[must_use]
     pub fn cmd(&mut self) -> CMD_W<12> {
         CMD_W::new(self)
     }
     #[doc = "Bits 16:17 - Divisor Value"]
     #[inline(always)]
+    #[must_use]
     pub fn div(&mut self) -> DIV_W<16> {
         DIV_W::new(self)
     }
     #[doc = "Bit 28 - Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn en(&mut self) -> EN_W<28> {
         EN_W::new(self)
     }
@@ -173,11 +147,10 @@ impl crate::Readable for PMC_PCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [pmc_pcr::W](W) writer structure"]
 impl crate::Writable for PMC_PCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PMC_PCR to value 0"]
 impl crate::Resettable for PMC_PCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

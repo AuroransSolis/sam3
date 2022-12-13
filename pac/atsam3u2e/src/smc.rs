@@ -105,113 +105,93 @@ pub struct RegisterBlock {
 impl RegisterBlock {
     #[doc = "0x2c - SMC ECC Parity 0 Register"]
     #[inline(always)]
-    pub fn w8bit_ecc_pr0_w8bit(&self) -> &W8BIT_ECC_PR0_W8BIT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(44usize) as *const W8BIT_ECC_PR0_W8BIT)
-        }
+    pub const fn w8bit_ecc_pr0_w8bit(&self) -> &W8BIT_ECC_PR0_W8BIT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(44usize).cast() }
     }
     #[doc = "0x2c - SMC ECC Parity 0 Register"]
     #[inline(always)]
-    pub fn w9bit_ecc_pr0_w9bit(&self) -> &W9BIT_ECC_PR0_W9BIT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(44usize) as *const W9BIT_ECC_PR0_W9BIT)
-        }
+    pub const fn w9bit_ecc_pr0_w9bit(&self) -> &W9BIT_ECC_PR0_W9BIT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(44usize).cast() }
     }
     #[doc = "0x2c - SMC ECC Parity 0 Register"]
     #[inline(always)]
-    pub fn ecc_pr0(&self) -> &ECC_PR0 {
-        unsafe { &*(((self as *const Self) as *const u8).add(44usize) as *const ECC_PR0) }
+    pub const fn ecc_pr0(&self) -> &ECC_PR0 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(44usize).cast() }
     }
     #[doc = "0x30 - SMC ECC parity 1 Register"]
     #[inline(always)]
-    pub fn w8bit_ecc_pr1_w8bit(&self) -> &W8BIT_ECC_PR1_W8BIT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(48usize) as *const W8BIT_ECC_PR1_W8BIT)
-        }
+    pub const fn w8bit_ecc_pr1_w8bit(&self) -> &W8BIT_ECC_PR1_W8BIT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(48usize).cast() }
     }
     #[doc = "0x30 - SMC ECC parity 1 Register"]
     #[inline(always)]
-    pub fn w9bit_ecc_pr1_w9bit(&self) -> &W9BIT_ECC_PR1_W9BIT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(48usize) as *const W9BIT_ECC_PR1_W9BIT)
-        }
+    pub const fn w9bit_ecc_pr1_w9bit(&self) -> &W9BIT_ECC_PR1_W9BIT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(48usize).cast() }
     }
     #[doc = "0x30 - SMC ECC parity 1 Register"]
     #[inline(always)]
-    pub fn ecc_pr1(&self) -> &ECC_PR1 {
-        unsafe { &*(((self as *const Self) as *const u8).add(48usize) as *const ECC_PR1) }
+    pub const fn ecc_pr1(&self) -> &ECC_PR1 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(48usize).cast() }
     }
     #[doc = "0x38 - SMC ECC parity 2 Register"]
     #[inline(always)]
-    pub fn w8bit_ecc_pr2_w8bit(&self) -> &W8BIT_ECC_PR2_W8BIT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(56usize) as *const W8BIT_ECC_PR2_W8BIT)
-        }
+    pub const fn w8bit_ecc_pr2_w8bit(&self) -> &W8BIT_ECC_PR2_W8BIT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(56usize).cast() }
     }
     #[doc = "0x38 - SMC ECC parity 2 Register"]
     #[inline(always)]
-    pub fn ecc_pr2(&self) -> &ECC_PR2 {
-        unsafe { &*(((self as *const Self) as *const u8).add(56usize) as *const ECC_PR2) }
+    pub const fn ecc_pr2(&self) -> &ECC_PR2 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(56usize).cast() }
     }
     #[doc = "0x3c - SMC ECC parity 3 Register"]
     #[inline(always)]
-    pub fn w8bit_ecc_pr3_w8bit(&self) -> &W8BIT_ECC_PR3_W8BIT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(60usize) as *const W8BIT_ECC_PR3_W8BIT)
-        }
+    pub const fn w8bit_ecc_pr3_w8bit(&self) -> &W8BIT_ECC_PR3_W8BIT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(60usize).cast() }
     }
     #[doc = "0x3c - SMC ECC parity 3 Register"]
     #[inline(always)]
-    pub fn ecc_pr3(&self) -> &ECC_PR3 {
-        unsafe { &*(((self as *const Self) as *const u8).add(60usize) as *const ECC_PR3) }
+    pub const fn ecc_pr3(&self) -> &ECC_PR3 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(60usize).cast() }
     }
     #[doc = "0x40 - SMC ECC parity 4 Register"]
     #[inline(always)]
-    pub fn w8bit_ecc_pr4_w8bit(&self) -> &W8BIT_ECC_PR4_W8BIT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(64usize) as *const W8BIT_ECC_PR4_W8BIT)
-        }
+    pub const fn w8bit_ecc_pr4_w8bit(&self) -> &W8BIT_ECC_PR4_W8BIT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(64usize).cast() }
     }
     #[doc = "0x40 - SMC ECC parity 4 Register"]
     #[inline(always)]
-    pub fn ecc_pr4(&self) -> &ECC_PR4 {
-        unsafe { &*(((self as *const Self) as *const u8).add(64usize) as *const ECC_PR4) }
+    pub const fn ecc_pr4(&self) -> &ECC_PR4 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(64usize).cast() }
     }
     #[doc = "0x44 - SMC ECC parity 5 Register"]
     #[inline(always)]
-    pub fn w8bit_ecc_pr5_w8bit(&self) -> &W8BIT_ECC_PR5_W8BIT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(68usize) as *const W8BIT_ECC_PR5_W8BIT)
-        }
+    pub const fn w8bit_ecc_pr5_w8bit(&self) -> &W8BIT_ECC_PR5_W8BIT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(68usize).cast() }
     }
     #[doc = "0x44 - SMC ECC parity 5 Register"]
     #[inline(always)]
-    pub fn ecc_pr5(&self) -> &ECC_PR5 {
-        unsafe { &*(((self as *const Self) as *const u8).add(68usize) as *const ECC_PR5) }
+    pub const fn ecc_pr5(&self) -> &ECC_PR5 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(68usize).cast() }
     }
     #[doc = "0x48 - SMC ECC parity 6 Register"]
     #[inline(always)]
-    pub fn w8bit_ecc_pr6_w8bit(&self) -> &W8BIT_ECC_PR6_W8BIT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(72usize) as *const W8BIT_ECC_PR6_W8BIT)
-        }
+    pub const fn w8bit_ecc_pr6_w8bit(&self) -> &W8BIT_ECC_PR6_W8BIT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(72usize).cast() }
     }
     #[doc = "0x48 - SMC ECC parity 6 Register"]
     #[inline(always)]
-    pub fn ecc_pr6(&self) -> &ECC_PR6 {
-        unsafe { &*(((self as *const Self) as *const u8).add(72usize) as *const ECC_PR6) }
+    pub const fn ecc_pr6(&self) -> &ECC_PR6 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(72usize).cast() }
     }
     #[doc = "0x4c - SMC ECC parity 7 Register"]
     #[inline(always)]
-    pub fn w8bit_ecc_pr7_w8bit(&self) -> &W8BIT_ECC_PR7_W8BIT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(76usize) as *const W8BIT_ECC_PR7_W8BIT)
-        }
+    pub const fn w8bit_ecc_pr7_w8bit(&self) -> &W8BIT_ECC_PR7_W8BIT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(76usize).cast() }
     }
     #[doc = "0x4c - SMC ECC parity 7 Register"]
     #[inline(always)]
-    pub fn ecc_pr7(&self) -> &ECC_PR7 {
-        unsafe { &*(((self as *const Self) as *const u8).add(76usize) as *const ECC_PR7) }
+    pub const fn ecc_pr7(&self) -> &ECC_PR7 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(76usize).cast() }
     }
 }
 #[doc = "CFG (rw) register accessor: an alias for `Reg<CFG_SPEC>`"]

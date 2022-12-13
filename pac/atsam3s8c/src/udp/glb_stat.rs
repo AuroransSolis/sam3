@@ -1,39 +1,9 @@
 #[doc = "Register `GLB_STAT` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<GLB_STAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GLB_STAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GLB_STAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GLB_STAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `GLB_STAT` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<GLB_STAT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<GLB_STAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<GLB_STAT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<GLB_STAT_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `FADDEN` reader - Function Address Enable"]
 pub type FADDEN_R = crate::BitReader<bool>;
 #[doc = "Field `FADDEN` writer - Function Address Enable"]
@@ -84,26 +54,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Function Address Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn fadden(&mut self) -> FADDEN_W<0> {
         FADDEN_W::new(self)
     }
     #[doc = "Bit 1 - Configured"]
     #[inline(always)]
+    #[must_use]
     pub fn confg(&mut self) -> CONFG_W<1> {
         CONFG_W::new(self)
     }
     #[doc = "Bit 2 - Enable Send Resume"]
     #[inline(always)]
+    #[must_use]
     pub fn esr(&mut self) -> ESR_W<2> {
         ESR_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
+    #[must_use]
     pub fn rsminpr(&mut self) -> RSMINPR_W<3> {
         RSMINPR_W::new(self)
     }
     #[doc = "Bit 4 - Remote Wake Up Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rmwupe(&mut self) -> RMWUPE_W<4> {
         RMWUPE_W::new(self)
     }
@@ -126,11 +101,10 @@ impl crate::Readable for GLB_STAT_SPEC {
 #[doc = "`write(|w| ..)` method takes [glb_stat::W](W) writer structure"]
 impl crate::Writable for GLB_STAT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GLB_STAT to value 0x10"]
 impl crate::Resettable for GLB_STAT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x10
-    }
+    const RESET_VALUE: Self::Ux = 0x10;
 }

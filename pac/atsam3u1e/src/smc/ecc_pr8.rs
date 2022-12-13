@@ -1,18 +1,6 @@
 #[doc = "Register `ECC_PR8` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<ECC_PR8_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ECC_PR8_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ECC_PR8_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ECC_PR8_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `BITADDR` reader - Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes"]
 pub type BITADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `WORDADDR` reader - Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes"]
@@ -47,8 +35,5 @@ impl crate::Readable for ECC_PR8_SPEC {
 }
 #[doc = "`reset()` method sets ECC_PR8 to value 0"]
 impl crate::Resettable for ECC_PR8_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

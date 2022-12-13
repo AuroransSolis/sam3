@@ -1,24 +1,6 @@
 #[doc = "Register `PMC_SCER` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<PMC_SCER_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PMC_SCER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PMC_SCER_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PMC_SCER_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `PCK0` writer - Programmable Clock 0 Output Enable"]
 pub type PCK0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_SCER_SPEC, bool, O>;
 #[doc = "Field `PCK1` writer - Programmable Clock 1 Output Enable"]
@@ -28,16 +10,19 @@ pub type PCK2_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_SCER_SPEC, bool
 impl W {
     #[doc = "Bit 8 - Programmable Clock 0 Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pck0(&mut self) -> PCK0_W<8> {
         PCK0_W::new(self)
     }
     #[doc = "Bit 9 - Programmable Clock 1 Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pck1(&mut self) -> PCK1_W<9> {
         PCK1_W::new(self)
     }
     #[doc = "Bit 10 - Programmable Clock 2 Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pck2(&mut self) -> PCK2_W<10> {
         PCK2_W::new(self)
     }
@@ -56,4 +41,6 @@ impl crate::RegisterSpec for PMC_SCER_SPEC {
 #[doc = "`write(|w| ..)` method takes [pmc_scer::W](W) writer structure"]
 impl crate::Writable for PMC_SCER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

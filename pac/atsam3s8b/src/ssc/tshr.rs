@@ -1,39 +1,9 @@
 #[doc = "Register `TSHR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<TSHR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TSHR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TSHR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TSHR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `TSHR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<TSHR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TSHR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TSHR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TSHR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `TSDAT` reader - Transmit Synchronization Data"]
 pub type TSDAT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TSDAT` writer - Transmit Synchronization Data"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Transmit Synchronization Data"]
     #[inline(always)]
+    #[must_use]
     pub fn tsdat(&mut self) -> TSDAT_W<0> {
         TSDAT_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for TSHR_SPEC {
 #[doc = "`write(|w| ..)` method takes [tshr::W](W) writer structure"]
 impl crate::Writable for TSHR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TSHR to value 0"]
 impl crate::Resettable for TSHR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

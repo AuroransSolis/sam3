@@ -1,39 +1,9 @@
 #[doc = "Register `ACR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<ACR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ACR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ACR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ACR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `ACR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<ACR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ACR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ACR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ACR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `TSON` reader - Temperature Sensor On"]
 pub type TSON_R = crate::BitReader<bool>;
 #[doc = "Field `TSON` writer - Temperature Sensor On"]
@@ -57,11 +27,13 @@ impl R {
 impl W {
     #[doc = "Bit 4 - Temperature Sensor On"]
     #[inline(always)]
+    #[must_use]
     pub fn tson(&mut self) -> TSON_W<4> {
         TSON_W::new(self)
     }
     #[doc = "Bits 8:9 - ADC Bias Current Control"]
     #[inline(always)]
+    #[must_use]
     pub fn ibctl(&mut self) -> IBCTL_W<8> {
         IBCTL_W::new(self)
     }
@@ -84,11 +56,10 @@ impl crate::Readable for ACR_SPEC {
 #[doc = "`write(|w| ..)` method takes [acr::W](W) writer structure"]
 impl crate::Writable for ACR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ACR to value 0x0100"]
 impl crate::Resettable for ACR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0100
-    }
+    const RESET_VALUE: Self::Ux = 0x0100;
 }

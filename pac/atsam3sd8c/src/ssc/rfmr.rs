@@ -1,39 +1,9 @@
 #[doc = "Register `RFMR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<RFMR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RFMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RFMR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RFMR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `RFMR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<RFMR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RFMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RFMR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RFMR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `DATLEN` reader - Data Length"]
 pub type DATLEN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DATLEN` writer - Data Length"]
@@ -57,21 +27,21 @@ pub type FSLEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RFMR_SPEC, u8, u
 #[doc = "Field `FSOS` reader - Receive Frame Sync Output Selection"]
 pub type FSOS_R = crate::FieldReader<u8, FSOS_A>;
 #[doc = "Receive Frame Sync Output Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FSOS_A {
     #[doc = "0: None"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: Negative Pulse"]
-    NEGATIVE = 1,
+    Negative = 1,
     #[doc = "2: Positive Pulse"]
-    POSITIVE = 2,
+    Positive = 2,
     #[doc = "3: Driven Low during data transfer"]
-    LOW = 3,
+    Low = 3,
     #[doc = "4: Driven High during data transfer"]
-    HIGH = 4,
+    High = 4,
     #[doc = "5: Toggling at each start of data transfer"]
-    TOGGLING = 5,
+    Toggling = 5,
 }
 impl From<FSOS_A> for u8 {
     #[inline(always)]
@@ -84,44 +54,44 @@ impl FSOS_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<FSOS_A> {
         match self.bits {
-            0 => Some(FSOS_A::NONE),
-            1 => Some(FSOS_A::NEGATIVE),
-            2 => Some(FSOS_A::POSITIVE),
-            3 => Some(FSOS_A::LOW),
-            4 => Some(FSOS_A::HIGH),
-            5 => Some(FSOS_A::TOGGLING),
+            0 => Some(FSOS_A::None),
+            1 => Some(FSOS_A::Negative),
+            2 => Some(FSOS_A::Positive),
+            3 => Some(FSOS_A::Low),
+            4 => Some(FSOS_A::High),
+            5 => Some(FSOS_A::Toggling),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Checks if the value of the field is `None`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == FSOS_A::NONE
+        *self == FSOS_A::None
     }
-    #[doc = "Checks if the value of the field is `NEGATIVE`"]
+    #[doc = "Checks if the value of the field is `Negative`"]
     #[inline(always)]
     pub fn is_negative(&self) -> bool {
-        *self == FSOS_A::NEGATIVE
+        *self == FSOS_A::Negative
     }
-    #[doc = "Checks if the value of the field is `POSITIVE`"]
+    #[doc = "Checks if the value of the field is `Positive`"]
     #[inline(always)]
     pub fn is_positive(&self) -> bool {
-        *self == FSOS_A::POSITIVE
+        *self == FSOS_A::Positive
     }
-    #[doc = "Checks if the value of the field is `LOW`"]
+    #[doc = "Checks if the value of the field is `Low`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == FSOS_A::LOW
+        *self == FSOS_A::Low
     }
-    #[doc = "Checks if the value of the field is `HIGH`"]
+    #[doc = "Checks if the value of the field is `High`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == FSOS_A::HIGH
+        *self == FSOS_A::High
     }
-    #[doc = "Checks if the value of the field is `TOGGLING`"]
+    #[doc = "Checks if the value of the field is `Toggling`"]
     #[inline(always)]
     pub fn is_toggling(&self) -> bool {
-        *self == FSOS_A::TOGGLING
+        *self == FSOS_A::Toggling
     }
 }
 #[doc = "Field `FSOS` writer - Receive Frame Sync Output Selection"]
@@ -130,43 +100,43 @@ impl<'a, const O: u8> FSOS_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
-        self.variant(FSOS_A::NONE)
+        self.variant(FSOS_A::None)
     }
     #[doc = "Negative Pulse"]
     #[inline(always)]
     pub fn negative(self) -> &'a mut W {
-        self.variant(FSOS_A::NEGATIVE)
+        self.variant(FSOS_A::Negative)
     }
     #[doc = "Positive Pulse"]
     #[inline(always)]
     pub fn positive(self) -> &'a mut W {
-        self.variant(FSOS_A::POSITIVE)
+        self.variant(FSOS_A::Positive)
     }
     #[doc = "Driven Low during data transfer"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
-        self.variant(FSOS_A::LOW)
+        self.variant(FSOS_A::Low)
     }
     #[doc = "Driven High during data transfer"]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
-        self.variant(FSOS_A::HIGH)
+        self.variant(FSOS_A::High)
     }
     #[doc = "Toggling at each start of data transfer"]
     #[inline(always)]
     pub fn toggling(self) -> &'a mut W {
-        self.variant(FSOS_A::TOGGLING)
+        self.variant(FSOS_A::Toggling)
     }
 }
 #[doc = "Field `FSEDGE` reader - Frame Sync Edge Detection"]
 pub type FSEDGE_R = crate::BitReader<FSEDGE_A>;
 #[doc = "Frame Sync Edge Detection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FSEDGE_A {
     #[doc = "0: Positive Edge Detection"]
-    POSITIVE = 0,
+    Positive = 0,
     #[doc = "1: Negative Edge Detection"]
-    NEGATIVE = 1,
+    Negative = 1,
 }
 impl From<FSEDGE_A> for bool {
     #[inline(always)]
@@ -179,19 +149,19 @@ impl FSEDGE_R {
     #[inline(always)]
     pub fn variant(&self) -> FSEDGE_A {
         match self.bits {
-            false => FSEDGE_A::POSITIVE,
-            true => FSEDGE_A::NEGATIVE,
+            false => FSEDGE_A::Positive,
+            true => FSEDGE_A::Negative,
         }
     }
-    #[doc = "Checks if the value of the field is `POSITIVE`"]
+    #[doc = "Checks if the value of the field is `Positive`"]
     #[inline(always)]
     pub fn is_positive(&self) -> bool {
-        *self == FSEDGE_A::POSITIVE
+        *self == FSEDGE_A::Positive
     }
-    #[doc = "Checks if the value of the field is `NEGATIVE`"]
+    #[doc = "Checks if the value of the field is `Negative`"]
     #[inline(always)]
     pub fn is_negative(&self) -> bool {
-        *self == FSEDGE_A::NEGATIVE
+        *self == FSEDGE_A::Negative
     }
 }
 #[doc = "Field `FSEDGE` writer - Frame Sync Edge Detection"]
@@ -200,12 +170,12 @@ impl<'a, const O: u8> FSEDGE_W<'a, O> {
     #[doc = "Positive Edge Detection"]
     #[inline(always)]
     pub fn positive(self) -> &'a mut W {
-        self.variant(FSEDGE_A::POSITIVE)
+        self.variant(FSEDGE_A::Positive)
     }
     #[doc = "Negative Edge Detection"]
     #[inline(always)]
     pub fn negative(self) -> &'a mut W {
-        self.variant(FSEDGE_A::NEGATIVE)
+        self.variant(FSEDGE_A::Negative)
     }
 }
 #[doc = "Field `FSLEN_EXT` reader - FSLEN Field Extension"]
@@ -257,41 +227,49 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Data Length"]
     #[inline(always)]
+    #[must_use]
     pub fn datlen(&mut self) -> DATLEN_W<0> {
         DATLEN_W::new(self)
     }
     #[doc = "Bit 5 - Loop Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn loop_(&mut self) -> LOOP_W<5> {
         LOOP_W::new(self)
     }
     #[doc = "Bit 7 - Most Significant Bit First"]
     #[inline(always)]
+    #[must_use]
     pub fn msbf(&mut self) -> MSBF_W<7> {
         MSBF_W::new(self)
     }
     #[doc = "Bits 8:11 - Data Number per Frame"]
     #[inline(always)]
+    #[must_use]
     pub fn datnb(&mut self) -> DATNB_W<8> {
         DATNB_W::new(self)
     }
     #[doc = "Bits 16:19 - Receive Frame Sync Length"]
     #[inline(always)]
+    #[must_use]
     pub fn fslen(&mut self) -> FSLEN_W<16> {
         FSLEN_W::new(self)
     }
     #[doc = "Bits 20:22 - Receive Frame Sync Output Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn fsos(&mut self) -> FSOS_W<20> {
         FSOS_W::new(self)
     }
     #[doc = "Bit 24 - Frame Sync Edge Detection"]
     #[inline(always)]
+    #[must_use]
     pub fn fsedge(&mut self) -> FSEDGE_W<24> {
         FSEDGE_W::new(self)
     }
     #[doc = "Bits 28:31 - FSLEN Field Extension"]
     #[inline(always)]
+    #[must_use]
     pub fn fslen_ext(&mut self) -> FSLEN_EXT_W<28> {
         FSLEN_EXT_W::new(self)
     }
@@ -314,11 +292,10 @@ impl crate::Readable for RFMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [rfmr::W](W) writer structure"]
 impl crate::Writable for RFMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RFMR to value 0"]
 impl crate::Resettable for RFMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

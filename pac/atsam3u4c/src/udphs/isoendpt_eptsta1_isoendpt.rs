@@ -1,32 +1,20 @@
 #[doc = "Register `EPTSTA1_ISOENDPT` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<ISOENDPT_EPTSTA1_ISOENDPT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ISOENDPT_EPTSTA1_ISOENDPT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ISOENDPT_EPTSTA1_ISOENDPT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ISOENDPT_EPTSTA1_ISOENDPT_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `TOGGLESQ_STA` reader - Toggle Sequencing"]
 pub type TOGGLESQ_STA_R = crate::FieldReader<u8, TOGGLESQ_STA_A>;
 #[doc = "Toggle Sequencing\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TOGGLESQ_STA_A {
     #[doc = "0: DATA0"]
-    DATA0 = 0,
+    Data0 = 0,
     #[doc = "1: DATA1"]
-    DATA1 = 1,
+    Data1 = 1,
     #[doc = "2: Data2 (only for High Bandwidth Isochronous Endpoint)"]
-    DATA2 = 2,
+    Data2 = 2,
     #[doc = "3: MData (only for High Bandwidth Isochronous Endpoint)"]
-    MDATA = 3,
+    Mdata = 3,
 }
 impl From<TOGGLESQ_STA_A> for u8 {
     #[inline(always)]
@@ -39,32 +27,32 @@ impl TOGGLESQ_STA_R {
     #[inline(always)]
     pub fn variant(&self) -> TOGGLESQ_STA_A {
         match self.bits {
-            0 => TOGGLESQ_STA_A::DATA0,
-            1 => TOGGLESQ_STA_A::DATA1,
-            2 => TOGGLESQ_STA_A::DATA2,
-            3 => TOGGLESQ_STA_A::MDATA,
+            0 => TOGGLESQ_STA_A::Data0,
+            1 => TOGGLESQ_STA_A::Data1,
+            2 => TOGGLESQ_STA_A::Data2,
+            3 => TOGGLESQ_STA_A::Mdata,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `DATA0`"]
+    #[doc = "Checks if the value of the field is `Data0`"]
     #[inline(always)]
     pub fn is_data0(&self) -> bool {
-        *self == TOGGLESQ_STA_A::DATA0
+        *self == TOGGLESQ_STA_A::Data0
     }
-    #[doc = "Checks if the value of the field is `DATA1`"]
+    #[doc = "Checks if the value of the field is `Data1`"]
     #[inline(always)]
     pub fn is_data1(&self) -> bool {
-        *self == TOGGLESQ_STA_A::DATA1
+        *self == TOGGLESQ_STA_A::Data1
     }
-    #[doc = "Checks if the value of the field is `DATA2`"]
+    #[doc = "Checks if the value of the field is `Data2`"]
     #[inline(always)]
     pub fn is_data2(&self) -> bool {
-        *self == TOGGLESQ_STA_A::DATA2
+        *self == TOGGLESQ_STA_A::Data2
     }
-    #[doc = "Checks if the value of the field is `MDATA`"]
+    #[doc = "Checks if the value of the field is `Mdata`"]
     #[inline(always)]
     pub fn is_mdata(&self) -> bool {
-        *self == TOGGLESQ_STA_A::MDATA
+        *self == TOGGLESQ_STA_A::Mdata
     }
 }
 #[doc = "Field `ERR_OVFLW` reader - Overflow Error"]
@@ -84,15 +72,15 @@ pub type ERR_FLUSH_R = crate::BitReader<bool>;
 #[doc = "Field `CURBK` reader - Current Bank"]
 pub type CURBK_R = crate::FieldReader<u8, CURBK_A>;
 #[doc = "Current Bank\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CURBK_A {
     #[doc = "0: Bank 0 (or single bank)"]
-    BANK0 = 0,
+    Bank0 = 0,
     #[doc = "1: Bank 1"]
-    BANK1 = 1,
+    Bank1 = 1,
     #[doc = "2: Bank 2"]
-    BANK2 = 2,
+    Bank2 = 2,
 }
 impl From<CURBK_A> for u8 {
     #[inline(always)]
@@ -105,40 +93,40 @@ impl CURBK_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<CURBK_A> {
         match self.bits {
-            0 => Some(CURBK_A::BANK0),
-            1 => Some(CURBK_A::BANK1),
-            2 => Some(CURBK_A::BANK2),
+            0 => Some(CURBK_A::Bank0),
+            1 => Some(CURBK_A::Bank1),
+            2 => Some(CURBK_A::Bank2),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `BANK0`"]
+    #[doc = "Checks if the value of the field is `Bank0`"]
     #[inline(always)]
     pub fn is_bank0(&self) -> bool {
-        *self == CURBK_A::BANK0
+        *self == CURBK_A::Bank0
     }
-    #[doc = "Checks if the value of the field is `BANK1`"]
+    #[doc = "Checks if the value of the field is `Bank1`"]
     #[inline(always)]
     pub fn is_bank1(&self) -> bool {
-        *self == CURBK_A::BANK1
+        *self == CURBK_A::Bank1
     }
-    #[doc = "Checks if the value of the field is `BANK2`"]
+    #[doc = "Checks if the value of the field is `Bank2`"]
     #[inline(always)]
     pub fn is_bank2(&self) -> bool {
-        *self == CURBK_A::BANK2
+        *self == CURBK_A::Bank2
     }
 }
 #[doc = "Field `BUSY_BANK_STA` reader - Busy Bank Number"]
 pub type BUSY_BANK_STA_R = crate::FieldReader<u8, BUSY_BANK_STA_A>;
 #[doc = "Busy Bank Number\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum BUSY_BANK_STA_A {
     #[doc = "0: 1 busy bank"]
-    _1BUSYBANK = 0,
+    _1busybank = 0,
     #[doc = "1: 2 busy banks"]
-    _2BUSYBANKS = 1,
+    _2busybanks = 1,
     #[doc = "2: 3 busy banks"]
-    _3BUSYBANKS = 2,
+    _3busybanks = 2,
 }
 impl From<BUSY_BANK_STA_A> for u8 {
     #[inline(always)]
@@ -151,26 +139,26 @@ impl BUSY_BANK_STA_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<BUSY_BANK_STA_A> {
         match self.bits {
-            0 => Some(BUSY_BANK_STA_A::_1BUSYBANK),
-            1 => Some(BUSY_BANK_STA_A::_2BUSYBANKS),
-            2 => Some(BUSY_BANK_STA_A::_3BUSYBANKS),
+            0 => Some(BUSY_BANK_STA_A::_1busybank),
+            1 => Some(BUSY_BANK_STA_A::_2busybanks),
+            2 => Some(BUSY_BANK_STA_A::_3busybanks),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `_1BUSYBANK`"]
+    #[doc = "Checks if the value of the field is `_1busybank`"]
     #[inline(always)]
     pub fn is_1busybank(&self) -> bool {
-        *self == BUSY_BANK_STA_A::_1BUSYBANK
+        *self == BUSY_BANK_STA_A::_1busybank
     }
-    #[doc = "Checks if the value of the field is `_2BUSYBANKS`"]
+    #[doc = "Checks if the value of the field is `_2busybanks`"]
     #[inline(always)]
     pub fn is_2busybanks(&self) -> bool {
-        *self == BUSY_BANK_STA_A::_2BUSYBANKS
+        *self == BUSY_BANK_STA_A::_2busybanks
     }
-    #[doc = "Checks if the value of the field is `_3BUSYBANKS`"]
+    #[doc = "Checks if the value of the field is `_3busybanks`"]
     #[inline(always)]
     pub fn is_3busybanks(&self) -> bool {
-        *self == BUSY_BANK_STA_A::_3BUSYBANKS
+        *self == BUSY_BANK_STA_A::_3busybanks
     }
 }
 #[doc = "Field `BYTE_COUNT` reader - UDPHS Byte Count"]
@@ -250,8 +238,5 @@ impl crate::Readable for ISOENDPT_EPTSTA1_ISOENDPT_SPEC {
 }
 #[doc = "`reset()` method sets EPTSTA1_ISOENDPT to value 0x40"]
 impl crate::Resettable for ISOENDPT_EPTSTA1_ISOENDPT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x40
-    }
+    const RESET_VALUE: Self::Ux = 0x40;
 }

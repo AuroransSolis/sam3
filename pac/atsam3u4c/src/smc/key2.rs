@@ -1,29 +1,12 @@
 #[doc = "Register `KEY2` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<KEY2_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<KEY2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<KEY2_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<KEY2_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `KEY2` writer - Off Chip Memory Scrambling (OCMS) Key Part 2"]
 pub type KEY2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, KEY2_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - Off Chip Memory Scrambling (OCMS) Key Part 2"]
     #[inline(always)]
+    #[must_use]
     pub fn key2(&mut self) -> KEY2_W<0> {
         KEY2_W::new(self)
     }
@@ -42,11 +25,10 @@ impl crate::RegisterSpec for KEY2_SPEC {
 #[doc = "`write(|w| ..)` method takes [key2::W](W) writer structure"]
 impl crate::Writable for KEY2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets KEY2 to value 0"]
 impl crate::Resettable for KEY2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,39 +1,9 @@
 #[doc = "Register `HSTPIPERR[%s]` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<HSTPIPERR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HSTPIPERR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HSTPIPERR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HSTPIPERR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `HSTPIPERR[%s]` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<HSTPIPERR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HSTPIPERR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HSTPIPERR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HSTPIPERR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `DATATGL` reader - Data Toggle Error"]
 pub type DATATGL_R = crate::BitReader<bool>;
 #[doc = "Field `DATATGL` writer - Data Toggle Error"]
@@ -93,31 +63,37 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Data Toggle Error"]
     #[inline(always)]
+    #[must_use]
     pub fn datatgl(&mut self) -> DATATGL_W<0> {
         DATATGL_W::new(self)
     }
     #[doc = "Bit 1 - Data PID Error"]
     #[inline(always)]
+    #[must_use]
     pub fn datapid(&mut self) -> DATAPID_W<1> {
         DATAPID_W::new(self)
     }
     #[doc = "Bit 2 - PID Error"]
     #[inline(always)]
+    #[must_use]
     pub fn pid(&mut self) -> PID_W<2> {
         PID_W::new(self)
     }
     #[doc = "Bit 3 - Time-Out Error"]
     #[inline(always)]
+    #[must_use]
     pub fn timeout(&mut self) -> TIMEOUT_W<3> {
         TIMEOUT_W::new(self)
     }
     #[doc = "Bit 4 - CRC16 Error"]
     #[inline(always)]
+    #[must_use]
     pub fn crc16(&mut self) -> CRC16_W<4> {
         CRC16_W::new(self)
     }
     #[doc = "Bits 5:6 - Error Counter"]
     #[inline(always)]
+    #[must_use]
     pub fn counter(&mut self) -> COUNTER_W<5> {
         COUNTER_W::new(self)
     }
@@ -140,4 +116,6 @@ impl crate::Readable for HSTPIPERR_SPEC {
 #[doc = "`write(|w| ..)` method takes [hstpiperr::W](W) writer structure"]
 impl crate::Writable for HSTPIPERR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

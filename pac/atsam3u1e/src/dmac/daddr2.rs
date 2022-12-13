@@ -1,39 +1,9 @@
 #[doc = "Register `DADDR2` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<DADDR2_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DADDR2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DADDR2_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DADDR2_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `DADDR2` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<DADDR2_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DADDR2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DADDR2_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DADDR2_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `DADDR` reader - Channel x Destination Address"]
 pub type DADDR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `DADDR` writer - Channel x Destination Address"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Channel x Destination Address"]
     #[inline(always)]
+    #[must_use]
     pub fn daddr(&mut self) -> DADDR_W<0> {
         DADDR_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for DADDR2_SPEC {
 #[doc = "`write(|w| ..)` method takes [daddr2::W](W) writer structure"]
 impl crate::Writable for DADDR2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DADDR2 to value 0"]
 impl crate::Resettable for DADDR2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

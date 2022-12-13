@@ -1,39 +1,9 @@
 #[doc = "Register `IF` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<IF_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<IF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<IF_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<IF_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `IF` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<IF_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IF_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IF_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `IRDA_FILTER` reader - IrDA Filter"]
 pub type IRDA_FILTER_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `IRDA_FILTER` writer - IrDA Filter"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - IrDA Filter"]
     #[inline(always)]
+    #[must_use]
     pub fn irda_filter(&mut self) -> IRDA_FILTER_W<0> {
         IRDA_FILTER_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [if_::W](W) writer structure"]
 impl crate::Writable for IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IF to value 0"]
 impl crate::Resettable for IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

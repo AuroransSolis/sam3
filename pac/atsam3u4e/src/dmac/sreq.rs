@@ -1,39 +1,9 @@
 #[doc = "Register `SREQ` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<SREQ_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SREQ_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SREQ_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SREQ_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `SREQ` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<SREQ_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SREQ_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SREQ_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SREQ_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `SSREQ0` reader - Source Request"]
 pub type SSREQ0_R = crate::BitReader<bool>;
 #[doc = "Field `SSREQ0` writer - Source Request"]
@@ -111,41 +81,49 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Source Request"]
     #[inline(always)]
+    #[must_use]
     pub fn ssreq0(&mut self) -> SSREQ0_W<0> {
         SSREQ0_W::new(self)
     }
     #[doc = "Bit 1 - Destination Request"]
     #[inline(always)]
+    #[must_use]
     pub fn dsreq0(&mut self) -> DSREQ0_W<1> {
         DSREQ0_W::new(self)
     }
     #[doc = "Bit 2 - Source Request"]
     #[inline(always)]
+    #[must_use]
     pub fn ssreq1(&mut self) -> SSREQ1_W<2> {
         SSREQ1_W::new(self)
     }
     #[doc = "Bit 3 - Destination Request"]
     #[inline(always)]
+    #[must_use]
     pub fn dsreq1(&mut self) -> DSREQ1_W<3> {
         DSREQ1_W::new(self)
     }
     #[doc = "Bit 4 - Source Request"]
     #[inline(always)]
+    #[must_use]
     pub fn ssreq2(&mut self) -> SSREQ2_W<4> {
         SSREQ2_W::new(self)
     }
     #[doc = "Bit 5 - Destination Request"]
     #[inline(always)]
+    #[must_use]
     pub fn dsreq2(&mut self) -> DSREQ2_W<5> {
         DSREQ2_W::new(self)
     }
     #[doc = "Bit 6 - Source Request"]
     #[inline(always)]
+    #[must_use]
     pub fn ssreq3(&mut self) -> SSREQ3_W<6> {
         SSREQ3_W::new(self)
     }
     #[doc = "Bit 7 - Destination Request"]
     #[inline(always)]
+    #[must_use]
     pub fn dsreq3(&mut self) -> DSREQ3_W<7> {
         DSREQ3_W::new(self)
     }
@@ -168,11 +146,10 @@ impl crate::Readable for SREQ_SPEC {
 #[doc = "`write(|w| ..)` method takes [sreq::W](W) writer structure"]
 impl crate::Writable for SREQ_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SREQ to value 0"]
 impl crate::Resettable for SREQ_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,18 +1,6 @@
 #[doc = "Register `MSR1` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MSR1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MSR1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MSR1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MSR1_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `MTIMESTAMP` reader - Timer value"]
 pub type MTIMESTAMP_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MDLC` reader - Mailbox Data Length Code"]
@@ -68,8 +56,5 @@ impl crate::Readable for MSR1_SPEC {
 }
 #[doc = "`reset()` method sets MSR1 to value 0"]
 impl crate::Resettable for MSR1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

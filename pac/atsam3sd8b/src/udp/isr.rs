@@ -1,18 +1,6 @@
 #[doc = "Register `ISR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<ISR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ISR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ISR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ISR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `EP0INT` reader - Endpoint 0 Interrupt Status"]
 pub type EP0INT_R = crate::BitReader<bool>;
 #[doc = "Field `EP1INT` reader - Endpoint 1 Interrupt Status"]

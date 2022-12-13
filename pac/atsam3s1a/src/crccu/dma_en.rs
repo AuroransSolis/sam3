@@ -1,29 +1,12 @@
 #[doc = "Register `DMA_EN` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<DMA_EN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DMA_EN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DMA_EN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DMA_EN_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `DMAEN` writer - DMA Enable Register"]
 pub type DMAEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DMA_EN_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - DMA Enable Register"]
     #[inline(always)]
+    #[must_use]
     pub fn dmaen(&mut self) -> DMAEN_W<0> {
         DMAEN_W::new(self)
     }
@@ -42,11 +25,10 @@ impl crate::RegisterSpec for DMA_EN_SPEC {
 #[doc = "`write(|w| ..)` method takes [dma_en::W](W) writer structure"]
 impl crate::Writable for DMA_EN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DMA_EN to value 0"]
 impl crate::Resettable for DMA_EN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

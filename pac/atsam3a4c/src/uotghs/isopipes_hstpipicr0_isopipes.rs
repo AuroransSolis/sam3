@@ -1,24 +1,6 @@
 #[doc = "Register `HSTPIPICR0_ISOPIPES` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<ISOPIPES_HSTPIPICR0_ISOPIPES_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ISOPIPES_HSTPIPICR0_ISOPIPES_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ISOPIPES_HSTPIPICR0_ISOPIPES_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ISOPIPES_HSTPIPICR0_ISOPIPES_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `RXINIC` writer - Received IN Data Interrupt Clear"]
 pub type RXINIC_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, ISOPIPES_HSTPIPICR0_ISOPIPES_SPEC, bool, O>;
@@ -43,36 +25,43 @@ pub type SHORTPACKETIC_W<'a, const O: u8> =
 impl W {
     #[doc = "Bit 0 - Received IN Data Interrupt Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn rxinic(&mut self) -> RXINIC_W<0> {
         RXINIC_W::new(self)
     }
     #[doc = "Bit 1 - Transmitted OUT Data Interrupt Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn txoutic(&mut self) -> TXOUTIC_W<1> {
         TXOUTIC_W::new(self)
     }
     #[doc = "Bit 2 - Underflow Interrupt Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn underfic(&mut self) -> UNDERFIC_W<2> {
         UNDERFIC_W::new(self)
     }
     #[doc = "Bit 4 - NAKed Interrupt Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn nakedic(&mut self) -> NAKEDIC_W<4> {
         NAKEDIC_W::new(self)
     }
     #[doc = "Bit 5 - Overflow Interrupt Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn overfic(&mut self) -> OVERFIC_W<5> {
         OVERFIC_W::new(self)
     }
     #[doc = "Bit 6 - CRC Error Interrupt Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn crcerric(&mut self) -> CRCERRIC_W<6> {
         CRCERRIC_W::new(self)
     }
     #[doc = "Bit 7 - Short Packet Interrupt Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn shortpacketic(&mut self) -> SHORTPACKETIC_W<7> {
         SHORTPACKETIC_W::new(self)
     }
@@ -91,4 +80,6 @@ impl crate::RegisterSpec for ISOPIPES_HSTPIPICR0_ISOPIPES_SPEC {
 #[doc = "`write(|w| ..)` method takes [isopipes_hstpipicr0_isopipes::W](W) writer structure"]
 impl crate::Writable for ISOPIPES_HSTPIPICR0_ISOPIPES_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

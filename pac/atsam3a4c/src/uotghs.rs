@@ -209,220 +209,163 @@ pub struct RegisterBlock {
 impl RegisterBlock {
     #[doc = "0x130 - Device Endpoint Status Register (n = 0)"]
     #[inline(always)]
-    pub fn isoenpt_deveptisr0_isoenpt(&self) -> &ISOENPT_DEVEPTISR0_ISOENPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(304usize)
-                as *const ISOENPT_DEVEPTISR0_ISOENPT)
-        }
+    pub const fn isoenpt_deveptisr0_isoenpt(&self) -> &ISOENPT_DEVEPTISR0_ISOENPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(304usize).cast() }
     }
     #[doc = "0x130..0x158 - Device Endpoint Status Register (n = 0)"]
     #[inline(always)]
-    pub fn deveptisr(&self) -> &[DEVEPTISR; 10] {
-        unsafe { &*(((self as *const Self) as *const u8).add(304usize) as *const [DEVEPTISR; 10]) }
+    pub const fn deveptisr(&self) -> &[DEVEPTISR; 10] {
+        unsafe { &*(self as *const Self).cast::<u8>().add(304usize).cast() }
     }
     #[doc = "0x160 - Device Endpoint Clear Register (n = 0)"]
     #[inline(always)]
-    pub fn isoenpt_devepticr0_isoenpt(&self) -> &ISOENPT_DEVEPTICR0_ISOENPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(352usize)
-                as *const ISOENPT_DEVEPTICR0_ISOENPT)
-        }
+    pub const fn isoenpt_devepticr0_isoenpt(&self) -> &ISOENPT_DEVEPTICR0_ISOENPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(352usize).cast() }
     }
     #[doc = "0x160..0x188 - Device Endpoint Clear Register (n = 0)"]
     #[inline(always)]
-    pub fn devepticr(&self) -> &[DEVEPTICR; 10] {
-        unsafe { &*(((self as *const Self) as *const u8).add(352usize) as *const [DEVEPTICR; 10]) }
+    pub const fn devepticr(&self) -> &[DEVEPTICR; 10] {
+        unsafe { &*(self as *const Self).cast::<u8>().add(352usize).cast() }
     }
     #[doc = "0x190 - Device Endpoint Set Register (n = 0)"]
     #[inline(always)]
-    pub fn isoenpt_deveptifr0_isoenpt(&self) -> &ISOENPT_DEVEPTIFR0_ISOENPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(400usize)
-                as *const ISOENPT_DEVEPTIFR0_ISOENPT)
-        }
+    pub const fn isoenpt_deveptifr0_isoenpt(&self) -> &ISOENPT_DEVEPTIFR0_ISOENPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(400usize).cast() }
     }
     #[doc = "0x190..0x1b8 - Device Endpoint Set Register (n = 0)"]
     #[inline(always)]
-    pub fn deveptifr(&self) -> &[DEVEPTIFR; 10] {
-        unsafe { &*(((self as *const Self) as *const u8).add(400usize) as *const [DEVEPTIFR; 10]) }
+    pub const fn deveptifr(&self) -> &[DEVEPTIFR; 10] {
+        unsafe { &*(self as *const Self).cast::<u8>().add(400usize).cast() }
     }
     #[doc = "0x1c0 - Device Endpoint Mask Register (n = 0)"]
     #[inline(always)]
-    pub fn isoenpt_deveptimr0_isoenpt(&self) -> &ISOENPT_DEVEPTIMR0_ISOENPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(448usize)
-                as *const ISOENPT_DEVEPTIMR0_ISOENPT)
-        }
+    pub const fn isoenpt_deveptimr0_isoenpt(&self) -> &ISOENPT_DEVEPTIMR0_ISOENPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(448usize).cast() }
     }
     #[doc = "0x1c0..0x1e8 - Device Endpoint Mask Register (n = 0)"]
     #[inline(always)]
-    pub fn deveptimr(&self) -> &[DEVEPTIMR; 10] {
-        unsafe { &*(((self as *const Self) as *const u8).add(448usize) as *const [DEVEPTIMR; 10]) }
+    pub const fn deveptimr(&self) -> &[DEVEPTIMR; 10] {
+        unsafe { &*(self as *const Self).cast::<u8>().add(448usize).cast() }
     }
     #[doc = "0x1f0 - Device Endpoint Enable Register (n = 0)"]
     #[inline(always)]
-    pub fn isoenpt_deveptier0_isoenpt(&self) -> &ISOENPT_DEVEPTIER0_ISOENPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(496usize)
-                as *const ISOENPT_DEVEPTIER0_ISOENPT)
-        }
+    pub const fn isoenpt_deveptier0_isoenpt(&self) -> &ISOENPT_DEVEPTIER0_ISOENPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(496usize).cast() }
     }
     #[doc = "0x1f0..0x218 - Device Endpoint Enable Register (n = 0)"]
     #[inline(always)]
-    pub fn deveptier(&self) -> &[DEVEPTIER; 10] {
-        unsafe { &*(((self as *const Self) as *const u8).add(496usize) as *const [DEVEPTIER; 10]) }
+    pub const fn deveptier(&self) -> &[DEVEPTIER; 10] {
+        unsafe { &*(self as *const Self).cast::<u8>().add(496usize).cast() }
     }
     #[doc = "0x220 - Device Endpoint Disable Register (n = 0)"]
     #[inline(always)]
-    pub fn isoenpt_deveptidr0_isoenpt(&self) -> &ISOENPT_DEVEPTIDR0_ISOENPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(544usize)
-                as *const ISOENPT_DEVEPTIDR0_ISOENPT)
-        }
+    pub const fn isoenpt_deveptidr0_isoenpt(&self) -> &ISOENPT_DEVEPTIDR0_ISOENPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(544usize).cast() }
     }
     #[doc = "0x220..0x248 - Device Endpoint Disable Register (n = 0)"]
     #[inline(always)]
-    pub fn deveptidr(&self) -> &[DEVEPTIDR; 10] {
-        unsafe { &*(((self as *const Self) as *const u8).add(544usize) as *const [DEVEPTIDR; 10]) }
+    pub const fn deveptidr(&self) -> &[DEVEPTIDR; 10] {
+        unsafe { &*(self as *const Self).cast::<u8>().add(544usize).cast() }
     }
     #[doc = "0x500 - Host Pipe Configuration Register (n = 0)"]
     #[inline(always)]
-    pub fn hsbohscp_hstpipcfg0_hsbohscp(&self) -> &HSBOHSCP_HSTPIPCFG0_HSBOHSCP {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(1280usize)
-                as *const HSBOHSCP_HSTPIPCFG0_HSBOHSCP)
-        }
+    pub const fn hsbohscp_hstpipcfg0_hsbohscp(&self) -> &HSBOHSCP_HSTPIPCFG0_HSBOHSCP {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1280usize).cast() }
     }
     #[doc = "0x500..0x528 - Host Pipe Configuration Register (n = 0)"]
     #[inline(always)]
-    pub fn hstpipcfg(&self) -> &[HSTPIPCFG; 10] {
-        unsafe { &*(((self as *const Self) as *const u8).add(1280usize) as *const [HSTPIPCFG; 10]) }
+    pub const fn hstpipcfg(&self) -> &[HSTPIPCFG; 10] {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1280usize).cast() }
     }
     #[doc = "0x530 - Host Pipe Status Register (n = 0)"]
     #[inline(always)]
-    pub fn isopipes_hstpipisr0_isopipes(&self) -> &ISOPIPES_HSTPIPISR0_ISOPIPES {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(1328usize)
-                as *const ISOPIPES_HSTPIPISR0_ISOPIPES)
-        }
+    pub const fn isopipes_hstpipisr0_isopipes(&self) -> &ISOPIPES_HSTPIPISR0_ISOPIPES {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1328usize).cast() }
     }
     #[doc = "0x530 - Host Pipe Status Register (n = 0)"]
     #[inline(always)]
-    pub fn intpipes_hstpipisr0_intpipes(&self) -> &INTPIPES_HSTPIPISR0_INTPIPES {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(1328usize)
-                as *const INTPIPES_HSTPIPISR0_INTPIPES)
-        }
+    pub const fn intpipes_hstpipisr0_intpipes(&self) -> &INTPIPES_HSTPIPISR0_INTPIPES {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1328usize).cast() }
     }
     #[doc = "0x530..0x558 - Host Pipe Status Register (n = 0)"]
     #[inline(always)]
-    pub fn hstpipisr(&self) -> &[HSTPIPISR; 10] {
-        unsafe { &*(((self as *const Self) as *const u8).add(1328usize) as *const [HSTPIPISR; 10]) }
+    pub const fn hstpipisr(&self) -> &[HSTPIPISR; 10] {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1328usize).cast() }
     }
     #[doc = "0x560 - Host Pipe Clear Register (n = 0)"]
     #[inline(always)]
-    pub fn isopipes_hstpipicr0_isopipes(&self) -> &ISOPIPES_HSTPIPICR0_ISOPIPES {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(1376usize)
-                as *const ISOPIPES_HSTPIPICR0_ISOPIPES)
-        }
+    pub const fn isopipes_hstpipicr0_isopipes(&self) -> &ISOPIPES_HSTPIPICR0_ISOPIPES {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1376usize).cast() }
     }
     #[doc = "0x560 - Host Pipe Clear Register (n = 0)"]
     #[inline(always)]
-    pub fn intpipes_hstpipicr0_intpipes(&self) -> &INTPIPES_HSTPIPICR0_INTPIPES {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(1376usize)
-                as *const INTPIPES_HSTPIPICR0_INTPIPES)
-        }
+    pub const fn intpipes_hstpipicr0_intpipes(&self) -> &INTPIPES_HSTPIPICR0_INTPIPES {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1376usize).cast() }
     }
     #[doc = "0x560..0x588 - Host Pipe Clear Register (n = 0)"]
     #[inline(always)]
-    pub fn hstpipicr(&self) -> &[HSTPIPICR; 10] {
-        unsafe { &*(((self as *const Self) as *const u8).add(1376usize) as *const [HSTPIPICR; 10]) }
+    pub const fn hstpipicr(&self) -> &[HSTPIPICR; 10] {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1376usize).cast() }
     }
     #[doc = "0x590 - Host Pipe Set Register (n = 0)"]
     #[inline(always)]
-    pub fn isopipes_hstpipifr0_isopipes(&self) -> &ISOPIPES_HSTPIPIFR0_ISOPIPES {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(1424usize)
-                as *const ISOPIPES_HSTPIPIFR0_ISOPIPES)
-        }
+    pub const fn isopipes_hstpipifr0_isopipes(&self) -> &ISOPIPES_HSTPIPIFR0_ISOPIPES {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1424usize).cast() }
     }
     #[doc = "0x590 - Host Pipe Set Register (n = 0)"]
     #[inline(always)]
-    pub fn intpipes_hstpipifr0_intpipes(&self) -> &INTPIPES_HSTPIPIFR0_INTPIPES {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(1424usize)
-                as *const INTPIPES_HSTPIPIFR0_INTPIPES)
-        }
+    pub const fn intpipes_hstpipifr0_intpipes(&self) -> &INTPIPES_HSTPIPIFR0_INTPIPES {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1424usize).cast() }
     }
     #[doc = "0x590..0x5b8 - Host Pipe Set Register (n = 0)"]
     #[inline(always)]
-    pub fn hstpipifr(&self) -> &[HSTPIPIFR; 10] {
-        unsafe { &*(((self as *const Self) as *const u8).add(1424usize) as *const [HSTPIPIFR; 10]) }
+    pub const fn hstpipifr(&self) -> &[HSTPIPIFR; 10] {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1424usize).cast() }
     }
     #[doc = "0x5c0 - Host Pipe Mask Register (n = 0)"]
     #[inline(always)]
-    pub fn isopipes_hstpipimr0_isopipes(&self) -> &ISOPIPES_HSTPIPIMR0_ISOPIPES {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(1472usize)
-                as *const ISOPIPES_HSTPIPIMR0_ISOPIPES)
-        }
+    pub const fn isopipes_hstpipimr0_isopipes(&self) -> &ISOPIPES_HSTPIPIMR0_ISOPIPES {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1472usize).cast() }
     }
     #[doc = "0x5c0 - Host Pipe Mask Register (n = 0)"]
     #[inline(always)]
-    pub fn intpipes_hstpipimr0_intpipes(&self) -> &INTPIPES_HSTPIPIMR0_INTPIPES {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(1472usize)
-                as *const INTPIPES_HSTPIPIMR0_INTPIPES)
-        }
+    pub const fn intpipes_hstpipimr0_intpipes(&self) -> &INTPIPES_HSTPIPIMR0_INTPIPES {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1472usize).cast() }
     }
     #[doc = "0x5c0..0x5e8 - Host Pipe Mask Register (n = 0)"]
     #[inline(always)]
-    pub fn hstpipimr(&self) -> &[HSTPIPIMR; 10] {
-        unsafe { &*(((self as *const Self) as *const u8).add(1472usize) as *const [HSTPIPIMR; 10]) }
+    pub const fn hstpipimr(&self) -> &[HSTPIPIMR; 10] {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1472usize).cast() }
     }
     #[doc = "0x5f0 - Host Pipe Enable Register (n = 0)"]
     #[inline(always)]
-    pub fn isopipes_hstpipier0_isopipes(&self) -> &ISOPIPES_HSTPIPIER0_ISOPIPES {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(1520usize)
-                as *const ISOPIPES_HSTPIPIER0_ISOPIPES)
-        }
+    pub const fn isopipes_hstpipier0_isopipes(&self) -> &ISOPIPES_HSTPIPIER0_ISOPIPES {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1520usize).cast() }
     }
     #[doc = "0x5f0 - Host Pipe Enable Register (n = 0)"]
     #[inline(always)]
-    pub fn intpipes_hstpipier0_intpipes(&self) -> &INTPIPES_HSTPIPIER0_INTPIPES {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(1520usize)
-                as *const INTPIPES_HSTPIPIER0_INTPIPES)
-        }
+    pub const fn intpipes_hstpipier0_intpipes(&self) -> &INTPIPES_HSTPIPIER0_INTPIPES {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1520usize).cast() }
     }
     #[doc = "0x5f0..0x618 - Host Pipe Enable Register (n = 0)"]
     #[inline(always)]
-    pub fn hstpipier(&self) -> &[HSTPIPIER; 10] {
-        unsafe { &*(((self as *const Self) as *const u8).add(1520usize) as *const [HSTPIPIER; 10]) }
+    pub const fn hstpipier(&self) -> &[HSTPIPIER; 10] {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1520usize).cast() }
     }
     #[doc = "0x620 - Host Pipe Disable Register (n = 0)"]
     #[inline(always)]
-    pub fn isopipes_hstpipidr0_isopipes(&self) -> &ISOPIPES_HSTPIPIDR0_ISOPIPES {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(1568usize)
-                as *const ISOPIPES_HSTPIPIDR0_ISOPIPES)
-        }
+    pub const fn isopipes_hstpipidr0_isopipes(&self) -> &ISOPIPES_HSTPIPIDR0_ISOPIPES {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1568usize).cast() }
     }
     #[doc = "0x620 - Host Pipe Disable Register (n = 0)"]
     #[inline(always)]
-    pub fn intpipes_hstpipidr0_intpipes(&self) -> &INTPIPES_HSTPIPIDR0_INTPIPES {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(1568usize)
-                as *const INTPIPES_HSTPIPIDR0_INTPIPES)
-        }
+    pub const fn intpipes_hstpipidr0_intpipes(&self) -> &INTPIPES_HSTPIPIDR0_INTPIPES {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1568usize).cast() }
     }
     #[doc = "0x620..0x648 - Host Pipe Disable Register (n = 0)"]
     #[inline(always)]
-    pub fn hstpipidr(&self) -> &[HSTPIPIDR; 10] {
-        unsafe { &*(((self as *const Self) as *const u8).add(1568usize) as *const [HSTPIPIDR; 10]) }
+    pub const fn hstpipidr(&self) -> &[HSTPIPIDR; 10] {
+        unsafe { &*(self as *const Self).cast::<u8>().add(1568usize).cast() }
     }
 }
 #[doc = "DEVCTRL (rw) register accessor: an alias for `Reg<DEVCTRL_SPEC>`"]

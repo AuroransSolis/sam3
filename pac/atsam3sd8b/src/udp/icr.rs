@@ -1,24 +1,6 @@
 #[doc = "Register `ICR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<ICR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ICR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ICR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ICR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `RXSUSP` writer - Clear UDP Suspend Interrupt"]
 pub type RXSUSP_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `RXRSM` writer - Clear UDP Resume Interrupt"]
@@ -34,31 +16,37 @@ pub type WAKEUP_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O
 impl W {
     #[doc = "Bit 8 - Clear UDP Suspend Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn rxsusp(&mut self) -> RXSUSP_W<8> {
         RXSUSP_W::new(self)
     }
     #[doc = "Bit 9 - Clear UDP Resume Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn rxrsm(&mut self) -> RXRSM_W<9> {
         RXRSM_W::new(self)
     }
     #[doc = "Bit 10"]
     #[inline(always)]
+    #[must_use]
     pub fn extrsm(&mut self) -> EXTRSM_W<10> {
         EXTRSM_W::new(self)
     }
     #[doc = "Bit 11 - Clear Start Of Frame Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn sofint(&mut self) -> SOFINT_W<11> {
         SOFINT_W::new(self)
     }
     #[doc = "Bit 12 - Clear End of Bus Reset Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn endbusres(&mut self) -> ENDBUSRES_W<12> {
         ENDBUSRES_W::new(self)
     }
     #[doc = "Bit 13 - Clear Wakeup Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn wakeup(&mut self) -> WAKEUP_W<13> {
         WAKEUP_W::new(self)
     }
@@ -77,4 +65,6 @@ impl crate::RegisterSpec for ICR_SPEC {
 #[doc = "`write(|w| ..)` method takes [icr::W](W) writer structure"]
 impl crate::Writable for ICR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

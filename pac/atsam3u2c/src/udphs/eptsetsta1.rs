@@ -1,24 +1,6 @@
 #[doc = "Register `EPTSETSTA1` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<EPTSETSTA1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EPTSETSTA1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EPTSETSTA1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EPTSETSTA1_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `FRCESTALL` writer - Stall Handshake Request Set"]
 pub type FRCESTALL_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPTSETSTA1_SPEC, bool, O>;
 #[doc = "Field `RXRDY_TXKL` writer - KILL Bank Set (for IN Endpoint)"]
@@ -28,16 +10,19 @@ pub type TXRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPTSETSTA1_SPEC, b
 impl W {
     #[doc = "Bit 5 - Stall Handshake Request Set"]
     #[inline(always)]
+    #[must_use]
     pub fn frcestall(&mut self) -> FRCESTALL_W<5> {
         FRCESTALL_W::new(self)
     }
     #[doc = "Bit 9 - KILL Bank Set (for IN Endpoint)"]
     #[inline(always)]
+    #[must_use]
     pub fn rxrdy_txkl(&mut self) -> RXRDY_TXKL_W<9> {
         RXRDY_TXKL_W::new(self)
     }
     #[doc = "Bit 11 - TX Packet Ready Set"]
     #[inline(always)]
+    #[must_use]
     pub fn txrdy(&mut self) -> TXRDY_W<11> {
         TXRDY_W::new(self)
     }
@@ -56,4 +41,6 @@ impl crate::RegisterSpec for EPTSETSTA1_SPEC {
 #[doc = "`write(|w| ..)` method takes [eptsetsta1::W](W) writer structure"]
 impl crate::Writable for EPTSETSTA1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

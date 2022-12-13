@@ -1,18 +1,6 @@
 #[doc = "Register `PMC_IMR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<PMC_IMR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PMC_IMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PMC_IMR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PMC_IMR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `MOSCXTS` reader - Main Crystal Oscillator Status Interrupt Mask"]
 pub type MOSCXTS_R = crate::BitReader<bool>;
 #[doc = "Field `LOCKA` reader - PLLA Lock Interrupt Mask"]
@@ -89,8 +77,5 @@ impl crate::Readable for PMC_IMR_SPEC {
 }
 #[doc = "`reset()` method sets PMC_IMR to value 0"]
 impl crate::Resettable for PMC_IMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

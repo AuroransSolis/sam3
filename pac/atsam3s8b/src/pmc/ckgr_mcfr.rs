@@ -1,39 +1,9 @@
 #[doc = "Register `CKGR_MCFR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CKGR_MCFR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CKGR_MCFR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CKGR_MCFR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CKGR_MCFR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CKGR_MCFR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CKGR_MCFR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CKGR_MCFR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CKGR_MCFR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CKGR_MCFR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `MAINF` reader - Main Clock Frequency"]
 pub type MAINF_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MAINF` writer - Main Clock Frequency"]
@@ -66,16 +36,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Main Clock Frequency"]
     #[inline(always)]
+    #[must_use]
     pub fn mainf(&mut self) -> MAINF_W<0> {
         MAINF_W::new(self)
     }
     #[doc = "Bit 16 - Main Clock Ready"]
     #[inline(always)]
+    #[must_use]
     pub fn mainfrdy(&mut self) -> MAINFRDY_W<16> {
         MAINFRDY_W::new(self)
     }
     #[doc = "Bit 20 - RC Oscillator Frequency Measure (write-only)"]
     #[inline(always)]
+    #[must_use]
     pub fn rcmeas(&mut self) -> RCMEAS_W<20> {
         RCMEAS_W::new(self)
     }
@@ -98,11 +71,10 @@ impl crate::Readable for CKGR_MCFR_SPEC {
 #[doc = "`write(|w| ..)` method takes [ckgr_mcfr::W](W) writer structure"]
 impl crate::Writable for CKGR_MCFR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CKGR_MCFR to value 0"]
 impl crate::Resettable for CKGR_MCFR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

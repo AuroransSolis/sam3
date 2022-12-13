@@ -1,39 +1,9 @@
 #[doc = "Register `MCFG[%s]` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MCFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MCFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MCFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MCFG[%s]` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<MCFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MCFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MCFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `ULBT` reader - Undefined Length Burst Type"]
 pub type ULBT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ULBT` writer - Undefined Length Burst Type"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Undefined Length Burst Type"]
     #[inline(always)]
+    #[must_use]
     pub fn ulbt(&mut self) -> ULBT_W<0> {
         ULBT_W::new(self)
     }
@@ -70,4 +41,6 @@ impl crate::Readable for MCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [mcfg::W](W) writer structure"]
 impl crate::Writable for MCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

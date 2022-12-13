@@ -1,39 +1,9 @@
 #[doc = "Register `MR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<MR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `RTPRES` reader - Real-time Timer Prescaler Value"]
 pub type RTPRES_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `RTPRES` writer - Real-time Timer Prescaler Value"]
@@ -75,21 +45,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Real-time Timer Prescaler Value"]
     #[inline(always)]
+    #[must_use]
     pub fn rtpres(&mut self) -> RTPRES_W<0> {
         RTPRES_W::new(self)
     }
     #[doc = "Bit 16 - Alarm Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn almien(&mut self) -> ALMIEN_W<16> {
         ALMIEN_W::new(self)
     }
     #[doc = "Bit 17 - Real-time Timer Increment Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rttincien(&mut self) -> RTTINCIEN_W<17> {
         RTTINCIEN_W::new(self)
     }
     #[doc = "Bit 18 - Real-time Timer Restart"]
     #[inline(always)]
+    #[must_use]
     pub fn rttrst(&mut self) -> RTTRST_W<18> {
         RTTRST_W::new(self)
     }
@@ -112,11 +86,10 @@ impl crate::Readable for MR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
 impl crate::Writable for MR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MR to value 0x8000"]
 impl crate::Resettable for MR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x8000
-    }
+    const RESET_VALUE: Self::Ux = 0x8000;
 }

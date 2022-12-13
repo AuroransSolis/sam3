@@ -1,18 +1,6 @@
 #[doc = "Register `NER` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<NER_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<NER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<NER_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<NER_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `NB_ERRORS` reader - Number of Errors"]
 pub type NB_ERRORS_R = crate::FieldReader<u8, u8>;
 impl R {

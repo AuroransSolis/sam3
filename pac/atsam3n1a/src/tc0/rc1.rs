@@ -1,39 +1,9 @@
 #[doc = "Register `RC1` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<RC1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RC1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RC1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RC1_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `RC1` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<RC1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RC1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RC1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RC1_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `RC` reader - Register C"]
 pub type RC_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `RC` writer - Register C"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Register C"]
     #[inline(always)]
+    #[must_use]
     pub fn rc(&mut self) -> RC_W<0> {
         RC_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for RC1_SPEC {
 #[doc = "`write(|w| ..)` method takes [rc1::W](W) writer structure"]
 impl crate::Writable for RC1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RC1 to value 0"]
 impl crate::Resettable for RC1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

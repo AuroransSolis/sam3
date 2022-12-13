@@ -1,39 +1,9 @@
 #[doc = "Register `MAN` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MAN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MAN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MAN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MAN_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MAN` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<MAN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MAN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MAN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MAN_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `DATA` reader - "]
 pub type DATA_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DATA` writer - "]
@@ -93,31 +63,37 @@ impl R {
 impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
+    #[must_use]
     pub fn data(&mut self) -> DATA_W<0> {
         DATA_W::new(self)
     }
     #[doc = "Bits 16:17"]
     #[inline(always)]
+    #[must_use]
     pub fn code(&mut self) -> CODE_W<16> {
         CODE_W::new(self)
     }
     #[doc = "Bits 18:22 - Register Address"]
     #[inline(always)]
+    #[must_use]
     pub fn rega(&mut self) -> REGA_W<18> {
         REGA_W::new(self)
     }
     #[doc = "Bits 23:27 - PHY Address"]
     #[inline(always)]
+    #[must_use]
     pub fn phya(&mut self) -> PHYA_W<23> {
         PHYA_W::new(self)
     }
     #[doc = "Bits 28:29 - Read-write"]
     #[inline(always)]
+    #[must_use]
     pub fn rw(&mut self) -> RW_W<28> {
         RW_W::new(self)
     }
     #[doc = "Bits 30:31 - Start of frame"]
     #[inline(always)]
+    #[must_use]
     pub fn sof(&mut self) -> SOF_W<30> {
         SOF_W::new(self)
     }
@@ -140,11 +116,10 @@ impl crate::Readable for MAN_SPEC {
 #[doc = "`write(|w| ..)` method takes [man::W](W) writer structure"]
 impl crate::Writable for MAN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MAN to value 0"]
 impl crate::Resettable for MAN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,39 +1,9 @@
 #[doc = "Register `CSR0_ISOENDPT` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<ISOENDPT_CSR0_ISOENDPT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ISOENDPT_CSR0_ISOENDPT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ISOENDPT_CSR0_ISOENDPT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ISOENDPT_CSR0_ISOENDPT_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CSR0_ISOENDPT` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<ISOENDPT_CSR0_ISOENDPT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ISOENDPT_CSR0_ISOENDPT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ISOENDPT_CSR0_ISOENDPT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ISOENDPT_CSR0_ISOENDPT_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `TXCOMP` reader - Generates an IN Packet with Data Previously Written in the DPR"]
 pub type TXCOMP_R = crate::BitReader<bool>;
 #[doc = "Field `TXCOMP` writer - Generates an IN Packet with Data Previously Written in the DPR"]
@@ -76,23 +46,23 @@ pub type DIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISOENDPT_CSR0_ISOEND
 #[doc = "Field `EPTYPE` reader - Endpoint Type"]
 pub type EPTYPE_R = crate::FieldReader<u8, EPTYPE_A>;
 #[doc = "Endpoint Type"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EPTYPE_A {
     #[doc = "0: Control"]
-    CTRL = 0,
+    Ctrl = 0,
     #[doc = "1: Isochronous OUT"]
-    ISO_OUT = 1,
+    IsoOut = 1,
     #[doc = "5: Isochronous IN"]
-    ISO_IN = 5,
+    IsoIn = 5,
     #[doc = "2: Bulk OUT"]
-    BULK_OUT = 2,
+    BulkOut = 2,
     #[doc = "6: Bulk IN"]
-    BULK_IN = 6,
+    BulkIn = 6,
     #[doc = "3: Interrupt OUT"]
-    INT_OUT = 3,
+    IntOut = 3,
     #[doc = "7: Interrupt IN"]
-    INT_IN = 7,
+    IntIn = 7,
 }
 impl From<EPTYPE_A> for u8 {
     #[inline(always)]
@@ -105,50 +75,50 @@ impl EPTYPE_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<EPTYPE_A> {
         match self.bits {
-            0 => Some(EPTYPE_A::CTRL),
-            1 => Some(EPTYPE_A::ISO_OUT),
-            5 => Some(EPTYPE_A::ISO_IN),
-            2 => Some(EPTYPE_A::BULK_OUT),
-            6 => Some(EPTYPE_A::BULK_IN),
-            3 => Some(EPTYPE_A::INT_OUT),
-            7 => Some(EPTYPE_A::INT_IN),
+            0 => Some(EPTYPE_A::Ctrl),
+            1 => Some(EPTYPE_A::IsoOut),
+            5 => Some(EPTYPE_A::IsoIn),
+            2 => Some(EPTYPE_A::BulkOut),
+            6 => Some(EPTYPE_A::BulkIn),
+            3 => Some(EPTYPE_A::IntOut),
+            7 => Some(EPTYPE_A::IntIn),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CTRL`"]
+    #[doc = "Checks if the value of the field is `Ctrl`"]
     #[inline(always)]
     pub fn is_ctrl(&self) -> bool {
-        *self == EPTYPE_A::CTRL
+        *self == EPTYPE_A::Ctrl
     }
-    #[doc = "Checks if the value of the field is `ISO_OUT`"]
+    #[doc = "Checks if the value of the field is `IsoOut`"]
     #[inline(always)]
     pub fn is_iso_out(&self) -> bool {
-        *self == EPTYPE_A::ISO_OUT
+        *self == EPTYPE_A::IsoOut
     }
-    #[doc = "Checks if the value of the field is `ISO_IN`"]
+    #[doc = "Checks if the value of the field is `IsoIn`"]
     #[inline(always)]
     pub fn is_iso_in(&self) -> bool {
-        *self == EPTYPE_A::ISO_IN
+        *self == EPTYPE_A::IsoIn
     }
-    #[doc = "Checks if the value of the field is `BULK_OUT`"]
+    #[doc = "Checks if the value of the field is `BulkOut`"]
     #[inline(always)]
     pub fn is_bulk_out(&self) -> bool {
-        *self == EPTYPE_A::BULK_OUT
+        *self == EPTYPE_A::BulkOut
     }
-    #[doc = "Checks if the value of the field is `BULK_IN`"]
+    #[doc = "Checks if the value of the field is `BulkIn`"]
     #[inline(always)]
     pub fn is_bulk_in(&self) -> bool {
-        *self == EPTYPE_A::BULK_IN
+        *self == EPTYPE_A::BulkIn
     }
-    #[doc = "Checks if the value of the field is `INT_OUT`"]
+    #[doc = "Checks if the value of the field is `IntOut`"]
     #[inline(always)]
     pub fn is_int_out(&self) -> bool {
-        *self == EPTYPE_A::INT_OUT
+        *self == EPTYPE_A::IntOut
     }
-    #[doc = "Checks if the value of the field is `INT_IN`"]
+    #[doc = "Checks if the value of the field is `IntIn`"]
     #[inline(always)]
     pub fn is_int_in(&self) -> bool {
-        *self == EPTYPE_A::INT_IN
+        *self == EPTYPE_A::IntIn
     }
 }
 #[doc = "Field `EPTYPE` writer - Endpoint Type"]
@@ -158,37 +128,37 @@ impl<'a, const O: u8> EPTYPE_W<'a, O> {
     #[doc = "Control"]
     #[inline(always)]
     pub fn ctrl(self) -> &'a mut W {
-        self.variant(EPTYPE_A::CTRL)
+        self.variant(EPTYPE_A::Ctrl)
     }
     #[doc = "Isochronous OUT"]
     #[inline(always)]
     pub fn iso_out(self) -> &'a mut W {
-        self.variant(EPTYPE_A::ISO_OUT)
+        self.variant(EPTYPE_A::IsoOut)
     }
     #[doc = "Isochronous IN"]
     #[inline(always)]
     pub fn iso_in(self) -> &'a mut W {
-        self.variant(EPTYPE_A::ISO_IN)
+        self.variant(EPTYPE_A::IsoIn)
     }
     #[doc = "Bulk OUT"]
     #[inline(always)]
     pub fn bulk_out(self) -> &'a mut W {
-        self.variant(EPTYPE_A::BULK_OUT)
+        self.variant(EPTYPE_A::BulkOut)
     }
     #[doc = "Bulk IN"]
     #[inline(always)]
     pub fn bulk_in(self) -> &'a mut W {
-        self.variant(EPTYPE_A::BULK_IN)
+        self.variant(EPTYPE_A::BulkIn)
     }
     #[doc = "Interrupt OUT"]
     #[inline(always)]
     pub fn int_out(self) -> &'a mut W {
-        self.variant(EPTYPE_A::INT_OUT)
+        self.variant(EPTYPE_A::IntOut)
     }
     #[doc = "Interrupt IN"]
     #[inline(always)]
     pub fn int_in(self) -> &'a mut W {
-        self.variant(EPTYPE_A::INT_IN)
+        self.variant(EPTYPE_A::IntIn)
     }
 }
 #[doc = "Field `DTGLE` reader - Data Toggle"]
@@ -269,61 +239,73 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Generates an IN Packet with Data Previously Written in the DPR"]
     #[inline(always)]
+    #[must_use]
     pub fn txcomp(&mut self) -> TXCOMP_W<0> {
         TXCOMP_W::new(self)
     }
     #[doc = "Bit 1 - Receive Data Bank 0"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_data_bk0(&mut self) -> RX_DATA_BK0_W<1> {
         RX_DATA_BK0_W::new(self)
     }
     #[doc = "Bit 2 - Received Setup"]
     #[inline(always)]
+    #[must_use]
     pub fn rxsetup(&mut self) -> RXSETUP_W<2> {
         RXSETUP_W::new(self)
     }
     #[doc = "Bit 3 - A CRC error has been detected in an isochronous transfer"]
     #[inline(always)]
+    #[must_use]
     pub fn isoerror(&mut self) -> ISOERROR_W<3> {
         ISOERROR_W::new(self)
     }
     #[doc = "Bit 4 - Transmit Packet Ready"]
     #[inline(always)]
+    #[must_use]
     pub fn txpktrdy(&mut self) -> TXPKTRDY_W<4> {
         TXPKTRDY_W::new(self)
     }
     #[doc = "Bit 5 - Force Stall (used by Control, Bulk and Isochronous Endpoints)"]
     #[inline(always)]
+    #[must_use]
     pub fn forcestall(&mut self) -> FORCESTALL_W<5> {
         FORCESTALL_W::new(self)
     }
     #[doc = "Bit 6 - Receive Data Bank 1 (only used by endpoints with ping-pong attributes)"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_data_bk1(&mut self) -> RX_DATA_BK1_W<6> {
         RX_DATA_BK1_W::new(self)
     }
     #[doc = "Bit 7 - Transfer Direction (only available for control endpoints)"]
     #[inline(always)]
+    #[must_use]
     pub fn dir(&mut self) -> DIR_W<7> {
         DIR_W::new(self)
     }
     #[doc = "Bits 8:10 - Endpoint Type"]
     #[inline(always)]
+    #[must_use]
     pub fn eptype(&mut self) -> EPTYPE_W<8> {
         EPTYPE_W::new(self)
     }
     #[doc = "Bit 11 - Data Toggle"]
     #[inline(always)]
+    #[must_use]
     pub fn dtgle(&mut self) -> DTGLE_W<11> {
         DTGLE_W::new(self)
     }
     #[doc = "Bit 15 - Endpoint Enable Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn epeds(&mut self) -> EPEDS_W<15> {
         EPEDS_W::new(self)
     }
     #[doc = "Bits 16:26 - Number of Bytes Available in the FIFO"]
     #[inline(always)]
+    #[must_use]
     pub fn rxbytecnt(&mut self) -> RXBYTECNT_W<16> {
         RXBYTECNT_W::new(self)
     }
@@ -346,4 +328,6 @@ impl crate::Readable for ISOENDPT_CSR0_ISOENDPT_SPEC {
 #[doc = "`write(|w| ..)` method takes [isoendpt_csr0_isoendpt::W](W) writer structure"]
 impl crate::Writable for ISOENDPT_CSR0_ISOENDPT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

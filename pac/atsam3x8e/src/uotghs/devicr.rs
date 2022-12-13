@@ -1,24 +1,6 @@
 #[doc = "Register `DEVICR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<DEVICR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DEVICR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DEVICR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DEVICR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `SUSPC` writer - Suspend Interrupt Clear"]
 pub type SUSPC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVICR_SPEC, bool, O>;
 #[doc = "Field `MSOFC` writer - Micro Start of Frame Interrupt Clear"]
@@ -36,36 +18,43 @@ pub type UPRSMC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVICR_SPEC, bool
 impl W {
     #[doc = "Bit 0 - Suspend Interrupt Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn suspc(&mut self) -> SUSPC_W<0> {
         SUSPC_W::new(self)
     }
     #[doc = "Bit 1 - Micro Start of Frame Interrupt Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn msofc(&mut self) -> MSOFC_W<1> {
         MSOFC_W::new(self)
     }
     #[doc = "Bit 2 - Start of Frame Interrupt Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn sofc(&mut self) -> SOFC_W<2> {
         SOFC_W::new(self)
     }
     #[doc = "Bit 3 - End of Reset Interrupt Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn eorstc(&mut self) -> EORSTC_W<3> {
         EORSTC_W::new(self)
     }
     #[doc = "Bit 4 - Wake-Up Interrupt Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn wakeupc(&mut self) -> WAKEUPC_W<4> {
         WAKEUPC_W::new(self)
     }
     #[doc = "Bit 5 - End of Resume Interrupt Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn eorsmc(&mut self) -> EORSMC_W<5> {
         EORSMC_W::new(self)
     }
     #[doc = "Bit 6 - Upstream Resume Interrupt Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn uprsmc(&mut self) -> UPRSMC_W<6> {
         UPRSMC_W::new(self)
     }
@@ -84,4 +73,6 @@ impl crate::RegisterSpec for DEVICR_SPEC {
 #[doc = "`write(|w| ..)` method takes [devicr::W](W) writer structure"]
 impl crate::Writable for DEVICR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

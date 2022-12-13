@@ -1,43 +1,13 @@
 #[doc = "Register `EPTCFG4` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<EPTCFG4_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EPTCFG4_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EPTCFG4_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EPTCFG4_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `EPTCFG4` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<EPTCFG4_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EPTCFG4_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EPTCFG4_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EPTCFG4_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `EPT_SIZE` reader - Endpoint Size"]
 pub type EPT_SIZE_R = crate::FieldReader<u8, EPT_SIZE_A>;
 #[doc = "Endpoint Size\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EPT_SIZE_A {
     #[doc = "0: 8 bytes"]
@@ -172,17 +142,17 @@ pub type EPT_DIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPTCFG4_SPEC, bo
 #[doc = "Field `EPT_TYPE` reader - Endpoint Type"]
 pub type EPT_TYPE_R = crate::FieldReader<u8, EPT_TYPE_A>;
 #[doc = "Endpoint Type\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EPT_TYPE_A {
     #[doc = "0: Control endpoint"]
-    CTRL8 = 0,
+    Ctrl8 = 0,
     #[doc = "1: Isochronous endpoint"]
-    ISO = 1,
+    Iso = 1,
     #[doc = "2: Bulk endpoint"]
-    BULK = 2,
+    Bulk = 2,
     #[doc = "3: Interrupt endpoint"]
-    INT = 3,
+    Int = 3,
 }
 impl From<EPT_TYPE_A> for u8 {
     #[inline(always)]
@@ -195,32 +165,32 @@ impl EPT_TYPE_R {
     #[inline(always)]
     pub fn variant(&self) -> EPT_TYPE_A {
         match self.bits {
-            0 => EPT_TYPE_A::CTRL8,
-            1 => EPT_TYPE_A::ISO,
-            2 => EPT_TYPE_A::BULK,
-            3 => EPT_TYPE_A::INT,
+            0 => EPT_TYPE_A::Ctrl8,
+            1 => EPT_TYPE_A::Iso,
+            2 => EPT_TYPE_A::Bulk,
+            3 => EPT_TYPE_A::Int,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `CTRL8`"]
+    #[doc = "Checks if the value of the field is `Ctrl8`"]
     #[inline(always)]
     pub fn is_ctrl8(&self) -> bool {
-        *self == EPT_TYPE_A::CTRL8
+        *self == EPT_TYPE_A::Ctrl8
     }
-    #[doc = "Checks if the value of the field is `ISO`"]
+    #[doc = "Checks if the value of the field is `Iso`"]
     #[inline(always)]
     pub fn is_iso(&self) -> bool {
-        *self == EPT_TYPE_A::ISO
+        *self == EPT_TYPE_A::Iso
     }
-    #[doc = "Checks if the value of the field is `BULK`"]
+    #[doc = "Checks if the value of the field is `Bulk`"]
     #[inline(always)]
     pub fn is_bulk(&self) -> bool {
-        *self == EPT_TYPE_A::BULK
+        *self == EPT_TYPE_A::Bulk
     }
-    #[doc = "Checks if the value of the field is `INT`"]
+    #[doc = "Checks if the value of the field is `Int`"]
     #[inline(always)]
     pub fn is_int(&self) -> bool {
-        *self == EPT_TYPE_A::INT
+        *self == EPT_TYPE_A::Int
     }
 }
 #[doc = "Field `EPT_TYPE` writer - Endpoint Type"]
@@ -230,28 +200,28 @@ impl<'a, const O: u8> EPT_TYPE_W<'a, O> {
     #[doc = "Control endpoint"]
     #[inline(always)]
     pub fn ctrl8(self) -> &'a mut W {
-        self.variant(EPT_TYPE_A::CTRL8)
+        self.variant(EPT_TYPE_A::Ctrl8)
     }
     #[doc = "Isochronous endpoint"]
     #[inline(always)]
     pub fn iso(self) -> &'a mut W {
-        self.variant(EPT_TYPE_A::ISO)
+        self.variant(EPT_TYPE_A::Iso)
     }
     #[doc = "Bulk endpoint"]
     #[inline(always)]
     pub fn bulk(self) -> &'a mut W {
-        self.variant(EPT_TYPE_A::BULK)
+        self.variant(EPT_TYPE_A::Bulk)
     }
     #[doc = "Interrupt endpoint"]
     #[inline(always)]
     pub fn int(self) -> &'a mut W {
-        self.variant(EPT_TYPE_A::INT)
+        self.variant(EPT_TYPE_A::Int)
     }
 }
 #[doc = "Field `BK_NUMBER` reader - Number of Banks"]
 pub type BK_NUMBER_R = crate::FieldReader<u8, BK_NUMBER_A>;
 #[doc = "Number of Banks\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum BK_NUMBER_A {
     #[doc = "0: Zero bank, the endpoint is not mapped in memory"]
@@ -370,31 +340,37 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Endpoint Size"]
     #[inline(always)]
+    #[must_use]
     pub fn ept_size(&mut self) -> EPT_SIZE_W<0> {
         EPT_SIZE_W::new(self)
     }
     #[doc = "Bit 3 - Endpoint Direction"]
     #[inline(always)]
+    #[must_use]
     pub fn ept_dir(&mut self) -> EPT_DIR_W<3> {
         EPT_DIR_W::new(self)
     }
     #[doc = "Bits 4:5 - Endpoint Type"]
     #[inline(always)]
+    #[must_use]
     pub fn ept_type(&mut self) -> EPT_TYPE_W<4> {
         EPT_TYPE_W::new(self)
     }
     #[doc = "Bits 6:7 - Number of Banks"]
     #[inline(always)]
+    #[must_use]
     pub fn bk_number(&mut self) -> BK_NUMBER_W<6> {
         BK_NUMBER_W::new(self)
     }
     #[doc = "Bits 8:9 - Number Of Transaction per Microframe"]
     #[inline(always)]
+    #[must_use]
     pub fn nb_trans(&mut self) -> NB_TRANS_W<8> {
         NB_TRANS_W::new(self)
     }
     #[doc = "Bit 31 - Endpoint Mapped"]
     #[inline(always)]
+    #[must_use]
     pub fn ept_mapd(&mut self) -> EPT_MAPD_W<31> {
         EPT_MAPD_W::new(self)
     }
@@ -417,11 +393,10 @@ impl crate::Readable for EPTCFG4_SPEC {
 #[doc = "`write(|w| ..)` method takes [eptcfg4::W](W) writer structure"]
 impl crate::Writable for EPTCFG4_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EPTCFG4 to value 0"]
 impl crate::Resettable for EPTCFG4_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,39 +1,9 @@
 #[doc = "Register `CYCLE1` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CYCLE1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CYCLE1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CYCLE1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CYCLE1_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CYCLE1` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CYCLE1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CYCLE1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CYCLE1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CYCLE1_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `NWE_CYCLE` reader - Total Write Cycle Length"]
 pub type NWE_CYCLE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `NWE_CYCLE` writer - Total Write Cycle Length"]
@@ -57,11 +27,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:8 - Total Write Cycle Length"]
     #[inline(always)]
+    #[must_use]
     pub fn nwe_cycle(&mut self) -> NWE_CYCLE_W<0> {
         NWE_CYCLE_W::new(self)
     }
     #[doc = "Bits 16:24 - Total Read Cycle Length"]
     #[inline(always)]
+    #[must_use]
     pub fn nrd_cycle(&mut self) -> NRD_CYCLE_W<16> {
         NRD_CYCLE_W::new(self)
     }
@@ -84,11 +56,10 @@ impl crate::Readable for CYCLE1_SPEC {
 #[doc = "`write(|w| ..)` method takes [cycle1::W](W) writer structure"]
 impl crate::Writable for CYCLE1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CYCLE1 to value 0x0003_0003"]
 impl crate::Resettable for CYCLE1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0003_0003
-    }
+    const RESET_VALUE: Self::Ux = 0x0003_0003;
 }

@@ -1,18 +1,6 @@
 #[doc = "Register `OVER` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<OVER_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<OVER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<OVER_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<OVER_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `OVRE0` reader - Overrun Error 0"]
 pub type OVRE0_R = crate::BitReader<bool>;
 #[doc = "Field `OVRE1` reader - Overrun Error 1"]
@@ -138,8 +126,5 @@ impl crate::Readable for OVER_SPEC {
 }
 #[doc = "`reset()` method sets OVER to value 0"]
 impl crate::Resettable for OVER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

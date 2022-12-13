@@ -1,39 +1,9 @@
 #[doc = "Register `FMR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<FMR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FMR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FMR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `FMR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<FMR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FMR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FMR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `FPOL` reader - Fault Polarity (fault input bit varies from 0 to 5)"]
 pub type FPOL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FPOL` writer - Fault Polarity (fault input bit varies from 0 to 5)"]
@@ -66,16 +36,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Fault Polarity (fault input bit varies from 0 to 5)"]
     #[inline(always)]
+    #[must_use]
     pub fn fpol(&mut self) -> FPOL_W<0> {
         FPOL_W::new(self)
     }
     #[doc = "Bits 8:15 - Fault Activation Mode (fault input bit varies from 0 to 5)"]
     #[inline(always)]
+    #[must_use]
     pub fn fmod(&mut self) -> FMOD_W<8> {
         FMOD_W::new(self)
     }
     #[doc = "Bits 16:23 - Fault Filtering (fault input bit varies from 0 to 5)"]
     #[inline(always)]
+    #[must_use]
     pub fn ffil(&mut self) -> FFIL_W<16> {
         FFIL_W::new(self)
     }
@@ -98,11 +71,10 @@ impl crate::Readable for FMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [fmr::W](W) writer structure"]
 impl crate::Writable for FMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FMR to value 0"]
 impl crate::Resettable for FMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

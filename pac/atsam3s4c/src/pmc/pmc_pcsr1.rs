@@ -1,18 +1,6 @@
 #[doc = "Register `PMC_PCSR1` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<PMC_PCSR1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PMC_PCSR1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PMC_PCSR1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PMC_PCSR1_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `PID32` reader - Peripheral Clock 32 Status"]
 pub type PID32_R = crate::BitReader<bool>;
 #[doc = "Field `PID33` reader - Peripheral Clock 33 Status"]
@@ -47,8 +35,5 @@ impl crate::Readable for PMC_PCSR1_SPEC {
 }
 #[doc = "`reset()` method sets PMC_PCSR1 to value 0"]
 impl crate::Resettable for PMC_PCSR1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

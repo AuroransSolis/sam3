@@ -1,18 +1,6 @@
 #[doc = "Register `DEVEPTIMR0_ISOENPT` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<ISOENPT_DEVEPTIMR0_ISOENPT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ISOENPT_DEVEPTIMR0_ISOENPT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ISOENPT_DEVEPTIMR0_ISOENPT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ISOENPT_DEVEPTIMR0_ISOENPT_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `TXINE` reader - Transmitted IN Data Interrupt"]
 pub type TXINE_R = crate::BitReader<bool>;
 #[doc = "Field `RXOUTE` reader - Received OUT Data Interrupt"]

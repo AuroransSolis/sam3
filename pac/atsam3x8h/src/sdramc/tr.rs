@@ -1,39 +1,9 @@
 #[doc = "Register `TR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<TR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `TR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<TR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `COUNT` reader - SDRAMC Refresh Timer Count"]
 pub type COUNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `COUNT` writer - SDRAMC Refresh Timer Count"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - SDRAMC Refresh Timer Count"]
     #[inline(always)]
+    #[must_use]
     pub fn count(&mut self) -> COUNT_W<0> {
         COUNT_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for TR_SPEC {
 #[doc = "`write(|w| ..)` method takes [tr::W](W) writer structure"]
 impl crate::Writable for TR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TR to value 0"]
 impl crate::Resettable for TR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

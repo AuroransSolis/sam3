@@ -1,39 +1,9 @@
 #[doc = "Register `SCHMITT` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<SCHMITT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SCHMITT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SCHMITT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SCHMITT_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `SCHMITT` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<SCHMITT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SCHMITT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SCHMITT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SCHMITT_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `SCHMITT0` reader - Schmitt Trigger Control"]
 pub type SCHMITT0_R = crate::BitReader<bool>;
 #[doc = "Field `SCHMITT0` writer - Schmitt Trigger Control"]
@@ -327,161 +297,193 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt0(&mut self) -> SCHMITT0_W<0> {
         SCHMITT0_W::new(self)
     }
     #[doc = "Bit 1 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt1(&mut self) -> SCHMITT1_W<1> {
         SCHMITT1_W::new(self)
     }
     #[doc = "Bit 2 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt2(&mut self) -> SCHMITT2_W<2> {
         SCHMITT2_W::new(self)
     }
     #[doc = "Bit 3 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt3(&mut self) -> SCHMITT3_W<3> {
         SCHMITT3_W::new(self)
     }
     #[doc = "Bit 4 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt4(&mut self) -> SCHMITT4_W<4> {
         SCHMITT4_W::new(self)
     }
     #[doc = "Bit 5 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt5(&mut self) -> SCHMITT5_W<5> {
         SCHMITT5_W::new(self)
     }
     #[doc = "Bit 6 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt6(&mut self) -> SCHMITT6_W<6> {
         SCHMITT6_W::new(self)
     }
     #[doc = "Bit 7 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt7(&mut self) -> SCHMITT7_W<7> {
         SCHMITT7_W::new(self)
     }
     #[doc = "Bit 8 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt8(&mut self) -> SCHMITT8_W<8> {
         SCHMITT8_W::new(self)
     }
     #[doc = "Bit 9 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt9(&mut self) -> SCHMITT9_W<9> {
         SCHMITT9_W::new(self)
     }
     #[doc = "Bit 10 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt10(&mut self) -> SCHMITT10_W<10> {
         SCHMITT10_W::new(self)
     }
     #[doc = "Bit 11 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt11(&mut self) -> SCHMITT11_W<11> {
         SCHMITT11_W::new(self)
     }
     #[doc = "Bit 12 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt12(&mut self) -> SCHMITT12_W<12> {
         SCHMITT12_W::new(self)
     }
     #[doc = "Bit 13 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt13(&mut self) -> SCHMITT13_W<13> {
         SCHMITT13_W::new(self)
     }
     #[doc = "Bit 14 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt14(&mut self) -> SCHMITT14_W<14> {
         SCHMITT14_W::new(self)
     }
     #[doc = "Bit 15 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt15(&mut self) -> SCHMITT15_W<15> {
         SCHMITT15_W::new(self)
     }
     #[doc = "Bit 16 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt16(&mut self) -> SCHMITT16_W<16> {
         SCHMITT16_W::new(self)
     }
     #[doc = "Bit 17 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt17(&mut self) -> SCHMITT17_W<17> {
         SCHMITT17_W::new(self)
     }
     #[doc = "Bit 18 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt18(&mut self) -> SCHMITT18_W<18> {
         SCHMITT18_W::new(self)
     }
     #[doc = "Bit 19 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt19(&mut self) -> SCHMITT19_W<19> {
         SCHMITT19_W::new(self)
     }
     #[doc = "Bit 20 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt20(&mut self) -> SCHMITT20_W<20> {
         SCHMITT20_W::new(self)
     }
     #[doc = "Bit 21 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt21(&mut self) -> SCHMITT21_W<21> {
         SCHMITT21_W::new(self)
     }
     #[doc = "Bit 22 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt22(&mut self) -> SCHMITT22_W<22> {
         SCHMITT22_W::new(self)
     }
     #[doc = "Bit 23 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt23(&mut self) -> SCHMITT23_W<23> {
         SCHMITT23_W::new(self)
     }
     #[doc = "Bit 24 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt24(&mut self) -> SCHMITT24_W<24> {
         SCHMITT24_W::new(self)
     }
     #[doc = "Bit 25 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt25(&mut self) -> SCHMITT25_W<25> {
         SCHMITT25_W::new(self)
     }
     #[doc = "Bit 26 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt26(&mut self) -> SCHMITT26_W<26> {
         SCHMITT26_W::new(self)
     }
     #[doc = "Bit 27 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt27(&mut self) -> SCHMITT27_W<27> {
         SCHMITT27_W::new(self)
     }
     #[doc = "Bit 28 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt28(&mut self) -> SCHMITT28_W<28> {
         SCHMITT28_W::new(self)
     }
     #[doc = "Bit 29 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt29(&mut self) -> SCHMITT29_W<29> {
         SCHMITT29_W::new(self)
     }
     #[doc = "Bit 30 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt30(&mut self) -> SCHMITT30_W<30> {
         SCHMITT30_W::new(self)
     }
     #[doc = "Bit 31 - Schmitt Trigger Control"]
     #[inline(always)]
+    #[must_use]
     pub fn schmitt31(&mut self) -> SCHMITT31_W<31> {
         SCHMITT31_W::new(self)
     }
@@ -504,11 +506,10 @@ impl crate::Readable for SCHMITT_SPEC {
 #[doc = "`write(|w| ..)` method takes [schmitt::W](W) writer structure"]
 impl crate::Writable for SCHMITT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCHMITT to value 0"]
 impl crate::Resettable for SCHMITT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

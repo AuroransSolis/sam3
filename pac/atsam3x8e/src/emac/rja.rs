@@ -1,39 +1,9 @@
 #[doc = "Register `RJA` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<RJA_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RJA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RJA_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RJA_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `RJA` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<RJA_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RJA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RJA_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RJA_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `RJB` reader - Receive Jabbers"]
 pub type RJB_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RJB` writer - Receive Jabbers"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Receive Jabbers"]
     #[inline(always)]
+    #[must_use]
     pub fn rjb(&mut self) -> RJB_W<0> {
         RJB_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for RJA_SPEC {
 #[doc = "`write(|w| ..)` method takes [rja::W](W) writer structure"]
 impl crate::Writable for RJA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RJA to value 0"]
 impl crate::Resettable for RJA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

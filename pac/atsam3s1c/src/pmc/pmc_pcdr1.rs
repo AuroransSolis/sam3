@@ -1,24 +1,6 @@
 #[doc = "Register `PMC_PCDR1` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<PMC_PCDR1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PMC_PCDR1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PMC_PCDR1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PMC_PCDR1_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `PID32` writer - Peripheral Clock 32 Disable"]
 pub type PID32_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_PCDR1_SPEC, bool, O>;
 #[doc = "Field `PID33` writer - Peripheral Clock 33 Disable"]
@@ -28,16 +10,19 @@ pub type PID34_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_PCDR1_SPEC, bo
 impl W {
     #[doc = "Bit 0 - Peripheral Clock 32 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid32(&mut self) -> PID32_W<0> {
         PID32_W::new(self)
     }
     #[doc = "Bit 1 - Peripheral Clock 33 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid33(&mut self) -> PID33_W<1> {
         PID33_W::new(self)
     }
     #[doc = "Bit 2 - Peripheral Clock 34 Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pid34(&mut self) -> PID34_W<2> {
         PID34_W::new(self)
     }
@@ -56,4 +41,6 @@ impl crate::RegisterSpec for PMC_PCDR1_SPEC {
 #[doc = "`write(|w| ..)` method takes [pmc_pcdr1::W](W) writer structure"]
 impl crate::Writable for PMC_PCDR1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

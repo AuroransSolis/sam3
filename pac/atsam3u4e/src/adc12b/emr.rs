@@ -1,39 +1,9 @@
 #[doc = "Register `EMR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<EMR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EMR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EMR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `EMR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<EMR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EMR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EMR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `OFFMODES` reader - Off Mode if Sleep Bit (ADC12B_MR) = 1"]
 pub type OFFMODES_R = crate::BitReader<bool>;
 #[doc = "Field `OFFMODES` writer - Off Mode if Sleep Bit (ADC12B_MR) = 1"]
@@ -58,11 +28,13 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Off Mode if Sleep Bit (ADC12B_MR) = 1"]
     #[inline(always)]
+    #[must_use]
     pub fn offmodes(&mut self) -> OFFMODES_W<0> {
         OFFMODES_W::new(self)
     }
     #[doc = "Bits 16:23 - Startup Time"]
     #[inline(always)]
+    #[must_use]
     pub fn off_mode_startup_time(&mut self) -> OFF_MODE_STARTUP_TIME_W<16> {
         OFF_MODE_STARTUP_TIME_W::new(self)
     }
@@ -85,11 +57,10 @@ impl crate::Readable for EMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [emr::W](W) writer structure"]
 impl crate::Writable for EMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EMR to value 0"]
 impl crate::Resettable for EMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

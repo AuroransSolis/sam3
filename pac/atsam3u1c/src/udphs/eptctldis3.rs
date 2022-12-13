@@ -1,24 +1,6 @@
 #[doc = "Register `EPTCTLDIS3` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<EPTCTLDIS3_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EPTCTLDIS3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EPTCTLDIS3_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EPTCTLDIS3_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `EPT_DISABL` writer - Endpoint Disable"]
 pub type EPT_DISABL_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPTCTLDIS3_SPEC, bool, O>;
 #[doc = "Field `AUTO_VALID` writer - Packet Auto-Valid Disable"]
@@ -50,71 +32,85 @@ pub type SHRT_PCKT_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPTCTLDIS3_SPE
 impl W {
     #[doc = "Bit 0 - Endpoint Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn ept_disabl(&mut self) -> EPT_DISABL_W<0> {
         EPT_DISABL_W::new(self)
     }
     #[doc = "Bit 1 - Packet Auto-Valid Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn auto_valid(&mut self) -> AUTO_VALID_W<1> {
         AUTO_VALID_W::new(self)
     }
     #[doc = "Bit 3 - Interrupts Disable DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn intdis_dma(&mut self) -> INTDIS_DMA_W<3> {
         INTDIS_DMA_W::new(self)
     }
     #[doc = "Bit 4 - NYET Enable (Only for High Speed Bulk OUT endpoints)"]
     #[inline(always)]
+    #[must_use]
     pub fn nyet_dis(&mut self) -> NYET_DIS_W<4> {
         NYET_DIS_W::new(self)
     }
     #[doc = "Bit 8 - Overflow Error Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn err_ovflw(&mut self) -> ERR_OVFLW_W<8> {
         ERR_OVFLW_W::new(self)
     }
     #[doc = "Bit 9 - Received OUT Data Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn rxrdy_txkl(&mut self) -> RXRDY_TXKL_W<9> {
         RXRDY_TXKL_W::new(self)
     }
     #[doc = "Bit 10 - Transmitted IN Data Complete Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_complt(&mut self) -> TX_COMPLT_W<10> {
         TX_COMPLT_W::new(self)
     }
     #[doc = "Bit 11 - TX Packet Ready Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn txrdy(&mut self) -> TXRDY_W<11> {
         TXRDY_W::new(self)
     }
     #[doc = "Bit 12 - Received SETUP Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_setup(&mut self) -> RX_SETUP_W<12> {
         RX_SETUP_W::new(self)
     }
     #[doc = "Bit 13 - Stall Sent Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn stall_snt(&mut self) -> STALL_SNT_W<13> {
         STALL_SNT_W::new(self)
     }
     #[doc = "Bit 14 - NAKIN Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn nak_in(&mut self) -> NAK_IN_W<14> {
         NAK_IN_W::new(self)
     }
     #[doc = "Bit 15 - NAKOUT Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn nak_out(&mut self) -> NAK_OUT_W<15> {
         NAK_OUT_W::new(self)
     }
     #[doc = "Bit 18 - Busy Bank Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn busy_bank(&mut self) -> BUSY_BANK_W<18> {
         BUSY_BANK_W::new(self)
     }
     #[doc = "Bit 31 - Short Packet Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn shrt_pckt(&mut self) -> SHRT_PCKT_W<31> {
         SHRT_PCKT_W::new(self)
     }
@@ -133,4 +129,6 @@ impl crate::RegisterSpec for EPTCTLDIS3_SPEC {
 #[doc = "`write(|w| ..)` method takes [eptctldis3::W](W) writer structure"]
 impl crate::Writable for EPTCTLDIS3_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

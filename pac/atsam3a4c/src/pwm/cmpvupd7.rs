@@ -1,24 +1,6 @@
 #[doc = "Register `CMPVUPD7` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CMPVUPD7_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CMPVUPD7_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CMPVUPD7_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CMPVUPD7_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `CVUPD` writer - Comparison x Value Update"]
 pub type CVUPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMPVUPD7_SPEC, u32, u32, 24, O>;
 #[doc = "Field `CVMUPD` writer - Comparison x Value Mode Update"]
@@ -26,11 +8,13 @@ pub type CVMUPD_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMPVUPD7_SPEC, bo
 impl W {
     #[doc = "Bits 0:23 - Comparison x Value Update"]
     #[inline(always)]
+    #[must_use]
     pub fn cvupd(&mut self) -> CVUPD_W<0> {
         CVUPD_W::new(self)
     }
     #[doc = "Bit 24 - Comparison x Value Mode Update"]
     #[inline(always)]
+    #[must_use]
     pub fn cvmupd(&mut self) -> CVMUPD_W<24> {
         CVMUPD_W::new(self)
     }
@@ -49,4 +33,6 @@ impl crate::RegisterSpec for CMPVUPD7_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmpvupd7::W](W) writer structure"]
 impl crate::Writable for CMPVUPD7_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,39 +1,9 @@
 #[doc = "Register `CGR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CGR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CGR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CGR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CGR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CGR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CGR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CGR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CGR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CGR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `GAIN0` reader - Gain for Channel 0"]
 pub type GAIN0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `GAIN0` writer - Gain for Channel 0"]
@@ -183,81 +153,97 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Gain for Channel 0"]
     #[inline(always)]
+    #[must_use]
     pub fn gain0(&mut self) -> GAIN0_W<0> {
         GAIN0_W::new(self)
     }
     #[doc = "Bits 2:3 - Gain for Channel 1"]
     #[inline(always)]
+    #[must_use]
     pub fn gain1(&mut self) -> GAIN1_W<2> {
         GAIN1_W::new(self)
     }
     #[doc = "Bits 4:5 - Gain for Channel 2"]
     #[inline(always)]
+    #[must_use]
     pub fn gain2(&mut self) -> GAIN2_W<4> {
         GAIN2_W::new(self)
     }
     #[doc = "Bits 6:7 - Gain for Channel 3"]
     #[inline(always)]
+    #[must_use]
     pub fn gain3(&mut self) -> GAIN3_W<6> {
         GAIN3_W::new(self)
     }
     #[doc = "Bits 8:9 - Gain for Channel 4"]
     #[inline(always)]
+    #[must_use]
     pub fn gain4(&mut self) -> GAIN4_W<8> {
         GAIN4_W::new(self)
     }
     #[doc = "Bits 10:11 - Gain for Channel 5"]
     #[inline(always)]
+    #[must_use]
     pub fn gain5(&mut self) -> GAIN5_W<10> {
         GAIN5_W::new(self)
     }
     #[doc = "Bits 12:13 - Gain for Channel 6"]
     #[inline(always)]
+    #[must_use]
     pub fn gain6(&mut self) -> GAIN6_W<12> {
         GAIN6_W::new(self)
     }
     #[doc = "Bits 14:15 - Gain for Channel 7"]
     #[inline(always)]
+    #[must_use]
     pub fn gain7(&mut self) -> GAIN7_W<14> {
         GAIN7_W::new(self)
     }
     #[doc = "Bits 16:17 - Gain for Channel 8"]
     #[inline(always)]
+    #[must_use]
     pub fn gain8(&mut self) -> GAIN8_W<16> {
         GAIN8_W::new(self)
     }
     #[doc = "Bits 18:19 - Gain for Channel 9"]
     #[inline(always)]
+    #[must_use]
     pub fn gain9(&mut self) -> GAIN9_W<18> {
         GAIN9_W::new(self)
     }
     #[doc = "Bits 20:21 - Gain for Channel 10"]
     #[inline(always)]
+    #[must_use]
     pub fn gain10(&mut self) -> GAIN10_W<20> {
         GAIN10_W::new(self)
     }
     #[doc = "Bits 22:23 - Gain for Channel 11"]
     #[inline(always)]
+    #[must_use]
     pub fn gain11(&mut self) -> GAIN11_W<22> {
         GAIN11_W::new(self)
     }
     #[doc = "Bits 24:25 - Gain for Channel 12"]
     #[inline(always)]
+    #[must_use]
     pub fn gain12(&mut self) -> GAIN12_W<24> {
         GAIN12_W::new(self)
     }
     #[doc = "Bits 26:27 - Gain for Channel 13"]
     #[inline(always)]
+    #[must_use]
     pub fn gain13(&mut self) -> GAIN13_W<26> {
         GAIN13_W::new(self)
     }
     #[doc = "Bits 28:29 - Gain for Channel 14"]
     #[inline(always)]
+    #[must_use]
     pub fn gain14(&mut self) -> GAIN14_W<28> {
         GAIN14_W::new(self)
     }
     #[doc = "Bits 30:31 - Gain for Channel 15"]
     #[inline(always)]
+    #[must_use]
     pub fn gain15(&mut self) -> GAIN15_W<30> {
         GAIN15_W::new(self)
     }
@@ -280,11 +266,10 @@ impl crate::Readable for CGR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cgr::W](W) writer structure"]
 impl crate::Writable for CGR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CGR to value 0"]
 impl crate::Resettable for CGR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

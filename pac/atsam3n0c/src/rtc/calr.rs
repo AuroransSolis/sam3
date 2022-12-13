@@ -1,39 +1,9 @@
 #[doc = "Register `CALR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CALR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CALR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CALR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CALR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CALR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CALR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CALR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CALR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CALR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `CENT` reader - Current Century"]
 pub type CENT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CENT` writer - Current Century"]
@@ -84,26 +54,31 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - Current Century"]
     #[inline(always)]
+    #[must_use]
     pub fn cent(&mut self) -> CENT_W<0> {
         CENT_W::new(self)
     }
     #[doc = "Bits 8:15 - Current Year"]
     #[inline(always)]
+    #[must_use]
     pub fn year(&mut self) -> YEAR_W<8> {
         YEAR_W::new(self)
     }
     #[doc = "Bits 16:20 - Current Month"]
     #[inline(always)]
+    #[must_use]
     pub fn month(&mut self) -> MONTH_W<16> {
         MONTH_W::new(self)
     }
     #[doc = "Bits 21:23 - Current Day in Current Week"]
     #[inline(always)]
+    #[must_use]
     pub fn day(&mut self) -> DAY_W<21> {
         DAY_W::new(self)
     }
     #[doc = "Bits 24:29 - Current Day in Current Month"]
     #[inline(always)]
+    #[must_use]
     pub fn date(&mut self) -> DATE_W<24> {
         DATE_W::new(self)
     }
@@ -126,11 +101,10 @@ impl crate::Readable for CALR_SPEC {
 #[doc = "`write(|w| ..)` method takes [calr::W](W) writer structure"]
 impl crate::Writable for CALR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CALR to value 0x0121_0720"]
 impl crate::Resettable for CALR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0121_0720
-    }
+    const RESET_VALUE: Self::Ux = 0x0121_0720;
 }

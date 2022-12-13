@@ -1,39 +1,9 @@
 #[doc = "Register `TSR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<TSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `TSR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<TSR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TSR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TSR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `UBR` reader - Used Bit Read"]
 pub type UBR_R = crate::BitReader<bool>;
 #[doc = "Field `UBR` writer - Used Bit Read"]
@@ -102,36 +72,43 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Used Bit Read"]
     #[inline(always)]
+    #[must_use]
     pub fn ubr(&mut self) -> UBR_W<0> {
         UBR_W::new(self)
     }
     #[doc = "Bit 1 - Collision Occurred"]
     #[inline(always)]
+    #[must_use]
     pub fn col(&mut self) -> COL_W<1> {
         COL_W::new(self)
     }
     #[doc = "Bit 2 - Retry Limit exceeded"]
     #[inline(always)]
+    #[must_use]
     pub fn rles(&mut self) -> RLES_W<2> {
         RLES_W::new(self)
     }
     #[doc = "Bit 3 - Transmit Go"]
     #[inline(always)]
+    #[must_use]
     pub fn tgo(&mut self) -> TGO_W<3> {
         TGO_W::new(self)
     }
     #[doc = "Bit 4 - Buffers exhausted mid frame"]
     #[inline(always)]
+    #[must_use]
     pub fn bex(&mut self) -> BEX_W<4> {
         BEX_W::new(self)
     }
     #[doc = "Bit 5 - Transmit Complete"]
     #[inline(always)]
+    #[must_use]
     pub fn comp(&mut self) -> COMP_W<5> {
         COMP_W::new(self)
     }
     #[doc = "Bit 6 - Transmit Underrun"]
     #[inline(always)]
+    #[must_use]
     pub fn und(&mut self) -> UND_W<6> {
         UND_W::new(self)
     }
@@ -154,11 +131,10 @@ impl crate::Readable for TSR_SPEC {
 #[doc = "`write(|w| ..)` method takes [tsr::W](W) writer structure"]
 impl crate::Writable for TSR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TSR to value 0"]
 impl crate::Resettable for TSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

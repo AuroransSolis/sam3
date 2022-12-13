@@ -1,39 +1,9 @@
 #[doc = "Register `HSTADDR2` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<HSTADDR2_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HSTADDR2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HSTADDR2_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HSTADDR2_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `HSTADDR2` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<HSTADDR2_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HSTADDR2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HSTADDR2_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HSTADDR2_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `HSTADDRP4` reader - USB Host Address"]
 pub type HSTADDRP4_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HSTADDRP4` writer - USB Host Address"]
@@ -75,21 +45,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - USB Host Address"]
     #[inline(always)]
+    #[must_use]
     pub fn hstaddrp4(&mut self) -> HSTADDRP4_W<0> {
         HSTADDRP4_W::new(self)
     }
     #[doc = "Bits 8:14 - USB Host Address"]
     #[inline(always)]
+    #[must_use]
     pub fn hstaddrp5(&mut self) -> HSTADDRP5_W<8> {
         HSTADDRP5_W::new(self)
     }
     #[doc = "Bits 16:22 - USB Host Address"]
     #[inline(always)]
+    #[must_use]
     pub fn hstaddrp6(&mut self) -> HSTADDRP6_W<16> {
         HSTADDRP6_W::new(self)
     }
     #[doc = "Bits 24:30 - USB Host Address"]
     #[inline(always)]
+    #[must_use]
     pub fn hstaddrp7(&mut self) -> HSTADDRP7_W<24> {
         HSTADDRP7_W::new(self)
     }
@@ -112,11 +86,10 @@ impl crate::Readable for HSTADDR2_SPEC {
 #[doc = "`write(|w| ..)` method takes [hstaddr2::W](W) writer structure"]
 impl crate::Writable for HSTADDR2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HSTADDR2 to value 0"]
 impl crate::Resettable for HSTADDR2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

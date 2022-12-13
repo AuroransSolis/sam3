@@ -1,39 +1,9 @@
 #[doc = "Register `CMPV7` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CMPV7_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CMPV7_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CMPV7_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CMPV7_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CMPV7` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CMPV7_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CMPV7_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CMPV7_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CMPV7_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `CV` reader - Comparison x Value"]
 pub type CV_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CV` writer - Comparison x Value"]
@@ -46,7 +16,7 @@ impl R {
     #[doc = "Bits 0:23 - Comparison x Value"]
     #[inline(always)]
     pub fn cv(&self) -> CV_R {
-        CV_R::new((self.bits & 0x00ff_ffff) as u32)
+        CV_R::new(self.bits & 0x00ff_ffff)
     }
     #[doc = "Bit 24 - Comparison x Value Mode"]
     #[inline(always)]
@@ -57,11 +27,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:23 - Comparison x Value"]
     #[inline(always)]
+    #[must_use]
     pub fn cv(&mut self) -> CV_W<0> {
         CV_W::new(self)
     }
     #[doc = "Bit 24 - Comparison x Value Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn cvm(&mut self) -> CVM_W<24> {
         CVM_W::new(self)
     }
@@ -84,11 +56,10 @@ impl crate::Readable for CMPV7_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmpv7::W](W) writer structure"]
 impl crate::Writable for CMPV7_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMPV7 to value 0"]
 impl crate::Resettable for CMPV7_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,18 +1,6 @@
 #[doc = "Register `FRLHSR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<FRLHSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FRLHSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FRLHSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FRLHSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `P0` reader - Edge /Level Interrupt Source Selection."]
 pub type P0_R = crate::BitReader<bool>;
 #[doc = "Field `P1` reader - Edge /Level Interrupt Source Selection."]
@@ -250,8 +238,5 @@ impl crate::Readable for FRLHSR_SPEC {
 }
 #[doc = "`reset()` method sets FRLHSR to value 0"]
 impl crate::Resettable for FRLHSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

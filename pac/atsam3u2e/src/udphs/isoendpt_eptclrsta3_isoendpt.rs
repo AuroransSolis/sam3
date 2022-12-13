@@ -1,24 +1,6 @@
 #[doc = "Register `EPTCLRSTA3_ISOENDPT` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<ISOENDPT_EPTCLRSTA3_ISOENDPT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ISOENDPT_EPTCLRSTA3_ISOENDPT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ISOENDPT_EPTCLRSTA3_ISOENDPT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ISOENDPT_EPTCLRSTA3_ISOENDPT_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `TOGGLESQ` writer - Data Toggle Clear"]
 pub type TOGGLESQ_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, ISOENDPT_EPTCLRSTA3_ISOENDPT_SPEC, bool, O>;
@@ -40,31 +22,37 @@ pub type ERR_FLUSH_W<'a, const O: u8> =
 impl W {
     #[doc = "Bit 6 - Data Toggle Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn togglesq(&mut self) -> TOGGLESQ_W<6> {
         TOGGLESQ_W::new(self)
     }
     #[doc = "Bit 9 - Received OUT Data Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn rxrdy_txkl(&mut self) -> RXRDY_TXKL_W<9> {
         RXRDY_TXKL_W::new(self)
     }
     #[doc = "Bit 10 - Transmitted IN Data Complete Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_complt(&mut self) -> TX_COMPLT_W<10> {
         TX_COMPLT_W::new(self)
     }
     #[doc = "Bit 12 - Error Flow Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn err_fl_iso(&mut self) -> ERR_FL_ISO_W<12> {
         ERR_FL_ISO_W::new(self)
     }
     #[doc = "Bit 13 - Number of Transaction Error Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn err_crc_ntr(&mut self) -> ERR_CRC_NTR_W<13> {
         ERR_CRC_NTR_W::new(self)
     }
     #[doc = "Bit 14 - Bank Flush Error Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn err_flush(&mut self) -> ERR_FLUSH_W<14> {
         ERR_FLUSH_W::new(self)
     }
@@ -83,4 +71,6 @@ impl crate::RegisterSpec for ISOENDPT_EPTCLRSTA3_ISOENDPT_SPEC {
 #[doc = "`write(|w| ..)` method takes [isoendpt_eptclrsta3_isoendpt::W](W) writer structure"]
 impl crate::Writable for ISOENDPT_EPTCLRSTA3_ISOENDPT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

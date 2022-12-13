@@ -1,24 +1,6 @@
 #[doc = "Register `CR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `PROCRST` writer - Processor Reset"]
 pub type PROCRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `PERRST` writer - Peripheral Reset"]
@@ -30,21 +12,25 @@ pub type KEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CR_SPEC, u8, u8, 8
 impl W {
     #[doc = "Bit 0 - Processor Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn procrst(&mut self) -> PROCRST_W<0> {
         PROCRST_W::new(self)
     }
     #[doc = "Bit 2 - Peripheral Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn perrst(&mut self) -> PERRST_W<2> {
         PERRST_W::new(self)
     }
     #[doc = "Bit 3 - External Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn extrst(&mut self) -> EXTRST_W<3> {
         EXTRST_W::new(self)
     }
     #[doc = "Bits 24:31 - Password"]
     #[inline(always)]
+    #[must_use]
     pub fn key(&mut self) -> KEY_W<24> {
         KEY_W::new(self)
     }
@@ -63,4 +49,6 @@ impl crate::RegisterSpec for CR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cr::W](W) writer structure"]
 impl crate::Writable for CR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

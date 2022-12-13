@@ -1,39 +1,9 @@
 #[doc = "Register `FPE2` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<FPE2_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FPE2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FPE2_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FPE2_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `FPE2` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<FPE2_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FPE2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FPE2_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FPE2_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `FPE4` reader - Fault Protection Enable for channel 4 (fault input bit varies from 0 to 5)"]
 pub type FPE4_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FPE4` writer - Fault Protection Enable for channel 4 (fault input bit varies from 0 to 5)"]
@@ -75,21 +45,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Fault Protection Enable for channel 4 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
+    #[must_use]
     pub fn fpe4(&mut self) -> FPE4_W<0> {
         FPE4_W::new(self)
     }
     #[doc = "Bits 8:15 - Fault Protection Enable for channel 5 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
+    #[must_use]
     pub fn fpe5(&mut self) -> FPE5_W<8> {
         FPE5_W::new(self)
     }
     #[doc = "Bits 16:23 - Fault Protection Enable for channel 6 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
+    #[must_use]
     pub fn fpe6(&mut self) -> FPE6_W<16> {
         FPE6_W::new(self)
     }
     #[doc = "Bits 24:31 - Fault Protection Enable for channel 7 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
+    #[must_use]
     pub fn fpe7(&mut self) -> FPE7_W<24> {
         FPE7_W::new(self)
     }
@@ -112,11 +86,10 @@ impl crate::Readable for FPE2_SPEC {
 #[doc = "`write(|w| ..)` method takes [fpe2::W](W) writer structure"]
 impl crate::Writable for FPE2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FPE2 to value 0"]
 impl crate::Resettable for FPE2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

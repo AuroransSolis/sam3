@@ -1,18 +1,6 @@
 #[doc = "Register `IMR_SPI_MODE` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<SPI_MODE_IMR_SPI_MODE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SPI_MODE_IMR_SPI_MODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SPI_MODE_IMR_SPI_MODE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SPI_MODE_IMR_SPI_MODE_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `RXRDY` reader - RXRDY Interrupt Mask"]
 pub type RXRDY_R = crate::BitReader<bool>;
 #[doc = "Field `TXRDY` reader - TXRDY Interrupt Mask"]
@@ -61,8 +49,5 @@ impl crate::Readable for SPI_MODE_IMR_SPI_MODE_SPEC {
 }
 #[doc = "`reset()` method sets IMR_SPI_MODE to value 0"]
 impl crate::Resettable for SPI_MODE_IMR_SPI_MODE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

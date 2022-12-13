@@ -1,39 +1,9 @@
 #[doc = "Register `DT7` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<DT7_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DT7_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DT7_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DT7_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `DT7` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<DT7_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DT7_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DT7_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DT7_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `DTH` reader - Dead-Time Value for PWMHx Output"]
 pub type DTH_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DTH` writer - Dead-Time Value for PWMHx Output"]
@@ -57,11 +27,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Dead-Time Value for PWMHx Output"]
     #[inline(always)]
+    #[must_use]
     pub fn dth(&mut self) -> DTH_W<0> {
         DTH_W::new(self)
     }
     #[doc = "Bits 16:31 - Dead-Time Value for PWMLx Output"]
     #[inline(always)]
+    #[must_use]
     pub fn dtl(&mut self) -> DTL_W<16> {
         DTL_W::new(self)
     }
@@ -84,11 +56,10 @@ impl crate::Readable for DT7_SPEC {
 #[doc = "`write(|w| ..)` method takes [dt7::W](W) writer structure"]
 impl crate::Writable for DT7_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DT7 to value 0"]
 impl crate::Resettable for DT7_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

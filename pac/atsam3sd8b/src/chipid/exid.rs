@@ -1,18 +1,6 @@
 #[doc = "Register `EXID` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<EXID_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EXID_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EXID_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EXID_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `EXID` reader - Chip ID Extension"]
 pub type EXID_R = crate::FieldReader<u32, u32>;
 impl R {

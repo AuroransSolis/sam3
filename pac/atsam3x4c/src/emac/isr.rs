@@ -1,39 +1,9 @@
 #[doc = "Register `ISR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<ISR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ISR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ISR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ISR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `ISR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<ISR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ISR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ISR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ISR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `MFD` reader - Management Frame Done"]
 pub type MFD_R = crate::BitReader<bool>;
 #[doc = "Field `MFD` writer - Management Frame Done"]
@@ -147,61 +117,73 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Management Frame Done"]
     #[inline(always)]
+    #[must_use]
     pub fn mfd(&mut self) -> MFD_W<0> {
         MFD_W::new(self)
     }
     #[doc = "Bit 1 - Receive Complete"]
     #[inline(always)]
+    #[must_use]
     pub fn rcomp(&mut self) -> RCOMP_W<1> {
         RCOMP_W::new(self)
     }
     #[doc = "Bit 2 - Receive Used Bit Read"]
     #[inline(always)]
+    #[must_use]
     pub fn rxubr(&mut self) -> RXUBR_W<2> {
         RXUBR_W::new(self)
     }
     #[doc = "Bit 3 - Transmit Used Bit Read"]
     #[inline(always)]
+    #[must_use]
     pub fn txubr(&mut self) -> TXUBR_W<3> {
         TXUBR_W::new(self)
     }
     #[doc = "Bit 4 - Ethernet Transmit Buffer Underrun"]
     #[inline(always)]
+    #[must_use]
     pub fn tund(&mut self) -> TUND_W<4> {
         TUND_W::new(self)
     }
     #[doc = "Bit 5 - Retry Limit Exceeded"]
     #[inline(always)]
+    #[must_use]
     pub fn rlex(&mut self) -> RLEX_W<5> {
         RLEX_W::new(self)
     }
     #[doc = "Bit 6 - Transmit Error"]
     #[inline(always)]
+    #[must_use]
     pub fn txerr(&mut self) -> TXERR_W<6> {
         TXERR_W::new(self)
     }
     #[doc = "Bit 7 - Transmit Complete"]
     #[inline(always)]
+    #[must_use]
     pub fn tcomp(&mut self) -> TCOMP_W<7> {
         TCOMP_W::new(self)
     }
     #[doc = "Bit 10 - Receive Overrun"]
     #[inline(always)]
+    #[must_use]
     pub fn rovr(&mut self) -> ROVR_W<10> {
         ROVR_W::new(self)
     }
     #[doc = "Bit 11 - Hresp not OK"]
     #[inline(always)]
+    #[must_use]
     pub fn hresp(&mut self) -> HRESP_W<11> {
         HRESP_W::new(self)
     }
     #[doc = "Bit 12 - Pause Frame Received"]
     #[inline(always)]
+    #[must_use]
     pub fn pfre(&mut self) -> PFRE_W<12> {
         PFRE_W::new(self)
     }
     #[doc = "Bit 13 - Pause Time Zero"]
     #[inline(always)]
+    #[must_use]
     pub fn ptz(&mut self) -> PTZ_W<13> {
         PTZ_W::new(self)
     }
@@ -224,11 +206,10 @@ impl crate::Readable for ISR_SPEC {
 #[doc = "`write(|w| ..)` method takes [isr::W](W) writer structure"]
 impl crate::Writable for ISR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ISR to value 0"]
 impl crate::Resettable for ISR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

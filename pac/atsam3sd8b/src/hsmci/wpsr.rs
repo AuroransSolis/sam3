@@ -1,32 +1,20 @@
 #[doc = "Register `WPSR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<WPSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<WPSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<WPSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<WPSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `WP_VS` reader - Write Protection Violation Status"]
 pub type WP_VS_R = crate::FieldReader<u8, WP_VS_A>;
 #[doc = "Write Protection Violation Status"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WP_VS_A {
     #[doc = "0: No Write Protection Violation occurred since the last read of this register (WP_SR)"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: Write Protection detected unauthorized attempt to write a control register had occurred (since the last read.)"]
-    WRITE = 1,
+    Write = 1,
     #[doc = "2: Software reset had been performed while Write Protection was enabled (since the last read)."]
-    RESET = 2,
+    Reset = 2,
     #[doc = "3: Both Write Protection violation and software reset with Write Protection enabled have occurred since the last read."]
-    BOTH = 3,
+    Both = 3,
 }
 impl From<WP_VS_A> for u8 {
     #[inline(always)]
@@ -39,32 +27,32 @@ impl WP_VS_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<WP_VS_A> {
         match self.bits {
-            0 => Some(WP_VS_A::NONE),
-            1 => Some(WP_VS_A::WRITE),
-            2 => Some(WP_VS_A::RESET),
-            3 => Some(WP_VS_A::BOTH),
+            0 => Some(WP_VS_A::None),
+            1 => Some(WP_VS_A::Write),
+            2 => Some(WP_VS_A::Reset),
+            3 => Some(WP_VS_A::Both),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Checks if the value of the field is `None`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == WP_VS_A::NONE
+        *self == WP_VS_A::None
     }
-    #[doc = "Checks if the value of the field is `WRITE`"]
+    #[doc = "Checks if the value of the field is `Write`"]
     #[inline(always)]
     pub fn is_write(&self) -> bool {
-        *self == WP_VS_A::WRITE
+        *self == WP_VS_A::Write
     }
-    #[doc = "Checks if the value of the field is `RESET`"]
+    #[doc = "Checks if the value of the field is `Reset`"]
     #[inline(always)]
     pub fn is_reset(&self) -> bool {
-        *self == WP_VS_A::RESET
+        *self == WP_VS_A::Reset
     }
-    #[doc = "Checks if the value of the field is `BOTH`"]
+    #[doc = "Checks if the value of the field is `Both`"]
     #[inline(always)]
     pub fn is_both(&self) -> bool {
-        *self == WP_VS_A::BOTH
+        *self == WP_VS_A::Both
     }
 }
 #[doc = "Field `WP_VSRC` reader - Write Protection Violation SouRCe"]

@@ -1,29 +1,12 @@
 #[doc = "Register `IER` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<IER_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IER_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IER_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `RES` writer - Refresh Error Status"]
 pub type RES_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Refresh Error Status"]
     #[inline(always)]
+    #[must_use]
     pub fn res(&mut self) -> RES_W<0> {
         RES_W::new(self)
     }
@@ -42,4 +25,6 @@ impl crate::RegisterSpec for IER_SPEC {
 #[doc = "`write(|w| ..)` method takes [ier::W](W) writer structure"]
 impl crate::Writable for IER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

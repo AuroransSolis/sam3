@@ -1,18 +1,6 @@
 #[doc = "Register `PCIMR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<PCIMR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PCIMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PCIMR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PCIMR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `DRDY` reader - Parallel Capture Mode Data Ready Interrupt Mask"]
 pub type DRDY_R = crate::BitReader<bool>;
 #[doc = "Field `OVRE` reader - Parallel Capture Mode Overrun Error Interrupt Mask"]
@@ -54,8 +42,5 @@ impl crate::Readable for PCIMR_SPEC {
 }
 #[doc = "`reset()` method sets PCIMR to value 0"]
 impl crate::Resettable for PCIMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

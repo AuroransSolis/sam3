@@ -1,18 +1,6 @@
 #[doc = "Register `PMC_SCSR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<PMC_SCSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PMC_SCSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PMC_SCSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PMC_SCSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `UDP` reader - USB Device Port Clock Status"]
 pub type UDP_R = crate::BitReader<bool>;
 #[doc = "Field `PCK0` reader - Programmable Clock 0 Output Status"]
@@ -54,8 +42,5 @@ impl crate::Readable for PMC_SCSR_SPEC {
 }
 #[doc = "`reset()` method sets PMC_SCSR to value 0x01"]
 impl crate::Resettable for PMC_SCSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+    const RESET_VALUE: Self::Ux = 0x01;
 }

@@ -1,39 +1,9 @@
 #[doc = "Register `DTOR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<DTOR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DTOR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DTOR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DTOR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `DTOR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<DTOR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DTOR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DTOR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DTOR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `DTOCYC` reader - Data Timeout Cycle Number"]
 pub type DTOCYC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DTOCYC` writer - Data Timeout Cycle Number"]
@@ -41,7 +11,7 @@ pub type DTOCYC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTOR_SPEC, u8, 
 #[doc = "Field `DTOMUL` reader - Data Timeout Multiplier"]
 pub type DTOMUL_R = crate::FieldReader<u8, DTOMUL_A>;
 #[doc = "Data Timeout Multiplier\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DTOMUL_A {
     #[doc = "0: DTOCYC"]
@@ -183,11 +153,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Data Timeout Cycle Number"]
     #[inline(always)]
+    #[must_use]
     pub fn dtocyc(&mut self) -> DTOCYC_W<0> {
         DTOCYC_W::new(self)
     }
     #[doc = "Bits 4:6 - Data Timeout Multiplier"]
     #[inline(always)]
+    #[must_use]
     pub fn dtomul(&mut self) -> DTOMUL_W<4> {
         DTOMUL_W::new(self)
     }
@@ -210,11 +182,10 @@ impl crate::Readable for DTOR_SPEC {
 #[doc = "`write(|w| ..)` method takes [dtor::W](W) writer structure"]
 impl crate::Writable for DTOR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DTOR to value 0"]
 impl crate::Resettable for DTOR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

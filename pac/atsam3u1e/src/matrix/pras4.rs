@@ -1,39 +1,9 @@
 #[doc = "Register `PRAS4` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<PRAS4_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PRAS4_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PRAS4_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PRAS4_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `PRAS4` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<PRAS4_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PRAS4_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PRAS4_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PRAS4_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `M0PR` reader - Master 0 Priority"]
 pub type M0PR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `M0PR` writer - Master 0 Priority"]
@@ -84,26 +54,31 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Master 0 Priority"]
     #[inline(always)]
+    #[must_use]
     pub fn m0pr(&mut self) -> M0PR_W<0> {
         M0PR_W::new(self)
     }
     #[doc = "Bits 4:5 - Master 1 Priority"]
     #[inline(always)]
+    #[must_use]
     pub fn m1pr(&mut self) -> M1PR_W<4> {
         M1PR_W::new(self)
     }
     #[doc = "Bits 8:9 - Master 2 Priority"]
     #[inline(always)]
+    #[must_use]
     pub fn m2pr(&mut self) -> M2PR_W<8> {
         M2PR_W::new(self)
     }
     #[doc = "Bits 12:13 - Master 3 Priority"]
     #[inline(always)]
+    #[must_use]
     pub fn m3pr(&mut self) -> M3PR_W<12> {
         M3PR_W::new(self)
     }
     #[doc = "Bits 16:17 - Master 4 Priority"]
     #[inline(always)]
+    #[must_use]
     pub fn m4pr(&mut self) -> M4PR_W<16> {
         M4PR_W::new(self)
     }
@@ -126,11 +101,10 @@ impl crate::Readable for PRAS4_SPEC {
 #[doc = "`write(|w| ..)` method takes [pras4::W](W) writer structure"]
 impl crate::Writable for PRAS4_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PRAS4 to value 0"]
 impl crate::Resettable for PRAS4_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,49 +1,19 @@
 #[doc = "Register `MR_SPI_MODE` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<SPI_MODE_MR_SPI_MODE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SPI_MODE_MR_SPI_MODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SPI_MODE_MR_SPI_MODE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SPI_MODE_MR_SPI_MODE_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MR_SPI_MODE` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<SPI_MODE_MR_SPI_MODE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SPI_MODE_MR_SPI_MODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SPI_MODE_MR_SPI_MODE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SPI_MODE_MR_SPI_MODE_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `USART_MODE` reader - USART Mode of Operation"]
 pub type USART_MODE_R = crate::FieldReader<u8, USART_MODE_A>;
 #[doc = "USART Mode of Operation"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum USART_MODE_A {
     #[doc = "14: SPI master"]
-    SPI_MASTER = 14,
+    SpiMaster = 14,
     #[doc = "15: SPI Slave"]
-    SPI_SLAVE = 15,
+    SpiSlave = 15,
 }
 impl From<USART_MODE_A> for u8 {
     #[inline(always)]
@@ -56,20 +26,20 @@ impl USART_MODE_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<USART_MODE_A> {
         match self.bits {
-            14 => Some(USART_MODE_A::SPI_MASTER),
-            15 => Some(USART_MODE_A::SPI_SLAVE),
+            14 => Some(USART_MODE_A::SpiMaster),
+            15 => Some(USART_MODE_A::SpiSlave),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `SPI_MASTER`"]
+    #[doc = "Checks if the value of the field is `SpiMaster`"]
     #[inline(always)]
     pub fn is_spi_master(&self) -> bool {
-        *self == USART_MODE_A::SPI_MASTER
+        *self == USART_MODE_A::SpiMaster
     }
-    #[doc = "Checks if the value of the field is `SPI_SLAVE`"]
+    #[doc = "Checks if the value of the field is `SpiSlave`"]
     #[inline(always)]
     pub fn is_spi_slave(&self) -> bool {
-        *self == USART_MODE_A::SPI_SLAVE
+        *self == USART_MODE_A::SpiSlave
     }
 }
 #[doc = "Field `USART_MODE` writer - USART Mode of Operation"]
@@ -79,26 +49,26 @@ impl<'a, const O: u8> USART_MODE_W<'a, O> {
     #[doc = "SPI master"]
     #[inline(always)]
     pub fn spi_master(self) -> &'a mut W {
-        self.variant(USART_MODE_A::SPI_MASTER)
+        self.variant(USART_MODE_A::SpiMaster)
     }
     #[doc = "SPI Slave"]
     #[inline(always)]
     pub fn spi_slave(self) -> &'a mut W {
-        self.variant(USART_MODE_A::SPI_SLAVE)
+        self.variant(USART_MODE_A::SpiSlave)
     }
 }
 #[doc = "Field `USCLKS` reader - Clock Selection"]
 pub type USCLKS_R = crate::FieldReader<u8, USCLKS_A>;
 #[doc = "Clock Selection"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum USCLKS_A {
     #[doc = "0: master Clock MCK is selected"]
-    MCK = 0,
+    Mck = 0,
     #[doc = "1: Internal Clock Divided MCK/DIV (DIV=8) is selected"]
-    DIV = 1,
+    Div = 1,
     #[doc = "3: Serial Clock SLK is selected"]
-    SCK = 3,
+    Sck = 3,
 }
 impl From<USCLKS_A> for u8 {
     #[inline(always)]
@@ -111,26 +81,26 @@ impl USCLKS_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<USCLKS_A> {
         match self.bits {
-            0 => Some(USCLKS_A::MCK),
-            1 => Some(USCLKS_A::DIV),
-            3 => Some(USCLKS_A::SCK),
+            0 => Some(USCLKS_A::Mck),
+            1 => Some(USCLKS_A::Div),
+            3 => Some(USCLKS_A::Sck),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `MCK`"]
+    #[doc = "Checks if the value of the field is `Mck`"]
     #[inline(always)]
     pub fn is_mck(&self) -> bool {
-        *self == USCLKS_A::MCK
+        *self == USCLKS_A::Mck
     }
-    #[doc = "Checks if the value of the field is `DIV`"]
+    #[doc = "Checks if the value of the field is `Div`"]
     #[inline(always)]
     pub fn is_div(&self) -> bool {
-        *self == USCLKS_A::DIV
+        *self == USCLKS_A::Div
     }
-    #[doc = "Checks if the value of the field is `SCK`"]
+    #[doc = "Checks if the value of the field is `Sck`"]
     #[inline(always)]
     pub fn is_sck(&self) -> bool {
-        *self == USCLKS_A::SCK
+        *self == USCLKS_A::Sck
     }
 }
 #[doc = "Field `USCLKS` writer - Clock Selection"]
@@ -140,27 +110,27 @@ impl<'a, const O: u8> USCLKS_W<'a, O> {
     #[doc = "master Clock MCK is selected"]
     #[inline(always)]
     pub fn mck(self) -> &'a mut W {
-        self.variant(USCLKS_A::MCK)
+        self.variant(USCLKS_A::Mck)
     }
     #[doc = "Internal Clock Divided MCK/DIV (DIV=8) is selected"]
     #[inline(always)]
     pub fn div(self) -> &'a mut W {
-        self.variant(USCLKS_A::DIV)
+        self.variant(USCLKS_A::Div)
     }
     #[doc = "Serial Clock SLK is selected"]
     #[inline(always)]
     pub fn sck(self) -> &'a mut W {
-        self.variant(USCLKS_A::SCK)
+        self.variant(USCLKS_A::Sck)
     }
 }
 #[doc = "Field `CHRL` reader - Character Length"]
 pub type CHRL_R = crate::FieldReader<u8, CHRL_A>;
 #[doc = "Character Length"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHRL_A {
     #[doc = "3: Character length is 8 bits"]
-    _8_BIT = 3,
+    _8Bit = 3,
 }
 impl From<CHRL_A> for u8 {
     #[inline(always)]
@@ -173,14 +143,14 @@ impl CHRL_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<CHRL_A> {
         match self.bits {
-            3 => Some(CHRL_A::_8_BIT),
+            3 => Some(CHRL_A::_8Bit),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `_8_BIT`"]
+    #[doc = "Checks if the value of the field is `_8Bit`"]
     #[inline(always)]
     pub fn is_8_bit(&self) -> bool {
-        *self == CHRL_A::_8_BIT
+        *self == CHRL_A::_8Bit
     }
 }
 #[doc = "Field `CHRL` writer - Character Length"]
@@ -190,7 +160,7 @@ impl<'a, const O: u8> CHRL_W<'a, O> {
     #[doc = "Character length is 8 bits"]
     #[inline(always)]
     pub fn _8_bit(self) -> &'a mut W {
-        self.variant(CHRL_A::_8_BIT)
+        self.variant(CHRL_A::_8Bit)
     }
 }
 #[doc = "Field `CPHA` reader - SPI Clock Phase"]
@@ -240,31 +210,37 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - USART Mode of Operation"]
     #[inline(always)]
+    #[must_use]
     pub fn usart_mode(&mut self) -> USART_MODE_W<0> {
         USART_MODE_W::new(self)
     }
     #[doc = "Bits 4:5 - Clock Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn usclks(&mut self) -> USCLKS_W<4> {
         USCLKS_W::new(self)
     }
     #[doc = "Bits 6:7 - Character Length"]
     #[inline(always)]
+    #[must_use]
     pub fn chrl(&mut self) -> CHRL_W<6> {
         CHRL_W::new(self)
     }
     #[doc = "Bit 8 - SPI Clock Phase"]
     #[inline(always)]
+    #[must_use]
     pub fn cpha(&mut self) -> CPHA_W<8> {
         CPHA_W::new(self)
     }
     #[doc = "Bit 16 - SPI Clock Polarity"]
     #[inline(always)]
+    #[must_use]
     pub fn cpol(&mut self) -> CPOL_W<16> {
         CPOL_W::new(self)
     }
     #[doc = "Bit 20 - Wait Read Data Before Transfer"]
     #[inline(always)]
+    #[must_use]
     pub fn wrdbt(&mut self) -> WRDBT_W<20> {
         WRDBT_W::new(self)
     }
@@ -287,4 +263,6 @@ impl crate::Readable for SPI_MODE_MR_SPI_MODE_SPEC {
 #[doc = "`write(|w| ..)` method takes [spi_mode_mr_spi_mode::W](W) writer structure"]
 impl crate::Writable for SPI_MODE_MR_SPI_MODE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

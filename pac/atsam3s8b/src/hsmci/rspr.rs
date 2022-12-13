@@ -1,18 +1,6 @@
 #[doc = "Register `RSPR[%s]` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<RSPR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RSPR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RSPR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RSPR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `RSP` reader - Response"]
 pub type RSP_R = crate::FieldReader<u32, u32>;
 impl R {

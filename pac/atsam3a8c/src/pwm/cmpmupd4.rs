@@ -1,24 +1,6 @@
 #[doc = "Register `CMPMUPD4` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CMPMUPD4_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CMPMUPD4_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CMPMUPD4_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CMPMUPD4_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `CENUPD` writer - Comparison x Enable Update"]
 pub type CENUPD_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMPMUPD4_SPEC, bool, O>;
 #[doc = "Field `CTRUPD` writer - Comparison x Trigger Update"]
@@ -30,21 +12,25 @@ pub type CUPRUPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMPMUPD4_SPEC,
 impl W {
     #[doc = "Bit 0 - Comparison x Enable Update"]
     #[inline(always)]
+    #[must_use]
     pub fn cenupd(&mut self) -> CENUPD_W<0> {
         CENUPD_W::new(self)
     }
     #[doc = "Bits 4:7 - Comparison x Trigger Update"]
     #[inline(always)]
+    #[must_use]
     pub fn ctrupd(&mut self) -> CTRUPD_W<4> {
         CTRUPD_W::new(self)
     }
     #[doc = "Bits 8:11 - Comparison x Period Update"]
     #[inline(always)]
+    #[must_use]
     pub fn cprupd(&mut self) -> CPRUPD_W<8> {
         CPRUPD_W::new(self)
     }
     #[doc = "Bits 16:19 - Comparison x Update Period Update"]
     #[inline(always)]
+    #[must_use]
     pub fn cuprupd(&mut self) -> CUPRUPD_W<16> {
         CUPRUPD_W::new(self)
     }
@@ -63,4 +49,6 @@ impl crate::RegisterSpec for CMPMUPD4_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmpmupd4::W](W) writer structure"]
 impl crate::Writable for CMPMUPD4_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

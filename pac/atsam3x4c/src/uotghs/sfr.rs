@@ -1,24 +1,6 @@
 #[doc = "Register `SFR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<SFR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SFR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SFR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SFR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `IDTIS` writer - ID Transition Interrupt Set"]
 pub type IDTIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, SFR_SPEC, bool, O>;
 #[doc = "Field `VBUSTIS` writer - VBus Transition Interrupt Set"]
@@ -40,46 +22,55 @@ pub type VBUSRQS_W<'a, const O: u8> = crate::BitWriter<'a, u32, SFR_SPEC, bool, 
 impl W {
     #[doc = "Bit 0 - ID Transition Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn idtis(&mut self) -> IDTIS_W<0> {
         IDTIS_W::new(self)
     }
     #[doc = "Bit 1 - VBus Transition Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn vbustis(&mut self) -> VBUSTIS_W<1> {
         VBUSTIS_W::new(self)
     }
     #[doc = "Bit 2 - SRP Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn srpis(&mut self) -> SRPIS_W<2> {
         SRPIS_W::new(self)
     }
     #[doc = "Bit 3 - VBus Error Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn vberris(&mut self) -> VBERRIS_W<3> {
         VBERRIS_W::new(self)
     }
     #[doc = "Bit 4 - B-Connection Error Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn bcerris(&mut self) -> BCERRIS_W<4> {
         BCERRIS_W::new(self)
     }
     #[doc = "Bit 5 - Role Exchange Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn roleexis(&mut self) -> ROLEEXIS_W<5> {
         ROLEEXIS_W::new(self)
     }
     #[doc = "Bit 6 - HNP Error Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn hnperris(&mut self) -> HNPERRIS_W<6> {
         HNPERRIS_W::new(self)
     }
     #[doc = "Bit 7 - Suspend Time-Out Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn stois(&mut self) -> STOIS_W<7> {
         STOIS_W::new(self)
     }
     #[doc = "Bit 9 - VBus Request Set"]
     #[inline(always)]
+    #[must_use]
     pub fn vbusrqs(&mut self) -> VBUSRQS_W<9> {
         VBUSRQS_W::new(self)
     }
@@ -98,4 +89,6 @@ impl crate::RegisterSpec for SFR_SPEC {
 #[doc = "`write(|w| ..)` method takes [sfr::W](W) writer structure"]
 impl crate::Writable for SFR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

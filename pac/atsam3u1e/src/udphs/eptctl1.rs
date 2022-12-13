@@ -1,18 +1,6 @@
 #[doc = "Register `EPTCTL1` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<EPTCTL1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EPTCTL1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EPTCTL1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EPTCTL1_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `EPT_ENABL` reader - Endpoint Enable"]
 pub type EPT_ENABL_R = crate::BitReader<bool>;
 #[doc = "Field `AUTO_VALID` reader - Packet Auto-Valid Enabled (Not for CONTROL Endpoints)"]
@@ -124,8 +112,5 @@ impl crate::Readable for EPTCTL1_SPEC {
 }
 #[doc = "`reset()` method sets EPTCTL1 to value 0"]
 impl crate::Resettable for EPTCTL1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

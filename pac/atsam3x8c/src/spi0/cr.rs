@@ -1,24 +1,6 @@
 #[doc = "Register `CR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `SPIEN` writer - SPI Enable"]
 pub type SPIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `SPIDIS` writer - SPI Disable"]
@@ -30,21 +12,25 @@ pub type LASTXFER_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, 
 impl W {
     #[doc = "Bit 0 - SPI Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn spien(&mut self) -> SPIEN_W<0> {
         SPIEN_W::new(self)
     }
     #[doc = "Bit 1 - SPI Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn spidis(&mut self) -> SPIDIS_W<1> {
         SPIDIS_W::new(self)
     }
     #[doc = "Bit 7 - SPI Software Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn swrst(&mut self) -> SWRST_W<7> {
         SWRST_W::new(self)
     }
     #[doc = "Bit 24 - Last Transfer"]
     #[inline(always)]
+    #[must_use]
     pub fn lastxfer(&mut self) -> LASTXFER_W<24> {
         LASTXFER_W::new(self)
     }
@@ -63,4 +49,6 @@ impl crate::RegisterSpec for CR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cr::W](W) writer structure"]
 impl crate::Writable for CR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

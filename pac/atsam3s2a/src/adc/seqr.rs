@@ -1,39 +1,9 @@
 #[doc = "Register `SEQR[%s]` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<SEQR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SEQR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SEQR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SEQR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `SEQR[%s]` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<SEQR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SEQR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SEQR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SEQR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 impl W {
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -54,4 +24,6 @@ impl crate::Readable for SEQR_SPEC {
 #[doc = "`write(|w| ..)` method takes [seqr::W](W) writer structure"]
 impl crate::Writable for SEQR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

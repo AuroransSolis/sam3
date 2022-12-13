@@ -1,39 +1,9 @@
 #[doc = "Register `HSTPIPINRQ[%s]` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<HSTPIPINRQ_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HSTPIPINRQ_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HSTPIPINRQ_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HSTPIPINRQ_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `HSTPIPINRQ[%s]` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<HSTPIPINRQ_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HSTPIPINRQ_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HSTPIPINRQ_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HSTPIPINRQ_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `INRQ` reader - IN Request Number before Freeze"]
 pub type INRQ_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `INRQ` writer - IN Request Number before Freeze"]
@@ -57,11 +27,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - IN Request Number before Freeze"]
     #[inline(always)]
+    #[must_use]
     pub fn inrq(&mut self) -> INRQ_W<0> {
         INRQ_W::new(self)
     }
     #[doc = "Bit 8 - IN Request Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn inmode(&mut self) -> INMODE_W<8> {
         INMODE_W::new(self)
     }
@@ -84,4 +56,6 @@ impl crate::Readable for HSTPIPINRQ_SPEC {
 #[doc = "`write(|w| ..)` method takes [hstpipinrq::W](W) writer structure"]
 impl crate::Writable for HSTPIPINRQ_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

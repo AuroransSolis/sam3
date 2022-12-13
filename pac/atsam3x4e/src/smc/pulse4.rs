@@ -1,39 +1,9 @@
 #[doc = "Register `PULSE4` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<PULSE4_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PULSE4_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PULSE4_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PULSE4_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `PULSE4` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<PULSE4_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PULSE4_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PULSE4_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PULSE4_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `NWE_PULSE` reader - NWE Pulse Length"]
 pub type NWE_PULSE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NWE_PULSE` writer - NWE Pulse Length"]
@@ -75,21 +45,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - NWE Pulse Length"]
     #[inline(always)]
+    #[must_use]
     pub fn nwe_pulse(&mut self) -> NWE_PULSE_W<0> {
         NWE_PULSE_W::new(self)
     }
     #[doc = "Bits 8:14 - NCS Pulse Length in WRITE Access"]
     #[inline(always)]
+    #[must_use]
     pub fn ncs_wr_pulse(&mut self) -> NCS_WR_PULSE_W<8> {
         NCS_WR_PULSE_W::new(self)
     }
     #[doc = "Bits 16:22 - NRD Pulse Length"]
     #[inline(always)]
+    #[must_use]
     pub fn nrd_pulse(&mut self) -> NRD_PULSE_W<16> {
         NRD_PULSE_W::new(self)
     }
     #[doc = "Bits 24:30 - NCS Pulse Length in READ Access"]
     #[inline(always)]
+    #[must_use]
     pub fn ncs_rd_pulse(&mut self) -> NCS_RD_PULSE_W<24> {
         NCS_RD_PULSE_W::new(self)
     }
@@ -112,11 +86,10 @@ impl crate::Readable for PULSE4_SPEC {
 #[doc = "`write(|w| ..)` method takes [pulse4::W](W) writer structure"]
 impl crate::Writable for PULSE4_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PULSE4 to value 0x0101_0101"]
 impl crate::Resettable for PULSE4_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0101_0101
-    }
+    const RESET_VALUE: Self::Ux = 0x0101_0101;
 }

@@ -1,29 +1,12 @@
 #[doc = "Register `CUPD2` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CUPD2_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CUPD2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CUPD2_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CUPD2_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `CUPD` writer - "]
 pub type CUPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CUPD2_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31"]
     #[inline(always)]
+    #[must_use]
     pub fn cupd(&mut self) -> CUPD_W<0> {
         CUPD_W::new(self)
     }
@@ -42,4 +25,6 @@ impl crate::RegisterSpec for CUPD2_SPEC {
 #[doc = "`write(|w| ..)` method takes [cupd2::W](W) writer structure"]
 impl crate::Writable for CUPD2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

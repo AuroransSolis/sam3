@@ -1,39 +1,9 @@
 #[doc = "Register `CTRL` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CTRL` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `DEV_ADDR` reader - UDPHS Address"]
 pub type DEV_ADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DEV_ADDR` writer - UDPHS Address"]
@@ -93,31 +63,37 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - UDPHS Address"]
     #[inline(always)]
+    #[must_use]
     pub fn dev_addr(&mut self) -> DEV_ADDR_W<0> {
         DEV_ADDR_W::new(self)
     }
     #[doc = "Bit 7 - Function Address Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn faddr_en(&mut self) -> FADDR_EN_W<7> {
         FADDR_EN_W::new(self)
     }
     #[doc = "Bit 8 - UDPHS Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn en_udphs(&mut self) -> EN_UDPHS_W<8> {
         EN_UDPHS_W::new(self)
     }
     #[doc = "Bit 9 - Detach Command"]
     #[inline(always)]
+    #[must_use]
     pub fn detach(&mut self) -> DETACH_W<9> {
         DETACH_W::new(self)
     }
     #[doc = "Bit 10 - Send Remote Wake Up"]
     #[inline(always)]
+    #[must_use]
     pub fn rewakeup(&mut self) -> REWAKEUP_W<10> {
         REWAKEUP_W::new(self)
     }
     #[doc = "Bit 11 - Pull-Down Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pulld_dis(&mut self) -> PULLD_DIS_W<11> {
         PULLD_DIS_W::new(self)
     }
@@ -140,11 +116,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x0200"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0200
-    }
+    const RESET_VALUE: Self::Ux = 0x0200;
 }

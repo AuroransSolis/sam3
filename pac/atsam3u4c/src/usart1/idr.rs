@@ -1,24 +1,6 @@
 #[doc = "Register `IDR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<IDR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IDR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IDR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `RXRDY` writer - RXRDY Interrupt Disable"]
 pub type RXRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `TXRDY` writer - TXRDY Interrupt Disable"]
@@ -60,96 +42,115 @@ pub type MANE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - RXRDY Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn rxrdy(&mut self) -> RXRDY_W<0> {
         RXRDY_W::new(self)
     }
     #[doc = "Bit 1 - TXRDY Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn txrdy(&mut self) -> TXRDY_W<1> {
         TXRDY_W::new(self)
     }
     #[doc = "Bit 2 - Receiver Break Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn rxbrk(&mut self) -> RXBRK_W<2> {
         RXBRK_W::new(self)
     }
     #[doc = "Bit 3 - End of Receive Transfer Interrupt Disable (available in all USART modes of operation)"]
     #[inline(always)]
+    #[must_use]
     pub fn endrx(&mut self) -> ENDRX_W<3> {
         ENDRX_W::new(self)
     }
     #[doc = "Bit 4 - End of Transmit Interrupt Disable (available in all USART modes of operation)"]
     #[inline(always)]
+    #[must_use]
     pub fn endtx(&mut self) -> ENDTX_W<4> {
         ENDTX_W::new(self)
     }
     #[doc = "Bit 5 - Overrun Error Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ovre(&mut self) -> OVRE_W<5> {
         OVRE_W::new(self)
     }
     #[doc = "Bit 6 - Framing Error Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn frame(&mut self) -> FRAME_W<6> {
         FRAME_W::new(self)
     }
     #[doc = "Bit 7 - Parity Error Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn pare(&mut self) -> PARE_W<7> {
         PARE_W::new(self)
     }
     #[doc = "Bit 8 - Time-out Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn timeout(&mut self) -> TIMEOUT_W<8> {
         TIMEOUT_W::new(self)
     }
     #[doc = "Bit 9 - TXEMPTY Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn txempty(&mut self) -> TXEMPTY_W<9> {
         TXEMPTY_W::new(self)
     }
     #[doc = "Bit 10 - Max Number of Repetitions Reached Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn iter(&mut self) -> ITER_W<10> {
         ITER_W::new(self)
     }
     #[doc = "Bit 11 - Buffer Empty Interrupt Disable (available in all USART modes of operation)"]
     #[inline(always)]
+    #[must_use]
     pub fn txbufe(&mut self) -> TXBUFE_W<11> {
         TXBUFE_W::new(self)
     }
     #[doc = "Bit 12 - Buffer Full Interrupt Disable (available in all USART modes of operation)"]
     #[inline(always)]
+    #[must_use]
     pub fn rxbuff(&mut self) -> RXBUFF_W<12> {
         RXBUFF_W::new(self)
     }
     #[doc = "Bit 13 - Non AcknowledgeInterrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn nack(&mut self) -> NACK_W<13> {
         NACK_W::new(self)
     }
     #[doc = "Bit 16 - Ring Indicator Input Change Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn riic(&mut self) -> RIIC_W<16> {
         RIIC_W::new(self)
     }
     #[doc = "Bit 17 - Data Set Ready Input Change Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn dsric(&mut self) -> DSRIC_W<17> {
         DSRIC_W::new(self)
     }
     #[doc = "Bit 18 - Data Carrier Detect Input Change Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn dcdic(&mut self) -> DCDIC_W<18> {
         DCDIC_W::new(self)
     }
     #[doc = "Bit 19 - Clear to Send Input Change Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn ctsic(&mut self) -> CTSIC_W<19> {
         CTSIC_W::new(self)
     }
     #[doc = "Bit 24 - Manchester Error Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn mane(&mut self) -> MANE_W<24> {
         MANE_W::new(self)
     }
@@ -168,4 +169,6 @@ impl crate::RegisterSpec for IDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [idr::W](W) writer structure"]
 impl crate::Writable for IDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

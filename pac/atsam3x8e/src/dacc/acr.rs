@@ -1,39 +1,9 @@
 #[doc = "Register `ACR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<ACR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ACR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ACR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ACR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `ACR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<ACR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ACR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ACR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ACR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `IBCTLCH0` reader - Analog Output Current Control"]
 pub type IBCTLCH0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `IBCTLCH0` writer - Analog Output Current Control"]
@@ -66,16 +36,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Analog Output Current Control"]
     #[inline(always)]
+    #[must_use]
     pub fn ibctlch0(&mut self) -> IBCTLCH0_W<0> {
         IBCTLCH0_W::new(self)
     }
     #[doc = "Bits 2:3 - Analog Output Current Control"]
     #[inline(always)]
+    #[must_use]
     pub fn ibctlch1(&mut self) -> IBCTLCH1_W<2> {
         IBCTLCH1_W::new(self)
     }
     #[doc = "Bits 8:9 - Bias Current Control for DAC Core"]
     #[inline(always)]
+    #[must_use]
     pub fn ibctldaccore(&mut self) -> IBCTLDACCORE_W<8> {
         IBCTLDACCORE_W::new(self)
     }
@@ -98,11 +71,10 @@ impl crate::Readable for ACR_SPEC {
 #[doc = "`write(|w| ..)` method takes [acr::W](W) writer structure"]
 impl crate::Writable for ACR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ACR to value 0"]
 impl crate::Resettable for ACR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

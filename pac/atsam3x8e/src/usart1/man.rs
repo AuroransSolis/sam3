@@ -1,39 +1,9 @@
 #[doc = "Register `MAN` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MAN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MAN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MAN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MAN_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MAN` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<MAN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MAN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MAN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MAN_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `TX_PL` reader - Transmitter Preamble Length"]
 pub type TX_PL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TX_PL` writer - Transmitter Preamble Length"]
@@ -41,17 +11,17 @@ pub type TX_PL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAN_SPEC, u8, u8
 #[doc = "Field `TX_PP` reader - Transmitter Preamble Pattern"]
 pub type TX_PP_R = crate::FieldReader<u8, TX_PP_A>;
 #[doc = "Transmitter Preamble Pattern\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TX_PP_A {
     #[doc = "0: The preamble is composed of '1's"]
-    ALL_ONE = 0,
+    AllOne = 0,
     #[doc = "1: The preamble is composed of '0's"]
-    ALL_ZERO = 1,
+    AllZero = 1,
     #[doc = "2: The preamble is composed of '01's"]
-    ZERO_ONE = 2,
+    ZeroOne = 2,
     #[doc = "3: The preamble is composed of '10's"]
-    ONE_ZERO = 3,
+    OneZero = 3,
 }
 impl From<TX_PP_A> for u8 {
     #[inline(always)]
@@ -64,32 +34,32 @@ impl TX_PP_R {
     #[inline(always)]
     pub fn variant(&self) -> TX_PP_A {
         match self.bits {
-            0 => TX_PP_A::ALL_ONE,
-            1 => TX_PP_A::ALL_ZERO,
-            2 => TX_PP_A::ZERO_ONE,
-            3 => TX_PP_A::ONE_ZERO,
+            0 => TX_PP_A::AllOne,
+            1 => TX_PP_A::AllZero,
+            2 => TX_PP_A::ZeroOne,
+            3 => TX_PP_A::OneZero,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `ALL_ONE`"]
+    #[doc = "Checks if the value of the field is `AllOne`"]
     #[inline(always)]
     pub fn is_all_one(&self) -> bool {
-        *self == TX_PP_A::ALL_ONE
+        *self == TX_PP_A::AllOne
     }
-    #[doc = "Checks if the value of the field is `ALL_ZERO`"]
+    #[doc = "Checks if the value of the field is `AllZero`"]
     #[inline(always)]
     pub fn is_all_zero(&self) -> bool {
-        *self == TX_PP_A::ALL_ZERO
+        *self == TX_PP_A::AllZero
     }
-    #[doc = "Checks if the value of the field is `ZERO_ONE`"]
+    #[doc = "Checks if the value of the field is `ZeroOne`"]
     #[inline(always)]
     pub fn is_zero_one(&self) -> bool {
-        *self == TX_PP_A::ZERO_ONE
+        *self == TX_PP_A::ZeroOne
     }
-    #[doc = "Checks if the value of the field is `ONE_ZERO`"]
+    #[doc = "Checks if the value of the field is `OneZero`"]
     #[inline(always)]
     pub fn is_one_zero(&self) -> bool {
-        *self == TX_PP_A::ONE_ZERO
+        *self == TX_PP_A::OneZero
     }
 }
 #[doc = "Field `TX_PP` writer - Transmitter Preamble Pattern"]
@@ -98,22 +68,22 @@ impl<'a, const O: u8> TX_PP_W<'a, O> {
     #[doc = "The preamble is composed of '1's"]
     #[inline(always)]
     pub fn all_one(self) -> &'a mut W {
-        self.variant(TX_PP_A::ALL_ONE)
+        self.variant(TX_PP_A::AllOne)
     }
     #[doc = "The preamble is composed of '0's"]
     #[inline(always)]
     pub fn all_zero(self) -> &'a mut W {
-        self.variant(TX_PP_A::ALL_ZERO)
+        self.variant(TX_PP_A::AllZero)
     }
     #[doc = "The preamble is composed of '01's"]
     #[inline(always)]
     pub fn zero_one(self) -> &'a mut W {
-        self.variant(TX_PP_A::ZERO_ONE)
+        self.variant(TX_PP_A::ZeroOne)
     }
     #[doc = "The preamble is composed of '10's"]
     #[inline(always)]
     pub fn one_zero(self) -> &'a mut W {
-        self.variant(TX_PP_A::ONE_ZERO)
+        self.variant(TX_PP_A::OneZero)
     }
 }
 #[doc = "Field `TX_MPOL` reader - Transmitter Manchester Polarity"]
@@ -127,17 +97,17 @@ pub type RX_PL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAN_SPEC, u8, u8
 #[doc = "Field `RX_PP` reader - Receiver Preamble Pattern detected"]
 pub type RX_PP_R = crate::FieldReader<u8, RX_PP_A>;
 #[doc = "Receiver Preamble Pattern detected\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RX_PP_A {
     #[doc = "0: The preamble is composed of '1's"]
-    ALL_ONE = 0,
+    AllOne = 0,
     #[doc = "1: The preamble is composed of '0's"]
-    ALL_ZERO = 1,
+    AllZero = 1,
     #[doc = "2: The preamble is composed of '01's"]
-    ZERO_ONE = 2,
+    ZeroOne = 2,
     #[doc = "3: The preamble is composed of '10's"]
-    ONE_ZERO = 3,
+    OneZero = 3,
 }
 impl From<RX_PP_A> for u8 {
     #[inline(always)]
@@ -150,32 +120,32 @@ impl RX_PP_R {
     #[inline(always)]
     pub fn variant(&self) -> RX_PP_A {
         match self.bits {
-            0 => RX_PP_A::ALL_ONE,
-            1 => RX_PP_A::ALL_ZERO,
-            2 => RX_PP_A::ZERO_ONE,
-            3 => RX_PP_A::ONE_ZERO,
+            0 => RX_PP_A::AllOne,
+            1 => RX_PP_A::AllZero,
+            2 => RX_PP_A::ZeroOne,
+            3 => RX_PP_A::OneZero,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `ALL_ONE`"]
+    #[doc = "Checks if the value of the field is `AllOne`"]
     #[inline(always)]
     pub fn is_all_one(&self) -> bool {
-        *self == RX_PP_A::ALL_ONE
+        *self == RX_PP_A::AllOne
     }
-    #[doc = "Checks if the value of the field is `ALL_ZERO`"]
+    #[doc = "Checks if the value of the field is `AllZero`"]
     #[inline(always)]
     pub fn is_all_zero(&self) -> bool {
-        *self == RX_PP_A::ALL_ZERO
+        *self == RX_PP_A::AllZero
     }
-    #[doc = "Checks if the value of the field is `ZERO_ONE`"]
+    #[doc = "Checks if the value of the field is `ZeroOne`"]
     #[inline(always)]
     pub fn is_zero_one(&self) -> bool {
-        *self == RX_PP_A::ZERO_ONE
+        *self == RX_PP_A::ZeroOne
     }
-    #[doc = "Checks if the value of the field is `ONE_ZERO`"]
+    #[doc = "Checks if the value of the field is `OneZero`"]
     #[inline(always)]
     pub fn is_one_zero(&self) -> bool {
-        *self == RX_PP_A::ONE_ZERO
+        *self == RX_PP_A::OneZero
     }
 }
 #[doc = "Field `RX_PP` writer - Receiver Preamble Pattern detected"]
@@ -184,22 +154,22 @@ impl<'a, const O: u8> RX_PP_W<'a, O> {
     #[doc = "The preamble is composed of '1's"]
     #[inline(always)]
     pub fn all_one(self) -> &'a mut W {
-        self.variant(RX_PP_A::ALL_ONE)
+        self.variant(RX_PP_A::AllOne)
     }
     #[doc = "The preamble is composed of '0's"]
     #[inline(always)]
     pub fn all_zero(self) -> &'a mut W {
-        self.variant(RX_PP_A::ALL_ZERO)
+        self.variant(RX_PP_A::AllZero)
     }
     #[doc = "The preamble is composed of '01's"]
     #[inline(always)]
     pub fn zero_one(self) -> &'a mut W {
-        self.variant(RX_PP_A::ZERO_ONE)
+        self.variant(RX_PP_A::ZeroOne)
     }
     #[doc = "The preamble is composed of '10's"]
     #[inline(always)]
     pub fn one_zero(self) -> &'a mut W {
-        self.variant(RX_PP_A::ONE_ZERO)
+        self.variant(RX_PP_A::OneZero)
     }
 }
 #[doc = "Field `RX_MPOL` reader - Receiver Manchester Polarity"]
@@ -259,41 +229,49 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Transmitter Preamble Length"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_pl(&mut self) -> TX_PL_W<0> {
         TX_PL_W::new(self)
     }
     #[doc = "Bits 8:9 - Transmitter Preamble Pattern"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_pp(&mut self) -> TX_PP_W<8> {
         TX_PP_W::new(self)
     }
     #[doc = "Bit 12 - Transmitter Manchester Polarity"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_mpol(&mut self) -> TX_MPOL_W<12> {
         TX_MPOL_W::new(self)
     }
     #[doc = "Bits 16:19 - Receiver Preamble Length"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_pl(&mut self) -> RX_PL_W<16> {
         RX_PL_W::new(self)
     }
     #[doc = "Bits 24:25 - Receiver Preamble Pattern detected"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_pp(&mut self) -> RX_PP_W<24> {
         RX_PP_W::new(self)
     }
     #[doc = "Bit 28 - Receiver Manchester Polarity"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_mpol(&mut self) -> RX_MPOL_W<28> {
         RX_MPOL_W::new(self)
     }
     #[doc = "Bit 29 - Must Be Set to 1"]
     #[inline(always)]
+    #[must_use]
     pub fn one(&mut self) -> ONE_W<29> {
         ONE_W::new(self)
     }
     #[doc = "Bit 30 - Drift Compensation"]
     #[inline(always)]
+    #[must_use]
     pub fn drift(&mut self) -> DRIFT_W<30> {
         DRIFT_W::new(self)
     }
@@ -316,11 +294,10 @@ impl crate::Readable for MAN_SPEC {
 #[doc = "`write(|w| ..)` method takes [man::W](W) writer structure"]
 impl crate::Writable for MAN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MAN to value 0xb001_1004"]
 impl crate::Resettable for MAN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xb001_1004
-    }
+    const RESET_VALUE: Self::Ux = 0xb001_1004;
 }

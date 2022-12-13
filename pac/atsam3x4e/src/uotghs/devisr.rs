@@ -1,18 +1,6 @@
 #[doc = "Register `DEVISR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<DEVISR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DEVISR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DEVISR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DEVISR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `SUSP` reader - Suspend Interrupt"]
 pub type SUSP_R = crate::BitReader<bool>;
 #[doc = "Field `MSOF` reader - Micro Start of Frame Interrupt"]
@@ -187,8 +175,5 @@ impl crate::Readable for DEVISR_SPEC {
 }
 #[doc = "`reset()` method sets DEVISR to value 0"]
 impl crate::Resettable for DEVISR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

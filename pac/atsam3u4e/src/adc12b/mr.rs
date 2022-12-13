@@ -1,39 +1,9 @@
 #[doc = "Register `MR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<MR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `TRGEN` reader - Trigger Enable"]
 pub type TRGEN_R = crate::BitReader<bool>;
 #[doc = "Field `TRGEN` writer - Trigger Enable"]
@@ -102,36 +72,43 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Trigger Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn trgen(&mut self) -> TRGEN_W<0> {
         TRGEN_W::new(self)
     }
     #[doc = "Bits 1:3 - Trigger Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn trgsel(&mut self) -> TRGSEL_W<1> {
         TRGSEL_W::new(self)
     }
     #[doc = "Bit 4 - Resolution"]
     #[inline(always)]
+    #[must_use]
     pub fn lowres(&mut self) -> LOWRES_W<4> {
         LOWRES_W::new(self)
     }
     #[doc = "Bit 5 - Sleep Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn sleep(&mut self) -> SLEEP_W<5> {
         SLEEP_W::new(self)
     }
     #[doc = "Bits 8:15 - Prescaler Rate Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn prescal(&mut self) -> PRESCAL_W<8> {
         PRESCAL_W::new(self)
     }
     #[doc = "Bits 16:23 - Start Up Time"]
     #[inline(always)]
+    #[must_use]
     pub fn startup(&mut self) -> STARTUP_W<16> {
         STARTUP_W::new(self)
     }
     #[doc = "Bits 24:27 - Sample & Hold Time"]
     #[inline(always)]
+    #[must_use]
     pub fn shtim(&mut self) -> SHTIM_W<24> {
         SHTIM_W::new(self)
     }
@@ -154,11 +131,10 @@ impl crate::Readable for MR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
 impl crate::Writable for MR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MR to value 0"]
 impl crate::Resettable for MR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

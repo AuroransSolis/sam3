@@ -1,18 +1,6 @@
 #[doc = "Register `PCRHR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<PCRHR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PCRHR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PCRHR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PCRHR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `RDATA` reader - Parallel Capture Mode Reception Data."]
 pub type RDATA_R = crate::FieldReader<u32, u32>;
 impl R {
@@ -33,8 +21,5 @@ impl crate::Readable for PCRHR_SPEC {
 }
 #[doc = "`reset()` method sets PCRHR to value 0"]
 impl crate::Resettable for PCRHR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,39 +1,9 @@
 #[doc = "Register `MDH3` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MDH3_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MDH3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MDH3_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MDH3_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MDH3` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<MDH3_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MDH3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MDH3_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MDH3_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `MDH` reader - Message Data High Value"]
 pub type MDH_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `MDH` writer - Message Data High Value"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Message Data High Value"]
     #[inline(always)]
+    #[must_use]
     pub fn mdh(&mut self) -> MDH_W<0> {
         MDH_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for MDH3_SPEC {
 #[doc = "`write(|w| ..)` method takes [mdh3::W](W) writer structure"]
 impl crate::Writable for MDH3_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MDH3 to value 0"]
 impl crate::Resettable for MDH3_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

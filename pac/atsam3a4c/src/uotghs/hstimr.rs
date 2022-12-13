@@ -1,18 +1,6 @@
 #[doc = "Register `HSTIMR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<HSTIMR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HSTIMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HSTIMR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HSTIMR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `DCONNIE` reader - Device Connection Interrupt Enable"]
 pub type DCONNIE_R = crate::BitReader<bool>;
 #[doc = "Field `DDISCIE` reader - Device Disconnection Interrupt Enable"]
@@ -187,8 +175,5 @@ impl crate::Readable for HSTIMR_SPEC {
 }
 #[doc = "`reset()` method sets HSTIMR to value 0"]
 impl crate::Resettable for HSTIMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

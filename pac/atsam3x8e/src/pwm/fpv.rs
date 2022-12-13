@@ -1,39 +1,9 @@
 #[doc = "Register `FPV` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<FPV_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FPV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FPV_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FPV_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `FPV` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<FPV_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FPV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FPV_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FPV_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `FPVH0` reader - Fault Protection Value for PWMH output on channel 0"]
 pub type FPVH0_R = crate::BitReader<bool>;
 #[doc = "Field `FPVH0` writer - Fault Protection Value for PWMH output on channel 0"]
@@ -183,81 +153,97 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Fault Protection Value for PWMH output on channel 0"]
     #[inline(always)]
+    #[must_use]
     pub fn fpvh0(&mut self) -> FPVH0_W<0> {
         FPVH0_W::new(self)
     }
     #[doc = "Bit 1 - Fault Protection Value for PWMH output on channel 1"]
     #[inline(always)]
+    #[must_use]
     pub fn fpvh1(&mut self) -> FPVH1_W<1> {
         FPVH1_W::new(self)
     }
     #[doc = "Bit 2 - Fault Protection Value for PWMH output on channel 2"]
     #[inline(always)]
+    #[must_use]
     pub fn fpvh2(&mut self) -> FPVH2_W<2> {
         FPVH2_W::new(self)
     }
     #[doc = "Bit 3 - Fault Protection Value for PWMH output on channel 3"]
     #[inline(always)]
+    #[must_use]
     pub fn fpvh3(&mut self) -> FPVH3_W<3> {
         FPVH3_W::new(self)
     }
     #[doc = "Bit 4 - Fault Protection Value for PWMH output on channel 4"]
     #[inline(always)]
+    #[must_use]
     pub fn fpvh4(&mut self) -> FPVH4_W<4> {
         FPVH4_W::new(self)
     }
     #[doc = "Bit 5 - Fault Protection Value for PWMH output on channel 5"]
     #[inline(always)]
+    #[must_use]
     pub fn fpvh5(&mut self) -> FPVH5_W<5> {
         FPVH5_W::new(self)
     }
     #[doc = "Bit 6 - Fault Protection Value for PWMH output on channel 6"]
     #[inline(always)]
+    #[must_use]
     pub fn fpvh6(&mut self) -> FPVH6_W<6> {
         FPVH6_W::new(self)
     }
     #[doc = "Bit 7 - Fault Protection Value for PWMH output on channel 7"]
     #[inline(always)]
+    #[must_use]
     pub fn fpvh7(&mut self) -> FPVH7_W<7> {
         FPVH7_W::new(self)
     }
     #[doc = "Bit 16 - Fault Protection Value for PWML output on channel 0"]
     #[inline(always)]
+    #[must_use]
     pub fn fpvl0(&mut self) -> FPVL0_W<16> {
         FPVL0_W::new(self)
     }
     #[doc = "Bit 17 - Fault Protection Value for PWML output on channel 1"]
     #[inline(always)]
+    #[must_use]
     pub fn fpvl1(&mut self) -> FPVL1_W<17> {
         FPVL1_W::new(self)
     }
     #[doc = "Bit 18 - Fault Protection Value for PWML output on channel 2"]
     #[inline(always)]
+    #[must_use]
     pub fn fpvl2(&mut self) -> FPVL2_W<18> {
         FPVL2_W::new(self)
     }
     #[doc = "Bit 19 - Fault Protection Value for PWML output on channel 3"]
     #[inline(always)]
+    #[must_use]
     pub fn fpvl3(&mut self) -> FPVL3_W<19> {
         FPVL3_W::new(self)
     }
     #[doc = "Bit 20 - Fault Protection Value for PWML output on channel 4"]
     #[inline(always)]
+    #[must_use]
     pub fn fpvl4(&mut self) -> FPVL4_W<20> {
         FPVL4_W::new(self)
     }
     #[doc = "Bit 21 - Fault Protection Value for PWML output on channel 5"]
     #[inline(always)]
+    #[must_use]
     pub fn fpvl5(&mut self) -> FPVL5_W<21> {
         FPVL5_W::new(self)
     }
     #[doc = "Bit 22 - Fault Protection Value for PWML output on channel 6"]
     #[inline(always)]
+    #[must_use]
     pub fn fpvl6(&mut self) -> FPVL6_W<22> {
         FPVL6_W::new(self)
     }
     #[doc = "Bit 23 - Fault Protection Value for PWML output on channel 7"]
     #[inline(always)]
+    #[must_use]
     pub fn fpvl7(&mut self) -> FPVL7_W<23> {
         FPVL7_W::new(self)
     }
@@ -280,11 +266,10 @@ impl crate::Readable for FPV_SPEC {
 #[doc = "`write(|w| ..)` method takes [fpv::W](W) writer structure"]
 impl crate::Writable for FPV_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FPV to value 0"]
 impl crate::Resettable for FPV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

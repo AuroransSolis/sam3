@@ -1,39 +1,9 @@
 #[doc = "Register `WPMR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<WPMR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<WPMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<WPMR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<WPMR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `WPMR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<WPMR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<WPMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<WPMR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<WPMR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `WP_EN` reader - Write Protection Enable"]
 pub type WP_EN_R = crate::BitReader<bool>;
 #[doc = "Field `WP_EN` writer - Write Protection Enable"]
@@ -51,17 +21,19 @@ impl R {
     #[doc = "Bits 8:31 - Write Protection Key password"]
     #[inline(always)]
     pub fn wp_key(&self) -> WP_KEY_R {
-        WP_KEY_R::new(((self.bits >> 8) & 0x00ff_ffff) as u32)
+        WP_KEY_R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
 impl W {
     #[doc = "Bit 0 - Write Protection Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn wp_en(&mut self) -> WP_EN_W<0> {
         WP_EN_W::new(self)
     }
     #[doc = "Bits 8:31 - Write Protection Key password"]
     #[inline(always)]
+    #[must_use]
     pub fn wp_key(&mut self) -> WP_KEY_W<8> {
         WP_KEY_W::new(self)
     }
@@ -84,4 +56,6 @@ impl crate::Readable for WPMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [wpmr::W](W) writer structure"]
 impl crate::Writable for WPMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

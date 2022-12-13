@@ -1,18 +1,6 @@
 #[doc = "Register `CSR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `RXRDY` reader - Receiver Ready"]
 pub type RXRDY_R = crate::BitReader<bool>;
 #[doc = "Field `TXRDY` reader - Transmitter Ready"]

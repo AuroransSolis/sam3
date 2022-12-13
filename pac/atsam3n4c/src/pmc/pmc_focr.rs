@@ -1,29 +1,12 @@
 #[doc = "Register `PMC_FOCR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<PMC_FOCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PMC_FOCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PMC_FOCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PMC_FOCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `FOCLR` writer - Fault Output Clear"]
 pub type FOCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FOCR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Fault Output Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn foclr(&mut self) -> FOCLR_W<0> {
         FOCLR_W::new(self)
     }
@@ -42,4 +25,6 @@ impl crate::RegisterSpec for PMC_FOCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [pmc_focr::W](W) writer structure"]
 impl crate::Writable for PMC_FOCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

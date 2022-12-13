@@ -1,39 +1,9 @@
 #[doc = "Register `ELMR[%s]` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<ELMR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ELMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ELMR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ELMR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `ELMR[%s]` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<ELMR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ELMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ELMR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ELMR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `CSEL0` reader - Comparison 0 Selection"]
 pub type CSEL0_R = crate::BitReader<bool>;
 #[doc = "Field `CSEL0` writer - Comparison 0 Selection"]
@@ -111,41 +81,49 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Comparison 0 Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn csel0(&mut self) -> CSEL0_W<0> {
         CSEL0_W::new(self)
     }
     #[doc = "Bit 1 - Comparison 1 Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn csel1(&mut self) -> CSEL1_W<1> {
         CSEL1_W::new(self)
     }
     #[doc = "Bit 2 - Comparison 2 Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn csel2(&mut self) -> CSEL2_W<2> {
         CSEL2_W::new(self)
     }
     #[doc = "Bit 3 - Comparison 3 Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn csel3(&mut self) -> CSEL3_W<3> {
         CSEL3_W::new(self)
     }
     #[doc = "Bit 4 - Comparison 4 Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn csel4(&mut self) -> CSEL4_W<4> {
         CSEL4_W::new(self)
     }
     #[doc = "Bit 5 - Comparison 5 Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn csel5(&mut self) -> CSEL5_W<5> {
         CSEL5_W::new(self)
     }
     #[doc = "Bit 6 - Comparison 6 Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn csel6(&mut self) -> CSEL6_W<6> {
         CSEL6_W::new(self)
     }
     #[doc = "Bit 7 - Comparison 7 Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn csel7(&mut self) -> CSEL7_W<7> {
         CSEL7_W::new(self)
     }
@@ -168,4 +146,6 @@ impl crate::Readable for ELMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [elmr::W](W) writer structure"]
 impl crate::Writable for ELMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

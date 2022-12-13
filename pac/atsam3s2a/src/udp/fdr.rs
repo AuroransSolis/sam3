@@ -1,39 +1,9 @@
 #[doc = "Register `FDR[%s]` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<FDR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FDR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FDR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `FDR[%s]` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<FDR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FDR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FDR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `FIFO_DATA` reader - FIFO Data Value"]
 pub type FIFO_DATA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FIFO_DATA` writer - FIFO Data Value"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - FIFO Data Value"]
     #[inline(always)]
+    #[must_use]
     pub fn fifo_data(&mut self) -> FIFO_DATA_W<0> {
         FIFO_DATA_W::new(self)
     }
@@ -70,4 +41,6 @@ impl crate::Readable for FDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [fdr::W](W) writer structure"]
 impl crate::Writable for FDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

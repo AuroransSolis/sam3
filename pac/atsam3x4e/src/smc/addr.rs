@@ -1,39 +1,9 @@
 #[doc = "Register `ADDR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<ADDR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ADDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ADDR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ADDR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `ADDR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<ADDR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ADDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ADDR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ADDR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `ADDR_CYCLE0` reader - NAND Flash Array Address cycle 0"]
 pub type ADDR_CYCLE0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ADDR_CYCLE0` writer - NAND Flash Array Address cycle 0"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - NAND Flash Array Address cycle 0"]
     #[inline(always)]
+    #[must_use]
     pub fn addr_cycle0(&mut self) -> ADDR_CYCLE0_W<0> {
         ADDR_CYCLE0_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for ADDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [addr::W](W) writer structure"]
 impl crate::Writable for ADDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ADDR to value 0"]
 impl crate::Resettable for ADDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,18 +1,6 @@
 #[doc = "Register `CKGR_MCFR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CKGR_MCFR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CKGR_MCFR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CKGR_MCFR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CKGR_MCFR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `MAINF` reader - Main Clock Frequency"]
 pub type MAINF_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MAINFRDY` reader - Main Clock Ready"]
@@ -40,8 +28,5 @@ impl crate::Readable for CKGR_MCFR_SPEC {
 }
 #[doc = "`reset()` method sets CKGR_MCFR to value 0"]
 impl crate::Resettable for CKGR_MCFR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

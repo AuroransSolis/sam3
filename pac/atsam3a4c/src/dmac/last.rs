@@ -1,39 +1,9 @@
 #[doc = "Register `LAST` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<LAST_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LAST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LAST_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LAST_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `LAST` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<LAST_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LAST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LAST_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LAST_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `SLAST0` reader - Source Last"]
 pub type SLAST0_R = crate::BitReader<bool>;
 #[doc = "Field `SLAST0` writer - Source Last"]
@@ -147,61 +117,73 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Source Last"]
     #[inline(always)]
+    #[must_use]
     pub fn slast0(&mut self) -> SLAST0_W<0> {
         SLAST0_W::new(self)
     }
     #[doc = "Bit 1 - Destination Last"]
     #[inline(always)]
+    #[must_use]
     pub fn dlast0(&mut self) -> DLAST0_W<1> {
         DLAST0_W::new(self)
     }
     #[doc = "Bit 2 - Source Last"]
     #[inline(always)]
+    #[must_use]
     pub fn slast1(&mut self) -> SLAST1_W<2> {
         SLAST1_W::new(self)
     }
     #[doc = "Bit 3 - Destination Last"]
     #[inline(always)]
+    #[must_use]
     pub fn dlast1(&mut self) -> DLAST1_W<3> {
         DLAST1_W::new(self)
     }
     #[doc = "Bit 4 - Source Last"]
     #[inline(always)]
+    #[must_use]
     pub fn slast2(&mut self) -> SLAST2_W<4> {
         SLAST2_W::new(self)
     }
     #[doc = "Bit 5 - Destination Last"]
     #[inline(always)]
+    #[must_use]
     pub fn dlast2(&mut self) -> DLAST2_W<5> {
         DLAST2_W::new(self)
     }
     #[doc = "Bit 6 - Source Last"]
     #[inline(always)]
+    #[must_use]
     pub fn slast3(&mut self) -> SLAST3_W<6> {
         SLAST3_W::new(self)
     }
     #[doc = "Bit 7 - Destination Last"]
     #[inline(always)]
+    #[must_use]
     pub fn dlast3(&mut self) -> DLAST3_W<7> {
         DLAST3_W::new(self)
     }
     #[doc = "Bit 8 - Source Last"]
     #[inline(always)]
+    #[must_use]
     pub fn slast4(&mut self) -> SLAST4_W<8> {
         SLAST4_W::new(self)
     }
     #[doc = "Bit 9 - Destination Last"]
     #[inline(always)]
+    #[must_use]
     pub fn dlast4(&mut self) -> DLAST4_W<9> {
         DLAST4_W::new(self)
     }
     #[doc = "Bit 10 - Source Last"]
     #[inline(always)]
+    #[must_use]
     pub fn slast5(&mut self) -> SLAST5_W<10> {
         SLAST5_W::new(self)
     }
     #[doc = "Bit 11 - Destination Last"]
     #[inline(always)]
+    #[must_use]
     pub fn dlast5(&mut self) -> DLAST5_W<11> {
         DLAST5_W::new(self)
     }
@@ -224,11 +206,10 @@ impl crate::Readable for LAST_SPEC {
 #[doc = "`write(|w| ..)` method takes [last::W](W) writer structure"]
 impl crate::Writable for LAST_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets LAST to value 0"]
 impl crate::Resettable for LAST_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

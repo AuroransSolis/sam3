@@ -1,39 +1,9 @@
 #[doc = "Register `MAM7` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MAM7_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MAM7_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MAM7_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MAM7_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MAM7` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<MAM7_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MAM7_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MAM7_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MAM7_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `MIDvB` reader - Complementary bits for identifier in extended frame mode"]
 pub type MIDV_B_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `MIDvB` writer - Complementary bits for identifier in extended frame mode"]
@@ -50,7 +20,7 @@ impl R {
     #[doc = "Bits 0:17 - Complementary bits for identifier in extended frame mode"]
     #[inline(always)]
     pub fn midv_b(&self) -> MIDV_B_R {
-        MIDV_B_R::new((self.bits & 0x0003_ffff) as u32)
+        MIDV_B_R::new(self.bits & 0x0003_ffff)
     }
     #[doc = "Bits 18:28 - Identifier for standard frame mode"]
     #[inline(always)]
@@ -66,16 +36,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:17 - Complementary bits for identifier in extended frame mode"]
     #[inline(always)]
+    #[must_use]
     pub fn midv_b(&mut self) -> MIDV_B_W<0> {
         MIDV_B_W::new(self)
     }
     #[doc = "Bits 18:28 - Identifier for standard frame mode"]
     #[inline(always)]
+    #[must_use]
     pub fn midv_a(&mut self) -> MIDV_A_W<18> {
         MIDV_A_W::new(self)
     }
     #[doc = "Bit 29 - Identifier Version"]
     #[inline(always)]
+    #[must_use]
     pub fn mide(&mut self) -> MIDE_W<29> {
         MIDE_W::new(self)
     }
@@ -98,11 +71,10 @@ impl crate::Readable for MAM7_SPEC {
 #[doc = "`write(|w| ..)` method takes [mam7::W](W) writer structure"]
 impl crate::Writable for MAM7_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MAM7 to value 0"]
 impl crate::Resettable for MAM7_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

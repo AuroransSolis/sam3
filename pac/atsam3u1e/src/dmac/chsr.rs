@@ -1,18 +1,6 @@
 #[doc = "Register `CHSR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CHSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CHSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CHSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CHSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `ENA0` reader - Enable \\[3:0\\]"]
 pub type ENA0_R = crate::BitReader<bool>;
 #[doc = "Field `ENA1` reader - Enable \\[3:0\\]"]
@@ -138,8 +126,5 @@ impl crate::Readable for CHSR_SPEC {
 }
 #[doc = "`reset()` method sets CHSR to value 0x00ff_0000"]
 impl crate::Resettable for CHSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x00ff_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x00ff_0000;
 }

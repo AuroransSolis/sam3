@@ -1,39 +1,9 @@
 #[doc = "Register `CWR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CWR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CWR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CWR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CWR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CWR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CWR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CWR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CWR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CWR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `LOWTHRES` reader - Low Threshold"]
 pub type LOWTHRES_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `LOWTHRES` writer - Low Threshold"]
@@ -57,11 +27,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Low Threshold"]
     #[inline(always)]
+    #[must_use]
     pub fn lowthres(&mut self) -> LOWTHRES_W<0> {
         LOWTHRES_W::new(self)
     }
     #[doc = "Bits 16:27 - High Threshold"]
     #[inline(always)]
+    #[must_use]
     pub fn highthres(&mut self) -> HIGHTHRES_W<16> {
         HIGHTHRES_W::new(self)
     }
@@ -84,11 +56,10 @@ impl crate::Readable for CWR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cwr::W](W) writer structure"]
 impl crate::Writable for CWR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CWR to value 0"]
 impl crate::Resettable for CWR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

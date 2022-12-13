@@ -1,39 +1,9 @@
 #[doc = "Register `FIDI` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<FIDI_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FIDI_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FIDI_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FIDI_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `FIDI` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<FIDI_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FIDI_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FIDI_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FIDI_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `FI_DI_RATIO` reader - FI Over DI Ratio Value"]
 pub type FI_DI_RATIO_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `FI_DI_RATIO` writer - FI Over DI Ratio Value"]
@@ -48,6 +18,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - FI Over DI Ratio Value"]
     #[inline(always)]
+    #[must_use]
     pub fn fi_di_ratio(&mut self) -> FI_DI_RATIO_W<0> {
         FI_DI_RATIO_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for FIDI_SPEC {
 #[doc = "`write(|w| ..)` method takes [fidi::W](W) writer structure"]
 impl crate::Writable for FIDI_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FIDI to value 0x0174"]
 impl crate::Resettable for FIDI_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0174
-    }
+    const RESET_VALUE: Self::Ux = 0x0174;
 }

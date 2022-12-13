@@ -1,18 +1,6 @@
 #[doc = "Register `ECR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<ECR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ECR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ECR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ECR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `REC` reader - Receive Error Counter"]
 pub type REC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TEC` reader - Transmit Error Counter"]
@@ -40,8 +28,5 @@ impl crate::Readable for ECR_SPEC {
 }
 #[doc = "`reset()` method sets ECR to value 0"]
 impl crate::Resettable for ECR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

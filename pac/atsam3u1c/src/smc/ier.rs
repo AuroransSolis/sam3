@@ -1,24 +1,6 @@
 #[doc = "Register `IER` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<IER_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IER_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IER_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `RB_RISE` writer - Ready Busy Rising Edge Detection Interrupt Enable"]
 pub type RB_RISE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `RB_FALL` writer - Ready Busy Falling Edge Detection Interrupt Enable"]
@@ -40,46 +22,55 @@ pub type RB_EDGE0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool,
 impl W {
     #[doc = "Bit 4 - Ready Busy Rising Edge Detection Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rb_rise(&mut self) -> RB_RISE_W<4> {
         RB_RISE_W::new(self)
     }
     #[doc = "Bit 5 - Ready Busy Falling Edge Detection Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rb_fall(&mut self) -> RB_FALL_W<5> {
         RB_FALL_W::new(self)
     }
     #[doc = "Bit 16 - Transfer Done Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn xfrdone(&mut self) -> XFRDONE_W<16> {
         XFRDONE_W::new(self)
     }
     #[doc = "Bit 17 - Command Done Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn cmddone(&mut self) -> CMDDONE_W<17> {
         CMDDONE_W::new(self)
     }
     #[doc = "Bit 20 - Data Timeout Error Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dtoe(&mut self) -> DTOE_W<20> {
         DTOE_W::new(self)
     }
     #[doc = "Bit 21 - Undefined Area Access Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn undef(&mut self) -> UNDEF_W<21> {
         UNDEF_W::new(self)
     }
     #[doc = "Bit 22 - Accessing While Busy Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn awb(&mut self) -> AWB_W<22> {
         AWB_W::new(self)
     }
     #[doc = "Bit 23 - NFC Access Size Error Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn nfcase(&mut self) -> NFCASE_W<23> {
         NFCASE_W::new(self)
     }
     #[doc = "Bit 24 - Ready/Busy Line 0 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rb_edge0(&mut self) -> RB_EDGE0_W<24> {
         RB_EDGE0_W::new(self)
     }
@@ -98,11 +89,10 @@ impl crate::RegisterSpec for IER_SPEC {
 #[doc = "`write(|w| ..)` method takes [ier::W](W) writer structure"]
 impl crate::Writable for IER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IER to value 0"]
 impl crate::Resettable for IER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

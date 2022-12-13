@@ -1,39 +1,9 @@
 #[doc = "Register `SETUP0` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<SETUP0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SETUP0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SETUP0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SETUP0_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `SETUP0` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<SETUP0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SETUP0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SETUP0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SETUP0_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `NWE_SETUP` reader - NWE Setup Length"]
 pub type NWE_SETUP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NWE_SETUP` writer - NWE Setup Length"]
@@ -75,21 +45,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - NWE Setup Length"]
     #[inline(always)]
+    #[must_use]
     pub fn nwe_setup(&mut self) -> NWE_SETUP_W<0> {
         NWE_SETUP_W::new(self)
     }
     #[doc = "Bits 8:13 - NCS Setup Length in WRITE Access"]
     #[inline(always)]
+    #[must_use]
     pub fn ncs_wr_setup(&mut self) -> NCS_WR_SETUP_W<8> {
         NCS_WR_SETUP_W::new(self)
     }
     #[doc = "Bits 16:21 - NRD Setup Length"]
     #[inline(always)]
+    #[must_use]
     pub fn nrd_setup(&mut self) -> NRD_SETUP_W<16> {
         NRD_SETUP_W::new(self)
     }
     #[doc = "Bits 24:29 - NCS Setup Length in READ Access"]
     #[inline(always)]
+    #[must_use]
     pub fn ncs_rd_setup(&mut self) -> NCS_RD_SETUP_W<24> {
         NCS_RD_SETUP_W::new(self)
     }
@@ -112,11 +86,10 @@ impl crate::Readable for SETUP0_SPEC {
 #[doc = "`write(|w| ..)` method takes [setup0::W](W) writer structure"]
 impl crate::Writable for SETUP0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SETUP0 to value 0x0101_0101"]
 impl crate::Resettable for SETUP0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0101_0101
-    }
+    const RESET_VALUE: Self::Ux = 0x0101_0101;
 }

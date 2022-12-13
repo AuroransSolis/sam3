@@ -1,51 +1,21 @@
 #[doc = "Register `TST` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<TST_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TST_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TST_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `TST` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<TST_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TST_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TST_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `SPEED_CFG` reader - Speed Configuration"]
 pub type SPEED_CFG_R = crate::FieldReader<u8, SPEED_CFG_A>;
 #[doc = "Speed Configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SPEED_CFG_A {
     #[doc = "0: Normal Mode: The macro is in Full Speed mode, ready to make a High Speed identification, if the host supports it and then to automatically switch to High Speed mode"]
-    NORMAL = 0,
+    Normal = 0,
     #[doc = "2: Force High Speed: Set this value to force the hardware to work in High Speed mode. Only for debug or test purpose."]
-    HIGH_SPEED = 2,
+    HighSpeed = 2,
     #[doc = "3: Force Full Speed: Set this value to force the hardware to work only in Full Speed mode. In this configuration, the macro will not respond to a High Speed reset handshake."]
-    FULL_SPEED = 3,
+    FullSpeed = 3,
 }
 impl From<SPEED_CFG_A> for u8 {
     #[inline(always)]
@@ -58,26 +28,26 @@ impl SPEED_CFG_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<SPEED_CFG_A> {
         match self.bits {
-            0 => Some(SPEED_CFG_A::NORMAL),
-            2 => Some(SPEED_CFG_A::HIGH_SPEED),
-            3 => Some(SPEED_CFG_A::FULL_SPEED),
+            0 => Some(SPEED_CFG_A::Normal),
+            2 => Some(SPEED_CFG_A::HighSpeed),
+            3 => Some(SPEED_CFG_A::FullSpeed),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "Checks if the value of the field is `Normal`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        *self == SPEED_CFG_A::NORMAL
+        *self == SPEED_CFG_A::Normal
     }
-    #[doc = "Checks if the value of the field is `HIGH_SPEED`"]
+    #[doc = "Checks if the value of the field is `HighSpeed`"]
     #[inline(always)]
     pub fn is_high_speed(&self) -> bool {
-        *self == SPEED_CFG_A::HIGH_SPEED
+        *self == SPEED_CFG_A::HighSpeed
     }
-    #[doc = "Checks if the value of the field is `FULL_SPEED`"]
+    #[doc = "Checks if the value of the field is `FullSpeed`"]
     #[inline(always)]
     pub fn is_full_speed(&self) -> bool {
-        *self == SPEED_CFG_A::FULL_SPEED
+        *self == SPEED_CFG_A::FullSpeed
     }
 }
 #[doc = "Field `SPEED_CFG` writer - Speed Configuration"]
@@ -87,17 +57,17 @@ impl<'a, const O: u8> SPEED_CFG_W<'a, O> {
     #[doc = "Normal Mode: The macro is in Full Speed mode, ready to make a High Speed identification, if the host supports it and then to automatically switch to High Speed mode"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
-        self.variant(SPEED_CFG_A::NORMAL)
+        self.variant(SPEED_CFG_A::Normal)
     }
     #[doc = "Force High Speed: Set this value to force the hardware to work in High Speed mode. Only for debug or test purpose."]
     #[inline(always)]
     pub fn high_speed(self) -> &'a mut W {
-        self.variant(SPEED_CFG_A::HIGH_SPEED)
+        self.variant(SPEED_CFG_A::HighSpeed)
     }
     #[doc = "Force Full Speed: Set this value to force the hardware to work only in Full Speed mode. In this configuration, the macro will not respond to a High Speed reset handshake."]
     #[inline(always)]
     pub fn full_speed(self) -> &'a mut W {
-        self.variant(SPEED_CFG_A::FULL_SPEED)
+        self.variant(SPEED_CFG_A::FullSpeed)
     }
 }
 #[doc = "Field `TST_J` reader - Test J Mode"]
@@ -146,26 +116,31 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Speed Configuration"]
     #[inline(always)]
+    #[must_use]
     pub fn speed_cfg(&mut self) -> SPEED_CFG_W<0> {
         SPEED_CFG_W::new(self)
     }
     #[doc = "Bit 2 - Test J Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn tst_j(&mut self) -> TST_J_W<2> {
         TST_J_W::new(self)
     }
     #[doc = "Bit 3 - Test K Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn tst_k(&mut self) -> TST_K_W<3> {
         TST_K_W::new(self)
     }
     #[doc = "Bit 4 - Test Packet Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn tst_pkt(&mut self) -> TST_PKT_W<4> {
         TST_PKT_W::new(self)
     }
     #[doc = "Bit 5 - OpMode2"]
     #[inline(always)]
+    #[must_use]
     pub fn opmode2(&mut self) -> OPMODE2_W<5> {
         OPMODE2_W::new(self)
     }
@@ -188,11 +163,10 @@ impl crate::Readable for TST_SPEC {
 #[doc = "`write(|w| ..)` method takes [tst::W](W) writer structure"]
 impl crate::Writable for TST_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TST to value 0"]
 impl crate::Resettable for TST_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,39 +1,9 @@
 #[doc = "Register `CALALR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CALALR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CALALR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CALALR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CALALR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CALALR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CALALR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CALALR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CALALR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CALALR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `MONTH` reader - Month Alarm"]
 pub type MONTH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MONTH` writer - Month Alarm"]
@@ -75,21 +45,25 @@ impl R {
 impl W {
     #[doc = "Bits 16:20 - Month Alarm"]
     #[inline(always)]
+    #[must_use]
     pub fn month(&mut self) -> MONTH_W<16> {
         MONTH_W::new(self)
     }
     #[doc = "Bit 23 - Month Alarm Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn mthen(&mut self) -> MTHEN_W<23> {
         MTHEN_W::new(self)
     }
     #[doc = "Bits 24:29 - Date Alarm"]
     #[inline(always)]
+    #[must_use]
     pub fn date(&mut self) -> DATE_W<24> {
         DATE_W::new(self)
     }
     #[doc = "Bit 31 - Date Alarm Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dateen(&mut self) -> DATEEN_W<31> {
         DATEEN_W::new(self)
     }
@@ -112,11 +86,10 @@ impl crate::Readable for CALALR_SPEC {
 #[doc = "`write(|w| ..)` method takes [calalr::W](W) writer structure"]
 impl crate::Writable for CALALR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CALALR to value 0x0101_0000"]
 impl crate::Resettable for CALALR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0101_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0101_0000;
 }

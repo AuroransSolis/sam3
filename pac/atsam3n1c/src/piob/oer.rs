@@ -1,24 +1,6 @@
 #[doc = "Register `OER` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<OER_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<OER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<OER_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<OER_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `P0` writer - Output Enable"]
 pub type P0_W<'a, const O: u8> = crate::BitWriter<'a, u32, OER_SPEC, bool, O>;
 #[doc = "Field `P1` writer - Output Enable"]
@@ -86,161 +68,193 @@ pub type P31_W<'a, const O: u8> = crate::BitWriter<'a, u32, OER_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p0(&mut self) -> P0_W<0> {
         P0_W::new(self)
     }
     #[doc = "Bit 1 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p1(&mut self) -> P1_W<1> {
         P1_W::new(self)
     }
     #[doc = "Bit 2 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p2(&mut self) -> P2_W<2> {
         P2_W::new(self)
     }
     #[doc = "Bit 3 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p3(&mut self) -> P3_W<3> {
         P3_W::new(self)
     }
     #[doc = "Bit 4 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p4(&mut self) -> P4_W<4> {
         P4_W::new(self)
     }
     #[doc = "Bit 5 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p5(&mut self) -> P5_W<5> {
         P5_W::new(self)
     }
     #[doc = "Bit 6 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p6(&mut self) -> P6_W<6> {
         P6_W::new(self)
     }
     #[doc = "Bit 7 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p7(&mut self) -> P7_W<7> {
         P7_W::new(self)
     }
     #[doc = "Bit 8 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p8(&mut self) -> P8_W<8> {
         P8_W::new(self)
     }
     #[doc = "Bit 9 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p9(&mut self) -> P9_W<9> {
         P9_W::new(self)
     }
     #[doc = "Bit 10 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p10(&mut self) -> P10_W<10> {
         P10_W::new(self)
     }
     #[doc = "Bit 11 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p11(&mut self) -> P11_W<11> {
         P11_W::new(self)
     }
     #[doc = "Bit 12 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p12(&mut self) -> P12_W<12> {
         P12_W::new(self)
     }
     #[doc = "Bit 13 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p13(&mut self) -> P13_W<13> {
         P13_W::new(self)
     }
     #[doc = "Bit 14 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p14(&mut self) -> P14_W<14> {
         P14_W::new(self)
     }
     #[doc = "Bit 15 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p15(&mut self) -> P15_W<15> {
         P15_W::new(self)
     }
     #[doc = "Bit 16 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p16(&mut self) -> P16_W<16> {
         P16_W::new(self)
     }
     #[doc = "Bit 17 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p17(&mut self) -> P17_W<17> {
         P17_W::new(self)
     }
     #[doc = "Bit 18 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p18(&mut self) -> P18_W<18> {
         P18_W::new(self)
     }
     #[doc = "Bit 19 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p19(&mut self) -> P19_W<19> {
         P19_W::new(self)
     }
     #[doc = "Bit 20 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p20(&mut self) -> P20_W<20> {
         P20_W::new(self)
     }
     #[doc = "Bit 21 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p21(&mut self) -> P21_W<21> {
         P21_W::new(self)
     }
     #[doc = "Bit 22 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p22(&mut self) -> P22_W<22> {
         P22_W::new(self)
     }
     #[doc = "Bit 23 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p23(&mut self) -> P23_W<23> {
         P23_W::new(self)
     }
     #[doc = "Bit 24 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p24(&mut self) -> P24_W<24> {
         P24_W::new(self)
     }
     #[doc = "Bit 25 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p25(&mut self) -> P25_W<25> {
         P25_W::new(self)
     }
     #[doc = "Bit 26 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p26(&mut self) -> P26_W<26> {
         P26_W::new(self)
     }
     #[doc = "Bit 27 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p27(&mut self) -> P27_W<27> {
         P27_W::new(self)
     }
     #[doc = "Bit 28 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p28(&mut self) -> P28_W<28> {
         P28_W::new(self)
     }
     #[doc = "Bit 29 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p29(&mut self) -> P29_W<29> {
         P29_W::new(self)
     }
     #[doc = "Bit 30 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p30(&mut self) -> P30_W<30> {
         P30_W::new(self)
     }
     #[doc = "Bit 31 - Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn p31(&mut self) -> P31_W<31> {
         P31_W::new(self)
     }
@@ -259,4 +273,6 @@ impl crate::RegisterSpec for OER_SPEC {
 #[doc = "`write(|w| ..)` method takes [oer::W](W) writer structure"]
 impl crate::Writable for OER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

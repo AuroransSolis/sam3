@@ -1,24 +1,6 @@
 #[doc = "Register `IER` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<IER_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IER_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IER_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `RDRF` writer - Receive Data Register Full Interrupt Enable"]
 pub type RDRF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `TDRE` writer - SPI Transmit Data Register Empty Interrupt Enable"]
@@ -36,36 +18,43 @@ pub type UNDES_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>
 impl W {
     #[doc = "Bit 0 - Receive Data Register Full Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rdrf(&mut self) -> RDRF_W<0> {
         RDRF_W::new(self)
     }
     #[doc = "Bit 1 - SPI Transmit Data Register Empty Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tdre(&mut self) -> TDRE_W<1> {
         TDRE_W::new(self)
     }
     #[doc = "Bit 2 - Mode Fault Error Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn modf(&mut self) -> MODF_W<2> {
         MODF_W::new(self)
     }
     #[doc = "Bit 3 - Overrun Error Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ovres(&mut self) -> OVRES_W<3> {
         OVRES_W::new(self)
     }
     #[doc = "Bit 8 - NSS Rising Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn nssr(&mut self) -> NSSR_W<8> {
         NSSR_W::new(self)
     }
     #[doc = "Bit 9 - Transmission Registers Empty Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn txempty(&mut self) -> TXEMPTY_W<9> {
         TXEMPTY_W::new(self)
     }
     #[doc = "Bit 10 - Underrun Error Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn undes(&mut self) -> UNDES_W<10> {
         UNDES_W::new(self)
     }
@@ -84,4 +73,6 @@ impl crate::RegisterSpec for IER_SPEC {
 #[doc = "`write(|w| ..)` method takes [ier::W](W) writer structure"]
 impl crate::Writable for IER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

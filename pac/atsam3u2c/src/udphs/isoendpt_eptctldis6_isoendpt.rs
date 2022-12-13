@@ -1,24 +1,6 @@
 #[doc = "Register `EPTCTLDIS6_ISOENDPT` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<ISOENDPT_EPTCTLDIS6_ISOENDPT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ISOENDPT_EPTCTLDIS6_ISOENDPT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ISOENDPT_EPTCTLDIS6_ISOENDPT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ISOENDPT_EPTCTLDIS6_ISOENDPT_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `EPT_DISABL` writer - Endpoint Disable"]
 pub type EPT_DISABL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, ISOENDPT_EPTCTLDIS6_ISOENDPT_SPEC, bool, O>;
@@ -64,71 +46,85 @@ pub type SHRT_PCKT_W<'a, const O: u8> =
 impl W {
     #[doc = "Bit 0 - Endpoint Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn ept_disabl(&mut self) -> EPT_DISABL_W<0> {
         EPT_DISABL_W::new(self)
     }
     #[doc = "Bit 1 - Packet Auto-Valid Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn auto_valid(&mut self) -> AUTO_VALID_W<1> {
         AUTO_VALID_W::new(self)
     }
     #[doc = "Bit 3 - Interrupts Disable DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn intdis_dma(&mut self) -> INTDIS_DMA_W<3> {
         INTDIS_DMA_W::new(self)
     }
     #[doc = "Bit 6 - DATAx Interrupt Disable (Only for High Bandwidth Isochronous OUT endpoints)"]
     #[inline(always)]
+    #[must_use]
     pub fn datax_rx(&mut self) -> DATAX_RX_W<6> {
         DATAX_RX_W::new(self)
     }
     #[doc = "Bit 7 - MDATA Interrupt Disable (Only for High Bandwidth Isochronous OUT endpoints)"]
     #[inline(always)]
+    #[must_use]
     pub fn mdata_rx(&mut self) -> MDATA_RX_W<7> {
         MDATA_RX_W::new(self)
     }
     #[doc = "Bit 8 - Overflow Error Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn err_ovflw(&mut self) -> ERR_OVFLW_W<8> {
         ERR_OVFLW_W::new(self)
     }
     #[doc = "Bit 9 - Received OUT Data Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn rxrdy_txkl(&mut self) -> RXRDY_TXKL_W<9> {
         RXRDY_TXKL_W::new(self)
     }
     #[doc = "Bit 10 - Transmitted IN Data Complete Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_complt(&mut self) -> TX_COMPLT_W<10> {
         TX_COMPLT_W::new(self)
     }
     #[doc = "Bit 11 - TX Packet Ready/Transaction Error Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn txrdy_trer(&mut self) -> TXRDY_TRER_W<11> {
         TXRDY_TRER_W::new(self)
     }
     #[doc = "Bit 12 - Error Flow Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn err_fl_iso(&mut self) -> ERR_FL_ISO_W<12> {
         ERR_FL_ISO_W::new(self)
     }
     #[doc = "Bit 13 - ISO CRC Error/Number of Transaction Error Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn err_crc_ntr(&mut self) -> ERR_CRC_NTR_W<13> {
         ERR_CRC_NTR_W::new(self)
     }
     #[doc = "Bit 14 - bank flush error Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn err_flush(&mut self) -> ERR_FLUSH_W<14> {
         ERR_FLUSH_W::new(self)
     }
     #[doc = "Bit 18 - Busy Bank Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn busy_bank(&mut self) -> BUSY_BANK_W<18> {
         BUSY_BANK_W::new(self)
     }
     #[doc = "Bit 31 - Short Packet Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn shrt_pckt(&mut self) -> SHRT_PCKT_W<31> {
         SHRT_PCKT_W::new(self)
     }
@@ -147,4 +143,6 @@ impl crate::RegisterSpec for ISOENDPT_EPTCTLDIS6_ISOENDPT_SPEC {
 #[doc = "`write(|w| ..)` method takes [isoendpt_eptctldis6_isoendpt::W](W) writer structure"]
 impl crate::Writable for ISOENDPT_EPTCTLDIS6_ISOENDPT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

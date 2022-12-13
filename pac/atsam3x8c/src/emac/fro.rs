@@ -1,39 +1,9 @@
 #[doc = "Register `FRO` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<FRO_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FRO_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FRO_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FRO_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `FRO` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<FRO_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FRO_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FRO_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FRO_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `FROK` reader - Frames Received OK"]
 pub type FROK_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `FROK` writer - Frames Received OK"]
@@ -42,12 +12,13 @@ impl R {
     #[doc = "Bits 0:23 - Frames Received OK"]
     #[inline(always)]
     pub fn frok(&self) -> FROK_R {
-        FROK_R::new((self.bits & 0x00ff_ffff) as u32)
+        FROK_R::new(self.bits & 0x00ff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:23 - Frames Received OK"]
     #[inline(always)]
+    #[must_use]
     pub fn frok(&mut self) -> FROK_W<0> {
         FROK_W::new(self)
     }
@@ -70,11 +41,10 @@ impl crate::Readable for FRO_SPEC {
 #[doc = "`write(|w| ..)` method takes [fro::W](W) writer structure"]
 impl crate::Writable for FRO_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FRO to value 0"]
 impl crate::Resettable for FRO_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

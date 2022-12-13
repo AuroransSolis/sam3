@@ -1,29 +1,12 @@
 #[doc = "Register `TDR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<TDR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TDR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TDR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `DATA` writer - Data to Write"]
 pub type DATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TDR_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - Data to Write"]
     #[inline(always)]
+    #[must_use]
     pub fn data(&mut self) -> DATA_W<0> {
         DATA_W::new(self)
     }
@@ -42,4 +25,6 @@ impl crate::RegisterSpec for TDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [tdr::W](W) writer structure"]
 impl crate::Writable for TDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

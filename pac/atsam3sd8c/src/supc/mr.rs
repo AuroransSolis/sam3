@@ -1,48 +1,18 @@
 #[doc = "Register `MR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<MR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `BODRSTEN` reader - Brownout Detector Reset Enable"]
 pub type BODRSTEN_R = crate::BitReader<BODRSTEN_A>;
 #[doc = "Brownout Detector Reset Enable\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BODRSTEN_A {
     #[doc = "0: the core reset signal \"vddcore_nreset\" is not affected when a brownout detection occurs."]
-    NOT_ENABLE = 0,
+    NotEnable = 0,
     #[doc = "1: the core reset signal, vddcore_nreset is asserted when a brownout detection occurs."]
-    ENABLE = 1,
+    Enable = 1,
 }
 impl From<BODRSTEN_A> for bool {
     #[inline(always)]
@@ -55,19 +25,19 @@ impl BODRSTEN_R {
     #[inline(always)]
     pub fn variant(&self) -> BODRSTEN_A {
         match self.bits {
-            false => BODRSTEN_A::NOT_ENABLE,
-            true => BODRSTEN_A::ENABLE,
+            false => BODRSTEN_A::NotEnable,
+            true => BODRSTEN_A::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_ENABLE`"]
+    #[doc = "Checks if the value of the field is `NotEnable`"]
     #[inline(always)]
     pub fn is_not_enable(&self) -> bool {
-        *self == BODRSTEN_A::NOT_ENABLE
+        *self == BODRSTEN_A::NotEnable
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Checks if the value of the field is `Enable`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == BODRSTEN_A::ENABLE
+        *self == BODRSTEN_A::Enable
     }
 }
 #[doc = "Field `BODRSTEN` writer - Brownout Detector Reset Enable"]
@@ -76,23 +46,23 @@ impl<'a, const O: u8> BODRSTEN_W<'a, O> {
     #[doc = "the core reset signal \"vddcore_nreset\" is not affected when a brownout detection occurs."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
-        self.variant(BODRSTEN_A::NOT_ENABLE)
+        self.variant(BODRSTEN_A::NotEnable)
     }
     #[doc = "the core reset signal, vddcore_nreset is asserted when a brownout detection occurs."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
-        self.variant(BODRSTEN_A::ENABLE)
+        self.variant(BODRSTEN_A::Enable)
     }
 }
 #[doc = "Field `BODDIS` reader - Brownout Detector Disable"]
 pub type BODDIS_R = crate::BitReader<BODDIS_A>;
 #[doc = "Brownout Detector Disable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BODDIS_A {
     #[doc = "0: the core brownout detector is enabled."]
-    ENABLE = 0,
+    Enable = 0,
     #[doc = "1: the core brownout detector is disabled."]
-    DISABLE = 1,
+    Disable = 1,
 }
 impl From<BODDIS_A> for bool {
     #[inline(always)]
@@ -105,19 +75,19 @@ impl BODDIS_R {
     #[inline(always)]
     pub fn variant(&self) -> BODDIS_A {
         match self.bits {
-            false => BODDIS_A::ENABLE,
-            true => BODDIS_A::DISABLE,
+            false => BODDIS_A::Enable,
+            true => BODDIS_A::Disable,
         }
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Checks if the value of the field is `Enable`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == BODDIS_A::ENABLE
+        *self == BODDIS_A::Enable
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Checks if the value of the field is `Disable`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == BODDIS_A::DISABLE
+        *self == BODDIS_A::Disable
     }
 }
 #[doc = "Field `BODDIS` writer - Brownout Detector Disable"]
@@ -126,23 +96,23 @@ impl<'a, const O: u8> BODDIS_W<'a, O> {
     #[doc = "the core brownout detector is enabled."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
-        self.variant(BODDIS_A::ENABLE)
+        self.variant(BODDIS_A::Enable)
     }
     #[doc = "the core brownout detector is disabled."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(BODDIS_A::DISABLE)
+        self.variant(BODDIS_A::Disable)
     }
 }
 #[doc = "Field `ONREG` reader - Voltage Regulator enable"]
 pub type ONREG_R = crate::BitReader<ONREG_A>;
 #[doc = "Voltage Regulator enable\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ONREG_A {
     #[doc = "0: Voltage Regulator is not used"]
-    ONREG_UNUSED = 0,
+    OnregUnused = 0,
     #[doc = "1: Voltage Regulator is used"]
-    ONREG_USED = 1,
+    OnregUsed = 1,
 }
 impl From<ONREG_A> for bool {
     #[inline(always)]
@@ -155,19 +125,19 @@ impl ONREG_R {
     #[inline(always)]
     pub fn variant(&self) -> ONREG_A {
         match self.bits {
-            false => ONREG_A::ONREG_UNUSED,
-            true => ONREG_A::ONREG_USED,
+            false => ONREG_A::OnregUnused,
+            true => ONREG_A::OnregUsed,
         }
     }
-    #[doc = "Checks if the value of the field is `ONREG_UNUSED`"]
+    #[doc = "Checks if the value of the field is `OnregUnused`"]
     #[inline(always)]
     pub fn is_onreg_unused(&self) -> bool {
-        *self == ONREG_A::ONREG_UNUSED
+        *self == ONREG_A::OnregUnused
     }
-    #[doc = "Checks if the value of the field is `ONREG_USED`"]
+    #[doc = "Checks if the value of the field is `OnregUsed`"]
     #[inline(always)]
     pub fn is_onreg_used(&self) -> bool {
-        *self == ONREG_A::ONREG_USED
+        *self == ONREG_A::OnregUsed
     }
 }
 #[doc = "Field `ONREG` writer - Voltage Regulator enable"]
@@ -176,23 +146,23 @@ impl<'a, const O: u8> ONREG_W<'a, O> {
     #[doc = "Voltage Regulator is not used"]
     #[inline(always)]
     pub fn onreg_unused(self) -> &'a mut W {
-        self.variant(ONREG_A::ONREG_UNUSED)
+        self.variant(ONREG_A::OnregUnused)
     }
     #[doc = "Voltage Regulator is used"]
     #[inline(always)]
     pub fn onreg_used(self) -> &'a mut W {
-        self.variant(ONREG_A::ONREG_USED)
+        self.variant(ONREG_A::OnregUsed)
     }
 }
 #[doc = "Field `OSCBYPASS` reader - Oscillator Bypass"]
 pub type OSCBYPASS_R = crate::BitReader<OSCBYPASS_A>;
 #[doc = "Oscillator Bypass\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OSCBYPASS_A {
     #[doc = "0: no effect. Clock selection depends on XTALSEL value."]
-    NO_EFFECT = 0,
+    NoEffect = 0,
     #[doc = "1: the 32-KHz XTAL oscillator is selected and is put in bypass mode."]
-    BYPASS = 1,
+    Bypass = 1,
 }
 impl From<OSCBYPASS_A> for bool {
     #[inline(always)]
@@ -205,19 +175,19 @@ impl OSCBYPASS_R {
     #[inline(always)]
     pub fn variant(&self) -> OSCBYPASS_A {
         match self.bits {
-            false => OSCBYPASS_A::NO_EFFECT,
-            true => OSCBYPASS_A::BYPASS,
+            false => OSCBYPASS_A::NoEffect,
+            true => OSCBYPASS_A::Bypass,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_EFFECT`"]
+    #[doc = "Checks if the value of the field is `NoEffect`"]
     #[inline(always)]
     pub fn is_no_effect(&self) -> bool {
-        *self == OSCBYPASS_A::NO_EFFECT
+        *self == OSCBYPASS_A::NoEffect
     }
-    #[doc = "Checks if the value of the field is `BYPASS`"]
+    #[doc = "Checks if the value of the field is `Bypass`"]
     #[inline(always)]
     pub fn is_bypass(&self) -> bool {
-        *self == OSCBYPASS_A::BYPASS
+        *self == OSCBYPASS_A::Bypass
     }
 }
 #[doc = "Field `OSCBYPASS` writer - Oscillator Bypass"]
@@ -226,12 +196,12 @@ impl<'a, const O: u8> OSCBYPASS_W<'a, O> {
     #[doc = "no effect. Clock selection depends on XTALSEL value."]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
-        self.variant(OSCBYPASS_A::NO_EFFECT)
+        self.variant(OSCBYPASS_A::NoEffect)
     }
     #[doc = "the 32-KHz XTAL oscillator is selected and is put in bypass mode."]
     #[inline(always)]
     pub fn bypass(self) -> &'a mut W {
-        self.variant(OSCBYPASS_A::BYPASS)
+        self.variant(OSCBYPASS_A::Bypass)
     }
 }
 #[doc = "Field `KEY` reader - Password Key"]
@@ -268,26 +238,31 @@ impl R {
 impl W {
     #[doc = "Bit 12 - Brownout Detector Reset Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn bodrsten(&mut self) -> BODRSTEN_W<12> {
         BODRSTEN_W::new(self)
     }
     #[doc = "Bit 13 - Brownout Detector Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn boddis(&mut self) -> BODDIS_W<13> {
         BODDIS_W::new(self)
     }
     #[doc = "Bit 14 - Voltage Regulator enable"]
     #[inline(always)]
+    #[must_use]
     pub fn onreg(&mut self) -> ONREG_W<14> {
         ONREG_W::new(self)
     }
     #[doc = "Bit 20 - Oscillator Bypass"]
     #[inline(always)]
+    #[must_use]
     pub fn oscbypass(&mut self) -> OSCBYPASS_W<20> {
         OSCBYPASS_W::new(self)
     }
     #[doc = "Bits 24:31 - Password Key"]
     #[inline(always)]
+    #[must_use]
     pub fn key(&mut self) -> KEY_W<24> {
         KEY_W::new(self)
     }
@@ -310,11 +285,10 @@ impl crate::Readable for MR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
 impl crate::Writable for MR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MR to value 0x5a00"]
 impl crate::Resettable for MR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x5a00
-    }
+    const RESET_VALUE: Self::Ux = 0x5a00;
 }

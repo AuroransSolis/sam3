@@ -1,39 +1,9 @@
 #[doc = "Register `CSTOR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CSTOR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CSTOR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CSTOR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CSTOR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CSTOR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CSTOR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CSTOR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CSTOR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CSTOR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `CSTOCYC` reader - Completion Signal Timeout Cycle Number"]
 pub type CSTOCYC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CSTOCYC` writer - Completion Signal Timeout Cycle Number"]
@@ -41,7 +11,7 @@ pub type CSTOCYC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CSTOR_SPEC, u8
 #[doc = "Field `CSTOMUL` reader - Completion Signal Timeout Multiplier"]
 pub type CSTOMUL_R = crate::FieldReader<u8, CSTOMUL_A>;
 #[doc = "Completion Signal Timeout Multiplier\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CSTOMUL_A {
     #[doc = "0: CSTOCYC x 1"]
@@ -184,11 +154,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Completion Signal Timeout Cycle Number"]
     #[inline(always)]
+    #[must_use]
     pub fn cstocyc(&mut self) -> CSTOCYC_W<0> {
         CSTOCYC_W::new(self)
     }
     #[doc = "Bits 4:6 - Completion Signal Timeout Multiplier"]
     #[inline(always)]
+    #[must_use]
     pub fn cstomul(&mut self) -> CSTOMUL_W<4> {
         CSTOMUL_W::new(self)
     }
@@ -211,11 +183,10 @@ impl crate::Readable for CSTOR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cstor::W](W) writer structure"]
 impl crate::Writable for CSTOR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CSTOR to value 0"]
 impl crate::Resettable for CSTOR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

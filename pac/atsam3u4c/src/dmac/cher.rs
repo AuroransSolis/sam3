@@ -1,24 +1,6 @@
 #[doc = "Register `CHER` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CHER_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CHER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CHER_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CHER_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `ENA0` writer - Enable \\[3:0\\]"]
 pub type ENA0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHER_SPEC, bool, O>;
 #[doc = "Field `ENA1` writer - Enable \\[3:0\\]"]
@@ -46,61 +28,73 @@ pub type KEEP3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHER_SPEC, bool, O
 impl W {
     #[doc = "Bit 0 - Enable \\[3:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn ena0(&mut self) -> ENA0_W<0> {
         ENA0_W::new(self)
     }
     #[doc = "Bit 1 - Enable \\[3:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn ena1(&mut self) -> ENA1_W<1> {
         ENA1_W::new(self)
     }
     #[doc = "Bit 2 - Enable \\[3:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn ena2(&mut self) -> ENA2_W<2> {
         ENA2_W::new(self)
     }
     #[doc = "Bit 3 - Enable \\[3:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn ena3(&mut self) -> ENA3_W<3> {
         ENA3_W::new(self)
     }
     #[doc = "Bit 8 - Suspend \\[3:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn susp0(&mut self) -> SUSP0_W<8> {
         SUSP0_W::new(self)
     }
     #[doc = "Bit 9 - Suspend \\[3:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn susp1(&mut self) -> SUSP1_W<9> {
         SUSP1_W::new(self)
     }
     #[doc = "Bit 10 - Suspend \\[3:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn susp2(&mut self) -> SUSP2_W<10> {
         SUSP2_W::new(self)
     }
     #[doc = "Bit 11 - Suspend \\[3:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn susp3(&mut self) -> SUSP3_W<11> {
         SUSP3_W::new(self)
     }
     #[doc = "Bit 24 - Keep on \\[3:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn keep0(&mut self) -> KEEP0_W<24> {
         KEEP0_W::new(self)
     }
     #[doc = "Bit 25 - Keep on \\[3:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn keep1(&mut self) -> KEEP1_W<25> {
         KEEP1_W::new(self)
     }
     #[doc = "Bit 26 - Keep on \\[3:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn keep2(&mut self) -> KEEP2_W<26> {
         KEEP2_W::new(self)
     }
     #[doc = "Bit 27 - Keep on \\[3:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn keep3(&mut self) -> KEEP3_W<27> {
         KEEP3_W::new(self)
     }
@@ -119,4 +113,6 @@ impl crate::RegisterSpec for CHER_SPEC {
 #[doc = "`write(|w| ..)` method takes [cher::W](W) writer structure"]
 impl crate::Writable for CHER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

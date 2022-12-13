@@ -1,39 +1,9 @@
 #[doc = "Register `MR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<MR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `CLKDIV` reader - Clock Divider"]
 pub type CLKDIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CLKDIV` writer - Clock Divider"]
@@ -102,36 +72,43 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Clock Divider"]
     #[inline(always)]
+    #[must_use]
     pub fn clkdiv(&mut self) -> CLKDIV_W<0> {
         CLKDIV_W::new(self)
     }
     #[doc = "Bits 8:10 - Power Saving Divider"]
     #[inline(always)]
+    #[must_use]
     pub fn pwsdiv(&mut self) -> PWSDIV_W<8> {
         PWSDIV_W::new(self)
     }
     #[doc = "Bit 11"]
     #[inline(always)]
+    #[must_use]
     pub fn rdproof(&mut self) -> RDPROOF_W<11> {
         RDPROOF_W::new(self)
     }
     #[doc = "Bit 12"]
     #[inline(always)]
+    #[must_use]
     pub fn wrproof(&mut self) -> WRPROOF_W<12> {
         WRPROOF_W::new(self)
     }
     #[doc = "Bit 13 - Force Byte Transfer"]
     #[inline(always)]
+    #[must_use]
     pub fn fbyte(&mut self) -> FBYTE_W<13> {
         FBYTE_W::new(self)
     }
     #[doc = "Bit 14 - Padding Value"]
     #[inline(always)]
+    #[must_use]
     pub fn padv(&mut self) -> PADV_W<14> {
         PADV_W::new(self)
     }
     #[doc = "Bit 15 - PDC-oriented Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn pdcmode(&mut self) -> PDCMODE_W<15> {
         PDCMODE_W::new(self)
     }
@@ -154,11 +131,10 @@ impl crate::Readable for MR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
 impl crate::Writable for MR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MR to value 0"]
 impl crate::Resettable for MR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

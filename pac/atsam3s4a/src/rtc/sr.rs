@@ -1,27 +1,15 @@
 #[doc = "Register `SR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<SR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `ACKUPD` reader - Acknowledge for Update"]
 pub type ACKUPD_R = crate::BitReader<ACKUPD_A>;
 #[doc = "Acknowledge for Update\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ACKUPD_A {
     #[doc = "0: Time and calendar registers cannot be updated."]
-    FREERUN = 0,
+    Freerun = 0,
     #[doc = "1: Time and calendar registers can be updated."]
-    UPDATE = 1,
+    Update = 1,
 }
 impl From<ACKUPD_A> for bool {
     #[inline(always)]
@@ -34,30 +22,30 @@ impl ACKUPD_R {
     #[inline(always)]
     pub fn variant(&self) -> ACKUPD_A {
         match self.bits {
-            false => ACKUPD_A::FREERUN,
-            true => ACKUPD_A::UPDATE,
+            false => ACKUPD_A::Freerun,
+            true => ACKUPD_A::Update,
         }
     }
-    #[doc = "Checks if the value of the field is `FREERUN`"]
+    #[doc = "Checks if the value of the field is `Freerun`"]
     #[inline(always)]
     pub fn is_freerun(&self) -> bool {
-        *self == ACKUPD_A::FREERUN
+        *self == ACKUPD_A::Freerun
     }
-    #[doc = "Checks if the value of the field is `UPDATE`"]
+    #[doc = "Checks if the value of the field is `Update`"]
     #[inline(always)]
     pub fn is_update(&self) -> bool {
-        *self == ACKUPD_A::UPDATE
+        *self == ACKUPD_A::Update
     }
 }
 #[doc = "Field `ALARM` reader - Alarm Flag"]
 pub type ALARM_R = crate::BitReader<ALARM_A>;
 #[doc = "Alarm Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ALARM_A {
     #[doc = "0: No alarm matching condition occurred."]
-    NO_ALARMEVENT = 0,
+    NoAlarmevent = 0,
     #[doc = "1: An alarm matching condition has occurred."]
-    ALARMEVENT = 1,
+    Alarmevent = 1,
 }
 impl From<ALARM_A> for bool {
     #[inline(always)]
@@ -70,30 +58,30 @@ impl ALARM_R {
     #[inline(always)]
     pub fn variant(&self) -> ALARM_A {
         match self.bits {
-            false => ALARM_A::NO_ALARMEVENT,
-            true => ALARM_A::ALARMEVENT,
+            false => ALARM_A::NoAlarmevent,
+            true => ALARM_A::Alarmevent,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_ALARMEVENT`"]
+    #[doc = "Checks if the value of the field is `NoAlarmevent`"]
     #[inline(always)]
     pub fn is_no_alarmevent(&self) -> bool {
-        *self == ALARM_A::NO_ALARMEVENT
+        *self == ALARM_A::NoAlarmevent
     }
-    #[doc = "Checks if the value of the field is `ALARMEVENT`"]
+    #[doc = "Checks if the value of the field is `Alarmevent`"]
     #[inline(always)]
     pub fn is_alarmevent(&self) -> bool {
-        *self == ALARM_A::ALARMEVENT
+        *self == ALARM_A::Alarmevent
     }
 }
 #[doc = "Field `SEC` reader - Second Event"]
 pub type SEC_R = crate::BitReader<SEC_A>;
 #[doc = "Second Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SEC_A {
     #[doc = "0: No second event has occurred since the last clear."]
-    NO_SECEVENT = 0,
+    NoSecevent = 0,
     #[doc = "1: At least one second event has occurred since the last clear."]
-    SECEVENT = 1,
+    Secevent = 1,
 }
 impl From<SEC_A> for bool {
     #[inline(always)]
@@ -106,30 +94,30 @@ impl SEC_R {
     #[inline(always)]
     pub fn variant(&self) -> SEC_A {
         match self.bits {
-            false => SEC_A::NO_SECEVENT,
-            true => SEC_A::SECEVENT,
+            false => SEC_A::NoSecevent,
+            true => SEC_A::Secevent,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_SECEVENT`"]
+    #[doc = "Checks if the value of the field is `NoSecevent`"]
     #[inline(always)]
     pub fn is_no_secevent(&self) -> bool {
-        *self == SEC_A::NO_SECEVENT
+        *self == SEC_A::NoSecevent
     }
-    #[doc = "Checks if the value of the field is `SECEVENT`"]
+    #[doc = "Checks if the value of the field is `Secevent`"]
     #[inline(always)]
     pub fn is_secevent(&self) -> bool {
-        *self == SEC_A::SECEVENT
+        *self == SEC_A::Secevent
     }
 }
 #[doc = "Field `TIMEV` reader - Time Event"]
 pub type TIMEV_R = crate::BitReader<TIMEV_A>;
 #[doc = "Time Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TIMEV_A {
     #[doc = "0: No time event has occurred since the last clear."]
-    NO_TIMEVENT = 0,
+    NoTimevent = 0,
     #[doc = "1: At least one time event has occurred since the last clear."]
-    TIMEVENT = 1,
+    Timevent = 1,
 }
 impl From<TIMEV_A> for bool {
     #[inline(always)]
@@ -142,30 +130,30 @@ impl TIMEV_R {
     #[inline(always)]
     pub fn variant(&self) -> TIMEV_A {
         match self.bits {
-            false => TIMEV_A::NO_TIMEVENT,
-            true => TIMEV_A::TIMEVENT,
+            false => TIMEV_A::NoTimevent,
+            true => TIMEV_A::Timevent,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_TIMEVENT`"]
+    #[doc = "Checks if the value of the field is `NoTimevent`"]
     #[inline(always)]
     pub fn is_no_timevent(&self) -> bool {
-        *self == TIMEV_A::NO_TIMEVENT
+        *self == TIMEV_A::NoTimevent
     }
-    #[doc = "Checks if the value of the field is `TIMEVENT`"]
+    #[doc = "Checks if the value of the field is `Timevent`"]
     #[inline(always)]
     pub fn is_timevent(&self) -> bool {
-        *self == TIMEV_A::TIMEVENT
+        *self == TIMEV_A::Timevent
     }
 }
 #[doc = "Field `CALEV` reader - Calendar Event"]
 pub type CALEV_R = crate::BitReader<CALEV_A>;
 #[doc = "Calendar Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CALEV_A {
     #[doc = "0: No calendar event has occurred since the last clear."]
-    NO_CALEVENT = 0,
+    NoCalevent = 0,
     #[doc = "1: At least one calendar event has occurred since the last clear."]
-    CALEVENT = 1,
+    Calevent = 1,
 }
 impl From<CALEV_A> for bool {
     #[inline(always)]
@@ -178,19 +166,19 @@ impl CALEV_R {
     #[inline(always)]
     pub fn variant(&self) -> CALEV_A {
         match self.bits {
-            false => CALEV_A::NO_CALEVENT,
-            true => CALEV_A::CALEVENT,
+            false => CALEV_A::NoCalevent,
+            true => CALEV_A::Calevent,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_CALEVENT`"]
+    #[doc = "Checks if the value of the field is `NoCalevent`"]
     #[inline(always)]
     pub fn is_no_calevent(&self) -> bool {
-        *self == CALEV_A::NO_CALEVENT
+        *self == CALEV_A::NoCalevent
     }
-    #[doc = "Checks if the value of the field is `CALEVENT`"]
+    #[doc = "Checks if the value of the field is `Calevent`"]
     #[inline(always)]
     pub fn is_calevent(&self) -> bool {
-        *self == CALEV_A::CALEVENT
+        *self == CALEV_A::Calevent
     }
 }
 impl R {
@@ -231,8 +219,5 @@ impl crate::Readable for SR_SPEC {
 }
 #[doc = "`reset()` method sets SR to value 0"]
 impl crate::Resettable for SR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

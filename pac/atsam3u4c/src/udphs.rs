@@ -134,549 +134,423 @@ pub struct RegisterBlock {
 impl RegisterBlock {
     #[doc = "0x104 - UDPHS Endpoint Control Enable Register (endpoint = 0)"]
     #[inline(always)]
-    pub fn isoendpt_eptctlenb0_isoendpt(&self) -> &ISOENDPT_EPTCTLENB0_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(260usize)
-                as *const ISOENDPT_EPTCTLENB0_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctlenb0_isoendpt(&self) -> &ISOENDPT_EPTCTLENB0_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(260usize).cast() }
     }
     #[doc = "0x104 - UDPHS Endpoint Control Enable Register (endpoint = 0)"]
     #[inline(always)]
-    pub fn eptctlenb0(&self) -> &EPTCTLENB0 {
-        unsafe { &*(((self as *const Self) as *const u8).add(260usize) as *const EPTCTLENB0) }
+    pub const fn eptctlenb0(&self) -> &EPTCTLENB0 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(260usize).cast() }
     }
     #[doc = "0x108 - UDPHS Endpoint Control Disable Register (endpoint = 0)"]
     #[inline(always)]
-    pub fn isoendpt_eptctldis0_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS0_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(264usize)
-                as *const ISOENDPT_EPTCTLDIS0_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctldis0_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS0_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(264usize).cast() }
     }
     #[doc = "0x108 - UDPHS Endpoint Control Disable Register (endpoint = 0)"]
     #[inline(always)]
-    pub fn eptctldis0(&self) -> &EPTCTLDIS0 {
-        unsafe { &*(((self as *const Self) as *const u8).add(264usize) as *const EPTCTLDIS0) }
+    pub const fn eptctldis0(&self) -> &EPTCTLDIS0 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(264usize).cast() }
     }
     #[doc = "0x10c - UDPHS Endpoint Control Register (endpoint = 0)"]
     #[inline(always)]
-    pub fn isoendpt_eptctl0_isoendpt(&self) -> &ISOENDPT_EPTCTL0_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(268usize)
-                as *const ISOENDPT_EPTCTL0_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctl0_isoendpt(&self) -> &ISOENDPT_EPTCTL0_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(268usize).cast() }
     }
     #[doc = "0x10c - UDPHS Endpoint Control Register (endpoint = 0)"]
     #[inline(always)]
-    pub fn eptctl0(&self) -> &EPTCTL0 {
-        unsafe { &*(((self as *const Self) as *const u8).add(268usize) as *const EPTCTL0) }
+    pub const fn eptctl0(&self) -> &EPTCTL0 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(268usize).cast() }
     }
     #[doc = "0x114 - UDPHS Endpoint Set Status Register (endpoint = 0)"]
     #[inline(always)]
-    pub fn isoendpt_eptsetsta0_isoendpt(&self) -> &ISOENDPT_EPTSETSTA0_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(276usize)
-                as *const ISOENDPT_EPTSETSTA0_ISOENDPT)
-        }
+    pub const fn isoendpt_eptsetsta0_isoendpt(&self) -> &ISOENDPT_EPTSETSTA0_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(276usize).cast() }
     }
     #[doc = "0x114 - UDPHS Endpoint Set Status Register (endpoint = 0)"]
     #[inline(always)]
-    pub fn eptsetsta0(&self) -> &EPTSETSTA0 {
-        unsafe { &*(((self as *const Self) as *const u8).add(276usize) as *const EPTSETSTA0) }
+    pub const fn eptsetsta0(&self) -> &EPTSETSTA0 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(276usize).cast() }
     }
     #[doc = "0x118 - UDPHS Endpoint Clear Status Register (endpoint = 0)"]
     #[inline(always)]
-    pub fn isoendpt_eptclrsta0_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA0_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(280usize)
-                as *const ISOENDPT_EPTCLRSTA0_ISOENDPT)
-        }
+    pub const fn isoendpt_eptclrsta0_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA0_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(280usize).cast() }
     }
     #[doc = "0x118 - UDPHS Endpoint Clear Status Register (endpoint = 0)"]
     #[inline(always)]
-    pub fn eptclrsta0(&self) -> &EPTCLRSTA0 {
-        unsafe { &*(((self as *const Self) as *const u8).add(280usize) as *const EPTCLRSTA0) }
+    pub const fn eptclrsta0(&self) -> &EPTCLRSTA0 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(280usize).cast() }
     }
     #[doc = "0x11c - UDPHS Endpoint Status Register (endpoint = 0)"]
     #[inline(always)]
-    pub fn isoendpt_eptsta0_isoendpt(&self) -> &ISOENDPT_EPTSTA0_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(284usize)
-                as *const ISOENDPT_EPTSTA0_ISOENDPT)
-        }
+    pub const fn isoendpt_eptsta0_isoendpt(&self) -> &ISOENDPT_EPTSTA0_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(284usize).cast() }
     }
     #[doc = "0x11c - UDPHS Endpoint Status Register (endpoint = 0)"]
     #[inline(always)]
-    pub fn eptsta0(&self) -> &EPTSTA0 {
-        unsafe { &*(((self as *const Self) as *const u8).add(284usize) as *const EPTSTA0) }
+    pub const fn eptsta0(&self) -> &EPTSTA0 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(284usize).cast() }
     }
     #[doc = "0x124 - UDPHS Endpoint Control Enable Register (endpoint = 1)"]
     #[inline(always)]
-    pub fn isoendpt_eptctlenb1_isoendpt(&self) -> &ISOENDPT_EPTCTLENB1_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(292usize)
-                as *const ISOENDPT_EPTCTLENB1_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctlenb1_isoendpt(&self) -> &ISOENDPT_EPTCTLENB1_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(292usize).cast() }
     }
     #[doc = "0x124 - UDPHS Endpoint Control Enable Register (endpoint = 1)"]
     #[inline(always)]
-    pub fn eptctlenb1(&self) -> &EPTCTLENB1 {
-        unsafe { &*(((self as *const Self) as *const u8).add(292usize) as *const EPTCTLENB1) }
+    pub const fn eptctlenb1(&self) -> &EPTCTLENB1 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(292usize).cast() }
     }
     #[doc = "0x128 - UDPHS Endpoint Control Disable Register (endpoint = 1)"]
     #[inline(always)]
-    pub fn isoendpt_eptctldis1_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS1_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(296usize)
-                as *const ISOENDPT_EPTCTLDIS1_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctldis1_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS1_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(296usize).cast() }
     }
     #[doc = "0x128 - UDPHS Endpoint Control Disable Register (endpoint = 1)"]
     #[inline(always)]
-    pub fn eptctldis1(&self) -> &EPTCTLDIS1 {
-        unsafe { &*(((self as *const Self) as *const u8).add(296usize) as *const EPTCTLDIS1) }
+    pub const fn eptctldis1(&self) -> &EPTCTLDIS1 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(296usize).cast() }
     }
     #[doc = "0x12c - UDPHS Endpoint Control Register (endpoint = 1)"]
     #[inline(always)]
-    pub fn isoendpt_eptctl1_isoendpt(&self) -> &ISOENDPT_EPTCTL1_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(300usize)
-                as *const ISOENDPT_EPTCTL1_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctl1_isoendpt(&self) -> &ISOENDPT_EPTCTL1_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(300usize).cast() }
     }
     #[doc = "0x12c - UDPHS Endpoint Control Register (endpoint = 1)"]
     #[inline(always)]
-    pub fn eptctl1(&self) -> &EPTCTL1 {
-        unsafe { &*(((self as *const Self) as *const u8).add(300usize) as *const EPTCTL1) }
+    pub const fn eptctl1(&self) -> &EPTCTL1 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(300usize).cast() }
     }
     #[doc = "0x134 - UDPHS Endpoint Set Status Register (endpoint = 1)"]
     #[inline(always)]
-    pub fn isoendpt_eptsetsta1_isoendpt(&self) -> &ISOENDPT_EPTSETSTA1_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(308usize)
-                as *const ISOENDPT_EPTSETSTA1_ISOENDPT)
-        }
+    pub const fn isoendpt_eptsetsta1_isoendpt(&self) -> &ISOENDPT_EPTSETSTA1_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(308usize).cast() }
     }
     #[doc = "0x134 - UDPHS Endpoint Set Status Register (endpoint = 1)"]
     #[inline(always)]
-    pub fn eptsetsta1(&self) -> &EPTSETSTA1 {
-        unsafe { &*(((self as *const Self) as *const u8).add(308usize) as *const EPTSETSTA1) }
+    pub const fn eptsetsta1(&self) -> &EPTSETSTA1 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(308usize).cast() }
     }
     #[doc = "0x138 - UDPHS Endpoint Clear Status Register (endpoint = 1)"]
     #[inline(always)]
-    pub fn isoendpt_eptclrsta1_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA1_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(312usize)
-                as *const ISOENDPT_EPTCLRSTA1_ISOENDPT)
-        }
+    pub const fn isoendpt_eptclrsta1_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA1_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(312usize).cast() }
     }
     #[doc = "0x138 - UDPHS Endpoint Clear Status Register (endpoint = 1)"]
     #[inline(always)]
-    pub fn eptclrsta1(&self) -> &EPTCLRSTA1 {
-        unsafe { &*(((self as *const Self) as *const u8).add(312usize) as *const EPTCLRSTA1) }
+    pub const fn eptclrsta1(&self) -> &EPTCLRSTA1 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(312usize).cast() }
     }
     #[doc = "0x13c - UDPHS Endpoint Status Register (endpoint = 1)"]
     #[inline(always)]
-    pub fn isoendpt_eptsta1_isoendpt(&self) -> &ISOENDPT_EPTSTA1_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(316usize)
-                as *const ISOENDPT_EPTSTA1_ISOENDPT)
-        }
+    pub const fn isoendpt_eptsta1_isoendpt(&self) -> &ISOENDPT_EPTSTA1_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(316usize).cast() }
     }
     #[doc = "0x13c - UDPHS Endpoint Status Register (endpoint = 1)"]
     #[inline(always)]
-    pub fn eptsta1(&self) -> &EPTSTA1 {
-        unsafe { &*(((self as *const Self) as *const u8).add(316usize) as *const EPTSTA1) }
+    pub const fn eptsta1(&self) -> &EPTSTA1 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(316usize).cast() }
     }
     #[doc = "0x144 - UDPHS Endpoint Control Enable Register (endpoint = 2)"]
     #[inline(always)]
-    pub fn isoendpt_eptctlenb2_isoendpt(&self) -> &ISOENDPT_EPTCTLENB2_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(324usize)
-                as *const ISOENDPT_EPTCTLENB2_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctlenb2_isoendpt(&self) -> &ISOENDPT_EPTCTLENB2_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(324usize).cast() }
     }
     #[doc = "0x144 - UDPHS Endpoint Control Enable Register (endpoint = 2)"]
     #[inline(always)]
-    pub fn eptctlenb2(&self) -> &EPTCTLENB2 {
-        unsafe { &*(((self as *const Self) as *const u8).add(324usize) as *const EPTCTLENB2) }
+    pub const fn eptctlenb2(&self) -> &EPTCTLENB2 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(324usize).cast() }
     }
     #[doc = "0x148 - UDPHS Endpoint Control Disable Register (endpoint = 2)"]
     #[inline(always)]
-    pub fn isoendpt_eptctldis2_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS2_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(328usize)
-                as *const ISOENDPT_EPTCTLDIS2_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctldis2_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS2_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(328usize).cast() }
     }
     #[doc = "0x148 - UDPHS Endpoint Control Disable Register (endpoint = 2)"]
     #[inline(always)]
-    pub fn eptctldis2(&self) -> &EPTCTLDIS2 {
-        unsafe { &*(((self as *const Self) as *const u8).add(328usize) as *const EPTCTLDIS2) }
+    pub const fn eptctldis2(&self) -> &EPTCTLDIS2 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(328usize).cast() }
     }
     #[doc = "0x14c - UDPHS Endpoint Control Register (endpoint = 2)"]
     #[inline(always)]
-    pub fn isoendpt_eptctl2_isoendpt(&self) -> &ISOENDPT_EPTCTL2_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(332usize)
-                as *const ISOENDPT_EPTCTL2_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctl2_isoendpt(&self) -> &ISOENDPT_EPTCTL2_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(332usize).cast() }
     }
     #[doc = "0x14c - UDPHS Endpoint Control Register (endpoint = 2)"]
     #[inline(always)]
-    pub fn eptctl2(&self) -> &EPTCTL2 {
-        unsafe { &*(((self as *const Self) as *const u8).add(332usize) as *const EPTCTL2) }
+    pub const fn eptctl2(&self) -> &EPTCTL2 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(332usize).cast() }
     }
     #[doc = "0x154 - UDPHS Endpoint Set Status Register (endpoint = 2)"]
     #[inline(always)]
-    pub fn isoendpt_eptsetsta2_isoendpt(&self) -> &ISOENDPT_EPTSETSTA2_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(340usize)
-                as *const ISOENDPT_EPTSETSTA2_ISOENDPT)
-        }
+    pub const fn isoendpt_eptsetsta2_isoendpt(&self) -> &ISOENDPT_EPTSETSTA2_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(340usize).cast() }
     }
     #[doc = "0x154 - UDPHS Endpoint Set Status Register (endpoint = 2)"]
     #[inline(always)]
-    pub fn eptsetsta2(&self) -> &EPTSETSTA2 {
-        unsafe { &*(((self as *const Self) as *const u8).add(340usize) as *const EPTSETSTA2) }
+    pub const fn eptsetsta2(&self) -> &EPTSETSTA2 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(340usize).cast() }
     }
     #[doc = "0x158 - UDPHS Endpoint Clear Status Register (endpoint = 2)"]
     #[inline(always)]
-    pub fn isoendpt_eptclrsta2_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA2_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(344usize)
-                as *const ISOENDPT_EPTCLRSTA2_ISOENDPT)
-        }
+    pub const fn isoendpt_eptclrsta2_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA2_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(344usize).cast() }
     }
     #[doc = "0x158 - UDPHS Endpoint Clear Status Register (endpoint = 2)"]
     #[inline(always)]
-    pub fn eptclrsta2(&self) -> &EPTCLRSTA2 {
-        unsafe { &*(((self as *const Self) as *const u8).add(344usize) as *const EPTCLRSTA2) }
+    pub const fn eptclrsta2(&self) -> &EPTCLRSTA2 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(344usize).cast() }
     }
     #[doc = "0x15c - UDPHS Endpoint Status Register (endpoint = 2)"]
     #[inline(always)]
-    pub fn isoendpt_eptsta2_isoendpt(&self) -> &ISOENDPT_EPTSTA2_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(348usize)
-                as *const ISOENDPT_EPTSTA2_ISOENDPT)
-        }
+    pub const fn isoendpt_eptsta2_isoendpt(&self) -> &ISOENDPT_EPTSTA2_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(348usize).cast() }
     }
     #[doc = "0x15c - UDPHS Endpoint Status Register (endpoint = 2)"]
     #[inline(always)]
-    pub fn eptsta2(&self) -> &EPTSTA2 {
-        unsafe { &*(((self as *const Self) as *const u8).add(348usize) as *const EPTSTA2) }
+    pub const fn eptsta2(&self) -> &EPTSTA2 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(348usize).cast() }
     }
     #[doc = "0x164 - UDPHS Endpoint Control Enable Register (endpoint = 3)"]
     #[inline(always)]
-    pub fn isoendpt_eptctlenb3_isoendpt(&self) -> &ISOENDPT_EPTCTLENB3_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(356usize)
-                as *const ISOENDPT_EPTCTLENB3_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctlenb3_isoendpt(&self) -> &ISOENDPT_EPTCTLENB3_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(356usize).cast() }
     }
     #[doc = "0x164 - UDPHS Endpoint Control Enable Register (endpoint = 3)"]
     #[inline(always)]
-    pub fn eptctlenb3(&self) -> &EPTCTLENB3 {
-        unsafe { &*(((self as *const Self) as *const u8).add(356usize) as *const EPTCTLENB3) }
+    pub const fn eptctlenb3(&self) -> &EPTCTLENB3 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(356usize).cast() }
     }
     #[doc = "0x168 - UDPHS Endpoint Control Disable Register (endpoint = 3)"]
     #[inline(always)]
-    pub fn isoendpt_eptctldis3_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS3_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(360usize)
-                as *const ISOENDPT_EPTCTLDIS3_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctldis3_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS3_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(360usize).cast() }
     }
     #[doc = "0x168 - UDPHS Endpoint Control Disable Register (endpoint = 3)"]
     #[inline(always)]
-    pub fn eptctldis3(&self) -> &EPTCTLDIS3 {
-        unsafe { &*(((self as *const Self) as *const u8).add(360usize) as *const EPTCTLDIS3) }
+    pub const fn eptctldis3(&self) -> &EPTCTLDIS3 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(360usize).cast() }
     }
     #[doc = "0x16c - UDPHS Endpoint Control Register (endpoint = 3)"]
     #[inline(always)]
-    pub fn isoendpt_eptctl3_isoendpt(&self) -> &ISOENDPT_EPTCTL3_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(364usize)
-                as *const ISOENDPT_EPTCTL3_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctl3_isoendpt(&self) -> &ISOENDPT_EPTCTL3_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(364usize).cast() }
     }
     #[doc = "0x16c - UDPHS Endpoint Control Register (endpoint = 3)"]
     #[inline(always)]
-    pub fn eptctl3(&self) -> &EPTCTL3 {
-        unsafe { &*(((self as *const Self) as *const u8).add(364usize) as *const EPTCTL3) }
+    pub const fn eptctl3(&self) -> &EPTCTL3 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(364usize).cast() }
     }
     #[doc = "0x174 - UDPHS Endpoint Set Status Register (endpoint = 3)"]
     #[inline(always)]
-    pub fn isoendpt_eptsetsta3_isoendpt(&self) -> &ISOENDPT_EPTSETSTA3_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(372usize)
-                as *const ISOENDPT_EPTSETSTA3_ISOENDPT)
-        }
+    pub const fn isoendpt_eptsetsta3_isoendpt(&self) -> &ISOENDPT_EPTSETSTA3_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(372usize).cast() }
     }
     #[doc = "0x174 - UDPHS Endpoint Set Status Register (endpoint = 3)"]
     #[inline(always)]
-    pub fn eptsetsta3(&self) -> &EPTSETSTA3 {
-        unsafe { &*(((self as *const Self) as *const u8).add(372usize) as *const EPTSETSTA3) }
+    pub const fn eptsetsta3(&self) -> &EPTSETSTA3 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(372usize).cast() }
     }
     #[doc = "0x178 - UDPHS Endpoint Clear Status Register (endpoint = 3)"]
     #[inline(always)]
-    pub fn isoendpt_eptclrsta3_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA3_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(376usize)
-                as *const ISOENDPT_EPTCLRSTA3_ISOENDPT)
-        }
+    pub const fn isoendpt_eptclrsta3_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA3_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(376usize).cast() }
     }
     #[doc = "0x178 - UDPHS Endpoint Clear Status Register (endpoint = 3)"]
     #[inline(always)]
-    pub fn eptclrsta3(&self) -> &EPTCLRSTA3 {
-        unsafe { &*(((self as *const Self) as *const u8).add(376usize) as *const EPTCLRSTA3) }
+    pub const fn eptclrsta3(&self) -> &EPTCLRSTA3 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(376usize).cast() }
     }
     #[doc = "0x17c - UDPHS Endpoint Status Register (endpoint = 3)"]
     #[inline(always)]
-    pub fn isoendpt_eptsta3_isoendpt(&self) -> &ISOENDPT_EPTSTA3_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(380usize)
-                as *const ISOENDPT_EPTSTA3_ISOENDPT)
-        }
+    pub const fn isoendpt_eptsta3_isoendpt(&self) -> &ISOENDPT_EPTSTA3_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(380usize).cast() }
     }
     #[doc = "0x17c - UDPHS Endpoint Status Register (endpoint = 3)"]
     #[inline(always)]
-    pub fn eptsta3(&self) -> &EPTSTA3 {
-        unsafe { &*(((self as *const Self) as *const u8).add(380usize) as *const EPTSTA3) }
+    pub const fn eptsta3(&self) -> &EPTSTA3 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(380usize).cast() }
     }
     #[doc = "0x184 - UDPHS Endpoint Control Enable Register (endpoint = 4)"]
     #[inline(always)]
-    pub fn isoendpt_eptctlenb4_isoendpt(&self) -> &ISOENDPT_EPTCTLENB4_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(388usize)
-                as *const ISOENDPT_EPTCTLENB4_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctlenb4_isoendpt(&self) -> &ISOENDPT_EPTCTLENB4_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(388usize).cast() }
     }
     #[doc = "0x184 - UDPHS Endpoint Control Enable Register (endpoint = 4)"]
     #[inline(always)]
-    pub fn eptctlenb4(&self) -> &EPTCTLENB4 {
-        unsafe { &*(((self as *const Self) as *const u8).add(388usize) as *const EPTCTLENB4) }
+    pub const fn eptctlenb4(&self) -> &EPTCTLENB4 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(388usize).cast() }
     }
     #[doc = "0x188 - UDPHS Endpoint Control Disable Register (endpoint = 4)"]
     #[inline(always)]
-    pub fn isoendpt_eptctldis4_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS4_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(392usize)
-                as *const ISOENDPT_EPTCTLDIS4_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctldis4_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS4_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(392usize).cast() }
     }
     #[doc = "0x188 - UDPHS Endpoint Control Disable Register (endpoint = 4)"]
     #[inline(always)]
-    pub fn eptctldis4(&self) -> &EPTCTLDIS4 {
-        unsafe { &*(((self as *const Self) as *const u8).add(392usize) as *const EPTCTLDIS4) }
+    pub const fn eptctldis4(&self) -> &EPTCTLDIS4 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(392usize).cast() }
     }
     #[doc = "0x18c - UDPHS Endpoint Control Register (endpoint = 4)"]
     #[inline(always)]
-    pub fn isoendpt_eptctl4_isoendpt(&self) -> &ISOENDPT_EPTCTL4_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(396usize)
-                as *const ISOENDPT_EPTCTL4_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctl4_isoendpt(&self) -> &ISOENDPT_EPTCTL4_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(396usize).cast() }
     }
     #[doc = "0x18c - UDPHS Endpoint Control Register (endpoint = 4)"]
     #[inline(always)]
-    pub fn eptctl4(&self) -> &EPTCTL4 {
-        unsafe { &*(((self as *const Self) as *const u8).add(396usize) as *const EPTCTL4) }
+    pub const fn eptctl4(&self) -> &EPTCTL4 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(396usize).cast() }
     }
     #[doc = "0x194 - UDPHS Endpoint Set Status Register (endpoint = 4)"]
     #[inline(always)]
-    pub fn isoendpt_eptsetsta4_isoendpt(&self) -> &ISOENDPT_EPTSETSTA4_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(404usize)
-                as *const ISOENDPT_EPTSETSTA4_ISOENDPT)
-        }
+    pub const fn isoendpt_eptsetsta4_isoendpt(&self) -> &ISOENDPT_EPTSETSTA4_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(404usize).cast() }
     }
     #[doc = "0x194 - UDPHS Endpoint Set Status Register (endpoint = 4)"]
     #[inline(always)]
-    pub fn eptsetsta4(&self) -> &EPTSETSTA4 {
-        unsafe { &*(((self as *const Self) as *const u8).add(404usize) as *const EPTSETSTA4) }
+    pub const fn eptsetsta4(&self) -> &EPTSETSTA4 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(404usize).cast() }
     }
     #[doc = "0x198 - UDPHS Endpoint Clear Status Register (endpoint = 4)"]
     #[inline(always)]
-    pub fn isoendpt_eptclrsta4_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA4_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(408usize)
-                as *const ISOENDPT_EPTCLRSTA4_ISOENDPT)
-        }
+    pub const fn isoendpt_eptclrsta4_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA4_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(408usize).cast() }
     }
     #[doc = "0x198 - UDPHS Endpoint Clear Status Register (endpoint = 4)"]
     #[inline(always)]
-    pub fn eptclrsta4(&self) -> &EPTCLRSTA4 {
-        unsafe { &*(((self as *const Self) as *const u8).add(408usize) as *const EPTCLRSTA4) }
+    pub const fn eptclrsta4(&self) -> &EPTCLRSTA4 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(408usize).cast() }
     }
     #[doc = "0x19c - UDPHS Endpoint Status Register (endpoint = 4)"]
     #[inline(always)]
-    pub fn isoendpt_eptsta4_isoendpt(&self) -> &ISOENDPT_EPTSTA4_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(412usize)
-                as *const ISOENDPT_EPTSTA4_ISOENDPT)
-        }
+    pub const fn isoendpt_eptsta4_isoendpt(&self) -> &ISOENDPT_EPTSTA4_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(412usize).cast() }
     }
     #[doc = "0x19c - UDPHS Endpoint Status Register (endpoint = 4)"]
     #[inline(always)]
-    pub fn eptsta4(&self) -> &EPTSTA4 {
-        unsafe { &*(((self as *const Self) as *const u8).add(412usize) as *const EPTSTA4) }
+    pub const fn eptsta4(&self) -> &EPTSTA4 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(412usize).cast() }
     }
     #[doc = "0x1a4 - UDPHS Endpoint Control Enable Register (endpoint = 5)"]
     #[inline(always)]
-    pub fn isoendpt_eptctlenb5_isoendpt(&self) -> &ISOENDPT_EPTCTLENB5_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(420usize)
-                as *const ISOENDPT_EPTCTLENB5_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctlenb5_isoendpt(&self) -> &ISOENDPT_EPTCTLENB5_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(420usize).cast() }
     }
     #[doc = "0x1a4 - UDPHS Endpoint Control Enable Register (endpoint = 5)"]
     #[inline(always)]
-    pub fn eptctlenb5(&self) -> &EPTCTLENB5 {
-        unsafe { &*(((self as *const Self) as *const u8).add(420usize) as *const EPTCTLENB5) }
+    pub const fn eptctlenb5(&self) -> &EPTCTLENB5 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(420usize).cast() }
     }
     #[doc = "0x1a8 - UDPHS Endpoint Control Disable Register (endpoint = 5)"]
     #[inline(always)]
-    pub fn isoendpt_eptctldis5_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS5_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(424usize)
-                as *const ISOENDPT_EPTCTLDIS5_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctldis5_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS5_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(424usize).cast() }
     }
     #[doc = "0x1a8 - UDPHS Endpoint Control Disable Register (endpoint = 5)"]
     #[inline(always)]
-    pub fn eptctldis5(&self) -> &EPTCTLDIS5 {
-        unsafe { &*(((self as *const Self) as *const u8).add(424usize) as *const EPTCTLDIS5) }
+    pub const fn eptctldis5(&self) -> &EPTCTLDIS5 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(424usize).cast() }
     }
     #[doc = "0x1ac - UDPHS Endpoint Control Register (endpoint = 5)"]
     #[inline(always)]
-    pub fn isoendpt_eptctl5_isoendpt(&self) -> &ISOENDPT_EPTCTL5_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(428usize)
-                as *const ISOENDPT_EPTCTL5_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctl5_isoendpt(&self) -> &ISOENDPT_EPTCTL5_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(428usize).cast() }
     }
     #[doc = "0x1ac - UDPHS Endpoint Control Register (endpoint = 5)"]
     #[inline(always)]
-    pub fn eptctl5(&self) -> &EPTCTL5 {
-        unsafe { &*(((self as *const Self) as *const u8).add(428usize) as *const EPTCTL5) }
+    pub const fn eptctl5(&self) -> &EPTCTL5 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(428usize).cast() }
     }
     #[doc = "0x1b4 - UDPHS Endpoint Set Status Register (endpoint = 5)"]
     #[inline(always)]
-    pub fn isoendpt_eptsetsta5_isoendpt(&self) -> &ISOENDPT_EPTSETSTA5_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(436usize)
-                as *const ISOENDPT_EPTSETSTA5_ISOENDPT)
-        }
+    pub const fn isoendpt_eptsetsta5_isoendpt(&self) -> &ISOENDPT_EPTSETSTA5_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(436usize).cast() }
     }
     #[doc = "0x1b4 - UDPHS Endpoint Set Status Register (endpoint = 5)"]
     #[inline(always)]
-    pub fn eptsetsta5(&self) -> &EPTSETSTA5 {
-        unsafe { &*(((self as *const Self) as *const u8).add(436usize) as *const EPTSETSTA5) }
+    pub const fn eptsetsta5(&self) -> &EPTSETSTA5 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(436usize).cast() }
     }
     #[doc = "0x1b8 - UDPHS Endpoint Clear Status Register (endpoint = 5)"]
     #[inline(always)]
-    pub fn isoendpt_eptclrsta5_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA5_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(440usize)
-                as *const ISOENDPT_EPTCLRSTA5_ISOENDPT)
-        }
+    pub const fn isoendpt_eptclrsta5_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA5_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(440usize).cast() }
     }
     #[doc = "0x1b8 - UDPHS Endpoint Clear Status Register (endpoint = 5)"]
     #[inline(always)]
-    pub fn eptclrsta5(&self) -> &EPTCLRSTA5 {
-        unsafe { &*(((self as *const Self) as *const u8).add(440usize) as *const EPTCLRSTA5) }
+    pub const fn eptclrsta5(&self) -> &EPTCLRSTA5 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(440usize).cast() }
     }
     #[doc = "0x1bc - UDPHS Endpoint Status Register (endpoint = 5)"]
     #[inline(always)]
-    pub fn isoendpt_eptsta5_isoendpt(&self) -> &ISOENDPT_EPTSTA5_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(444usize)
-                as *const ISOENDPT_EPTSTA5_ISOENDPT)
-        }
+    pub const fn isoendpt_eptsta5_isoendpt(&self) -> &ISOENDPT_EPTSTA5_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(444usize).cast() }
     }
     #[doc = "0x1bc - UDPHS Endpoint Status Register (endpoint = 5)"]
     #[inline(always)]
-    pub fn eptsta5(&self) -> &EPTSTA5 {
-        unsafe { &*(((self as *const Self) as *const u8).add(444usize) as *const EPTSTA5) }
+    pub const fn eptsta5(&self) -> &EPTSTA5 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(444usize).cast() }
     }
     #[doc = "0x1c4 - UDPHS Endpoint Control Enable Register (endpoint = 6)"]
     #[inline(always)]
-    pub fn isoendpt_eptctlenb6_isoendpt(&self) -> &ISOENDPT_EPTCTLENB6_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(452usize)
-                as *const ISOENDPT_EPTCTLENB6_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctlenb6_isoendpt(&self) -> &ISOENDPT_EPTCTLENB6_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(452usize).cast() }
     }
     #[doc = "0x1c4 - UDPHS Endpoint Control Enable Register (endpoint = 6)"]
     #[inline(always)]
-    pub fn eptctlenb6(&self) -> &EPTCTLENB6 {
-        unsafe { &*(((self as *const Self) as *const u8).add(452usize) as *const EPTCTLENB6) }
+    pub const fn eptctlenb6(&self) -> &EPTCTLENB6 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(452usize).cast() }
     }
     #[doc = "0x1c8 - UDPHS Endpoint Control Disable Register (endpoint = 6)"]
     #[inline(always)]
-    pub fn isoendpt_eptctldis6_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS6_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(456usize)
-                as *const ISOENDPT_EPTCTLDIS6_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctldis6_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS6_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(456usize).cast() }
     }
     #[doc = "0x1c8 - UDPHS Endpoint Control Disable Register (endpoint = 6)"]
     #[inline(always)]
-    pub fn eptctldis6(&self) -> &EPTCTLDIS6 {
-        unsafe { &*(((self as *const Self) as *const u8).add(456usize) as *const EPTCTLDIS6) }
+    pub const fn eptctldis6(&self) -> &EPTCTLDIS6 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(456usize).cast() }
     }
     #[doc = "0x1cc - UDPHS Endpoint Control Register (endpoint = 6)"]
     #[inline(always)]
-    pub fn isoendpt_eptctl6_isoendpt(&self) -> &ISOENDPT_EPTCTL6_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(460usize)
-                as *const ISOENDPT_EPTCTL6_ISOENDPT)
-        }
+    pub const fn isoendpt_eptctl6_isoendpt(&self) -> &ISOENDPT_EPTCTL6_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(460usize).cast() }
     }
     #[doc = "0x1cc - UDPHS Endpoint Control Register (endpoint = 6)"]
     #[inline(always)]
-    pub fn eptctl6(&self) -> &EPTCTL6 {
-        unsafe { &*(((self as *const Self) as *const u8).add(460usize) as *const EPTCTL6) }
+    pub const fn eptctl6(&self) -> &EPTCTL6 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(460usize).cast() }
     }
     #[doc = "0x1d4 - UDPHS Endpoint Set Status Register (endpoint = 6)"]
     #[inline(always)]
-    pub fn isoendpt_eptsetsta6_isoendpt(&self) -> &ISOENDPT_EPTSETSTA6_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(468usize)
-                as *const ISOENDPT_EPTSETSTA6_ISOENDPT)
-        }
+    pub const fn isoendpt_eptsetsta6_isoendpt(&self) -> &ISOENDPT_EPTSETSTA6_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(468usize).cast() }
     }
     #[doc = "0x1d4 - UDPHS Endpoint Set Status Register (endpoint = 6)"]
     #[inline(always)]
-    pub fn eptsetsta6(&self) -> &EPTSETSTA6 {
-        unsafe { &*(((self as *const Self) as *const u8).add(468usize) as *const EPTSETSTA6) }
+    pub const fn eptsetsta6(&self) -> &EPTSETSTA6 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(468usize).cast() }
     }
     #[doc = "0x1d8 - UDPHS Endpoint Clear Status Register (endpoint = 6)"]
     #[inline(always)]
-    pub fn isoendpt_eptclrsta6_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA6_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(472usize)
-                as *const ISOENDPT_EPTCLRSTA6_ISOENDPT)
-        }
+    pub const fn isoendpt_eptclrsta6_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA6_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(472usize).cast() }
     }
     #[doc = "0x1d8 - UDPHS Endpoint Clear Status Register (endpoint = 6)"]
     #[inline(always)]
-    pub fn eptclrsta6(&self) -> &EPTCLRSTA6 {
-        unsafe { &*(((self as *const Self) as *const u8).add(472usize) as *const EPTCLRSTA6) }
+    pub const fn eptclrsta6(&self) -> &EPTCLRSTA6 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(472usize).cast() }
     }
     #[doc = "0x1dc - UDPHS Endpoint Status Register (endpoint = 6)"]
     #[inline(always)]
-    pub fn isoendpt_eptsta6_isoendpt(&self) -> &ISOENDPT_EPTSTA6_ISOENDPT {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(476usize)
-                as *const ISOENDPT_EPTSTA6_ISOENDPT)
-        }
+    pub const fn isoendpt_eptsta6_isoendpt(&self) -> &ISOENDPT_EPTSTA6_ISOENDPT {
+        unsafe { &*(self as *const Self).cast::<u8>().add(476usize).cast() }
     }
     #[doc = "0x1dc - UDPHS Endpoint Status Register (endpoint = 6)"]
     #[inline(always)]
-    pub fn eptsta6(&self) -> &EPTSTA6 {
-        unsafe { &*(((self as *const Self) as *const u8).add(476usize) as *const EPTSTA6) }
+    pub const fn eptsta6(&self) -> &EPTSTA6 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(476usize).cast() }
     }
 }
 #[doc = "CTRL (rw) register accessor: an alias for `Reg<CTRL_SPEC>`"]

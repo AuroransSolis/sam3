@@ -13,6 +13,7 @@ edition = "2021"
 [dependencies]
 cortex-m = "0.7"
 vcell = "0.1"
+derive_more = "0.99.17"
 
 [dependencies.cortex-m-rt]
 version = "0.7"

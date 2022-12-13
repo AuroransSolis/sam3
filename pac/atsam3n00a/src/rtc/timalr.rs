@@ -1,39 +1,9 @@
 #[doc = "Register `TIMALR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<TIMALR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TIMALR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TIMALR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TIMALR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `TIMALR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<TIMALR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TIMALR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TIMALR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TIMALR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `SEC` reader - Second Alarm"]
 pub type SEC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SEC` writer - Second Alarm"]
@@ -102,36 +72,43 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - Second Alarm"]
     #[inline(always)]
+    #[must_use]
     pub fn sec(&mut self) -> SEC_W<0> {
         SEC_W::new(self)
     }
     #[doc = "Bit 7 - Second Alarm Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn secen(&mut self) -> SECEN_W<7> {
         SECEN_W::new(self)
     }
     #[doc = "Bits 8:14 - Minute Alarm"]
     #[inline(always)]
+    #[must_use]
     pub fn min(&mut self) -> MIN_W<8> {
         MIN_W::new(self)
     }
     #[doc = "Bit 15 - Minute Alarm Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn minen(&mut self) -> MINEN_W<15> {
         MINEN_W::new(self)
     }
     #[doc = "Bits 16:21 - Hour Alarm"]
     #[inline(always)]
+    #[must_use]
     pub fn hour(&mut self) -> HOUR_W<16> {
         HOUR_W::new(self)
     }
     #[doc = "Bit 22 - AM/PM Indicator"]
     #[inline(always)]
+    #[must_use]
     pub fn ampm(&mut self) -> AMPM_W<22> {
         AMPM_W::new(self)
     }
     #[doc = "Bit 23 - Hour Alarm Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn houren(&mut self) -> HOUREN_W<23> {
         HOUREN_W::new(self)
     }
@@ -154,11 +131,10 @@ impl crate::Readable for TIMALR_SPEC {
 #[doc = "`write(|w| ..)` method takes [timalr::W](W) writer structure"]
 impl crate::Writable for TIMALR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TIMALR to value 0"]
 impl crate::Resettable for TIMALR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

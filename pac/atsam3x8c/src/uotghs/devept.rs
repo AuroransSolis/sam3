@@ -1,39 +1,9 @@
 #[doc = "Register `DEVEPT` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<DEVEPT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DEVEPT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DEVEPT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DEVEPT_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `DEVEPT` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<DEVEPT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DEVEPT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DEVEPT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DEVEPT_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `EPEN0` reader - Endpoint 0 Enable"]
 pub type EPEN0_R = crate::BitReader<bool>;
 #[doc = "Field `EPEN0` writer - Endpoint 0 Enable"]
@@ -201,91 +171,109 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Endpoint 0 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn epen0(&mut self) -> EPEN0_W<0> {
         EPEN0_W::new(self)
     }
     #[doc = "Bit 1 - Endpoint 1 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn epen1(&mut self) -> EPEN1_W<1> {
         EPEN1_W::new(self)
     }
     #[doc = "Bit 2 - Endpoint 2 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn epen2(&mut self) -> EPEN2_W<2> {
         EPEN2_W::new(self)
     }
     #[doc = "Bit 3 - Endpoint 3 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn epen3(&mut self) -> EPEN3_W<3> {
         EPEN3_W::new(self)
     }
     #[doc = "Bit 4 - Endpoint 4 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn epen4(&mut self) -> EPEN4_W<4> {
         EPEN4_W::new(self)
     }
     #[doc = "Bit 5 - Endpoint 5 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn epen5(&mut self) -> EPEN5_W<5> {
         EPEN5_W::new(self)
     }
     #[doc = "Bit 6 - Endpoint 6 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn epen6(&mut self) -> EPEN6_W<6> {
         EPEN6_W::new(self)
     }
     #[doc = "Bit 7 - Endpoint 7 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn epen7(&mut self) -> EPEN7_W<7> {
         EPEN7_W::new(self)
     }
     #[doc = "Bit 8 - Endpoint 8 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn epen8(&mut self) -> EPEN8_W<8> {
         EPEN8_W::new(self)
     }
     #[doc = "Bit 16 - Endpoint 0 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn eprst0(&mut self) -> EPRST0_W<16> {
         EPRST0_W::new(self)
     }
     #[doc = "Bit 17 - Endpoint 1 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn eprst1(&mut self) -> EPRST1_W<17> {
         EPRST1_W::new(self)
     }
     #[doc = "Bit 18 - Endpoint 2 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn eprst2(&mut self) -> EPRST2_W<18> {
         EPRST2_W::new(self)
     }
     #[doc = "Bit 19 - Endpoint 3 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn eprst3(&mut self) -> EPRST3_W<19> {
         EPRST3_W::new(self)
     }
     #[doc = "Bit 20 - Endpoint 4 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn eprst4(&mut self) -> EPRST4_W<20> {
         EPRST4_W::new(self)
     }
     #[doc = "Bit 21 - Endpoint 5 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn eprst5(&mut self) -> EPRST5_W<21> {
         EPRST5_W::new(self)
     }
     #[doc = "Bit 22 - Endpoint 6 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn eprst6(&mut self) -> EPRST6_W<22> {
         EPRST6_W::new(self)
     }
     #[doc = "Bit 23 - Endpoint 7 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn eprst7(&mut self) -> EPRST7_W<23> {
         EPRST7_W::new(self)
     }
     #[doc = "Bit 24 - Endpoint 8 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn eprst8(&mut self) -> EPRST8_W<24> {
         EPRST8_W::new(self)
     }
@@ -308,11 +296,10 @@ impl crate::Readable for DEVEPT_SPEC {
 #[doc = "`write(|w| ..)` method takes [devept::W](W) writer structure"]
 impl crate::Writable for DEVEPT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DEVEPT to value 0"]
 impl crate::Resettable for DEVEPT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,49 +1,19 @@
 #[doc = "Register `MDR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<MDR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MDR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MDR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `MDR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<MDR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MDR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MDR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `MD` reader - Memory Device Type"]
 pub type MD_R = crate::FieldReader<u8, MD_A>;
 #[doc = "Memory Device Type\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MD_A {
     #[doc = "0: SDRAM"]
-    SDRAM = 0,
+    Sdram = 0,
     #[doc = "1: Low-power SDRAM"]
-    LPSDRAM = 1,
+    Lpsdram = 1,
 }
 impl From<MD_A> for u8 {
     #[inline(always)]
@@ -56,20 +26,20 @@ impl MD_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<MD_A> {
         match self.bits {
-            0 => Some(MD_A::SDRAM),
-            1 => Some(MD_A::LPSDRAM),
+            0 => Some(MD_A::Sdram),
+            1 => Some(MD_A::Lpsdram),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `SDRAM`"]
+    #[doc = "Checks if the value of the field is `Sdram`"]
     #[inline(always)]
     pub fn is_sdram(&self) -> bool {
-        *self == MD_A::SDRAM
+        *self == MD_A::Sdram
     }
-    #[doc = "Checks if the value of the field is `LPSDRAM`"]
+    #[doc = "Checks if the value of the field is `Lpsdram`"]
     #[inline(always)]
     pub fn is_lpsdram(&self) -> bool {
-        *self == MD_A::LPSDRAM
+        *self == MD_A::Lpsdram
     }
 }
 #[doc = "Field `MD` writer - Memory Device Type"]
@@ -78,12 +48,12 @@ impl<'a, const O: u8> MD_W<'a, O> {
     #[doc = "SDRAM"]
     #[inline(always)]
     pub fn sdram(self) -> &'a mut W {
-        self.variant(MD_A::SDRAM)
+        self.variant(MD_A::Sdram)
     }
     #[doc = "Low-power SDRAM"]
     #[inline(always)]
     pub fn lpsdram(self) -> &'a mut W {
-        self.variant(MD_A::LPSDRAM)
+        self.variant(MD_A::Lpsdram)
     }
 }
 impl R {
@@ -96,6 +66,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Memory Device Type"]
     #[inline(always)]
+    #[must_use]
     pub fn md(&mut self) -> MD_W<0> {
         MD_W::new(self)
     }
@@ -118,11 +89,10 @@ impl crate::Readable for MDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mdr::W](W) writer structure"]
 impl crate::Writable for MDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MDR to value 0"]
 impl crate::Resettable for MDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

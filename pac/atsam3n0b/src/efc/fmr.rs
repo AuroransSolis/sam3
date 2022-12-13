@@ -1,39 +1,9 @@
 #[doc = "Register `FMR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<FMR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FMR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FMR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `FMR` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<FMR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FMR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FMR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `FRDY` reader - Ready Interrupt Enable"]
 pub type FRDY_R = crate::BitReader<bool>;
 #[doc = "Field `FRDY` writer - Ready Interrupt Enable"]
@@ -75,21 +45,25 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Ready Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn frdy(&mut self) -> FRDY_W<0> {
         FRDY_W::new(self)
     }
     #[doc = "Bits 8:11 - Flash Wait State"]
     #[inline(always)]
+    #[must_use]
     pub fn fws(&mut self) -> FWS_W<8> {
         FWS_W::new(self)
     }
     #[doc = "Bit 16 - Sequential Code Optimization Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn scod(&mut self) -> SCOD_W<16> {
         SCOD_W::new(self)
     }
     #[doc = "Bit 24 - Flash Access Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn fam(&mut self) -> FAM_W<24> {
         FAM_W::new(self)
     }
@@ -112,11 +86,10 @@ impl crate::Readable for FMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [fmr::W](W) writer structure"]
 impl crate::Writable for FMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FMR to value 0"]
 impl crate::Resettable for FMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

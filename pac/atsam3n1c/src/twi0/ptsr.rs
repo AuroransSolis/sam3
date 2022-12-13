@@ -1,18 +1,6 @@
 #[doc = "Register `PTSR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<PTSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PTSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PTSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PTSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `RXTEN` reader - Receiver Transfer Enable"]
 pub type RXTEN_R = crate::BitReader<bool>;
 #[doc = "Field `TXTEN` reader - Transmitter Transfer Enable"]
@@ -40,8 +28,5 @@ impl crate::Readable for PTSR_SPEC {
 }
 #[doc = "`reset()` method sets PTSR to value 0"]
 impl crate::Resettable for PTSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

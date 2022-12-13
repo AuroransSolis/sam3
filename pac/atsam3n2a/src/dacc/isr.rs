@@ -1,18 +1,6 @@
 #[doc = "Register `ISR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<ISR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ISR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ISR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ISR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `TXRDY` reader - Transmission Ready Interrupt Flag"]
 pub type TXRDY_R = crate::BitReader<bool>;
 #[doc = "Field `ENDTX` reader - End of PDC Interrupt Flag"]
@@ -47,8 +35,5 @@ impl crate::Readable for ISR_SPEC {
 }
 #[doc = "`reset()` method sets ISR to value 0"]
 impl crate::Resettable for ISR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

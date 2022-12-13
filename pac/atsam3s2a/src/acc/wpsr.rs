@@ -1,18 +1,6 @@
 #[doc = "Register `WPSR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<WPSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<WPSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<WPSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<WPSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `WPROTERR` reader - Write PROTection ERRor"]
 pub type WPROTERR_R = crate::BitReader<bool>;
 impl R {
@@ -33,8 +21,5 @@ impl crate::Readable for WPSR_SPEC {
 }
 #[doc = "`reset()` method sets WPSR to value 0"]
 impl crate::Resettable for WPSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

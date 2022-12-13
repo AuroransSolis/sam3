@@ -1,39 +1,9 @@
 #[doc = "Register `OS` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<OS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<OS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<OS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<OS_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `OS` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<OS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<OS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<OS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<OS_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `OSH0` reader - Output Selection for PWMH output of the channel 0"]
 pub type OSH0_R = crate::BitReader<bool>;
 #[doc = "Field `OSH0` writer - Output Selection for PWMH output of the channel 0"]
@@ -183,81 +153,97 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Output Selection for PWMH output of the channel 0"]
     #[inline(always)]
+    #[must_use]
     pub fn osh0(&mut self) -> OSH0_W<0> {
         OSH0_W::new(self)
     }
     #[doc = "Bit 1 - Output Selection for PWMH output of the channel 1"]
     #[inline(always)]
+    #[must_use]
     pub fn osh1(&mut self) -> OSH1_W<1> {
         OSH1_W::new(self)
     }
     #[doc = "Bit 2 - Output Selection for PWMH output of the channel 2"]
     #[inline(always)]
+    #[must_use]
     pub fn osh2(&mut self) -> OSH2_W<2> {
         OSH2_W::new(self)
     }
     #[doc = "Bit 3 - Output Selection for PWMH output of the channel 3"]
     #[inline(always)]
+    #[must_use]
     pub fn osh3(&mut self) -> OSH3_W<3> {
         OSH3_W::new(self)
     }
     #[doc = "Bit 4 - Output Selection for PWMH output of the channel 4"]
     #[inline(always)]
+    #[must_use]
     pub fn osh4(&mut self) -> OSH4_W<4> {
         OSH4_W::new(self)
     }
     #[doc = "Bit 5 - Output Selection for PWMH output of the channel 5"]
     #[inline(always)]
+    #[must_use]
     pub fn osh5(&mut self) -> OSH5_W<5> {
         OSH5_W::new(self)
     }
     #[doc = "Bit 6 - Output Selection for PWMH output of the channel 6"]
     #[inline(always)]
+    #[must_use]
     pub fn osh6(&mut self) -> OSH6_W<6> {
         OSH6_W::new(self)
     }
     #[doc = "Bit 7 - Output Selection for PWMH output of the channel 7"]
     #[inline(always)]
+    #[must_use]
     pub fn osh7(&mut self) -> OSH7_W<7> {
         OSH7_W::new(self)
     }
     #[doc = "Bit 16 - Output Selection for PWML output of the channel 0"]
     #[inline(always)]
+    #[must_use]
     pub fn osl0(&mut self) -> OSL0_W<16> {
         OSL0_W::new(self)
     }
     #[doc = "Bit 17 - Output Selection for PWML output of the channel 1"]
     #[inline(always)]
+    #[must_use]
     pub fn osl1(&mut self) -> OSL1_W<17> {
         OSL1_W::new(self)
     }
     #[doc = "Bit 18 - Output Selection for PWML output of the channel 2"]
     #[inline(always)]
+    #[must_use]
     pub fn osl2(&mut self) -> OSL2_W<18> {
         OSL2_W::new(self)
     }
     #[doc = "Bit 19 - Output Selection for PWML output of the channel 3"]
     #[inline(always)]
+    #[must_use]
     pub fn osl3(&mut self) -> OSL3_W<19> {
         OSL3_W::new(self)
     }
     #[doc = "Bit 20 - Output Selection for PWML output of the channel 4"]
     #[inline(always)]
+    #[must_use]
     pub fn osl4(&mut self) -> OSL4_W<20> {
         OSL4_W::new(self)
     }
     #[doc = "Bit 21 - Output Selection for PWML output of the channel 5"]
     #[inline(always)]
+    #[must_use]
     pub fn osl5(&mut self) -> OSL5_W<21> {
         OSL5_W::new(self)
     }
     #[doc = "Bit 22 - Output Selection for PWML output of the channel 6"]
     #[inline(always)]
+    #[must_use]
     pub fn osl6(&mut self) -> OSL6_W<22> {
         OSL6_W::new(self)
     }
     #[doc = "Bit 23 - Output Selection for PWML output of the channel 7"]
     #[inline(always)]
+    #[must_use]
     pub fn osl7(&mut self) -> OSL7_W<23> {
         OSL7_W::new(self)
     }
@@ -280,11 +266,10 @@ impl crate::Readable for OS_SPEC {
 #[doc = "`write(|w| ..)` method takes [os::W](W) writer structure"]
 impl crate::Writable for OS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets OS to value 0"]
 impl crate::Resettable for OS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

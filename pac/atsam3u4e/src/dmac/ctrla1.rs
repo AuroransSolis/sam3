@@ -1,39 +1,9 @@
 #[doc = "Register `CTRLA1` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<CTRLA1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CTRLA1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CTRLA1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CTRLA1_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `CTRLA1` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<CTRLA1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CTRLA1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CTRLA1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CTRLA1_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `BTSIZE` reader - Buffer Transfer Size"]
 pub type BTSIZE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `BTSIZE` writer - Buffer Transfer Size"]
@@ -41,15 +11,15 @@ pub type BTSIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRLA1_SPEC, u1
 #[doc = "Field `SRC_WIDTH` reader - Transfer Width for the Source"]
 pub type SRC_WIDTH_R = crate::FieldReader<u8, SRC_WIDTH_A>;
 #[doc = "Transfer Width for the Source\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SRC_WIDTH_A {
     #[doc = "0: the transfer size is set to 8-bit width"]
-    BYTE = 0,
+    Byte = 0,
     #[doc = "1: the transfer size is set to 16-bit width"]
-    HALF_WORD = 1,
+    HalfWord = 1,
     #[doc = "2: the transfer size is set to 32-bit width"]
-    WORD = 2,
+    Word = 2,
 }
 impl From<SRC_WIDTH_A> for u8 {
     #[inline(always)]
@@ -62,26 +32,26 @@ impl SRC_WIDTH_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<SRC_WIDTH_A> {
         match self.bits {
-            0 => Some(SRC_WIDTH_A::BYTE),
-            1 => Some(SRC_WIDTH_A::HALF_WORD),
-            2 => Some(SRC_WIDTH_A::WORD),
+            0 => Some(SRC_WIDTH_A::Byte),
+            1 => Some(SRC_WIDTH_A::HalfWord),
+            2 => Some(SRC_WIDTH_A::Word),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `BYTE`"]
+    #[doc = "Checks if the value of the field is `Byte`"]
     #[inline(always)]
     pub fn is_byte(&self) -> bool {
-        *self == SRC_WIDTH_A::BYTE
+        *self == SRC_WIDTH_A::Byte
     }
-    #[doc = "Checks if the value of the field is `HALF_WORD`"]
+    #[doc = "Checks if the value of the field is `HalfWord`"]
     #[inline(always)]
     pub fn is_half_word(&self) -> bool {
-        *self == SRC_WIDTH_A::HALF_WORD
+        *self == SRC_WIDTH_A::HalfWord
     }
-    #[doc = "Checks if the value of the field is `WORD`"]
+    #[doc = "Checks if the value of the field is `Word`"]
     #[inline(always)]
     pub fn is_word(&self) -> bool {
-        *self == SRC_WIDTH_A::WORD
+        *self == SRC_WIDTH_A::Word
     }
 }
 #[doc = "Field `SRC_WIDTH` writer - Transfer Width for the Source"]
@@ -91,31 +61,31 @@ impl<'a, const O: u8> SRC_WIDTH_W<'a, O> {
     #[doc = "the transfer size is set to 8-bit width"]
     #[inline(always)]
     pub fn byte(self) -> &'a mut W {
-        self.variant(SRC_WIDTH_A::BYTE)
+        self.variant(SRC_WIDTH_A::Byte)
     }
     #[doc = "the transfer size is set to 16-bit width"]
     #[inline(always)]
     pub fn half_word(self) -> &'a mut W {
-        self.variant(SRC_WIDTH_A::HALF_WORD)
+        self.variant(SRC_WIDTH_A::HalfWord)
     }
     #[doc = "the transfer size is set to 32-bit width"]
     #[inline(always)]
     pub fn word(self) -> &'a mut W {
-        self.variant(SRC_WIDTH_A::WORD)
+        self.variant(SRC_WIDTH_A::Word)
     }
 }
 #[doc = "Field `DST_WIDTH` reader - Transfer Width for the Destination"]
 pub type DST_WIDTH_R = crate::FieldReader<u8, DST_WIDTH_A>;
 #[doc = "Transfer Width for the Destination\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DST_WIDTH_A {
     #[doc = "0: the transfer size is set to 8-bit width"]
-    BYTE = 0,
+    Byte = 0,
     #[doc = "1: the transfer size is set to 16-bit width"]
-    HALF_WORD = 1,
+    HalfWord = 1,
     #[doc = "2: the transfer size is set to 32-bit width"]
-    WORD = 2,
+    Word = 2,
 }
 impl From<DST_WIDTH_A> for u8 {
     #[inline(always)]
@@ -128,26 +98,26 @@ impl DST_WIDTH_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<DST_WIDTH_A> {
         match self.bits {
-            0 => Some(DST_WIDTH_A::BYTE),
-            1 => Some(DST_WIDTH_A::HALF_WORD),
-            2 => Some(DST_WIDTH_A::WORD),
+            0 => Some(DST_WIDTH_A::Byte),
+            1 => Some(DST_WIDTH_A::HalfWord),
+            2 => Some(DST_WIDTH_A::Word),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `BYTE`"]
+    #[doc = "Checks if the value of the field is `Byte`"]
     #[inline(always)]
     pub fn is_byte(&self) -> bool {
-        *self == DST_WIDTH_A::BYTE
+        *self == DST_WIDTH_A::Byte
     }
-    #[doc = "Checks if the value of the field is `HALF_WORD`"]
+    #[doc = "Checks if the value of the field is `HalfWord`"]
     #[inline(always)]
     pub fn is_half_word(&self) -> bool {
-        *self == DST_WIDTH_A::HALF_WORD
+        *self == DST_WIDTH_A::HalfWord
     }
-    #[doc = "Checks if the value of the field is `WORD`"]
+    #[doc = "Checks if the value of the field is `Word`"]
     #[inline(always)]
     pub fn is_word(&self) -> bool {
-        *self == DST_WIDTH_A::WORD
+        *self == DST_WIDTH_A::Word
     }
 }
 #[doc = "Field `DST_WIDTH` writer - Transfer Width for the Destination"]
@@ -157,17 +127,17 @@ impl<'a, const O: u8> DST_WIDTH_W<'a, O> {
     #[doc = "the transfer size is set to 8-bit width"]
     #[inline(always)]
     pub fn byte(self) -> &'a mut W {
-        self.variant(DST_WIDTH_A::BYTE)
+        self.variant(DST_WIDTH_A::Byte)
     }
     #[doc = "the transfer size is set to 16-bit width"]
     #[inline(always)]
     pub fn half_word(self) -> &'a mut W {
-        self.variant(DST_WIDTH_A::HALF_WORD)
+        self.variant(DST_WIDTH_A::HalfWord)
     }
     #[doc = "the transfer size is set to 32-bit width"]
     #[inline(always)]
     pub fn word(self) -> &'a mut W {
-        self.variant(DST_WIDTH_A::WORD)
+        self.variant(DST_WIDTH_A::Word)
     }
 }
 #[doc = "Field `DONE` reader - Current Descriptor Stop Command and Transfer Completed Memory Indicator"]
@@ -199,21 +169,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Buffer Transfer Size"]
     #[inline(always)]
+    #[must_use]
     pub fn btsize(&mut self) -> BTSIZE_W<0> {
         BTSIZE_W::new(self)
     }
     #[doc = "Bits 24:25 - Transfer Width for the Source"]
     #[inline(always)]
+    #[must_use]
     pub fn src_width(&mut self) -> SRC_WIDTH_W<24> {
         SRC_WIDTH_W::new(self)
     }
     #[doc = "Bits 28:29 - Transfer Width for the Destination"]
     #[inline(always)]
+    #[must_use]
     pub fn dst_width(&mut self) -> DST_WIDTH_W<28> {
         DST_WIDTH_W::new(self)
     }
     #[doc = "Bit 31 - Current Descriptor Stop Command and Transfer Completed Memory Indicator"]
     #[inline(always)]
+    #[must_use]
     pub fn done(&mut self) -> DONE_W<31> {
         DONE_W::new(self)
     }
@@ -236,11 +210,10 @@ impl crate::Readable for CTRLA1_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrla1::W](W) writer structure"]
 impl crate::Writable for CTRLA1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRLA1 to value 0"]
 impl crate::Resettable for CTRLA1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

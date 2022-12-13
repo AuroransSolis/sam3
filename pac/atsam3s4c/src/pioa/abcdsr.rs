@@ -1,39 +1,9 @@
 #[doc = "Register `ABCDSR[%s]` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<ABCDSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ABCDSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ABCDSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ABCDSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `ABCDSR[%s]` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<ABCDSR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ABCDSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ABCDSR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ABCDSR_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `P0` reader - Peripheral Select."]
 pub type P0_R = crate::BitReader<bool>;
 #[doc = "Field `P0` writer - Peripheral Select."]
@@ -327,161 +297,193 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p0(&mut self) -> P0_W<0> {
         P0_W::new(self)
     }
     #[doc = "Bit 1 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p1(&mut self) -> P1_W<1> {
         P1_W::new(self)
     }
     #[doc = "Bit 2 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p2(&mut self) -> P2_W<2> {
         P2_W::new(self)
     }
     #[doc = "Bit 3 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p3(&mut self) -> P3_W<3> {
         P3_W::new(self)
     }
     #[doc = "Bit 4 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p4(&mut self) -> P4_W<4> {
         P4_W::new(self)
     }
     #[doc = "Bit 5 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p5(&mut self) -> P5_W<5> {
         P5_W::new(self)
     }
     #[doc = "Bit 6 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p6(&mut self) -> P6_W<6> {
         P6_W::new(self)
     }
     #[doc = "Bit 7 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p7(&mut self) -> P7_W<7> {
         P7_W::new(self)
     }
     #[doc = "Bit 8 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p8(&mut self) -> P8_W<8> {
         P8_W::new(self)
     }
     #[doc = "Bit 9 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p9(&mut self) -> P9_W<9> {
         P9_W::new(self)
     }
     #[doc = "Bit 10 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p10(&mut self) -> P10_W<10> {
         P10_W::new(self)
     }
     #[doc = "Bit 11 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p11(&mut self) -> P11_W<11> {
         P11_W::new(self)
     }
     #[doc = "Bit 12 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p12(&mut self) -> P12_W<12> {
         P12_W::new(self)
     }
     #[doc = "Bit 13 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p13(&mut self) -> P13_W<13> {
         P13_W::new(self)
     }
     #[doc = "Bit 14 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p14(&mut self) -> P14_W<14> {
         P14_W::new(self)
     }
     #[doc = "Bit 15 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p15(&mut self) -> P15_W<15> {
         P15_W::new(self)
     }
     #[doc = "Bit 16 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p16(&mut self) -> P16_W<16> {
         P16_W::new(self)
     }
     #[doc = "Bit 17 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p17(&mut self) -> P17_W<17> {
         P17_W::new(self)
     }
     #[doc = "Bit 18 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p18(&mut self) -> P18_W<18> {
         P18_W::new(self)
     }
     #[doc = "Bit 19 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p19(&mut self) -> P19_W<19> {
         P19_W::new(self)
     }
     #[doc = "Bit 20 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p20(&mut self) -> P20_W<20> {
         P20_W::new(self)
     }
     #[doc = "Bit 21 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p21(&mut self) -> P21_W<21> {
         P21_W::new(self)
     }
     #[doc = "Bit 22 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p22(&mut self) -> P22_W<22> {
         P22_W::new(self)
     }
     #[doc = "Bit 23 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p23(&mut self) -> P23_W<23> {
         P23_W::new(self)
     }
     #[doc = "Bit 24 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p24(&mut self) -> P24_W<24> {
         P24_W::new(self)
     }
     #[doc = "Bit 25 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p25(&mut self) -> P25_W<25> {
         P25_W::new(self)
     }
     #[doc = "Bit 26 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p26(&mut self) -> P26_W<26> {
         P26_W::new(self)
     }
     #[doc = "Bit 27 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p27(&mut self) -> P27_W<27> {
         P27_W::new(self)
     }
     #[doc = "Bit 28 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p28(&mut self) -> P28_W<28> {
         P28_W::new(self)
     }
     #[doc = "Bit 29 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p29(&mut self) -> P29_W<29> {
         P29_W::new(self)
     }
     #[doc = "Bit 30 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p30(&mut self) -> P30_W<30> {
         P30_W::new(self)
     }
     #[doc = "Bit 31 - Peripheral Select."]
     #[inline(always)]
+    #[must_use]
     pub fn p31(&mut self) -> P31_W<31> {
         P31_W::new(self)
     }
@@ -504,4 +506,6 @@ impl crate::Readable for ABCDSR_SPEC {
 #[doc = "`write(|w| ..)` method takes [abcdsr::W](W) writer structure"]
 impl crate::Writable for ABCDSR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

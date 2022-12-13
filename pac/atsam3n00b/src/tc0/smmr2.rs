@@ -1,39 +1,9 @@
 #[doc = "Register `SMMR2` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<SMMR2_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SMMR2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SMMR2_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SMMR2_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `SMMR2` writer"]
+#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
 pub struct W(crate::W<SMMR2_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SMMR2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SMMR2_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SMMR2_SPEC>) -> Self {
-        W(writer)
-    }
-}
 #[doc = "Field `GCEN` reader - Gray Count Enable"]
 pub type GCEN_R = crate::BitReader<bool>;
 #[doc = "Field `GCEN` writer - Gray Count Enable"]
@@ -57,11 +27,13 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Gray Count Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn gcen(&mut self) -> GCEN_W<0> {
         GCEN_W::new(self)
     }
     #[doc = "Bit 1 - Down Count"]
     #[inline(always)]
+    #[must_use]
     pub fn down(&mut self) -> DOWN_W<1> {
         DOWN_W::new(self)
     }
@@ -84,11 +56,10 @@ impl crate::Readable for SMMR2_SPEC {
 #[doc = "`write(|w| ..)` method takes [smmr2::W](W) writer structure"]
 impl crate::Writable for SMMR2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SMMR2 to value 0"]
 impl crate::Resettable for SMMR2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

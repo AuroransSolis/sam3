@@ -1,18 +1,6 @@
 #[doc = "Register `SR` reader"]
+#[derive(derive_more :: Deref, derive_more :: From)]
 pub struct R(crate::R<SR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SR_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Field `IDTI` reader - ID Transition Interrupt"]
 pub type IDTI_R = crate::BitReader<bool>;
 #[doc = "Field `VBUSTI` reader - VBus Transition Interrupt"]
@@ -38,15 +26,15 @@ pub type VBUS_R = crate::BitReader<bool>;
 #[doc = "Field `SPEED` reader - Speed Status"]
 pub type SPEED_R = crate::FieldReader<u8, SPEED_A>;
 #[doc = "Speed Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SPEED_A {
     #[doc = "0: Full-Speed mode"]
-    FULL_SPEED = 0,
+    FullSpeed = 0,
     #[doc = "1: High-Speed mode"]
-    HIGH_SPEED = 1,
+    HighSpeed = 1,
     #[doc = "2: Low-Speed mode"]
-    LOW_SPEED = 2,
+    LowSpeed = 2,
 }
 impl From<SPEED_A> for u8 {
     #[inline(always)]
@@ -59,26 +47,26 @@ impl SPEED_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<SPEED_A> {
         match self.bits {
-            0 => Some(SPEED_A::FULL_SPEED),
-            1 => Some(SPEED_A::HIGH_SPEED),
-            2 => Some(SPEED_A::LOW_SPEED),
+            0 => Some(SPEED_A::FullSpeed),
+            1 => Some(SPEED_A::HighSpeed),
+            2 => Some(SPEED_A::LowSpeed),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `FULL_SPEED`"]
+    #[doc = "Checks if the value of the field is `FullSpeed`"]
     #[inline(always)]
     pub fn is_full_speed(&self) -> bool {
-        *self == SPEED_A::FULL_SPEED
+        *self == SPEED_A::FullSpeed
     }
-    #[doc = "Checks if the value of the field is `HIGH_SPEED`"]
+    #[doc = "Checks if the value of the field is `HighSpeed`"]
     #[inline(always)]
     pub fn is_high_speed(&self) -> bool {
-        *self == SPEED_A::HIGH_SPEED
+        *self == SPEED_A::HighSpeed
     }
-    #[doc = "Checks if the value of the field is `LOW_SPEED`"]
+    #[doc = "Checks if the value of the field is `LowSpeed`"]
     #[inline(always)]
     pub fn is_low_speed(&self) -> bool {
-        *self == SPEED_A::LOW_SPEED
+        *self == SPEED_A::LowSpeed
     }
 }
 #[doc = "Field `CLKUSABLE` reader - UTMI Clock Usable"]
@@ -161,8 +149,5 @@ impl crate::Readable for SR_SPEC {
 }
 #[doc = "`reset()` method sets SR to value 0x0400"]
 impl crate::Resettable for SR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0400
-    }
+    const RESET_VALUE: Self::Ux = 0x0400;
 }
