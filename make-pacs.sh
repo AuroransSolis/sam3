@@ -17,24 +17,27 @@ fi
 function build_pac() {
     chip_upper=$(basename "${1}" ".svd")
     chip_lower=$(echo "${chip_upper}" | tr '[:upper:]' '[:lower:]')
-    xsl="svd/patches/${chip_lower}.xsl"
-    pac_dir="pac/${chip_lower}"
+    xsl=svd/patches/${chip_lower}.xsl
+    pac_dir=pac/${chip_lower}
 
-    if [ -d "${pac_dir}" ]
-    then
-        rm -r "${pac_dir}"/src/*
-    else
-        mkdir -p ${pac_dir}
-    fi
+    mkdir -p ${pac_dir}
 
     xsltproc ${xsl} ${1} \
-        | svd2rust --nightly --const_generic --target cortex-m --output-dir ${pac_dir}
+        | svd2rust \
+            --nightly \
+            --const_generic \
+            --target cortex-m \
+            --strict \
+            --pascal_enum_values \
+            --derive_more \
+            --output-dir ${pac_dir}
     form -i ${pac_dir}/lib.rs -o ${pac_dir}/src/
     rm ${pac_dir}/lib.rs
 
     pushd ${pac_dir}
     cargo +nightly fmt
     rustfmt +nightly build.rs
+    
     popd
 }
 
