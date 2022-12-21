@@ -628,122 +628,6 @@ macro_rules! impl_flrhcfg {
     )+};
 }
 
-// macro_rules! impl_flrhcfg {
-//     ($($pio:ty),+$(,)?) => {$(
-//         impl_flrhcfg! {
-//             @impls $pio
-//         }
-//     )+};
-//     (@impls $pio:ty) => {
-//         impl_flrhcfg! {
-//             @impl_variant $pio, DetectFallingEdgeLowLevel, frlhsr, fellsr, 0
-//         }
-//         impl_flrhcfg! {
-//             @impl_variant $pio, DetectRisingEdgeHighLevel, frlhsr, rehlsr, 1
-//         }
-//     };
-//     (@impl_variant $pio:ty, $variant:ty, $sreg:ident, $wreg:ident, $lookfor:literal) => {
-//         paste! {
-//             impl FallRiseLowHighCfg<$pio> for $variant {
-//                 fn apply_fall_low_rise_high_cfg<Pid, Mdvr, Pupr, Edlv, Frlh, Filt>(
-//                     pin: Pin<
-//                         $pio,
-//                         Pid,
-//                         Mdvr,
-//                         Pupr,
-//                         InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, Frlh>>,
-//                         Filt,
-//                     >,
-//                 ) -> Pin<
-//                     $pio,
-//                     Pid,
-//                     Mdvr,
-//                     Pupr,
-//                     InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, $variant>>,
-//                     Filt,
-//                 >
-//                 where
-//                     Pid: PinId<Controller = $pio>,
-//                     Mdvr: MultiDriverCfg,
-//                     Pupr: PullupResistorCfg,
-//                     Edlv: EdgeLevelCfg<$pio>,
-//                     Frlh: FallRiseLowHighCfg<$pio>,
-//                     Filt: InputFilterCfg,
-//                 {
-//                     let pioreg = unsafe { &mut *($pio::PTR as *mut <$pio as IsPio>::RegType) };
-//                     unsafe {
-//                         Self::apply_fall_low_rise_high_cfg_rb::<Pid>(pioreg);
-//                     }
-//                     while !Self::is_fall_low_rise_high_cfg_applied::<Pid>(pioreg) {}
-//                     unsafe { Pin::new() }
-//                 }
-//
-//                 unsafe fn apply_fall_low_rise_high_cfg_rb<Pid: PinId<Controller = $pio>>(
-//                     rb: &mut <$pio as IsPio>::RegType
-//                 ) {
-//                     rb.$wreg.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-//                 }
-//
-//                 fn is_fall_low_rise_high_cfg_applied<Pid: PinId<Controller = $pio>>(rb: &<$pio as IsPio>::RegType) -> bool {
-//                     rb.$sreg.read().bits() & <Pid as PinId>::MASK == $lookfor
-//                 }
-//             }
-//
-//             impl<Pid, Mdvr, Pupr, Edlv, Frlh, Filt> [<Apply $variant>] for
-//                 Pin<
-//                     $pio,
-//                     Pid,
-//                     Mdvr,
-//                     Pupr,
-//                     InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, Frlh>>,
-//                     Filt,
-//                 >
-//             where
-//                 Pid: PinId<Controller = $pio>,
-//                 Mdvr: MultiDriverCfg,
-//                 Pupr: PullupResistorCfg,
-//                 Edlv: EdgeLevelCfg<$pio>,
-//                 Frlh: FallRiseLowHighCfg<$pio>,
-//                 Filt: InputFilterCfg,
-//             {
-//                 type Output = Pin<
-//                     $pio,
-//                     Pid,
-//                     Mdvr,
-//                     Pupr,
-//                     InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, $variant>>,
-//                     Filt,
-//                 >;
-//
-//                 default fn [<$variant:snake>](self) -> Self::Output {
-//                     $variant::apply_fall_low_rise_high_cfg(self)
-//                 }
-//             }
-//
-//             impl<Pid, Mdvr, Pupr, Edlv, Filt> [<Apply $variant>] for
-//                 Pin<
-//                     $pio,
-//                     Pid,
-//                     Mdvr,
-//                     Pupr,
-//                     InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, $variant>>,
-//                     Filt,
-//                 >
-//             where
-//                 Pid: PinId<Controller = $pio>,
-//                 Mdvr: MultiDriverCfg,
-//                 Pupr: PullupResistorCfg,
-//                 Edlv: EdgeLevelCfg<$pio>,
-//                 Filt: InputFilterCfg,
-//             {
-//                 fn [<$variant:snake>](self) -> Self::Output {
-//                     self
-//                 }
-//             }
-//         }
-//     };
-// }
-
 impl_flrhcfg! {
     PioA, PioB, PioC,
 }
@@ -753,7 +637,7 @@ impl_flrhcfg! {
     PioD,
 }
 
-// #[cfg(feature = "sam3x8h")]
-// impl_flrhcfg! {
-//     PioE, PioF,
-// }
+#[cfg(feature = "sam3x8h")]
+impl_flrhcfg! {
+    PioE, PioF,
+}
