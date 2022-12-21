@@ -198,7 +198,7 @@ impl Dacc {
     ///       **c**hannel **2**
     ///   - `TRGSEL_A::PWM0`: **PWM** event line **0**
     ///   - `TRGSEL_A::PWM1`: **PWM** event line **1**
-    pub fn set_trigger(&mut self, trigger: TRGSEL_A) -> DaccResult {
+    pub fn set_trigger(&mut self, trigger: TRGSEL_A_A) -> DaccResult {
         if self.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
@@ -215,10 +215,10 @@ impl Dacc {
     ///
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     #[rustfmt::skip]
-    pub unsafe fn set_trigger_unchecked(&mut self, trigger: TRGSEL_A) {
+    pub unsafe fn set_trigger_unchecked(&mut self, trigger: TRGSEL_A_A) {
         self.dacc.mr.write(|mode_reg| {
             mode_reg
-                .trgen().variant(TRGEN_A::EN)
+                .trgen().variant(TRGEN_A::En)
                 .trgsel().variant(trigger)
         });
     }
@@ -243,7 +243,7 @@ impl Dacc {
     pub unsafe fn disable_trigger_unchecked(&mut self) {
         self.dacc
             .mr
-            .write(|mode_reg| mode_reg.trgen().variant(TRGEN_A::DIS));
+            .write(|mode_reg| mode_reg.trgen().variant(TRGEN_A::Dis));
     }
 
     /// Attempt to set the transfer mode. Fails if write protection is enabled.
