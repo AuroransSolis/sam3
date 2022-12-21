@@ -1,5 +1,9 @@
+#![allow(unused_imports)]
+
 // pub mod dynpin;
-pub mod peripherals;
+pub mod filter;
+pub mod interrupt;
+pub mod peripheral;
 pub mod pin;
 pub mod pioa;
 pub mod piob;
@@ -64,6 +68,7 @@ macro_rules! def_pioc {
                     $(#[$meta])*
                     [<$pio_abbv:snake $num:snake>]: [<$pio_abbv:camel $num:camel>],
                 )+
+
             }
 
             impl crate::pio::IsPio for $pio {

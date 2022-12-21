@@ -1,5 +1,6 @@
 #![no_std]
-#![allow(dead_code)]
+#![allow(dead_code, incomplete_features)]
+#![feature(specialization)]
 
 #[cfg(not(feature = "device"))]
 compile_error! {

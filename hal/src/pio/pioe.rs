@@ -1,13 +1,6 @@
 use crate::{
     pac::{pioe, PIOE},
-    pio::{
-        def_pioc,
-        pin::{
-            AdditionalInterruptModesDisabled, DetectLevels, DetectRisingEdgeHighLevel,
-            InputFilterDisabled, InterruptDisabled, PeripheralA, PeripheralB, PeripheralControlled,
-            Pin, SystemClockGlitchFilter,
-        },
-    },
+    pio::{def_pioc, pin::Pin},
 };
 use seq_macro::seq;
 
