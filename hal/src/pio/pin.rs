@@ -17,7 +17,15 @@ pub trait PinId {
     const MASK: u32;
 }
 
-pub struct Pin<Pio, Pid, Mdvr, Pupr, Irpt, Filt> {
+pub struct Pin<Pio, Pid, Mdvr, Pupr, Irpt, Filt>
+where
+    Pio: IsPio,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg,
+    Pupr: PullupResistorCfg,
+    Irpt: InterruptCfg,
+    Filt: InputFilterCfg,
+{
     _pio: PhantomData<Pio>,
     _pid: PhantomData<Pid>,
     _mdvr: PhantomData<Mdvr>,
@@ -25,22 +33,6 @@ pub struct Pin<Pio, Pid, Mdvr, Pupr, Irpt, Filt> {
     _irpt: PhantomData<Irpt>,
     _filt: PhantomData<Filt>,
 }
-
-pub struct Unconfigured;
-
-pub trait Configured {}
-
-pub trait PullupResistorCfg {}
-
-/// Enable the pull-up resistor on an I/O line.
-pub struct PullupEnabled;
-
-impl PullupResistorCfg for PullupEnabled {}
-
-/// Disable the pull-up resistor on an I/O line.
-pub struct PullupDisabled;
-
-impl PullupResistorCfg for PullupDisabled {}
 
 impl<Pio, Pid, Mdvr, Pupr, Irpt, Filt> Pin<Pio, Pid, Mdvr, Pupr, Irpt, Filt>
 where
@@ -62,3 +54,30 @@ where
         }
     }
 }
+
+pub trait Configured {}
+
+#[rustfmt::skip]
+impl<Pio, Pid, Mdvr, Pupr, Irpt, Filt> Configured for Pin<Pio, Pid, Mdvr, Pupr, Irpt, Filt>
+where
+    Pio: IsPio,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg + Configured,
+    Pupr: PullupResistorCfg + Configured,
+    Irpt: InterruptCfg + Configured,
+    Filt: InputFilterCfg + Configured,
+{}
+
+pub struct Unconfigured;
+
+pub trait PullupResistorCfg {}
+
+/// Enable the pull-up resistor on an I/O line.
+pub struct PullupEnabled;
+
+impl PullupResistorCfg for PullupEnabled {}
+
+/// Disable the pull-up resistor on an I/O line.
+pub struct PullupDisabled;
+
+impl PullupResistorCfg for PullupDisabled {}
