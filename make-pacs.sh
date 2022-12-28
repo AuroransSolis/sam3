@@ -24,7 +24,6 @@ function build_pac() {
 
     xsltproc ${xsl} ${1} \
         | svd2rust \
-            --nightly \
             --const_generic \
             --target cortex-m \
             --strict \
