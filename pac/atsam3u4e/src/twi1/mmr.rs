@@ -1,11 +1,9 @@
 #[doc = "Register `MMR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<MMR_SPEC>);
+pub type R = crate::R<MMR_SPEC>;
 #[doc = "Register `MMR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<MMR_SPEC>);
+pub type W = crate::W<MMR_SPEC>;
 #[doc = "Field `IADRSZ` reader - Internal Device Address Size"]
-pub type IADRSZ_R = crate::FieldReader<u8, IADRSZ_A>;
+pub type IADRSZ_R = crate::FieldReader<IADRSZ_A>;
 #[doc = "Internal Device Address Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -25,6 +23,9 @@ impl From<IADRSZ_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for IADRSZ_A {
+    type Ux = u8;
+}
 impl IADRSZ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -37,59 +38,63 @@ impl IADRSZ_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `None`"]
+    #[doc = "No internal device address"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
         *self == IADRSZ_A::None
     }
-    #[doc = "Checks if the value of the field is `_1Byte`"]
+    #[doc = "One-byte internal device address"]
     #[inline(always)]
     pub fn is_1_byte(&self) -> bool {
         *self == IADRSZ_A::_1Byte
     }
-    #[doc = "Checks if the value of the field is `_2Byte`"]
+    #[doc = "Two-byte internal device address"]
     #[inline(always)]
     pub fn is_2_byte(&self) -> bool {
         *self == IADRSZ_A::_2Byte
     }
-    #[doc = "Checks if the value of the field is `_3Byte`"]
+    #[doc = "Three-byte internal device address"]
     #[inline(always)]
     pub fn is_3_byte(&self) -> bool {
         *self == IADRSZ_A::_3Byte
     }
 }
 #[doc = "Field `IADRSZ` writer - Internal Device Address Size"]
-pub type IADRSZ_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, MMR_SPEC, u8, IADRSZ_A, 2, O>;
-impl<'a, const O: u8> IADRSZ_W<'a, O> {
+pub type IADRSZ_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, IADRSZ_A>;
+impl<'a, REG, const O: u8> IADRSZ_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No internal device address"]
     #[inline(always)]
-    pub fn none(self) -> &'a mut W {
+    pub fn none(self) -> &'a mut crate::W<REG> {
         self.variant(IADRSZ_A::None)
     }
     #[doc = "One-byte internal device address"]
     #[inline(always)]
-    pub fn _1_byte(self) -> &'a mut W {
+    pub fn _1_byte(self) -> &'a mut crate::W<REG> {
         self.variant(IADRSZ_A::_1Byte)
     }
     #[doc = "Two-byte internal device address"]
     #[inline(always)]
-    pub fn _2_byte(self) -> &'a mut W {
+    pub fn _2_byte(self) -> &'a mut crate::W<REG> {
         self.variant(IADRSZ_A::_2Byte)
     }
     #[doc = "Three-byte internal device address"]
     #[inline(always)]
-    pub fn _3_byte(self) -> &'a mut W {
+    pub fn _3_byte(self) -> &'a mut crate::W<REG> {
         self.variant(IADRSZ_A::_3Byte)
     }
 }
 #[doc = "Field `MREAD` reader - Master Read Direction"]
-pub type MREAD_R = crate::BitReader<bool>;
+pub type MREAD_R = crate::BitReader;
 #[doc = "Field `MREAD` writer - Master Read Direction"]
-pub type MREAD_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMR_SPEC, bool, O>;
+pub type MREAD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DADR` reader - Device Address"]
-pub type DADR_R = crate::FieldReader<u8, u8>;
+pub type DADR_R = crate::FieldReader;
 #[doc = "Field `DADR` writer - Device Address"]
-pub type DADR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MMR_SPEC, u8, u8, 7, O>;
+pub type DADR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
 impl R {
     #[doc = "Bits 8:9 - Internal Device Address Size"]
     #[inline(always)]
@@ -111,40 +116,37 @@ impl W {
     #[doc = "Bits 8:9 - Internal Device Address Size"]
     #[inline(always)]
     #[must_use]
-    pub fn iadrsz(&mut self) -> IADRSZ_W<8> {
+    pub fn iadrsz(&mut self) -> IADRSZ_W<MMR_SPEC, 8> {
         IADRSZ_W::new(self)
     }
     #[doc = "Bit 12 - Master Read Direction"]
     #[inline(always)]
     #[must_use]
-    pub fn mread(&mut self) -> MREAD_W<12> {
+    pub fn mread(&mut self) -> MREAD_W<MMR_SPEC, 12> {
         MREAD_W::new(self)
     }
     #[doc = "Bits 16:22 - Device Address"]
     #[inline(always)]
     #[must_use]
-    pub fn dadr(&mut self) -> DADR_W<16> {
+    pub fn dadr(&mut self) -> DADR_W<MMR_SPEC, 16> {
         DADR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Master Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mmr](index.html) module"]
+#[doc = "Master Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mmr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mmr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MMR_SPEC;
 impl crate::RegisterSpec for MMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mmr::R](R) reader structure"]
-impl crate::Readable for MMR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mmr::W](W) writer structure"]
+#[doc = "`read()` method returns [`mmr::R`](R) reader structure"]
+impl crate::Readable for MMR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mmr::W`](W) writer structure"]
 impl crate::Writable for MMR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

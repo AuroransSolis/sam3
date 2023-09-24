@@ -1,11 +1,9 @@
 #[doc = "Register `MR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<MR_SPEC>);
+pub type R = crate::R<MR_SPEC>;
 #[doc = "Register `MR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<MR_SPEC>);
+pub type W = crate::W<MR_SPEC>;
 #[doc = "Field `USART_MODE` reader - USART Mode of Operation"]
-pub type USART_MODE_R = crate::FieldReader<u8, USART_MODE_A>;
+pub type USART_MODE_R = crate::FieldReader<USART_MODE_A>;
 #[doc = "USART Mode of Operation"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -35,6 +33,9 @@ impl From<USART_MODE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for USART_MODE_A {
+    type Ux = u8;
+}
 impl USART_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -52,104 +53,107 @@ impl USART_MODE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Normal`"]
+    #[doc = "Normal mode"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == USART_MODE_A::Normal
     }
-    #[doc = "Checks if the value of the field is `Rs485`"]
+    #[doc = "RS485"]
     #[inline(always)]
     pub fn is_rs485(&self) -> bool {
         *self == USART_MODE_A::Rs485
     }
-    #[doc = "Checks if the value of the field is `HwHandshaking`"]
+    #[doc = "Hardware Handshaking"]
     #[inline(always)]
     pub fn is_hw_handshaking(&self) -> bool {
         *self == USART_MODE_A::HwHandshaking
     }
-    #[doc = "Checks if the value of the field is `Modem`"]
+    #[doc = "Modem"]
     #[inline(always)]
     pub fn is_modem(&self) -> bool {
         *self == USART_MODE_A::Modem
     }
-    #[doc = "Checks if the value of the field is `Is07816T0`"]
+    #[doc = "IS07816 Protocol: T = 0"]
     #[inline(always)]
     pub fn is_is07816_t_0(&self) -> bool {
         *self == USART_MODE_A::Is07816T0
     }
-    #[doc = "Checks if the value of the field is `Is07816T1`"]
+    #[doc = "IS07816 Protocol: T = 1"]
     #[inline(always)]
     pub fn is_is07816_t_1(&self) -> bool {
         *self == USART_MODE_A::Is07816T1
     }
-    #[doc = "Checks if the value of the field is `Irda`"]
+    #[doc = "IrDA"]
     #[inline(always)]
     pub fn is_irda(&self) -> bool {
         *self == USART_MODE_A::Irda
     }
-    #[doc = "Checks if the value of the field is `SpiMaster`"]
+    #[doc = "SPI Master"]
     #[inline(always)]
     pub fn is_spi_master(&self) -> bool {
         *self == USART_MODE_A::SpiMaster
     }
-    #[doc = "Checks if the value of the field is `SpiSlave`"]
+    #[doc = "SPI Slave"]
     #[inline(always)]
     pub fn is_spi_slave(&self) -> bool {
         *self == USART_MODE_A::SpiSlave
     }
 }
 #[doc = "Field `USART_MODE` writer - USART Mode of Operation"]
-pub type USART_MODE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, MR_SPEC, u8, USART_MODE_A, 4, O>;
-impl<'a, const O: u8> USART_MODE_W<'a, O> {
+pub type USART_MODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, USART_MODE_A>;
+impl<'a, REG, const O: u8> USART_MODE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Normal mode"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(USART_MODE_A::Normal)
     }
     #[doc = "RS485"]
     #[inline(always)]
-    pub fn rs485(self) -> &'a mut W {
+    pub fn rs485(self) -> &'a mut crate::W<REG> {
         self.variant(USART_MODE_A::Rs485)
     }
     #[doc = "Hardware Handshaking"]
     #[inline(always)]
-    pub fn hw_handshaking(self) -> &'a mut W {
+    pub fn hw_handshaking(self) -> &'a mut crate::W<REG> {
         self.variant(USART_MODE_A::HwHandshaking)
     }
     #[doc = "Modem"]
     #[inline(always)]
-    pub fn modem(self) -> &'a mut W {
+    pub fn modem(self) -> &'a mut crate::W<REG> {
         self.variant(USART_MODE_A::Modem)
     }
     #[doc = "IS07816 Protocol: T = 0"]
     #[inline(always)]
-    pub fn is07816_t_0(self) -> &'a mut W {
+    pub fn is07816_t_0(self) -> &'a mut crate::W<REG> {
         self.variant(USART_MODE_A::Is07816T0)
     }
     #[doc = "IS07816 Protocol: T = 1"]
     #[inline(always)]
-    pub fn is07816_t_1(self) -> &'a mut W {
+    pub fn is07816_t_1(self) -> &'a mut crate::W<REG> {
         self.variant(USART_MODE_A::Is07816T1)
     }
     #[doc = "IrDA"]
     #[inline(always)]
-    pub fn irda(self) -> &'a mut W {
+    pub fn irda(self) -> &'a mut crate::W<REG> {
         self.variant(USART_MODE_A::Irda)
     }
     #[doc = "SPI Master"]
     #[inline(always)]
-    pub fn spi_master(self) -> &'a mut W {
+    pub fn spi_master(self) -> &'a mut crate::W<REG> {
         self.variant(USART_MODE_A::SpiMaster)
     }
     #[doc = "SPI Slave"]
     #[inline(always)]
-    pub fn spi_slave(self) -> &'a mut W {
+    pub fn spi_slave(self) -> &'a mut crate::W<REG> {
         self.variant(USART_MODE_A::SpiSlave)
     }
 }
 #[doc = "Field `USCLKS` reader - Clock Selection"]
-pub type USCLKS_R = crate::FieldReader<u8, USCLKS_A>;
+pub type USCLKS_R = crate::FieldReader<USCLKS_A>;
 #[doc = "Clock Selection"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -167,6 +171,9 @@ impl From<USCLKS_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for USCLKS_A {
+    type Ux = u8;
+}
 impl USCLKS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -178,43 +185,47 @@ impl USCLKS_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Mck`"]
+    #[doc = "Master Clock MCK is selected"]
     #[inline(always)]
     pub fn is_mck(&self) -> bool {
         *self == USCLKS_A::Mck
     }
-    #[doc = "Checks if the value of the field is `Div`"]
+    #[doc = "Internal Clock Divided MCK/DIV (DIV=8) is selected"]
     #[inline(always)]
     pub fn is_div(&self) -> bool {
         *self == USCLKS_A::Div
     }
-    #[doc = "Checks if the value of the field is `Sck`"]
+    #[doc = "Serial Clock SLK is selected"]
     #[inline(always)]
     pub fn is_sck(&self) -> bool {
         *self == USCLKS_A::Sck
     }
 }
 #[doc = "Field `USCLKS` writer - Clock Selection"]
-pub type USCLKS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, USCLKS_A, 2, O>;
-impl<'a, const O: u8> USCLKS_W<'a, O> {
+pub type USCLKS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, USCLKS_A>;
+impl<'a, REG, const O: u8> USCLKS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Master Clock MCK is selected"]
     #[inline(always)]
-    pub fn mck(self) -> &'a mut W {
+    pub fn mck(self) -> &'a mut crate::W<REG> {
         self.variant(USCLKS_A::Mck)
     }
     #[doc = "Internal Clock Divided MCK/DIV (DIV=8) is selected"]
     #[inline(always)]
-    pub fn div(self) -> &'a mut W {
+    pub fn div(self) -> &'a mut crate::W<REG> {
         self.variant(USCLKS_A::Div)
     }
     #[doc = "Serial Clock SLK is selected"]
     #[inline(always)]
-    pub fn sck(self) -> &'a mut W {
+    pub fn sck(self) -> &'a mut crate::W<REG> {
         self.variant(USCLKS_A::Sck)
     }
 }
 #[doc = "Field `CHRL` reader - Character Length."]
-pub type CHRL_R = crate::FieldReader<u8, CHRL_A>;
+pub type CHRL_R = crate::FieldReader<CHRL_A>;
 #[doc = "Character Length."]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -234,6 +245,9 @@ impl From<CHRL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CHRL_A {
+    type Ux = u8;
+}
 impl CHRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -246,57 +260,61 @@ impl CHRL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_5Bit`"]
+    #[doc = "Character length is 5 bits"]
     #[inline(always)]
     pub fn is_5_bit(&self) -> bool {
         *self == CHRL_A::_5Bit
     }
-    #[doc = "Checks if the value of the field is `_6Bit`"]
+    #[doc = "Character length is 6 bits"]
     #[inline(always)]
     pub fn is_6_bit(&self) -> bool {
         *self == CHRL_A::_6Bit
     }
-    #[doc = "Checks if the value of the field is `_7Bit`"]
+    #[doc = "Character length is 7 bits"]
     #[inline(always)]
     pub fn is_7_bit(&self) -> bool {
         *self == CHRL_A::_7Bit
     }
-    #[doc = "Checks if the value of the field is `_8Bit`"]
+    #[doc = "Character length is 8 bits"]
     #[inline(always)]
     pub fn is_8_bit(&self) -> bool {
         *self == CHRL_A::_8Bit
     }
 }
 #[doc = "Field `CHRL` writer - Character Length."]
-pub type CHRL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, MR_SPEC, u8, CHRL_A, 2, O>;
-impl<'a, const O: u8> CHRL_W<'a, O> {
+pub type CHRL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CHRL_A>;
+impl<'a, REG, const O: u8> CHRL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Character length is 5 bits"]
     #[inline(always)]
-    pub fn _5_bit(self) -> &'a mut W {
+    pub fn _5_bit(self) -> &'a mut crate::W<REG> {
         self.variant(CHRL_A::_5Bit)
     }
     #[doc = "Character length is 6 bits"]
     #[inline(always)]
-    pub fn _6_bit(self) -> &'a mut W {
+    pub fn _6_bit(self) -> &'a mut crate::W<REG> {
         self.variant(CHRL_A::_6Bit)
     }
     #[doc = "Character length is 7 bits"]
     #[inline(always)]
-    pub fn _7_bit(self) -> &'a mut W {
+    pub fn _7_bit(self) -> &'a mut crate::W<REG> {
         self.variant(CHRL_A::_7Bit)
     }
     #[doc = "Character length is 8 bits"]
     #[inline(always)]
-    pub fn _8_bit(self) -> &'a mut W {
+    pub fn _8_bit(self) -> &'a mut crate::W<REG> {
         self.variant(CHRL_A::_8Bit)
     }
 }
 #[doc = "Field `SYNC` reader - Synchronous Mode Select"]
-pub type SYNC_R = crate::BitReader<bool>;
+pub type SYNC_R = crate::BitReader;
 #[doc = "Field `SYNC` writer - Synchronous Mode Select"]
-pub type SYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
+pub type SYNC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `PAR` reader - Parity Type"]
-pub type PAR_R = crate::FieldReader<u8, PAR_A>;
+pub type PAR_R = crate::FieldReader<PAR_A>;
 #[doc = "Parity Type"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -320,6 +338,9 @@ impl From<PAR_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for PAR_A {
+    type Ux = u8;
+}
 impl PAR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -334,73 +355,77 @@ impl PAR_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Even`"]
+    #[doc = "Even parity"]
     #[inline(always)]
     pub fn is_even(&self) -> bool {
         *self == PAR_A::Even
     }
-    #[doc = "Checks if the value of the field is `Odd`"]
+    #[doc = "Odd parity"]
     #[inline(always)]
     pub fn is_odd(&self) -> bool {
         *self == PAR_A::Odd
     }
-    #[doc = "Checks if the value of the field is `Space`"]
+    #[doc = "Parity forced to 0 (Space)"]
     #[inline(always)]
     pub fn is_space(&self) -> bool {
         *self == PAR_A::Space
     }
-    #[doc = "Checks if the value of the field is `Mark`"]
+    #[doc = "Parity forced to 1 (Mark)"]
     #[inline(always)]
     pub fn is_mark(&self) -> bool {
         *self == PAR_A::Mark
     }
-    #[doc = "Checks if the value of the field is `No`"]
+    #[doc = "No parity"]
     #[inline(always)]
     pub fn is_no(&self) -> bool {
         *self == PAR_A::No
     }
-    #[doc = "Checks if the value of the field is `Multidrop`"]
+    #[doc = "Multidrop mode"]
     #[inline(always)]
     pub fn is_multidrop(&self) -> bool {
         *self == PAR_A::Multidrop
     }
 }
 #[doc = "Field `PAR` writer - Parity Type"]
-pub type PAR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, PAR_A, 3, O>;
-impl<'a, const O: u8> PAR_W<'a, O> {
+pub type PAR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, PAR_A>;
+impl<'a, REG, const O: u8> PAR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Even parity"]
     #[inline(always)]
-    pub fn even(self) -> &'a mut W {
+    pub fn even(self) -> &'a mut crate::W<REG> {
         self.variant(PAR_A::Even)
     }
     #[doc = "Odd parity"]
     #[inline(always)]
-    pub fn odd(self) -> &'a mut W {
+    pub fn odd(self) -> &'a mut crate::W<REG> {
         self.variant(PAR_A::Odd)
     }
     #[doc = "Parity forced to 0 (Space)"]
     #[inline(always)]
-    pub fn space(self) -> &'a mut W {
+    pub fn space(self) -> &'a mut crate::W<REG> {
         self.variant(PAR_A::Space)
     }
     #[doc = "Parity forced to 1 (Mark)"]
     #[inline(always)]
-    pub fn mark(self) -> &'a mut W {
+    pub fn mark(self) -> &'a mut crate::W<REG> {
         self.variant(PAR_A::Mark)
     }
     #[doc = "No parity"]
     #[inline(always)]
-    pub fn no(self) -> &'a mut W {
+    pub fn no(self) -> &'a mut crate::W<REG> {
         self.variant(PAR_A::No)
     }
     #[doc = "Multidrop mode"]
     #[inline(always)]
-    pub fn multidrop(self) -> &'a mut W {
+    pub fn multidrop(self) -> &'a mut crate::W<REG> {
         self.variant(PAR_A::Multidrop)
     }
 }
 #[doc = "Field `NBSTOP` reader - Number of Stop Bits"]
-pub type NBSTOP_R = crate::FieldReader<u8, NBSTOP_A>;
+pub type NBSTOP_R = crate::FieldReader<NBSTOP_A>;
 #[doc = "Number of Stop Bits"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -418,6 +443,9 @@ impl From<NBSTOP_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for NBSTOP_A {
+    type Ux = u8;
+}
 impl NBSTOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -429,43 +457,47 @@ impl NBSTOP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `_1Bit`"]
+    #[doc = "1 stop bit"]
     #[inline(always)]
     pub fn is_1_bit(&self) -> bool {
         *self == NBSTOP_A::_1Bit
     }
-    #[doc = "Checks if the value of the field is `_15Bit`"]
+    #[doc = "1.5 stop bit (SYNC = 0) or reserved (SYNC = 1)"]
     #[inline(always)]
     pub fn is_1_5_bit(&self) -> bool {
         *self == NBSTOP_A::_15Bit
     }
-    #[doc = "Checks if the value of the field is `_2Bit`"]
+    #[doc = "2 stop bits"]
     #[inline(always)]
     pub fn is_2_bit(&self) -> bool {
         *self == NBSTOP_A::_2Bit
     }
 }
 #[doc = "Field `NBSTOP` writer - Number of Stop Bits"]
-pub type NBSTOP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, NBSTOP_A, 2, O>;
-impl<'a, const O: u8> NBSTOP_W<'a, O> {
+pub type NBSTOP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, NBSTOP_A>;
+impl<'a, REG, const O: u8> NBSTOP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "1 stop bit"]
     #[inline(always)]
-    pub fn _1_bit(self) -> &'a mut W {
+    pub fn _1_bit(self) -> &'a mut crate::W<REG> {
         self.variant(NBSTOP_A::_1Bit)
     }
     #[doc = "1.5 stop bit (SYNC = 0) or reserved (SYNC = 1)"]
     #[inline(always)]
-    pub fn _1_5_bit(self) -> &'a mut W {
+    pub fn _1_5_bit(self) -> &'a mut crate::W<REG> {
         self.variant(NBSTOP_A::_15Bit)
     }
     #[doc = "2 stop bits"]
     #[inline(always)]
-    pub fn _2_bit(self) -> &'a mut W {
+    pub fn _2_bit(self) -> &'a mut crate::W<REG> {
         self.variant(NBSTOP_A::_2Bit)
     }
 }
 #[doc = "Field `CHMODE` reader - Channel Mode"]
-pub type CHMODE_R = crate::FieldReader<u8, CHMODE_A>;
+pub type CHMODE_R = crate::FieldReader<CHMODE_A>;
 #[doc = "Channel Mode"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -485,6 +517,9 @@ impl From<CHMODE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CHMODE_A {
+    type Ux = u8;
+}
 impl CHMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -497,103 +532,107 @@ impl CHMODE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `Normal`"]
+    #[doc = "Normal Mode"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == CHMODE_A::Normal
     }
-    #[doc = "Checks if the value of the field is `Automatic`"]
+    #[doc = "Automatic Echo. Receiver input is connected to the TXD pin."]
     #[inline(always)]
     pub fn is_automatic(&self) -> bool {
         *self == CHMODE_A::Automatic
     }
-    #[doc = "Checks if the value of the field is `LocalLoopback`"]
+    #[doc = "Local Loopback. Transmitter output is connected to the Receiver Input."]
     #[inline(always)]
     pub fn is_local_loopback(&self) -> bool {
         *self == CHMODE_A::LocalLoopback
     }
-    #[doc = "Checks if the value of the field is `RemoteLoopback`"]
+    #[doc = "Remote Loopback. RXD pin is internally connected to the TXD pin."]
     #[inline(always)]
     pub fn is_remote_loopback(&self) -> bool {
         *self == CHMODE_A::RemoteLoopback
     }
 }
 #[doc = "Field `CHMODE` writer - Channel Mode"]
-pub type CHMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, MR_SPEC, u8, CHMODE_A, 2, O>;
-impl<'a, const O: u8> CHMODE_W<'a, O> {
+pub type CHMODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CHMODE_A>;
+impl<'a, REG, const O: u8> CHMODE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Normal Mode"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(CHMODE_A::Normal)
     }
     #[doc = "Automatic Echo. Receiver input is connected to the TXD pin."]
     #[inline(always)]
-    pub fn automatic(self) -> &'a mut W {
+    pub fn automatic(self) -> &'a mut crate::W<REG> {
         self.variant(CHMODE_A::Automatic)
     }
     #[doc = "Local Loopback. Transmitter output is connected to the Receiver Input."]
     #[inline(always)]
-    pub fn local_loopback(self) -> &'a mut W {
+    pub fn local_loopback(self) -> &'a mut crate::W<REG> {
         self.variant(CHMODE_A::LocalLoopback)
     }
     #[doc = "Remote Loopback. RXD pin is internally connected to the TXD pin."]
     #[inline(always)]
-    pub fn remote_loopback(self) -> &'a mut W {
+    pub fn remote_loopback(self) -> &'a mut crate::W<REG> {
         self.variant(CHMODE_A::RemoteLoopback)
     }
 }
 #[doc = "Field `MSBF` reader - Bit Order"]
-pub type MSBF_R = crate::BitReader<bool>;
+pub type MSBF_R = crate::BitReader;
 #[doc = "Field `MSBF` writer - Bit Order"]
-pub type MSBF_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
+pub type MSBF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `MODE9` reader - 9-bit Character Length"]
-pub type MODE9_R = crate::BitReader<bool>;
+pub type MODE9_R = crate::BitReader;
 #[doc = "Field `MODE9` writer - 9-bit Character Length"]
-pub type MODE9_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
+pub type MODE9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CLKO` reader - Clock Output Select"]
-pub type CLKO_R = crate::BitReader<bool>;
+pub type CLKO_R = crate::BitReader;
 #[doc = "Field `CLKO` writer - Clock Output Select"]
-pub type CLKO_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
+pub type CLKO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OVER` reader - Oversampling Mode"]
-pub type OVER_R = crate::BitReader<bool>;
+pub type OVER_R = crate::BitReader;
 #[doc = "Field `OVER` writer - Oversampling Mode"]
-pub type OVER_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
+pub type OVER_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `INACK` reader - Inhibit Non Acknowledge"]
-pub type INACK_R = crate::BitReader<bool>;
+pub type INACK_R = crate::BitReader;
 #[doc = "Field `INACK` writer - Inhibit Non Acknowledge"]
-pub type INACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
+pub type INACK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DSNACK` reader - Disable Successive NACK"]
-pub type DSNACK_R = crate::BitReader<bool>;
+pub type DSNACK_R = crate::BitReader;
 #[doc = "Field `DSNACK` writer - Disable Successive NACK"]
-pub type DSNACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
+pub type DSNACK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `VAR_SYNC` reader - Variable Synchronization of Command/Data Sync Start Frame Delimiter"]
-pub type VAR_SYNC_R = crate::BitReader<bool>;
+pub type VAR_SYNC_R = crate::BitReader;
 #[doc = "Field `VAR_SYNC` writer - Variable Synchronization of Command/Data Sync Start Frame Delimiter"]
-pub type VAR_SYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
+pub type VAR_SYNC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `INVDATA` reader - Inverted Data"]
-pub type INVDATA_R = crate::BitReader<bool>;
+pub type INVDATA_R = crate::BitReader;
 #[doc = "Field `INVDATA` writer - Inverted Data"]
-pub type INVDATA_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
+pub type INVDATA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `MAX_ITERATION` reader - Maximum Number of Automatic Iteration"]
-pub type MAX_ITERATION_R = crate::FieldReader<u8, u8>;
+pub type MAX_ITERATION_R = crate::FieldReader;
 #[doc = "Field `MAX_ITERATION` writer - Maximum Number of Automatic Iteration"]
-pub type MAX_ITERATION_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, u8, 3, O>;
+pub type MAX_ITERATION_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 #[doc = "Field `FILTER` reader - Infrared Receive Line Filter"]
-pub type FILTER_R = crate::BitReader<bool>;
+pub type FILTER_R = crate::BitReader;
 #[doc = "Field `FILTER` writer - Infrared Receive Line Filter"]
-pub type FILTER_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
+pub type FILTER_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `MAN` reader - Manchester Encoder/Decoder Enable"]
-pub type MAN_R = crate::BitReader<bool>;
+pub type MAN_R = crate::BitReader;
 #[doc = "Field `MAN` writer - Manchester Encoder/Decoder Enable"]
-pub type MAN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
+pub type MAN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `MODSYNC` reader - Manchester Synchronization Mode"]
-pub type MODSYNC_R = crate::BitReader<bool>;
+pub type MODSYNC_R = crate::BitReader;
 #[doc = "Field `MODSYNC` writer - Manchester Synchronization Mode"]
-pub type MODSYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
+pub type MODSYNC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `ONEBIT` reader - Start Frame Delimiter Selector"]
-pub type ONEBIT_R = crate::BitReader<bool>;
+pub type ONEBIT_R = crate::BitReader;
 #[doc = "Field `ONEBIT` writer - Start Frame Delimiter Selector"]
-pub type ONEBIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
+pub type ONEBIT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bits 0:3 - USART Mode of Operation"]
     #[inline(always)]
@@ -700,142 +739,139 @@ impl W {
     #[doc = "Bits 0:3 - USART Mode of Operation"]
     #[inline(always)]
     #[must_use]
-    pub fn usart_mode(&mut self) -> USART_MODE_W<0> {
+    pub fn usart_mode(&mut self) -> USART_MODE_W<MR_SPEC, 0> {
         USART_MODE_W::new(self)
     }
     #[doc = "Bits 4:5 - Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn usclks(&mut self) -> USCLKS_W<4> {
+    pub fn usclks(&mut self) -> USCLKS_W<MR_SPEC, 4> {
         USCLKS_W::new(self)
     }
     #[doc = "Bits 6:7 - Character Length."]
     #[inline(always)]
     #[must_use]
-    pub fn chrl(&mut self) -> CHRL_W<6> {
+    pub fn chrl(&mut self) -> CHRL_W<MR_SPEC, 6> {
         CHRL_W::new(self)
     }
     #[doc = "Bit 8 - Synchronous Mode Select"]
     #[inline(always)]
     #[must_use]
-    pub fn sync(&mut self) -> SYNC_W<8> {
+    pub fn sync(&mut self) -> SYNC_W<MR_SPEC, 8> {
         SYNC_W::new(self)
     }
     #[doc = "Bits 9:11 - Parity Type"]
     #[inline(always)]
     #[must_use]
-    pub fn par(&mut self) -> PAR_W<9> {
+    pub fn par(&mut self) -> PAR_W<MR_SPEC, 9> {
         PAR_W::new(self)
     }
     #[doc = "Bits 12:13 - Number of Stop Bits"]
     #[inline(always)]
     #[must_use]
-    pub fn nbstop(&mut self) -> NBSTOP_W<12> {
+    pub fn nbstop(&mut self) -> NBSTOP_W<MR_SPEC, 12> {
         NBSTOP_W::new(self)
     }
     #[doc = "Bits 14:15 - Channel Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn chmode(&mut self) -> CHMODE_W<14> {
+    pub fn chmode(&mut self) -> CHMODE_W<MR_SPEC, 14> {
         CHMODE_W::new(self)
     }
     #[doc = "Bit 16 - Bit Order"]
     #[inline(always)]
     #[must_use]
-    pub fn msbf(&mut self) -> MSBF_W<16> {
+    pub fn msbf(&mut self) -> MSBF_W<MR_SPEC, 16> {
         MSBF_W::new(self)
     }
     #[doc = "Bit 17 - 9-bit Character Length"]
     #[inline(always)]
     #[must_use]
-    pub fn mode9(&mut self) -> MODE9_W<17> {
+    pub fn mode9(&mut self) -> MODE9_W<MR_SPEC, 17> {
         MODE9_W::new(self)
     }
     #[doc = "Bit 18 - Clock Output Select"]
     #[inline(always)]
     #[must_use]
-    pub fn clko(&mut self) -> CLKO_W<18> {
+    pub fn clko(&mut self) -> CLKO_W<MR_SPEC, 18> {
         CLKO_W::new(self)
     }
     #[doc = "Bit 19 - Oversampling Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn over(&mut self) -> OVER_W<19> {
+    pub fn over(&mut self) -> OVER_W<MR_SPEC, 19> {
         OVER_W::new(self)
     }
     #[doc = "Bit 20 - Inhibit Non Acknowledge"]
     #[inline(always)]
     #[must_use]
-    pub fn inack(&mut self) -> INACK_W<20> {
+    pub fn inack(&mut self) -> INACK_W<MR_SPEC, 20> {
         INACK_W::new(self)
     }
     #[doc = "Bit 21 - Disable Successive NACK"]
     #[inline(always)]
     #[must_use]
-    pub fn dsnack(&mut self) -> DSNACK_W<21> {
+    pub fn dsnack(&mut self) -> DSNACK_W<MR_SPEC, 21> {
         DSNACK_W::new(self)
     }
     #[doc = "Bit 22 - Variable Synchronization of Command/Data Sync Start Frame Delimiter"]
     #[inline(always)]
     #[must_use]
-    pub fn var_sync(&mut self) -> VAR_SYNC_W<22> {
+    pub fn var_sync(&mut self) -> VAR_SYNC_W<MR_SPEC, 22> {
         VAR_SYNC_W::new(self)
     }
     #[doc = "Bit 23 - Inverted Data"]
     #[inline(always)]
     #[must_use]
-    pub fn invdata(&mut self) -> INVDATA_W<23> {
+    pub fn invdata(&mut self) -> INVDATA_W<MR_SPEC, 23> {
         INVDATA_W::new(self)
     }
     #[doc = "Bits 24:26 - Maximum Number of Automatic Iteration"]
     #[inline(always)]
     #[must_use]
-    pub fn max_iteration(&mut self) -> MAX_ITERATION_W<24> {
+    pub fn max_iteration(&mut self) -> MAX_ITERATION_W<MR_SPEC, 24> {
         MAX_ITERATION_W::new(self)
     }
     #[doc = "Bit 28 - Infrared Receive Line Filter"]
     #[inline(always)]
     #[must_use]
-    pub fn filter(&mut self) -> FILTER_W<28> {
+    pub fn filter(&mut self) -> FILTER_W<MR_SPEC, 28> {
         FILTER_W::new(self)
     }
     #[doc = "Bit 29 - Manchester Encoder/Decoder Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn man(&mut self) -> MAN_W<29> {
+    pub fn man(&mut self) -> MAN_W<MR_SPEC, 29> {
         MAN_W::new(self)
     }
     #[doc = "Bit 30 - Manchester Synchronization Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn modsync(&mut self) -> MODSYNC_W<30> {
+    pub fn modsync(&mut self) -> MODSYNC_W<MR_SPEC, 30> {
         MODSYNC_W::new(self)
     }
     #[doc = "Bit 31 - Start Frame Delimiter Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn onebit(&mut self) -> ONEBIT_W<31> {
+    pub fn onebit(&mut self) -> ONEBIT_W<MR_SPEC, 31> {
         ONEBIT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mr](index.html) module"]
+#[doc = "Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mr::R`](R).  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MR_SPEC;
 impl crate::RegisterSpec for MR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mr::R](R) reader structure"]
-impl crate::Readable for MR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
+#[doc = "`read()` method returns [`mr::R`](R) reader structure"]
+impl crate::Readable for MR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mr::W`](W) writer structure"]
 impl crate::Writable for MR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

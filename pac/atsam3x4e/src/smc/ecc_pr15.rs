@@ -1,12 +1,11 @@
 #[doc = "Register `ECC_PR15` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<ECC_PR15_SPEC>);
+pub type R = crate::R<ECC_PR15_SPEC>;
 #[doc = "Field `BITADDR` reader - Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes"]
-pub type BITADDR_R = crate::FieldReader<u8, u8>;
+pub type BITADDR_R = crate::FieldReader;
 #[doc = "Field `WORDADDR` reader - Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes"]
-pub type WORDADDR_R = crate::FieldReader<u8, u8>;
+pub type WORDADDR_R = crate::FieldReader;
 #[doc = "Field `NPARITY` reader - Parity N"]
-pub type NPARITY_R = crate::FieldReader<u16, u16>;
+pub type NPARITY_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:2 - Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes"]
     #[inline(always)]
@@ -24,15 +23,13 @@ impl R {
         NPARITY_R::new(((self.bits >> 12) & 0x07ff) as u16)
     }
 }
-#[doc = "SMC ECC parity 15 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ecc_pr15](index.html) module"]
+#[doc = "SMC ECC parity 15 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr15::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ECC_PR15_SPEC;
 impl crate::RegisterSpec for ECC_PR15_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ecc_pr15::R](R) reader structure"]
-impl crate::Readable for ECC_PR15_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`ecc_pr15::R`](R) reader structure"]
+impl crate::Readable for ECC_PR15_SPEC {}
 #[doc = "`reset()` method sets ECC_PR15 to value 0"]
 impl crate::Resettable for ECC_PR15_SPEC {
     const RESET_VALUE: Self::Ux = 0;

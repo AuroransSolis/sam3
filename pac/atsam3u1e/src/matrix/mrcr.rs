@@ -1,29 +1,27 @@
 #[doc = "Register `MRCR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<MRCR_SPEC>);
+pub type R = crate::R<MRCR_SPEC>;
 #[doc = "Register `MRCR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<MRCR_SPEC>);
+pub type W = crate::W<MRCR_SPEC>;
 #[doc = "Field `RCB0` reader - Remap Command Bit for AHB Master 0"]
-pub type RCB0_R = crate::BitReader<bool>;
+pub type RCB0_R = crate::BitReader;
 #[doc = "Field `RCB0` writer - Remap Command Bit for AHB Master 0"]
-pub type RCB0_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, bool, O>;
+pub type RCB0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RCB1` reader - Remap Command Bit for AHB Master 1"]
-pub type RCB1_R = crate::BitReader<bool>;
+pub type RCB1_R = crate::BitReader;
 #[doc = "Field `RCB1` writer - Remap Command Bit for AHB Master 1"]
-pub type RCB1_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, bool, O>;
+pub type RCB1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RCB2` reader - Remap Command Bit for AHB Master 2"]
-pub type RCB2_R = crate::BitReader<bool>;
+pub type RCB2_R = crate::BitReader;
 #[doc = "Field `RCB2` writer - Remap Command Bit for AHB Master 2"]
-pub type RCB2_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, bool, O>;
+pub type RCB2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RCB3` reader - Remap Command Bit for AHB Master 3"]
-pub type RCB3_R = crate::BitReader<bool>;
+pub type RCB3_R = crate::BitReader;
 #[doc = "Field `RCB3` writer - Remap Command Bit for AHB Master 3"]
-pub type RCB3_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, bool, O>;
+pub type RCB3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RCB4` reader - Remap Command Bit for AHB Master 4"]
-pub type RCB4_R = crate::BitReader<bool>;
+pub type RCB4_R = crate::BitReader;
 #[doc = "Field `RCB4` writer - Remap Command Bit for AHB Master 4"]
-pub type RCB4_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, bool, O>;
+pub type RCB4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - Remap Command Bit for AHB Master 0"]
     #[inline(always)]
@@ -55,52 +53,49 @@ impl W {
     #[doc = "Bit 0 - Remap Command Bit for AHB Master 0"]
     #[inline(always)]
     #[must_use]
-    pub fn rcb0(&mut self) -> RCB0_W<0> {
+    pub fn rcb0(&mut self) -> RCB0_W<MRCR_SPEC, 0> {
         RCB0_W::new(self)
     }
     #[doc = "Bit 1 - Remap Command Bit for AHB Master 1"]
     #[inline(always)]
     #[must_use]
-    pub fn rcb1(&mut self) -> RCB1_W<1> {
+    pub fn rcb1(&mut self) -> RCB1_W<MRCR_SPEC, 1> {
         RCB1_W::new(self)
     }
     #[doc = "Bit 2 - Remap Command Bit for AHB Master 2"]
     #[inline(always)]
     #[must_use]
-    pub fn rcb2(&mut self) -> RCB2_W<2> {
+    pub fn rcb2(&mut self) -> RCB2_W<MRCR_SPEC, 2> {
         RCB2_W::new(self)
     }
     #[doc = "Bit 3 - Remap Command Bit for AHB Master 3"]
     #[inline(always)]
     #[must_use]
-    pub fn rcb3(&mut self) -> RCB3_W<3> {
+    pub fn rcb3(&mut self) -> RCB3_W<MRCR_SPEC, 3> {
         RCB3_W::new(self)
     }
     #[doc = "Bit 4 - Remap Command Bit for AHB Master 4"]
     #[inline(always)]
     #[must_use]
-    pub fn rcb4(&mut self) -> RCB4_W<4> {
+    pub fn rcb4(&mut self) -> RCB4_W<MRCR_SPEC, 4> {
         RCB4_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Master Remap Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mrcr](index.html) module"]
+#[doc = "Master Remap Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mrcr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mrcr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MRCR_SPEC;
 impl crate::RegisterSpec for MRCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mrcr::R](R) reader structure"]
-impl crate::Readable for MRCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mrcr::W](W) writer structure"]
+#[doc = "`read()` method returns [`mrcr::R`](R) reader structure"]
+impl crate::Readable for MRCR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mrcr::W`](W) writer structure"]
 impl crate::Writable for MRCR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

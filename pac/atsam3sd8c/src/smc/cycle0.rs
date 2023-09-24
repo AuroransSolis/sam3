@@ -1,17 +1,15 @@
 #[doc = "Register `CYCLE0` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<CYCLE0_SPEC>);
+pub type R = crate::R<CYCLE0_SPEC>;
 #[doc = "Register `CYCLE0` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<CYCLE0_SPEC>);
+pub type W = crate::W<CYCLE0_SPEC>;
 #[doc = "Field `NWE_CYCLE` reader - Total Write Cycle Length"]
-pub type NWE_CYCLE_R = crate::FieldReader<u16, u16>;
+pub type NWE_CYCLE_R = crate::FieldReader<u16>;
 #[doc = "Field `NWE_CYCLE` writer - Total Write Cycle Length"]
-pub type NWE_CYCLE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CYCLE0_SPEC, u16, u16, 9, O>;
+pub type NWE_CYCLE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 9, O, u16>;
 #[doc = "Field `NRD_CYCLE` reader - Total Read Cycle Length"]
-pub type NRD_CYCLE_R = crate::FieldReader<u16, u16>;
+pub type NRD_CYCLE_R = crate::FieldReader<u16>;
 #[doc = "Field `NRD_CYCLE` writer - Total Read Cycle Length"]
-pub type NRD_CYCLE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CYCLE0_SPEC, u16, u16, 9, O>;
+pub type NRD_CYCLE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 9, O, u16>;
 impl R {
     #[doc = "Bits 0:8 - Total Write Cycle Length"]
     #[inline(always)]
@@ -28,34 +26,31 @@ impl W {
     #[doc = "Bits 0:8 - Total Write Cycle Length"]
     #[inline(always)]
     #[must_use]
-    pub fn nwe_cycle(&mut self) -> NWE_CYCLE_W<0> {
+    pub fn nwe_cycle(&mut self) -> NWE_CYCLE_W<CYCLE0_SPEC, 0> {
         NWE_CYCLE_W::new(self)
     }
     #[doc = "Bits 16:24 - Total Read Cycle Length"]
     #[inline(always)]
     #[must_use]
-    pub fn nrd_cycle(&mut self) -> NRD_CYCLE_W<16> {
+    pub fn nrd_cycle(&mut self) -> NRD_CYCLE_W<CYCLE0_SPEC, 16> {
         NRD_CYCLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "SMC Cycle Register (CS_number = 0)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cycle0](index.html) module"]
+#[doc = "SMC Cycle Register (CS_number = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cycle0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cycle0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CYCLE0_SPEC;
 impl crate::RegisterSpec for CYCLE0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cycle0::R](R) reader structure"]
-impl crate::Readable for CYCLE0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cycle0::W](W) writer structure"]
+#[doc = "`read()` method returns [`cycle0::R`](R) reader structure"]
+impl crate::Readable for CYCLE0_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`cycle0::W`](W) writer structure"]
 impl crate::Writable for CYCLE0_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

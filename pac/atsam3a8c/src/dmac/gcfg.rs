@@ -1,9 +1,7 @@
 #[doc = "Register `GCFG` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<GCFG_SPEC>);
+pub type R = crate::R<GCFG_SPEC>;
 #[doc = "Register `GCFG` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<GCFG_SPEC>);
+pub type W = crate::W<GCFG_SPEC>;
 #[doc = "Field `ARB_CFG` reader - Arbiter Configuration"]
 pub type ARB_CFG_R = crate::BitReader<ARB_CFG_A>;
 #[doc = "Arbiter Configuration\n\nValue on reset: 1"]
@@ -29,28 +27,31 @@ impl ARB_CFG_R {
             true => ARB_CFG_A::RoundRobin,
         }
     }
-    #[doc = "Checks if the value of the field is `Fixed`"]
+    #[doc = "Fixed priority arbiter (see \"Basic Definitions\" )"]
     #[inline(always)]
     pub fn is_fixed(&self) -> bool {
         *self == ARB_CFG_A::Fixed
     }
-    #[doc = "Checks if the value of the field is `RoundRobin`"]
+    #[doc = "Modified round robin arbiter."]
     #[inline(always)]
     pub fn is_round_robin(&self) -> bool {
         *self == ARB_CFG_A::RoundRobin
     }
 }
 #[doc = "Field `ARB_CFG` writer - Arbiter Configuration"]
-pub type ARB_CFG_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCFG_SPEC, ARB_CFG_A, O>;
-impl<'a, const O: u8> ARB_CFG_W<'a, O> {
+pub type ARB_CFG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ARB_CFG_A>;
+impl<'a, REG, const O: u8> ARB_CFG_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Fixed priority arbiter (see \"Basic Definitions\" )"]
     #[inline(always)]
-    pub fn fixed(self) -> &'a mut W {
+    pub fn fixed(self) -> &'a mut crate::W<REG> {
         self.variant(ARB_CFG_A::Fixed)
     }
     #[doc = "Modified round robin arbiter."]
     #[inline(always)]
-    pub fn round_robin(self) -> &'a mut W {
+    pub fn round_robin(self) -> &'a mut crate::W<REG> {
         self.variant(ARB_CFG_A::RoundRobin)
     }
 }
@@ -65,28 +66,25 @@ impl W {
     #[doc = "Bit 4 - Arbiter Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn arb_cfg(&mut self) -> ARB_CFG_W<4> {
+    pub fn arb_cfg(&mut self) -> ARB_CFG_W<GCFG_SPEC, 4> {
         ARB_CFG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "DMAC Global Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gcfg](index.html) module"]
+#[doc = "DMAC Global Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gcfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gcfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GCFG_SPEC;
 impl crate::RegisterSpec for GCFG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [gcfg::R](R) reader structure"]
-impl crate::Readable for GCFG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [gcfg::W](W) writer structure"]
+#[doc = "`read()` method returns [`gcfg::R`](R) reader structure"]
+impl crate::Readable for GCFG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`gcfg::W`](W) writer structure"]
 impl crate::Writable for GCFG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

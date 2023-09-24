@@ -1,46 +1,45 @@
 #[doc = "Register `CSR_LIN_MODE` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<LIN_MODE_CSR_LIN_MODE_SPEC>);
+pub type R = crate::R<LIN_MODE_CSR_LIN_MODE_SPEC>;
 #[doc = "Field `RXRDY` reader - Receiver Ready"]
-pub type RXRDY_R = crate::BitReader<bool>;
+pub type RXRDY_R = crate::BitReader;
 #[doc = "Field `TXRDY` reader - Transmitter Ready"]
-pub type TXRDY_R = crate::BitReader<bool>;
+pub type TXRDY_R = crate::BitReader;
 #[doc = "Field `ENDRX` reader - "]
-pub type ENDRX_R = crate::BitReader<bool>;
+pub type ENDRX_R = crate::BitReader;
 #[doc = "Field `ENDTX` reader - "]
-pub type ENDTX_R = crate::BitReader<bool>;
+pub type ENDTX_R = crate::BitReader;
 #[doc = "Field `OVRE` reader - Overrun Error"]
-pub type OVRE_R = crate::BitReader<bool>;
+pub type OVRE_R = crate::BitReader;
 #[doc = "Field `FRAME` reader - Framing Error"]
-pub type FRAME_R = crate::BitReader<bool>;
+pub type FRAME_R = crate::BitReader;
 #[doc = "Field `PARE` reader - Parity Error"]
-pub type PARE_R = crate::BitReader<bool>;
+pub type PARE_R = crate::BitReader;
 #[doc = "Field `TIMEOUT` reader - Receiver Time-out"]
-pub type TIMEOUT_R = crate::BitReader<bool>;
+pub type TIMEOUT_R = crate::BitReader;
 #[doc = "Field `TXEMPTY` reader - Transmitter Empty"]
-pub type TXEMPTY_R = crate::BitReader<bool>;
+pub type TXEMPTY_R = crate::BitReader;
 #[doc = "Field `TXBUFE` reader - "]
-pub type TXBUFE_R = crate::BitReader<bool>;
+pub type TXBUFE_R = crate::BitReader;
 #[doc = "Field `RXBUFF` reader - "]
-pub type RXBUFF_R = crate::BitReader<bool>;
+pub type RXBUFF_R = crate::BitReader;
 #[doc = "Field `LINBK` reader - LIN Break Sent or LIN Break Received"]
-pub type LINBK_R = crate::BitReader<bool>;
+pub type LINBK_R = crate::BitReader;
 #[doc = "Field `LINID` reader - LIN Identifier Sent or LIN Identifier Received"]
-pub type LINID_R = crate::BitReader<bool>;
+pub type LINID_R = crate::BitReader;
 #[doc = "Field `LINTC` reader - LIN Transfer Completed"]
-pub type LINTC_R = crate::BitReader<bool>;
+pub type LINTC_R = crate::BitReader;
 #[doc = "Field `LINBLS` reader - LIN Bus Line Status"]
-pub type LINBLS_R = crate::BitReader<bool>;
+pub type LINBLS_R = crate::BitReader;
 #[doc = "Field `LINBE` reader - LIN Bit Error"]
-pub type LINBE_R = crate::BitReader<bool>;
+pub type LINBE_R = crate::BitReader;
 #[doc = "Field `LINISFE` reader - LIN Inconsistent Synch Field Error"]
-pub type LINISFE_R = crate::BitReader<bool>;
+pub type LINISFE_R = crate::BitReader;
 #[doc = "Field `LINIPE` reader - LIN Identifier Parity Error"]
-pub type LINIPE_R = crate::BitReader<bool>;
+pub type LINIPE_R = crate::BitReader;
 #[doc = "Field `LINCE` reader - LIN Checksum Error"]
-pub type LINCE_R = crate::BitReader<bool>;
+pub type LINCE_R = crate::BitReader;
 #[doc = "Field `LINSNRE` reader - LIN Slave Not Responding Error"]
-pub type LINSNRE_R = crate::BitReader<bool>;
+pub type LINSNRE_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Receiver Ready"]
     #[inline(always)]
@@ -143,12 +142,10 @@ impl R {
         LINSNRE_R::new(((self.bits >> 29) & 1) != 0)
     }
 }
-#[doc = "Channel Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lin_mode_csr_lin_mode](index.html) module"]
+#[doc = "Channel Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lin_mode_csr_lin_mode::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LIN_MODE_CSR_LIN_MODE_SPEC;
 impl crate::RegisterSpec for LIN_MODE_CSR_LIN_MODE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [lin_mode_csr_lin_mode::R](R) reader structure"]
-impl crate::Readable for LIN_MODE_CSR_LIN_MODE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`lin_mode_csr_lin_mode::R`](R) reader structure"]
+impl crate::Readable for LIN_MODE_CSR_LIN_MODE_SPEC {}

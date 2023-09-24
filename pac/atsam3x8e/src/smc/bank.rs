@@ -1,13 +1,11 @@
 #[doc = "Register `BANK` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<BANK_SPEC>);
+pub type R = crate::R<BANK_SPEC>;
 #[doc = "Register `BANK` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<BANK_SPEC>);
+pub type W = crate::W<BANK_SPEC>;
 #[doc = "Field `BANK` reader - Bank Identifier"]
-pub type BANK_R = crate::FieldReader<u8, u8>;
+pub type BANK_R = crate::FieldReader;
 #[doc = "Field `BANK` writer - Bank Identifier"]
-pub type BANK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BANK_SPEC, u8, u8, 3, O>;
+pub type BANK_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 impl R {
     #[doc = "Bits 0:2 - Bank Identifier"]
     #[inline(always)]
@@ -19,28 +17,25 @@ impl W {
     #[doc = "Bits 0:2 - Bank Identifier"]
     #[inline(always)]
     #[must_use]
-    pub fn bank(&mut self) -> BANK_W<0> {
+    pub fn bank(&mut self) -> BANK_W<BANK_SPEC, 0> {
         BANK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "SMC Bank Address Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bank](index.html) module"]
+#[doc = "SMC Bank Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`bank::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`bank::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct BANK_SPEC;
 impl crate::RegisterSpec for BANK_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [bank::R](R) reader structure"]
-impl crate::Readable for BANK_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [bank::W](W) writer structure"]
+#[doc = "`read()` method returns [`bank::R`](R) reader structure"]
+impl crate::Readable for BANK_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`bank::W`](W) writer structure"]
 impl crate::Writable for BANK_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

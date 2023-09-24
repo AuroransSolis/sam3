@@ -1,9 +1,7 @@
 #[doc = "Register `CTRLB0` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<CTRLB0_SPEC>);
+pub type R = crate::R<CTRLB0_SPEC>;
 #[doc = "Register `CTRLB0` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<CTRLB0_SPEC>);
+pub type W = crate::W<CTRLB0_SPEC>;
 #[doc = "Field `SRC_DSCR` reader - Source Address Descriptor"]
 pub type SRC_DSCR_R = crate::BitReader<SRC_DSCR_A>;
 #[doc = "Source Address Descriptor\n\nValue on reset: 0"]
@@ -29,28 +27,31 @@ impl SRC_DSCR_R {
             true => SRC_DSCR_A::FetchDisable,
         }
     }
-    #[doc = "Checks if the value of the field is `FetchFromMem`"]
+    #[doc = "Source address is updated when the descriptor is fetched from the memory."]
     #[inline(always)]
     pub fn is_fetch_from_mem(&self) -> bool {
         *self == SRC_DSCR_A::FetchFromMem
     }
-    #[doc = "Checks if the value of the field is `FetchDisable`"]
+    #[doc = "Buffer Descriptor Fetch operation is disabled for the source."]
     #[inline(always)]
     pub fn is_fetch_disable(&self) -> bool {
         *self == SRC_DSCR_A::FetchDisable
     }
 }
 #[doc = "Field `SRC_DSCR` writer - Source Address Descriptor"]
-pub type SRC_DSCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRLB0_SPEC, SRC_DSCR_A, O>;
-impl<'a, const O: u8> SRC_DSCR_W<'a, O> {
+pub type SRC_DSCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRC_DSCR_A>;
+impl<'a, REG, const O: u8> SRC_DSCR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Source address is updated when the descriptor is fetched from the memory."]
     #[inline(always)]
-    pub fn fetch_from_mem(self) -> &'a mut W {
+    pub fn fetch_from_mem(self) -> &'a mut crate::W<REG> {
         self.variant(SRC_DSCR_A::FetchFromMem)
     }
     #[doc = "Buffer Descriptor Fetch operation is disabled for the source."]
     #[inline(always)]
-    pub fn fetch_disable(self) -> &'a mut W {
+    pub fn fetch_disable(self) -> &'a mut crate::W<REG> {
         self.variant(SRC_DSCR_A::FetchDisable)
     }
 }
@@ -79,33 +80,36 @@ impl DST_DSCR_R {
             true => DST_DSCR_A::FetchDisable,
         }
     }
-    #[doc = "Checks if the value of the field is `FetchFromMem`"]
+    #[doc = "Destination address is updated when the descriptor is fetched from the memory."]
     #[inline(always)]
     pub fn is_fetch_from_mem(&self) -> bool {
         *self == DST_DSCR_A::FetchFromMem
     }
-    #[doc = "Checks if the value of the field is `FetchDisable`"]
+    #[doc = "Buffer Descriptor Fetch operation is disabled for the destination."]
     #[inline(always)]
     pub fn is_fetch_disable(&self) -> bool {
         *self == DST_DSCR_A::FetchDisable
     }
 }
 #[doc = "Field `DST_DSCR` writer - Destination Address Descriptor"]
-pub type DST_DSCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRLB0_SPEC, DST_DSCR_A, O>;
-impl<'a, const O: u8> DST_DSCR_W<'a, O> {
+pub type DST_DSCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DST_DSCR_A>;
+impl<'a, REG, const O: u8> DST_DSCR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Destination address is updated when the descriptor is fetched from the memory."]
     #[inline(always)]
-    pub fn fetch_from_mem(self) -> &'a mut W {
+    pub fn fetch_from_mem(self) -> &'a mut crate::W<REG> {
         self.variant(DST_DSCR_A::FetchFromMem)
     }
     #[doc = "Buffer Descriptor Fetch operation is disabled for the destination."]
     #[inline(always)]
-    pub fn fetch_disable(self) -> &'a mut W {
+    pub fn fetch_disable(self) -> &'a mut crate::W<REG> {
         self.variant(DST_DSCR_A::FetchDisable)
     }
 }
 #[doc = "Field `FC` reader - Flow Control"]
-pub type FC_R = crate::FieldReader<u8, FC_A>;
+pub type FC_R = crate::FieldReader<FC_A>;
 #[doc = "Flow Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -125,6 +129,9 @@ impl From<FC_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for FC_A {
+    type Ux = u8;
+}
 impl FC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -137,53 +144,57 @@ impl FC_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `Mem2memDmaFc`"]
+    #[doc = "Memory-to-Memory Transfer DMAC is flow controller"]
     #[inline(always)]
     pub fn is_mem2mem_dma_fc(&self) -> bool {
         *self == FC_A::Mem2memDmaFc
     }
-    #[doc = "Checks if the value of the field is `Mem2perDmaFc`"]
+    #[doc = "Memory-to-Peripheral Transfer DMAC is flow controller"]
     #[inline(always)]
     pub fn is_mem2per_dma_fc(&self) -> bool {
         *self == FC_A::Mem2perDmaFc
     }
-    #[doc = "Checks if the value of the field is `Per2memDmaFc`"]
+    #[doc = "Peripheral-to-Memory Transfer DMAC is flow controller"]
     #[inline(always)]
     pub fn is_per2mem_dma_fc(&self) -> bool {
         *self == FC_A::Per2memDmaFc
     }
-    #[doc = "Checks if the value of the field is `Per2perDmaFc`"]
+    #[doc = "Peripheral-to-Peripheral Transfer DMAC is flow controller"]
     #[inline(always)]
     pub fn is_per2per_dma_fc(&self) -> bool {
         *self == FC_A::Per2perDmaFc
     }
 }
 #[doc = "Field `FC` writer - Flow Control"]
-pub type FC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRLB0_SPEC, u8, FC_A, 2, O>;
-impl<'a, const O: u8> FC_W<'a, O> {
+pub type FC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, FC_A>;
+impl<'a, REG, const O: u8> FC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Memory-to-Memory Transfer DMAC is flow controller"]
     #[inline(always)]
-    pub fn mem2mem_dma_fc(self) -> &'a mut W {
+    pub fn mem2mem_dma_fc(self) -> &'a mut crate::W<REG> {
         self.variant(FC_A::Mem2memDmaFc)
     }
     #[doc = "Memory-to-Peripheral Transfer DMAC is flow controller"]
     #[inline(always)]
-    pub fn mem2per_dma_fc(self) -> &'a mut W {
+    pub fn mem2per_dma_fc(self) -> &'a mut crate::W<REG> {
         self.variant(FC_A::Mem2perDmaFc)
     }
     #[doc = "Peripheral-to-Memory Transfer DMAC is flow controller"]
     #[inline(always)]
-    pub fn per2mem_dma_fc(self) -> &'a mut W {
+    pub fn per2mem_dma_fc(self) -> &'a mut crate::W<REG> {
         self.variant(FC_A::Per2memDmaFc)
     }
     #[doc = "Peripheral-to-Peripheral Transfer DMAC is flow controller"]
     #[inline(always)]
-    pub fn per2per_dma_fc(self) -> &'a mut W {
+    pub fn per2per_dma_fc(self) -> &'a mut crate::W<REG> {
         self.variant(FC_A::Per2perDmaFc)
     }
 }
 #[doc = "Field `SRC_INCR` reader - Incrementing, Decrementing or Fixed Address for the Source"]
-pub type SRC_INCR_R = crate::FieldReader<u8, SRC_INCR_A>;
+pub type SRC_INCR_R = crate::FieldReader<SRC_INCR_A>;
 #[doc = "Incrementing, Decrementing or Fixed Address for the Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -201,6 +212,9 @@ impl From<SRC_INCR_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SRC_INCR_A {
+    type Ux = u8;
+}
 impl SRC_INCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -212,44 +226,47 @@ impl SRC_INCR_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Incrementing`"]
+    #[doc = "The source address is incremented"]
     #[inline(always)]
     pub fn is_incrementing(&self) -> bool {
         *self == SRC_INCR_A::Incrementing
     }
-    #[doc = "Checks if the value of the field is `Decrementing`"]
+    #[doc = "The source address is decremented"]
     #[inline(always)]
     pub fn is_decrementing(&self) -> bool {
         *self == SRC_INCR_A::Decrementing
     }
-    #[doc = "Checks if the value of the field is `Fixed`"]
+    #[doc = "The source address remains unchanged"]
     #[inline(always)]
     pub fn is_fixed(&self) -> bool {
         *self == SRC_INCR_A::Fixed
     }
 }
 #[doc = "Field `SRC_INCR` writer - Incrementing, Decrementing or Fixed Address for the Source"]
-pub type SRC_INCR_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CTRLB0_SPEC, u8, SRC_INCR_A, 2, O>;
-impl<'a, const O: u8> SRC_INCR_W<'a, O> {
+pub type SRC_INCR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, SRC_INCR_A>;
+impl<'a, REG, const O: u8> SRC_INCR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The source address is incremented"]
     #[inline(always)]
-    pub fn incrementing(self) -> &'a mut W {
+    pub fn incrementing(self) -> &'a mut crate::W<REG> {
         self.variant(SRC_INCR_A::Incrementing)
     }
     #[doc = "The source address is decremented"]
     #[inline(always)]
-    pub fn decrementing(self) -> &'a mut W {
+    pub fn decrementing(self) -> &'a mut crate::W<REG> {
         self.variant(SRC_INCR_A::Decrementing)
     }
     #[doc = "The source address remains unchanged"]
     #[inline(always)]
-    pub fn fixed(self) -> &'a mut W {
+    pub fn fixed(self) -> &'a mut crate::W<REG> {
         self.variant(SRC_INCR_A::Fixed)
     }
 }
 #[doc = "Field `DST_INCR` reader - Incrementing, Decrementing or Fixed Address for the Destination"]
-pub type DST_INCR_R = crate::FieldReader<u8, DST_INCR_A>;
+pub type DST_INCR_R = crate::FieldReader<DST_INCR_A>;
 #[doc = "Incrementing, Decrementing or Fixed Address for the Destination\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -267,6 +284,9 @@ impl From<DST_INCR_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for DST_INCR_A {
+    type Ux = u8;
+}
 impl DST_INCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -278,46 +298,49 @@ impl DST_INCR_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Incrementing`"]
+    #[doc = "The destination address is incremented"]
     #[inline(always)]
     pub fn is_incrementing(&self) -> bool {
         *self == DST_INCR_A::Incrementing
     }
-    #[doc = "Checks if the value of the field is `Decrementing`"]
+    #[doc = "The destination address is decremented"]
     #[inline(always)]
     pub fn is_decrementing(&self) -> bool {
         *self == DST_INCR_A::Decrementing
     }
-    #[doc = "Checks if the value of the field is `Fixed`"]
+    #[doc = "The destination address remains unchanged"]
     #[inline(always)]
     pub fn is_fixed(&self) -> bool {
         *self == DST_INCR_A::Fixed
     }
 }
 #[doc = "Field `DST_INCR` writer - Incrementing, Decrementing or Fixed Address for the Destination"]
-pub type DST_INCR_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CTRLB0_SPEC, u8, DST_INCR_A, 2, O>;
-impl<'a, const O: u8> DST_INCR_W<'a, O> {
+pub type DST_INCR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, DST_INCR_A>;
+impl<'a, REG, const O: u8> DST_INCR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The destination address is incremented"]
     #[inline(always)]
-    pub fn incrementing(self) -> &'a mut W {
+    pub fn incrementing(self) -> &'a mut crate::W<REG> {
         self.variant(DST_INCR_A::Incrementing)
     }
     #[doc = "The destination address is decremented"]
     #[inline(always)]
-    pub fn decrementing(self) -> &'a mut W {
+    pub fn decrementing(self) -> &'a mut crate::W<REG> {
         self.variant(DST_INCR_A::Decrementing)
     }
     #[doc = "The destination address remains unchanged"]
     #[inline(always)]
-    pub fn fixed(self) -> &'a mut W {
+    pub fn fixed(self) -> &'a mut crate::W<REG> {
         self.variant(DST_INCR_A::Fixed)
     }
 }
 #[doc = "Field `IEN` reader - Interrupt Enable Not"]
-pub type IEN_R = crate::BitReader<bool>;
+pub type IEN_R = crate::BitReader;
 #[doc = "Field `IEN` writer - Interrupt Enable Not"]
-pub type IEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRLB0_SPEC, bool, O>;
+pub type IEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 16 - Source Address Descriptor"]
     #[inline(always)]
@@ -354,58 +377,55 @@ impl W {
     #[doc = "Bit 16 - Source Address Descriptor"]
     #[inline(always)]
     #[must_use]
-    pub fn src_dscr(&mut self) -> SRC_DSCR_W<16> {
+    pub fn src_dscr(&mut self) -> SRC_DSCR_W<CTRLB0_SPEC, 16> {
         SRC_DSCR_W::new(self)
     }
     #[doc = "Bit 20 - Destination Address Descriptor"]
     #[inline(always)]
     #[must_use]
-    pub fn dst_dscr(&mut self) -> DST_DSCR_W<20> {
+    pub fn dst_dscr(&mut self) -> DST_DSCR_W<CTRLB0_SPEC, 20> {
         DST_DSCR_W::new(self)
     }
     #[doc = "Bits 21:22 - Flow Control"]
     #[inline(always)]
     #[must_use]
-    pub fn fc(&mut self) -> FC_W<21> {
+    pub fn fc(&mut self) -> FC_W<CTRLB0_SPEC, 21> {
         FC_W::new(self)
     }
     #[doc = "Bits 24:25 - Incrementing, Decrementing or Fixed Address for the Source"]
     #[inline(always)]
     #[must_use]
-    pub fn src_incr(&mut self) -> SRC_INCR_W<24> {
+    pub fn src_incr(&mut self) -> SRC_INCR_W<CTRLB0_SPEC, 24> {
         SRC_INCR_W::new(self)
     }
     #[doc = "Bits 28:29 - Incrementing, Decrementing or Fixed Address for the Destination"]
     #[inline(always)]
     #[must_use]
-    pub fn dst_incr(&mut self) -> DST_INCR_W<28> {
+    pub fn dst_incr(&mut self) -> DST_INCR_W<CTRLB0_SPEC, 28> {
         DST_INCR_W::new(self)
     }
     #[doc = "Bit 30 - Interrupt Enable Not"]
     #[inline(always)]
     #[must_use]
-    pub fn ien(&mut self) -> IEN_W<30> {
+    pub fn ien(&mut self) -> IEN_W<CTRLB0_SPEC, 30> {
         IEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "DMAC Channel Control B Register (ch_num = 0)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrlb0](index.html) module"]
+#[doc = "DMAC Channel Control B Register (ch_num = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrlb0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrlb0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CTRLB0_SPEC;
 impl crate::RegisterSpec for CTRLB0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ctrlb0::R](R) reader structure"]
-impl crate::Readable for CTRLB0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ctrlb0::W](W) writer structure"]
+#[doc = "`read()` method returns [`ctrlb0::R`](R) reader structure"]
+impl crate::Readable for CTRLB0_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ctrlb0::W`](W) writer structure"]
 impl crate::Writable for CTRLB0_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

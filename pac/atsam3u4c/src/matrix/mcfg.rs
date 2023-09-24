@@ -1,13 +1,11 @@
 #[doc = "Register `MCFG[%s]` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<MCFG_SPEC>);
+pub type R = crate::R<MCFG_SPEC>;
 #[doc = "Register `MCFG[%s]` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<MCFG_SPEC>);
+pub type W = crate::W<MCFG_SPEC>;
 #[doc = "Field `ULBT` reader - Undefined Length Burst Type"]
-pub type ULBT_R = crate::FieldReader<u8, u8>;
+pub type ULBT_R = crate::FieldReader;
 #[doc = "Field `ULBT` writer - Undefined Length Burst Type"]
-pub type ULBT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MCFG_SPEC, u8, u8, 3, O>;
+pub type ULBT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 impl R {
     #[doc = "Bits 0:2 - Undefined Length Burst Type"]
     #[inline(always)]
@@ -19,28 +17,25 @@ impl W {
     #[doc = "Bits 0:2 - Undefined Length Burst Type"]
     #[inline(always)]
     #[must_use]
-    pub fn ulbt(&mut self) -> ULBT_W<0> {
+    pub fn ulbt(&mut self) -> ULBT_W<MCFG_SPEC, 0> {
         ULBT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Master Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mcfg](index.html) module"]
+#[doc = "Master Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mcfg::R`](R).  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mcfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MCFG_SPEC;
 impl crate::RegisterSpec for MCFG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mcfg::R](R) reader structure"]
-impl crate::Readable for MCFG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mcfg::W](W) writer structure"]
+#[doc = "`read()` method returns [`mcfg::R`](R) reader structure"]
+impl crate::Readable for MCFG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mcfg::W`](W) writer structure"]
 impl crate::Writable for MCFG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

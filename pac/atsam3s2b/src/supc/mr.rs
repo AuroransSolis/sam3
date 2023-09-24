@@ -1,9 +1,7 @@
 #[doc = "Register `MR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<MR_SPEC>);
+pub type R = crate::R<MR_SPEC>;
 #[doc = "Register `MR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<MR_SPEC>);
+pub type W = crate::W<MR_SPEC>;
 #[doc = "Field `BODRSTEN` reader - Brownout Detector Reset Enable"]
 pub type BODRSTEN_R = crate::BitReader<BODRSTEN_A>;
 #[doc = "Brownout Detector Reset Enable\n\nValue on reset: 1"]
@@ -29,28 +27,31 @@ impl BODRSTEN_R {
             true => BODRSTEN_A::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `NotEnable`"]
+    #[doc = "the core reset signal \"vddcore_nreset\" is not affected when a brownout detection occurs."]
     #[inline(always)]
     pub fn is_not_enable(&self) -> bool {
         *self == BODRSTEN_A::NotEnable
     }
-    #[doc = "Checks if the value of the field is `Enable`"]
+    #[doc = "the core reset signal, vddcore_nreset is asserted when a brownout detection occurs."]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == BODRSTEN_A::Enable
     }
 }
 #[doc = "Field `BODRSTEN` writer - Brownout Detector Reset Enable"]
-pub type BODRSTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, BODRSTEN_A, O>;
-impl<'a, const O: u8> BODRSTEN_W<'a, O> {
+pub type BODRSTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BODRSTEN_A>;
+impl<'a, REG, const O: u8> BODRSTEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "the core reset signal \"vddcore_nreset\" is not affected when a brownout detection occurs."]
     #[inline(always)]
-    pub fn not_enable(self) -> &'a mut W {
+    pub fn not_enable(self) -> &'a mut crate::W<REG> {
         self.variant(BODRSTEN_A::NotEnable)
     }
     #[doc = "the core reset signal, vddcore_nreset is asserted when a brownout detection occurs."]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(BODRSTEN_A::Enable)
     }
 }
@@ -79,28 +80,31 @@ impl BODDIS_R {
             true => BODDIS_A::Disable,
         }
     }
-    #[doc = "Checks if the value of the field is `Enable`"]
+    #[doc = "the core brownout detector is enabled."]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == BODDIS_A::Enable
     }
-    #[doc = "Checks if the value of the field is `Disable`"]
+    #[doc = "the core brownout detector is disabled."]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == BODDIS_A::Disable
     }
 }
 #[doc = "Field `BODDIS` writer - Brownout Detector Disable"]
-pub type BODDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, BODDIS_A, O>;
-impl<'a, const O: u8> BODDIS_W<'a, O> {
+pub type BODDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BODDIS_A>;
+impl<'a, REG, const O: u8> BODDIS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "the core brownout detector is enabled."]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(BODDIS_A::Enable)
     }
     #[doc = "the core brownout detector is disabled."]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(BODDIS_A::Disable)
     }
 }
@@ -129,28 +133,31 @@ impl ONREG_R {
             true => ONREG_A::OnregUsed,
         }
     }
-    #[doc = "Checks if the value of the field is `OnregUnused`"]
+    #[doc = "Internal voltage regulator is not used (external power supply is used)"]
     #[inline(always)]
     pub fn is_onreg_unused(&self) -> bool {
         *self == ONREG_A::OnregUnused
     }
-    #[doc = "Checks if the value of the field is `OnregUsed`"]
+    #[doc = "internal voltage regulator is used"]
     #[inline(always)]
     pub fn is_onreg_used(&self) -> bool {
         *self == ONREG_A::OnregUsed
     }
 }
 #[doc = "Field `ONREG` writer - Voltage Regulator enable"]
-pub type ONREG_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, ONREG_A, O>;
-impl<'a, const O: u8> ONREG_W<'a, O> {
+pub type ONREG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ONREG_A>;
+impl<'a, REG, const O: u8> ONREG_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Internal voltage regulator is not used (external power supply is used)"]
     #[inline(always)]
-    pub fn onreg_unused(self) -> &'a mut W {
+    pub fn onreg_unused(self) -> &'a mut crate::W<REG> {
         self.variant(ONREG_A::OnregUnused)
     }
     #[doc = "internal voltage regulator is used"]
     #[inline(always)]
-    pub fn onreg_used(self) -> &'a mut W {
+    pub fn onreg_used(self) -> &'a mut crate::W<REG> {
         self.variant(ONREG_A::OnregUsed)
     }
 }
@@ -179,33 +186,36 @@ impl OSCBYPASS_R {
             true => OSCBYPASS_A::Bypass,
         }
     }
-    #[doc = "Checks if the value of the field is `NoEffect`"]
+    #[doc = "no effect. Clock selection depends on XTALSEL value."]
     #[inline(always)]
     pub fn is_no_effect(&self) -> bool {
         *self == OSCBYPASS_A::NoEffect
     }
-    #[doc = "Checks if the value of the field is `Bypass`"]
+    #[doc = "the 32-KHz XTAL oscillator is selected and is put in bypass mode."]
     #[inline(always)]
     pub fn is_bypass(&self) -> bool {
         *self == OSCBYPASS_A::Bypass
     }
 }
 #[doc = "Field `OSCBYPASS` writer - Oscillator Bypass"]
-pub type OSCBYPASS_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, OSCBYPASS_A, O>;
-impl<'a, const O: u8> OSCBYPASS_W<'a, O> {
+pub type OSCBYPASS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OSCBYPASS_A>;
+impl<'a, REG, const O: u8> OSCBYPASS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no effect. Clock selection depends on XTALSEL value."]
     #[inline(always)]
-    pub fn no_effect(self) -> &'a mut W {
+    pub fn no_effect(self) -> &'a mut crate::W<REG> {
         self.variant(OSCBYPASS_A::NoEffect)
     }
     #[doc = "the 32-KHz XTAL oscillator is selected and is put in bypass mode."]
     #[inline(always)]
-    pub fn bypass(self) -> &'a mut W {
+    pub fn bypass(self) -> &'a mut crate::W<REG> {
         self.variant(OSCBYPASS_A::Bypass)
     }
 }
 #[doc = "Field `KEY` reader - Password Key"]
-pub type KEY_R = crate::FieldReader<u8, KEY_A>;
+pub type KEY_R = crate::FieldReader<KEY_A>;
 #[doc = "Password Key\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -219,6 +229,9 @@ impl From<KEY_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for KEY_A {
+    type Ux = u8;
+}
 impl KEY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -228,18 +241,22 @@ impl KEY_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Passwd`"]
+    #[doc = "Writing any other value in this field aborts the write operation."]
     #[inline(always)]
     pub fn is_passwd(&self) -> bool {
         *self == KEY_A::Passwd
     }
 }
 #[doc = "Field `KEY` writer - Password Key"]
-pub type KEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, KEY_A, 8, O>;
-impl<'a, const O: u8> KEY_W<'a, O> {
+pub type KEY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, KEY_A>;
+impl<'a, REG, const O: u8> KEY_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Writing any other value in this field aborts the write operation."]
     #[inline(always)]
-    pub fn passwd(self) -> &'a mut W {
+    pub fn passwd(self) -> &'a mut crate::W<REG> {
         self.variant(KEY_A::Passwd)
     }
 }
@@ -274,52 +291,49 @@ impl W {
     #[doc = "Bit 12 - Brownout Detector Reset Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn bodrsten(&mut self) -> BODRSTEN_W<12> {
+    pub fn bodrsten(&mut self) -> BODRSTEN_W<MR_SPEC, 12> {
         BODRSTEN_W::new(self)
     }
     #[doc = "Bit 13 - Brownout Detector Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn boddis(&mut self) -> BODDIS_W<13> {
+    pub fn boddis(&mut self) -> BODDIS_W<MR_SPEC, 13> {
         BODDIS_W::new(self)
     }
     #[doc = "Bit 14 - Voltage Regulator enable"]
     #[inline(always)]
     #[must_use]
-    pub fn onreg(&mut self) -> ONREG_W<14> {
+    pub fn onreg(&mut self) -> ONREG_W<MR_SPEC, 14> {
         ONREG_W::new(self)
     }
     #[doc = "Bit 20 - Oscillator Bypass"]
     #[inline(always)]
     #[must_use]
-    pub fn oscbypass(&mut self) -> OSCBYPASS_W<20> {
+    pub fn oscbypass(&mut self) -> OSCBYPASS_W<MR_SPEC, 20> {
         OSCBYPASS_W::new(self)
     }
     #[doc = "Bits 24:31 - Password Key"]
     #[inline(always)]
     #[must_use]
-    pub fn key(&mut self) -> KEY_W<24> {
+    pub fn key(&mut self) -> KEY_W<MR_SPEC, 24> {
         KEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Supply Controller Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mr](index.html) module"]
+#[doc = "Supply Controller Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MR_SPEC;
 impl crate::RegisterSpec for MR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mr::R](R) reader structure"]
-impl crate::Readable for MR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
+#[doc = "`read()` method returns [`mr::R`](R) reader structure"]
+impl crate::Readable for MR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mr::W`](W) writer structure"]
 impl crate::Writable for MR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,30 +1,29 @@
 #[doc = "Register `SR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<SR_SPEC>);
+pub type R = crate::R<SR_SPEC>;
 #[doc = "Field `IDTI` reader - ID Transition Interrupt"]
-pub type IDTI_R = crate::BitReader<bool>;
+pub type IDTI_R = crate::BitReader;
 #[doc = "Field `VBUSTI` reader - VBus Transition Interrupt"]
-pub type VBUSTI_R = crate::BitReader<bool>;
+pub type VBUSTI_R = crate::BitReader;
 #[doc = "Field `SRPI` reader - SRP Interrupt"]
-pub type SRPI_R = crate::BitReader<bool>;
+pub type SRPI_R = crate::BitReader;
 #[doc = "Field `VBERRI` reader - VBus Error Interrupt"]
-pub type VBERRI_R = crate::BitReader<bool>;
+pub type VBERRI_R = crate::BitReader;
 #[doc = "Field `BCERRI` reader - B-Connection Error Interrupt"]
-pub type BCERRI_R = crate::BitReader<bool>;
+pub type BCERRI_R = crate::BitReader;
 #[doc = "Field `ROLEEXI` reader - Role Exchange Interrupt"]
-pub type ROLEEXI_R = crate::BitReader<bool>;
+pub type ROLEEXI_R = crate::BitReader;
 #[doc = "Field `HNPERRI` reader - HNP Error Interrupt"]
-pub type HNPERRI_R = crate::BitReader<bool>;
+pub type HNPERRI_R = crate::BitReader;
 #[doc = "Field `STOI` reader - Suspend Time-Out Interrupt"]
-pub type STOI_R = crate::BitReader<bool>;
+pub type STOI_R = crate::BitReader;
 #[doc = "Field `VBUSRQ` reader - VBus Request"]
-pub type VBUSRQ_R = crate::BitReader<bool>;
+pub type VBUSRQ_R = crate::BitReader;
 #[doc = "Field `ID` reader - UOTGID Pin State"]
-pub type ID_R = crate::BitReader<bool>;
+pub type ID_R = crate::BitReader;
 #[doc = "Field `VBUS` reader - VBus Level"]
-pub type VBUS_R = crate::BitReader<bool>;
+pub type VBUS_R = crate::BitReader;
 #[doc = "Field `SPEED` reader - Speed Status"]
-pub type SPEED_R = crate::FieldReader<u8, SPEED_A>;
+pub type SPEED_R = crate::FieldReader<SPEED_A>;
 #[doc = "Speed Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -42,6 +41,9 @@ impl From<SPEED_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SPEED_A {
+    type Ux = u8;
+}
 impl SPEED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -53,24 +55,24 @@ impl SPEED_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `FullSpeed`"]
+    #[doc = "Full-Speed mode"]
     #[inline(always)]
     pub fn is_full_speed(&self) -> bool {
         *self == SPEED_A::FullSpeed
     }
-    #[doc = "Checks if the value of the field is `HighSpeed`"]
+    #[doc = "High-Speed mode"]
     #[inline(always)]
     pub fn is_high_speed(&self) -> bool {
         *self == SPEED_A::HighSpeed
     }
-    #[doc = "Checks if the value of the field is `LowSpeed`"]
+    #[doc = "Low-Speed mode"]
     #[inline(always)]
     pub fn is_low_speed(&self) -> bool {
         *self == SPEED_A::LowSpeed
     }
 }
 #[doc = "Field `CLKUSABLE` reader - UTMI Clock Usable"]
-pub type CLKUSABLE_R = crate::BitReader<bool>;
+pub type CLKUSABLE_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - ID Transition Interrupt"]
     #[inline(always)]
@@ -138,15 +140,13 @@ impl R {
         CLKUSABLE_R::new(((self.bits >> 14) & 1) != 0)
     }
 }
-#[doc = "General Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]
+#[doc = "General Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SR_SPEC;
 impl crate::RegisterSpec for SR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sr::R](R) reader structure"]
-impl crate::Readable for SR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`sr::R`](R) reader structure"]
+impl crate::Readable for SR_SPEC {}
 #[doc = "`reset()` method sets SR to value 0x0400"]
 impl crate::Resettable for SR_SPEC {
     const RESET_VALUE: Self::Ux = 0x0400;

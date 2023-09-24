@@ -1,46 +1,45 @@
 #[doc = "Register `IMR2` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<IMR2_SPEC>);
+pub type R = crate::R<IMR2_SPEC>;
 #[doc = "Field `WRDY` reader - Write Ready for Synchronous Channels Update Interrupt Mask"]
-pub type WRDY_R = crate::BitReader<bool>;
+pub type WRDY_R = crate::BitReader;
 #[doc = "Field `ENDTX` reader - PDC End of TX Buffer Interrupt Mask"]
-pub type ENDTX_R = crate::BitReader<bool>;
+pub type ENDTX_R = crate::BitReader;
 #[doc = "Field `TXBUFE` reader - PDC TX Buffer Empty Interrupt Mask"]
-pub type TXBUFE_R = crate::BitReader<bool>;
+pub type TXBUFE_R = crate::BitReader;
 #[doc = "Field `UNRE` reader - Synchronous Channels Update Underrun Error Interrupt Mask"]
-pub type UNRE_R = crate::BitReader<bool>;
+pub type UNRE_R = crate::BitReader;
 #[doc = "Field `CMPM0` reader - Comparison 0 Match Interrupt Mask"]
-pub type CMPM0_R = crate::BitReader<bool>;
+pub type CMPM0_R = crate::BitReader;
 #[doc = "Field `CMPM1` reader - Comparison 1 Match Interrupt Mask"]
-pub type CMPM1_R = crate::BitReader<bool>;
+pub type CMPM1_R = crate::BitReader;
 #[doc = "Field `CMPM2` reader - Comparison 2 Match Interrupt Mask"]
-pub type CMPM2_R = crate::BitReader<bool>;
+pub type CMPM2_R = crate::BitReader;
 #[doc = "Field `CMPM3` reader - Comparison 3 Match Interrupt Mask"]
-pub type CMPM3_R = crate::BitReader<bool>;
+pub type CMPM3_R = crate::BitReader;
 #[doc = "Field `CMPM4` reader - Comparison 4 Match Interrupt Mask"]
-pub type CMPM4_R = crate::BitReader<bool>;
+pub type CMPM4_R = crate::BitReader;
 #[doc = "Field `CMPM5` reader - Comparison 5 Match Interrupt Mask"]
-pub type CMPM5_R = crate::BitReader<bool>;
+pub type CMPM5_R = crate::BitReader;
 #[doc = "Field `CMPM6` reader - Comparison 6 Match Interrupt Mask"]
-pub type CMPM6_R = crate::BitReader<bool>;
+pub type CMPM6_R = crate::BitReader;
 #[doc = "Field `CMPM7` reader - Comparison 7 Match Interrupt Mask"]
-pub type CMPM7_R = crate::BitReader<bool>;
+pub type CMPM7_R = crate::BitReader;
 #[doc = "Field `CMPU0` reader - Comparison 0 Update Interrupt Mask"]
-pub type CMPU0_R = crate::BitReader<bool>;
+pub type CMPU0_R = crate::BitReader;
 #[doc = "Field `CMPU1` reader - Comparison 1 Update Interrupt Mask"]
-pub type CMPU1_R = crate::BitReader<bool>;
+pub type CMPU1_R = crate::BitReader;
 #[doc = "Field `CMPU2` reader - Comparison 2 Update Interrupt Mask"]
-pub type CMPU2_R = crate::BitReader<bool>;
+pub type CMPU2_R = crate::BitReader;
 #[doc = "Field `CMPU3` reader - Comparison 3 Update Interrupt Mask"]
-pub type CMPU3_R = crate::BitReader<bool>;
+pub type CMPU3_R = crate::BitReader;
 #[doc = "Field `CMPU4` reader - Comparison 4 Update Interrupt Mask"]
-pub type CMPU4_R = crate::BitReader<bool>;
+pub type CMPU4_R = crate::BitReader;
 #[doc = "Field `CMPU5` reader - Comparison 5 Update Interrupt Mask"]
-pub type CMPU5_R = crate::BitReader<bool>;
+pub type CMPU5_R = crate::BitReader;
 #[doc = "Field `CMPU6` reader - Comparison 6 Update Interrupt Mask"]
-pub type CMPU6_R = crate::BitReader<bool>;
+pub type CMPU6_R = crate::BitReader;
 #[doc = "Field `CMPU7` reader - Comparison 7 Update Interrupt Mask"]
-pub type CMPU7_R = crate::BitReader<bool>;
+pub type CMPU7_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Write Ready for Synchronous Channels Update Interrupt Mask"]
     #[inline(always)]
@@ -143,15 +142,13 @@ impl R {
         CMPU7_R::new(((self.bits >> 23) & 1) != 0)
     }
 }
-#[doc = "PWM Interrupt Mask Register 2\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr2](index.html) module"]
+#[doc = "PWM Interrupt Mask Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`imr2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IMR2_SPEC;
 impl crate::RegisterSpec for IMR2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [imr2::R](R) reader structure"]
-impl crate::Readable for IMR2_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`imr2::R`](R) reader structure"]
+impl crate::Readable for IMR2_SPEC {}
 #[doc = "`reset()` method sets IMR2 to value 0"]
 impl crate::Resettable for IMR2_SPEC {
     const RESET_VALUE: Self::Ux = 0;

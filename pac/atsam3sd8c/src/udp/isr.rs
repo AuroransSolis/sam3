@@ -1,34 +1,33 @@
 #[doc = "Register `ISR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<ISR_SPEC>);
+pub type R = crate::R<ISR_SPEC>;
 #[doc = "Field `EP0INT` reader - Endpoint 0 Interrupt Status"]
-pub type EP0INT_R = crate::BitReader<bool>;
+pub type EP0INT_R = crate::BitReader;
 #[doc = "Field `EP1INT` reader - Endpoint 1 Interrupt Status"]
-pub type EP1INT_R = crate::BitReader<bool>;
+pub type EP1INT_R = crate::BitReader;
 #[doc = "Field `EP2INT` reader - Endpoint 2 Interrupt Status"]
-pub type EP2INT_R = crate::BitReader<bool>;
+pub type EP2INT_R = crate::BitReader;
 #[doc = "Field `EP3INT` reader - Endpoint 3 Interrupt Status"]
-pub type EP3INT_R = crate::BitReader<bool>;
+pub type EP3INT_R = crate::BitReader;
 #[doc = "Field `EP4INT` reader - Endpoint 4 Interrupt Status"]
-pub type EP4INT_R = crate::BitReader<bool>;
+pub type EP4INT_R = crate::BitReader;
 #[doc = "Field `EP5INT` reader - Endpoint 5 Interrupt Status"]
-pub type EP5INT_R = crate::BitReader<bool>;
+pub type EP5INT_R = crate::BitReader;
 #[doc = "Field `EP6INT` reader - Endpoint 6 Interrupt Status"]
-pub type EP6INT_R = crate::BitReader<bool>;
+pub type EP6INT_R = crate::BitReader;
 #[doc = "Field `EP7INT` reader - Endpoint 7Interrupt Status"]
-pub type EP7INT_R = crate::BitReader<bool>;
+pub type EP7INT_R = crate::BitReader;
 #[doc = "Field `RXSUSP` reader - UDP Suspend Interrupt Status"]
-pub type RXSUSP_R = crate::BitReader<bool>;
+pub type RXSUSP_R = crate::BitReader;
 #[doc = "Field `RXRSM` reader - UDP Resume Interrupt Status"]
-pub type RXRSM_R = crate::BitReader<bool>;
+pub type RXRSM_R = crate::BitReader;
 #[doc = "Field `EXTRSM` reader - "]
-pub type EXTRSM_R = crate::BitReader<bool>;
+pub type EXTRSM_R = crate::BitReader;
 #[doc = "Field `SOFINT` reader - Start of Frame Interrupt Status"]
-pub type SOFINT_R = crate::BitReader<bool>;
+pub type SOFINT_R = crate::BitReader;
 #[doc = "Field `ENDBUSRES` reader - End of BUS Reset Interrupt Status"]
-pub type ENDBUSRES_R = crate::BitReader<bool>;
+pub type ENDBUSRES_R = crate::BitReader;
 #[doc = "Field `WAKEUP` reader - UDP Resume Interrupt Status"]
-pub type WAKEUP_R = crate::BitReader<bool>;
+pub type WAKEUP_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Endpoint 0 Interrupt Status"]
     #[inline(always)]
@@ -101,12 +100,10 @@ impl R {
         WAKEUP_R::new(((self.bits >> 13) & 1) != 0)
     }
 }
-#[doc = "Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [isr](index.html) module"]
+#[doc = "Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`isr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ISR_SPEC;
 impl crate::RegisterSpec for ISR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [isr::R](R) reader structure"]
-impl crate::Readable for ISR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`isr::R`](R) reader structure"]
+impl crate::Readable for ISR_SPEC {}

@@ -1,37 +1,35 @@
 #[doc = "Register `TSR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<TSR_SPEC>);
+pub type R = crate::R<TSR_SPEC>;
 #[doc = "Register `TSR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<TSR_SPEC>);
+pub type W = crate::W<TSR_SPEC>;
 #[doc = "Field `UBR` reader - Used Bit Read"]
-pub type UBR_R = crate::BitReader<bool>;
+pub type UBR_R = crate::BitReader;
 #[doc = "Field `UBR` writer - Used Bit Read"]
-pub type UBR_W<'a, const O: u8> = crate::BitWriter<'a, u32, TSR_SPEC, bool, O>;
+pub type UBR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `COL` reader - Collision Occurred"]
-pub type COL_R = crate::BitReader<bool>;
+pub type COL_R = crate::BitReader;
 #[doc = "Field `COL` writer - Collision Occurred"]
-pub type COL_W<'a, const O: u8> = crate::BitWriter<'a, u32, TSR_SPEC, bool, O>;
+pub type COL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RLES` reader - Retry Limit exceeded"]
-pub type RLES_R = crate::BitReader<bool>;
+pub type RLES_R = crate::BitReader;
 #[doc = "Field `RLES` writer - Retry Limit exceeded"]
-pub type RLES_W<'a, const O: u8> = crate::BitWriter<'a, u32, TSR_SPEC, bool, O>;
+pub type RLES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TGO` reader - Transmit Go"]
-pub type TGO_R = crate::BitReader<bool>;
+pub type TGO_R = crate::BitReader;
 #[doc = "Field `TGO` writer - Transmit Go"]
-pub type TGO_W<'a, const O: u8> = crate::BitWriter<'a, u32, TSR_SPEC, bool, O>;
+pub type TGO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `BEX` reader - Buffers exhausted mid frame"]
-pub type BEX_R = crate::BitReader<bool>;
+pub type BEX_R = crate::BitReader;
 #[doc = "Field `BEX` writer - Buffers exhausted mid frame"]
-pub type BEX_W<'a, const O: u8> = crate::BitWriter<'a, u32, TSR_SPEC, bool, O>;
+pub type BEX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `COMP` reader - Transmit Complete"]
-pub type COMP_R = crate::BitReader<bool>;
+pub type COMP_R = crate::BitReader;
 #[doc = "Field `COMP` writer - Transmit Complete"]
-pub type COMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, TSR_SPEC, bool, O>;
+pub type COMP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `UND` reader - Transmit Underrun"]
-pub type UND_R = crate::BitReader<bool>;
+pub type UND_R = crate::BitReader;
 #[doc = "Field `UND` writer - Transmit Underrun"]
-pub type UND_W<'a, const O: u8> = crate::BitWriter<'a, u32, TSR_SPEC, bool, O>;
+pub type UND_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - Used Bit Read"]
     #[inline(always)]
@@ -73,64 +71,61 @@ impl W {
     #[doc = "Bit 0 - Used Bit Read"]
     #[inline(always)]
     #[must_use]
-    pub fn ubr(&mut self) -> UBR_W<0> {
+    pub fn ubr(&mut self) -> UBR_W<TSR_SPEC, 0> {
         UBR_W::new(self)
     }
     #[doc = "Bit 1 - Collision Occurred"]
     #[inline(always)]
     #[must_use]
-    pub fn col(&mut self) -> COL_W<1> {
+    pub fn col(&mut self) -> COL_W<TSR_SPEC, 1> {
         COL_W::new(self)
     }
     #[doc = "Bit 2 - Retry Limit exceeded"]
     #[inline(always)]
     #[must_use]
-    pub fn rles(&mut self) -> RLES_W<2> {
+    pub fn rles(&mut self) -> RLES_W<TSR_SPEC, 2> {
         RLES_W::new(self)
     }
     #[doc = "Bit 3 - Transmit Go"]
     #[inline(always)]
     #[must_use]
-    pub fn tgo(&mut self) -> TGO_W<3> {
+    pub fn tgo(&mut self) -> TGO_W<TSR_SPEC, 3> {
         TGO_W::new(self)
     }
     #[doc = "Bit 4 - Buffers exhausted mid frame"]
     #[inline(always)]
     #[must_use]
-    pub fn bex(&mut self) -> BEX_W<4> {
+    pub fn bex(&mut self) -> BEX_W<TSR_SPEC, 4> {
         BEX_W::new(self)
     }
     #[doc = "Bit 5 - Transmit Complete"]
     #[inline(always)]
     #[must_use]
-    pub fn comp(&mut self) -> COMP_W<5> {
+    pub fn comp(&mut self) -> COMP_W<TSR_SPEC, 5> {
         COMP_W::new(self)
     }
     #[doc = "Bit 6 - Transmit Underrun"]
     #[inline(always)]
     #[must_use]
-    pub fn und(&mut self) -> UND_W<6> {
+    pub fn und(&mut self) -> UND_W<TSR_SPEC, 6> {
         UND_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Transmit Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tsr](index.html) module"]
+#[doc = "Transmit Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tsr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tsr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TSR_SPEC;
 impl crate::RegisterSpec for TSR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tsr::R](R) reader structure"]
-impl crate::Readable for TSR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [tsr::W](W) writer structure"]
+#[doc = "`read()` method returns [`tsr::R`](R) reader structure"]
+impl crate::Readable for TSR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`tsr::W`](W) writer structure"]
 impl crate::Writable for TSR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

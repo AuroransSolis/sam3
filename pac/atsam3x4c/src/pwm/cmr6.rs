@@ -1,11 +1,9 @@
 #[doc = "Register `CMR6` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<CMR6_SPEC>);
+pub type R = crate::R<CMR6_SPEC>;
 #[doc = "Register `CMR6` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<CMR6_SPEC>);
+pub type W = crate::W<CMR6_SPEC>;
 #[doc = "Field `CPRE` reader - Channel Pre-scaler"]
-pub type CPRE_R = crate::FieldReader<u8, CPRE_A>;
+pub type CPRE_R = crate::FieldReader<CPRE_A>;
 #[doc = "Channel Pre-scaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -43,6 +41,9 @@ impl From<CPRE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CPRE_A {
+    type Ux = u8;
+}
 impl CPRE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -64,165 +65,169 @@ impl CPRE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Mck`"]
+    #[doc = "Master clock"]
     #[inline(always)]
     pub fn is_mck(&self) -> bool {
         *self == CPRE_A::Mck
     }
-    #[doc = "Checks if the value of the field is `MckDiv2`"]
+    #[doc = "Master clock/2"]
     #[inline(always)]
     pub fn is_mck_div_2(&self) -> bool {
         *self == CPRE_A::MckDiv2
     }
-    #[doc = "Checks if the value of the field is `MckDiv4`"]
+    #[doc = "Master clock/4"]
     #[inline(always)]
     pub fn is_mck_div_4(&self) -> bool {
         *self == CPRE_A::MckDiv4
     }
-    #[doc = "Checks if the value of the field is `MckDiv8`"]
+    #[doc = "Master clock/8"]
     #[inline(always)]
     pub fn is_mck_div_8(&self) -> bool {
         *self == CPRE_A::MckDiv8
     }
-    #[doc = "Checks if the value of the field is `MckDiv16`"]
+    #[doc = "Master clock/16"]
     #[inline(always)]
     pub fn is_mck_div_16(&self) -> bool {
         *self == CPRE_A::MckDiv16
     }
-    #[doc = "Checks if the value of the field is `MckDiv32`"]
+    #[doc = "Master clock/32"]
     #[inline(always)]
     pub fn is_mck_div_32(&self) -> bool {
         *self == CPRE_A::MckDiv32
     }
-    #[doc = "Checks if the value of the field is `MckDiv64`"]
+    #[doc = "Master clock/64"]
     #[inline(always)]
     pub fn is_mck_div_64(&self) -> bool {
         *self == CPRE_A::MckDiv64
     }
-    #[doc = "Checks if the value of the field is `MckDiv128`"]
+    #[doc = "Master clock/128"]
     #[inline(always)]
     pub fn is_mck_div_128(&self) -> bool {
         *self == CPRE_A::MckDiv128
     }
-    #[doc = "Checks if the value of the field is `MckDiv256`"]
+    #[doc = "Master clock/256"]
     #[inline(always)]
     pub fn is_mck_div_256(&self) -> bool {
         *self == CPRE_A::MckDiv256
     }
-    #[doc = "Checks if the value of the field is `MckDiv512`"]
+    #[doc = "Master clock/512"]
     #[inline(always)]
     pub fn is_mck_div_512(&self) -> bool {
         *self == CPRE_A::MckDiv512
     }
-    #[doc = "Checks if the value of the field is `MckDiv1024`"]
+    #[doc = "Master clock/1024"]
     #[inline(always)]
     pub fn is_mck_div_1024(&self) -> bool {
         *self == CPRE_A::MckDiv1024
     }
-    #[doc = "Checks if the value of the field is `Clka`"]
+    #[doc = "Clock A"]
     #[inline(always)]
     pub fn is_clka(&self) -> bool {
         *self == CPRE_A::Clka
     }
-    #[doc = "Checks if the value of the field is `Clkb`"]
+    #[doc = "Clock B"]
     #[inline(always)]
     pub fn is_clkb(&self) -> bool {
         *self == CPRE_A::Clkb
     }
 }
 #[doc = "Field `CPRE` writer - Channel Pre-scaler"]
-pub type CPRE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMR6_SPEC, u8, CPRE_A, 4, O>;
-impl<'a, const O: u8> CPRE_W<'a, O> {
+pub type CPRE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, CPRE_A>;
+impl<'a, REG, const O: u8> CPRE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Master clock"]
     #[inline(always)]
-    pub fn mck(self) -> &'a mut W {
+    pub fn mck(self) -> &'a mut crate::W<REG> {
         self.variant(CPRE_A::Mck)
     }
     #[doc = "Master clock/2"]
     #[inline(always)]
-    pub fn mck_div_2(self) -> &'a mut W {
+    pub fn mck_div_2(self) -> &'a mut crate::W<REG> {
         self.variant(CPRE_A::MckDiv2)
     }
     #[doc = "Master clock/4"]
     #[inline(always)]
-    pub fn mck_div_4(self) -> &'a mut W {
+    pub fn mck_div_4(self) -> &'a mut crate::W<REG> {
         self.variant(CPRE_A::MckDiv4)
     }
     #[doc = "Master clock/8"]
     #[inline(always)]
-    pub fn mck_div_8(self) -> &'a mut W {
+    pub fn mck_div_8(self) -> &'a mut crate::W<REG> {
         self.variant(CPRE_A::MckDiv8)
     }
     #[doc = "Master clock/16"]
     #[inline(always)]
-    pub fn mck_div_16(self) -> &'a mut W {
+    pub fn mck_div_16(self) -> &'a mut crate::W<REG> {
         self.variant(CPRE_A::MckDiv16)
     }
     #[doc = "Master clock/32"]
     #[inline(always)]
-    pub fn mck_div_32(self) -> &'a mut W {
+    pub fn mck_div_32(self) -> &'a mut crate::W<REG> {
         self.variant(CPRE_A::MckDiv32)
     }
     #[doc = "Master clock/64"]
     #[inline(always)]
-    pub fn mck_div_64(self) -> &'a mut W {
+    pub fn mck_div_64(self) -> &'a mut crate::W<REG> {
         self.variant(CPRE_A::MckDiv64)
     }
     #[doc = "Master clock/128"]
     #[inline(always)]
-    pub fn mck_div_128(self) -> &'a mut W {
+    pub fn mck_div_128(self) -> &'a mut crate::W<REG> {
         self.variant(CPRE_A::MckDiv128)
     }
     #[doc = "Master clock/256"]
     #[inline(always)]
-    pub fn mck_div_256(self) -> &'a mut W {
+    pub fn mck_div_256(self) -> &'a mut crate::W<REG> {
         self.variant(CPRE_A::MckDiv256)
     }
     #[doc = "Master clock/512"]
     #[inline(always)]
-    pub fn mck_div_512(self) -> &'a mut W {
+    pub fn mck_div_512(self) -> &'a mut crate::W<REG> {
         self.variant(CPRE_A::MckDiv512)
     }
     #[doc = "Master clock/1024"]
     #[inline(always)]
-    pub fn mck_div_1024(self) -> &'a mut W {
+    pub fn mck_div_1024(self) -> &'a mut crate::W<REG> {
         self.variant(CPRE_A::MckDiv1024)
     }
     #[doc = "Clock A"]
     #[inline(always)]
-    pub fn clka(self) -> &'a mut W {
+    pub fn clka(self) -> &'a mut crate::W<REG> {
         self.variant(CPRE_A::Clka)
     }
     #[doc = "Clock B"]
     #[inline(always)]
-    pub fn clkb(self) -> &'a mut W {
+    pub fn clkb(self) -> &'a mut crate::W<REG> {
         self.variant(CPRE_A::Clkb)
     }
 }
 #[doc = "Field `CALG` reader - Channel Alignment"]
-pub type CALG_R = crate::BitReader<bool>;
+pub type CALG_R = crate::BitReader;
 #[doc = "Field `CALG` writer - Channel Alignment"]
-pub type CALG_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMR6_SPEC, bool, O>;
+pub type CALG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CPOL` reader - Channel Polarity"]
-pub type CPOL_R = crate::BitReader<bool>;
+pub type CPOL_R = crate::BitReader;
 #[doc = "Field `CPOL` writer - Channel Polarity"]
-pub type CPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMR6_SPEC, bool, O>;
+pub type CPOL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CES` reader - Counter Event Selection"]
-pub type CES_R = crate::BitReader<bool>;
+pub type CES_R = crate::BitReader;
 #[doc = "Field `CES` writer - Counter Event Selection"]
-pub type CES_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMR6_SPEC, bool, O>;
+pub type CES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DTE` reader - Dead-Time Generator Enable"]
-pub type DTE_R = crate::BitReader<bool>;
+pub type DTE_R = crate::BitReader;
 #[doc = "Field `DTE` writer - Dead-Time Generator Enable"]
-pub type DTE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMR6_SPEC, bool, O>;
+pub type DTE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DTHI` reader - Dead-Time PWMHx Output Inverted"]
-pub type DTHI_R = crate::BitReader<bool>;
+pub type DTHI_R = crate::BitReader;
 #[doc = "Field `DTHI` writer - Dead-Time PWMHx Output Inverted"]
-pub type DTHI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMR6_SPEC, bool, O>;
+pub type DTHI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DTLI` reader - Dead-Time PWMLx Output Inverted"]
-pub type DTLI_R = crate::BitReader<bool>;
+pub type DTLI_R = crate::BitReader;
 #[doc = "Field `DTLI` writer - Dead-Time PWMLx Output Inverted"]
-pub type DTLI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMR6_SPEC, bool, O>;
+pub type DTLI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bits 0:3 - Channel Pre-scaler"]
     #[inline(always)]
@@ -264,64 +269,61 @@ impl W {
     #[doc = "Bits 0:3 - Channel Pre-scaler"]
     #[inline(always)]
     #[must_use]
-    pub fn cpre(&mut self) -> CPRE_W<0> {
+    pub fn cpre(&mut self) -> CPRE_W<CMR6_SPEC, 0> {
         CPRE_W::new(self)
     }
     #[doc = "Bit 8 - Channel Alignment"]
     #[inline(always)]
     #[must_use]
-    pub fn calg(&mut self) -> CALG_W<8> {
+    pub fn calg(&mut self) -> CALG_W<CMR6_SPEC, 8> {
         CALG_W::new(self)
     }
     #[doc = "Bit 9 - Channel Polarity"]
     #[inline(always)]
     #[must_use]
-    pub fn cpol(&mut self) -> CPOL_W<9> {
+    pub fn cpol(&mut self) -> CPOL_W<CMR6_SPEC, 9> {
         CPOL_W::new(self)
     }
     #[doc = "Bit 10 - Counter Event Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ces(&mut self) -> CES_W<10> {
+    pub fn ces(&mut self) -> CES_W<CMR6_SPEC, 10> {
         CES_W::new(self)
     }
     #[doc = "Bit 16 - Dead-Time Generator Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dte(&mut self) -> DTE_W<16> {
+    pub fn dte(&mut self) -> DTE_W<CMR6_SPEC, 16> {
         DTE_W::new(self)
     }
     #[doc = "Bit 17 - Dead-Time PWMHx Output Inverted"]
     #[inline(always)]
     #[must_use]
-    pub fn dthi(&mut self) -> DTHI_W<17> {
+    pub fn dthi(&mut self) -> DTHI_W<CMR6_SPEC, 17> {
         DTHI_W::new(self)
     }
     #[doc = "Bit 18 - Dead-Time PWMLx Output Inverted"]
     #[inline(always)]
     #[must_use]
-    pub fn dtli(&mut self) -> DTLI_W<18> {
+    pub fn dtli(&mut self) -> DTLI_W<CMR6_SPEC, 18> {
         DTLI_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PWM Channel Mode Register (ch_num = 6)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmr6](index.html) module"]
+#[doc = "PWM Channel Mode Register (ch_num = 6)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cmr6::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmr6::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CMR6_SPEC;
 impl crate::RegisterSpec for CMR6_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cmr6::R](R) reader structure"]
-impl crate::Readable for CMR6_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cmr6::W](W) writer structure"]
+#[doc = "`read()` method returns [`cmr6::R`](R) reader structure"]
+impl crate::Readable for CMR6_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`cmr6::W`](W) writer structure"]
 impl crate::Writable for CMR6_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,19 +1,17 @@
 #[doc = "Register `MODE2` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<MODE2_SPEC>);
+pub type R = crate::R<MODE2_SPEC>;
 #[doc = "Register `MODE2` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<MODE2_SPEC>);
+pub type W = crate::W<MODE2_SPEC>;
 #[doc = "Field `READ_MODE` reader - "]
-pub type READ_MODE_R = crate::BitReader<bool>;
+pub type READ_MODE_R = crate::BitReader;
 #[doc = "Field `READ_MODE` writer - "]
-pub type READ_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE2_SPEC, bool, O>;
+pub type READ_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `WRITE_MODE` reader - "]
-pub type WRITE_MODE_R = crate::BitReader<bool>;
+pub type WRITE_MODE_R = crate::BitReader;
 #[doc = "Field `WRITE_MODE` writer - "]
-pub type WRITE_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE2_SPEC, bool, O>;
+pub type WRITE_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `EXNW_MODE` reader - NWAIT Mode"]
-pub type EXNW_MODE_R = crate::FieldReader<u8, EXNW_MODE_A>;
+pub type EXNW_MODE_R = crate::FieldReader<EXNW_MODE_A>;
 #[doc = "NWAIT Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -31,6 +29,9 @@ impl From<EXNW_MODE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for EXNW_MODE_A {
+    type Ux = u8;
+}
 impl EXNW_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -42,56 +43,59 @@ impl EXNW_MODE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
         *self == EXNW_MODE_A::Disabled
     }
-    #[doc = "Checks if the value of the field is `Frozen`"]
+    #[doc = "Frozen Mode"]
     #[inline(always)]
     pub fn is_frozen(&self) -> bool {
         *self == EXNW_MODE_A::Frozen
     }
-    #[doc = "Checks if the value of the field is `Ready`"]
+    #[doc = "Ready Mode"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
         *self == EXNW_MODE_A::Ready
     }
 }
 #[doc = "Field `EXNW_MODE` writer - NWAIT Mode"]
-pub type EXNW_MODE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, MODE2_SPEC, u8, EXNW_MODE_A, 2, O>;
-impl<'a, const O: u8> EXNW_MODE_W<'a, O> {
+pub type EXNW_MODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, EXNW_MODE_A>;
+impl<'a, REG, const O: u8> EXNW_MODE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
         self.variant(EXNW_MODE_A::Disabled)
     }
     #[doc = "Frozen Mode"]
     #[inline(always)]
-    pub fn frozen(self) -> &'a mut W {
+    pub fn frozen(self) -> &'a mut crate::W<REG> {
         self.variant(EXNW_MODE_A::Frozen)
     }
     #[doc = "Ready Mode"]
     #[inline(always)]
-    pub fn ready(self) -> &'a mut W {
+    pub fn ready(self) -> &'a mut crate::W<REG> {
         self.variant(EXNW_MODE_A::Ready)
     }
 }
 #[doc = "Field `TDF_CYCLES` reader - Data Float Time"]
-pub type TDF_CYCLES_R = crate::FieldReader<u8, u8>;
+pub type TDF_CYCLES_R = crate::FieldReader;
 #[doc = "Field `TDF_CYCLES` writer - Data Float Time"]
-pub type TDF_CYCLES_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODE2_SPEC, u8, u8, 4, O>;
+pub type TDF_CYCLES_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `TDF_MODE` reader - TDF Optimization"]
-pub type TDF_MODE_R = crate::BitReader<bool>;
+pub type TDF_MODE_R = crate::BitReader;
 #[doc = "Field `TDF_MODE` writer - TDF Optimization"]
-pub type TDF_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE2_SPEC, bool, O>;
+pub type TDF_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `PMEN` reader - Page Mode Enabled"]
-pub type PMEN_R = crate::BitReader<bool>;
+pub type PMEN_R = crate::BitReader;
 #[doc = "Field `PMEN` writer - Page Mode Enabled"]
-pub type PMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE2_SPEC, bool, O>;
+pub type PMEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `PS` reader - Page Size"]
-pub type PS_R = crate::FieldReader<u8, PS_A>;
+pub type PS_R = crate::FieldReader<PS_A>;
 #[doc = "Page Size\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -111,6 +115,9 @@ impl From<PS_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for PS_A {
+    type Ux = u8;
+}
 impl PS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -123,48 +130,52 @@ impl PS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_4Byte`"]
+    #[doc = "4-byte page"]
     #[inline(always)]
     pub fn is_4_byte(&self) -> bool {
         *self == PS_A::_4Byte
     }
-    #[doc = "Checks if the value of the field is `_8Byte`"]
+    #[doc = "8-byte page"]
     #[inline(always)]
     pub fn is_8_byte(&self) -> bool {
         *self == PS_A::_8Byte
     }
-    #[doc = "Checks if the value of the field is `_16Byte`"]
+    #[doc = "16-byte page"]
     #[inline(always)]
     pub fn is_16_byte(&self) -> bool {
         *self == PS_A::_16Byte
     }
-    #[doc = "Checks if the value of the field is `_32Byte`"]
+    #[doc = "32-byte page"]
     #[inline(always)]
     pub fn is_32_byte(&self) -> bool {
         *self == PS_A::_32Byte
     }
 }
 #[doc = "Field `PS` writer - Page Size"]
-pub type PS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, MODE2_SPEC, u8, PS_A, 2, O>;
-impl<'a, const O: u8> PS_W<'a, O> {
+pub type PS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PS_A>;
+impl<'a, REG, const O: u8> PS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "4-byte page"]
     #[inline(always)]
-    pub fn _4_byte(self) -> &'a mut W {
+    pub fn _4_byte(self) -> &'a mut crate::W<REG> {
         self.variant(PS_A::_4Byte)
     }
     #[doc = "8-byte page"]
     #[inline(always)]
-    pub fn _8_byte(self) -> &'a mut W {
+    pub fn _8_byte(self) -> &'a mut crate::W<REG> {
         self.variant(PS_A::_8Byte)
     }
     #[doc = "16-byte page"]
     #[inline(always)]
-    pub fn _16_byte(self) -> &'a mut W {
+    pub fn _16_byte(self) -> &'a mut crate::W<REG> {
         self.variant(PS_A::_16Byte)
     }
     #[doc = "32-byte page"]
     #[inline(always)]
-    pub fn _32_byte(self) -> &'a mut W {
+    pub fn _32_byte(self) -> &'a mut crate::W<REG> {
         self.variant(PS_A::_32Byte)
     }
 }
@@ -209,64 +220,61 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn read_mode(&mut self) -> READ_MODE_W<0> {
+    pub fn read_mode(&mut self) -> READ_MODE_W<MODE2_SPEC, 0> {
         READ_MODE_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn write_mode(&mut self) -> WRITE_MODE_W<1> {
+    pub fn write_mode(&mut self) -> WRITE_MODE_W<MODE2_SPEC, 1> {
         WRITE_MODE_W::new(self)
     }
     #[doc = "Bits 4:5 - NWAIT Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn exnw_mode(&mut self) -> EXNW_MODE_W<4> {
+    pub fn exnw_mode(&mut self) -> EXNW_MODE_W<MODE2_SPEC, 4> {
         EXNW_MODE_W::new(self)
     }
     #[doc = "Bits 16:19 - Data Float Time"]
     #[inline(always)]
     #[must_use]
-    pub fn tdf_cycles(&mut self) -> TDF_CYCLES_W<16> {
+    pub fn tdf_cycles(&mut self) -> TDF_CYCLES_W<MODE2_SPEC, 16> {
         TDF_CYCLES_W::new(self)
     }
     #[doc = "Bit 20 - TDF Optimization"]
     #[inline(always)]
     #[must_use]
-    pub fn tdf_mode(&mut self) -> TDF_MODE_W<20> {
+    pub fn tdf_mode(&mut self) -> TDF_MODE_W<MODE2_SPEC, 20> {
         TDF_MODE_W::new(self)
     }
     #[doc = "Bit 24 - Page Mode Enabled"]
     #[inline(always)]
     #[must_use]
-    pub fn pmen(&mut self) -> PMEN_W<24> {
+    pub fn pmen(&mut self) -> PMEN_W<MODE2_SPEC, 24> {
         PMEN_W::new(self)
     }
     #[doc = "Bits 28:29 - Page Size"]
     #[inline(always)]
     #[must_use]
-    pub fn ps(&mut self) -> PS_W<28> {
+    pub fn ps(&mut self) -> PS_W<MODE2_SPEC, 28> {
         PS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "SMC Mode Register (CS_number = 2)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mode2](index.html) module"]
+#[doc = "SMC Mode Register (CS_number = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mode2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mode2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MODE2_SPEC;
 impl crate::RegisterSpec for MODE2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mode2::R](R) reader structure"]
-impl crate::Readable for MODE2_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mode2::W](W) writer structure"]
+#[doc = "`read()` method returns [`mode2::R`](R) reader structure"]
+impl crate::Readable for MODE2_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mode2::W`](W) writer structure"]
 impl crate::Writable for MODE2_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,12 +1,11 @@
 #[doc = "Register `FSR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<FSR_SPEC>);
+pub type R = crate::R<FSR_SPEC>;
 #[doc = "Field `FRDY` reader - Flash Ready Status"]
-pub type FRDY_R = crate::BitReader<bool>;
+pub type FRDY_R = crate::BitReader;
 #[doc = "Field `FCMDE` reader - Flash Command Error Status"]
-pub type FCMDE_R = crate::BitReader<bool>;
+pub type FCMDE_R = crate::BitReader;
 #[doc = "Field `FLOCKE` reader - Flash Lock Error Status"]
-pub type FLOCKE_R = crate::BitReader<bool>;
+pub type FLOCKE_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Flash Ready Status"]
     #[inline(always)]
@@ -24,15 +23,13 @@ impl R {
         FLOCKE_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
-#[doc = "EEFC Flash Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fsr](index.html) module"]
+#[doc = "EEFC Flash Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FSR_SPEC;
 impl crate::RegisterSpec for FSR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [fsr::R](R) reader structure"]
-impl crate::Readable for FSR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`fsr::R`](R) reader structure"]
+impl crate::Readable for FSR_SPEC {}
 #[doc = "`reset()` method sets FSR to value 0x01"]
 impl crate::Resettable for FSR_SPEC {
     const RESET_VALUE: Self::Ux = 0x01;

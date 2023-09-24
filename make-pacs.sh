@@ -3,40 +3,55 @@
 # Ensure svd2rust is installed
 if ! command -v svd2rust &> /dev/null
 then
-    echo "svd2rust must be installed. Make sure it's installed and $HOME/.cargo/bin is in your \$PATH."
+    echo "svd2rust must be installed. Make sure it's installed and \$HOME/.cargo/bin is in your \$PATH."
     return
 fi
 
 # Ensure form is installed
 if ! command -v form &> /dev/null
 then
-    echo "form must be installed. Make sure it's installed and $HOME/.cargo/bin is in your \$PATH."
+    echo "form must be installed. Make sure it's installed and \$HOME/.cargo/bin is in your \$PATH."
+    return
+fi
+
+# Ensure xsltproc is installed
+if ! command -v xsltproc &> /dev/null
+then
+    echo "xsltproc must be installed."
+    return
+fi
+
+# Ensure sd is installed
+if ! command -v sd &> /dev/null
+then
+    echo "sd must be installed. Make sure it's installed and \$HOME/.cargo/bin is in your \$PATH."
     return
 fi
 
 function build_pac() {
-    chip_upper=$(basename "${1}" ".svd")
-    chip_lower=$(echo "${chip_upper}" | tr '[:upper:]' '[:lower:]')
-    xsl=svd/patches/${chip_lower}.xsl
-    pac_dir=pac/${chip_lower}
+    chip_upper="$(basename "${1}" ".svd")"
+    chip_lower="$(echo "${chip_upper}" | tr '[:upper:]' '[:lower:]')"
+    xsl="svd/patches/${chip_lower}.xsl"
+    pac_dir="pac/${chip_lower}"
 
-    mkdir -p ${pac_dir}
+    mkdir -p "${pac_dir}"
 
-    xsltproc ${xsl} ${1} \
+    xsltproc "${xsl}" "${1}" \
         | svd2rust \
             --const_generic \
             --target cortex-m \
             --strict \
             --pascal_enum_values \
-            --derive_more \
-            --output-dir ${pac_dir}
-    form -i ${pac_dir}/lib.rs -o ${pac_dir}/src/
-    rm ${pac_dir}/lib.rs
+            --output-dir "${pac_dir}"
+    form -i "${pac_dir}/lib.rs" -o "${pac_dir}/src/"
+    rm "${pac_dir}/lib.rs"
 
-    pushd ${pac_dir}
+    pushd "${pac_dir}"
     cargo +nightly fmt
     rustfmt +nightly build.rs
-    
+    # Not entirely sure why this `deny` is still present.
+    sd '#!\[deny\(private_in_public\)\]' '' src/lib.rs
+
     popd
 }
 

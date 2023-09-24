@@ -1,8 +1,7 @@
 #[doc = "Register `FSM` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<FSM_SPEC>);
+pub type R = crate::R<FSM_SPEC>;
 #[doc = "Field `DRDSTATE` reader - Dual Role Device State"]
-pub type DRDSTATE_R = crate::FieldReader<u8, DRDSTATE_A>;
+pub type DRDSTATE_R = crate::FieldReader<DRDSTATE_A>;
 #[doc = "Dual Role Device State\n\nValue on reset: 9"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -46,6 +45,9 @@ impl From<DRDSTATE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for DRDSTATE_A {
+    type Ux = u8;
+}
 impl DRDSTATE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -70,82 +72,82 @@ impl DRDSTATE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `AIdlestate`"]
+    #[doc = "This is the start state for A-devices (when the ID pin is 0)"]
     #[inline(always)]
     pub fn is_a_idlestate(&self) -> bool {
         *self == DRDSTATE_A::AIdlestate
     }
-    #[doc = "Checks if the value of the field is `AWaitVrise`"]
+    #[doc = "In this state, the A-device waits for the voltage on VBus to rise above the A-device VBus Valid threshold (4.4 V)."]
     #[inline(always)]
     pub fn is_a_wait_vrise(&self) -> bool {
         *self == DRDSTATE_A::AWaitVrise
     }
-    #[doc = "Checks if the value of the field is `AWaitBcon`"]
+    #[doc = "In this state, the A-device waits for the B-device to signal a connection."]
     #[inline(always)]
     pub fn is_a_wait_bcon(&self) -> bool {
         *self == DRDSTATE_A::AWaitBcon
     }
-    #[doc = "Checks if the value of the field is `AHost`"]
+    #[doc = "In this state, the A-device that operates in Host mode is operational."]
     #[inline(always)]
     pub fn is_a_host(&self) -> bool {
         *self == DRDSTATE_A::AHost
     }
-    #[doc = "Checks if the value of the field is `ASuspend`"]
+    #[doc = "The A-device operating as a host is in the suspend mode."]
     #[inline(always)]
     pub fn is_a_suspend(&self) -> bool {
         *self == DRDSTATE_A::ASuspend
     }
-    #[doc = "Checks if the value of the field is `APeripheral`"]
+    #[doc = "The A-device operates as a peripheral."]
     #[inline(always)]
     pub fn is_a_peripheral(&self) -> bool {
         *self == DRDSTATE_A::APeripheral
     }
-    #[doc = "Checks if the value of the field is `AWaitVfall`"]
+    #[doc = "In this state, the A-device waits for the voltage on VBus to drop below the A-device Session Valid threshold (1.4 V)."]
     #[inline(always)]
     pub fn is_a_wait_vfall(&self) -> bool {
         *self == DRDSTATE_A::AWaitVfall
     }
-    #[doc = "Checks if the value of the field is `AVbusErr`"]
+    #[doc = "In this state, the A-device waits for recovery of the over-current condition that caused it to enter this state."]
     #[inline(always)]
     pub fn is_a_vbus_err(&self) -> bool {
         *self == DRDSTATE_A::AVbusErr
     }
-    #[doc = "Checks if the value of the field is `AWaitDischarge`"]
+    #[doc = "In this state, the A-device waits for the data USB line to discharge (100 us)."]
     #[inline(always)]
     pub fn is_a_wait_discharge(&self) -> bool {
         *self == DRDSTATE_A::AWaitDischarge
     }
-    #[doc = "Checks if the value of the field is `BIdle`"]
+    #[doc = "This is the start state for B-device (when the ID pin is 1)."]
     #[inline(always)]
     pub fn is_b_idle(&self) -> bool {
         *self == DRDSTATE_A::BIdle
     }
-    #[doc = "Checks if the value of the field is `BPeripheral`"]
+    #[doc = "In this state, the B-device acts as the peripheral."]
     #[inline(always)]
     pub fn is_b_peripheral(&self) -> bool {
         *self == DRDSTATE_A::BPeripheral
     }
-    #[doc = "Checks if the value of the field is `BWaitBeginHnp`"]
+    #[doc = "In this state, the B-device is in suspend mode and waits until 3 ms before initiating the HNP protocol if requested."]
     #[inline(always)]
     pub fn is_b_wait_begin_hnp(&self) -> bool {
         *self == DRDSTATE_A::BWaitBeginHnp
     }
-    #[doc = "Checks if the value of the field is `BWaitDischarge`"]
+    #[doc = "In this state, the B-device waits for the data USB line to discharge (100 us) before becoming Host."]
     #[inline(always)]
     pub fn is_b_wait_discharge(&self) -> bool {
         *self == DRDSTATE_A::BWaitDischarge
     }
-    #[doc = "Checks if the value of the field is `BWaitAcon`"]
+    #[doc = "In this state, the B-device waits for the A-device to signal a connect before becoming B-Host."]
     #[inline(always)]
     pub fn is_b_wait_acon(&self) -> bool {
         *self == DRDSTATE_A::BWaitAcon
     }
-    #[doc = "Checks if the value of the field is `BHost`"]
+    #[doc = "In this state, the B-device acts as the Host."]
     #[inline(always)]
     pub fn is_b_host(&self) -> bool {
         *self == DRDSTATE_A::BHost
     }
-    #[doc = "Checks if the value of the field is `BSrpInit`"]
+    #[doc = "In this state, the B-device attempts to start a session using the SRP protocol."]
     #[inline(always)]
     pub fn is_b_srp_init(&self) -> bool {
         *self == DRDSTATE_A::BSrpInit
@@ -158,15 +160,13 @@ impl R {
         DRDSTATE_R::new((self.bits & 0x0f) as u8)
     }
 }
-#[doc = "General Finite State Machine Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fsm](index.html) module"]
+#[doc = "General Finite State Machine Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fsm::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FSM_SPEC;
 impl crate::RegisterSpec for FSM_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [fsm::R](R) reader structure"]
-impl crate::Readable for FSM_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`fsm::R`](R) reader structure"]
+impl crate::Readable for FSM_SPEC {}
 #[doc = "`reset()` method sets FSM to value 0x09"]
 impl crate::Resettable for FSM_SPEC {
     const RESET_VALUE: Self::Ux = 0x09;

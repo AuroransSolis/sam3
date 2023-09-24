@@ -1,34 +1,33 @@
 #[doc = "Register `SR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<SR_SPEC>);
+pub type R = crate::R<SR_SPEC>;
 #[doc = "Field `TXRDY` reader - Transmit Ready"]
-pub type TXRDY_R = crate::BitReader<bool>;
+pub type TXRDY_R = crate::BitReader;
 #[doc = "Field `TXEMPTY` reader - Transmit Empty"]
-pub type TXEMPTY_R = crate::BitReader<bool>;
+pub type TXEMPTY_R = crate::BitReader;
 #[doc = "Field `ENDTX` reader - End of Transmission"]
-pub type ENDTX_R = crate::BitReader<bool>;
+pub type ENDTX_R = crate::BitReader;
 #[doc = "Field `TXBUFE` reader - Transmit Buffer Empty"]
-pub type TXBUFE_R = crate::BitReader<bool>;
+pub type TXBUFE_R = crate::BitReader;
 #[doc = "Field `RXRDY` reader - Receive Ready"]
-pub type RXRDY_R = crate::BitReader<bool>;
+pub type RXRDY_R = crate::BitReader;
 #[doc = "Field `OVRUN` reader - Receive Overrun"]
-pub type OVRUN_R = crate::BitReader<bool>;
+pub type OVRUN_R = crate::BitReader;
 #[doc = "Field `ENDRX` reader - End of Reception"]
-pub type ENDRX_R = crate::BitReader<bool>;
+pub type ENDRX_R = crate::BitReader;
 #[doc = "Field `RXBUFF` reader - Receive Buffer Full"]
-pub type RXBUFF_R = crate::BitReader<bool>;
+pub type RXBUFF_R = crate::BitReader;
 #[doc = "Field `CP0` reader - Compare 0"]
-pub type CP0_R = crate::BitReader<bool>;
+pub type CP0_R = crate::BitReader;
 #[doc = "Field `CP1` reader - Compare 1"]
-pub type CP1_R = crate::BitReader<bool>;
+pub type CP1_R = crate::BitReader;
 #[doc = "Field `TXSYN` reader - Transmit Sync"]
-pub type TXSYN_R = crate::BitReader<bool>;
+pub type TXSYN_R = crate::BitReader;
 #[doc = "Field `RXSYN` reader - Receive Sync"]
-pub type RXSYN_R = crate::BitReader<bool>;
+pub type RXSYN_R = crate::BitReader;
 #[doc = "Field `TXEN` reader - Transmit Enable"]
-pub type TXEN_R = crate::BitReader<bool>;
+pub type TXEN_R = crate::BitReader;
 #[doc = "Field `RXEN` reader - Receive Enable"]
-pub type RXEN_R = crate::BitReader<bool>;
+pub type RXEN_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Transmit Ready"]
     #[inline(always)]
@@ -101,15 +100,13 @@ impl R {
         RXEN_R::new(((self.bits >> 17) & 1) != 0)
     }
 }
-#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]
+#[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SR_SPEC;
 impl crate::RegisterSpec for SR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sr::R](R) reader structure"]
-impl crate::Readable for SR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`sr::R`](R) reader structure"]
+impl crate::Readable for SR_SPEC {}
 #[doc = "`reset()` method sets SR to value 0xcc"]
 impl crate::Resettable for SR_SPEC {
     const RESET_VALUE: Self::Ux = 0xcc;

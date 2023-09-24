@@ -1,12 +1,11 @@
 #[doc = "Register `FNUM` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<FNUM_SPEC>);
+pub type R = crate::R<FNUM_SPEC>;
 #[doc = "Field `MICRO_FRAME_NUM` reader - Microframe Number"]
-pub type MICRO_FRAME_NUM_R = crate::FieldReader<u8, u8>;
+pub type MICRO_FRAME_NUM_R = crate::FieldReader;
 #[doc = "Field `FRAME_NUMBER` reader - Frame Number as defined in the Packet Field Formats"]
-pub type FRAME_NUMBER_R = crate::FieldReader<u16, u16>;
+pub type FRAME_NUMBER_R = crate::FieldReader<u16>;
 #[doc = "Field `FNUM_ERR` reader - Frame Number CRC Error"]
-pub type FNUM_ERR_R = crate::BitReader<bool>;
+pub type FNUM_ERR_R = crate::BitReader;
 impl R {
     #[doc = "Bits 0:2 - Microframe Number"]
     #[inline(always)]
@@ -24,15 +23,13 @@ impl R {
         FNUM_ERR_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "UDPHS Frame Number Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fnum](index.html) module"]
+#[doc = "UDPHS Frame Number Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fnum::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FNUM_SPEC;
 impl crate::RegisterSpec for FNUM_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [fnum::R](R) reader structure"]
-impl crate::Readable for FNUM_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`fnum::R`](R) reader structure"]
+impl crate::Readable for FNUM_SPEC {}
 #[doc = "`reset()` method sets FNUM to value 0"]
 impl crate::Resettable for FNUM_SPEC {
     const RESET_VALUE: Self::Ux = 0;

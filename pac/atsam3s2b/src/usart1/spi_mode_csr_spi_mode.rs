@@ -1,24 +1,23 @@
 #[doc = "Register `CSR_SPI_MODE` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<SPI_MODE_CSR_SPI_MODE_SPEC>);
+pub type R = crate::R<SPI_MODE_CSR_SPI_MODE_SPEC>;
 #[doc = "Field `RXRDY` reader - Receiver Ready"]
-pub type RXRDY_R = crate::BitReader<bool>;
+pub type RXRDY_R = crate::BitReader;
 #[doc = "Field `TXRDY` reader - Transmitter Ready"]
-pub type TXRDY_R = crate::BitReader<bool>;
+pub type TXRDY_R = crate::BitReader;
 #[doc = "Field `ENDRX` reader - "]
-pub type ENDRX_R = crate::BitReader<bool>;
+pub type ENDRX_R = crate::BitReader;
 #[doc = "Field `ENDTX` reader - "]
-pub type ENDTX_R = crate::BitReader<bool>;
+pub type ENDTX_R = crate::BitReader;
 #[doc = "Field `OVRE` reader - Overrun Error"]
-pub type OVRE_R = crate::BitReader<bool>;
+pub type OVRE_R = crate::BitReader;
 #[doc = "Field `TXEMPTY` reader - Transmitter Empty"]
-pub type TXEMPTY_R = crate::BitReader<bool>;
+pub type TXEMPTY_R = crate::BitReader;
 #[doc = "Field `UNRE` reader - Underrun Error"]
-pub type UNRE_R = crate::BitReader<bool>;
+pub type UNRE_R = crate::BitReader;
 #[doc = "Field `TXBUFE` reader - "]
-pub type TXBUFE_R = crate::BitReader<bool>;
+pub type TXBUFE_R = crate::BitReader;
 #[doc = "Field `RXBUFF` reader - "]
-pub type RXBUFF_R = crate::BitReader<bool>;
+pub type RXBUFF_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Receiver Ready"]
     #[inline(always)]
@@ -66,12 +65,10 @@ impl R {
         RXBUFF_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
-#[doc = "Channel Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spi_mode_csr_spi_mode](index.html) module"]
+#[doc = "Channel Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_mode_csr_spi_mode::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SPI_MODE_CSR_SPI_MODE_SPEC;
 impl crate::RegisterSpec for SPI_MODE_CSR_SPI_MODE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [spi_mode_csr_spi_mode::R](R) reader structure"]
-impl crate::Readable for SPI_MODE_CSR_SPI_MODE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`spi_mode_csr_spi_mode::R`](R) reader structure"]
+impl crate::Readable for SPI_MODE_CSR_SPI_MODE_SPEC {}

@@ -1,57 +1,55 @@
 #[doc = "Register `ISR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<ISR_SPEC>);
+pub type R = crate::R<ISR_SPEC>;
 #[doc = "Register `ISR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<ISR_SPEC>);
+pub type W = crate::W<ISR_SPEC>;
 #[doc = "Field `MFD` reader - Management Frame Done"]
-pub type MFD_R = crate::BitReader<bool>;
+pub type MFD_R = crate::BitReader;
 #[doc = "Field `MFD` writer - Management Frame Done"]
-pub type MFD_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, bool, O>;
+pub type MFD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RCOMP` reader - Receive Complete"]
-pub type RCOMP_R = crate::BitReader<bool>;
+pub type RCOMP_R = crate::BitReader;
 #[doc = "Field `RCOMP` writer - Receive Complete"]
-pub type RCOMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, bool, O>;
+pub type RCOMP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RXUBR` reader - Receive Used Bit Read"]
-pub type RXUBR_R = crate::BitReader<bool>;
+pub type RXUBR_R = crate::BitReader;
 #[doc = "Field `RXUBR` writer - Receive Used Bit Read"]
-pub type RXUBR_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, bool, O>;
+pub type RXUBR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TXUBR` reader - Transmit Used Bit Read"]
-pub type TXUBR_R = crate::BitReader<bool>;
+pub type TXUBR_R = crate::BitReader;
 #[doc = "Field `TXUBR` writer - Transmit Used Bit Read"]
-pub type TXUBR_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, bool, O>;
+pub type TXUBR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TUND` reader - Ethernet Transmit Buffer Underrun"]
-pub type TUND_R = crate::BitReader<bool>;
+pub type TUND_R = crate::BitReader;
 #[doc = "Field `TUND` writer - Ethernet Transmit Buffer Underrun"]
-pub type TUND_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, bool, O>;
+pub type TUND_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RLEX` reader - Retry Limit Exceeded"]
-pub type RLEX_R = crate::BitReader<bool>;
+pub type RLEX_R = crate::BitReader;
 #[doc = "Field `RLEX` writer - Retry Limit Exceeded"]
-pub type RLEX_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, bool, O>;
+pub type RLEX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TXERR` reader - Transmit Error"]
-pub type TXERR_R = crate::BitReader<bool>;
+pub type TXERR_R = crate::BitReader;
 #[doc = "Field `TXERR` writer - Transmit Error"]
-pub type TXERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, bool, O>;
+pub type TXERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TCOMP` reader - Transmit Complete"]
-pub type TCOMP_R = crate::BitReader<bool>;
+pub type TCOMP_R = crate::BitReader;
 #[doc = "Field `TCOMP` writer - Transmit Complete"]
-pub type TCOMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, bool, O>;
+pub type TCOMP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `ROVR` reader - Receive Overrun"]
-pub type ROVR_R = crate::BitReader<bool>;
+pub type ROVR_R = crate::BitReader;
 #[doc = "Field `ROVR` writer - Receive Overrun"]
-pub type ROVR_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, bool, O>;
+pub type ROVR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `HRESP` reader - Hresp not OK"]
-pub type HRESP_R = crate::BitReader<bool>;
+pub type HRESP_R = crate::BitReader;
 #[doc = "Field `HRESP` writer - Hresp not OK"]
-pub type HRESP_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, bool, O>;
+pub type HRESP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `PFRE` reader - Pause Frame Received"]
-pub type PFRE_R = crate::BitReader<bool>;
+pub type PFRE_R = crate::BitReader;
 #[doc = "Field `PFRE` writer - Pause Frame Received"]
-pub type PFRE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, bool, O>;
+pub type PFRE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `PTZ` reader - Pause Time Zero"]
-pub type PTZ_R = crate::BitReader<bool>;
+pub type PTZ_R = crate::BitReader;
 #[doc = "Field `PTZ` writer - Pause Time Zero"]
-pub type PTZ_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, bool, O>;
+pub type PTZ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - Management Frame Done"]
     #[inline(always)]
@@ -118,94 +116,91 @@ impl W {
     #[doc = "Bit 0 - Management Frame Done"]
     #[inline(always)]
     #[must_use]
-    pub fn mfd(&mut self) -> MFD_W<0> {
+    pub fn mfd(&mut self) -> MFD_W<ISR_SPEC, 0> {
         MFD_W::new(self)
     }
     #[doc = "Bit 1 - Receive Complete"]
     #[inline(always)]
     #[must_use]
-    pub fn rcomp(&mut self) -> RCOMP_W<1> {
+    pub fn rcomp(&mut self) -> RCOMP_W<ISR_SPEC, 1> {
         RCOMP_W::new(self)
     }
     #[doc = "Bit 2 - Receive Used Bit Read"]
     #[inline(always)]
     #[must_use]
-    pub fn rxubr(&mut self) -> RXUBR_W<2> {
+    pub fn rxubr(&mut self) -> RXUBR_W<ISR_SPEC, 2> {
         RXUBR_W::new(self)
     }
     #[doc = "Bit 3 - Transmit Used Bit Read"]
     #[inline(always)]
     #[must_use]
-    pub fn txubr(&mut self) -> TXUBR_W<3> {
+    pub fn txubr(&mut self) -> TXUBR_W<ISR_SPEC, 3> {
         TXUBR_W::new(self)
     }
     #[doc = "Bit 4 - Ethernet Transmit Buffer Underrun"]
     #[inline(always)]
     #[must_use]
-    pub fn tund(&mut self) -> TUND_W<4> {
+    pub fn tund(&mut self) -> TUND_W<ISR_SPEC, 4> {
         TUND_W::new(self)
     }
     #[doc = "Bit 5 - Retry Limit Exceeded"]
     #[inline(always)]
     #[must_use]
-    pub fn rlex(&mut self) -> RLEX_W<5> {
+    pub fn rlex(&mut self) -> RLEX_W<ISR_SPEC, 5> {
         RLEX_W::new(self)
     }
     #[doc = "Bit 6 - Transmit Error"]
     #[inline(always)]
     #[must_use]
-    pub fn txerr(&mut self) -> TXERR_W<6> {
+    pub fn txerr(&mut self) -> TXERR_W<ISR_SPEC, 6> {
         TXERR_W::new(self)
     }
     #[doc = "Bit 7 - Transmit Complete"]
     #[inline(always)]
     #[must_use]
-    pub fn tcomp(&mut self) -> TCOMP_W<7> {
+    pub fn tcomp(&mut self) -> TCOMP_W<ISR_SPEC, 7> {
         TCOMP_W::new(self)
     }
     #[doc = "Bit 10 - Receive Overrun"]
     #[inline(always)]
     #[must_use]
-    pub fn rovr(&mut self) -> ROVR_W<10> {
+    pub fn rovr(&mut self) -> ROVR_W<ISR_SPEC, 10> {
         ROVR_W::new(self)
     }
     #[doc = "Bit 11 - Hresp not OK"]
     #[inline(always)]
     #[must_use]
-    pub fn hresp(&mut self) -> HRESP_W<11> {
+    pub fn hresp(&mut self) -> HRESP_W<ISR_SPEC, 11> {
         HRESP_W::new(self)
     }
     #[doc = "Bit 12 - Pause Frame Received"]
     #[inline(always)]
     #[must_use]
-    pub fn pfre(&mut self) -> PFRE_W<12> {
+    pub fn pfre(&mut self) -> PFRE_W<ISR_SPEC, 12> {
         PFRE_W::new(self)
     }
     #[doc = "Bit 13 - Pause Time Zero"]
     #[inline(always)]
     #[must_use]
-    pub fn ptz(&mut self) -> PTZ_W<13> {
+    pub fn ptz(&mut self) -> PTZ_W<ISR_SPEC, 13> {
         PTZ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [isr](index.html) module"]
+#[doc = "Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`isr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`isr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ISR_SPEC;
 impl crate::RegisterSpec for ISR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [isr::R](R) reader structure"]
-impl crate::Readable for ISR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [isr::W](W) writer structure"]
+#[doc = "`read()` method returns [`isr::R`](R) reader structure"]
+impl crate::Readable for ISR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`isr::W`](W) writer structure"]
 impl crate::Writable for ISR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

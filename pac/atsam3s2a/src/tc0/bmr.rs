@@ -1,11 +1,9 @@
 #[doc = "Register `BMR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<BMR_SPEC>);
+pub type R = crate::R<BMR_SPEC>;
 #[doc = "Register `BMR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<BMR_SPEC>);
+pub type W = crate::W<BMR_SPEC>;
 #[doc = "Field `TC0XC0S` reader - External Clock Signal 0 Selection"]
-pub type TC0XC0S_R = crate::FieldReader<u8, TC0XC0S_A>;
+pub type TC0XC0S_R = crate::FieldReader<TC0XC0S_A>;
 #[doc = "External Clock Signal 0 Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -23,6 +21,9 @@ impl From<TC0XC0S_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for TC0XC0S_A {
+    type Ux = u8;
+}
 impl TC0XC0S_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -34,43 +35,47 @@ impl TC0XC0S_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Tclk0`"]
+    #[doc = "Signal connected to XC0: TCLK0"]
     #[inline(always)]
     pub fn is_tclk0(&self) -> bool {
         *self == TC0XC0S_A::Tclk0
     }
-    #[doc = "Checks if the value of the field is `Tioa1`"]
+    #[doc = "Signal connected to XC0: TIOA1"]
     #[inline(always)]
     pub fn is_tioa1(&self) -> bool {
         *self == TC0XC0S_A::Tioa1
     }
-    #[doc = "Checks if the value of the field is `Tioa2`"]
+    #[doc = "Signal connected to XC0: TIOA2"]
     #[inline(always)]
     pub fn is_tioa2(&self) -> bool {
         *self == TC0XC0S_A::Tioa2
     }
 }
 #[doc = "Field `TC0XC0S` writer - External Clock Signal 0 Selection"]
-pub type TC0XC0S_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BMR_SPEC, u8, TC0XC0S_A, 2, O>;
-impl<'a, const O: u8> TC0XC0S_W<'a, O> {
+pub type TC0XC0S_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, TC0XC0S_A>;
+impl<'a, REG, const O: u8> TC0XC0S_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Signal connected to XC0: TCLK0"]
     #[inline(always)]
-    pub fn tclk0(self) -> &'a mut W {
+    pub fn tclk0(self) -> &'a mut crate::W<REG> {
         self.variant(TC0XC0S_A::Tclk0)
     }
     #[doc = "Signal connected to XC0: TIOA1"]
     #[inline(always)]
-    pub fn tioa1(self) -> &'a mut W {
+    pub fn tioa1(self) -> &'a mut crate::W<REG> {
         self.variant(TC0XC0S_A::Tioa1)
     }
     #[doc = "Signal connected to XC0: TIOA2"]
     #[inline(always)]
-    pub fn tioa2(self) -> &'a mut W {
+    pub fn tioa2(self) -> &'a mut crate::W<REG> {
         self.variant(TC0XC0S_A::Tioa2)
     }
 }
 #[doc = "Field `TC1XC1S` reader - External Clock Signal 1 Selection"]
-pub type TC1XC1S_R = crate::FieldReader<u8, TC1XC1S_A>;
+pub type TC1XC1S_R = crate::FieldReader<TC1XC1S_A>;
 #[doc = "External Clock Signal 1 Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -88,6 +93,9 @@ impl From<TC1XC1S_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for TC1XC1S_A {
+    type Ux = u8;
+}
 impl TC1XC1S_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -99,43 +107,47 @@ impl TC1XC1S_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Tclk1`"]
+    #[doc = "Signal connected to XC1: TCLK1"]
     #[inline(always)]
     pub fn is_tclk1(&self) -> bool {
         *self == TC1XC1S_A::Tclk1
     }
-    #[doc = "Checks if the value of the field is `Tioa0`"]
+    #[doc = "Signal connected to XC1: TIOA0"]
     #[inline(always)]
     pub fn is_tioa0(&self) -> bool {
         *self == TC1XC1S_A::Tioa0
     }
-    #[doc = "Checks if the value of the field is `Tioa2`"]
+    #[doc = "Signal connected to XC1: TIOA2"]
     #[inline(always)]
     pub fn is_tioa2(&self) -> bool {
         *self == TC1XC1S_A::Tioa2
     }
 }
 #[doc = "Field `TC1XC1S` writer - External Clock Signal 1 Selection"]
-pub type TC1XC1S_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BMR_SPEC, u8, TC1XC1S_A, 2, O>;
-impl<'a, const O: u8> TC1XC1S_W<'a, O> {
+pub type TC1XC1S_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, TC1XC1S_A>;
+impl<'a, REG, const O: u8> TC1XC1S_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Signal connected to XC1: TCLK1"]
     #[inline(always)]
-    pub fn tclk1(self) -> &'a mut W {
+    pub fn tclk1(self) -> &'a mut crate::W<REG> {
         self.variant(TC1XC1S_A::Tclk1)
     }
     #[doc = "Signal connected to XC1: TIOA0"]
     #[inline(always)]
-    pub fn tioa0(self) -> &'a mut W {
+    pub fn tioa0(self) -> &'a mut crate::W<REG> {
         self.variant(TC1XC1S_A::Tioa0)
     }
     #[doc = "Signal connected to XC1: TIOA2"]
     #[inline(always)]
-    pub fn tioa2(self) -> &'a mut W {
+    pub fn tioa2(self) -> &'a mut crate::W<REG> {
         self.variant(TC1XC1S_A::Tioa2)
     }
 }
 #[doc = "Field `TC2XC2S` reader - External Clock Signal 2 Selection"]
-pub type TC2XC2S_R = crate::FieldReader<u8, TC2XC2S_A>;
+pub type TC2XC2S_R = crate::FieldReader<TC2XC2S_A>;
 #[doc = "External Clock Signal 2 Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -153,6 +165,9 @@ impl From<TC2XC2S_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for TC2XC2S_A {
+    type Ux = u8;
+}
 impl TC2XC2S_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -164,89 +179,93 @@ impl TC2XC2S_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Tclk2`"]
+    #[doc = "Signal connected to XC2: TCLK2"]
     #[inline(always)]
     pub fn is_tclk2(&self) -> bool {
         *self == TC2XC2S_A::Tclk2
     }
-    #[doc = "Checks if the value of the field is `Tioa1`"]
+    #[doc = "Signal connected to XC2: TIOA1"]
     #[inline(always)]
     pub fn is_tioa1(&self) -> bool {
         *self == TC2XC2S_A::Tioa1
     }
-    #[doc = "Checks if the value of the field is `Tioa2`"]
+    #[doc = "Signal connected to XC2: TIOA2"]
     #[inline(always)]
     pub fn is_tioa2(&self) -> bool {
         *self == TC2XC2S_A::Tioa2
     }
 }
 #[doc = "Field `TC2XC2S` writer - External Clock Signal 2 Selection"]
-pub type TC2XC2S_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BMR_SPEC, u8, TC2XC2S_A, 2, O>;
-impl<'a, const O: u8> TC2XC2S_W<'a, O> {
+pub type TC2XC2S_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, TC2XC2S_A>;
+impl<'a, REG, const O: u8> TC2XC2S_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Signal connected to XC2: TCLK2"]
     #[inline(always)]
-    pub fn tclk2(self) -> &'a mut W {
+    pub fn tclk2(self) -> &'a mut crate::W<REG> {
         self.variant(TC2XC2S_A::Tclk2)
     }
     #[doc = "Signal connected to XC2: TIOA1"]
     #[inline(always)]
-    pub fn tioa1(self) -> &'a mut W {
+    pub fn tioa1(self) -> &'a mut crate::W<REG> {
         self.variant(TC2XC2S_A::Tioa1)
     }
     #[doc = "Signal connected to XC2: TIOA2"]
     #[inline(always)]
-    pub fn tioa2(self) -> &'a mut W {
+    pub fn tioa2(self) -> &'a mut crate::W<REG> {
         self.variant(TC2XC2S_A::Tioa2)
     }
 }
 #[doc = "Field `QDEN` reader - Quadrature Decoder ENabled"]
-pub type QDEN_R = crate::BitReader<bool>;
+pub type QDEN_R = crate::BitReader;
 #[doc = "Field `QDEN` writer - Quadrature Decoder ENabled"]
-pub type QDEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, BMR_SPEC, bool, O>;
+pub type QDEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `POSEN` reader - POSition ENabled"]
-pub type POSEN_R = crate::BitReader<bool>;
+pub type POSEN_R = crate::BitReader;
 #[doc = "Field `POSEN` writer - POSition ENabled"]
-pub type POSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, BMR_SPEC, bool, O>;
+pub type POSEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `SPEEDEN` reader - SPEED ENabled"]
-pub type SPEEDEN_R = crate::BitReader<bool>;
+pub type SPEEDEN_R = crate::BitReader;
 #[doc = "Field `SPEEDEN` writer - SPEED ENabled"]
-pub type SPEEDEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, BMR_SPEC, bool, O>;
+pub type SPEEDEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `QDTRANS` reader - Quadrature Decoding TRANSparent"]
-pub type QDTRANS_R = crate::BitReader<bool>;
+pub type QDTRANS_R = crate::BitReader;
 #[doc = "Field `QDTRANS` writer - Quadrature Decoding TRANSparent"]
-pub type QDTRANS_W<'a, const O: u8> = crate::BitWriter<'a, u32, BMR_SPEC, bool, O>;
+pub type QDTRANS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `EDGPHA` reader - EDGe on PHA count mode"]
-pub type EDGPHA_R = crate::BitReader<bool>;
+pub type EDGPHA_R = crate::BitReader;
 #[doc = "Field `EDGPHA` writer - EDGe on PHA count mode"]
-pub type EDGPHA_W<'a, const O: u8> = crate::BitWriter<'a, u32, BMR_SPEC, bool, O>;
+pub type EDGPHA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `INVA` reader - INVerted phA"]
-pub type INVA_R = crate::BitReader<bool>;
+pub type INVA_R = crate::BitReader;
 #[doc = "Field `INVA` writer - INVerted phA"]
-pub type INVA_W<'a, const O: u8> = crate::BitWriter<'a, u32, BMR_SPEC, bool, O>;
+pub type INVA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `INVB` reader - INVerted phB"]
-pub type INVB_R = crate::BitReader<bool>;
+pub type INVB_R = crate::BitReader;
 #[doc = "Field `INVB` writer - INVerted phB"]
-pub type INVB_W<'a, const O: u8> = crate::BitWriter<'a, u32, BMR_SPEC, bool, O>;
+pub type INVB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `INVIDX` reader - INVerted InDeX"]
-pub type INVIDX_R = crate::BitReader<bool>;
+pub type INVIDX_R = crate::BitReader;
 #[doc = "Field `INVIDX` writer - INVerted InDeX"]
-pub type INVIDX_W<'a, const O: u8> = crate::BitWriter<'a, u32, BMR_SPEC, bool, O>;
+pub type INVIDX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `SWAP` reader - SWAP PHA and PHB"]
-pub type SWAP_R = crate::BitReader<bool>;
+pub type SWAP_R = crate::BitReader;
 #[doc = "Field `SWAP` writer - SWAP PHA and PHB"]
-pub type SWAP_W<'a, const O: u8> = crate::BitWriter<'a, u32, BMR_SPEC, bool, O>;
+pub type SWAP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `IDXPHB` reader - InDeX pin is PHB pin"]
-pub type IDXPHB_R = crate::BitReader<bool>;
+pub type IDXPHB_R = crate::BitReader;
 #[doc = "Field `IDXPHB` writer - InDeX pin is PHB pin"]
-pub type IDXPHB_W<'a, const O: u8> = crate::BitWriter<'a, u32, BMR_SPEC, bool, O>;
+pub type IDXPHB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FILTER` reader - "]
-pub type FILTER_R = crate::BitReader<bool>;
+pub type FILTER_R = crate::BitReader;
 #[doc = "Field `FILTER` writer - "]
-pub type FILTER_W<'a, const O: u8> = crate::BitWriter<'a, u32, BMR_SPEC, bool, O>;
+pub type FILTER_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `MAXFILT` reader - MAXimum FILTer"]
-pub type MAXFILT_R = crate::FieldReader<u8, u8>;
+pub type MAXFILT_R = crate::FieldReader;
 #[doc = "Field `MAXFILT` writer - MAXimum FILTer"]
-pub type MAXFILT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BMR_SPEC, u8, u8, 6, O>;
+pub type MAXFILT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
 impl R {
     #[doc = "Bits 0:1 - External Clock Signal 0 Selection"]
     #[inline(always)]
@@ -328,112 +347,109 @@ impl W {
     #[doc = "Bits 0:1 - External Clock Signal 0 Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn tc0xc0s(&mut self) -> TC0XC0S_W<0> {
+    pub fn tc0xc0s(&mut self) -> TC0XC0S_W<BMR_SPEC, 0> {
         TC0XC0S_W::new(self)
     }
     #[doc = "Bits 2:3 - External Clock Signal 1 Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn tc1xc1s(&mut self) -> TC1XC1S_W<2> {
+    pub fn tc1xc1s(&mut self) -> TC1XC1S_W<BMR_SPEC, 2> {
         TC1XC1S_W::new(self)
     }
     #[doc = "Bits 4:5 - External Clock Signal 2 Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn tc2xc2s(&mut self) -> TC2XC2S_W<4> {
+    pub fn tc2xc2s(&mut self) -> TC2XC2S_W<BMR_SPEC, 4> {
         TC2XC2S_W::new(self)
     }
     #[doc = "Bit 8 - Quadrature Decoder ENabled"]
     #[inline(always)]
     #[must_use]
-    pub fn qden(&mut self) -> QDEN_W<8> {
+    pub fn qden(&mut self) -> QDEN_W<BMR_SPEC, 8> {
         QDEN_W::new(self)
     }
     #[doc = "Bit 9 - POSition ENabled"]
     #[inline(always)]
     #[must_use]
-    pub fn posen(&mut self) -> POSEN_W<9> {
+    pub fn posen(&mut self) -> POSEN_W<BMR_SPEC, 9> {
         POSEN_W::new(self)
     }
     #[doc = "Bit 10 - SPEED ENabled"]
     #[inline(always)]
     #[must_use]
-    pub fn speeden(&mut self) -> SPEEDEN_W<10> {
+    pub fn speeden(&mut self) -> SPEEDEN_W<BMR_SPEC, 10> {
         SPEEDEN_W::new(self)
     }
     #[doc = "Bit 11 - Quadrature Decoding TRANSparent"]
     #[inline(always)]
     #[must_use]
-    pub fn qdtrans(&mut self) -> QDTRANS_W<11> {
+    pub fn qdtrans(&mut self) -> QDTRANS_W<BMR_SPEC, 11> {
         QDTRANS_W::new(self)
     }
     #[doc = "Bit 12 - EDGe on PHA count mode"]
     #[inline(always)]
     #[must_use]
-    pub fn edgpha(&mut self) -> EDGPHA_W<12> {
+    pub fn edgpha(&mut self) -> EDGPHA_W<BMR_SPEC, 12> {
         EDGPHA_W::new(self)
     }
     #[doc = "Bit 13 - INVerted phA"]
     #[inline(always)]
     #[must_use]
-    pub fn inva(&mut self) -> INVA_W<13> {
+    pub fn inva(&mut self) -> INVA_W<BMR_SPEC, 13> {
         INVA_W::new(self)
     }
     #[doc = "Bit 14 - INVerted phB"]
     #[inline(always)]
     #[must_use]
-    pub fn invb(&mut self) -> INVB_W<14> {
+    pub fn invb(&mut self) -> INVB_W<BMR_SPEC, 14> {
         INVB_W::new(self)
     }
     #[doc = "Bit 15 - INVerted InDeX"]
     #[inline(always)]
     #[must_use]
-    pub fn invidx(&mut self) -> INVIDX_W<15> {
+    pub fn invidx(&mut self) -> INVIDX_W<BMR_SPEC, 15> {
         INVIDX_W::new(self)
     }
     #[doc = "Bit 16 - SWAP PHA and PHB"]
     #[inline(always)]
     #[must_use]
-    pub fn swap(&mut self) -> SWAP_W<16> {
+    pub fn swap(&mut self) -> SWAP_W<BMR_SPEC, 16> {
         SWAP_W::new(self)
     }
     #[doc = "Bit 17 - InDeX pin is PHB pin"]
     #[inline(always)]
     #[must_use]
-    pub fn idxphb(&mut self) -> IDXPHB_W<17> {
+    pub fn idxphb(&mut self) -> IDXPHB_W<BMR_SPEC, 17> {
         IDXPHB_W::new(self)
     }
     #[doc = "Bit 19"]
     #[inline(always)]
     #[must_use]
-    pub fn filter(&mut self) -> FILTER_W<19> {
+    pub fn filter(&mut self) -> FILTER_W<BMR_SPEC, 19> {
         FILTER_W::new(self)
     }
     #[doc = "Bits 20:25 - MAXimum FILTer"]
     #[inline(always)]
     #[must_use]
-    pub fn maxfilt(&mut self) -> MAXFILT_W<20> {
+    pub fn maxfilt(&mut self) -> MAXFILT_W<BMR_SPEC, 20> {
         MAXFILT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Block Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bmr](index.html) module"]
+#[doc = "Block Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`bmr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`bmr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct BMR_SPEC;
 impl crate::RegisterSpec for BMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [bmr::R](R) reader structure"]
-impl crate::Readable for BMR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [bmr::W](W) writer structure"]
+#[doc = "`read()` method returns [`bmr::R`](R) reader structure"]
+impl crate::Readable for BMR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`bmr::W`](W) writer structure"]
 impl crate::Writable for BMR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

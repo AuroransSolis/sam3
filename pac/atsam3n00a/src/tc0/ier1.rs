@@ -1,86 +1,84 @@
 #[doc = "Register `IER1` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<IER1_SPEC>);
+pub type W = crate::W<IER1_SPEC>;
 #[doc = "Field `COVFS` writer - Counter Overflow"]
-pub type COVFS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+pub type COVFS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `LOVRS` writer - Load Overrun"]
-pub type LOVRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+pub type LOVRS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CPAS` writer - RA Compare"]
-pub type CPAS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+pub type CPAS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CPBS` writer - RB Compare"]
-pub type CPBS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+pub type CPBS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CPCS` writer - RC Compare"]
-pub type CPCS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+pub type CPCS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `LDRAS` writer - RA Loading"]
-pub type LDRAS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+pub type LDRAS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `LDRBS` writer - RB Loading"]
-pub type LDRBS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+pub type LDRBS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `ETRGS` writer - External Trigger"]
-pub type ETRGS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+pub type ETRGS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl W {
     #[doc = "Bit 0 - Counter Overflow"]
     #[inline(always)]
     #[must_use]
-    pub fn covfs(&mut self) -> COVFS_W<0> {
+    pub fn covfs(&mut self) -> COVFS_W<IER1_SPEC, 0> {
         COVFS_W::new(self)
     }
     #[doc = "Bit 1 - Load Overrun"]
     #[inline(always)]
     #[must_use]
-    pub fn lovrs(&mut self) -> LOVRS_W<1> {
+    pub fn lovrs(&mut self) -> LOVRS_W<IER1_SPEC, 1> {
         LOVRS_W::new(self)
     }
     #[doc = "Bit 2 - RA Compare"]
     #[inline(always)]
     #[must_use]
-    pub fn cpas(&mut self) -> CPAS_W<2> {
+    pub fn cpas(&mut self) -> CPAS_W<IER1_SPEC, 2> {
         CPAS_W::new(self)
     }
     #[doc = "Bit 3 - RB Compare"]
     #[inline(always)]
     #[must_use]
-    pub fn cpbs(&mut self) -> CPBS_W<3> {
+    pub fn cpbs(&mut self) -> CPBS_W<IER1_SPEC, 3> {
         CPBS_W::new(self)
     }
     #[doc = "Bit 4 - RC Compare"]
     #[inline(always)]
     #[must_use]
-    pub fn cpcs(&mut self) -> CPCS_W<4> {
+    pub fn cpcs(&mut self) -> CPCS_W<IER1_SPEC, 4> {
         CPCS_W::new(self)
     }
     #[doc = "Bit 5 - RA Loading"]
     #[inline(always)]
     #[must_use]
-    pub fn ldras(&mut self) -> LDRAS_W<5> {
+    pub fn ldras(&mut self) -> LDRAS_W<IER1_SPEC, 5> {
         LDRAS_W::new(self)
     }
     #[doc = "Bit 6 - RB Loading"]
     #[inline(always)]
     #[must_use]
-    pub fn ldrbs(&mut self) -> LDRBS_W<6> {
+    pub fn ldrbs(&mut self) -> LDRBS_W<IER1_SPEC, 6> {
         LDRBS_W::new(self)
     }
     #[doc = "Bit 7 - External Trigger"]
     #[inline(always)]
     #[must_use]
-    pub fn etrgs(&mut self) -> ETRGS_W<7> {
+    pub fn etrgs(&mut self) -> ETRGS_W<IER1_SPEC, 7> {
         ETRGS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Interrupt Enable Register (channel = 1)\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ier1](index.html) module"]
+#[doc = "Interrupt Enable Register (channel = 1)\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ier1::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IER1_SPEC;
 impl crate::RegisterSpec for IER1_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [ier1::W](W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [`ier1::W`](W) writer structure"]
 impl crate::Writable for IER1_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

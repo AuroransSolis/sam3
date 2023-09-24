@@ -1,10 +1,9 @@
 #[doc = "Register `SR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<SR_SPEC>);
+pub type R = crate::R<SR_SPEC>;
 #[doc = "Field `URSTS` reader - User Reset Status"]
-pub type URSTS_R = crate::BitReader<bool>;
+pub type URSTS_R = crate::BitReader;
 #[doc = "Field `RSTTYP` reader - Reset Type"]
-pub type RSTTYP_R = crate::FieldReader<u8, RSTTYP_A>;
+pub type RSTTYP_R = crate::FieldReader<RSTTYP_A>;
 #[doc = "Reset Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -26,6 +25,9 @@ impl From<RSTTYP_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for RSTTYP_A {
+    type Ux = u8;
+}
 impl RSTTYP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -39,36 +41,36 @@ impl RSTTYP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `GeneralReset`"]
+    #[doc = "First power-up Reset"]
     #[inline(always)]
     pub fn is_general_reset(&self) -> bool {
         *self == RSTTYP_A::GeneralReset
     }
-    #[doc = "Checks if the value of the field is `BackupReset`"]
+    #[doc = "Return from Backup Mode"]
     #[inline(always)]
     pub fn is_backup_reset(&self) -> bool {
         *self == RSTTYP_A::BackupReset
     }
-    #[doc = "Checks if the value of the field is `WatchdogReset`"]
+    #[doc = "Watchdog fault occurred"]
     #[inline(always)]
     pub fn is_watchdog_reset(&self) -> bool {
         *self == RSTTYP_A::WatchdogReset
     }
-    #[doc = "Checks if the value of the field is `SoftwareReset`"]
+    #[doc = "Processor reset required by the software"]
     #[inline(always)]
     pub fn is_software_reset(&self) -> bool {
         *self == RSTTYP_A::SoftwareReset
     }
-    #[doc = "Checks if the value of the field is `UserReset`"]
+    #[doc = "NRST pin detected low"]
     #[inline(always)]
     pub fn is_user_reset(&self) -> bool {
         *self == RSTTYP_A::UserReset
     }
 }
 #[doc = "Field `NRSTL` reader - NRST Pin Level"]
-pub type NRSTL_R = crate::BitReader<bool>;
+pub type NRSTL_R = crate::BitReader;
 #[doc = "Field `SRCMP` reader - Software Reset Command in Progress"]
-pub type SRCMP_R = crate::BitReader<bool>;
+pub type SRCMP_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - User Reset Status"]
     #[inline(always)]
@@ -91,15 +93,13 @@ impl R {
         SRCMP_R::new(((self.bits >> 17) & 1) != 0)
     }
 }
-#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]
+#[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SR_SPEC;
 impl crate::RegisterSpec for SR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sr::R](R) reader structure"]
-impl crate::Readable for SR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`sr::R`](R) reader structure"]
+impl crate::Readable for SR_SPEC {}
 #[doc = "`reset()` method sets SR to value 0"]
 impl crate::Resettable for SR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

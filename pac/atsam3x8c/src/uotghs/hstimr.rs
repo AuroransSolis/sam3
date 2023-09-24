@@ -1,52 +1,51 @@
 #[doc = "Register `HSTIMR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<HSTIMR_SPEC>);
+pub type R = crate::R<HSTIMR_SPEC>;
 #[doc = "Field `DCONNIE` reader - Device Connection Interrupt Enable"]
-pub type DCONNIE_R = crate::BitReader<bool>;
+pub type DCONNIE_R = crate::BitReader;
 #[doc = "Field `DDISCIE` reader - Device Disconnection Interrupt Enable"]
-pub type DDISCIE_R = crate::BitReader<bool>;
+pub type DDISCIE_R = crate::BitReader;
 #[doc = "Field `RSTIE` reader - USB Reset Sent Interrupt Enable"]
-pub type RSTIE_R = crate::BitReader<bool>;
+pub type RSTIE_R = crate::BitReader;
 #[doc = "Field `RSMEDIE` reader - Downstream Resume Sent Interrupt Enable"]
-pub type RSMEDIE_R = crate::BitReader<bool>;
+pub type RSMEDIE_R = crate::BitReader;
 #[doc = "Field `RXRSMIE` reader - Upstream Resume Received Interrupt Enable"]
-pub type RXRSMIE_R = crate::BitReader<bool>;
+pub type RXRSMIE_R = crate::BitReader;
 #[doc = "Field `HSOFIE` reader - Host Start of Frame Interrupt Enable"]
-pub type HSOFIE_R = crate::BitReader<bool>;
+pub type HSOFIE_R = crate::BitReader;
 #[doc = "Field `HWUPIE` reader - Host Wake-Up Interrupt Enable"]
-pub type HWUPIE_R = crate::BitReader<bool>;
+pub type HWUPIE_R = crate::BitReader;
 #[doc = "Field `PEP_0` reader - Pipe 0 Interrupt Enable"]
-pub type PEP_0_R = crate::BitReader<bool>;
+pub type PEP_0_R = crate::BitReader;
 #[doc = "Field `PEP_1` reader - Pipe 1 Interrupt Enable"]
-pub type PEP_1_R = crate::BitReader<bool>;
+pub type PEP_1_R = crate::BitReader;
 #[doc = "Field `PEP_2` reader - Pipe 2 Interrupt Enable"]
-pub type PEP_2_R = crate::BitReader<bool>;
+pub type PEP_2_R = crate::BitReader;
 #[doc = "Field `PEP_3` reader - Pipe 3 Interrupt Enable"]
-pub type PEP_3_R = crate::BitReader<bool>;
+pub type PEP_3_R = crate::BitReader;
 #[doc = "Field `PEP_4` reader - Pipe 4 Interrupt Enable"]
-pub type PEP_4_R = crate::BitReader<bool>;
+pub type PEP_4_R = crate::BitReader;
 #[doc = "Field `PEP_5` reader - Pipe 5 Interrupt Enable"]
-pub type PEP_5_R = crate::BitReader<bool>;
+pub type PEP_5_R = crate::BitReader;
 #[doc = "Field `PEP_6` reader - Pipe 6 Interrupt Enable"]
-pub type PEP_6_R = crate::BitReader<bool>;
+pub type PEP_6_R = crate::BitReader;
 #[doc = "Field `PEP_7` reader - Pipe 7 Interrupt Enable"]
-pub type PEP_7_R = crate::BitReader<bool>;
+pub type PEP_7_R = crate::BitReader;
 #[doc = "Field `PEP_8` reader - Pipe 8 Interrupt Enable"]
-pub type PEP_8_R = crate::BitReader<bool>;
+pub type PEP_8_R = crate::BitReader;
 #[doc = "Field `PEP_9` reader - Pipe 9 Interrupt Enable"]
-pub type PEP_9_R = crate::BitReader<bool>;
+pub type PEP_9_R = crate::BitReader;
 #[doc = "Field `DMA_1` reader - DMA Channel 1 Interrupt Enable"]
-pub type DMA_1_R = crate::BitReader<bool>;
+pub type DMA_1_R = crate::BitReader;
 #[doc = "Field `DMA_2` reader - DMA Channel 2 Interrupt Enable"]
-pub type DMA_2_R = crate::BitReader<bool>;
+pub type DMA_2_R = crate::BitReader;
 #[doc = "Field `DMA_3` reader - DMA Channel 3 Interrupt Enable"]
-pub type DMA_3_R = crate::BitReader<bool>;
+pub type DMA_3_R = crate::BitReader;
 #[doc = "Field `DMA_4` reader - DMA Channel 4 Interrupt Enable"]
-pub type DMA_4_R = crate::BitReader<bool>;
+pub type DMA_4_R = crate::BitReader;
 #[doc = "Field `DMA_5` reader - DMA Channel 5 Interrupt Enable"]
-pub type DMA_5_R = crate::BitReader<bool>;
+pub type DMA_5_R = crate::BitReader;
 #[doc = "Field `DMA_6` reader - DMA Channel 6 Interrupt Enable"]
-pub type DMA_6_R = crate::BitReader<bool>;
+pub type DMA_6_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Device Connection Interrupt Enable"]
     #[inline(always)]
@@ -164,15 +163,13 @@ impl R {
         DMA_6_R::new(((self.bits >> 30) & 1) != 0)
     }
 }
-#[doc = "Host Global Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hstimr](index.html) module"]
+#[doc = "Host Global Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hstimr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HSTIMR_SPEC;
 impl crate::RegisterSpec for HSTIMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hstimr::R](R) reader structure"]
-impl crate::Readable for HSTIMR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`hstimr::R`](R) reader structure"]
+impl crate::Readable for HSTIMR_SPEC {}
 #[doc = "`reset()` method sets HSTIMR to value 0"]
 impl crate::Resettable for HSTIMR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

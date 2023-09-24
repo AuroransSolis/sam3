@@ -1,11 +1,9 @@
 #[doc = "Register `MR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<MR_SPEC>);
+pub type R = crate::R<MR_SPEC>;
 #[doc = "Register `MR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<MR_SPEC>);
+pub type W = crate::W<MR_SPEC>;
 #[doc = "Field `SELMINUS` reader - SELection for MINUS comparator input"]
-pub type SELMINUS_R = crate::FieldReader<u8, SELMINUS_A>;
+pub type SELMINUS_R = crate::FieldReader<SELMINUS_A>;
 #[doc = "SELection for MINUS comparator input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -33,6 +31,9 @@ impl From<SELMINUS_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SELMINUS_A {
+    type Ux = u8;
+}
 impl SELMINUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -49,94 +50,97 @@ impl SELMINUS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `Ts`"]
+    #[doc = "SelectTS"]
     #[inline(always)]
     pub fn is_ts(&self) -> bool {
         *self == SELMINUS_A::Ts
     }
-    #[doc = "Checks if the value of the field is `Advref`"]
+    #[doc = "Select ADVREF"]
     #[inline(always)]
     pub fn is_advref(&self) -> bool {
         *self == SELMINUS_A::Advref
     }
-    #[doc = "Checks if the value of the field is `Dac0`"]
+    #[doc = "Select DAC0"]
     #[inline(always)]
     pub fn is_dac0(&self) -> bool {
         *self == SELMINUS_A::Dac0
     }
-    #[doc = "Checks if the value of the field is `Dac1`"]
+    #[doc = "Select DAC1"]
     #[inline(always)]
     pub fn is_dac1(&self) -> bool {
         *self == SELMINUS_A::Dac1
     }
-    #[doc = "Checks if the value of the field is `Ad0`"]
+    #[doc = "Select AD0"]
     #[inline(always)]
     pub fn is_ad0(&self) -> bool {
         *self == SELMINUS_A::Ad0
     }
-    #[doc = "Checks if the value of the field is `Ad1`"]
+    #[doc = "Select AD1"]
     #[inline(always)]
     pub fn is_ad1(&self) -> bool {
         *self == SELMINUS_A::Ad1
     }
-    #[doc = "Checks if the value of the field is `Ad2`"]
+    #[doc = "Select AD2"]
     #[inline(always)]
     pub fn is_ad2(&self) -> bool {
         *self == SELMINUS_A::Ad2
     }
-    #[doc = "Checks if the value of the field is `Ad3`"]
+    #[doc = "Select AD3"]
     #[inline(always)]
     pub fn is_ad3(&self) -> bool {
         *self == SELMINUS_A::Ad3
     }
 }
 #[doc = "Field `SELMINUS` writer - SELection for MINUS comparator input"]
-pub type SELMINUS_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, MR_SPEC, u8, SELMINUS_A, 3, O>;
-impl<'a, const O: u8> SELMINUS_W<'a, O> {
+pub type SELMINUS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, SELMINUS_A>;
+impl<'a, REG, const O: u8> SELMINUS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "SelectTS"]
     #[inline(always)]
-    pub fn ts(self) -> &'a mut W {
+    pub fn ts(self) -> &'a mut crate::W<REG> {
         self.variant(SELMINUS_A::Ts)
     }
     #[doc = "Select ADVREF"]
     #[inline(always)]
-    pub fn advref(self) -> &'a mut W {
+    pub fn advref(self) -> &'a mut crate::W<REG> {
         self.variant(SELMINUS_A::Advref)
     }
     #[doc = "Select DAC0"]
     #[inline(always)]
-    pub fn dac0(self) -> &'a mut W {
+    pub fn dac0(self) -> &'a mut crate::W<REG> {
         self.variant(SELMINUS_A::Dac0)
     }
     #[doc = "Select DAC1"]
     #[inline(always)]
-    pub fn dac1(self) -> &'a mut W {
+    pub fn dac1(self) -> &'a mut crate::W<REG> {
         self.variant(SELMINUS_A::Dac1)
     }
     #[doc = "Select AD0"]
     #[inline(always)]
-    pub fn ad0(self) -> &'a mut W {
+    pub fn ad0(self) -> &'a mut crate::W<REG> {
         self.variant(SELMINUS_A::Ad0)
     }
     #[doc = "Select AD1"]
     #[inline(always)]
-    pub fn ad1(self) -> &'a mut W {
+    pub fn ad1(self) -> &'a mut crate::W<REG> {
         self.variant(SELMINUS_A::Ad1)
     }
     #[doc = "Select AD2"]
     #[inline(always)]
-    pub fn ad2(self) -> &'a mut W {
+    pub fn ad2(self) -> &'a mut crate::W<REG> {
         self.variant(SELMINUS_A::Ad2)
     }
     #[doc = "Select AD3"]
     #[inline(always)]
-    pub fn ad3(self) -> &'a mut W {
+    pub fn ad3(self) -> &'a mut crate::W<REG> {
         self.variant(SELMINUS_A::Ad3)
     }
 }
 #[doc = "Field `SELPLUS` reader - SELection for PLUS comparator input"]
-pub type SELPLUS_R = crate::FieldReader<u8, SELPLUS_A>;
+pub type SELPLUS_R = crate::FieldReader<SELPLUS_A>;
 #[doc = "SELection for PLUS comparator input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -164,6 +168,9 @@ impl From<SELPLUS_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SELPLUS_A {
+    type Ux = u8;
+}
 impl SELPLUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -180,88 +187,92 @@ impl SELPLUS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `Ad0`"]
+    #[doc = "Select AD0"]
     #[inline(always)]
     pub fn is_ad0(&self) -> bool {
         *self == SELPLUS_A::Ad0
     }
-    #[doc = "Checks if the value of the field is `Ad1`"]
+    #[doc = "Select AD1"]
     #[inline(always)]
     pub fn is_ad1(&self) -> bool {
         *self == SELPLUS_A::Ad1
     }
-    #[doc = "Checks if the value of the field is `Ad2`"]
+    #[doc = "Select AD2"]
     #[inline(always)]
     pub fn is_ad2(&self) -> bool {
         *self == SELPLUS_A::Ad2
     }
-    #[doc = "Checks if the value of the field is `Ad3`"]
+    #[doc = "Select AD3"]
     #[inline(always)]
     pub fn is_ad3(&self) -> bool {
         *self == SELPLUS_A::Ad3
     }
-    #[doc = "Checks if the value of the field is `Ad4`"]
+    #[doc = "Select AD4"]
     #[inline(always)]
     pub fn is_ad4(&self) -> bool {
         *self == SELPLUS_A::Ad4
     }
-    #[doc = "Checks if the value of the field is `Ad5`"]
+    #[doc = "Select AD5"]
     #[inline(always)]
     pub fn is_ad5(&self) -> bool {
         *self == SELPLUS_A::Ad5
     }
-    #[doc = "Checks if the value of the field is `Ad6`"]
+    #[doc = "Select AD6"]
     #[inline(always)]
     pub fn is_ad6(&self) -> bool {
         *self == SELPLUS_A::Ad6
     }
-    #[doc = "Checks if the value of the field is `Ad7`"]
+    #[doc = "Select AD7"]
     #[inline(always)]
     pub fn is_ad7(&self) -> bool {
         *self == SELPLUS_A::Ad7
     }
 }
 #[doc = "Field `SELPLUS` writer - SELection for PLUS comparator input"]
-pub type SELPLUS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, MR_SPEC, u8, SELPLUS_A, 3, O>;
-impl<'a, const O: u8> SELPLUS_W<'a, O> {
+pub type SELPLUS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, SELPLUS_A>;
+impl<'a, REG, const O: u8> SELPLUS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select AD0"]
     #[inline(always)]
-    pub fn ad0(self) -> &'a mut W {
+    pub fn ad0(self) -> &'a mut crate::W<REG> {
         self.variant(SELPLUS_A::Ad0)
     }
     #[doc = "Select AD1"]
     #[inline(always)]
-    pub fn ad1(self) -> &'a mut W {
+    pub fn ad1(self) -> &'a mut crate::W<REG> {
         self.variant(SELPLUS_A::Ad1)
     }
     #[doc = "Select AD2"]
     #[inline(always)]
-    pub fn ad2(self) -> &'a mut W {
+    pub fn ad2(self) -> &'a mut crate::W<REG> {
         self.variant(SELPLUS_A::Ad2)
     }
     #[doc = "Select AD3"]
     #[inline(always)]
-    pub fn ad3(self) -> &'a mut W {
+    pub fn ad3(self) -> &'a mut crate::W<REG> {
         self.variant(SELPLUS_A::Ad3)
     }
     #[doc = "Select AD4"]
     #[inline(always)]
-    pub fn ad4(self) -> &'a mut W {
+    pub fn ad4(self) -> &'a mut crate::W<REG> {
         self.variant(SELPLUS_A::Ad4)
     }
     #[doc = "Select AD5"]
     #[inline(always)]
-    pub fn ad5(self) -> &'a mut W {
+    pub fn ad5(self) -> &'a mut crate::W<REG> {
         self.variant(SELPLUS_A::Ad5)
     }
     #[doc = "Select AD6"]
     #[inline(always)]
-    pub fn ad6(self) -> &'a mut W {
+    pub fn ad6(self) -> &'a mut crate::W<REG> {
         self.variant(SELPLUS_A::Ad6)
     }
     #[doc = "Select AD7"]
     #[inline(always)]
-    pub fn ad7(self) -> &'a mut W {
+    pub fn ad7(self) -> &'a mut crate::W<REG> {
         self.variant(SELPLUS_A::Ad7)
     }
 }
@@ -290,33 +301,36 @@ impl ACEN_R {
             true => ACEN_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `Dis`"]
+    #[doc = "Analog Comparator Disabled."]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
         *self == ACEN_A::Dis
     }
-    #[doc = "Checks if the value of the field is `En`"]
+    #[doc = "Analog Comparator Enabled."]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
         *self == ACEN_A::En
     }
 }
 #[doc = "Field `ACEN` writer - Analog Comparator ENable"]
-pub type ACEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, ACEN_A, O>;
-impl<'a, const O: u8> ACEN_W<'a, O> {
+pub type ACEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ACEN_A>;
+impl<'a, REG, const O: u8> ACEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Analog Comparator Disabled."]
     #[inline(always)]
-    pub fn dis(self) -> &'a mut W {
+    pub fn dis(self) -> &'a mut crate::W<REG> {
         self.variant(ACEN_A::Dis)
     }
     #[doc = "Analog Comparator Enabled."]
     #[inline(always)]
-    pub fn en(self) -> &'a mut W {
+    pub fn en(self) -> &'a mut crate::W<REG> {
         self.variant(ACEN_A::En)
     }
 }
 #[doc = "Field `EDGETYP` reader - EDGE TYPe"]
-pub type EDGETYP_R = crate::FieldReader<u8, EDGETYP_A>;
+pub type EDGETYP_R = crate::FieldReader<EDGETYP_A>;
 #[doc = "EDGE TYPe\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -334,6 +348,9 @@ impl From<EDGETYP_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for EDGETYP_A {
+    type Ux = u8;
+}
 impl EDGETYP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -345,38 +362,42 @@ impl EDGETYP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Rising`"]
+    #[doc = "only rising edge of comparator output"]
     #[inline(always)]
     pub fn is_rising(&self) -> bool {
         *self == EDGETYP_A::Rising
     }
-    #[doc = "Checks if the value of the field is `Falling`"]
+    #[doc = "falling edge of comparator output"]
     #[inline(always)]
     pub fn is_falling(&self) -> bool {
         *self == EDGETYP_A::Falling
     }
-    #[doc = "Checks if the value of the field is `Any`"]
+    #[doc = "any edge of comparator output"]
     #[inline(always)]
     pub fn is_any(&self) -> bool {
         *self == EDGETYP_A::Any
     }
 }
 #[doc = "Field `EDGETYP` writer - EDGE TYPe"]
-pub type EDGETYP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, EDGETYP_A, 2, O>;
-impl<'a, const O: u8> EDGETYP_W<'a, O> {
+pub type EDGETYP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, EDGETYP_A>;
+impl<'a, REG, const O: u8> EDGETYP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "only rising edge of comparator output"]
     #[inline(always)]
-    pub fn rising(self) -> &'a mut W {
+    pub fn rising(self) -> &'a mut crate::W<REG> {
         self.variant(EDGETYP_A::Rising)
     }
     #[doc = "falling edge of comparator output"]
     #[inline(always)]
-    pub fn falling(self) -> &'a mut W {
+    pub fn falling(self) -> &'a mut crate::W<REG> {
         self.variant(EDGETYP_A::Falling)
     }
     #[doc = "any edge of comparator output"]
     #[inline(always)]
-    pub fn any(self) -> &'a mut W {
+    pub fn any(self) -> &'a mut crate::W<REG> {
         self.variant(EDGETYP_A::Any)
     }
 }
@@ -405,28 +426,31 @@ impl INV_R {
             true => INV_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `Dis`"]
+    #[doc = "Analog Comparator output is directly processed."]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
         *self == INV_A::Dis
     }
-    #[doc = "Checks if the value of the field is `En`"]
+    #[doc = "Analog Comparator output is inverted prior to being processed."]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
         *self == INV_A::En
     }
 }
 #[doc = "Field `INV` writer - INVert comparator output"]
-pub type INV_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, INV_A, O>;
-impl<'a, const O: u8> INV_W<'a, O> {
+pub type INV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, INV_A>;
+impl<'a, REG, const O: u8> INV_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Analog Comparator output is directly processed."]
     #[inline(always)]
-    pub fn dis(self) -> &'a mut W {
+    pub fn dis(self) -> &'a mut crate::W<REG> {
         self.variant(INV_A::Dis)
     }
     #[doc = "Analog Comparator output is inverted prior to being processed."]
     #[inline(always)]
-    pub fn en(self) -> &'a mut W {
+    pub fn en(self) -> &'a mut crate::W<REG> {
         self.variant(INV_A::En)
     }
 }
@@ -455,28 +479,31 @@ impl SELFS_R {
             true => SELFS_A::Output,
         }
     }
-    #[doc = "Checks if the value of the field is `Cf`"]
+    #[doc = "the CF flag is used to drive the FAULT output."]
     #[inline(always)]
     pub fn is_cf(&self) -> bool {
         *self == SELFS_A::Cf
     }
-    #[doc = "Checks if the value of the field is `Output`"]
+    #[doc = "the output of the Analog Comparator flag is used to drive the FAULT output."]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
         *self == SELFS_A::Output
     }
 }
 #[doc = "Field `SELFS` writer - SELection of Fault Source"]
-pub type SELFS_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, SELFS_A, O>;
-impl<'a, const O: u8> SELFS_W<'a, O> {
+pub type SELFS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELFS_A>;
+impl<'a, REG, const O: u8> SELFS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "the CF flag is used to drive the FAULT output."]
     #[inline(always)]
-    pub fn cf(self) -> &'a mut W {
+    pub fn cf(self) -> &'a mut crate::W<REG> {
         self.variant(SELFS_A::Cf)
     }
     #[doc = "the output of the Analog Comparator flag is used to drive the FAULT output."]
     #[inline(always)]
-    pub fn output(self) -> &'a mut W {
+    pub fn output(self) -> &'a mut crate::W<REG> {
         self.variant(SELFS_A::Output)
     }
 }
@@ -505,28 +532,31 @@ impl FE_R {
             true => FE_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `Dis`"]
+    #[doc = "the FAULT output is tied to 0."]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
         *self == FE_A::Dis
     }
-    #[doc = "Checks if the value of the field is `En`"]
+    #[doc = "the FAULT output is driven by the signal defined by SELFS."]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
         *self == FE_A::En
     }
 }
 #[doc = "Field `FE` writer - Fault Enable"]
-pub type FE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, FE_A, O>;
-impl<'a, const O: u8> FE_W<'a, O> {
+pub type FE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_A>;
+impl<'a, REG, const O: u8> FE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "the FAULT output is tied to 0."]
     #[inline(always)]
-    pub fn dis(self) -> &'a mut W {
+    pub fn dis(self) -> &'a mut crate::W<REG> {
         self.variant(FE_A::Dis)
     }
     #[doc = "the FAULT output is driven by the signal defined by SELFS."]
     #[inline(always)]
-    pub fn en(self) -> &'a mut W {
+    pub fn en(self) -> &'a mut crate::W<REG> {
         self.variant(FE_A::En)
     }
 }
@@ -571,64 +601,61 @@ impl W {
     #[doc = "Bits 0:2 - SELection for MINUS comparator input"]
     #[inline(always)]
     #[must_use]
-    pub fn selminus(&mut self) -> SELMINUS_W<0> {
+    pub fn selminus(&mut self) -> SELMINUS_W<MR_SPEC, 0> {
         SELMINUS_W::new(self)
     }
     #[doc = "Bits 4:6 - SELection for PLUS comparator input"]
     #[inline(always)]
     #[must_use]
-    pub fn selplus(&mut self) -> SELPLUS_W<4> {
+    pub fn selplus(&mut self) -> SELPLUS_W<MR_SPEC, 4> {
         SELPLUS_W::new(self)
     }
     #[doc = "Bit 8 - Analog Comparator ENable"]
     #[inline(always)]
     #[must_use]
-    pub fn acen(&mut self) -> ACEN_W<8> {
+    pub fn acen(&mut self) -> ACEN_W<MR_SPEC, 8> {
         ACEN_W::new(self)
     }
     #[doc = "Bits 9:10 - EDGE TYPe"]
     #[inline(always)]
     #[must_use]
-    pub fn edgetyp(&mut self) -> EDGETYP_W<9> {
+    pub fn edgetyp(&mut self) -> EDGETYP_W<MR_SPEC, 9> {
         EDGETYP_W::new(self)
     }
     #[doc = "Bit 12 - INVert comparator output"]
     #[inline(always)]
     #[must_use]
-    pub fn inv(&mut self) -> INV_W<12> {
+    pub fn inv(&mut self) -> INV_W<MR_SPEC, 12> {
         INV_W::new(self)
     }
     #[doc = "Bit 13 - SELection of Fault Source"]
     #[inline(always)]
     #[must_use]
-    pub fn selfs(&mut self) -> SELFS_W<13> {
+    pub fn selfs(&mut self) -> SELFS_W<MR_SPEC, 13> {
         SELFS_W::new(self)
     }
     #[doc = "Bit 14 - Fault Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fe(&mut self) -> FE_W<14> {
+    pub fn fe(&mut self) -> FE_W<MR_SPEC, 14> {
         FE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mr](index.html) module"]
+#[doc = "Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MR_SPEC;
 impl crate::RegisterSpec for MR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mr::R](R) reader structure"]
-impl crate::Readable for MR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
+#[doc = "`read()` method returns [`mr::R`](R) reader structure"]
+impl crate::Readable for MR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mr::W`](W) writer structure"]
 impl crate::Writable for MR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

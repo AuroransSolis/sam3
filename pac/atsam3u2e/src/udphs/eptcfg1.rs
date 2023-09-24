@@ -1,11 +1,9 @@
 #[doc = "Register `EPTCFG1` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<EPTCFG1_SPEC>);
+pub type R = crate::R<EPTCFG1_SPEC>;
 #[doc = "Register `EPTCFG1` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<EPTCFG1_SPEC>);
+pub type W = crate::W<EPTCFG1_SPEC>;
 #[doc = "Field `EPT_SIZE` reader - Endpoint Size"]
-pub type EPT_SIZE_R = crate::FieldReader<u8, EPT_SIZE_A>;
+pub type EPT_SIZE_R = crate::FieldReader<EPT_SIZE_A>;
 #[doc = "Endpoint Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -33,6 +31,9 @@ impl From<EPT_SIZE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for EPT_SIZE_A {
+    type Ux = u8;
+}
 impl EPT_SIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -49,98 +50,101 @@ impl EPT_SIZE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_8`"]
+    #[doc = "8 bytes"]
     #[inline(always)]
     pub fn is_8(&self) -> bool {
         *self == EPT_SIZE_A::_8
     }
-    #[doc = "Checks if the value of the field is `_16`"]
+    #[doc = "16 bytes"]
     #[inline(always)]
     pub fn is_16(&self) -> bool {
         *self == EPT_SIZE_A::_16
     }
-    #[doc = "Checks if the value of the field is `_32`"]
+    #[doc = "32 bytes"]
     #[inline(always)]
     pub fn is_32(&self) -> bool {
         *self == EPT_SIZE_A::_32
     }
-    #[doc = "Checks if the value of the field is `_64`"]
+    #[doc = "64 bytes"]
     #[inline(always)]
     pub fn is_64(&self) -> bool {
         *self == EPT_SIZE_A::_64
     }
-    #[doc = "Checks if the value of the field is `_128`"]
+    #[doc = "128 bytes"]
     #[inline(always)]
     pub fn is_128(&self) -> bool {
         *self == EPT_SIZE_A::_128
     }
-    #[doc = "Checks if the value of the field is `_256`"]
+    #[doc = "256 bytes"]
     #[inline(always)]
     pub fn is_256(&self) -> bool {
         *self == EPT_SIZE_A::_256
     }
-    #[doc = "Checks if the value of the field is `_512`"]
+    #[doc = "512 bytes"]
     #[inline(always)]
     pub fn is_512(&self) -> bool {
         *self == EPT_SIZE_A::_512
     }
-    #[doc = "Checks if the value of the field is `_1024`"]
+    #[doc = "1024 bytes"]
     #[inline(always)]
     pub fn is_1024(&self) -> bool {
         *self == EPT_SIZE_A::_1024
     }
 }
 #[doc = "Field `EPT_SIZE` writer - Endpoint Size"]
-pub type EPT_SIZE_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, EPTCFG1_SPEC, u8, EPT_SIZE_A, 3, O>;
-impl<'a, const O: u8> EPT_SIZE_W<'a, O> {
+pub type EPT_SIZE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, EPT_SIZE_A>;
+impl<'a, REG, const O: u8> EPT_SIZE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "8 bytes"]
     #[inline(always)]
-    pub fn _8(self) -> &'a mut W {
+    pub fn _8(self) -> &'a mut crate::W<REG> {
         self.variant(EPT_SIZE_A::_8)
     }
     #[doc = "16 bytes"]
     #[inline(always)]
-    pub fn _16(self) -> &'a mut W {
+    pub fn _16(self) -> &'a mut crate::W<REG> {
         self.variant(EPT_SIZE_A::_16)
     }
     #[doc = "32 bytes"]
     #[inline(always)]
-    pub fn _32(self) -> &'a mut W {
+    pub fn _32(self) -> &'a mut crate::W<REG> {
         self.variant(EPT_SIZE_A::_32)
     }
     #[doc = "64 bytes"]
     #[inline(always)]
-    pub fn _64(self) -> &'a mut W {
+    pub fn _64(self) -> &'a mut crate::W<REG> {
         self.variant(EPT_SIZE_A::_64)
     }
     #[doc = "128 bytes"]
     #[inline(always)]
-    pub fn _128(self) -> &'a mut W {
+    pub fn _128(self) -> &'a mut crate::W<REG> {
         self.variant(EPT_SIZE_A::_128)
     }
     #[doc = "256 bytes"]
     #[inline(always)]
-    pub fn _256(self) -> &'a mut W {
+    pub fn _256(self) -> &'a mut crate::W<REG> {
         self.variant(EPT_SIZE_A::_256)
     }
     #[doc = "512 bytes"]
     #[inline(always)]
-    pub fn _512(self) -> &'a mut W {
+    pub fn _512(self) -> &'a mut crate::W<REG> {
         self.variant(EPT_SIZE_A::_512)
     }
     #[doc = "1024 bytes"]
     #[inline(always)]
-    pub fn _1024(self) -> &'a mut W {
+    pub fn _1024(self) -> &'a mut crate::W<REG> {
         self.variant(EPT_SIZE_A::_1024)
     }
 }
 #[doc = "Field `EPT_DIR` reader - Endpoint Direction"]
-pub type EPT_DIR_R = crate::BitReader<bool>;
+pub type EPT_DIR_R = crate::BitReader;
 #[doc = "Field `EPT_DIR` writer - Endpoint Direction"]
-pub type EPT_DIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPTCFG1_SPEC, bool, O>;
+pub type EPT_DIR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `EPT_TYPE` reader - Endpoint Type"]
-pub type EPT_TYPE_R = crate::FieldReader<u8, EPT_TYPE_A>;
+pub type EPT_TYPE_R = crate::FieldReader<EPT_TYPE_A>;
 #[doc = "Endpoint Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -160,6 +164,9 @@ impl From<EPT_TYPE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for EPT_TYPE_A {
+    type Ux = u8;
+}
 impl EPT_TYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -172,54 +179,57 @@ impl EPT_TYPE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `Ctrl8`"]
+    #[doc = "Control endpoint"]
     #[inline(always)]
     pub fn is_ctrl8(&self) -> bool {
         *self == EPT_TYPE_A::Ctrl8
     }
-    #[doc = "Checks if the value of the field is `Iso`"]
+    #[doc = "Isochronous endpoint"]
     #[inline(always)]
     pub fn is_iso(&self) -> bool {
         *self == EPT_TYPE_A::Iso
     }
-    #[doc = "Checks if the value of the field is `Bulk`"]
+    #[doc = "Bulk endpoint"]
     #[inline(always)]
     pub fn is_bulk(&self) -> bool {
         *self == EPT_TYPE_A::Bulk
     }
-    #[doc = "Checks if the value of the field is `Int`"]
+    #[doc = "Interrupt endpoint"]
     #[inline(always)]
     pub fn is_int(&self) -> bool {
         *self == EPT_TYPE_A::Int
     }
 }
 #[doc = "Field `EPT_TYPE` writer - Endpoint Type"]
-pub type EPT_TYPE_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, EPTCFG1_SPEC, u8, EPT_TYPE_A, 2, O>;
-impl<'a, const O: u8> EPT_TYPE_W<'a, O> {
+pub type EPT_TYPE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EPT_TYPE_A>;
+impl<'a, REG, const O: u8> EPT_TYPE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Control endpoint"]
     #[inline(always)]
-    pub fn ctrl8(self) -> &'a mut W {
+    pub fn ctrl8(self) -> &'a mut crate::W<REG> {
         self.variant(EPT_TYPE_A::Ctrl8)
     }
     #[doc = "Isochronous endpoint"]
     #[inline(always)]
-    pub fn iso(self) -> &'a mut W {
+    pub fn iso(self) -> &'a mut crate::W<REG> {
         self.variant(EPT_TYPE_A::Iso)
     }
     #[doc = "Bulk endpoint"]
     #[inline(always)]
-    pub fn bulk(self) -> &'a mut W {
+    pub fn bulk(self) -> &'a mut crate::W<REG> {
         self.variant(EPT_TYPE_A::Bulk)
     }
     #[doc = "Interrupt endpoint"]
     #[inline(always)]
-    pub fn int(self) -> &'a mut W {
+    pub fn int(self) -> &'a mut crate::W<REG> {
         self.variant(EPT_TYPE_A::Int)
     }
 }
 #[doc = "Field `BK_NUMBER` reader - Number of Banks"]
-pub type BK_NUMBER_R = crate::FieldReader<u8, BK_NUMBER_A>;
+pub type BK_NUMBER_R = crate::FieldReader<BK_NUMBER_A>;
 #[doc = "Number of Banks\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -239,6 +249,9 @@ impl From<BK_NUMBER_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for BK_NUMBER_A {
+    type Ux = u8;
+}
 impl BK_NUMBER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -251,60 +264,63 @@ impl BK_NUMBER_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_0`"]
+    #[doc = "Zero bank, the endpoint is not mapped in memory"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
         *self == BK_NUMBER_A::_0
     }
-    #[doc = "Checks if the value of the field is `_1`"]
+    #[doc = "One bank (bank 0)"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
         *self == BK_NUMBER_A::_1
     }
-    #[doc = "Checks if the value of the field is `_2`"]
+    #[doc = "Double bank (Ping-Pong: bank0/bank1)"]
     #[inline(always)]
     pub fn is_2(&self) -> bool {
         *self == BK_NUMBER_A::_2
     }
-    #[doc = "Checks if the value of the field is `_3`"]
+    #[doc = "Triple bank (bank0/bank1/bank2)"]
     #[inline(always)]
     pub fn is_3(&self) -> bool {
         *self == BK_NUMBER_A::_3
     }
 }
 #[doc = "Field `BK_NUMBER` writer - Number of Banks"]
-pub type BK_NUMBER_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, EPTCFG1_SPEC, u8, BK_NUMBER_A, 2, O>;
-impl<'a, const O: u8> BK_NUMBER_W<'a, O> {
+pub type BK_NUMBER_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, BK_NUMBER_A>;
+impl<'a, REG, const O: u8> BK_NUMBER_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Zero bank, the endpoint is not mapped in memory"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut W {
+    pub fn _0(self) -> &'a mut crate::W<REG> {
         self.variant(BK_NUMBER_A::_0)
     }
     #[doc = "One bank (bank 0)"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut W {
+    pub fn _1(self) -> &'a mut crate::W<REG> {
         self.variant(BK_NUMBER_A::_1)
     }
     #[doc = "Double bank (Ping-Pong: bank0/bank1)"]
     #[inline(always)]
-    pub fn _2(self) -> &'a mut W {
+    pub fn _2(self) -> &'a mut crate::W<REG> {
         self.variant(BK_NUMBER_A::_2)
     }
     #[doc = "Triple bank (bank0/bank1/bank2)"]
     #[inline(always)]
-    pub fn _3(self) -> &'a mut W {
+    pub fn _3(self) -> &'a mut crate::W<REG> {
         self.variant(BK_NUMBER_A::_3)
     }
 }
 #[doc = "Field `NB_TRANS` reader - Number Of Transaction per Microframe"]
-pub type NB_TRANS_R = crate::FieldReader<u8, u8>;
+pub type NB_TRANS_R = crate::FieldReader;
 #[doc = "Field `NB_TRANS` writer - Number Of Transaction per Microframe"]
-pub type NB_TRANS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EPTCFG1_SPEC, u8, u8, 2, O>;
+pub type NB_TRANS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `EPT_MAPD` reader - Endpoint Mapped"]
-pub type EPT_MAPD_R = crate::BitReader<bool>;
+pub type EPT_MAPD_R = crate::BitReader;
 #[doc = "Field `EPT_MAPD` writer - Endpoint Mapped"]
-pub type EPT_MAPD_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPTCFG1_SPEC, bool, O>;
+pub type EPT_MAPD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bits 0:2 - Endpoint Size"]
     #[inline(always)]
@@ -341,58 +357,55 @@ impl W {
     #[doc = "Bits 0:2 - Endpoint Size"]
     #[inline(always)]
     #[must_use]
-    pub fn ept_size(&mut self) -> EPT_SIZE_W<0> {
+    pub fn ept_size(&mut self) -> EPT_SIZE_W<EPTCFG1_SPEC, 0> {
         EPT_SIZE_W::new(self)
     }
     #[doc = "Bit 3 - Endpoint Direction"]
     #[inline(always)]
     #[must_use]
-    pub fn ept_dir(&mut self) -> EPT_DIR_W<3> {
+    pub fn ept_dir(&mut self) -> EPT_DIR_W<EPTCFG1_SPEC, 3> {
         EPT_DIR_W::new(self)
     }
     #[doc = "Bits 4:5 - Endpoint Type"]
     #[inline(always)]
     #[must_use]
-    pub fn ept_type(&mut self) -> EPT_TYPE_W<4> {
+    pub fn ept_type(&mut self) -> EPT_TYPE_W<EPTCFG1_SPEC, 4> {
         EPT_TYPE_W::new(self)
     }
     #[doc = "Bits 6:7 - Number of Banks"]
     #[inline(always)]
     #[must_use]
-    pub fn bk_number(&mut self) -> BK_NUMBER_W<6> {
+    pub fn bk_number(&mut self) -> BK_NUMBER_W<EPTCFG1_SPEC, 6> {
         BK_NUMBER_W::new(self)
     }
     #[doc = "Bits 8:9 - Number Of Transaction per Microframe"]
     #[inline(always)]
     #[must_use]
-    pub fn nb_trans(&mut self) -> NB_TRANS_W<8> {
+    pub fn nb_trans(&mut self) -> NB_TRANS_W<EPTCFG1_SPEC, 8> {
         NB_TRANS_W::new(self)
     }
     #[doc = "Bit 31 - Endpoint Mapped"]
     #[inline(always)]
     #[must_use]
-    pub fn ept_mapd(&mut self) -> EPT_MAPD_W<31> {
+    pub fn ept_mapd(&mut self) -> EPT_MAPD_W<EPTCFG1_SPEC, 31> {
         EPT_MAPD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "UDPHS Endpoint Configuration Register (endpoint = 1)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [eptcfg1](index.html) module"]
+#[doc = "UDPHS Endpoint Configuration Register (endpoint = 1)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`eptcfg1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`eptcfg1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EPTCFG1_SPEC;
 impl crate::RegisterSpec for EPTCFG1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [eptcfg1::R](R) reader structure"]
-impl crate::Readable for EPTCFG1_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [eptcfg1::W](W) writer structure"]
+#[doc = "`read()` method returns [`eptcfg1::R`](R) reader structure"]
+impl crate::Readable for EPTCFG1_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`eptcfg1::W`](W) writer structure"]
 impl crate::Writable for EPTCFG1_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,22 +1,21 @@
 #[doc = "Register `IMR1` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<IMR1_SPEC>);
+pub type R = crate::R<IMR1_SPEC>;
 #[doc = "Field `COVFS` reader - Counter Overflow"]
-pub type COVFS_R = crate::BitReader<bool>;
+pub type COVFS_R = crate::BitReader;
 #[doc = "Field `LOVRS` reader - Load Overrun"]
-pub type LOVRS_R = crate::BitReader<bool>;
+pub type LOVRS_R = crate::BitReader;
 #[doc = "Field `CPAS` reader - RA Compare"]
-pub type CPAS_R = crate::BitReader<bool>;
+pub type CPAS_R = crate::BitReader;
 #[doc = "Field `CPBS` reader - RB Compare"]
-pub type CPBS_R = crate::BitReader<bool>;
+pub type CPBS_R = crate::BitReader;
 #[doc = "Field `CPCS` reader - RC Compare"]
-pub type CPCS_R = crate::BitReader<bool>;
+pub type CPCS_R = crate::BitReader;
 #[doc = "Field `LDRAS` reader - RA Loading"]
-pub type LDRAS_R = crate::BitReader<bool>;
+pub type LDRAS_R = crate::BitReader;
 #[doc = "Field `LDRBS` reader - RB Loading"]
-pub type LDRBS_R = crate::BitReader<bool>;
+pub type LDRBS_R = crate::BitReader;
 #[doc = "Field `ETRGS` reader - External Trigger"]
-pub type ETRGS_R = crate::BitReader<bool>;
+pub type ETRGS_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Counter Overflow"]
     #[inline(always)]
@@ -59,15 +58,13 @@ impl R {
         ETRGS_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "Interrupt Mask Register (channel = 1)\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr1](index.html) module"]
+#[doc = "Interrupt Mask Register (channel = 1)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`imr1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IMR1_SPEC;
 impl crate::RegisterSpec for IMR1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [imr1::R](R) reader structure"]
-impl crate::Readable for IMR1_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`imr1::R`](R) reader structure"]
+impl crate::Readable for IMR1_SPEC {}
 #[doc = "`reset()` method sets IMR1 to value 0"]
 impl crate::Resettable for IMR1_SPEC {
     const RESET_VALUE: Self::Ux = 0;

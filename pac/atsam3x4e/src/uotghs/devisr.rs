@@ -1,52 +1,51 @@
 #[doc = "Register `DEVISR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<DEVISR_SPEC>);
+pub type R = crate::R<DEVISR_SPEC>;
 #[doc = "Field `SUSP` reader - Suspend Interrupt"]
-pub type SUSP_R = crate::BitReader<bool>;
+pub type SUSP_R = crate::BitReader;
 #[doc = "Field `MSOF` reader - Micro Start of Frame Interrupt"]
-pub type MSOF_R = crate::BitReader<bool>;
+pub type MSOF_R = crate::BitReader;
 #[doc = "Field `SOF` reader - Start of Frame Interrupt"]
-pub type SOF_R = crate::BitReader<bool>;
+pub type SOF_R = crate::BitReader;
 #[doc = "Field `EORST` reader - End of Reset Interrupt"]
-pub type EORST_R = crate::BitReader<bool>;
+pub type EORST_R = crate::BitReader;
 #[doc = "Field `WAKEUP` reader - Wake-Up Interrupt"]
-pub type WAKEUP_R = crate::BitReader<bool>;
+pub type WAKEUP_R = crate::BitReader;
 #[doc = "Field `EORSM` reader - End of Resume Interrupt"]
-pub type EORSM_R = crate::BitReader<bool>;
+pub type EORSM_R = crate::BitReader;
 #[doc = "Field `UPRSM` reader - Upstream Resume Interrupt"]
-pub type UPRSM_R = crate::BitReader<bool>;
+pub type UPRSM_R = crate::BitReader;
 #[doc = "Field `PEP_0` reader - Endpoint 0 Interrupt"]
-pub type PEP_0_R = crate::BitReader<bool>;
+pub type PEP_0_R = crate::BitReader;
 #[doc = "Field `PEP_1` reader - Endpoint 1 Interrupt"]
-pub type PEP_1_R = crate::BitReader<bool>;
+pub type PEP_1_R = crate::BitReader;
 #[doc = "Field `PEP_2` reader - Endpoint 2 Interrupt"]
-pub type PEP_2_R = crate::BitReader<bool>;
+pub type PEP_2_R = crate::BitReader;
 #[doc = "Field `PEP_3` reader - Endpoint 3 Interrupt"]
-pub type PEP_3_R = crate::BitReader<bool>;
+pub type PEP_3_R = crate::BitReader;
 #[doc = "Field `PEP_4` reader - Endpoint 4 Interrupt"]
-pub type PEP_4_R = crate::BitReader<bool>;
+pub type PEP_4_R = crate::BitReader;
 #[doc = "Field `PEP_5` reader - Endpoint 5 Interrupt"]
-pub type PEP_5_R = crate::BitReader<bool>;
+pub type PEP_5_R = crate::BitReader;
 #[doc = "Field `PEP_6` reader - Endpoint 6 Interrupt"]
-pub type PEP_6_R = crate::BitReader<bool>;
+pub type PEP_6_R = crate::BitReader;
 #[doc = "Field `PEP_7` reader - Endpoint 7 Interrupt"]
-pub type PEP_7_R = crate::BitReader<bool>;
+pub type PEP_7_R = crate::BitReader;
 #[doc = "Field `PEP_8` reader - Endpoint 8 Interrupt"]
-pub type PEP_8_R = crate::BitReader<bool>;
+pub type PEP_8_R = crate::BitReader;
 #[doc = "Field `PEP_9` reader - Endpoint 9 Interrupt"]
-pub type PEP_9_R = crate::BitReader<bool>;
+pub type PEP_9_R = crate::BitReader;
 #[doc = "Field `DMA_1` reader - DMA Channel 1 Interrupt"]
-pub type DMA_1_R = crate::BitReader<bool>;
+pub type DMA_1_R = crate::BitReader;
 #[doc = "Field `DMA_2` reader - DMA Channel 2 Interrupt"]
-pub type DMA_2_R = crate::BitReader<bool>;
+pub type DMA_2_R = crate::BitReader;
 #[doc = "Field `DMA_3` reader - DMA Channel 3 Interrupt"]
-pub type DMA_3_R = crate::BitReader<bool>;
+pub type DMA_3_R = crate::BitReader;
 #[doc = "Field `DMA_4` reader - DMA Channel 4 Interrupt"]
-pub type DMA_4_R = crate::BitReader<bool>;
+pub type DMA_4_R = crate::BitReader;
 #[doc = "Field `DMA_5` reader - DMA Channel 5 Interrupt"]
-pub type DMA_5_R = crate::BitReader<bool>;
+pub type DMA_5_R = crate::BitReader;
 #[doc = "Field `DMA_6` reader - DMA Channel 6 Interrupt"]
-pub type DMA_6_R = crate::BitReader<bool>;
+pub type DMA_6_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Suspend Interrupt"]
     #[inline(always)]
@@ -164,15 +163,13 @@ impl R {
         DMA_6_R::new(((self.bits >> 30) & 1) != 0)
     }
 }
-#[doc = "Device Global Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [devisr](index.html) module"]
+#[doc = "Device Global Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`devisr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DEVISR_SPEC;
 impl crate::RegisterSpec for DEVISR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [devisr::R](R) reader structure"]
-impl crate::Readable for DEVISR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`devisr::R`](R) reader structure"]
+impl crate::Readable for DEVISR_SPEC {}
 #[doc = "`reset()` method sets DEVISR to value 0"]
 impl crate::Resettable for DEVISR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

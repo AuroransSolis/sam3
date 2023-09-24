@@ -1,13 +1,11 @@
 #[doc = "Register `DADDR1` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<DADDR1_SPEC>);
+pub type R = crate::R<DADDR1_SPEC>;
 #[doc = "Register `DADDR1` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<DADDR1_SPEC>);
+pub type W = crate::W<DADDR1_SPEC>;
 #[doc = "Field `DADDR` reader - Channel x Destination Address"]
-pub type DADDR_R = crate::FieldReader<u32, u32>;
+pub type DADDR_R = crate::FieldReader<u32>;
 #[doc = "Field `DADDR` writer - Channel x Destination Address"]
-pub type DADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DADDR1_SPEC, u32, u32, 32, O>;
+pub type DADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Channel x Destination Address"]
     #[inline(always)]
@@ -19,28 +17,25 @@ impl W {
     #[doc = "Bits 0:31 - Channel x Destination Address"]
     #[inline(always)]
     #[must_use]
-    pub fn daddr(&mut self) -> DADDR_W<0> {
+    pub fn daddr(&mut self) -> DADDR_W<DADDR1_SPEC, 0> {
         DADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "DMAC Channel Destination Address Register (ch_num = 1)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [daddr1](index.html) module"]
+#[doc = "DMAC Channel Destination Address Register (ch_num = 1)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`daddr1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`daddr1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DADDR1_SPEC;
 impl crate::RegisterSpec for DADDR1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [daddr1::R](R) reader structure"]
-impl crate::Readable for DADDR1_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [daddr1::W](W) writer structure"]
+#[doc = "`read()` method returns [`daddr1::R`](R) reader structure"]
+impl crate::Readable for DADDR1_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`daddr1::W`](W) writer structure"]
 impl crate::Writable for DADDR1_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

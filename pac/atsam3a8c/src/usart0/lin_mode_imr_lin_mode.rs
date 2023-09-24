@@ -1,44 +1,43 @@
 #[doc = "Register `IMR_LIN_MODE` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<LIN_MODE_IMR_LIN_MODE_SPEC>);
+pub type R = crate::R<LIN_MODE_IMR_LIN_MODE_SPEC>;
 #[doc = "Field `RXRDY` reader - RXRDY Interrupt Mask"]
-pub type RXRDY_R = crate::BitReader<bool>;
+pub type RXRDY_R = crate::BitReader;
 #[doc = "Field `TXRDY` reader - TXRDY Interrupt Mask"]
-pub type TXRDY_R = crate::BitReader<bool>;
+pub type TXRDY_R = crate::BitReader;
 #[doc = "Field `ENDRX` reader - "]
-pub type ENDRX_R = crate::BitReader<bool>;
+pub type ENDRX_R = crate::BitReader;
 #[doc = "Field `ENDTX` reader - "]
-pub type ENDTX_R = crate::BitReader<bool>;
+pub type ENDTX_R = crate::BitReader;
 #[doc = "Field `OVRE` reader - Overrun Error Interrupt Mask"]
-pub type OVRE_R = crate::BitReader<bool>;
+pub type OVRE_R = crate::BitReader;
 #[doc = "Field `FRAME` reader - Framing Error Interrupt Mask"]
-pub type FRAME_R = crate::BitReader<bool>;
+pub type FRAME_R = crate::BitReader;
 #[doc = "Field `PARE` reader - Parity Error Interrupt Mask"]
-pub type PARE_R = crate::BitReader<bool>;
+pub type PARE_R = crate::BitReader;
 #[doc = "Field `TIMEOUT` reader - Time-out Interrupt Mask"]
-pub type TIMEOUT_R = crate::BitReader<bool>;
+pub type TIMEOUT_R = crate::BitReader;
 #[doc = "Field `TXEMPTY` reader - TXEMPTY Interrupt Mask"]
-pub type TXEMPTY_R = crate::BitReader<bool>;
+pub type TXEMPTY_R = crate::BitReader;
 #[doc = "Field `TXBUFE` reader - "]
-pub type TXBUFE_R = crate::BitReader<bool>;
+pub type TXBUFE_R = crate::BitReader;
 #[doc = "Field `RXBUFF` reader - "]
-pub type RXBUFF_R = crate::BitReader<bool>;
+pub type RXBUFF_R = crate::BitReader;
 #[doc = "Field `LINBK` reader - LIN Break Sent or LIN Break Received Interrupt Mask"]
-pub type LINBK_R = crate::BitReader<bool>;
+pub type LINBK_R = crate::BitReader;
 #[doc = "Field `LINID` reader - LIN Identifier Sent or LIN Identifier Received Interrupt Mask"]
-pub type LINID_R = crate::BitReader<bool>;
+pub type LINID_R = crate::BitReader;
 #[doc = "Field `LINTC` reader - LIN Transfer Completed Interrupt Mask"]
-pub type LINTC_R = crate::BitReader<bool>;
+pub type LINTC_R = crate::BitReader;
 #[doc = "Field `LINBE` reader - LIN Bus Error Interrupt Mask"]
-pub type LINBE_R = crate::BitReader<bool>;
+pub type LINBE_R = crate::BitReader;
 #[doc = "Field `LINISFE` reader - LIN Inconsistent Synch Field Error Interrupt Mask"]
-pub type LINISFE_R = crate::BitReader<bool>;
+pub type LINISFE_R = crate::BitReader;
 #[doc = "Field `LINIPE` reader - LIN Identifier Parity Interrupt Mask"]
-pub type LINIPE_R = crate::BitReader<bool>;
+pub type LINIPE_R = crate::BitReader;
 #[doc = "Field `LINCE` reader - LIN Checksum Error Interrupt Mask"]
-pub type LINCE_R = crate::BitReader<bool>;
+pub type LINCE_R = crate::BitReader;
 #[doc = "Field `LINSNRE` reader - LIN Slave Not Responding Error Interrupt Mask"]
-pub type LINSNRE_R = crate::BitReader<bool>;
+pub type LINSNRE_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - RXRDY Interrupt Mask"]
     #[inline(always)]
@@ -136,15 +135,13 @@ impl R {
         LINSNRE_R::new(((self.bits >> 29) & 1) != 0)
     }
 }
-#[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lin_mode_imr_lin_mode](index.html) module"]
+#[doc = "Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lin_mode_imr_lin_mode::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LIN_MODE_IMR_LIN_MODE_SPEC;
 impl crate::RegisterSpec for LIN_MODE_IMR_LIN_MODE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [lin_mode_imr_lin_mode::R](R) reader structure"]
-impl crate::Readable for LIN_MODE_IMR_LIN_MODE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`lin_mode_imr_lin_mode::R`](R) reader structure"]
+impl crate::Readable for LIN_MODE_IMR_LIN_MODE_SPEC {}
 #[doc = "`reset()` method sets IMR_LIN_MODE to value 0"]
 impl crate::Resettable for LIN_MODE_IMR_LIN_MODE_SPEC {
     const RESET_VALUE: Self::Ux = 0;

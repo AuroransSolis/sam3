@@ -1,15 +1,22 @@
 #[doc = "Register `WPSR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<WPSR_SPEC>);
-#[doc = "Write Protect Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpsr](index.html) module"]
+pub type R = crate::R<WPSR_SPEC>;
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        write!(f, "{}", self.bits())
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<WPSR_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
+#[doc = "Write Protect Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wpsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct WPSR_SPEC;
 impl crate::RegisterSpec for WPSR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [wpsr::R](R) reader structure"]
-impl crate::Readable for WPSR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`wpsr::R`](R) reader structure"]
+impl crate::Readable for WPSR_SPEC {}
 #[doc = "`reset()` method sets WPSR to value 0"]
 impl crate::Resettable for WPSR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

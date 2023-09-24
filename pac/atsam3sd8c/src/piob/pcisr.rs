@@ -1,14 +1,13 @@
 #[doc = "Register `PCISR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<PCISR_SPEC>);
+pub type R = crate::R<PCISR_SPEC>;
 #[doc = "Field `DRDY` reader - Parallel Capture Mode Data Ready"]
-pub type DRDY_R = crate::BitReader<bool>;
+pub type DRDY_R = crate::BitReader;
 #[doc = "Field `OVRE` reader - Parallel Capture Mode Overrun Error."]
-pub type OVRE_R = crate::BitReader<bool>;
+pub type OVRE_R = crate::BitReader;
 #[doc = "Field `ENDRX` reader - End of Reception Transfer."]
-pub type ENDRX_R = crate::BitReader<bool>;
+pub type ENDRX_R = crate::BitReader;
 #[doc = "Field `RXBUFF` reader - Reception Buffer Full"]
-pub type RXBUFF_R = crate::BitReader<bool>;
+pub type RXBUFF_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Parallel Capture Mode Data Ready"]
     #[inline(always)]
@@ -31,15 +30,13 @@ impl R {
         RXBUFF_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
-#[doc = "Parallel Capture Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcisr](index.html) module"]
+#[doc = "Parallel Capture Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcisr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PCISR_SPEC;
 impl crate::RegisterSpec for PCISR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pcisr::R](R) reader structure"]
-impl crate::Readable for PCISR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`pcisr::R`](R) reader structure"]
+impl crate::Readable for PCISR_SPEC {}
 #[doc = "`reset()` method sets PCISR to value 0"]
 impl crate::Resettable for PCISR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

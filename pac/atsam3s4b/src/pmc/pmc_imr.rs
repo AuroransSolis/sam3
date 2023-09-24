@@ -1,26 +1,25 @@
 #[doc = "Register `PMC_IMR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<PMC_IMR_SPEC>);
+pub type R = crate::R<PMC_IMR_SPEC>;
 #[doc = "Field `MOSCXTS` reader - Main Crystal Oscillator Status Interrupt Mask"]
-pub type MOSCXTS_R = crate::BitReader<bool>;
+pub type MOSCXTS_R = crate::BitReader;
 #[doc = "Field `LOCKA` reader - PLLA Lock Interrupt Mask"]
-pub type LOCKA_R = crate::BitReader<bool>;
+pub type LOCKA_R = crate::BitReader;
 #[doc = "Field `LOCKB` reader - PLLB Lock Interrupt Mask"]
-pub type LOCKB_R = crate::BitReader<bool>;
+pub type LOCKB_R = crate::BitReader;
 #[doc = "Field `MCKRDY` reader - Master Clock Ready Interrupt Mask"]
-pub type MCKRDY_R = crate::BitReader<bool>;
+pub type MCKRDY_R = crate::BitReader;
 #[doc = "Field `PCKRDY0` reader - Programmable Clock Ready 0 Interrupt Mask"]
-pub type PCKRDY0_R = crate::BitReader<bool>;
+pub type PCKRDY0_R = crate::BitReader;
 #[doc = "Field `PCKRDY1` reader - Programmable Clock Ready 1 Interrupt Mask"]
-pub type PCKRDY1_R = crate::BitReader<bool>;
+pub type PCKRDY1_R = crate::BitReader;
 #[doc = "Field `PCKRDY2` reader - Programmable Clock Ready 2 Interrupt Mask"]
-pub type PCKRDY2_R = crate::BitReader<bool>;
+pub type PCKRDY2_R = crate::BitReader;
 #[doc = "Field `MOSCSELS` reader - Main Oscillator Selection Status Interrupt Mask"]
-pub type MOSCSELS_R = crate::BitReader<bool>;
+pub type MOSCSELS_R = crate::BitReader;
 #[doc = "Field `MOSCRCS` reader - Main On-Chip RC Status Interrupt Mask"]
-pub type MOSCRCS_R = crate::BitReader<bool>;
+pub type MOSCRCS_R = crate::BitReader;
 #[doc = "Field `CFDEV` reader - Clock Failure Detector Event Interrupt Mask"]
-pub type CFDEV_R = crate::BitReader<bool>;
+pub type CFDEV_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Main Crystal Oscillator Status Interrupt Mask"]
     #[inline(always)]
@@ -73,15 +72,13 @@ impl R {
         CFDEV_R::new(((self.bits >> 18) & 1) != 0)
     }
 }
-#[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_imr](index.html) module"]
+#[doc = "Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmc_imr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PMC_IMR_SPEC;
 impl crate::RegisterSpec for PMC_IMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pmc_imr::R](R) reader structure"]
-impl crate::Readable for PMC_IMR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`pmc_imr::R`](R) reader structure"]
+impl crate::Readable for PMC_IMR_SPEC {}
 #[doc = "`reset()` method sets PMC_IMR to value 0"]
 impl crate::Resettable for PMC_IMR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

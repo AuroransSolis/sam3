@@ -1,54 +1,53 @@
 #[doc = "Register `SR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<SR_SPEC>);
+pub type R = crate::R<SR_SPEC>;
 #[doc = "Field `MB0` reader - Mailbox 0 Event"]
-pub type MB0_R = crate::BitReader<bool>;
+pub type MB0_R = crate::BitReader;
 #[doc = "Field `MB1` reader - Mailbox 1 Event"]
-pub type MB1_R = crate::BitReader<bool>;
+pub type MB1_R = crate::BitReader;
 #[doc = "Field `MB2` reader - Mailbox 2 Event"]
-pub type MB2_R = crate::BitReader<bool>;
+pub type MB2_R = crate::BitReader;
 #[doc = "Field `MB3` reader - Mailbox 3 Event"]
-pub type MB3_R = crate::BitReader<bool>;
+pub type MB3_R = crate::BitReader;
 #[doc = "Field `MB4` reader - Mailbox 4 Event"]
-pub type MB4_R = crate::BitReader<bool>;
+pub type MB4_R = crate::BitReader;
 #[doc = "Field `MB5` reader - Mailbox 5 Event"]
-pub type MB5_R = crate::BitReader<bool>;
+pub type MB5_R = crate::BitReader;
 #[doc = "Field `MB6` reader - Mailbox 6 Event"]
-pub type MB6_R = crate::BitReader<bool>;
+pub type MB6_R = crate::BitReader;
 #[doc = "Field `MB7` reader - Mailbox 7 Event"]
-pub type MB7_R = crate::BitReader<bool>;
+pub type MB7_R = crate::BitReader;
 #[doc = "Field `ERRA` reader - Error Active Mode"]
-pub type ERRA_R = crate::BitReader<bool>;
+pub type ERRA_R = crate::BitReader;
 #[doc = "Field `WARN` reader - Warning Limit"]
-pub type WARN_R = crate::BitReader<bool>;
+pub type WARN_R = crate::BitReader;
 #[doc = "Field `ERRP` reader - Error Passive Mode"]
-pub type ERRP_R = crate::BitReader<bool>;
+pub type ERRP_R = crate::BitReader;
 #[doc = "Field `BOFF` reader - Bus Off Mode"]
-pub type BOFF_R = crate::BitReader<bool>;
+pub type BOFF_R = crate::BitReader;
 #[doc = "Field `SLEEP` reader - CAN controller in Low power Mode"]
-pub type SLEEP_R = crate::BitReader<bool>;
+pub type SLEEP_R = crate::BitReader;
 #[doc = "Field `WAKEUP` reader - CAN controller is not in Low power Mode"]
-pub type WAKEUP_R = crate::BitReader<bool>;
+pub type WAKEUP_R = crate::BitReader;
 #[doc = "Field `TOVF` reader - Timer Overflow"]
-pub type TOVF_R = crate::BitReader<bool>;
+pub type TOVF_R = crate::BitReader;
 #[doc = "Field `TSTP` reader - "]
-pub type TSTP_R = crate::BitReader<bool>;
+pub type TSTP_R = crate::BitReader;
 #[doc = "Field `CERR` reader - Mailbox CRC Error"]
-pub type CERR_R = crate::BitReader<bool>;
+pub type CERR_R = crate::BitReader;
 #[doc = "Field `SERR` reader - Mailbox Stuffing Error"]
-pub type SERR_R = crate::BitReader<bool>;
+pub type SERR_R = crate::BitReader;
 #[doc = "Field `AERR` reader - Acknowledgment Error"]
-pub type AERR_R = crate::BitReader<bool>;
+pub type AERR_R = crate::BitReader;
 #[doc = "Field `FERR` reader - Form Error"]
-pub type FERR_R = crate::BitReader<bool>;
+pub type FERR_R = crate::BitReader;
 #[doc = "Field `BERR` reader - Bit Error"]
-pub type BERR_R = crate::BitReader<bool>;
+pub type BERR_R = crate::BitReader;
 #[doc = "Field `RBSY` reader - Receiver busy"]
-pub type RBSY_R = crate::BitReader<bool>;
+pub type RBSY_R = crate::BitReader;
 #[doc = "Field `TBSY` reader - Transmitter busy"]
-pub type TBSY_R = crate::BitReader<bool>;
+pub type TBSY_R = crate::BitReader;
 #[doc = "Field `OVLSY` reader - Overload busy"]
-pub type OVLSY_R = crate::BitReader<bool>;
+pub type OVLSY_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Mailbox 0 Event"]
     #[inline(always)]
@@ -171,15 +170,13 @@ impl R {
         OVLSY_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]
+#[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SR_SPEC;
 impl crate::RegisterSpec for SR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sr::R](R) reader structure"]
-impl crate::Readable for SR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`sr::R`](R) reader structure"]
+impl crate::Readable for SR_SPEC {}
 #[doc = "`reset()` method sets SR to value 0"]
 impl crate::Resettable for SR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

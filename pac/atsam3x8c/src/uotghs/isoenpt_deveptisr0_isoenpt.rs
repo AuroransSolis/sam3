@@ -1,24 +1,23 @@
 #[doc = "Register `DEVEPTISR0_ISOENPT` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<ISOENPT_DEVEPTISR0_ISOENPT_SPEC>);
+pub type R = crate::R<ISOENPT_DEVEPTISR0_ISOENPT_SPEC>;
 #[doc = "Field `TXINI` reader - Transmitted IN Data Interrupt"]
-pub type TXINI_R = crate::BitReader<bool>;
+pub type TXINI_R = crate::BitReader;
 #[doc = "Field `RXOUTI` reader - Received OUT Data Interrupt"]
-pub type RXOUTI_R = crate::BitReader<bool>;
+pub type RXOUTI_R = crate::BitReader;
 #[doc = "Field `UNDERFI` reader - Underflow Interrupt"]
-pub type UNDERFI_R = crate::BitReader<bool>;
+pub type UNDERFI_R = crate::BitReader;
 #[doc = "Field `HBISOINERRI` reader - High Bandwidth Isochronous IN Underflow Error Interrupt"]
-pub type HBISOINERRI_R = crate::BitReader<bool>;
+pub type HBISOINERRI_R = crate::BitReader;
 #[doc = "Field `HBISOFLUSHI` reader - High Bandwidth Isochronous IN Flush Interrupt"]
-pub type HBISOFLUSHI_R = crate::BitReader<bool>;
+pub type HBISOFLUSHI_R = crate::BitReader;
 #[doc = "Field `OVERFI` reader - Overflow Interrupt"]
-pub type OVERFI_R = crate::BitReader<bool>;
+pub type OVERFI_R = crate::BitReader;
 #[doc = "Field `CRCERRI` reader - CRC Error Interrupt"]
-pub type CRCERRI_R = crate::BitReader<bool>;
+pub type CRCERRI_R = crate::BitReader;
 #[doc = "Field `SHORTPACKET` reader - Short Packet Interrupt"]
-pub type SHORTPACKET_R = crate::BitReader<bool>;
+pub type SHORTPACKET_R = crate::BitReader;
 #[doc = "Field `DTSEQ` reader - Data Toggle Sequence"]
-pub type DTSEQ_R = crate::FieldReader<u8, DTSEQ_A>;
+pub type DTSEQ_R = crate::FieldReader<DTSEQ_A>;
 #[doc = "Data Toggle Sequence"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -38,6 +37,9 @@ impl From<DTSEQ_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for DTSEQ_A {
+    type Ux = u8;
+}
 impl DTSEQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -50,31 +52,31 @@ impl DTSEQ_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `Data0`"]
+    #[doc = "Data0 toggle sequence"]
     #[inline(always)]
     pub fn is_data0(&self) -> bool {
         *self == DTSEQ_A::Data0
     }
-    #[doc = "Checks if the value of the field is `Data1`"]
+    #[doc = "Data1 toggle sequence"]
     #[inline(always)]
     pub fn is_data1(&self) -> bool {
         *self == DTSEQ_A::Data1
     }
-    #[doc = "Checks if the value of the field is `Data2`"]
+    #[doc = "Data2 toggle sequence (for high-bandwidth isochronous endpoint)"]
     #[inline(always)]
     pub fn is_data2(&self) -> bool {
         *self == DTSEQ_A::Data2
     }
-    #[doc = "Checks if the value of the field is `Mdata`"]
+    #[doc = "MData toggle sequence (for high-bandwidth isochronous endpoint)"]
     #[inline(always)]
     pub fn is_mdata(&self) -> bool {
         *self == DTSEQ_A::Mdata
     }
 }
 #[doc = "Field `ERRORTRANS` reader - High-bandwidth Isochronous OUT Endpoint Transaction Error Interrupt"]
-pub type ERRORTRANS_R = crate::BitReader<bool>;
+pub type ERRORTRANS_R = crate::BitReader;
 #[doc = "Field `NBUSYBK` reader - Number of Busy Banks"]
-pub type NBUSYBK_R = crate::FieldReader<u8, NBUSYBK_A>;
+pub type NBUSYBK_R = crate::FieldReader<NBUSYBK_A>;
 #[doc = "Number of Busy Banks"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -94,6 +96,9 @@ impl From<NBUSYBK_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for NBUSYBK_A {
+    type Ux = u8;
+}
 impl NBUSYBK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -106,29 +111,29 @@ impl NBUSYBK_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_0Busy`"]
+    #[doc = "0 busy bank (all banks free)"]
     #[inline(always)]
     pub fn is_0_busy(&self) -> bool {
         *self == NBUSYBK_A::_0Busy
     }
-    #[doc = "Checks if the value of the field is `_1Busy`"]
+    #[doc = "1 busy bank"]
     #[inline(always)]
     pub fn is_1_busy(&self) -> bool {
         *self == NBUSYBK_A::_1Busy
     }
-    #[doc = "Checks if the value of the field is `_2Busy`"]
+    #[doc = "2 busy banks"]
     #[inline(always)]
     pub fn is_2_busy(&self) -> bool {
         *self == NBUSYBK_A::_2Busy
     }
-    #[doc = "Checks if the value of the field is `_3Busy`"]
+    #[doc = "3 busy banks"]
     #[inline(always)]
     pub fn is_3_busy(&self) -> bool {
         *self == NBUSYBK_A::_3Busy
     }
 }
 #[doc = "Field `CURRBK` reader - Current Bank"]
-pub type CURRBK_R = crate::FieldReader<u8, CURRBK_A>;
+pub type CURRBK_R = crate::FieldReader<CURRBK_A>;
 #[doc = "Current Bank"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -146,6 +151,9 @@ impl From<CURRBK_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CURRBK_A {
+    type Ux = u8;
+}
 impl CURRBK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -157,28 +165,28 @@ impl CURRBK_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Bank0`"]
+    #[doc = "Current bank is bank0"]
     #[inline(always)]
     pub fn is_bank0(&self) -> bool {
         *self == CURRBK_A::Bank0
     }
-    #[doc = "Checks if the value of the field is `Bank1`"]
+    #[doc = "Current bank is bank1"]
     #[inline(always)]
     pub fn is_bank1(&self) -> bool {
         *self == CURRBK_A::Bank1
     }
-    #[doc = "Checks if the value of the field is `Bank2`"]
+    #[doc = "Current bank is bank2"]
     #[inline(always)]
     pub fn is_bank2(&self) -> bool {
         *self == CURRBK_A::Bank2
     }
 }
 #[doc = "Field `RWALL` reader - Read-write Allowed"]
-pub type RWALL_R = crate::BitReader<bool>;
+pub type RWALL_R = crate::BitReader;
 #[doc = "Field `CFGOK` reader - Configuration OK Status"]
-pub type CFGOK_R = crate::BitReader<bool>;
+pub type CFGOK_R = crate::BitReader;
 #[doc = "Field `BYCT` reader - Byte Count"]
-pub type BYCT_R = crate::FieldReader<u16, u16>;
+pub type BYCT_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bit 0 - Transmitted IN Data Interrupt"]
     #[inline(always)]
@@ -256,12 +264,10 @@ impl R {
         BYCT_R::new(((self.bits >> 20) & 0x07ff) as u16)
     }
 }
-#[doc = "Device Endpoint Status Register (n = 0)\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [isoenpt_deveptisr0_isoenpt](index.html) module"]
+#[doc = "Device Endpoint Status Register (n = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`isoenpt_deveptisr0_isoenpt::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ISOENPT_DEVEPTISR0_ISOENPT_SPEC;
 impl crate::RegisterSpec for ISOENPT_DEVEPTISR0_ISOENPT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [isoenpt_deveptisr0_isoenpt::R](R) reader structure"]
-impl crate::Readable for ISOENPT_DEVEPTISR0_ISOENPT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`isoenpt_deveptisr0_isoenpt::R`](R) reader structure"]
+impl crate::Readable for ISOENPT_DEVEPTISR0_ISOENPT_SPEC {}

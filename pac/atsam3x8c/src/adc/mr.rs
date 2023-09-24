@@ -1,9 +1,7 @@
 #[doc = "Register `MR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<MR_SPEC>);
+pub type R = crate::R<MR_SPEC>;
 #[doc = "Register `MR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<MR_SPEC>);
+pub type W = crate::W<MR_SPEC>;
 #[doc = "Field `TRGEN` reader - Trigger Enable"]
 pub type TRGEN_R = crate::BitReader<TRGEN_A>;
 #[doc = "Trigger Enable\n\nValue on reset: 0"]
@@ -29,33 +27,36 @@ impl TRGEN_R {
             true => TRGEN_A::En,
         }
     }
-    #[doc = "Checks if the value of the field is `Dis`"]
+    #[doc = "Hardware triggers are disabled. Starting a conversion is only possible by software."]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
         *self == TRGEN_A::Dis
     }
-    #[doc = "Checks if the value of the field is `En`"]
+    #[doc = "Hardware trigger selected by TRGSEL field is enabled."]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
         *self == TRGEN_A::En
     }
 }
 #[doc = "Field `TRGEN` writer - Trigger Enable"]
-pub type TRGEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, TRGEN_A, O>;
-impl<'a, const O: u8> TRGEN_W<'a, O> {
+pub type TRGEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TRGEN_A>;
+impl<'a, REG, const O: u8> TRGEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Hardware triggers are disabled. Starting a conversion is only possible by software."]
     #[inline(always)]
-    pub fn dis(self) -> &'a mut W {
+    pub fn dis(self) -> &'a mut crate::W<REG> {
         self.variant(TRGEN_A::Dis)
     }
     #[doc = "Hardware trigger selected by TRGSEL field is enabled."]
     #[inline(always)]
-    pub fn en(self) -> &'a mut W {
+    pub fn en(self) -> &'a mut crate::W<REG> {
         self.variant(TRGEN_A::En)
     }
 }
 #[doc = "Field `TRGSEL` reader - Trigger Selection"]
-pub type TRGSEL_R = crate::FieldReader<u8, TRGSEL_A>;
+pub type TRGSEL_R = crate::FieldReader<TRGSEL_A>;
 #[doc = "Trigger Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -79,6 +80,9 @@ impl From<TRGSEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for TRGSEL_A {
+    type Ux = u8;
+}
 impl TRGSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -93,68 +97,72 @@ impl TRGSEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `AdcTrig0`"]
+    #[doc = "External : ADCTRG"]
     #[inline(always)]
     pub fn is_adc_trig0(&self) -> bool {
         *self == TRGSEL_A::AdcTrig0
     }
-    #[doc = "Checks if the value of the field is `AdcTrig1`"]
+    #[doc = "TIOA Output of the Timer Counter Channel 0"]
     #[inline(always)]
     pub fn is_adc_trig1(&self) -> bool {
         *self == TRGSEL_A::AdcTrig1
     }
-    #[doc = "Checks if the value of the field is `AdcTrig2`"]
+    #[doc = "TIOA Output of the Timer Counter Channel 1"]
     #[inline(always)]
     pub fn is_adc_trig2(&self) -> bool {
         *self == TRGSEL_A::AdcTrig2
     }
-    #[doc = "Checks if the value of the field is `AdcTrig3`"]
+    #[doc = "TIOA Output of the Timer Counter Channel 2"]
     #[inline(always)]
     pub fn is_adc_trig3(&self) -> bool {
         *self == TRGSEL_A::AdcTrig3
     }
-    #[doc = "Checks if the value of the field is `AdcTrig4`"]
+    #[doc = "PWM Event Line 0"]
     #[inline(always)]
     pub fn is_adc_trig4(&self) -> bool {
         *self == TRGSEL_A::AdcTrig4
     }
-    #[doc = "Checks if the value of the field is `AdcTrig5`"]
+    #[doc = "PWM Event Line 0"]
     #[inline(always)]
     pub fn is_adc_trig5(&self) -> bool {
         *self == TRGSEL_A::AdcTrig5
     }
 }
 #[doc = "Field `TRGSEL` writer - Trigger Selection"]
-pub type TRGSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, TRGSEL_A, 3, O>;
-impl<'a, const O: u8> TRGSEL_W<'a, O> {
+pub type TRGSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, TRGSEL_A>;
+impl<'a, REG, const O: u8> TRGSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "External : ADCTRG"]
     #[inline(always)]
-    pub fn adc_trig0(self) -> &'a mut W {
+    pub fn adc_trig0(self) -> &'a mut crate::W<REG> {
         self.variant(TRGSEL_A::AdcTrig0)
     }
     #[doc = "TIOA Output of the Timer Counter Channel 0"]
     #[inline(always)]
-    pub fn adc_trig1(self) -> &'a mut W {
+    pub fn adc_trig1(self) -> &'a mut crate::W<REG> {
         self.variant(TRGSEL_A::AdcTrig1)
     }
     #[doc = "TIOA Output of the Timer Counter Channel 1"]
     #[inline(always)]
-    pub fn adc_trig2(self) -> &'a mut W {
+    pub fn adc_trig2(self) -> &'a mut crate::W<REG> {
         self.variant(TRGSEL_A::AdcTrig2)
     }
     #[doc = "TIOA Output of the Timer Counter Channel 2"]
     #[inline(always)]
-    pub fn adc_trig3(self) -> &'a mut W {
+    pub fn adc_trig3(self) -> &'a mut crate::W<REG> {
         self.variant(TRGSEL_A::AdcTrig3)
     }
     #[doc = "PWM Event Line 0"]
     #[inline(always)]
-    pub fn adc_trig4(self) -> &'a mut W {
+    pub fn adc_trig4(self) -> &'a mut crate::W<REG> {
         self.variant(TRGSEL_A::AdcTrig4)
     }
     #[doc = "PWM Event Line 0"]
     #[inline(always)]
-    pub fn adc_trig5(self) -> &'a mut W {
+    pub fn adc_trig5(self) -> &'a mut crate::W<REG> {
         self.variant(TRGSEL_A::AdcTrig5)
     }
 }
@@ -183,28 +191,31 @@ impl SLEEP_R {
             true => SLEEP_A::Sleep,
         }
     }
-    #[doc = "Checks if the value of the field is `Normal`"]
+    #[doc = "Normal Mode: The ADC Core and reference voltage circuitry are kept ON between conversions"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == SLEEP_A::Normal
     }
-    #[doc = "Checks if the value of the field is `Sleep`"]
+    #[doc = "Sleep Mode: The wake-up time can be modified by programming FWUP bit"]
     #[inline(always)]
     pub fn is_sleep(&self) -> bool {
         *self == SLEEP_A::Sleep
     }
 }
 #[doc = "Field `SLEEP` writer - Sleep Mode"]
-pub type SLEEP_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, SLEEP_A, O>;
-impl<'a, const O: u8> SLEEP_W<'a, O> {
+pub type SLEEP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SLEEP_A>;
+impl<'a, REG, const O: u8> SLEEP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal Mode: The ADC Core and reference voltage circuitry are kept ON between conversions"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(SLEEP_A::Normal)
     }
     #[doc = "Sleep Mode: The wake-up time can be modified by programming FWUP bit"]
     #[inline(always)]
-    pub fn sleep(self) -> &'a mut W {
+    pub fn sleep(self) -> &'a mut crate::W<REG> {
         self.variant(SLEEP_A::Sleep)
     }
 }
@@ -233,28 +244,31 @@ impl FWUP_R {
             true => FWUP_A::On,
         }
     }
-    #[doc = "Checks if the value of the field is `Off`"]
+    #[doc = "If SLEEP is 1 then both ADC Core and reference voltage circuitry are OFF between conversions"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
         *self == FWUP_A::Off
     }
-    #[doc = "Checks if the value of the field is `On`"]
+    #[doc = "If SLEEP is 1 then Fast Wake-up Sleep Mode: The Voltage reference is ON between conversions and ADC Core is OFF"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
         *self == FWUP_A::On
     }
 }
 #[doc = "Field `FWUP` writer - Fast Wake Up"]
-pub type FWUP_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, FWUP_A, O>;
-impl<'a, const O: u8> FWUP_W<'a, O> {
+pub type FWUP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FWUP_A>;
+impl<'a, REG, const O: u8> FWUP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "If SLEEP is 1 then both ADC Core and reference voltage circuitry are OFF between conversions"]
     #[inline(always)]
-    pub fn off(self) -> &'a mut W {
+    pub fn off(self) -> &'a mut crate::W<REG> {
         self.variant(FWUP_A::Off)
     }
     #[doc = "If SLEEP is 1 then Fast Wake-up Sleep Mode: The Voltage reference is ON between conversions and ADC Core is OFF"]
     #[inline(always)]
-    pub fn on(self) -> &'a mut W {
+    pub fn on(self) -> &'a mut crate::W<REG> {
         self.variant(FWUP_A::On)
     }
 }
@@ -283,37 +297,40 @@ impl FREERUN_R {
             true => FREERUN_A::On,
         }
     }
-    #[doc = "Checks if the value of the field is `Off`"]
+    #[doc = "Normal Mode"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
         *self == FREERUN_A::Off
     }
-    #[doc = "Checks if the value of the field is `On`"]
+    #[doc = "Free Run Mode: Never wait for any trigger."]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
         *self == FREERUN_A::On
     }
 }
 #[doc = "Field `FREERUN` writer - Free Run Mode"]
-pub type FREERUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, FREERUN_A, O>;
-impl<'a, const O: u8> FREERUN_W<'a, O> {
+pub type FREERUN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FREERUN_A>;
+impl<'a, REG, const O: u8> FREERUN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal Mode"]
     #[inline(always)]
-    pub fn off(self) -> &'a mut W {
+    pub fn off(self) -> &'a mut crate::W<REG> {
         self.variant(FREERUN_A::Off)
     }
     #[doc = "Free Run Mode: Never wait for any trigger."]
     #[inline(always)]
-    pub fn on(self) -> &'a mut W {
+    pub fn on(self) -> &'a mut crate::W<REG> {
         self.variant(FREERUN_A::On)
     }
 }
 #[doc = "Field `PRESCAL` reader - Prescaler Rate Selection"]
-pub type PRESCAL_R = crate::FieldReader<u8, u8>;
+pub type PRESCAL_R = crate::FieldReader;
 #[doc = "Field `PRESCAL` writer - Prescaler Rate Selection"]
-pub type PRESCAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, u8, 8, O>;
+pub type PRESCAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `STARTUP` reader - Start Up Time"]
-pub type STARTUP_R = crate::FieldReader<u8, STARTUP_A>;
+pub type STARTUP_R = crate::FieldReader<STARTUP_A>;
 #[doc = "Start Up Time\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -357,6 +374,9 @@ impl From<STARTUP_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for STARTUP_A {
+    type Ux = u8;
+}
 impl STARTUP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -381,173 +401,177 @@ impl STARTUP_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `Sut0`"]
+    #[doc = "0 periods of ADCClock"]
     #[inline(always)]
     pub fn is_sut0(&self) -> bool {
         *self == STARTUP_A::Sut0
     }
-    #[doc = "Checks if the value of the field is `Sut8`"]
+    #[doc = "8 periods of ADCClock"]
     #[inline(always)]
     pub fn is_sut8(&self) -> bool {
         *self == STARTUP_A::Sut8
     }
-    #[doc = "Checks if the value of the field is `Sut16`"]
+    #[doc = "16 periods of ADCClock"]
     #[inline(always)]
     pub fn is_sut16(&self) -> bool {
         *self == STARTUP_A::Sut16
     }
-    #[doc = "Checks if the value of the field is `Sut24`"]
+    #[doc = "24 periods of ADCClock"]
     #[inline(always)]
     pub fn is_sut24(&self) -> bool {
         *self == STARTUP_A::Sut24
     }
-    #[doc = "Checks if the value of the field is `Sut64`"]
+    #[doc = "64 periods of ADCClock"]
     #[inline(always)]
     pub fn is_sut64(&self) -> bool {
         *self == STARTUP_A::Sut64
     }
-    #[doc = "Checks if the value of the field is `Sut80`"]
+    #[doc = "80 periods of ADCClock"]
     #[inline(always)]
     pub fn is_sut80(&self) -> bool {
         *self == STARTUP_A::Sut80
     }
-    #[doc = "Checks if the value of the field is `Sut96`"]
+    #[doc = "96 periods of ADCClock"]
     #[inline(always)]
     pub fn is_sut96(&self) -> bool {
         *self == STARTUP_A::Sut96
     }
-    #[doc = "Checks if the value of the field is `Sut112`"]
+    #[doc = "112 periods of ADCClock"]
     #[inline(always)]
     pub fn is_sut112(&self) -> bool {
         *self == STARTUP_A::Sut112
     }
-    #[doc = "Checks if the value of the field is `Sut512`"]
+    #[doc = "512 periods of ADCClock"]
     #[inline(always)]
     pub fn is_sut512(&self) -> bool {
         *self == STARTUP_A::Sut512
     }
-    #[doc = "Checks if the value of the field is `Sut576`"]
+    #[doc = "576 periods of ADCClock"]
     #[inline(always)]
     pub fn is_sut576(&self) -> bool {
         *self == STARTUP_A::Sut576
     }
-    #[doc = "Checks if the value of the field is `Sut640`"]
+    #[doc = "640 periods of ADCClock"]
     #[inline(always)]
     pub fn is_sut640(&self) -> bool {
         *self == STARTUP_A::Sut640
     }
-    #[doc = "Checks if the value of the field is `Sut704`"]
+    #[doc = "704 periods of ADCClock"]
     #[inline(always)]
     pub fn is_sut704(&self) -> bool {
         *self == STARTUP_A::Sut704
     }
-    #[doc = "Checks if the value of the field is `Sut768`"]
+    #[doc = "768 periods of ADCClock"]
     #[inline(always)]
     pub fn is_sut768(&self) -> bool {
         *self == STARTUP_A::Sut768
     }
-    #[doc = "Checks if the value of the field is `Sut832`"]
+    #[doc = "832 periods of ADCClock"]
     #[inline(always)]
     pub fn is_sut832(&self) -> bool {
         *self == STARTUP_A::Sut832
     }
-    #[doc = "Checks if the value of the field is `Sut896`"]
+    #[doc = "896 periods of ADCClock"]
     #[inline(always)]
     pub fn is_sut896(&self) -> bool {
         *self == STARTUP_A::Sut896
     }
-    #[doc = "Checks if the value of the field is `Sut960`"]
+    #[doc = "960 periods of ADCClock"]
     #[inline(always)]
     pub fn is_sut960(&self) -> bool {
         *self == STARTUP_A::Sut960
     }
 }
 #[doc = "Field `STARTUP` writer - Start Up Time"]
-pub type STARTUP_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, MR_SPEC, u8, STARTUP_A, 4, O>;
-impl<'a, const O: u8> STARTUP_W<'a, O> {
+pub type STARTUP_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 4, O, STARTUP_A>;
+impl<'a, REG, const O: u8> STARTUP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "0 periods of ADCClock"]
     #[inline(always)]
-    pub fn sut0(self) -> &'a mut W {
+    pub fn sut0(self) -> &'a mut crate::W<REG> {
         self.variant(STARTUP_A::Sut0)
     }
     #[doc = "8 periods of ADCClock"]
     #[inline(always)]
-    pub fn sut8(self) -> &'a mut W {
+    pub fn sut8(self) -> &'a mut crate::W<REG> {
         self.variant(STARTUP_A::Sut8)
     }
     #[doc = "16 periods of ADCClock"]
     #[inline(always)]
-    pub fn sut16(self) -> &'a mut W {
+    pub fn sut16(self) -> &'a mut crate::W<REG> {
         self.variant(STARTUP_A::Sut16)
     }
     #[doc = "24 periods of ADCClock"]
     #[inline(always)]
-    pub fn sut24(self) -> &'a mut W {
+    pub fn sut24(self) -> &'a mut crate::W<REG> {
         self.variant(STARTUP_A::Sut24)
     }
     #[doc = "64 periods of ADCClock"]
     #[inline(always)]
-    pub fn sut64(self) -> &'a mut W {
+    pub fn sut64(self) -> &'a mut crate::W<REG> {
         self.variant(STARTUP_A::Sut64)
     }
     #[doc = "80 periods of ADCClock"]
     #[inline(always)]
-    pub fn sut80(self) -> &'a mut W {
+    pub fn sut80(self) -> &'a mut crate::W<REG> {
         self.variant(STARTUP_A::Sut80)
     }
     #[doc = "96 periods of ADCClock"]
     #[inline(always)]
-    pub fn sut96(self) -> &'a mut W {
+    pub fn sut96(self) -> &'a mut crate::W<REG> {
         self.variant(STARTUP_A::Sut96)
     }
     #[doc = "112 periods of ADCClock"]
     #[inline(always)]
-    pub fn sut112(self) -> &'a mut W {
+    pub fn sut112(self) -> &'a mut crate::W<REG> {
         self.variant(STARTUP_A::Sut112)
     }
     #[doc = "512 periods of ADCClock"]
     #[inline(always)]
-    pub fn sut512(self) -> &'a mut W {
+    pub fn sut512(self) -> &'a mut crate::W<REG> {
         self.variant(STARTUP_A::Sut512)
     }
     #[doc = "576 periods of ADCClock"]
     #[inline(always)]
-    pub fn sut576(self) -> &'a mut W {
+    pub fn sut576(self) -> &'a mut crate::W<REG> {
         self.variant(STARTUP_A::Sut576)
     }
     #[doc = "640 periods of ADCClock"]
     #[inline(always)]
-    pub fn sut640(self) -> &'a mut W {
+    pub fn sut640(self) -> &'a mut crate::W<REG> {
         self.variant(STARTUP_A::Sut640)
     }
     #[doc = "704 periods of ADCClock"]
     #[inline(always)]
-    pub fn sut704(self) -> &'a mut W {
+    pub fn sut704(self) -> &'a mut crate::W<REG> {
         self.variant(STARTUP_A::Sut704)
     }
     #[doc = "768 periods of ADCClock"]
     #[inline(always)]
-    pub fn sut768(self) -> &'a mut W {
+    pub fn sut768(self) -> &'a mut crate::W<REG> {
         self.variant(STARTUP_A::Sut768)
     }
     #[doc = "832 periods of ADCClock"]
     #[inline(always)]
-    pub fn sut832(self) -> &'a mut W {
+    pub fn sut832(self) -> &'a mut crate::W<REG> {
         self.variant(STARTUP_A::Sut832)
     }
     #[doc = "896 periods of ADCClock"]
     #[inline(always)]
-    pub fn sut896(self) -> &'a mut W {
+    pub fn sut896(self) -> &'a mut crate::W<REG> {
         self.variant(STARTUP_A::Sut896)
     }
     #[doc = "960 periods of ADCClock"]
     #[inline(always)]
-    pub fn sut960(self) -> &'a mut W {
+    pub fn sut960(self) -> &'a mut crate::W<REG> {
         self.variant(STARTUP_A::Sut960)
     }
 }
 #[doc = "Field `SETTLING` reader - Analog Settling Time"]
-pub type SETTLING_R = crate::FieldReader<u8, SETTLING_A>;
+pub type SETTLING_R = crate::FieldReader<SETTLING_A>;
 #[doc = "Analog Settling Time\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -567,6 +591,9 @@ impl From<SETTLING_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SETTLING_A {
+    type Ux = u8;
+}
 impl SETTLING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -579,49 +606,52 @@ impl SETTLING_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `Ast3`"]
+    #[doc = "3 periods of ADCClock"]
     #[inline(always)]
     pub fn is_ast3(&self) -> bool {
         *self == SETTLING_A::Ast3
     }
-    #[doc = "Checks if the value of the field is `Ast5`"]
+    #[doc = "5 periods of ADCClock"]
     #[inline(always)]
     pub fn is_ast5(&self) -> bool {
         *self == SETTLING_A::Ast5
     }
-    #[doc = "Checks if the value of the field is `Ast9`"]
+    #[doc = "9 periods of ADCClock"]
     #[inline(always)]
     pub fn is_ast9(&self) -> bool {
         *self == SETTLING_A::Ast9
     }
-    #[doc = "Checks if the value of the field is `Ast17`"]
+    #[doc = "17 periods of ADCClock"]
     #[inline(always)]
     pub fn is_ast17(&self) -> bool {
         *self == SETTLING_A::Ast17
     }
 }
 #[doc = "Field `SETTLING` writer - Analog Settling Time"]
-pub type SETTLING_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, MR_SPEC, u8, SETTLING_A, 2, O>;
-impl<'a, const O: u8> SETTLING_W<'a, O> {
+pub type SETTLING_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, SETTLING_A>;
+impl<'a, REG, const O: u8> SETTLING_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "3 periods of ADCClock"]
     #[inline(always)]
-    pub fn ast3(self) -> &'a mut W {
+    pub fn ast3(self) -> &'a mut crate::W<REG> {
         self.variant(SETTLING_A::Ast3)
     }
     #[doc = "5 periods of ADCClock"]
     #[inline(always)]
-    pub fn ast5(self) -> &'a mut W {
+    pub fn ast5(self) -> &'a mut crate::W<REG> {
         self.variant(SETTLING_A::Ast5)
     }
     #[doc = "9 periods of ADCClock"]
     #[inline(always)]
-    pub fn ast9(self) -> &'a mut W {
+    pub fn ast9(self) -> &'a mut crate::W<REG> {
         self.variant(SETTLING_A::Ast9)
     }
     #[doc = "17 periods of ADCClock"]
     #[inline(always)]
-    pub fn ast17(self) -> &'a mut W {
+    pub fn ast17(self) -> &'a mut crate::W<REG> {
         self.variant(SETTLING_A::Ast17)
     }
 }
@@ -650,39 +680,42 @@ impl ANACH_R {
             true => ANACH_A::Allowed,
         }
     }
-    #[doc = "Checks if the value of the field is `None`"]
+    #[doc = "No analog change on channel switching: DIFF0, GAIN0 and OFF0 are used for all channels"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
         *self == ANACH_A::None
     }
-    #[doc = "Checks if the value of the field is `Allowed`"]
+    #[doc = "Allows different analog settings for each channel. See ADC_CGR and ADC_COR Registers"]
     #[inline(always)]
     pub fn is_allowed(&self) -> bool {
         *self == ANACH_A::Allowed
     }
 }
 #[doc = "Field `ANACH` writer - Analog Change"]
-pub type ANACH_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, ANACH_A, O>;
-impl<'a, const O: u8> ANACH_W<'a, O> {
+pub type ANACH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ANACH_A>;
+impl<'a, REG, const O: u8> ANACH_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No analog change on channel switching: DIFF0, GAIN0 and OFF0 are used for all channels"]
     #[inline(always)]
-    pub fn none(self) -> &'a mut W {
+    pub fn none(self) -> &'a mut crate::W<REG> {
         self.variant(ANACH_A::None)
     }
     #[doc = "Allows different analog settings for each channel. See ADC_CGR and ADC_COR Registers"]
     #[inline(always)]
-    pub fn allowed(self) -> &'a mut W {
+    pub fn allowed(self) -> &'a mut crate::W<REG> {
         self.variant(ANACH_A::Allowed)
     }
 }
 #[doc = "Field `TRACKTIM` reader - Tracking Time"]
-pub type TRACKTIM_R = crate::FieldReader<u8, u8>;
+pub type TRACKTIM_R = crate::FieldReader;
 #[doc = "Field `TRACKTIM` writer - Tracking Time"]
-pub type TRACKTIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, u8, 4, O>;
+pub type TRACKTIM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `TRANSFER` reader - Transfer Period"]
-pub type TRANSFER_R = crate::FieldReader<u8, u8>;
+pub type TRANSFER_R = crate::FieldReader;
 #[doc = "Field `TRANSFER` writer - Transfer Period"]
-pub type TRANSFER_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, u8, 2, O>;
+pub type TRANSFER_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `USEQ` reader - Use Sequence Enable"]
 pub type USEQ_R = crate::BitReader<USEQ_A>;
 #[doc = "Use Sequence Enable\n\nValue on reset: 0"]
@@ -708,28 +741,31 @@ impl USEQ_R {
             true => USEQ_A::RegOrder,
         }
     }
-    #[doc = "Checks if the value of the field is `NumOrder`"]
+    #[doc = "Normal Mode: The controller converts channels in a simple numeric order depending only on the channel index."]
     #[inline(always)]
     pub fn is_num_order(&self) -> bool {
         *self == USEQ_A::NumOrder
     }
-    #[doc = "Checks if the value of the field is `RegOrder`"]
+    #[doc = "User Sequence Mode: The sequence respects what is defined in ADC_SEQR1 and ADC_SEQR2 registers and can be used to convert several times the same channel."]
     #[inline(always)]
     pub fn is_reg_order(&self) -> bool {
         *self == USEQ_A::RegOrder
     }
 }
 #[doc = "Field `USEQ` writer - Use Sequence Enable"]
-pub type USEQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, USEQ_A, O>;
-impl<'a, const O: u8> USEQ_W<'a, O> {
+pub type USEQ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USEQ_A>;
+impl<'a, REG, const O: u8> USEQ_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal Mode: The controller converts channels in a simple numeric order depending only on the channel index."]
     #[inline(always)]
-    pub fn num_order(self) -> &'a mut W {
+    pub fn num_order(self) -> &'a mut crate::W<REG> {
         self.variant(USEQ_A::NumOrder)
     }
     #[doc = "User Sequence Mode: The sequence respects what is defined in ADC_SEQR1 and ADC_SEQR2 registers and can be used to convert several times the same channel."]
     #[inline(always)]
-    pub fn reg_order(self) -> &'a mut W {
+    pub fn reg_order(self) -> &'a mut crate::W<REG> {
         self.variant(USEQ_A::RegOrder)
     }
 }
@@ -799,94 +835,91 @@ impl W {
     #[doc = "Bit 0 - Trigger Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn trgen(&mut self) -> TRGEN_W<0> {
+    pub fn trgen(&mut self) -> TRGEN_W<MR_SPEC, 0> {
         TRGEN_W::new(self)
     }
     #[doc = "Bits 1:3 - Trigger Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn trgsel(&mut self) -> TRGSEL_W<1> {
+    pub fn trgsel(&mut self) -> TRGSEL_W<MR_SPEC, 1> {
         TRGSEL_W::new(self)
     }
     #[doc = "Bit 5 - Sleep Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn sleep(&mut self) -> SLEEP_W<5> {
+    pub fn sleep(&mut self) -> SLEEP_W<MR_SPEC, 5> {
         SLEEP_W::new(self)
     }
     #[doc = "Bit 6 - Fast Wake Up"]
     #[inline(always)]
     #[must_use]
-    pub fn fwup(&mut self) -> FWUP_W<6> {
+    pub fn fwup(&mut self) -> FWUP_W<MR_SPEC, 6> {
         FWUP_W::new(self)
     }
     #[doc = "Bit 7 - Free Run Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn freerun(&mut self) -> FREERUN_W<7> {
+    pub fn freerun(&mut self) -> FREERUN_W<MR_SPEC, 7> {
         FREERUN_W::new(self)
     }
     #[doc = "Bits 8:15 - Prescaler Rate Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn prescal(&mut self) -> PRESCAL_W<8> {
+    pub fn prescal(&mut self) -> PRESCAL_W<MR_SPEC, 8> {
         PRESCAL_W::new(self)
     }
     #[doc = "Bits 16:19 - Start Up Time"]
     #[inline(always)]
     #[must_use]
-    pub fn startup(&mut self) -> STARTUP_W<16> {
+    pub fn startup(&mut self) -> STARTUP_W<MR_SPEC, 16> {
         STARTUP_W::new(self)
     }
     #[doc = "Bits 20:21 - Analog Settling Time"]
     #[inline(always)]
     #[must_use]
-    pub fn settling(&mut self) -> SETTLING_W<20> {
+    pub fn settling(&mut self) -> SETTLING_W<MR_SPEC, 20> {
         SETTLING_W::new(self)
     }
     #[doc = "Bit 23 - Analog Change"]
     #[inline(always)]
     #[must_use]
-    pub fn anach(&mut self) -> ANACH_W<23> {
+    pub fn anach(&mut self) -> ANACH_W<MR_SPEC, 23> {
         ANACH_W::new(self)
     }
     #[doc = "Bits 24:27 - Tracking Time"]
     #[inline(always)]
     #[must_use]
-    pub fn tracktim(&mut self) -> TRACKTIM_W<24> {
+    pub fn tracktim(&mut self) -> TRACKTIM_W<MR_SPEC, 24> {
         TRACKTIM_W::new(self)
     }
     #[doc = "Bits 28:29 - Transfer Period"]
     #[inline(always)]
     #[must_use]
-    pub fn transfer(&mut self) -> TRANSFER_W<28> {
+    pub fn transfer(&mut self) -> TRANSFER_W<MR_SPEC, 28> {
         TRANSFER_W::new(self)
     }
     #[doc = "Bit 31 - Use Sequence Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn useq(&mut self) -> USEQ_W<31> {
+    pub fn useq(&mut self) -> USEQ_W<MR_SPEC, 31> {
         USEQ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mr](index.html) module"]
+#[doc = "Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MR_SPEC;
 impl crate::RegisterSpec for MR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mr::R](R) reader structure"]
-impl crate::Readable for MR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
+#[doc = "`read()` method returns [`mr::R`](R) reader structure"]
+impl crate::Readable for MR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mr::W`](W) writer structure"]
 impl crate::Writable for MR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

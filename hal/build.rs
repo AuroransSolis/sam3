@@ -12,7 +12,7 @@ fn main() {
         .filter_map(|[chip, memory_file]| env::var_os(chip).map(|_| memory_file))
         .for_each(|memory_file| memory_files.push(memory_file));
     if memory_files.is_empty() {
-        println!("cargo:warning=No target device specified.");
+        println!("cargo:warning=No memory file being specified.");
     } else if memory_files.len() > 1 {
         let mut msg = format!(
             "cargo:warning=Multiple devices enabled: [{}",

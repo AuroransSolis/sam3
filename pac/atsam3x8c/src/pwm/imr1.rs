@@ -1,38 +1,37 @@
 #[doc = "Register `IMR1` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<IMR1_SPEC>);
+pub type R = crate::R<IMR1_SPEC>;
 #[doc = "Field `CHID0` reader - Counter Event on Channel 0 Interrupt Mask"]
-pub type CHID0_R = crate::BitReader<bool>;
+pub type CHID0_R = crate::BitReader;
 #[doc = "Field `CHID1` reader - Counter Event on Channel 1 Interrupt Mask"]
-pub type CHID1_R = crate::BitReader<bool>;
+pub type CHID1_R = crate::BitReader;
 #[doc = "Field `CHID2` reader - Counter Event on Channel 2 Interrupt Mask"]
-pub type CHID2_R = crate::BitReader<bool>;
+pub type CHID2_R = crate::BitReader;
 #[doc = "Field `CHID3` reader - Counter Event on Channel 3 Interrupt Mask"]
-pub type CHID3_R = crate::BitReader<bool>;
+pub type CHID3_R = crate::BitReader;
 #[doc = "Field `CHID4` reader - Counter Event on Channel 4 Interrupt Mask"]
-pub type CHID4_R = crate::BitReader<bool>;
+pub type CHID4_R = crate::BitReader;
 #[doc = "Field `CHID5` reader - Counter Event on Channel 5 Interrupt Mask"]
-pub type CHID5_R = crate::BitReader<bool>;
+pub type CHID5_R = crate::BitReader;
 #[doc = "Field `CHID6` reader - Counter Event on Channel 6 Interrupt Mask"]
-pub type CHID6_R = crate::BitReader<bool>;
+pub type CHID6_R = crate::BitReader;
 #[doc = "Field `CHID7` reader - Counter Event on Channel 7 Interrupt Mask"]
-pub type CHID7_R = crate::BitReader<bool>;
+pub type CHID7_R = crate::BitReader;
 #[doc = "Field `FCHID0` reader - Fault Protection Trigger on Channel 0 Interrupt Mask"]
-pub type FCHID0_R = crate::BitReader<bool>;
+pub type FCHID0_R = crate::BitReader;
 #[doc = "Field `FCHID1` reader - Fault Protection Trigger on Channel 1 Interrupt Mask"]
-pub type FCHID1_R = crate::BitReader<bool>;
+pub type FCHID1_R = crate::BitReader;
 #[doc = "Field `FCHID2` reader - Fault Protection Trigger on Channel 2 Interrupt Mask"]
-pub type FCHID2_R = crate::BitReader<bool>;
+pub type FCHID2_R = crate::BitReader;
 #[doc = "Field `FCHID3` reader - Fault Protection Trigger on Channel 3 Interrupt Mask"]
-pub type FCHID3_R = crate::BitReader<bool>;
+pub type FCHID3_R = crate::BitReader;
 #[doc = "Field `FCHID4` reader - Fault Protection Trigger on Channel 4 Interrupt Mask"]
-pub type FCHID4_R = crate::BitReader<bool>;
+pub type FCHID4_R = crate::BitReader;
 #[doc = "Field `FCHID5` reader - Fault Protection Trigger on Channel 5 Interrupt Mask"]
-pub type FCHID5_R = crate::BitReader<bool>;
+pub type FCHID5_R = crate::BitReader;
 #[doc = "Field `FCHID6` reader - Fault Protection Trigger on Channel 6 Interrupt Mask"]
-pub type FCHID6_R = crate::BitReader<bool>;
+pub type FCHID6_R = crate::BitReader;
 #[doc = "Field `FCHID7` reader - Fault Protection Trigger on Channel 7 Interrupt Mask"]
-pub type FCHID7_R = crate::BitReader<bool>;
+pub type FCHID7_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Counter Event on Channel 0 Interrupt Mask"]
     #[inline(always)]
@@ -115,15 +114,13 @@ impl R {
         FCHID7_R::new(((self.bits >> 23) & 1) != 0)
     }
 }
-#[doc = "PWM Interrupt Mask Register 1\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr1](index.html) module"]
+#[doc = "PWM Interrupt Mask Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`imr1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IMR1_SPEC;
 impl crate::RegisterSpec for IMR1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [imr1::R](R) reader structure"]
-impl crate::Readable for IMR1_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`imr1::R`](R) reader structure"]
+impl crate::Readable for IMR1_SPEC {}
 #[doc = "`reset()` method sets IMR1 to value 0"]
 impl crate::Resettable for IMR1_SPEC {
     const RESET_VALUE: Self::Ux = 0;

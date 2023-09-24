@@ -1,25 +1,23 @@
 #[doc = "Register `FPE1` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<FPE1_SPEC>);
+pub type R = crate::R<FPE1_SPEC>;
 #[doc = "Register `FPE1` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<FPE1_SPEC>);
+pub type W = crate::W<FPE1_SPEC>;
 #[doc = "Field `FPE0` reader - Fault Protection Enable for channel 0 (fault input bit varies from 0 to 5)"]
-pub type FPE0_R = crate::FieldReader<u8, u8>;
+pub type FPE0_R = crate::FieldReader;
 #[doc = "Field `FPE0` writer - Fault Protection Enable for channel 0 (fault input bit varies from 0 to 5)"]
-pub type FPE0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FPE1_SPEC, u8, u8, 8, O>;
+pub type FPE0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `FPE1` reader - Fault Protection Enable for channel 1 (fault input bit varies from 0 to 5)"]
-pub type FPE1_R = crate::FieldReader<u8, u8>;
+pub type FPE1_R = crate::FieldReader;
 #[doc = "Field `FPE1` writer - Fault Protection Enable for channel 1 (fault input bit varies from 0 to 5)"]
-pub type FPE1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FPE1_SPEC, u8, u8, 8, O>;
+pub type FPE1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `FPE2` reader - Fault Protection Enable for channel 2 (fault input bit varies from 0 to 5)"]
-pub type FPE2_R = crate::FieldReader<u8, u8>;
+pub type FPE2_R = crate::FieldReader;
 #[doc = "Field `FPE2` writer - Fault Protection Enable for channel 2 (fault input bit varies from 0 to 5)"]
-pub type FPE2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FPE1_SPEC, u8, u8, 8, O>;
+pub type FPE2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `FPE3` reader - Fault Protection Enable for channel 3 (fault input bit varies from 0 to 5)"]
-pub type FPE3_R = crate::FieldReader<u8, u8>;
+pub type FPE3_R = crate::FieldReader;
 #[doc = "Field `FPE3` writer - Fault Protection Enable for channel 3 (fault input bit varies from 0 to 5)"]
-pub type FPE3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FPE1_SPEC, u8, u8, 8, O>;
+pub type FPE3_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Fault Protection Enable for channel 0 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
@@ -46,46 +44,43 @@ impl W {
     #[doc = "Bits 0:7 - Fault Protection Enable for channel 0 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
     #[must_use]
-    pub fn fpe0(&mut self) -> FPE0_W<0> {
+    pub fn fpe0(&mut self) -> FPE0_W<FPE1_SPEC, 0> {
         FPE0_W::new(self)
     }
     #[doc = "Bits 8:15 - Fault Protection Enable for channel 1 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
     #[must_use]
-    pub fn fpe1(&mut self) -> FPE1_W<8> {
+    pub fn fpe1(&mut self) -> FPE1_W<FPE1_SPEC, 8> {
         FPE1_W::new(self)
     }
     #[doc = "Bits 16:23 - Fault Protection Enable for channel 2 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
     #[must_use]
-    pub fn fpe2(&mut self) -> FPE2_W<16> {
+    pub fn fpe2(&mut self) -> FPE2_W<FPE1_SPEC, 16> {
         FPE2_W::new(self)
     }
     #[doc = "Bits 24:31 - Fault Protection Enable for channel 3 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
     #[must_use]
-    pub fn fpe3(&mut self) -> FPE3_W<24> {
+    pub fn fpe3(&mut self) -> FPE3_W<FPE1_SPEC, 24> {
         FPE3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PWM Fault Protection Enable Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fpe1](index.html) module"]
+#[doc = "PWM Fault Protection Enable Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fpe1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fpe1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FPE1_SPEC;
 impl crate::RegisterSpec for FPE1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [fpe1::R](R) reader structure"]
-impl crate::Readable for FPE1_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [fpe1::W](W) writer structure"]
+#[doc = "`read()` method returns [`fpe1::R`](R) reader structure"]
+impl crate::Readable for FPE1_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`fpe1::W`](W) writer structure"]
 impl crate::Writable for FPE1_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

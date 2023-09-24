@@ -1,41 +1,39 @@
 #[doc = "Register `SEQR2` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<SEQR2_SPEC>);
+pub type R = crate::R<SEQR2_SPEC>;
 #[doc = "Register `SEQR2` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<SEQR2_SPEC>);
+pub type W = crate::W<SEQR2_SPEC>;
 #[doc = "Field `USCH9` reader - User Sequence Number 9"]
-pub type USCH9_R = crate::FieldReader<u8, u8>;
+pub type USCH9_R = crate::FieldReader;
 #[doc = "Field `USCH9` writer - User Sequence Number 9"]
-pub type USCH9_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQR2_SPEC, u8, u8, 4, O>;
+pub type USCH9_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `USCH10` reader - User Sequence Number 10"]
-pub type USCH10_R = crate::FieldReader<u8, u8>;
+pub type USCH10_R = crate::FieldReader;
 #[doc = "Field `USCH10` writer - User Sequence Number 10"]
-pub type USCH10_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQR2_SPEC, u8, u8, 4, O>;
+pub type USCH10_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `USCH11` reader - User Sequence Number 11"]
-pub type USCH11_R = crate::FieldReader<u8, u8>;
+pub type USCH11_R = crate::FieldReader;
 #[doc = "Field `USCH11` writer - User Sequence Number 11"]
-pub type USCH11_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQR2_SPEC, u8, u8, 4, O>;
+pub type USCH11_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `USCH12` reader - User Sequence Number 12"]
-pub type USCH12_R = crate::FieldReader<u8, u8>;
+pub type USCH12_R = crate::FieldReader;
 #[doc = "Field `USCH12` writer - User Sequence Number 12"]
-pub type USCH12_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQR2_SPEC, u8, u8, 4, O>;
+pub type USCH12_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `USCH13` reader - User Sequence Number 13"]
-pub type USCH13_R = crate::FieldReader<u8, u8>;
+pub type USCH13_R = crate::FieldReader;
 #[doc = "Field `USCH13` writer - User Sequence Number 13"]
-pub type USCH13_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQR2_SPEC, u8, u8, 4, O>;
+pub type USCH13_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `USCH14` reader - User Sequence Number 14"]
-pub type USCH14_R = crate::FieldReader<u8, u8>;
+pub type USCH14_R = crate::FieldReader;
 #[doc = "Field `USCH14` writer - User Sequence Number 14"]
-pub type USCH14_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQR2_SPEC, u8, u8, 4, O>;
+pub type USCH14_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `USCH15` reader - User Sequence Number 15"]
-pub type USCH15_R = crate::FieldReader<u8, u8>;
+pub type USCH15_R = crate::FieldReader;
 #[doc = "Field `USCH15` writer - User Sequence Number 15"]
-pub type USCH15_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQR2_SPEC, u8, u8, 4, O>;
+pub type USCH15_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `USCH16` reader - User Sequence Number 16"]
-pub type USCH16_R = crate::FieldReader<u8, u8>;
+pub type USCH16_R = crate::FieldReader;
 #[doc = "Field `USCH16` writer - User Sequence Number 16"]
-pub type USCH16_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQR2_SPEC, u8, u8, 4, O>;
+pub type USCH16_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - User Sequence Number 9"]
     #[inline(always)]
@@ -82,70 +80,67 @@ impl W {
     #[doc = "Bits 0:3 - User Sequence Number 9"]
     #[inline(always)]
     #[must_use]
-    pub fn usch9(&mut self) -> USCH9_W<0> {
+    pub fn usch9(&mut self) -> USCH9_W<SEQR2_SPEC, 0> {
         USCH9_W::new(self)
     }
     #[doc = "Bits 4:7 - User Sequence Number 10"]
     #[inline(always)]
     #[must_use]
-    pub fn usch10(&mut self) -> USCH10_W<4> {
+    pub fn usch10(&mut self) -> USCH10_W<SEQR2_SPEC, 4> {
         USCH10_W::new(self)
     }
     #[doc = "Bits 8:11 - User Sequence Number 11"]
     #[inline(always)]
     #[must_use]
-    pub fn usch11(&mut self) -> USCH11_W<8> {
+    pub fn usch11(&mut self) -> USCH11_W<SEQR2_SPEC, 8> {
         USCH11_W::new(self)
     }
     #[doc = "Bits 12:15 - User Sequence Number 12"]
     #[inline(always)]
     #[must_use]
-    pub fn usch12(&mut self) -> USCH12_W<12> {
+    pub fn usch12(&mut self) -> USCH12_W<SEQR2_SPEC, 12> {
         USCH12_W::new(self)
     }
     #[doc = "Bits 16:19 - User Sequence Number 13"]
     #[inline(always)]
     #[must_use]
-    pub fn usch13(&mut self) -> USCH13_W<16> {
+    pub fn usch13(&mut self) -> USCH13_W<SEQR2_SPEC, 16> {
         USCH13_W::new(self)
     }
     #[doc = "Bits 20:23 - User Sequence Number 14"]
     #[inline(always)]
     #[must_use]
-    pub fn usch14(&mut self) -> USCH14_W<20> {
+    pub fn usch14(&mut self) -> USCH14_W<SEQR2_SPEC, 20> {
         USCH14_W::new(self)
     }
     #[doc = "Bits 24:27 - User Sequence Number 15"]
     #[inline(always)]
     #[must_use]
-    pub fn usch15(&mut self) -> USCH15_W<24> {
+    pub fn usch15(&mut self) -> USCH15_W<SEQR2_SPEC, 24> {
         USCH15_W::new(self)
     }
     #[doc = "Bits 28:31 - User Sequence Number 16"]
     #[inline(always)]
     #[must_use]
-    pub fn usch16(&mut self) -> USCH16_W<28> {
+    pub fn usch16(&mut self) -> USCH16_W<SEQR2_SPEC, 28> {
         USCH16_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Channel Sequence Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seqr2](index.html) module"]
+#[doc = "Channel Sequence Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`seqr2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`seqr2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SEQR2_SPEC;
 impl crate::RegisterSpec for SEQR2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [seqr2::R](R) reader structure"]
-impl crate::Readable for SEQR2_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [seqr2::W](W) writer structure"]
+#[doc = "`read()` method returns [`seqr2::R`](R) reader structure"]
+impl crate::Readable for SEQR2_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`seqr2::W`](W) writer structure"]
 impl crate::Writable for SEQR2_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,14 +1,13 @@
 #[doc = "Register `QISR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<QISR_SPEC>);
+pub type R = crate::R<QISR_SPEC>;
 #[doc = "Field `IDX` reader - Index"]
-pub type IDX_R = crate::BitReader<bool>;
+pub type IDX_R = crate::BitReader;
 #[doc = "Field `DIRCHG` reader - Direction Change"]
-pub type DIRCHG_R = crate::BitReader<bool>;
+pub type DIRCHG_R = crate::BitReader;
 #[doc = "Field `QERR` reader - Quadrature Error"]
-pub type QERR_R = crate::BitReader<bool>;
+pub type QERR_R = crate::BitReader;
 #[doc = "Field `DIR` reader - Direction"]
-pub type DIR_R = crate::BitReader<bool>;
+pub type DIR_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Index"]
     #[inline(always)]
@@ -31,15 +30,13 @@ impl R {
         DIR_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
-#[doc = "QDEC Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [qisr](index.html) module"]
+#[doc = "QDEC Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`qisr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct QISR_SPEC;
 impl crate::RegisterSpec for QISR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [qisr::R](R) reader structure"]
-impl crate::Readable for QISR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`qisr::R`](R) reader structure"]
+impl crate::Readable for QISR_SPEC {}
 #[doc = "`reset()` method sets QISR to value 0"]
 impl crate::Resettable for QISR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

@@ -1,11 +1,9 @@
 #[doc = "Register `CMR2` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<CMR2_SPEC>);
+pub type R = crate::R<CMR2_SPEC>;
 #[doc = "Register `CMR2` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<CMR2_SPEC>);
+pub type W = crate::W<CMR2_SPEC>;
 #[doc = "Field `TCCLKS` reader - Clock Selection"]
-pub type TCCLKS_R = crate::FieldReader<u8, TCCLKS_A>;
+pub type TCCLKS_R = crate::FieldReader<TCCLKS_A>;
 #[doc = "Clock Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -33,6 +31,9 @@ impl From<TCCLKS_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for TCCLKS_A {
+    type Ux = u8;
+}
 impl TCCLKS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -49,97 +50,101 @@ impl TCCLKS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `TimerClock1`"]
+    #[doc = "Clock selected: TCLK1"]
     #[inline(always)]
     pub fn is_timer_clock1(&self) -> bool {
         *self == TCCLKS_A::TimerClock1
     }
-    #[doc = "Checks if the value of the field is `TimerClock2`"]
+    #[doc = "Clock selected: TCLK2"]
     #[inline(always)]
     pub fn is_timer_clock2(&self) -> bool {
         *self == TCCLKS_A::TimerClock2
     }
-    #[doc = "Checks if the value of the field is `TimerClock3`"]
+    #[doc = "Clock selected: TCLK3"]
     #[inline(always)]
     pub fn is_timer_clock3(&self) -> bool {
         *self == TCCLKS_A::TimerClock3
     }
-    #[doc = "Checks if the value of the field is `TimerClock4`"]
+    #[doc = "Clock selected: TCLK4"]
     #[inline(always)]
     pub fn is_timer_clock4(&self) -> bool {
         *self == TCCLKS_A::TimerClock4
     }
-    #[doc = "Checks if the value of the field is `TimerClock5`"]
+    #[doc = "Clock selected: TCLK5"]
     #[inline(always)]
     pub fn is_timer_clock5(&self) -> bool {
         *self == TCCLKS_A::TimerClock5
     }
-    #[doc = "Checks if the value of the field is `Xc0`"]
+    #[doc = "Clock selected: XC0"]
     #[inline(always)]
     pub fn is_xc0(&self) -> bool {
         *self == TCCLKS_A::Xc0
     }
-    #[doc = "Checks if the value of the field is `Xc1`"]
+    #[doc = "Clock selected: XC1"]
     #[inline(always)]
     pub fn is_xc1(&self) -> bool {
         *self == TCCLKS_A::Xc1
     }
-    #[doc = "Checks if the value of the field is `Xc2`"]
+    #[doc = "Clock selected: XC2"]
     #[inline(always)]
     pub fn is_xc2(&self) -> bool {
         *self == TCCLKS_A::Xc2
     }
 }
 #[doc = "Field `TCCLKS` writer - Clock Selection"]
-pub type TCCLKS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CMR2_SPEC, u8, TCCLKS_A, 3, O>;
-impl<'a, const O: u8> TCCLKS_W<'a, O> {
+pub type TCCLKS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, TCCLKS_A>;
+impl<'a, REG, const O: u8> TCCLKS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Clock selected: TCLK1"]
     #[inline(always)]
-    pub fn timer_clock1(self) -> &'a mut W {
+    pub fn timer_clock1(self) -> &'a mut crate::W<REG> {
         self.variant(TCCLKS_A::TimerClock1)
     }
     #[doc = "Clock selected: TCLK2"]
     #[inline(always)]
-    pub fn timer_clock2(self) -> &'a mut W {
+    pub fn timer_clock2(self) -> &'a mut crate::W<REG> {
         self.variant(TCCLKS_A::TimerClock2)
     }
     #[doc = "Clock selected: TCLK3"]
     #[inline(always)]
-    pub fn timer_clock3(self) -> &'a mut W {
+    pub fn timer_clock3(self) -> &'a mut crate::W<REG> {
         self.variant(TCCLKS_A::TimerClock3)
     }
     #[doc = "Clock selected: TCLK4"]
     #[inline(always)]
-    pub fn timer_clock4(self) -> &'a mut W {
+    pub fn timer_clock4(self) -> &'a mut crate::W<REG> {
         self.variant(TCCLKS_A::TimerClock4)
     }
     #[doc = "Clock selected: TCLK5"]
     #[inline(always)]
-    pub fn timer_clock5(self) -> &'a mut W {
+    pub fn timer_clock5(self) -> &'a mut crate::W<REG> {
         self.variant(TCCLKS_A::TimerClock5)
     }
     #[doc = "Clock selected: XC0"]
     #[inline(always)]
-    pub fn xc0(self) -> &'a mut W {
+    pub fn xc0(self) -> &'a mut crate::W<REG> {
         self.variant(TCCLKS_A::Xc0)
     }
     #[doc = "Clock selected: XC1"]
     #[inline(always)]
-    pub fn xc1(self) -> &'a mut W {
+    pub fn xc1(self) -> &'a mut crate::W<REG> {
         self.variant(TCCLKS_A::Xc1)
     }
     #[doc = "Clock selected: XC2"]
     #[inline(always)]
-    pub fn xc2(self) -> &'a mut W {
+    pub fn xc2(self) -> &'a mut crate::W<REG> {
         self.variant(TCCLKS_A::Xc2)
     }
 }
 #[doc = "Field `CLKI` reader - Clock Invert"]
-pub type CLKI_R = crate::BitReader<bool>;
+pub type CLKI_R = crate::BitReader;
 #[doc = "Field `CLKI` writer - Clock Invert"]
-pub type CLKI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMR2_SPEC, bool, O>;
+pub type CLKI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `BURST` reader - Burst Signal Selection"]
-pub type BURST_R = crate::FieldReader<u8, BURST_A>;
+pub type BURST_R = crate::FieldReader<BURST_A>;
 #[doc = "Burst Signal Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -159,6 +164,9 @@ impl From<BURST_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for BURST_A {
+    type Ux = u8;
+}
 impl BURST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -171,61 +179,65 @@ impl BURST_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `None`"]
+    #[doc = "The clock is not gated by an external signal."]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
         *self == BURST_A::None
     }
-    #[doc = "Checks if the value of the field is `Xc0`"]
+    #[doc = "XC0 is ANDed with the selected clock."]
     #[inline(always)]
     pub fn is_xc0(&self) -> bool {
         *self == BURST_A::Xc0
     }
-    #[doc = "Checks if the value of the field is `Xc1`"]
+    #[doc = "XC1 is ANDed with the selected clock."]
     #[inline(always)]
     pub fn is_xc1(&self) -> bool {
         *self == BURST_A::Xc1
     }
-    #[doc = "Checks if the value of the field is `Xc2`"]
+    #[doc = "XC2 is ANDed with the selected clock."]
     #[inline(always)]
     pub fn is_xc2(&self) -> bool {
         *self == BURST_A::Xc2
     }
 }
 #[doc = "Field `BURST` writer - Burst Signal Selection"]
-pub type BURST_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CMR2_SPEC, u8, BURST_A, 2, O>;
-impl<'a, const O: u8> BURST_W<'a, O> {
+pub type BURST_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, BURST_A>;
+impl<'a, REG, const O: u8> BURST_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The clock is not gated by an external signal."]
     #[inline(always)]
-    pub fn none(self) -> &'a mut W {
+    pub fn none(self) -> &'a mut crate::W<REG> {
         self.variant(BURST_A::None)
     }
     #[doc = "XC0 is ANDed with the selected clock."]
     #[inline(always)]
-    pub fn xc0(self) -> &'a mut W {
+    pub fn xc0(self) -> &'a mut crate::W<REG> {
         self.variant(BURST_A::Xc0)
     }
     #[doc = "XC1 is ANDed with the selected clock."]
     #[inline(always)]
-    pub fn xc1(self) -> &'a mut W {
+    pub fn xc1(self) -> &'a mut crate::W<REG> {
         self.variant(BURST_A::Xc1)
     }
     #[doc = "XC2 is ANDed with the selected clock."]
     #[inline(always)]
-    pub fn xc2(self) -> &'a mut W {
+    pub fn xc2(self) -> &'a mut crate::W<REG> {
         self.variant(BURST_A::Xc2)
     }
 }
 #[doc = "Field `LDBSTOP` reader - Counter Clock Stopped with RB Loading"]
-pub type LDBSTOP_R = crate::BitReader<bool>;
+pub type LDBSTOP_R = crate::BitReader;
 #[doc = "Field `LDBSTOP` writer - Counter Clock Stopped with RB Loading"]
-pub type LDBSTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMR2_SPEC, bool, O>;
+pub type LDBSTOP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `LDBDIS` reader - Counter Clock Disable with RB Loading"]
-pub type LDBDIS_R = crate::BitReader<bool>;
+pub type LDBDIS_R = crate::BitReader;
 #[doc = "Field `LDBDIS` writer - Counter Clock Disable with RB Loading"]
-pub type LDBDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMR2_SPEC, bool, O>;
+pub type LDBDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `ETRGEDG` reader - External Trigger Edge Selection"]
-pub type ETRGEDG_R = crate::FieldReader<u8, ETRGEDG_A>;
+pub type ETRGEDG_R = crate::FieldReader<ETRGEDG_A>;
 #[doc = "External Trigger Edge Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -245,6 +257,9 @@ impl From<ETRGEDG_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for ETRGEDG_A {
+    type Ux = u8;
+}
 impl ETRGEDG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -257,66 +272,69 @@ impl ETRGEDG_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `None`"]
+    #[doc = "The clock is not gated by an external signal."]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
         *self == ETRGEDG_A::None
     }
-    #[doc = "Checks if the value of the field is `Rising`"]
+    #[doc = "Rising edge"]
     #[inline(always)]
     pub fn is_rising(&self) -> bool {
         *self == ETRGEDG_A::Rising
     }
-    #[doc = "Checks if the value of the field is `Falling`"]
+    #[doc = "Falling edge"]
     #[inline(always)]
     pub fn is_falling(&self) -> bool {
         *self == ETRGEDG_A::Falling
     }
-    #[doc = "Checks if the value of the field is `Edge`"]
+    #[doc = "Each edge"]
     #[inline(always)]
     pub fn is_edge(&self) -> bool {
         *self == ETRGEDG_A::Edge
     }
 }
 #[doc = "Field `ETRGEDG` writer - External Trigger Edge Selection"]
-pub type ETRGEDG_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, CMR2_SPEC, u8, ETRGEDG_A, 2, O>;
-impl<'a, const O: u8> ETRGEDG_W<'a, O> {
+pub type ETRGEDG_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ETRGEDG_A>;
+impl<'a, REG, const O: u8> ETRGEDG_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The clock is not gated by an external signal."]
     #[inline(always)]
-    pub fn none(self) -> &'a mut W {
+    pub fn none(self) -> &'a mut crate::W<REG> {
         self.variant(ETRGEDG_A::None)
     }
     #[doc = "Rising edge"]
     #[inline(always)]
-    pub fn rising(self) -> &'a mut W {
+    pub fn rising(self) -> &'a mut crate::W<REG> {
         self.variant(ETRGEDG_A::Rising)
     }
     #[doc = "Falling edge"]
     #[inline(always)]
-    pub fn falling(self) -> &'a mut W {
+    pub fn falling(self) -> &'a mut crate::W<REG> {
         self.variant(ETRGEDG_A::Falling)
     }
     #[doc = "Each edge"]
     #[inline(always)]
-    pub fn edge(self) -> &'a mut W {
+    pub fn edge(self) -> &'a mut crate::W<REG> {
         self.variant(ETRGEDG_A::Edge)
     }
 }
 #[doc = "Field `ABETRG` reader - TIOA or TIOB External Trigger Selection"]
-pub type ABETRG_R = crate::BitReader<bool>;
+pub type ABETRG_R = crate::BitReader;
 #[doc = "Field `ABETRG` writer - TIOA or TIOB External Trigger Selection"]
-pub type ABETRG_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMR2_SPEC, bool, O>;
+pub type ABETRG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CPCTRG` reader - RC Compare Trigger Enable"]
-pub type CPCTRG_R = crate::BitReader<bool>;
+pub type CPCTRG_R = crate::BitReader;
 #[doc = "Field `CPCTRG` writer - RC Compare Trigger Enable"]
-pub type CPCTRG_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMR2_SPEC, bool, O>;
+pub type CPCTRG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `WAVE` reader - Waveform Mode"]
-pub type WAVE_R = crate::BitReader<bool>;
+pub type WAVE_R = crate::BitReader;
 #[doc = "Field `WAVE` writer - Waveform Mode"]
-pub type WAVE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMR2_SPEC, bool, O>;
+pub type WAVE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `LDRA` reader - RA Loading Edge Selection"]
-pub type LDRA_R = crate::FieldReader<u8, LDRA_A>;
+pub type LDRA_R = crate::FieldReader<LDRA_A>;
 #[doc = "RA Loading Edge Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -336,6 +354,9 @@ impl From<LDRA_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for LDRA_A {
+    type Ux = u8;
+}
 impl LDRA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -348,53 +369,57 @@ impl LDRA_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `None`"]
+    #[doc = "None"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
         *self == LDRA_A::None
     }
-    #[doc = "Checks if the value of the field is `Rising`"]
+    #[doc = "Rising edge of TIOA"]
     #[inline(always)]
     pub fn is_rising(&self) -> bool {
         *self == LDRA_A::Rising
     }
-    #[doc = "Checks if the value of the field is `Falling`"]
+    #[doc = "Falling edge of TIOA"]
     #[inline(always)]
     pub fn is_falling(&self) -> bool {
         *self == LDRA_A::Falling
     }
-    #[doc = "Checks if the value of the field is `Edge`"]
+    #[doc = "Each edge of TIOA"]
     #[inline(always)]
     pub fn is_edge(&self) -> bool {
         *self == LDRA_A::Edge
     }
 }
 #[doc = "Field `LDRA` writer - RA Loading Edge Selection"]
-pub type LDRA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CMR2_SPEC, u8, LDRA_A, 2, O>;
-impl<'a, const O: u8> LDRA_W<'a, O> {
+pub type LDRA_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, LDRA_A>;
+impl<'a, REG, const O: u8> LDRA_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "None"]
     #[inline(always)]
-    pub fn none(self) -> &'a mut W {
+    pub fn none(self) -> &'a mut crate::W<REG> {
         self.variant(LDRA_A::None)
     }
     #[doc = "Rising edge of TIOA"]
     #[inline(always)]
-    pub fn rising(self) -> &'a mut W {
+    pub fn rising(self) -> &'a mut crate::W<REG> {
         self.variant(LDRA_A::Rising)
     }
     #[doc = "Falling edge of TIOA"]
     #[inline(always)]
-    pub fn falling(self) -> &'a mut W {
+    pub fn falling(self) -> &'a mut crate::W<REG> {
         self.variant(LDRA_A::Falling)
     }
     #[doc = "Each edge of TIOA"]
     #[inline(always)]
-    pub fn edge(self) -> &'a mut W {
+    pub fn edge(self) -> &'a mut crate::W<REG> {
         self.variant(LDRA_A::Edge)
     }
 }
 #[doc = "Field `LDRB` reader - RB Loading Edge Selection"]
-pub type LDRB_R = crate::FieldReader<u8, LDRB_A>;
+pub type LDRB_R = crate::FieldReader<LDRB_A>;
 #[doc = "RB Loading Edge Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -414,6 +439,9 @@ impl From<LDRB_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for LDRB_A {
+    type Ux = u8;
+}
 impl LDRB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -426,48 +454,52 @@ impl LDRB_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `None`"]
+    #[doc = "None"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
         *self == LDRB_A::None
     }
-    #[doc = "Checks if the value of the field is `Rising`"]
+    #[doc = "Rising edge of TIOA"]
     #[inline(always)]
     pub fn is_rising(&self) -> bool {
         *self == LDRB_A::Rising
     }
-    #[doc = "Checks if the value of the field is `Falling`"]
+    #[doc = "Falling edge of TIOA"]
     #[inline(always)]
     pub fn is_falling(&self) -> bool {
         *self == LDRB_A::Falling
     }
-    #[doc = "Checks if the value of the field is `Edge`"]
+    #[doc = "Each edge of TIOA"]
     #[inline(always)]
     pub fn is_edge(&self) -> bool {
         *self == LDRB_A::Edge
     }
 }
 #[doc = "Field `LDRB` writer - RB Loading Edge Selection"]
-pub type LDRB_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CMR2_SPEC, u8, LDRB_A, 2, O>;
-impl<'a, const O: u8> LDRB_W<'a, O> {
+pub type LDRB_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, LDRB_A>;
+impl<'a, REG, const O: u8> LDRB_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "None"]
     #[inline(always)]
-    pub fn none(self) -> &'a mut W {
+    pub fn none(self) -> &'a mut crate::W<REG> {
         self.variant(LDRB_A::None)
     }
     #[doc = "Rising edge of TIOA"]
     #[inline(always)]
-    pub fn rising(self) -> &'a mut W {
+    pub fn rising(self) -> &'a mut crate::W<REG> {
         self.variant(LDRB_A::Rising)
     }
     #[doc = "Falling edge of TIOA"]
     #[inline(always)]
-    pub fn falling(self) -> &'a mut W {
+    pub fn falling(self) -> &'a mut crate::W<REG> {
         self.variant(LDRB_A::Falling)
     }
     #[doc = "Each edge of TIOA"]
     #[inline(always)]
-    pub fn edge(self) -> &'a mut W {
+    pub fn edge(self) -> &'a mut crate::W<REG> {
         self.variant(LDRB_A::Edge)
     }
 }
@@ -532,88 +564,85 @@ impl W {
     #[doc = "Bits 0:2 - Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn tcclks(&mut self) -> TCCLKS_W<0> {
+    pub fn tcclks(&mut self) -> TCCLKS_W<CMR2_SPEC, 0> {
         TCCLKS_W::new(self)
     }
     #[doc = "Bit 3 - Clock Invert"]
     #[inline(always)]
     #[must_use]
-    pub fn clki(&mut self) -> CLKI_W<3> {
+    pub fn clki(&mut self) -> CLKI_W<CMR2_SPEC, 3> {
         CLKI_W::new(self)
     }
     #[doc = "Bits 4:5 - Burst Signal Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn burst(&mut self) -> BURST_W<4> {
+    pub fn burst(&mut self) -> BURST_W<CMR2_SPEC, 4> {
         BURST_W::new(self)
     }
     #[doc = "Bit 6 - Counter Clock Stopped with RB Loading"]
     #[inline(always)]
     #[must_use]
-    pub fn ldbstop(&mut self) -> LDBSTOP_W<6> {
+    pub fn ldbstop(&mut self) -> LDBSTOP_W<CMR2_SPEC, 6> {
         LDBSTOP_W::new(self)
     }
     #[doc = "Bit 7 - Counter Clock Disable with RB Loading"]
     #[inline(always)]
     #[must_use]
-    pub fn ldbdis(&mut self) -> LDBDIS_W<7> {
+    pub fn ldbdis(&mut self) -> LDBDIS_W<CMR2_SPEC, 7> {
         LDBDIS_W::new(self)
     }
     #[doc = "Bits 8:9 - External Trigger Edge Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn etrgedg(&mut self) -> ETRGEDG_W<8> {
+    pub fn etrgedg(&mut self) -> ETRGEDG_W<CMR2_SPEC, 8> {
         ETRGEDG_W::new(self)
     }
     #[doc = "Bit 10 - TIOA or TIOB External Trigger Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn abetrg(&mut self) -> ABETRG_W<10> {
+    pub fn abetrg(&mut self) -> ABETRG_W<CMR2_SPEC, 10> {
         ABETRG_W::new(self)
     }
     #[doc = "Bit 14 - RC Compare Trigger Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cpctrg(&mut self) -> CPCTRG_W<14> {
+    pub fn cpctrg(&mut self) -> CPCTRG_W<CMR2_SPEC, 14> {
         CPCTRG_W::new(self)
     }
     #[doc = "Bit 15 - Waveform Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn wave(&mut self) -> WAVE_W<15> {
+    pub fn wave(&mut self) -> WAVE_W<CMR2_SPEC, 15> {
         WAVE_W::new(self)
     }
     #[doc = "Bits 16:17 - RA Loading Edge Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ldra(&mut self) -> LDRA_W<16> {
+    pub fn ldra(&mut self) -> LDRA_W<CMR2_SPEC, 16> {
         LDRA_W::new(self)
     }
     #[doc = "Bits 18:19 - RB Loading Edge Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ldrb(&mut self) -> LDRB_W<18> {
+    pub fn ldrb(&mut self) -> LDRB_W<CMR2_SPEC, 18> {
         LDRB_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Channel Mode Register (channel = 2)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmr2](index.html) module"]
+#[doc = "Channel Mode Register (channel = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cmr2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmr2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CMR2_SPEC;
 impl crate::RegisterSpec for CMR2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cmr2::R](R) reader structure"]
-impl crate::Readable for CMR2_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cmr2::W](W) writer structure"]
+#[doc = "`read()` method returns [`cmr2::R`](R) reader structure"]
+impl crate::Readable for CMR2_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`cmr2::W`](W) writer structure"]
 impl crate::Writable for CMR2_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,17 +1,15 @@
 #[doc = "Register `FADDR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<FADDR_SPEC>);
+pub type R = crate::R<FADDR_SPEC>;
 #[doc = "Register `FADDR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<FADDR_SPEC>);
+pub type W = crate::W<FADDR_SPEC>;
 #[doc = "Field `FADD` reader - Function Address Value"]
-pub type FADD_R = crate::FieldReader<u8, u8>;
+pub type FADD_R = crate::FieldReader;
 #[doc = "Field `FADD` writer - Function Address Value"]
-pub type FADD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FADDR_SPEC, u8, u8, 7, O>;
+pub type FADD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
 #[doc = "Field `FEN` reader - Function Enable"]
-pub type FEN_R = crate::BitReader<bool>;
+pub type FEN_R = crate::BitReader;
 #[doc = "Field `FEN` writer - Function Enable"]
-pub type FEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, FADDR_SPEC, bool, O>;
+pub type FEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bits 0:6 - Function Address Value"]
     #[inline(always)]
@@ -28,34 +26,31 @@ impl W {
     #[doc = "Bits 0:6 - Function Address Value"]
     #[inline(always)]
     #[must_use]
-    pub fn fadd(&mut self) -> FADD_W<0> {
+    pub fn fadd(&mut self) -> FADD_W<FADDR_SPEC, 0> {
         FADD_W::new(self)
     }
     #[doc = "Bit 8 - Function Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fen(&mut self) -> FEN_W<8> {
+    pub fn fen(&mut self) -> FEN_W<FADDR_SPEC, 8> {
         FEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Function Address Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [faddr](index.html) module"]
+#[doc = "Function Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`faddr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`faddr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FADDR_SPEC;
 impl crate::RegisterSpec for FADDR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [faddr::R](R) reader structure"]
-impl crate::Readable for FADDR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [faddr::W](W) writer structure"]
+#[doc = "`read()` method returns [`faddr::R`](R) reader structure"]
+impl crate::Readable for FADDR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`faddr::W`](W) writer structure"]
 impl crate::Writable for FADDR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

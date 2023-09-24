@@ -1,34 +1,33 @@
 #[doc = "Register `WPSR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<WPSR_SPEC>);
+pub type R = crate::R<WPSR_SPEC>;
 #[doc = "Field `WPSWS0` reader - Write Protect SW Status"]
-pub type WPSWS0_R = crate::BitReader<bool>;
+pub type WPSWS0_R = crate::BitReader;
 #[doc = "Field `WPSWS1` reader - Write Protect SW Status"]
-pub type WPSWS1_R = crate::BitReader<bool>;
+pub type WPSWS1_R = crate::BitReader;
 #[doc = "Field `WPSWS2` reader - Write Protect SW Status"]
-pub type WPSWS2_R = crate::BitReader<bool>;
+pub type WPSWS2_R = crate::BitReader;
 #[doc = "Field `WPSWS3` reader - Write Protect SW Status"]
-pub type WPSWS3_R = crate::BitReader<bool>;
+pub type WPSWS3_R = crate::BitReader;
 #[doc = "Field `WPSWS4` reader - Write Protect SW Status"]
-pub type WPSWS4_R = crate::BitReader<bool>;
+pub type WPSWS4_R = crate::BitReader;
 #[doc = "Field `WPSWS5` reader - Write Protect SW Status"]
-pub type WPSWS5_R = crate::BitReader<bool>;
+pub type WPSWS5_R = crate::BitReader;
 #[doc = "Field `WPVS` reader - Write Protect Violation Status"]
-pub type WPVS_R = crate::BitReader<bool>;
+pub type WPVS_R = crate::BitReader;
 #[doc = "Field `WPHWS0` reader - Write Protect HW Status"]
-pub type WPHWS0_R = crate::BitReader<bool>;
+pub type WPHWS0_R = crate::BitReader;
 #[doc = "Field `WPHWS1` reader - Write Protect HW Status"]
-pub type WPHWS1_R = crate::BitReader<bool>;
+pub type WPHWS1_R = crate::BitReader;
 #[doc = "Field `WPHWS2` reader - Write Protect HW Status"]
-pub type WPHWS2_R = crate::BitReader<bool>;
+pub type WPHWS2_R = crate::BitReader;
 #[doc = "Field `WPHWS3` reader - Write Protect HW Status"]
-pub type WPHWS3_R = crate::BitReader<bool>;
+pub type WPHWS3_R = crate::BitReader;
 #[doc = "Field `WPHWS4` reader - Write Protect HW Status"]
-pub type WPHWS4_R = crate::BitReader<bool>;
+pub type WPHWS4_R = crate::BitReader;
 #[doc = "Field `WPHWS5` reader - Write Protect HW Status"]
-pub type WPHWS5_R = crate::BitReader<bool>;
+pub type WPHWS5_R = crate::BitReader;
 #[doc = "Field `WPVSRC` reader - Write Protect Violation Source"]
-pub type WPVSRC_R = crate::FieldReader<u16, u16>;
+pub type WPVSRC_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bit 0 - Write Protect SW Status"]
     #[inline(always)]
@@ -101,15 +100,13 @@ impl R {
         WPVSRC_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
-#[doc = "PWM Write Protect Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpsr](index.html) module"]
+#[doc = "PWM Write Protect Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wpsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct WPSR_SPEC;
 impl crate::RegisterSpec for WPSR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [wpsr::R](R) reader structure"]
-impl crate::Readable for WPSR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`wpsr::R`](R) reader structure"]
+impl crate::Readable for WPSR_SPEC {}
 #[doc = "`reset()` method sets WPSR to value 0"]
 impl crate::Resettable for WPSR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

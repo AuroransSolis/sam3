@@ -1,33 +1,31 @@
 #[doc = "Register `MAN` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<MAN_SPEC>);
+pub type R = crate::R<MAN_SPEC>;
 #[doc = "Register `MAN` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<MAN_SPEC>);
+pub type W = crate::W<MAN_SPEC>;
 #[doc = "Field `DATA` reader - "]
-pub type DATA_R = crate::FieldReader<u16, u16>;
+pub type DATA_R = crate::FieldReader<u16>;
 #[doc = "Field `DATA` writer - "]
-pub type DATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAN_SPEC, u16, u16, 16, O>;
+pub type DATA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
 #[doc = "Field `CODE` reader - "]
-pub type CODE_R = crate::FieldReader<u8, u8>;
+pub type CODE_R = crate::FieldReader;
 #[doc = "Field `CODE` writer - "]
-pub type CODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAN_SPEC, u8, u8, 2, O>;
+pub type CODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `REGA` reader - Register Address"]
-pub type REGA_R = crate::FieldReader<u8, u8>;
+pub type REGA_R = crate::FieldReader;
 #[doc = "Field `REGA` writer - Register Address"]
-pub type REGA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAN_SPEC, u8, u8, 5, O>;
+pub type REGA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
 #[doc = "Field `PHYA` reader - PHY Address"]
-pub type PHYA_R = crate::FieldReader<u8, u8>;
+pub type PHYA_R = crate::FieldReader;
 #[doc = "Field `PHYA` writer - PHY Address"]
-pub type PHYA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAN_SPEC, u8, u8, 5, O>;
+pub type PHYA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
 #[doc = "Field `RW` reader - Read-write"]
-pub type RW_R = crate::FieldReader<u8, u8>;
+pub type RW_R = crate::FieldReader;
 #[doc = "Field `RW` writer - Read-write"]
-pub type RW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAN_SPEC, u8, u8, 2, O>;
+pub type RW_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `SOF` reader - Start of frame"]
-pub type SOF_R = crate::FieldReader<u8, u8>;
+pub type SOF_R = crate::FieldReader;
 #[doc = "Field `SOF` writer - Start of frame"]
-pub type SOF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAN_SPEC, u8, u8, 2, O>;
+pub type SOF_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 impl R {
     #[doc = "Bits 0:15"]
     #[inline(always)]
@@ -64,58 +62,55 @@ impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
     #[must_use]
-    pub fn data(&mut self) -> DATA_W<0> {
+    pub fn data(&mut self) -> DATA_W<MAN_SPEC, 0> {
         DATA_W::new(self)
     }
     #[doc = "Bits 16:17"]
     #[inline(always)]
     #[must_use]
-    pub fn code(&mut self) -> CODE_W<16> {
+    pub fn code(&mut self) -> CODE_W<MAN_SPEC, 16> {
         CODE_W::new(self)
     }
     #[doc = "Bits 18:22 - Register Address"]
     #[inline(always)]
     #[must_use]
-    pub fn rega(&mut self) -> REGA_W<18> {
+    pub fn rega(&mut self) -> REGA_W<MAN_SPEC, 18> {
         REGA_W::new(self)
     }
     #[doc = "Bits 23:27 - PHY Address"]
     #[inline(always)]
     #[must_use]
-    pub fn phya(&mut self) -> PHYA_W<23> {
+    pub fn phya(&mut self) -> PHYA_W<MAN_SPEC, 23> {
         PHYA_W::new(self)
     }
     #[doc = "Bits 28:29 - Read-write"]
     #[inline(always)]
     #[must_use]
-    pub fn rw(&mut self) -> RW_W<28> {
+    pub fn rw(&mut self) -> RW_W<MAN_SPEC, 28> {
         RW_W::new(self)
     }
     #[doc = "Bits 30:31 - Start of frame"]
     #[inline(always)]
     #[must_use]
-    pub fn sof(&mut self) -> SOF_W<30> {
+    pub fn sof(&mut self) -> SOF_W<MAN_SPEC, 30> {
         SOF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Phy Maintenance Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [man](index.html) module"]
+#[doc = "Phy Maintenance Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`man::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`man::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MAN_SPEC;
 impl crate::RegisterSpec for MAN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [man::R](R) reader structure"]
-impl crate::Readable for MAN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [man::W](W) writer structure"]
+#[doc = "`read()` method returns [`man::R`](R) reader structure"]
+impl crate::Readable for MAN_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`man::W`](W) writer structure"]
 impl crate::Writable for MAN_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

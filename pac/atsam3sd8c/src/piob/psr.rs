@@ -1,70 +1,69 @@
 #[doc = "Register `PSR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<PSR_SPEC>);
+pub type R = crate::R<PSR_SPEC>;
 #[doc = "Field `P0` reader - PIO Status"]
-pub type P0_R = crate::BitReader<bool>;
+pub type P0_R = crate::BitReader;
 #[doc = "Field `P1` reader - PIO Status"]
-pub type P1_R = crate::BitReader<bool>;
+pub type P1_R = crate::BitReader;
 #[doc = "Field `P2` reader - PIO Status"]
-pub type P2_R = crate::BitReader<bool>;
+pub type P2_R = crate::BitReader;
 #[doc = "Field `P3` reader - PIO Status"]
-pub type P3_R = crate::BitReader<bool>;
+pub type P3_R = crate::BitReader;
 #[doc = "Field `P4` reader - PIO Status"]
-pub type P4_R = crate::BitReader<bool>;
+pub type P4_R = crate::BitReader;
 #[doc = "Field `P5` reader - PIO Status"]
-pub type P5_R = crate::BitReader<bool>;
+pub type P5_R = crate::BitReader;
 #[doc = "Field `P6` reader - PIO Status"]
-pub type P6_R = crate::BitReader<bool>;
+pub type P6_R = crate::BitReader;
 #[doc = "Field `P7` reader - PIO Status"]
-pub type P7_R = crate::BitReader<bool>;
+pub type P7_R = crate::BitReader;
 #[doc = "Field `P8` reader - PIO Status"]
-pub type P8_R = crate::BitReader<bool>;
+pub type P8_R = crate::BitReader;
 #[doc = "Field `P9` reader - PIO Status"]
-pub type P9_R = crate::BitReader<bool>;
+pub type P9_R = crate::BitReader;
 #[doc = "Field `P10` reader - PIO Status"]
-pub type P10_R = crate::BitReader<bool>;
+pub type P10_R = crate::BitReader;
 #[doc = "Field `P11` reader - PIO Status"]
-pub type P11_R = crate::BitReader<bool>;
+pub type P11_R = crate::BitReader;
 #[doc = "Field `P12` reader - PIO Status"]
-pub type P12_R = crate::BitReader<bool>;
+pub type P12_R = crate::BitReader;
 #[doc = "Field `P13` reader - PIO Status"]
-pub type P13_R = crate::BitReader<bool>;
+pub type P13_R = crate::BitReader;
 #[doc = "Field `P14` reader - PIO Status"]
-pub type P14_R = crate::BitReader<bool>;
+pub type P14_R = crate::BitReader;
 #[doc = "Field `P15` reader - PIO Status"]
-pub type P15_R = crate::BitReader<bool>;
+pub type P15_R = crate::BitReader;
 #[doc = "Field `P16` reader - PIO Status"]
-pub type P16_R = crate::BitReader<bool>;
+pub type P16_R = crate::BitReader;
 #[doc = "Field `P17` reader - PIO Status"]
-pub type P17_R = crate::BitReader<bool>;
+pub type P17_R = crate::BitReader;
 #[doc = "Field `P18` reader - PIO Status"]
-pub type P18_R = crate::BitReader<bool>;
+pub type P18_R = crate::BitReader;
 #[doc = "Field `P19` reader - PIO Status"]
-pub type P19_R = crate::BitReader<bool>;
+pub type P19_R = crate::BitReader;
 #[doc = "Field `P20` reader - PIO Status"]
-pub type P20_R = crate::BitReader<bool>;
+pub type P20_R = crate::BitReader;
 #[doc = "Field `P21` reader - PIO Status"]
-pub type P21_R = crate::BitReader<bool>;
+pub type P21_R = crate::BitReader;
 #[doc = "Field `P22` reader - PIO Status"]
-pub type P22_R = crate::BitReader<bool>;
+pub type P22_R = crate::BitReader;
 #[doc = "Field `P23` reader - PIO Status"]
-pub type P23_R = crate::BitReader<bool>;
+pub type P23_R = crate::BitReader;
 #[doc = "Field `P24` reader - PIO Status"]
-pub type P24_R = crate::BitReader<bool>;
+pub type P24_R = crate::BitReader;
 #[doc = "Field `P25` reader - PIO Status"]
-pub type P25_R = crate::BitReader<bool>;
+pub type P25_R = crate::BitReader;
 #[doc = "Field `P26` reader - PIO Status"]
-pub type P26_R = crate::BitReader<bool>;
+pub type P26_R = crate::BitReader;
 #[doc = "Field `P27` reader - PIO Status"]
-pub type P27_R = crate::BitReader<bool>;
+pub type P27_R = crate::BitReader;
 #[doc = "Field `P28` reader - PIO Status"]
-pub type P28_R = crate::BitReader<bool>;
+pub type P28_R = crate::BitReader;
 #[doc = "Field `P29` reader - PIO Status"]
-pub type P29_R = crate::BitReader<bool>;
+pub type P29_R = crate::BitReader;
 #[doc = "Field `P30` reader - PIO Status"]
-pub type P30_R = crate::BitReader<bool>;
+pub type P30_R = crate::BitReader;
 #[doc = "Field `P31` reader - PIO Status"]
-pub type P31_R = crate::BitReader<bool>;
+pub type P31_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - PIO Status"]
     #[inline(always)]
@@ -227,12 +226,10 @@ impl R {
         P31_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "PIO Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [psr](index.html) module"]
+#[doc = "PIO Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`psr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PSR_SPEC;
 impl crate::RegisterSpec for PSR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [psr::R](R) reader structure"]
-impl crate::Readable for PSR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`psr::R`](R) reader structure"]
+impl crate::Readable for PSR_SPEC {}

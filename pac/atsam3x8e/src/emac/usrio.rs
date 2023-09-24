@@ -1,17 +1,15 @@
 #[doc = "Register `USRIO` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<USRIO_SPEC>);
+pub type R = crate::R<USRIO_SPEC>;
 #[doc = "Register `USRIO` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<USRIO_SPEC>);
+pub type W = crate::W<USRIO_SPEC>;
 #[doc = "Field `RMII` reader - Reduce MII"]
-pub type RMII_R = crate::BitReader<bool>;
+pub type RMII_R = crate::BitReader;
 #[doc = "Field `RMII` writer - Reduce MII"]
-pub type RMII_W<'a, const O: u8> = crate::BitWriter<'a, u32, USRIO_SPEC, bool, O>;
+pub type RMII_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CLKEN` reader - Clock Enable"]
-pub type CLKEN_R = crate::BitReader<bool>;
+pub type CLKEN_R = crate::BitReader;
 #[doc = "Field `CLKEN` writer - Clock Enable"]
-pub type CLKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, USRIO_SPEC, bool, O>;
+pub type CLKEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - Reduce MII"]
     #[inline(always)]
@@ -28,34 +26,31 @@ impl W {
     #[doc = "Bit 0 - Reduce MII"]
     #[inline(always)]
     #[must_use]
-    pub fn rmii(&mut self) -> RMII_W<0> {
+    pub fn rmii(&mut self) -> RMII_W<USRIO_SPEC, 0> {
         RMII_W::new(self)
     }
     #[doc = "Bit 1 - Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn clken(&mut self) -> CLKEN_W<1> {
+    pub fn clken(&mut self) -> CLKEN_W<USRIO_SPEC, 1> {
         CLKEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "User Input/Output Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usrio](index.html) module"]
+#[doc = "User Input/Output Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`usrio::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`usrio::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct USRIO_SPEC;
 impl crate::RegisterSpec for USRIO_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [usrio::R](R) reader structure"]
-impl crate::Readable for USRIO_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [usrio::W](W) writer structure"]
+#[doc = "`read()` method returns [`usrio::R`](R) reader structure"]
+impl crate::Readable for USRIO_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`usrio::W`](W) writer structure"]
 impl crate::Writable for USRIO_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

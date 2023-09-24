@@ -1,6 +1,5 @@
 #[doc = "Register `SR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<SR_SPEC>);
+pub type R = crate::R<SR_SPEC>;
 #[doc = "Field `ACKUPD` reader - Acknowledge for Update"]
 pub type ACKUPD_R = crate::BitReader<ACKUPD_A>;
 #[doc = "Acknowledge for Update\n\nValue on reset: 0"]
@@ -26,12 +25,12 @@ impl ACKUPD_R {
             true => ACKUPD_A::Update,
         }
     }
-    #[doc = "Checks if the value of the field is `Freerun`"]
+    #[doc = "Time and calendar registers cannot be updated."]
     #[inline(always)]
     pub fn is_freerun(&self) -> bool {
         *self == ACKUPD_A::Freerun
     }
-    #[doc = "Checks if the value of the field is `Update`"]
+    #[doc = "Time and calendar registers can be updated."]
     #[inline(always)]
     pub fn is_update(&self) -> bool {
         *self == ACKUPD_A::Update
@@ -62,12 +61,12 @@ impl ALARM_R {
             true => ALARM_A::Alarmevent,
         }
     }
-    #[doc = "Checks if the value of the field is `NoAlarmevent`"]
+    #[doc = "No alarm matching condition occurred."]
     #[inline(always)]
     pub fn is_no_alarmevent(&self) -> bool {
         *self == ALARM_A::NoAlarmevent
     }
-    #[doc = "Checks if the value of the field is `Alarmevent`"]
+    #[doc = "An alarm matching condition has occurred."]
     #[inline(always)]
     pub fn is_alarmevent(&self) -> bool {
         *self == ALARM_A::Alarmevent
@@ -98,12 +97,12 @@ impl SEC_R {
             true => SEC_A::Secevent,
         }
     }
-    #[doc = "Checks if the value of the field is `NoSecevent`"]
+    #[doc = "No second event has occurred since the last clear."]
     #[inline(always)]
     pub fn is_no_secevent(&self) -> bool {
         *self == SEC_A::NoSecevent
     }
-    #[doc = "Checks if the value of the field is `Secevent`"]
+    #[doc = "At least one second event has occurred since the last clear."]
     #[inline(always)]
     pub fn is_secevent(&self) -> bool {
         *self == SEC_A::Secevent
@@ -134,12 +133,12 @@ impl TIMEV_R {
             true => TIMEV_A::Timevent,
         }
     }
-    #[doc = "Checks if the value of the field is `NoTimevent`"]
+    #[doc = "No time event has occurred since the last clear."]
     #[inline(always)]
     pub fn is_no_timevent(&self) -> bool {
         *self == TIMEV_A::NoTimevent
     }
-    #[doc = "Checks if the value of the field is `Timevent`"]
+    #[doc = "At least one time event has occurred since the last clear."]
     #[inline(always)]
     pub fn is_timevent(&self) -> bool {
         *self == TIMEV_A::Timevent
@@ -170,12 +169,12 @@ impl CALEV_R {
             true => CALEV_A::Calevent,
         }
     }
-    #[doc = "Checks if the value of the field is `NoCalevent`"]
+    #[doc = "No calendar event has occurred since the last clear."]
     #[inline(always)]
     pub fn is_no_calevent(&self) -> bool {
         *self == CALEV_A::NoCalevent
     }
-    #[doc = "Checks if the value of the field is `Calevent`"]
+    #[doc = "At least one calendar event has occurred since the last clear."]
     #[inline(always)]
     pub fn is_calevent(&self) -> bool {
         *self == CALEV_A::Calevent
@@ -208,15 +207,13 @@ impl R {
         CALEV_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
-#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]
+#[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SR_SPEC;
 impl crate::RegisterSpec for SR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sr::R](R) reader structure"]
-impl crate::Readable for SR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`sr::R`](R) reader structure"]
+impl crate::Readable for SR_SPEC {}
 #[doc = "`reset()` method sets SR to value 0"]
 impl crate::Resettable for SR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

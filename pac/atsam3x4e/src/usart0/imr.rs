@@ -1,38 +1,37 @@
 #[doc = "Register `IMR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<IMR_SPEC>);
+pub type R = crate::R<IMR_SPEC>;
 #[doc = "Field `RXRDY` reader - RXRDY Interrupt Mask"]
-pub type RXRDY_R = crate::BitReader<bool>;
+pub type RXRDY_R = crate::BitReader;
 #[doc = "Field `TXRDY` reader - TXRDY Interrupt Mask"]
-pub type TXRDY_R = crate::BitReader<bool>;
+pub type TXRDY_R = crate::BitReader;
 #[doc = "Field `RXBRK` reader - Receiver Break Interrupt Mask"]
-pub type RXBRK_R = crate::BitReader<bool>;
+pub type RXBRK_R = crate::BitReader;
 #[doc = "Field `ENDRX` reader - End of Receive Transfer Interrupt Mask (available in all USART modes of operation)"]
-pub type ENDRX_R = crate::BitReader<bool>;
+pub type ENDRX_R = crate::BitReader;
 #[doc = "Field `ENDTX` reader - End of Transmit Interrupt Mask (available in all USART modes of operation)"]
-pub type ENDTX_R = crate::BitReader<bool>;
+pub type ENDTX_R = crate::BitReader;
 #[doc = "Field `OVRE` reader - Overrun Error Interrupt Mask"]
-pub type OVRE_R = crate::BitReader<bool>;
+pub type OVRE_R = crate::BitReader;
 #[doc = "Field `FRAME` reader - Framing Error Interrupt Mask"]
-pub type FRAME_R = crate::BitReader<bool>;
+pub type FRAME_R = crate::BitReader;
 #[doc = "Field `PARE` reader - Parity Error Interrupt Mask"]
-pub type PARE_R = crate::BitReader<bool>;
+pub type PARE_R = crate::BitReader;
 #[doc = "Field `TIMEOUT` reader - Time-out Interrupt Mask"]
-pub type TIMEOUT_R = crate::BitReader<bool>;
+pub type TIMEOUT_R = crate::BitReader;
 #[doc = "Field `TXEMPTY` reader - TXEMPTY Interrupt Mask"]
-pub type TXEMPTY_R = crate::BitReader<bool>;
+pub type TXEMPTY_R = crate::BitReader;
 #[doc = "Field `ITER` reader - Max Number of Repetitions Reached Interrupt Mask"]
-pub type ITER_R = crate::BitReader<bool>;
+pub type ITER_R = crate::BitReader;
 #[doc = "Field `TXBUFE` reader - Buffer Empty Interrupt Mask (available in all USART modes of operation)"]
-pub type TXBUFE_R = crate::BitReader<bool>;
+pub type TXBUFE_R = crate::BitReader;
 #[doc = "Field `RXBUFF` reader - Buffer Full Interrupt Mask (available in all USART modes of operation)"]
-pub type RXBUFF_R = crate::BitReader<bool>;
+pub type RXBUFF_R = crate::BitReader;
 #[doc = "Field `NACK` reader - Non Acknowledge Interrupt Mask"]
-pub type NACK_R = crate::BitReader<bool>;
+pub type NACK_R = crate::BitReader;
 #[doc = "Field `CTSIC` reader - Clear to Send Input Change Interrupt Mask"]
-pub type CTSIC_R = crate::BitReader<bool>;
+pub type CTSIC_R = crate::BitReader;
 #[doc = "Field `MANE` reader - Manchester Error Interrupt Mask"]
-pub type MANE_R = crate::BitReader<bool>;
+pub type MANE_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - RXRDY Interrupt Mask"]
     #[inline(always)]
@@ -115,15 +114,13 @@ impl R {
         MANE_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
-#[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](index.html) module"]
+#[doc = "Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`imr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IMR_SPEC;
 impl crate::RegisterSpec for IMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [imr::R](R) reader structure"]
-impl crate::Readable for IMR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`imr::R`](R) reader structure"]
+impl crate::Readable for IMR_SPEC {}
 #[doc = "`reset()` method sets IMR to value 0"]
 impl crate::Resettable for IMR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

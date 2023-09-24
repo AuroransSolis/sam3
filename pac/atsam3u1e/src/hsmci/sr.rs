@@ -1,56 +1,55 @@
 #[doc = "Register `SR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<SR_SPEC>);
+pub type R = crate::R<SR_SPEC>;
 #[doc = "Field `CMDRDY` reader - Command Ready"]
-pub type CMDRDY_R = crate::BitReader<bool>;
+pub type CMDRDY_R = crate::BitReader;
 #[doc = "Field `RXRDY` reader - Receiver Ready"]
-pub type RXRDY_R = crate::BitReader<bool>;
+pub type RXRDY_R = crate::BitReader;
 #[doc = "Field `TXRDY` reader - Transmit Ready"]
-pub type TXRDY_R = crate::BitReader<bool>;
+pub type TXRDY_R = crate::BitReader;
 #[doc = "Field `BLKE` reader - Data Block Ended"]
-pub type BLKE_R = crate::BitReader<bool>;
+pub type BLKE_R = crate::BitReader;
 #[doc = "Field `DTIP` reader - Data Transfer in Progress"]
-pub type DTIP_R = crate::BitReader<bool>;
+pub type DTIP_R = crate::BitReader;
 #[doc = "Field `NOTBUSY` reader - HSMCI Not Busy"]
-pub type NOTBUSY_R = crate::BitReader<bool>;
+pub type NOTBUSY_R = crate::BitReader;
 #[doc = "Field `MCI_SDIOIRQA` reader - "]
-pub type MCI_SDIOIRQA_R = crate::BitReader<bool>;
+pub type MCI_SDIOIRQA_R = crate::BitReader;
 #[doc = "Field `SDIOWAIT` reader - SDIO Read Wait Operation Status"]
-pub type SDIOWAIT_R = crate::BitReader<bool>;
+pub type SDIOWAIT_R = crate::BitReader;
 #[doc = "Field `CSRCV` reader - CE-ATA Completion Signal Received"]
-pub type CSRCV_R = crate::BitReader<bool>;
+pub type CSRCV_R = crate::BitReader;
 #[doc = "Field `RINDE` reader - Response Index Error"]
-pub type RINDE_R = crate::BitReader<bool>;
+pub type RINDE_R = crate::BitReader;
 #[doc = "Field `RDIRE` reader - Response Direction Error"]
-pub type RDIRE_R = crate::BitReader<bool>;
+pub type RDIRE_R = crate::BitReader;
 #[doc = "Field `RCRCE` reader - Response CRC Error"]
-pub type RCRCE_R = crate::BitReader<bool>;
+pub type RCRCE_R = crate::BitReader;
 #[doc = "Field `RENDE` reader - Response End Bit Error"]
-pub type RENDE_R = crate::BitReader<bool>;
+pub type RENDE_R = crate::BitReader;
 #[doc = "Field `RTOE` reader - Response Time-out Error"]
-pub type RTOE_R = crate::BitReader<bool>;
+pub type RTOE_R = crate::BitReader;
 #[doc = "Field `DCRCE` reader - Data CRC Error"]
-pub type DCRCE_R = crate::BitReader<bool>;
+pub type DCRCE_R = crate::BitReader;
 #[doc = "Field `DTOE` reader - Data Time-out Error"]
-pub type DTOE_R = crate::BitReader<bool>;
+pub type DTOE_R = crate::BitReader;
 #[doc = "Field `CSTOE` reader - Completion Signal Time-out Error"]
-pub type CSTOE_R = crate::BitReader<bool>;
+pub type CSTOE_R = crate::BitReader;
 #[doc = "Field `BLKOVRE` reader - DMA Block Overrun Error"]
-pub type BLKOVRE_R = crate::BitReader<bool>;
+pub type BLKOVRE_R = crate::BitReader;
 #[doc = "Field `DMADONE` reader - DMA Transfer done"]
-pub type DMADONE_R = crate::BitReader<bool>;
+pub type DMADONE_R = crate::BitReader;
 #[doc = "Field `FIFOEMPTY` reader - FIFO empty flag"]
-pub type FIFOEMPTY_R = crate::BitReader<bool>;
+pub type FIFOEMPTY_R = crate::BitReader;
 #[doc = "Field `XFRDONE` reader - Transfer Done flag"]
-pub type XFRDONE_R = crate::BitReader<bool>;
+pub type XFRDONE_R = crate::BitReader;
 #[doc = "Field `ACKRCV` reader - Boot Operation Acknowledge Received"]
-pub type ACKRCV_R = crate::BitReader<bool>;
+pub type ACKRCV_R = crate::BitReader;
 #[doc = "Field `ACKRCVE` reader - Boot Operation Acknowledge Error"]
-pub type ACKRCVE_R = crate::BitReader<bool>;
+pub type ACKRCVE_R = crate::BitReader;
 #[doc = "Field `OVRE` reader - Overrun"]
-pub type OVRE_R = crate::BitReader<bool>;
+pub type OVRE_R = crate::BitReader;
 #[doc = "Field `UNRE` reader - Underrun"]
-pub type UNRE_R = crate::BitReader<bool>;
+pub type UNRE_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Command Ready"]
     #[inline(always)]
@@ -178,15 +177,13 @@ impl R {
         UNRE_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]
+#[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SR_SPEC;
 impl crate::RegisterSpec for SR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sr::R](R) reader structure"]
-impl crate::Readable for SR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`sr::R`](R) reader structure"]
+impl crate::Readable for SR_SPEC {}
 #[doc = "`reset()` method sets SR to value 0xc0e5"]
 impl crate::Resettable for SR_SPEC {
     const RESET_VALUE: Self::Ux = 0xc0e5;

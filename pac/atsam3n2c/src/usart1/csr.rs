@@ -1,38 +1,37 @@
 #[doc = "Register `CSR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<CSR_SPEC>);
+pub type R = crate::R<CSR_SPEC>;
 #[doc = "Field `RXRDY` reader - Receiver Ready"]
-pub type RXRDY_R = crate::BitReader<bool>;
+pub type RXRDY_R = crate::BitReader;
 #[doc = "Field `TXRDY` reader - Transmitter Ready"]
-pub type TXRDY_R = crate::BitReader<bool>;
+pub type TXRDY_R = crate::BitReader;
 #[doc = "Field `RXBRK` reader - Break Received/End of Break"]
-pub type RXBRK_R = crate::BitReader<bool>;
+pub type RXBRK_R = crate::BitReader;
 #[doc = "Field `ENDRX` reader - End of Receiver Transfer"]
-pub type ENDRX_R = crate::BitReader<bool>;
+pub type ENDRX_R = crate::BitReader;
 #[doc = "Field `ENDTX` reader - End of Transmitter Transfer"]
-pub type ENDTX_R = crate::BitReader<bool>;
+pub type ENDTX_R = crate::BitReader;
 #[doc = "Field `OVRE` reader - Overrun Error"]
-pub type OVRE_R = crate::BitReader<bool>;
+pub type OVRE_R = crate::BitReader;
 #[doc = "Field `FRAME` reader - Framing Error"]
-pub type FRAME_R = crate::BitReader<bool>;
+pub type FRAME_R = crate::BitReader;
 #[doc = "Field `PARE` reader - Parity Error"]
-pub type PARE_R = crate::BitReader<bool>;
+pub type PARE_R = crate::BitReader;
 #[doc = "Field `TIMEOUT` reader - Receiver Time-out"]
-pub type TIMEOUT_R = crate::BitReader<bool>;
+pub type TIMEOUT_R = crate::BitReader;
 #[doc = "Field `TXEMPTY` reader - Transmitter Empty"]
-pub type TXEMPTY_R = crate::BitReader<bool>;
+pub type TXEMPTY_R = crate::BitReader;
 #[doc = "Field `ITER` reader - Max number of Repetitions Reached"]
-pub type ITER_R = crate::BitReader<bool>;
+pub type ITER_R = crate::BitReader;
 #[doc = "Field `TXBUFE` reader - Transmission Buffer Empty"]
-pub type TXBUFE_R = crate::BitReader<bool>;
+pub type TXBUFE_R = crate::BitReader;
 #[doc = "Field `RXBUFF` reader - Reception Buffer Full"]
-pub type RXBUFF_R = crate::BitReader<bool>;
+pub type RXBUFF_R = crate::BitReader;
 #[doc = "Field `NACK` reader - Non AcknowledgeInterrupt"]
-pub type NACK_R = crate::BitReader<bool>;
+pub type NACK_R = crate::BitReader;
 #[doc = "Field `CTSIC` reader - Clear to Send Input Change Flag"]
-pub type CTSIC_R = crate::BitReader<bool>;
+pub type CTSIC_R = crate::BitReader;
 #[doc = "Field `CTS` reader - Image of CTS Input"]
-pub type CTS_R = crate::BitReader<bool>;
+pub type CTS_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Receiver Ready"]
     #[inline(always)]
@@ -115,12 +114,10 @@ impl R {
         CTS_R::new(((self.bits >> 23) & 1) != 0)
     }
 }
-#[doc = "Channel Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csr](index.html) module"]
+#[doc = "Channel Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CSR_SPEC;
 impl crate::RegisterSpec for CSR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [csr::R](R) reader structure"]
-impl crate::Readable for CSR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`csr::R`](R) reader structure"]
+impl crate::Readable for CSR_SPEC {}

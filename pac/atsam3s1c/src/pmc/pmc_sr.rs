@@ -1,32 +1,31 @@
 #[doc = "Register `PMC_SR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<PMC_SR_SPEC>);
+pub type R = crate::R<PMC_SR_SPEC>;
 #[doc = "Field `MOSCXTS` reader - Main XTAL Oscillator Status"]
-pub type MOSCXTS_R = crate::BitReader<bool>;
+pub type MOSCXTS_R = crate::BitReader;
 #[doc = "Field `LOCKA` reader - PLLA Lock Status"]
-pub type LOCKA_R = crate::BitReader<bool>;
+pub type LOCKA_R = crate::BitReader;
 #[doc = "Field `LOCKB` reader - PLLB Lock Status"]
-pub type LOCKB_R = crate::BitReader<bool>;
+pub type LOCKB_R = crate::BitReader;
 #[doc = "Field `MCKRDY` reader - Master Clock Status"]
-pub type MCKRDY_R = crate::BitReader<bool>;
+pub type MCKRDY_R = crate::BitReader;
 #[doc = "Field `OSCSELS` reader - Slow Clock Oscillator Selection"]
-pub type OSCSELS_R = crate::BitReader<bool>;
+pub type OSCSELS_R = crate::BitReader;
 #[doc = "Field `PCKRDY0` reader - Programmable Clock Ready Status"]
-pub type PCKRDY0_R = crate::BitReader<bool>;
+pub type PCKRDY0_R = crate::BitReader;
 #[doc = "Field `PCKRDY1` reader - Programmable Clock Ready Status"]
-pub type PCKRDY1_R = crate::BitReader<bool>;
+pub type PCKRDY1_R = crate::BitReader;
 #[doc = "Field `PCKRDY2` reader - Programmable Clock Ready Status"]
-pub type PCKRDY2_R = crate::BitReader<bool>;
+pub type PCKRDY2_R = crate::BitReader;
 #[doc = "Field `MOSCSELS` reader - Main Oscillator Selection Status"]
-pub type MOSCSELS_R = crate::BitReader<bool>;
+pub type MOSCSELS_R = crate::BitReader;
 #[doc = "Field `MOSCRCS` reader - Main On-Chip RC Oscillator Status"]
-pub type MOSCRCS_R = crate::BitReader<bool>;
+pub type MOSCRCS_R = crate::BitReader;
 #[doc = "Field `CFDEV` reader - Clock Failure Detector Event"]
-pub type CFDEV_R = crate::BitReader<bool>;
+pub type CFDEV_R = crate::BitReader;
 #[doc = "Field `CFDS` reader - Clock Failure Detector Status"]
-pub type CFDS_R = crate::BitReader<bool>;
+pub type CFDS_R = crate::BitReader;
 #[doc = "Field `FOS` reader - Clock Failure Detector Fault Output Status"]
-pub type FOS_R = crate::BitReader<bool>;
+pub type FOS_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Main XTAL Oscillator Status"]
     #[inline(always)]
@@ -94,15 +93,13 @@ impl R {
         FOS_R::new(((self.bits >> 20) & 1) != 0)
     }
 }
-#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_sr](index.html) module"]
+#[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmc_sr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PMC_SR_SPEC;
 impl crate::RegisterSpec for PMC_SR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pmc_sr::R](R) reader structure"]
-impl crate::Readable for PMC_SR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`pmc_sr::R`](R) reader structure"]
+impl crate::Readable for PMC_SR_SPEC {}
 #[doc = "`reset()` method sets PMC_SR to value 0x0001_0008"]
 impl crate::Resettable for PMC_SR_SPEC {
     const RESET_VALUE: Self::Ux = 0x0001_0008;

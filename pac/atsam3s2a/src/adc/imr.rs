@@ -1,48 +1,47 @@
 #[doc = "Register `IMR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<IMR_SPEC>);
+pub type R = crate::R<IMR_SPEC>;
 #[doc = "Field `EOC0` reader - End of Conversion Interrupt Mask 0"]
-pub type EOC0_R = crate::BitReader<bool>;
+pub type EOC0_R = crate::BitReader;
 #[doc = "Field `EOC1` reader - End of Conversion Interrupt Mask 1"]
-pub type EOC1_R = crate::BitReader<bool>;
+pub type EOC1_R = crate::BitReader;
 #[doc = "Field `EOC2` reader - End of Conversion Interrupt Mask 2"]
-pub type EOC2_R = crate::BitReader<bool>;
+pub type EOC2_R = crate::BitReader;
 #[doc = "Field `EOC3` reader - End of Conversion Interrupt Mask 3"]
-pub type EOC3_R = crate::BitReader<bool>;
+pub type EOC3_R = crate::BitReader;
 #[doc = "Field `EOC4` reader - End of Conversion Interrupt Mask 4"]
-pub type EOC4_R = crate::BitReader<bool>;
+pub type EOC4_R = crate::BitReader;
 #[doc = "Field `EOC5` reader - End of Conversion Interrupt Mask 5"]
-pub type EOC5_R = crate::BitReader<bool>;
+pub type EOC5_R = crate::BitReader;
 #[doc = "Field `EOC6` reader - End of Conversion Interrupt Mask 6"]
-pub type EOC6_R = crate::BitReader<bool>;
+pub type EOC6_R = crate::BitReader;
 #[doc = "Field `EOC7` reader - End of Conversion Interrupt Mask 7"]
-pub type EOC7_R = crate::BitReader<bool>;
+pub type EOC7_R = crate::BitReader;
 #[doc = "Field `EOC8` reader - End of Conversion Interrupt Mask 8"]
-pub type EOC8_R = crate::BitReader<bool>;
+pub type EOC8_R = crate::BitReader;
 #[doc = "Field `EOC9` reader - End of Conversion Interrupt Mask 9"]
-pub type EOC9_R = crate::BitReader<bool>;
+pub type EOC9_R = crate::BitReader;
 #[doc = "Field `EOC10` reader - End of Conversion Interrupt Mask 10"]
-pub type EOC10_R = crate::BitReader<bool>;
+pub type EOC10_R = crate::BitReader;
 #[doc = "Field `EOC11` reader - End of Conversion Interrupt Mask 11"]
-pub type EOC11_R = crate::BitReader<bool>;
+pub type EOC11_R = crate::BitReader;
 #[doc = "Field `EOC12` reader - End of Conversion Interrupt Mask 12"]
-pub type EOC12_R = crate::BitReader<bool>;
+pub type EOC12_R = crate::BitReader;
 #[doc = "Field `EOC13` reader - End of Conversion Interrupt Mask 13"]
-pub type EOC13_R = crate::BitReader<bool>;
+pub type EOC13_R = crate::BitReader;
 #[doc = "Field `EOC14` reader - End of Conversion Interrupt Mask 14"]
-pub type EOC14_R = crate::BitReader<bool>;
+pub type EOC14_R = crate::BitReader;
 #[doc = "Field `EOC15` reader - End of Conversion Interrupt Mask 15"]
-pub type EOC15_R = crate::BitReader<bool>;
+pub type EOC15_R = crate::BitReader;
 #[doc = "Field `DRDY` reader - Data Ready Interrupt Mask"]
-pub type DRDY_R = crate::BitReader<bool>;
+pub type DRDY_R = crate::BitReader;
 #[doc = "Field `GOVRE` reader - General Overrun Error Interrupt Mask"]
-pub type GOVRE_R = crate::BitReader<bool>;
+pub type GOVRE_R = crate::BitReader;
 #[doc = "Field `COMPE` reader - Comparison Event Interrupt Mask"]
-pub type COMPE_R = crate::BitReader<bool>;
+pub type COMPE_R = crate::BitReader;
 #[doc = "Field `ENDRX` reader - End of Receive Buffer Interrupt Mask"]
-pub type ENDRX_R = crate::BitReader<bool>;
+pub type ENDRX_R = crate::BitReader;
 #[doc = "Field `RXBUFF` reader - Receive Buffer Full Interrupt Mask"]
-pub type RXBUFF_R = crate::BitReader<bool>;
+pub type RXBUFF_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - End of Conversion Interrupt Mask 0"]
     #[inline(always)]
@@ -150,15 +149,13 @@ impl R {
         RXBUFF_R::new(((self.bits >> 28) & 1) != 0)
     }
 }
-#[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](index.html) module"]
+#[doc = "Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`imr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IMR_SPEC;
 impl crate::RegisterSpec for IMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [imr::R](R) reader structure"]
-impl crate::Readable for IMR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`imr::R`](R) reader structure"]
+impl crate::Readable for IMR_SPEC {}
 #[doc = "`reset()` method sets IMR to value 0"]
 impl crate::Resettable for IMR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

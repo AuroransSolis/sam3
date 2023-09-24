@@ -1,19 +1,17 @@
 #[doc = "Register `MMR3` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<MMR3_SPEC>);
+pub type R = crate::R<MMR3_SPEC>;
 #[doc = "Register `MMR3` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<MMR3_SPEC>);
+pub type W = crate::W<MMR3_SPEC>;
 #[doc = "Field `MTIMEMARK` reader - Mailbox Timemark"]
-pub type MTIMEMARK_R = crate::FieldReader<u16, u16>;
+pub type MTIMEMARK_R = crate::FieldReader<u16>;
 #[doc = "Field `MTIMEMARK` writer - Mailbox Timemark"]
-pub type MTIMEMARK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MMR3_SPEC, u16, u16, 16, O>;
+pub type MTIMEMARK_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
 #[doc = "Field `PRIOR` reader - Mailbox Priority"]
-pub type PRIOR_R = crate::FieldReader<u8, u8>;
+pub type PRIOR_R = crate::FieldReader;
 #[doc = "Field `PRIOR` writer - Mailbox Priority"]
-pub type PRIOR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MMR3_SPEC, u8, u8, 4, O>;
+pub type PRIOR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `MOT` reader - Mailbox Object Type"]
-pub type MOT_R = crate::FieldReader<u8, MOT_A>;
+pub type MOT_R = crate::FieldReader<MOT_A>;
 #[doc = "Mailbox Object Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -37,6 +35,9 @@ impl From<MOT_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for MOT_A {
+    type Ux = u8;
+}
 impl MOT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -51,68 +52,72 @@ impl MOT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `MbDisabled`"]
+    #[doc = "Mailbox is disabled. This prevents receiving or transmitting any messages with this mailbox."]
     #[inline(always)]
     pub fn is_mb_disabled(&self) -> bool {
         *self == MOT_A::MbDisabled
     }
-    #[doc = "Checks if the value of the field is `MbRx`"]
+    #[doc = "Reception Mailbox. Mailbox is configured for reception. If a message is received while the mailbox data register is full, it is discarded."]
     #[inline(always)]
     pub fn is_mb_rx(&self) -> bool {
         *self == MOT_A::MbRx
     }
-    #[doc = "Checks if the value of the field is `MbRxOverwrite`"]
+    #[doc = "Reception mailbox with overwrite. Mailbox is configured for reception. If a message is received while the mailbox is full, it overwrites the previous message."]
     #[inline(always)]
     pub fn is_mb_rx_overwrite(&self) -> bool {
         *self == MOT_A::MbRxOverwrite
     }
-    #[doc = "Checks if the value of the field is `MbTx`"]
+    #[doc = "Transmit mailbox. Mailbox is configured for transmission."]
     #[inline(always)]
     pub fn is_mb_tx(&self) -> bool {
         *self == MOT_A::MbTx
     }
-    #[doc = "Checks if the value of the field is `MbConsumer`"]
+    #[doc = "Consumer Mailbox. Mailbox is configured in reception but behaves as a Transmit Mailbox, i.e., it sends a remote frame and waits for an answer."]
     #[inline(always)]
     pub fn is_mb_consumer(&self) -> bool {
         *self == MOT_A::MbConsumer
     }
-    #[doc = "Checks if the value of the field is `MbProducer`"]
+    #[doc = "Producer Mailbox. Mailbox is configured in transmission but also behaves like a reception mailbox, i.e., it waits to receive a Remote Frame before sending its contents."]
     #[inline(always)]
     pub fn is_mb_producer(&self) -> bool {
         *self == MOT_A::MbProducer
     }
 }
 #[doc = "Field `MOT` writer - Mailbox Object Type"]
-pub type MOT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MMR3_SPEC, u8, MOT_A, 3, O>;
-impl<'a, const O: u8> MOT_W<'a, O> {
+pub type MOT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, MOT_A>;
+impl<'a, REG, const O: u8> MOT_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Mailbox is disabled. This prevents receiving or transmitting any messages with this mailbox."]
     #[inline(always)]
-    pub fn mb_disabled(self) -> &'a mut W {
+    pub fn mb_disabled(self) -> &'a mut crate::W<REG> {
         self.variant(MOT_A::MbDisabled)
     }
     #[doc = "Reception Mailbox. Mailbox is configured for reception. If a message is received while the mailbox data register is full, it is discarded."]
     #[inline(always)]
-    pub fn mb_rx(self) -> &'a mut W {
+    pub fn mb_rx(self) -> &'a mut crate::W<REG> {
         self.variant(MOT_A::MbRx)
     }
     #[doc = "Reception mailbox with overwrite. Mailbox is configured for reception. If a message is received while the mailbox is full, it overwrites the previous message."]
     #[inline(always)]
-    pub fn mb_rx_overwrite(self) -> &'a mut W {
+    pub fn mb_rx_overwrite(self) -> &'a mut crate::W<REG> {
         self.variant(MOT_A::MbRxOverwrite)
     }
     #[doc = "Transmit mailbox. Mailbox is configured for transmission."]
     #[inline(always)]
-    pub fn mb_tx(self) -> &'a mut W {
+    pub fn mb_tx(self) -> &'a mut crate::W<REG> {
         self.variant(MOT_A::MbTx)
     }
     #[doc = "Consumer Mailbox. Mailbox is configured in reception but behaves as a Transmit Mailbox, i.e., it sends a remote frame and waits for an answer."]
     #[inline(always)]
-    pub fn mb_consumer(self) -> &'a mut W {
+    pub fn mb_consumer(self) -> &'a mut crate::W<REG> {
         self.variant(MOT_A::MbConsumer)
     }
     #[doc = "Producer Mailbox. Mailbox is configured in transmission but also behaves like a reception mailbox, i.e., it waits to receive a Remote Frame before sending its contents."]
     #[inline(always)]
-    pub fn mb_producer(self) -> &'a mut W {
+    pub fn mb_producer(self) -> &'a mut crate::W<REG> {
         self.variant(MOT_A::MbProducer)
     }
 }
@@ -137,40 +142,37 @@ impl W {
     #[doc = "Bits 0:15 - Mailbox Timemark"]
     #[inline(always)]
     #[must_use]
-    pub fn mtimemark(&mut self) -> MTIMEMARK_W<0> {
+    pub fn mtimemark(&mut self) -> MTIMEMARK_W<MMR3_SPEC, 0> {
         MTIMEMARK_W::new(self)
     }
     #[doc = "Bits 16:19 - Mailbox Priority"]
     #[inline(always)]
     #[must_use]
-    pub fn prior(&mut self) -> PRIOR_W<16> {
+    pub fn prior(&mut self) -> PRIOR_W<MMR3_SPEC, 16> {
         PRIOR_W::new(self)
     }
     #[doc = "Bits 24:26 - Mailbox Object Type"]
     #[inline(always)]
     #[must_use]
-    pub fn mot(&mut self) -> MOT_W<24> {
+    pub fn mot(&mut self) -> MOT_W<MMR3_SPEC, 24> {
         MOT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Mailbox Mode Register (MB = 3)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mmr3](index.html) module"]
+#[doc = "Mailbox Mode Register (MB = 3)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mmr3::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mmr3::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MMR3_SPEC;
 impl crate::RegisterSpec for MMR3_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mmr3::R](R) reader structure"]
-impl crate::Readable for MMR3_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mmr3::W](W) writer structure"]
+#[doc = "`read()` method returns [`mmr3::R`](R) reader structure"]
+impl crate::Readable for MMR3_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mmr3::W`](W) writer structure"]
 impl crate::Writable for MMR3_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

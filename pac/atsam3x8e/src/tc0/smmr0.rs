@@ -1,17 +1,15 @@
 #[doc = "Register `SMMR0` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<SMMR0_SPEC>);
+pub type R = crate::R<SMMR0_SPEC>;
 #[doc = "Register `SMMR0` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<SMMR0_SPEC>);
+pub type W = crate::W<SMMR0_SPEC>;
 #[doc = "Field `GCEN` reader - Gray Count Enable"]
-pub type GCEN_R = crate::BitReader<bool>;
+pub type GCEN_R = crate::BitReader;
 #[doc = "Field `GCEN` writer - Gray Count Enable"]
-pub type GCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMMR0_SPEC, bool, O>;
+pub type GCEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DOWN` reader - DOWN Count"]
-pub type DOWN_R = crate::BitReader<bool>;
+pub type DOWN_R = crate::BitReader;
 #[doc = "Field `DOWN` writer - DOWN Count"]
-pub type DOWN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMMR0_SPEC, bool, O>;
+pub type DOWN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - Gray Count Enable"]
     #[inline(always)]
@@ -28,34 +26,31 @@ impl W {
     #[doc = "Bit 0 - Gray Count Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn gcen(&mut self) -> GCEN_W<0> {
+    pub fn gcen(&mut self) -> GCEN_W<SMMR0_SPEC, 0> {
         GCEN_W::new(self)
     }
     #[doc = "Bit 1 - DOWN Count"]
     #[inline(always)]
     #[must_use]
-    pub fn down(&mut self) -> DOWN_W<1> {
+    pub fn down(&mut self) -> DOWN_W<SMMR0_SPEC, 1> {
         DOWN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Stepper Motor Mode Register (channel = 0)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [smmr0](index.html) module"]
+#[doc = "Stepper Motor Mode Register (channel = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`smmr0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`smmr0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SMMR0_SPEC;
 impl crate::RegisterSpec for SMMR0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [smmr0::R](R) reader structure"]
-impl crate::Readable for SMMR0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [smmr0::W](W) writer structure"]
+#[doc = "`read()` method returns [`smmr0::R`](R) reader structure"]
+impl crate::Readable for SMMR0_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`smmr0::W`](W) writer structure"]
 impl crate::Writable for SMMR0_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

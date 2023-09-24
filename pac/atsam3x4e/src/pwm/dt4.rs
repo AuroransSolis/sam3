@@ -1,17 +1,15 @@
 #[doc = "Register `DT4` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<DT4_SPEC>);
+pub type R = crate::R<DT4_SPEC>;
 #[doc = "Register `DT4` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<DT4_SPEC>);
+pub type W = crate::W<DT4_SPEC>;
 #[doc = "Field `DTH` reader - Dead-Time Value for PWMHx Output"]
-pub type DTH_R = crate::FieldReader<u16, u16>;
+pub type DTH_R = crate::FieldReader<u16>;
 #[doc = "Field `DTH` writer - Dead-Time Value for PWMHx Output"]
-pub type DTH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DT4_SPEC, u16, u16, 16, O>;
+pub type DTH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
 #[doc = "Field `DTL` reader - Dead-Time Value for PWMLx Output"]
-pub type DTL_R = crate::FieldReader<u16, u16>;
+pub type DTL_R = crate::FieldReader<u16>;
 #[doc = "Field `DTL` writer - Dead-Time Value for PWMLx Output"]
-pub type DTL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DT4_SPEC, u16, u16, 16, O>;
+pub type DTL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Dead-Time Value for PWMHx Output"]
     #[inline(always)]
@@ -28,34 +26,31 @@ impl W {
     #[doc = "Bits 0:15 - Dead-Time Value for PWMHx Output"]
     #[inline(always)]
     #[must_use]
-    pub fn dth(&mut self) -> DTH_W<0> {
+    pub fn dth(&mut self) -> DTH_W<DT4_SPEC, 0> {
         DTH_W::new(self)
     }
     #[doc = "Bits 16:31 - Dead-Time Value for PWMLx Output"]
     #[inline(always)]
     #[must_use]
-    pub fn dtl(&mut self) -> DTL_W<16> {
+    pub fn dtl(&mut self) -> DTL_W<DT4_SPEC, 16> {
         DTL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PWM Channel Dead Time Register (ch_num = 4)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dt4](index.html) module"]
+#[doc = "PWM Channel Dead Time Register (ch_num = 4)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dt4::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dt4::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DT4_SPEC;
 impl crate::RegisterSpec for DT4_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dt4::R](R) reader structure"]
-impl crate::Readable for DT4_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dt4::W](W) writer structure"]
+#[doc = "`read()` method returns [`dt4::R`](R) reader structure"]
+impl crate::Readable for DT4_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`dt4::W`](W) writer structure"]
 impl crate::Writable for DT4_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

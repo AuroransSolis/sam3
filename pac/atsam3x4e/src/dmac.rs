@@ -110,203 +110,253 @@ pub struct RegisterBlock {
     #[doc = "0x1e8 - DMAC Write Protect Status Register"]
     pub wpsr: WPSR,
 }
-#[doc = "GCFG (rw) register accessor: an alias for `Reg<GCFG_SPEC>`"]
+#[doc = "GCFG (rw) register accessor: DMAC Global Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gcfg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gcfg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`gcfg`]
+module"]
 pub type GCFG = crate::Reg<gcfg::GCFG_SPEC>;
 #[doc = "DMAC Global Configuration Register"]
 pub mod gcfg;
-#[doc = "EN (rw) register accessor: an alias for `Reg<EN_SPEC>`"]
+#[doc = "EN (rw) register accessor: DMAC Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`en::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`en::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`en`]
+module"]
 pub type EN = crate::Reg<en::EN_SPEC>;
 #[doc = "DMAC Enable Register"]
 pub mod en;
-#[doc = "SREQ (rw) register accessor: an alias for `Reg<SREQ_SPEC>`"]
+#[doc = "SREQ (rw) register accessor: DMAC Software Single Request Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sreq::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sreq::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`sreq`]
+module"]
 pub type SREQ = crate::Reg<sreq::SREQ_SPEC>;
 #[doc = "DMAC Software Single Request Register"]
 pub mod sreq;
-#[doc = "CREQ (rw) register accessor: an alias for `Reg<CREQ_SPEC>`"]
+#[doc = "CREQ (rw) register accessor: DMAC Software Chunk Transfer Request Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`creq::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`creq::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`creq`]
+module"]
 pub type CREQ = crate::Reg<creq::CREQ_SPEC>;
 #[doc = "DMAC Software Chunk Transfer Request Register"]
 pub mod creq;
-#[doc = "LAST (rw) register accessor: an alias for `Reg<LAST_SPEC>`"]
+#[doc = "LAST (rw) register accessor: DMAC Software Last Transfer Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`last::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`last::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`last`]
+module"]
 pub type LAST = crate::Reg<last::LAST_SPEC>;
 #[doc = "DMAC Software Last Transfer Flag Register"]
 pub mod last;
-#[doc = "EBCIER (w) register accessor: an alias for `Reg<EBCIER_SPEC>`"]
+#[doc = "EBCIER (w) register accessor: DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Enable register.\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ebcier::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ebcier`]
+module"]
 pub type EBCIER = crate::Reg<ebcier::EBCIER_SPEC>;
 #[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Enable register."]
 pub mod ebcier;
-#[doc = "EBCIDR (w) register accessor: an alias for `Reg<EBCIDR_SPEC>`"]
+#[doc = "EBCIDR (w) register accessor: DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Disable register.\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ebcidr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ebcidr`]
+module"]
 pub type EBCIDR = crate::Reg<ebcidr::EBCIDR_SPEC>;
 #[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Disable register."]
 pub mod ebcidr;
-#[doc = "EBCIMR (r) register accessor: an alias for `Reg<EBCIMR_SPEC>`"]
+#[doc = "EBCIMR (r) register accessor: DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Mask Register.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ebcimr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ebcimr`]
+module"]
 pub type EBCIMR = crate::Reg<ebcimr::EBCIMR_SPEC>;
 #[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Mask Register."]
 pub mod ebcimr;
-#[doc = "EBCISR (r) register accessor: an alias for `Reg<EBCISR_SPEC>`"]
+#[doc = "EBCISR (r) register accessor: DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Status Register.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ebcisr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ebcisr`]
+module"]
 pub type EBCISR = crate::Reg<ebcisr::EBCISR_SPEC>;
 #[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Status Register."]
 pub mod ebcisr;
-#[doc = "CHER (w) register accessor: an alias for `Reg<CHER_SPEC>`"]
+#[doc = "CHER (w) register accessor: DMAC Channel Handler Enable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cher::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cher`]
+module"]
 pub type CHER = crate::Reg<cher::CHER_SPEC>;
 #[doc = "DMAC Channel Handler Enable Register"]
 pub mod cher;
-#[doc = "CHDR (w) register accessor: an alias for `Reg<CHDR_SPEC>`"]
+#[doc = "CHDR (w) register accessor: DMAC Channel Handler Disable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`chdr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`chdr`]
+module"]
 pub type CHDR = crate::Reg<chdr::CHDR_SPEC>;
 #[doc = "DMAC Channel Handler Disable Register"]
 pub mod chdr;
-#[doc = "CHSR (r) register accessor: an alias for `Reg<CHSR_SPEC>`"]
+#[doc = "CHSR (r) register accessor: DMAC Channel Handler Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`chsr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`chsr`]
+module"]
 pub type CHSR = crate::Reg<chsr::CHSR_SPEC>;
 #[doc = "DMAC Channel Handler Status Register"]
 pub mod chsr;
-#[doc = "SADDR0 (rw) register accessor: an alias for `Reg<SADDR0_SPEC>`"]
+#[doc = "SADDR0 (rw) register accessor: DMAC Channel Source Address Register (ch_num = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`saddr0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`saddr0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`saddr0`]
+module"]
 pub type SADDR0 = crate::Reg<saddr0::SADDR0_SPEC>;
 #[doc = "DMAC Channel Source Address Register (ch_num = 0)"]
 pub mod saddr0;
-#[doc = "DADDR0 (rw) register accessor: an alias for `Reg<DADDR0_SPEC>`"]
+#[doc = "DADDR0 (rw) register accessor: DMAC Channel Destination Address Register (ch_num = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`daddr0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`daddr0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`daddr0`]
+module"]
 pub type DADDR0 = crate::Reg<daddr0::DADDR0_SPEC>;
 #[doc = "DMAC Channel Destination Address Register (ch_num = 0)"]
 pub mod daddr0;
-#[doc = "DSCR0 (rw) register accessor: an alias for `Reg<DSCR0_SPEC>`"]
+#[doc = "DSCR0 (rw) register accessor: DMAC Channel Descriptor Address Register (ch_num = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dscr0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dscr0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`dscr0`]
+module"]
 pub type DSCR0 = crate::Reg<dscr0::DSCR0_SPEC>;
 #[doc = "DMAC Channel Descriptor Address Register (ch_num = 0)"]
 pub mod dscr0;
-#[doc = "CTRLA0 (rw) register accessor: an alias for `Reg<CTRLA0_SPEC>`"]
+#[doc = "CTRLA0 (rw) register accessor: DMAC Channel Control A Register (ch_num = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrla0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrla0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ctrla0`]
+module"]
 pub type CTRLA0 = crate::Reg<ctrla0::CTRLA0_SPEC>;
 #[doc = "DMAC Channel Control A Register (ch_num = 0)"]
 pub mod ctrla0;
-#[doc = "CTRLB0 (rw) register accessor: an alias for `Reg<CTRLB0_SPEC>`"]
+#[doc = "CTRLB0 (rw) register accessor: DMAC Channel Control B Register (ch_num = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrlb0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrlb0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ctrlb0`]
+module"]
 pub type CTRLB0 = crate::Reg<ctrlb0::CTRLB0_SPEC>;
 #[doc = "DMAC Channel Control B Register (ch_num = 0)"]
 pub mod ctrlb0;
-#[doc = "CFG0 (rw) register accessor: an alias for `Reg<CFG0_SPEC>`"]
+#[doc = "CFG0 (rw) register accessor: DMAC Channel Configuration Register (ch_num = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cfg0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cfg0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cfg0`]
+module"]
 pub type CFG0 = crate::Reg<cfg0::CFG0_SPEC>;
 #[doc = "DMAC Channel Configuration Register (ch_num = 0)"]
 pub mod cfg0;
-#[doc = "SADDR1 (rw) register accessor: an alias for `Reg<SADDR1_SPEC>`"]
+#[doc = "SADDR1 (rw) register accessor: DMAC Channel Source Address Register (ch_num = 1)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`saddr1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`saddr1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`saddr1`]
+module"]
 pub type SADDR1 = crate::Reg<saddr1::SADDR1_SPEC>;
 #[doc = "DMAC Channel Source Address Register (ch_num = 1)"]
 pub mod saddr1;
-#[doc = "DADDR1 (rw) register accessor: an alias for `Reg<DADDR1_SPEC>`"]
+#[doc = "DADDR1 (rw) register accessor: DMAC Channel Destination Address Register (ch_num = 1)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`daddr1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`daddr1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`daddr1`]
+module"]
 pub type DADDR1 = crate::Reg<daddr1::DADDR1_SPEC>;
 #[doc = "DMAC Channel Destination Address Register (ch_num = 1)"]
 pub mod daddr1;
-#[doc = "DSCR1 (rw) register accessor: an alias for `Reg<DSCR1_SPEC>`"]
+#[doc = "DSCR1 (rw) register accessor: DMAC Channel Descriptor Address Register (ch_num = 1)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dscr1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dscr1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`dscr1`]
+module"]
 pub type DSCR1 = crate::Reg<dscr1::DSCR1_SPEC>;
 #[doc = "DMAC Channel Descriptor Address Register (ch_num = 1)"]
 pub mod dscr1;
-#[doc = "CTRLA1 (rw) register accessor: an alias for `Reg<CTRLA1_SPEC>`"]
+#[doc = "CTRLA1 (rw) register accessor: DMAC Channel Control A Register (ch_num = 1)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrla1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrla1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ctrla1`]
+module"]
 pub type CTRLA1 = crate::Reg<ctrla1::CTRLA1_SPEC>;
 #[doc = "DMAC Channel Control A Register (ch_num = 1)"]
 pub mod ctrla1;
-#[doc = "CTRLB1 (rw) register accessor: an alias for `Reg<CTRLB1_SPEC>`"]
+#[doc = "CTRLB1 (rw) register accessor: DMAC Channel Control B Register (ch_num = 1)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrlb1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrlb1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ctrlb1`]
+module"]
 pub type CTRLB1 = crate::Reg<ctrlb1::CTRLB1_SPEC>;
 #[doc = "DMAC Channel Control B Register (ch_num = 1)"]
 pub mod ctrlb1;
-#[doc = "CFG1 (rw) register accessor: an alias for `Reg<CFG1_SPEC>`"]
+#[doc = "CFG1 (rw) register accessor: DMAC Channel Configuration Register (ch_num = 1)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cfg1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cfg1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cfg1`]
+module"]
 pub type CFG1 = crate::Reg<cfg1::CFG1_SPEC>;
 #[doc = "DMAC Channel Configuration Register (ch_num = 1)"]
 pub mod cfg1;
-#[doc = "SADDR2 (rw) register accessor: an alias for `Reg<SADDR2_SPEC>`"]
+#[doc = "SADDR2 (rw) register accessor: DMAC Channel Source Address Register (ch_num = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`saddr2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`saddr2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`saddr2`]
+module"]
 pub type SADDR2 = crate::Reg<saddr2::SADDR2_SPEC>;
 #[doc = "DMAC Channel Source Address Register (ch_num = 2)"]
 pub mod saddr2;
-#[doc = "DADDR2 (rw) register accessor: an alias for `Reg<DADDR2_SPEC>`"]
+#[doc = "DADDR2 (rw) register accessor: DMAC Channel Destination Address Register (ch_num = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`daddr2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`daddr2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`daddr2`]
+module"]
 pub type DADDR2 = crate::Reg<daddr2::DADDR2_SPEC>;
 #[doc = "DMAC Channel Destination Address Register (ch_num = 2)"]
 pub mod daddr2;
-#[doc = "DSCR2 (rw) register accessor: an alias for `Reg<DSCR2_SPEC>`"]
+#[doc = "DSCR2 (rw) register accessor: DMAC Channel Descriptor Address Register (ch_num = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dscr2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dscr2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`dscr2`]
+module"]
 pub type DSCR2 = crate::Reg<dscr2::DSCR2_SPEC>;
 #[doc = "DMAC Channel Descriptor Address Register (ch_num = 2)"]
 pub mod dscr2;
-#[doc = "CTRLA2 (rw) register accessor: an alias for `Reg<CTRLA2_SPEC>`"]
+#[doc = "CTRLA2 (rw) register accessor: DMAC Channel Control A Register (ch_num = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrla2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrla2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ctrla2`]
+module"]
 pub type CTRLA2 = crate::Reg<ctrla2::CTRLA2_SPEC>;
 #[doc = "DMAC Channel Control A Register (ch_num = 2)"]
 pub mod ctrla2;
-#[doc = "CTRLB2 (rw) register accessor: an alias for `Reg<CTRLB2_SPEC>`"]
+#[doc = "CTRLB2 (rw) register accessor: DMAC Channel Control B Register (ch_num = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrlb2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrlb2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ctrlb2`]
+module"]
 pub type CTRLB2 = crate::Reg<ctrlb2::CTRLB2_SPEC>;
 #[doc = "DMAC Channel Control B Register (ch_num = 2)"]
 pub mod ctrlb2;
-#[doc = "CFG2 (rw) register accessor: an alias for `Reg<CFG2_SPEC>`"]
+#[doc = "CFG2 (rw) register accessor: DMAC Channel Configuration Register (ch_num = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cfg2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cfg2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cfg2`]
+module"]
 pub type CFG2 = crate::Reg<cfg2::CFG2_SPEC>;
 #[doc = "DMAC Channel Configuration Register (ch_num = 2)"]
 pub mod cfg2;
-#[doc = "SADDR3 (rw) register accessor: an alias for `Reg<SADDR3_SPEC>`"]
+#[doc = "SADDR3 (rw) register accessor: DMAC Channel Source Address Register (ch_num = 3)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`saddr3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`saddr3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`saddr3`]
+module"]
 pub type SADDR3 = crate::Reg<saddr3::SADDR3_SPEC>;
 #[doc = "DMAC Channel Source Address Register (ch_num = 3)"]
 pub mod saddr3;
-#[doc = "DADDR3 (rw) register accessor: an alias for `Reg<DADDR3_SPEC>`"]
+#[doc = "DADDR3 (rw) register accessor: DMAC Channel Destination Address Register (ch_num = 3)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`daddr3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`daddr3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`daddr3`]
+module"]
 pub type DADDR3 = crate::Reg<daddr3::DADDR3_SPEC>;
 #[doc = "DMAC Channel Destination Address Register (ch_num = 3)"]
 pub mod daddr3;
-#[doc = "DSCR3 (rw) register accessor: an alias for `Reg<DSCR3_SPEC>`"]
+#[doc = "DSCR3 (rw) register accessor: DMAC Channel Descriptor Address Register (ch_num = 3)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dscr3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dscr3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`dscr3`]
+module"]
 pub type DSCR3 = crate::Reg<dscr3::DSCR3_SPEC>;
 #[doc = "DMAC Channel Descriptor Address Register (ch_num = 3)"]
 pub mod dscr3;
-#[doc = "CTRLA3 (rw) register accessor: an alias for `Reg<CTRLA3_SPEC>`"]
+#[doc = "CTRLA3 (rw) register accessor: DMAC Channel Control A Register (ch_num = 3)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrla3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrla3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ctrla3`]
+module"]
 pub type CTRLA3 = crate::Reg<ctrla3::CTRLA3_SPEC>;
 #[doc = "DMAC Channel Control A Register (ch_num = 3)"]
 pub mod ctrla3;
-#[doc = "CTRLB3 (rw) register accessor: an alias for `Reg<CTRLB3_SPEC>`"]
+#[doc = "CTRLB3 (rw) register accessor: DMAC Channel Control B Register (ch_num = 3)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrlb3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrlb3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ctrlb3`]
+module"]
 pub type CTRLB3 = crate::Reg<ctrlb3::CTRLB3_SPEC>;
 #[doc = "DMAC Channel Control B Register (ch_num = 3)"]
 pub mod ctrlb3;
-#[doc = "CFG3 (rw) register accessor: an alias for `Reg<CFG3_SPEC>`"]
+#[doc = "CFG3 (rw) register accessor: DMAC Channel Configuration Register (ch_num = 3)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cfg3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cfg3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cfg3`]
+module"]
 pub type CFG3 = crate::Reg<cfg3::CFG3_SPEC>;
 #[doc = "DMAC Channel Configuration Register (ch_num = 3)"]
 pub mod cfg3;
-#[doc = "SADDR4 (rw) register accessor: an alias for `Reg<SADDR4_SPEC>`"]
+#[doc = "SADDR4 (rw) register accessor: DMAC Channel Source Address Register (ch_num = 4)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`saddr4::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`saddr4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`saddr4`]
+module"]
 pub type SADDR4 = crate::Reg<saddr4::SADDR4_SPEC>;
 #[doc = "DMAC Channel Source Address Register (ch_num = 4)"]
 pub mod saddr4;
-#[doc = "DADDR4 (rw) register accessor: an alias for `Reg<DADDR4_SPEC>`"]
+#[doc = "DADDR4 (rw) register accessor: DMAC Channel Destination Address Register (ch_num = 4)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`daddr4::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`daddr4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`daddr4`]
+module"]
 pub type DADDR4 = crate::Reg<daddr4::DADDR4_SPEC>;
 #[doc = "DMAC Channel Destination Address Register (ch_num = 4)"]
 pub mod daddr4;
-#[doc = "DSCR4 (rw) register accessor: an alias for `Reg<DSCR4_SPEC>`"]
+#[doc = "DSCR4 (rw) register accessor: DMAC Channel Descriptor Address Register (ch_num = 4)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dscr4::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dscr4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`dscr4`]
+module"]
 pub type DSCR4 = crate::Reg<dscr4::DSCR4_SPEC>;
 #[doc = "DMAC Channel Descriptor Address Register (ch_num = 4)"]
 pub mod dscr4;
-#[doc = "CTRLA4 (rw) register accessor: an alias for `Reg<CTRLA4_SPEC>`"]
+#[doc = "CTRLA4 (rw) register accessor: DMAC Channel Control A Register (ch_num = 4)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrla4::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrla4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ctrla4`]
+module"]
 pub type CTRLA4 = crate::Reg<ctrla4::CTRLA4_SPEC>;
 #[doc = "DMAC Channel Control A Register (ch_num = 4)"]
 pub mod ctrla4;
-#[doc = "CTRLB4 (rw) register accessor: an alias for `Reg<CTRLB4_SPEC>`"]
+#[doc = "CTRLB4 (rw) register accessor: DMAC Channel Control B Register (ch_num = 4)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrlb4::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrlb4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ctrlb4`]
+module"]
 pub type CTRLB4 = crate::Reg<ctrlb4::CTRLB4_SPEC>;
 #[doc = "DMAC Channel Control B Register (ch_num = 4)"]
 pub mod ctrlb4;
-#[doc = "CFG4 (rw) register accessor: an alias for `Reg<CFG4_SPEC>`"]
+#[doc = "CFG4 (rw) register accessor: DMAC Channel Configuration Register (ch_num = 4)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cfg4::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cfg4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cfg4`]
+module"]
 pub type CFG4 = crate::Reg<cfg4::CFG4_SPEC>;
 #[doc = "DMAC Channel Configuration Register (ch_num = 4)"]
 pub mod cfg4;
-#[doc = "SADDR5 (rw) register accessor: an alias for `Reg<SADDR5_SPEC>`"]
+#[doc = "SADDR5 (rw) register accessor: DMAC Channel Source Address Register (ch_num = 5)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`saddr5::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`saddr5::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`saddr5`]
+module"]
 pub type SADDR5 = crate::Reg<saddr5::SADDR5_SPEC>;
 #[doc = "DMAC Channel Source Address Register (ch_num = 5)"]
 pub mod saddr5;
-#[doc = "DADDR5 (rw) register accessor: an alias for `Reg<DADDR5_SPEC>`"]
+#[doc = "DADDR5 (rw) register accessor: DMAC Channel Destination Address Register (ch_num = 5)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`daddr5::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`daddr5::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`daddr5`]
+module"]
 pub type DADDR5 = crate::Reg<daddr5::DADDR5_SPEC>;
 #[doc = "DMAC Channel Destination Address Register (ch_num = 5)"]
 pub mod daddr5;
-#[doc = "DSCR5 (rw) register accessor: an alias for `Reg<DSCR5_SPEC>`"]
+#[doc = "DSCR5 (rw) register accessor: DMAC Channel Descriptor Address Register (ch_num = 5)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dscr5::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dscr5::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`dscr5`]
+module"]
 pub type DSCR5 = crate::Reg<dscr5::DSCR5_SPEC>;
 #[doc = "DMAC Channel Descriptor Address Register (ch_num = 5)"]
 pub mod dscr5;
-#[doc = "CTRLA5 (rw) register accessor: an alias for `Reg<CTRLA5_SPEC>`"]
+#[doc = "CTRLA5 (rw) register accessor: DMAC Channel Control A Register (ch_num = 5)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrla5::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrla5::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ctrla5`]
+module"]
 pub type CTRLA5 = crate::Reg<ctrla5::CTRLA5_SPEC>;
 #[doc = "DMAC Channel Control A Register (ch_num = 5)"]
 pub mod ctrla5;
-#[doc = "CTRLB5 (rw) register accessor: an alias for `Reg<CTRLB5_SPEC>`"]
+#[doc = "CTRLB5 (rw) register accessor: DMAC Channel Control B Register (ch_num = 5)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrlb5::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrlb5::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ctrlb5`]
+module"]
 pub type CTRLB5 = crate::Reg<ctrlb5::CTRLB5_SPEC>;
 #[doc = "DMAC Channel Control B Register (ch_num = 5)"]
 pub mod ctrlb5;
-#[doc = "CFG5 (rw) register accessor: an alias for `Reg<CFG5_SPEC>`"]
+#[doc = "CFG5 (rw) register accessor: DMAC Channel Configuration Register (ch_num = 5)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cfg5::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cfg5::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cfg5`]
+module"]
 pub type CFG5 = crate::Reg<cfg5::CFG5_SPEC>;
 #[doc = "DMAC Channel Configuration Register (ch_num = 5)"]
 pub mod cfg5;
-#[doc = "WPMR (rw) register accessor: an alias for `Reg<WPMR_SPEC>`"]
+#[doc = "WPMR (rw) register accessor: DMAC Write Protect Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wpmr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wpmr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`wpmr`]
+module"]
 pub type WPMR = crate::Reg<wpmr::WPMR_SPEC>;
 #[doc = "DMAC Write Protect Mode Register"]
 pub mod wpmr;
-#[doc = "WPSR (r) register accessor: an alias for `Reg<WPSR_SPEC>`"]
+#[doc = "WPSR (r) register accessor: DMAC Write Protect Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wpsr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`wpsr`]
+module"]
 pub type WPSR = crate::Reg<wpsr::WPSR_SPEC>;
 #[doc = "DMAC Write Protect Status Register"]
 pub mod wpsr;

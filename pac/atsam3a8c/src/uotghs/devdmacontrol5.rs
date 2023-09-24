@@ -1,46 +1,43 @@
 #[doc = "Register `DEVDMACONTROL5` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<DEVDMACONTROL5_SPEC>);
+pub type R = crate::R<DEVDMACONTROL5_SPEC>;
 #[doc = "Register `DEVDMACONTROL5` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<DEVDMACONTROL5_SPEC>);
+pub type W = crate::W<DEVDMACONTROL5_SPEC>;
 #[doc = "Field `CHANN_ENB` reader - Channel Enable Command"]
-pub type CHANN_ENB_R = crate::BitReader<bool>;
+pub type CHANN_ENB_R = crate::BitReader;
 #[doc = "Field `CHANN_ENB` writer - Channel Enable Command"]
-pub type CHANN_ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVDMACONTROL5_SPEC, bool, O>;
+pub type CHANN_ENB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `LDNXT_DSC` reader - Load Next Channel Transfer Descriptor Enable Command"]
-pub type LDNXT_DSC_R = crate::BitReader<bool>;
+pub type LDNXT_DSC_R = crate::BitReader;
 #[doc = "Field `LDNXT_DSC` writer - Load Next Channel Transfer Descriptor Enable Command"]
-pub type LDNXT_DSC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVDMACONTROL5_SPEC, bool, O>;
+pub type LDNXT_DSC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `END_TR_EN` reader - End of Transfer Enable Control"]
-pub type END_TR_EN_R = crate::BitReader<bool>;
+pub type END_TR_EN_R = crate::BitReader;
 #[doc = "Field `END_TR_EN` writer - End of Transfer Enable Control"]
-pub type END_TR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVDMACONTROL5_SPEC, bool, O>;
+pub type END_TR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `END_B_EN` reader - End of Buffer Enable Control"]
-pub type END_B_EN_R = crate::BitReader<bool>;
+pub type END_B_EN_R = crate::BitReader;
 #[doc = "Field `END_B_EN` writer - End of Buffer Enable Control"]
-pub type END_B_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVDMACONTROL5_SPEC, bool, O>;
+pub type END_B_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `END_TR_IT` reader - End of Transfer Interrupt Enable"]
-pub type END_TR_IT_R = crate::BitReader<bool>;
+pub type END_TR_IT_R = crate::BitReader;
 #[doc = "Field `END_TR_IT` writer - End of Transfer Interrupt Enable"]
-pub type END_TR_IT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVDMACONTROL5_SPEC, bool, O>;
+pub type END_TR_IT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `END_BUFFIT` reader - End of Buffer Interrupt Enable"]
-pub type END_BUFFIT_R = crate::BitReader<bool>;
+pub type END_BUFFIT_R = crate::BitReader;
 #[doc = "Field `END_BUFFIT` writer - End of Buffer Interrupt Enable"]
-pub type END_BUFFIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVDMACONTROL5_SPEC, bool, O>;
+pub type END_BUFFIT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DESC_LD_IT` reader - Descriptor Loaded Interrupt Enable"]
-pub type DESC_LD_IT_R = crate::BitReader<bool>;
+pub type DESC_LD_IT_R = crate::BitReader;
 #[doc = "Field `DESC_LD_IT` writer - Descriptor Loaded Interrupt Enable"]
-pub type DESC_LD_IT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVDMACONTROL5_SPEC, bool, O>;
+pub type DESC_LD_IT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `BURST_LCK` reader - Burst Lock Enable"]
-pub type BURST_LCK_R = crate::BitReader<bool>;
+pub type BURST_LCK_R = crate::BitReader;
 #[doc = "Field `BURST_LCK` writer - Burst Lock Enable"]
-pub type BURST_LCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEVDMACONTROL5_SPEC, bool, O>;
+pub type BURST_LCK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `BUFF_LENGTH` reader - Buffer Byte Length (Write-only)"]
-pub type BUFF_LENGTH_R = crate::FieldReader<u16, u16>;
+pub type BUFF_LENGTH_R = crate::FieldReader<u16>;
 #[doc = "Field `BUFF_LENGTH` writer - Buffer Byte Length (Write-only)"]
-pub type BUFF_LENGTH_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DEVDMACONTROL5_SPEC, u16, u16, 16, O>;
+pub type BUFF_LENGTH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
 impl R {
     #[doc = "Bit 0 - Channel Enable Command"]
     #[inline(always)]
@@ -92,76 +89,73 @@ impl W {
     #[doc = "Bit 0 - Channel Enable Command"]
     #[inline(always)]
     #[must_use]
-    pub fn chann_enb(&mut self) -> CHANN_ENB_W<0> {
+    pub fn chann_enb(&mut self) -> CHANN_ENB_W<DEVDMACONTROL5_SPEC, 0> {
         CHANN_ENB_W::new(self)
     }
     #[doc = "Bit 1 - Load Next Channel Transfer Descriptor Enable Command"]
     #[inline(always)]
     #[must_use]
-    pub fn ldnxt_dsc(&mut self) -> LDNXT_DSC_W<1> {
+    pub fn ldnxt_dsc(&mut self) -> LDNXT_DSC_W<DEVDMACONTROL5_SPEC, 1> {
         LDNXT_DSC_W::new(self)
     }
     #[doc = "Bit 2 - End of Transfer Enable Control"]
     #[inline(always)]
     #[must_use]
-    pub fn end_tr_en(&mut self) -> END_TR_EN_W<2> {
+    pub fn end_tr_en(&mut self) -> END_TR_EN_W<DEVDMACONTROL5_SPEC, 2> {
         END_TR_EN_W::new(self)
     }
     #[doc = "Bit 3 - End of Buffer Enable Control"]
     #[inline(always)]
     #[must_use]
-    pub fn end_b_en(&mut self) -> END_B_EN_W<3> {
+    pub fn end_b_en(&mut self) -> END_B_EN_W<DEVDMACONTROL5_SPEC, 3> {
         END_B_EN_W::new(self)
     }
     #[doc = "Bit 4 - End of Transfer Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn end_tr_it(&mut self) -> END_TR_IT_W<4> {
+    pub fn end_tr_it(&mut self) -> END_TR_IT_W<DEVDMACONTROL5_SPEC, 4> {
         END_TR_IT_W::new(self)
     }
     #[doc = "Bit 5 - End of Buffer Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn end_buffit(&mut self) -> END_BUFFIT_W<5> {
+    pub fn end_buffit(&mut self) -> END_BUFFIT_W<DEVDMACONTROL5_SPEC, 5> {
         END_BUFFIT_W::new(self)
     }
     #[doc = "Bit 6 - Descriptor Loaded Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn desc_ld_it(&mut self) -> DESC_LD_IT_W<6> {
+    pub fn desc_ld_it(&mut self) -> DESC_LD_IT_W<DEVDMACONTROL5_SPEC, 6> {
         DESC_LD_IT_W::new(self)
     }
     #[doc = "Bit 7 - Burst Lock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn burst_lck(&mut self) -> BURST_LCK_W<7> {
+    pub fn burst_lck(&mut self) -> BURST_LCK_W<DEVDMACONTROL5_SPEC, 7> {
         BURST_LCK_W::new(self)
     }
     #[doc = "Bits 16:31 - Buffer Byte Length (Write-only)"]
     #[inline(always)]
     #[must_use]
-    pub fn buff_length(&mut self) -> BUFF_LENGTH_W<16> {
+    pub fn buff_length(&mut self) -> BUFF_LENGTH_W<DEVDMACONTROL5_SPEC, 16> {
         BUFF_LENGTH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Device DMA Channel Control Register (n = 5)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [devdmacontrol5](index.html) module"]
+#[doc = "Device DMA Channel Control Register (n = 5)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`devdmacontrol5::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`devdmacontrol5::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DEVDMACONTROL5_SPEC;
 impl crate::RegisterSpec for DEVDMACONTROL5_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [devdmacontrol5::R](R) reader structure"]
-impl crate::Readable for DEVDMACONTROL5_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [devdmacontrol5::W](W) writer structure"]
+#[doc = "`read()` method returns [`devdmacontrol5::R`](R) reader structure"]
+impl crate::Readable for DEVDMACONTROL5_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`devdmacontrol5::W`](W) writer structure"]
 impl crate::Writable for DEVDMACONTROL5_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

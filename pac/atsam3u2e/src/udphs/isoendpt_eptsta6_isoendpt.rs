@@ -1,8 +1,7 @@
 #[doc = "Register `EPTSTA6_ISOENDPT` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<ISOENDPT_EPTSTA6_ISOENDPT_SPEC>);
+pub type R = crate::R<ISOENDPT_EPTSTA6_ISOENDPT_SPEC>;
 #[doc = "Field `TOGGLESQ_STA` reader - Toggle Sequencing"]
-pub type TOGGLESQ_STA_R = crate::FieldReader<u8, TOGGLESQ_STA_A>;
+pub type TOGGLESQ_STA_R = crate::FieldReader<TOGGLESQ_STA_A>;
 #[doc = "Toggle Sequencing\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -22,6 +21,9 @@ impl From<TOGGLESQ_STA_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for TOGGLESQ_STA_A {
+    type Ux = u8;
+}
 impl TOGGLESQ_STA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -34,43 +36,43 @@ impl TOGGLESQ_STA_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `Data0`"]
+    #[doc = "DATA0"]
     #[inline(always)]
     pub fn is_data0(&self) -> bool {
         *self == TOGGLESQ_STA_A::Data0
     }
-    #[doc = "Checks if the value of the field is `Data1`"]
+    #[doc = "DATA1"]
     #[inline(always)]
     pub fn is_data1(&self) -> bool {
         *self == TOGGLESQ_STA_A::Data1
     }
-    #[doc = "Checks if the value of the field is `Data2`"]
+    #[doc = "Data2 (only for High Bandwidth Isochronous Endpoint)"]
     #[inline(always)]
     pub fn is_data2(&self) -> bool {
         *self == TOGGLESQ_STA_A::Data2
     }
-    #[doc = "Checks if the value of the field is `Mdata`"]
+    #[doc = "MData (only for High Bandwidth Isochronous Endpoint)"]
     #[inline(always)]
     pub fn is_mdata(&self) -> bool {
         *self == TOGGLESQ_STA_A::Mdata
     }
 }
 #[doc = "Field `ERR_OVFLW` reader - Overflow Error"]
-pub type ERR_OVFLW_R = crate::BitReader<bool>;
+pub type ERR_OVFLW_R = crate::BitReader;
 #[doc = "Field `RXRDY_TXKL` reader - Received OUT Data/KILL Bank"]
-pub type RXRDY_TXKL_R = crate::BitReader<bool>;
+pub type RXRDY_TXKL_R = crate::BitReader;
 #[doc = "Field `TX_COMPLT` reader - Transmitted IN Data Complete"]
-pub type TX_COMPLT_R = crate::BitReader<bool>;
+pub type TX_COMPLT_R = crate::BitReader;
 #[doc = "Field `TXRDY_TRER` reader - TX Packet Ready/Transaction Error"]
-pub type TXRDY_TRER_R = crate::BitReader<bool>;
+pub type TXRDY_TRER_R = crate::BitReader;
 #[doc = "Field `ERR_FL_ISO` reader - Error Flow"]
-pub type ERR_FL_ISO_R = crate::BitReader<bool>;
+pub type ERR_FL_ISO_R = crate::BitReader;
 #[doc = "Field `ERR_CRC_NTR` reader - CRC ISO Error/Number of Transaction Error"]
-pub type ERR_CRC_NTR_R = crate::BitReader<bool>;
+pub type ERR_CRC_NTR_R = crate::BitReader;
 #[doc = "Field `ERR_FLUSH` reader - Bank Flush Error"]
-pub type ERR_FLUSH_R = crate::BitReader<bool>;
+pub type ERR_FLUSH_R = crate::BitReader;
 #[doc = "Field `CURBK` reader - Current Bank"]
-pub type CURBK_R = crate::FieldReader<u8, CURBK_A>;
+pub type CURBK_R = crate::FieldReader<CURBK_A>;
 #[doc = "Current Bank\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -88,6 +90,9 @@ impl From<CURBK_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CURBK_A {
+    type Ux = u8;
+}
 impl CURBK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -99,24 +104,24 @@ impl CURBK_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Bank0`"]
+    #[doc = "Bank 0 (or single bank)"]
     #[inline(always)]
     pub fn is_bank0(&self) -> bool {
         *self == CURBK_A::Bank0
     }
-    #[doc = "Checks if the value of the field is `Bank1`"]
+    #[doc = "Bank 1"]
     #[inline(always)]
     pub fn is_bank1(&self) -> bool {
         *self == CURBK_A::Bank1
     }
-    #[doc = "Checks if the value of the field is `Bank2`"]
+    #[doc = "Bank 2"]
     #[inline(always)]
     pub fn is_bank2(&self) -> bool {
         *self == CURBK_A::Bank2
     }
 }
 #[doc = "Field `BUSY_BANK_STA` reader - Busy Bank Number"]
-pub type BUSY_BANK_STA_R = crate::FieldReader<u8, BUSY_BANK_STA_A>;
+pub type BUSY_BANK_STA_R = crate::FieldReader<BUSY_BANK_STA_A>;
 #[doc = "Busy Bank Number\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -134,6 +139,9 @@ impl From<BUSY_BANK_STA_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for BUSY_BANK_STA_A {
+    type Ux = u8;
+}
 impl BUSY_BANK_STA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -145,26 +153,26 @@ impl BUSY_BANK_STA_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `_1busybank`"]
+    #[doc = "1 busy bank"]
     #[inline(always)]
     pub fn is_1busybank(&self) -> bool {
         *self == BUSY_BANK_STA_A::_1busybank
     }
-    #[doc = "Checks if the value of the field is `_2busybanks`"]
+    #[doc = "2 busy banks"]
     #[inline(always)]
     pub fn is_2busybanks(&self) -> bool {
         *self == BUSY_BANK_STA_A::_2busybanks
     }
-    #[doc = "Checks if the value of the field is `_3busybanks`"]
+    #[doc = "3 busy banks"]
     #[inline(always)]
     pub fn is_3busybanks(&self) -> bool {
         *self == BUSY_BANK_STA_A::_3busybanks
     }
 }
 #[doc = "Field `BYTE_COUNT` reader - UDPHS Byte Count"]
-pub type BYTE_COUNT_R = crate::FieldReader<u16, u16>;
+pub type BYTE_COUNT_R = crate::FieldReader<u16>;
 #[doc = "Field `SHRT_PCKT` reader - Short Packet"]
-pub type SHRT_PCKT_R = crate::BitReader<bool>;
+pub type SHRT_PCKT_R = crate::BitReader;
 impl R {
     #[doc = "Bits 6:7 - Toggle Sequencing"]
     #[inline(always)]
@@ -227,15 +235,13 @@ impl R {
         SHRT_PCKT_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "UDPHS Endpoint Status Register (endpoint = 6)\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [isoendpt_eptsta6_isoendpt](index.html) module"]
+#[doc = "UDPHS Endpoint Status Register (endpoint = 6)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`isoendpt_eptsta6_isoendpt::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ISOENDPT_EPTSTA6_ISOENDPT_SPEC;
 impl crate::RegisterSpec for ISOENDPT_EPTSTA6_ISOENDPT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [isoendpt_eptsta6_isoendpt::R](R) reader structure"]
-impl crate::Readable for ISOENDPT_EPTSTA6_ISOENDPT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`isoendpt_eptsta6_isoendpt::R`](R) reader structure"]
+impl crate::Readable for ISOENDPT_EPTSTA6_ISOENDPT_SPEC {}
 #[doc = "`reset()` method sets EPTSTA6_ISOENDPT to value 0x40"]
 impl crate::Resettable for ISOENDPT_EPTSTA6_ISOENDPT_SPEC {
     const RESET_VALUE: Self::Ux = 0x40;

@@ -1,36 +1,35 @@
 #[doc = "Register `SR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<SR_SPEC>);
+pub type R = crate::R<SR_SPEC>;
 #[doc = "Field `TXCOMP` reader - Transmission Completed (automatically set / reset)"]
-pub type TXCOMP_R = crate::BitReader<bool>;
+pub type TXCOMP_R = crate::BitReader;
 #[doc = "Field `RXRDY` reader - Receive Holding Register Ready (automatically set / reset)"]
-pub type RXRDY_R = crate::BitReader<bool>;
+pub type RXRDY_R = crate::BitReader;
 #[doc = "Field `TXRDY` reader - Transmit Holding Register Ready (automatically set / reset)"]
-pub type TXRDY_R = crate::BitReader<bool>;
+pub type TXRDY_R = crate::BitReader;
 #[doc = "Field `SVREAD` reader - Slave Read (automatically set / reset)"]
-pub type SVREAD_R = crate::BitReader<bool>;
+pub type SVREAD_R = crate::BitReader;
 #[doc = "Field `SVACC` reader - Slave Access (automatically set / reset)"]
-pub type SVACC_R = crate::BitReader<bool>;
+pub type SVACC_R = crate::BitReader;
 #[doc = "Field `GACC` reader - General Call Access (clear on read)"]
-pub type GACC_R = crate::BitReader<bool>;
+pub type GACC_R = crate::BitReader;
 #[doc = "Field `OVRE` reader - Overrun Error (clear on read)"]
-pub type OVRE_R = crate::BitReader<bool>;
+pub type OVRE_R = crate::BitReader;
 #[doc = "Field `NACK` reader - Not Acknowledged (clear on read)"]
-pub type NACK_R = crate::BitReader<bool>;
+pub type NACK_R = crate::BitReader;
 #[doc = "Field `ARBLST` reader - Arbitration Lost (clear on read)"]
-pub type ARBLST_R = crate::BitReader<bool>;
+pub type ARBLST_R = crate::BitReader;
 #[doc = "Field `SCLWS` reader - Clock Wait State (automatically set / reset)"]
-pub type SCLWS_R = crate::BitReader<bool>;
+pub type SCLWS_R = crate::BitReader;
 #[doc = "Field `EOSACC` reader - End Of Slave Access (clear on read)"]
-pub type EOSACC_R = crate::BitReader<bool>;
+pub type EOSACC_R = crate::BitReader;
 #[doc = "Field `ENDRX` reader - End of RX buffer"]
-pub type ENDRX_R = crate::BitReader<bool>;
+pub type ENDRX_R = crate::BitReader;
 #[doc = "Field `ENDTX` reader - End of TX buffer"]
-pub type ENDTX_R = crate::BitReader<bool>;
+pub type ENDTX_R = crate::BitReader;
 #[doc = "Field `RXBUFF` reader - RX Buffer Full"]
-pub type RXBUFF_R = crate::BitReader<bool>;
+pub type RXBUFF_R = crate::BitReader;
 #[doc = "Field `TXBUFE` reader - TX Buffer Empty"]
-pub type TXBUFE_R = crate::BitReader<bool>;
+pub type TXBUFE_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Transmission Completed (automatically set / reset)"]
     #[inline(always)]
@@ -108,15 +107,13 @@ impl R {
         TXBUFE_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]
+#[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SR_SPEC;
 impl crate::RegisterSpec for SR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sr::R](R) reader structure"]
-impl crate::Readable for SR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`sr::R`](R) reader structure"]
+impl crate::Readable for SR_SPEC {}
 #[doc = "`reset()` method sets SR to value 0xf009"]
 impl crate::Resettable for SR_SPEC {
     const RESET_VALUE: Self::Ux = 0xf009;

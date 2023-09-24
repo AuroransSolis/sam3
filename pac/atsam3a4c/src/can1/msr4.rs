@@ -1,18 +1,17 @@
 #[doc = "Register `MSR4` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<MSR4_SPEC>);
+pub type R = crate::R<MSR4_SPEC>;
 #[doc = "Field `MTIMESTAMP` reader - Timer value"]
-pub type MTIMESTAMP_R = crate::FieldReader<u16, u16>;
+pub type MTIMESTAMP_R = crate::FieldReader<u16>;
 #[doc = "Field `MDLC` reader - Mailbox Data Length Code"]
-pub type MDLC_R = crate::FieldReader<u8, u8>;
+pub type MDLC_R = crate::FieldReader;
 #[doc = "Field `MRTR` reader - Mailbox Remote Transmission Request"]
-pub type MRTR_R = crate::BitReader<bool>;
+pub type MRTR_R = crate::BitReader;
 #[doc = "Field `MABT` reader - Mailbox Message Abort"]
-pub type MABT_R = crate::BitReader<bool>;
+pub type MABT_R = crate::BitReader;
 #[doc = "Field `MRDY` reader - Mailbox Ready"]
-pub type MRDY_R = crate::BitReader<bool>;
+pub type MRDY_R = crate::BitReader;
 #[doc = "Field `MMI` reader - Mailbox Message Ignored"]
-pub type MMI_R = crate::BitReader<bool>;
+pub type MMI_R = crate::BitReader;
 impl R {
     #[doc = "Bits 0:15 - Timer value"]
     #[inline(always)]
@@ -45,15 +44,13 @@ impl R {
         MMI_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
-#[doc = "Mailbox Status Register (MB = 4)\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [msr4](index.html) module"]
+#[doc = "Mailbox Status Register (MB = 4)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`msr4::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MSR4_SPEC;
 impl crate::RegisterSpec for MSR4_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [msr4::R](R) reader structure"]
-impl crate::Readable for MSR4_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`msr4::R`](R) reader structure"]
+impl crate::Readable for MSR4_SPEC {}
 #[doc = "`reset()` method sets MSR4 to value 0"]
 impl crate::Resettable for MSR4_SPEC {
     const RESET_VALUE: Self::Ux = 0;

@@ -1,89 +1,87 @@
 #[doc = "Register `PMC_FSMR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<PMC_FSMR_SPEC>);
+pub type R = crate::R<PMC_FSMR_SPEC>;
 #[doc = "Register `PMC_FSMR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<PMC_FSMR_SPEC>);
+pub type W = crate::W<PMC_FSMR_SPEC>;
 #[doc = "Field `FSTT0` reader - Fast Start-up Input Enable 0"]
-pub type FSTT0_R = crate::BitReader<bool>;
+pub type FSTT0_R = crate::BitReader;
 #[doc = "Field `FSTT0` writer - Fast Start-up Input Enable 0"]
-pub type FSTT0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type FSTT0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FSTT1` reader - Fast Start-up Input Enable 1"]
-pub type FSTT1_R = crate::BitReader<bool>;
+pub type FSTT1_R = crate::BitReader;
 #[doc = "Field `FSTT1` writer - Fast Start-up Input Enable 1"]
-pub type FSTT1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type FSTT1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FSTT2` reader - Fast Start-up Input Enable 2"]
-pub type FSTT2_R = crate::BitReader<bool>;
+pub type FSTT2_R = crate::BitReader;
 #[doc = "Field `FSTT2` writer - Fast Start-up Input Enable 2"]
-pub type FSTT2_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type FSTT2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FSTT3` reader - Fast Start-up Input Enable 3"]
-pub type FSTT3_R = crate::BitReader<bool>;
+pub type FSTT3_R = crate::BitReader;
 #[doc = "Field `FSTT3` writer - Fast Start-up Input Enable 3"]
-pub type FSTT3_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type FSTT3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FSTT4` reader - Fast Start-up Input Enable 4"]
-pub type FSTT4_R = crate::BitReader<bool>;
+pub type FSTT4_R = crate::BitReader;
 #[doc = "Field `FSTT4` writer - Fast Start-up Input Enable 4"]
-pub type FSTT4_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type FSTT4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FSTT5` reader - Fast Start-up Input Enable 5"]
-pub type FSTT5_R = crate::BitReader<bool>;
+pub type FSTT5_R = crate::BitReader;
 #[doc = "Field `FSTT5` writer - Fast Start-up Input Enable 5"]
-pub type FSTT5_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type FSTT5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FSTT6` reader - Fast Start-up Input Enable 6"]
-pub type FSTT6_R = crate::BitReader<bool>;
+pub type FSTT6_R = crate::BitReader;
 #[doc = "Field `FSTT6` writer - Fast Start-up Input Enable 6"]
-pub type FSTT6_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type FSTT6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FSTT7` reader - Fast Start-up Input Enable 7"]
-pub type FSTT7_R = crate::BitReader<bool>;
+pub type FSTT7_R = crate::BitReader;
 #[doc = "Field `FSTT7` writer - Fast Start-up Input Enable 7"]
-pub type FSTT7_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type FSTT7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FSTT8` reader - Fast Start-up Input Enable 8"]
-pub type FSTT8_R = crate::BitReader<bool>;
+pub type FSTT8_R = crate::BitReader;
 #[doc = "Field `FSTT8` writer - Fast Start-up Input Enable 8"]
-pub type FSTT8_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type FSTT8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FSTT9` reader - Fast Start-up Input Enable 9"]
-pub type FSTT9_R = crate::BitReader<bool>;
+pub type FSTT9_R = crate::BitReader;
 #[doc = "Field `FSTT9` writer - Fast Start-up Input Enable 9"]
-pub type FSTT9_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type FSTT9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FSTT10` reader - Fast Start-up Input Enable 10"]
-pub type FSTT10_R = crate::BitReader<bool>;
+pub type FSTT10_R = crate::BitReader;
 #[doc = "Field `FSTT10` writer - Fast Start-up Input Enable 10"]
-pub type FSTT10_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type FSTT10_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FSTT11` reader - Fast Start-up Input Enable 11"]
-pub type FSTT11_R = crate::BitReader<bool>;
+pub type FSTT11_R = crate::BitReader;
 #[doc = "Field `FSTT11` writer - Fast Start-up Input Enable 11"]
-pub type FSTT11_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type FSTT11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FSTT12` reader - Fast Start-up Input Enable 12"]
-pub type FSTT12_R = crate::BitReader<bool>;
+pub type FSTT12_R = crate::BitReader;
 #[doc = "Field `FSTT12` writer - Fast Start-up Input Enable 12"]
-pub type FSTT12_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type FSTT12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FSTT13` reader - Fast Start-up Input Enable 13"]
-pub type FSTT13_R = crate::BitReader<bool>;
+pub type FSTT13_R = crate::BitReader;
 #[doc = "Field `FSTT13` writer - Fast Start-up Input Enable 13"]
-pub type FSTT13_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type FSTT13_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FSTT14` reader - Fast Start-up Input Enable 14"]
-pub type FSTT14_R = crate::BitReader<bool>;
+pub type FSTT14_R = crate::BitReader;
 #[doc = "Field `FSTT14` writer - Fast Start-up Input Enable 14"]
-pub type FSTT14_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type FSTT14_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FSTT15` reader - Fast Start-up Input Enable 15"]
-pub type FSTT15_R = crate::BitReader<bool>;
+pub type FSTT15_R = crate::BitReader;
 #[doc = "Field `FSTT15` writer - Fast Start-up Input Enable 15"]
-pub type FSTT15_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type FSTT15_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RTTAL` reader - RTT Alarm Enable"]
-pub type RTTAL_R = crate::BitReader<bool>;
+pub type RTTAL_R = crate::BitReader;
 #[doc = "Field `RTTAL` writer - RTT Alarm Enable"]
-pub type RTTAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type RTTAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RTCAL` reader - RTC Alarm Enable"]
-pub type RTCAL_R = crate::BitReader<bool>;
+pub type RTCAL_R = crate::BitReader;
 #[doc = "Field `RTCAL` writer - RTC Alarm Enable"]
-pub type RTCAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type RTCAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `USBAL` reader - USB Alarm Enable"]
-pub type USBAL_R = crate::BitReader<bool>;
+pub type USBAL_R = crate::BitReader;
 #[doc = "Field `USBAL` writer - USB Alarm Enable"]
-pub type USBAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type USBAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `LPM` reader - Low Power Mode"]
-pub type LPM_R = crate::BitReader<bool>;
+pub type LPM_R = crate::BitReader;
 #[doc = "Field `LPM` writer - Low Power Mode"]
-pub type LPM_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMC_FSMR_SPEC, bool, O>;
+pub type LPM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - Fast Start-up Input Enable 0"]
     #[inline(always)]
@@ -190,142 +188,139 @@ impl W {
     #[doc = "Bit 0 - Fast Start-up Input Enable 0"]
     #[inline(always)]
     #[must_use]
-    pub fn fstt0(&mut self) -> FSTT0_W<0> {
+    pub fn fstt0(&mut self) -> FSTT0_W<PMC_FSMR_SPEC, 0> {
         FSTT0_W::new(self)
     }
     #[doc = "Bit 1 - Fast Start-up Input Enable 1"]
     #[inline(always)]
     #[must_use]
-    pub fn fstt1(&mut self) -> FSTT1_W<1> {
+    pub fn fstt1(&mut self) -> FSTT1_W<PMC_FSMR_SPEC, 1> {
         FSTT1_W::new(self)
     }
     #[doc = "Bit 2 - Fast Start-up Input Enable 2"]
     #[inline(always)]
     #[must_use]
-    pub fn fstt2(&mut self) -> FSTT2_W<2> {
+    pub fn fstt2(&mut self) -> FSTT2_W<PMC_FSMR_SPEC, 2> {
         FSTT2_W::new(self)
     }
     #[doc = "Bit 3 - Fast Start-up Input Enable 3"]
     #[inline(always)]
     #[must_use]
-    pub fn fstt3(&mut self) -> FSTT3_W<3> {
+    pub fn fstt3(&mut self) -> FSTT3_W<PMC_FSMR_SPEC, 3> {
         FSTT3_W::new(self)
     }
     #[doc = "Bit 4 - Fast Start-up Input Enable 4"]
     #[inline(always)]
     #[must_use]
-    pub fn fstt4(&mut self) -> FSTT4_W<4> {
+    pub fn fstt4(&mut self) -> FSTT4_W<PMC_FSMR_SPEC, 4> {
         FSTT4_W::new(self)
     }
     #[doc = "Bit 5 - Fast Start-up Input Enable 5"]
     #[inline(always)]
     #[must_use]
-    pub fn fstt5(&mut self) -> FSTT5_W<5> {
+    pub fn fstt5(&mut self) -> FSTT5_W<PMC_FSMR_SPEC, 5> {
         FSTT5_W::new(self)
     }
     #[doc = "Bit 6 - Fast Start-up Input Enable 6"]
     #[inline(always)]
     #[must_use]
-    pub fn fstt6(&mut self) -> FSTT6_W<6> {
+    pub fn fstt6(&mut self) -> FSTT6_W<PMC_FSMR_SPEC, 6> {
         FSTT6_W::new(self)
     }
     #[doc = "Bit 7 - Fast Start-up Input Enable 7"]
     #[inline(always)]
     #[must_use]
-    pub fn fstt7(&mut self) -> FSTT7_W<7> {
+    pub fn fstt7(&mut self) -> FSTT7_W<PMC_FSMR_SPEC, 7> {
         FSTT7_W::new(self)
     }
     #[doc = "Bit 8 - Fast Start-up Input Enable 8"]
     #[inline(always)]
     #[must_use]
-    pub fn fstt8(&mut self) -> FSTT8_W<8> {
+    pub fn fstt8(&mut self) -> FSTT8_W<PMC_FSMR_SPEC, 8> {
         FSTT8_W::new(self)
     }
     #[doc = "Bit 9 - Fast Start-up Input Enable 9"]
     #[inline(always)]
     #[must_use]
-    pub fn fstt9(&mut self) -> FSTT9_W<9> {
+    pub fn fstt9(&mut self) -> FSTT9_W<PMC_FSMR_SPEC, 9> {
         FSTT9_W::new(self)
     }
     #[doc = "Bit 10 - Fast Start-up Input Enable 10"]
     #[inline(always)]
     #[must_use]
-    pub fn fstt10(&mut self) -> FSTT10_W<10> {
+    pub fn fstt10(&mut self) -> FSTT10_W<PMC_FSMR_SPEC, 10> {
         FSTT10_W::new(self)
     }
     #[doc = "Bit 11 - Fast Start-up Input Enable 11"]
     #[inline(always)]
     #[must_use]
-    pub fn fstt11(&mut self) -> FSTT11_W<11> {
+    pub fn fstt11(&mut self) -> FSTT11_W<PMC_FSMR_SPEC, 11> {
         FSTT11_W::new(self)
     }
     #[doc = "Bit 12 - Fast Start-up Input Enable 12"]
     #[inline(always)]
     #[must_use]
-    pub fn fstt12(&mut self) -> FSTT12_W<12> {
+    pub fn fstt12(&mut self) -> FSTT12_W<PMC_FSMR_SPEC, 12> {
         FSTT12_W::new(self)
     }
     #[doc = "Bit 13 - Fast Start-up Input Enable 13"]
     #[inline(always)]
     #[must_use]
-    pub fn fstt13(&mut self) -> FSTT13_W<13> {
+    pub fn fstt13(&mut self) -> FSTT13_W<PMC_FSMR_SPEC, 13> {
         FSTT13_W::new(self)
     }
     #[doc = "Bit 14 - Fast Start-up Input Enable 14"]
     #[inline(always)]
     #[must_use]
-    pub fn fstt14(&mut self) -> FSTT14_W<14> {
+    pub fn fstt14(&mut self) -> FSTT14_W<PMC_FSMR_SPEC, 14> {
         FSTT14_W::new(self)
     }
     #[doc = "Bit 15 - Fast Start-up Input Enable 15"]
     #[inline(always)]
     #[must_use]
-    pub fn fstt15(&mut self) -> FSTT15_W<15> {
+    pub fn fstt15(&mut self) -> FSTT15_W<PMC_FSMR_SPEC, 15> {
         FSTT15_W::new(self)
     }
     #[doc = "Bit 16 - RTT Alarm Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rttal(&mut self) -> RTTAL_W<16> {
+    pub fn rttal(&mut self) -> RTTAL_W<PMC_FSMR_SPEC, 16> {
         RTTAL_W::new(self)
     }
     #[doc = "Bit 17 - RTC Alarm Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rtcal(&mut self) -> RTCAL_W<17> {
+    pub fn rtcal(&mut self) -> RTCAL_W<PMC_FSMR_SPEC, 17> {
         RTCAL_W::new(self)
     }
     #[doc = "Bit 18 - USB Alarm Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn usbal(&mut self) -> USBAL_W<18> {
+    pub fn usbal(&mut self) -> USBAL_W<PMC_FSMR_SPEC, 18> {
         USBAL_W::new(self)
     }
     #[doc = "Bit 20 - Low Power Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn lpm(&mut self) -> LPM_W<20> {
+    pub fn lpm(&mut self) -> LPM_W<PMC_FSMR_SPEC, 20> {
         LPM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Fast Start-up Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_fsmr](index.html) module"]
+#[doc = "Fast Start-up Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmc_fsmr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmc_fsmr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PMC_FSMR_SPEC;
 impl crate::RegisterSpec for PMC_FSMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pmc_fsmr::R](R) reader structure"]
-impl crate::Readable for PMC_FSMR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pmc_fsmr::W](W) writer structure"]
+#[doc = "`read()` method returns [`pmc_fsmr::R`](R) reader structure"]
+impl crate::Readable for PMC_FSMR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pmc_fsmr::W`](W) writer structure"]
 impl crate::Writable for PMC_FSMR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

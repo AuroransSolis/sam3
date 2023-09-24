@@ -1,42 +1,41 @@
 #[doc = "Register `EBCISR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<EBCISR_SPEC>);
+pub type R = crate::R<EBCISR_SPEC>;
 #[doc = "Field `BTC0` reader - Buffer Transfer Completed \\[5:0\\]"]
-pub type BTC0_R = crate::BitReader<bool>;
+pub type BTC0_R = crate::BitReader;
 #[doc = "Field `BTC1` reader - Buffer Transfer Completed \\[5:0\\]"]
-pub type BTC1_R = crate::BitReader<bool>;
+pub type BTC1_R = crate::BitReader;
 #[doc = "Field `BTC2` reader - Buffer Transfer Completed \\[5:0\\]"]
-pub type BTC2_R = crate::BitReader<bool>;
+pub type BTC2_R = crate::BitReader;
 #[doc = "Field `BTC3` reader - Buffer Transfer Completed \\[5:0\\]"]
-pub type BTC3_R = crate::BitReader<bool>;
+pub type BTC3_R = crate::BitReader;
 #[doc = "Field `BTC4` reader - Buffer Transfer Completed \\[5:0\\]"]
-pub type BTC4_R = crate::BitReader<bool>;
+pub type BTC4_R = crate::BitReader;
 #[doc = "Field `BTC5` reader - Buffer Transfer Completed \\[5:0\\]"]
-pub type BTC5_R = crate::BitReader<bool>;
+pub type BTC5_R = crate::BitReader;
 #[doc = "Field `CBTC0` reader - Chained Buffer Transfer Completed \\[5:0\\]"]
-pub type CBTC0_R = crate::BitReader<bool>;
+pub type CBTC0_R = crate::BitReader;
 #[doc = "Field `CBTC1` reader - Chained Buffer Transfer Completed \\[5:0\\]"]
-pub type CBTC1_R = crate::BitReader<bool>;
+pub type CBTC1_R = crate::BitReader;
 #[doc = "Field `CBTC2` reader - Chained Buffer Transfer Completed \\[5:0\\]"]
-pub type CBTC2_R = crate::BitReader<bool>;
+pub type CBTC2_R = crate::BitReader;
 #[doc = "Field `CBTC3` reader - Chained Buffer Transfer Completed \\[5:0\\]"]
-pub type CBTC3_R = crate::BitReader<bool>;
+pub type CBTC3_R = crate::BitReader;
 #[doc = "Field `CBTC4` reader - Chained Buffer Transfer Completed \\[5:0\\]"]
-pub type CBTC4_R = crate::BitReader<bool>;
+pub type CBTC4_R = crate::BitReader;
 #[doc = "Field `CBTC5` reader - Chained Buffer Transfer Completed \\[5:0\\]"]
-pub type CBTC5_R = crate::BitReader<bool>;
+pub type CBTC5_R = crate::BitReader;
 #[doc = "Field `ERR0` reader - Access Error \\[5:0\\]"]
-pub type ERR0_R = crate::BitReader<bool>;
+pub type ERR0_R = crate::BitReader;
 #[doc = "Field `ERR1` reader - Access Error \\[5:0\\]"]
-pub type ERR1_R = crate::BitReader<bool>;
+pub type ERR1_R = crate::BitReader;
 #[doc = "Field `ERR2` reader - Access Error \\[5:0\\]"]
-pub type ERR2_R = crate::BitReader<bool>;
+pub type ERR2_R = crate::BitReader;
 #[doc = "Field `ERR3` reader - Access Error \\[5:0\\]"]
-pub type ERR3_R = crate::BitReader<bool>;
+pub type ERR3_R = crate::BitReader;
 #[doc = "Field `ERR4` reader - Access Error \\[5:0\\]"]
-pub type ERR4_R = crate::BitReader<bool>;
+pub type ERR4_R = crate::BitReader;
 #[doc = "Field `ERR5` reader - Access Error \\[5:0\\]"]
-pub type ERR5_R = crate::BitReader<bool>;
+pub type ERR5_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Buffer Transfer Completed \\[5:0\\]"]
     #[inline(always)]
@@ -129,15 +128,13 @@ impl R {
         ERR5_R::new(((self.bits >> 21) & 1) != 0)
     }
 }
-#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Status Register.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ebcisr](index.html) module"]
+#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Status Register.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ebcisr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EBCISR_SPEC;
 impl crate::RegisterSpec for EBCISR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ebcisr::R](R) reader structure"]
-impl crate::Readable for EBCISR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`ebcisr::R`](R) reader structure"]
+impl crate::Readable for EBCISR_SPEC {}
 #[doc = "`reset()` method sets EBCISR to value 0"]
 impl crate::Resettable for EBCISR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

@@ -1,32 +1,31 @@
 #[doc = "Register `HSTPIPIMR[%s]` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<HSTPIPIMR_SPEC>);
+pub type R = crate::R<HSTPIPIMR_SPEC>;
 #[doc = "Field `RXINE` reader - Received IN Data Interrupt Enable"]
-pub type RXINE_R = crate::BitReader<bool>;
+pub type RXINE_R = crate::BitReader;
 #[doc = "Field `TXOUTE` reader - Transmitted OUT Data Interrupt Enable"]
-pub type TXOUTE_R = crate::BitReader<bool>;
+pub type TXOUTE_R = crate::BitReader;
 #[doc = "Field `TXSTPE` reader - Transmitted SETUP Interrupt Enable"]
-pub type TXSTPE_R = crate::BitReader<bool>;
+pub type TXSTPE_R = crate::BitReader;
 #[doc = "Field `PERRE` reader - Pipe Error Interrupt Enable"]
-pub type PERRE_R = crate::BitReader<bool>;
+pub type PERRE_R = crate::BitReader;
 #[doc = "Field `NAKEDE` reader - NAKed Interrupt Enable"]
-pub type NAKEDE_R = crate::BitReader<bool>;
+pub type NAKEDE_R = crate::BitReader;
 #[doc = "Field `OVERFIE` reader - Overflow Interrupt Enable"]
-pub type OVERFIE_R = crate::BitReader<bool>;
+pub type OVERFIE_R = crate::BitReader;
 #[doc = "Field `RXSTALLDE` reader - Received STALLed Interrupt Enable"]
-pub type RXSTALLDE_R = crate::BitReader<bool>;
+pub type RXSTALLDE_R = crate::BitReader;
 #[doc = "Field `SHORTPACKETIE` reader - Short Packet Interrupt Enable"]
-pub type SHORTPACKETIE_R = crate::BitReader<bool>;
+pub type SHORTPACKETIE_R = crate::BitReader;
 #[doc = "Field `NBUSYBKE` reader - Number of Busy Banks Interrupt Enable"]
-pub type NBUSYBKE_R = crate::BitReader<bool>;
+pub type NBUSYBKE_R = crate::BitReader;
 #[doc = "Field `FIFOCON` reader - FIFO Control"]
-pub type FIFOCON_R = crate::BitReader<bool>;
+pub type FIFOCON_R = crate::BitReader;
 #[doc = "Field `PDISHDMA` reader - Pipe Interrupts Disable HDMA Request Enable"]
-pub type PDISHDMA_R = crate::BitReader<bool>;
+pub type PDISHDMA_R = crate::BitReader;
 #[doc = "Field `PFREEZE` reader - Pipe Freeze"]
-pub type PFREEZE_R = crate::BitReader<bool>;
+pub type PFREEZE_R = crate::BitReader;
 #[doc = "Field `RSTDT` reader - Reset Data Toggle"]
-pub type RSTDT_R = crate::BitReader<bool>;
+pub type RSTDT_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Received IN Data Interrupt Enable"]
     #[inline(always)]
@@ -94,12 +93,10 @@ impl R {
         RSTDT_R::new(((self.bits >> 18) & 1) != 0)
     }
 }
-#[doc = "Host Pipe Mask Register (n = 0)\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hstpipimr](index.html) module"]
+#[doc = "Host Pipe Mask Register (n = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hstpipimr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HSTPIPIMR_SPEC;
 impl crate::RegisterSpec for HSTPIPIMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hstpipimr::R](R) reader structure"]
-impl crate::Readable for HSTPIPIMR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`hstpipimr::R`](R) reader structure"]
+impl crate::Readable for HSTPIPIMR_SPEC {}

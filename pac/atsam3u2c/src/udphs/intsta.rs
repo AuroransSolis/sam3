@@ -1,48 +1,47 @@
 #[doc = "Register `INTSTA` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<INTSTA_SPEC>);
+pub type R = crate::R<INTSTA_SPEC>;
 #[doc = "Field `SPEED` reader - Speed Status"]
-pub type SPEED_R = crate::BitReader<bool>;
+pub type SPEED_R = crate::BitReader;
 #[doc = "Field `DET_SUSPD` reader - Suspend Interrupt"]
-pub type DET_SUSPD_R = crate::BitReader<bool>;
+pub type DET_SUSPD_R = crate::BitReader;
 #[doc = "Field `MICRO_SOF` reader - Micro Start Of Frame Interrupt"]
-pub type MICRO_SOF_R = crate::BitReader<bool>;
+pub type MICRO_SOF_R = crate::BitReader;
 #[doc = "Field `INT_SOF` reader - Start Of Frame Interrupt"]
-pub type INT_SOF_R = crate::BitReader<bool>;
+pub type INT_SOF_R = crate::BitReader;
 #[doc = "Field `ENDRESET` reader - End Of Reset Interrupt"]
-pub type ENDRESET_R = crate::BitReader<bool>;
+pub type ENDRESET_R = crate::BitReader;
 #[doc = "Field `WAKE_UP` reader - Wake Up CPU Interrupt"]
-pub type WAKE_UP_R = crate::BitReader<bool>;
+pub type WAKE_UP_R = crate::BitReader;
 #[doc = "Field `ENDOFRSM` reader - End Of Resume Interrupt"]
-pub type ENDOFRSM_R = crate::BitReader<bool>;
+pub type ENDOFRSM_R = crate::BitReader;
 #[doc = "Field `UPSTR_RES` reader - Upstream Resume Interrupt"]
-pub type UPSTR_RES_R = crate::BitReader<bool>;
+pub type UPSTR_RES_R = crate::BitReader;
 #[doc = "Field `EPT_0` reader - Endpoint 0 Interrupt"]
-pub type EPT_0_R = crate::BitReader<bool>;
+pub type EPT_0_R = crate::BitReader;
 #[doc = "Field `EPT_1` reader - Endpoint 1 Interrupt"]
-pub type EPT_1_R = crate::BitReader<bool>;
+pub type EPT_1_R = crate::BitReader;
 #[doc = "Field `EPT_2` reader - Endpoint 2 Interrupt"]
-pub type EPT_2_R = crate::BitReader<bool>;
+pub type EPT_2_R = crate::BitReader;
 #[doc = "Field `EPT_3` reader - Endpoint 3 Interrupt"]
-pub type EPT_3_R = crate::BitReader<bool>;
+pub type EPT_3_R = crate::BitReader;
 #[doc = "Field `EPT_4` reader - Endpoint 4 Interrupt"]
-pub type EPT_4_R = crate::BitReader<bool>;
+pub type EPT_4_R = crate::BitReader;
 #[doc = "Field `EPT_5` reader - Endpoint 5 Interrupt"]
-pub type EPT_5_R = crate::BitReader<bool>;
+pub type EPT_5_R = crate::BitReader;
 #[doc = "Field `EPT_6` reader - Endpoint 6 Interrupt"]
-pub type EPT_6_R = crate::BitReader<bool>;
+pub type EPT_6_R = crate::BitReader;
 #[doc = "Field `DMA_1` reader - DMA Channel 1 Interrupt"]
-pub type DMA_1_R = crate::BitReader<bool>;
+pub type DMA_1_R = crate::BitReader;
 #[doc = "Field `DMA_2` reader - DMA Channel 2 Interrupt"]
-pub type DMA_2_R = crate::BitReader<bool>;
+pub type DMA_2_R = crate::BitReader;
 #[doc = "Field `DMA_3` reader - DMA Channel 3 Interrupt"]
-pub type DMA_3_R = crate::BitReader<bool>;
+pub type DMA_3_R = crate::BitReader;
 #[doc = "Field `DMA_4` reader - DMA Channel 4 Interrupt"]
-pub type DMA_4_R = crate::BitReader<bool>;
+pub type DMA_4_R = crate::BitReader;
 #[doc = "Field `DMA_5` reader - DMA Channel 5 Interrupt"]
-pub type DMA_5_R = crate::BitReader<bool>;
+pub type DMA_5_R = crate::BitReader;
 #[doc = "Field `DMA_6` reader - DMA Channel 6 Interrupt"]
-pub type DMA_6_R = crate::BitReader<bool>;
+pub type DMA_6_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Speed Status"]
     #[inline(always)]
@@ -150,15 +149,13 @@ impl R {
         DMA_6_R::new(((self.bits >> 30) & 1) != 0)
     }
 }
-#[doc = "UDPHS Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intsta](index.html) module"]
+#[doc = "UDPHS Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intsta::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct INTSTA_SPEC;
 impl crate::RegisterSpec for INTSTA_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [intsta::R](R) reader structure"]
-impl crate::Readable for INTSTA_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`intsta::R`](R) reader structure"]
+impl crate::Readable for INTSTA_SPEC {}
 #[doc = "`reset()` method sets INTSTA to value 0"]
 impl crate::Resettable for INTSTA_SPEC {
     const RESET_VALUE: Self::Ux = 0;

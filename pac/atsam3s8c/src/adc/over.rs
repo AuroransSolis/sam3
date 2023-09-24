@@ -1,38 +1,37 @@
 #[doc = "Register `OVER` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<OVER_SPEC>);
+pub type R = crate::R<OVER_SPEC>;
 #[doc = "Field `OVRE0` reader - Overrun Error 0"]
-pub type OVRE0_R = crate::BitReader<bool>;
+pub type OVRE0_R = crate::BitReader;
 #[doc = "Field `OVRE1` reader - Overrun Error 1"]
-pub type OVRE1_R = crate::BitReader<bool>;
+pub type OVRE1_R = crate::BitReader;
 #[doc = "Field `OVRE2` reader - Overrun Error 2"]
-pub type OVRE2_R = crate::BitReader<bool>;
+pub type OVRE2_R = crate::BitReader;
 #[doc = "Field `OVRE3` reader - Overrun Error 3"]
-pub type OVRE3_R = crate::BitReader<bool>;
+pub type OVRE3_R = crate::BitReader;
 #[doc = "Field `OVRE4` reader - Overrun Error 4"]
-pub type OVRE4_R = crate::BitReader<bool>;
+pub type OVRE4_R = crate::BitReader;
 #[doc = "Field `OVRE5` reader - Overrun Error 5"]
-pub type OVRE5_R = crate::BitReader<bool>;
+pub type OVRE5_R = crate::BitReader;
 #[doc = "Field `OVRE6` reader - Overrun Error 6"]
-pub type OVRE6_R = crate::BitReader<bool>;
+pub type OVRE6_R = crate::BitReader;
 #[doc = "Field `OVRE7` reader - Overrun Error 7"]
-pub type OVRE7_R = crate::BitReader<bool>;
+pub type OVRE7_R = crate::BitReader;
 #[doc = "Field `OVRE8` reader - Overrun Error 8"]
-pub type OVRE8_R = crate::BitReader<bool>;
+pub type OVRE8_R = crate::BitReader;
 #[doc = "Field `OVRE9` reader - Overrun Error 9"]
-pub type OVRE9_R = crate::BitReader<bool>;
+pub type OVRE9_R = crate::BitReader;
 #[doc = "Field `OVRE10` reader - Overrun Error 10"]
-pub type OVRE10_R = crate::BitReader<bool>;
+pub type OVRE10_R = crate::BitReader;
 #[doc = "Field `OVRE11` reader - Overrun Error 11"]
-pub type OVRE11_R = crate::BitReader<bool>;
+pub type OVRE11_R = crate::BitReader;
 #[doc = "Field `OVRE12` reader - Overrun Error 12"]
-pub type OVRE12_R = crate::BitReader<bool>;
+pub type OVRE12_R = crate::BitReader;
 #[doc = "Field `OVRE13` reader - Overrun Error 13"]
-pub type OVRE13_R = crate::BitReader<bool>;
+pub type OVRE13_R = crate::BitReader;
 #[doc = "Field `OVRE14` reader - Overrun Error 14"]
-pub type OVRE14_R = crate::BitReader<bool>;
+pub type OVRE14_R = crate::BitReader;
 #[doc = "Field `OVRE15` reader - Overrun Error 15"]
-pub type OVRE15_R = crate::BitReader<bool>;
+pub type OVRE15_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Overrun Error 0"]
     #[inline(always)]
@@ -115,15 +114,13 @@ impl R {
         OVRE15_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Overrun Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [over](index.html) module"]
+#[doc = "Overrun Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`over::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OVER_SPEC;
 impl crate::RegisterSpec for OVER_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [over::R](R) reader structure"]
-impl crate::Readable for OVER_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`over::R`](R) reader structure"]
+impl crate::Readable for OVER_SPEC {}
 #[doc = "`reset()` method sets OVER to value 0"]
 impl crate::Resettable for OVER_SPEC {
     const RESET_VALUE: Self::Ux = 0;

@@ -1,11 +1,9 @@
 #[doc = "Register `MR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<MR_SPEC>);
+pub type R = crate::R<MR_SPEC>;
 #[doc = "Register `MR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<MR_SPEC>);
+pub type W = crate::W<MR_SPEC>;
 #[doc = "Field `MODE` reader - SDRAMC Command Mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
+pub type MODE_R = crate::FieldReader<MODE_A>;
 #[doc = "SDRAMC Command Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -31,6 +29,9 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for MODE_A {
+    type Ux = u8;
+}
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -46,78 +47,82 @@ impl MODE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Normal`"]
+    #[doc = "Normal mode. Any access to the SDRAM is decoded normally. To activate this mode, command must be followed by a write to the SDRAM."]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == MODE_A::Normal
     }
-    #[doc = "Checks if the value of the field is `Nop`"]
+    #[doc = "The SDRAM Controller issues a NOP command when the SDRAM device is accessed regardless of the cycle. To activate this mode, command must be followed by a write to the SDRAM."]
     #[inline(always)]
     pub fn is_nop(&self) -> bool {
         *self == MODE_A::Nop
     }
-    #[doc = "Checks if the value of the field is `AllbanksPrecharge`"]
+    #[doc = "The SDRAM Controller issues an \"All Banks Precharge\" command when the SDRAM device is accessed regardless of the cycle. To activate this mode, command must be followed by a write to the SDRAM."]
     #[inline(always)]
     pub fn is_allbanks_precharge(&self) -> bool {
         *self == MODE_A::AllbanksPrecharge
     }
-    #[doc = "Checks if the value of the field is `LoadModereg`"]
+    #[doc = "The SDRAM Controller issues a \"Load Mode Register\" command when the SDRAM device is accessed regardless of the cycle. To activate this mode, command must be followed by a write to the SDRAM."]
     #[inline(always)]
     pub fn is_load_modereg(&self) -> bool {
         *self == MODE_A::LoadModereg
     }
-    #[doc = "Checks if the value of the field is `AutoRefresh`"]
+    #[doc = "The SDRAM Controller issues an \"Auto-Refresh\" Command when the SDRAM device is accessed regardless of the cycle. Previously, an \"All Banks Precharge\" command must be issued. To activate this mode, command must be followed by a write to the SDRAM."]
     #[inline(always)]
     pub fn is_auto_refresh(&self) -> bool {
         *self == MODE_A::AutoRefresh
     }
-    #[doc = "Checks if the value of the field is `ExtLoadModereg`"]
+    #[doc = "The SDRAM Controller issues an \"Extended Load Mode Register\" command when the SDRAM device is accessed regardless of the cycle. To activate this mode, the \"Extended Load Mode Register\" command must be followed by a write to the SDRAM. The write in the SDRAM must be done in the appropriate bank; most low-power SDRAM devices use the bank 1."]
     #[inline(always)]
     pub fn is_ext_load_modereg(&self) -> bool {
         *self == MODE_A::ExtLoadModereg
     }
-    #[doc = "Checks if the value of the field is `DeepPowerdown`"]
+    #[doc = "Deep power-down mode. Enters deep power-down mode."]
     #[inline(always)]
     pub fn is_deep_powerdown(&self) -> bool {
         *self == MODE_A::DeepPowerdown
     }
 }
 #[doc = "Field `MODE` writer - SDRAMC Command Mode"]
-pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, MODE_A, 3, O>;
-impl<'a, const O: u8> MODE_W<'a, O> {
+pub type MODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, MODE_A>;
+impl<'a, REG, const O: u8> MODE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Normal mode. Any access to the SDRAM is decoded normally. To activate this mode, command must be followed by a write to the SDRAM."]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::Normal)
     }
     #[doc = "The SDRAM Controller issues a NOP command when the SDRAM device is accessed regardless of the cycle. To activate this mode, command must be followed by a write to the SDRAM."]
     #[inline(always)]
-    pub fn nop(self) -> &'a mut W {
+    pub fn nop(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::Nop)
     }
     #[doc = "The SDRAM Controller issues an \"All Banks Precharge\" command when the SDRAM device is accessed regardless of the cycle. To activate this mode, command must be followed by a write to the SDRAM."]
     #[inline(always)]
-    pub fn allbanks_precharge(self) -> &'a mut W {
+    pub fn allbanks_precharge(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::AllbanksPrecharge)
     }
     #[doc = "The SDRAM Controller issues a \"Load Mode Register\" command when the SDRAM device is accessed regardless of the cycle. To activate this mode, command must be followed by a write to the SDRAM."]
     #[inline(always)]
-    pub fn load_modereg(self) -> &'a mut W {
+    pub fn load_modereg(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::LoadModereg)
     }
     #[doc = "The SDRAM Controller issues an \"Auto-Refresh\" Command when the SDRAM device is accessed regardless of the cycle. Previously, an \"All Banks Precharge\" command must be issued. To activate this mode, command must be followed by a write to the SDRAM."]
     #[inline(always)]
-    pub fn auto_refresh(self) -> &'a mut W {
+    pub fn auto_refresh(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::AutoRefresh)
     }
     #[doc = "The SDRAM Controller issues an \"Extended Load Mode Register\" command when the SDRAM device is accessed regardless of the cycle. To activate this mode, the \"Extended Load Mode Register\" command must be followed by a write to the SDRAM. The write in the SDRAM must be done in the appropriate bank; most low-power SDRAM devices use the bank 1."]
     #[inline(always)]
-    pub fn ext_load_modereg(self) -> &'a mut W {
+    pub fn ext_load_modereg(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::ExtLoadModereg)
     }
     #[doc = "Deep power-down mode. Enters deep power-down mode."]
     #[inline(always)]
-    pub fn deep_powerdown(self) -> &'a mut W {
+    pub fn deep_powerdown(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::DeepPowerdown)
     }
 }
@@ -132,28 +137,25 @@ impl W {
     #[doc = "Bits 0:2 - SDRAMC Command Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode(&mut self) -> MODE_W<0> {
+    pub fn mode(&mut self) -> MODE_W<MR_SPEC, 0> {
         MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "SDRAMC Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mr](index.html) module"]
+#[doc = "SDRAMC Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MR_SPEC;
 impl crate::RegisterSpec for MR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mr::R](R) reader structure"]
-impl crate::Readable for MR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
+#[doc = "`read()` method returns [`mr::R`](R) reader structure"]
+impl crate::Readable for MR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mr::W`](W) writer structure"]
 impl crate::Writable for MR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

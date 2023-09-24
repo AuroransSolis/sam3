@@ -233,335 +233,417 @@ impl RegisterBlock {
         unsafe { &*(self as *const Self).cast::<u8>().add(76usize).cast() }
     }
 }
-#[doc = "CFG (rw) register accessor: an alias for `Reg<CFG_SPEC>`"]
+#[doc = "CFG (rw) register accessor: SMC NFC Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cfg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cfg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub type CFG = crate::Reg<cfg::CFG_SPEC>;
 #[doc = "SMC NFC Configuration Register"]
 pub mod cfg;
-#[doc = "CTRL (w) register accessor: an alias for `Reg<CTRL_SPEC>`"]
+#[doc = "CTRL (w) register accessor: SMC NFC Control Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ctrl`]
+module"]
 pub type CTRL = crate::Reg<ctrl::CTRL_SPEC>;
 #[doc = "SMC NFC Control Register"]
 pub mod ctrl;
-#[doc = "SR (r) register accessor: an alias for `Reg<SR_SPEC>`"]
+#[doc = "SR (r) register accessor: SMC NFC Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`sr`]
+module"]
 pub type SR = crate::Reg<sr::SR_SPEC>;
 #[doc = "SMC NFC Status Register"]
 pub mod sr;
-#[doc = "IER (w) register accessor: an alias for `Reg<IER_SPEC>`"]
+#[doc = "IER (w) register accessor: SMC NFC Interrupt Enable Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ier::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ier`]
+module"]
 pub type IER = crate::Reg<ier::IER_SPEC>;
 #[doc = "SMC NFC Interrupt Enable Register"]
 pub mod ier;
-#[doc = "IDR (w) register accessor: an alias for `Reg<IDR_SPEC>`"]
+#[doc = "IDR (w) register accessor: SMC NFC Interrupt Disable Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`idr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`idr`]
+module"]
 pub type IDR = crate::Reg<idr::IDR_SPEC>;
 #[doc = "SMC NFC Interrupt Disable Register"]
 pub mod idr;
-#[doc = "IMR (r) register accessor: an alias for `Reg<IMR_SPEC>`"]
+#[doc = "IMR (r) register accessor: SMC NFC Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`imr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`imr`]
+module"]
 pub type IMR = crate::Reg<imr::IMR_SPEC>;
 #[doc = "SMC NFC Interrupt Mask Register"]
 pub mod imr;
-#[doc = "ADDR (rw) register accessor: an alias for `Reg<ADDR_SPEC>`"]
+#[doc = "ADDR (rw) register accessor: SMC NFC Address Cycle Zero Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`addr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`addr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`addr`]
+module"]
 pub type ADDR = crate::Reg<addr::ADDR_SPEC>;
 #[doc = "SMC NFC Address Cycle Zero Register"]
 pub mod addr;
-#[doc = "BANK (rw) register accessor: an alias for `Reg<BANK_SPEC>`"]
+#[doc = "BANK (rw) register accessor: SMC Bank Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`bank::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`bank::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`bank`]
+module"]
 pub type BANK = crate::Reg<bank::BANK_SPEC>;
 #[doc = "SMC Bank Address Register"]
 pub mod bank;
-#[doc = "ECC_CTRL (w) register accessor: an alias for `Reg<ECC_CTRL_SPEC>`"]
+#[doc = "ECC_CTRL (w) register accessor: SMC ECC Control Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ecc_ctrl::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_ctrl`]
+module"]
 pub type ECC_CTRL = crate::Reg<ecc_ctrl::ECC_CTRL_SPEC>;
 #[doc = "SMC ECC Control Register"]
 pub mod ecc_ctrl;
-#[doc = "ECC_MD (rw) register accessor: an alias for `Reg<ECC_MD_SPEC>`"]
+#[doc = "ECC_MD (rw) register accessor: SMC ECC Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_md::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ecc_md::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_md`]
+module"]
 pub type ECC_MD = crate::Reg<ecc_md::ECC_MD_SPEC>;
 #[doc = "SMC ECC Mode Register"]
 pub mod ecc_md;
-#[doc = "ECC_SR1 (r) register accessor: an alias for `Reg<ECC_SR1_SPEC>`"]
+#[doc = "ECC_SR1 (r) register accessor: SMC ECC Status 1 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_sr1::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_sr1`]
+module"]
 pub type ECC_SR1 = crate::Reg<ecc_sr1::ECC_SR1_SPEC>;
 #[doc = "SMC ECC Status 1 Register"]
 pub mod ecc_sr1;
-#[doc = "ECC_PR0 (r) register accessor: an alias for `Reg<ECC_PR0_SPEC>`"]
+#[doc = "ECC_PR0 (r) register accessor: SMC ECC Parity 0 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr0::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_pr0`]
+module"]
 pub type ECC_PR0 = crate::Reg<ecc_pr0::ECC_PR0_SPEC>;
 #[doc = "SMC ECC Parity 0 Register"]
 pub mod ecc_pr0;
-#[doc = "W9BIT_ECC_PR0_W9BIT (r) register accessor: an alias for `Reg<W9BIT_ECC_PR0_W9BIT_SPEC>`"]
+#[doc = "W9BIT_ECC_PR0_W9BIT (r) register accessor: SMC ECC Parity 0 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`w9bit_ecc_pr0_w9bit::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`w9bit_ecc_pr0_w9bit`]
+module"]
 pub type W9BIT_ECC_PR0_W9BIT = crate::Reg<w9bit_ecc_pr0_w9bit::W9BIT_ECC_PR0_W9BIT_SPEC>;
 #[doc = "SMC ECC Parity 0 Register"]
 pub mod w9bit_ecc_pr0_w9bit;
-#[doc = "W8BIT_ECC_PR0_W8BIT (r) register accessor: an alias for `Reg<W8BIT_ECC_PR0_W8BIT_SPEC>`"]
+#[doc = "W8BIT_ECC_PR0_W8BIT (r) register accessor: SMC ECC Parity 0 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`w8bit_ecc_pr0_w8bit::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`w8bit_ecc_pr0_w8bit`]
+module"]
 pub type W8BIT_ECC_PR0_W8BIT = crate::Reg<w8bit_ecc_pr0_w8bit::W8BIT_ECC_PR0_W8BIT_SPEC>;
 #[doc = "SMC ECC Parity 0 Register"]
 pub mod w8bit_ecc_pr0_w8bit;
-#[doc = "ECC_PR1 (r) register accessor: an alias for `Reg<ECC_PR1_SPEC>`"]
+#[doc = "ECC_PR1 (r) register accessor: SMC ECC parity 1 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr1::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_pr1`]
+module"]
 pub type ECC_PR1 = crate::Reg<ecc_pr1::ECC_PR1_SPEC>;
 #[doc = "SMC ECC parity 1 Register"]
 pub mod ecc_pr1;
-#[doc = "W9BIT_ECC_PR1_W9BIT (r) register accessor: an alias for `Reg<W9BIT_ECC_PR1_W9BIT_SPEC>`"]
+#[doc = "W9BIT_ECC_PR1_W9BIT (r) register accessor: SMC ECC parity 1 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`w9bit_ecc_pr1_w9bit::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`w9bit_ecc_pr1_w9bit`]
+module"]
 pub type W9BIT_ECC_PR1_W9BIT = crate::Reg<w9bit_ecc_pr1_w9bit::W9BIT_ECC_PR1_W9BIT_SPEC>;
 #[doc = "SMC ECC parity 1 Register"]
 pub mod w9bit_ecc_pr1_w9bit;
-#[doc = "W8BIT_ECC_PR1_W8BIT (r) register accessor: an alias for `Reg<W8BIT_ECC_PR1_W8BIT_SPEC>`"]
+#[doc = "W8BIT_ECC_PR1_W8BIT (r) register accessor: SMC ECC parity 1 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`w8bit_ecc_pr1_w8bit::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`w8bit_ecc_pr1_w8bit`]
+module"]
 pub type W8BIT_ECC_PR1_W8BIT = crate::Reg<w8bit_ecc_pr1_w8bit::W8BIT_ECC_PR1_W8BIT_SPEC>;
 #[doc = "SMC ECC parity 1 Register"]
 pub mod w8bit_ecc_pr1_w8bit;
-#[doc = "ECC_SR2 (r) register accessor: an alias for `Reg<ECC_SR2_SPEC>`"]
+#[doc = "ECC_SR2 (r) register accessor: SMC ECC status 2 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_sr2::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_sr2`]
+module"]
 pub type ECC_SR2 = crate::Reg<ecc_sr2::ECC_SR2_SPEC>;
 #[doc = "SMC ECC status 2 Register"]
 pub mod ecc_sr2;
-#[doc = "ECC_PR2 (r) register accessor: an alias for `Reg<ECC_PR2_SPEC>`"]
+#[doc = "ECC_PR2 (r) register accessor: SMC ECC parity 2 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr2::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_pr2`]
+module"]
 pub type ECC_PR2 = crate::Reg<ecc_pr2::ECC_PR2_SPEC>;
 #[doc = "SMC ECC parity 2 Register"]
 pub mod ecc_pr2;
-#[doc = "W8BIT_ECC_PR2_W8BIT (r) register accessor: an alias for `Reg<W8BIT_ECC_PR2_W8BIT_SPEC>`"]
+#[doc = "W8BIT_ECC_PR2_W8BIT (r) register accessor: SMC ECC parity 2 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`w8bit_ecc_pr2_w8bit::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`w8bit_ecc_pr2_w8bit`]
+module"]
 pub type W8BIT_ECC_PR2_W8BIT = crate::Reg<w8bit_ecc_pr2_w8bit::W8BIT_ECC_PR2_W8BIT_SPEC>;
 #[doc = "SMC ECC parity 2 Register"]
 pub mod w8bit_ecc_pr2_w8bit;
-#[doc = "ECC_PR3 (r) register accessor: an alias for `Reg<ECC_PR3_SPEC>`"]
+#[doc = "ECC_PR3 (r) register accessor: SMC ECC parity 3 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr3::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_pr3`]
+module"]
 pub type ECC_PR3 = crate::Reg<ecc_pr3::ECC_PR3_SPEC>;
 #[doc = "SMC ECC parity 3 Register"]
 pub mod ecc_pr3;
-#[doc = "W8BIT_ECC_PR3_W8BIT (r) register accessor: an alias for `Reg<W8BIT_ECC_PR3_W8BIT_SPEC>`"]
+#[doc = "W8BIT_ECC_PR3_W8BIT (r) register accessor: SMC ECC parity 3 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`w8bit_ecc_pr3_w8bit::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`w8bit_ecc_pr3_w8bit`]
+module"]
 pub type W8BIT_ECC_PR3_W8BIT = crate::Reg<w8bit_ecc_pr3_w8bit::W8BIT_ECC_PR3_W8BIT_SPEC>;
 #[doc = "SMC ECC parity 3 Register"]
 pub mod w8bit_ecc_pr3_w8bit;
-#[doc = "ECC_PR4 (r) register accessor: an alias for `Reg<ECC_PR4_SPEC>`"]
+#[doc = "ECC_PR4 (r) register accessor: SMC ECC parity 4 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr4::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_pr4`]
+module"]
 pub type ECC_PR4 = crate::Reg<ecc_pr4::ECC_PR4_SPEC>;
 #[doc = "SMC ECC parity 4 Register"]
 pub mod ecc_pr4;
-#[doc = "W8BIT_ECC_PR4_W8BIT (r) register accessor: an alias for `Reg<W8BIT_ECC_PR4_W8BIT_SPEC>`"]
+#[doc = "W8BIT_ECC_PR4_W8BIT (r) register accessor: SMC ECC parity 4 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`w8bit_ecc_pr4_w8bit::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`w8bit_ecc_pr4_w8bit`]
+module"]
 pub type W8BIT_ECC_PR4_W8BIT = crate::Reg<w8bit_ecc_pr4_w8bit::W8BIT_ECC_PR4_W8BIT_SPEC>;
 #[doc = "SMC ECC parity 4 Register"]
 pub mod w8bit_ecc_pr4_w8bit;
-#[doc = "ECC_PR5 (r) register accessor: an alias for `Reg<ECC_PR5_SPEC>`"]
+#[doc = "ECC_PR5 (r) register accessor: SMC ECC parity 5 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr5::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_pr5`]
+module"]
 pub type ECC_PR5 = crate::Reg<ecc_pr5::ECC_PR5_SPEC>;
 #[doc = "SMC ECC parity 5 Register"]
 pub mod ecc_pr5;
-#[doc = "W8BIT_ECC_PR5_W8BIT (r) register accessor: an alias for `Reg<W8BIT_ECC_PR5_W8BIT_SPEC>`"]
+#[doc = "W8BIT_ECC_PR5_W8BIT (r) register accessor: SMC ECC parity 5 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`w8bit_ecc_pr5_w8bit::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`w8bit_ecc_pr5_w8bit`]
+module"]
 pub type W8BIT_ECC_PR5_W8BIT = crate::Reg<w8bit_ecc_pr5_w8bit::W8BIT_ECC_PR5_W8BIT_SPEC>;
 #[doc = "SMC ECC parity 5 Register"]
 pub mod w8bit_ecc_pr5_w8bit;
-#[doc = "ECC_PR6 (r) register accessor: an alias for `Reg<ECC_PR6_SPEC>`"]
+#[doc = "ECC_PR6 (r) register accessor: SMC ECC parity 6 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr6::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_pr6`]
+module"]
 pub type ECC_PR6 = crate::Reg<ecc_pr6::ECC_PR6_SPEC>;
 #[doc = "SMC ECC parity 6 Register"]
 pub mod ecc_pr6;
-#[doc = "W8BIT_ECC_PR6_W8BIT (r) register accessor: an alias for `Reg<W8BIT_ECC_PR6_W8BIT_SPEC>`"]
+#[doc = "W8BIT_ECC_PR6_W8BIT (r) register accessor: SMC ECC parity 6 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`w8bit_ecc_pr6_w8bit::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`w8bit_ecc_pr6_w8bit`]
+module"]
 pub type W8BIT_ECC_PR6_W8BIT = crate::Reg<w8bit_ecc_pr6_w8bit::W8BIT_ECC_PR6_W8BIT_SPEC>;
 #[doc = "SMC ECC parity 6 Register"]
 pub mod w8bit_ecc_pr6_w8bit;
-#[doc = "ECC_PR7 (r) register accessor: an alias for `Reg<ECC_PR7_SPEC>`"]
+#[doc = "ECC_PR7 (r) register accessor: SMC ECC parity 7 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr7::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_pr7`]
+module"]
 pub type ECC_PR7 = crate::Reg<ecc_pr7::ECC_PR7_SPEC>;
 #[doc = "SMC ECC parity 7 Register"]
 pub mod ecc_pr7;
-#[doc = "W8BIT_ECC_PR7_W8BIT (r) register accessor: an alias for `Reg<W8BIT_ECC_PR7_W8BIT_SPEC>`"]
+#[doc = "W8BIT_ECC_PR7_W8BIT (r) register accessor: SMC ECC parity 7 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`w8bit_ecc_pr7_w8bit::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`w8bit_ecc_pr7_w8bit`]
+module"]
 pub type W8BIT_ECC_PR7_W8BIT = crate::Reg<w8bit_ecc_pr7_w8bit::W8BIT_ECC_PR7_W8BIT_SPEC>;
 #[doc = "SMC ECC parity 7 Register"]
 pub mod w8bit_ecc_pr7_w8bit;
-#[doc = "ECC_PR8 (r) register accessor: an alias for `Reg<ECC_PR8_SPEC>`"]
+#[doc = "ECC_PR8 (r) register accessor: SMC ECC parity 8 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr8::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_pr8`]
+module"]
 pub type ECC_PR8 = crate::Reg<ecc_pr8::ECC_PR8_SPEC>;
 #[doc = "SMC ECC parity 8 Register"]
 pub mod ecc_pr8;
-#[doc = "ECC_PR9 (r) register accessor: an alias for `Reg<ECC_PR9_SPEC>`"]
+#[doc = "ECC_PR9 (r) register accessor: SMC ECC parity 9 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr9::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_pr9`]
+module"]
 pub type ECC_PR9 = crate::Reg<ecc_pr9::ECC_PR9_SPEC>;
 #[doc = "SMC ECC parity 9 Register"]
 pub mod ecc_pr9;
-#[doc = "ECC_PR10 (r) register accessor: an alias for `Reg<ECC_PR10_SPEC>`"]
+#[doc = "ECC_PR10 (r) register accessor: SMC ECC parity 10 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr10::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_pr10`]
+module"]
 pub type ECC_PR10 = crate::Reg<ecc_pr10::ECC_PR10_SPEC>;
 #[doc = "SMC ECC parity 10 Register"]
 pub mod ecc_pr10;
-#[doc = "ECC_PR11 (r) register accessor: an alias for `Reg<ECC_PR11_SPEC>`"]
+#[doc = "ECC_PR11 (r) register accessor: SMC ECC parity 11 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr11::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_pr11`]
+module"]
 pub type ECC_PR11 = crate::Reg<ecc_pr11::ECC_PR11_SPEC>;
 #[doc = "SMC ECC parity 11 Register"]
 pub mod ecc_pr11;
-#[doc = "ECC_PR12 (r) register accessor: an alias for `Reg<ECC_PR12_SPEC>`"]
+#[doc = "ECC_PR12 (r) register accessor: SMC ECC parity 12 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr12::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_pr12`]
+module"]
 pub type ECC_PR12 = crate::Reg<ecc_pr12::ECC_PR12_SPEC>;
 #[doc = "SMC ECC parity 12 Register"]
 pub mod ecc_pr12;
-#[doc = "ECC_PR13 (r) register accessor: an alias for `Reg<ECC_PR13_SPEC>`"]
+#[doc = "ECC_PR13 (r) register accessor: SMC ECC parity 13 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr13::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_pr13`]
+module"]
 pub type ECC_PR13 = crate::Reg<ecc_pr13::ECC_PR13_SPEC>;
 #[doc = "SMC ECC parity 13 Register"]
 pub mod ecc_pr13;
-#[doc = "ECC_PR14 (r) register accessor: an alias for `Reg<ECC_PR14_SPEC>`"]
+#[doc = "ECC_PR14 (r) register accessor: SMC ECC parity 14 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr14::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_pr14`]
+module"]
 pub type ECC_PR14 = crate::Reg<ecc_pr14::ECC_PR14_SPEC>;
 #[doc = "SMC ECC parity 14 Register"]
 pub mod ecc_pr14;
-#[doc = "ECC_PR15 (r) register accessor: an alias for `Reg<ECC_PR15_SPEC>`"]
+#[doc = "ECC_PR15 (r) register accessor: SMC ECC parity 15 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr15::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ecc_pr15`]
+module"]
 pub type ECC_PR15 = crate::Reg<ecc_pr15::ECC_PR15_SPEC>;
 #[doc = "SMC ECC parity 15 Register"]
 pub mod ecc_pr15;
-#[doc = "SETUP0 (rw) register accessor: an alias for `Reg<SETUP0_SPEC>`"]
+#[doc = "SETUP0 (rw) register accessor: SMC Setup Register (CS_number = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`setup0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`setup0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`setup0`]
+module"]
 pub type SETUP0 = crate::Reg<setup0::SETUP0_SPEC>;
 #[doc = "SMC Setup Register (CS_number = 0)"]
 pub mod setup0;
-#[doc = "PULSE0 (rw) register accessor: an alias for `Reg<PULSE0_SPEC>`"]
+#[doc = "PULSE0 (rw) register accessor: SMC Pulse Register (CS_number = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pulse0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pulse0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`pulse0`]
+module"]
 pub type PULSE0 = crate::Reg<pulse0::PULSE0_SPEC>;
 #[doc = "SMC Pulse Register (CS_number = 0)"]
 pub mod pulse0;
-#[doc = "CYCLE0 (rw) register accessor: an alias for `Reg<CYCLE0_SPEC>`"]
+#[doc = "CYCLE0 (rw) register accessor: SMC Cycle Register (CS_number = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cycle0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cycle0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cycle0`]
+module"]
 pub type CYCLE0 = crate::Reg<cycle0::CYCLE0_SPEC>;
 #[doc = "SMC Cycle Register (CS_number = 0)"]
 pub mod cycle0;
-#[doc = "TIMINGS0 (rw) register accessor: an alias for `Reg<TIMINGS0_SPEC>`"]
+#[doc = "TIMINGS0 (rw) register accessor: SMC Timings Register (CS_number = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timings0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`timings0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`timings0`]
+module"]
 pub type TIMINGS0 = crate::Reg<timings0::TIMINGS0_SPEC>;
 #[doc = "SMC Timings Register (CS_number = 0)"]
 pub mod timings0;
-#[doc = "MODE0 (rw) register accessor: an alias for `Reg<MODE0_SPEC>`"]
+#[doc = "MODE0 (rw) register accessor: SMC Mode Register (CS_number = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mode0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mode0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mode0`]
+module"]
 pub type MODE0 = crate::Reg<mode0::MODE0_SPEC>;
 #[doc = "SMC Mode Register (CS_number = 0)"]
 pub mod mode0;
-#[doc = "SETUP1 (rw) register accessor: an alias for `Reg<SETUP1_SPEC>`"]
+#[doc = "SETUP1 (rw) register accessor: SMC Setup Register (CS_number = 1)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`setup1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`setup1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`setup1`]
+module"]
 pub type SETUP1 = crate::Reg<setup1::SETUP1_SPEC>;
 #[doc = "SMC Setup Register (CS_number = 1)"]
 pub mod setup1;
-#[doc = "PULSE1 (rw) register accessor: an alias for `Reg<PULSE1_SPEC>`"]
+#[doc = "PULSE1 (rw) register accessor: SMC Pulse Register (CS_number = 1)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pulse1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pulse1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`pulse1`]
+module"]
 pub type PULSE1 = crate::Reg<pulse1::PULSE1_SPEC>;
 #[doc = "SMC Pulse Register (CS_number = 1)"]
 pub mod pulse1;
-#[doc = "CYCLE1 (rw) register accessor: an alias for `Reg<CYCLE1_SPEC>`"]
+#[doc = "CYCLE1 (rw) register accessor: SMC Cycle Register (CS_number = 1)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cycle1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cycle1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cycle1`]
+module"]
 pub type CYCLE1 = crate::Reg<cycle1::CYCLE1_SPEC>;
 #[doc = "SMC Cycle Register (CS_number = 1)"]
 pub mod cycle1;
-#[doc = "TIMINGS1 (rw) register accessor: an alias for `Reg<TIMINGS1_SPEC>`"]
+#[doc = "TIMINGS1 (rw) register accessor: SMC Timings Register (CS_number = 1)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timings1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`timings1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`timings1`]
+module"]
 pub type TIMINGS1 = crate::Reg<timings1::TIMINGS1_SPEC>;
 #[doc = "SMC Timings Register (CS_number = 1)"]
 pub mod timings1;
-#[doc = "MODE1 (rw) register accessor: an alias for `Reg<MODE1_SPEC>`"]
+#[doc = "MODE1 (rw) register accessor: SMC Mode Register (CS_number = 1)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mode1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mode1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mode1`]
+module"]
 pub type MODE1 = crate::Reg<mode1::MODE1_SPEC>;
 #[doc = "SMC Mode Register (CS_number = 1)"]
 pub mod mode1;
-#[doc = "SETUP2 (rw) register accessor: an alias for `Reg<SETUP2_SPEC>`"]
+#[doc = "SETUP2 (rw) register accessor: SMC Setup Register (CS_number = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`setup2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`setup2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`setup2`]
+module"]
 pub type SETUP2 = crate::Reg<setup2::SETUP2_SPEC>;
 #[doc = "SMC Setup Register (CS_number = 2)"]
 pub mod setup2;
-#[doc = "PULSE2 (rw) register accessor: an alias for `Reg<PULSE2_SPEC>`"]
+#[doc = "PULSE2 (rw) register accessor: SMC Pulse Register (CS_number = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pulse2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pulse2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`pulse2`]
+module"]
 pub type PULSE2 = crate::Reg<pulse2::PULSE2_SPEC>;
 #[doc = "SMC Pulse Register (CS_number = 2)"]
 pub mod pulse2;
-#[doc = "CYCLE2 (rw) register accessor: an alias for `Reg<CYCLE2_SPEC>`"]
+#[doc = "CYCLE2 (rw) register accessor: SMC Cycle Register (CS_number = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cycle2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cycle2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cycle2`]
+module"]
 pub type CYCLE2 = crate::Reg<cycle2::CYCLE2_SPEC>;
 #[doc = "SMC Cycle Register (CS_number = 2)"]
 pub mod cycle2;
-#[doc = "TIMINGS2 (rw) register accessor: an alias for `Reg<TIMINGS2_SPEC>`"]
+#[doc = "TIMINGS2 (rw) register accessor: SMC Timings Register (CS_number = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timings2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`timings2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`timings2`]
+module"]
 pub type TIMINGS2 = crate::Reg<timings2::TIMINGS2_SPEC>;
 #[doc = "SMC Timings Register (CS_number = 2)"]
 pub mod timings2;
-#[doc = "MODE2 (rw) register accessor: an alias for `Reg<MODE2_SPEC>`"]
+#[doc = "MODE2 (rw) register accessor: SMC Mode Register (CS_number = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mode2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mode2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mode2`]
+module"]
 pub type MODE2 = crate::Reg<mode2::MODE2_SPEC>;
 #[doc = "SMC Mode Register (CS_number = 2)"]
 pub mod mode2;
-#[doc = "SETUP3 (rw) register accessor: an alias for `Reg<SETUP3_SPEC>`"]
+#[doc = "SETUP3 (rw) register accessor: SMC Setup Register (CS_number = 3)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`setup3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`setup3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`setup3`]
+module"]
 pub type SETUP3 = crate::Reg<setup3::SETUP3_SPEC>;
 #[doc = "SMC Setup Register (CS_number = 3)"]
 pub mod setup3;
-#[doc = "PULSE3 (rw) register accessor: an alias for `Reg<PULSE3_SPEC>`"]
+#[doc = "PULSE3 (rw) register accessor: SMC Pulse Register (CS_number = 3)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pulse3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pulse3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`pulse3`]
+module"]
 pub type PULSE3 = crate::Reg<pulse3::PULSE3_SPEC>;
 #[doc = "SMC Pulse Register (CS_number = 3)"]
 pub mod pulse3;
-#[doc = "CYCLE3 (rw) register accessor: an alias for `Reg<CYCLE3_SPEC>`"]
+#[doc = "CYCLE3 (rw) register accessor: SMC Cycle Register (CS_number = 3)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cycle3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cycle3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cycle3`]
+module"]
 pub type CYCLE3 = crate::Reg<cycle3::CYCLE3_SPEC>;
 #[doc = "SMC Cycle Register (CS_number = 3)"]
 pub mod cycle3;
-#[doc = "TIMINGS3 (rw) register accessor: an alias for `Reg<TIMINGS3_SPEC>`"]
+#[doc = "TIMINGS3 (rw) register accessor: SMC Timings Register (CS_number = 3)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timings3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`timings3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`timings3`]
+module"]
 pub type TIMINGS3 = crate::Reg<timings3::TIMINGS3_SPEC>;
 #[doc = "SMC Timings Register (CS_number = 3)"]
 pub mod timings3;
-#[doc = "MODE3 (rw) register accessor: an alias for `Reg<MODE3_SPEC>`"]
+#[doc = "MODE3 (rw) register accessor: SMC Mode Register (CS_number = 3)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mode3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mode3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mode3`]
+module"]
 pub type MODE3 = crate::Reg<mode3::MODE3_SPEC>;
 #[doc = "SMC Mode Register (CS_number = 3)"]
 pub mod mode3;
-#[doc = "SETUP4 (rw) register accessor: an alias for `Reg<SETUP4_SPEC>`"]
+#[doc = "SETUP4 (rw) register accessor: SMC Setup Register (CS_number = 4)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`setup4::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`setup4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`setup4`]
+module"]
 pub type SETUP4 = crate::Reg<setup4::SETUP4_SPEC>;
 #[doc = "SMC Setup Register (CS_number = 4)"]
 pub mod setup4;
-#[doc = "PULSE4 (rw) register accessor: an alias for `Reg<PULSE4_SPEC>`"]
+#[doc = "PULSE4 (rw) register accessor: SMC Pulse Register (CS_number = 4)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pulse4::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pulse4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`pulse4`]
+module"]
 pub type PULSE4 = crate::Reg<pulse4::PULSE4_SPEC>;
 #[doc = "SMC Pulse Register (CS_number = 4)"]
 pub mod pulse4;
-#[doc = "CYCLE4 (rw) register accessor: an alias for `Reg<CYCLE4_SPEC>`"]
+#[doc = "CYCLE4 (rw) register accessor: SMC Cycle Register (CS_number = 4)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cycle4::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cycle4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cycle4`]
+module"]
 pub type CYCLE4 = crate::Reg<cycle4::CYCLE4_SPEC>;
 #[doc = "SMC Cycle Register (CS_number = 4)"]
 pub mod cycle4;
-#[doc = "TIMINGS4 (rw) register accessor: an alias for `Reg<TIMINGS4_SPEC>`"]
+#[doc = "TIMINGS4 (rw) register accessor: SMC Timings Register (CS_number = 4)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timings4::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`timings4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`timings4`]
+module"]
 pub type TIMINGS4 = crate::Reg<timings4::TIMINGS4_SPEC>;
 #[doc = "SMC Timings Register (CS_number = 4)"]
 pub mod timings4;
-#[doc = "MODE4 (rw) register accessor: an alias for `Reg<MODE4_SPEC>`"]
+#[doc = "MODE4 (rw) register accessor: SMC Mode Register (CS_number = 4)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mode4::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mode4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mode4`]
+module"]
 pub type MODE4 = crate::Reg<mode4::MODE4_SPEC>;
 #[doc = "SMC Mode Register (CS_number = 4)"]
 pub mod mode4;
-#[doc = "SETUP5 (rw) register accessor: an alias for `Reg<SETUP5_SPEC>`"]
+#[doc = "SETUP5 (rw) register accessor: SMC Setup Register (CS_number = 5)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`setup5::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`setup5::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`setup5`]
+module"]
 pub type SETUP5 = crate::Reg<setup5::SETUP5_SPEC>;
 #[doc = "SMC Setup Register (CS_number = 5)"]
 pub mod setup5;
-#[doc = "PULSE5 (rw) register accessor: an alias for `Reg<PULSE5_SPEC>`"]
+#[doc = "PULSE5 (rw) register accessor: SMC Pulse Register (CS_number = 5)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pulse5::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pulse5::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`pulse5`]
+module"]
 pub type PULSE5 = crate::Reg<pulse5::PULSE5_SPEC>;
 #[doc = "SMC Pulse Register (CS_number = 5)"]
 pub mod pulse5;
-#[doc = "CYCLE5 (rw) register accessor: an alias for `Reg<CYCLE5_SPEC>`"]
+#[doc = "CYCLE5 (rw) register accessor: SMC Cycle Register (CS_number = 5)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cycle5::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cycle5::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cycle5`]
+module"]
 pub type CYCLE5 = crate::Reg<cycle5::CYCLE5_SPEC>;
 #[doc = "SMC Cycle Register (CS_number = 5)"]
 pub mod cycle5;
-#[doc = "TIMINGS5 (rw) register accessor: an alias for `Reg<TIMINGS5_SPEC>`"]
+#[doc = "TIMINGS5 (rw) register accessor: SMC Timings Register (CS_number = 5)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timings5::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`timings5::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`timings5`]
+module"]
 pub type TIMINGS5 = crate::Reg<timings5::TIMINGS5_SPEC>;
 #[doc = "SMC Timings Register (CS_number = 5)"]
 pub mod timings5;
-#[doc = "MODE5 (rw) register accessor: an alias for `Reg<MODE5_SPEC>`"]
+#[doc = "MODE5 (rw) register accessor: SMC Mode Register (CS_number = 5)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mode5::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mode5::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mode5`]
+module"]
 pub type MODE5 = crate::Reg<mode5::MODE5_SPEC>;
 #[doc = "SMC Mode Register (CS_number = 5)"]
 pub mod mode5;
-#[doc = "SETUP6 (rw) register accessor: an alias for `Reg<SETUP6_SPEC>`"]
+#[doc = "SETUP6 (rw) register accessor: SMC Setup Register (CS_number = 6)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`setup6::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`setup6::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`setup6`]
+module"]
 pub type SETUP6 = crate::Reg<setup6::SETUP6_SPEC>;
 #[doc = "SMC Setup Register (CS_number = 6)"]
 pub mod setup6;
-#[doc = "PULSE6 (rw) register accessor: an alias for `Reg<PULSE6_SPEC>`"]
+#[doc = "PULSE6 (rw) register accessor: SMC Pulse Register (CS_number = 6)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pulse6::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pulse6::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`pulse6`]
+module"]
 pub type PULSE6 = crate::Reg<pulse6::PULSE6_SPEC>;
 #[doc = "SMC Pulse Register (CS_number = 6)"]
 pub mod pulse6;
-#[doc = "CYCLE6 (rw) register accessor: an alias for `Reg<CYCLE6_SPEC>`"]
+#[doc = "CYCLE6 (rw) register accessor: SMC Cycle Register (CS_number = 6)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cycle6::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cycle6::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cycle6`]
+module"]
 pub type CYCLE6 = crate::Reg<cycle6::CYCLE6_SPEC>;
 #[doc = "SMC Cycle Register (CS_number = 6)"]
 pub mod cycle6;
-#[doc = "TIMINGS6 (rw) register accessor: an alias for `Reg<TIMINGS6_SPEC>`"]
+#[doc = "TIMINGS6 (rw) register accessor: SMC Timings Register (CS_number = 6)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timings6::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`timings6::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`timings6`]
+module"]
 pub type TIMINGS6 = crate::Reg<timings6::TIMINGS6_SPEC>;
 #[doc = "SMC Timings Register (CS_number = 6)"]
 pub mod timings6;
-#[doc = "MODE6 (rw) register accessor: an alias for `Reg<MODE6_SPEC>`"]
+#[doc = "MODE6 (rw) register accessor: SMC Mode Register (CS_number = 6)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mode6::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mode6::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mode6`]
+module"]
 pub type MODE6 = crate::Reg<mode6::MODE6_SPEC>;
 #[doc = "SMC Mode Register (CS_number = 6)"]
 pub mod mode6;
-#[doc = "SETUP7 (rw) register accessor: an alias for `Reg<SETUP7_SPEC>`"]
+#[doc = "SETUP7 (rw) register accessor: SMC Setup Register (CS_number = 7)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`setup7::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`setup7::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`setup7`]
+module"]
 pub type SETUP7 = crate::Reg<setup7::SETUP7_SPEC>;
 #[doc = "SMC Setup Register (CS_number = 7)"]
 pub mod setup7;
-#[doc = "PULSE7 (rw) register accessor: an alias for `Reg<PULSE7_SPEC>`"]
+#[doc = "PULSE7 (rw) register accessor: SMC Pulse Register (CS_number = 7)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pulse7::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pulse7::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`pulse7`]
+module"]
 pub type PULSE7 = crate::Reg<pulse7::PULSE7_SPEC>;
 #[doc = "SMC Pulse Register (CS_number = 7)"]
 pub mod pulse7;
-#[doc = "CYCLE7 (rw) register accessor: an alias for `Reg<CYCLE7_SPEC>`"]
+#[doc = "CYCLE7 (rw) register accessor: SMC Cycle Register (CS_number = 7)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cycle7::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cycle7::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cycle7`]
+module"]
 pub type CYCLE7 = crate::Reg<cycle7::CYCLE7_SPEC>;
 #[doc = "SMC Cycle Register (CS_number = 7)"]
 pub mod cycle7;
-#[doc = "TIMINGS7 (rw) register accessor: an alias for `Reg<TIMINGS7_SPEC>`"]
+#[doc = "TIMINGS7 (rw) register accessor: SMC Timings Register (CS_number = 7)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timings7::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`timings7::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`timings7`]
+module"]
 pub type TIMINGS7 = crate::Reg<timings7::TIMINGS7_SPEC>;
 #[doc = "SMC Timings Register (CS_number = 7)"]
 pub mod timings7;
-#[doc = "MODE7 (rw) register accessor: an alias for `Reg<MODE7_SPEC>`"]
+#[doc = "MODE7 (rw) register accessor: SMC Mode Register (CS_number = 7)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mode7::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mode7::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mode7`]
+module"]
 pub type MODE7 = crate::Reg<mode7::MODE7_SPEC>;
 #[doc = "SMC Mode Register (CS_number = 7)"]
 pub mod mode7;
-#[doc = "OCMS (rw) register accessor: an alias for `Reg<OCMS_SPEC>`"]
+#[doc = "OCMS (rw) register accessor: SMC OCMS Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ocms::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ocms::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ocms`]
+module"]
 pub type OCMS = crate::Reg<ocms::OCMS_SPEC>;
 #[doc = "SMC OCMS Register"]
 pub mod ocms;
-#[doc = "KEY1 (w) register accessor: an alias for `Reg<KEY1_SPEC>`"]
+#[doc = "KEY1 (w) register accessor: SMC OCMS KEY1 Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`key1::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`key1`]
+module"]
 pub type KEY1 = crate::Reg<key1::KEY1_SPEC>;
 #[doc = "SMC OCMS KEY1 Register"]
 pub mod key1;
-#[doc = "KEY2 (w) register accessor: an alias for `Reg<KEY2_SPEC>`"]
+#[doc = "KEY2 (w) register accessor: SMC OCMS KEY2 Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`key2::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`key2`]
+module"]
 pub type KEY2 = crate::Reg<key2::KEY2_SPEC>;
 #[doc = "SMC OCMS KEY2 Register"]
 pub mod key2;
-#[doc = "WPCR (w) register accessor: an alias for `Reg<WPCR_SPEC>`"]
+#[doc = "WPCR (w) register accessor: Write Protection Control Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wpcr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`wpcr`]
+module"]
 pub type WPCR = crate::Reg<wpcr::WPCR_SPEC>;
 #[doc = "Write Protection Control Register"]
 pub mod wpcr;
-#[doc = "WPSR (r) register accessor: an alias for `Reg<WPSR_SPEC>`"]
+#[doc = "WPSR (r) register accessor: Write Protection Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wpsr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`wpsr`]
+module"]
 pub type WPSR = crate::Reg<wpsr::WPSR_SPEC>;
 #[doc = "Write Protection Status Register"]
 pub mod wpsr;

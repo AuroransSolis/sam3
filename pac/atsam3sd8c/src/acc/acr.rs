@@ -1,9 +1,7 @@
 #[doc = "Register `ACR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<ACR_SPEC>);
+pub type R = crate::R<ACR_SPEC>;
 #[doc = "Register `ACR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<ACR_SPEC>);
+pub type W = crate::W<ACR_SPEC>;
 #[doc = "Field `ISEL` reader - Current SELection"]
 pub type ISEL_R = crate::BitReader<ISEL_A>;
 #[doc = "Current SELection\n\nValue on reset: 0"]
@@ -29,35 +27,38 @@ impl ISEL_R {
             true => ISEL_A::Hisp,
         }
     }
-    #[doc = "Checks if the value of the field is `Lopw`"]
+    #[doc = "low power option."]
     #[inline(always)]
     pub fn is_lopw(&self) -> bool {
         *self == ISEL_A::Lopw
     }
-    #[doc = "Checks if the value of the field is `Hisp`"]
+    #[doc = "high speed option."]
     #[inline(always)]
     pub fn is_hisp(&self) -> bool {
         *self == ISEL_A::Hisp
     }
 }
 #[doc = "Field `ISEL` writer - Current SELection"]
-pub type ISEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACR_SPEC, ISEL_A, O>;
-impl<'a, const O: u8> ISEL_W<'a, O> {
+pub type ISEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ISEL_A>;
+impl<'a, REG, const O: u8> ISEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "low power option."]
     #[inline(always)]
-    pub fn lopw(self) -> &'a mut W {
+    pub fn lopw(self) -> &'a mut crate::W<REG> {
         self.variant(ISEL_A::Lopw)
     }
     #[doc = "high speed option."]
     #[inline(always)]
-    pub fn hisp(self) -> &'a mut W {
+    pub fn hisp(self) -> &'a mut crate::W<REG> {
         self.variant(ISEL_A::Hisp)
     }
 }
 #[doc = "Field `HYST` reader - HYSTeresis selection"]
-pub type HYST_R = crate::FieldReader<u8, u8>;
+pub type HYST_R = crate::FieldReader;
 #[doc = "Field `HYST` writer - HYSTeresis selection"]
-pub type HYST_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ACR_SPEC, u8, u8, 2, O>;
+pub type HYST_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 impl R {
     #[doc = "Bit 0 - Current SELection"]
     #[inline(always)]
@@ -74,34 +75,31 @@ impl W {
     #[doc = "Bit 0 - Current SELection"]
     #[inline(always)]
     #[must_use]
-    pub fn isel(&mut self) -> ISEL_W<0> {
+    pub fn isel(&mut self) -> ISEL_W<ACR_SPEC, 0> {
         ISEL_W::new(self)
     }
     #[doc = "Bits 1:2 - HYSTeresis selection"]
     #[inline(always)]
     #[must_use]
-    pub fn hyst(&mut self) -> HYST_W<1> {
+    pub fn hyst(&mut self) -> HYST_W<ACR_SPEC, 1> {
         HYST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Analog Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [acr](index.html) module"]
+#[doc = "Analog Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`acr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`acr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ACR_SPEC;
 impl crate::RegisterSpec for ACR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [acr::R](R) reader structure"]
-impl crate::Readable for ACR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [acr::W](W) writer structure"]
+#[doc = "`read()` method returns [`acr::R`](R) reader structure"]
+impl crate::Readable for ACR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`acr::W`](W) writer structure"]
 impl crate::Writable for ACR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

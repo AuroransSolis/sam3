@@ -1,54 +1,52 @@
 #[doc = "Register `MCR7` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<MCR7_SPEC>);
+pub type W = crate::W<MCR7_SPEC>;
 #[doc = "Field `MDLC` writer - Mailbox Data Length Code"]
-pub type MDLC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MCR7_SPEC, u8, u8, 4, O>;
+pub type MDLC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `MRTR` writer - Mailbox Remote Transmission Request"]
-pub type MRTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCR7_SPEC, bool, O>;
+pub type MRTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `MACR` writer - Abort Request for Mailbox x"]
-pub type MACR_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCR7_SPEC, bool, O>;
+pub type MACR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `MTCR` writer - Mailbox Transfer Command"]
-pub type MTCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCR7_SPEC, bool, O>;
+pub type MTCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl W {
     #[doc = "Bits 16:19 - Mailbox Data Length Code"]
     #[inline(always)]
     #[must_use]
-    pub fn mdlc(&mut self) -> MDLC_W<16> {
+    pub fn mdlc(&mut self) -> MDLC_W<MCR7_SPEC, 16> {
         MDLC_W::new(self)
     }
     #[doc = "Bit 20 - Mailbox Remote Transmission Request"]
     #[inline(always)]
     #[must_use]
-    pub fn mrtr(&mut self) -> MRTR_W<20> {
+    pub fn mrtr(&mut self) -> MRTR_W<MCR7_SPEC, 20> {
         MRTR_W::new(self)
     }
     #[doc = "Bit 22 - Abort Request for Mailbox x"]
     #[inline(always)]
     #[must_use]
-    pub fn macr(&mut self) -> MACR_W<22> {
+    pub fn macr(&mut self) -> MACR_W<MCR7_SPEC, 22> {
         MACR_W::new(self)
     }
     #[doc = "Bit 23 - Mailbox Transfer Command"]
     #[inline(always)]
     #[must_use]
-    pub fn mtcr(&mut self) -> MTCR_W<23> {
+    pub fn mtcr(&mut self) -> MTCR_W<MCR7_SPEC, 23> {
         MTCR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Mailbox Control Register (MB = 7)\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mcr7](index.html) module"]
+#[doc = "Mailbox Control Register (MB = 7)\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mcr7::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MCR7_SPEC;
 impl crate::RegisterSpec for MCR7_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [mcr7::W](W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [`mcr7::W`](W) writer structure"]
 impl crate::Writable for MCR7_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

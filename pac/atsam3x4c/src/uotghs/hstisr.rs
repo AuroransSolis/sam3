@@ -1,52 +1,51 @@
 #[doc = "Register `HSTISR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<HSTISR_SPEC>);
+pub type R = crate::R<HSTISR_SPEC>;
 #[doc = "Field `DCONNI` reader - Device Connection Interrupt"]
-pub type DCONNI_R = crate::BitReader<bool>;
+pub type DCONNI_R = crate::BitReader;
 #[doc = "Field `DDISCI` reader - Device Disconnection Interrupt"]
-pub type DDISCI_R = crate::BitReader<bool>;
+pub type DDISCI_R = crate::BitReader;
 #[doc = "Field `RSTI` reader - USB Reset Sent Interrupt"]
-pub type RSTI_R = crate::BitReader<bool>;
+pub type RSTI_R = crate::BitReader;
 #[doc = "Field `RSMEDI` reader - Downstream Resume Sent Interrupt"]
-pub type RSMEDI_R = crate::BitReader<bool>;
+pub type RSMEDI_R = crate::BitReader;
 #[doc = "Field `RXRSMI` reader - Upstream Resume Received Interrupt"]
-pub type RXRSMI_R = crate::BitReader<bool>;
+pub type RXRSMI_R = crate::BitReader;
 #[doc = "Field `HSOFI` reader - Host Start of Frame Interrupt"]
-pub type HSOFI_R = crate::BitReader<bool>;
+pub type HSOFI_R = crate::BitReader;
 #[doc = "Field `HWUPI` reader - Host Wake-Up Interrupt"]
-pub type HWUPI_R = crate::BitReader<bool>;
+pub type HWUPI_R = crate::BitReader;
 #[doc = "Field `PEP_0` reader - Pipe 0 Interrupt"]
-pub type PEP_0_R = crate::BitReader<bool>;
+pub type PEP_0_R = crate::BitReader;
 #[doc = "Field `PEP_1` reader - Pipe 1 Interrupt"]
-pub type PEP_1_R = crate::BitReader<bool>;
+pub type PEP_1_R = crate::BitReader;
 #[doc = "Field `PEP_2` reader - Pipe 2 Interrupt"]
-pub type PEP_2_R = crate::BitReader<bool>;
+pub type PEP_2_R = crate::BitReader;
 #[doc = "Field `PEP_3` reader - Pipe 3 Interrupt"]
-pub type PEP_3_R = crate::BitReader<bool>;
+pub type PEP_3_R = crate::BitReader;
 #[doc = "Field `PEP_4` reader - Pipe 4 Interrupt"]
-pub type PEP_4_R = crate::BitReader<bool>;
+pub type PEP_4_R = crate::BitReader;
 #[doc = "Field `PEP_5` reader - Pipe 5 Interrupt"]
-pub type PEP_5_R = crate::BitReader<bool>;
+pub type PEP_5_R = crate::BitReader;
 #[doc = "Field `PEP_6` reader - Pipe 6 Interrupt"]
-pub type PEP_6_R = crate::BitReader<bool>;
+pub type PEP_6_R = crate::BitReader;
 #[doc = "Field `PEP_7` reader - Pipe 7 Interrupt"]
-pub type PEP_7_R = crate::BitReader<bool>;
+pub type PEP_7_R = crate::BitReader;
 #[doc = "Field `PEP_8` reader - Pipe 8 Interrupt"]
-pub type PEP_8_R = crate::BitReader<bool>;
+pub type PEP_8_R = crate::BitReader;
 #[doc = "Field `PEP_9` reader - Pipe 9 Interrupt"]
-pub type PEP_9_R = crate::BitReader<bool>;
+pub type PEP_9_R = crate::BitReader;
 #[doc = "Field `DMA_1` reader - DMA Channel 1 Interrupt"]
-pub type DMA_1_R = crate::BitReader<bool>;
+pub type DMA_1_R = crate::BitReader;
 #[doc = "Field `DMA_2` reader - DMA Channel 2 Interrupt"]
-pub type DMA_2_R = crate::BitReader<bool>;
+pub type DMA_2_R = crate::BitReader;
 #[doc = "Field `DMA_3` reader - DMA Channel 3 Interrupt"]
-pub type DMA_3_R = crate::BitReader<bool>;
+pub type DMA_3_R = crate::BitReader;
 #[doc = "Field `DMA_4` reader - DMA Channel 4 Interrupt"]
-pub type DMA_4_R = crate::BitReader<bool>;
+pub type DMA_4_R = crate::BitReader;
 #[doc = "Field `DMA_5` reader - DMA Channel 5 Interrupt"]
-pub type DMA_5_R = crate::BitReader<bool>;
+pub type DMA_5_R = crate::BitReader;
 #[doc = "Field `DMA_6` reader - DMA Channel 6 Interrupt"]
-pub type DMA_6_R = crate::BitReader<bool>;
+pub type DMA_6_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Device Connection Interrupt"]
     #[inline(always)]
@@ -164,15 +163,13 @@ impl R {
         DMA_6_R::new(((self.bits >> 30) & 1) != 0)
     }
 }
-#[doc = "Host Global Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hstisr](index.html) module"]
+#[doc = "Host Global Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hstisr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HSTISR_SPEC;
 impl crate::RegisterSpec for HSTISR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hstisr::R](R) reader structure"]
-impl crate::Readable for HSTISR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`hstisr::R`](R) reader structure"]
+impl crate::Readable for HSTISR_SPEC {}
 #[doc = "`reset()` method sets HSTISR to value 0"]
 impl crate::Resettable for HSTISR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

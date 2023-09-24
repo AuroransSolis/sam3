@@ -1,12 +1,11 @@
 #[doc = "Register `QIMR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<QIMR_SPEC>);
+pub type R = crate::R<QIMR_SPEC>;
 #[doc = "Field `IDX` reader - InDeX"]
-pub type IDX_R = crate::BitReader<bool>;
+pub type IDX_R = crate::BitReader;
 #[doc = "Field `DIRCHG` reader - DIRection CHanGe"]
-pub type DIRCHG_R = crate::BitReader<bool>;
+pub type DIRCHG_R = crate::BitReader;
 #[doc = "Field `QERR` reader - Quadrature ERRor"]
-pub type QERR_R = crate::BitReader<bool>;
+pub type QERR_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - InDeX"]
     #[inline(always)]
@@ -24,15 +23,13 @@ impl R {
         QERR_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
-#[doc = "QDEC Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [qimr](index.html) module"]
+#[doc = "QDEC Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`qimr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct QIMR_SPEC;
 impl crate::RegisterSpec for QIMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [qimr::R](R) reader structure"]
-impl crate::Readable for QIMR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`qimr::R`](R) reader structure"]
+impl crate::Readable for QIMR_SPEC {}
 #[doc = "`reset()` method sets QIMR to value 0"]
 impl crate::Resettable for QIMR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

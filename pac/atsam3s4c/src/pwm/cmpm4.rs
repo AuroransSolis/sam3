@@ -1,33 +1,31 @@
 #[doc = "Register `CMPM4` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<CMPM4_SPEC>);
+pub type R = crate::R<CMPM4_SPEC>;
 #[doc = "Register `CMPM4` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<CMPM4_SPEC>);
+pub type W = crate::W<CMPM4_SPEC>;
 #[doc = "Field `CEN` reader - Comparison x Enable"]
-pub type CEN_R = crate::BitReader<bool>;
+pub type CEN_R = crate::BitReader;
 #[doc = "Field `CEN` writer - Comparison x Enable"]
-pub type CEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMPM4_SPEC, bool, O>;
+pub type CEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CTR` reader - Comparison x Trigger"]
-pub type CTR_R = crate::FieldReader<u8, u8>;
+pub type CTR_R = crate::FieldReader;
 #[doc = "Field `CTR` writer - Comparison x Trigger"]
-pub type CTR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMPM4_SPEC, u8, u8, 4, O>;
+pub type CTR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `CPR` reader - Comparison x Period"]
-pub type CPR_R = crate::FieldReader<u8, u8>;
+pub type CPR_R = crate::FieldReader;
 #[doc = "Field `CPR` writer - Comparison x Period"]
-pub type CPR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMPM4_SPEC, u8, u8, 4, O>;
+pub type CPR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `CPRCNT` reader - Comparison x Period Counter"]
-pub type CPRCNT_R = crate::FieldReader<u8, u8>;
+pub type CPRCNT_R = crate::FieldReader;
 #[doc = "Field `CPRCNT` writer - Comparison x Period Counter"]
-pub type CPRCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMPM4_SPEC, u8, u8, 4, O>;
+pub type CPRCNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `CUPR` reader - Comparison x Update Period"]
-pub type CUPR_R = crate::FieldReader<u8, u8>;
+pub type CUPR_R = crate::FieldReader;
 #[doc = "Field `CUPR` writer - Comparison x Update Period"]
-pub type CUPR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMPM4_SPEC, u8, u8, 4, O>;
+pub type CUPR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `CUPRCNT` reader - Comparison x Update Period Counter"]
-pub type CUPRCNT_R = crate::FieldReader<u8, u8>;
+pub type CUPRCNT_R = crate::FieldReader;
 #[doc = "Field `CUPRCNT` writer - Comparison x Update Period Counter"]
-pub type CUPRCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMPM4_SPEC, u8, u8, 4, O>;
+pub type CUPRCNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 impl R {
     #[doc = "Bit 0 - Comparison x Enable"]
     #[inline(always)]
@@ -64,58 +62,55 @@ impl W {
     #[doc = "Bit 0 - Comparison x Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cen(&mut self) -> CEN_W<0> {
+    pub fn cen(&mut self) -> CEN_W<CMPM4_SPEC, 0> {
         CEN_W::new(self)
     }
     #[doc = "Bits 4:7 - Comparison x Trigger"]
     #[inline(always)]
     #[must_use]
-    pub fn ctr(&mut self) -> CTR_W<4> {
+    pub fn ctr(&mut self) -> CTR_W<CMPM4_SPEC, 4> {
         CTR_W::new(self)
     }
     #[doc = "Bits 8:11 - Comparison x Period"]
     #[inline(always)]
     #[must_use]
-    pub fn cpr(&mut self) -> CPR_W<8> {
+    pub fn cpr(&mut self) -> CPR_W<CMPM4_SPEC, 8> {
         CPR_W::new(self)
     }
     #[doc = "Bits 12:15 - Comparison x Period Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn cprcnt(&mut self) -> CPRCNT_W<12> {
+    pub fn cprcnt(&mut self) -> CPRCNT_W<CMPM4_SPEC, 12> {
         CPRCNT_W::new(self)
     }
     #[doc = "Bits 16:19 - Comparison x Update Period"]
     #[inline(always)]
     #[must_use]
-    pub fn cupr(&mut self) -> CUPR_W<16> {
+    pub fn cupr(&mut self) -> CUPR_W<CMPM4_SPEC, 16> {
         CUPR_W::new(self)
     }
     #[doc = "Bits 20:23 - Comparison x Update Period Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn cuprcnt(&mut self) -> CUPRCNT_W<20> {
+    pub fn cuprcnt(&mut self) -> CUPRCNT_W<CMPM4_SPEC, 20> {
         CUPRCNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PWM Comparison 4 Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmpm4](index.html) module"]
+#[doc = "PWM Comparison 4 Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cmpm4::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmpm4::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CMPM4_SPEC;
 impl crate::RegisterSpec for CMPM4_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cmpm4::R](R) reader structure"]
-impl crate::Readable for CMPM4_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cmpm4::W](W) writer structure"]
+#[doc = "`read()` method returns [`cmpm4::R`](R) reader structure"]
+impl crate::Readable for CMPM4_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`cmpm4::W`](W) writer structure"]
 impl crate::Writable for CMPM4_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

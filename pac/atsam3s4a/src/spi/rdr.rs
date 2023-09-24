@@ -1,10 +1,9 @@
 #[doc = "Register `RDR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<RDR_SPEC>);
+pub type R = crate::R<RDR_SPEC>;
 #[doc = "Field `RD` reader - Receive Data"]
-pub type RD_R = crate::FieldReader<u16, u16>;
+pub type RD_R = crate::FieldReader<u16>;
 #[doc = "Field `PCS` reader - Peripheral Chip Select"]
-pub type PCS_R = crate::FieldReader<u8, u8>;
+pub type PCS_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:15 - Receive Data"]
     #[inline(always)]
@@ -17,15 +16,13 @@ impl R {
         PCS_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
-#[doc = "Receive Data Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rdr](index.html) module"]
+#[doc = "Receive Data Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rdr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RDR_SPEC;
 impl crate::RegisterSpec for RDR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rdr::R](R) reader structure"]
-impl crate::Readable for RDR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`rdr::R`](R) reader structure"]
+impl crate::Readable for RDR_SPEC {}
 #[doc = "`reset()` method sets RDR to value 0"]
 impl crate::Resettable for RDR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

@@ -1,10 +1,9 @@
 #[doc = "Register `ECC_PR0` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<ECC_PR0_SPEC>);
+pub type R = crate::R<ECC_PR0_SPEC>;
 #[doc = "Field `BITADDR` reader - Bit Address"]
-pub type BITADDR_R = crate::FieldReader<u8, u8>;
+pub type BITADDR_R = crate::FieldReader;
 #[doc = "Field `WORDADDR` reader - Word Address"]
-pub type WORDADDR_R = crate::FieldReader<u16, u16>;
+pub type WORDADDR_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:3 - Bit Address"]
     #[inline(always)]
@@ -17,15 +16,13 @@ impl R {
         WORDADDR_R::new(((self.bits >> 4) & 0x0fff) as u16)
     }
 }
-#[doc = "SMC ECC Parity 0 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ecc_pr0](index.html) module"]
+#[doc = "SMC ECC Parity 0 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ECC_PR0_SPEC;
 impl crate::RegisterSpec for ECC_PR0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ecc_pr0::R](R) reader structure"]
-impl crate::Readable for ECC_PR0_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`ecc_pr0::R`](R) reader structure"]
+impl crate::Readable for ECC_PR0_SPEC {}
 #[doc = "`reset()` method sets ECC_PR0 to value 0"]
 impl crate::Resettable for ECC_PR0_SPEC {
     const RESET_VALUE: Self::Ux = 0;

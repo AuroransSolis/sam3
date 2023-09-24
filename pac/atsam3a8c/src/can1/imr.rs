@@ -1,48 +1,47 @@
 #[doc = "Register `IMR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<IMR_SPEC>);
+pub type R = crate::R<IMR_SPEC>;
 #[doc = "Field `MB0` reader - Mailbox 0 Interrupt Mask"]
-pub type MB0_R = crate::BitReader<bool>;
+pub type MB0_R = crate::BitReader;
 #[doc = "Field `MB1` reader - Mailbox 1 Interrupt Mask"]
-pub type MB1_R = crate::BitReader<bool>;
+pub type MB1_R = crate::BitReader;
 #[doc = "Field `MB2` reader - Mailbox 2 Interrupt Mask"]
-pub type MB2_R = crate::BitReader<bool>;
+pub type MB2_R = crate::BitReader;
 #[doc = "Field `MB3` reader - Mailbox 3 Interrupt Mask"]
-pub type MB3_R = crate::BitReader<bool>;
+pub type MB3_R = crate::BitReader;
 #[doc = "Field `MB4` reader - Mailbox 4 Interrupt Mask"]
-pub type MB4_R = crate::BitReader<bool>;
+pub type MB4_R = crate::BitReader;
 #[doc = "Field `MB5` reader - Mailbox 5 Interrupt Mask"]
-pub type MB5_R = crate::BitReader<bool>;
+pub type MB5_R = crate::BitReader;
 #[doc = "Field `MB6` reader - Mailbox 6 Interrupt Mask"]
-pub type MB6_R = crate::BitReader<bool>;
+pub type MB6_R = crate::BitReader;
 #[doc = "Field `MB7` reader - Mailbox 7 Interrupt Mask"]
-pub type MB7_R = crate::BitReader<bool>;
+pub type MB7_R = crate::BitReader;
 #[doc = "Field `ERRA` reader - Error Active Mode Interrupt Mask"]
-pub type ERRA_R = crate::BitReader<bool>;
+pub type ERRA_R = crate::BitReader;
 #[doc = "Field `WARN` reader - Warning Limit Interrupt Mask"]
-pub type WARN_R = crate::BitReader<bool>;
+pub type WARN_R = crate::BitReader;
 #[doc = "Field `ERRP` reader - Error Passive Mode Interrupt Mask"]
-pub type ERRP_R = crate::BitReader<bool>;
+pub type ERRP_R = crate::BitReader;
 #[doc = "Field `BOFF` reader - Bus Off Mode Interrupt Mask"]
-pub type BOFF_R = crate::BitReader<bool>;
+pub type BOFF_R = crate::BitReader;
 #[doc = "Field `SLEEP` reader - Sleep Interrupt Mask"]
-pub type SLEEP_R = crate::BitReader<bool>;
+pub type SLEEP_R = crate::BitReader;
 #[doc = "Field `WAKEUP` reader - Wakeup Interrupt Mask"]
-pub type WAKEUP_R = crate::BitReader<bool>;
+pub type WAKEUP_R = crate::BitReader;
 #[doc = "Field `TOVF` reader - Timer Overflow Interrupt Mask"]
-pub type TOVF_R = crate::BitReader<bool>;
+pub type TOVF_R = crate::BitReader;
 #[doc = "Field `TSTP` reader - Timestamp Interrupt Mask"]
-pub type TSTP_R = crate::BitReader<bool>;
+pub type TSTP_R = crate::BitReader;
 #[doc = "Field `CERR` reader - CRC Error Interrupt Mask"]
-pub type CERR_R = crate::BitReader<bool>;
+pub type CERR_R = crate::BitReader;
 #[doc = "Field `SERR` reader - Stuffing Error Interrupt Mask"]
-pub type SERR_R = crate::BitReader<bool>;
+pub type SERR_R = crate::BitReader;
 #[doc = "Field `AERR` reader - Acknowledgment Error Interrupt Mask"]
-pub type AERR_R = crate::BitReader<bool>;
+pub type AERR_R = crate::BitReader;
 #[doc = "Field `FERR` reader - Form Error Interrupt Mask"]
-pub type FERR_R = crate::BitReader<bool>;
+pub type FERR_R = crate::BitReader;
 #[doc = "Field `BERR` reader - Bit Error Interrupt Mask"]
-pub type BERR_R = crate::BitReader<bool>;
+pub type BERR_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Mailbox 0 Interrupt Mask"]
     #[inline(always)]
@@ -150,15 +149,13 @@ impl R {
         BERR_R::new(((self.bits >> 28) & 1) != 0)
     }
 }
-#[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](index.html) module"]
+#[doc = "Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`imr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IMR_SPEC;
 impl crate::RegisterSpec for IMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [imr::R](R) reader structure"]
-impl crate::Readable for IMR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`imr::R`](R) reader structure"]
+impl crate::Readable for IMR_SPEC {}
 #[doc = "`reset()` method sets IMR to value 0"]
 impl crate::Resettable for IMR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

@@ -1,32 +1,31 @@
 #[doc = "Register `SR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<SR_SPEC>);
+pub type R = crate::R<SR_SPEC>;
 #[doc = "Field `SMCSTS` reader - NAND Flash Controller status (this field cannot be reset)"]
-pub type SMCSTS_R = crate::BitReader<bool>;
+pub type SMCSTS_R = crate::BitReader;
 #[doc = "Field `RB_RISE` reader - Selected Ready Busy Rising Edge Detected"]
-pub type RB_RISE_R = crate::BitReader<bool>;
+pub type RB_RISE_R = crate::BitReader;
 #[doc = "Field `RB_FALL` reader - Selected Ready Busy Falling Edge Detected"]
-pub type RB_FALL_R = crate::BitReader<bool>;
+pub type RB_FALL_R = crate::BitReader;
 #[doc = "Field `NFCBUSY` reader - NFC Busy (this field cannot be reset)"]
-pub type NFCBUSY_R = crate::BitReader<bool>;
+pub type NFCBUSY_R = crate::BitReader;
 #[doc = "Field `NFCWR` reader - NFC Write/Read Operation (this field cannot be reset)"]
-pub type NFCWR_R = crate::BitReader<bool>;
+pub type NFCWR_R = crate::BitReader;
 #[doc = "Field `NFCSID` reader - NFC Chip Select ID (this field cannot be reset)"]
-pub type NFCSID_R = crate::FieldReader<u8, u8>;
+pub type NFCSID_R = crate::FieldReader;
 #[doc = "Field `XFRDONE` reader - NFC Data Transfer Terminated"]
-pub type XFRDONE_R = crate::BitReader<bool>;
+pub type XFRDONE_R = crate::BitReader;
 #[doc = "Field `CMDDONE` reader - Command Done"]
-pub type CMDDONE_R = crate::BitReader<bool>;
+pub type CMDDONE_R = crate::BitReader;
 #[doc = "Field `DTOE` reader - Data Timeout Error"]
-pub type DTOE_R = crate::BitReader<bool>;
+pub type DTOE_R = crate::BitReader;
 #[doc = "Field `UNDEF` reader - Undefined Area Error"]
-pub type UNDEF_R = crate::BitReader<bool>;
+pub type UNDEF_R = crate::BitReader;
 #[doc = "Field `AWB` reader - Accessing While Busy"]
-pub type AWB_R = crate::BitReader<bool>;
+pub type AWB_R = crate::BitReader;
 #[doc = "Field `NFCASE` reader - NFC Access Size Error"]
-pub type NFCASE_R = crate::BitReader<bool>;
+pub type NFCASE_R = crate::BitReader;
 #[doc = "Field `RB_EDGE0` reader - Ready/Busy Line 0 Edge Detected"]
-pub type RB_EDGE0_R = crate::BitReader<bool>;
+pub type RB_EDGE0_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - NAND Flash Controller status (this field cannot be reset)"]
     #[inline(always)]
@@ -94,15 +93,13 @@ impl R {
         RB_EDGE0_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
-#[doc = "SMC NFC Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]
+#[doc = "SMC NFC Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SR_SPEC;
 impl crate::RegisterSpec for SR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sr::R](R) reader structure"]
-impl crate::Readable for SR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`sr::R`](R) reader structure"]
+impl crate::Readable for SR_SPEC {}
 #[doc = "`reset()` method sets SR to value 0"]
 impl crate::Resettable for SR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

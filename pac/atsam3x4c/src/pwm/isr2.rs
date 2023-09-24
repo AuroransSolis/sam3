@@ -1,46 +1,45 @@
 #[doc = "Register `ISR2` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<ISR2_SPEC>);
+pub type R = crate::R<ISR2_SPEC>;
 #[doc = "Field `WRDY` reader - Write Ready for Synchronous Channels Update"]
-pub type WRDY_R = crate::BitReader<bool>;
+pub type WRDY_R = crate::BitReader;
 #[doc = "Field `ENDTX` reader - PDC End of TX Buffer"]
-pub type ENDTX_R = crate::BitReader<bool>;
+pub type ENDTX_R = crate::BitReader;
 #[doc = "Field `TXBUFE` reader - PDC TX Buffer Empty"]
-pub type TXBUFE_R = crate::BitReader<bool>;
+pub type TXBUFE_R = crate::BitReader;
 #[doc = "Field `UNRE` reader - Synchronous Channels Update Underrun Error"]
-pub type UNRE_R = crate::BitReader<bool>;
+pub type UNRE_R = crate::BitReader;
 #[doc = "Field `CMPM0` reader - Comparison 0 Match"]
-pub type CMPM0_R = crate::BitReader<bool>;
+pub type CMPM0_R = crate::BitReader;
 #[doc = "Field `CMPM1` reader - Comparison 1 Match"]
-pub type CMPM1_R = crate::BitReader<bool>;
+pub type CMPM1_R = crate::BitReader;
 #[doc = "Field `CMPM2` reader - Comparison 2 Match"]
-pub type CMPM2_R = crate::BitReader<bool>;
+pub type CMPM2_R = crate::BitReader;
 #[doc = "Field `CMPM3` reader - Comparison 3 Match"]
-pub type CMPM3_R = crate::BitReader<bool>;
+pub type CMPM3_R = crate::BitReader;
 #[doc = "Field `CMPM4` reader - Comparison 4 Match"]
-pub type CMPM4_R = crate::BitReader<bool>;
+pub type CMPM4_R = crate::BitReader;
 #[doc = "Field `CMPM5` reader - Comparison 5 Match"]
-pub type CMPM5_R = crate::BitReader<bool>;
+pub type CMPM5_R = crate::BitReader;
 #[doc = "Field `CMPM6` reader - Comparison 6 Match"]
-pub type CMPM6_R = crate::BitReader<bool>;
+pub type CMPM6_R = crate::BitReader;
 #[doc = "Field `CMPM7` reader - Comparison 7 Match"]
-pub type CMPM7_R = crate::BitReader<bool>;
+pub type CMPM7_R = crate::BitReader;
 #[doc = "Field `CMPU0` reader - Comparison 0 Update"]
-pub type CMPU0_R = crate::BitReader<bool>;
+pub type CMPU0_R = crate::BitReader;
 #[doc = "Field `CMPU1` reader - Comparison 1 Update"]
-pub type CMPU1_R = crate::BitReader<bool>;
+pub type CMPU1_R = crate::BitReader;
 #[doc = "Field `CMPU2` reader - Comparison 2 Update"]
-pub type CMPU2_R = crate::BitReader<bool>;
+pub type CMPU2_R = crate::BitReader;
 #[doc = "Field `CMPU3` reader - Comparison 3 Update"]
-pub type CMPU3_R = crate::BitReader<bool>;
+pub type CMPU3_R = crate::BitReader;
 #[doc = "Field `CMPU4` reader - Comparison 4 Update"]
-pub type CMPU4_R = crate::BitReader<bool>;
+pub type CMPU4_R = crate::BitReader;
 #[doc = "Field `CMPU5` reader - Comparison 5 Update"]
-pub type CMPU5_R = crate::BitReader<bool>;
+pub type CMPU5_R = crate::BitReader;
 #[doc = "Field `CMPU6` reader - Comparison 6 Update"]
-pub type CMPU6_R = crate::BitReader<bool>;
+pub type CMPU6_R = crate::BitReader;
 #[doc = "Field `CMPU7` reader - Comparison 7 Update"]
-pub type CMPU7_R = crate::BitReader<bool>;
+pub type CMPU7_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Write Ready for Synchronous Channels Update"]
     #[inline(always)]
@@ -143,15 +142,13 @@ impl R {
         CMPU7_R::new(((self.bits >> 23) & 1) != 0)
     }
 }
-#[doc = "PWM Interrupt Status Register 2\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [isr2](index.html) module"]
+#[doc = "PWM Interrupt Status Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`isr2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ISR2_SPEC;
 impl crate::RegisterSpec for ISR2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [isr2::R](R) reader structure"]
-impl crate::Readable for ISR2_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`isr2::R`](R) reader structure"]
+impl crate::Readable for ISR2_SPEC {}
 #[doc = "`reset()` method sets ISR2 to value 0"]
 impl crate::Resettable for ISR2_SPEC {
     const RESET_VALUE: Self::Ux = 0;

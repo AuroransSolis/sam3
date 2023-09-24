@@ -1,41 +1,39 @@
 #[doc = "Register `SMMR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<SMMR_SPEC>);
+pub type R = crate::R<SMMR_SPEC>;
 #[doc = "Register `SMMR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<SMMR_SPEC>);
+pub type W = crate::W<SMMR_SPEC>;
 #[doc = "Field `GCEN0` reader - Gray Count ENable"]
-pub type GCEN0_R = crate::BitReader<bool>;
+pub type GCEN0_R = crate::BitReader;
 #[doc = "Field `GCEN0` writer - Gray Count ENable"]
-pub type GCEN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMMR_SPEC, bool, O>;
+pub type GCEN0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `GCEN1` reader - Gray Count ENable"]
-pub type GCEN1_R = crate::BitReader<bool>;
+pub type GCEN1_R = crate::BitReader;
 #[doc = "Field `GCEN1` writer - Gray Count ENable"]
-pub type GCEN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMMR_SPEC, bool, O>;
+pub type GCEN1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `GCEN2` reader - Gray Count ENable"]
-pub type GCEN2_R = crate::BitReader<bool>;
+pub type GCEN2_R = crate::BitReader;
 #[doc = "Field `GCEN2` writer - Gray Count ENable"]
-pub type GCEN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMMR_SPEC, bool, O>;
+pub type GCEN2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `GCEN3` reader - Gray Count ENable"]
-pub type GCEN3_R = crate::BitReader<bool>;
+pub type GCEN3_R = crate::BitReader;
 #[doc = "Field `GCEN3` writer - Gray Count ENable"]
-pub type GCEN3_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMMR_SPEC, bool, O>;
+pub type GCEN3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DOWN0` reader - DOWN Count"]
-pub type DOWN0_R = crate::BitReader<bool>;
+pub type DOWN0_R = crate::BitReader;
 #[doc = "Field `DOWN0` writer - DOWN Count"]
-pub type DOWN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMMR_SPEC, bool, O>;
+pub type DOWN0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DOWN1` reader - DOWN Count"]
-pub type DOWN1_R = crate::BitReader<bool>;
+pub type DOWN1_R = crate::BitReader;
 #[doc = "Field `DOWN1` writer - DOWN Count"]
-pub type DOWN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMMR_SPEC, bool, O>;
+pub type DOWN1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DOWN2` reader - DOWN Count"]
-pub type DOWN2_R = crate::BitReader<bool>;
+pub type DOWN2_R = crate::BitReader;
 #[doc = "Field `DOWN2` writer - DOWN Count"]
-pub type DOWN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMMR_SPEC, bool, O>;
+pub type DOWN2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DOWN3` reader - DOWN Count"]
-pub type DOWN3_R = crate::BitReader<bool>;
+pub type DOWN3_R = crate::BitReader;
 #[doc = "Field `DOWN3` writer - DOWN Count"]
-pub type DOWN3_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMMR_SPEC, bool, O>;
+pub type DOWN3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - Gray Count ENable"]
     #[inline(always)]
@@ -82,70 +80,67 @@ impl W {
     #[doc = "Bit 0 - Gray Count ENable"]
     #[inline(always)]
     #[must_use]
-    pub fn gcen0(&mut self) -> GCEN0_W<0> {
+    pub fn gcen0(&mut self) -> GCEN0_W<SMMR_SPEC, 0> {
         GCEN0_W::new(self)
     }
     #[doc = "Bit 1 - Gray Count ENable"]
     #[inline(always)]
     #[must_use]
-    pub fn gcen1(&mut self) -> GCEN1_W<1> {
+    pub fn gcen1(&mut self) -> GCEN1_W<SMMR_SPEC, 1> {
         GCEN1_W::new(self)
     }
     #[doc = "Bit 2 - Gray Count ENable"]
     #[inline(always)]
     #[must_use]
-    pub fn gcen2(&mut self) -> GCEN2_W<2> {
+    pub fn gcen2(&mut self) -> GCEN2_W<SMMR_SPEC, 2> {
         GCEN2_W::new(self)
     }
     #[doc = "Bit 3 - Gray Count ENable"]
     #[inline(always)]
     #[must_use]
-    pub fn gcen3(&mut self) -> GCEN3_W<3> {
+    pub fn gcen3(&mut self) -> GCEN3_W<SMMR_SPEC, 3> {
         GCEN3_W::new(self)
     }
     #[doc = "Bit 16 - DOWN Count"]
     #[inline(always)]
     #[must_use]
-    pub fn down0(&mut self) -> DOWN0_W<16> {
+    pub fn down0(&mut self) -> DOWN0_W<SMMR_SPEC, 16> {
         DOWN0_W::new(self)
     }
     #[doc = "Bit 17 - DOWN Count"]
     #[inline(always)]
     #[must_use]
-    pub fn down1(&mut self) -> DOWN1_W<17> {
+    pub fn down1(&mut self) -> DOWN1_W<SMMR_SPEC, 17> {
         DOWN1_W::new(self)
     }
     #[doc = "Bit 18 - DOWN Count"]
     #[inline(always)]
     #[must_use]
-    pub fn down2(&mut self) -> DOWN2_W<18> {
+    pub fn down2(&mut self) -> DOWN2_W<SMMR_SPEC, 18> {
         DOWN2_W::new(self)
     }
     #[doc = "Bit 19 - DOWN Count"]
     #[inline(always)]
     #[must_use]
-    pub fn down3(&mut self) -> DOWN3_W<19> {
+    pub fn down3(&mut self) -> DOWN3_W<SMMR_SPEC, 19> {
         DOWN3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PWM Stepper Motor Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [smmr](index.html) module"]
+#[doc = "PWM Stepper Motor Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`smmr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`smmr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SMMR_SPEC;
 impl crate::RegisterSpec for SMMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [smmr::R](R) reader structure"]
-impl crate::Readable for SMMR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [smmr::W](W) writer structure"]
+#[doc = "`read()` method returns [`smmr::R`](R) reader structure"]
+impl crate::Readable for SMMR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`smmr::W`](W) writer structure"]
 impl crate::Writable for SMMR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

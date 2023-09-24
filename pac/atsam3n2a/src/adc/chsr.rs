@@ -1,38 +1,37 @@
 #[doc = "Register `CHSR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<CHSR_SPEC>);
+pub type R = crate::R<CHSR_SPEC>;
 #[doc = "Field `CH0` reader - Channel 0 Status"]
-pub type CH0_R = crate::BitReader<bool>;
+pub type CH0_R = crate::BitReader;
 #[doc = "Field `CH1` reader - Channel 1 Status"]
-pub type CH1_R = crate::BitReader<bool>;
+pub type CH1_R = crate::BitReader;
 #[doc = "Field `CH2` reader - Channel 2 Status"]
-pub type CH2_R = crate::BitReader<bool>;
+pub type CH2_R = crate::BitReader;
 #[doc = "Field `CH3` reader - Channel 3 Status"]
-pub type CH3_R = crate::BitReader<bool>;
+pub type CH3_R = crate::BitReader;
 #[doc = "Field `CH4` reader - Channel 4 Status"]
-pub type CH4_R = crate::BitReader<bool>;
+pub type CH4_R = crate::BitReader;
 #[doc = "Field `CH5` reader - Channel 5 Status"]
-pub type CH5_R = crate::BitReader<bool>;
+pub type CH5_R = crate::BitReader;
 #[doc = "Field `CH6` reader - Channel 6 Status"]
-pub type CH6_R = crate::BitReader<bool>;
+pub type CH6_R = crate::BitReader;
 #[doc = "Field `CH7` reader - Channel 7 Status"]
-pub type CH7_R = crate::BitReader<bool>;
+pub type CH7_R = crate::BitReader;
 #[doc = "Field `CH8` reader - Channel 8 Status"]
-pub type CH8_R = crate::BitReader<bool>;
+pub type CH8_R = crate::BitReader;
 #[doc = "Field `CH9` reader - Channel 9 Status"]
-pub type CH9_R = crate::BitReader<bool>;
+pub type CH9_R = crate::BitReader;
 #[doc = "Field `CH10` reader - Channel 10 Status"]
-pub type CH10_R = crate::BitReader<bool>;
+pub type CH10_R = crate::BitReader;
 #[doc = "Field `CH11` reader - Channel 11 Status"]
-pub type CH11_R = crate::BitReader<bool>;
+pub type CH11_R = crate::BitReader;
 #[doc = "Field `CH12` reader - Channel 12 Status"]
-pub type CH12_R = crate::BitReader<bool>;
+pub type CH12_R = crate::BitReader;
 #[doc = "Field `CH13` reader - Channel 13 Status"]
-pub type CH13_R = crate::BitReader<bool>;
+pub type CH13_R = crate::BitReader;
 #[doc = "Field `CH14` reader - Channel 14 Status"]
-pub type CH14_R = crate::BitReader<bool>;
+pub type CH14_R = crate::BitReader;
 #[doc = "Field `CH15` reader - Channel 15 Status"]
-pub type CH15_R = crate::BitReader<bool>;
+pub type CH15_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Channel 0 Status"]
     #[inline(always)]
@@ -115,15 +114,13 @@ impl R {
         CH15_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Channel Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chsr](index.html) module"]
+#[doc = "Channel Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`chsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CHSR_SPEC;
 impl crate::RegisterSpec for CHSR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [chsr::R](R) reader structure"]
-impl crate::Readable for CHSR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`chsr::R`](R) reader structure"]
+impl crate::Readable for CHSR_SPEC {}
 #[doc = "`reset()` method sets CHSR to value 0"]
 impl crate::Resettable for CHSR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

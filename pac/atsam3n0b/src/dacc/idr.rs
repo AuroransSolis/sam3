@@ -1,46 +1,44 @@
 #[doc = "Register `IDR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<IDR_SPEC>);
+pub type W = crate::W<IDR_SPEC>;
 #[doc = "Field `TXRDY` writer - Transmission Ready Interrupt Disable"]
-pub type TXRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
+pub type TXRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `ENDTX` writer - End of PDC Interrupt Disable"]
-pub type ENDTX_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
+pub type ENDTX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TXBUFE` writer - Buffer Empty Interrupt Disable"]
-pub type TXBUFE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
+pub type TXBUFE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl W {
     #[doc = "Bit 0 - Transmission Ready Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn txrdy(&mut self) -> TXRDY_W<0> {
+    pub fn txrdy(&mut self) -> TXRDY_W<IDR_SPEC, 0> {
         TXRDY_W::new(self)
     }
     #[doc = "Bit 1 - End of PDC Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn endtx(&mut self) -> ENDTX_W<1> {
+    pub fn endtx(&mut self) -> ENDTX_W<IDR_SPEC, 1> {
         ENDTX_W::new(self)
     }
     #[doc = "Bit 2 - Buffer Empty Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn txbufe(&mut self) -> TXBUFE_W<2> {
+    pub fn txbufe(&mut self) -> TXBUFE_W<IDR_SPEC, 2> {
         TXBUFE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Interrupt Disable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [idr](index.html) module"]
+#[doc = "Interrupt Disable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`idr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IDR_SPEC;
 impl crate::RegisterSpec for IDR_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [idr::W](W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [`idr::W`](W) writer structure"]
 impl crate::Writable for IDR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

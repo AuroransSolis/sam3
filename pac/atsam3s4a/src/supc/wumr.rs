@@ -1,9 +1,7 @@
 #[doc = "Register `WUMR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<WUMR_SPEC>);
+pub type R = crate::R<WUMR_SPEC>;
 #[doc = "Register `WUMR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<WUMR_SPEC>);
+pub type W = crate::W<WUMR_SPEC>;
 #[doc = "Field `SMEN` reader - Supply Monitor Wake-up Enable"]
 pub type SMEN_R = crate::BitReader<SMEN_A>;
 #[doc = "Supply Monitor Wake-up Enable\n\nValue on reset: 0"]
@@ -29,28 +27,31 @@ impl SMEN_R {
             true => SMEN_A::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `NotEnable`"]
+    #[doc = "the supply monitor detection has no wake-up effect."]
     #[inline(always)]
     pub fn is_not_enable(&self) -> bool {
         *self == SMEN_A::NotEnable
     }
-    #[doc = "Checks if the value of the field is `Enable`"]
+    #[doc = "the supply monitor detection forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == SMEN_A::Enable
     }
 }
 #[doc = "Field `SMEN` writer - Supply Monitor Wake-up Enable"]
-pub type SMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, WUMR_SPEC, SMEN_A, O>;
-impl<'a, const O: u8> SMEN_W<'a, O> {
+pub type SMEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMEN_A>;
+impl<'a, REG, const O: u8> SMEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "the supply monitor detection has no wake-up effect."]
     #[inline(always)]
-    pub fn not_enable(self) -> &'a mut W {
+    pub fn not_enable(self) -> &'a mut crate::W<REG> {
         self.variant(SMEN_A::NotEnable)
     }
     #[doc = "the supply monitor detection forces the wake-up of the core power supply."]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(SMEN_A::Enable)
     }
 }
@@ -79,28 +80,31 @@ impl RTTEN_R {
             true => RTTEN_A::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `NotEnable`"]
+    #[doc = "the RTT alarm signal has no wake-up effect."]
     #[inline(always)]
     pub fn is_not_enable(&self) -> bool {
         *self == RTTEN_A::NotEnable
     }
-    #[doc = "Checks if the value of the field is `Enable`"]
+    #[doc = "the RTT alarm signal forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == RTTEN_A::Enable
     }
 }
 #[doc = "Field `RTTEN` writer - Real Time Timer Wake-up Enable"]
-pub type RTTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, WUMR_SPEC, RTTEN_A, O>;
-impl<'a, const O: u8> RTTEN_W<'a, O> {
+pub type RTTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTTEN_A>;
+impl<'a, REG, const O: u8> RTTEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "the RTT alarm signal has no wake-up effect."]
     #[inline(always)]
-    pub fn not_enable(self) -> &'a mut W {
+    pub fn not_enable(self) -> &'a mut crate::W<REG> {
         self.variant(RTTEN_A::NotEnable)
     }
     #[doc = "the RTT alarm signal forces the wake-up of the core power supply."]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(RTTEN_A::Enable)
     }
 }
@@ -129,33 +133,36 @@ impl RTCEN_R {
             true => RTCEN_A::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `NotEnable`"]
+    #[doc = "the RTC alarm signal has no wake-up effect."]
     #[inline(always)]
     pub fn is_not_enable(&self) -> bool {
         *self == RTCEN_A::NotEnable
     }
-    #[doc = "Checks if the value of the field is `Enable`"]
+    #[doc = "the RTC alarm signal forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == RTCEN_A::Enable
     }
 }
 #[doc = "Field `RTCEN` writer - Real Time Clock Wake-up Enable"]
-pub type RTCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, WUMR_SPEC, RTCEN_A, O>;
-impl<'a, const O: u8> RTCEN_W<'a, O> {
+pub type RTCEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTCEN_A>;
+impl<'a, REG, const O: u8> RTCEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "the RTC alarm signal has no wake-up effect."]
     #[inline(always)]
-    pub fn not_enable(self) -> &'a mut W {
+    pub fn not_enable(self) -> &'a mut crate::W<REG> {
         self.variant(RTCEN_A::NotEnable)
     }
     #[doc = "the RTC alarm signal forces the wake-up of the core power supply."]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(RTCEN_A::Enable)
     }
 }
 #[doc = "Field `WKUPDBC` reader - Wake-up Inputs Debouncer Period"]
-pub type WKUPDBC_R = crate::FieldReader<u8, WKUPDBC_A>;
+pub type WKUPDBC_R = crate::FieldReader<WKUPDBC_A>;
 #[doc = "Wake-up Inputs Debouncer Period\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -179,6 +186,9 @@ impl From<WKUPDBC_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for WKUPDBC_A {
+    type Ux = u8;
+}
 impl WKUPDBC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -193,68 +203,72 @@ impl WKUPDBC_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Immediate`"]
+    #[doc = "Immediate, no debouncing, detected active at least on one Slow Clock edge."]
     #[inline(always)]
     pub fn is_immediate(&self) -> bool {
         *self == WKUPDBC_A::Immediate
     }
-    #[doc = "Checks if the value of the field is `_3Sclk`"]
+    #[doc = "WKUPx shall be in its active state for at least 3 SLCK periods"]
     #[inline(always)]
     pub fn is_3_sclk(&self) -> bool {
         *self == WKUPDBC_A::_3Sclk
     }
-    #[doc = "Checks if the value of the field is `_32Sclk`"]
+    #[doc = "WKUPx shall be in its active state for at least 32 SLCK periods"]
     #[inline(always)]
     pub fn is_32_sclk(&self) -> bool {
         *self == WKUPDBC_A::_32Sclk
     }
-    #[doc = "Checks if the value of the field is `_512Sclk`"]
+    #[doc = "WKUPx shall be in its active state for at least 512 SLCK periods"]
     #[inline(always)]
     pub fn is_512_sclk(&self) -> bool {
         *self == WKUPDBC_A::_512Sclk
     }
-    #[doc = "Checks if the value of the field is `_4096Sclk`"]
+    #[doc = "WKUPx shall be in its active state for at least 4,096 SLCK periods"]
     #[inline(always)]
     pub fn is_4096_sclk(&self) -> bool {
         *self == WKUPDBC_A::_4096Sclk
     }
-    #[doc = "Checks if the value of the field is `_32768Sclk`"]
+    #[doc = "WKUPx shall be in its active state for at least 32,768 SLCK periods"]
     #[inline(always)]
     pub fn is_32768_sclk(&self) -> bool {
         *self == WKUPDBC_A::_32768Sclk
     }
 }
 #[doc = "Field `WKUPDBC` writer - Wake-up Inputs Debouncer Period"]
-pub type WKUPDBC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WUMR_SPEC, u8, WKUPDBC_A, 3, O>;
-impl<'a, const O: u8> WKUPDBC_W<'a, O> {
+pub type WKUPDBC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, WKUPDBC_A>;
+impl<'a, REG, const O: u8> WKUPDBC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Immediate, no debouncing, detected active at least on one Slow Clock edge."]
     #[inline(always)]
-    pub fn immediate(self) -> &'a mut W {
+    pub fn immediate(self) -> &'a mut crate::W<REG> {
         self.variant(WKUPDBC_A::Immediate)
     }
     #[doc = "WKUPx shall be in its active state for at least 3 SLCK periods"]
     #[inline(always)]
-    pub fn _3_sclk(self) -> &'a mut W {
+    pub fn _3_sclk(self) -> &'a mut crate::W<REG> {
         self.variant(WKUPDBC_A::_3Sclk)
     }
     #[doc = "WKUPx shall be in its active state for at least 32 SLCK periods"]
     #[inline(always)]
-    pub fn _32_sclk(self) -> &'a mut W {
+    pub fn _32_sclk(self) -> &'a mut crate::W<REG> {
         self.variant(WKUPDBC_A::_32Sclk)
     }
     #[doc = "WKUPx shall be in its active state for at least 512 SLCK periods"]
     #[inline(always)]
-    pub fn _512_sclk(self) -> &'a mut W {
+    pub fn _512_sclk(self) -> &'a mut crate::W<REG> {
         self.variant(WKUPDBC_A::_512Sclk)
     }
     #[doc = "WKUPx shall be in its active state for at least 4,096 SLCK periods"]
     #[inline(always)]
-    pub fn _4096_sclk(self) -> &'a mut W {
+    pub fn _4096_sclk(self) -> &'a mut crate::W<REG> {
         self.variant(WKUPDBC_A::_4096Sclk)
     }
     #[doc = "WKUPx shall be in its active state for at least 32,768 SLCK periods"]
     #[inline(always)]
-    pub fn _32768_sclk(self) -> &'a mut W {
+    pub fn _32768_sclk(self) -> &'a mut crate::W<REG> {
         self.variant(WKUPDBC_A::_32768Sclk)
     }
 }
@@ -284,46 +298,43 @@ impl W {
     #[doc = "Bit 1 - Supply Monitor Wake-up Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn smen(&mut self) -> SMEN_W<1> {
+    pub fn smen(&mut self) -> SMEN_W<WUMR_SPEC, 1> {
         SMEN_W::new(self)
     }
     #[doc = "Bit 2 - Real Time Timer Wake-up Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rtten(&mut self) -> RTTEN_W<2> {
+    pub fn rtten(&mut self) -> RTTEN_W<WUMR_SPEC, 2> {
         RTTEN_W::new(self)
     }
     #[doc = "Bit 3 - Real Time Clock Wake-up Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rtcen(&mut self) -> RTCEN_W<3> {
+    pub fn rtcen(&mut self) -> RTCEN_W<WUMR_SPEC, 3> {
         RTCEN_W::new(self)
     }
     #[doc = "Bits 12:14 - Wake-up Inputs Debouncer Period"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupdbc(&mut self) -> WKUPDBC_W<12> {
+    pub fn wkupdbc(&mut self) -> WKUPDBC_W<WUMR_SPEC, 12> {
         WKUPDBC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Supply Controller Wake-up Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wumr](index.html) module"]
+#[doc = "Supply Controller Wake-up Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wumr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wumr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct WUMR_SPEC;
 impl crate::RegisterSpec for WUMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [wumr::R](R) reader structure"]
-impl crate::Readable for WUMR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [wumr::W](W) writer structure"]
+#[doc = "`read()` method returns [`wumr::R`](R) reader structure"]
+impl crate::Readable for WUMR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`wumr::W`](W) writer structure"]
 impl crate::Writable for WUMR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

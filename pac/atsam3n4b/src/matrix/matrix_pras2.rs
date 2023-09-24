@@ -1,25 +1,23 @@
 #[doc = "Register `MATRIX_PRAS2` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<MATRIX_PRAS2_SPEC>);
+pub type R = crate::R<MATRIX_PRAS2_SPEC>;
 #[doc = "Register `MATRIX_PRAS2` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<MATRIX_PRAS2_SPEC>);
+pub type W = crate::W<MATRIX_PRAS2_SPEC>;
 #[doc = "Field `M0PR` reader - Master 0 Priority"]
-pub type M0PR_R = crate::FieldReader<u8, u8>;
+pub type M0PR_R = crate::FieldReader;
 #[doc = "Field `M0PR` writer - Master 0 Priority"]
-pub type M0PR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MATRIX_PRAS2_SPEC, u8, u8, 2, O>;
+pub type M0PR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `M1PR` reader - Master 1 Priority"]
-pub type M1PR_R = crate::FieldReader<u8, u8>;
+pub type M1PR_R = crate::FieldReader;
 #[doc = "Field `M1PR` writer - Master 1 Priority"]
-pub type M1PR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MATRIX_PRAS2_SPEC, u8, u8, 2, O>;
+pub type M1PR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `M2PR` reader - Master 2 Priority"]
-pub type M2PR_R = crate::FieldReader<u8, u8>;
+pub type M2PR_R = crate::FieldReader;
 #[doc = "Field `M2PR` writer - Master 2 Priority"]
-pub type M2PR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MATRIX_PRAS2_SPEC, u8, u8, 2, O>;
+pub type M2PR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `M3PR` reader - Master 3 Priority"]
-pub type M3PR_R = crate::FieldReader<u8, u8>;
+pub type M3PR_R = crate::FieldReader;
 #[doc = "Field `M3PR` writer - Master 3 Priority"]
-pub type M3PR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MATRIX_PRAS2_SPEC, u8, u8, 2, O>;
+pub type M3PR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 impl R {
     #[doc = "Bits 0:1 - Master 0 Priority"]
     #[inline(always)]
@@ -46,46 +44,43 @@ impl W {
     #[doc = "Bits 0:1 - Master 0 Priority"]
     #[inline(always)]
     #[must_use]
-    pub fn m0pr(&mut self) -> M0PR_W<0> {
+    pub fn m0pr(&mut self) -> M0PR_W<MATRIX_PRAS2_SPEC, 0> {
         M0PR_W::new(self)
     }
     #[doc = "Bits 4:5 - Master 1 Priority"]
     #[inline(always)]
     #[must_use]
-    pub fn m1pr(&mut self) -> M1PR_W<4> {
+    pub fn m1pr(&mut self) -> M1PR_W<MATRIX_PRAS2_SPEC, 4> {
         M1PR_W::new(self)
     }
     #[doc = "Bits 8:9 - Master 2 Priority"]
     #[inline(always)]
     #[must_use]
-    pub fn m2pr(&mut self) -> M2PR_W<8> {
+    pub fn m2pr(&mut self) -> M2PR_W<MATRIX_PRAS2_SPEC, 8> {
         M2PR_W::new(self)
     }
     #[doc = "Bits 12:13 - Master 3 Priority"]
     #[inline(always)]
     #[must_use]
-    pub fn m3pr(&mut self) -> M3PR_W<12> {
+    pub fn m3pr(&mut self) -> M3PR_W<MATRIX_PRAS2_SPEC, 12> {
         M3PR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Priority Register A for Slave 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [matrix_pras2](index.html) module"]
+#[doc = "Priority Register A for Slave 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`matrix_pras2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`matrix_pras2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MATRIX_PRAS2_SPEC;
 impl crate::RegisterSpec for MATRIX_PRAS2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [matrix_pras2::R](R) reader structure"]
-impl crate::Readable for MATRIX_PRAS2_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [matrix_pras2::W](W) writer structure"]
+#[doc = "`read()` method returns [`matrix_pras2::R`](R) reader structure"]
+impl crate::Readable for MATRIX_PRAS2_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`matrix_pras2::W`](W) writer structure"]
 impl crate::Writable for MATRIX_PRAS2_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

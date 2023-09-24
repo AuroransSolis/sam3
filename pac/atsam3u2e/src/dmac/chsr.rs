@@ -1,38 +1,37 @@
 #[doc = "Register `CHSR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<CHSR_SPEC>);
+pub type R = crate::R<CHSR_SPEC>;
 #[doc = "Field `ENA0` reader - Enable \\[3:0\\]"]
-pub type ENA0_R = crate::BitReader<bool>;
+pub type ENA0_R = crate::BitReader;
 #[doc = "Field `ENA1` reader - Enable \\[3:0\\]"]
-pub type ENA1_R = crate::BitReader<bool>;
+pub type ENA1_R = crate::BitReader;
 #[doc = "Field `ENA2` reader - Enable \\[3:0\\]"]
-pub type ENA2_R = crate::BitReader<bool>;
+pub type ENA2_R = crate::BitReader;
 #[doc = "Field `ENA3` reader - Enable \\[3:0\\]"]
-pub type ENA3_R = crate::BitReader<bool>;
+pub type ENA3_R = crate::BitReader;
 #[doc = "Field `SUSP0` reader - Suspend \\[3:0\\]"]
-pub type SUSP0_R = crate::BitReader<bool>;
+pub type SUSP0_R = crate::BitReader;
 #[doc = "Field `SUSP1` reader - Suspend \\[3:0\\]"]
-pub type SUSP1_R = crate::BitReader<bool>;
+pub type SUSP1_R = crate::BitReader;
 #[doc = "Field `SUSP2` reader - Suspend \\[3:0\\]"]
-pub type SUSP2_R = crate::BitReader<bool>;
+pub type SUSP2_R = crate::BitReader;
 #[doc = "Field `SUSP3` reader - Suspend \\[3:0\\]"]
-pub type SUSP3_R = crate::BitReader<bool>;
+pub type SUSP3_R = crate::BitReader;
 #[doc = "Field `EMPT0` reader - Empty \\[3:0\\]"]
-pub type EMPT0_R = crate::BitReader<bool>;
+pub type EMPT0_R = crate::BitReader;
 #[doc = "Field `EMPT1` reader - Empty \\[3:0\\]"]
-pub type EMPT1_R = crate::BitReader<bool>;
+pub type EMPT1_R = crate::BitReader;
 #[doc = "Field `EMPT2` reader - Empty \\[3:0\\]"]
-pub type EMPT2_R = crate::BitReader<bool>;
+pub type EMPT2_R = crate::BitReader;
 #[doc = "Field `EMPT3` reader - Empty \\[3:0\\]"]
-pub type EMPT3_R = crate::BitReader<bool>;
+pub type EMPT3_R = crate::BitReader;
 #[doc = "Field `STAL0` reader - Stalled \\[3:0\\]"]
-pub type STAL0_R = crate::BitReader<bool>;
+pub type STAL0_R = crate::BitReader;
 #[doc = "Field `STAL1` reader - Stalled \\[3:0\\]"]
-pub type STAL1_R = crate::BitReader<bool>;
+pub type STAL1_R = crate::BitReader;
 #[doc = "Field `STAL2` reader - Stalled \\[3:0\\]"]
-pub type STAL2_R = crate::BitReader<bool>;
+pub type STAL2_R = crate::BitReader;
 #[doc = "Field `STAL3` reader - Stalled \\[3:0\\]"]
-pub type STAL3_R = crate::BitReader<bool>;
+pub type STAL3_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Enable \\[3:0\\]"]
     #[inline(always)]
@@ -115,15 +114,13 @@ impl R {
         STAL3_R::new(((self.bits >> 27) & 1) != 0)
     }
 }
-#[doc = "DMAC Channel Handler Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chsr](index.html) module"]
+#[doc = "DMAC Channel Handler Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`chsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CHSR_SPEC;
 impl crate::RegisterSpec for CHSR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [chsr::R](R) reader structure"]
-impl crate::Readable for CHSR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`chsr::R`](R) reader structure"]
+impl crate::Readable for CHSR_SPEC {}
 #[doc = "`reset()` method sets CHSR to value 0x00ff_0000"]
 impl crate::Resettable for CHSR_SPEC {
     const RESET_VALUE: Self::Ux = 0x00ff_0000;

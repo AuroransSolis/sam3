@@ -1,9 +1,7 @@
 #[doc = "Register `MODE5` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<MODE5_SPEC>);
+pub type R = crate::R<MODE5_SPEC>;
 #[doc = "Register `MODE5` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<MODE5_SPEC>);
+pub type W = crate::W<MODE5_SPEC>;
 #[doc = "Field `READ_MODE` reader - Selection of the Control Signal for Read Operation"]
 pub type READ_MODE_R = crate::BitReader<READ_MODE_A>;
 #[doc = "Selection of the Control Signal for Read Operation\n\nValue on reset: 1"]
@@ -29,28 +27,31 @@ impl READ_MODE_R {
             true => READ_MODE_A::NrdCtrl,
         }
     }
-    #[doc = "Checks if the value of the field is `NcsCtrl`"]
+    #[doc = "The Read operation is controlled by the NCS signal."]
     #[inline(always)]
     pub fn is_ncs_ctrl(&self) -> bool {
         *self == READ_MODE_A::NcsCtrl
     }
-    #[doc = "Checks if the value of the field is `NrdCtrl`"]
+    #[doc = "The Read operation is controlled by the NRD signal."]
     #[inline(always)]
     pub fn is_nrd_ctrl(&self) -> bool {
         *self == READ_MODE_A::NrdCtrl
     }
 }
 #[doc = "Field `READ_MODE` writer - Selection of the Control Signal for Read Operation"]
-pub type READ_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE5_SPEC, READ_MODE_A, O>;
-impl<'a, const O: u8> READ_MODE_W<'a, O> {
+pub type READ_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, READ_MODE_A>;
+impl<'a, REG, const O: u8> READ_MODE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The Read operation is controlled by the NCS signal."]
     #[inline(always)]
-    pub fn ncs_ctrl(self) -> &'a mut W {
+    pub fn ncs_ctrl(self) -> &'a mut crate::W<REG> {
         self.variant(READ_MODE_A::NcsCtrl)
     }
     #[doc = "The Read operation is controlled by the NRD signal."]
     #[inline(always)]
-    pub fn nrd_ctrl(self) -> &'a mut W {
+    pub fn nrd_ctrl(self) -> &'a mut crate::W<REG> {
         self.variant(READ_MODE_A::NrdCtrl)
     }
 }
@@ -79,33 +80,36 @@ impl WRITE_MODE_R {
             true => WRITE_MODE_A::NweCtrl,
         }
     }
-    #[doc = "Checks if the value of the field is `NcsCtrl`"]
+    #[doc = "The Write operation is controller by the NCS signal."]
     #[inline(always)]
     pub fn is_ncs_ctrl(&self) -> bool {
         *self == WRITE_MODE_A::NcsCtrl
     }
-    #[doc = "Checks if the value of the field is `NweCtrl`"]
+    #[doc = "The Write operation is controlled by the NWE signal."]
     #[inline(always)]
     pub fn is_nwe_ctrl(&self) -> bool {
         *self == WRITE_MODE_A::NweCtrl
     }
 }
 #[doc = "Field `WRITE_MODE` writer - Selection of the Control Signal for Write Operation"]
-pub type WRITE_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE5_SPEC, WRITE_MODE_A, O>;
-impl<'a, const O: u8> WRITE_MODE_W<'a, O> {
+pub type WRITE_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WRITE_MODE_A>;
+impl<'a, REG, const O: u8> WRITE_MODE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The Write operation is controller by the NCS signal."]
     #[inline(always)]
-    pub fn ncs_ctrl(self) -> &'a mut W {
+    pub fn ncs_ctrl(self) -> &'a mut crate::W<REG> {
         self.variant(WRITE_MODE_A::NcsCtrl)
     }
     #[doc = "The Write operation is controlled by the NWE signal."]
     #[inline(always)]
-    pub fn nwe_ctrl(self) -> &'a mut W {
+    pub fn nwe_ctrl(self) -> &'a mut crate::W<REG> {
         self.variant(WRITE_MODE_A::NweCtrl)
     }
 }
 #[doc = "Field `EXNW_MODE` reader - NWAIT Mode"]
-pub type EXNW_MODE_R = crate::FieldReader<u8, EXNW_MODE_A>;
+pub type EXNW_MODE_R = crate::FieldReader<EXNW_MODE_A>;
 #[doc = "NWAIT Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -123,6 +127,9 @@ impl From<EXNW_MODE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for EXNW_MODE_A {
+    type Ux = u8;
+}
 impl EXNW_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -134,46 +141,49 @@ impl EXNW_MODE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
         *self == EXNW_MODE_A::Disabled
     }
-    #[doc = "Checks if the value of the field is `Frozen`"]
+    #[doc = "Frozen Mode"]
     #[inline(always)]
     pub fn is_frozen(&self) -> bool {
         *self == EXNW_MODE_A::Frozen
     }
-    #[doc = "Checks if the value of the field is `Ready`"]
+    #[doc = "Ready Mode"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
         *self == EXNW_MODE_A::Ready
     }
 }
 #[doc = "Field `EXNW_MODE` writer - NWAIT Mode"]
-pub type EXNW_MODE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, MODE5_SPEC, u8, EXNW_MODE_A, 2, O>;
-impl<'a, const O: u8> EXNW_MODE_W<'a, O> {
+pub type EXNW_MODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, EXNW_MODE_A>;
+impl<'a, REG, const O: u8> EXNW_MODE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
         self.variant(EXNW_MODE_A::Disabled)
     }
     #[doc = "Frozen Mode"]
     #[inline(always)]
-    pub fn frozen(self) -> &'a mut W {
+    pub fn frozen(self) -> &'a mut crate::W<REG> {
         self.variant(EXNW_MODE_A::Frozen)
     }
     #[doc = "Ready Mode"]
     #[inline(always)]
-    pub fn ready(self) -> &'a mut W {
+    pub fn ready(self) -> &'a mut crate::W<REG> {
         self.variant(EXNW_MODE_A::Ready)
     }
 }
 #[doc = "Field `BAT` reader - Byte Access Type"]
-pub type BAT_R = crate::BitReader<bool>;
+pub type BAT_R = crate::BitReader;
 #[doc = "Field `BAT` writer - Byte Access Type"]
-pub type BAT_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE5_SPEC, bool, O>;
+pub type BAT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DBW` reader - Data Bus Width"]
 pub type DBW_R = crate::BitReader<DBW_A>;
 #[doc = "Data Bus Width\n\nValue on reset: 0"]
@@ -199,39 +209,42 @@ impl DBW_R {
             true => DBW_A::Bit16,
         }
     }
-    #[doc = "Checks if the value of the field is `Bit8`"]
+    #[doc = "8-bit bus"]
     #[inline(always)]
     pub fn is_bit_8(&self) -> bool {
         *self == DBW_A::Bit8
     }
-    #[doc = "Checks if the value of the field is `Bit16`"]
+    #[doc = "16-bit bus"]
     #[inline(always)]
     pub fn is_bit_16(&self) -> bool {
         *self == DBW_A::Bit16
     }
 }
 #[doc = "Field `DBW` writer - Data Bus Width"]
-pub type DBW_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE5_SPEC, DBW_A, O>;
-impl<'a, const O: u8> DBW_W<'a, O> {
+pub type DBW_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DBW_A>;
+impl<'a, REG, const O: u8> DBW_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "8-bit bus"]
     #[inline(always)]
-    pub fn bit_8(self) -> &'a mut W {
+    pub fn bit_8(self) -> &'a mut crate::W<REG> {
         self.variant(DBW_A::Bit8)
     }
     #[doc = "16-bit bus"]
     #[inline(always)]
-    pub fn bit_16(self) -> &'a mut W {
+    pub fn bit_16(self) -> &'a mut crate::W<REG> {
         self.variant(DBW_A::Bit16)
     }
 }
 #[doc = "Field `TDF_CYCLES` reader - Data Float Time"]
-pub type TDF_CYCLES_R = crate::FieldReader<u8, u8>;
+pub type TDF_CYCLES_R = crate::FieldReader;
 #[doc = "Field `TDF_CYCLES` writer - Data Float Time"]
-pub type TDF_CYCLES_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODE5_SPEC, u8, u8, 4, O>;
+pub type TDF_CYCLES_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `TDF_MODE` reader - TDF Optimization"]
-pub type TDF_MODE_R = crate::BitReader<bool>;
+pub type TDF_MODE_R = crate::BitReader;
 #[doc = "Field `TDF_MODE` writer - TDF Optimization"]
-pub type TDF_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE5_SPEC, bool, O>;
+pub type TDF_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - Selection of the Control Signal for Read Operation"]
     #[inline(always)]
@@ -273,64 +286,61 @@ impl W {
     #[doc = "Bit 0 - Selection of the Control Signal for Read Operation"]
     #[inline(always)]
     #[must_use]
-    pub fn read_mode(&mut self) -> READ_MODE_W<0> {
+    pub fn read_mode(&mut self) -> READ_MODE_W<MODE5_SPEC, 0> {
         READ_MODE_W::new(self)
     }
     #[doc = "Bit 1 - Selection of the Control Signal for Write Operation"]
     #[inline(always)]
     #[must_use]
-    pub fn write_mode(&mut self) -> WRITE_MODE_W<1> {
+    pub fn write_mode(&mut self) -> WRITE_MODE_W<MODE5_SPEC, 1> {
         WRITE_MODE_W::new(self)
     }
     #[doc = "Bits 4:5 - NWAIT Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn exnw_mode(&mut self) -> EXNW_MODE_W<4> {
+    pub fn exnw_mode(&mut self) -> EXNW_MODE_W<MODE5_SPEC, 4> {
         EXNW_MODE_W::new(self)
     }
     #[doc = "Bit 8 - Byte Access Type"]
     #[inline(always)]
     #[must_use]
-    pub fn bat(&mut self) -> BAT_W<8> {
+    pub fn bat(&mut self) -> BAT_W<MODE5_SPEC, 8> {
         BAT_W::new(self)
     }
     #[doc = "Bit 12 - Data Bus Width"]
     #[inline(always)]
     #[must_use]
-    pub fn dbw(&mut self) -> DBW_W<12> {
+    pub fn dbw(&mut self) -> DBW_W<MODE5_SPEC, 12> {
         DBW_W::new(self)
     }
     #[doc = "Bits 16:19 - Data Float Time"]
     #[inline(always)]
     #[must_use]
-    pub fn tdf_cycles(&mut self) -> TDF_CYCLES_W<16> {
+    pub fn tdf_cycles(&mut self) -> TDF_CYCLES_W<MODE5_SPEC, 16> {
         TDF_CYCLES_W::new(self)
     }
     #[doc = "Bit 20 - TDF Optimization"]
     #[inline(always)]
     #[must_use]
-    pub fn tdf_mode(&mut self) -> TDF_MODE_W<20> {
+    pub fn tdf_mode(&mut self) -> TDF_MODE_W<MODE5_SPEC, 20> {
         TDF_MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "SMC Mode Register (CS_number = 5)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mode5](index.html) module"]
+#[doc = "SMC Mode Register (CS_number = 5)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mode5::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mode5::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MODE5_SPEC;
 impl crate::RegisterSpec for MODE5_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mode5::R](R) reader structure"]
-impl crate::Readable for MODE5_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mode5::W](W) writer structure"]
+#[doc = "`read()` method returns [`mode5::R`](R) reader structure"]
+impl crate::Readable for MODE5_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mode5::W`](W) writer structure"]
 impl crate::Writable for MODE5_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

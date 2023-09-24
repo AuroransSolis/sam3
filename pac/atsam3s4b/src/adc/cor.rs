@@ -1,137 +1,135 @@
 #[doc = "Register `COR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<COR_SPEC>);
+pub type R = crate::R<COR_SPEC>;
 #[doc = "Register `COR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<COR_SPEC>);
+pub type W = crate::W<COR_SPEC>;
 #[doc = "Field `OFF0` reader - Offset for channel 0"]
-pub type OFF0_R = crate::BitReader<bool>;
+pub type OFF0_R = crate::BitReader;
 #[doc = "Field `OFF0` writer - Offset for channel 0"]
-pub type OFF0_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type OFF0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OFF1` reader - Offset for channel 1"]
-pub type OFF1_R = crate::BitReader<bool>;
+pub type OFF1_R = crate::BitReader;
 #[doc = "Field `OFF1` writer - Offset for channel 1"]
-pub type OFF1_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type OFF1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OFF2` reader - Offset for channel 2"]
-pub type OFF2_R = crate::BitReader<bool>;
+pub type OFF2_R = crate::BitReader;
 #[doc = "Field `OFF2` writer - Offset for channel 2"]
-pub type OFF2_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type OFF2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OFF3` reader - Offset for channel 3"]
-pub type OFF3_R = crate::BitReader<bool>;
+pub type OFF3_R = crate::BitReader;
 #[doc = "Field `OFF3` writer - Offset for channel 3"]
-pub type OFF3_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type OFF3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OFF4` reader - Offset for channel 4"]
-pub type OFF4_R = crate::BitReader<bool>;
+pub type OFF4_R = crate::BitReader;
 #[doc = "Field `OFF4` writer - Offset for channel 4"]
-pub type OFF4_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type OFF4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OFF5` reader - Offset for channel 5"]
-pub type OFF5_R = crate::BitReader<bool>;
+pub type OFF5_R = crate::BitReader;
 #[doc = "Field `OFF5` writer - Offset for channel 5"]
-pub type OFF5_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type OFF5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OFF6` reader - Offset for channel 6"]
-pub type OFF6_R = crate::BitReader<bool>;
+pub type OFF6_R = crate::BitReader;
 #[doc = "Field `OFF6` writer - Offset for channel 6"]
-pub type OFF6_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type OFF6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OFF7` reader - Offset for channel 7"]
-pub type OFF7_R = crate::BitReader<bool>;
+pub type OFF7_R = crate::BitReader;
 #[doc = "Field `OFF7` writer - Offset for channel 7"]
-pub type OFF7_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type OFF7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OFF8` reader - Offset for channel 8"]
-pub type OFF8_R = crate::BitReader<bool>;
+pub type OFF8_R = crate::BitReader;
 #[doc = "Field `OFF8` writer - Offset for channel 8"]
-pub type OFF8_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type OFF8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OFF9` reader - Offset for channel 9"]
-pub type OFF9_R = crate::BitReader<bool>;
+pub type OFF9_R = crate::BitReader;
 #[doc = "Field `OFF9` writer - Offset for channel 9"]
-pub type OFF9_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type OFF9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OFF10` reader - Offset for channel 10"]
-pub type OFF10_R = crate::BitReader<bool>;
+pub type OFF10_R = crate::BitReader;
 #[doc = "Field `OFF10` writer - Offset for channel 10"]
-pub type OFF10_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type OFF10_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OFF11` reader - Offset for channel 11"]
-pub type OFF11_R = crate::BitReader<bool>;
+pub type OFF11_R = crate::BitReader;
 #[doc = "Field `OFF11` writer - Offset for channel 11"]
-pub type OFF11_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type OFF11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OFF12` reader - Offset for channel 12"]
-pub type OFF12_R = crate::BitReader<bool>;
+pub type OFF12_R = crate::BitReader;
 #[doc = "Field `OFF12` writer - Offset for channel 12"]
-pub type OFF12_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type OFF12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OFF13` reader - Offset for channel 13"]
-pub type OFF13_R = crate::BitReader<bool>;
+pub type OFF13_R = crate::BitReader;
 #[doc = "Field `OFF13` writer - Offset for channel 13"]
-pub type OFF13_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type OFF13_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OFF14` reader - Offset for channel 14"]
-pub type OFF14_R = crate::BitReader<bool>;
+pub type OFF14_R = crate::BitReader;
 #[doc = "Field `OFF14` writer - Offset for channel 14"]
-pub type OFF14_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type OFF14_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OFF15` reader - Offset for channel 15"]
-pub type OFF15_R = crate::BitReader<bool>;
+pub type OFF15_R = crate::BitReader;
 #[doc = "Field `OFF15` writer - Offset for channel 15"]
-pub type OFF15_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type OFF15_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIFF0` reader - Differential inputs for channel 0"]
-pub type DIFF0_R = crate::BitReader<bool>;
+pub type DIFF0_R = crate::BitReader;
 #[doc = "Field `DIFF0` writer - Differential inputs for channel 0"]
-pub type DIFF0_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type DIFF0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIFF1` reader - Differential inputs for channel 1"]
-pub type DIFF1_R = crate::BitReader<bool>;
+pub type DIFF1_R = crate::BitReader;
 #[doc = "Field `DIFF1` writer - Differential inputs for channel 1"]
-pub type DIFF1_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type DIFF1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIFF2` reader - Differential inputs for channel 2"]
-pub type DIFF2_R = crate::BitReader<bool>;
+pub type DIFF2_R = crate::BitReader;
 #[doc = "Field `DIFF2` writer - Differential inputs for channel 2"]
-pub type DIFF2_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type DIFF2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIFF3` reader - Differential inputs for channel 3"]
-pub type DIFF3_R = crate::BitReader<bool>;
+pub type DIFF3_R = crate::BitReader;
 #[doc = "Field `DIFF3` writer - Differential inputs for channel 3"]
-pub type DIFF3_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type DIFF3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIFF4` reader - Differential inputs for channel 4"]
-pub type DIFF4_R = crate::BitReader<bool>;
+pub type DIFF4_R = crate::BitReader;
 #[doc = "Field `DIFF4` writer - Differential inputs for channel 4"]
-pub type DIFF4_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type DIFF4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIFF5` reader - Differential inputs for channel 5"]
-pub type DIFF5_R = crate::BitReader<bool>;
+pub type DIFF5_R = crate::BitReader;
 #[doc = "Field `DIFF5` writer - Differential inputs for channel 5"]
-pub type DIFF5_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type DIFF5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIFF6` reader - Differential inputs for channel 6"]
-pub type DIFF6_R = crate::BitReader<bool>;
+pub type DIFF6_R = crate::BitReader;
 #[doc = "Field `DIFF6` writer - Differential inputs for channel 6"]
-pub type DIFF6_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type DIFF6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIFF7` reader - Differential inputs for channel 7"]
-pub type DIFF7_R = crate::BitReader<bool>;
+pub type DIFF7_R = crate::BitReader;
 #[doc = "Field `DIFF7` writer - Differential inputs for channel 7"]
-pub type DIFF7_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type DIFF7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIFF8` reader - Differential inputs for channel 8"]
-pub type DIFF8_R = crate::BitReader<bool>;
+pub type DIFF8_R = crate::BitReader;
 #[doc = "Field `DIFF8` writer - Differential inputs for channel 8"]
-pub type DIFF8_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type DIFF8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIFF9` reader - Differential inputs for channel 9"]
-pub type DIFF9_R = crate::BitReader<bool>;
+pub type DIFF9_R = crate::BitReader;
 #[doc = "Field `DIFF9` writer - Differential inputs for channel 9"]
-pub type DIFF9_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type DIFF9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIFF10` reader - Differential inputs for channel 10"]
-pub type DIFF10_R = crate::BitReader<bool>;
+pub type DIFF10_R = crate::BitReader;
 #[doc = "Field `DIFF10` writer - Differential inputs for channel 10"]
-pub type DIFF10_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type DIFF10_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIFF11` reader - Differential inputs for channel 11"]
-pub type DIFF11_R = crate::BitReader<bool>;
+pub type DIFF11_R = crate::BitReader;
 #[doc = "Field `DIFF11` writer - Differential inputs for channel 11"]
-pub type DIFF11_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type DIFF11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIFF12` reader - Differential inputs for channel 12"]
-pub type DIFF12_R = crate::BitReader<bool>;
+pub type DIFF12_R = crate::BitReader;
 #[doc = "Field `DIFF12` writer - Differential inputs for channel 12"]
-pub type DIFF12_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type DIFF12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIFF13` reader - Differential inputs for channel 13"]
-pub type DIFF13_R = crate::BitReader<bool>;
+pub type DIFF13_R = crate::BitReader;
 #[doc = "Field `DIFF13` writer - Differential inputs for channel 13"]
-pub type DIFF13_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type DIFF13_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIFF14` reader - Differential inputs for channel 14"]
-pub type DIFF14_R = crate::BitReader<bool>;
+pub type DIFF14_R = crate::BitReader;
 #[doc = "Field `DIFF14` writer - Differential inputs for channel 14"]
-pub type DIFF14_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type DIFF14_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIFF15` reader - Differential inputs for channel 15"]
-pub type DIFF15_R = crate::BitReader<bool>;
+pub type DIFF15_R = crate::BitReader;
 #[doc = "Field `DIFF15` writer - Differential inputs for channel 15"]
-pub type DIFF15_W<'a, const O: u8> = crate::BitWriter<'a, u32, COR_SPEC, bool, O>;
+pub type DIFF15_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - Offset for channel 0"]
     #[inline(always)]
@@ -298,214 +296,211 @@ impl W {
     #[doc = "Bit 0 - Offset for channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn off0(&mut self) -> OFF0_W<0> {
+    pub fn off0(&mut self) -> OFF0_W<COR_SPEC, 0> {
         OFF0_W::new(self)
     }
     #[doc = "Bit 1 - Offset for channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn off1(&mut self) -> OFF1_W<1> {
+    pub fn off1(&mut self) -> OFF1_W<COR_SPEC, 1> {
         OFF1_W::new(self)
     }
     #[doc = "Bit 2 - Offset for channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn off2(&mut self) -> OFF2_W<2> {
+    pub fn off2(&mut self) -> OFF2_W<COR_SPEC, 2> {
         OFF2_W::new(self)
     }
     #[doc = "Bit 3 - Offset for channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn off3(&mut self) -> OFF3_W<3> {
+    pub fn off3(&mut self) -> OFF3_W<COR_SPEC, 3> {
         OFF3_W::new(self)
     }
     #[doc = "Bit 4 - Offset for channel 4"]
     #[inline(always)]
     #[must_use]
-    pub fn off4(&mut self) -> OFF4_W<4> {
+    pub fn off4(&mut self) -> OFF4_W<COR_SPEC, 4> {
         OFF4_W::new(self)
     }
     #[doc = "Bit 5 - Offset for channel 5"]
     #[inline(always)]
     #[must_use]
-    pub fn off5(&mut self) -> OFF5_W<5> {
+    pub fn off5(&mut self) -> OFF5_W<COR_SPEC, 5> {
         OFF5_W::new(self)
     }
     #[doc = "Bit 6 - Offset for channel 6"]
     #[inline(always)]
     #[must_use]
-    pub fn off6(&mut self) -> OFF6_W<6> {
+    pub fn off6(&mut self) -> OFF6_W<COR_SPEC, 6> {
         OFF6_W::new(self)
     }
     #[doc = "Bit 7 - Offset for channel 7"]
     #[inline(always)]
     #[must_use]
-    pub fn off7(&mut self) -> OFF7_W<7> {
+    pub fn off7(&mut self) -> OFF7_W<COR_SPEC, 7> {
         OFF7_W::new(self)
     }
     #[doc = "Bit 8 - Offset for channel 8"]
     #[inline(always)]
     #[must_use]
-    pub fn off8(&mut self) -> OFF8_W<8> {
+    pub fn off8(&mut self) -> OFF8_W<COR_SPEC, 8> {
         OFF8_W::new(self)
     }
     #[doc = "Bit 9 - Offset for channel 9"]
     #[inline(always)]
     #[must_use]
-    pub fn off9(&mut self) -> OFF9_W<9> {
+    pub fn off9(&mut self) -> OFF9_W<COR_SPEC, 9> {
         OFF9_W::new(self)
     }
     #[doc = "Bit 10 - Offset for channel 10"]
     #[inline(always)]
     #[must_use]
-    pub fn off10(&mut self) -> OFF10_W<10> {
+    pub fn off10(&mut self) -> OFF10_W<COR_SPEC, 10> {
         OFF10_W::new(self)
     }
     #[doc = "Bit 11 - Offset for channel 11"]
     #[inline(always)]
     #[must_use]
-    pub fn off11(&mut self) -> OFF11_W<11> {
+    pub fn off11(&mut self) -> OFF11_W<COR_SPEC, 11> {
         OFF11_W::new(self)
     }
     #[doc = "Bit 12 - Offset for channel 12"]
     #[inline(always)]
     #[must_use]
-    pub fn off12(&mut self) -> OFF12_W<12> {
+    pub fn off12(&mut self) -> OFF12_W<COR_SPEC, 12> {
         OFF12_W::new(self)
     }
     #[doc = "Bit 13 - Offset for channel 13"]
     #[inline(always)]
     #[must_use]
-    pub fn off13(&mut self) -> OFF13_W<13> {
+    pub fn off13(&mut self) -> OFF13_W<COR_SPEC, 13> {
         OFF13_W::new(self)
     }
     #[doc = "Bit 14 - Offset for channel 14"]
     #[inline(always)]
     #[must_use]
-    pub fn off14(&mut self) -> OFF14_W<14> {
+    pub fn off14(&mut self) -> OFF14_W<COR_SPEC, 14> {
         OFF14_W::new(self)
     }
     #[doc = "Bit 15 - Offset for channel 15"]
     #[inline(always)]
     #[must_use]
-    pub fn off15(&mut self) -> OFF15_W<15> {
+    pub fn off15(&mut self) -> OFF15_W<COR_SPEC, 15> {
         OFF15_W::new(self)
     }
     #[doc = "Bit 16 - Differential inputs for channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn diff0(&mut self) -> DIFF0_W<16> {
+    pub fn diff0(&mut self) -> DIFF0_W<COR_SPEC, 16> {
         DIFF0_W::new(self)
     }
     #[doc = "Bit 17 - Differential inputs for channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn diff1(&mut self) -> DIFF1_W<17> {
+    pub fn diff1(&mut self) -> DIFF1_W<COR_SPEC, 17> {
         DIFF1_W::new(self)
     }
     #[doc = "Bit 18 - Differential inputs for channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn diff2(&mut self) -> DIFF2_W<18> {
+    pub fn diff2(&mut self) -> DIFF2_W<COR_SPEC, 18> {
         DIFF2_W::new(self)
     }
     #[doc = "Bit 19 - Differential inputs for channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn diff3(&mut self) -> DIFF3_W<19> {
+    pub fn diff3(&mut self) -> DIFF3_W<COR_SPEC, 19> {
         DIFF3_W::new(self)
     }
     #[doc = "Bit 20 - Differential inputs for channel 4"]
     #[inline(always)]
     #[must_use]
-    pub fn diff4(&mut self) -> DIFF4_W<20> {
+    pub fn diff4(&mut self) -> DIFF4_W<COR_SPEC, 20> {
         DIFF4_W::new(self)
     }
     #[doc = "Bit 21 - Differential inputs for channel 5"]
     #[inline(always)]
     #[must_use]
-    pub fn diff5(&mut self) -> DIFF5_W<21> {
+    pub fn diff5(&mut self) -> DIFF5_W<COR_SPEC, 21> {
         DIFF5_W::new(self)
     }
     #[doc = "Bit 22 - Differential inputs for channel 6"]
     #[inline(always)]
     #[must_use]
-    pub fn diff6(&mut self) -> DIFF6_W<22> {
+    pub fn diff6(&mut self) -> DIFF6_W<COR_SPEC, 22> {
         DIFF6_W::new(self)
     }
     #[doc = "Bit 23 - Differential inputs for channel 7"]
     #[inline(always)]
     #[must_use]
-    pub fn diff7(&mut self) -> DIFF7_W<23> {
+    pub fn diff7(&mut self) -> DIFF7_W<COR_SPEC, 23> {
         DIFF7_W::new(self)
     }
     #[doc = "Bit 24 - Differential inputs for channel 8"]
     #[inline(always)]
     #[must_use]
-    pub fn diff8(&mut self) -> DIFF8_W<24> {
+    pub fn diff8(&mut self) -> DIFF8_W<COR_SPEC, 24> {
         DIFF8_W::new(self)
     }
     #[doc = "Bit 25 - Differential inputs for channel 9"]
     #[inline(always)]
     #[must_use]
-    pub fn diff9(&mut self) -> DIFF9_W<25> {
+    pub fn diff9(&mut self) -> DIFF9_W<COR_SPEC, 25> {
         DIFF9_W::new(self)
     }
     #[doc = "Bit 26 - Differential inputs for channel 10"]
     #[inline(always)]
     #[must_use]
-    pub fn diff10(&mut self) -> DIFF10_W<26> {
+    pub fn diff10(&mut self) -> DIFF10_W<COR_SPEC, 26> {
         DIFF10_W::new(self)
     }
     #[doc = "Bit 27 - Differential inputs for channel 11"]
     #[inline(always)]
     #[must_use]
-    pub fn diff11(&mut self) -> DIFF11_W<27> {
+    pub fn diff11(&mut self) -> DIFF11_W<COR_SPEC, 27> {
         DIFF11_W::new(self)
     }
     #[doc = "Bit 28 - Differential inputs for channel 12"]
     #[inline(always)]
     #[must_use]
-    pub fn diff12(&mut self) -> DIFF12_W<28> {
+    pub fn diff12(&mut self) -> DIFF12_W<COR_SPEC, 28> {
         DIFF12_W::new(self)
     }
     #[doc = "Bit 29 - Differential inputs for channel 13"]
     #[inline(always)]
     #[must_use]
-    pub fn diff13(&mut self) -> DIFF13_W<29> {
+    pub fn diff13(&mut self) -> DIFF13_W<COR_SPEC, 29> {
         DIFF13_W::new(self)
     }
     #[doc = "Bit 30 - Differential inputs for channel 14"]
     #[inline(always)]
     #[must_use]
-    pub fn diff14(&mut self) -> DIFF14_W<30> {
+    pub fn diff14(&mut self) -> DIFF14_W<COR_SPEC, 30> {
         DIFF14_W::new(self)
     }
     #[doc = "Bit 31 - Differential inputs for channel 15"]
     #[inline(always)]
     #[must_use]
-    pub fn diff15(&mut self) -> DIFF15_W<31> {
+    pub fn diff15(&mut self) -> DIFF15_W<COR_SPEC, 31> {
         DIFF15_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Channel Offset Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cor](index.html) module"]
+#[doc = "Channel Offset Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cor::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cor::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct COR_SPEC;
 impl crate::RegisterSpec for COR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cor::R](R) reader structure"]
-impl crate::Readable for COR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cor::W](W) writer structure"]
+#[doc = "`read()` method returns [`cor::R`](R) reader structure"]
+impl crate::Readable for COR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`cor::W`](W) writer structure"]
 impl crate::Writable for COR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

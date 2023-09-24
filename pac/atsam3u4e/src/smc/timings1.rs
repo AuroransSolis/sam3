@@ -1,41 +1,39 @@
 #[doc = "Register `TIMINGS1` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<TIMINGS1_SPEC>);
+pub type R = crate::R<TIMINGS1_SPEC>;
 #[doc = "Register `TIMINGS1` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<TIMINGS1_SPEC>);
+pub type W = crate::W<TIMINGS1_SPEC>;
 #[doc = "Field `TCLR` reader - CLE to REN Low Delay"]
-pub type TCLR_R = crate::FieldReader<u8, u8>;
+pub type TCLR_R = crate::FieldReader;
 #[doc = "Field `TCLR` writer - CLE to REN Low Delay"]
-pub type TCLR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMINGS1_SPEC, u8, u8, 4, O>;
+pub type TCLR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `TADL` reader - ALE to Data Start"]
-pub type TADL_R = crate::FieldReader<u8, u8>;
+pub type TADL_R = crate::FieldReader;
 #[doc = "Field `TADL` writer - ALE to Data Start"]
-pub type TADL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMINGS1_SPEC, u8, u8, 4, O>;
+pub type TADL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `TAR` reader - ALE to REN Low Delay"]
-pub type TAR_R = crate::FieldReader<u8, u8>;
+pub type TAR_R = crate::FieldReader;
 #[doc = "Field `TAR` writer - ALE to REN Low Delay"]
-pub type TAR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMINGS1_SPEC, u8, u8, 4, O>;
+pub type TAR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `OCMS` reader - Off Chip Memory Scrambling Enable"]
-pub type OCMS_R = crate::BitReader<bool>;
+pub type OCMS_R = crate::BitReader;
 #[doc = "Field `OCMS` writer - Off Chip Memory Scrambling Enable"]
-pub type OCMS_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIMINGS1_SPEC, bool, O>;
+pub type OCMS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TRR` reader - Ready to REN Low Delay"]
-pub type TRR_R = crate::FieldReader<u8, u8>;
+pub type TRR_R = crate::FieldReader;
 #[doc = "Field `TRR` writer - Ready to REN Low Delay"]
-pub type TRR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMINGS1_SPEC, u8, u8, 4, O>;
+pub type TRR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `TWB` reader - WEN High to REN to Busy"]
-pub type TWB_R = crate::FieldReader<u8, u8>;
+pub type TWB_R = crate::FieldReader;
 #[doc = "Field `TWB` writer - WEN High to REN to Busy"]
-pub type TWB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMINGS1_SPEC, u8, u8, 4, O>;
+pub type TWB_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `RBNSEL` reader - Ready/Busy Line Selection"]
-pub type RBNSEL_R = crate::FieldReader<u8, u8>;
+pub type RBNSEL_R = crate::FieldReader;
 #[doc = "Field `RBNSEL` writer - Ready/Busy Line Selection"]
-pub type RBNSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMINGS1_SPEC, u8, u8, 3, O>;
+pub type RBNSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 #[doc = "Field `NFSEL` reader - NAND Flash Selection"]
-pub type NFSEL_R = crate::BitReader<bool>;
+pub type NFSEL_R = crate::BitReader;
 #[doc = "Field `NFSEL` writer - NAND Flash Selection"]
-pub type NFSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIMINGS1_SPEC, bool, O>;
+pub type NFSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bits 0:3 - CLE to REN Low Delay"]
     #[inline(always)]
@@ -82,70 +80,67 @@ impl W {
     #[doc = "Bits 0:3 - CLE to REN Low Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn tclr(&mut self) -> TCLR_W<0> {
+    pub fn tclr(&mut self) -> TCLR_W<TIMINGS1_SPEC, 0> {
         TCLR_W::new(self)
     }
     #[doc = "Bits 4:7 - ALE to Data Start"]
     #[inline(always)]
     #[must_use]
-    pub fn tadl(&mut self) -> TADL_W<4> {
+    pub fn tadl(&mut self) -> TADL_W<TIMINGS1_SPEC, 4> {
         TADL_W::new(self)
     }
     #[doc = "Bits 8:11 - ALE to REN Low Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn tar(&mut self) -> TAR_W<8> {
+    pub fn tar(&mut self) -> TAR_W<TIMINGS1_SPEC, 8> {
         TAR_W::new(self)
     }
     #[doc = "Bit 12 - Off Chip Memory Scrambling Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ocms(&mut self) -> OCMS_W<12> {
+    pub fn ocms(&mut self) -> OCMS_W<TIMINGS1_SPEC, 12> {
         OCMS_W::new(self)
     }
     #[doc = "Bits 16:19 - Ready to REN Low Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn trr(&mut self) -> TRR_W<16> {
+    pub fn trr(&mut self) -> TRR_W<TIMINGS1_SPEC, 16> {
         TRR_W::new(self)
     }
     #[doc = "Bits 24:27 - WEN High to REN to Busy"]
     #[inline(always)]
     #[must_use]
-    pub fn twb(&mut self) -> TWB_W<24> {
+    pub fn twb(&mut self) -> TWB_W<TIMINGS1_SPEC, 24> {
         TWB_W::new(self)
     }
     #[doc = "Bits 28:30 - Ready/Busy Line Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn rbnsel(&mut self) -> RBNSEL_W<28> {
+    pub fn rbnsel(&mut self) -> RBNSEL_W<TIMINGS1_SPEC, 28> {
         RBNSEL_W::new(self)
     }
     #[doc = "Bit 31 - NAND Flash Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn nfsel(&mut self) -> NFSEL_W<31> {
+    pub fn nfsel(&mut self) -> NFSEL_W<TIMINGS1_SPEC, 31> {
         NFSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "SMC Timings Register (CS_number = 1)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timings1](index.html) module"]
+#[doc = "SMC Timings Register (CS_number = 1)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timings1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`timings1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TIMINGS1_SPEC;
 impl crate::RegisterSpec for TIMINGS1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [timings1::R](R) reader structure"]
-impl crate::Readable for TIMINGS1_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [timings1::W](W) writer structure"]
+#[doc = "`read()` method returns [`timings1::R`](R) reader structure"]
+impl crate::Readable for TIMINGS1_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`timings1::W`](W) writer structure"]
 impl crate::Writable for TIMINGS1_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

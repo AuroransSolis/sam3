@@ -1,16 +1,15 @@
 #[doc = "Register `SR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<SR_SPEC>);
+pub type R = crate::R<SR_SPEC>;
 #[doc = "Field `ACKUPD` reader - Acknowledge for Update"]
-pub type ACKUPD_R = crate::BitReader<bool>;
+pub type ACKUPD_R = crate::BitReader;
 #[doc = "Field `ALARM` reader - Alarm Flag"]
-pub type ALARM_R = crate::BitReader<bool>;
+pub type ALARM_R = crate::BitReader;
 #[doc = "Field `SEC` reader - Second Event"]
-pub type SEC_R = crate::BitReader<bool>;
+pub type SEC_R = crate::BitReader;
 #[doc = "Field `TIMEV` reader - Time Event"]
-pub type TIMEV_R = crate::BitReader<bool>;
+pub type TIMEV_R = crate::BitReader;
 #[doc = "Field `CALEV` reader - Calendar Event"]
-pub type CALEV_R = crate::BitReader<bool>;
+pub type CALEV_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Acknowledge for Update"]
     #[inline(always)]
@@ -38,15 +37,13 @@ impl R {
         CALEV_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
-#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]
+#[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SR_SPEC;
 impl crate::RegisterSpec for SR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sr::R](R) reader structure"]
-impl crate::Readable for SR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`sr::R`](R) reader structure"]
+impl crate::Readable for SR_SPEC {}
 #[doc = "`reset()` method sets SR to value 0"]
 impl crate::Resettable for SR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

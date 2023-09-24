@@ -1,13 +1,11 @@
 #[doc = "Register `RTOR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<RTOR_SPEC>);
+pub type R = crate::R<RTOR_SPEC>;
 #[doc = "Register `RTOR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<RTOR_SPEC>);
+pub type W = crate::W<RTOR_SPEC>;
 #[doc = "Field `TO` reader - Time-out Value"]
-pub type TO_R = crate::FieldReader<u32, u32>;
+pub type TO_R = crate::FieldReader<u32>;
 #[doc = "Field `TO` writer - Time-out Value"]
-pub type TO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RTOR_SPEC, u32, u32, 17, O>;
+pub type TO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 17, O, u32>;
 impl R {
     #[doc = "Bits 0:16 - Time-out Value"]
     #[inline(always)]
@@ -19,28 +17,25 @@ impl W {
     #[doc = "Bits 0:16 - Time-out Value"]
     #[inline(always)]
     #[must_use]
-    pub fn to(&mut self) -> TO_W<0> {
+    pub fn to(&mut self) -> TO_W<RTOR_SPEC, 0> {
         TO_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Receiver Time-out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rtor](index.html) module"]
+#[doc = "Receiver Time-out Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rtor::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rtor::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RTOR_SPEC;
 impl crate::RegisterSpec for RTOR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rtor::R](R) reader structure"]
-impl crate::Readable for RTOR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [rtor::W](W) writer structure"]
+#[doc = "`read()` method returns [`rtor::R`](R) reader structure"]
+impl crate::Readable for RTOR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`rtor::W`](W) writer structure"]
 impl crate::Writable for RTOR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

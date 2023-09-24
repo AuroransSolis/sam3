@@ -1,28 +1,27 @@
 #[doc = "Register `SR2` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<SR2_SPEC>);
+pub type R = crate::R<SR2_SPEC>;
 #[doc = "Field `COVFS` reader - Counter Overflow Status"]
-pub type COVFS_R = crate::BitReader<bool>;
+pub type COVFS_R = crate::BitReader;
 #[doc = "Field `LOVRS` reader - Load Overrun Status"]
-pub type LOVRS_R = crate::BitReader<bool>;
+pub type LOVRS_R = crate::BitReader;
 #[doc = "Field `CPAS` reader - RA Compare Status"]
-pub type CPAS_R = crate::BitReader<bool>;
+pub type CPAS_R = crate::BitReader;
 #[doc = "Field `CPBS` reader - RB Compare Status"]
-pub type CPBS_R = crate::BitReader<bool>;
+pub type CPBS_R = crate::BitReader;
 #[doc = "Field `CPCS` reader - RC Compare Status"]
-pub type CPCS_R = crate::BitReader<bool>;
+pub type CPCS_R = crate::BitReader;
 #[doc = "Field `LDRAS` reader - RA Loading Status"]
-pub type LDRAS_R = crate::BitReader<bool>;
+pub type LDRAS_R = crate::BitReader;
 #[doc = "Field `LDRBS` reader - RB Loading Status"]
-pub type LDRBS_R = crate::BitReader<bool>;
+pub type LDRBS_R = crate::BitReader;
 #[doc = "Field `ETRGS` reader - External Trigger Status"]
-pub type ETRGS_R = crate::BitReader<bool>;
+pub type ETRGS_R = crate::BitReader;
 #[doc = "Field `CLKSTA` reader - Clock Enabling Status"]
-pub type CLKSTA_R = crate::BitReader<bool>;
+pub type CLKSTA_R = crate::BitReader;
 #[doc = "Field `MTIOA` reader - TIOA Mirror"]
-pub type MTIOA_R = crate::BitReader<bool>;
+pub type MTIOA_R = crate::BitReader;
 #[doc = "Field `MTIOB` reader - TIOB Mirror"]
-pub type MTIOB_R = crate::BitReader<bool>;
+pub type MTIOB_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Counter Overflow Status"]
     #[inline(always)]
@@ -80,15 +79,13 @@ impl R {
         MTIOB_R::new(((self.bits >> 18) & 1) != 0)
     }
 }
-#[doc = "Status Register (channel = 2)\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr2](index.html) module"]
+#[doc = "Status Register (channel = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sr2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SR2_SPEC;
 impl crate::RegisterSpec for SR2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sr2::R](R) reader structure"]
-impl crate::Readable for SR2_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`sr2::R`](R) reader structure"]
+impl crate::Readable for SR2_SPEC {}
 #[doc = "`reset()` method sets SR2 to value 0"]
 impl crate::Resettable for SR2_SPEC {
     const RESET_VALUE: Self::Ux = 0;

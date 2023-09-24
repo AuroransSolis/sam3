@@ -1,14 +1,13 @@
 #[doc = "Register `PCIMR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<PCIMR_SPEC>);
+pub type R = crate::R<PCIMR_SPEC>;
 #[doc = "Field `DRDY` reader - Parallel Capture Mode Data Ready Interrupt Mask"]
-pub type DRDY_R = crate::BitReader<bool>;
+pub type DRDY_R = crate::BitReader;
 #[doc = "Field `OVRE` reader - Parallel Capture Mode Overrun Error Interrupt Mask"]
-pub type OVRE_R = crate::BitReader<bool>;
+pub type OVRE_R = crate::BitReader;
 #[doc = "Field `ENDRX` reader - End of Reception Transfer Interrupt Mask"]
-pub type ENDRX_R = crate::BitReader<bool>;
+pub type ENDRX_R = crate::BitReader;
 #[doc = "Field `RXBUFF` reader - Reception Buffer Full Interrupt Mask"]
-pub type RXBUFF_R = crate::BitReader<bool>;
+pub type RXBUFF_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Parallel Capture Mode Data Ready Interrupt Mask"]
     #[inline(always)]
@@ -31,15 +30,13 @@ impl R {
         RXBUFF_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
-#[doc = "Parallel Capture Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcimr](index.html) module"]
+#[doc = "Parallel Capture Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcimr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PCIMR_SPEC;
 impl crate::RegisterSpec for PCIMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pcimr::R](R) reader structure"]
-impl crate::Readable for PCIMR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`pcimr::R`](R) reader structure"]
+impl crate::Readable for PCIMR_SPEC {}
 #[doc = "`reset()` method sets PCIMR to value 0"]
 impl crate::Resettable for PCIMR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

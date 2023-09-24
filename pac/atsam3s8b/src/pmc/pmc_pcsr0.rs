@@ -1,64 +1,63 @@
 #[doc = "Register `PMC_PCSR0` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<PMC_PCSR0_SPEC>);
+pub type R = crate::R<PMC_PCSR0_SPEC>;
 #[doc = "Field `PID2` reader - Peripheral Clock 2 Status"]
-pub type PID2_R = crate::BitReader<bool>;
+pub type PID2_R = crate::BitReader;
 #[doc = "Field `PID3` reader - Peripheral Clock 3 Status"]
-pub type PID3_R = crate::BitReader<bool>;
+pub type PID3_R = crate::BitReader;
 #[doc = "Field `PID4` reader - Peripheral Clock 4 Status"]
-pub type PID4_R = crate::BitReader<bool>;
+pub type PID4_R = crate::BitReader;
 #[doc = "Field `PID5` reader - Peripheral Clock 5 Status"]
-pub type PID5_R = crate::BitReader<bool>;
+pub type PID5_R = crate::BitReader;
 #[doc = "Field `PID6` reader - Peripheral Clock 6 Status"]
-pub type PID6_R = crate::BitReader<bool>;
+pub type PID6_R = crate::BitReader;
 #[doc = "Field `PID7` reader - Peripheral Clock 7 Status"]
-pub type PID7_R = crate::BitReader<bool>;
+pub type PID7_R = crate::BitReader;
 #[doc = "Field `PID8` reader - Peripheral Clock 8 Status"]
-pub type PID8_R = crate::BitReader<bool>;
+pub type PID8_R = crate::BitReader;
 #[doc = "Field `PID9` reader - Peripheral Clock 9 Status"]
-pub type PID9_R = crate::BitReader<bool>;
+pub type PID9_R = crate::BitReader;
 #[doc = "Field `PID10` reader - Peripheral Clock 10 Status"]
-pub type PID10_R = crate::BitReader<bool>;
+pub type PID10_R = crate::BitReader;
 #[doc = "Field `PID11` reader - Peripheral Clock 11 Status"]
-pub type PID11_R = crate::BitReader<bool>;
+pub type PID11_R = crate::BitReader;
 #[doc = "Field `PID12` reader - Peripheral Clock 12 Status"]
-pub type PID12_R = crate::BitReader<bool>;
+pub type PID12_R = crate::BitReader;
 #[doc = "Field `PID13` reader - Peripheral Clock 13 Status"]
-pub type PID13_R = crate::BitReader<bool>;
+pub type PID13_R = crate::BitReader;
 #[doc = "Field `PID14` reader - Peripheral Clock 14 Status"]
-pub type PID14_R = crate::BitReader<bool>;
+pub type PID14_R = crate::BitReader;
 #[doc = "Field `PID15` reader - Peripheral Clock 15 Status"]
-pub type PID15_R = crate::BitReader<bool>;
+pub type PID15_R = crate::BitReader;
 #[doc = "Field `PID16` reader - Peripheral Clock 16 Status"]
-pub type PID16_R = crate::BitReader<bool>;
+pub type PID16_R = crate::BitReader;
 #[doc = "Field `PID18` reader - Peripheral Clock 18 Status"]
-pub type PID18_R = crate::BitReader<bool>;
+pub type PID18_R = crate::BitReader;
 #[doc = "Field `PID19` reader - Peripheral Clock 19 Status"]
-pub type PID19_R = crate::BitReader<bool>;
+pub type PID19_R = crate::BitReader;
 #[doc = "Field `PID20` reader - Peripheral Clock 20 Status"]
-pub type PID20_R = crate::BitReader<bool>;
+pub type PID20_R = crate::BitReader;
 #[doc = "Field `PID21` reader - Peripheral Clock 21 Status"]
-pub type PID21_R = crate::BitReader<bool>;
+pub type PID21_R = crate::BitReader;
 #[doc = "Field `PID22` reader - Peripheral Clock 22 Status"]
-pub type PID22_R = crate::BitReader<bool>;
+pub type PID22_R = crate::BitReader;
 #[doc = "Field `PID23` reader - Peripheral Clock 23 Status"]
-pub type PID23_R = crate::BitReader<bool>;
+pub type PID23_R = crate::BitReader;
 #[doc = "Field `PID24` reader - Peripheral Clock 24 Status"]
-pub type PID24_R = crate::BitReader<bool>;
+pub type PID24_R = crate::BitReader;
 #[doc = "Field `PID25` reader - Peripheral Clock 25 Status"]
-pub type PID25_R = crate::BitReader<bool>;
+pub type PID25_R = crate::BitReader;
 #[doc = "Field `PID26` reader - Peripheral Clock 26 Status"]
-pub type PID26_R = crate::BitReader<bool>;
+pub type PID26_R = crate::BitReader;
 #[doc = "Field `PID27` reader - Peripheral Clock 27 Status"]
-pub type PID27_R = crate::BitReader<bool>;
+pub type PID27_R = crate::BitReader;
 #[doc = "Field `PID28` reader - Peripheral Clock 28 Status"]
-pub type PID28_R = crate::BitReader<bool>;
+pub type PID28_R = crate::BitReader;
 #[doc = "Field `PID29` reader - Peripheral Clock 29 Status"]
-pub type PID29_R = crate::BitReader<bool>;
+pub type PID29_R = crate::BitReader;
 #[doc = "Field `PID30` reader - Peripheral Clock 30 Status"]
-pub type PID30_R = crate::BitReader<bool>;
+pub type PID30_R = crate::BitReader;
 #[doc = "Field `PID31` reader - Peripheral Clock 31 Status"]
-pub type PID31_R = crate::BitReader<bool>;
+pub type PID31_R = crate::BitReader;
 impl R {
     #[doc = "Bit 2 - Peripheral Clock 2 Status"]
     #[inline(always)]
@@ -206,15 +205,13 @@ impl R {
         PID31_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Peripheral Clock Status Register 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_pcsr0](index.html) module"]
+#[doc = "Peripheral Clock Status Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmc_pcsr0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PMC_PCSR0_SPEC;
 impl crate::RegisterSpec for PMC_PCSR0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pmc_pcsr0::R](R) reader structure"]
-impl crate::Readable for PMC_PCSR0_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`pmc_pcsr0::R`](R) reader structure"]
+impl crate::Readable for PMC_PCSR0_SPEC {}
 #[doc = "`reset()` method sets PMC_PCSR0 to value 0"]
 impl crate::Resettable for PMC_PCSR0_SPEC {
     const RESET_VALUE: Self::Ux = 0;

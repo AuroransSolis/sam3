@@ -1,29 +1,27 @@
 #[doc = "Register `PRAS6` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<PRAS6_SPEC>);
+pub type R = crate::R<PRAS6_SPEC>;
 #[doc = "Register `PRAS6` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<PRAS6_SPEC>);
+pub type W = crate::W<PRAS6_SPEC>;
 #[doc = "Field `M0PR` reader - Master 0 Priority"]
-pub type M0PR_R = crate::FieldReader<u8, u8>;
+pub type M0PR_R = crate::FieldReader;
 #[doc = "Field `M0PR` writer - Master 0 Priority"]
-pub type M0PR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PRAS6_SPEC, u8, u8, 2, O>;
+pub type M0PR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `M1PR` reader - Master 1 Priority"]
-pub type M1PR_R = crate::FieldReader<u8, u8>;
+pub type M1PR_R = crate::FieldReader;
 #[doc = "Field `M1PR` writer - Master 1 Priority"]
-pub type M1PR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PRAS6_SPEC, u8, u8, 2, O>;
+pub type M1PR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `M2PR` reader - Master 2 Priority"]
-pub type M2PR_R = crate::FieldReader<u8, u8>;
+pub type M2PR_R = crate::FieldReader;
 #[doc = "Field `M2PR` writer - Master 2 Priority"]
-pub type M2PR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PRAS6_SPEC, u8, u8, 2, O>;
+pub type M2PR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `M3PR` reader - Master 3 Priority"]
-pub type M3PR_R = crate::FieldReader<u8, u8>;
+pub type M3PR_R = crate::FieldReader;
 #[doc = "Field `M3PR` writer - Master 3 Priority"]
-pub type M3PR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PRAS6_SPEC, u8, u8, 2, O>;
+pub type M3PR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `M4PR` reader - Master 4 Priority"]
-pub type M4PR_R = crate::FieldReader<u8, u8>;
+pub type M4PR_R = crate::FieldReader;
 #[doc = "Field `M4PR` writer - Master 4 Priority"]
-pub type M4PR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PRAS6_SPEC, u8, u8, 2, O>;
+pub type M4PR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 impl R {
     #[doc = "Bits 0:1 - Master 0 Priority"]
     #[inline(always)]
@@ -55,52 +53,49 @@ impl W {
     #[doc = "Bits 0:1 - Master 0 Priority"]
     #[inline(always)]
     #[must_use]
-    pub fn m0pr(&mut self) -> M0PR_W<0> {
+    pub fn m0pr(&mut self) -> M0PR_W<PRAS6_SPEC, 0> {
         M0PR_W::new(self)
     }
     #[doc = "Bits 4:5 - Master 1 Priority"]
     #[inline(always)]
     #[must_use]
-    pub fn m1pr(&mut self) -> M1PR_W<4> {
+    pub fn m1pr(&mut self) -> M1PR_W<PRAS6_SPEC, 4> {
         M1PR_W::new(self)
     }
     #[doc = "Bits 8:9 - Master 2 Priority"]
     #[inline(always)]
     #[must_use]
-    pub fn m2pr(&mut self) -> M2PR_W<8> {
+    pub fn m2pr(&mut self) -> M2PR_W<PRAS6_SPEC, 8> {
         M2PR_W::new(self)
     }
     #[doc = "Bits 12:13 - Master 3 Priority"]
     #[inline(always)]
     #[must_use]
-    pub fn m3pr(&mut self) -> M3PR_W<12> {
+    pub fn m3pr(&mut self) -> M3PR_W<PRAS6_SPEC, 12> {
         M3PR_W::new(self)
     }
     #[doc = "Bits 16:17 - Master 4 Priority"]
     #[inline(always)]
     #[must_use]
-    pub fn m4pr(&mut self) -> M4PR_W<16> {
+    pub fn m4pr(&mut self) -> M4PR_W<PRAS6_SPEC, 16> {
         M4PR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Priority Register A for Slave 6\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pras6](index.html) module"]
+#[doc = "Priority Register A for Slave 6\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pras6::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pras6::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PRAS6_SPEC;
 impl crate::RegisterSpec for PRAS6_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pras6::R](R) reader structure"]
-impl crate::Readable for PRAS6_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pras6::W](W) writer structure"]
+#[doc = "`read()` method returns [`pras6::R`](R) reader structure"]
+impl crate::Readable for PRAS6_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pras6::W`](W) writer structure"]
 impl crate::Writable for PRAS6_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

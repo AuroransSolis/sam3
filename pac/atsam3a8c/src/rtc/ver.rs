@@ -1,14 +1,13 @@
 #[doc = "Register `VER` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<VER_SPEC>);
+pub type R = crate::R<VER_SPEC>;
 #[doc = "Field `NVTIM` reader - Non-valid Time"]
-pub type NVTIM_R = crate::BitReader<bool>;
+pub type NVTIM_R = crate::BitReader;
 #[doc = "Field `NVCAL` reader - Non-valid Calendar"]
-pub type NVCAL_R = crate::BitReader<bool>;
+pub type NVCAL_R = crate::BitReader;
 #[doc = "Field `NVTIMALR` reader - Non-valid Time Alarm"]
-pub type NVTIMALR_R = crate::BitReader<bool>;
+pub type NVTIMALR_R = crate::BitReader;
 #[doc = "Field `NVCALALR` reader - Non-valid Calendar Alarm"]
-pub type NVCALALR_R = crate::BitReader<bool>;
+pub type NVCALALR_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Non-valid Time"]
     #[inline(always)]
@@ -31,15 +30,13 @@ impl R {
         NVCALALR_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
-#[doc = "Valid Entry Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ver](index.html) module"]
+#[doc = "Valid Entry Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ver::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct VER_SPEC;
 impl crate::RegisterSpec for VER_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ver::R](R) reader structure"]
-impl crate::Readable for VER_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`ver::R`](R) reader structure"]
+impl crate::Readable for VER_SPEC {}
 #[doc = "`reset()` method sets VER to value 0"]
 impl crate::Resettable for VER_SPEC {
     const RESET_VALUE: Self::Ux = 0;

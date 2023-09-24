@@ -1,11 +1,9 @@
 #[doc = "Register `TST` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<TST_SPEC>);
+pub type R = crate::R<TST_SPEC>;
 #[doc = "Register `TST` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<TST_SPEC>);
+pub type W = crate::W<TST_SPEC>;
 #[doc = "Field `SPEED_CFG` reader - Speed Configuration"]
-pub type SPEED_CFG_R = crate::FieldReader<u8, SPEED_CFG_A>;
+pub type SPEED_CFG_R = crate::FieldReader<SPEED_CFG_A>;
 #[doc = "Speed Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -23,6 +21,9 @@ impl From<SPEED_CFG_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SPEED_CFG_A {
+    type Ux = u8;
+}
 impl SPEED_CFG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -34,58 +35,61 @@ impl SPEED_CFG_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Normal`"]
+    #[doc = "Normal Mode: The macro is in Full Speed mode, ready to make a High Speed identification, if the host supports it and then to automatically switch to High Speed mode"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == SPEED_CFG_A::Normal
     }
-    #[doc = "Checks if the value of the field is `HighSpeed`"]
+    #[doc = "Force High Speed: Set this value to force the hardware to work in High Speed mode. Only for debug or test purpose."]
     #[inline(always)]
     pub fn is_high_speed(&self) -> bool {
         *self == SPEED_CFG_A::HighSpeed
     }
-    #[doc = "Checks if the value of the field is `FullSpeed`"]
+    #[doc = "Force Full Speed: Set this value to force the hardware to work only in Full Speed mode. In this configuration, the macro will not respond to a High Speed reset handshake."]
     #[inline(always)]
     pub fn is_full_speed(&self) -> bool {
         *self == SPEED_CFG_A::FullSpeed
     }
 }
 #[doc = "Field `SPEED_CFG` writer - Speed Configuration"]
-pub type SPEED_CFG_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TST_SPEC, u8, SPEED_CFG_A, 2, O>;
-impl<'a, const O: u8> SPEED_CFG_W<'a, O> {
+pub type SPEED_CFG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, SPEED_CFG_A>;
+impl<'a, REG, const O: u8> SPEED_CFG_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Normal Mode: The macro is in Full Speed mode, ready to make a High Speed identification, if the host supports it and then to automatically switch to High Speed mode"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(SPEED_CFG_A::Normal)
     }
     #[doc = "Force High Speed: Set this value to force the hardware to work in High Speed mode. Only for debug or test purpose."]
     #[inline(always)]
-    pub fn high_speed(self) -> &'a mut W {
+    pub fn high_speed(self) -> &'a mut crate::W<REG> {
         self.variant(SPEED_CFG_A::HighSpeed)
     }
     #[doc = "Force Full Speed: Set this value to force the hardware to work only in Full Speed mode. In this configuration, the macro will not respond to a High Speed reset handshake."]
     #[inline(always)]
-    pub fn full_speed(self) -> &'a mut W {
+    pub fn full_speed(self) -> &'a mut crate::W<REG> {
         self.variant(SPEED_CFG_A::FullSpeed)
     }
 }
 #[doc = "Field `TST_J` reader - Test J Mode"]
-pub type TST_J_R = crate::BitReader<bool>;
+pub type TST_J_R = crate::BitReader;
 #[doc = "Field `TST_J` writer - Test J Mode"]
-pub type TST_J_W<'a, const O: u8> = crate::BitWriter<'a, u32, TST_SPEC, bool, O>;
+pub type TST_J_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TST_K` reader - Test K Mode"]
-pub type TST_K_R = crate::BitReader<bool>;
+pub type TST_K_R = crate::BitReader;
 #[doc = "Field `TST_K` writer - Test K Mode"]
-pub type TST_K_W<'a, const O: u8> = crate::BitWriter<'a, u32, TST_SPEC, bool, O>;
+pub type TST_K_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TST_PKT` reader - Test Packet Mode"]
-pub type TST_PKT_R = crate::BitReader<bool>;
+pub type TST_PKT_R = crate::BitReader;
 #[doc = "Field `TST_PKT` writer - Test Packet Mode"]
-pub type TST_PKT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TST_SPEC, bool, O>;
+pub type TST_PKT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OPMODE2` reader - OpMode2"]
-pub type OPMODE2_R = crate::BitReader<bool>;
+pub type OPMODE2_R = crate::BitReader;
 #[doc = "Field `OPMODE2` writer - OpMode2"]
-pub type OPMODE2_W<'a, const O: u8> = crate::BitWriter<'a, u32, TST_SPEC, bool, O>;
+pub type OPMODE2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bits 0:1 - Speed Configuration"]
     #[inline(always)]
@@ -117,52 +121,49 @@ impl W {
     #[doc = "Bits 0:1 - Speed Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn speed_cfg(&mut self) -> SPEED_CFG_W<0> {
+    pub fn speed_cfg(&mut self) -> SPEED_CFG_W<TST_SPEC, 0> {
         SPEED_CFG_W::new(self)
     }
     #[doc = "Bit 2 - Test J Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn tst_j(&mut self) -> TST_J_W<2> {
+    pub fn tst_j(&mut self) -> TST_J_W<TST_SPEC, 2> {
         TST_J_W::new(self)
     }
     #[doc = "Bit 3 - Test K Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn tst_k(&mut self) -> TST_K_W<3> {
+    pub fn tst_k(&mut self) -> TST_K_W<TST_SPEC, 3> {
         TST_K_W::new(self)
     }
     #[doc = "Bit 4 - Test Packet Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn tst_pkt(&mut self) -> TST_PKT_W<4> {
+    pub fn tst_pkt(&mut self) -> TST_PKT_W<TST_SPEC, 4> {
         TST_PKT_W::new(self)
     }
     #[doc = "Bit 5 - OpMode2"]
     #[inline(always)]
     #[must_use]
-    pub fn opmode2(&mut self) -> OPMODE2_W<5> {
+    pub fn opmode2(&mut self) -> OPMODE2_W<TST_SPEC, 5> {
         OPMODE2_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "UDPHS Test Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tst](index.html) module"]
+#[doc = "UDPHS Test Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tst::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tst::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TST_SPEC;
 impl crate::RegisterSpec for TST_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tst::R](R) reader structure"]
-impl crate::Readable for TST_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [tst::W](W) writer structure"]
+#[doc = "`read()` method returns [`tst::R`](R) reader structure"]
+impl crate::Readable for TST_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`tst::W`](W) writer structure"]
 impl crate::Writable for TST_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

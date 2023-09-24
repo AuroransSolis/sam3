@@ -1,44 +1,43 @@
 #[doc = "Register `ECC_SR1` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<ECC_SR1_SPEC>);
+pub type R = crate::R<ECC_SR1_SPEC>;
 #[doc = "Field `RECERR0` reader - Recoverable Error"]
-pub type RECERR0_R = crate::BitReader<bool>;
+pub type RECERR0_R = crate::BitReader;
 #[doc = "Field `ECCERR0` reader - ECC Error"]
-pub type ECCERR0_R = crate::FieldReader<u8, u8>;
+pub type ECCERR0_R = crate::FieldReader;
 #[doc = "Field `RECERR1` reader - Recoverable Error in the page between the 256th and the 511th bytes or the 512nd and the 1023rd bytes"]
-pub type RECERR1_R = crate::BitReader<bool>;
+pub type RECERR1_R = crate::BitReader;
 #[doc = "Field `ECCERR1` reader - ECC Error in the page between the 256th and the 511th bytes or between the 512nd and the 1023rd bytes"]
-pub type ECCERR1_R = crate::BitReader<bool>;
+pub type ECCERR1_R = crate::BitReader;
 #[doc = "Field `MULERR1` reader - Multiple Error in the page between the 256th and the 511th bytes or between the 512nd and the 1023rd bytes"]
-pub type MULERR1_R = crate::BitReader<bool>;
+pub type MULERR1_R = crate::BitReader;
 #[doc = "Field `RECERR2` reader - Recoverable Error in the page between the 512nd and the 767th bytes or between the 1024th and the 1535th bytes"]
-pub type RECERR2_R = crate::BitReader<bool>;
+pub type RECERR2_R = crate::BitReader;
 #[doc = "Field `ECCERR2` reader - ECC Error in the page between the 512nd and the 767th bytes or between the 1024th and the 1535th bytes"]
-pub type ECCERR2_R = crate::BitReader<bool>;
+pub type ECCERR2_R = crate::BitReader;
 #[doc = "Field `MULERR2` reader - Multiple Error in the page between the 512nd and the 767th bytes or between the 1024th and the 1535th bytes"]
-pub type MULERR2_R = crate::BitReader<bool>;
+pub type MULERR2_R = crate::BitReader;
 #[doc = "Field `RECERR3` reader - Recoverable Error in the page between the 768th and the 1023rd bytes or between the 1536th and the 2047th bytes"]
-pub type RECERR3_R = crate::BitReader<bool>;
+pub type RECERR3_R = crate::BitReader;
 #[doc = "Field `ECCERR3` reader - ECC Error in the page between the 768th and the 1023rd bytes or between the 1536th and the 2047th bytes"]
-pub type ECCERR3_R = crate::BitReader<bool>;
+pub type ECCERR3_R = crate::BitReader;
 #[doc = "Field `MULERR3` reader - Multiple Error in the page between the 768th and the 1023rd bytes or between the 1536th and the 2047th bytes"]
-pub type MULERR3_R = crate::BitReader<bool>;
+pub type MULERR3_R = crate::BitReader;
 #[doc = "Field `RECERR4` reader - Recoverable Error in the page between the 1024th and the 1279th bytes or between the 2048th and the 2559th bytes"]
-pub type RECERR4_R = crate::BitReader<bool>;
+pub type RECERR4_R = crate::BitReader;
 #[doc = "Field `ECCERR4` reader - ECC Error in the page between the 1024th and the 1279th bytes or between the 2048th and the 2559th bytes"]
-pub type ECCERR4_R = crate::FieldReader<u8, u8>;
+pub type ECCERR4_R = crate::FieldReader;
 #[doc = "Field `RECERR5` reader - Recoverable Error in the page between the 1280th and the 1535th bytes or between the 2560th and the 3071st bytes"]
-pub type RECERR5_R = crate::BitReader<bool>;
+pub type RECERR5_R = crate::BitReader;
 #[doc = "Field `ECCERR5` reader - ECC Error in the page between the 1280th and the 1535th bytes or between the 2560th and the 3071st bytes"]
-pub type ECCERR5_R = crate::FieldReader<u8, u8>;
+pub type ECCERR5_R = crate::FieldReader;
 #[doc = "Field `RECERR6` reader - Recoverable Error in the page between the 1536th and the 1791st bytes or between the 3072nd and the 3583rd bytes"]
-pub type RECERR6_R = crate::BitReader<bool>;
+pub type RECERR6_R = crate::BitReader;
 #[doc = "Field `ECCERR6` reader - ECC Error in the page between the 1536th and the 1791st bytes or between the 3072nd and the 3583rd bytes"]
-pub type ECCERR6_R = crate::FieldReader<u8, u8>;
+pub type ECCERR6_R = crate::FieldReader;
 #[doc = "Field `RECERR7` reader - Recoverable Error in the page between the 1792nd and the 2047th bytes or between the 3584th and the 4095th bytes"]
-pub type RECERR7_R = crate::BitReader<bool>;
+pub type RECERR7_R = crate::BitReader;
 #[doc = "Field `ECCERR7` reader - ECC Error in the page between the 1792nd and the 2047th bytes or between the 3584th and the 4095th bytes"]
-pub type ECCERR7_R = crate::FieldReader<u8, u8>;
+pub type ECCERR7_R = crate::FieldReader;
 impl R {
     #[doc = "Bit 0 - Recoverable Error"]
     #[inline(always)]
@@ -136,15 +135,13 @@ impl R {
         ECCERR7_R::new(((self.bits >> 29) & 3) as u8)
     }
 }
-#[doc = "SMC ECC Status 1 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ecc_sr1](index.html) module"]
+#[doc = "SMC ECC Status 1 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_sr1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ECC_SR1_SPEC;
 impl crate::RegisterSpec for ECC_SR1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ecc_sr1::R](R) reader structure"]
-impl crate::Readable for ECC_SR1_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`ecc_sr1::R`](R) reader structure"]
+impl crate::Readable for ECC_SR1_SPEC {}
 #[doc = "`reset()` method sets ECC_SR1 to value 0"]
 impl crate::Resettable for ECC_SR1_SPEC {
     const RESET_VALUE: Self::Ux = 0;

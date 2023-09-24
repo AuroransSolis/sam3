@@ -1,10 +1,9 @@
 #[doc = "Register `NSR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<NSR_SPEC>);
+pub type R = crate::R<NSR_SPEC>;
 #[doc = "Field `MDIO` reader - "]
-pub type MDIO_R = crate::BitReader<bool>;
+pub type MDIO_R = crate::BitReader;
 #[doc = "Field `IDLE` reader - "]
-pub type IDLE_R = crate::BitReader<bool>;
+pub type IDLE_R = crate::BitReader;
 impl R {
     #[doc = "Bit 1"]
     #[inline(always)]
@@ -17,12 +16,10 @@ impl R {
         IDLE_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
-#[doc = "Network Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nsr](index.html) module"]
+#[doc = "Network Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`nsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct NSR_SPEC;
 impl crate::RegisterSpec for NSR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [nsr::R](R) reader structure"]
-impl crate::Readable for NSR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`nsr::R`](R) reader structure"]
+impl crate::Readable for NSR_SPEC {}

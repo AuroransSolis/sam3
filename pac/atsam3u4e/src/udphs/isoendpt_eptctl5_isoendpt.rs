@@ -1,34 +1,33 @@
 #[doc = "Register `EPTCTL5_ISOENDPT` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<ISOENDPT_EPTCTL5_ISOENDPT_SPEC>);
+pub type R = crate::R<ISOENDPT_EPTCTL5_ISOENDPT_SPEC>;
 #[doc = "Field `EPT_ENABL` reader - Endpoint Enable"]
-pub type EPT_ENABL_R = crate::BitReader<bool>;
+pub type EPT_ENABL_R = crate::BitReader;
 #[doc = "Field `AUTO_VALID` reader - Packet Auto-Valid Enabled"]
-pub type AUTO_VALID_R = crate::BitReader<bool>;
+pub type AUTO_VALID_R = crate::BitReader;
 #[doc = "Field `INTDIS_DMA` reader - Interrupt Disables DMA"]
-pub type INTDIS_DMA_R = crate::BitReader<bool>;
+pub type INTDIS_DMA_R = crate::BitReader;
 #[doc = "Field `DATAX_RX` reader - DATAx Interrupt Enabled (Only for High Bandwidth Isochronous OUT endpoints)"]
-pub type DATAX_RX_R = crate::BitReader<bool>;
+pub type DATAX_RX_R = crate::BitReader;
 #[doc = "Field `MDATA_RX` reader - MDATA Interrupt Enabled (Only for High Bandwidth Isochronous OUT endpoints)"]
-pub type MDATA_RX_R = crate::BitReader<bool>;
+pub type MDATA_RX_R = crate::BitReader;
 #[doc = "Field `ERR_OVFLW` reader - Overflow Error Interrupt Enabled"]
-pub type ERR_OVFLW_R = crate::BitReader<bool>;
+pub type ERR_OVFLW_R = crate::BitReader;
 #[doc = "Field `RXRDY_TXKL` reader - Received OUT Data Interrupt Enabled"]
-pub type RXRDY_TXKL_R = crate::BitReader<bool>;
+pub type RXRDY_TXKL_R = crate::BitReader;
 #[doc = "Field `TX_COMPLT` reader - Transmitted IN Data Complete Interrupt Enabled"]
-pub type TX_COMPLT_R = crate::BitReader<bool>;
+pub type TX_COMPLT_R = crate::BitReader;
 #[doc = "Field `TXRDY_TRER` reader - TX Packet Ready/Transaction Error Interrupt Enabled"]
-pub type TXRDY_TRER_R = crate::BitReader<bool>;
+pub type TXRDY_TRER_R = crate::BitReader;
 #[doc = "Field `ERR_FL_ISO` reader - Error Flow Interrupt Enabled"]
-pub type ERR_FL_ISO_R = crate::BitReader<bool>;
+pub type ERR_FL_ISO_R = crate::BitReader;
 #[doc = "Field `ERR_CRC_NTR` reader - ISO CRC Error/Number of Transaction Error Interrupt Enabled"]
-pub type ERR_CRC_NTR_R = crate::BitReader<bool>;
+pub type ERR_CRC_NTR_R = crate::BitReader;
 #[doc = "Field `ERR_FLUSH` reader - Bank Flush Error Interrupt Enabled"]
-pub type ERR_FLUSH_R = crate::BitReader<bool>;
+pub type ERR_FLUSH_R = crate::BitReader;
 #[doc = "Field `BUSY_BANK` reader - Busy Bank Interrupt Enabled"]
-pub type BUSY_BANK_R = crate::BitReader<bool>;
+pub type BUSY_BANK_R = crate::BitReader;
 #[doc = "Field `SHRT_PCKT` reader - Short Packet Interrupt Enabled"]
-pub type SHRT_PCKT_R = crate::BitReader<bool>;
+pub type SHRT_PCKT_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Endpoint Enable"]
     #[inline(always)]
@@ -101,15 +100,13 @@ impl R {
         SHRT_PCKT_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "UDPHS Endpoint Control Register (endpoint = 5)\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [isoendpt_eptctl5_isoendpt](index.html) module"]
+#[doc = "UDPHS Endpoint Control Register (endpoint = 5)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`isoendpt_eptctl5_isoendpt::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ISOENDPT_EPTCTL5_ISOENDPT_SPEC;
 impl crate::RegisterSpec for ISOENDPT_EPTCTL5_ISOENDPT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [isoendpt_eptctl5_isoendpt::R](R) reader structure"]
-impl crate::Readable for ISOENDPT_EPTCTL5_ISOENDPT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`isoendpt_eptctl5_isoendpt::R`](R) reader structure"]
+impl crate::Readable for ISOENDPT_EPTCTL5_ISOENDPT_SPEC {}
 #[doc = "`reset()` method sets EPTCTL5_ISOENDPT to value 0"]
 impl crate::Resettable for ISOENDPT_EPTCTL5_ISOENDPT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

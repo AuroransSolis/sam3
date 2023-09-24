@@ -1,11 +1,9 @@
 #[doc = "Register `LINMR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<LINMR_SPEC>);
+pub type R = crate::R<LINMR_SPEC>;
 #[doc = "Register `LINMR` writer"]
-#[derive(derive_more :: Deref, derive_more :: DerefMut, derive_more :: From)]
-pub struct W(crate::W<LINMR_SPEC>);
+pub type W = crate::W<LINMR_SPEC>;
 #[doc = "Field `NACT` reader - LIN Node Action"]
-pub type NACT_R = crate::FieldReader<u8, NACT_A>;
+pub type NACT_R = crate::FieldReader<NACT_A>;
 #[doc = "LIN Node Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -23,6 +21,9 @@ impl From<NACT_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for NACT_A {
+    type Ux = u8;
+}
 impl NACT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -34,73 +35,77 @@ impl NACT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Publish`"]
+    #[doc = "The USART transmits the response."]
     #[inline(always)]
     pub fn is_publish(&self) -> bool {
         *self == NACT_A::Publish
     }
-    #[doc = "Checks if the value of the field is `Subscribe`"]
+    #[doc = "The USART receives the response."]
     #[inline(always)]
     pub fn is_subscribe(&self) -> bool {
         *self == NACT_A::Subscribe
     }
-    #[doc = "Checks if the value of the field is `Ignore`"]
+    #[doc = "The USART does not transmit and does not receive the response."]
     #[inline(always)]
     pub fn is_ignore(&self) -> bool {
         *self == NACT_A::Ignore
     }
 }
 #[doc = "Field `NACT` writer - LIN Node Action"]
-pub type NACT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LINMR_SPEC, u8, NACT_A, 2, O>;
-impl<'a, const O: u8> NACT_W<'a, O> {
+pub type NACT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, NACT_A>;
+impl<'a, REG, const O: u8> NACT_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The USART transmits the response."]
     #[inline(always)]
-    pub fn publish(self) -> &'a mut W {
+    pub fn publish(self) -> &'a mut crate::W<REG> {
         self.variant(NACT_A::Publish)
     }
     #[doc = "The USART receives the response."]
     #[inline(always)]
-    pub fn subscribe(self) -> &'a mut W {
+    pub fn subscribe(self) -> &'a mut crate::W<REG> {
         self.variant(NACT_A::Subscribe)
     }
     #[doc = "The USART does not transmit and does not receive the response."]
     #[inline(always)]
-    pub fn ignore(self) -> &'a mut W {
+    pub fn ignore(self) -> &'a mut crate::W<REG> {
         self.variant(NACT_A::Ignore)
     }
 }
 #[doc = "Field `PARDIS` reader - Parity Disable"]
-pub type PARDIS_R = crate::BitReader<bool>;
+pub type PARDIS_R = crate::BitReader;
 #[doc = "Field `PARDIS` writer - Parity Disable"]
-pub type PARDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, LINMR_SPEC, bool, O>;
+pub type PARDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CHKDIS` reader - Checksum Disable"]
-pub type CHKDIS_R = crate::BitReader<bool>;
+pub type CHKDIS_R = crate::BitReader;
 #[doc = "Field `CHKDIS` writer - Checksum Disable"]
-pub type CHKDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, LINMR_SPEC, bool, O>;
+pub type CHKDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CHKTYP` reader - Checksum Type"]
-pub type CHKTYP_R = crate::BitReader<bool>;
+pub type CHKTYP_R = crate::BitReader;
 #[doc = "Field `CHKTYP` writer - Checksum Type"]
-pub type CHKTYP_W<'a, const O: u8> = crate::BitWriter<'a, u32, LINMR_SPEC, bool, O>;
+pub type CHKTYP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DLM` reader - Data Length Mode"]
-pub type DLM_R = crate::BitReader<bool>;
+pub type DLM_R = crate::BitReader;
 #[doc = "Field `DLM` writer - Data Length Mode"]
-pub type DLM_W<'a, const O: u8> = crate::BitWriter<'a, u32, LINMR_SPEC, bool, O>;
+pub type DLM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FSDIS` reader - Frame Slot Mode Disable"]
-pub type FSDIS_R = crate::BitReader<bool>;
+pub type FSDIS_R = crate::BitReader;
 #[doc = "Field `FSDIS` writer - Frame Slot Mode Disable"]
-pub type FSDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, LINMR_SPEC, bool, O>;
+pub type FSDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `WKUPTYP` reader - Wakeup Signal Type"]
-pub type WKUPTYP_R = crate::BitReader<bool>;
+pub type WKUPTYP_R = crate::BitReader;
 #[doc = "Field `WKUPTYP` writer - Wakeup Signal Type"]
-pub type WKUPTYP_W<'a, const O: u8> = crate::BitWriter<'a, u32, LINMR_SPEC, bool, O>;
+pub type WKUPTYP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DLC` reader - Data Length Control"]
-pub type DLC_R = crate::FieldReader<u8, u8>;
+pub type DLC_R = crate::FieldReader;
 #[doc = "Field `DLC` writer - Data Length Control"]
-pub type DLC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LINMR_SPEC, u8, u8, 8, O>;
+pub type DLC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `PDCM` reader - PDC Mode"]
-pub type PDCM_R = crate::BitReader<bool>;
+pub type PDCM_R = crate::BitReader;
 #[doc = "Field `PDCM` writer - PDC Mode"]
-pub type PDCM_W<'a, const O: u8> = crate::BitWriter<'a, u32, LINMR_SPEC, bool, O>;
+pub type PDCM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bits 0:1 - LIN Node Action"]
     #[inline(always)]
@@ -152,76 +157,73 @@ impl W {
     #[doc = "Bits 0:1 - LIN Node Action"]
     #[inline(always)]
     #[must_use]
-    pub fn nact(&mut self) -> NACT_W<0> {
+    pub fn nact(&mut self) -> NACT_W<LINMR_SPEC, 0> {
         NACT_W::new(self)
     }
     #[doc = "Bit 2 - Parity Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn pardis(&mut self) -> PARDIS_W<2> {
+    pub fn pardis(&mut self) -> PARDIS_W<LINMR_SPEC, 2> {
         PARDIS_W::new(self)
     }
     #[doc = "Bit 3 - Checksum Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn chkdis(&mut self) -> CHKDIS_W<3> {
+    pub fn chkdis(&mut self) -> CHKDIS_W<LINMR_SPEC, 3> {
         CHKDIS_W::new(self)
     }
     #[doc = "Bit 4 - Checksum Type"]
     #[inline(always)]
     #[must_use]
-    pub fn chktyp(&mut self) -> CHKTYP_W<4> {
+    pub fn chktyp(&mut self) -> CHKTYP_W<LINMR_SPEC, 4> {
         CHKTYP_W::new(self)
     }
     #[doc = "Bit 5 - Data Length Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn dlm(&mut self) -> DLM_W<5> {
+    pub fn dlm(&mut self) -> DLM_W<LINMR_SPEC, 5> {
         DLM_W::new(self)
     }
     #[doc = "Bit 6 - Frame Slot Mode Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn fsdis(&mut self) -> FSDIS_W<6> {
+    pub fn fsdis(&mut self) -> FSDIS_W<LINMR_SPEC, 6> {
         FSDIS_W::new(self)
     }
     #[doc = "Bit 7 - Wakeup Signal Type"]
     #[inline(always)]
     #[must_use]
-    pub fn wkuptyp(&mut self) -> WKUPTYP_W<7> {
+    pub fn wkuptyp(&mut self) -> WKUPTYP_W<LINMR_SPEC, 7> {
         WKUPTYP_W::new(self)
     }
     #[doc = "Bits 8:15 - Data Length Control"]
     #[inline(always)]
     #[must_use]
-    pub fn dlc(&mut self) -> DLC_W<8> {
+    pub fn dlc(&mut self) -> DLC_W<LINMR_SPEC, 8> {
         DLC_W::new(self)
     }
     #[doc = "Bit 16 - PDC Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn pdcm(&mut self) -> PDCM_W<16> {
+    pub fn pdcm(&mut self) -> PDCM_W<LINMR_SPEC, 16> {
         PDCM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "LIN Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [linmr](index.html) module"]
+#[doc = "LIN Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`linmr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`linmr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LINMR_SPEC;
 impl crate::RegisterSpec for LINMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [linmr::R](R) reader structure"]
-impl crate::Readable for LINMR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [linmr::W](W) writer structure"]
+#[doc = "`read()` method returns [`linmr::R`](R) reader structure"]
+impl crate::Readable for LINMR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`linmr::W`](W) writer structure"]
 impl crate::Writable for LINMR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,48 +1,47 @@
 #[doc = "Register `ISR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<ISR_SPEC>);
+pub type R = crate::R<ISR_SPEC>;
 #[doc = "Field `EOC0` reader - End of Conversion 0"]
-pub type EOC0_R = crate::BitReader<bool>;
+pub type EOC0_R = crate::BitReader;
 #[doc = "Field `EOC1` reader - End of Conversion 1"]
-pub type EOC1_R = crate::BitReader<bool>;
+pub type EOC1_R = crate::BitReader;
 #[doc = "Field `EOC2` reader - End of Conversion 2"]
-pub type EOC2_R = crate::BitReader<bool>;
+pub type EOC2_R = crate::BitReader;
 #[doc = "Field `EOC3` reader - End of Conversion 3"]
-pub type EOC3_R = crate::BitReader<bool>;
+pub type EOC3_R = crate::BitReader;
 #[doc = "Field `EOC4` reader - End of Conversion 4"]
-pub type EOC4_R = crate::BitReader<bool>;
+pub type EOC4_R = crate::BitReader;
 #[doc = "Field `EOC5` reader - End of Conversion 5"]
-pub type EOC5_R = crate::BitReader<bool>;
+pub type EOC5_R = crate::BitReader;
 #[doc = "Field `EOC6` reader - End of Conversion 6"]
-pub type EOC6_R = crate::BitReader<bool>;
+pub type EOC6_R = crate::BitReader;
 #[doc = "Field `EOC7` reader - End of Conversion 7"]
-pub type EOC7_R = crate::BitReader<bool>;
+pub type EOC7_R = crate::BitReader;
 #[doc = "Field `EOC8` reader - End of Conversion 8"]
-pub type EOC8_R = crate::BitReader<bool>;
+pub type EOC8_R = crate::BitReader;
 #[doc = "Field `EOC9` reader - End of Conversion 9"]
-pub type EOC9_R = crate::BitReader<bool>;
+pub type EOC9_R = crate::BitReader;
 #[doc = "Field `EOC10` reader - End of Conversion 10"]
-pub type EOC10_R = crate::BitReader<bool>;
+pub type EOC10_R = crate::BitReader;
 #[doc = "Field `EOC11` reader - End of Conversion 11"]
-pub type EOC11_R = crate::BitReader<bool>;
+pub type EOC11_R = crate::BitReader;
 #[doc = "Field `EOC12` reader - End of Conversion 12"]
-pub type EOC12_R = crate::BitReader<bool>;
+pub type EOC12_R = crate::BitReader;
 #[doc = "Field `EOC13` reader - End of Conversion 13"]
-pub type EOC13_R = crate::BitReader<bool>;
+pub type EOC13_R = crate::BitReader;
 #[doc = "Field `EOC14` reader - End of Conversion 14"]
-pub type EOC14_R = crate::BitReader<bool>;
+pub type EOC14_R = crate::BitReader;
 #[doc = "Field `EOC15` reader - End of Conversion 15"]
-pub type EOC15_R = crate::BitReader<bool>;
+pub type EOC15_R = crate::BitReader;
 #[doc = "Field `DRDY` reader - Data Ready"]
-pub type DRDY_R = crate::BitReader<bool>;
+pub type DRDY_R = crate::BitReader;
 #[doc = "Field `GOVRE` reader - General Overrun Error"]
-pub type GOVRE_R = crate::BitReader<bool>;
+pub type GOVRE_R = crate::BitReader;
 #[doc = "Field `COMPE` reader - Comparison Error"]
-pub type COMPE_R = crate::BitReader<bool>;
+pub type COMPE_R = crate::BitReader;
 #[doc = "Field `ENDRX` reader - End of RX Buffer"]
-pub type ENDRX_R = crate::BitReader<bool>;
+pub type ENDRX_R = crate::BitReader;
 #[doc = "Field `RXBUFF` reader - RX Buffer Full"]
-pub type RXBUFF_R = crate::BitReader<bool>;
+pub type RXBUFF_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - End of Conversion 0"]
     #[inline(always)]
@@ -150,15 +149,13 @@ impl R {
         RXBUFF_R::new(((self.bits >> 28) & 1) != 0)
     }
 }
-#[doc = "Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [isr](index.html) module"]
+#[doc = "Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`isr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ISR_SPEC;
 impl crate::RegisterSpec for ISR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [isr::R](R) reader structure"]
-impl crate::Readable for ISR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`isr::R`](R) reader structure"]
+impl crate::Readable for ISR_SPEC {}
 #[doc = "`reset()` method sets ISR to value 0"]
 impl crate::Resettable for ISR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

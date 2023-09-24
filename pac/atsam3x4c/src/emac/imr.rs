@@ -1,30 +1,29 @@
 #[doc = "Register `IMR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<IMR_SPEC>);
+pub type R = crate::R<IMR_SPEC>;
 #[doc = "Field `MFD` reader - Management Frame sent"]
-pub type MFD_R = crate::BitReader<bool>;
+pub type MFD_R = crate::BitReader;
 #[doc = "Field `RCOMP` reader - Receive Complete"]
-pub type RCOMP_R = crate::BitReader<bool>;
+pub type RCOMP_R = crate::BitReader;
 #[doc = "Field `RXUBR` reader - Receive Used Bit Read"]
-pub type RXUBR_R = crate::BitReader<bool>;
+pub type RXUBR_R = crate::BitReader;
 #[doc = "Field `TXUBR` reader - Transmit Used Bit Read"]
-pub type TXUBR_R = crate::BitReader<bool>;
+pub type TXUBR_R = crate::BitReader;
 #[doc = "Field `TUND` reader - Ethernet Transmit Buffer Underrun"]
-pub type TUND_R = crate::BitReader<bool>;
+pub type TUND_R = crate::BitReader;
 #[doc = "Field `RLE` reader - Retry Limit Exceeded"]
-pub type RLE_R = crate::BitReader<bool>;
+pub type RLE_R = crate::BitReader;
 #[doc = "Field `TXERR` reader - "]
-pub type TXERR_R = crate::BitReader<bool>;
+pub type TXERR_R = crate::BitReader;
 #[doc = "Field `TCOMP` reader - Transmit Complete"]
-pub type TCOMP_R = crate::BitReader<bool>;
+pub type TCOMP_R = crate::BitReader;
 #[doc = "Field `ROVR` reader - Receive Overrun"]
-pub type ROVR_R = crate::BitReader<bool>;
+pub type ROVR_R = crate::BitReader;
 #[doc = "Field `HRESP` reader - Hresp not OK"]
-pub type HRESP_R = crate::BitReader<bool>;
+pub type HRESP_R = crate::BitReader;
 #[doc = "Field `PFR` reader - Pause Frame Received"]
-pub type PFR_R = crate::BitReader<bool>;
+pub type PFR_R = crate::BitReader;
 #[doc = "Field `PTZ` reader - Pause Time Zero"]
-pub type PTZ_R = crate::BitReader<bool>;
+pub type PTZ_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Management Frame sent"]
     #[inline(always)]
@@ -87,15 +86,13 @@ impl R {
         PTZ_R::new(((self.bits >> 13) & 1) != 0)
     }
 }
-#[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](index.html) module"]
+#[doc = "Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`imr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IMR_SPEC;
 impl crate::RegisterSpec for IMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [imr::R](R) reader structure"]
-impl crate::Readable for IMR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`imr::R`](R) reader structure"]
+impl crate::Readable for IMR_SPEC {}
 #[doc = "`reset()` method sets IMR to value 0x3fff"]
 impl crate::Resettable for IMR_SPEC {
     const RESET_VALUE: Self::Ux = 0x3fff;

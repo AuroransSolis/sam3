@@ -1,36 +1,35 @@
 #[doc = "Register `DEVEPTIMR[%s]` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<DEVEPTIMR_SPEC>);
+pub type R = crate::R<DEVEPTIMR_SPEC>;
 #[doc = "Field `TXINE` reader - Transmitted IN Data Interrupt"]
-pub type TXINE_R = crate::BitReader<bool>;
+pub type TXINE_R = crate::BitReader;
 #[doc = "Field `RXOUTE` reader - Received OUT Data Interrupt"]
-pub type RXOUTE_R = crate::BitReader<bool>;
+pub type RXOUTE_R = crate::BitReader;
 #[doc = "Field `RXSTPE` reader - Received SETUP Interrupt"]
-pub type RXSTPE_R = crate::BitReader<bool>;
+pub type RXSTPE_R = crate::BitReader;
 #[doc = "Field `NAKOUTE` reader - NAKed OUT Interrupt"]
-pub type NAKOUTE_R = crate::BitReader<bool>;
+pub type NAKOUTE_R = crate::BitReader;
 #[doc = "Field `NAKINE` reader - NAKed IN Interrupt"]
-pub type NAKINE_R = crate::BitReader<bool>;
+pub type NAKINE_R = crate::BitReader;
 #[doc = "Field `OVERFE` reader - Overflow Interrupt"]
-pub type OVERFE_R = crate::BitReader<bool>;
+pub type OVERFE_R = crate::BitReader;
 #[doc = "Field `STALLEDE` reader - STALLed Interrupt"]
-pub type STALLEDE_R = crate::BitReader<bool>;
+pub type STALLEDE_R = crate::BitReader;
 #[doc = "Field `SHORTPACKETE` reader - Short Packet Interrupt"]
-pub type SHORTPACKETE_R = crate::BitReader<bool>;
+pub type SHORTPACKETE_R = crate::BitReader;
 #[doc = "Field `NBUSYBKE` reader - Number of Busy Banks Interrupt"]
-pub type NBUSYBKE_R = crate::BitReader<bool>;
+pub type NBUSYBKE_R = crate::BitReader;
 #[doc = "Field `KILLBK` reader - Kill IN Bank"]
-pub type KILLBK_R = crate::BitReader<bool>;
+pub type KILLBK_R = crate::BitReader;
 #[doc = "Field `FIFOCON` reader - FIFO Control"]
-pub type FIFOCON_R = crate::BitReader<bool>;
+pub type FIFOCON_R = crate::BitReader;
 #[doc = "Field `EPDISHDMA` reader - Endpoint Interrupts Disable HDMA Request"]
-pub type EPDISHDMA_R = crate::BitReader<bool>;
+pub type EPDISHDMA_R = crate::BitReader;
 #[doc = "Field `NYETDIS` reader - NYET Token Disable"]
-pub type NYETDIS_R = crate::BitReader<bool>;
+pub type NYETDIS_R = crate::BitReader;
 #[doc = "Field `RSTDT` reader - Reset Data Toggle"]
-pub type RSTDT_R = crate::BitReader<bool>;
+pub type RSTDT_R = crate::BitReader;
 #[doc = "Field `STALLRQ` reader - STALL Request"]
-pub type STALLRQ_R = crate::BitReader<bool>;
+pub type STALLRQ_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Transmitted IN Data Interrupt"]
     #[inline(always)]
@@ -108,12 +107,10 @@ impl R {
         STALLRQ_R::new(((self.bits >> 19) & 1) != 0)
     }
 }
-#[doc = "Device Endpoint Mask Register (n = 0)\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [deveptimr](index.html) module"]
+#[doc = "Device Endpoint Mask Register (n = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`deveptimr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DEVEPTIMR_SPEC;
 impl crate::RegisterSpec for DEVEPTIMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [deveptimr::R](R) reader structure"]
-impl crate::Readable for DEVEPTIMR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`deveptimr::R`](R) reader structure"]
+impl crate::Readable for DEVEPTIMR_SPEC {}

@@ -1,10 +1,9 @@
 #[doc = "Register `RHR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<RHR_SPEC>);
+pub type R = crate::R<RHR_SPEC>;
 #[doc = "Field `RXCHR` reader - Received Character"]
-pub type RXCHR_R = crate::FieldReader<u16, u16>;
+pub type RXCHR_R = crate::FieldReader<u16>;
 #[doc = "Field `RXSYNH` reader - Received Sync"]
-pub type RXSYNH_R = crate::BitReader<bool>;
+pub type RXSYNH_R = crate::BitReader;
 impl R {
     #[doc = "Bits 0:8 - Received Character"]
     #[inline(always)]
@@ -17,15 +16,13 @@ impl R {
         RXSYNH_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Receiver Holding Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rhr](index.html) module"]
+#[doc = "Receiver Holding Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rhr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RHR_SPEC;
 impl crate::RegisterSpec for RHR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rhr::R](R) reader structure"]
-impl crate::Readable for RHR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`rhr::R`](R) reader structure"]
+impl crate::Readable for RHR_SPEC {}
 #[doc = "`reset()` method sets RHR to value 0"]
 impl crate::Resettable for RHR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

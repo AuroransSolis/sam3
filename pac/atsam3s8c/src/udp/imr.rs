@@ -1,34 +1,33 @@
 #[doc = "Register `IMR` reader"]
-#[derive(derive_more :: Deref, derive_more :: From)]
-pub struct R(crate::R<IMR_SPEC>);
+pub type R = crate::R<IMR_SPEC>;
 #[doc = "Field `EP0INT` reader - Mask Endpoint 0 Interrupt"]
-pub type EP0INT_R = crate::BitReader<bool>;
+pub type EP0INT_R = crate::BitReader;
 #[doc = "Field `EP1INT` reader - Mask Endpoint 1 Interrupt"]
-pub type EP1INT_R = crate::BitReader<bool>;
+pub type EP1INT_R = crate::BitReader;
 #[doc = "Field `EP2INT` reader - Mask Endpoint 2 Interrupt"]
-pub type EP2INT_R = crate::BitReader<bool>;
+pub type EP2INT_R = crate::BitReader;
 #[doc = "Field `EP3INT` reader - Mask Endpoint 3 Interrupt"]
-pub type EP3INT_R = crate::BitReader<bool>;
+pub type EP3INT_R = crate::BitReader;
 #[doc = "Field `EP4INT` reader - Mask Endpoint 4 Interrupt"]
-pub type EP4INT_R = crate::BitReader<bool>;
+pub type EP4INT_R = crate::BitReader;
 #[doc = "Field `EP5INT` reader - Mask Endpoint 5 Interrupt"]
-pub type EP5INT_R = crate::BitReader<bool>;
+pub type EP5INT_R = crate::BitReader;
 #[doc = "Field `EP6INT` reader - Mask Endpoint 6 Interrupt"]
-pub type EP6INT_R = crate::BitReader<bool>;
+pub type EP6INT_R = crate::BitReader;
 #[doc = "Field `EP7INT` reader - Mask Endpoint 7 Interrupt"]
-pub type EP7INT_R = crate::BitReader<bool>;
+pub type EP7INT_R = crate::BitReader;
 #[doc = "Field `RXSUSP` reader - Mask UDP Suspend Interrupt"]
-pub type RXSUSP_R = crate::BitReader<bool>;
+pub type RXSUSP_R = crate::BitReader;
 #[doc = "Field `RXRSM` reader - Mask UDP Resume Interrupt."]
-pub type RXRSM_R = crate::BitReader<bool>;
+pub type RXRSM_R = crate::BitReader;
 #[doc = "Field `EXTRSM` reader - "]
-pub type EXTRSM_R = crate::BitReader<bool>;
+pub type EXTRSM_R = crate::BitReader;
 #[doc = "Field `SOFINT` reader - Mask Start Of Frame Interrupt"]
-pub type SOFINT_R = crate::BitReader<bool>;
+pub type SOFINT_R = crate::BitReader;
 #[doc = "Field `BIT12` reader - UDP_IMR Bit 12"]
-pub type BIT12_R = crate::BitReader<bool>;
+pub type BIT12_R = crate::BitReader;
 #[doc = "Field `WAKEUP` reader - USB Bus WAKEUP Interrupt"]
-pub type WAKEUP_R = crate::BitReader<bool>;
+pub type WAKEUP_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Mask Endpoint 0 Interrupt"]
     #[inline(always)]
@@ -101,15 +100,13 @@ impl R {
         WAKEUP_R::new(((self.bits >> 13) & 1) != 0)
     }
 }
-#[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](index.html) module"]
+#[doc = "Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`imr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IMR_SPEC;
 impl crate::RegisterSpec for IMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [imr::R](R) reader structure"]
-impl crate::Readable for IMR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`imr::R`](R) reader structure"]
+impl crate::Readable for IMR_SPEC {}
 #[doc = "`reset()` method sets IMR to value 0x1200"]
 impl crate::Resettable for IMR_SPEC {
     const RESET_VALUE: Self::Ux = 0x1200;
