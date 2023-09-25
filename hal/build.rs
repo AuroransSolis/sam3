@@ -18,11 +18,11 @@ fn main() {
             "cargo:warning=Multiple devices enabled: [{}",
             memory_files[0]
         );
-        memory_files.into_iter().for_each(|memory_file| {
+        for memory_file in memory_files {
             msg.push_str(", ");
             msg.push_str(memory_file);
-        });
-        msg.push_str("]");
+        }
+        msg.push(']');
         println!("{msg}");
         panic!();
     } else {

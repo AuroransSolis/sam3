@@ -17,14 +17,18 @@
 
 use core::marker::PhantomData;
 
+#[allow(clippy::module_name_repetitions)]
 pub trait InputFilterCfg {}
+#[allow(clippy::module_name_repetitions)]
 pub trait InputFilterClockCfg {}
 
+#[allow(clippy::module_name_repetitions)]
 /// Disable the glitch input filter on an I/O line.
 pub struct InputFilterDisabled;
 
 impl InputFilterCfg for InputFilterDisabled {}
 
+#[allow(clippy::module_name_repetitions)]
 /// Enable the glitch input filter on an I/O line.
 pub struct InputFilterEnabled<Flck: InputFilterClockCfg> {
     _flck: PhantomData<Flck>,
@@ -32,11 +36,13 @@ pub struct InputFilterEnabled<Flck: InputFilterClockCfg> {
 
 impl<Flck: InputFilterClockCfg> InputFilterCfg for InputFilterEnabled<Flck> {}
 
+#[allow(clippy::module_name_repetitions)]
 /// Set an I/O line's input filter to use the system clock glitch filter.
 pub struct SystemClockGlitchFilter;
 
 impl InputFilterClockCfg for SystemClockGlitchFilter {}
 
+#[allow(clippy::module_name_repetitions)]
 /// Set an I/O line's input filter to use the debouncing filter.
 pub struct DebouncingInputGlitchFilter;
 

@@ -1,6 +1,6 @@
 use crate::pac::{pmc::pmc_mckr::PRES_A, PMC};
 
-pub fn set_master_clk_prescaler(pmc: &mut PMC, prescaler: PRES_A) {
+pub fn set_master_clk_prescaler(pmc: &PMC, prescaler: PRES_A) {
     // Set prescaler bits
     pmc.pmc_mckr
         .write(|master_clk_reg| master_clk_reg.pres().variant(prescaler));
@@ -9,7 +9,7 @@ pub fn set_master_clk_prescaler(pmc: &mut PMC, prescaler: PRES_A) {
 }
 
 // Only defined for peripheral IDs 9, 11-44
-pub(crate) unsafe fn enable_peripheral_clk(pmc: &mut PMC, id: u32) {
+pub(crate) unsafe fn enable_peripheral_clk(pmc: &PMC, id: u32) {
     if id < 32 {
         let mask = 1 << id;
         if pmc.pmc_pcsr0.read().bits() & mask == 0 {
@@ -23,7 +23,7 @@ pub(crate) unsafe fn enable_peripheral_clk(pmc: &mut PMC, id: u32) {
     }
 }
 
-pub(crate) unsafe fn disable_peripheral_clk(pmc: &mut PMC, id: u32) {
+pub(crate) unsafe fn disable_peripheral_clk(pmc: &PMC, id: u32) {
     if id < 32 {
         let mask = 1 << id;
         if pmc.pmc_pcsr0.read().bits() & mask == mask {

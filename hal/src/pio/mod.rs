@@ -26,11 +26,13 @@ use pioe::PioE;
 #[cfg(feature = "sam3x8h")]
 use piof::PioF;
 
+#[allow(clippy::module_name_repetitions)]
 pub trait IsPio: WriteProtect {
     type RegType;
     const PTR: *const Self::RegType;
 }
 
+#[allow(clippy::module_name_repetitions)]
 pub struct PioControllers {
     pioa: PioA,
     piob: PioB,

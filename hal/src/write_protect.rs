@@ -15,7 +15,7 @@ pub trait WriteProtect {
     /// Read the value from the `WPROTADDR` field of the write protection status register of a
     /// peripheral with write protection capability without checking the `WPROTERR` flag.
     ///
-    /// # Soundness
+    /// # Safety
     ///
     /// The value held in this register may be nonsensical if the `WPROTERR` flag is not indicating
     /// that a write protection error has occured, thus it is recommended to use the

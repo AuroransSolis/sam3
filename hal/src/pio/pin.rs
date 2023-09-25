@@ -1,17 +1,10 @@
-use crate::pio::IsPio;
-use super::filter::*;
-use super::interrupt::*;
-use super::peripheral::*;
-use super::pioa::*;
-use super::piob::*;
-use super::pioc::*;
-#[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
-use super::piod::*;
-#[cfg(feature = "sam3x8h")]
-use super::{pioe::*, piof::*};
+use crate::pio::{
+    filter::InputFilterCfg, interrupt::InterruptCfg, peripheral::MultiDriverCfg, IsPio,
+};
 use core::marker::PhantomData;
 use paste::paste;
 
+#[allow(clippy::module_name_repetitions)]
 pub trait PinId {
     type Controller: IsPio;
     const MASK: u32;
