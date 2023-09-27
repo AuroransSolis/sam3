@@ -1,6 +1,15 @@
 use crate::{
     pac::PIOA,
-    pio::{def_pioc, peripheral::impl_peripheral_absel, pin::Pin},
+    pio::{
+        def_pioc,
+        filter::InputFilterCfg,
+        interrupt::InterruptCfg,
+        peripheral::{
+            impl_peripheral_absel, MultiDriverDisabled, MultiDriverEnabled, OutputSyncWriteCfg,
+            PeripheralA, PeripheralB, PeripheralControlled,
+        },
+        pin::{Pin, PullupResistorCfg, def_peripheral_multiplex},
+    },
 };
 use seq_macro::seq;
 
@@ -62,70 +71,22 @@ impl_peripheral_absel! {
     }
 }
 
-// def_peripherals! {
-//     A {
-//         0 {
-//             A: CanTx0<
-//                 ! PeripheralControlled,
-//                 ? Outw,
-//                 ? Otpt,
-//                 ? Pupr,
-//                 ! InterruptDisabled,
-//                 ? Mdvr,
-//                 ? Odta,
-//                 ! InputFilterDisabled,
-//                 ! SystemClockGlitchFilter,
-//                 ? Frlh
-//             >,
-//             B: PwmL3<
-//                 ! PeripheralControlled,
-//                 ? Outw,
-//                 ? Otpt,
-//                 ? Pupr,
-//                 ! InterruptDisabled,
-//                 ? Mdvr,
-//                 ? Odta,
-//                 ! InputFilterDisabled,
-//                 ! SystemClockGlitchFilter,
-//                 ? Frlh
-//             >,
-//         },
-//     };
-// }
+// type CanTx0<Pupr, Irpt, Filt> =
+//     Pin<PioA, Pa0, MultiDriverDisabled<PeripheralControlled<PeripheralA>>, Pupr, Irpt, Filt>;
+// type CanTx0MD<Sync, Pupr, Irpt, Filt> =
+//     Pin<PioA, Pa0, MultiDriverEnabled<PeripheralControlled<PeripheralA>, Sync>, Pupr, Irpt, Filt>;
 
-// Type aliases to peripherals.
-
-// type CanTx0<Outw, Outp, Pupr, Mdvr, Odta> = Pin<
-//     PioA,
-//     Pa0,
-//     PeripheralControlled,
-//     Outw,
-//     Outp,
-//     Pupr,
-//     InterruptDisabled,
-//     Mdvr,
-//     PeripheralA,
-//     Odta,
-//     InputFilterDisabled,
-//     SystemClockGlitchFilter,
-//     AdditionalInterruptModesDisabled,
-//     DetectLevels,
-//     DetectRisingEdgeHighLevel,
-// >;
-// type PwmL3<Outw, Outp, Pupr, Mdvr, Odta> = Pin<
-//     PioA,
-//     Pa0,
-//     PeripheralControlled,
-//     Outw,
-//     Outp,
-//     Pupr,
-//     InterruptDisabled,
-//     Mdvr,
-//     PeripheralB,
-//     Odta,
-//     InputFilterDisabled,
-//     SystemClockGlitchFilter,
-//     AdditionalInterruptModesDisabled,
-//     DetectLevels,
-//     DetectRisingEdgeHighLevel,
-// >;
+def_peripheral_multiplex! {
+    PioA {
+        Pa0: CanTx0, PwmL3;
+        Pa1: CanRx0, Pck0;
+        Pa2: TioA1, NandRdy;
+        Pa3: TioB1, PwmFi1;
+        Pa4: TClk1, NWait;
+        Pa5: TioA2, PwmFi0;
+        Pa6: TioB2, Ncs0;
+        Pa7: TClk2, Ncs1;
+        Pa8: URxD, PwmH0;
+        Pa9: UTxD, PwmH3;
+    }
+}
