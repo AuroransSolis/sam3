@@ -1,4 +1,4 @@
-use atsam3x8e::dacc::cdr::{CDR_HW0_CHSEL_AW, CDR_HW1_CHSEL_AW};
+use crate::pac::dacc::cdr::{CDR_HW0_CHSEL_AW, CDR_HW1_CHSEL_AW};
 
 pub trait CdrData {
     fn bits(self) -> u32;

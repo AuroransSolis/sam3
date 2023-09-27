@@ -12,22 +12,19 @@
 //! Please note that the PIO interrupt signal for the entire PIO bank is fired if the interrupt
 //! condition for any of the individual lines in that PIO bank is met.
 
-#[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
-use crate::pio::piod::PioD;
 use crate::pio::{
     filter::InputFilterCfg,
     peripheral::MultiDriverCfg,
     pin::{Configured, Pin, PinId, PullupResistorCfg, Unconfigured},
     pioa::PioA,
     piob::PioB,
-    pioc::PioC,
     IsPio,
 };
+#[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
+use crate::pio::{pioc::PioC, piod::PioD};
 #[cfg(feature = "sam3x8h")]
 use crate::pio::{pioe::PioE, piof::PioF};
 use core::marker::PhantomData;
-use paste::paste;
-use seq_macro::seq;
 
 #[allow(clippy::module_name_repetitions)]
 /// Marker trait for interrupt configuration types.
@@ -907,12 +904,12 @@ macro_rules! impl_interrupt_cfgs {
 }
 
 impl_interrupt_cfgs! {
-    PioA, PioB, PioC,
+    PioA, PioB,
 }
 
 #[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
 impl_interrupt_cfgs! {
-    PioD,
+    PioC, PioD,
 }
 
 #[cfg(feature = "sam3x8h")]

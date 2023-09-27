@@ -138,13 +138,16 @@
 
 pub mod cdr_data;
 
-use cdr_data::CdrData;
 use crate::{
-    pac::{dacc::mr::{USER_SEL_A, STARTUP_A, WORD_A, TRGEN_A, TRGSEL_A_A}, DACC, PMC},
+    pac::{
+        dacc::mr::{STARTUP_A, TRGEN_A, TRGSEL_A_A, USER_SEL_A, WORD_A},
+        DACC, PMC,
+    },
     peripheral_id::PeripheralId,
-    pmc::{enable_peripheral_clk, disable_peripheral_clk},
+    pmc::{disable_peripheral_clk, enable_peripheral_clk},
     write_protect::{wp_impl, WriteProtect},
 };
+use cdr_data::CdrData;
 
 pub const DACC_PID: u32 = PeripheralId::DACC as u32;
 

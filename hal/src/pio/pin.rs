@@ -2,7 +2,6 @@ use crate::pio::{
     filter::InputFilterCfg, interrupt::InterruptCfg, peripheral::MultiDriverCfg, IsPio,
 };
 use core::marker::PhantomData;
-use paste::paste;
 
 #[allow(clippy::module_name_repetitions)]
 pub trait PinId {

@@ -1,5 +1,3 @@
-#![allow(unused_imports)]
-
 // pub mod dynpin;
 pub mod filter;
 pub mod interrupt;
@@ -7,6 +5,7 @@ pub mod peripheral;
 pub mod pin;
 pub mod pioa;
 pub mod piob;
+#[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
 pub mod pioc;
 #[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
 pub mod piod;
@@ -15,9 +14,10 @@ pub mod pioe;
 #[cfg(feature = "sam3x8h")]
 pub mod piof;
 
-use crate::{pac::pioa::RegisterBlock, write_protect::WriteProtect};
+use crate::write_protect::WriteProtect;
 use pioa::PioA;
 use piob::PioB;
+#[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
 use pioc::PioC;
 #[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
 use piod::PioD;
@@ -36,6 +36,7 @@ pub trait IsPio: WriteProtect {
 pub struct PioControllers {
     pioa: PioA,
     piob: PioB,
+    #[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
     pioc: PioC,
     #[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
     piod: PioD,
