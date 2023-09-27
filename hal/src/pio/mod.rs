@@ -101,6 +101,13 @@ macro_rules! def_pioc {
 
 pub(crate) use def_pioc;
 
+#[allow(clippy::module_name_repetitions)]
+#[derive(Clone, Copy)]
+pub enum PioError {
+    LineLocked,
+    WriteProtected,
+}
+
 // impl<Pio: IsPio> Pio {
 //     pub fn status_reg(&self) -> u32 {
 //         unsafe {

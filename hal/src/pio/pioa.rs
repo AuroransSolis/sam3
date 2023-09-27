@@ -1,6 +1,6 @@
 use crate::{
-    pac::{pioa, PIOA},
-    pio::{def_pioc, pin::Pin},
+    pac::PIOA,
+    pio::{def_pioc, peripheral::impl_peripheral_absel, pin::Pin},
 };
 use seq_macro::seq;
 
@@ -11,6 +11,56 @@ seq! {N in 0..32 {
         }
     }
 }}
+
+impl_peripheral_absel! {
+    PioA {
+        Pa0: absel,
+        Pa1: absel,
+        Pa2: absel,
+        Pa3: absel,
+        Pa4: absel,
+        Pa5: absel,
+        Pa6: absel,
+        Pa7: absel,
+        Pa8: absel,
+        Pa10: absel,
+        Pa11: absel,
+        Pa12: absel,
+        Pa13: absel,
+        Pa14: absel,
+        Pa15: absel,
+        Pa16: absel,
+        Pa17: absel,
+        Pa18: absel,
+        Pa19: absel,
+        Pa20: absel,
+        Pa21: absel,
+        Pa22: absel,
+        Pa23: absel,
+        Pa24: absel,
+        Pa25: absel,
+        Pa26: absel,
+        Pa27: absel,
+        Pa28: absel,
+        Pa29: absel,
+    }
+}
+
+#[cfg(not(feature = "sam3x8h"))]
+impl_peripheral_absel! {
+    PioA {
+        Pa30: noab,
+        Pa31: noab,
+    }
+}
+
+#[cfg(feature = "sam3x8h")]
+impl_peripheral_absel! {
+    PioA {
+        Pa30: absel,
+        Pa31: absel,
+    }
+}
 
 // def_peripherals! {
 //     A {
