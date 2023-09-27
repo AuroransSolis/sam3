@@ -56,9 +56,116 @@ where
     }
 }
 #[doc = "Field `TRGSEL` reader - Trigger Selection"]
-pub type TRGSEL_R = crate::FieldReader;
+pub type TRGSEL_R = crate::FieldReader<TRGSEL_A_A>;
+#[doc = "Trigger Selection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum TRGSEL_A_A {
+    #[doc = "0: External trigger"]
+    External = 0,
+    #[doc = "1: TIO Output of the Timer Counter Channel 0"]
+    Tiootcc0 = 1,
+    #[doc = "2: TIO Output of the Timer Counter Channel 1"]
+    Tiootcc1 = 2,
+    #[doc = "3: TIO Output of the Timer Counter Channel 2"]
+    Tiootcc2 = 3,
+    #[doc = "4: PWM Event Line 0"]
+    Pwm0 = 4,
+    #[doc = "5: PWM Event Line 1"]
+    Pwm1 = 5,
+}
+impl From<TRGSEL_A_A> for u8 {
+    #[inline(always)]
+    fn from(variant: TRGSEL_A_A) -> Self {
+        variant as _
+    }
+}
+impl crate::FieldSpec for TRGSEL_A_A {
+    type Ux = u8;
+}
+impl TRGSEL_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRGSEL_A_A {
+        match self.bits {
+            0 => TRGSEL_A_A::External,
+            1 => TRGSEL_A_A::Tiootcc0,
+            2 => TRGSEL_A_A::Tiootcc1,
+            3 => TRGSEL_A_A::Tiootcc2,
+            4 => TRGSEL_A_A::Pwm0,
+            5 => TRGSEL_A_A::Pwm1,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "External trigger"]
+    #[inline(always)]
+    pub fn is_external(&self) -> bool {
+        *self == TRGSEL_A_A::External
+    }
+    #[doc = "TIO Output of the Timer Counter Channel 0"]
+    #[inline(always)]
+    pub fn is_tiootcc0(&self) -> bool {
+        *self == TRGSEL_A_A::Tiootcc0
+    }
+    #[doc = "TIO Output of the Timer Counter Channel 1"]
+    #[inline(always)]
+    pub fn is_tiootcc1(&self) -> bool {
+        *self == TRGSEL_A_A::Tiootcc1
+    }
+    #[doc = "TIO Output of the Timer Counter Channel 2"]
+    #[inline(always)]
+    pub fn is_tiootcc2(&self) -> bool {
+        *self == TRGSEL_A_A::Tiootcc2
+    }
+    #[doc = "PWM Event Line 0"]
+    #[inline(always)]
+    pub fn is_pwm0(&self) -> bool {
+        *self == TRGSEL_A_A::Pwm0
+    }
+    #[doc = "PWM Event Line 1"]
+    #[inline(always)]
+    pub fn is_pwm1(&self) -> bool {
+        *self == TRGSEL_A_A::Pwm1
+    }
+}
 #[doc = "Field `TRGSEL` writer - Trigger Selection"]
-pub type TRGSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type TRGSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, TRGSEL_A_A>;
+impl<'a, REG, const O: u8> TRGSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "External trigger"]
+    #[inline(always)]
+    pub fn external(self) -> &'a mut crate::W<REG> {
+        self.variant(TRGSEL_A_A::External)
+    }
+    #[doc = "TIO Output of the Timer Counter Channel 0"]
+    #[inline(always)]
+    pub fn tiootcc0(self) -> &'a mut crate::W<REG> {
+        self.variant(TRGSEL_A_A::Tiootcc0)
+    }
+    #[doc = "TIO Output of the Timer Counter Channel 1"]
+    #[inline(always)]
+    pub fn tiootcc1(self) -> &'a mut crate::W<REG> {
+        self.variant(TRGSEL_A_A::Tiootcc1)
+    }
+    #[doc = "TIO Output of the Timer Counter Channel 2"]
+    #[inline(always)]
+    pub fn tiootcc2(self) -> &'a mut crate::W<REG> {
+        self.variant(TRGSEL_A_A::Tiootcc2)
+    }
+    #[doc = "PWM Event Line 0"]
+    #[inline(always)]
+    pub fn pwm0(self) -> &'a mut crate::W<REG> {
+        self.variant(TRGSEL_A_A::Pwm0)
+    }
+    #[doc = "PWM Event Line 1"]
+    #[inline(always)]
+    pub fn pwm1(self) -> &'a mut crate::W<REG> {
+        self.variant(TRGSEL_A_A::Pwm1)
+    }
+}
 #[doc = "Field `WORD` reader - Word Transfer"]
 pub type WORD_R = crate::BitReader<WORD_A>;
 #[doc = "Word Transfer\n\nValue on reset: 0"]
