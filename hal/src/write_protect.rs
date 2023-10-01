@@ -78,6 +78,15 @@ macro_rules! wp_impl {
                     self.$field.wpsr.read().$err().bit()
                 }
 
+                /// Read the value from the `WPROTADDR` field of the write protection status register of a
+                /// peripheral with write protection capability without checking the `WPROTERR` flag.
+                ///
+                /// # Safety
+                ///
+                /// The value held in this register may be nonsensical if the `WPROTERR` flag is not indicating
+                /// that a write protection error has occured, thus it is recommended to use the
+                /// [`writeprotect_error_addr`](crate::write_protect::WriteProtect::writeprotect_error_addr)
+                /// method instead.
                 unsafe fn writeprotect_error_addr_unchecked(&self) -> $addrty {
                     self.$field.wpsr.read().$addr().bits()
                 }
