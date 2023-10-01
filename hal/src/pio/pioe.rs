@@ -1,6 +1,6 @@
 use crate::{
     pac::PIOE,
-    pio::{def_pioc, pin::def_peripheral_multiplex},
+    pio::{def_pioc, peripheral::impl_peripheral_absel, pin::def_peripheral_multiplex},
 };
 use seq_macro::seq;
 
@@ -11,6 +11,41 @@ seq! {N in 0..32 {
         }
     }
 }}
+
+impl_peripheral_absel! {
+    PioE {
+        Pe0: asel,
+        Pe1: asel,
+        Pe2: asel,
+        Pe3: asel,
+        Pe4: asel,
+        Pe5: asel,
+        Pe6: asel,
+        Pe9: asel,
+        Pe10: asel,
+        Pe11: asel,
+        Pe12: asel,
+        Pe13: asel,
+        Pe14: asel,
+        Pe15: asel,
+        Pe16: absel,
+        Pe17: asel,
+        Pe18: absel,
+        Pe19: asel,
+        Pe20: absel,
+        Pe21: asel,
+        Pe22: absel,
+        Pe23: asel,
+        Pe24: absel,
+        Pe25: asel,
+        Pe26: absel,
+        Pe27: absel,
+        Pe28: asel,
+        Pe29: asel,
+        Pe30: asel,
+        Pe31: asel,
+    }
+}
 
 def_peripheral_multiplex! {
     PioE {

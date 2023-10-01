@@ -1,10 +1,6 @@
 use crate::{
     pac::PIOA,
-    pio::{
-        def_pioc,
-        peripheral::impl_peripheral_absel,
-        pin::{def_peripheral_multiplex, Pin},
-    },
+    pio::{def_pioc, peripheral::impl_peripheral_absel, pin::def_peripheral_multiplex},
 };
 use seq_macro::seq;
 

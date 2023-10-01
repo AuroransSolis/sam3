@@ -1,12 +1,6 @@
-#![allow(unused_imports)]
-
 use crate::{
-    pac::{piod, PIOD},
-    pio::{
-        def_pioc,
-        peripheral::impl_peripheral_absel,
-        pin::{def_peripheral_multiplex, Pin},
-    },
+    pac::PIOD,
+    pio::{def_pioc, peripheral::impl_peripheral_absel, pin::def_peripheral_multiplex},
 };
 use seq_macro::seq;
 
