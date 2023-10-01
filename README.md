@@ -9,8 +9,8 @@ welcome.
 
 ## License
 
-The included SVD files are sourced from http://packs.download.atmel.com/ and are licensed under the
-Apache License, Version 2.0 ([LICENSE-APACHE-ATMEL](LICENSE-APACHE-ATMEL) or
+The included SVD and linker script files are sourced from http://packs.download.atmel.com/ and are
+licensed under the Apache License, Version 2.0 ([LICENSE-APACHE-ATMEL](LICENSE-APACHE-ATMEL) or
 http://www.apache.org/licenses/LICENSE-2.0).
 
 The remainder of the code is licensed under the European Union Public License version 1.2 or later
