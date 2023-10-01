@@ -77,63 +77,132 @@ impl PullupResistorCfg for PullupDisabled {}
 macro_rules! def_peripheral_multiplex {
     (
         $pio:ty {
-            $($pid:ty: $asel:ident, $bsel:ident;)+
+            $($pid:ty: $opts:tt;)+
         }
     ) => {
         $(
-            paste::paste! {
-                pub type $asel<Pupr, Irpt, Filt> = crate::pio::pin::Pin<
-                    $pio,
-                    $pid,
-                    crate::pio::peripheral::MultiDriverDisabled<
-                        crate::pio::peripheral::PeripheralControlled<
-                            crate::pio::peripheral::PeripheralA
-                        >
-                    >,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-                pub type [<$asel MD>]<Sync, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
-                    $pio,
-                    $pid,
-                    crate::pio::peripheral::MultiDriverEnabled<
-                        crate::pio::peripheral::PeripheralControlled<
-                            crate::pio::peripheral::PeripheralA
-                        >,
-                        Sync,
-                    >,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-                pub type $bsel<Pupr, Irpt, Filt> = crate::pio::pin::Pin<
-                    $pio,
-                    $pid,
-                    crate::pio::peripheral::MultiDriverDisabled<
-                        crate::pio::peripheral::PeripheralControlled<
-                            crate::pio::peripheral::PeripheralB
-                        >
-                    >,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-                pub type [<$bsel MD>]<Sync, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
-                    $pio,
-                    $pid,
-                    crate::pio::peripheral::MultiDriverEnabled<
-                        crate::pio::peripheral::PeripheralControlled<
-                            crate::pio::peripheral::PeripheralB
-                        >,
-                        Sync,
-                    >,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
+            def_peripheral_multiplex! {
+                @def $pio, $pid: $opts
             }
         )+
+    };
+    (
+        @def $pio:ty, $pid:ty: [$asel:ident, $bsel:ident]
+    ) => {
+        paste::paste! {
+            pub type $asel<Pupr, Irpt, Filt> = crate::pio::pin::Pin<
+                $pio,
+                $pid,
+                crate::pio::peripheral::MultiDriverDisabled<
+                    crate::pio::peripheral::PeripheralControlled<
+                        crate::pio::peripheral::PeripheralA
+                    >
+                >,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+            pub type [<$asel MD>]<Sync, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
+                $pio,
+                $pid,
+                crate::pio::peripheral::MultiDriverEnabled<
+                    crate::pio::peripheral::PeripheralControlled<
+                        crate::pio::peripheral::PeripheralA
+                    >,
+                    Sync,
+                >,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+            pub type $bsel<Pupr, Irpt, Filt> = crate::pio::pin::Pin<
+                $pio,
+                $pid,
+                crate::pio::peripheral::MultiDriverDisabled<
+                    crate::pio::peripheral::PeripheralControlled<
+                        crate::pio::peripheral::PeripheralB
+                    >
+                >,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+            pub type [<$bsel MD>]<Sync, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
+                $pio,
+                $pid,
+                crate::pio::peripheral::MultiDriverEnabled<
+                    crate::pio::peripheral::PeripheralControlled<
+                        crate::pio::peripheral::PeripheralB
+                    >,
+                    Sync,
+                >,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+        }
+    };
+    (
+        @def $pio:ty, $pid:ty: [asel $asel:ident]
+    ) => {
+        paste::paste! {
+            pub type $asel<Pupr, Irpt, Filt> = crate::pio::pin::Pin<
+                $pio,
+                $pid,
+                crate::pio::peripheral::MultiDriverDisabled<
+                    crate::pio::peripheral::PeripheralControlled<
+                        crate::pio::peripheral::PeripheralA
+                    >
+                >,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+            pub type [<$asel MD>]<Sync, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
+                $pio,
+                $pid,
+                crate::pio::peripheral::MultiDriverEnabled<
+                    crate::pio::peripheral::PeripheralControlled<
+                        crate::pio::peripheral::PeripheralA
+                    >,
+                    Sync,
+                >,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+        }
+    };
+    (
+        @def $pio:ty, $pid:ty: [bsel $bsel:ident]
+    ) => {
+        paste::paste! {
+            pub type $bsel<Pupr, Irpt, Filt> = crate::pio::pin::Pin<
+                $pio,
+                $pid,
+                crate::pio::peripheral::MultiDriverDisabled<
+                    crate::pio::peripheral::PeripheralControlled<
+                        crate::pio::peripheral::PeripheralB
+                    >
+                >,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+            pub type [<$bsel MD>]<Sync, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
+                $pio,
+                $pid,
+                crate::pio::peripheral::MultiDriverEnabled<
+                    crate::pio::peripheral::PeripheralControlled<
+                        crate::pio::peripheral::PeripheralB
+                    >,
+                    Sync,
+                >,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+        }
     };
 }
 

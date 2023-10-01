@@ -2,13 +2,8 @@ use crate::{
     pac::PIOA,
     pio::{
         def_pioc,
-        filter::InputFilterCfg,
-        interrupt::InterruptCfg,
-        peripheral::{
-            impl_peripheral_absel, MultiDriverDisabled, MultiDriverEnabled, OutputSyncWriteCfg,
-            PeripheralA, PeripheralB, PeripheralControlled,
-        },
-        pin::{Pin, PullupResistorCfg, def_peripheral_multiplex},
+        peripheral::impl_peripheral_absel,
+        pin::{def_peripheral_multiplex, Pin},
     },
 };
 use seq_macro::seq;
@@ -71,22 +66,45 @@ impl_peripheral_absel! {
     }
 }
 
-// type CanTx0<Pupr, Irpt, Filt> =
-//     Pin<PioA, Pa0, MultiDriverDisabled<PeripheralControlled<PeripheralA>>, Pupr, Irpt, Filt>;
-// type CanTx0MD<Sync, Pupr, Irpt, Filt> =
-//     Pin<PioA, Pa0, MultiDriverEnabled<PeripheralControlled<PeripheralA>, Sync>, Pupr, Irpt, Filt>;
-
 def_peripheral_multiplex! {
     PioA {
-        Pa0: CanTx0, PwmL3;
-        Pa1: CanRx0, Pck0;
-        Pa2: TioA1, NandRdy;
-        Pa3: TioB1, PwmFi1;
-        Pa4: TClk1, NWait;
-        Pa5: TioA2, PwmFi0;
-        Pa6: TioB2, Ncs0;
-        Pa7: TClk2, Ncs1;
-        Pa8: URxD, PwmH0;
-        Pa9: UTxD, PwmH3;
+        Pa0: [CanTx0, PwmL3];
+        Pa1: [CanRx0, Pck0];
+        Pa2: [TioA1, NandRdy];
+        Pa3: [TioB1, PwmFi1];
+        Pa4: [TClk1, NWait];
+        Pa5: [TioA2, PwmFi0];
+        Pa6: [TioB2, Ncs0];
+        Pa7: [TClk2, Ncs1];
+        Pa8: [URxD, PwmH0];
+        Pa9: [UTxD, PwmH3];
+        Pa10: [RxD0, DaTrg];
+        Pa11: [TxD0, AdTrg];
+        Pa12: [RxD1, PwmL1];
+        Pa13: [TxD1, PwmH2];
+        Pa14: [Rts1, Tk];
+        Pa15: [Cts1, Tf];
+        Pa16: [SpCk1, Td];
+        Pa17: [Twd0, SpCk0];
+        Pa18: [TwCk0, Pa18A20];
+        Pa19: [MCCk, PwmH1];
+        Pa20: [MCCdA, PwmL2];
+        Pa21: [MCDA0, PwmL0];
+        Pa22: [MCDA1, TClk3];
+        Pa23: [MCDA2, TClk4];
+        Pa24: [MCDA3, Pa24PCk1];
+        Pa25: [SPI0MISO, A18];
+        Pa26: [SPI0MOSI, A19];
+        Pa27: [SPIOSPCk, Pa27A20];
+        Pa28: [SPI0NPCS0, Pck2];
+        Pa29: [SPI0NPCS1, NRd];
+    }
+}
+
+#[cfg(feature = "sam3x8h")]
+def_peripheral_multiplex! {
+    PioA {
+        Pa30: [SPI0NPCS2, Pa30PCk1];
+        Pa31: [SPI0NPCS3, PCk2];
     }
 }
