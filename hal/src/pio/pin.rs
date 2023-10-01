@@ -102,14 +102,14 @@ macro_rules! def_peripheral_multiplex {
                 Irpt,
                 Filt,
             >;
-            pub type [<$asel MD>]<Sync, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
+            pub type [<$asel MD>]<Outp, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
                 $pio,
                 $pid,
                 crate::pio::peripheral::MultiDriverEnabled<
                     crate::pio::peripheral::PeripheralControlled<
                         crate::pio::peripheral::PeripheralA
                     >,
-                    Sync,
+                    Outp,
                 >,
                 Pupr,
                 Irpt,
@@ -127,14 +127,14 @@ macro_rules! def_peripheral_multiplex {
                 Irpt,
                 Filt,
             >;
-            pub type [<$bsel MD>]<Sync, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
+            pub type [<$bsel MD>]<Outp, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
                 $pio,
                 $pid,
                 crate::pio::peripheral::MultiDriverEnabled<
                     crate::pio::peripheral::PeripheralControlled<
                         crate::pio::peripheral::PeripheralB
                     >,
-                    Sync,
+                    Outp,
                 >,
                 Pupr,
                 Irpt,
@@ -158,14 +158,14 @@ macro_rules! def_peripheral_multiplex {
                 Irpt,
                 Filt,
             >;
-            pub type [<$asel MD>]<Sync, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
+            pub type [<$asel MD>]<Outp, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
                 $pio,
                 $pid,
                 crate::pio::peripheral::MultiDriverEnabled<
                     crate::pio::peripheral::PeripheralControlled<
                         crate::pio::peripheral::PeripheralA
                     >,
-                    Sync,
+                    Outp,
                 >,
                 Pupr,
                 Irpt,
@@ -189,14 +189,14 @@ macro_rules! def_peripheral_multiplex {
                 Irpt,
                 Filt,
             >;
-            pub type [<$bsel MD>]<Sync, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
+            pub type [<$bsel MD>]<Outp, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
                 $pio,
                 $pid,
                 crate::pio::peripheral::MultiDriverEnabled<
                     crate::pio::peripheral::PeripheralControlled<
                         crate::pio::peripheral::PeripheralB
                     >,
-                    Sync,
+                    Outp,
                 >,
                 Pupr,
                 Irpt,
