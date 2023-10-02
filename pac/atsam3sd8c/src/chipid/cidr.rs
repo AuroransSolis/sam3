@@ -447,7 +447,70 @@ impl SRAMSIZ_R {
     }
 }
 #[doc = "Field `ARCH` reader - Architecture Identifier"]
-pub type ARCH_R = crate::FieldReader;
+pub type ARCH_R = crate::FieldReader<ARCH_A>;
+#[doc = "Architecture Identifier"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum ARCH_A {
+    #[doc = "136: SAM3SxASeries (48-pin version)"]
+    Sam3sxA = 136,
+    #[doc = "137: SAM3SxB Series (64-pin version)"]
+    Sam3sxB = 137,
+    #[doc = "138: SAM3SxC Series (100-pin version)"]
+    Sam3sxC = 138,
+    #[doc = "153: SAM3SDxB Series (64-pin version)"]
+    Sam3sdxB = 153,
+    #[doc = "154: SAM3SDxC Series (100-pin version)"]
+    Sam3sdxC = 154,
+}
+impl From<ARCH_A> for u8 {
+    #[inline(always)]
+    fn from(variant: ARCH_A) -> Self {
+        variant as _
+    }
+}
+impl crate::FieldSpec for ARCH_A {
+    type Ux = u8;
+}
+impl ARCH_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<ARCH_A> {
+        match self.bits {
+            136 => Some(ARCH_A::Sam3sxA),
+            137 => Some(ARCH_A::Sam3sxB),
+            138 => Some(ARCH_A::Sam3sxC),
+            153 => Some(ARCH_A::Sam3sdxB),
+            154 => Some(ARCH_A::Sam3sdxC),
+            _ => None,
+        }
+    }
+    #[doc = "SAM3SxASeries (48-pin version)"]
+    #[inline(always)]
+    pub fn is_sam3sx_a(&self) -> bool {
+        *self == ARCH_A::Sam3sxA
+    }
+    #[doc = "SAM3SxB Series (64-pin version)"]
+    #[inline(always)]
+    pub fn is_sam3sx_b(&self) -> bool {
+        *self == ARCH_A::Sam3sxB
+    }
+    #[doc = "SAM3SxC Series (100-pin version)"]
+    #[inline(always)]
+    pub fn is_sam3sx_c(&self) -> bool {
+        *self == ARCH_A::Sam3sxC
+    }
+    #[doc = "SAM3SDxB Series (64-pin version)"]
+    #[inline(always)]
+    pub fn is_sam3sdx_b(&self) -> bool {
+        *self == ARCH_A::Sam3sdxB
+    }
+    #[doc = "SAM3SDxC Series (100-pin version)"]
+    #[inline(always)]
+    pub fn is_sam3sdx_c(&self) -> bool {
+        *self == ARCH_A::Sam3sdxC
+    }
+}
 #[doc = "Field `NVPTYP` reader - Nonvolatile Program Memory Type"]
 pub type NVPTYP_R = crate::FieldReader<NVPTYP_A>;
 #[doc = "Nonvolatile Program Memory Type"]
