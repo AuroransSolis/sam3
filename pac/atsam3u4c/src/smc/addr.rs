@@ -20,7 +20,11 @@ impl W {
     pub fn addr_cycle0(&mut self) -> ADDR_CYCLE0_W<ADDR_SPEC, 0> {
         ADDR_CYCLE0_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
