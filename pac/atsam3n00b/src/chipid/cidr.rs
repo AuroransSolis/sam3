@@ -452,90 +452,16 @@ pub type ARCH_R = crate::FieldReader<ARCH_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ARCH_A {
-    #[doc = "25: AT91SAM9xx Series"]
-    At91sam9xx = 25,
-    #[doc = "41: AT91SAM9XExx Series"]
-    At91sam9xexx = 41,
-    #[doc = "52: AT91x34 Series"]
-    At91x34 = 52,
-    #[doc = "55: CAP7 Series"]
-    Cap7 = 55,
-    #[doc = "57: CAP9 Series"]
-    Cap9 = 57,
-    #[doc = "59: CAP11 Series"]
-    Cap11 = 59,
-    #[doc = "64: AT91x40 Series"]
-    At91x40 = 64,
-    #[doc = "66: AT91x42 Series"]
-    At91x42 = 66,
-    #[doc = "85: AT91x55 Series"]
-    At91x55 = 85,
-    #[doc = "96: AT91SAM7Axx Series"]
-    At91sam7axx = 96,
-    #[doc = "97: AT91SAM7AQxx Series"]
-    At91sam7aqxx = 97,
-    #[doc = "99: AT91x63 Series"]
-    At91x63 = 99,
-    #[doc = "112: AT91SAM7Sxx Series"]
-    At91sam7sxx = 112,
-    #[doc = "113: AT91SAM7XCxx Series"]
-    At91sam7xcxx = 113,
-    #[doc = "114: AT91SAM7SExx Series"]
-    At91sam7sexx = 114,
-    #[doc = "115: AT91SAM7Lxx Series"]
-    At91sam7lxx = 115,
-    #[doc = "117: AT91SAM7Xxx Series"]
-    At91sam7xxx = 117,
-    #[doc = "118: AT91SAM7SLxx Series"]
-    At91sam7slxx = 118,
-    #[doc = "128: SAM3UxC Series (100-pin version)"]
-    Sam3uxC = 128,
-    #[doc = "129: SAM3UxE Series (144-pin version)"]
-    Sam3uxE = 129,
-    #[doc = "131: SAM3AxC Series (100-pin version)"]
-    Sam3axC = 131,
-    #[doc = "131: SAM4AxC Series (100-pin version)"]
-    Sam4axC = 131,
-    #[doc = "132: SAM3XxC Series (100-pin version)"]
-    Sam3xxC = 132,
-    #[doc = "132: SAM4XxC Series (100-pin version)"]
-    Sam4xxC = 132,
-    #[doc = "133: SAM3XxE Series (144-pin version)"]
-    Sam3xxE = 133,
-    #[doc = "133: SAM4XxE Series (144-pin version)"]
-    Sam4xxE = 133,
-    #[doc = "134: SAM3XxG Series (208/217-pin version)"]
-    Sam3xxG = 134,
-    #[doc = "134: SAM4XxG Series (208/217-pin version)"]
-    Sam4xxG = 134,
     #[doc = "136: SAM3SxASeries (48-pin version)"]
     Sam3sxA = 136,
-    #[doc = "136: SAM4SxA Series (48-pin version)"]
-    Sam4sxA = 136,
     #[doc = "137: SAM3SxB Series (64-pin version)"]
     Sam3sxB = 137,
-    #[doc = "137: SAM4SxB Series (64-pin version)"]
-    Sam4sxB = 137,
     #[doc = "138: SAM3SxC Series (100-pin version)"]
     Sam3sxC = 138,
-    #[doc = "138: SAM4SxC Series (100-pin version)"]
-    Sam4sxC = 138,
-    #[doc = "146: AT91x92 Series"]
-    At91x92 = 146,
-    #[doc = "147: SAM3NxA Series (48-pin version)"]
-    Sam3nxA = 147,
-    #[doc = "148: SAM3NxB Series (64-pin version)"]
-    Sam3nxB = 148,
-    #[doc = "149: SAM3NxC Series (100-pin version)"]
-    Sam3nxC = 149,
     #[doc = "153: SAM3SDxB Series (64-pin version)"]
     Sam3sdxB = 153,
     #[doc = "154: SAM3SDxC Series (100-pin version)"]
     Sam3sdxC = 154,
-    #[doc = "165: SAM5A"]
-    Sam5a = 165,
-    #[doc = "240: AT75Cxx Series"]
-    At75cxx = 240,
 }
 impl From<ARCH_A> for u8 {
     #[inline(always)]
@@ -551,240 +477,28 @@ impl ARCH_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<ARCH_A> {
         match self.bits {
-            25 => Some(ARCH_A::At91sam9xx),
-            41 => Some(ARCH_A::At91sam9xexx),
-            52 => Some(ARCH_A::At91x34),
-            55 => Some(ARCH_A::Cap7),
-            57 => Some(ARCH_A::Cap9),
-            59 => Some(ARCH_A::Cap11),
-            64 => Some(ARCH_A::At91x40),
-            66 => Some(ARCH_A::At91x42),
-            85 => Some(ARCH_A::At91x55),
-            96 => Some(ARCH_A::At91sam7axx),
-            97 => Some(ARCH_A::At91sam7aqxx),
-            99 => Some(ARCH_A::At91x63),
-            112 => Some(ARCH_A::At91sam7sxx),
-            113 => Some(ARCH_A::At91sam7xcxx),
-            114 => Some(ARCH_A::At91sam7sexx),
-            115 => Some(ARCH_A::At91sam7lxx),
-            117 => Some(ARCH_A::At91sam7xxx),
-            118 => Some(ARCH_A::At91sam7slxx),
-            128 => Some(ARCH_A::Sam3uxC),
-            129 => Some(ARCH_A::Sam3uxE),
-            131 => Some(ARCH_A::Sam3axC),
-            131 => Some(ARCH_A::Sam4axC),
-            132 => Some(ARCH_A::Sam3xxC),
-            132 => Some(ARCH_A::Sam4xxC),
-            133 => Some(ARCH_A::Sam3xxE),
-            133 => Some(ARCH_A::Sam4xxE),
-            134 => Some(ARCH_A::Sam3xxG),
-            134 => Some(ARCH_A::Sam4xxG),
             136 => Some(ARCH_A::Sam3sxA),
-            136 => Some(ARCH_A::Sam4sxA),
             137 => Some(ARCH_A::Sam3sxB),
-            137 => Some(ARCH_A::Sam4sxB),
             138 => Some(ARCH_A::Sam3sxC),
-            138 => Some(ARCH_A::Sam4sxC),
-            146 => Some(ARCH_A::At91x92),
-            147 => Some(ARCH_A::Sam3nxA),
-            148 => Some(ARCH_A::Sam3nxB),
-            149 => Some(ARCH_A::Sam3nxC),
             153 => Some(ARCH_A::Sam3sdxB),
             154 => Some(ARCH_A::Sam3sdxC),
-            165 => Some(ARCH_A::Sam5a),
-            240 => Some(ARCH_A::At75cxx),
             _ => None,
         }
-    }
-    #[doc = "AT91SAM9xx Series"]
-    #[inline(always)]
-    pub fn is_at91sam9xx(&self) -> bool {
-        *self == ARCH_A::At91sam9xx
-    }
-    #[doc = "AT91SAM9XExx Series"]
-    #[inline(always)]
-    pub fn is_at91sam9xexx(&self) -> bool {
-        *self == ARCH_A::At91sam9xexx
-    }
-    #[doc = "AT91x34 Series"]
-    #[inline(always)]
-    pub fn is_at91x34(&self) -> bool {
-        *self == ARCH_A::At91x34
-    }
-    #[doc = "CAP7 Series"]
-    #[inline(always)]
-    pub fn is_cap7(&self) -> bool {
-        *self == ARCH_A::Cap7
-    }
-    #[doc = "CAP9 Series"]
-    #[inline(always)]
-    pub fn is_cap9(&self) -> bool {
-        *self == ARCH_A::Cap9
-    }
-    #[doc = "CAP11 Series"]
-    #[inline(always)]
-    pub fn is_cap11(&self) -> bool {
-        *self == ARCH_A::Cap11
-    }
-    #[doc = "AT91x40 Series"]
-    #[inline(always)]
-    pub fn is_at91x40(&self) -> bool {
-        *self == ARCH_A::At91x40
-    }
-    #[doc = "AT91x42 Series"]
-    #[inline(always)]
-    pub fn is_at91x42(&self) -> bool {
-        *self == ARCH_A::At91x42
-    }
-    #[doc = "AT91x55 Series"]
-    #[inline(always)]
-    pub fn is_at91x55(&self) -> bool {
-        *self == ARCH_A::At91x55
-    }
-    #[doc = "AT91SAM7Axx Series"]
-    #[inline(always)]
-    pub fn is_at91sam7axx(&self) -> bool {
-        *self == ARCH_A::At91sam7axx
-    }
-    #[doc = "AT91SAM7AQxx Series"]
-    #[inline(always)]
-    pub fn is_at91sam7aqxx(&self) -> bool {
-        *self == ARCH_A::At91sam7aqxx
-    }
-    #[doc = "AT91x63 Series"]
-    #[inline(always)]
-    pub fn is_at91x63(&self) -> bool {
-        *self == ARCH_A::At91x63
-    }
-    #[doc = "AT91SAM7Sxx Series"]
-    #[inline(always)]
-    pub fn is_at91sam7sxx(&self) -> bool {
-        *self == ARCH_A::At91sam7sxx
-    }
-    #[doc = "AT91SAM7XCxx Series"]
-    #[inline(always)]
-    pub fn is_at91sam7xcxx(&self) -> bool {
-        *self == ARCH_A::At91sam7xcxx
-    }
-    #[doc = "AT91SAM7SExx Series"]
-    #[inline(always)]
-    pub fn is_at91sam7sexx(&self) -> bool {
-        *self == ARCH_A::At91sam7sexx
-    }
-    #[doc = "AT91SAM7Lxx Series"]
-    #[inline(always)]
-    pub fn is_at91sam7lxx(&self) -> bool {
-        *self == ARCH_A::At91sam7lxx
-    }
-    #[doc = "AT91SAM7Xxx Series"]
-    #[inline(always)]
-    pub fn is_at91sam7xxx(&self) -> bool {
-        *self == ARCH_A::At91sam7xxx
-    }
-    #[doc = "AT91SAM7SLxx Series"]
-    #[inline(always)]
-    pub fn is_at91sam7slxx(&self) -> bool {
-        *self == ARCH_A::At91sam7slxx
-    }
-    #[doc = "SAM3UxC Series (100-pin version)"]
-    #[inline(always)]
-    pub fn is_sam3ux_c(&self) -> bool {
-        *self == ARCH_A::Sam3uxC
-    }
-    #[doc = "SAM3UxE Series (144-pin version)"]
-    #[inline(always)]
-    pub fn is_sam3ux_e(&self) -> bool {
-        *self == ARCH_A::Sam3uxE
-    }
-    #[doc = "SAM3AxC Series (100-pin version)"]
-    #[inline(always)]
-    pub fn is_sam3ax_c(&self) -> bool {
-        *self == ARCH_A::Sam3axC
-    }
-    #[doc = "SAM4AxC Series (100-pin version)"]
-    #[inline(always)]
-    pub fn is_sam4ax_c(&self) -> bool {
-        *self == ARCH_A::Sam4axC
-    }
-    #[doc = "SAM3XxC Series (100-pin version)"]
-    #[inline(always)]
-    pub fn is_sam3xx_c(&self) -> bool {
-        *self == ARCH_A::Sam3xxC
-    }
-    #[doc = "SAM4XxC Series (100-pin version)"]
-    #[inline(always)]
-    pub fn is_sam4xx_c(&self) -> bool {
-        *self == ARCH_A::Sam4xxC
-    }
-    #[doc = "SAM3XxE Series (144-pin version)"]
-    #[inline(always)]
-    pub fn is_sam3xx_e(&self) -> bool {
-        *self == ARCH_A::Sam3xxE
-    }
-    #[doc = "SAM4XxE Series (144-pin version)"]
-    #[inline(always)]
-    pub fn is_sam4xx_e(&self) -> bool {
-        *self == ARCH_A::Sam4xxE
-    }
-    #[doc = "SAM3XxG Series (208/217-pin version)"]
-    #[inline(always)]
-    pub fn is_sam3xx_g(&self) -> bool {
-        *self == ARCH_A::Sam3xxG
-    }
-    #[doc = "SAM4XxG Series (208/217-pin version)"]
-    #[inline(always)]
-    pub fn is_sam4xx_g(&self) -> bool {
-        *self == ARCH_A::Sam4xxG
     }
     #[doc = "SAM3SxASeries (48-pin version)"]
     #[inline(always)]
     pub fn is_sam3sx_a(&self) -> bool {
         *self == ARCH_A::Sam3sxA
     }
-    #[doc = "SAM4SxA Series (48-pin version)"]
-    #[inline(always)]
-    pub fn is_sam4sx_a(&self) -> bool {
-        *self == ARCH_A::Sam4sxA
-    }
     #[doc = "SAM3SxB Series (64-pin version)"]
     #[inline(always)]
     pub fn is_sam3sx_b(&self) -> bool {
         *self == ARCH_A::Sam3sxB
     }
-    #[doc = "SAM4SxB Series (64-pin version)"]
-    #[inline(always)]
-    pub fn is_sam4sx_b(&self) -> bool {
-        *self == ARCH_A::Sam4sxB
-    }
     #[doc = "SAM3SxC Series (100-pin version)"]
     #[inline(always)]
     pub fn is_sam3sx_c(&self) -> bool {
         *self == ARCH_A::Sam3sxC
-    }
-    #[doc = "SAM4SxC Series (100-pin version)"]
-    #[inline(always)]
-    pub fn is_sam4sx_c(&self) -> bool {
-        *self == ARCH_A::Sam4sxC
-    }
-    #[doc = "AT91x92 Series"]
-    #[inline(always)]
-    pub fn is_at91x92(&self) -> bool {
-        *self == ARCH_A::At91x92
-    }
-    #[doc = "SAM3NxA Series (48-pin version)"]
-    #[inline(always)]
-    pub fn is_sam3nx_a(&self) -> bool {
-        *self == ARCH_A::Sam3nxA
-    }
-    #[doc = "SAM3NxB Series (64-pin version)"]
-    #[inline(always)]
-    pub fn is_sam3nx_b(&self) -> bool {
-        *self == ARCH_A::Sam3nxB
-    }
-    #[doc = "SAM3NxC Series (100-pin version)"]
-    #[inline(always)]
-    pub fn is_sam3nx_c(&self) -> bool {
-        *self == ARCH_A::Sam3nxC
     }
     #[doc = "SAM3SDxB Series (64-pin version)"]
     #[inline(always)]
@@ -795,16 +509,6 @@ impl ARCH_R {
     #[inline(always)]
     pub fn is_sam3sdx_c(&self) -> bool {
         *self == ARCH_A::Sam3sdxC
-    }
-    #[doc = "SAM5A"]
-    #[inline(always)]
-    pub fn is_sam5a(&self) -> bool {
-        *self == ARCH_A::Sam5a
-    }
-    #[doc = "AT75Cxx Series"]
-    #[inline(always)]
-    pub fn is_at75cxx(&self) -> bool {
-        *self == ARCH_A::At75cxx
     }
 }
 #[doc = "Field `NVPTYP` reader - Nonvolatile Program Memory Type"]
