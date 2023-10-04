@@ -99,12 +99,14 @@ pub struct RegisterBlock {
     pub rehlsr: REHLSR,
     #[doc = "0xd8 - Fall/Rise - Low/High Status Register"]
     pub frlhsr: FRLHSR,
-    _reserved44: [u8; 0x08],
+    _reserved44: [u8; 0x04],
+    #[doc = "0xe0 - Lock Status"]
+    pub locksr: LOCKSR,
     #[doc = "0xe4 - Write Protect Mode Register"]
     pub wpmr: WPMR,
     #[doc = "0xe8 - Write Protect Status Register"]
     pub wpsr: WPSR,
-    _reserved46: [u8; 0x14],
+    _reserved47: [u8; 0x14],
     #[doc = "0x100 - Schmitt Trigger Register"]
     pub schmitt: SCHMITT,
 }
@@ -343,3 +345,8 @@ module"]
 pub type SCHMITT = crate::Reg<schmitt::SCHMITT_SPEC>;
 #[doc = "Schmitt Trigger Register"]
 pub mod schmitt;
+#[doc = "LOCKSR (r) register accessor: Lock Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`locksr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`locksr`]
+module"]
+pub type LOCKSR = crate::Reg<locksr::LOCKSR_SPEC>;
+#[doc = "Lock Status"]
+pub mod locksr;
