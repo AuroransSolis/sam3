@@ -236,23 +236,6 @@ impl_peripheral_fnsel! {
     }
 }
 
-#[cfg(feature = "sam3s48")]
-impl_peripheral_fnsel! {
-    PioA {
-        Pa21: [],
-        Pa22: [],
-        Pa23: [],
-        Pa24: [],
-        Pa25: [],
-        Pa26: [],
-        Pa27: [],
-        Pa28: [],
-        Pa29: [],
-        Pa30: [],
-        Pa31: [],
-    }
-}
-
 #[cfg(any(feature = "sam3s64", feature = "sam3s100"))]
 impl_peripheral_fnsel! {
     PioA {

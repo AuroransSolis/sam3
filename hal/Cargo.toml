@@ -124,7 +124,7 @@ sam3sd8b-rt = ["sam3sd8b", "atsam3sd8b/rt"]
 sam3sd8c = ["atsam3sd8c", "sam3s8", "pioc", "sam3s8100"]
 sam3sd8c-rt = ["sam3sd8c", "atsam3sd8c/rt"]
 
-sam3u = ["device", "pioa", "piob", "3fn"]
+sam3u = ["device", "pioa", "piob", "2fn"]
 sam3u1c = ["atsam3u1c", "sam3u", "sam3u100"]
 sam3u1c-rt = ["sam3u1c", "atsam3u1c/rt"]
 sam3u1e = ["atsam3u1e", "sam3u", "pioc", "sam3u144"]
