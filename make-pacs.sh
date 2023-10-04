@@ -36,7 +36,8 @@ function build_pac() {
 
     mkdir -p "${pac_dir}"
 
-    xsltproc "${xsl}" "${1}" \
+    xsltproc -o "${pac_dir}/${chip_upper}.out" "svd/patches/expand-dim.xsl" "${1}"
+    xsltproc "${xsl}" "${pac_dir}/${chip_upper}.out" \
         | svd2rust \
             --const_generic \
             --target cortex-m \
@@ -45,12 +46,15 @@ function build_pac() {
             --output-dir "${pac_dir}"
     form -i "${pac_dir}/lib.rs" -o "${pac_dir}/src/"
     rm "${pac_dir}/lib.rs"
+    rm "${pac_dir}/${chip_upper}.out"
 
     pushd "${pac_dir}"
     cargo +nightly fmt
     rustfmt +nightly build.rs
-    # Not entirely sure why this `deny` is still present.
+    # Not entirely sure why these `deny`s are still present.
     sd '#!\[deny\(private_in_public\)\]' '' src/lib.rs
+    sd '#!\[deny\(private_bounds\)\]' '' src/lib.rs
+    sd '#!\[deny\(private_interfaces\)\]' '' src/lib.rs
 
     popd
 }

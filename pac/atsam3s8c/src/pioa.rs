@@ -52,9 +52,11 @@ pub struct RegisterBlock {
     #[doc = "0x68 - Pad Pull-up Status Register"]
     pub pusr: PUSR,
     _reserved23: [u8; 0x04],
-    #[doc = "0x70..0x78 - Peripheral Select Register"]
-    pub abcdsr: [ABCDSR; 2],
-    _reserved24: [u8; 0x08],
+    #[doc = "0x70 - Peripheral Select Register 0"]
+    pub abcdsr0: ABCDSR0,
+    #[doc = "0x74 - Peripheral Select Register 1"]
+    pub abcdsr1: ABCDSR1,
+    _reserved25: [u8; 0x08],
     #[doc = "0x80 - Input Filter Slow Clock Disable Register"]
     pub ifscdr: IFSCDR,
     #[doc = "0x84 - Input Filter Slow Clock Enable Register"]
@@ -69,45 +71,45 @@ pub struct RegisterBlock {
     pub ppder: PPDER,
     #[doc = "0x98 - Pad Pull-down Status Register"]
     pub ppdsr: PPDSR,
-    _reserved31: [u8; 0x04],
+    _reserved32: [u8; 0x04],
     #[doc = "0xa0 - Output Write Enable"]
     pub ower: OWER,
     #[doc = "0xa4 - Output Write Disable"]
     pub owdr: OWDR,
     #[doc = "0xa8 - Output Write Status Register"]
     pub owsr: OWSR,
-    _reserved34: [u8; 0x04],
+    _reserved35: [u8; 0x04],
     #[doc = "0xb0 - Additional Interrupt Modes Enable Register"]
     pub aimer: AIMER,
     #[doc = "0xb4 - Additional Interrupt Modes Disables Register"]
     pub aimdr: AIMDR,
     #[doc = "0xb8 - Additional Interrupt Modes Mask Register"]
     pub aimmr: AIMMR,
-    _reserved37: [u8; 0x04],
+    _reserved38: [u8; 0x04],
     #[doc = "0xc0 - Edge Select Register"]
     pub esr: ESR,
     #[doc = "0xc4 - Level Select Register"]
     pub lsr: LSR,
     #[doc = "0xc8 - Edge/Level Status Register"]
     pub elsr: ELSR,
-    _reserved40: [u8; 0x04],
+    _reserved41: [u8; 0x04],
     #[doc = "0xd0 - Falling Edge/Low Level Select Register"]
     pub fellsr: FELLSR,
     #[doc = "0xd4 - Rising Edge/ High Level Select Register"]
     pub rehlsr: REHLSR,
     #[doc = "0xd8 - Fall/Rise - Low/High Status Register"]
     pub frlhsr: FRLHSR,
-    _reserved43: [u8; 0x04],
+    _reserved44: [u8; 0x04],
     #[doc = "0xe0 - Lock Status"]
     pub locksr: LOCKSR,
     #[doc = "0xe4 - Write Protect Mode Register"]
     pub wpmr: WPMR,
     #[doc = "0xe8 - Write Protect Status Register"]
     pub wpsr: WPSR,
-    _reserved46: [u8; 0x14],
+    _reserved47: [u8; 0x14],
     #[doc = "0x100 - Schmitt Trigger Register"]
     pub schmitt: SCHMITT,
-    _reserved47: [u8; 0x4c],
+    _reserved48: [u8; 0x4c],
     #[doc = "0x150 - Parallel Capture Mode Register"]
     pub pcmr: PCMR,
     #[doc = "0x154 - Parallel Capture Interrupt Enable Register"]
@@ -124,12 +126,12 @@ pub struct RegisterBlock {
     pub rpr: RPR,
     #[doc = "0x16c - Receive Counter Register"]
     pub rcr: RCR,
-    _reserved55: [u8; 0x08],
+    _reserved56: [u8; 0x08],
     #[doc = "0x178 - Receive Next Pointer Register"]
     pub rnpr: RNPR,
     #[doc = "0x17c - Receive Next Counter Register"]
     pub rncr: RNCR,
-    _reserved57: [u8; 0x08],
+    _reserved58: [u8; 0x08],
     #[doc = "0x188 - Transfer Control Register"]
     pub ptcr: PTCR,
     #[doc = "0x18c - Transfer Status Register"]
@@ -250,11 +252,16 @@ module"]
 pub type PUSR = crate::Reg<pusr::PUSR_SPEC>;
 #[doc = "Pad Pull-up Status Register"]
 pub mod pusr;
-#[doc = "ABCDSR (rw) register accessor: Peripheral Select Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`abcdsr::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`abcdsr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`abcdsr`]
+#[doc = "ABCDSR0 (rw) register accessor: Peripheral Select Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`abcdsr0::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`abcdsr0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`abcdsr0`]
 module"]
-pub type ABCDSR = crate::Reg<abcdsr::ABCDSR_SPEC>;
-#[doc = "Peripheral Select Register"]
-pub mod abcdsr;
+pub type ABCDSR0 = crate::Reg<abcdsr0::ABCDSR0_SPEC>;
+#[doc = "Peripheral Select Register 0"]
+pub mod abcdsr0;
+#[doc = "ABCDSR1 (rw) register accessor: Peripheral Select Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`abcdsr1::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`abcdsr1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`abcdsr1`]
+module"]
+pub type ABCDSR1 = crate::Reg<abcdsr1::ABCDSR1_SPEC>;
+#[doc = "Peripheral Select Register 1"]
+pub mod abcdsr1;
 #[doc = "IFSCDR (w) register accessor: Input Filter Slow Clock Disable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ifscdr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ifscdr`]
 module"]
 pub type IFSCDR = crate::Reg<ifscdr::IFSCDR_SPEC>;

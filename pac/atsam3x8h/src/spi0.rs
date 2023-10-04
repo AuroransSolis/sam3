@@ -18,9 +18,15 @@ pub struct RegisterBlock {
     #[doc = "0x1c - Interrupt Mask Register"]
     pub imr: IMR,
     _reserved8: [u8; 0x10],
-    #[doc = "0x30..0x40 - Chip Select Register"]
-    pub csr: [CSR; 4],
-    _reserved9: [u8; 0xa4],
+    #[doc = "0x30 - Chip Select Register 0"]
+    pub csr0: CSR0,
+    #[doc = "0x34 - Chip Select Register 1"]
+    pub csr1: CSR1,
+    #[doc = "0x38 - Chip Select Register 2"]
+    pub csr2: CSR2,
+    #[doc = "0x3c - Chip Select Register 3"]
+    pub csr3: CSR3,
+    _reserved12: [u8; 0xa4],
     #[doc = "0xe4 - Write Protection Control Register"]
     pub wpmr: WPMR,
     #[doc = "0xe8 - Write Protection Status Register"]
@@ -66,11 +72,26 @@ module"]
 pub type IMR = crate::Reg<imr::IMR_SPEC>;
 #[doc = "Interrupt Mask Register"]
 pub mod imr;
-#[doc = "CSR (rw) register accessor: Chip Select Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`csr`]
+#[doc = "CSR0 (rw) register accessor: Chip Select Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr0::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csr0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`csr0`]
 module"]
-pub type CSR = crate::Reg<csr::CSR_SPEC>;
-#[doc = "Chip Select Register"]
-pub mod csr;
+pub type CSR0 = crate::Reg<csr0::CSR0_SPEC>;
+#[doc = "Chip Select Register 0"]
+pub mod csr0;
+#[doc = "CSR1 (rw) register accessor: Chip Select Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr1::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csr1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`csr1`]
+module"]
+pub type CSR1 = crate::Reg<csr1::CSR1_SPEC>;
+#[doc = "Chip Select Register 1"]
+pub mod csr1;
+#[doc = "CSR2 (rw) register accessor: Chip Select Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr2::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csr2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`csr2`]
+module"]
+pub type CSR2 = crate::Reg<csr2::CSR2_SPEC>;
+#[doc = "Chip Select Register 2"]
+pub mod csr2;
+#[doc = "CSR3 (rw) register accessor: Chip Select Register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr3::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csr3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`csr3`]
+module"]
+pub type CSR3 = crate::Reg<csr3::CSR3_SPEC>;
+#[doc = "Chip Select Register 3"]
+pub mod csr3;
 #[doc = "WPMR (rw) register accessor: Write Protection Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wpmr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wpmr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`wpmr`]
 module"]
 pub type WPMR = crate::Reg<wpmr::WPMR_SPEC>;

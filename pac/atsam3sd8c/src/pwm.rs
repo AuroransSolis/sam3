@@ -57,19 +57,21 @@ pub struct RegisterBlock {
     #[doc = "0x6c - PWM Fault Protection Enable Register"]
     pub fpe: FPE,
     _reserved27: [u8; 0x0c],
-    #[doc = "0x7c..0x84 - PWM Event Line 0 Mode Register"]
-    pub elmr: [ELMR; 2],
-    _reserved28: [u8; 0x60],
+    #[doc = "0x7c - PWM Event Line 0 Mode Register 0"]
+    pub elmr0: ELMR0,
+    #[doc = "0x80 - PWM Event Line 0 Mode Register 1"]
+    pub elmr1: ELMR1,
+    _reserved29: [u8; 0x60],
     #[doc = "0xe4 - PWM Write Protect Control Register"]
     pub wpcr: WPCR,
     #[doc = "0xe8 - PWM Write Protect Status Register"]
     pub wpsr: WPSR,
-    _reserved30: [u8; 0x1c],
+    _reserved31: [u8; 0x1c],
     #[doc = "0x108 - Transmit Pointer Register"]
     pub tpr: TPR,
     #[doc = "0x10c - Transmit Counter Register"]
     pub tcr: TCR,
-    _reserved32: [u8; 0x08],
+    _reserved33: [u8; 0x08],
     #[doc = "0x118 - Transmit Next Pointer Register"]
     pub tnpr: TNPR,
     #[doc = "0x11c - Transmit Next Counter Register"]
@@ -78,7 +80,7 @@ pub struct RegisterBlock {
     pub ptcr: PTCR,
     #[doc = "0x124 - Transfer Status Register"]
     pub ptsr: PTSR,
-    _reserved36: [u8; 0x08],
+    _reserved37: [u8; 0x08],
     #[doc = "0x130 - PWM Comparison 0 Value Register"]
     pub cmpv0: CMPV0,
     #[doc = "0x134 - PWM Comparison 0 Value Update Register"]
@@ -143,7 +145,7 @@ pub struct RegisterBlock {
     pub cmpm7: CMPM7,
     #[doc = "0x1ac - PWM Comparison 7 Mode Update Register"]
     pub cmpmupd7: CMPMUPD7,
-    _reserved68: [u8; 0x50],
+    _reserved69: [u8; 0x50],
     #[doc = "0x200 - PWM Channel Mode Register (ch_num = 0)"]
     pub cmr0: CMR0,
     #[doc = "0x204 - PWM Channel Duty Cycle Register (ch_num = 0)"]
@@ -344,11 +346,16 @@ module"]
 pub type FPE = crate::Reg<fpe::FPE_SPEC>;
 #[doc = "PWM Fault Protection Enable Register"]
 pub mod fpe;
-#[doc = "ELMR (rw) register accessor: PWM Event Line 0 Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`elmr::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`elmr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`elmr`]
+#[doc = "ELMR0 (rw) register accessor: PWM Event Line 0 Mode Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`elmr0::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`elmr0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`elmr0`]
 module"]
-pub type ELMR = crate::Reg<elmr::ELMR_SPEC>;
-#[doc = "PWM Event Line 0 Mode Register"]
-pub mod elmr;
+pub type ELMR0 = crate::Reg<elmr0::ELMR0_SPEC>;
+#[doc = "PWM Event Line 0 Mode Register 0"]
+pub mod elmr0;
+#[doc = "ELMR1 (rw) register accessor: PWM Event Line 0 Mode Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`elmr1::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`elmr1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`elmr1`]
+module"]
+pub type ELMR1 = crate::Reg<elmr1::ELMR1_SPEC>;
+#[doc = "PWM Event Line 0 Mode Register 1"]
+pub mod elmr1;
 #[doc = "WPCR (w) register accessor: PWM Write Protect Control Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wpcr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`wpcr`]
 module"]
 pub type WPCR = crate::Reg<wpcr::WPCR_SPEC>;

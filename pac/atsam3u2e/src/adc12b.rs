@@ -22,24 +22,38 @@ pub struct RegisterBlock {
     pub idr: IDR,
     #[doc = "0x2c - Interrupt Mask Register"]
     pub imr: IMR,
-    #[doc = "0x30..0x50 - Channel Data Register"]
-    pub cdr: [CDR; 8],
-    _reserved11: [u8; 0x14],
+    #[doc = "0x30 - Channel Data Register 0"]
+    pub cdr0: CDR0,
+    #[doc = "0x34 - Channel Data Register 1"]
+    pub cdr1: CDR1,
+    #[doc = "0x38 - Channel Data Register 2"]
+    pub cdr2: CDR2,
+    #[doc = "0x3c - Channel Data Register 3"]
+    pub cdr3: CDR3,
+    #[doc = "0x40 - Channel Data Register 4"]
+    pub cdr4: CDR4,
+    #[doc = "0x44 - Channel Data Register 5"]
+    pub cdr5: CDR5,
+    #[doc = "0x48 - Channel Data Register 6"]
+    pub cdr6: CDR6,
+    #[doc = "0x4c - Channel Data Register 7"]
+    pub cdr7: CDR7,
+    _reserved18: [u8; 0x14],
     #[doc = "0x64 - Analog Control Register"]
     pub acr: ACR,
     #[doc = "0x68 - Extended Mode Register"]
     pub emr: EMR,
-    _reserved13: [u8; 0x94],
+    _reserved20: [u8; 0x94],
     #[doc = "0x100 - Receive Pointer Register"]
     pub rpr: RPR,
     #[doc = "0x104 - Receive Counter Register"]
     pub rcr: RCR,
-    _reserved15: [u8; 0x08],
+    _reserved22: [u8; 0x08],
     #[doc = "0x110 - Receive Next Pointer Register"]
     pub rnpr: RNPR,
     #[doc = "0x114 - Receive Next Counter Register"]
     pub rncr: RNCR,
-    _reserved17: [u8; 0x08],
+    _reserved24: [u8; 0x08],
     #[doc = "0x120 - Transfer Control Register"]
     pub ptcr: PTCR,
     #[doc = "0x124 - Transfer Status Register"]
@@ -95,11 +109,46 @@ module"]
 pub type IMR = crate::Reg<imr::IMR_SPEC>;
 #[doc = "Interrupt Mask Register"]
 pub mod imr;
-#[doc = "CDR (r) register accessor: Channel Data Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cdr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cdr`]
+#[doc = "CDR0 (r) register accessor: Channel Data Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cdr0::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cdr0`]
 module"]
-pub type CDR = crate::Reg<cdr::CDR_SPEC>;
-#[doc = "Channel Data Register"]
-pub mod cdr;
+pub type CDR0 = crate::Reg<cdr0::CDR0_SPEC>;
+#[doc = "Channel Data Register 0"]
+pub mod cdr0;
+#[doc = "CDR1 (r) register accessor: Channel Data Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cdr1::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cdr1`]
+module"]
+pub type CDR1 = crate::Reg<cdr1::CDR1_SPEC>;
+#[doc = "Channel Data Register 1"]
+pub mod cdr1;
+#[doc = "CDR2 (r) register accessor: Channel Data Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cdr2::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cdr2`]
+module"]
+pub type CDR2 = crate::Reg<cdr2::CDR2_SPEC>;
+#[doc = "Channel Data Register 2"]
+pub mod cdr2;
+#[doc = "CDR3 (r) register accessor: Channel Data Register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cdr3::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cdr3`]
+module"]
+pub type CDR3 = crate::Reg<cdr3::CDR3_SPEC>;
+#[doc = "Channel Data Register 3"]
+pub mod cdr3;
+#[doc = "CDR4 (r) register accessor: Channel Data Register 4\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cdr4::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cdr4`]
+module"]
+pub type CDR4 = crate::Reg<cdr4::CDR4_SPEC>;
+#[doc = "Channel Data Register 4"]
+pub mod cdr4;
+#[doc = "CDR5 (r) register accessor: Channel Data Register 5\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cdr5::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cdr5`]
+module"]
+pub type CDR5 = crate::Reg<cdr5::CDR5_SPEC>;
+#[doc = "Channel Data Register 5"]
+pub mod cdr5;
+#[doc = "CDR6 (r) register accessor: Channel Data Register 6\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cdr6::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cdr6`]
+module"]
+pub type CDR6 = crate::Reg<cdr6::CDR6_SPEC>;
+#[doc = "Channel Data Register 6"]
+pub mod cdr6;
+#[doc = "CDR7 (r) register accessor: Channel Data Register 7\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cdr7::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`cdr7`]
+module"]
+pub type CDR7 = crate::Reg<cdr7::CDR7_SPEC>;
+#[doc = "Channel Data Register 7"]
+pub mod cdr7;
 #[doc = "ACR (rw) register accessor: Analog Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`acr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`acr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`acr`]
 module"]
 pub type ACR = crate::Reg<acr::ACR_SPEC>;

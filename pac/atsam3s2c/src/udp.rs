@@ -22,10 +22,38 @@ pub struct RegisterBlock {
     #[doc = "0x28 - Reset Endpoint Register"]
     pub rst_ep: RST_EP,
     _reserved9: [u8; 0x04],
-    _reserved_9_csr: [u8; 0x20],
-    #[doc = "0x50..0x70 - Endpoint FIFO Data Register"]
-    pub fdr: [FDR; 8],
-    _reserved11: [u8; 0x04],
+    _reserved_9_csr0: [u8; 0x04],
+    #[doc = "0x34 - Endpoint Control and Status Register 1"]
+    pub csr1: CSR1,
+    #[doc = "0x38 - Endpoint Control and Status Register 2"]
+    pub csr2: CSR2,
+    #[doc = "0x3c - Endpoint Control and Status Register 3"]
+    pub csr3: CSR3,
+    #[doc = "0x40 - Endpoint Control and Status Register 4"]
+    pub csr4: CSR4,
+    #[doc = "0x44 - Endpoint Control and Status Register 5"]
+    pub csr5: CSR5,
+    #[doc = "0x48 - Endpoint Control and Status Register 6"]
+    pub csr6: CSR6,
+    #[doc = "0x4c - Endpoint Control and Status Register 7"]
+    pub csr7: CSR7,
+    #[doc = "0x50 - Endpoint FIFO Data Register 0"]
+    pub fdr0: FDR0,
+    #[doc = "0x54 - Endpoint FIFO Data Register 1"]
+    pub fdr1: FDR1,
+    #[doc = "0x58 - Endpoint FIFO Data Register 2"]
+    pub fdr2: FDR2,
+    #[doc = "0x5c - Endpoint FIFO Data Register 3"]
+    pub fdr3: FDR3,
+    #[doc = "0x60 - Endpoint FIFO Data Register 4"]
+    pub fdr4: FDR4,
+    #[doc = "0x64 - Endpoint FIFO Data Register 5"]
+    pub fdr5: FDR5,
+    #[doc = "0x68 - Endpoint FIFO Data Register 6"]
+    pub fdr6: FDR6,
+    #[doc = "0x6c - Endpoint FIFO Data Register 7"]
+    pub fdr7: FDR7,
+    _reserved25: [u8; 0x04],
     #[doc = "0x74 - Transceiver Control Register"]
     pub txvc: TXVC,
 }
@@ -35,9 +63,9 @@ impl RegisterBlock {
     pub const fn isoendpt_csr0_isoendpt(&self) -> &ISOENDPT_CSR0_ISOENDPT {
         unsafe { &*(self as *const Self).cast::<u8>().add(48usize).cast() }
     }
-    #[doc = "0x30..0x50 - Endpoint Control and Status Register"]
+    #[doc = "0x30 - Endpoint Control and Status Register 0"]
     #[inline(always)]
-    pub const fn csr(&self) -> &[CSR; 8] {
+    pub const fn csr0(&self) -> &CSR0 {
         unsafe { &*(self as *const Self).cast::<u8>().add(48usize).cast() }
     }
 }
@@ -86,21 +114,91 @@ module"]
 pub type RST_EP = crate::Reg<rst_ep::RST_EP_SPEC>;
 #[doc = "Reset Endpoint Register"]
 pub mod rst_ep;
-#[doc = "CSR (rw) register accessor: Endpoint Control and Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`csr`]
+#[doc = "CSR0 (rw) register accessor: Endpoint Control and Status Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr0::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csr0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`csr0`]
 module"]
-pub type CSR = crate::Reg<csr::CSR_SPEC>;
-#[doc = "Endpoint Control and Status Register"]
-pub mod csr;
+pub type CSR0 = crate::Reg<csr0::CSR0_SPEC>;
+#[doc = "Endpoint Control and Status Register 0"]
+pub mod csr0;
+#[doc = "CSR1 (rw) register accessor: Endpoint Control and Status Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr1::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csr1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`csr1`]
+module"]
+pub type CSR1 = crate::Reg<csr1::CSR1_SPEC>;
+#[doc = "Endpoint Control and Status Register 1"]
+pub mod csr1;
+#[doc = "CSR2 (rw) register accessor: Endpoint Control and Status Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr2::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csr2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`csr2`]
+module"]
+pub type CSR2 = crate::Reg<csr2::CSR2_SPEC>;
+#[doc = "Endpoint Control and Status Register 2"]
+pub mod csr2;
+#[doc = "CSR3 (rw) register accessor: Endpoint Control and Status Register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr3::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csr3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`csr3`]
+module"]
+pub type CSR3 = crate::Reg<csr3::CSR3_SPEC>;
+#[doc = "Endpoint Control and Status Register 3"]
+pub mod csr3;
+#[doc = "CSR4 (rw) register accessor: Endpoint Control and Status Register 4\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr4::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csr4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`csr4`]
+module"]
+pub type CSR4 = crate::Reg<csr4::CSR4_SPEC>;
+#[doc = "Endpoint Control and Status Register 4"]
+pub mod csr4;
+#[doc = "CSR5 (rw) register accessor: Endpoint Control and Status Register 5\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr5::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csr5::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`csr5`]
+module"]
+pub type CSR5 = crate::Reg<csr5::CSR5_SPEC>;
+#[doc = "Endpoint Control and Status Register 5"]
+pub mod csr5;
+#[doc = "CSR6 (rw) register accessor: Endpoint Control and Status Register 6\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr6::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csr6::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`csr6`]
+module"]
+pub type CSR6 = crate::Reg<csr6::CSR6_SPEC>;
+#[doc = "Endpoint Control and Status Register 6"]
+pub mod csr6;
+#[doc = "CSR7 (rw) register accessor: Endpoint Control and Status Register 7\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr7::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csr7::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`csr7`]
+module"]
+pub type CSR7 = crate::Reg<csr7::CSR7_SPEC>;
+#[doc = "Endpoint Control and Status Register 7"]
+pub mod csr7;
 #[doc = "ISOENDPT_CSR0_ISOENDPT (rw) register accessor: Endpoint Control and Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`isoendpt_csr0_isoendpt::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`isoendpt_csr0_isoendpt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`isoendpt_csr0_isoendpt`]
 module"]
 pub type ISOENDPT_CSR0_ISOENDPT = crate::Reg<isoendpt_csr0_isoendpt::ISOENDPT_CSR0_ISOENDPT_SPEC>;
 #[doc = "Endpoint Control and Status Register"]
 pub mod isoendpt_csr0_isoendpt;
-#[doc = "FDR (rw) register accessor: Endpoint FIFO Data Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fdr::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fdr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`fdr`]
+#[doc = "FDR0 (rw) register accessor: Endpoint FIFO Data Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fdr0::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fdr0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`fdr0`]
 module"]
-pub type FDR = crate::Reg<fdr::FDR_SPEC>;
-#[doc = "Endpoint FIFO Data Register"]
-pub mod fdr;
+pub type FDR0 = crate::Reg<fdr0::FDR0_SPEC>;
+#[doc = "Endpoint FIFO Data Register 0"]
+pub mod fdr0;
+#[doc = "FDR1 (rw) register accessor: Endpoint FIFO Data Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fdr1::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fdr1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`fdr1`]
+module"]
+pub type FDR1 = crate::Reg<fdr1::FDR1_SPEC>;
+#[doc = "Endpoint FIFO Data Register 1"]
+pub mod fdr1;
+#[doc = "FDR2 (rw) register accessor: Endpoint FIFO Data Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fdr2::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fdr2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`fdr2`]
+module"]
+pub type FDR2 = crate::Reg<fdr2::FDR2_SPEC>;
+#[doc = "Endpoint FIFO Data Register 2"]
+pub mod fdr2;
+#[doc = "FDR3 (rw) register accessor: Endpoint FIFO Data Register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fdr3::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fdr3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`fdr3`]
+module"]
+pub type FDR3 = crate::Reg<fdr3::FDR3_SPEC>;
+#[doc = "Endpoint FIFO Data Register 3"]
+pub mod fdr3;
+#[doc = "FDR4 (rw) register accessor: Endpoint FIFO Data Register 4\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fdr4::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fdr4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`fdr4`]
+module"]
+pub type FDR4 = crate::Reg<fdr4::FDR4_SPEC>;
+#[doc = "Endpoint FIFO Data Register 4"]
+pub mod fdr4;
+#[doc = "FDR5 (rw) register accessor: Endpoint FIFO Data Register 5\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fdr5::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fdr5::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`fdr5`]
+module"]
+pub type FDR5 = crate::Reg<fdr5::FDR5_SPEC>;
+#[doc = "Endpoint FIFO Data Register 5"]
+pub mod fdr5;
+#[doc = "FDR6 (rw) register accessor: Endpoint FIFO Data Register 6\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fdr6::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fdr6::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`fdr6`]
+module"]
+pub type FDR6 = crate::Reg<fdr6::FDR6_SPEC>;
+#[doc = "Endpoint FIFO Data Register 6"]
+pub mod fdr6;
+#[doc = "FDR7 (rw) register accessor: Endpoint FIFO Data Register 7\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fdr7::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fdr7::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`fdr7`]
+module"]
+pub type FDR7 = crate::Reg<fdr7::FDR7_SPEC>;
+#[doc = "Endpoint FIFO Data Register 7"]
+pub mod fdr7;
 #[doc = "TXVC (rw) register accessor: Transceiver Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`txvc::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`txvc::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`txvc`]
 module"]
 pub type TXVC = crate::Reg<txvc::TXVC_SPEC>;

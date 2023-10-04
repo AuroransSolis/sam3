@@ -29,9 +29,13 @@ pub struct RegisterBlock {
     #[doc = "0x38 - USB Clock Register"]
     pub pmc_usb: PMC_USB,
     _reserved12: [u8; 0x04],
-    #[doc = "0x40..0x4c - Programmable Clock 0 Register"]
-    pub pmc_pck: [PMC_PCK; 3],
-    _reserved13: [u8; 0x14],
+    #[doc = "0x40 - Programmable Clock 0 Register 0"]
+    pub pmc_pck0: PMC_PCK0,
+    #[doc = "0x44 - Programmable Clock 0 Register 1"]
+    pub pmc_pck1: PMC_PCK1,
+    #[doc = "0x48 - Programmable Clock 0 Register 2"]
+    pub pmc_pck2: PMC_PCK2,
+    _reserved15: [u8; 0x14],
     #[doc = "0x60 - Interrupt Enable Register"]
     pub pmc_ier: PMC_IER,
     #[doc = "0x64 - Interrupt Disable Register"]
@@ -46,19 +50,19 @@ pub struct RegisterBlock {
     pub pmc_fspr: PMC_FSPR,
     #[doc = "0x78 - Fault Output Clear Register"]
     pub pmc_focr: PMC_FOCR,
-    _reserved20: [u8; 0x68],
+    _reserved22: [u8; 0x68],
     #[doc = "0xe4 - Write Protect Mode Register"]
     pub pmc_wpmr: PMC_WPMR,
     #[doc = "0xe8 - Write Protect Status Register"]
     pub pmc_wpsr: PMC_WPSR,
-    _reserved22: [u8; 0x14],
+    _reserved24: [u8; 0x14],
     #[doc = "0x100 - Peripheral Clock Enable Register 1"]
     pub pmc_pcer1: PMC_PCER1,
     #[doc = "0x104 - Peripheral Clock Disable Register 1"]
     pub pmc_pcdr1: PMC_PCDR1,
     #[doc = "0x108 - Peripheral Clock Status Register 1"]
     pub pmc_pcsr1: PMC_PCSR1,
-    _reserved25: [u8; 0x04],
+    _reserved27: [u8; 0x04],
     #[doc = "0x110 - Oscillator Calibration Register"]
     pub pmc_ocr: PMC_OCR,
 }
@@ -122,11 +126,21 @@ module"]
 pub type PMC_USB = crate::Reg<pmc_usb::PMC_USB_SPEC>;
 #[doc = "USB Clock Register"]
 pub mod pmc_usb;
-#[doc = "PMC_PCK (rw) register accessor: Programmable Clock 0 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmc_pck::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmc_pck::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`pmc_pck`]
+#[doc = "PMC_PCK0 (rw) register accessor: Programmable Clock 0 Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmc_pck0::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmc_pck0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`pmc_pck0`]
 module"]
-pub type PMC_PCK = crate::Reg<pmc_pck::PMC_PCK_SPEC>;
-#[doc = "Programmable Clock 0 Register"]
-pub mod pmc_pck;
+pub type PMC_PCK0 = crate::Reg<pmc_pck0::PMC_PCK0_SPEC>;
+#[doc = "Programmable Clock 0 Register 0"]
+pub mod pmc_pck0;
+#[doc = "PMC_PCK1 (rw) register accessor: Programmable Clock 0 Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmc_pck1::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmc_pck1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`pmc_pck1`]
+module"]
+pub type PMC_PCK1 = crate::Reg<pmc_pck1::PMC_PCK1_SPEC>;
+#[doc = "Programmable Clock 0 Register 1"]
+pub mod pmc_pck1;
+#[doc = "PMC_PCK2 (rw) register accessor: Programmable Clock 0 Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmc_pck2::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmc_pck2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`pmc_pck2`]
+module"]
+pub type PMC_PCK2 = crate::Reg<pmc_pck2::PMC_PCK2_SPEC>;
+#[doc = "Programmable Clock 0 Register 2"]
+pub mod pmc_pck2;
 #[doc = "PMC_IER (w) register accessor: Interrupt Enable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmc_ier::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`pmc_ier`]
 module"]
 pub type PMC_IER = crate::Reg<pmc_ier::PMC_IER_SPEC>;
