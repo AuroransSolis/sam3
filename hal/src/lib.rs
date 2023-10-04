@@ -126,13 +126,13 @@ pub use atsam3x8e as pac;
 #[cfg(feature = "atsam3x8h")]
 pub use atsam3x8h as pac;
 
-#[cfg(feature = "device")]
+#[cfg(all(feature = "device", any(feature = "sam3a", feature = "sam3x")))]
 pub mod dacc;
 #[cfg(feature = "device")]
 pub mod peripheral_id;
 #[cfg(feature = "device")]
 pub mod pio;
-#[cfg(feature = "device")]
+#[cfg(all(feature = "device", any(feature = "sam3a", feature = "sam3x")))]
 mod pmc;
 #[cfg(feature = "device")]
 pub mod write_protect;
