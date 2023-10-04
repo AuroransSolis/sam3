@@ -3,27 +3,31 @@ pub mod filter;
 pub mod interrupt;
 pub mod peripheral;
 pub mod pin;
+#[cfg(feature = "pioa")]
 pub mod pioa;
+#[cfg(feature = "piob")]
 pub mod piob;
-#[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
+#[cfg(feature = "pioc")]
 pub mod pioc;
-#[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
+#[cfg(feature = "piod")]
 pub mod piod;
-#[cfg(feature = "sam3x8h")]
+#[cfg(feature = "pioe")]
 pub mod pioe;
-#[cfg(feature = "sam3x8h")]
+#[cfg(feature = "piof")]
 pub mod piof;
 
 use crate::write_protect::WriteProtect;
+#[cfg(feature = "pioa")]
 use pioa::PioA;
+#[cfg(feature = "piob")]
 use piob::PioB;
-#[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
+#[cfg(feature = "pioc")]
 use pioc::PioC;
-#[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
+#[cfg(feature = "piod")]
 use piod::PioD;
-#[cfg(feature = "sam3x8h")]
+#[cfg(feature = "pioe")]
 use pioe::PioE;
-#[cfg(feature = "sam3x8h")]
+#[cfg(feature = "piof")]
 use piof::PioF;
 
 #[allow(clippy::module_name_repetitions)]
@@ -34,15 +38,17 @@ pub trait IsPio: WriteProtect {
 
 #[allow(clippy::module_name_repetitions)]
 pub struct PioControllers {
+    #[cfg(feature = "pioa")]
     pioa: PioA,
+    #[cfg(feature = "piob")]
     piob: PioB,
-    #[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
+    #[cfg(feature = "pioc")]
     pioc: PioC,
-    #[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
+    #[cfg(feature = "piod")]
     piod: PioD,
-    #[cfg(feature = "sam3x8h")]
+    #[cfg(feature = "pioe")]
     piof: PioF,
-    #[cfg(feature = "sam3x8h")]
+    #[cfg(feature = "piof")]
     pioe: PioE,
 }
 

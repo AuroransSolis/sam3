@@ -74,129 +74,81 @@ pub struct PullupDisabled;
 
 impl PullupResistorCfg for PullupDisabled {}
 
+/*
+unsure if this is the right way to do it - maybe reverse?
+what i mean by this is instead of
+
+type Pwm0<Pupr, Irpt, Filt> = Pin<PioA, Pa0, MultiDriverDisabled<...>, Pupr, Irpt, Filt>;
+
+instead have
+
+pub trait Pwm0: ConfigurePioControl + ConfigureFunctionSelect {
+    type Pwm0;
+
+    fn to_pwm0(self) -> Result<Self::Pwm0, (Self, PioError)>;
+    unsafe fn to_pwm0_unchecked(self) -> Self::Pwm0;
+}
+
+impl<Line, Pupr, Irpt, Filt> Pwm0 for Pin<PioA, Pa0, MultiDriverDisabled<Line>, Pupr, Irpt, Filt>
+where
+    Pin<PioA, Pa0, MultiDriverDisabled<Line>, Pupr, Irpt, Filt>: ConfigurePioControl
+        + ConfigureFunctionSelect,
+{
+    type Pwm0 =
+        Pin<PioA, Pa0, MultiDriverDisabled<PeripheralControlled<PeripheralA>>, Pupr, Irpt, Filt>;
+
+    fn to_pwm0(self) -> Result<Self::Pwm0, (Self, PioError)> {
+        self.peripheral_controlled()?.peripheral_a()
+    }
+
+    unsafe fn to_pwm0_unchecked(self) -> Self::Pwm0 {
+        self.peripheral_controlled_unchecked().peripheral_a_unchecked()
+    }
+}
+
+and so on
+
 macro_rules! def_peripheral_multiplex {
     (
         $pio:ty {
-            $($pid:ty: $opts:tt;)+
+            $($pid:ty: $opts:tt),+$(,)?
         }
     ) => {
         $(
             def_peripheral_multiplex! {
-                @def $pio, $pid: $opts
+                @expand $pio, $pid, $opts
             }
         )+
     };
-    (
-        @def $pio:ty, $pid:ty: [$asel:ident, $bsel:ident]
-    ) => {
-        paste::paste! {
-            pub type $asel<Pupr, Irpt, Filt> = crate::pio::pin::Pin<
-                $pio,
-                $pid,
-                crate::pio::peripheral::MultiDriverDisabled<
-                    crate::pio::peripheral::PeripheralControlled<
-                        crate::pio::peripheral::PeripheralA
-                    >
-                >,
-                Pupr,
-                Irpt,
-                Filt,
-            >;
-            pub type [<$asel MD>]<Outp, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
-                $pio,
-                $pid,
-                crate::pio::peripheral::MultiDriverEnabled<
-                    crate::pio::peripheral::PeripheralControlled<
-                        crate::pio::peripheral::PeripheralA
-                    >,
-                    Outp,
-                >,
-                Pupr,
-                Irpt,
-                Filt,
-            >;
-            pub type $bsel<Pupr, Irpt, Filt> = crate::pio::pin::Pin<
-                $pio,
-                $pid,
-                crate::pio::peripheral::MultiDriverDisabled<
-                    crate::pio::peripheral::PeripheralControlled<
-                        crate::pio::peripheral::PeripheralB
-                    >
-                >,
-                Pupr,
-                Irpt,
-                Filt,
-            >;
-            pub type [<$bsel MD>]<Outp, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
-                $pio,
-                $pid,
-                crate::pio::peripheral::MultiDriverEnabled<
-                    crate::pio::peripheral::PeripheralControlled<
-                        crate::pio::peripheral::PeripheralB
-                    >,
-                    Outp,
-                >,
-                Pupr,
-                Irpt,
-                Filt,
-            >;
-        }
+    (@expand $pio:ty, $pid:ty, [$($sel:tt $name:ident),+$(,)?]) => {
+        $(
+            def_peripheral_multiplex! {
+                @def $pio, $pid, $sel, $name
+            }
+        )+
     };
-    (
-        @def $pio:ty, $pid:ty: [asel $asel:ident]
-    ) => {
+    (@def $pio:ty, $pid:ty, $suffix:tt, $name:ident) => {
         paste::paste! {
-            pub type $asel<Pupr, Irpt, Filt> = crate::pio::pin::Pin<
+            pub type $name<Pupr, Irpt, Filt> = crate::pio::pin::Pin<
                 $pio,
                 $pid,
                 crate::pio::peripheral::MultiDriverDisabled<
                     crate::pio::peripheral::PeripheralControlled<
-                        crate::pio::peripheral::PeripheralA
-                    >
+                        crate::pio::peripheral::[<Peripheral $suffix:upper>]
+                    >,
                 >,
                 Pupr,
                 Irpt,
                 Filt,
             >;
-            pub type [<$asel MD>]<Outp, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
+            pub type [<$name MD>]<Otpt, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
                 $pio,
                 $pid,
                 crate::pio::peripheral::MultiDriverEnabled<
                     crate::pio::peripheral::PeripheralControlled<
-                        crate::pio::peripheral::PeripheralA
+                        crate::pio::peripheral::[<Peripheral $suffix:upper>]
                     >,
-                    Outp,
-                >,
-                Pupr,
-                Irpt,
-                Filt,
-            >;
-        }
-    };
-    (
-        @def $pio:ty, $pid:ty: [bsel $bsel:ident]
-    ) => {
-        paste::paste! {
-            pub type $bsel<Pupr, Irpt, Filt> = crate::pio::pin::Pin<
-                $pio,
-                $pid,
-                crate::pio::peripheral::MultiDriverDisabled<
-                    crate::pio::peripheral::PeripheralControlled<
-                        crate::pio::peripheral::PeripheralB
-                    >
-                >,
-                Pupr,
-                Irpt,
-                Filt,
-            >;
-            pub type [<$bsel MD>]<Outp, Pupr, Irpt, Filt> = crate::pio::pin::Pin<
-                $pio,
-                $pid,
-                crate::pio::peripheral::MultiDriverEnabled<
-                    crate::pio::peripheral::PeripheralControlled<
-                        crate::pio::peripheral::PeripheralB
-                    >,
-                    Outp,
+                    Otpt,
                 >,
                 Pupr,
                 Irpt,
@@ -207,3 +159,4 @@ macro_rules! def_peripheral_multiplex {
 }
 
 pub(crate) use def_peripheral_multiplex;
+*/

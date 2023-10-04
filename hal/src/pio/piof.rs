@@ -1,6 +1,6 @@
 use crate::{
     pac::PIOF,
-    pio::{def_pioc, peripheral::impl_peripheral_absel, pin::def_peripheral_multiplex},
+    pio::{def_pioc, peripheral::impl_peripheral_fnsel},
 };
 use seq_macro::seq;
 
@@ -12,24 +12,24 @@ seq! {N in 0..6 {
     }
 }}
 
-impl_peripheral_absel! {
+impl_peripheral_fnsel! {
     PioF {
-        Pf0: asel,
-        Pf1: asel,
-        Pf2: asel,
-        Pf3: asel,
-        Pf4: asel,
-        Pf5: asel,
+        Pf0: a,
+        Pf1: a,
+        Pf2: a,
+        Pf3: a,
+        Pf4: a,
+        Pf5: a,
     }
 }
 
-def_peripheral_multiplex! {
-    PioF {
-        Pf0: [asel SPI1NPCS1];
-        Pf1: [asel SPI1NPCS2];
-        Pf2: [asel SPI1NPCS3];
-        Pf3: [asel PwmH3];
-        Pf4: [asel CTS3];
-        Pf5: [asel RTS3];
-    }
-}
+// def_peripheral_multiplex! {
+//     PioF {
+//         Pf0: [a SPI1NPCS1],
+//         Pf1: [a SPI1NPCS2],
+//         Pf2: [a SPI1NPCS3],
+//         Pf3: [a PwmH3],
+//         Pf4: [a CTS3],
+//         Pf5: [a RTS3],
+//     }
+// }

@@ -1,9 +1,10 @@
 use crate::{
     pac::PIOB,
-    pio::{def_pioc, peripheral::impl_peripheral_absel, pin::def_peripheral_multiplex},
+    pio::{def_pioc, peripheral::impl_peripheral_fnsel},
 };
 use seq_macro::seq;
 
+#[cfg(any(feature = "sam3a", feature = "sam3x"))]
 seq! {N in 0..32 {
     def_pioc! {
         PioB(PIOB) => {
@@ -13,119 +14,319 @@ seq! {N in 0..32 {
 }}
 
 #[cfg(feature = "sam3x")]
-impl_peripheral_absel! {
+impl_peripheral_fnsel! {
     PioB {
-        Pb0: asel,
-        Pb1: asel,
-        Pb2: asel,
-        Pb3: asel,
-        Pb4: asel,
-        Pb5: asel,
-        Pb6: asel,
-        Pb7: asel,
-        Pb8: asel,
-        Pb9: asel,
+        Pb0: a,
+        Pb1: a,
+        Pb2: a,
+        Pb3: a,
+        Pb4: a,
+        Pb5: a,
+        Pb6: a,
+        Pb7: a,
+        Pb8: a,
+        Pb9: a,
     }
 }
 
 #[cfg(feature = "sam3a")]
-impl_peripheral_absel! {
+impl_peripheral_fnsel! {
     PioB {
-        Pb0: bsel,
-        Pb1: bsel,
-        Pb2: bsel,
-        Pb3: bsel,
-        Pb4: bsel,
-        Pb5: bsel,
-        Pb6: bsel,
-        Pb7: bsel,
-        Pb8: bsel,
-        Pb9: bsel,
+        Pb0: b,
+        Pb1: b,
+        Pb2: b,
+        Pb3: b,
+        Pb4: b,
+        Pb5: b,
+        Pb6: b,
+        Pb7: b,
+        Pb8: b,
+        Pb9: b,
     }
 }
 
-impl_peripheral_absel! {
+#[cfg(any(feature = "sam3a", feature = "sam3x"))]
+impl_peripheral_fnsel! {
     PioB {
-        Pb10: absel,
-        Pb11: absel,
-        Pb12: absel,
-        Pb13: absel,
-        Pb14: absel,
-        Pb15: absel,
-        Pb16: absel,
-        Pb17: absel,
-        Pb18: absel,
-        Pb19: absel,
-        Pb20: absel,
-        Pb21: absel,
-        Pb22: absel,
-        Pb23: absel,
-        Pb24: absel,
-        Pb25: absel,
-        Pb26: absel,
-        Pb27: absel,
-        Pb28: asel,
-        Pb29: asel,
-        Pb30: asel,
-        Pb31: asel,
+        Pb10: ab,
+        Pb11: ab,
+        Pb12: ab,
+        Pb13: ab,
+        Pb14: ab,
+        Pb15: ab,
+        Pb16: ab,
+        Pb17: ab,
+        Pb18: ab,
+        Pb19: ab,
+        Pb20: ab,
+        Pb21: ab,
+        Pb22: ab,
+        Pb23: ab,
+        Pb24: ab,
+        Pb25: ab,
+        Pb26: ab,
+        Pb27: ab,
+        Pb28: a,
+        Pb29: a,
+        Pb30: a,
+        Pb31: a,
     }
 }
 
-#[cfg(feature = "sam3x")]
-def_peripheral_multiplex! {
+// #[cfg(feature = "sam3a")]
+// def_peripheral_multiplex! {
+//     PioB {
+//         Pb0: [b TioA3],
+//         Pb1: [b TioB3],
+//         Pb2: [b TioA4],
+//         Pb3: [b TioB4],
+//         Pb4: [b TioA5],
+//         Pb5: [b TioB5],
+//         Pb6: [b PwmL4],
+//         Pb7: [b PwmL5],
+//         Pb8: [b PwmL6],
+//         Pb9: [b PwmL7],
+//     }
+// }
+
+// #[cfg(feature = "sam3x")]
+// def_peripheral_multiplex! {
+//     PioB {
+//         Pb0: [a ETxCkERefCk],
+//         Pb1: [a ETxEn],
+//         Pb2: [a ETx0],
+//         Pb3: [a ETx1],
+//         Pb4: [a ECrSDVERxDV],
+//         Pb5: [a ERx0],
+//         Pb6: [a ERx1],
+//         Pb7: [a ERxEr],
+//         Pb8: [a EMDC],
+//         Pb9: [a EMDio],
+//     }
+// }
+
+// #[cfg(any(feature = "sam3a", feature = "sam3x"))]
+// def_peripheral_multiplex! {
+//     PioB {
+//         Pb10: [a UOtgVBOF, b A18],
+//         Pb11: [a UOtgId, b A19],
+//         Pb12: [a Twd1, b PwmH0],
+//         Pb13: [a TwCk1, b PwmH1],
+//         Pb14: [a CanTx1, b PwmH2],
+//         Pb15: [a CanRx1, b PwmH3],
+//         Pb16: [a TClk5, b PwmL0],
+//         Pb17: [a Rf, b PwmL1],
+//         Pb18: [a Rd, b PwmL2],
+//         Pb19: [a Rk, b PwmL3],
+//         Pb20: [a TxD2, b SPI0NPCS1],
+//         Pb21: [a RxD2, b SPI0NPCS2],
+//         Pb22: [a Rts2, b Pck0],
+//         Pb23: [a Cts2, b SPI0NPCS3],
+//         Pb24: [a SCk2, b Ncs2],
+//         Pb25: [a Rts0, b TioA0],
+//         Pb26: [a Cts0, b TClk0],
+//         Pb27: [a Ncs3, b TioB0],
+//         Pb28: [a TCkSwClk],
+//         Pb29: [a Tdi],
+//         Pb30: [a TdoTraceSwO],
+//         Pb31: [a TwmSwDio],
+//     }
+// }
+
+#[cfg(feature = "sam3n48")]
+seq! {N in 0..13 {
+    def_pioc! {
+        PioB(PIOB) => {
+            #(Pb: N,)*
+        }
+    }
+}}
+
+#[cfg(any(feature = "sam3n64", feature = "sam3n100"))]
+seq! {N in 0..15 {
+    def_pioc! {
+        PioB(PIOB) => {
+            #(Pb: N,)*
+        }
+    }
+}}
+
+#[cfg(feature = "sam3n")]
+impl_peripheral_fnsel! {
     PioB {
-        Pb0: [asel ETxCkERefCk];
-        Pb1: [asel ETxEn];
-        Pb2: [asel ETx0];
-        Pb3: [asel ETx1];
-        Pb4: [asel ECrSDVERxDV];
-        Pb5: [asel ERx0];
-        Pb6: [asel ERx1];
-        Pb7: [asel ERxEr];
-        Pb8: [asel EMDC];
-        Pb9: [asel EMDio];
+        Pb0: [a],
+        Pb1: [a],
+        Pb2: [a, b],
+        Pb3: [a, b],
+        Pb4: [a, b],
+        Pb5: [a],
+        Pb6: [],
+        Pb7: [],
+        Pb8: [],
+        Pb9: [],
+        Pb10: [],
+        Pb11: [],
+        Pb12: [],
     }
 }
 
-#[cfg(feature = "sam3a")]
-def_peripheral_multiplex! {
+#[cfg(feature = "sam3n48")]
+impl_peripheral_fnsel! {
     PioB {
-        Pb0: [bsel TioA3];
-        Pb1: [bsel TioB3];
-        Pb2: [bsel TioA4];
-        Pb3: [bsel TioB4];
-        Pb4: [bsel TioA5];
-        Pb5: [bsel TioB5];
-        Pb6: [bsel PwmL4];
-        Pb7: [bsel PwmL5];
-        Pb8: [bsel PwmL6];
-        Pb9: [bsel PwmL7];
+        Pb13: [],
+        Pb14: [],
     }
 }
 
-def_peripheral_multiplex! {
+#[cfg(any(feature = "sam3n64", feature = "sam3n100"))]
+impl_peripheral_fnsel! {
     PioB {
-        Pb10: [UOtgVBOF, A18];
-        Pb11: [UOtgId, A19];
-        Pb12: [Twd1, PwmH0];
-        Pb13: [TwCk1, PwmH1];
-        Pb14: [CanTx1, PwmH2];
-        Pb15: [CanRx1, PwmH3];
-        Pb16: [TClk5, PwmL0];
-        Pb17: [Rf, PwmL1];
-        Pb18: [Rd, PwmL2];
-        Pb19: [Rk, PwmL3];
-        Pb20: [TxD2, SPI0NPCS1];
-        Pb21: [RxD2, SPI0NPCS2];
-        Pb22: [Rts2, Pck0];
-        Pb23: [Cts2, SPI0NPCS3];
-        Pb24: [SCk2, Ncs2];
-        Pb25: [Rts0, TioA0];
-        Pb26: [Cts0, TClk0];
-        Pb27: [Ncs3, TioB0];
-        Pb28: [asel TCkSwClk];
-        Pb29: [asel Tdi];
-        Pb30: [asel TdoTraceSwO];
-        Pb31: [asel TwmSwDio];
+        Pb13: [b],
+        Pb14: [a, b],
+    }
+}
+
+#[cfg(feature = "sam3s48")]
+seq! {N in 0..13 {
+    def_pioc! {
+        PioB(PIOB) => {
+            #(Pb: N,)*
+        }
+    }
+}}
+
+#[cfg(any(feature = "sam3s64", feature = "sam3s100"))]
+seq! {N in 0..15 {
+    def_pioc! {
+        PioB(PIOB) => {
+            #(Pb: N,)*
+        }
+    }
+}}
+
+#[cfg(feature = "sam3s")]
+impl_peripheral_fnsel! {
+    PioB {
+        Pb0: [a],
+        Pb1: [a],
+        Pb2: [a, b],
+        Pb3: [a, b],
+        Pb4: [a, b],
+        Pb5: [a],
+        Pb6: [],
+        Pb7: [],
+        Pb8: [],
+        Pb9: [],
+        Pb10: [],
+        Pb11: [],
+        Pb12: [a],
+    }
+}
+
+#[cfg(feature = "sam3s48")]
+impl_peripheral_fnsel! {
+    PioB {
+        Pb13: [],
+        Pb14: [],
+    }
+}
+
+#[cfg(any(feature = "sam3s64", feature = "sam3s100"))]
+impl_peripheral_fnsel! {
+    PioB {
+        Pb13: [a, b],
+        Pb14: [a, b],
+    }
+}
+
+#[cfg(feature = "sam3s8")]
+seq! {N in 0..15 {
+    def_pioc! {
+        PioB(PIOB) => {
+            #(Pb: N,)*
+        }
+    }
+}}
+
+#[cfg(feature = "sam3s8")]
+impl_peripheral_fnsel! {
+    PioB {
+        Pb0: [a],
+        Pb1: [a],
+        Pb2: [a, b],
+        Pb3: [a, b],
+        Pb4: [a, b],
+        Pb5: [a, b],
+        Pb6: [],
+        Pb7: [],
+        Pb8: [],
+        Pb9: [],
+        Pb10: [],
+        Pb11: [],
+        Pb12: [a],
+        Pb13: [a, b],
+        Pb14: [a, b],
+    }
+}
+
+#[cfg(feature = "sam3u100")]
+seq! {N in 0..25 {
+    def_pioc! {
+        PioB(PIOB) => {
+            #(Pb: N,)*
+        }
+    }
+}}
+
+#[cfg(feature = "sam3u144")]
+seq! {N in 0..32 {
+    def_pioc! {
+        PioB(PIOB) => {
+            #(Pb: N,)*
+        }
+    }
+}}
+
+#[cfg(feature = "sam3u")]
+impl_peripheral_fnsel! {
+    PioB {
+        Pb0: [a, b],
+        Pb1: [a, b],
+        Pb2: [a, b],
+        Pb3: [a, b],
+        Pb4: [a, b],
+        Pb5: [a, b],
+        Pb6: [a, b],
+        Pb7: [a, b],
+        Pb8: [a, b],
+        Pb9: [a, b],
+        Pb10: [a, b],
+        Pb11: [a, b],
+        Pb12: [a, b],
+        Pb13: [a, b],
+        Pb14: [a, b],
+        Pb15: [a, b],
+        Pb16: [a, b],
+        Pb17: [a, b],
+        Pb18: [a, b],
+        Pb19: [a, b],
+        Pb20: [a, b],
+        Pb21: [a, b],
+        Pb22: [a, b],
+        Pb23: [a, b],
+        Pb24: [a, b],
+    }
+}
+
+#[cfg(feature = "sam3u144")]
+impl_peripheral_fnsel! {
+    PioB {
+        Pb25: [a, b],
+        Pb26: [a, b],
+        Pb27: [a, b],
+        Pb28: [a, b],
+        Pb29: [a],
+        Pb30: [a],
+        Pb31: [a],
     }
 }

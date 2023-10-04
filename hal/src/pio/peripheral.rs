@@ -2,18 +2,24 @@
 //!
 //!
 
+#[cfg(feature = "pioa")]
+use crate::pio::pioa::PioA;
+#[cfg(feature = "piob")]
+use crate::pio::piob::PioB;
+#[cfg(feature = "pioc")]
+use crate::pio::pioc::PioC;
+#[cfg(feature = "piod")]
+use crate::pio::piod::PioD;
+#[cfg(feature = "pioe")]
+use crate::pio::pioe::PioE;
+#[cfg(feature = "piof")]
+use crate::pio::piof::PioF;
 use crate::pio::{
     filter::InputFilterCfg,
     interrupt::InterruptCfg,
     pin::{Configured, Pin, PinId, PullupResistorCfg, Unconfigured},
-    pioa::PioA,
-    piob::PioB,
     IsPio, PioError,
 };
-#[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
-use crate::pio::{pioc::PioC, piod::PioD};
-#[cfg(feature = "sam3x8h")]
-use crate::pio::{pioe::PioE, piof::PioF};
 use core::marker::PhantomData;
 
 pub trait MultiDriverCfg {}
@@ -193,66 +199,154 @@ pub struct PeripheralB;
 impl PeripheralSelectCfg for PeripheralB {}
 impl Configured for PeripheralB {}
 
-/// # Peripheral A or B Selection
-///
-/// The PIO Controller provides multiplexing of up to two peripheral functions on a single pin. The
-/// selection is performed by writing `PIO_ABSR` (AB Select Register). For each pin, the
-/// corresponding bit at level 0 means peripheral A is selected whereas the corresponding bit at
-/// level 1 indicates that peripheral B is selected.
-///
-/// Note that multiplexing of peripheral lines A and B only affects the output line. The peripheral
-/// input lines are always connected to the pin input.
-///
-/// After reset, `PIO_ABSR` is 0, thus indicating that all the PIO lines are configured on
-/// peripheral A. However, peripheral A generally does not drive the pin as the PIO Controller
-/// resets in I/O line mode.
-///
-/// Writing in `PIO_ABSR` manages the multiplexing regardless of the configuration of the pin.
-/// However, assignment of a pin to a peripheral function requires a write in the peripheral
-/// selection register (`PIO_ABSR`) in addition to a write in `PIO_PDR`.
-pub trait ConfigureABSelect: Sized {
-    type A: ConfigureABSelect;
-    type B: ConfigureABSelect;
+#[cfg(any(feature = "3fn", feature = "4fn"))]
+mod c {
+    #[allow(clippy::wildcard_imports)]
+    use super::*;
 
-    /// Select peripheral A for this pin. Waits for `PIO_ABSR` to update accordingly.
-    ///
-    /// # Errors
-    ///
-    /// This function can fail if:
-    /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
-    ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
-    ///   controller.
-    /// - Write protection is enabled on the PIO controller. Write protection must first be
-    ///   disabled for any pins within the controller to have their configurations modified.
-    fn peripheral_a(self) -> Result<Self::A, (Self, PioError)>;
-    /// Select peripheral A for this pin without waiting for `PIO_ABSR` to update.
-    ///
-    /// # Safety
-    ///
-    /// This function returns a type showing that this pin selects peripheral A, but this may be at
-    /// odds with the actual configuration state of the PIO controller. Writes to the configuration
-    /// may fail silently if the PIO line is locked or write protection is enabled.
-    unsafe fn peripheral_a_unchecked(self) -> Self::A;
-    /// Enable select peripheral B for this pin. Waits for `PIO_ABSR` to update accordingly.
-    ///
-    /// # Errors
-    ///
-    /// This function can fail if:
-    /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
-    ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
-    ///   controller.
-    /// - Write protection is enabled on the PIO controller. Write protection must first be
-    ///   disabled for any pins within the controller to have their configurations modified.
-    fn peripheral_b(self) -> Result<Self::B, (Self, PioError)>;
-    /// Select peripheral B for this pin without waiting for `PIO_ABSR` to update.
-    ///
-    /// # Safety
-    ///
-    /// This function returns a type showing that this pin selects peripheral B, but this may be at
-    /// odds with the actual configuration state of the PIO controller. Writes to the configuration
-    /// may fail silently if the PIO line is locked or write protection is enabled.
-    unsafe fn peripheral_b_unchecked(self) -> Self::B;
+    #[allow(clippy::module_name_repetitions)]
+    pub struct PeripheralC;
+
+    impl PeripheralSelectCfg for PeripheralC {}
+    impl Configured for PeripheralC {}
 }
+
+#[cfg(any(feature = "3fn", feature = "4fn"))]
+pub use c::PeripheralC;
+
+#[cfg(feature = "4fn")]
+mod d {
+    #[allow(clippy::wildcard_imports)]
+    use super::*;
+
+    #[allow(clippy::module_name_repetitions)]
+    pub struct PeripheralD;
+
+    impl PeripheralSelectCfg for PeripheralD {}
+    impl Configured for PeripheralD {}
+}
+
+#[cfg(feature = "4fn")]
+pub use d::PeripheralD;
+
+#[cfg(feature = "2fn")]
+mod fn_ab {
+    #[allow(clippy::wildcard_imports)]
+    use super::*;
+
+    /// # Peripheral A or B Selection
+    ///
+    /// The PIO Controller provides multiplexing of up to two peripheral functions on a single pin.
+    /// The selection is performed by writing `PIO_ABSR` (AB Select Register). For each pin, the
+    /// corresponding bit at level 0 means peripheral A is selected whereas the corresponding bit at
+    /// level 1 indicates that peripheral B is selected.
+    ///
+    /// Note that multiplexing of peripheral lines A and B only affects the output line. The
+    /// peripheral input lines are always connected to the pin input.
+    ///
+    /// After reset, `PIO_ABSR` is 0, thus indicating that all the PIO lines are configured on
+    /// peripheral A. However, peripheral A generally does not drive the pin as the PIO Controller
+    /// resets in I/O line mode.
+    ///
+    /// Writing in `PIO_ABSR` manages the multiplexing regardless of the configuration of the pin.
+    /// However, assignment of a pin to a peripheral function requires a write in the peripheral
+    /// selection register (`PIO_ABSR`) in addition to a write in `PIO_PDR`.
+    pub trait ConfigureFunctionSelect: Sized {
+        type A: ConfigureFunctionSelect;
+        type B: ConfigureFunctionSelect;
+
+        /// Select peripheral A for this pin. Waits for `PIO_ABSR` to update accordingly.
+        ///
+        /// # Errors
+        ///
+        /// This function can fail if:
+        /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
+        ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
+        ///   controller.
+        /// - Write protection is enabled on the PIO controller. Write protection must first be
+        ///   disabled for any pins within the controller to have their configurations modified.
+        fn peripheral_a(self) -> Result<Self::A, (Self, PioError)>;
+        /// Select peripheral A for this pin without waiting for `PIO_ABSR` to update.
+        ///
+        /// # Safety
+        ///
+        /// This function returns a type showing that this pin selects peripheral A, but this may be
+        /// at odds with the actual configuration state of the PIO controller. Writes to the
+        /// configuration may fail silently if the PIO line is locked or write protection is
+        /// enabled.
+        unsafe fn peripheral_a_unchecked(self) -> Self::A;
+        /// Enable select peripheral B for this pin. Waits for `PIO_ABSR` to update accordingly.
+        ///
+        /// # Errors
+        ///
+        /// This function can fail if:
+        /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
+        ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
+        ///   controller.
+        /// - Write protection is enabled on the PIO controller. Write protection must first be
+        ///   disabled for any pins within the controller to have their configurations modified.
+        fn peripheral_b(self) -> Result<Self::B, (Self, PioError)>;
+        /// Select peripheral B for this pin without waiting for `PIO_ABSR` to update.
+        ///
+        /// # Safety
+        ///
+        /// This function returns a type showing that this pin selects peripheral B, but this may be
+        /// at odds with the actual configuration state of the PIO controller. Writes to the
+        /// configuration may fail silently if the PIO line is locked or write protection is
+        /// enabled.
+        unsafe fn peripheral_b_unchecked(self) -> Self::B;
+    }
+}
+
+#[cfg(feature = "2fn")]
+pub use fn_ab::ConfigureFunctionSelect;
+
+#[cfg(feature = "3fn")]
+mod fn_abcd {
+    #[allow(clippy::wildcard_imports)]
+    use super::*;
+
+    pub trait ConfigureFunctionSelect: Sized {
+        type A: ConfigureFunctionSelect;
+        type B: ConfigureFunctionSelect;
+        type C: ConfigureFunctionSelect;
+
+        fn peripheral_a(self) -> Result<Self::A, (Self, PioError)>;
+        unsafe fn peripheral_a_unchecked(self) -> Self::A;
+        fn peripheral_b(self) -> Result<Self::B, (Self, PioError)>;
+        unsafe fn peripheral_b_unchecked(self) -> Self::B;
+        fn peripheral_c(self) -> Result<Self::C, (Self, PioError)>;
+        unsafe fn peripheral_c_unchecked(self) -> Self::C;
+    }
+}
+
+#[cfg(feature = "3fn")]
+pub use fn_abcd::ConfigureFunctionSelect;
+
+#[cfg(feature = "4fn")]
+mod fn_abcd {
+    #[allow(clippy::wildcard_imports)]
+    use super::*;
+
+    pub trait ConfigureFunctionSelect: Sized {
+        type A: ConfigureFunctionSelect;
+        type B: ConfigureFunctionSelect;
+        type C: ConfigureFunctionSelect;
+        type D: ConfigureFunctionSelect;
+
+        fn peripheral_a(self) -> Result<Self::A, (Self, PioError)>;
+        unsafe fn peripheral_a_unchecked(self) -> Self::A;
+        fn peripheral_b(self) -> Result<Self::B, (Self, PioError)>;
+        unsafe fn peripheral_b_unchecked(self) -> Self::B;
+        fn peripheral_c(self) -> Result<Self::C, (Self, PioError)>;
+        unsafe fn peripheral_c_unchecked(self) -> Self::C;
+        fn peripheral_d(self) -> Result<Self::D, (Self, PioError)>;
+        unsafe fn peripheral_d_unchecked(self) -> Self::D;
+    }
+}
+
+#[cfg(feature = "4fn")]
+pub use fn_abcd::ConfigureFunctionSelect;
 
 pub trait OutputCfg {}
 
@@ -360,24 +454,24 @@ pub trait ConfigureOutputSyncWrite: Sized {
 
     /// Enables synchronous data output writing for this pin. Waits for `PIO_OWSR` to update
     /// accordingly.
-    /// 
+    ///
     /// # Errors
-    /// 
+    ///
     /// This function will fail unless write protection is disabled on the PIO controller. Write
     /// protection must be disabled for any pins within the controller to have their configurations
     /// modified.
-    /// 
+    ///
     /// # Safety
-    /// 
+    ///
     /// This function allows external control of this pin's output, and for that reason, it's marked
     /// `unsafe`. Mutable access to either this pin or the PIO controller driving it will allow
     /// modification of the output.
     unsafe fn enable_output_sync_write(self) -> Result<Self::Enabled, (Self, PioError)>;
     /// Enables synchronous data output writing for this pin without waiting for `PIO_OWSR` to
     /// update.
-    /// 
+    ///
     /// # Safety
-    /// 
+    ///
     /// This function returns a type showing that this pin has synchronous output writing enabled,
     /// but this may be at odds with the actual configuration state of the PIO controller. Writes to
     /// the configuration may fail silently if write protection is enabled. Furthermore, this is
@@ -386,18 +480,18 @@ pub trait ConfigureOutputSyncWrite: Sized {
     unsafe fn enable_output_sync_write_unchecked(self) -> Self::Enabled;
     /// Disables synchronous data output writing for this pin. Waits for `PIO_OWSR` to update
     /// accordingly.
-    /// 
+    ///
     /// # Errors
-    /// 
+    ///
     /// This function will fail unless write protection is disabled on the PIO controller. Write
     /// protection must be disabled for any pins within the controller to have their configurations
     /// modified.
     fn disable_output_sync_write(self) -> Result<Self::Disabled, (Self, PioError)>;
     /// Disables synchronous data output writing for this pin without waiting for `PIO_OWSR` to
     /// update.
-    /// 
+    ///
     /// # Safety
-    /// 
+    ///
     /// This function returns a type showing that this pin has synchronous output writing disabled,
     /// but this may be at odds with the actual configuration state of the PIO controller. Writes to
     /// the configuration may fail silently if write protection is enabled.
@@ -421,14 +515,14 @@ impl OutputWriteCfg for ClearOutput {}
 impl Configured for ClearOutput {}
 
 /// # Output Control (Set/Clear Output Data)
-/// 
+///
 /// The level driven on an I/O line can be determined by writing in `PIO_SODR` (Set Output Data
 /// Register) and `PIO_CODR` (Clear Output Data Register). These write operations respectively set
 /// and clear `PIO_ODSR` (Output Data Status Register), which represents the data driven on the I/O
 /// lines. Writing in `PIO_OER` and `PIO_ODR` manages `PIO_OSR` whether the pin is configured to be
 /// controlled by the PIO controller or assigned to a peripheral function. This enables
 /// configuration of the I/O line prior to setting it to be managed by the PIO Controller.
-/// 
+///
 /// Similarly, writing in `PIO_SODR` and `PIO_CODR` affects `PIO_ODSR`. This is important as it
 /// defines the first level driven on the I/O line.
 pub trait ConfigureOutputWrite {
@@ -440,9 +534,9 @@ pub trait ConfigureOutputWrite {
     fn set_output(self) -> Self::Set;
     /// Set 1 as the first driven level for this pin I/O line without waiting for `PIO_ODSR` to
     /// update.
-    /// 
+    ///
     /// # Safety
-    /// 
+    ///
     /// This function returns a type showing that this pin has set 1 as its first driven level, but
     /// the first driven level won't be set to 1 until the corresponding bit in `PIO_ODSR` is set.
     unsafe fn set_output_unchecked(self) -> Self::Set;
@@ -451,9 +545,9 @@ pub trait ConfigureOutputWrite {
     fn clear_output(self) -> Self::Clear;
     /// Set 0 as the first driven level for this pin I/O line without waiting for `PIO_ODSR` to
     /// update.
-    /// 
+    ///
     /// # Safety
-    /// 
+    ///
     /// This function returns a type showing that this pin has 0 set as its first driven level, but
     /// the first driven level won't be set to 0 until the corresponding bit in `PIO_ODSR` is
     /// cleared.
@@ -461,1067 +555,1078 @@ pub trait ConfigureOutputWrite {
 }
 
 macro_rules! impl_peripheral_cfgs {
-    ($($pio:ty),+$(,)?) => {
-        $(
-            impl<Pid, Pupr, Irpt, Filt> ConfigureMultiDriver for
-                Pin<$pio, Pid, Unconfigured, Pupr, Irpt, Filt>
-            where
-                Pid: PinId<Controller = $pio>,
-                Pupr: PullupResistorCfg,
-                Irpt: InterruptCfg,
-                Filt: InputFilterCfg,
-            {
-                type Enabled = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverEnabled<Unconfigured, Unconfigured>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-                type Disabled = Pin<$pio, Pid, MultiDriverDisabled<Unconfigured>, Pupr, Irpt, Filt>;
+    ($pio:ty) => {
+        impl<Pid, Pupr, Irpt, Filt> ConfigureMultiDriver
+            for Pin<$pio, Pid, Unconfigured, Pupr, Irpt, Filt>
+        where
+            Pid: PinId<Controller = $pio>,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Filt: InputFilterCfg,
+        {
+            type Enabled =
+                Pin<$pio, Pid, MultiDriverEnabled<Unconfigured, Unconfigured>, Pupr, Irpt, Filt>;
+            type Disabled = Pin<$pio, Pid, MultiDriverDisabled<Unconfigured>, Pupr, Irpt, Filt>;
 
-                fn enable_multi_driver(
-                    self,
-                ) -> Self::Enabled {
-                    unsafe {
-                        let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                        if pioreg.mdsr.read().bits() & <Pid as PinId>::MASK == 0 {
-                            let _ = self.enable_multi_driver_unchecked();
-                            while pioreg.mdsr.read().bits() & <Pid as PinId>::MASK == 0 {}
-                        }
-                        Pin::new()
-                    }
-                }
-
-                unsafe fn enable_multi_driver_unchecked(self) -> Self::Enabled {
+            fn enable_multi_driver(self) -> Self::Enabled {
+                unsafe {
                     let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.mder.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    Pin::new()
-                }
-
-                fn disable_multi_driver(self) -> Self::Disabled {
-                    unsafe {
-                        let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                        if pioreg.mdsr.read().bits() & <Pid as PinId>::MASK > 0 {
-                            let _ = self.disable_multi_driver_unchecked();
-                            while pioreg.mdsr.read().bits() & <Pid as PinId>::MASK > 0 {}
-                        }
-                        Pin::new()
-                    }
-                }
-
-                unsafe fn disable_multi_driver_unchecked(self) -> Self::Disabled {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.mddr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    Pin::new()
-                }
-            }
-
-            impl<Pid, Line, Pupr, Irpt, Filt> ConfigureMultiDriver for
-                Pin<$pio, Pid, MultiDriverDisabled<Line>, Pupr, Irpt, Filt>
-            where
-                Pid: PinId<Controller = $pio>,
-                Line: PioControl,
-                Pupr: PullupResistorCfg,
-                Irpt: InterruptCfg,
-                Filt: InputFilterCfg,
-            {
-                type Enabled = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverEnabled<Line, Unconfigured>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-                type Disabled = Self;
-
-                fn enable_multi_driver(
-                    self,
-                ) -> Self::Enabled {
-                    unsafe {
+                    if pioreg.mdsr.read().bits() & <Pid as PinId>::MASK == 0 {
                         let _ = self.enable_multi_driver_unchecked();
-                        let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
                         while pioreg.mdsr.read().bits() & <Pid as PinId>::MASK == 0 {}
-                        Pin::new()
                     }
-                }
-
-                unsafe fn enable_multi_driver_unchecked(self) -> Self::Enabled {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.mder.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
                     Pin::new()
-                }
-
-                fn disable_multi_driver(self) -> Self::Disabled {
-                    self
-                }
-
-                unsafe fn disable_multi_driver_unchecked(self) -> Self::Disabled {
-                    self
                 }
             }
 
-            impl<Pid, Psel, Otpt, Pupr, Irpt, Filt> ConfigureMultiDriver for
-                Pin<$pio, Pid, MultiDriverEnabled<Psel, Otpt>, Pupr, Irpt, Filt>
-            where
-                Pid: PinId<Controller = $pio>,
-                Psel: PioControl,
-                Otpt: OutputCfg,
-                Pupr: PullupResistorCfg,
-                Irpt: InterruptCfg,
-                Filt: InputFilterCfg,
-            {
-                type Enabled = Self;
-                type Disabled = Pin<$pio, Pid, MultiDriverDisabled<Psel>, Pupr, Irpt, Filt>;
+            unsafe fn enable_multi_driver_unchecked(self) -> Self::Enabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg
+                    .mder
+                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
+            }
 
-                fn enable_multi_driver(self) -> Self::Enabled {
-                    self
-                }
-
-                unsafe fn enable_multi_driver_unchecked(self) -> Self::Enabled {
-                    self
-                }
-
-                fn disable_multi_driver(self) -> Self::Disabled {
-                    unsafe {
-                        let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+            fn disable_multi_driver(self) -> Self::Disabled {
+                unsafe {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    if pioreg.mdsr.read().bits() & <Pid as PinId>::MASK > 0 {
                         let _ = self.disable_multi_driver_unchecked();
                         while pioreg.mdsr.read().bits() & <Pid as PinId>::MASK > 0 {}
-                        Pin::new()
                     }
-                }
-
-                unsafe fn disable_multi_driver_unchecked(self) -> Self::Disabled {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.mddr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
                     Pin::new()
                 }
             }
 
-            impl<Pid, Pupr, Irpt, Filt> ConfigurePioOutput for
-                Pin<$pio, Pid, MultiDriverDisabled<PioControlled<Unconfigured>>, Pupr, Irpt, Filt>
-            where
-                Pid: PinId<Controller = $pio>,
-                Pupr: PullupResistorCfg,
-                Irpt: InterruptCfg,
-                Filt: InputFilterCfg,
-            {
-                type Enabled = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputEnabled<Unconfigured, Unconfigured>>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-                type Disabled = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputDisabled>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
+            unsafe fn disable_multi_driver_unchecked(self) -> Self::Disabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg
+                    .mddr
+                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
+            }
+        }
 
-                fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
-                    let pioreg = unsafe { &*<$pio>::PTR };
-                    if pioreg.wpmr.read().wpen().bit() {
-                        Err((self, PioError::WriteProtected))
-                    } else {
-                        if pioreg.osr.read().bits() & <Pid as PinId>::MASK == 0 {
-                            unsafe {
-                                let _ = self.enable_pio_output_unchecked();
-                                while pioreg.osr.read().bits() & <Pid as PinId>::MASK == 0 {}
-                            }
-                        }
-                        unsafe { Ok(Pin::new()) }
-                    }
-                }
+        impl<Pid, Line, Pupr, Irpt, Filt> ConfigureMultiDriver
+            for Pin<$pio, Pid, MultiDriverDisabled<Line>, Pupr, Irpt, Filt>
+        where
+            Pid: PinId<Controller = $pio>,
+            Line: PioControl,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Filt: InputFilterCfg,
+        {
+            type Enabled = Pin<$pio, Pid, MultiDriverEnabled<Line, Unconfigured>, Pupr, Irpt, Filt>;
+            type Disabled = Self;
 
-                unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
+            fn enable_multi_driver(self) -> Self::Enabled {
+                unsafe {
+                    let _ = self.enable_multi_driver_unchecked();
                     let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.oer.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    Pin::new()
-                }
-
-                fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
-                    let pioreg = unsafe { &*<$pio>::PTR };
-                    if pioreg.wpmr.read().wpen().bit() {
-                        Err((self, PioError::WriteProtected))
-                    } else {
-                        if pioreg.osr.read().bits() & <Pid as PinId>::MASK > 0 {
-                            unsafe {
-                                let _ = self.disable_pio_output_unchecked();
-                                while pioreg.osr.read().bits() & <Pid as PinId>::MASK > 0 {}
-                            }
-                        }
-                        unsafe { Ok(Pin::new()) }
-                    }
-                }
-
-                unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.odr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                    while pioreg.mdsr.read().bits() & <Pid as PinId>::MASK == 0 {}
                     Pin::new()
                 }
             }
 
-            impl<Pid, Pupr, Irpt, Filt> ConfigurePioOutput for
-                Pin<$pio, Pid, MultiDriverDisabled<PioControlled<OutputDisabled>>, Pupr, Irpt, Filt>
-            where
-                Pid: PinId<Controller = $pio>,
-                Pupr: PullupResistorCfg,
-                Irpt: InterruptCfg,
-                Filt: InputFilterCfg,
-            {
-                type Enabled = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputEnabled<Unconfigured, Unconfigured>>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-                type Disabled = Self;
-
-                fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
-                    let pioreg = unsafe { &*<$pio>::PTR };
-                    if pioreg.wpmr.read().wpen().bit() {
-                        Err((self, PioError::WriteProtected))
-                    } else {
-                        unsafe {
-                            let _ = self.enable_pio_output_unchecked();
-                            while pioreg.osr.read().bits() & <Pid as PinId>::MASK == 0 {}
-                            Ok(Pin::new())
-                        }
-                    }
-                }
-
-                unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.oer.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    Pin::new()
-                }
-
-                fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
-                    Ok(self)
-                }
-
-                unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
-                    self
-                }
+            unsafe fn enable_multi_driver_unchecked(self) -> Self::Enabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg
+                    .mder
+                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
             }
 
-            impl<Pid, Sync, Outw, Pupr, Irpt, Filt> ConfigurePioOutput for
-                Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputEnabled<Sync, Outw>>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >
-            where
-                Pid: PinId<Controller = $pio>,
-                Sync: OutputSyncWriteCfg,
-                Outw: OutputWriteCfg,
-                Pupr: PullupResistorCfg,
-                Irpt: InterruptCfg,
-                Filt: InputFilterCfg,
-            {
-                type Enabled = Self;
-                type Disabled = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputDisabled>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
+            fn disable_multi_driver(self) -> Self::Disabled {
+                self
+            }
 
-                fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
-                    Ok(self)
-                }
+            unsafe fn disable_multi_driver_unchecked(self) -> Self::Disabled {
+                self
+            }
+        }
 
-                unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
-                    self
-                }
+        impl<Pid, Psel, Otpt, Pupr, Irpt, Filt> ConfigureMultiDriver
+            for Pin<$pio, Pid, MultiDriverEnabled<Psel, Otpt>, Pupr, Irpt, Filt>
+        where
+            Pid: PinId<Controller = $pio>,
+            Psel: PioControl,
+            Otpt: OutputCfg,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Filt: InputFilterCfg,
+        {
+            type Enabled = Self;
+            type Disabled = Pin<$pio, Pid, MultiDriverDisabled<Psel>, Pupr, Irpt, Filt>;
 
-                fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
-                    let pioreg = unsafe { &*<$pio>::PTR };
-                    if pioreg.wpmr.read().wpen().bit() {
-                        Err((self, PioError::WriteProtected))
-                    } else {
-                        unsafe {
-                            let _ = self.disable_pio_output_unchecked();
-                            while pioreg.osr.read().bits() & <Pid as PinId>::MASK > 0 {}
-                            Ok(Pin::new())
-                        }
-                    }
-                }
+            fn enable_multi_driver(self) -> Self::Enabled {
+                self
+            }
 
-                unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
+            unsafe fn enable_multi_driver_unchecked(self) -> Self::Enabled {
+                self
+            }
+
+            fn disable_multi_driver(self) -> Self::Disabled {
+                unsafe {
                     let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.odr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                    let _ = self.disable_multi_driver_unchecked();
+                    while pioreg.mdsr.read().bits() & <Pid as PinId>::MASK > 0 {}
                     Pin::new()
                 }
             }
 
-            impl<Pid, Otpt, Pupr, Irpt, Filt> ConfigurePioOutput for
-                Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverEnabled<PioControlled<Unconfigured>, Otpt>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >
-            where
-                Pid: PinId<Controller = $pio>,
-                Otpt: OutputCfg,
-                Pupr: PullupResistorCfg,
-                Irpt: InterruptCfg,
-                Filt: InputFilterCfg,
-            {
-                type Enabled = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverEnabled<
-                        PioControlled<OutputEnabled<Unconfigured, Unconfigured>>,
-                        Otpt,
-                    >,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-                type Disabled = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverEnabled<PioControlled<OutputDisabled>, Otpt>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-
-                fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
-                    let pioreg = unsafe { &*<$pio>::PTR };
-                    if pioreg.wpmr.read().wpen().bit() {
-                        Err((self, PioError::WriteProtected))
-                    } else {
-                        if pioreg.osr.read().bits() & <Pid as PinId>::MASK == 0 {
-                            unsafe {
-                                let _ = self.enable_pio_output_unchecked();
-                                while pioreg.osr.read().bits() & <Pid as PinId>::MASK == 0 {}
-                            }
-                        }
-                        unsafe { Ok(Pin::new()) }
-                    }
-                }
-
-                unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.oer.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    Pin::new()
-                }
-
-                fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
-                    let pioreg = unsafe { &*<$pio>::PTR };
-                    if pioreg.wpmr.read().wpen().bit() {
-                        Err((self, PioError::WriteProtected))
-                    } else {
-                        if pioreg.osr.read().bits() & <Pid as PinId>::MASK > 0 {
-                            unsafe {
-                                let _ = self.disable_pio_output_unchecked();
-                                while pioreg.osr.read().bits() & <Pid as PinId>::MASK > 0 {}
-                            }
-                        }
-                        unsafe { Ok(Pin::new()) }
-                    }
-                }
-
-                unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.odr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    Pin::new()
-                }
+            unsafe fn disable_multi_driver_unchecked(self) -> Self::Disabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg
+                    .mddr
+                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
             }
+        }
 
-            impl<Pid, Otpt, Pupr, Irpt, Filt> ConfigurePioOutput for
-                Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverEnabled<PioControlled<OutputDisabled>, Otpt>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >
-            where
-                Pid: PinId<Controller = $pio>,
-                Otpt: OutputCfg,
-                Pupr: PullupResistorCfg,
-                Irpt: InterruptCfg,
-                Filt: InputFilterCfg,
-            {
-                type Enabled = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverEnabled<
-                        PioControlled<OutputEnabled<Unconfigured, Unconfigured>>,
-                        Otpt,
-                    >,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-                type Disabled = Self;
+        impl<Pid, Pupr, Irpt, Filt> ConfigurePioOutput
+            for Pin<$pio, Pid, MultiDriverDisabled<PioControlled<Unconfigured>>, Pupr, Irpt, Filt>
+        where
+            Pid: PinId<Controller = $pio>,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Filt: InputFilterCfg,
+        {
+            type Enabled = Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputEnabled<Unconfigured, Unconfigured>>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+            type Disabled = Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputDisabled>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
 
-                fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
-                    let pioreg = unsafe { &*<$pio>::PTR };
-                    if pioreg.wpmr.read().wpen().bit() {
-                        Err((self, PioError::WriteProtected))
-                    } else {
-                        unsafe {
-                            let _ = self.enable_pio_output_unchecked();
-                            while pioreg.osr.read().bits() & <Pid as PinId>::MASK == 0 {}
-                            Ok(Pin::new())
-                        }
-                    }
-                }
-
-                unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.oer.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    Pin::new()
-                }
-
-                fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
-                    Ok(self)
-                }
-
-                unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
-                    self
-                }
-            }
-
-            impl<Pid, Sync, Outw, Otpt, Pupr, Irpt, Filt> ConfigurePioOutput for
-                Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverEnabled<PioControlled<OutputEnabled<Sync, Outw>>, Otpt>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >
-            where
-                Pid: PinId<Controller = $pio>,
-                Sync: OutputSyncWriteCfg,
-                Outw: OutputWriteCfg,
-                Otpt: OutputCfg,
-                Pupr: PullupResistorCfg,
-                Irpt: InterruptCfg,
-                Filt: InputFilterCfg,
-            {
-                type Enabled = Self;
-                type Disabled = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverEnabled<PioControlled<OutputDisabled>, Otpt>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-
-                fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
-                    Ok(self)
-                }
-
-                unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
-                    self
-                }
-
-                fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
-                    let pioreg = unsafe { &*<$pio>::PTR };
-                    if pioreg.wpmr.read().wpen().bit() {
-                        Err((self, PioError::WriteProtected))
-                    } else {
-                        unsafe {
-                            let _ = self.disable_pio_output_unchecked();
-                            while pioreg.osr.read().bits() & <Pid as PinId>::MASK > 0 {}
-                            Ok(Pin::new())
-                        }
-                    }
-                }
-
-                unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.odr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    Pin::new()
-                }
-            }
-
-            impl<Pid, Outw, Pupr, Irpt, Filt> ConfigureOutputSyncWrite for
-                Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputEnabled<Unconfigured, Outw>>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >
-            where
-                Pid: PinId<Controller = $pio>,
-                Outw: OutputWriteCfg,
-                Pupr: PullupResistorCfg,
-                Irpt: InterruptCfg,
-                Filt: InputFilterCfg,
-            {
-                type Enabled = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputEnabled<SyncOutputEnabled, Outw>>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-                type Disabled = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputEnabled<SyncOutputDisabled, Outw>>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-
-                unsafe fn enable_output_sync_write(self) -> Result<Self::Enabled, (Self, PioError)> {
-                    let pioreg = &*<$pio>::PTR;
-                    if pioreg.wpmr.read().wpen().bit() {
-                        Err((self, PioError::WriteProtected))
-                    } else {
-                        if pioreg.owsr.read().bits() & <Pid as PinId>::MASK == 0 {
-                            let _ = self.enable_output_sync_write_unchecked();
-                            while pioreg.owsr.read().bits() & <Pid as PinId>::MASK == 0 {}
-                        }
+            fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
+                let pioreg = unsafe { &*<$pio>::PTR };
+                if pioreg.wpmr.read().wpen().bit() {
+                    Err((self, PioError::WriteProtected))
+                } else {
+                    unsafe {
+                        let _ = self.enable_pio_output_unchecked();
+                        while pioreg.osr.read().bits() & <Pid as PinId>::MASK == 0 {}
                         Ok(Pin::new())
                     }
                 }
+            }
 
-                unsafe fn enable_output_sync_write_unchecked(self) -> Self::Enabled {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.ower.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    Pin::new()
-                }
+            unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg.oer.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
+            }
 
-                fn disable_output_sync_write(self) -> Result<Self::Disabled, (Self, PioError)> {
-                    let pioreg = unsafe { &*<$pio>::PTR };
-                    if pioreg.wpmr.read().wpen().bit() {
-                        Err((self, PioError::WriteProtected))
-                    } else {
-                        if pioreg.owsr.read().bits() & <Pid as PinId>::MASK > 0 {
-                            unsafe {
-                                let _ = self.disable_output_sync_write_unchecked();
-                                while pioreg.owsr.read().bits() & <Pid as PinId>::MASK > 0 {}
-                            }
-                        }
-                        unsafe { Ok(Pin::new()) }
+            fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
+                let pioreg = unsafe { &*<$pio>::PTR };
+                if pioreg.wpmr.read().wpen().bit() {
+                    Err((self, PioError::WriteProtected))
+                } else {
+                    unsafe {
+                        let _ = self.disable_pio_output_unchecked();
+                        while pioreg.osr.read().bits() & <Pid as PinId>::MASK > 0 {}
+                        Ok(Pin::new())
                     }
-                }
-
-                unsafe fn disable_output_sync_write_unchecked(self) -> Self::Disabled {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.owdr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    Pin::new()
                 }
             }
 
-            impl<Pid, Outw, Pupr, Irpt, Filt> ConfigureOutputSyncWrite for
-                Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputEnabled<SyncOutputDisabled, Outw>>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >
-            where
-                Pid: PinId<Controller = $pio>,
-                Outw: OutputWriteCfg,
-                Pupr: PullupResistorCfg,
-                Irpt: InterruptCfg,
-                Filt: InputFilterCfg,
-            {
-                type Enabled = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputEnabled<SyncOutputEnabled, Outw>>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-                type Disabled = Self;
+            unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg.odr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
+            }
+        }
 
-                unsafe fn enable_output_sync_write(self) -> Result<Self::Enabled, (Self, PioError)> {
-                    let pioreg = &*<$pio>::PTR;
-                    if pioreg.wpmr.read().wpen().bit() {
-                        Err((self, PioError::WriteProtected))
-                    } else {
+        impl<Pid, Pupr, Irpt, Filt> ConfigurePioOutput
+            for Pin<$pio, Pid, MultiDriverDisabled<PioControlled<OutputDisabled>>, Pupr, Irpt, Filt>
+        where
+            Pid: PinId<Controller = $pio>,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Filt: InputFilterCfg,
+        {
+            type Enabled = Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputEnabled<Unconfigured, Unconfigured>>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+            type Disabled = Self;
+
+            fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
+                let pioreg = unsafe { &*<$pio>::PTR };
+                if pioreg.wpmr.read().wpen().bit() {
+                    Err((self, PioError::WriteProtected))
+                } else {
+                    unsafe {
+                        let _ = self.enable_pio_output_unchecked();
+                        while pioreg.osr.read().bits() & <Pid as PinId>::MASK == 0 {}
+                        Ok(Pin::new())
+                    }
+                }
+            }
+
+            unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg.oer.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
+            }
+
+            fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
+                Ok(self)
+            }
+
+            unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
+                self
+            }
+        }
+
+        impl<Pid, Sync, Outw, Pupr, Irpt, Filt> ConfigurePioOutput
+            for Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputEnabled<Sync, Outw>>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >
+        where
+            Pid: PinId<Controller = $pio>,
+            Sync: OutputSyncWriteCfg,
+            Outw: OutputWriteCfg,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Filt: InputFilterCfg,
+        {
+            type Enabled = Self;
+            type Disabled = Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputDisabled>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+
+            fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
+                Ok(self)
+            }
+
+            unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
+                self
+            }
+
+            fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
+                let pioreg = unsafe { &*<$pio>::PTR };
+                if pioreg.wpmr.read().wpen().bit() {
+                    Err((self, PioError::WriteProtected))
+                } else {
+                    unsafe {
+                        let _ = self.disable_pio_output_unchecked();
+                        while pioreg.osr.read().bits() & <Pid as PinId>::MASK > 0 {}
+                        Ok(Pin::new())
+                    }
+                }
+            }
+
+            unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg.odr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
+            }
+        }
+
+        impl<Pid, Otpt, Pupr, Irpt, Filt> ConfigurePioOutput
+            for Pin<
+                $pio,
+                Pid,
+                MultiDriverEnabled<PioControlled<Unconfigured>, Otpt>,
+                Pupr,
+                Irpt,
+                Filt,
+            >
+        where
+            Pid: PinId<Controller = $pio>,
+            Otpt: OutputCfg,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Filt: InputFilterCfg,
+        {
+            type Enabled = Pin<
+                $pio,
+                Pid,
+                MultiDriverEnabled<PioControlled<OutputEnabled<Unconfigured, Unconfigured>>, Otpt>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+            type Disabled = Pin<
+                $pio,
+                Pid,
+                MultiDriverEnabled<PioControlled<OutputDisabled>, Otpt>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+
+            fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
+                let pioreg = unsafe { &*<$pio>::PTR };
+                if pioreg.wpmr.read().wpen().bit() {
+                    Err((self, PioError::WriteProtected))
+                } else {
+                    unsafe {
+                        let _ = self.enable_pio_output_unchecked();
+                        while pioreg.osr.read().bits() & <Pid as PinId>::MASK == 0 {}
+                        Ok(Pin::new())
+                    }
+                }
+            }
+
+            unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg.oer.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
+            }
+
+            fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
+                let pioreg = unsafe { &*<$pio>::PTR };
+                if pioreg.wpmr.read().wpen().bit() {
+                    Err((self, PioError::WriteProtected))
+                } else {
+                    unsafe {
+                        let _ = self.disable_pio_output_unchecked();
+                        while pioreg.osr.read().bits() & <Pid as PinId>::MASK > 0 {}
+                        Ok(Pin::new())
+                    }
+                }
+            }
+
+            unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg.odr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
+            }
+        }
+
+        impl<Pid, Otpt, Pupr, Irpt, Filt> ConfigurePioOutput
+            for Pin<
+                $pio,
+                Pid,
+                MultiDriverEnabled<PioControlled<OutputDisabled>, Otpt>,
+                Pupr,
+                Irpt,
+                Filt,
+            >
+        where
+            Pid: PinId<Controller = $pio>,
+            Otpt: OutputCfg,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Filt: InputFilterCfg,
+        {
+            type Enabled = Pin<
+                $pio,
+                Pid,
+                MultiDriverEnabled<PioControlled<OutputEnabled<Unconfigured, Unconfigured>>, Otpt>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+            type Disabled = Self;
+
+            fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
+                let pioreg = unsafe { &*<$pio>::PTR };
+                if pioreg.wpmr.read().wpen().bit() {
+                    Err((self, PioError::WriteProtected))
+                } else {
+                    unsafe {
+                        let _ = self.enable_pio_output_unchecked();
+                        while pioreg.osr.read().bits() & <Pid as PinId>::MASK == 0 {}
+                        Ok(Pin::new())
+                    }
+                }
+            }
+
+            unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg.oer.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
+            }
+
+            fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
+                Ok(self)
+            }
+
+            unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
+                self
+            }
+        }
+
+        impl<Pid, Sync, Outw, Otpt, Pupr, Irpt, Filt> ConfigurePioOutput
+            for Pin<
+                $pio,
+                Pid,
+                MultiDriverEnabled<PioControlled<OutputEnabled<Sync, Outw>>, Otpt>,
+                Pupr,
+                Irpt,
+                Filt,
+            >
+        where
+            Pid: PinId<Controller = $pio>,
+            Sync: OutputSyncWriteCfg,
+            Outw: OutputWriteCfg,
+            Otpt: OutputCfg,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Filt: InputFilterCfg,
+        {
+            type Enabled = Self;
+            type Disabled = Pin<
+                $pio,
+                Pid,
+                MultiDriverEnabled<PioControlled<OutputDisabled>, Otpt>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+
+            fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
+                Ok(self)
+            }
+
+            unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
+                self
+            }
+
+            fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
+                let pioreg = unsafe { &*<$pio>::PTR };
+                if pioreg.wpmr.read().wpen().bit() {
+                    Err((self, PioError::WriteProtected))
+                } else {
+                    unsafe {
+                        let _ = self.disable_pio_output_unchecked();
+                        while pioreg.osr.read().bits() & <Pid as PinId>::MASK > 0 {}
+                        Ok(Pin::new())
+                    }
+                }
+            }
+
+            unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg.odr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
+            }
+        }
+
+        impl<Pid, Outw, Pupr, Irpt, Filt> ConfigureOutputSyncWrite
+            for Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputEnabled<Unconfigured, Outw>>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >
+        where
+            Pid: PinId<Controller = $pio>,
+            Outw: OutputWriteCfg,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Filt: InputFilterCfg,
+        {
+            type Enabled = Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputEnabled<SyncOutputEnabled, Outw>>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+            type Disabled = Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputEnabled<SyncOutputDisabled, Outw>>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+
+            unsafe fn enable_output_sync_write(self) -> Result<Self::Enabled, (Self, PioError)> {
+                let pioreg = &*<$pio>::PTR;
+                if pioreg.wpmr.read().wpen().bit() {
+                    Err((self, PioError::WriteProtected))
+                } else {
+                    if pioreg.owsr.read().bits() & <Pid as PinId>::MASK == 0 {
                         let _ = self.enable_output_sync_write_unchecked();
                         while pioreg.owsr.read().bits() & <Pid as PinId>::MASK == 0 {}
+                    }
+                    Ok(Pin::new())
+                }
+            }
+
+            unsafe fn enable_output_sync_write_unchecked(self) -> Self::Enabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg
+                    .ower
+                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
+            }
+
+            fn disable_output_sync_write(self) -> Result<Self::Disabled, (Self, PioError)> {
+                let pioreg = unsafe { &*<$pio>::PTR };
+                if pioreg.wpmr.read().wpen().bit() {
+                    Err((self, PioError::WriteProtected))
+                } else {
+                    unsafe {
+                        let _ = self.disable_output_sync_write_unchecked();
+                        while pioreg.owsr.read().bits() & <Pid as PinId>::MASK > 0 {}
                         Ok(Pin::new())
                     }
                 }
+            }
 
-                unsafe fn enable_output_sync_write_unchecked(self) -> Self::Enabled {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.ower.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    Pin::new()
-                }
+            unsafe fn disable_output_sync_write_unchecked(self) -> Self::Disabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg
+                    .owdr
+                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
+            }
+        }
 
-                fn disable_output_sync_write(self) -> Result<Self::Disabled, (Self, PioError)> {
-                    Ok(self)
-                }
+        impl<Pid, Outw, Pupr, Irpt, Filt> ConfigureOutputSyncWrite
+            for Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputEnabled<SyncOutputDisabled, Outw>>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >
+        where
+            Pid: PinId<Controller = $pio>,
+            Outw: OutputWriteCfg,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Filt: InputFilterCfg,
+        {
+            type Enabled = Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputEnabled<SyncOutputEnabled, Outw>>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+            type Disabled = Self;
 
-                unsafe fn disable_output_sync_write_unchecked(self) -> Self::Disabled {
-                    self
+            unsafe fn enable_output_sync_write(self) -> Result<Self::Enabled, (Self, PioError)> {
+                let pioreg = &*<$pio>::PTR;
+                if pioreg.wpmr.read().wpen().bit() {
+                    Err((self, PioError::WriteProtected))
+                } else {
+                    let _ = self.enable_output_sync_write_unchecked();
+                    while pioreg.owsr.read().bits() & <Pid as PinId>::MASK == 0 {}
+                    Ok(Pin::new())
                 }
             }
 
-            impl<Pid, Outw, Pupr, Irpt, Filt> ConfigureOutputSyncWrite for
-                Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputEnabled<SyncOutputEnabled, Outw>>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >
-            where
-                Pid: PinId<Controller = $pio>,
-                Outw: OutputWriteCfg,
-                Pupr: PullupResistorCfg,
-                Irpt: InterruptCfg,
-                Filt: InputFilterCfg,
-            {
-                type Enabled = Self;
-                type Disabled = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputEnabled<SyncOutputDisabled, Outw>>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-
-                unsafe fn enable_output_sync_write(self) -> Result<Self::Enabled, (Self, PioError)> {
-                    Ok(self)
-                }
-
-                unsafe fn enable_output_sync_write_unchecked(self) -> Self::Enabled {
-                    self
-                }
-
-                fn disable_output_sync_write(self) -> Result<Self::Disabled, (Self, PioError)> {
-                    let pioreg = unsafe { &*<$pio>::PTR };
-                    if pioreg.wpmr.read().wpen().bit() {
-                        Err((self, PioError::WriteProtected))
-                    } else {
-                        unsafe {
-                            let _ = self.disable_output_sync_write_unchecked();
-                            while pioreg.owsr.read().bits() & <Pid as PinId>::MASK > 0 {}
-                            Ok(Pin::new())
-                        }
-                    }
-                }
-
-                unsafe fn disable_output_sync_write_unchecked(self) -> Self::Disabled {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.owdr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    Pin::new()
-                }
+            unsafe fn enable_output_sync_write_unchecked(self) -> Self::Enabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg
+                    .ower
+                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
             }
 
-            impl<Pid, Outw, Otpt, Pupr, Irpt, Filt> ConfigureOutputSyncWrite for
-                Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverEnabled<PioControlled<OutputEnabled<Unconfigured, Outw>>, Otpt>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >
-            where
-                Pid: PinId<Controller = $pio>,
-                Outw: OutputWriteCfg,
-                Otpt: OutputCfg,
-                Pupr: PullupResistorCfg,
-                Irpt: InterruptCfg,
-                Filt: InputFilterCfg,
-            {
-                type Enabled = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverEnabled<PioControlled<OutputEnabled<SyncOutputEnabled, Outw>>, Otpt>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-                type Disabled = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverEnabled<
-                        PioControlled<OutputEnabled<SyncOutputDisabled, Outw>>,
-                        Otpt,
-                    >,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
+            fn disable_output_sync_write(self) -> Result<Self::Disabled, (Self, PioError)> {
+                Ok(self)
+            }
 
-                unsafe fn enable_output_sync_write(self) -> Result<Self::Enabled, (Self, PioError)> {
-                    let pioreg = &*<$pio>::PTR;
-                    if pioreg.wpmr.read().wpen().bit() {
-                        Err((self, PioError::WriteProtected))
-                    } else {
-                        if pioreg.owsr.read().bits() & <Pid as PinId>::MASK == 0 {
-                            let _ = self.enable_output_sync_write_unchecked();
-                            while pioreg.owsr.read().bits() & <Pid as PinId>::MASK == 0 {}
-                        }
+            unsafe fn disable_output_sync_write_unchecked(self) -> Self::Disabled {
+                self
+            }
+        }
+
+        impl<Pid, Outw, Pupr, Irpt, Filt> ConfigureOutputSyncWrite
+            for Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputEnabled<SyncOutputEnabled, Outw>>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >
+        where
+            Pid: PinId<Controller = $pio>,
+            Outw: OutputWriteCfg,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Filt: InputFilterCfg,
+        {
+            type Enabled = Self;
+            type Disabled = Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputEnabled<SyncOutputDisabled, Outw>>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+
+            unsafe fn enable_output_sync_write(self) -> Result<Self::Enabled, (Self, PioError)> {
+                Ok(self)
+            }
+
+            unsafe fn enable_output_sync_write_unchecked(self) -> Self::Enabled {
+                self
+            }
+
+            fn disable_output_sync_write(self) -> Result<Self::Disabled, (Self, PioError)> {
+                let pioreg = unsafe { &*<$pio>::PTR };
+                if pioreg.wpmr.read().wpen().bit() {
+                    Err((self, PioError::WriteProtected))
+                } else {
+                    unsafe {
+                        let _ = self.disable_output_sync_write_unchecked();
+                        while pioreg.owsr.read().bits() & <Pid as PinId>::MASK > 0 {}
                         Ok(Pin::new())
                     }
                 }
-
-                unsafe fn enable_output_sync_write_unchecked(self) -> Self::Enabled {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.ower.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    Pin::new()
-                }
-
-                fn disable_output_sync_write(self) -> Result<Self::Disabled, (Self, PioError)> {
-                    let pioreg = unsafe { &*<$pio>::PTR };
-                    if pioreg.wpmr.read().wpen().bit() {
-                        Err((self, PioError::WriteProtected))
-                    } else {
-                        if pioreg.owsr.read().bits() & <Pid as PinId>::MASK > 0 {
-                            unsafe {
-                                let _ = self.disable_output_sync_write_unchecked();
-                                while pioreg.owsr.read().bits() & <Pid as PinId>::MASK > 0 {}
-                            }
-                        }
-                        unsafe { Ok(Pin::new()) }
-                    }
-                }
-
-                unsafe fn disable_output_sync_write_unchecked(self) -> Self::Disabled {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.owdr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    Pin::new()
-                }
             }
 
-            impl<Pid, Outw, Otpt, Pupr, Irpt, Filt> ConfigureOutputSyncWrite for
-                Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverEnabled<
-                        PioControlled<OutputEnabled<SyncOutputDisabled, Outw>>,
-                        Otpt,
-                    >,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >
-            where
-                Pid: PinId<Controller = $pio>,
-                Outw: OutputWriteCfg,
-                Otpt: OutputCfg,
-                Pupr: PullupResistorCfg,
-                Irpt: InterruptCfg,
-                Filt: InputFilterCfg,
-            {
-                type Enabled = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverEnabled<PioControlled<OutputEnabled<SyncOutputEnabled, Outw>>, Otpt>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-                type Disabled = Self;
+            unsafe fn disable_output_sync_write_unchecked(self) -> Self::Disabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg
+                    .owdr
+                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
+            }
+        }
 
-                unsafe fn enable_output_sync_write(self) -> Result<Self::Enabled, (Self, PioError)> {
-                    let pioreg = &*<$pio>::PTR;
-                    if pioreg.wpmr.read().wpen().bit() {
-                        Err((self, PioError::WriteProtected))
-                    } else {
+        impl<Pid, Outw, Otpt, Pupr, Irpt, Filt> ConfigureOutputSyncWrite
+            for Pin<
+                $pio,
+                Pid,
+                MultiDriverEnabled<PioControlled<OutputEnabled<Unconfigured, Outw>>, Otpt>,
+                Pupr,
+                Irpt,
+                Filt,
+            >
+        where
+            Pid: PinId<Controller = $pio>,
+            Outw: OutputWriteCfg,
+            Otpt: OutputCfg,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Filt: InputFilterCfg,
+        {
+            type Enabled = Pin<
+                $pio,
+                Pid,
+                MultiDriverEnabled<PioControlled<OutputEnabled<SyncOutputEnabled, Outw>>, Otpt>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+            type Disabled = Pin<
+                $pio,
+                Pid,
+                MultiDriverEnabled<PioControlled<OutputEnabled<SyncOutputDisabled, Outw>>, Otpt>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+
+            unsafe fn enable_output_sync_write(self) -> Result<Self::Enabled, (Self, PioError)> {
+                let pioreg = &*<$pio>::PTR;
+                if pioreg.wpmr.read().wpen().bit() {
+                    Err((self, PioError::WriteProtected))
+                } else {
+                    if pioreg.owsr.read().bits() & <Pid as PinId>::MASK == 0 {
                         let _ = self.enable_output_sync_write_unchecked();
                         while pioreg.owsr.read().bits() & <Pid as PinId>::MASK == 0 {}
+                    }
+                    Ok(Pin::new())
+                }
+            }
+
+            unsafe fn enable_output_sync_write_unchecked(self) -> Self::Enabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg
+                    .ower
+                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
+            }
+
+            fn disable_output_sync_write(self) -> Result<Self::Disabled, (Self, PioError)> {
+                let pioreg = unsafe { &*<$pio>::PTR };
+                if pioreg.wpmr.read().wpen().bit() {
+                    Err((self, PioError::WriteProtected))
+                } else {
+                    unsafe {
+                        let _ = self.disable_output_sync_write_unchecked();
+                        while pioreg.owsr.read().bits() & <Pid as PinId>::MASK > 0 {}
                         Ok(Pin::new())
                     }
                 }
+            }
 
-                unsafe fn enable_output_sync_write_unchecked(self) -> Self::Enabled {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.ower.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    Pin::new()
-                }
+            unsafe fn disable_output_sync_write_unchecked(self) -> Self::Disabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg
+                    .owdr
+                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
+            }
+        }
 
-                fn disable_output_sync_write(self) -> Result<Self::Disabled, (Self, PioError)> {
-                    Ok(self)
-                }
+        impl<Pid, Outw, Otpt, Pupr, Irpt, Filt> ConfigureOutputSyncWrite
+            for Pin<
+                $pio,
+                Pid,
+                MultiDriverEnabled<PioControlled<OutputEnabled<SyncOutputDisabled, Outw>>, Otpt>,
+                Pupr,
+                Irpt,
+                Filt,
+            >
+        where
+            Pid: PinId<Controller = $pio>,
+            Outw: OutputWriteCfg,
+            Otpt: OutputCfg,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Filt: InputFilterCfg,
+        {
+            type Enabled = Pin<
+                $pio,
+                Pid,
+                MultiDriverEnabled<PioControlled<OutputEnabled<SyncOutputEnabled, Outw>>, Otpt>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+            type Disabled = Self;
 
-                unsafe fn disable_output_sync_write_unchecked(self) -> Self::Disabled {
-                    self
+            unsafe fn enable_output_sync_write(self) -> Result<Self::Enabled, (Self, PioError)> {
+                let pioreg = &*<$pio>::PTR;
+                if pioreg.wpmr.read().wpen().bit() {
+                    Err((self, PioError::WriteProtected))
+                } else {
+                    let _ = self.enable_output_sync_write_unchecked();
+                    while pioreg.owsr.read().bits() & <Pid as PinId>::MASK == 0 {}
+                    Ok(Pin::new())
                 }
             }
 
-            impl<Pid, Outw, Otpt, Pupr, Irpt, Filt> ConfigureOutputSyncWrite for
-                Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverEnabled<PioControlled<OutputEnabled<SyncOutputEnabled, Outw>>, Otpt>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >
-            where
-                Pid: PinId<Controller = $pio>,
-                Outw: OutputWriteCfg,
-                Otpt: OutputCfg,
-                Pupr: PullupResistorCfg,
-                Irpt: InterruptCfg,
-                Filt: InputFilterCfg,
-            {
-                type Enabled = Self;
-                type Disabled = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverEnabled<
-                        PioControlled<OutputEnabled<SyncOutputDisabled, Outw>>,
-                        Otpt,
-                    >,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
+            unsafe fn enable_output_sync_write_unchecked(self) -> Self::Enabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg
+                    .ower
+                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
+            }
 
-                unsafe fn enable_output_sync_write(self) -> Result<Self::Enabled, (Self, PioError)> {
-                    Ok(self)
-                }
+            fn disable_output_sync_write(self) -> Result<Self::Disabled, (Self, PioError)> {
+                Ok(self)
+            }
 
-                unsafe fn enable_output_sync_write_unchecked(self) -> Self::Enabled {
-                    self
-                }
+            unsafe fn disable_output_sync_write_unchecked(self) -> Self::Disabled {
+                self
+            }
+        }
 
-                fn disable_output_sync_write(self) -> Result<Self::Disabled, (Self, PioError)> {
-                    let pioreg = unsafe { &*<$pio>::PTR };
-                    if pioreg.wpmr.read().wpen().bit() {
-                        Err((self, PioError::WriteProtected))
-                    } else {
-                        unsafe {
-                            let _ = self.disable_output_sync_write_unchecked();
-                            while pioreg.owsr.read().bits() & <Pid as PinId>::MASK > 0 {}
-                            Ok(Pin::new())
-                        }
+        impl<Pid, Outw, Otpt, Pupr, Irpt, Filt> ConfigureOutputSyncWrite
+            for Pin<
+                $pio,
+                Pid,
+                MultiDriverEnabled<PioControlled<OutputEnabled<SyncOutputEnabled, Outw>>, Otpt>,
+                Pupr,
+                Irpt,
+                Filt,
+            >
+        where
+            Pid: PinId<Controller = $pio>,
+            Outw: OutputWriteCfg,
+            Otpt: OutputCfg,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Filt: InputFilterCfg,
+        {
+            type Enabled = Self;
+            type Disabled = Pin<
+                $pio,
+                Pid,
+                MultiDriverEnabled<PioControlled<OutputEnabled<SyncOutputDisabled, Outw>>, Otpt>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+
+            unsafe fn enable_output_sync_write(self) -> Result<Self::Enabled, (Self, PioError)> {
+                Ok(self)
+            }
+
+            unsafe fn enable_output_sync_write_unchecked(self) -> Self::Enabled {
+                self
+            }
+
+            fn disable_output_sync_write(self) -> Result<Self::Disabled, (Self, PioError)> {
+                let pioreg = unsafe { &*<$pio>::PTR };
+                if pioreg.wpmr.read().wpen().bit() {
+                    Err((self, PioError::WriteProtected))
+                } else {
+                    unsafe {
+                        let _ = self.disable_output_sync_write_unchecked();
+                        while pioreg.owsr.read().bits() & <Pid as PinId>::MASK > 0 {}
+                        Ok(Pin::new())
                     }
-                }
-
-                unsafe fn disable_output_sync_write_unchecked(self) -> Self::Disabled {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.owdr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    Pin::new()
                 }
             }
 
-            impl<Pid, Sync, Pupr, Irpt, Filt> ConfigureOutputWrite for
-                Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputEnabled<Sync, Unconfigured>>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >
-            where
-                Pid: PinId<Controller = $pio>,
-                Sync: OutputSyncWriteCfg,
-                Pupr: PullupResistorCfg,
-                Irpt: InterruptCfg,
-                Filt: InputFilterCfg,
-            {
-                type Set = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputEnabled<Sync, SetOutput>>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-                type Clear = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputEnabled<Sync, ClearOutput>>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-
-                fn set_output(self) -> Self::Set {
-                    unsafe {
-                        let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                        if pioreg.odsr.read().bits() & <Pid as PinId>::MASK == 0 {
-                            pioreg.sodr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                            while pioreg.odsr.read().bits() & <Pid as PinId>::MASK == 0 {}
-                        }
-                        Pin::new()
-                    }
-                }
-
-                unsafe fn set_output_unchecked(self) -> Self::Set {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.sodr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    unsafe { Pin::new() }
-                }
-
-                fn clear_output(self) -> Self::Clear {
-                    unsafe {
-                        let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                        if pioreg.odsr.read().bits() & <Pid as PinId>::MASK > 0 {
-                            pioreg.codr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                            while pioreg.odsr.read().bits() & <Pid as PinId>::MASK > 0 {}
-                        }
-                        Pin::new()
-                    }
-                }
-
-                unsafe fn clear_output_unchecked(self) -> Self::Clear {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.codr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    unsafe { Pin::new() }
-                }
+            unsafe fn disable_output_sync_write_unchecked(self) -> Self::Disabled {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg
+                    .owdr
+                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                Pin::new()
             }
+        }
 
-            impl<Pid, Sync, Pupr, Irpt, Filt> ConfigureOutputWrite for
-                Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputEnabled<Sync, SetOutput>>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >
-            where
-                Pid: PinId<Controller = $pio>,
-                Sync: OutputSyncWriteCfg,
-                Pupr: PullupResistorCfg,
-                Irpt: InterruptCfg,
-                Filt: InputFilterCfg,
-            {
-                type Set = Self;
-                type Clear = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputEnabled<Sync, ClearOutput>>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
+        impl<Pid, Sync, Pupr, Irpt, Filt> ConfigureOutputWrite
+            for Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputEnabled<Sync, Unconfigured>>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >
+        where
+            Pid: PinId<Controller = $pio>,
+            Sync: OutputSyncWriteCfg,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Filt: InputFilterCfg,
+        {
+            type Set = Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputEnabled<Sync, SetOutput>>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+            type Clear = Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputEnabled<Sync, ClearOutput>>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
 
-                fn set_output(self) -> Self::Set {
-                    self
-                }
-
-                unsafe fn set_output_unchecked(self) -> Self::Set {
-                    self
-                }
-
-                fn clear_output(self) -> Self::Clear {
-                    unsafe {
-                        let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                        pioreg.codr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                        while pioreg.odsr.read().bits() & <Pid as PinId>::MASK > 0 {}
-                        Pin::new()
-                    }
-                }
-
-                unsafe fn clear_output_unchecked(self) -> Self::Clear {
+            fn set_output(self) -> Self::Set {
+                unsafe {
                     let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.codr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    unsafe { Pin::new() }
-                }
-            }
-
-            impl<Pid, Sync, Pupr, Irpt, Filt> ConfigureOutputWrite for
-                Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputEnabled<Sync, ClearOutput>>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >
-            where
-                Pid: PinId<Controller = $pio>,
-                Sync: OutputSyncWriteCfg,
-                Pupr: PullupResistorCfg,
-                Irpt: InterruptCfg,
-                Filt: InputFilterCfg,
-            {
-                type Set = Pin<
-                    $pio,
-                    Pid,
-                    MultiDriverDisabled<PioControlled<OutputEnabled<Sync, SetOutput>>>,
-                    Pupr,
-                    Irpt,
-                    Filt,
-                >;
-                type Clear = Self;
-
-                fn set_output(self) -> Self::Set {
-                    unsafe {
-                        let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                        pioreg.sodr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                    if pioreg.odsr.read().bits() & <Pid as PinId>::MASK == 0 {
+                        pioreg
+                            .sodr
+                            .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
                         while pioreg.odsr.read().bits() & <Pid as PinId>::MASK == 0 {}
-                        Pin::new()
                     }
-                }
-
-                unsafe fn set_output_unchecked(self) -> Self::Set {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    pioreg.sodr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                    unsafe { Pin::new() }
-                }
-
-                fn clear_output(self) -> Self::Clear {
-                    self
-                }
-
-                unsafe fn clear_output_unchecked(self) -> Self::Clear {
-                    self
+                    Pin::new()
                 }
             }
-        )+
+
+            unsafe fn set_output_unchecked(self) -> Self::Set {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg
+                    .sodr
+                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                unsafe { Pin::new() }
+            }
+
+            fn clear_output(self) -> Self::Clear {
+                unsafe {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    if pioreg.odsr.read().bits() & <Pid as PinId>::MASK > 0 {
+                        pioreg
+                            .codr
+                            .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                        while pioreg.odsr.read().bits() & <Pid as PinId>::MASK > 0 {}
+                    }
+                    Pin::new()
+                }
+            }
+
+            unsafe fn clear_output_unchecked(self) -> Self::Clear {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg
+                    .codr
+                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                unsafe { Pin::new() }
+            }
+        }
+
+        impl<Pid, Sync, Pupr, Irpt, Filt> ConfigureOutputWrite
+            for Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputEnabled<Sync, SetOutput>>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >
+        where
+            Pid: PinId<Controller = $pio>,
+            Sync: OutputSyncWriteCfg,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Filt: InputFilterCfg,
+        {
+            type Set = Self;
+            type Clear = Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputEnabled<Sync, ClearOutput>>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+
+            fn set_output(self) -> Self::Set {
+                self
+            }
+
+            unsafe fn set_output_unchecked(self) -> Self::Set {
+                self
+            }
+
+            fn clear_output(self) -> Self::Clear {
+                unsafe {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    pioreg
+                        .codr
+                        .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                    while pioreg.odsr.read().bits() & <Pid as PinId>::MASK > 0 {}
+                    Pin::new()
+                }
+            }
+
+            unsafe fn clear_output_unchecked(self) -> Self::Clear {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg
+                    .codr
+                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                unsafe { Pin::new() }
+            }
+        }
+
+        impl<Pid, Sync, Pupr, Irpt, Filt> ConfigureOutputWrite
+            for Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputEnabled<Sync, ClearOutput>>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >
+        where
+            Pid: PinId<Controller = $pio>,
+            Sync: OutputSyncWriteCfg,
+            Pupr: PullupResistorCfg,
+            Irpt: InterruptCfg,
+            Filt: InputFilterCfg,
+        {
+            type Set = Pin<
+                $pio,
+                Pid,
+                MultiDriverDisabled<PioControlled<OutputEnabled<Sync, SetOutput>>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+            type Clear = Self;
+
+            fn set_output(self) -> Self::Set {
+                unsafe {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    pioreg
+                        .sodr
+                        .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                    while pioreg.odsr.read().bits() & <Pid as PinId>::MASK == 0 {}
+                    Pin::new()
+                }
+            }
+
+            unsafe fn set_output_unchecked(self) -> Self::Set {
+                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                pioreg
+                    .sodr
+                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
+                unsafe { Pin::new() }
+            }
+
+            fn clear_output(self) -> Self::Clear {
+                self
+            }
+
+            unsafe fn clear_output_unchecked(self) -> Self::Clear {
+                self
+            }
+        }
     };
 }
 
+#[cfg(feature = "pioa")]
 impl_peripheral_cfgs! {
-    PioA, PioB,
+    PioA
 }
 
-#[cfg(any(feature = "sam3x4e", feature = "sam3x8e", feature = "sam3x8h"))]
+#[cfg(feature = "piob")]
 impl_peripheral_cfgs! {
-    PioC, PioD,
+    PioB
 }
 
-#[cfg(feature = "sam3x8h")]
+#[cfg(feature = "pioc")]
 impl_peripheral_cfgs! {
-    PioE, PioF,
+    PioC
 }
 
-macro_rules! impl_peripheral_absel {
+#[cfg(feature = "piod")]
+impl_peripheral_cfgs! {
+    PioD
+}
+
+#[cfg(feature = "pioe")]
+impl_peripheral_cfgs! {
+    PioE
+}
+
+#[cfg(feature = "piof")]
+impl_peripheral_cfgs! {
+    PioF
+}
+
+#[cfg(feature = "2fn")]
+macro_rules! impl_peripheral_fnsel {
     ($pio:ty { $($pid:ty: $opt:tt),+$(,)? }) => {
         $(
-            impl_peripheral_absel! {
+            impl_peripheral_fnsel! {
                 @impl $pio, $pid, $opt
             }
         )+
@@ -1640,7 +1745,14 @@ macro_rules! impl_peripheral_absel {
             }
 
             impl<Otpt1, Otpt2, Pupr, Irpt, Filt> ConfigurePioControl
-                for Pin<$pio, $pid, MultiDriverEnabled<PioControlled<Otpt1>, Otpt2>, Pupr, Irpt, Filt>
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PioControlled<Otpt1>, Otpt2>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
             where
                 Otpt1: OutputCfg,
                 Otpt2: OutputCfg,
@@ -1669,8 +1781,8 @@ macro_rules! impl_peripheral_absel {
             }
         };
     };
-    (@impl $pio:ty, $pid:ty, asel) => {
-        impl_peripheral_absel! {
+    (@impl $pio:ty, $pid:ty, a) => {
+        impl_peripheral_fnsel! {
             @peripheral $pio, $pid
         }
 
@@ -1679,7 +1791,7 @@ macro_rules! impl_peripheral_absel {
                 filter::InputFilterCfg,
                 interrupt::InterruptCfg,
                 peripheral::{
-                    ConfigureABSelect,
+                    ConfigureFunctionSelect,
                     MultiDriverDisabled,
                     MultiDriverEnabled,
                     OutputCfg,
@@ -1691,7 +1803,7 @@ macro_rules! impl_peripheral_absel {
                 PioError,
             };
 
-            impl<Pupr, Irpt, Filt> ConfigureABSelect
+            impl<Pupr, Irpt, Filt> ConfigureFunctionSelect
                 for Pin<
                     $pio,
                     $pid,
@@ -1722,12 +1834,7 @@ macro_rules! impl_peripheral_absel {
                     } else if pioreg.wpmr.read().wpen().bit() {
                         Err((self, PioError::WriteProtected))
                     } else {
-                        if pioreg.absr.read().bits() & <$pid>::MASK > 0 {
-                            unsafe {
-                                let _ = self.peripheral_a_unchecked();
-                            }
-                        }
-                        unsafe { Ok(Pin::new()) }
+                        unsafe { Ok(self.peripheral_a_unchecked()) }
                     }
                 }
 
@@ -1748,7 +1855,7 @@ macro_rules! impl_peripheral_absel {
                 }
             }
 
-            impl<Pupr, Irpt, Filt> ConfigureABSelect
+            impl<Pupr, Irpt, Filt> ConfigureFunctionSelect
                 for Pin<
                     $pio,
                     $pid,
@@ -1782,7 +1889,7 @@ macro_rules! impl_peripheral_absel {
                 }
             }
 
-            impl<Otpt, Pupr, Irpt, Filt> ConfigureABSelect
+            impl<Otpt, Pupr, Irpt, Filt> ConfigureFunctionSelect
                 for Pin<
                     $pio,
                     $pid,
@@ -1814,12 +1921,7 @@ macro_rules! impl_peripheral_absel {
                     } else if pioreg.wpmr.read().wpen().bit() {
                         Err((self, PioError::WriteProtected))
                     } else {
-                        if pioreg.absr.read().bits() & <$pid>::MASK > 0 {
-                            unsafe {
-                                let _ = self.peripheral_a_unchecked();
-                            }
-                        }
-                        unsafe { Ok(Pin::new()) }
+                        unsafe { Ok(self.peripheral_a_unchecked()) }
                     }
                 }
 
@@ -1840,7 +1942,7 @@ macro_rules! impl_peripheral_absel {
                 }
             }
 
-            impl<Otpt, Pupr, Irpt, Filt> ConfigureABSelect
+            impl<Otpt, Pupr, Irpt, Filt> ConfigureFunctionSelect
                 for Pin<
                     $pio,
                     $pid,
@@ -1876,8 +1978,8 @@ macro_rules! impl_peripheral_absel {
             }
         };
     };
-    (@impl $pio:ty, $pid:ty, bsel) => {
-        impl_peripheral_absel! {
+    (@impl $pio:ty, $pid:ty, b) => {
+        impl_peripheral_fnsel! {
             @peripheral $pio, $pid
         }
 
@@ -1886,7 +1988,7 @@ macro_rules! impl_peripheral_absel {
                 filter::InputFilterCfg,
                 interrupt::InterruptCfg,
                 peripheral::{
-                    ConfigureABSelect,
+                    ConfigureFunctionSelect,
                     MultiDriverDisabled,
                     MultiDriverEnabled,
                     OutputCfg,
@@ -1898,7 +2000,7 @@ macro_rules! impl_peripheral_absel {
                 PioError,
             };
 
-            impl<Pupr, Irpt, Filt> ConfigureABSelect
+            impl<Pupr, Irpt, Filt> ConfigureFunctionSelect
                 for Pin<
                     $pio,
                     $pid,
@@ -1937,12 +2039,7 @@ macro_rules! impl_peripheral_absel {
                     } else if pioreg.wpmr.read().wpen().bit() {
                         Err((self, PioError::WriteProtected))
                     } else {
-                        if pioreg.absr.read().bits() & <$pid>::MASK == 0 {
-                            unsafe {
-                                let _ = self.peripheral_b_unchecked();
-                            }
-                        }
-                        unsafe { Ok(Pin::new()) }
+                        unsafe { Ok(self.peripheral_b_unchecked()) }
                     }
                 }
 
@@ -1953,7 +2050,7 @@ macro_rules! impl_peripheral_absel {
                 }
             }
 
-            impl<Pupr, Irpt, Filt> ConfigureABSelect
+            impl<Pupr, Irpt, Filt> ConfigureFunctionSelect
                 for Pin<
                     $pio,
                     $pid,
@@ -1987,7 +2084,7 @@ macro_rules! impl_peripheral_absel {
                 }
             }
 
-            impl<Otpt, Pupr, Irpt, Filt> ConfigureABSelect
+            impl<Otpt, Pupr, Irpt, Filt> ConfigureFunctionSelect
                 for Pin<
                     $pio,
                     $pid,
@@ -2027,12 +2124,7 @@ macro_rules! impl_peripheral_absel {
                     } else if pioreg.wpmr.read().wpen().bit() {
                         Err((self, PioError::WriteProtected))
                     } else {
-                        if pioreg.absr.read().bits() & <$pid>::MASK == 0 {
-                            unsafe {
-                                let _ = self.peripheral_b_unchecked();
-                            }
-                        }
-                        unsafe { Ok(Pin::new()) }
+                        unsafe { Ok(self.peripheral_b_unchecked()) }
                     }
                 }
 
@@ -2043,7 +2135,7 @@ macro_rules! impl_peripheral_absel {
                 }
             }
 
-            impl<Otpt, Pupr, Irpt, Filt> ConfigureABSelect
+            impl<Otpt, Pupr, Irpt, Filt> ConfigureFunctionSelect
                 for Pin<
                     $pio,
                     $pid,
@@ -2079,8 +2171,8 @@ macro_rules! impl_peripheral_absel {
             }
         };
     };
-    (@impl $pio:ty, $pid:ty, absel) => {
-        impl_peripheral_absel! {
+    (@impl $pio:ty, $pid:ty, ab) => {
+        impl_peripheral_fnsel! {
             @peripheral $pio, $pid
         }
 
@@ -2089,7 +2181,7 @@ macro_rules! impl_peripheral_absel {
                 filter::InputFilterCfg,
                 interrupt::InterruptCfg,
                 peripheral::{
-                    ConfigureABSelect,
+                    ConfigureFunctionSelect,
                     MultiDriverDisabled,
                     MultiDriverEnabled,
                     OutputCfg,
@@ -2102,7 +2194,7 @@ macro_rules! impl_peripheral_absel {
                 PioError,
             };
 
-            impl<Pupr, Irpt, Filt> ConfigureABSelect
+            impl<Pupr, Irpt, Filt> ConfigureFunctionSelect
                 for Pin<
                     $pio,
                     $pid,
@@ -2140,12 +2232,7 @@ macro_rules! impl_peripheral_absel {
                     } else if pioreg.wpmr.read().wpen().bit() {
                         Err((self, PioError::WriteProtected))
                     } else {
-                        if pioreg.absr.read().bits() & <$pid>::MASK > 0 {
-                            unsafe {
-                                let _ = self.peripheral_a_unchecked();
-                            }
-                        }
-                        unsafe { Ok(Pin::new()) }
+                        unsafe { Ok(self.peripheral_a_unchecked()) }
                     }
                 }
 
@@ -2164,12 +2251,7 @@ macro_rules! impl_peripheral_absel {
                     } else if pioreg.wpmr.read().wpen().bit() {
                         Err((self, PioError::WriteProtected))
                     } else {
-                        if pioreg.absr.read().bits() & <$pid>::MASK == 0 {
-                            unsafe {
-                                let _ = self.peripheral_b_unchecked();
-                            }
-                        }
-                        unsafe { Ok(Pin::new()) }
+                        unsafe { Ok(self.peripheral_b_unchecked()) }
                     }
                 }
 
@@ -2180,7 +2262,7 @@ macro_rules! impl_peripheral_absel {
                 }
             }
 
-            impl<Pupr, Irpt, Filt> ConfigureABSelect
+            impl<Pupr, Irpt, Filt> ConfigureFunctionSelect
                 for Pin<
                     $pio,
                     $pid,
@@ -2230,7 +2312,7 @@ macro_rules! impl_peripheral_absel {
                 }
             }
 
-            impl<Pupr, Irpt, Filt> ConfigureABSelect
+            impl<Pupr, Irpt, Filt> ConfigureFunctionSelect
                 for Pin<
                     $pio,
                     $pid,
@@ -2282,7 +2364,7 @@ macro_rules! impl_peripheral_absel {
                 }
             }
 
-            impl<Otpt, Pupr, Irpt, Filt> ConfigureABSelect
+            impl<Otpt, Pupr, Irpt, Filt> ConfigureFunctionSelect
                 for Pin<
                     $pio,
                     $pid,
@@ -2321,12 +2403,7 @@ macro_rules! impl_peripheral_absel {
                     } else if pioreg.wpmr.read().wpen().bit() {
                         Err((self, PioError::WriteProtected))
                     } else {
-                        if pioreg.absr.read().bits() & <$pid>::MASK > 0 {
-                            unsafe {
-                                let _ = self.peripheral_a_unchecked();
-                            }
-                        }
-                        unsafe { Ok(Pin::new()) }
+                        unsafe { Ok(self.peripheral_a_unchecked()) }
                     }
                 }
 
@@ -2345,12 +2422,7 @@ macro_rules! impl_peripheral_absel {
                     } else if pioreg.wpmr.read().wpen().bit() {
                         Err((self, PioError::WriteProtected))
                     } else {
-                        if pioreg.absr.read().bits() & <$pid>::MASK == 0 {
-                            unsafe {
-                                let _ = self.peripheral_b_unchecked();
-                            }
-                        }
-                        unsafe { Ok(Pin::new()) }
+                        unsafe { Ok(self.peripheral_b_unchecked()) }
                     }
                 }
 
@@ -2361,7 +2433,7 @@ macro_rules! impl_peripheral_absel {
                 }
             }
 
-            impl<Otpt, Pupr, Irpt, Filt> ConfigureABSelect
+            impl<Otpt, Pupr, Irpt, Filt> ConfigureFunctionSelect
                 for Pin<
                     $pio,
                     $pid,
@@ -2412,7 +2484,7 @@ macro_rules! impl_peripheral_absel {
                 }
             }
 
-            impl<Otpt, Pupr, Irpt, Filt> ConfigureABSelect
+            impl<Otpt, Pupr, Irpt, Filt> ConfigureFunctionSelect
                 for Pin<
                     $pio,
                     $pid,
@@ -2468,7 +2540,7 @@ macro_rules! impl_peripheral_absel {
     };
     (@impl $pio:ty, $pid:ty, $unk:tt) => {
         compile_error!(concat!(
-            "impl_peripheral_absel: @impl internal rule got unexpected option: `",
+            "impl_peripheral_fnsel: @impl internal rule got unexpected option: `",
             stringify!($unk),
             "`",
         ));
@@ -2523,13 +2595,11 @@ macro_rules! impl_peripheral_absel {
                     } else if pioreg.wpmr.read().wpen().bit() {
                         Err((self, PioError::WriteProtected))
                     } else {
-                        if pioreg.psr.read().bits() & <$pid>::MASK == 0 {
-                            unsafe {
-                                let _ = self.pio_controlled_unchecked();
-                                while pioreg.psr.read().bits() & <$pid>::MASK == 0 {}
-                            }
+                        unsafe {
+                            let _ = self.pio_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK == 0 {}
+                            Ok(Pin::new())
                         }
-                        unsafe { Ok(Pin::new()) }
                     }
                 }
 
@@ -2546,13 +2616,11 @@ macro_rules! impl_peripheral_absel {
                     } else if pioreg.wpmr.read().wpen().bit() {
                         Err((self, PioError::WriteProtected))
                     } else {
-                        if pioreg.psr.read().bits() & <$pid>::MASK > 0 {
-                            unsafe {
-                                let _ = self.peripheral_controlled_unchecked();
-                                while pioreg.psr.read().bits() & <$pid>::MASK > 0 {}
-                            }
+                        unsafe {
+                            let _ = self.peripheral_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK > 0 {}
+                            Ok(Pin::new())
                         }
-                        unsafe { Ok(Pin::new()) }
                     }
                 }
 
@@ -2698,13 +2766,11 @@ macro_rules! impl_peripheral_absel {
                     } else if pioreg.wpmr.read().wpen().bit() {
                         Err((self, PioError::WriteProtected))
                     } else {
-                        if pioreg.psr.read().bits() & <$pid>::MASK == 0 {
-                            unsafe {
-                                let _ = self.pio_controlled_unchecked();
-                                while pioreg.psr.read().bits() & <$pid>::MASK == 0 {}
-                            }
+                        unsafe {
+                            let _ = self.pio_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK == 0 {}
+                            Ok(Pin::new())
                         }
-                        unsafe { Ok(Pin::new()) }
                     }
                 }
 
@@ -2721,13 +2787,11 @@ macro_rules! impl_peripheral_absel {
                     } else if pioreg.wpmr.read().wpen().bit() {
                         Err((self, PioError::WriteProtected))
                     } else {
-                        if pioreg.psr.read().bits() & <$pid>::MASK > 0 {
-                            unsafe {
-                                let _ = self.peripheral_controlled_unchecked();
-                                while pioreg.psr.read().bits() & <$pid>::MASK > 0 {}
-                            }
+                        unsafe {
+                            let _ = self.peripheral_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK > 0 {}
+                            Ok(Pin::new())
                         }
-                        unsafe { Ok(Pin::new()) }
                     }
                 }
 
@@ -2739,7 +2803,14 @@ macro_rules! impl_peripheral_absel {
             }
 
             impl<Otpt1, Otpt2, Pupr, Irpt, Filt> ConfigurePioControl
-                for Pin<$pio, $pid, MultiDriverEnabled<PioControlled<Otpt1>, Otpt2>, Pupr, Irpt, Filt>
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PioControlled<Otpt1>, Otpt2>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
             where
                 Otpt1: OutputCfg,
                 Otpt2: OutputCfg,
@@ -2846,4 +2917,2261 @@ macro_rules! impl_peripheral_absel {
     };
 }
 
-pub(crate) use impl_peripheral_absel;
+#[cfg(feature = "3fn")]
+macro_rules! impl_peripheral_fnsel {
+    ($pio:ty { $($pid:ty: $opt:tt),+$(,)? }) => {
+        $(
+            impl_peripheral_fnsel! {
+                @expandopts $pio, $pid: $opt
+            }
+        )+
+    };
+    (@expandopts $pio:ty, $pid:ty: []) => {
+        const _: () = {
+            use crate::pio::{
+                filter::InputFilterCfg,
+                interrupt::InterruptCfg,
+                peripheral::{
+                    ConfigurePioControl,
+                    MultiDriverDisabled,
+                    MultiDriverEnabled,
+                    OutputCfg,
+                    PioControlled,
+                },
+                pin::{Pin, PullupResistorCfg, Unconfigured},
+                PioError,
+            };
+
+            impl<Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<$pio, $pid, MultiDriverDisabled<Unconfigured>, Pupr, Irpt, Filt>
+            where
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PioControlled<Unconfigured>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+                type Peripheral = Self;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    unsafe { Ok(Pin::new()) }
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    Pin::new()
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    self
+                }
+            }
+
+            impl<Otpt, Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<$pio, $pid, MultiDriverDisabled<PioControlled<Otpt>>, Pupr, Irpt, Filt>
+            where
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Self;
+                type Peripheral = Self;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    self
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    self
+                }
+            }
+
+            impl<Otpt, Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<$pio, $pid, MultiDriverEnabled<Unconfigured, Otpt>, Pupr, Irpt, Filt>
+            where
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PioControlled<Unconfigured>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+                type Peripheral = Self;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    unsafe { Ok(Pin::new()) }
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    Pin::new()
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    self
+                }
+            }
+
+            impl<Otpt1, Otpt2, Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PioControlled<Otpt1>, Otpt2>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Otpt1: OutputCfg,
+                Otpt2: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Self;
+                type Peripheral = Self;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    self
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    self
+                }
+            }
+        };
+    };
+    (@expandopts $pio:ty, $pid:ty: [$($opt:tt),+$(,)?]) => {
+        impl_peripheral_fnsel! {
+            @expandoptsinner
+            $pio,
+            $pid: [$($opt),+],
+            opts: [
+                a: n,
+                b: n,
+                c: n,
+            ],
+        }
+    };
+    (
+        @expandoptsinner
+        $pio:ty,
+        $pid:ty: [a$(, $rest:tt)*],
+        opts: [
+            a: $a:tt,
+            b: $b:tt,
+            c: $c:tt,
+        ],
+    ) => {
+        impl_peripheral_fnsel! {
+            @expandoptsinner
+            $pio,
+            $pid: [$($rest),*],
+            opts: [
+                a: y,
+                b: $b,
+                c: $c,
+            ],
+        }
+    };
+    (
+        @expandoptsinner
+        $pio:ty,
+        $pid:ty: [b$(, $rest:tt)*],
+        opts: [
+            a: $a:tt,
+            b: $b:tt,
+            c: $c:tt,
+        ],
+    ) => {
+        impl_peripheral_fnsel! {
+            @expandoptsinner
+            $pio,
+            $pid: [$($rest),*],
+            opts: [
+                a: $a,
+                b: y,
+                c: $c,
+            ],
+        }
+    };
+    (
+        @expandoptsinner
+        $pio:ty,
+        $pid:ty: [c$(, $rest:tt)*],
+        opts: [
+            a: $a:tt,
+            b: $b:tt,
+            c: $c:tt,
+        ],
+    ) => {
+        impl_peripheral_fnsel! {
+            @expandoptsinner
+            $pio,
+            $pid: [$($rest),*],
+            opts: [
+                a: $a,
+                b: $b,
+                c: y,
+            ],
+        }
+    };
+    (
+        @expandoptsinner
+        $pio:ty,
+        $pid:ty: [],
+        opts: $opts:tt,
+    ) => {
+        impl_peripheral_fnsel! {
+            @impl $pio, $pid, $opts
+        }
+    };
+    (@impl $pio:ty, $pid:ty, [a: $a:tt, b: $b:tt, c: $c:tt,]) => {
+        impl_peripheral_fnsel! {
+            @peripheral $pio, $pid
+        }
+
+        const _: () = {
+            use crate::pio::{
+                filter::InputFilterCfg,
+                interrupt::InterruptCfg,
+                peripheral::{
+                    ConfigureFunctionSelect,
+                    MultiDriverDisabled,
+                    MultiDriverEnabled,
+                    OutputCfg,
+                    PeripheralA,
+                    PeripheralB,
+                    PeripheralC,
+                    PeripheralControlled,
+                },
+                pin::{Pin, PinId, PullupResistorCfg, Unconfigured},
+                IsPio,
+                PioError,
+            };
+
+            impl<Pupr, Irpt, Filt> ConfigureFunctionSelect
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PeripheralControlled<Unconfigured>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, c: $c
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, c: $c
+                }
+            }
+
+            impl<Pupr, Irpt, Filt> ConfigureFunctionSelect
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PeripheralControlled<PeripheralA>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type A = Self;
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, c: $c
+                }
+                fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
+                    Ok(self)
+                }
+                unsafe fn peripheral_a_unchecked(self) -> Self::A {
+                    self
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, c: $c
+                }
+            }
+
+            impl<Pupr, Irpt, Filt> ConfigureFunctionSelect
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PeripheralControlled<PeripheralB>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, a: $a
+                }
+                type B = Self;
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, c: $c
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, a: $a
+                }
+                fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
+                    Ok(self)
+                }
+                unsafe fn peripheral_b_unchecked(self) -> Self::B {
+                    self
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, c: $c
+                }
+            }
+
+            impl<Pupr, Irpt, Filt> ConfigureFunctionSelect
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PeripheralControlled<PeripheralC>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, b: $b
+                }
+                type C = Self;
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, b: $b
+                }
+                fn peripheral_c(self) -> Result<Self::C, (Self, PioError)> {
+                    Ok(self)
+                }
+                unsafe fn peripheral_c_unchecked(self) -> Self::C {
+                    self
+                }
+            }
+
+            impl<Otpt, Pupr, Irpt, Filt> ConfigureFunctionSelect
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PeripheralControlled<Unconfigured>, Otpt>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, c: $c
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, c: $c
+                }
+            }
+
+            impl<Otpt, Pupr, Irpt, Filt> ConfigureFunctionSelect
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PeripheralControlled<PeripheralA>, Otpt>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type A = Self;
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, c: $c
+                }
+                fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
+                    Ok(self)
+                }
+                unsafe fn peripheral_a_unchecked(self) -> Self::A {
+                    self
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, c: $c
+                }
+            }
+
+            impl<Otpt, Pupr, Irpt, Filt> ConfigureFunctionSelect
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PeripheralControlled<PeripheralB>, Otpt>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, a: $a
+                }
+                type B = Self;
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, c: $c
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, a: $a
+                }
+                fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
+                    Ok(self)
+                }
+                unsafe fn peripheral_b_unchecked(self) -> Self::B {
+                    self
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, c: $c
+                }
+            }
+
+            impl<Otpt, Pupr, Irpt, Filt> ConfigureFunctionSelect
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PeripheralControlled<PeripheralC>, Otpt>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, b: $b
+                }
+                type C = Self;
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, b: $b
+                }
+                fn peripheral_c(self) -> Result<Self::C, (Self, PioError)> {
+                    Ok(self)
+                }
+                unsafe fn peripheral_c_unchecked(self) -> Self::C {
+                    self
+                }
+            }
+        };
+    };
+    (@implselty $pio:ty, $pid:ty, $sel:tt: n) => {
+        paste::paste! {
+            type [<$sel:upper>] = Self;
+        }
+    };
+    (@implselty $pio:ty, $pid:ty, $sel:tt: y) => {
+        paste::paste! {
+            type [<$sel:upper>] = Pin<
+                $pio,
+                $pid,
+                MultiDriverDisabled<PeripheralControlled<[<Peripheral $sel:upper>]>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+        }
+    };
+    (@implseltymd $pio:ty, $pid:ty, $sel:tt: n) => {
+        paste::paste! {
+            type [<$sel:upper>] = Self;
+        }
+    };
+    (@implseltymd $pio:ty, $pid:ty, $sel:tt: y) => {
+        paste::paste! {
+            type [<$sel:upper>] = Pin<
+                $pio,
+                $pid,
+                MultiDriverEnabled<PeripheralControlled<[<Peripheral $sel:upper>]>, Otpt>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+        }
+    };
+    (@implselfns $pio:ty, $pid:ty, $sel:tt: n) => {
+        paste::paste! {
+            fn [<peripheral_ $sel>](self) -> Result<Self::[<$sel:upper>], (Self, PioError)> {
+                Ok(self)
+            }
+
+            unsafe fn [<peripheral_ $sel _unchecked>](self) -> Self::[<$sel:upper>] {
+                self
+            }
+        }
+    };
+    (@implselfns $pio:ty, $pid:ty, a: y) => {
+        fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
+            const INV: u32 = !<$pid>::MASK;
+
+            let pioreg = unsafe { &*<$pio>::PTR };
+            if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                Err((self, PioError::LineLocked))
+            } else if pioreg.wpmr.read().wpen().bit() {
+                Err((self, PioError::WriteProtected))
+            } else {
+                unsafe { Ok(self.peripheral_a_unchecked()) }
+            }
+        }
+
+        unsafe fn peripheral_a_unchecked(self) -> Self::A {
+            const INV: u32 = !<$pid>::MASK;
+
+            let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+            pioreg.abcdsr0.modify(|r, w| w.bits(r.bits() & INV));
+            pioreg.abcdsr1.modify(|r, w| w.bits(r.bits() & INV));
+            Pin::new()
+        }
+    };
+    (@implselfns $pio:ty, $pid:ty, b: y) => {
+        fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
+            const INV: u32 = !<$pid>::MASK;
+
+            let pioreg = unsafe { &*<$pio>::PTR };
+            if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                Err((self, PioError::LineLocked))
+            } else if pioreg.wpmr.read().wpen().bit() {
+                Err((self, PioError::WriteProtected))
+            } else {
+                unsafe { Ok(self.peripheral_b_unchecked()) }
+            }
+        }
+
+        unsafe fn peripheral_b_unchecked(self) -> Self::B {
+            const INV: u32 = !<$pid>::MASK;
+
+            let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+            pioreg.abcdsr0.modify(|r, w| w.bits(r.bits() & INV));
+            pioreg.abcdsr1.modify(|r, w| w.bits(r.bits() | <$pid>::MASK));
+            Pin::new()
+        }
+    };
+    (@implselfns $pio:ty, $pid:ty, c: y) => {
+        fn peripheral_c(self) -> Result<Self::C, (Self, PioError)> {
+            const INV: u32 = !<$pid>::MASK;
+
+            let pioreg = unsafe { &*<$pio>::PTR };
+            if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                Err((self, PioError::LineLocked))
+            } else if pioreg.wpmr.read().wpen().bit() {
+                Err((self, PioError::WriteProtected))
+            } else {
+                unsafe { Ok(self.peripheral_c_unchecked()) }
+            }
+        }
+
+        unsafe fn peripheral_c_unchecked(self) -> Self::C {
+            const INV: u32 = !<$pid>::MASK;
+
+            let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+            pioreg.abcdsr0.modify(|r, w| w.bits(r.bits() | <$pid>::MASK));
+            pioreg.abcdsr1.modify(|r, w| w.bits(r.bits() & INV));
+            Pin::new()
+        }
+    };
+    (@peripheral $pio:ty, $pid:ty) => {
+        const _: () = {
+            use crate::pio::{
+                filter::InputFilterCfg,
+                interrupt::InterruptCfg,
+                peripheral::{
+                    ConfigurePioControl,
+                    MultiDriverDisabled,
+                    MultiDriverEnabled,
+                    OutputCfg,
+                    PeripheralControlled,
+                    PeripheralSelectCfg,
+                    PioControlled,
+                },
+                pin::{Pin, PinId, PullupResistorCfg, Unconfigured},
+                IsPio,
+                PioError,
+            };
+
+            impl<Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<$pio, $pid, MultiDriverDisabled<Unconfigured>, Pupr, Irpt, Filt>
+            where
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PioControlled<Unconfigured>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+                type Peripheral = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PeripheralControlled<Unconfigured>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    let pioreg = unsafe { &*<$pio>::PTR };
+                    if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                        Err((self, PioError::LineLocked))
+                    } else if pioreg.wpmr.read().wpen().bit() {
+                        Err((self, PioError::WriteProtected))
+                    } else {
+                        unsafe {
+                            let _ = self.pio_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK == 0 {}
+                            Ok(Pin::new())
+                        }
+                    }
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    pioreg.per.write_with_zero(|w| w.bits(<$pid>::MASK));
+                    Pin::new()
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    let pioreg = unsafe { &*<$pio>::PTR };
+                    if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                        Err((self, PioError::LineLocked))
+                    } else if pioreg.wpmr.read().wpen().bit() {
+                        Err((self, PioError::WriteProtected))
+                    } else {
+                        unsafe {
+                            let _ = self.peripheral_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK > 0 {}
+                            Ok(Pin::new())
+                        }
+                    }
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    pioreg.pdr.write_with_zero(|w| w.bits(<$pid>::MASK));
+                    Pin::new()
+                }
+            }
+
+            impl<Otpt, Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<$pio, $pid, MultiDriverDisabled<PioControlled<Otpt>>, Pupr, Irpt, Filt>
+            where
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Self;
+                type Peripheral = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PeripheralControlled<Unconfigured>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    self
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    let pioreg = unsafe { &*<$pio>::PTR };
+                    if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                        Err((self, PioError::LineLocked))
+                    } else if pioreg.wpmr.read().wpen().bit() {
+                        Err((self, PioError::WriteProtected))
+                    } else {
+                        unsafe {
+                            let _ = self.peripheral_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK > 0 {}
+                            Ok(Pin::new())
+                        }
+                    }
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    pioreg.pdr.write_with_zero(|w| w.bits(<$pid>::MASK));
+                    Pin::new()
+                }
+            }
+
+            impl<Psel, Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PeripheralControlled<Psel>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Psel: PeripheralSelectCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PioControlled<Unconfigured>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+                type Peripheral = Self;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    let pioreg = unsafe { &*<$pio>::PTR };
+                    if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                        Err((self, PioError::LineLocked))
+                    } else if pioreg.wpmr.read().wpen().bit() {
+                        Err((self, PioError::WriteProtected))
+                    } else {
+                        unsafe {
+                            let _ = self.pio_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK == 0 {}
+                            Ok(Pin::new())
+                        }
+                    }
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    pioreg.per.write_with_zero(|w| w.bits(<$pid>::MASK));
+                    Pin::new()
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    self
+                }
+            }
+
+            impl<Otpt, Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<$pio, $pid, MultiDriverEnabled<Unconfigured, Otpt>, Pupr, Irpt, Filt>
+            where
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PioControlled<Unconfigured>, Otpt>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+                type Peripheral = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PeripheralControlled<Unconfigured>, Otpt>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    let pioreg = unsafe { &*<$pio>::PTR };
+                    if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                        Err((self, PioError::LineLocked))
+                    } else if pioreg.wpmr.read().wpen().bit() {
+                        Err((self, PioError::WriteProtected))
+                    } else {
+                        unsafe {
+                            let _ = self.pio_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK == 0 {}
+                            Ok(Pin::new())
+                        }
+                    }
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    pioreg.per.write_with_zero(|w| w.bits(<$pid>::MASK));
+                    Pin::new()
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    let pioreg = unsafe { &*<$pio>::PTR };
+                    if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                        Err((self, PioError::LineLocked))
+                    } else if pioreg.wpmr.read().wpen().bit() {
+                        Err((self, PioError::WriteProtected))
+                    } else {
+                        unsafe {
+                            let _ = self.peripheral_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK > 0 {}
+                            Ok(Pin::new())
+                        }
+                    }
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    pioreg.pdr.write_with_zero(|w| w.bits(<$pid>::MASK));
+                    Pin::new()
+                }
+            }
+
+            impl<Otpt1, Otpt2, Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PioControlled<Otpt1>, Otpt2>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Otpt1: OutputCfg,
+                Otpt2: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Self;
+                type Peripheral = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PeripheralControlled<Unconfigured>, Otpt2>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    self
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    let pioreg = unsafe { &*<$pio>::PTR };
+                    if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                        Err((self, PioError::LineLocked))
+                    } else if pioreg.wpmr.read().wpen().bit() {
+                        Err((self, PioError::WriteProtected))
+                    } else {
+                        unsafe {
+                            let _ = self.peripheral_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK > 0 {}
+                            Ok(Pin::new())
+                        }
+                    }
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    pioreg.pdr.write_with_zero(|w| w.bits(<$pid>::MASK));
+                    Pin::new()
+                }
+            }
+
+            impl<Psel, Otpt, Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PeripheralControlled<Psel>, Otpt>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Psel: PeripheralSelectCfg,
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PioControlled<Unconfigured>, Otpt>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+                type Peripheral = Self;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    let pioreg = unsafe { &*<$pio>::PTR };
+                    if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                        Err((self, PioError::LineLocked))
+                    } else if pioreg.wpmr.read().wpen().bit() {
+                        Err((self, PioError::WriteProtected))
+                    } else {
+                        unsafe {
+                            let _ = self.pio_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK == 0 {}
+                            Ok(Pin::new())
+                        }
+                    }
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    pioreg.per.write_with_zero(|w| w.bits(<$pid>::MASK));
+                    Pin::new()
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    self
+                }
+            }
+        };
+    };
+}
+
+#[cfg(feature = "4fn")]
+macro_rules! impl_peripheral_fnsel {
+    ($pio:ty { $($pid:ty: $opt:tt),+$(,)? }) => {
+        $(
+            impl_peripheral_fnsel! {
+                @expandopts $pio, $pid: $opt
+            }
+        )+
+    };
+    (@expandopts $pio:ty, $pid:ty: []) => {
+        const _: () = {
+            use crate::pio::{
+                filter::InputFilterCfg,
+                interrupt::InterruptCfg,
+                peripheral::{
+                    ConfigurePioControl,
+                    MultiDriverDisabled,
+                    MultiDriverEnabled,
+                    OutputCfg,
+                    PioControlled,
+                },
+                pin::{Pin, PullupResistorCfg, Unconfigured},
+                PioError,
+            };
+
+            impl<Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<$pio, $pid, MultiDriverDisabled<Unconfigured>, Pupr, Irpt, Filt>
+            where
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PioControlled<Unconfigured>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+                type Peripheral = Self;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    unsafe { Ok(Pin::new()) }
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    Pin::new()
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    self
+                }
+            }
+
+            impl<Otpt, Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<$pio, $pid, MultiDriverDisabled<PioControlled<Otpt>>, Pupr, Irpt, Filt>
+            where
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Self;
+                type Peripheral = Self;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    self
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    self
+                }
+            }
+
+            impl<Otpt, Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<$pio, $pid, MultiDriverEnabled<Unconfigured, Otpt>, Pupr, Irpt, Filt>
+            where
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PioControlled<Unconfigured>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+                type Peripheral = Self;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    unsafe { Ok(Pin::new()) }
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    Pin::new()
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    self
+                }
+            }
+
+            impl<Otpt1, Otpt2, Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PioControlled<Otpt1>, Otpt2>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Otpt1: OutputCfg,
+                Otpt2: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Self;
+                type Peripheral = Self;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    self
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    self
+                }
+            }
+        };
+    };
+    (@expandopts $pio:ty, $pid:ty: [$($opt:tt),+$(,)?]) => {
+        impl_peripheral_fnsel! {
+            @expandoptsinner
+            $pio,
+            $pid: [$($opt),+],
+            opts: [
+                a: n,
+                b: n,
+                c: n,
+                d: n,
+            ],
+        }
+    };
+    (
+        @expandoptsinner
+        $pio:ty,
+        $pid:ty: [a$(, $rest:tt)*],
+        opts: [
+            a: $a:tt,
+            b: $b:tt,
+            c: $c:tt,
+            d: $d:tt,
+        ],
+    ) => {
+        impl_peripheral_fnsel! {
+            @expandoptsinner
+            $pio,
+            $pid: [$($rest),*],
+            opts: [
+                a: y,
+                b: $b,
+                c: $c,
+                d: $d,
+            ],
+        }
+    };
+    (
+        @expandoptsinner
+        $pio:ty,
+        $pid:ty: [b$(, $rest:tt)*],
+        opts: [
+            a: $a:tt,
+            b: $b:tt,
+            c: $c:tt,
+            d: $d:tt,
+        ],
+    ) => {
+        impl_peripheral_fnsel! {
+            @expandoptsinner
+            $pio,
+            $pid: [$($rest),*],
+            opts: [
+                a: $a,
+                b: y,
+                c: $c,
+                d: $d,
+            ],
+        }
+    };
+    (
+        @expandoptsinner
+        $pio:ty,
+        $pid:ty: [c$(, $rest:tt)*],
+        opts: [
+            a: $a:tt,
+            b: $b:tt,
+            c: $c:tt,
+            d: $d:tt,
+        ],
+    ) => {
+        impl_peripheral_fnsel! {
+            @expandoptsinner
+            $pio,
+            $pid: [$($rest),*],
+            opts: [
+                a: $a,
+                b: $b,
+                c: y,
+                d: $d,
+            ],
+        }
+    };
+    (
+        @expandoptsinner
+        $pio:ty,
+        $pid:ty: [d$(, $rest:tt)*],
+        opts: [
+            a: $a:tt,
+            b: $b:tt,
+            c: $c:tt,
+            d: $d:tt,
+        ],
+    ) => {
+        impl_peripheral_fnsel! {
+            @expandoptsinner
+            $pio,
+            $pid: [$($rest),*],
+            opts: [
+                a: $a,
+                b: $b,
+                c: $c,
+                d: y,
+            ],
+        }
+    };
+    (
+        @expandoptsinner
+        $pio:ty,
+        $pid:ty: [],
+        opts: $opts:tt,
+    ) => {
+        impl_peripheral_fnsel! {
+            @impl $pio, $pid, $opts
+        }
+    };
+    (@impl $pio:ty, $pid:ty, [a: $a:tt, b: $b:tt, c: $c:tt, d: $d:tt,]) => {
+        impl_peripheral_fnsel! {
+            @peripheral $pio, $pid
+        }
+
+        const _: () = {
+            use crate::pio::{
+                filter::InputFilterCfg,
+                interrupt::InterruptCfg,
+                peripheral::{
+                    ConfigureFunctionSelect,
+                    MultiDriverDisabled,
+                    MultiDriverEnabled,
+                    OutputCfg,
+                    PeripheralA,
+                    PeripheralB,
+                    PeripheralC,
+                    PeripheralControlled,
+                    PeripheralD,
+                },
+                pin::{Pin, PinId, PullupResistorCfg, Unconfigured},
+                IsPio,
+                PioError,
+            };
+
+            impl<Pupr, Irpt, Filt> ConfigureFunctionSelect
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PeripheralControlled<Unconfigured>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, c: $c
+                }
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, d: $d
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, c: $c
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, d: $d
+                }
+            }
+
+            impl<Pupr, Irpt, Filt> ConfigureFunctionSelect
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PeripheralControlled<PeripheralA>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type A = Self;
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, c: $c
+                }
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, d: $d
+                }
+                fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
+                    Ok(self)
+                }
+                unsafe fn peripheral_a_unchecked(self) -> Self::A {
+                    self
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, c: $c
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, d: $d
+                }
+            }
+
+            impl<Pupr, Irpt, Filt> ConfigureFunctionSelect
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PeripheralControlled<PeripheralB>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, a: $a
+                }
+                type B = Self;
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, c: $c
+                }
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, d: $d
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, a: $a
+                }
+                fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
+                    Ok(self)
+                }
+                unsafe fn peripheral_b_unchecked(self) -> Self::B {
+                    self
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, c: $c
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, d: $d
+                }
+            }
+
+            impl<Pupr, Irpt, Filt> ConfigureFunctionSelect
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PeripheralControlled<PeripheralC>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, b: $b
+                }
+                type C = Self;
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, d: $d
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, b: $b
+                }
+                fn peripheral_c(self) -> Result<Self::C, (Self, PioError)> {
+                    Ok(self)
+                }
+                unsafe fn peripheral_c_unchecked(self) -> Self::C {
+                    self
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, d: $d
+                }
+            }
+
+            impl<Pupr, Irpt, Filt> ConfigureFunctionSelect
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PeripheralControlled<PeripheralD>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implselty $pio, $pid, c: $c
+                }
+                type D = Self;
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, c: $c
+                }
+                fn peripheral_d(self) -> Result<Self::D, (Self, PioError)> {
+                    Ok(self)
+                }
+                unsafe fn peripheral_d_unchecked(self) -> Self::D {
+                    self
+                }
+            }
+
+            impl<Otpt, Pupr, Irpt, Filt> ConfigureFunctionSelect
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PeripheralControlled<Unconfigured>, Otpt>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, c: $c
+                }
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, d: $d
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, c: $c
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, d: $d
+                }
+            }
+
+            impl<Otpt, Pupr, Irpt, Filt> ConfigureFunctionSelect
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PeripheralControlled<PeripheralA>, Otpt>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type A = Self;
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, c: $c
+                }
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, d: $d
+                }
+                fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
+                    Ok(self)
+                }
+                unsafe fn peripheral_a_unchecked(self) -> Self::A {
+                    self
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, c: $c
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, d: $d
+                }
+            }
+
+            impl<Otpt, Pupr, Irpt, Filt> ConfigureFunctionSelect
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PeripheralControlled<PeripheralB>, Otpt>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, a: $a
+                }
+                type B = Self;
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, c: $c
+                }
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, d: $d
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, a: $a
+                }
+                fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
+                    Ok(self)
+                }
+                unsafe fn peripheral_b_unchecked(self) -> Self::B {
+                    self
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, c: $c
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, d: $d
+                }
+            }
+
+            impl<Otpt, Pupr, Irpt, Filt> ConfigureFunctionSelect
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PeripheralControlled<PeripheralC>, Otpt>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, b: $b
+                }
+                type C = Self;
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, d: $d
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, b: $b
+                }
+                fn peripheral_c(self) -> Result<Self::C, (Self, PioError)> {
+                    Ok(self)
+                }
+                unsafe fn peripheral_c_unchecked(self) -> Self::C {
+                    self
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, d: $d
+                }
+            }
+
+            impl<Otpt, Pupr, Irpt, Filt> ConfigureFunctionSelect
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PeripheralControlled<PeripheralD>, Otpt>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implseltymd $pio, $pid, c: $c
+                }
+                type D = Self;
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, a: $a
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, b: $b
+                }
+                impl_peripheral_fnsel! {
+                    @implselfns $pio, $pid, c: $c
+                }
+                fn peripheral_d(self) -> Result<Self::D, (Self, PioError)> {
+                    Ok(self)
+                }
+                unsafe fn peripheral_d_unchecked(self) -> Self::D {
+                    self
+                }
+            }
+        };
+    };
+    (@implselty $pio:ty, $pid:ty, $sel:tt: n) => {
+        paste::paste! {
+            type [<$sel:upper>] = Self;
+        }
+    };
+    (@implselty $pio:ty, $pid:ty, $sel:tt: y) => {
+        paste::paste! {
+            type [<$sel:upper>] = Pin<
+                $pio,
+                $pid,
+                MultiDriverDisabled<PeripheralControlled<[<Peripheral $sel:upper>]>>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+        }
+    };
+    (@implseltymd $pio:ty, $pid:ty, $sel:tt: n) => {
+        paste::paste! {
+            type [<$sel:upper>] = Self;
+        }
+    };
+    (@implseltymd $pio:ty, $pid:ty, $sel:tt: y) => {
+        paste::paste! {
+            type [<$sel:upper>] = Pin<
+                $pio,
+                $pid,
+                MultiDriverEnabled<PeripheralControlled<[<Peripheral $sel:upper>]>, Otpt>,
+                Pupr,
+                Irpt,
+                Filt,
+            >;
+        }
+    };
+    (@implselfns $pio:ty, $pid:ty, $sel:tt: n) => {
+        paste::paste! {
+            fn [<peripheral_ $sel>](self) -> Result<Self::[<$sel:upper>], (Self, PioError)> {
+                Ok(self)
+            }
+
+            unsafe fn [<peripheral_ $sel _unchecked>](self) -> Self::[<$sel:upper>] {
+                self
+            }
+        }
+    };
+    (@implselfns $pio:ty, $pid:ty, a: y) => {
+        fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
+            const INV: u32 = !<$pid>::MASK;
+
+            let pioreg = unsafe { &*<$pio>::PTR };
+            if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                Err((self, PioError::LineLocked))
+            } else if pioreg.wpmr.read().wpen().bit() {
+                Err((self, PioError::WriteProtected))
+            } else {
+                unsafe { Ok(self.peripheral_a_unchecked()) }
+            }
+        }
+
+        unsafe fn peripheral_a_unchecked(self) -> Self::A {
+            const INV: u32 = !<$pid>::MASK;
+
+            let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+            pioreg.abcdsr0.modify(|r, w| w.bits(r.bits() & INV));
+            pioreg.abcdsr1.modify(|r, w| w.bits(r.bits() & INV));
+            Pin::new()
+        }
+    };
+    (@implselfns $pio:ty, $pid:ty, b: y) => {
+        fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
+            const INV: u32 = !<$pid>::MASK;
+
+            let pioreg = unsafe { &*<$pio>::PTR };
+            if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                Err((self, PioError::LineLocked))
+            } else if pioreg.wpmr.read().wpen().bit() {
+                Err((self, PioError::WriteProtected))
+            } else {
+                unsafe { Ok(self.peripheral_b_unchecked()) }
+            }
+        }
+
+        unsafe fn peripheral_b_unchecked(self) -> Self::B {
+            const INV: u32 = !<$pid>::MASK;
+
+            let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+            pioreg.abcdsr0.modify(|r, w| w.bits(r.bits() & INV));
+            pioreg.abcdsr1.modify(|r, w| w.bits(r.bits() | <$pid>::MASK));
+            Pin::new()
+        }
+    };
+    (@implselfns $pio:ty, $pid:ty, c: y) => {
+        fn peripheral_c(self) -> Result<Self::C, (Self, PioError)> {
+            const INV: u32 = !<$pid>::MASK;
+
+            let pioreg = unsafe { &*<$pio>::PTR };
+            if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                Err((self, PioError::LineLocked))
+            } else if pioreg.wpmr.read().wpen().bit() {
+                Err((self, PioError::WriteProtected))
+            } else {
+                unsafe { Ok(self.peripheral_c_unchecked()) }
+            }
+        }
+
+        unsafe fn peripheral_c_unchecked(self) -> Self::C {
+            const INV: u32 = !<$pid>::MASK;
+
+            let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+            pioreg.abcdsr0.modify(|r, w| w.bits(r.bits() | <$pid>::MASK));
+            pioreg.abcdsr1.modify(|r, w| w.bits(r.bits() & INV));
+            Pin::new()
+        }
+    };
+    (@implselfns $pio:ty, $pid:ty, d: y) => {
+        fn peripheral_d(self) -> Result<Self::D, (Self, PioError)> {
+            const INV: u32 = !<$pid>::MASK;
+
+            let pioreg = unsafe { &*<$pio>::PTR };
+            if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                Err((self, PioError::LineLocked))
+            } else if pioreg.wpmr.read().wpen().bit() {
+                Err((self, PioError::WriteProtected))
+            } else {
+                unsafe { Ok(self.peripheral_d_unchecked()) }
+            }
+        }
+
+        unsafe fn peripheral_d_unchecked(self) -> Self::D {
+            let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+            pioreg.abcdsr0.modify(|r, w| w.bits(r.bits() | <$pid>::MASK));
+            pioreg.abcdsr1.modify(|r, w| w.bits(r.bits() | <$pid>::MASK));
+            Pin::new()
+        }
+    };
+    (@peripheral $pio:ty, $pid:ty) => {
+        const _: () = {
+            use crate::pio::{
+                filter::InputFilterCfg,
+                interrupt::InterruptCfg,
+                peripheral::{
+                    ConfigurePioControl,
+                    MultiDriverDisabled,
+                    MultiDriverEnabled,
+                    OutputCfg,
+                    PeripheralControlled,
+                    PeripheralSelectCfg,
+                    PioControlled,
+                },
+                pin::{Pin, PinId, PullupResistorCfg, Unconfigured},
+                IsPio,
+                PioError,
+            };
+
+            impl<Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<$pio, $pid, MultiDriverDisabled<Unconfigured>, Pupr, Irpt, Filt>
+            where
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PioControlled<Unconfigured>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+                type Peripheral = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PeripheralControlled<Unconfigured>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    let pioreg = unsafe { &*<$pio>::PTR };
+                    if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                        Err((self, PioError::LineLocked))
+                    } else if pioreg.wpmr.read().wpen().bit() {
+                        Err((self, PioError::WriteProtected))
+                    } else {
+                        unsafe {
+                            let _ = self.pio_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK == 0 {}
+                            Ok(Pin::new())
+                        }
+                    }
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    pioreg.per.write_with_zero(|w| w.bits(<$pid>::MASK));
+                    Pin::new()
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    let pioreg = unsafe { &*<$pio>::PTR };
+                    if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                        Err((self, PioError::LineLocked))
+                    } else if pioreg.wpmr.read().wpen().bit() {
+                        Err((self, PioError::WriteProtected))
+                    } else {
+                        unsafe {
+                            let _ = self.peripheral_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK > 0 {}
+                            Ok(Pin::new())
+                        }
+                    }
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    pioreg.pdr.write_with_zero(|w| w.bits(<$pid>::MASK));
+                    Pin::new()
+                }
+            }
+
+            impl<Otpt, Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<$pio, $pid, MultiDriverDisabled<PioControlled<Otpt>>, Pupr, Irpt, Filt>
+            where
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Self;
+                type Peripheral = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PeripheralControlled<Unconfigured>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    self
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    let pioreg = unsafe { &*<$pio>::PTR };
+                    if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                        Err((self, PioError::LineLocked))
+                    } else if pioreg.wpmr.read().wpen().bit() {
+                        Err((self, PioError::WriteProtected))
+                    } else {
+                        unsafe {
+                            let _ = self.peripheral_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK > 0 {}
+                            Ok(Pin::new())
+                        }
+                    }
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    pioreg.pdr.write_with_zero(|w| w.bits(<$pid>::MASK));
+                    Pin::new()
+                }
+            }
+
+            impl<Psel, Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PeripheralControlled<Psel>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Psel: PeripheralSelectCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverDisabled<PioControlled<Unconfigured>>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+                type Peripheral = Self;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    let pioreg = unsafe { &*<$pio>::PTR };
+                    if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                        Err((self, PioError::LineLocked))
+                    } else if pioreg.wpmr.read().wpen().bit() {
+                        Err((self, PioError::WriteProtected))
+                    } else {
+                        unsafe {
+                            let _ = self.pio_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK == 0 {}
+                            Ok(Pin::new())
+                        }
+                    }
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    pioreg.per.write_with_zero(|w| w.bits(<$pid>::MASK));
+                    Pin::new()
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    self
+                }
+            }
+
+            impl<Otpt, Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<$pio, $pid, MultiDriverEnabled<Unconfigured, Otpt>, Pupr, Irpt, Filt>
+            where
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PioControlled<Unconfigured>, Otpt>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+                type Peripheral = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PeripheralControlled<Unconfigured>, Otpt>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    let pioreg = unsafe { &*<$pio>::PTR };
+                    if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                        Err((self, PioError::LineLocked))
+                    } else if pioreg.wpmr.read().wpen().bit() {
+                        Err((self, PioError::WriteProtected))
+                    } else {
+                        unsafe {
+                            let _ = self.pio_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK == 0 {}
+                            Ok(Pin::new())
+                        }
+                    }
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    pioreg.per.write_with_zero(|w| w.bits(<$pid>::MASK));
+                    Pin::new()
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    let pioreg = unsafe { &*<$pio>::PTR };
+                    if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                        Err((self, PioError::LineLocked))
+                    } else if pioreg.wpmr.read().wpen().bit() {
+                        Err((self, PioError::WriteProtected))
+                    } else {
+                        unsafe {
+                            let _ = self.peripheral_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK > 0 {}
+                            Ok(Pin::new())
+                        }
+                    }
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    pioreg.pdr.write_with_zero(|w| w.bits(<$pid>::MASK));
+                    Pin::new()
+                }
+            }
+
+            impl<Otpt1, Otpt2, Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PioControlled<Otpt1>, Otpt2>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Otpt1: OutputCfg,
+                Otpt2: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Self;
+                type Peripheral = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PeripheralControlled<Unconfigured>, Otpt2>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    self
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    let pioreg = unsafe { &*<$pio>::PTR };
+                    if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                        Err((self, PioError::LineLocked))
+                    } else if pioreg.wpmr.read().wpen().bit() {
+                        Err((self, PioError::WriteProtected))
+                    } else {
+                        unsafe {
+                            let _ = self.peripheral_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK > 0 {}
+                            Ok(Pin::new())
+                        }
+                    }
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    pioreg.pdr.write_with_zero(|w| w.bits(<$pid>::MASK));
+                    Pin::new()
+                }
+            }
+
+            impl<Psel, Otpt, Pupr, Irpt, Filt> ConfigurePioControl
+                for Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PeripheralControlled<Psel>, Otpt>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >
+            where
+                Psel: PeripheralSelectCfg,
+                Otpt: OutputCfg,
+                Pupr: PullupResistorCfg,
+                Irpt: InterruptCfg,
+                Filt: InputFilterCfg,
+            {
+                type Pio = Pin<
+                    $pio,
+                    $pid,
+                    MultiDriverEnabled<PioControlled<Unconfigured>, Otpt>,
+                    Pupr,
+                    Irpt,
+                    Filt,
+                >;
+                type Peripheral = Self;
+
+                fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
+                    let pioreg = unsafe { &*<$pio>::PTR };
+                    if pioreg.locksr.read().bits() & <$pid>::MASK > 0 {
+                        Err((self, PioError::LineLocked))
+                    } else if pioreg.wpmr.read().wpen().bit() {
+                        Err((self, PioError::WriteProtected))
+                    } else {
+                        unsafe {
+                            let _ = self.pio_controlled_unchecked();
+                            while pioreg.psr.read().bits() & <$pid>::MASK == 0 {}
+                            Ok(Pin::new())
+                        }
+                    }
+                }
+
+                unsafe fn pio_controlled_unchecked(self) -> Self::Pio {
+                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
+                    pioreg.per.write_with_zero(|w| w.bits(<$pid>::MASK));
+                    Pin::new()
+                }
+
+                fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
+                    Ok(self)
+                }
+
+                unsafe fn peripheral_controlled_unchecked(self) -> Self::Peripheral {
+                    self
+                }
+            }
+        };
+    };
+}
+
+pub(crate) use impl_peripheral_fnsel;
