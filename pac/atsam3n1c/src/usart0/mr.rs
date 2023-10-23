@@ -37,7 +37,7 @@ impl crate::FieldSpec for USART_MODE_A {
 impl USART_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<USART_MODE_A> {
+    pub const fn variant(&self) -> Option<USART_MODE_A> {
         match self.bits {
             0 => Some(USART_MODE_A::Normal),
             1 => Some(USART_MODE_A::Rs485),
@@ -164,7 +164,7 @@ impl crate::FieldSpec for USCLKS_A {
 impl USCLKS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<USCLKS_A> {
+    pub const fn variant(&self) -> Option<USCLKS_A> {
         match self.bits {
             0 => Some(USCLKS_A::Mck),
             1 => Some(USCLKS_A::Div),
@@ -238,7 +238,7 @@ impl crate::FieldSpec for CHRL_A {
 impl CHRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHRL_A {
+    pub const fn variant(&self) -> CHRL_A {
         match self.bits {
             0 => CHRL_A::_5Bit,
             1 => CHRL_A::_6Bit,
@@ -331,7 +331,7 @@ impl crate::FieldSpec for PAR_A {
 impl PAR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PAR_A> {
+    pub const fn variant(&self) -> Option<PAR_A> {
         match self.bits {
             0 => Some(PAR_A::Even),
             1 => Some(PAR_A::Odd),
@@ -436,7 +436,7 @@ impl crate::FieldSpec for NBSTOP_A {
 impl NBSTOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<NBSTOP_A> {
+    pub const fn variant(&self) -> Option<NBSTOP_A> {
         match self.bits {
             0 => Some(NBSTOP_A::_1Bit),
             1 => Some(NBSTOP_A::_15Bit),
@@ -510,7 +510,7 @@ impl crate::FieldSpec for CHMODE_A {
 impl CHMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHMODE_A {
+    pub const fn variant(&self) -> CHMODE_A {
         match self.bits {
             0 => CHMODE_A::Normal,
             1 => CHMODE_A::Automatic,

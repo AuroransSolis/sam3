@@ -27,7 +27,7 @@ impl crate::FieldSpec for TOGGLESQ_STA_A {
 impl TOGGLESQ_STA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TOGGLESQ_STA_A {
+    pub const fn variant(&self) -> TOGGLESQ_STA_A {
         match self.bits {
             0 => TOGGLESQ_STA_A::Data0,
             1 => TOGGLESQ_STA_A::Data1,
@@ -96,7 +96,7 @@ impl crate::FieldSpec for CURBK_A {
 impl CURBK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CURBK_A> {
+    pub const fn variant(&self) -> Option<CURBK_A> {
         match self.bits {
             0 => Some(CURBK_A::Bank0),
             1 => Some(CURBK_A::Bank1),
@@ -145,7 +145,7 @@ impl crate::FieldSpec for BUSY_BANK_STA_A {
 impl BUSY_BANK_STA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<BUSY_BANK_STA_A> {
+    pub const fn variant(&self) -> Option<BUSY_BANK_STA_A> {
         match self.bits {
             0 => Some(BUSY_BANK_STA_A::_1busybank),
             1 => Some(BUSY_BANK_STA_A::_2busybanks),

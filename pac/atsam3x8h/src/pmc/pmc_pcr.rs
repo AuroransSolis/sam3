@@ -35,7 +35,7 @@ impl crate::FieldSpec for DIV_A {
 impl DIV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DIV_A> {
+    pub const fn variant(&self) -> Option<DIV_A> {
         match self.bits {
             0 => Some(DIV_A::PeriphDivMck),
             1 => Some(DIV_A::PeriphDiv2Mck),

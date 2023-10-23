@@ -29,7 +29,7 @@ impl crate::FieldSpec for ECC_PAGESIZE_A {
 impl ECC_PAGESIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ECC_PAGESIZE_A {
+    pub const fn variant(&self) -> ECC_PAGESIZE_A {
         match self.bits {
             0 => ECC_PAGESIZE_A::Ps512,
             1 => ECC_PAGESIZE_A::Ps1024,
@@ -113,7 +113,7 @@ impl crate::FieldSpec for TYPCORREC_A {
 impl TYPCORREC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TYPCORREC_A> {
+    pub const fn variant(&self) -> Option<TYPCORREC_A> {
         match self.bits {
             0 => Some(TYPCORREC_A::Cpage),
             1 => Some(TYPCORREC_A::C256b),

@@ -97,7 +97,7 @@ impl From<UIDE_A> for bool {
 impl UIDE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UIDE_A {
+    pub const fn variant(&self) -> UIDE_A {
         match self.bits {
             false => UIDE_A::Uimod,
             true => UIDE_A::Uotgid,
@@ -150,7 +150,7 @@ impl From<UIMOD_A> for bool {
 impl UIMOD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UIMOD_A {
+    pub const fn variant(&self) -> UIMOD_A {
         match self.bits {
             false => UIMOD_A::Host,
             true => UIMOD_A::Device,

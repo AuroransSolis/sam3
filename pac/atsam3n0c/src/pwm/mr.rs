@@ -25,7 +25,7 @@ impl crate::FieldSpec for DIVA_A {
 impl DIVA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DIVA_A> {
+    pub const fn variant(&self) -> Option<DIVA_A> {
         match self.bits {
             0 => Some(DIVA_A::ClkOff),
             1 => Some(DIVA_A::ClkDiv1),
@@ -102,7 +102,7 @@ impl crate::FieldSpec for PREA_A {
 impl PREA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PREA_A> {
+    pub const fn variant(&self) -> Option<PREA_A> {
         match self.bits {
             0 => Some(PREA_A::Mck),
             1 => Some(PREA_A::Mckdiv2),
@@ -260,7 +260,7 @@ impl crate::FieldSpec for DIVB_A {
 impl DIVB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DIVB_A> {
+    pub const fn variant(&self) -> Option<DIVB_A> {
         match self.bits {
             0 => Some(DIVB_A::ClkOff),
             1 => Some(DIVB_A::ClkDiv1),
@@ -337,7 +337,7 @@ impl crate::FieldSpec for PREB_A {
 impl PREB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PREB_A> {
+    pub const fn variant(&self) -> Option<PREB_A> {
         match self.bits {
             0 => Some(PREB_A::Mck),
             1 => Some(PREB_A::Mckdiv2),

@@ -29,7 +29,7 @@ impl crate::FieldSpec for NC_A {
 impl NC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NC_A {
+    pub const fn variant(&self) -> NC_A {
         match self.bits {
             0 => NC_A::Col8,
             1 => NC_A::Col9,
@@ -112,7 +112,7 @@ impl crate::FieldSpec for NR_A {
 impl NR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<NR_A> {
+    pub const fn variant(&self) -> Option<NR_A> {
         match self.bits {
             0 => Some(NR_A::Row11),
             1 => Some(NR_A::Row12),
@@ -178,7 +178,7 @@ impl From<NB_A> for bool {
 impl NB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NB_A {
+    pub const fn variant(&self) -> NB_A {
         match self.bits {
             false => NB_A::Bank2,
             true => NB_A::Bank4,
@@ -237,7 +237,7 @@ impl crate::FieldSpec for CAS_A {
 impl CAS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CAS_A> {
+    pub const fn variant(&self) -> Option<CAS_A> {
         match self.bits {
             1 => Some(CAS_A::Latency1),
             2 => Some(CAS_A::Latency2),

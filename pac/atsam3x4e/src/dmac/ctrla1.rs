@@ -33,7 +33,7 @@ impl crate::FieldSpec for SCSIZE_A {
 impl SCSIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SCSIZE_A> {
+    pub const fn variant(&self) -> Option<SCSIZE_A> {
         match self.bits {
             0 => Some(SCSIZE_A::Chk1),
             1 => Some(SCSIZE_A::Chk4),
@@ -118,7 +118,7 @@ impl crate::FieldSpec for DCSIZE_A {
 impl DCSIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DCSIZE_A> {
+    pub const fn variant(&self) -> Option<DCSIZE_A> {
         match self.bits {
             0 => Some(DCSIZE_A::Chk1),
             1 => Some(DCSIZE_A::Chk4),
@@ -201,7 +201,7 @@ impl crate::FieldSpec for SRC_WIDTH_A {
 impl SRC_WIDTH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SRC_WIDTH_A> {
+    pub const fn variant(&self) -> Option<SRC_WIDTH_A> {
         match self.bits {
             0 => Some(SRC_WIDTH_A::Byte),
             1 => Some(SRC_WIDTH_A::HalfWord),
@@ -273,7 +273,7 @@ impl crate::FieldSpec for DST_WIDTH_A {
 impl DST_WIDTH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DST_WIDTH_A> {
+    pub const fn variant(&self) -> Option<DST_WIDTH_A> {
         match self.bits {
             0 => Some(DST_WIDTH_A::Byte),
             1 => Some(DST_WIDTH_A::HalfWord),

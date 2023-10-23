@@ -19,7 +19,7 @@ impl From<WKUPS_A> for bool {
 impl WKUPS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKUPS_A {
+    pub const fn variant(&self) -> WKUPS_A {
         match self.bits {
             false => WKUPS_A::No,
             true => WKUPS_A::Present,
@@ -55,7 +55,7 @@ impl From<SMWS_A> for bool {
 impl SMWS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMWS_A {
+    pub const fn variant(&self) -> SMWS_A {
         match self.bits {
             false => SMWS_A::No,
             true => SMWS_A::Present,
@@ -91,7 +91,7 @@ impl From<BODRSTS_A> for bool {
 impl BODRSTS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BODRSTS_A {
+    pub const fn variant(&self) -> BODRSTS_A {
         match self.bits {
             false => BODRSTS_A::No,
             true => BODRSTS_A::Present,
@@ -127,7 +127,7 @@ impl From<SMRSTS_A> for bool {
 impl SMRSTS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMRSTS_A {
+    pub const fn variant(&self) -> SMRSTS_A {
         match self.bits {
             false => SMRSTS_A::No,
             true => SMRSTS_A::Present,
@@ -163,7 +163,7 @@ impl From<SMS_A> for bool {
 impl SMS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMS_A {
+    pub const fn variant(&self) -> SMS_A {
         match self.bits {
             false => SMS_A::No,
             true => SMS_A::Present,
@@ -199,7 +199,7 @@ impl From<SMOS_A> for bool {
 impl SMOS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMOS_A {
+    pub const fn variant(&self) -> SMOS_A {
         match self.bits {
             false => SMOS_A::High,
             true => SMOS_A::Low,
@@ -235,7 +235,7 @@ impl From<OSCSEL_A> for bool {
 impl OSCSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OSCSEL_A {
+    pub const fn variant(&self) -> OSCSEL_A {
         match self.bits {
             false => OSCSEL_A::Rc,
             true => OSCSEL_A::Cryst,
@@ -271,7 +271,7 @@ impl From<LPDBCS0_A> for bool {
 impl LPDBCS0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LPDBCS0_A {
+    pub const fn variant(&self) -> LPDBCS0_A {
         match self.bits {
             false => LPDBCS0_A::No,
             true => LPDBCS0_A::Present,
@@ -307,7 +307,7 @@ impl From<LPDBCS1_A> for bool {
 impl LPDBCS1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LPDBCS1_A {
+    pub const fn variant(&self) -> LPDBCS1_A {
         match self.bits {
             false => LPDBCS1_A::No,
             true => LPDBCS1_A::Present,
@@ -343,7 +343,7 @@ impl From<WKUPIS0_A> for bool {
 impl WKUPIS0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKUPIS0_A {
+    pub const fn variant(&self) -> WKUPIS0_A {
         match self.bits {
             false => WKUPIS0_A::Dis,
             true => WKUPIS0_A::En,
@@ -379,7 +379,7 @@ impl From<WKUPIS1_A> for bool {
 impl WKUPIS1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKUPIS1_A {
+    pub const fn variant(&self) -> WKUPIS1_A {
         match self.bits {
             false => WKUPIS1_A::Dis,
             true => WKUPIS1_A::En,
@@ -415,7 +415,7 @@ impl From<WKUPIS2_A> for bool {
 impl WKUPIS2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKUPIS2_A {
+    pub const fn variant(&self) -> WKUPIS2_A {
         match self.bits {
             false => WKUPIS2_A::Dis,
             true => WKUPIS2_A::En,
@@ -451,7 +451,7 @@ impl From<WKUPIS3_A> for bool {
 impl WKUPIS3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKUPIS3_A {
+    pub const fn variant(&self) -> WKUPIS3_A {
         match self.bits {
             false => WKUPIS3_A::Dis,
             true => WKUPIS3_A::En,
@@ -487,7 +487,7 @@ impl From<WKUPIS4_A> for bool {
 impl WKUPIS4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKUPIS4_A {
+    pub const fn variant(&self) -> WKUPIS4_A {
         match self.bits {
             false => WKUPIS4_A::Dis,
             true => WKUPIS4_A::En,
@@ -523,7 +523,7 @@ impl From<WKUPIS5_A> for bool {
 impl WKUPIS5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKUPIS5_A {
+    pub const fn variant(&self) -> WKUPIS5_A {
         match self.bits {
             false => WKUPIS5_A::Dis,
             true => WKUPIS5_A::En,
@@ -559,7 +559,7 @@ impl From<WKUPIS6_A> for bool {
 impl WKUPIS6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKUPIS6_A {
+    pub const fn variant(&self) -> WKUPIS6_A {
         match self.bits {
             false => WKUPIS6_A::Dis,
             true => WKUPIS6_A::En,
@@ -595,7 +595,7 @@ impl From<WKUPIS7_A> for bool {
 impl WKUPIS7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKUPIS7_A {
+    pub const fn variant(&self) -> WKUPIS7_A {
         match self.bits {
             false => WKUPIS7_A::Dis,
             true => WKUPIS7_A::En,
@@ -631,7 +631,7 @@ impl From<WKUPIS8_A> for bool {
 impl WKUPIS8_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKUPIS8_A {
+    pub const fn variant(&self) -> WKUPIS8_A {
         match self.bits {
             false => WKUPIS8_A::Dis,
             true => WKUPIS8_A::En,
@@ -667,7 +667,7 @@ impl From<WKUPIS9_A> for bool {
 impl WKUPIS9_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKUPIS9_A {
+    pub const fn variant(&self) -> WKUPIS9_A {
         match self.bits {
             false => WKUPIS9_A::Dis,
             true => WKUPIS9_A::En,
@@ -703,7 +703,7 @@ impl From<WKUPIS10_A> for bool {
 impl WKUPIS10_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKUPIS10_A {
+    pub const fn variant(&self) -> WKUPIS10_A {
         match self.bits {
             false => WKUPIS10_A::Dis,
             true => WKUPIS10_A::En,
@@ -739,7 +739,7 @@ impl From<WKUPIS11_A> for bool {
 impl WKUPIS11_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKUPIS11_A {
+    pub const fn variant(&self) -> WKUPIS11_A {
         match self.bits {
             false => WKUPIS11_A::Dis,
             true => WKUPIS11_A::En,
@@ -775,7 +775,7 @@ impl From<WKUPIS12_A> for bool {
 impl WKUPIS12_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKUPIS12_A {
+    pub const fn variant(&self) -> WKUPIS12_A {
         match self.bits {
             false => WKUPIS12_A::Dis,
             true => WKUPIS12_A::En,
@@ -811,7 +811,7 @@ impl From<WKUPIS13_A> for bool {
 impl WKUPIS13_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKUPIS13_A {
+    pub const fn variant(&self) -> WKUPIS13_A {
         match self.bits {
             false => WKUPIS13_A::Dis,
             true => WKUPIS13_A::En,
@@ -847,7 +847,7 @@ impl From<WKUPIS14_A> for bool {
 impl WKUPIS14_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKUPIS14_A {
+    pub const fn variant(&self) -> WKUPIS14_A {
         match self.bits {
             false => WKUPIS14_A::Dis,
             true => WKUPIS14_A::En,
@@ -883,7 +883,7 @@ impl From<WKUPIS15_A> for bool {
 impl WKUPIS15_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKUPIS15_A {
+    pub const fn variant(&self) -> WKUPIS15_A {
         match self.bits {
             false => WKUPIS15_A::Dis,
             true => WKUPIS15_A::En,

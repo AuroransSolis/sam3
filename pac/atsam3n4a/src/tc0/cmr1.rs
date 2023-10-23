@@ -37,7 +37,7 @@ impl crate::FieldSpec for TCCLKS_A {
 impl TCCLKS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TCCLKS_A {
+    pub const fn variant(&self) -> TCCLKS_A {
         match self.bits {
             0 => TCCLKS_A::TimerClock1,
             1 => TCCLKS_A::TimerClock2,
@@ -170,7 +170,7 @@ impl crate::FieldSpec for BURST_A {
 impl BURST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BURST_A {
+    pub const fn variant(&self) -> BURST_A {
         match self.bits {
             0 => BURST_A::None,
             1 => BURST_A::Xc0,
@@ -263,7 +263,7 @@ impl crate::FieldSpec for ETRGEDG_A {
 impl ETRGEDG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ETRGEDG_A {
+    pub const fn variant(&self) -> ETRGEDG_A {
         match self.bits {
             0 => ETRGEDG_A::None,
             1 => ETRGEDG_A::Rising,
@@ -360,7 +360,7 @@ impl crate::FieldSpec for LDRA_A {
 impl LDRA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LDRA_A {
+    pub const fn variant(&self) -> LDRA_A {
         match self.bits {
             0 => LDRA_A::None,
             1 => LDRA_A::Rising,
@@ -445,7 +445,7 @@ impl crate::FieldSpec for LDRB_A {
 impl LDRB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LDRB_A {
+    pub const fn variant(&self) -> LDRB_A {
         match self.bits {
             0 => LDRB_A::None,
             1 => LDRB_A::Rising,

@@ -27,7 +27,7 @@ impl crate::FieldSpec for WP_VS_A {
 impl WP_VS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<WP_VS_A> {
+    pub const fn variant(&self) -> Option<WP_VS_A> {
         match self.bits {
             0 => Some(WP_VS_A::None),
             1 => Some(WP_VS_A::Write),

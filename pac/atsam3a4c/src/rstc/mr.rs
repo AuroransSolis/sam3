@@ -35,7 +35,7 @@ impl crate::FieldSpec for KEY_A {
 impl KEY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<KEY_A> {
+    pub const fn variant(&self) -> Option<KEY_A> {
         match self.bits {
             165 => Some(KEY_A::Passwd),
             _ => None,

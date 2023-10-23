@@ -29,7 +29,7 @@ impl crate::FieldSpec for IADRSZ_A {
 impl IADRSZ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IADRSZ_A {
+    pub const fn variant(&self) -> IADRSZ_A {
         match self.bits {
             0 => IADRSZ_A::None,
             1 => IADRSZ_A::_1Byte,

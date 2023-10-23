@@ -35,7 +35,7 @@ impl crate::FieldSpec for EPROC_A {
 impl EPROC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<EPROC_A> {
+    pub const fn variant(&self) -> Option<EPROC_A> {
         match self.bits {
             1 => Some(EPROC_A::Arm946es),
             2 => Some(EPROC_A::Arm7tdmi),
@@ -122,7 +122,7 @@ impl crate::FieldSpec for NVPSIZ_A {
 impl NVPSIZ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<NVPSIZ_A> {
+    pub const fn variant(&self) -> Option<NVPSIZ_A> {
         match self.bits {
             0 => Some(NVPSIZ_A::None),
             1 => Some(NVPSIZ_A::_8k),
@@ -227,7 +227,7 @@ impl crate::FieldSpec for NVPSIZ2_A {
 impl NVPSIZ2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<NVPSIZ2_A> {
+    pub const fn variant(&self) -> Option<NVPSIZ2_A> {
         match self.bits {
             0 => Some(NVPSIZ2_A::None),
             1 => Some(NVPSIZ2_A::_8k),
@@ -344,7 +344,7 @@ impl crate::FieldSpec for SRAMSIZ_A {
 impl SRAMSIZ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SRAMSIZ_A {
+    pub const fn variant(&self) -> SRAMSIZ_A {
         match self.bits {
             0 => SRAMSIZ_A::_48k,
             1 => SRAMSIZ_A::_1k,
@@ -475,7 +475,7 @@ impl crate::FieldSpec for ARCH_A {
 impl ARCH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ARCH_A> {
+    pub const fn variant(&self) -> Option<ARCH_A> {
         match self.bits {
             136 => Some(ARCH_A::Sam3sxA),
             137 => Some(ARCH_A::Sam3sxB),
@@ -540,7 +540,7 @@ impl crate::FieldSpec for NVPTYP_A {
 impl NVPTYP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<NVPTYP_A> {
+    pub const fn variant(&self) -> Option<NVPTYP_A> {
         match self.bits {
             0 => Some(NVPTYP_A::Rom),
             1 => Some(NVPTYP_A::Romless),

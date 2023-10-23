@@ -37,7 +37,7 @@ impl crate::FieldSpec for TIMEVSEL_A {
 impl TIMEVSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TIMEVSEL_A {
+    pub const fn variant(&self) -> TIMEVSEL_A {
         match self.bits {
             0 => TIMEVSEL_A::Minute,
             1 => TIMEVSEL_A::Hour,
@@ -120,7 +120,7 @@ impl crate::FieldSpec for CALEVSEL_A {
 impl CALEVSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CALEVSEL_A> {
+    pub const fn variant(&self) -> Option<CALEVSEL_A> {
         match self.bits {
             0 => Some(CALEVSEL_A::Week),
             1 => Some(CALEVSEL_A::Month),

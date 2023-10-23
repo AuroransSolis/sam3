@@ -19,7 +19,7 @@ impl From<ACKUPD_A> for bool {
 impl ACKUPD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACKUPD_A {
+    pub const fn variant(&self) -> ACKUPD_A {
         match self.bits {
             false => ACKUPD_A::Freerun,
             true => ACKUPD_A::Update,
@@ -55,7 +55,7 @@ impl From<ALARM_A> for bool {
 impl ALARM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ALARM_A {
+    pub const fn variant(&self) -> ALARM_A {
         match self.bits {
             false => ALARM_A::NoAlarmevent,
             true => ALARM_A::Alarmevent,
@@ -91,7 +91,7 @@ impl From<SEC_A> for bool {
 impl SEC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SEC_A {
+    pub const fn variant(&self) -> SEC_A {
         match self.bits {
             false => SEC_A::NoSecevent,
             true => SEC_A::Secevent,
@@ -127,7 +127,7 @@ impl From<TIMEV_A> for bool {
 impl TIMEV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TIMEV_A {
+    pub const fn variant(&self) -> TIMEV_A {
         match self.bits {
             false => TIMEV_A::NoTimevent,
             true => TIMEV_A::Timevent,
@@ -163,7 +163,7 @@ impl From<CALEV_A> for bool {
 impl CALEV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CALEV_A {
+    pub const fn variant(&self) -> CALEV_A {
         match self.bits {
             false => CALEV_A::NoCalevent,
             true => CALEV_A::Calevent,

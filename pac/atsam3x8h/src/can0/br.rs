@@ -41,7 +41,7 @@ impl From<SMP_A> for bool {
 impl SMP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMP_A {
+    pub const fn variant(&self) -> SMP_A {
         match self.bits {
             false => SMP_A::Once,
             true => SMP_A::Three,

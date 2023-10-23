@@ -21,7 +21,7 @@ impl From<BODRSTEN_A> for bool {
 impl BODRSTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BODRSTEN_A {
+    pub const fn variant(&self) -> BODRSTEN_A {
         match self.bits {
             false => BODRSTEN_A::NotEnable,
             true => BODRSTEN_A::Enable,
@@ -74,7 +74,7 @@ impl From<BODDIS_A> for bool {
 impl BODDIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BODDIS_A {
+    pub const fn variant(&self) -> BODDIS_A {
         match self.bits {
             false => BODDIS_A::Enable,
             true => BODDIS_A::Disable,
@@ -127,7 +127,7 @@ impl From<VDDIORDY_A> for bool {
 impl VDDIORDY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VDDIORDY_A {
+    pub const fn variant(&self) -> VDDIORDY_A {
         match self.bits {
             false => VDDIORDY_A::VddioRemoved,
             true => VDDIORDY_A::VddioPresent,
@@ -180,7 +180,7 @@ impl From<OSCBYPASS_A> for bool {
 impl OSCBYPASS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OSCBYPASS_A {
+    pub const fn variant(&self) -> OSCBYPASS_A {
         match self.bits {
             false => OSCBYPASS_A::NoEffect,
             true => OSCBYPASS_A::Bypass,
@@ -235,7 +235,7 @@ impl crate::FieldSpec for KEY_A {
 impl KEY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<KEY_A> {
+    pub const fn variant(&self) -> Option<KEY_A> {
         match self.bits {
             165 => Some(KEY_A::Passwd),
             _ => None,

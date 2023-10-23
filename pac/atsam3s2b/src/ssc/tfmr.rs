@@ -53,7 +53,7 @@ impl crate::FieldSpec for FSOS_A {
 impl FSOS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<FSOS_A> {
+    pub const fn variant(&self) -> Option<FSOS_A> {
         match self.bits {
             0 => Some(FSOS_A::None),
             1 => Some(FSOS_A::Negative),
@@ -156,7 +156,7 @@ impl From<FSEDGE_A> for bool {
 impl FSEDGE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FSEDGE_A {
+    pub const fn variant(&self) -> FSEDGE_A {
         match self.bits {
             false => FSEDGE_A::Positive,
             true => FSEDGE_A::Negative,

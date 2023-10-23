@@ -57,7 +57,7 @@ impl crate::FieldSpec for OUT0_A {
 impl OUT0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OUT0_A {
+    pub const fn variant(&self) -> OUT0_A {
         match self.bits {
             0 => OUT0_A::NoWave,
             1 => OUT0_A::Freq1hz,
@@ -194,7 +194,7 @@ impl crate::FieldSpec for OUT1_A {
 impl OUT1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OUT1_A {
+    pub const fn variant(&self) -> OUT1_A {
         match self.bits {
             0 => OUT1_A::NoWave,
             1 => OUT1_A::Freq1hz,
@@ -331,7 +331,7 @@ impl crate::FieldSpec for THIGH_A {
 impl THIGH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> THIGH_A {
+    pub const fn variant(&self) -> THIGH_A {
         match self.bits {
             0 => THIGH_A::H31ms,
             1 => THIGH_A::H16ms,
@@ -460,7 +460,7 @@ impl crate::FieldSpec for TPERIOD_A {
 impl TPERIOD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TPERIOD_A {
+    pub const fn variant(&self) -> TPERIOD_A {
         match self.bits {
             0 => TPERIOD_A::P1s,
             1 => TPERIOD_A::P500ms,

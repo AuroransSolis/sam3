@@ -53,7 +53,7 @@ impl crate::FieldSpec for SMTH_A {
 impl SMTH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMTH_A {
+    pub const fn variant(&self) -> SMTH_A {
         match self.bits {
             0 => SMTH_A::_19v,
             1 => SMTH_A::_20v,
@@ -272,7 +272,7 @@ impl crate::FieldSpec for SMSMPL_A {
 impl SMSMPL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SMSMPL_A> {
+    pub const fn variant(&self) -> Option<SMSMPL_A> {
         match self.bits {
             0 => Some(SMSMPL_A::Smd),
             1 => Some(SMSMPL_A::Csm),
@@ -360,7 +360,7 @@ impl From<SMRSTEN_A> for bool {
 impl SMRSTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMRSTEN_A {
+    pub const fn variant(&self) -> SMRSTEN_A {
         match self.bits {
             false => SMRSTEN_A::NotEnable,
             true => SMRSTEN_A::Enable,
@@ -413,7 +413,7 @@ impl From<SMIEN_A> for bool {
 impl SMIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMIEN_A {
+    pub const fn variant(&self) -> SMIEN_A {
         match self.bits {
             false => SMIEN_A::NotEnable,
             true => SMIEN_A::Enable,

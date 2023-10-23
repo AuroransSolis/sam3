@@ -35,7 +35,7 @@ impl crate::FieldSpec for EXNW_MODE_A {
 impl EXNW_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<EXNW_MODE_A> {
+    pub const fn variant(&self) -> Option<EXNW_MODE_A> {
         match self.bits {
             0 => Some(EXNW_MODE_A::Disabled),
             2 => Some(EXNW_MODE_A::Frozen),
@@ -121,7 +121,7 @@ impl crate::FieldSpec for PS_A {
 impl PS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PS_A {
+    pub const fn variant(&self) -> PS_A {
         match self.bits {
             0 => PS_A::_4Byte,
             1 => PS_A::_8Byte,

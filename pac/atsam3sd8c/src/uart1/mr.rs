@@ -31,7 +31,7 @@ impl crate::FieldSpec for PAR_A {
 impl PAR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PAR_A> {
+    pub const fn variant(&self) -> Option<PAR_A> {
         match self.bits {
             0 => Some(PAR_A::Even),
             1 => Some(PAR_A::Odd),
@@ -127,7 +127,7 @@ impl crate::FieldSpec for CHMODE_A {
 impl CHMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHMODE_A {
+    pub const fn variant(&self) -> CHMODE_A {
         match self.bits {
             0 => CHMODE_A::Normal,
             1 => CHMODE_A::Automatic,

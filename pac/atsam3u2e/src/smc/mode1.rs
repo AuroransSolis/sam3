@@ -21,7 +21,7 @@ impl From<READ_MODE_A> for bool {
 impl READ_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> READ_MODE_A {
+    pub const fn variant(&self) -> READ_MODE_A {
         match self.bits {
             false => READ_MODE_A::NcsCtrl,
             true => READ_MODE_A::NrdCtrl,
@@ -74,7 +74,7 @@ impl From<WRITE_MODE_A> for bool {
 impl WRITE_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WRITE_MODE_A {
+    pub const fn variant(&self) -> WRITE_MODE_A {
         match self.bits {
             false => WRITE_MODE_A::NcsCtrl,
             true => WRITE_MODE_A::NweCtrl,
@@ -133,7 +133,7 @@ impl crate::FieldSpec for EXNW_MODE_A {
 impl EXNW_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<EXNW_MODE_A> {
+    pub const fn variant(&self) -> Option<EXNW_MODE_A> {
         match self.bits {
             0 => Some(EXNW_MODE_A::Disabled),
             2 => Some(EXNW_MODE_A::Frozen),
@@ -203,7 +203,7 @@ impl From<DBW_A> for bool {
 impl DBW_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DBW_A {
+    pub const fn variant(&self) -> DBW_A {
         match self.bits {
             false => DBW_A::Bit8,
             true => DBW_A::Bit16,

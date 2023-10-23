@@ -31,7 +31,7 @@ impl crate::FieldSpec for RSTTYP_A {
 impl RSTTYP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RSTTYP_A> {
+    pub const fn variant(&self) -> Option<RSTTYP_A> {
         match self.bits {
             0 => Some(RSTTYP_A::GeneralReset),
             1 => Some(RSTTYP_A::BackupReset),

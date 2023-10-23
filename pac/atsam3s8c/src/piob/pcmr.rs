@@ -31,7 +31,7 @@ impl crate::FieldSpec for DSIZE_A {
 impl DSIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DSIZE_A> {
+    pub const fn variant(&self) -> Option<DSIZE_A> {
         match self.bits {
             0 => Some(DSIZE_A::Byte),
             1 => Some(DSIZE_A::Halfword),

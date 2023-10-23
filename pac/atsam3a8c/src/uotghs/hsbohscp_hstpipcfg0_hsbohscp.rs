@@ -31,7 +31,7 @@ impl crate::FieldSpec for PBK_A {
 impl PBK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PBK_A> {
+    pub const fn variant(&self) -> Option<PBK_A> {
         match self.bits {
             0 => Some(PBK_A::_1Bank),
             1 => Some(PBK_A::_2Bank),
@@ -113,7 +113,7 @@ impl crate::FieldSpec for PSIZE_A {
 impl PSIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PSIZE_A {
+    pub const fn variant(&self) -> PSIZE_A {
         match self.bits {
             0 => PSIZE_A::_8Byte,
             1 => PSIZE_A::_16Byte,
@@ -240,7 +240,7 @@ impl crate::FieldSpec for PTOKEN_A {
 impl PTOKEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PTOKEN_A> {
+    pub const fn variant(&self) -> Option<PTOKEN_A> {
         match self.bits {
             0 => Some(PTOKEN_A::Setup),
             1 => Some(PTOKEN_A::In),
@@ -314,7 +314,7 @@ impl crate::FieldSpec for PTYPE_A {
 impl PTYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PTYPE_A> {
+    pub const fn variant(&self) -> Option<PTYPE_A> {
         match self.bits {
             0 => Some(PTYPE_A::Ctrl),
             2 => Some(PTYPE_A::Blk),

@@ -39,7 +39,7 @@ impl crate::FieldSpec for MOSCRCF_A {
 impl MOSCRCF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<MOSCRCF_A> {
+    pub const fn variant(&self) -> Option<MOSCRCF_A> {
         match self.bits {
             0 => Some(MOSCRCF_A::_4Mhz),
             1 => Some(MOSCRCF_A::_8Mhz),

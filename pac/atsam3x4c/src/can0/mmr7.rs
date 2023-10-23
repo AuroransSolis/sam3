@@ -41,7 +41,7 @@ impl crate::FieldSpec for MOT_A {
 impl MOT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<MOT_A> {
+    pub const fn variant(&self) -> Option<MOT_A> {
         match self.bits {
             0 => Some(MOT_A::MbDisabled),
             1 => Some(MOT_A::MbRx),

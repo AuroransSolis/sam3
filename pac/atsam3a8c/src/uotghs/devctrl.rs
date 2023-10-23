@@ -45,7 +45,7 @@ impl crate::FieldSpec for SPDCONF_A {
 impl SPDCONF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SPDCONF_A {
+    pub const fn variant(&self) -> SPDCONF_A {
         match self.bits {
             0 => SPDCONF_A::Normal,
             1 => SPDCONF_A::LowPower,

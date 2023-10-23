@@ -47,7 +47,7 @@ impl crate::FieldSpec for CPRE_A {
 impl CPRE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CPRE_A> {
+    pub const fn variant(&self) -> Option<CPRE_A> {
         match self.bits {
             0 => Some(CPRE_A::Mck),
             1 => Some(CPRE_A::MckDiv2),

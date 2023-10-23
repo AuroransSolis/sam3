@@ -27,7 +27,7 @@ impl crate::FieldSpec for CKS_A {
 impl CKS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CKS_A> {
+    pub const fn variant(&self) -> Option<CKS_A> {
         match self.bits {
             0 => Some(CKS_A::Mck),
             1 => Some(CKS_A::Tk),
@@ -99,7 +99,7 @@ impl crate::FieldSpec for CKO_A {
 impl CKO_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CKO_A> {
+    pub const fn variant(&self) -> Option<CKO_A> {
         match self.bits {
             0 => Some(CKO_A::None),
             1 => Some(CKO_A::Continuous),
@@ -175,7 +175,7 @@ impl crate::FieldSpec for CKG_A {
 impl CKG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CKG_A> {
+    pub const fn variant(&self) -> Option<CKG_A> {
         match self.bits {
             0 => Some(CKG_A::Continuous),
             1 => Some(CKG_A::EnRfLow),
@@ -259,7 +259,7 @@ impl crate::FieldSpec for START_A {
 impl START_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<START_A> {
+    pub const fn variant(&self) -> Option<START_A> {
         match self.bits {
             0 => Some(START_A::Continuous),
             1 => Some(START_A::Transmit),

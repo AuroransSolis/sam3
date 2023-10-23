@@ -29,7 +29,7 @@ impl crate::FieldSpec for CMPMODE_A {
 impl CMPMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMPMODE_A {
+    pub const fn variant(&self) -> CMPMODE_A {
         match self.bits {
             0 => CMPMODE_A::Low,
             1 => CMPMODE_A::High,

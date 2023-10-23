@@ -27,7 +27,7 @@ impl crate::FieldSpec for WPVS_A {
 impl WPVS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<WPVS_A> {
+    pub const fn variant(&self) -> Option<WPVS_A> {
         match self.bits {
             0 => Some(WPVS_A::None),
             1 => Some(WPVS_A::Write),

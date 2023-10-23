@@ -29,7 +29,7 @@ impl crate::FieldSpec for PAGESIZE_A {
 impl PAGESIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PAGESIZE_A {
+    pub const fn variant(&self) -> PAGESIZE_A {
         match self.bits {
             0 => PAGESIZE_A::Ps512,
             1 => PAGESIZE_A::Ps1024,
@@ -142,7 +142,7 @@ impl crate::FieldSpec for DTOMUL_A {
 impl DTOMUL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DTOMUL_A {
+    pub const fn variant(&self) -> DTOMUL_A {
         match self.bits {
             0 => DTOMUL_A::X1,
             1 => DTOMUL_A::X16,

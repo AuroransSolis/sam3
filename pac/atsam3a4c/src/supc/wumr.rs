@@ -21,7 +21,7 @@ impl From<FWUPEN_A> for bool {
 impl FWUPEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FWUPEN_A {
+    pub const fn variant(&self) -> FWUPEN_A {
         match self.bits {
             false => FWUPEN_A::NotEnable,
             true => FWUPEN_A::Enable,
@@ -74,7 +74,7 @@ impl From<SMEN_A> for bool {
 impl SMEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMEN_A {
+    pub const fn variant(&self) -> SMEN_A {
         match self.bits {
             false => SMEN_A::NotEnable,
             true => SMEN_A::Enable,
@@ -127,7 +127,7 @@ impl From<RTTEN_A> for bool {
 impl RTTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RTTEN_A {
+    pub const fn variant(&self) -> RTTEN_A {
         match self.bits {
             false => RTTEN_A::NotEnable,
             true => RTTEN_A::Enable,
@@ -180,7 +180,7 @@ impl From<RTCEN_A> for bool {
 impl RTCEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RTCEN_A {
+    pub const fn variant(&self) -> RTCEN_A {
         match self.bits {
             false => RTCEN_A::NotEnable,
             true => RTCEN_A::Enable,
@@ -245,7 +245,7 @@ impl crate::FieldSpec for FWUPDBC_A {
 impl FWUPDBC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<FWUPDBC_A> {
+    pub const fn variant(&self) -> Option<FWUPDBC_A> {
         match self.bits {
             0 => Some(FWUPDBC_A::Immediate),
             1 => Some(FWUPDBC_A::_3Sclk),
@@ -356,7 +356,7 @@ impl crate::FieldSpec for WKUPDBC_A {
 impl WKUPDBC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<WKUPDBC_A> {
+    pub const fn variant(&self) -> Option<WKUPDBC_A> {
         match self.bits {
             0 => Some(WKUPDBC_A::Immediate),
             1 => Some(WKUPDBC_A::_3Sclk),

@@ -29,7 +29,7 @@ impl crate::FieldSpec for SDCSEL_A {
 impl SDCSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SDCSEL_A {
+    pub const fn variant(&self) -> SDCSEL_A {
         match self.bits {
             0 => SDCSEL_A::Slota,
             1 => SDCSEL_A::Slotb,
@@ -112,7 +112,7 @@ impl crate::FieldSpec for SDCBUS_A {
 impl SDCBUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SDCBUS_A> {
+    pub const fn variant(&self) -> Option<SDCBUS_A> {
         match self.bits {
             0 => Some(SDCBUS_A::_1),
             2 => Some(SDCBUS_A::_4),

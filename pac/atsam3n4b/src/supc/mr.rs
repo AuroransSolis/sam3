@@ -21,7 +21,7 @@ impl From<BODRSTEN_A> for bool {
 impl BODRSTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BODRSTEN_A {
+    pub const fn variant(&self) -> BODRSTEN_A {
         match self.bits {
             false => BODRSTEN_A::NotEnable,
             true => BODRSTEN_A::Enable,
@@ -74,7 +74,7 @@ impl From<BODDIS_A> for bool {
 impl BODDIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BODDIS_A {
+    pub const fn variant(&self) -> BODDIS_A {
         match self.bits {
             false => BODDIS_A::Enable,
             true => BODDIS_A::Disable,
@@ -127,7 +127,7 @@ impl From<ONREG_A> for bool {
 impl ONREG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ONREG_A {
+    pub const fn variant(&self) -> ONREG_A {
         match self.bits {
             false => ONREG_A::OnregUnused,
             true => ONREG_A::OnregUsed,
@@ -180,7 +180,7 @@ impl From<OSCBYPASS_A> for bool {
 impl OSCBYPASS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OSCBYPASS_A {
+    pub const fn variant(&self) -> OSCBYPASS_A {
         match self.bits {
             false => OSCBYPASS_A::NoEffect,
             true => OSCBYPASS_A::Bypass,

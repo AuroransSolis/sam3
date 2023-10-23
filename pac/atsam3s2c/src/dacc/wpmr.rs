@@ -27,7 +27,7 @@ impl crate::FieldSpec for WPKEY_A {
 impl WPKEY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<WPKEY_A> {
+    pub const fn variant(&self) -> Option<WPKEY_A> {
         match self.bits {
             4473155 => Some(WPKEY_A::Passwd),
             _ => None,

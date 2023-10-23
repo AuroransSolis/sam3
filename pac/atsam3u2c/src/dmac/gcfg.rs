@@ -21,7 +21,7 @@ impl From<ARB_CFG_A> for bool {
 impl ARB_CFG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ARB_CFG_A {
+    pub const fn variant(&self) -> ARB_CFG_A {
         match self.bits {
             false => ARB_CFG_A::Fixed,
             true => ARB_CFG_A::RoundRobin,

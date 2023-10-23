@@ -43,7 +43,7 @@ impl crate::FieldSpec for UPDM_A {
 impl UPDM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<UPDM_A> {
+    pub const fn variant(&self) -> Option<UPDM_A> {
         match self.bits {
             0 => Some(UPDM_A::Mode0),
             1 => Some(UPDM_A::Mode1),

@@ -41,7 +41,7 @@ impl crate::FieldSpec for CSTOMUL_A {
 impl CSTOMUL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CSTOMUL_A {
+    pub const fn variant(&self) -> CSTOMUL_A {
         match self.bits {
             0 => CSTOMUL_A::_1,
             1 => CSTOMUL_A::_16,

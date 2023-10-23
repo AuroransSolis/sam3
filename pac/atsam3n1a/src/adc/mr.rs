@@ -21,7 +21,7 @@ impl From<TRGEN_A> for bool {
 impl TRGEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TRGEN_A {
+    pub const fn variant(&self) -> TRGEN_A {
         match self.bits {
             false => TRGEN_A::Dis,
             true => TRGEN_A::En,
@@ -82,7 +82,7 @@ impl crate::FieldSpec for TRGSEL_A {
 impl TRGSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TRGSEL_A> {
+    pub const fn variant(&self) -> Option<TRGSEL_A> {
         match self.bits {
             0 => Some(TRGSEL_A::AdcTrig0),
             1 => Some(TRGSEL_A::AdcTrig1),
@@ -159,7 +159,7 @@ impl From<LOWRES_A> for bool {
 impl LOWRES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOWRES_A {
+    pub const fn variant(&self) -> LOWRES_A {
         match self.bits {
             false => LOWRES_A::Bits10,
             true => LOWRES_A::Bits8,
@@ -212,7 +212,7 @@ impl From<SLEEP_A> for bool {
 impl SLEEP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SLEEP_A {
+    pub const fn variant(&self) -> SLEEP_A {
         match self.bits {
             false => SLEEP_A::Normal,
             true => SLEEP_A::Sleep,
@@ -265,7 +265,7 @@ impl From<FWUP_A> for bool {
 impl FWUP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FWUP_A {
+    pub const fn variant(&self) -> FWUP_A {
         match self.bits {
             false => FWUP_A::Off,
             true => FWUP_A::On,
@@ -318,7 +318,7 @@ impl From<FREERUN_A> for bool {
 impl FREERUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FREERUN_A {
+    pub const fn variant(&self) -> FREERUN_A {
         match self.bits {
             false => FREERUN_A::Off,
             true => FREERUN_A::On,
@@ -407,7 +407,7 @@ impl crate::FieldSpec for STARTUP_A {
 impl STARTUP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STARTUP_A {
+    pub const fn variant(&self) -> STARTUP_A {
         match self.bits {
             0 => STARTUP_A::Sut0,
             1 => STARTUP_A::Sut8,
@@ -620,7 +620,7 @@ impl From<USEQ_A> for bool {
 impl USEQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USEQ_A {
+    pub const fn variant(&self) -> USEQ_A {
         match self.bits {
             false => USEQ_A::NumOrder,
             true => USEQ_A::RegOrder,

@@ -37,7 +37,7 @@ impl crate::FieldSpec for SELMINUS_A {
 impl SELMINUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SELMINUS_A {
+    pub const fn variant(&self) -> SELMINUS_A {
         match self.bits {
             0 => SELMINUS_A::Ts,
             1 => SELMINUS_A::Advref,
@@ -174,7 +174,7 @@ impl crate::FieldSpec for SELPLUS_A {
 impl SELPLUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SELPLUS_A {
+    pub const fn variant(&self) -> SELPLUS_A {
         match self.bits {
             0 => SELPLUS_A::Ad0,
             1 => SELPLUS_A::Ad1,
@@ -295,7 +295,7 @@ impl From<ACEN_A> for bool {
 impl ACEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACEN_A {
+    pub const fn variant(&self) -> ACEN_A {
         match self.bits {
             false => ACEN_A::Dis,
             true => ACEN_A::En,
@@ -354,7 +354,7 @@ impl crate::FieldSpec for EDGETYP_A {
 impl EDGETYP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<EDGETYP_A> {
+    pub const fn variant(&self) -> Option<EDGETYP_A> {
         match self.bits {
             0 => Some(EDGETYP_A::Rising),
             1 => Some(EDGETYP_A::Falling),
@@ -420,7 +420,7 @@ impl From<INV_A> for bool {
 impl INV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INV_A {
+    pub const fn variant(&self) -> INV_A {
         match self.bits {
             false => INV_A::Dis,
             true => INV_A::En,
@@ -473,7 +473,7 @@ impl From<SELFS_A> for bool {
 impl SELFS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SELFS_A {
+    pub const fn variant(&self) -> SELFS_A {
         match self.bits {
             false => SELFS_A::Cf,
             true => SELFS_A::Output,
@@ -526,7 +526,7 @@ impl From<FE_A> for bool {
 impl FE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FE_A {
+    pub const fn variant(&self) -> FE_A {
         match self.bits {
             false => FE_A::Dis,
             true => FE_A::En,

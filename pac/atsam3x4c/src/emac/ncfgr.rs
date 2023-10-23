@@ -61,7 +61,7 @@ impl crate::FieldSpec for CLK_A {
 impl CLK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CLK_A {
+    pub const fn variant(&self) -> CLK_A {
         match self.bits {
             0 => CLK_A::Mck8,
             1 => CLK_A::Mck16,
@@ -154,7 +154,7 @@ impl crate::FieldSpec for RBOF_A {
 impl RBOF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RBOF_A {
+    pub const fn variant(&self) -> RBOF_A {
         match self.bits {
             0 => RBOF_A::Offset0,
             1 => RBOF_A::Offset1,

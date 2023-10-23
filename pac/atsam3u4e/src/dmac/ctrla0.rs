@@ -31,7 +31,7 @@ impl crate::FieldSpec for SRC_WIDTH_A {
 impl SRC_WIDTH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SRC_WIDTH_A> {
+    pub const fn variant(&self) -> Option<SRC_WIDTH_A> {
         match self.bits {
             0 => Some(SRC_WIDTH_A::Byte),
             1 => Some(SRC_WIDTH_A::HalfWord),
@@ -103,7 +103,7 @@ impl crate::FieldSpec for DST_WIDTH_A {
 impl DST_WIDTH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DST_WIDTH_A> {
+    pub const fn variant(&self) -> Option<DST_WIDTH_A> {
         match self.bits {
             0 => Some(DST_WIDTH_A::Byte),
             1 => Some(DST_WIDTH_A::HalfWord),

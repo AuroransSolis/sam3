@@ -27,7 +27,7 @@ impl crate::FieldSpec for TC0XC0S_A {
 impl TC0XC0S_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TC0XC0S_A> {
+    pub const fn variant(&self) -> Option<TC0XC0S_A> {
         match self.bits {
             0 => Some(TC0XC0S_A::Tclk0),
             2 => Some(TC0XC0S_A::Tioa1),
@@ -99,7 +99,7 @@ impl crate::FieldSpec for TC1XC1S_A {
 impl TC1XC1S_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TC1XC1S_A> {
+    pub const fn variant(&self) -> Option<TC1XC1S_A> {
         match self.bits {
             0 => Some(TC1XC1S_A::Tclk1),
             2 => Some(TC1XC1S_A::Tioa0),
@@ -171,7 +171,7 @@ impl crate::FieldSpec for TC2XC2S_A {
 impl TC2XC2S_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TC2XC2S_A> {
+    pub const fn variant(&self) -> Option<TC2XC2S_A> {
         match self.bits {
             0 => Some(TC2XC2S_A::Tclk2),
             2 => Some(TC2XC2S_A::Tioa1),

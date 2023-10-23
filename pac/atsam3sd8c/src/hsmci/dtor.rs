@@ -41,7 +41,7 @@ impl crate::FieldSpec for DTOMUL_A {
 impl DTOMUL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DTOMUL_A {
+    pub const fn variant(&self) -> DTOMUL_A {
         match self.bits {
             0 => DTOMUL_A::_1,
             1 => DTOMUL_A::_16,

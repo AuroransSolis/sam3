@@ -27,7 +27,7 @@ impl crate::FieldSpec for BCNT_A {
 impl BCNT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<BCNT_A> {
+    pub const fn variant(&self) -> Option<BCNT_A> {
         match self.bits {
             0 => Some(BCNT_A::Multiple),
             4 => Some(BCNT_A::Byte),

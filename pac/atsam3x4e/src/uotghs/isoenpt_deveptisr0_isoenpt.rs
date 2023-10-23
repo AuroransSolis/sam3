@@ -43,7 +43,7 @@ impl crate::FieldSpec for DTSEQ_A {
 impl DTSEQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DTSEQ_A {
+    pub const fn variant(&self) -> DTSEQ_A {
         match self.bits {
             0 => DTSEQ_A::Data0,
             1 => DTSEQ_A::Data1,
@@ -102,7 +102,7 @@ impl crate::FieldSpec for NBUSYBK_A {
 impl NBUSYBK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NBUSYBK_A {
+    pub const fn variant(&self) -> NBUSYBK_A {
         match self.bits {
             0 => NBUSYBK_A::_0Busy,
             1 => NBUSYBK_A::_1Busy,
@@ -157,7 +157,7 @@ impl crate::FieldSpec for CURRBK_A {
 impl CURRBK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CURRBK_A> {
+    pub const fn variant(&self) -> Option<CURRBK_A> {
         match self.bits {
             0 => Some(CURRBK_A::Bank0),
             1 => Some(CURRBK_A::Bank1),

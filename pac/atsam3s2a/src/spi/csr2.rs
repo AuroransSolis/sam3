@@ -55,7 +55,7 @@ impl crate::FieldSpec for BITS_A {
 impl BITS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<BITS_A> {
+    pub const fn variant(&self) -> Option<BITS_A> {
         match self.bits {
             0 => Some(BITS_A::_8Bit),
             1 => Some(BITS_A::_9Bit),

@@ -27,7 +27,7 @@ impl crate::FieldSpec for CSS_A {
 impl CSS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CSS_A> {
+    pub const fn variant(&self) -> Option<CSS_A> {
         match self.bits {
             0 => Some(CSS_A::SlowClk),
             1 => Some(CSS_A::MainClk),
@@ -109,7 +109,7 @@ impl crate::FieldSpec for PRES_A {
 impl PRES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRES_A {
+    pub const fn variant(&self) -> PRES_A {
         match self.bits {
             0 => PRES_A::Clk1,
             1 => PRES_A::Clk2,

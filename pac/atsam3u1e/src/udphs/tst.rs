@@ -27,7 +27,7 @@ impl crate::FieldSpec for SPEED_CFG_A {
 impl SPEED_CFG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SPEED_CFG_A> {
+    pub const fn variant(&self) -> Option<SPEED_CFG_A> {
         match self.bits {
             0 => Some(SPEED_CFG_A::Normal),
             2 => Some(SPEED_CFG_A::HighSpeed),

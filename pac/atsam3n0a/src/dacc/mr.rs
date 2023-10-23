@@ -33,7 +33,7 @@ impl crate::FieldSpec for TRGSEL_A {
 impl TRGSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TRGSEL_A> {
+    pub const fn variant(&self) -> Option<TRGSEL_A> {
         match self.bits {
             0 => Some(TRGSEL_A::Trgsel0),
             1 => Some(TRGSEL_A::Trgsel1),

@@ -61,7 +61,7 @@ impl crate::FieldSpec for RXSYNC_A {
 impl RXSYNC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RXSYNC_A> {
+    pub const fn variant(&self) -> Option<RXSYNC_A> {
         match self.bits {
             0 => Some(RXSYNC_A::DoublePp),
             1 => Some(RXSYNC_A::DoublePn),

@@ -31,7 +31,7 @@ impl crate::FieldSpec for EPBK_A {
 impl EPBK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<EPBK_A> {
+    pub const fn variant(&self) -> Option<EPBK_A> {
         match self.bits {
             0 => Some(EPBK_A::_1Bank),
             1 => Some(EPBK_A::_2Bank),
@@ -113,7 +113,7 @@ impl crate::FieldSpec for EPSIZE_A {
 impl EPSIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPSIZE_A {
+    pub const fn variant(&self) -> EPSIZE_A {
         match self.bits {
             0 => EPSIZE_A::_8Byte,
             1 => EPSIZE_A::_16Byte,
@@ -234,7 +234,7 @@ impl From<EPDIR_A> for bool {
 impl EPDIR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPDIR_A {
+    pub const fn variant(&self) -> EPDIR_A {
         match self.bits {
             false => EPDIR_A::Out,
             true => EPDIR_A::In,
@@ -299,7 +299,7 @@ impl crate::FieldSpec for EPTYPE_A {
 impl EPTYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPTYPE_A {
+    pub const fn variant(&self) -> EPTYPE_A {
         match self.bits {
             0 => EPTYPE_A::Ctrl,
             1 => EPTYPE_A::Iso,
@@ -384,7 +384,7 @@ impl crate::FieldSpec for NBTRANS_A {
 impl NBTRANS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NBTRANS_A {
+    pub const fn variant(&self) -> NBTRANS_A {
         match self.bits {
             0 => NBTRANS_A::_0Trans,
             1 => NBTRANS_A::_1Trans,

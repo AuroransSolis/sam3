@@ -51,7 +51,7 @@ impl crate::FieldSpec for DRDSTATE_A {
 impl DRDSTATE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DRDSTATE_A {
+    pub const fn variant(&self) -> DRDSTATE_A {
         match self.bits {
             0 => DRDSTATE_A::AIdlestate,
             1 => DRDSTATE_A::AWaitVrise,

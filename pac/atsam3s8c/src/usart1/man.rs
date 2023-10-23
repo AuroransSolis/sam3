@@ -33,7 +33,7 @@ impl crate::FieldSpec for TX_PP_A {
 impl TX_PP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_PP_A {
+    pub const fn variant(&self) -> TX_PP_A {
         match self.bits {
             0 => TX_PP_A::AllOne,
             1 => TX_PP_A::AllZero,
@@ -126,7 +126,7 @@ impl crate::FieldSpec for RX_PP_A {
 impl RX_PP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_PP_A {
+    pub const fn variant(&self) -> RX_PP_A {
         match self.bits {
             0 => RX_PP_A::AllOne,
             1 => RX_PP_A::AllZero,

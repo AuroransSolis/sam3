@@ -21,7 +21,7 @@ impl From<TRGEN_A> for bool {
 impl TRGEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TRGEN_A {
+    pub const fn variant(&self) -> TRGEN_A {
         match self.bits {
             false => TRGEN_A::Dis,
             true => TRGEN_A::En,
@@ -78,7 +78,7 @@ impl From<WORD_A> for bool {
 impl WORD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WORD_A {
+    pub const fn variant(&self) -> WORD_A {
         match self.bits {
             false => WORD_A::Half,
             true => WORD_A::Word,
@@ -147,7 +147,7 @@ impl crate::FieldSpec for USER_SEL_A {
 impl USER_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<USER_SEL_A> {
+    pub const fn variant(&self) -> Option<USER_SEL_A> {
         match self.bits {
             0 => Some(USER_SEL_A::Channel0),
             1 => Some(USER_SEL_A::Channel1),
@@ -202,7 +202,7 @@ impl From<TAG_A> for bool {
 impl TAG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TAG_A {
+    pub const fn variant(&self) -> TAG_A {
         match self.bits {
             false => TAG_A::Dis,
             true => TAG_A::En,
@@ -255,7 +255,7 @@ impl From<MAXS_A> for bool {
 impl MAXS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MAXS_A {
+    pub const fn variant(&self) -> MAXS_A {
         match self.bits {
             false => MAXS_A::Normal,
             true => MAXS_A::Maximum,
@@ -372,7 +372,7 @@ impl crate::FieldSpec for STARTUP_A {
 impl STARTUP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<STARTUP_A> {
+    pub const fn variant(&self) -> Option<STARTUP_A> {
         match self.bits {
             0 => Some(STARTUP_A::_0),
             1 => Some(STARTUP_A::_8),

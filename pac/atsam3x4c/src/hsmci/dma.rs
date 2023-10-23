@@ -25,7 +25,7 @@ impl From<CHKSIZE_A> for bool {
 impl CHKSIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHKSIZE_A {
+    pub const fn variant(&self) -> CHKSIZE_A {
         match self.bits {
             false => CHKSIZE_A::_1,
             true => CHKSIZE_A::_4,

@@ -25,7 +25,7 @@ impl crate::FieldSpec for MD_A {
 impl MD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<MD_A> {
+    pub const fn variant(&self) -> Option<MD_A> {
         match self.bits {
             0 => Some(MD_A::Sdram),
             1 => Some(MD_A::Lpsdram),

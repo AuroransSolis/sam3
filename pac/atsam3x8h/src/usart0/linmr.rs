@@ -27,7 +27,7 @@ impl crate::FieldSpec for NACT_A {
 impl NACT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<NACT_A> {
+    pub const fn variant(&self) -> Option<NACT_A> {
         match self.bits {
             0 => Some(NACT_A::Publish),
             1 => Some(NACT_A::Subscribe),

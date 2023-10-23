@@ -21,7 +21,7 @@ impl From<SRC_DSCR_A> for bool {
 impl SRC_DSCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SRC_DSCR_A {
+    pub const fn variant(&self) -> SRC_DSCR_A {
         match self.bits {
             false => SRC_DSCR_A::FetchFromMem,
             true => SRC_DSCR_A::FetchDisable,
@@ -74,7 +74,7 @@ impl From<DST_DSCR_A> for bool {
 impl DST_DSCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DST_DSCR_A {
+    pub const fn variant(&self) -> DST_DSCR_A {
         match self.bits {
             false => DST_DSCR_A::FetchFromMem,
             true => DST_DSCR_A::FetchDisable,
@@ -135,7 +135,7 @@ impl crate::FieldSpec for FC_A {
 impl FC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FC_A {
+    pub const fn variant(&self) -> FC_A {
         match self.bits {
             0 => FC_A::Mem2memDmaFc,
             1 => FC_A::Mem2perDmaFc,
@@ -218,7 +218,7 @@ impl crate::FieldSpec for SRC_INCR_A {
 impl SRC_INCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SRC_INCR_A> {
+    pub const fn variant(&self) -> Option<SRC_INCR_A> {
         match self.bits {
             0 => Some(SRC_INCR_A::Incrementing),
             1 => Some(SRC_INCR_A::Decrementing),
@@ -290,7 +290,7 @@ impl crate::FieldSpec for DST_INCR_A {
 impl DST_INCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DST_INCR_A> {
+    pub const fn variant(&self) -> Option<DST_INCR_A> {
         match self.bits {
             0 => Some(DST_INCR_A::Incrementing),
             1 => Some(DST_INCR_A::Decrementing),

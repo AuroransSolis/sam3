@@ -29,7 +29,7 @@ impl From<SRC_H2SEL_A> for bool {
 impl SRC_H2SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SRC_H2SEL_A {
+    pub const fn variant(&self) -> SRC_H2SEL_A {
         match self.bits {
             false => SRC_H2SEL_A::Sw,
             true => SRC_H2SEL_A::Hw,
@@ -82,7 +82,7 @@ impl From<DST_H2SEL_A> for bool {
 impl DST_H2SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DST_H2SEL_A {
+    pub const fn variant(&self) -> DST_H2SEL_A {
         match self.bits {
             false => DST_H2SEL_A::Sw,
             true => DST_H2SEL_A::Hw,
@@ -135,7 +135,7 @@ impl From<SOD_A> for bool {
 impl SOD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SOD_A {
+    pub const fn variant(&self) -> SOD_A {
         match self.bits {
             false => SOD_A::Disable,
             true => SOD_A::Enable,
@@ -188,7 +188,7 @@ impl From<LOCK_IF_A> for bool {
 impl LOCK_IF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOCK_IF_A {
+    pub const fn variant(&self) -> LOCK_IF_A {
         match self.bits {
             false => LOCK_IF_A::Disable,
             true => LOCK_IF_A::Enable,
@@ -239,7 +239,7 @@ impl From<LOCK_B_A> for bool {
 impl LOCK_B_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<LOCK_B_A> {
+    pub const fn variant(&self) -> Option<LOCK_B_A> {
         match self.bits {
             false => Some(LOCK_B_A::Disable),
             _ => None,
@@ -282,7 +282,7 @@ impl From<LOCK_IF_L_A> for bool {
 impl LOCK_IF_L_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOCK_IF_L_A {
+    pub const fn variant(&self) -> LOCK_IF_L_A {
         match self.bits {
             false => LOCK_IF_L_A::Chunk,
             true => LOCK_IF_L_A::Buffer,
@@ -345,7 +345,7 @@ impl crate::FieldSpec for FIFOCFG_A {
 impl FIFOCFG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<FIFOCFG_A> {
+    pub const fn variant(&self) -> Option<FIFOCFG_A> {
         match self.bits {
             0 => Some(FIFOCFG_A::AlapCfg),
             1 => Some(FIFOCFG_A::HalfCfg),

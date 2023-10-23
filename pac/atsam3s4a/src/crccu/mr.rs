@@ -35,7 +35,7 @@ impl crate::FieldSpec for PTYPE_A {
 impl PTYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PTYPE_A> {
+    pub const fn variant(&self) -> Option<PTYPE_A> {
         match self.bits {
             0 => Some(PTYPE_A::Ccitt8023),
             1 => Some(PTYPE_A::Castagnoli),

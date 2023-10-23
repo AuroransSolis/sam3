@@ -37,7 +37,7 @@ impl crate::FieldSpec for TCCLKS_A {
 impl TCCLKS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TCCLKS_A {
+    pub const fn variant(&self) -> TCCLKS_A {
         match self.bits {
             0 => TCCLKS_A::TimerClock1,
             1 => TCCLKS_A::TimerClock2,
@@ -170,7 +170,7 @@ impl crate::FieldSpec for BURST_A {
 impl BURST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BURST_A {
+    pub const fn variant(&self) -> BURST_A {
         match self.bits {
             0 => BURST_A::None,
             1 => BURST_A::Xc0,
@@ -263,7 +263,7 @@ impl crate::FieldSpec for EEVTEDG_A {
 impl EEVTEDG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EEVTEDG_A {
+    pub const fn variant(&self) -> EEVTEDG_A {
         match self.bits {
             0 => EEVTEDG_A::None,
             1 => EEVTEDG_A::Rising,
@@ -348,7 +348,7 @@ impl crate::FieldSpec for EEVT_A {
 impl EEVT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EEVT_A {
+    pub const fn variant(&self) -> EEVT_A {
         match self.bits {
             0 => EEVT_A::Tiob,
             1 => EEVT_A::Xc0,
@@ -437,7 +437,7 @@ impl crate::FieldSpec for WAVSEL_A {
 impl WAVSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WAVSEL_A {
+    pub const fn variant(&self) -> WAVSEL_A {
         match self.bits {
             0 => WAVSEL_A::Up,
             1 => WAVSEL_A::Updown,
@@ -526,7 +526,7 @@ impl crate::FieldSpec for ACPA_A {
 impl ACPA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACPA_A {
+    pub const fn variant(&self) -> ACPA_A {
         match self.bits {
             0 => ACPA_A::None,
             1 => ACPA_A::Set,
@@ -611,7 +611,7 @@ impl crate::FieldSpec for ACPC_A {
 impl ACPC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACPC_A {
+    pub const fn variant(&self) -> ACPC_A {
         match self.bits {
             0 => ACPC_A::None,
             1 => ACPC_A::Set,
@@ -696,7 +696,7 @@ impl crate::FieldSpec for AEEVT_A {
 impl AEEVT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AEEVT_A {
+    pub const fn variant(&self) -> AEEVT_A {
         match self.bits {
             0 => AEEVT_A::None,
             1 => AEEVT_A::Set,
@@ -781,7 +781,7 @@ impl crate::FieldSpec for ASWTRG_A {
 impl ASWTRG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ASWTRG_A {
+    pub const fn variant(&self) -> ASWTRG_A {
         match self.bits {
             0 => ASWTRG_A::None,
             1 => ASWTRG_A::Set,
@@ -866,7 +866,7 @@ impl crate::FieldSpec for BCPB_A {
 impl BCPB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BCPB_A {
+    pub const fn variant(&self) -> BCPB_A {
         match self.bits {
             0 => BCPB_A::None,
             1 => BCPB_A::Set,
@@ -951,7 +951,7 @@ impl crate::FieldSpec for BCPC_A {
 impl BCPC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BCPC_A {
+    pub const fn variant(&self) -> BCPC_A {
         match self.bits {
             0 => BCPC_A::None,
             1 => BCPC_A::Set,
@@ -1036,7 +1036,7 @@ impl crate::FieldSpec for BEEVT_A {
 impl BEEVT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BEEVT_A {
+    pub const fn variant(&self) -> BEEVT_A {
         match self.bits {
             0 => BEEVT_A::None,
             1 => BEEVT_A::Set,
@@ -1121,7 +1121,7 @@ impl crate::FieldSpec for BSWTRG_A {
 impl BSWTRG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BSWTRG_A {
+    pub const fn variant(&self) -> BSWTRG_A {
         match self.bits {
             0 => BSWTRG_A::None,
             1 => BSWTRG_A::Set,

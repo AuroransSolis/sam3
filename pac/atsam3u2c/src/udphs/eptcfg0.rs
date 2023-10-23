@@ -37,7 +37,7 @@ impl crate::FieldSpec for EPT_SIZE_A {
 impl EPT_SIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPT_SIZE_A {
+    pub const fn variant(&self) -> EPT_SIZE_A {
         match self.bits {
             0 => EPT_SIZE_A::_8,
             1 => EPT_SIZE_A::_16,
@@ -170,7 +170,7 @@ impl crate::FieldSpec for EPT_TYPE_A {
 impl EPT_TYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPT_TYPE_A {
+    pub const fn variant(&self) -> EPT_TYPE_A {
         match self.bits {
             0 => EPT_TYPE_A::Ctrl8,
             1 => EPT_TYPE_A::Iso,
@@ -255,7 +255,7 @@ impl crate::FieldSpec for BK_NUMBER_A {
 impl BK_NUMBER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BK_NUMBER_A {
+    pub const fn variant(&self) -> BK_NUMBER_A {
         match self.bits {
             0 => BK_NUMBER_A::_0,
             1 => BK_NUMBER_A::_1,

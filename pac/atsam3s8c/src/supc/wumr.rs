@@ -21,7 +21,7 @@ impl From<SMEN_A> for bool {
 impl SMEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMEN_A {
+    pub const fn variant(&self) -> SMEN_A {
         match self.bits {
             false => SMEN_A::NotEnable,
             true => SMEN_A::Enable,
@@ -74,7 +74,7 @@ impl From<RTTEN_A> for bool {
 impl RTTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RTTEN_A {
+    pub const fn variant(&self) -> RTTEN_A {
         match self.bits {
             false => RTTEN_A::NotEnable,
             true => RTTEN_A::Enable,
@@ -127,7 +127,7 @@ impl From<RTCEN_A> for bool {
 impl RTCEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RTCEN_A {
+    pub const fn variant(&self) -> RTCEN_A {
         match self.bits {
             false => RTCEN_A::NotEnable,
             true => RTCEN_A::Enable,
@@ -180,7 +180,7 @@ impl From<LPDBCEN0_A> for bool {
 impl LPDBCEN0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LPDBCEN0_A {
+    pub const fn variant(&self) -> LPDBCEN0_A {
         match self.bits {
             false => LPDBCEN0_A::NotEnable,
             true => LPDBCEN0_A::Enable,
@@ -233,7 +233,7 @@ impl From<LPDBCEN1_A> for bool {
 impl LPDBCEN1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LPDBCEN1_A {
+    pub const fn variant(&self) -> LPDBCEN1_A {
         match self.bits {
             false => LPDBCEN1_A::NotEnable,
             true => LPDBCEN1_A::Enable,
@@ -286,7 +286,7 @@ impl From<LPDBCCLR_A> for bool {
 impl LPDBCCLR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LPDBCCLR_A {
+    pub const fn variant(&self) -> LPDBCCLR_A {
         match self.bits {
             false => LPDBCCLR_A::NotEnable,
             true => LPDBCCLR_A::Enable,
@@ -351,7 +351,7 @@ impl crate::FieldSpec for WKUPDBC_A {
 impl WKUPDBC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<WKUPDBC_A> {
+    pub const fn variant(&self) -> Option<WKUPDBC_A> {
         match self.bits {
             0 => Some(WKUPDBC_A::Immediate),
             1 => Some(WKUPDBC_A::_3Sclk),
@@ -466,7 +466,7 @@ impl crate::FieldSpec for LPDBC_A {
 impl LPDBC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LPDBC_A {
+    pub const fn variant(&self) -> LPDBC_A {
         match self.bits {
             0 => LPDBC_A::Disable,
             1 => LPDBC_A::_2Rtcout0,

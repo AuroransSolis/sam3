@@ -25,7 +25,7 @@ impl crate::FieldSpec for USART_MODE_A {
 impl USART_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<USART_MODE_A> {
+    pub const fn variant(&self) -> Option<USART_MODE_A> {
         match self.bits {
             14 => Some(USART_MODE_A::SpiMaster),
             15 => Some(USART_MODE_A::SpiSlave),
@@ -86,7 +86,7 @@ impl crate::FieldSpec for USCLKS_A {
 impl USCLKS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<USCLKS_A> {
+    pub const fn variant(&self) -> Option<USCLKS_A> {
         match self.bits {
             0 => Some(USCLKS_A::Mck),
             1 => Some(USCLKS_A::Div),
@@ -154,7 +154,7 @@ impl crate::FieldSpec for CHRL_A {
 impl CHRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CHRL_A> {
+    pub const fn variant(&self) -> Option<CHRL_A> {
         match self.bits {
             3 => Some(CHRL_A::_8Bit),
             _ => None,

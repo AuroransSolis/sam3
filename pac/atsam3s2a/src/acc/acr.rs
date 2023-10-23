@@ -21,7 +21,7 @@ impl From<ISEL_A> for bool {
 impl ISEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ISEL_A {
+    pub const fn variant(&self) -> ISEL_A {
         match self.bits {
             false => ISEL_A::Lopw,
             true => ISEL_A::Hisp,

@@ -29,7 +29,7 @@ impl crate::FieldSpec for LPCB_A {
 impl LPCB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LPCB_A {
+    pub const fn variant(&self) -> LPCB_A {
         match self.bits {
             0 => LPCB_A::Disabled,
             1 => LPCB_A::SelfRefresh,
@@ -124,7 +124,7 @@ impl crate::FieldSpec for TIMEOUT_A {
 impl TIMEOUT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TIMEOUT_A> {
+    pub const fn variant(&self) -> Option<TIMEOUT_A> {
         match self.bits {
             0 => Some(TIMEOUT_A::LpLastXfer),
             1 => Some(TIMEOUT_A::LpLastXfer64),
