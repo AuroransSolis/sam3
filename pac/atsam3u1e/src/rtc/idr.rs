@@ -1,45 +1,45 @@
 #[doc = "Register `IDR` writer"]
 pub type W = crate::W<IDR_SPEC>;
 #[doc = "Field `ACKDIS` writer - Acknowledge Update Interrupt Disable"]
-pub type ACKDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ACKDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ALRDIS` writer - Alarm Interrupt Disable"]
-pub type ALRDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ALRDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SECDIS` writer - Second Event Interrupt Disable"]
-pub type SECDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SECDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TIMDIS` writer - Time Event Interrupt Disable"]
-pub type TIMDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TIMDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CALDIS` writer - Calendar Event Interrupt Disable"]
-pub type CALDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CALDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Acknowledge Update Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn ackdis(&mut self) -> ACKDIS_W<IDR_SPEC, 0> {
-        ACKDIS_W::new(self)
+    pub fn ackdis(&mut self) -> ACKDIS_W<IDR_SPEC> {
+        ACKDIS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Alarm Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn alrdis(&mut self) -> ALRDIS_W<IDR_SPEC, 1> {
-        ALRDIS_W::new(self)
+    pub fn alrdis(&mut self) -> ALRDIS_W<IDR_SPEC> {
+        ALRDIS_W::new(self, 1)
     }
     #[doc = "Bit 2 - Second Event Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn secdis(&mut self) -> SECDIS_W<IDR_SPEC, 2> {
-        SECDIS_W::new(self)
+    pub fn secdis(&mut self) -> SECDIS_W<IDR_SPEC> {
+        SECDIS_W::new(self, 2)
     }
     #[doc = "Bit 3 - Time Event Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn timdis(&mut self) -> TIMDIS_W<IDR_SPEC, 3> {
-        TIMDIS_W::new(self)
+    pub fn timdis(&mut self) -> TIMDIS_W<IDR_SPEC> {
+        TIMDIS_W::new(self, 3)
     }
     #[doc = "Bit 4 - Calendar Event Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn caldis(&mut self) -> CALDIS_W<IDR_SPEC, 4> {
-        CALDIS_W::new(self)
+    pub fn caldis(&mut self) -> CALDIS_W<IDR_SPEC> {
+        CALDIS_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

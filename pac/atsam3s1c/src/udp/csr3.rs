@@ -5,35 +5,35 @@ pub type W = crate::W<CSR3_SPEC>;
 #[doc = "Field `TXCOMP` reader - Generates an IN Packet with Data Previously Written in the DPR"]
 pub type TXCOMP_R = crate::BitReader;
 #[doc = "Field `TXCOMP` writer - Generates an IN Packet with Data Previously Written in the DPR"]
-pub type TXCOMP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXCOMP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RX_DATA_BK0` reader - Receive Data Bank 0"]
 pub type RX_DATA_BK0_R = crate::BitReader;
 #[doc = "Field `RX_DATA_BK0` writer - Receive Data Bank 0"]
-pub type RX_DATA_BK0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RX_DATA_BK0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXSETUP` reader - Received Setup"]
 pub type RXSETUP_R = crate::BitReader;
 #[doc = "Field `RXSETUP` writer - Received Setup"]
-pub type RXSETUP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXSETUP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `STALLSENT` reader - Stall Sent"]
 pub type STALLSENT_R = crate::BitReader;
 #[doc = "Field `STALLSENT` writer - Stall Sent"]
-pub type STALLSENT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STALLSENT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXPKTRDY` reader - Transmit Packet Ready"]
 pub type TXPKTRDY_R = crate::BitReader;
 #[doc = "Field `TXPKTRDY` writer - Transmit Packet Ready"]
-pub type TXPKTRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXPKTRDY_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FORCESTALL` reader - Force Stall (used by Control, Bulk and Isochronous Endpoints)"]
 pub type FORCESTALL_R = crate::BitReader;
 #[doc = "Field `FORCESTALL` writer - Force Stall (used by Control, Bulk and Isochronous Endpoints)"]
-pub type FORCESTALL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FORCESTALL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RX_DATA_BK1` reader - Receive Data Bank 1 (only used by endpoints with ping-pong attributes)"]
 pub type RX_DATA_BK1_R = crate::BitReader;
 #[doc = "Field `RX_DATA_BK1` writer - Receive Data Bank 1 (only used by endpoints with ping-pong attributes)"]
-pub type RX_DATA_BK1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RX_DATA_BK1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DIR` reader - Transfer Direction (only available for control endpoints)"]
 pub type DIR_R = crate::BitReader;
 #[doc = "Field `DIR` writer - Transfer Direction (only available for control endpoints)"]
-pub type DIR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DIR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPTYPE` reader - Endpoint Type"]
 pub type EPTYPE_R = crate::FieldReader<EPTYPE_A>;
 #[doc = "Endpoint Type"]
@@ -116,8 +116,8 @@ impl EPTYPE_R {
     }
 }
 #[doc = "Field `EPTYPE` writer - Endpoint Type"]
-pub type EPTYPE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, EPTYPE_A>;
-impl<'a, REG, const O: u8> EPTYPE_W<'a, REG, O>
+pub type EPTYPE_W<'a, REG> = crate::FieldWriter<'a, REG, 3, EPTYPE_A>;
+impl<'a, REG> EPTYPE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -161,15 +161,15 @@ where
 #[doc = "Field `DTGLE` reader - Data Toggle"]
 pub type DTGLE_R = crate::BitReader;
 #[doc = "Field `DTGLE` writer - Data Toggle"]
-pub type DTGLE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DTGLE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPEDS` reader - Endpoint Enable Disable"]
 pub type EPEDS_R = crate::BitReader;
 #[doc = "Field `EPEDS` writer - Endpoint Enable Disable"]
-pub type EPEDS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPEDS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXBYTECNT` reader - Number of Bytes Available in the FIFO"]
 pub type RXBYTECNT_R = crate::FieldReader<u16>;
 #[doc = "Field `RXBYTECNT` writer - Number of Bytes Available in the FIFO"]
-pub type RXBYTECNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 11, O, u16>;
+pub type RXBYTECNT_W<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 impl R {
     #[doc = "Bit 0 - Generates an IN Packet with Data Previously Written in the DPR"]
     #[inline(always)]
@@ -236,74 +236,74 @@ impl W {
     #[doc = "Bit 0 - Generates an IN Packet with Data Previously Written in the DPR"]
     #[inline(always)]
     #[must_use]
-    pub fn txcomp(&mut self) -> TXCOMP_W<CSR3_SPEC, 0> {
-        TXCOMP_W::new(self)
+    pub fn txcomp(&mut self) -> TXCOMP_W<CSR3_SPEC> {
+        TXCOMP_W::new(self, 0)
     }
     #[doc = "Bit 1 - Receive Data Bank 0"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_data_bk0(&mut self) -> RX_DATA_BK0_W<CSR3_SPEC, 1> {
-        RX_DATA_BK0_W::new(self)
+    pub fn rx_data_bk0(&mut self) -> RX_DATA_BK0_W<CSR3_SPEC> {
+        RX_DATA_BK0_W::new(self, 1)
     }
     #[doc = "Bit 2 - Received Setup"]
     #[inline(always)]
     #[must_use]
-    pub fn rxsetup(&mut self) -> RXSETUP_W<CSR3_SPEC, 2> {
-        RXSETUP_W::new(self)
+    pub fn rxsetup(&mut self) -> RXSETUP_W<CSR3_SPEC> {
+        RXSETUP_W::new(self, 2)
     }
     #[doc = "Bit 3 - Stall Sent"]
     #[inline(always)]
     #[must_use]
-    pub fn stallsent(&mut self) -> STALLSENT_W<CSR3_SPEC, 3> {
-        STALLSENT_W::new(self)
+    pub fn stallsent(&mut self) -> STALLSENT_W<CSR3_SPEC> {
+        STALLSENT_W::new(self, 3)
     }
     #[doc = "Bit 4 - Transmit Packet Ready"]
     #[inline(always)]
     #[must_use]
-    pub fn txpktrdy(&mut self) -> TXPKTRDY_W<CSR3_SPEC, 4> {
-        TXPKTRDY_W::new(self)
+    pub fn txpktrdy(&mut self) -> TXPKTRDY_W<CSR3_SPEC> {
+        TXPKTRDY_W::new(self, 4)
     }
     #[doc = "Bit 5 - Force Stall (used by Control, Bulk and Isochronous Endpoints)"]
     #[inline(always)]
     #[must_use]
-    pub fn forcestall(&mut self) -> FORCESTALL_W<CSR3_SPEC, 5> {
-        FORCESTALL_W::new(self)
+    pub fn forcestall(&mut self) -> FORCESTALL_W<CSR3_SPEC> {
+        FORCESTALL_W::new(self, 5)
     }
     #[doc = "Bit 6 - Receive Data Bank 1 (only used by endpoints with ping-pong attributes)"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_data_bk1(&mut self) -> RX_DATA_BK1_W<CSR3_SPEC, 6> {
-        RX_DATA_BK1_W::new(self)
+    pub fn rx_data_bk1(&mut self) -> RX_DATA_BK1_W<CSR3_SPEC> {
+        RX_DATA_BK1_W::new(self, 6)
     }
     #[doc = "Bit 7 - Transfer Direction (only available for control endpoints)"]
     #[inline(always)]
     #[must_use]
-    pub fn dir(&mut self) -> DIR_W<CSR3_SPEC, 7> {
-        DIR_W::new(self)
+    pub fn dir(&mut self) -> DIR_W<CSR3_SPEC> {
+        DIR_W::new(self, 7)
     }
     #[doc = "Bits 8:10 - Endpoint Type"]
     #[inline(always)]
     #[must_use]
-    pub fn eptype(&mut self) -> EPTYPE_W<CSR3_SPEC, 8> {
-        EPTYPE_W::new(self)
+    pub fn eptype(&mut self) -> EPTYPE_W<CSR3_SPEC> {
+        EPTYPE_W::new(self, 8)
     }
     #[doc = "Bit 11 - Data Toggle"]
     #[inline(always)]
     #[must_use]
-    pub fn dtgle(&mut self) -> DTGLE_W<CSR3_SPEC, 11> {
-        DTGLE_W::new(self)
+    pub fn dtgle(&mut self) -> DTGLE_W<CSR3_SPEC> {
+        DTGLE_W::new(self, 11)
     }
     #[doc = "Bit 15 - Endpoint Enable Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn epeds(&mut self) -> EPEDS_W<CSR3_SPEC, 15> {
-        EPEDS_W::new(self)
+    pub fn epeds(&mut self) -> EPEDS_W<CSR3_SPEC> {
+        EPEDS_W::new(self, 15)
     }
     #[doc = "Bits 16:26 - Number of Bytes Available in the FIFO"]
     #[inline(always)]
     #[must_use]
-    pub fn rxbytecnt(&mut self) -> RXBYTECNT_W<CSR3_SPEC, 16> {
-        RXBYTECNT_W::new(self)
+    pub fn rxbytecnt(&mut self) -> RXBYTECNT_W<CSR3_SPEC> {
+        RXBYTECNT_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

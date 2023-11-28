@@ -5,11 +5,11 @@ pub type W = crate::W<BRGR_SPEC>;
 #[doc = "Field `CD` reader - Clock Divider"]
 pub type CD_R = crate::FieldReader<u16>;
 #[doc = "Field `CD` writer - Clock Divider"]
-pub type CD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type CD_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `FP` reader - Fractional Part"]
 pub type FP_R = crate::FieldReader;
 #[doc = "Field `FP` writer - Fractional Part"]
-pub type FP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type FP_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 0:15 - Clock Divider"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:15 - Clock Divider"]
     #[inline(always)]
     #[must_use]
-    pub fn cd(&mut self) -> CD_W<BRGR_SPEC, 0> {
-        CD_W::new(self)
+    pub fn cd(&mut self) -> CD_W<BRGR_SPEC> {
+        CD_W::new(self, 0)
     }
     #[doc = "Bits 16:18 - Fractional Part"]
     #[inline(always)]
     #[must_use]
-    pub fn fp(&mut self) -> FP_W<BRGR_SPEC, 16> {
-        FP_W::new(self)
+    pub fn fp(&mut self) -> FP_W<BRGR_SPEC> {
+        FP_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

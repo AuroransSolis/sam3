@@ -5,11 +5,11 @@ pub type W = crate::W<TXVC_SPEC>;
 #[doc = "Field `TXVDIS` reader - Transceiver Disable"]
 pub type TXVDIS_R = crate::BitReader;
 #[doc = "Field `TXVDIS` writer - Transceiver Disable"]
-pub type TXVDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXVDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PUON` reader - Pull-up On"]
 pub type PUON_R = crate::BitReader;
 #[doc = "Field `PUON` writer - Pull-up On"]
-pub type PUON_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PUON_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 8 - Transceiver Disable"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bit 8 - Transceiver Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn txvdis(&mut self) -> TXVDIS_W<TXVC_SPEC, 8> {
-        TXVDIS_W::new(self)
+    pub fn txvdis(&mut self) -> TXVDIS_W<TXVC_SPEC> {
+        TXVDIS_W::new(self, 8)
     }
     #[doc = "Bit 9 - Pull-up On"]
     #[inline(always)]
     #[must_use]
-    pub fn puon(&mut self) -> PUON_W<TXVC_SPEC, 9> {
-        PUON_W::new(self)
+    pub fn puon(&mut self) -> PUON_W<TXVC_SPEC> {
+        PUON_W::new(self, 9)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

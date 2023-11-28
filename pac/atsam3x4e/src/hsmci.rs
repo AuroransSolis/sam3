@@ -1,565 +1,1679 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Control Register"]
-    pub cr: CR,
-    #[doc = "0x04 - Mode Register"]
-    pub mr: MR,
-    #[doc = "0x08 - Data Timeout Register"]
-    pub dtor: DTOR,
-    #[doc = "0x0c - SD/SDIO Card Register"]
-    pub sdcr: SDCR,
-    #[doc = "0x10 - Argument Register"]
-    pub argr: ARGR,
-    #[doc = "0x14 - Command Register"]
-    pub cmdr: CMDR,
-    #[doc = "0x18 - Block Register"]
-    pub blkr: BLKR,
-    #[doc = "0x1c - Completion Signal Timeout Register"]
-    pub cstor: CSTOR,
-    #[doc = "0x20 - Response Register 0"]
-    pub rspr0: RSPR0,
-    #[doc = "0x24 - Response Register 1"]
-    pub rspr1: RSPR1,
-    #[doc = "0x28 - Response Register 2"]
-    pub rspr2: RSPR2,
-    #[doc = "0x2c - Response Register 3"]
-    pub rspr3: RSPR3,
-    #[doc = "0x30 - Receive Data Register"]
-    pub rdr: RDR,
-    #[doc = "0x34 - Transmit Data Register"]
-    pub tdr: TDR,
+    cr: CR,
+    mr: MR,
+    dtor: DTOR,
+    sdcr: SDCR,
+    argr: ARGR,
+    cmdr: CMDR,
+    blkr: BLKR,
+    cstor: CSTOR,
+    rspr0: RSPR0,
+    rspr1: RSPR1,
+    rspr2: RSPR2,
+    rspr3: RSPR3,
+    rdr: RDR,
+    tdr: TDR,
     _reserved14: [u8; 0x08],
-    #[doc = "0x40 - Status Register"]
-    pub sr: SR,
-    #[doc = "0x44 - Interrupt Enable Register"]
-    pub ier: IER,
-    #[doc = "0x48 - Interrupt Disable Register"]
-    pub idr: IDR,
-    #[doc = "0x4c - Interrupt Mask Register"]
-    pub imr: IMR,
-    #[doc = "0x50 - DMA Configuration Register"]
-    pub dma: DMA,
-    #[doc = "0x54 - Configuration Register"]
-    pub cfg: CFG,
+    sr: SR,
+    ier: IER,
+    idr: IDR,
+    imr: IMR,
+    dma: DMA,
+    cfg: CFG,
     _reserved20: [u8; 0x8c],
-    #[doc = "0xe4 - Write Protection Mode Register"]
-    pub wpmr: WPMR,
-    #[doc = "0xe8 - Write Protection Status Register"]
-    pub wpsr: WPSR,
+    wpmr: WPMR,
+    wpsr: WPSR,
     _reserved22: [u8; 0x0114],
+    fifo0: FIFO0,
+    fifo1: FIFO1,
+    fifo2: FIFO2,
+    fifo3: FIFO3,
+    fifo4: FIFO4,
+    fifo5: FIFO5,
+    fifo6: FIFO6,
+    fifo7: FIFO7,
+    fifo8: FIFO8,
+    fifo9: FIFO9,
+    fifo10: FIFO10,
+    fifo11: FIFO11,
+    fifo12: FIFO12,
+    fifo13: FIFO13,
+    fifo14: FIFO14,
+    fifo15: FIFO15,
+    fifo16: FIFO16,
+    fifo17: FIFO17,
+    fifo18: FIFO18,
+    fifo19: FIFO19,
+    fifo20: FIFO20,
+    fifo21: FIFO21,
+    fifo22: FIFO22,
+    fifo23: FIFO23,
+    fifo24: FIFO24,
+    fifo25: FIFO25,
+    fifo26: FIFO26,
+    fifo27: FIFO27,
+    fifo28: FIFO28,
+    fifo29: FIFO29,
+    fifo30: FIFO30,
+    fifo31: FIFO31,
+    fifo32: FIFO32,
+    fifo33: FIFO33,
+    fifo34: FIFO34,
+    fifo35: FIFO35,
+    fifo36: FIFO36,
+    fifo37: FIFO37,
+    fifo38: FIFO38,
+    fifo39: FIFO39,
+    fifo40: FIFO40,
+    fifo41: FIFO41,
+    fifo42: FIFO42,
+    fifo43: FIFO43,
+    fifo44: FIFO44,
+    fifo45: FIFO45,
+    fifo46: FIFO46,
+    fifo47: FIFO47,
+    fifo48: FIFO48,
+    fifo49: FIFO49,
+    fifo50: FIFO50,
+    fifo51: FIFO51,
+    fifo52: FIFO52,
+    fifo53: FIFO53,
+    fifo54: FIFO54,
+    fifo55: FIFO55,
+    fifo56: FIFO56,
+    fifo57: FIFO57,
+    fifo58: FIFO58,
+    fifo59: FIFO59,
+    fifo60: FIFO60,
+    fifo61: FIFO61,
+    fifo62: FIFO62,
+    fifo63: FIFO63,
+    fifo64: FIFO64,
+    fifo65: FIFO65,
+    fifo66: FIFO66,
+    fifo67: FIFO67,
+    fifo68: FIFO68,
+    fifo69: FIFO69,
+    fifo70: FIFO70,
+    fifo71: FIFO71,
+    fifo72: FIFO72,
+    fifo73: FIFO73,
+    fifo74: FIFO74,
+    fifo75: FIFO75,
+    fifo76: FIFO76,
+    fifo77: FIFO77,
+    fifo78: FIFO78,
+    fifo79: FIFO79,
+    fifo80: FIFO80,
+    fifo81: FIFO81,
+    fifo82: FIFO82,
+    fifo83: FIFO83,
+    fifo84: FIFO84,
+    fifo85: FIFO85,
+    fifo86: FIFO86,
+    fifo87: FIFO87,
+    fifo88: FIFO88,
+    fifo89: FIFO89,
+    fifo90: FIFO90,
+    fifo91: FIFO91,
+    fifo92: FIFO92,
+    fifo93: FIFO93,
+    fifo94: FIFO94,
+    fifo95: FIFO95,
+    fifo96: FIFO96,
+    fifo97: FIFO97,
+    fifo98: FIFO98,
+    fifo99: FIFO99,
+    fifo100: FIFO100,
+    fifo101: FIFO101,
+    fifo102: FIFO102,
+    fifo103: FIFO103,
+    fifo104: FIFO104,
+    fifo105: FIFO105,
+    fifo106: FIFO106,
+    fifo107: FIFO107,
+    fifo108: FIFO108,
+    fifo109: FIFO109,
+    fifo110: FIFO110,
+    fifo111: FIFO111,
+    fifo112: FIFO112,
+    fifo113: FIFO113,
+    fifo114: FIFO114,
+    fifo115: FIFO115,
+    fifo116: FIFO116,
+    fifo117: FIFO117,
+    fifo118: FIFO118,
+    fifo119: FIFO119,
+    fifo120: FIFO120,
+    fifo121: FIFO121,
+    fifo122: FIFO122,
+    fifo123: FIFO123,
+    fifo124: FIFO124,
+    fifo125: FIFO125,
+    fifo126: FIFO126,
+    fifo127: FIFO127,
+    fifo128: FIFO128,
+    fifo129: FIFO129,
+    fifo130: FIFO130,
+    fifo131: FIFO131,
+    fifo132: FIFO132,
+    fifo133: FIFO133,
+    fifo134: FIFO134,
+    fifo135: FIFO135,
+    fifo136: FIFO136,
+    fifo137: FIFO137,
+    fifo138: FIFO138,
+    fifo139: FIFO139,
+    fifo140: FIFO140,
+    fifo141: FIFO141,
+    fifo142: FIFO142,
+    fifo143: FIFO143,
+    fifo144: FIFO144,
+    fifo145: FIFO145,
+    fifo146: FIFO146,
+    fifo147: FIFO147,
+    fifo148: FIFO148,
+    fifo149: FIFO149,
+    fifo150: FIFO150,
+    fifo151: FIFO151,
+    fifo152: FIFO152,
+    fifo153: FIFO153,
+    fifo154: FIFO154,
+    fifo155: FIFO155,
+    fifo156: FIFO156,
+    fifo157: FIFO157,
+    fifo158: FIFO158,
+    fifo159: FIFO159,
+    fifo160: FIFO160,
+    fifo161: FIFO161,
+    fifo162: FIFO162,
+    fifo163: FIFO163,
+    fifo164: FIFO164,
+    fifo165: FIFO165,
+    fifo166: FIFO166,
+    fifo167: FIFO167,
+    fifo168: FIFO168,
+    fifo169: FIFO169,
+    fifo170: FIFO170,
+    fifo171: FIFO171,
+    fifo172: FIFO172,
+    fifo173: FIFO173,
+    fifo174: FIFO174,
+    fifo175: FIFO175,
+    fifo176: FIFO176,
+    fifo177: FIFO177,
+    fifo178: FIFO178,
+    fifo179: FIFO179,
+    fifo180: FIFO180,
+    fifo181: FIFO181,
+    fifo182: FIFO182,
+    fifo183: FIFO183,
+    fifo184: FIFO184,
+    fifo185: FIFO185,
+    fifo186: FIFO186,
+    fifo187: FIFO187,
+    fifo188: FIFO188,
+    fifo189: FIFO189,
+    fifo190: FIFO190,
+    fifo191: FIFO191,
+    fifo192: FIFO192,
+    fifo193: FIFO193,
+    fifo194: FIFO194,
+    fifo195: FIFO195,
+    fifo196: FIFO196,
+    fifo197: FIFO197,
+    fifo198: FIFO198,
+    fifo199: FIFO199,
+    fifo200: FIFO200,
+    fifo201: FIFO201,
+    fifo202: FIFO202,
+    fifo203: FIFO203,
+    fifo204: FIFO204,
+    fifo205: FIFO205,
+    fifo206: FIFO206,
+    fifo207: FIFO207,
+    fifo208: FIFO208,
+    fifo209: FIFO209,
+    fifo210: FIFO210,
+    fifo211: FIFO211,
+    fifo212: FIFO212,
+    fifo213: FIFO213,
+    fifo214: FIFO214,
+    fifo215: FIFO215,
+    fifo216: FIFO216,
+    fifo217: FIFO217,
+    fifo218: FIFO218,
+    fifo219: FIFO219,
+    fifo220: FIFO220,
+    fifo221: FIFO221,
+    fifo222: FIFO222,
+    fifo223: FIFO223,
+    fifo224: FIFO224,
+    fifo225: FIFO225,
+    fifo226: FIFO226,
+    fifo227: FIFO227,
+    fifo228: FIFO228,
+    fifo229: FIFO229,
+    fifo230: FIFO230,
+    fifo231: FIFO231,
+    fifo232: FIFO232,
+    fifo233: FIFO233,
+    fifo234: FIFO234,
+    fifo235: FIFO235,
+    fifo236: FIFO236,
+    fifo237: FIFO237,
+    fifo238: FIFO238,
+    fifo239: FIFO239,
+    fifo240: FIFO240,
+    fifo241: FIFO241,
+    fifo242: FIFO242,
+    fifo243: FIFO243,
+    fifo244: FIFO244,
+    fifo245: FIFO245,
+    fifo246: FIFO246,
+    fifo247: FIFO247,
+    fifo248: FIFO248,
+    fifo249: FIFO249,
+    fifo250: FIFO250,
+    fifo251: FIFO251,
+    fifo252: FIFO252,
+    fifo253: FIFO253,
+    fifo254: FIFO254,
+    fifo255: FIFO255,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Control Register"]
+    #[inline(always)]
+    pub const fn cr(&self) -> &CR {
+        &self.cr
+    }
+    #[doc = "0x04 - Mode Register"]
+    #[inline(always)]
+    pub const fn mr(&self) -> &MR {
+        &self.mr
+    }
+    #[doc = "0x08 - Data Timeout Register"]
+    #[inline(always)]
+    pub const fn dtor(&self) -> &DTOR {
+        &self.dtor
+    }
+    #[doc = "0x0c - SD/SDIO Card Register"]
+    #[inline(always)]
+    pub const fn sdcr(&self) -> &SDCR {
+        &self.sdcr
+    }
+    #[doc = "0x10 - Argument Register"]
+    #[inline(always)]
+    pub const fn argr(&self) -> &ARGR {
+        &self.argr
+    }
+    #[doc = "0x14 - Command Register"]
+    #[inline(always)]
+    pub const fn cmdr(&self) -> &CMDR {
+        &self.cmdr
+    }
+    #[doc = "0x18 - Block Register"]
+    #[inline(always)]
+    pub const fn blkr(&self) -> &BLKR {
+        &self.blkr
+    }
+    #[doc = "0x1c - Completion Signal Timeout Register"]
+    #[inline(always)]
+    pub const fn cstor(&self) -> &CSTOR {
+        &self.cstor
+    }
+    #[doc = "0x20 - Response Register 0"]
+    #[inline(always)]
+    pub const fn rspr0(&self) -> &RSPR0 {
+        &self.rspr0
+    }
+    #[doc = "0x24 - Response Register 1"]
+    #[inline(always)]
+    pub const fn rspr1(&self) -> &RSPR1 {
+        &self.rspr1
+    }
+    #[doc = "0x28 - Response Register 2"]
+    #[inline(always)]
+    pub const fn rspr2(&self) -> &RSPR2 {
+        &self.rspr2
+    }
+    #[doc = "0x2c - Response Register 3"]
+    #[inline(always)]
+    pub const fn rspr3(&self) -> &RSPR3 {
+        &self.rspr3
+    }
+    #[doc = "0x30 - Receive Data Register"]
+    #[inline(always)]
+    pub const fn rdr(&self) -> &RDR {
+        &self.rdr
+    }
+    #[doc = "0x34 - Transmit Data Register"]
+    #[inline(always)]
+    pub const fn tdr(&self) -> &TDR {
+        &self.tdr
+    }
+    #[doc = "0x40 - Status Register"]
+    #[inline(always)]
+    pub const fn sr(&self) -> &SR {
+        &self.sr
+    }
+    #[doc = "0x44 - Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn ier(&self) -> &IER {
+        &self.ier
+    }
+    #[doc = "0x48 - Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn idr(&self) -> &IDR {
+        &self.idr
+    }
+    #[doc = "0x4c - Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn imr(&self) -> &IMR {
+        &self.imr
+    }
+    #[doc = "0x50 - DMA Configuration Register"]
+    #[inline(always)]
+    pub const fn dma(&self) -> &DMA {
+        &self.dma
+    }
+    #[doc = "0x54 - Configuration Register"]
+    #[inline(always)]
+    pub const fn cfg(&self) -> &CFG {
+        &self.cfg
+    }
+    #[doc = "0xe4 - Write Protection Mode Register"]
+    #[inline(always)]
+    pub const fn wpmr(&self) -> &WPMR {
+        &self.wpmr
+    }
+    #[doc = "0xe8 - Write Protection Status Register"]
+    #[inline(always)]
+    pub const fn wpsr(&self) -> &WPSR {
+        &self.wpsr
+    }
     #[doc = "0x200 - FIFO Memory Aperture0 0"]
-    pub fifo0: FIFO0,
+    #[inline(always)]
+    pub const fn fifo0(&self) -> &FIFO0 {
+        &self.fifo0
+    }
     #[doc = "0x204 - FIFO Memory Aperture0 1"]
-    pub fifo1: FIFO1,
+    #[inline(always)]
+    pub const fn fifo1(&self) -> &FIFO1 {
+        &self.fifo1
+    }
     #[doc = "0x208 - FIFO Memory Aperture0 2"]
-    pub fifo2: FIFO2,
+    #[inline(always)]
+    pub const fn fifo2(&self) -> &FIFO2 {
+        &self.fifo2
+    }
     #[doc = "0x20c - FIFO Memory Aperture0 3"]
-    pub fifo3: FIFO3,
+    #[inline(always)]
+    pub const fn fifo3(&self) -> &FIFO3 {
+        &self.fifo3
+    }
     #[doc = "0x210 - FIFO Memory Aperture0 4"]
-    pub fifo4: FIFO4,
+    #[inline(always)]
+    pub const fn fifo4(&self) -> &FIFO4 {
+        &self.fifo4
+    }
     #[doc = "0x214 - FIFO Memory Aperture0 5"]
-    pub fifo5: FIFO5,
+    #[inline(always)]
+    pub const fn fifo5(&self) -> &FIFO5 {
+        &self.fifo5
+    }
     #[doc = "0x218 - FIFO Memory Aperture0 6"]
-    pub fifo6: FIFO6,
+    #[inline(always)]
+    pub const fn fifo6(&self) -> &FIFO6 {
+        &self.fifo6
+    }
     #[doc = "0x21c - FIFO Memory Aperture0 7"]
-    pub fifo7: FIFO7,
+    #[inline(always)]
+    pub const fn fifo7(&self) -> &FIFO7 {
+        &self.fifo7
+    }
     #[doc = "0x220 - FIFO Memory Aperture0 8"]
-    pub fifo8: FIFO8,
+    #[inline(always)]
+    pub const fn fifo8(&self) -> &FIFO8 {
+        &self.fifo8
+    }
     #[doc = "0x224 - FIFO Memory Aperture0 9"]
-    pub fifo9: FIFO9,
+    #[inline(always)]
+    pub const fn fifo9(&self) -> &FIFO9 {
+        &self.fifo9
+    }
     #[doc = "0x228 - FIFO Memory Aperture0 10"]
-    pub fifo10: FIFO10,
+    #[inline(always)]
+    pub const fn fifo10(&self) -> &FIFO10 {
+        &self.fifo10
+    }
     #[doc = "0x22c - FIFO Memory Aperture0 11"]
-    pub fifo11: FIFO11,
+    #[inline(always)]
+    pub const fn fifo11(&self) -> &FIFO11 {
+        &self.fifo11
+    }
     #[doc = "0x230 - FIFO Memory Aperture0 12"]
-    pub fifo12: FIFO12,
+    #[inline(always)]
+    pub const fn fifo12(&self) -> &FIFO12 {
+        &self.fifo12
+    }
     #[doc = "0x234 - FIFO Memory Aperture0 13"]
-    pub fifo13: FIFO13,
+    #[inline(always)]
+    pub const fn fifo13(&self) -> &FIFO13 {
+        &self.fifo13
+    }
     #[doc = "0x238 - FIFO Memory Aperture0 14"]
-    pub fifo14: FIFO14,
+    #[inline(always)]
+    pub const fn fifo14(&self) -> &FIFO14 {
+        &self.fifo14
+    }
     #[doc = "0x23c - FIFO Memory Aperture0 15"]
-    pub fifo15: FIFO15,
+    #[inline(always)]
+    pub const fn fifo15(&self) -> &FIFO15 {
+        &self.fifo15
+    }
     #[doc = "0x240 - FIFO Memory Aperture0 16"]
-    pub fifo16: FIFO16,
+    #[inline(always)]
+    pub const fn fifo16(&self) -> &FIFO16 {
+        &self.fifo16
+    }
     #[doc = "0x244 - FIFO Memory Aperture0 17"]
-    pub fifo17: FIFO17,
+    #[inline(always)]
+    pub const fn fifo17(&self) -> &FIFO17 {
+        &self.fifo17
+    }
     #[doc = "0x248 - FIFO Memory Aperture0 18"]
-    pub fifo18: FIFO18,
+    #[inline(always)]
+    pub const fn fifo18(&self) -> &FIFO18 {
+        &self.fifo18
+    }
     #[doc = "0x24c - FIFO Memory Aperture0 19"]
-    pub fifo19: FIFO19,
+    #[inline(always)]
+    pub const fn fifo19(&self) -> &FIFO19 {
+        &self.fifo19
+    }
     #[doc = "0x250 - FIFO Memory Aperture0 20"]
-    pub fifo20: FIFO20,
+    #[inline(always)]
+    pub const fn fifo20(&self) -> &FIFO20 {
+        &self.fifo20
+    }
     #[doc = "0x254 - FIFO Memory Aperture0 21"]
-    pub fifo21: FIFO21,
+    #[inline(always)]
+    pub const fn fifo21(&self) -> &FIFO21 {
+        &self.fifo21
+    }
     #[doc = "0x258 - FIFO Memory Aperture0 22"]
-    pub fifo22: FIFO22,
+    #[inline(always)]
+    pub const fn fifo22(&self) -> &FIFO22 {
+        &self.fifo22
+    }
     #[doc = "0x25c - FIFO Memory Aperture0 23"]
-    pub fifo23: FIFO23,
+    #[inline(always)]
+    pub const fn fifo23(&self) -> &FIFO23 {
+        &self.fifo23
+    }
     #[doc = "0x260 - FIFO Memory Aperture0 24"]
-    pub fifo24: FIFO24,
+    #[inline(always)]
+    pub const fn fifo24(&self) -> &FIFO24 {
+        &self.fifo24
+    }
     #[doc = "0x264 - FIFO Memory Aperture0 25"]
-    pub fifo25: FIFO25,
+    #[inline(always)]
+    pub const fn fifo25(&self) -> &FIFO25 {
+        &self.fifo25
+    }
     #[doc = "0x268 - FIFO Memory Aperture0 26"]
-    pub fifo26: FIFO26,
+    #[inline(always)]
+    pub const fn fifo26(&self) -> &FIFO26 {
+        &self.fifo26
+    }
     #[doc = "0x26c - FIFO Memory Aperture0 27"]
-    pub fifo27: FIFO27,
+    #[inline(always)]
+    pub const fn fifo27(&self) -> &FIFO27 {
+        &self.fifo27
+    }
     #[doc = "0x270 - FIFO Memory Aperture0 28"]
-    pub fifo28: FIFO28,
+    #[inline(always)]
+    pub const fn fifo28(&self) -> &FIFO28 {
+        &self.fifo28
+    }
     #[doc = "0x274 - FIFO Memory Aperture0 29"]
-    pub fifo29: FIFO29,
+    #[inline(always)]
+    pub const fn fifo29(&self) -> &FIFO29 {
+        &self.fifo29
+    }
     #[doc = "0x278 - FIFO Memory Aperture0 30"]
-    pub fifo30: FIFO30,
+    #[inline(always)]
+    pub const fn fifo30(&self) -> &FIFO30 {
+        &self.fifo30
+    }
     #[doc = "0x27c - FIFO Memory Aperture0 31"]
-    pub fifo31: FIFO31,
+    #[inline(always)]
+    pub const fn fifo31(&self) -> &FIFO31 {
+        &self.fifo31
+    }
     #[doc = "0x280 - FIFO Memory Aperture0 32"]
-    pub fifo32: FIFO32,
+    #[inline(always)]
+    pub const fn fifo32(&self) -> &FIFO32 {
+        &self.fifo32
+    }
     #[doc = "0x284 - FIFO Memory Aperture0 33"]
-    pub fifo33: FIFO33,
+    #[inline(always)]
+    pub const fn fifo33(&self) -> &FIFO33 {
+        &self.fifo33
+    }
     #[doc = "0x288 - FIFO Memory Aperture0 34"]
-    pub fifo34: FIFO34,
+    #[inline(always)]
+    pub const fn fifo34(&self) -> &FIFO34 {
+        &self.fifo34
+    }
     #[doc = "0x28c - FIFO Memory Aperture0 35"]
-    pub fifo35: FIFO35,
+    #[inline(always)]
+    pub const fn fifo35(&self) -> &FIFO35 {
+        &self.fifo35
+    }
     #[doc = "0x290 - FIFO Memory Aperture0 36"]
-    pub fifo36: FIFO36,
+    #[inline(always)]
+    pub const fn fifo36(&self) -> &FIFO36 {
+        &self.fifo36
+    }
     #[doc = "0x294 - FIFO Memory Aperture0 37"]
-    pub fifo37: FIFO37,
+    #[inline(always)]
+    pub const fn fifo37(&self) -> &FIFO37 {
+        &self.fifo37
+    }
     #[doc = "0x298 - FIFO Memory Aperture0 38"]
-    pub fifo38: FIFO38,
+    #[inline(always)]
+    pub const fn fifo38(&self) -> &FIFO38 {
+        &self.fifo38
+    }
     #[doc = "0x29c - FIFO Memory Aperture0 39"]
-    pub fifo39: FIFO39,
+    #[inline(always)]
+    pub const fn fifo39(&self) -> &FIFO39 {
+        &self.fifo39
+    }
     #[doc = "0x2a0 - FIFO Memory Aperture0 40"]
-    pub fifo40: FIFO40,
+    #[inline(always)]
+    pub const fn fifo40(&self) -> &FIFO40 {
+        &self.fifo40
+    }
     #[doc = "0x2a4 - FIFO Memory Aperture0 41"]
-    pub fifo41: FIFO41,
+    #[inline(always)]
+    pub const fn fifo41(&self) -> &FIFO41 {
+        &self.fifo41
+    }
     #[doc = "0x2a8 - FIFO Memory Aperture0 42"]
-    pub fifo42: FIFO42,
+    #[inline(always)]
+    pub const fn fifo42(&self) -> &FIFO42 {
+        &self.fifo42
+    }
     #[doc = "0x2ac - FIFO Memory Aperture0 43"]
-    pub fifo43: FIFO43,
+    #[inline(always)]
+    pub const fn fifo43(&self) -> &FIFO43 {
+        &self.fifo43
+    }
     #[doc = "0x2b0 - FIFO Memory Aperture0 44"]
-    pub fifo44: FIFO44,
+    #[inline(always)]
+    pub const fn fifo44(&self) -> &FIFO44 {
+        &self.fifo44
+    }
     #[doc = "0x2b4 - FIFO Memory Aperture0 45"]
-    pub fifo45: FIFO45,
+    #[inline(always)]
+    pub const fn fifo45(&self) -> &FIFO45 {
+        &self.fifo45
+    }
     #[doc = "0x2b8 - FIFO Memory Aperture0 46"]
-    pub fifo46: FIFO46,
+    #[inline(always)]
+    pub const fn fifo46(&self) -> &FIFO46 {
+        &self.fifo46
+    }
     #[doc = "0x2bc - FIFO Memory Aperture0 47"]
-    pub fifo47: FIFO47,
+    #[inline(always)]
+    pub const fn fifo47(&self) -> &FIFO47 {
+        &self.fifo47
+    }
     #[doc = "0x2c0 - FIFO Memory Aperture0 48"]
-    pub fifo48: FIFO48,
+    #[inline(always)]
+    pub const fn fifo48(&self) -> &FIFO48 {
+        &self.fifo48
+    }
     #[doc = "0x2c4 - FIFO Memory Aperture0 49"]
-    pub fifo49: FIFO49,
+    #[inline(always)]
+    pub const fn fifo49(&self) -> &FIFO49 {
+        &self.fifo49
+    }
     #[doc = "0x2c8 - FIFO Memory Aperture0 50"]
-    pub fifo50: FIFO50,
+    #[inline(always)]
+    pub const fn fifo50(&self) -> &FIFO50 {
+        &self.fifo50
+    }
     #[doc = "0x2cc - FIFO Memory Aperture0 51"]
-    pub fifo51: FIFO51,
+    #[inline(always)]
+    pub const fn fifo51(&self) -> &FIFO51 {
+        &self.fifo51
+    }
     #[doc = "0x2d0 - FIFO Memory Aperture0 52"]
-    pub fifo52: FIFO52,
+    #[inline(always)]
+    pub const fn fifo52(&self) -> &FIFO52 {
+        &self.fifo52
+    }
     #[doc = "0x2d4 - FIFO Memory Aperture0 53"]
-    pub fifo53: FIFO53,
+    #[inline(always)]
+    pub const fn fifo53(&self) -> &FIFO53 {
+        &self.fifo53
+    }
     #[doc = "0x2d8 - FIFO Memory Aperture0 54"]
-    pub fifo54: FIFO54,
+    #[inline(always)]
+    pub const fn fifo54(&self) -> &FIFO54 {
+        &self.fifo54
+    }
     #[doc = "0x2dc - FIFO Memory Aperture0 55"]
-    pub fifo55: FIFO55,
+    #[inline(always)]
+    pub const fn fifo55(&self) -> &FIFO55 {
+        &self.fifo55
+    }
     #[doc = "0x2e0 - FIFO Memory Aperture0 56"]
-    pub fifo56: FIFO56,
+    #[inline(always)]
+    pub const fn fifo56(&self) -> &FIFO56 {
+        &self.fifo56
+    }
     #[doc = "0x2e4 - FIFO Memory Aperture0 57"]
-    pub fifo57: FIFO57,
+    #[inline(always)]
+    pub const fn fifo57(&self) -> &FIFO57 {
+        &self.fifo57
+    }
     #[doc = "0x2e8 - FIFO Memory Aperture0 58"]
-    pub fifo58: FIFO58,
+    #[inline(always)]
+    pub const fn fifo58(&self) -> &FIFO58 {
+        &self.fifo58
+    }
     #[doc = "0x2ec - FIFO Memory Aperture0 59"]
-    pub fifo59: FIFO59,
+    #[inline(always)]
+    pub const fn fifo59(&self) -> &FIFO59 {
+        &self.fifo59
+    }
     #[doc = "0x2f0 - FIFO Memory Aperture0 60"]
-    pub fifo60: FIFO60,
+    #[inline(always)]
+    pub const fn fifo60(&self) -> &FIFO60 {
+        &self.fifo60
+    }
     #[doc = "0x2f4 - FIFO Memory Aperture0 61"]
-    pub fifo61: FIFO61,
+    #[inline(always)]
+    pub const fn fifo61(&self) -> &FIFO61 {
+        &self.fifo61
+    }
     #[doc = "0x2f8 - FIFO Memory Aperture0 62"]
-    pub fifo62: FIFO62,
+    #[inline(always)]
+    pub const fn fifo62(&self) -> &FIFO62 {
+        &self.fifo62
+    }
     #[doc = "0x2fc - FIFO Memory Aperture0 63"]
-    pub fifo63: FIFO63,
+    #[inline(always)]
+    pub const fn fifo63(&self) -> &FIFO63 {
+        &self.fifo63
+    }
     #[doc = "0x300 - FIFO Memory Aperture0 64"]
-    pub fifo64: FIFO64,
+    #[inline(always)]
+    pub const fn fifo64(&self) -> &FIFO64 {
+        &self.fifo64
+    }
     #[doc = "0x304 - FIFO Memory Aperture0 65"]
-    pub fifo65: FIFO65,
+    #[inline(always)]
+    pub const fn fifo65(&self) -> &FIFO65 {
+        &self.fifo65
+    }
     #[doc = "0x308 - FIFO Memory Aperture0 66"]
-    pub fifo66: FIFO66,
+    #[inline(always)]
+    pub const fn fifo66(&self) -> &FIFO66 {
+        &self.fifo66
+    }
     #[doc = "0x30c - FIFO Memory Aperture0 67"]
-    pub fifo67: FIFO67,
+    #[inline(always)]
+    pub const fn fifo67(&self) -> &FIFO67 {
+        &self.fifo67
+    }
     #[doc = "0x310 - FIFO Memory Aperture0 68"]
-    pub fifo68: FIFO68,
+    #[inline(always)]
+    pub const fn fifo68(&self) -> &FIFO68 {
+        &self.fifo68
+    }
     #[doc = "0x314 - FIFO Memory Aperture0 69"]
-    pub fifo69: FIFO69,
+    #[inline(always)]
+    pub const fn fifo69(&self) -> &FIFO69 {
+        &self.fifo69
+    }
     #[doc = "0x318 - FIFO Memory Aperture0 70"]
-    pub fifo70: FIFO70,
+    #[inline(always)]
+    pub const fn fifo70(&self) -> &FIFO70 {
+        &self.fifo70
+    }
     #[doc = "0x31c - FIFO Memory Aperture0 71"]
-    pub fifo71: FIFO71,
+    #[inline(always)]
+    pub const fn fifo71(&self) -> &FIFO71 {
+        &self.fifo71
+    }
     #[doc = "0x320 - FIFO Memory Aperture0 72"]
-    pub fifo72: FIFO72,
+    #[inline(always)]
+    pub const fn fifo72(&self) -> &FIFO72 {
+        &self.fifo72
+    }
     #[doc = "0x324 - FIFO Memory Aperture0 73"]
-    pub fifo73: FIFO73,
+    #[inline(always)]
+    pub const fn fifo73(&self) -> &FIFO73 {
+        &self.fifo73
+    }
     #[doc = "0x328 - FIFO Memory Aperture0 74"]
-    pub fifo74: FIFO74,
+    #[inline(always)]
+    pub const fn fifo74(&self) -> &FIFO74 {
+        &self.fifo74
+    }
     #[doc = "0x32c - FIFO Memory Aperture0 75"]
-    pub fifo75: FIFO75,
+    #[inline(always)]
+    pub const fn fifo75(&self) -> &FIFO75 {
+        &self.fifo75
+    }
     #[doc = "0x330 - FIFO Memory Aperture0 76"]
-    pub fifo76: FIFO76,
+    #[inline(always)]
+    pub const fn fifo76(&self) -> &FIFO76 {
+        &self.fifo76
+    }
     #[doc = "0x334 - FIFO Memory Aperture0 77"]
-    pub fifo77: FIFO77,
+    #[inline(always)]
+    pub const fn fifo77(&self) -> &FIFO77 {
+        &self.fifo77
+    }
     #[doc = "0x338 - FIFO Memory Aperture0 78"]
-    pub fifo78: FIFO78,
+    #[inline(always)]
+    pub const fn fifo78(&self) -> &FIFO78 {
+        &self.fifo78
+    }
     #[doc = "0x33c - FIFO Memory Aperture0 79"]
-    pub fifo79: FIFO79,
+    #[inline(always)]
+    pub const fn fifo79(&self) -> &FIFO79 {
+        &self.fifo79
+    }
     #[doc = "0x340 - FIFO Memory Aperture0 80"]
-    pub fifo80: FIFO80,
+    #[inline(always)]
+    pub const fn fifo80(&self) -> &FIFO80 {
+        &self.fifo80
+    }
     #[doc = "0x344 - FIFO Memory Aperture0 81"]
-    pub fifo81: FIFO81,
+    #[inline(always)]
+    pub const fn fifo81(&self) -> &FIFO81 {
+        &self.fifo81
+    }
     #[doc = "0x348 - FIFO Memory Aperture0 82"]
-    pub fifo82: FIFO82,
+    #[inline(always)]
+    pub const fn fifo82(&self) -> &FIFO82 {
+        &self.fifo82
+    }
     #[doc = "0x34c - FIFO Memory Aperture0 83"]
-    pub fifo83: FIFO83,
+    #[inline(always)]
+    pub const fn fifo83(&self) -> &FIFO83 {
+        &self.fifo83
+    }
     #[doc = "0x350 - FIFO Memory Aperture0 84"]
-    pub fifo84: FIFO84,
+    #[inline(always)]
+    pub const fn fifo84(&self) -> &FIFO84 {
+        &self.fifo84
+    }
     #[doc = "0x354 - FIFO Memory Aperture0 85"]
-    pub fifo85: FIFO85,
+    #[inline(always)]
+    pub const fn fifo85(&self) -> &FIFO85 {
+        &self.fifo85
+    }
     #[doc = "0x358 - FIFO Memory Aperture0 86"]
-    pub fifo86: FIFO86,
+    #[inline(always)]
+    pub const fn fifo86(&self) -> &FIFO86 {
+        &self.fifo86
+    }
     #[doc = "0x35c - FIFO Memory Aperture0 87"]
-    pub fifo87: FIFO87,
+    #[inline(always)]
+    pub const fn fifo87(&self) -> &FIFO87 {
+        &self.fifo87
+    }
     #[doc = "0x360 - FIFO Memory Aperture0 88"]
-    pub fifo88: FIFO88,
+    #[inline(always)]
+    pub const fn fifo88(&self) -> &FIFO88 {
+        &self.fifo88
+    }
     #[doc = "0x364 - FIFO Memory Aperture0 89"]
-    pub fifo89: FIFO89,
+    #[inline(always)]
+    pub const fn fifo89(&self) -> &FIFO89 {
+        &self.fifo89
+    }
     #[doc = "0x368 - FIFO Memory Aperture0 90"]
-    pub fifo90: FIFO90,
+    #[inline(always)]
+    pub const fn fifo90(&self) -> &FIFO90 {
+        &self.fifo90
+    }
     #[doc = "0x36c - FIFO Memory Aperture0 91"]
-    pub fifo91: FIFO91,
+    #[inline(always)]
+    pub const fn fifo91(&self) -> &FIFO91 {
+        &self.fifo91
+    }
     #[doc = "0x370 - FIFO Memory Aperture0 92"]
-    pub fifo92: FIFO92,
+    #[inline(always)]
+    pub const fn fifo92(&self) -> &FIFO92 {
+        &self.fifo92
+    }
     #[doc = "0x374 - FIFO Memory Aperture0 93"]
-    pub fifo93: FIFO93,
+    #[inline(always)]
+    pub const fn fifo93(&self) -> &FIFO93 {
+        &self.fifo93
+    }
     #[doc = "0x378 - FIFO Memory Aperture0 94"]
-    pub fifo94: FIFO94,
+    #[inline(always)]
+    pub const fn fifo94(&self) -> &FIFO94 {
+        &self.fifo94
+    }
     #[doc = "0x37c - FIFO Memory Aperture0 95"]
-    pub fifo95: FIFO95,
+    #[inline(always)]
+    pub const fn fifo95(&self) -> &FIFO95 {
+        &self.fifo95
+    }
     #[doc = "0x380 - FIFO Memory Aperture0 96"]
-    pub fifo96: FIFO96,
+    #[inline(always)]
+    pub const fn fifo96(&self) -> &FIFO96 {
+        &self.fifo96
+    }
     #[doc = "0x384 - FIFO Memory Aperture0 97"]
-    pub fifo97: FIFO97,
+    #[inline(always)]
+    pub const fn fifo97(&self) -> &FIFO97 {
+        &self.fifo97
+    }
     #[doc = "0x388 - FIFO Memory Aperture0 98"]
-    pub fifo98: FIFO98,
+    #[inline(always)]
+    pub const fn fifo98(&self) -> &FIFO98 {
+        &self.fifo98
+    }
     #[doc = "0x38c - FIFO Memory Aperture0 99"]
-    pub fifo99: FIFO99,
+    #[inline(always)]
+    pub const fn fifo99(&self) -> &FIFO99 {
+        &self.fifo99
+    }
     #[doc = "0x390 - FIFO Memory Aperture0 100"]
-    pub fifo100: FIFO100,
+    #[inline(always)]
+    pub const fn fifo100(&self) -> &FIFO100 {
+        &self.fifo100
+    }
     #[doc = "0x394 - FIFO Memory Aperture0 101"]
-    pub fifo101: FIFO101,
+    #[inline(always)]
+    pub const fn fifo101(&self) -> &FIFO101 {
+        &self.fifo101
+    }
     #[doc = "0x398 - FIFO Memory Aperture0 102"]
-    pub fifo102: FIFO102,
+    #[inline(always)]
+    pub const fn fifo102(&self) -> &FIFO102 {
+        &self.fifo102
+    }
     #[doc = "0x39c - FIFO Memory Aperture0 103"]
-    pub fifo103: FIFO103,
+    #[inline(always)]
+    pub const fn fifo103(&self) -> &FIFO103 {
+        &self.fifo103
+    }
     #[doc = "0x3a0 - FIFO Memory Aperture0 104"]
-    pub fifo104: FIFO104,
+    #[inline(always)]
+    pub const fn fifo104(&self) -> &FIFO104 {
+        &self.fifo104
+    }
     #[doc = "0x3a4 - FIFO Memory Aperture0 105"]
-    pub fifo105: FIFO105,
+    #[inline(always)]
+    pub const fn fifo105(&self) -> &FIFO105 {
+        &self.fifo105
+    }
     #[doc = "0x3a8 - FIFO Memory Aperture0 106"]
-    pub fifo106: FIFO106,
+    #[inline(always)]
+    pub const fn fifo106(&self) -> &FIFO106 {
+        &self.fifo106
+    }
     #[doc = "0x3ac - FIFO Memory Aperture0 107"]
-    pub fifo107: FIFO107,
+    #[inline(always)]
+    pub const fn fifo107(&self) -> &FIFO107 {
+        &self.fifo107
+    }
     #[doc = "0x3b0 - FIFO Memory Aperture0 108"]
-    pub fifo108: FIFO108,
+    #[inline(always)]
+    pub const fn fifo108(&self) -> &FIFO108 {
+        &self.fifo108
+    }
     #[doc = "0x3b4 - FIFO Memory Aperture0 109"]
-    pub fifo109: FIFO109,
+    #[inline(always)]
+    pub const fn fifo109(&self) -> &FIFO109 {
+        &self.fifo109
+    }
     #[doc = "0x3b8 - FIFO Memory Aperture0 110"]
-    pub fifo110: FIFO110,
+    #[inline(always)]
+    pub const fn fifo110(&self) -> &FIFO110 {
+        &self.fifo110
+    }
     #[doc = "0x3bc - FIFO Memory Aperture0 111"]
-    pub fifo111: FIFO111,
+    #[inline(always)]
+    pub const fn fifo111(&self) -> &FIFO111 {
+        &self.fifo111
+    }
     #[doc = "0x3c0 - FIFO Memory Aperture0 112"]
-    pub fifo112: FIFO112,
+    #[inline(always)]
+    pub const fn fifo112(&self) -> &FIFO112 {
+        &self.fifo112
+    }
     #[doc = "0x3c4 - FIFO Memory Aperture0 113"]
-    pub fifo113: FIFO113,
+    #[inline(always)]
+    pub const fn fifo113(&self) -> &FIFO113 {
+        &self.fifo113
+    }
     #[doc = "0x3c8 - FIFO Memory Aperture0 114"]
-    pub fifo114: FIFO114,
+    #[inline(always)]
+    pub const fn fifo114(&self) -> &FIFO114 {
+        &self.fifo114
+    }
     #[doc = "0x3cc - FIFO Memory Aperture0 115"]
-    pub fifo115: FIFO115,
+    #[inline(always)]
+    pub const fn fifo115(&self) -> &FIFO115 {
+        &self.fifo115
+    }
     #[doc = "0x3d0 - FIFO Memory Aperture0 116"]
-    pub fifo116: FIFO116,
+    #[inline(always)]
+    pub const fn fifo116(&self) -> &FIFO116 {
+        &self.fifo116
+    }
     #[doc = "0x3d4 - FIFO Memory Aperture0 117"]
-    pub fifo117: FIFO117,
+    #[inline(always)]
+    pub const fn fifo117(&self) -> &FIFO117 {
+        &self.fifo117
+    }
     #[doc = "0x3d8 - FIFO Memory Aperture0 118"]
-    pub fifo118: FIFO118,
+    #[inline(always)]
+    pub const fn fifo118(&self) -> &FIFO118 {
+        &self.fifo118
+    }
     #[doc = "0x3dc - FIFO Memory Aperture0 119"]
-    pub fifo119: FIFO119,
+    #[inline(always)]
+    pub const fn fifo119(&self) -> &FIFO119 {
+        &self.fifo119
+    }
     #[doc = "0x3e0 - FIFO Memory Aperture0 120"]
-    pub fifo120: FIFO120,
+    #[inline(always)]
+    pub const fn fifo120(&self) -> &FIFO120 {
+        &self.fifo120
+    }
     #[doc = "0x3e4 - FIFO Memory Aperture0 121"]
-    pub fifo121: FIFO121,
+    #[inline(always)]
+    pub const fn fifo121(&self) -> &FIFO121 {
+        &self.fifo121
+    }
     #[doc = "0x3e8 - FIFO Memory Aperture0 122"]
-    pub fifo122: FIFO122,
+    #[inline(always)]
+    pub const fn fifo122(&self) -> &FIFO122 {
+        &self.fifo122
+    }
     #[doc = "0x3ec - FIFO Memory Aperture0 123"]
-    pub fifo123: FIFO123,
+    #[inline(always)]
+    pub const fn fifo123(&self) -> &FIFO123 {
+        &self.fifo123
+    }
     #[doc = "0x3f0 - FIFO Memory Aperture0 124"]
-    pub fifo124: FIFO124,
+    #[inline(always)]
+    pub const fn fifo124(&self) -> &FIFO124 {
+        &self.fifo124
+    }
     #[doc = "0x3f4 - FIFO Memory Aperture0 125"]
-    pub fifo125: FIFO125,
+    #[inline(always)]
+    pub const fn fifo125(&self) -> &FIFO125 {
+        &self.fifo125
+    }
     #[doc = "0x3f8 - FIFO Memory Aperture0 126"]
-    pub fifo126: FIFO126,
+    #[inline(always)]
+    pub const fn fifo126(&self) -> &FIFO126 {
+        &self.fifo126
+    }
     #[doc = "0x3fc - FIFO Memory Aperture0 127"]
-    pub fifo127: FIFO127,
+    #[inline(always)]
+    pub const fn fifo127(&self) -> &FIFO127 {
+        &self.fifo127
+    }
     #[doc = "0x400 - FIFO Memory Aperture0 128"]
-    pub fifo128: FIFO128,
+    #[inline(always)]
+    pub const fn fifo128(&self) -> &FIFO128 {
+        &self.fifo128
+    }
     #[doc = "0x404 - FIFO Memory Aperture0 129"]
-    pub fifo129: FIFO129,
+    #[inline(always)]
+    pub const fn fifo129(&self) -> &FIFO129 {
+        &self.fifo129
+    }
     #[doc = "0x408 - FIFO Memory Aperture0 130"]
-    pub fifo130: FIFO130,
+    #[inline(always)]
+    pub const fn fifo130(&self) -> &FIFO130 {
+        &self.fifo130
+    }
     #[doc = "0x40c - FIFO Memory Aperture0 131"]
-    pub fifo131: FIFO131,
+    #[inline(always)]
+    pub const fn fifo131(&self) -> &FIFO131 {
+        &self.fifo131
+    }
     #[doc = "0x410 - FIFO Memory Aperture0 132"]
-    pub fifo132: FIFO132,
+    #[inline(always)]
+    pub const fn fifo132(&self) -> &FIFO132 {
+        &self.fifo132
+    }
     #[doc = "0x414 - FIFO Memory Aperture0 133"]
-    pub fifo133: FIFO133,
+    #[inline(always)]
+    pub const fn fifo133(&self) -> &FIFO133 {
+        &self.fifo133
+    }
     #[doc = "0x418 - FIFO Memory Aperture0 134"]
-    pub fifo134: FIFO134,
+    #[inline(always)]
+    pub const fn fifo134(&self) -> &FIFO134 {
+        &self.fifo134
+    }
     #[doc = "0x41c - FIFO Memory Aperture0 135"]
-    pub fifo135: FIFO135,
+    #[inline(always)]
+    pub const fn fifo135(&self) -> &FIFO135 {
+        &self.fifo135
+    }
     #[doc = "0x420 - FIFO Memory Aperture0 136"]
-    pub fifo136: FIFO136,
+    #[inline(always)]
+    pub const fn fifo136(&self) -> &FIFO136 {
+        &self.fifo136
+    }
     #[doc = "0x424 - FIFO Memory Aperture0 137"]
-    pub fifo137: FIFO137,
+    #[inline(always)]
+    pub const fn fifo137(&self) -> &FIFO137 {
+        &self.fifo137
+    }
     #[doc = "0x428 - FIFO Memory Aperture0 138"]
-    pub fifo138: FIFO138,
+    #[inline(always)]
+    pub const fn fifo138(&self) -> &FIFO138 {
+        &self.fifo138
+    }
     #[doc = "0x42c - FIFO Memory Aperture0 139"]
-    pub fifo139: FIFO139,
+    #[inline(always)]
+    pub const fn fifo139(&self) -> &FIFO139 {
+        &self.fifo139
+    }
     #[doc = "0x430 - FIFO Memory Aperture0 140"]
-    pub fifo140: FIFO140,
+    #[inline(always)]
+    pub const fn fifo140(&self) -> &FIFO140 {
+        &self.fifo140
+    }
     #[doc = "0x434 - FIFO Memory Aperture0 141"]
-    pub fifo141: FIFO141,
+    #[inline(always)]
+    pub const fn fifo141(&self) -> &FIFO141 {
+        &self.fifo141
+    }
     #[doc = "0x438 - FIFO Memory Aperture0 142"]
-    pub fifo142: FIFO142,
+    #[inline(always)]
+    pub const fn fifo142(&self) -> &FIFO142 {
+        &self.fifo142
+    }
     #[doc = "0x43c - FIFO Memory Aperture0 143"]
-    pub fifo143: FIFO143,
+    #[inline(always)]
+    pub const fn fifo143(&self) -> &FIFO143 {
+        &self.fifo143
+    }
     #[doc = "0x440 - FIFO Memory Aperture0 144"]
-    pub fifo144: FIFO144,
+    #[inline(always)]
+    pub const fn fifo144(&self) -> &FIFO144 {
+        &self.fifo144
+    }
     #[doc = "0x444 - FIFO Memory Aperture0 145"]
-    pub fifo145: FIFO145,
+    #[inline(always)]
+    pub const fn fifo145(&self) -> &FIFO145 {
+        &self.fifo145
+    }
     #[doc = "0x448 - FIFO Memory Aperture0 146"]
-    pub fifo146: FIFO146,
+    #[inline(always)]
+    pub const fn fifo146(&self) -> &FIFO146 {
+        &self.fifo146
+    }
     #[doc = "0x44c - FIFO Memory Aperture0 147"]
-    pub fifo147: FIFO147,
+    #[inline(always)]
+    pub const fn fifo147(&self) -> &FIFO147 {
+        &self.fifo147
+    }
     #[doc = "0x450 - FIFO Memory Aperture0 148"]
-    pub fifo148: FIFO148,
+    #[inline(always)]
+    pub const fn fifo148(&self) -> &FIFO148 {
+        &self.fifo148
+    }
     #[doc = "0x454 - FIFO Memory Aperture0 149"]
-    pub fifo149: FIFO149,
+    #[inline(always)]
+    pub const fn fifo149(&self) -> &FIFO149 {
+        &self.fifo149
+    }
     #[doc = "0x458 - FIFO Memory Aperture0 150"]
-    pub fifo150: FIFO150,
+    #[inline(always)]
+    pub const fn fifo150(&self) -> &FIFO150 {
+        &self.fifo150
+    }
     #[doc = "0x45c - FIFO Memory Aperture0 151"]
-    pub fifo151: FIFO151,
+    #[inline(always)]
+    pub const fn fifo151(&self) -> &FIFO151 {
+        &self.fifo151
+    }
     #[doc = "0x460 - FIFO Memory Aperture0 152"]
-    pub fifo152: FIFO152,
+    #[inline(always)]
+    pub const fn fifo152(&self) -> &FIFO152 {
+        &self.fifo152
+    }
     #[doc = "0x464 - FIFO Memory Aperture0 153"]
-    pub fifo153: FIFO153,
+    #[inline(always)]
+    pub const fn fifo153(&self) -> &FIFO153 {
+        &self.fifo153
+    }
     #[doc = "0x468 - FIFO Memory Aperture0 154"]
-    pub fifo154: FIFO154,
+    #[inline(always)]
+    pub const fn fifo154(&self) -> &FIFO154 {
+        &self.fifo154
+    }
     #[doc = "0x46c - FIFO Memory Aperture0 155"]
-    pub fifo155: FIFO155,
+    #[inline(always)]
+    pub const fn fifo155(&self) -> &FIFO155 {
+        &self.fifo155
+    }
     #[doc = "0x470 - FIFO Memory Aperture0 156"]
-    pub fifo156: FIFO156,
+    #[inline(always)]
+    pub const fn fifo156(&self) -> &FIFO156 {
+        &self.fifo156
+    }
     #[doc = "0x474 - FIFO Memory Aperture0 157"]
-    pub fifo157: FIFO157,
+    #[inline(always)]
+    pub const fn fifo157(&self) -> &FIFO157 {
+        &self.fifo157
+    }
     #[doc = "0x478 - FIFO Memory Aperture0 158"]
-    pub fifo158: FIFO158,
+    #[inline(always)]
+    pub const fn fifo158(&self) -> &FIFO158 {
+        &self.fifo158
+    }
     #[doc = "0x47c - FIFO Memory Aperture0 159"]
-    pub fifo159: FIFO159,
+    #[inline(always)]
+    pub const fn fifo159(&self) -> &FIFO159 {
+        &self.fifo159
+    }
     #[doc = "0x480 - FIFO Memory Aperture0 160"]
-    pub fifo160: FIFO160,
+    #[inline(always)]
+    pub const fn fifo160(&self) -> &FIFO160 {
+        &self.fifo160
+    }
     #[doc = "0x484 - FIFO Memory Aperture0 161"]
-    pub fifo161: FIFO161,
+    #[inline(always)]
+    pub const fn fifo161(&self) -> &FIFO161 {
+        &self.fifo161
+    }
     #[doc = "0x488 - FIFO Memory Aperture0 162"]
-    pub fifo162: FIFO162,
+    #[inline(always)]
+    pub const fn fifo162(&self) -> &FIFO162 {
+        &self.fifo162
+    }
     #[doc = "0x48c - FIFO Memory Aperture0 163"]
-    pub fifo163: FIFO163,
+    #[inline(always)]
+    pub const fn fifo163(&self) -> &FIFO163 {
+        &self.fifo163
+    }
     #[doc = "0x490 - FIFO Memory Aperture0 164"]
-    pub fifo164: FIFO164,
+    #[inline(always)]
+    pub const fn fifo164(&self) -> &FIFO164 {
+        &self.fifo164
+    }
     #[doc = "0x494 - FIFO Memory Aperture0 165"]
-    pub fifo165: FIFO165,
+    #[inline(always)]
+    pub const fn fifo165(&self) -> &FIFO165 {
+        &self.fifo165
+    }
     #[doc = "0x498 - FIFO Memory Aperture0 166"]
-    pub fifo166: FIFO166,
+    #[inline(always)]
+    pub const fn fifo166(&self) -> &FIFO166 {
+        &self.fifo166
+    }
     #[doc = "0x49c - FIFO Memory Aperture0 167"]
-    pub fifo167: FIFO167,
+    #[inline(always)]
+    pub const fn fifo167(&self) -> &FIFO167 {
+        &self.fifo167
+    }
     #[doc = "0x4a0 - FIFO Memory Aperture0 168"]
-    pub fifo168: FIFO168,
+    #[inline(always)]
+    pub const fn fifo168(&self) -> &FIFO168 {
+        &self.fifo168
+    }
     #[doc = "0x4a4 - FIFO Memory Aperture0 169"]
-    pub fifo169: FIFO169,
+    #[inline(always)]
+    pub const fn fifo169(&self) -> &FIFO169 {
+        &self.fifo169
+    }
     #[doc = "0x4a8 - FIFO Memory Aperture0 170"]
-    pub fifo170: FIFO170,
+    #[inline(always)]
+    pub const fn fifo170(&self) -> &FIFO170 {
+        &self.fifo170
+    }
     #[doc = "0x4ac - FIFO Memory Aperture0 171"]
-    pub fifo171: FIFO171,
+    #[inline(always)]
+    pub const fn fifo171(&self) -> &FIFO171 {
+        &self.fifo171
+    }
     #[doc = "0x4b0 - FIFO Memory Aperture0 172"]
-    pub fifo172: FIFO172,
+    #[inline(always)]
+    pub const fn fifo172(&self) -> &FIFO172 {
+        &self.fifo172
+    }
     #[doc = "0x4b4 - FIFO Memory Aperture0 173"]
-    pub fifo173: FIFO173,
+    #[inline(always)]
+    pub const fn fifo173(&self) -> &FIFO173 {
+        &self.fifo173
+    }
     #[doc = "0x4b8 - FIFO Memory Aperture0 174"]
-    pub fifo174: FIFO174,
+    #[inline(always)]
+    pub const fn fifo174(&self) -> &FIFO174 {
+        &self.fifo174
+    }
     #[doc = "0x4bc - FIFO Memory Aperture0 175"]
-    pub fifo175: FIFO175,
+    #[inline(always)]
+    pub const fn fifo175(&self) -> &FIFO175 {
+        &self.fifo175
+    }
     #[doc = "0x4c0 - FIFO Memory Aperture0 176"]
-    pub fifo176: FIFO176,
+    #[inline(always)]
+    pub const fn fifo176(&self) -> &FIFO176 {
+        &self.fifo176
+    }
     #[doc = "0x4c4 - FIFO Memory Aperture0 177"]
-    pub fifo177: FIFO177,
+    #[inline(always)]
+    pub const fn fifo177(&self) -> &FIFO177 {
+        &self.fifo177
+    }
     #[doc = "0x4c8 - FIFO Memory Aperture0 178"]
-    pub fifo178: FIFO178,
+    #[inline(always)]
+    pub const fn fifo178(&self) -> &FIFO178 {
+        &self.fifo178
+    }
     #[doc = "0x4cc - FIFO Memory Aperture0 179"]
-    pub fifo179: FIFO179,
+    #[inline(always)]
+    pub const fn fifo179(&self) -> &FIFO179 {
+        &self.fifo179
+    }
     #[doc = "0x4d0 - FIFO Memory Aperture0 180"]
-    pub fifo180: FIFO180,
+    #[inline(always)]
+    pub const fn fifo180(&self) -> &FIFO180 {
+        &self.fifo180
+    }
     #[doc = "0x4d4 - FIFO Memory Aperture0 181"]
-    pub fifo181: FIFO181,
+    #[inline(always)]
+    pub const fn fifo181(&self) -> &FIFO181 {
+        &self.fifo181
+    }
     #[doc = "0x4d8 - FIFO Memory Aperture0 182"]
-    pub fifo182: FIFO182,
+    #[inline(always)]
+    pub const fn fifo182(&self) -> &FIFO182 {
+        &self.fifo182
+    }
     #[doc = "0x4dc - FIFO Memory Aperture0 183"]
-    pub fifo183: FIFO183,
+    #[inline(always)]
+    pub const fn fifo183(&self) -> &FIFO183 {
+        &self.fifo183
+    }
     #[doc = "0x4e0 - FIFO Memory Aperture0 184"]
-    pub fifo184: FIFO184,
+    #[inline(always)]
+    pub const fn fifo184(&self) -> &FIFO184 {
+        &self.fifo184
+    }
     #[doc = "0x4e4 - FIFO Memory Aperture0 185"]
-    pub fifo185: FIFO185,
+    #[inline(always)]
+    pub const fn fifo185(&self) -> &FIFO185 {
+        &self.fifo185
+    }
     #[doc = "0x4e8 - FIFO Memory Aperture0 186"]
-    pub fifo186: FIFO186,
+    #[inline(always)]
+    pub const fn fifo186(&self) -> &FIFO186 {
+        &self.fifo186
+    }
     #[doc = "0x4ec - FIFO Memory Aperture0 187"]
-    pub fifo187: FIFO187,
+    #[inline(always)]
+    pub const fn fifo187(&self) -> &FIFO187 {
+        &self.fifo187
+    }
     #[doc = "0x4f0 - FIFO Memory Aperture0 188"]
-    pub fifo188: FIFO188,
+    #[inline(always)]
+    pub const fn fifo188(&self) -> &FIFO188 {
+        &self.fifo188
+    }
     #[doc = "0x4f4 - FIFO Memory Aperture0 189"]
-    pub fifo189: FIFO189,
+    #[inline(always)]
+    pub const fn fifo189(&self) -> &FIFO189 {
+        &self.fifo189
+    }
     #[doc = "0x4f8 - FIFO Memory Aperture0 190"]
-    pub fifo190: FIFO190,
+    #[inline(always)]
+    pub const fn fifo190(&self) -> &FIFO190 {
+        &self.fifo190
+    }
     #[doc = "0x4fc - FIFO Memory Aperture0 191"]
-    pub fifo191: FIFO191,
+    #[inline(always)]
+    pub const fn fifo191(&self) -> &FIFO191 {
+        &self.fifo191
+    }
     #[doc = "0x500 - FIFO Memory Aperture0 192"]
-    pub fifo192: FIFO192,
+    #[inline(always)]
+    pub const fn fifo192(&self) -> &FIFO192 {
+        &self.fifo192
+    }
     #[doc = "0x504 - FIFO Memory Aperture0 193"]
-    pub fifo193: FIFO193,
+    #[inline(always)]
+    pub const fn fifo193(&self) -> &FIFO193 {
+        &self.fifo193
+    }
     #[doc = "0x508 - FIFO Memory Aperture0 194"]
-    pub fifo194: FIFO194,
+    #[inline(always)]
+    pub const fn fifo194(&self) -> &FIFO194 {
+        &self.fifo194
+    }
     #[doc = "0x50c - FIFO Memory Aperture0 195"]
-    pub fifo195: FIFO195,
+    #[inline(always)]
+    pub const fn fifo195(&self) -> &FIFO195 {
+        &self.fifo195
+    }
     #[doc = "0x510 - FIFO Memory Aperture0 196"]
-    pub fifo196: FIFO196,
+    #[inline(always)]
+    pub const fn fifo196(&self) -> &FIFO196 {
+        &self.fifo196
+    }
     #[doc = "0x514 - FIFO Memory Aperture0 197"]
-    pub fifo197: FIFO197,
+    #[inline(always)]
+    pub const fn fifo197(&self) -> &FIFO197 {
+        &self.fifo197
+    }
     #[doc = "0x518 - FIFO Memory Aperture0 198"]
-    pub fifo198: FIFO198,
+    #[inline(always)]
+    pub const fn fifo198(&self) -> &FIFO198 {
+        &self.fifo198
+    }
     #[doc = "0x51c - FIFO Memory Aperture0 199"]
-    pub fifo199: FIFO199,
+    #[inline(always)]
+    pub const fn fifo199(&self) -> &FIFO199 {
+        &self.fifo199
+    }
     #[doc = "0x520 - FIFO Memory Aperture0 200"]
-    pub fifo200: FIFO200,
+    #[inline(always)]
+    pub const fn fifo200(&self) -> &FIFO200 {
+        &self.fifo200
+    }
     #[doc = "0x524 - FIFO Memory Aperture0 201"]
-    pub fifo201: FIFO201,
+    #[inline(always)]
+    pub const fn fifo201(&self) -> &FIFO201 {
+        &self.fifo201
+    }
     #[doc = "0x528 - FIFO Memory Aperture0 202"]
-    pub fifo202: FIFO202,
+    #[inline(always)]
+    pub const fn fifo202(&self) -> &FIFO202 {
+        &self.fifo202
+    }
     #[doc = "0x52c - FIFO Memory Aperture0 203"]
-    pub fifo203: FIFO203,
+    #[inline(always)]
+    pub const fn fifo203(&self) -> &FIFO203 {
+        &self.fifo203
+    }
     #[doc = "0x530 - FIFO Memory Aperture0 204"]
-    pub fifo204: FIFO204,
+    #[inline(always)]
+    pub const fn fifo204(&self) -> &FIFO204 {
+        &self.fifo204
+    }
     #[doc = "0x534 - FIFO Memory Aperture0 205"]
-    pub fifo205: FIFO205,
+    #[inline(always)]
+    pub const fn fifo205(&self) -> &FIFO205 {
+        &self.fifo205
+    }
     #[doc = "0x538 - FIFO Memory Aperture0 206"]
-    pub fifo206: FIFO206,
+    #[inline(always)]
+    pub const fn fifo206(&self) -> &FIFO206 {
+        &self.fifo206
+    }
     #[doc = "0x53c - FIFO Memory Aperture0 207"]
-    pub fifo207: FIFO207,
+    #[inline(always)]
+    pub const fn fifo207(&self) -> &FIFO207 {
+        &self.fifo207
+    }
     #[doc = "0x540 - FIFO Memory Aperture0 208"]
-    pub fifo208: FIFO208,
+    #[inline(always)]
+    pub const fn fifo208(&self) -> &FIFO208 {
+        &self.fifo208
+    }
     #[doc = "0x544 - FIFO Memory Aperture0 209"]
-    pub fifo209: FIFO209,
+    #[inline(always)]
+    pub const fn fifo209(&self) -> &FIFO209 {
+        &self.fifo209
+    }
     #[doc = "0x548 - FIFO Memory Aperture0 210"]
-    pub fifo210: FIFO210,
+    #[inline(always)]
+    pub const fn fifo210(&self) -> &FIFO210 {
+        &self.fifo210
+    }
     #[doc = "0x54c - FIFO Memory Aperture0 211"]
-    pub fifo211: FIFO211,
+    #[inline(always)]
+    pub const fn fifo211(&self) -> &FIFO211 {
+        &self.fifo211
+    }
     #[doc = "0x550 - FIFO Memory Aperture0 212"]
-    pub fifo212: FIFO212,
+    #[inline(always)]
+    pub const fn fifo212(&self) -> &FIFO212 {
+        &self.fifo212
+    }
     #[doc = "0x554 - FIFO Memory Aperture0 213"]
-    pub fifo213: FIFO213,
+    #[inline(always)]
+    pub const fn fifo213(&self) -> &FIFO213 {
+        &self.fifo213
+    }
     #[doc = "0x558 - FIFO Memory Aperture0 214"]
-    pub fifo214: FIFO214,
+    #[inline(always)]
+    pub const fn fifo214(&self) -> &FIFO214 {
+        &self.fifo214
+    }
     #[doc = "0x55c - FIFO Memory Aperture0 215"]
-    pub fifo215: FIFO215,
+    #[inline(always)]
+    pub const fn fifo215(&self) -> &FIFO215 {
+        &self.fifo215
+    }
     #[doc = "0x560 - FIFO Memory Aperture0 216"]
-    pub fifo216: FIFO216,
+    #[inline(always)]
+    pub const fn fifo216(&self) -> &FIFO216 {
+        &self.fifo216
+    }
     #[doc = "0x564 - FIFO Memory Aperture0 217"]
-    pub fifo217: FIFO217,
+    #[inline(always)]
+    pub const fn fifo217(&self) -> &FIFO217 {
+        &self.fifo217
+    }
     #[doc = "0x568 - FIFO Memory Aperture0 218"]
-    pub fifo218: FIFO218,
+    #[inline(always)]
+    pub const fn fifo218(&self) -> &FIFO218 {
+        &self.fifo218
+    }
     #[doc = "0x56c - FIFO Memory Aperture0 219"]
-    pub fifo219: FIFO219,
+    #[inline(always)]
+    pub const fn fifo219(&self) -> &FIFO219 {
+        &self.fifo219
+    }
     #[doc = "0x570 - FIFO Memory Aperture0 220"]
-    pub fifo220: FIFO220,
+    #[inline(always)]
+    pub const fn fifo220(&self) -> &FIFO220 {
+        &self.fifo220
+    }
     #[doc = "0x574 - FIFO Memory Aperture0 221"]
-    pub fifo221: FIFO221,
+    #[inline(always)]
+    pub const fn fifo221(&self) -> &FIFO221 {
+        &self.fifo221
+    }
     #[doc = "0x578 - FIFO Memory Aperture0 222"]
-    pub fifo222: FIFO222,
+    #[inline(always)]
+    pub const fn fifo222(&self) -> &FIFO222 {
+        &self.fifo222
+    }
     #[doc = "0x57c - FIFO Memory Aperture0 223"]
-    pub fifo223: FIFO223,
+    #[inline(always)]
+    pub const fn fifo223(&self) -> &FIFO223 {
+        &self.fifo223
+    }
     #[doc = "0x580 - FIFO Memory Aperture0 224"]
-    pub fifo224: FIFO224,
+    #[inline(always)]
+    pub const fn fifo224(&self) -> &FIFO224 {
+        &self.fifo224
+    }
     #[doc = "0x584 - FIFO Memory Aperture0 225"]
-    pub fifo225: FIFO225,
+    #[inline(always)]
+    pub const fn fifo225(&self) -> &FIFO225 {
+        &self.fifo225
+    }
     #[doc = "0x588 - FIFO Memory Aperture0 226"]
-    pub fifo226: FIFO226,
+    #[inline(always)]
+    pub const fn fifo226(&self) -> &FIFO226 {
+        &self.fifo226
+    }
     #[doc = "0x58c - FIFO Memory Aperture0 227"]
-    pub fifo227: FIFO227,
+    #[inline(always)]
+    pub const fn fifo227(&self) -> &FIFO227 {
+        &self.fifo227
+    }
     #[doc = "0x590 - FIFO Memory Aperture0 228"]
-    pub fifo228: FIFO228,
+    #[inline(always)]
+    pub const fn fifo228(&self) -> &FIFO228 {
+        &self.fifo228
+    }
     #[doc = "0x594 - FIFO Memory Aperture0 229"]
-    pub fifo229: FIFO229,
+    #[inline(always)]
+    pub const fn fifo229(&self) -> &FIFO229 {
+        &self.fifo229
+    }
     #[doc = "0x598 - FIFO Memory Aperture0 230"]
-    pub fifo230: FIFO230,
+    #[inline(always)]
+    pub const fn fifo230(&self) -> &FIFO230 {
+        &self.fifo230
+    }
     #[doc = "0x59c - FIFO Memory Aperture0 231"]
-    pub fifo231: FIFO231,
+    #[inline(always)]
+    pub const fn fifo231(&self) -> &FIFO231 {
+        &self.fifo231
+    }
     #[doc = "0x5a0 - FIFO Memory Aperture0 232"]
-    pub fifo232: FIFO232,
+    #[inline(always)]
+    pub const fn fifo232(&self) -> &FIFO232 {
+        &self.fifo232
+    }
     #[doc = "0x5a4 - FIFO Memory Aperture0 233"]
-    pub fifo233: FIFO233,
+    #[inline(always)]
+    pub const fn fifo233(&self) -> &FIFO233 {
+        &self.fifo233
+    }
     #[doc = "0x5a8 - FIFO Memory Aperture0 234"]
-    pub fifo234: FIFO234,
+    #[inline(always)]
+    pub const fn fifo234(&self) -> &FIFO234 {
+        &self.fifo234
+    }
     #[doc = "0x5ac - FIFO Memory Aperture0 235"]
-    pub fifo235: FIFO235,
+    #[inline(always)]
+    pub const fn fifo235(&self) -> &FIFO235 {
+        &self.fifo235
+    }
     #[doc = "0x5b0 - FIFO Memory Aperture0 236"]
-    pub fifo236: FIFO236,
+    #[inline(always)]
+    pub const fn fifo236(&self) -> &FIFO236 {
+        &self.fifo236
+    }
     #[doc = "0x5b4 - FIFO Memory Aperture0 237"]
-    pub fifo237: FIFO237,
+    #[inline(always)]
+    pub const fn fifo237(&self) -> &FIFO237 {
+        &self.fifo237
+    }
     #[doc = "0x5b8 - FIFO Memory Aperture0 238"]
-    pub fifo238: FIFO238,
+    #[inline(always)]
+    pub const fn fifo238(&self) -> &FIFO238 {
+        &self.fifo238
+    }
     #[doc = "0x5bc - FIFO Memory Aperture0 239"]
-    pub fifo239: FIFO239,
+    #[inline(always)]
+    pub const fn fifo239(&self) -> &FIFO239 {
+        &self.fifo239
+    }
     #[doc = "0x5c0 - FIFO Memory Aperture0 240"]
-    pub fifo240: FIFO240,
+    #[inline(always)]
+    pub const fn fifo240(&self) -> &FIFO240 {
+        &self.fifo240
+    }
     #[doc = "0x5c4 - FIFO Memory Aperture0 241"]
-    pub fifo241: FIFO241,
+    #[inline(always)]
+    pub const fn fifo241(&self) -> &FIFO241 {
+        &self.fifo241
+    }
     #[doc = "0x5c8 - FIFO Memory Aperture0 242"]
-    pub fifo242: FIFO242,
+    #[inline(always)]
+    pub const fn fifo242(&self) -> &FIFO242 {
+        &self.fifo242
+    }
     #[doc = "0x5cc - FIFO Memory Aperture0 243"]
-    pub fifo243: FIFO243,
+    #[inline(always)]
+    pub const fn fifo243(&self) -> &FIFO243 {
+        &self.fifo243
+    }
     #[doc = "0x5d0 - FIFO Memory Aperture0 244"]
-    pub fifo244: FIFO244,
+    #[inline(always)]
+    pub const fn fifo244(&self) -> &FIFO244 {
+        &self.fifo244
+    }
     #[doc = "0x5d4 - FIFO Memory Aperture0 245"]
-    pub fifo245: FIFO245,
+    #[inline(always)]
+    pub const fn fifo245(&self) -> &FIFO245 {
+        &self.fifo245
+    }
     #[doc = "0x5d8 - FIFO Memory Aperture0 246"]
-    pub fifo246: FIFO246,
+    #[inline(always)]
+    pub const fn fifo246(&self) -> &FIFO246 {
+        &self.fifo246
+    }
     #[doc = "0x5dc - FIFO Memory Aperture0 247"]
-    pub fifo247: FIFO247,
+    #[inline(always)]
+    pub const fn fifo247(&self) -> &FIFO247 {
+        &self.fifo247
+    }
     #[doc = "0x5e0 - FIFO Memory Aperture0 248"]
-    pub fifo248: FIFO248,
+    #[inline(always)]
+    pub const fn fifo248(&self) -> &FIFO248 {
+        &self.fifo248
+    }
     #[doc = "0x5e4 - FIFO Memory Aperture0 249"]
-    pub fifo249: FIFO249,
+    #[inline(always)]
+    pub const fn fifo249(&self) -> &FIFO249 {
+        &self.fifo249
+    }
     #[doc = "0x5e8 - FIFO Memory Aperture0 250"]
-    pub fifo250: FIFO250,
+    #[inline(always)]
+    pub const fn fifo250(&self) -> &FIFO250 {
+        &self.fifo250
+    }
     #[doc = "0x5ec - FIFO Memory Aperture0 251"]
-    pub fifo251: FIFO251,
+    #[inline(always)]
+    pub const fn fifo251(&self) -> &FIFO251 {
+        &self.fifo251
+    }
     #[doc = "0x5f0 - FIFO Memory Aperture0 252"]
-    pub fifo252: FIFO252,
+    #[inline(always)]
+    pub const fn fifo252(&self) -> &FIFO252 {
+        &self.fifo252
+    }
     #[doc = "0x5f4 - FIFO Memory Aperture0 253"]
-    pub fifo253: FIFO253,
+    #[inline(always)]
+    pub const fn fifo253(&self) -> &FIFO253 {
+        &self.fifo253
+    }
     #[doc = "0x5f8 - FIFO Memory Aperture0 254"]
-    pub fifo254: FIFO254,
+    #[inline(always)]
+    pub const fn fifo254(&self) -> &FIFO254 {
+        &self.fifo254
+    }
     #[doc = "0x5fc - FIFO Memory Aperture0 255"]
-    pub fifo255: FIFO255,
+    #[inline(always)]
+    pub const fn fifo255(&self) -> &FIFO255 {
+        &self.fifo255
+    }
 }
 #[doc = "CR (w) register accessor: Control Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
 module"]

@@ -5,23 +5,23 @@ pub type W = crate::W<MR_SPEC>;
 #[doc = "Field `HRMOD` reader - 12-/24-hour Mode"]
 pub type HRMOD_R = crate::BitReader;
 #[doc = "Field `HRMOD` writer - 12-/24-hour Mode"]
-pub type HRMOD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HRMOD_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PERSIAN` reader - PERSIAN Calendar"]
 pub type PERSIAN_R = crate::BitReader;
 #[doc = "Field `PERSIAN` writer - PERSIAN Calendar"]
-pub type PERSIAN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PERSIAN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NEGPPM` reader - NEGative PPM Correction"]
 pub type NEGPPM_R = crate::BitReader;
 #[doc = "Field `NEGPPM` writer - NEGative PPM Correction"]
-pub type NEGPPM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NEGPPM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CORRECTION` reader - Slow Clock Correction"]
 pub type CORRECTION_R = crate::FieldReader;
 #[doc = "Field `CORRECTION` writer - Slow Clock Correction"]
-pub type CORRECTION_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type CORRECTION_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `HIGHPPM` reader - HIGH PPM Correction"]
 pub type HIGHPPM_R = crate::BitReader;
 #[doc = "Field `HIGHPPM` writer - HIGH PPM Correction"]
-pub type HIGHPPM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HIGHPPM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OUT0` reader - RTCOUT0 Output Source Selection"]
 pub type OUT0_R = crate::FieldReader<OUT0_A>;
 #[doc = "RTCOUT0 Output Source Selection\n\nValue on reset: 0"]
@@ -112,8 +112,8 @@ impl OUT0_R {
     }
 }
 #[doc = "Field `OUT0` writer - RTCOUT0 Output Source Selection"]
-pub type OUT0_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, OUT0_A>;
-impl<'a, REG, const O: u8> OUT0_W<'a, REG, O>
+pub type OUT0_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, OUT0_A>;
+impl<'a, REG> OUT0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -249,8 +249,8 @@ impl OUT1_R {
     }
 }
 #[doc = "Field `OUT1` writer - RTCOUT1 Output Source Selection"]
-pub type OUT1_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, OUT1_A>;
-impl<'a, REG, const O: u8> OUT1_W<'a, REG, O>
+pub type OUT1_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, OUT1_A>;
+impl<'a, REG> OUT1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -386,8 +386,8 @@ impl THIGH_R {
     }
 }
 #[doc = "Field `THIGH` writer - High Duration of the Output Pulse"]
-pub type THIGH_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, THIGH_A>;
-impl<'a, REG, const O: u8> THIGH_W<'a, REG, O>
+pub type THIGH_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, THIGH_A>;
+impl<'a, REG> THIGH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -491,8 +491,8 @@ impl TPERIOD_R {
     }
 }
 #[doc = "Field `TPERIOD` writer - Period of the Output Pulse"]
-pub type TPERIOD_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, TPERIOD_A>;
-impl<'a, REG, const O: u8> TPERIOD_W<'a, REG, O>
+pub type TPERIOD_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, TPERIOD_A>;
+impl<'a, REG> TPERIOD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -569,56 +569,56 @@ impl W {
     #[doc = "Bit 0 - 12-/24-hour Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn hrmod(&mut self) -> HRMOD_W<MR_SPEC, 0> {
-        HRMOD_W::new(self)
+    pub fn hrmod(&mut self) -> HRMOD_W<MR_SPEC> {
+        HRMOD_W::new(self, 0)
     }
     #[doc = "Bit 1 - PERSIAN Calendar"]
     #[inline(always)]
     #[must_use]
-    pub fn persian(&mut self) -> PERSIAN_W<MR_SPEC, 1> {
-        PERSIAN_W::new(self)
+    pub fn persian(&mut self) -> PERSIAN_W<MR_SPEC> {
+        PERSIAN_W::new(self, 1)
     }
     #[doc = "Bit 4 - NEGative PPM Correction"]
     #[inline(always)]
     #[must_use]
-    pub fn negppm(&mut self) -> NEGPPM_W<MR_SPEC, 4> {
-        NEGPPM_W::new(self)
+    pub fn negppm(&mut self) -> NEGPPM_W<MR_SPEC> {
+        NEGPPM_W::new(self, 4)
     }
     #[doc = "Bits 8:14 - Slow Clock Correction"]
     #[inline(always)]
     #[must_use]
-    pub fn correction(&mut self) -> CORRECTION_W<MR_SPEC, 8> {
-        CORRECTION_W::new(self)
+    pub fn correction(&mut self) -> CORRECTION_W<MR_SPEC> {
+        CORRECTION_W::new(self, 8)
     }
     #[doc = "Bit 15 - HIGH PPM Correction"]
     #[inline(always)]
     #[must_use]
-    pub fn highppm(&mut self) -> HIGHPPM_W<MR_SPEC, 15> {
-        HIGHPPM_W::new(self)
+    pub fn highppm(&mut self) -> HIGHPPM_W<MR_SPEC> {
+        HIGHPPM_W::new(self, 15)
     }
     #[doc = "Bits 16:18 - RTCOUT0 Output Source Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn out0(&mut self) -> OUT0_W<MR_SPEC, 16> {
-        OUT0_W::new(self)
+    pub fn out0(&mut self) -> OUT0_W<MR_SPEC> {
+        OUT0_W::new(self, 16)
     }
     #[doc = "Bits 20:22 - RTCOUT1 Output Source Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn out1(&mut self) -> OUT1_W<MR_SPEC, 20> {
-        OUT1_W::new(self)
+    pub fn out1(&mut self) -> OUT1_W<MR_SPEC> {
+        OUT1_W::new(self, 20)
     }
     #[doc = "Bits 24:26 - High Duration of the Output Pulse"]
     #[inline(always)]
     #[must_use]
-    pub fn thigh(&mut self) -> THIGH_W<MR_SPEC, 24> {
-        THIGH_W::new(self)
+    pub fn thigh(&mut self) -> THIGH_W<MR_SPEC> {
+        THIGH_W::new(self, 24)
     }
     #[doc = "Bits 28:29 - Period of the Output Pulse"]
     #[inline(always)]
     #[must_use]
-    pub fn tperiod(&mut self) -> TPERIOD_W<MR_SPEC, 28> {
-        TPERIOD_W::new(self)
+    pub fn tperiod(&mut self) -> TPERIOD_W<MR_SPEC> {
+        TPERIOD_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

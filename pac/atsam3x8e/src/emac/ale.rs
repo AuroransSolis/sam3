@@ -5,7 +5,7 @@ pub type W = crate::W<ALE_SPEC>;
 #[doc = "Field `ALE` reader - Alignment Errors"]
 pub type ALE_R = crate::FieldReader;
 #[doc = "Field `ALE` writer - Alignment Errors"]
-pub type ALE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type ALE_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Alignment Errors"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - Alignment Errors"]
     #[inline(always)]
     #[must_use]
-    pub fn ale(&mut self) -> ALE_W<ALE_SPEC, 0> {
-        ALE_W::new(self)
+    pub fn ale(&mut self) -> ALE_W<ALE_SPEC> {
+        ALE_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

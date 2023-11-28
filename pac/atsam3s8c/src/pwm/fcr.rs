@@ -1,13 +1,13 @@
 #[doc = "Register `FCR` writer"]
 pub type W = crate::W<FCR_SPEC>;
 #[doc = "Field `FCLR` writer - Fault Clear (fault input bit varies from 0 to 5)"]
-pub type FCLR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type FCLR_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl W {
     #[doc = "Bits 0:7 - Fault Clear (fault input bit varies from 0 to 5)"]
     #[inline(always)]
     #[must_use]
-    pub fn fclr(&mut self) -> FCLR_W<FCR_SPEC, 0> {
-        FCLR_W::new(self)
+    pub fn fclr(&mut self) -> FCLR_W<FCR_SPEC> {
+        FCLR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

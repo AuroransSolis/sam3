@@ -1,77 +1,77 @@
 #[doc = "Register `DEVEPTIFR8` writer"]
 pub type W = crate::W<DEVEPTIFR8_SPEC>;
 #[doc = "Field `TXINIS` writer - Transmitted IN Data Interrupt Set"]
-pub type TXINIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXINIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXOUTIS` writer - Received OUT Data Interrupt Set"]
-pub type RXOUTIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXOUTIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXSTPIS` writer - Received SETUP Interrupt Set"]
-pub type RXSTPIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXSTPIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NAKOUTIS` writer - NAKed OUT Interrupt Set"]
-pub type NAKOUTIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NAKOUTIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NAKINIS` writer - NAKed IN Interrupt Set"]
-pub type NAKINIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NAKINIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OVERFIS` writer - Overflow Interrupt Set"]
-pub type OVERFIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OVERFIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `STALLEDIS` writer - STALLed Interrupt Set"]
-pub type STALLEDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STALLEDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SHORTPACKETS` writer - Short Packet Interrupt Set"]
-pub type SHORTPACKETS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SHORTPACKETS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NBUSYBKS` writer - Number of Busy Banks Interrupt Set"]
-pub type NBUSYBKS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NBUSYBKS_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Transmitted IN Data Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn txinis(&mut self) -> TXINIS_W<DEVEPTIFR8_SPEC, 0> {
-        TXINIS_W::new(self)
+    pub fn txinis(&mut self) -> TXINIS_W<DEVEPTIFR8_SPEC> {
+        TXINIS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Received OUT Data Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn rxoutis(&mut self) -> RXOUTIS_W<DEVEPTIFR8_SPEC, 1> {
-        RXOUTIS_W::new(self)
+    pub fn rxoutis(&mut self) -> RXOUTIS_W<DEVEPTIFR8_SPEC> {
+        RXOUTIS_W::new(self, 1)
     }
     #[doc = "Bit 2 - Received SETUP Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn rxstpis(&mut self) -> RXSTPIS_W<DEVEPTIFR8_SPEC, 2> {
-        RXSTPIS_W::new(self)
+    pub fn rxstpis(&mut self) -> RXSTPIS_W<DEVEPTIFR8_SPEC> {
+        RXSTPIS_W::new(self, 2)
     }
     #[doc = "Bit 3 - NAKed OUT Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn nakoutis(&mut self) -> NAKOUTIS_W<DEVEPTIFR8_SPEC, 3> {
-        NAKOUTIS_W::new(self)
+    pub fn nakoutis(&mut self) -> NAKOUTIS_W<DEVEPTIFR8_SPEC> {
+        NAKOUTIS_W::new(self, 3)
     }
     #[doc = "Bit 4 - NAKed IN Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn nakinis(&mut self) -> NAKINIS_W<DEVEPTIFR8_SPEC, 4> {
-        NAKINIS_W::new(self)
+    pub fn nakinis(&mut self) -> NAKINIS_W<DEVEPTIFR8_SPEC> {
+        NAKINIS_W::new(self, 4)
     }
     #[doc = "Bit 5 - Overflow Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn overfis(&mut self) -> OVERFIS_W<DEVEPTIFR8_SPEC, 5> {
-        OVERFIS_W::new(self)
+    pub fn overfis(&mut self) -> OVERFIS_W<DEVEPTIFR8_SPEC> {
+        OVERFIS_W::new(self, 5)
     }
     #[doc = "Bit 6 - STALLed Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn stalledis(&mut self) -> STALLEDIS_W<DEVEPTIFR8_SPEC, 6> {
-        STALLEDIS_W::new(self)
+    pub fn stalledis(&mut self) -> STALLEDIS_W<DEVEPTIFR8_SPEC> {
+        STALLEDIS_W::new(self, 6)
     }
     #[doc = "Bit 7 - Short Packet Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn shortpackets(&mut self) -> SHORTPACKETS_W<DEVEPTIFR8_SPEC, 7> {
-        SHORTPACKETS_W::new(self)
+    pub fn shortpackets(&mut self) -> SHORTPACKETS_W<DEVEPTIFR8_SPEC> {
+        SHORTPACKETS_W::new(self, 7)
     }
     #[doc = "Bit 12 - Number of Busy Banks Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn nbusybks(&mut self) -> NBUSYBKS_W<DEVEPTIFR8_SPEC, 12> {
-        NBUSYBKS_W::new(self)
+    pub fn nbusybks(&mut self) -> NBUSYBKS_W<DEVEPTIFR8_SPEC> {
+        NBUSYBKS_W::new(self, 12)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -1,659 +1,1575 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Device General Control Register"]
-    pub devctrl: DEVCTRL,
-    #[doc = "0x04 - Device Global Interrupt Status Register"]
-    pub devisr: DEVISR,
-    #[doc = "0x08 - Device Global Interrupt Clear Register"]
-    pub devicr: DEVICR,
-    #[doc = "0x0c - Device Global Interrupt Set Register"]
-    pub devifr: DEVIFR,
-    #[doc = "0x10 - Device Global Interrupt Mask Register"]
-    pub devimr: DEVIMR,
-    #[doc = "0x14 - Device Global Interrupt Disable Register"]
-    pub devidr: DEVIDR,
-    #[doc = "0x18 - Device Global Interrupt Enable Register"]
-    pub devier: DEVIER,
-    #[doc = "0x1c - Device Endpoint Register"]
-    pub devept: DEVEPT,
-    #[doc = "0x20 - Device Frame Number Register"]
-    pub devfnum: DEVFNUM,
+    devctrl: DEVCTRL,
+    devisr: DEVISR,
+    devicr: DEVICR,
+    devifr: DEVIFR,
+    devimr: DEVIMR,
+    devidr: DEVIDR,
+    devier: DEVIER,
+    devept: DEVEPT,
+    devfnum: DEVFNUM,
     _reserved9: [u8; 0xdc],
-    #[doc = "0x100 - Device Endpoint Configuration Register (n = 0) 0"]
-    pub deveptcfg0: DEVEPTCFG0,
-    #[doc = "0x104 - Device Endpoint Configuration Register (n = 0) 1"]
-    pub deveptcfg1: DEVEPTCFG1,
-    #[doc = "0x108 - Device Endpoint Configuration Register (n = 0) 2"]
-    pub deveptcfg2: DEVEPTCFG2,
-    #[doc = "0x10c - Device Endpoint Configuration Register (n = 0) 3"]
-    pub deveptcfg3: DEVEPTCFG3,
-    #[doc = "0x110 - Device Endpoint Configuration Register (n = 0) 4"]
-    pub deveptcfg4: DEVEPTCFG4,
-    #[doc = "0x114 - Device Endpoint Configuration Register (n = 0) 5"]
-    pub deveptcfg5: DEVEPTCFG5,
-    #[doc = "0x118 - Device Endpoint Configuration Register (n = 0) 6"]
-    pub deveptcfg6: DEVEPTCFG6,
-    #[doc = "0x11c - Device Endpoint Configuration Register (n = 0) 7"]
-    pub deveptcfg7: DEVEPTCFG7,
-    #[doc = "0x120 - Device Endpoint Configuration Register (n = 0) 8"]
-    pub deveptcfg8: DEVEPTCFG8,
-    #[doc = "0x124 - Device Endpoint Configuration Register (n = 0) 9"]
-    pub deveptcfg9: DEVEPTCFG9,
+    deveptcfg0: DEVEPTCFG0,
+    deveptcfg1: DEVEPTCFG1,
+    deveptcfg2: DEVEPTCFG2,
+    deveptcfg3: DEVEPTCFG3,
+    deveptcfg4: DEVEPTCFG4,
+    deveptcfg5: DEVEPTCFG5,
+    deveptcfg6: DEVEPTCFG6,
+    deveptcfg7: DEVEPTCFG7,
+    deveptcfg8: DEVEPTCFG8,
+    deveptcfg9: DEVEPTCFG9,
     _reserved19: [u8; 0x08],
     _reserved_19_deveptisr0: [u8; 0x04],
-    #[doc = "0x134 - Device Endpoint Status Register (n = 0) 1"]
-    pub deveptisr1: DEVEPTISR1,
-    #[doc = "0x138 - Device Endpoint Status Register (n = 0) 2"]
-    pub deveptisr2: DEVEPTISR2,
-    #[doc = "0x13c - Device Endpoint Status Register (n = 0) 3"]
-    pub deveptisr3: DEVEPTISR3,
-    #[doc = "0x140 - Device Endpoint Status Register (n = 0) 4"]
-    pub deveptisr4: DEVEPTISR4,
-    #[doc = "0x144 - Device Endpoint Status Register (n = 0) 5"]
-    pub deveptisr5: DEVEPTISR5,
-    #[doc = "0x148 - Device Endpoint Status Register (n = 0) 6"]
-    pub deveptisr6: DEVEPTISR6,
-    #[doc = "0x14c - Device Endpoint Status Register (n = 0) 7"]
-    pub deveptisr7: DEVEPTISR7,
-    #[doc = "0x150 - Device Endpoint Status Register (n = 0) 8"]
-    pub deveptisr8: DEVEPTISR8,
-    #[doc = "0x154 - Device Endpoint Status Register (n = 0) 9"]
-    pub deveptisr9: DEVEPTISR9,
+    deveptisr1: DEVEPTISR1,
+    deveptisr2: DEVEPTISR2,
+    deveptisr3: DEVEPTISR3,
+    deveptisr4: DEVEPTISR4,
+    deveptisr5: DEVEPTISR5,
+    deveptisr6: DEVEPTISR6,
+    deveptisr7: DEVEPTISR7,
+    deveptisr8: DEVEPTISR8,
+    deveptisr9: DEVEPTISR9,
     _reserved29: [u8; 0x08],
     _reserved_29_devepticr0: [u8; 0x04],
-    #[doc = "0x164 - Device Endpoint Clear Register (n = 0) 1"]
-    pub devepticr1: DEVEPTICR1,
-    #[doc = "0x168 - Device Endpoint Clear Register (n = 0) 2"]
-    pub devepticr2: DEVEPTICR2,
-    #[doc = "0x16c - Device Endpoint Clear Register (n = 0) 3"]
-    pub devepticr3: DEVEPTICR3,
-    #[doc = "0x170 - Device Endpoint Clear Register (n = 0) 4"]
-    pub devepticr4: DEVEPTICR4,
-    #[doc = "0x174 - Device Endpoint Clear Register (n = 0) 5"]
-    pub devepticr5: DEVEPTICR5,
-    #[doc = "0x178 - Device Endpoint Clear Register (n = 0) 6"]
-    pub devepticr6: DEVEPTICR6,
-    #[doc = "0x17c - Device Endpoint Clear Register (n = 0) 7"]
-    pub devepticr7: DEVEPTICR7,
-    #[doc = "0x180 - Device Endpoint Clear Register (n = 0) 8"]
-    pub devepticr8: DEVEPTICR8,
-    #[doc = "0x184 - Device Endpoint Clear Register (n = 0) 9"]
-    pub devepticr9: DEVEPTICR9,
+    devepticr1: DEVEPTICR1,
+    devepticr2: DEVEPTICR2,
+    devepticr3: DEVEPTICR3,
+    devepticr4: DEVEPTICR4,
+    devepticr5: DEVEPTICR5,
+    devepticr6: DEVEPTICR6,
+    devepticr7: DEVEPTICR7,
+    devepticr8: DEVEPTICR8,
+    devepticr9: DEVEPTICR9,
     _reserved39: [u8; 0x08],
     _reserved_39_deveptifr0: [u8; 0x04],
-    #[doc = "0x194 - Device Endpoint Set Register (n = 0) 1"]
-    pub deveptifr1: DEVEPTIFR1,
-    #[doc = "0x198 - Device Endpoint Set Register (n = 0) 2"]
-    pub deveptifr2: DEVEPTIFR2,
-    #[doc = "0x19c - Device Endpoint Set Register (n = 0) 3"]
-    pub deveptifr3: DEVEPTIFR3,
-    #[doc = "0x1a0 - Device Endpoint Set Register (n = 0) 4"]
-    pub deveptifr4: DEVEPTIFR4,
-    #[doc = "0x1a4 - Device Endpoint Set Register (n = 0) 5"]
-    pub deveptifr5: DEVEPTIFR5,
-    #[doc = "0x1a8 - Device Endpoint Set Register (n = 0) 6"]
-    pub deveptifr6: DEVEPTIFR6,
-    #[doc = "0x1ac - Device Endpoint Set Register (n = 0) 7"]
-    pub deveptifr7: DEVEPTIFR7,
-    #[doc = "0x1b0 - Device Endpoint Set Register (n = 0) 8"]
-    pub deveptifr8: DEVEPTIFR8,
-    #[doc = "0x1b4 - Device Endpoint Set Register (n = 0) 9"]
-    pub deveptifr9: DEVEPTIFR9,
+    deveptifr1: DEVEPTIFR1,
+    deveptifr2: DEVEPTIFR2,
+    deveptifr3: DEVEPTIFR3,
+    deveptifr4: DEVEPTIFR4,
+    deveptifr5: DEVEPTIFR5,
+    deveptifr6: DEVEPTIFR6,
+    deveptifr7: DEVEPTIFR7,
+    deveptifr8: DEVEPTIFR8,
+    deveptifr9: DEVEPTIFR9,
     _reserved49: [u8; 0x08],
     _reserved_49_deveptimr0: [u8; 0x04],
-    #[doc = "0x1c4 - Device Endpoint Mask Register (n = 0) 1"]
-    pub deveptimr1: DEVEPTIMR1,
-    #[doc = "0x1c8 - Device Endpoint Mask Register (n = 0) 2"]
-    pub deveptimr2: DEVEPTIMR2,
-    #[doc = "0x1cc - Device Endpoint Mask Register (n = 0) 3"]
-    pub deveptimr3: DEVEPTIMR3,
-    #[doc = "0x1d0 - Device Endpoint Mask Register (n = 0) 4"]
-    pub deveptimr4: DEVEPTIMR4,
-    #[doc = "0x1d4 - Device Endpoint Mask Register (n = 0) 5"]
-    pub deveptimr5: DEVEPTIMR5,
-    #[doc = "0x1d8 - Device Endpoint Mask Register (n = 0) 6"]
-    pub deveptimr6: DEVEPTIMR6,
-    #[doc = "0x1dc - Device Endpoint Mask Register (n = 0) 7"]
-    pub deveptimr7: DEVEPTIMR7,
-    #[doc = "0x1e0 - Device Endpoint Mask Register (n = 0) 8"]
-    pub deveptimr8: DEVEPTIMR8,
-    #[doc = "0x1e4 - Device Endpoint Mask Register (n = 0) 9"]
-    pub deveptimr9: DEVEPTIMR9,
+    deveptimr1: DEVEPTIMR1,
+    deveptimr2: DEVEPTIMR2,
+    deveptimr3: DEVEPTIMR3,
+    deveptimr4: DEVEPTIMR4,
+    deveptimr5: DEVEPTIMR5,
+    deveptimr6: DEVEPTIMR6,
+    deveptimr7: DEVEPTIMR7,
+    deveptimr8: DEVEPTIMR8,
+    deveptimr9: DEVEPTIMR9,
     _reserved59: [u8; 0x08],
     _reserved_59_deveptier0: [u8; 0x04],
-    #[doc = "0x1f4 - Device Endpoint Enable Register (n = 0) 1"]
-    pub deveptier1: DEVEPTIER1,
-    #[doc = "0x1f8 - Device Endpoint Enable Register (n = 0) 2"]
-    pub deveptier2: DEVEPTIER2,
-    #[doc = "0x1fc - Device Endpoint Enable Register (n = 0) 3"]
-    pub deveptier3: DEVEPTIER3,
-    #[doc = "0x200 - Device Endpoint Enable Register (n = 0) 4"]
-    pub deveptier4: DEVEPTIER4,
-    #[doc = "0x204 - Device Endpoint Enable Register (n = 0) 5"]
-    pub deveptier5: DEVEPTIER5,
-    #[doc = "0x208 - Device Endpoint Enable Register (n = 0) 6"]
-    pub deveptier6: DEVEPTIER6,
-    #[doc = "0x20c - Device Endpoint Enable Register (n = 0) 7"]
-    pub deveptier7: DEVEPTIER7,
-    #[doc = "0x210 - Device Endpoint Enable Register (n = 0) 8"]
-    pub deveptier8: DEVEPTIER8,
-    #[doc = "0x214 - Device Endpoint Enable Register (n = 0) 9"]
-    pub deveptier9: DEVEPTIER9,
+    deveptier1: DEVEPTIER1,
+    deveptier2: DEVEPTIER2,
+    deveptier3: DEVEPTIER3,
+    deveptier4: DEVEPTIER4,
+    deveptier5: DEVEPTIER5,
+    deveptier6: DEVEPTIER6,
+    deveptier7: DEVEPTIER7,
+    deveptier8: DEVEPTIER8,
+    deveptier9: DEVEPTIER9,
     _reserved69: [u8; 0x08],
     _reserved_69_deveptidr0: [u8; 0x04],
-    #[doc = "0x224 - Device Endpoint Disable Register (n = 0) 1"]
-    pub deveptidr1: DEVEPTIDR1,
-    #[doc = "0x228 - Device Endpoint Disable Register (n = 0) 2"]
-    pub deveptidr2: DEVEPTIDR2,
-    #[doc = "0x22c - Device Endpoint Disable Register (n = 0) 3"]
-    pub deveptidr3: DEVEPTIDR3,
-    #[doc = "0x230 - Device Endpoint Disable Register (n = 0) 4"]
-    pub deveptidr4: DEVEPTIDR4,
-    #[doc = "0x234 - Device Endpoint Disable Register (n = 0) 5"]
-    pub deveptidr5: DEVEPTIDR5,
-    #[doc = "0x238 - Device Endpoint Disable Register (n = 0) 6"]
-    pub deveptidr6: DEVEPTIDR6,
-    #[doc = "0x23c - Device Endpoint Disable Register (n = 0) 7"]
-    pub deveptidr7: DEVEPTIDR7,
-    #[doc = "0x240 - Device Endpoint Disable Register (n = 0) 8"]
-    pub deveptidr8: DEVEPTIDR8,
-    #[doc = "0x244 - Device Endpoint Disable Register (n = 0) 9"]
-    pub deveptidr9: DEVEPTIDR9,
+    deveptidr1: DEVEPTIDR1,
+    deveptidr2: DEVEPTIDR2,
+    deveptidr3: DEVEPTIDR3,
+    deveptidr4: DEVEPTIDR4,
+    deveptidr5: DEVEPTIDR5,
+    deveptidr6: DEVEPTIDR6,
+    deveptidr7: DEVEPTIDR7,
+    deveptidr8: DEVEPTIDR8,
+    deveptidr9: DEVEPTIDR9,
     _reserved79: [u8; 0xc8],
-    #[doc = "0x310 - Device DMA Channel Next Descriptor Address Register (n = 1)"]
-    pub devdmanxtdsc1: DEVDMANXTDSC1,
-    #[doc = "0x314 - Device DMA Channel Address Register (n = 1)"]
-    pub devdmaaddress1: DEVDMAADDRESS1,
-    #[doc = "0x318 - Device DMA Channel Control Register (n = 1)"]
-    pub devdmacontrol1: DEVDMACONTROL1,
-    #[doc = "0x31c - Device DMA Channel Status Register (n = 1)"]
-    pub devdmastatus1: DEVDMASTATUS1,
-    #[doc = "0x320 - Device DMA Channel Next Descriptor Address Register (n = 2)"]
-    pub devdmanxtdsc2: DEVDMANXTDSC2,
-    #[doc = "0x324 - Device DMA Channel Address Register (n = 2)"]
-    pub devdmaaddress2: DEVDMAADDRESS2,
-    #[doc = "0x328 - Device DMA Channel Control Register (n = 2)"]
-    pub devdmacontrol2: DEVDMACONTROL2,
-    #[doc = "0x32c - Device DMA Channel Status Register (n = 2)"]
-    pub devdmastatus2: DEVDMASTATUS2,
-    #[doc = "0x330 - Device DMA Channel Next Descriptor Address Register (n = 3)"]
-    pub devdmanxtdsc3: DEVDMANXTDSC3,
-    #[doc = "0x334 - Device DMA Channel Address Register (n = 3)"]
-    pub devdmaaddress3: DEVDMAADDRESS3,
-    #[doc = "0x338 - Device DMA Channel Control Register (n = 3)"]
-    pub devdmacontrol3: DEVDMACONTROL3,
-    #[doc = "0x33c - Device DMA Channel Status Register (n = 3)"]
-    pub devdmastatus3: DEVDMASTATUS3,
-    #[doc = "0x340 - Device DMA Channel Next Descriptor Address Register (n = 4)"]
-    pub devdmanxtdsc4: DEVDMANXTDSC4,
-    #[doc = "0x344 - Device DMA Channel Address Register (n = 4)"]
-    pub devdmaaddress4: DEVDMAADDRESS4,
-    #[doc = "0x348 - Device DMA Channel Control Register (n = 4)"]
-    pub devdmacontrol4: DEVDMACONTROL4,
-    #[doc = "0x34c - Device DMA Channel Status Register (n = 4)"]
-    pub devdmastatus4: DEVDMASTATUS4,
-    #[doc = "0x350 - Device DMA Channel Next Descriptor Address Register (n = 5)"]
-    pub devdmanxtdsc5: DEVDMANXTDSC5,
-    #[doc = "0x354 - Device DMA Channel Address Register (n = 5)"]
-    pub devdmaaddress5: DEVDMAADDRESS5,
-    #[doc = "0x358 - Device DMA Channel Control Register (n = 5)"]
-    pub devdmacontrol5: DEVDMACONTROL5,
-    #[doc = "0x35c - Device DMA Channel Status Register (n = 5)"]
-    pub devdmastatus5: DEVDMASTATUS5,
-    #[doc = "0x360 - Device DMA Channel Next Descriptor Address Register (n = 6)"]
-    pub devdmanxtdsc6: DEVDMANXTDSC6,
-    #[doc = "0x364 - Device DMA Channel Address Register (n = 6)"]
-    pub devdmaaddress6: DEVDMAADDRESS6,
-    #[doc = "0x368 - Device DMA Channel Control Register (n = 6)"]
-    pub devdmacontrol6: DEVDMACONTROL6,
-    #[doc = "0x36c - Device DMA Channel Status Register (n = 6)"]
-    pub devdmastatus6: DEVDMASTATUS6,
-    #[doc = "0x370 - Device DMA Channel Next Descriptor Address Register (n = 7)"]
-    pub devdmanxtdsc7: DEVDMANXTDSC7,
-    #[doc = "0x374 - Device DMA Channel Address Register (n = 7)"]
-    pub devdmaaddress7: DEVDMAADDRESS7,
-    #[doc = "0x378 - Device DMA Channel Control Register (n = 7)"]
-    pub devdmacontrol7: DEVDMACONTROL7,
-    #[doc = "0x37c - Device DMA Channel Status Register (n = 7)"]
-    pub devdmastatus7: DEVDMASTATUS7,
+    devdmanxtdsc1: DEVDMANXTDSC1,
+    devdmaaddress1: DEVDMAADDRESS1,
+    devdmacontrol1: DEVDMACONTROL1,
+    devdmastatus1: DEVDMASTATUS1,
+    devdmanxtdsc2: DEVDMANXTDSC2,
+    devdmaaddress2: DEVDMAADDRESS2,
+    devdmacontrol2: DEVDMACONTROL2,
+    devdmastatus2: DEVDMASTATUS2,
+    devdmanxtdsc3: DEVDMANXTDSC3,
+    devdmaaddress3: DEVDMAADDRESS3,
+    devdmacontrol3: DEVDMACONTROL3,
+    devdmastatus3: DEVDMASTATUS3,
+    devdmanxtdsc4: DEVDMANXTDSC4,
+    devdmaaddress4: DEVDMAADDRESS4,
+    devdmacontrol4: DEVDMACONTROL4,
+    devdmastatus4: DEVDMASTATUS4,
+    devdmanxtdsc5: DEVDMANXTDSC5,
+    devdmaaddress5: DEVDMAADDRESS5,
+    devdmacontrol5: DEVDMACONTROL5,
+    devdmastatus5: DEVDMASTATUS5,
+    devdmanxtdsc6: DEVDMANXTDSC6,
+    devdmaaddress6: DEVDMAADDRESS6,
+    devdmacontrol6: DEVDMACONTROL6,
+    devdmastatus6: DEVDMASTATUS6,
+    devdmanxtdsc7: DEVDMANXTDSC7,
+    devdmaaddress7: DEVDMAADDRESS7,
+    devdmacontrol7: DEVDMACONTROL7,
+    devdmastatus7: DEVDMASTATUS7,
     _reserved107: [u8; 0x80],
-    #[doc = "0x400 - Host General Control Register"]
-    pub hstctrl: HSTCTRL,
-    #[doc = "0x404 - Host Global Interrupt Status Register"]
-    pub hstisr: HSTISR,
-    #[doc = "0x408 - Host Global Interrupt Clear Register"]
-    pub hsticr: HSTICR,
-    #[doc = "0x40c - Host Global Interrupt Set Register"]
-    pub hstifr: HSTIFR,
-    #[doc = "0x410 - Host Global Interrupt Mask Register"]
-    pub hstimr: HSTIMR,
-    #[doc = "0x414 - Host Global Interrupt Disable Register"]
-    pub hstidr: HSTIDR,
-    #[doc = "0x418 - Host Global Interrupt Enable Register"]
-    pub hstier: HSTIER,
-    #[doc = "0x41c - Host Pipe Register"]
-    pub hstpip: HSTPIP,
-    #[doc = "0x420 - Host Frame Number Register"]
-    pub hstfnum: HSTFNUM,
-    #[doc = "0x424 - Host Address 1 Register"]
-    pub hstaddr1: HSTADDR1,
-    #[doc = "0x428 - Host Address 2 Register"]
-    pub hstaddr2: HSTADDR2,
-    #[doc = "0x42c - Host Address 3 Register"]
-    pub hstaddr3: HSTADDR3,
+    hstctrl: HSTCTRL,
+    hstisr: HSTISR,
+    hsticr: HSTICR,
+    hstifr: HSTIFR,
+    hstimr: HSTIMR,
+    hstidr: HSTIDR,
+    hstier: HSTIER,
+    hstpip: HSTPIP,
+    hstfnum: HSTFNUM,
+    hstaddr1: HSTADDR1,
+    hstaddr2: HSTADDR2,
+    hstaddr3: HSTADDR3,
     _reserved119: [u8; 0xd0],
     _reserved_119_hstpipcfg0: [u8; 0x04],
-    #[doc = "0x504 - Host Pipe Configuration Register (n = 0) 1"]
-    pub hstpipcfg1: HSTPIPCFG1,
-    #[doc = "0x508 - Host Pipe Configuration Register (n = 0) 2"]
-    pub hstpipcfg2: HSTPIPCFG2,
-    #[doc = "0x50c - Host Pipe Configuration Register (n = 0) 3"]
-    pub hstpipcfg3: HSTPIPCFG3,
-    #[doc = "0x510 - Host Pipe Configuration Register (n = 0) 4"]
-    pub hstpipcfg4: HSTPIPCFG4,
-    #[doc = "0x514 - Host Pipe Configuration Register (n = 0) 5"]
-    pub hstpipcfg5: HSTPIPCFG5,
-    #[doc = "0x518 - Host Pipe Configuration Register (n = 0) 6"]
-    pub hstpipcfg6: HSTPIPCFG6,
-    #[doc = "0x51c - Host Pipe Configuration Register (n = 0) 7"]
-    pub hstpipcfg7: HSTPIPCFG7,
-    #[doc = "0x520 - Host Pipe Configuration Register (n = 0) 8"]
-    pub hstpipcfg8: HSTPIPCFG8,
-    #[doc = "0x524 - Host Pipe Configuration Register (n = 0) 9"]
-    pub hstpipcfg9: HSTPIPCFG9,
+    hstpipcfg1: HSTPIPCFG1,
+    hstpipcfg2: HSTPIPCFG2,
+    hstpipcfg3: HSTPIPCFG3,
+    hstpipcfg4: HSTPIPCFG4,
+    hstpipcfg5: HSTPIPCFG5,
+    hstpipcfg6: HSTPIPCFG6,
+    hstpipcfg7: HSTPIPCFG7,
+    hstpipcfg8: HSTPIPCFG8,
+    hstpipcfg9: HSTPIPCFG9,
     _reserved129: [u8; 0x08],
     _reserved_129_hstpipisr0: [u8; 0x04],
-    #[doc = "0x534 - Host Pipe Status Register (n = 0) 1"]
-    pub hstpipisr1: HSTPIPISR1,
-    #[doc = "0x538 - Host Pipe Status Register (n = 0) 2"]
-    pub hstpipisr2: HSTPIPISR2,
-    #[doc = "0x53c - Host Pipe Status Register (n = 0) 3"]
-    pub hstpipisr3: HSTPIPISR3,
-    #[doc = "0x540 - Host Pipe Status Register (n = 0) 4"]
-    pub hstpipisr4: HSTPIPISR4,
-    #[doc = "0x544 - Host Pipe Status Register (n = 0) 5"]
-    pub hstpipisr5: HSTPIPISR5,
-    #[doc = "0x548 - Host Pipe Status Register (n = 0) 6"]
-    pub hstpipisr6: HSTPIPISR6,
-    #[doc = "0x54c - Host Pipe Status Register (n = 0) 7"]
-    pub hstpipisr7: HSTPIPISR7,
-    #[doc = "0x550 - Host Pipe Status Register (n = 0) 8"]
-    pub hstpipisr8: HSTPIPISR8,
-    #[doc = "0x554 - Host Pipe Status Register (n = 0) 9"]
-    pub hstpipisr9: HSTPIPISR9,
+    hstpipisr1: HSTPIPISR1,
+    hstpipisr2: HSTPIPISR2,
+    hstpipisr3: HSTPIPISR3,
+    hstpipisr4: HSTPIPISR4,
+    hstpipisr5: HSTPIPISR5,
+    hstpipisr6: HSTPIPISR6,
+    hstpipisr7: HSTPIPISR7,
+    hstpipisr8: HSTPIPISR8,
+    hstpipisr9: HSTPIPISR9,
     _reserved139: [u8; 0x08],
     _reserved_139_hstpipicr0: [u8; 0x04],
-    #[doc = "0x564 - Host Pipe Clear Register (n = 0) 1"]
-    pub hstpipicr1: HSTPIPICR1,
-    #[doc = "0x568 - Host Pipe Clear Register (n = 0) 2"]
-    pub hstpipicr2: HSTPIPICR2,
-    #[doc = "0x56c - Host Pipe Clear Register (n = 0) 3"]
-    pub hstpipicr3: HSTPIPICR3,
-    #[doc = "0x570 - Host Pipe Clear Register (n = 0) 4"]
-    pub hstpipicr4: HSTPIPICR4,
-    #[doc = "0x574 - Host Pipe Clear Register (n = 0) 5"]
-    pub hstpipicr5: HSTPIPICR5,
-    #[doc = "0x578 - Host Pipe Clear Register (n = 0) 6"]
-    pub hstpipicr6: HSTPIPICR6,
-    #[doc = "0x57c - Host Pipe Clear Register (n = 0) 7"]
-    pub hstpipicr7: HSTPIPICR7,
-    #[doc = "0x580 - Host Pipe Clear Register (n = 0) 8"]
-    pub hstpipicr8: HSTPIPICR8,
-    #[doc = "0x584 - Host Pipe Clear Register (n = 0) 9"]
-    pub hstpipicr9: HSTPIPICR9,
+    hstpipicr1: HSTPIPICR1,
+    hstpipicr2: HSTPIPICR2,
+    hstpipicr3: HSTPIPICR3,
+    hstpipicr4: HSTPIPICR4,
+    hstpipicr5: HSTPIPICR5,
+    hstpipicr6: HSTPIPICR6,
+    hstpipicr7: HSTPIPICR7,
+    hstpipicr8: HSTPIPICR8,
+    hstpipicr9: HSTPIPICR9,
     _reserved149: [u8; 0x08],
     _reserved_149_hstpipifr0: [u8; 0x04],
-    #[doc = "0x594 - Host Pipe Set Register (n = 0) 1"]
-    pub hstpipifr1: HSTPIPIFR1,
-    #[doc = "0x598 - Host Pipe Set Register (n = 0) 2"]
-    pub hstpipifr2: HSTPIPIFR2,
-    #[doc = "0x59c - Host Pipe Set Register (n = 0) 3"]
-    pub hstpipifr3: HSTPIPIFR3,
-    #[doc = "0x5a0 - Host Pipe Set Register (n = 0) 4"]
-    pub hstpipifr4: HSTPIPIFR4,
-    #[doc = "0x5a4 - Host Pipe Set Register (n = 0) 5"]
-    pub hstpipifr5: HSTPIPIFR5,
-    #[doc = "0x5a8 - Host Pipe Set Register (n = 0) 6"]
-    pub hstpipifr6: HSTPIPIFR6,
-    #[doc = "0x5ac - Host Pipe Set Register (n = 0) 7"]
-    pub hstpipifr7: HSTPIPIFR7,
-    #[doc = "0x5b0 - Host Pipe Set Register (n = 0) 8"]
-    pub hstpipifr8: HSTPIPIFR8,
-    #[doc = "0x5b4 - Host Pipe Set Register (n = 0) 9"]
-    pub hstpipifr9: HSTPIPIFR9,
+    hstpipifr1: HSTPIPIFR1,
+    hstpipifr2: HSTPIPIFR2,
+    hstpipifr3: HSTPIPIFR3,
+    hstpipifr4: HSTPIPIFR4,
+    hstpipifr5: HSTPIPIFR5,
+    hstpipifr6: HSTPIPIFR6,
+    hstpipifr7: HSTPIPIFR7,
+    hstpipifr8: HSTPIPIFR8,
+    hstpipifr9: HSTPIPIFR9,
     _reserved159: [u8; 0x08],
     _reserved_159_hstpipimr0: [u8; 0x04],
-    #[doc = "0x5c4 - Host Pipe Mask Register (n = 0) 1"]
-    pub hstpipimr1: HSTPIPIMR1,
-    #[doc = "0x5c8 - Host Pipe Mask Register (n = 0) 2"]
-    pub hstpipimr2: HSTPIPIMR2,
-    #[doc = "0x5cc - Host Pipe Mask Register (n = 0) 3"]
-    pub hstpipimr3: HSTPIPIMR3,
-    #[doc = "0x5d0 - Host Pipe Mask Register (n = 0) 4"]
-    pub hstpipimr4: HSTPIPIMR4,
-    #[doc = "0x5d4 - Host Pipe Mask Register (n = 0) 5"]
-    pub hstpipimr5: HSTPIPIMR5,
-    #[doc = "0x5d8 - Host Pipe Mask Register (n = 0) 6"]
-    pub hstpipimr6: HSTPIPIMR6,
-    #[doc = "0x5dc - Host Pipe Mask Register (n = 0) 7"]
-    pub hstpipimr7: HSTPIPIMR7,
-    #[doc = "0x5e0 - Host Pipe Mask Register (n = 0) 8"]
-    pub hstpipimr8: HSTPIPIMR8,
-    #[doc = "0x5e4 - Host Pipe Mask Register (n = 0) 9"]
-    pub hstpipimr9: HSTPIPIMR9,
+    hstpipimr1: HSTPIPIMR1,
+    hstpipimr2: HSTPIPIMR2,
+    hstpipimr3: HSTPIPIMR3,
+    hstpipimr4: HSTPIPIMR4,
+    hstpipimr5: HSTPIPIMR5,
+    hstpipimr6: HSTPIPIMR6,
+    hstpipimr7: HSTPIPIMR7,
+    hstpipimr8: HSTPIPIMR8,
+    hstpipimr9: HSTPIPIMR9,
     _reserved169: [u8; 0x08],
     _reserved_169_hstpipier0: [u8; 0x04],
-    #[doc = "0x5f4 - Host Pipe Enable Register (n = 0) 1"]
-    pub hstpipier1: HSTPIPIER1,
-    #[doc = "0x5f8 - Host Pipe Enable Register (n = 0) 2"]
-    pub hstpipier2: HSTPIPIER2,
-    #[doc = "0x5fc - Host Pipe Enable Register (n = 0) 3"]
-    pub hstpipier3: HSTPIPIER3,
-    #[doc = "0x600 - Host Pipe Enable Register (n = 0) 4"]
-    pub hstpipier4: HSTPIPIER4,
-    #[doc = "0x604 - Host Pipe Enable Register (n = 0) 5"]
-    pub hstpipier5: HSTPIPIER5,
-    #[doc = "0x608 - Host Pipe Enable Register (n = 0) 6"]
-    pub hstpipier6: HSTPIPIER6,
-    #[doc = "0x60c - Host Pipe Enable Register (n = 0) 7"]
-    pub hstpipier7: HSTPIPIER7,
-    #[doc = "0x610 - Host Pipe Enable Register (n = 0) 8"]
-    pub hstpipier8: HSTPIPIER8,
-    #[doc = "0x614 - Host Pipe Enable Register (n = 0) 9"]
-    pub hstpipier9: HSTPIPIER9,
+    hstpipier1: HSTPIPIER1,
+    hstpipier2: HSTPIPIER2,
+    hstpipier3: HSTPIPIER3,
+    hstpipier4: HSTPIPIER4,
+    hstpipier5: HSTPIPIER5,
+    hstpipier6: HSTPIPIER6,
+    hstpipier7: HSTPIPIER7,
+    hstpipier8: HSTPIPIER8,
+    hstpipier9: HSTPIPIER9,
     _reserved179: [u8; 0x08],
     _reserved_179_hstpipidr0: [u8; 0x04],
-    #[doc = "0x624 - Host Pipe Disable Register (n = 0) 1"]
-    pub hstpipidr1: HSTPIPIDR1,
-    #[doc = "0x628 - Host Pipe Disable Register (n = 0) 2"]
-    pub hstpipidr2: HSTPIPIDR2,
-    #[doc = "0x62c - Host Pipe Disable Register (n = 0) 3"]
-    pub hstpipidr3: HSTPIPIDR3,
-    #[doc = "0x630 - Host Pipe Disable Register (n = 0) 4"]
-    pub hstpipidr4: HSTPIPIDR4,
-    #[doc = "0x634 - Host Pipe Disable Register (n = 0) 5"]
-    pub hstpipidr5: HSTPIPIDR5,
-    #[doc = "0x638 - Host Pipe Disable Register (n = 0) 6"]
-    pub hstpipidr6: HSTPIPIDR6,
-    #[doc = "0x63c - Host Pipe Disable Register (n = 0) 7"]
-    pub hstpipidr7: HSTPIPIDR7,
-    #[doc = "0x640 - Host Pipe Disable Register (n = 0) 8"]
-    pub hstpipidr8: HSTPIPIDR8,
-    #[doc = "0x644 - Host Pipe Disable Register (n = 0) 9"]
-    pub hstpipidr9: HSTPIPIDR9,
+    hstpipidr1: HSTPIPIDR1,
+    hstpipidr2: HSTPIPIDR2,
+    hstpipidr3: HSTPIPIDR3,
+    hstpipidr4: HSTPIPIDR4,
+    hstpipidr5: HSTPIPIDR5,
+    hstpipidr6: HSTPIPIDR6,
+    hstpipidr7: HSTPIPIDR7,
+    hstpipidr8: HSTPIPIDR8,
+    hstpipidr9: HSTPIPIDR9,
     _reserved189: [u8; 0x08],
-    #[doc = "0x650 - Host Pipe IN Request Register (n = 0) 0"]
-    pub hstpipinrq0: HSTPIPINRQ0,
-    #[doc = "0x654 - Host Pipe IN Request Register (n = 0) 1"]
-    pub hstpipinrq1: HSTPIPINRQ1,
-    #[doc = "0x658 - Host Pipe IN Request Register (n = 0) 2"]
-    pub hstpipinrq2: HSTPIPINRQ2,
-    #[doc = "0x65c - Host Pipe IN Request Register (n = 0) 3"]
-    pub hstpipinrq3: HSTPIPINRQ3,
-    #[doc = "0x660 - Host Pipe IN Request Register (n = 0) 4"]
-    pub hstpipinrq4: HSTPIPINRQ4,
-    #[doc = "0x664 - Host Pipe IN Request Register (n = 0) 5"]
-    pub hstpipinrq5: HSTPIPINRQ5,
-    #[doc = "0x668 - Host Pipe IN Request Register (n = 0) 6"]
-    pub hstpipinrq6: HSTPIPINRQ6,
-    #[doc = "0x66c - Host Pipe IN Request Register (n = 0) 7"]
-    pub hstpipinrq7: HSTPIPINRQ7,
-    #[doc = "0x670 - Host Pipe IN Request Register (n = 0) 8"]
-    pub hstpipinrq8: HSTPIPINRQ8,
-    #[doc = "0x674 - Host Pipe IN Request Register (n = 0) 9"]
-    pub hstpipinrq9: HSTPIPINRQ9,
+    hstpipinrq0: HSTPIPINRQ0,
+    hstpipinrq1: HSTPIPINRQ1,
+    hstpipinrq2: HSTPIPINRQ2,
+    hstpipinrq3: HSTPIPINRQ3,
+    hstpipinrq4: HSTPIPINRQ4,
+    hstpipinrq5: HSTPIPINRQ5,
+    hstpipinrq6: HSTPIPINRQ6,
+    hstpipinrq7: HSTPIPINRQ7,
+    hstpipinrq8: HSTPIPINRQ8,
+    hstpipinrq9: HSTPIPINRQ9,
     _reserved199: [u8; 0x08],
-    #[doc = "0x680 - Host Pipe Error Register (n = 0) 0"]
-    pub hstpiperr0: HSTPIPERR0,
-    #[doc = "0x684 - Host Pipe Error Register (n = 0) 1"]
-    pub hstpiperr1: HSTPIPERR1,
-    #[doc = "0x688 - Host Pipe Error Register (n = 0) 2"]
-    pub hstpiperr2: HSTPIPERR2,
-    #[doc = "0x68c - Host Pipe Error Register (n = 0) 3"]
-    pub hstpiperr3: HSTPIPERR3,
-    #[doc = "0x690 - Host Pipe Error Register (n = 0) 4"]
-    pub hstpiperr4: HSTPIPERR4,
-    #[doc = "0x694 - Host Pipe Error Register (n = 0) 5"]
-    pub hstpiperr5: HSTPIPERR5,
-    #[doc = "0x698 - Host Pipe Error Register (n = 0) 6"]
-    pub hstpiperr6: HSTPIPERR6,
-    #[doc = "0x69c - Host Pipe Error Register (n = 0) 7"]
-    pub hstpiperr7: HSTPIPERR7,
-    #[doc = "0x6a0 - Host Pipe Error Register (n = 0) 8"]
-    pub hstpiperr8: HSTPIPERR8,
-    #[doc = "0x6a4 - Host Pipe Error Register (n = 0) 9"]
-    pub hstpiperr9: HSTPIPERR9,
+    hstpiperr0: HSTPIPERR0,
+    hstpiperr1: HSTPIPERR1,
+    hstpiperr2: HSTPIPERR2,
+    hstpiperr3: HSTPIPERR3,
+    hstpiperr4: HSTPIPERR4,
+    hstpiperr5: HSTPIPERR5,
+    hstpiperr6: HSTPIPERR6,
+    hstpiperr7: HSTPIPERR7,
+    hstpiperr8: HSTPIPERR8,
+    hstpiperr9: HSTPIPERR9,
     _reserved209: [u8; 0x68],
-    #[doc = "0x710 - Host DMA Channel Next Descriptor Address Register (n = 1)"]
-    pub hstdmanxtdsc1: HSTDMANXTDSC1,
-    #[doc = "0x714 - Host DMA Channel Address Register (n = 1)"]
-    pub hstdmaaddress1: HSTDMAADDRESS1,
-    #[doc = "0x718 - Host DMA Channel Control Register (n = 1)"]
-    pub hstdmacontrol1: HSTDMACONTROL1,
-    #[doc = "0x71c - Host DMA Channel Status Register (n = 1)"]
-    pub hstdmastatus1: HSTDMASTATUS1,
-    #[doc = "0x720 - Host DMA Channel Next Descriptor Address Register (n = 2)"]
-    pub hstdmanxtdsc2: HSTDMANXTDSC2,
-    #[doc = "0x724 - Host DMA Channel Address Register (n = 2)"]
-    pub hstdmaaddress2: HSTDMAADDRESS2,
-    #[doc = "0x728 - Host DMA Channel Control Register (n = 2)"]
-    pub hstdmacontrol2: HSTDMACONTROL2,
-    #[doc = "0x72c - Host DMA Channel Status Register (n = 2)"]
-    pub hstdmastatus2: HSTDMASTATUS2,
-    #[doc = "0x730 - Host DMA Channel Next Descriptor Address Register (n = 3)"]
-    pub hstdmanxtdsc3: HSTDMANXTDSC3,
-    #[doc = "0x734 - Host DMA Channel Address Register (n = 3)"]
-    pub hstdmaaddress3: HSTDMAADDRESS3,
-    #[doc = "0x738 - Host DMA Channel Control Register (n = 3)"]
-    pub hstdmacontrol3: HSTDMACONTROL3,
-    #[doc = "0x73c - Host DMA Channel Status Register (n = 3)"]
-    pub hstdmastatus3: HSTDMASTATUS3,
-    #[doc = "0x740 - Host DMA Channel Next Descriptor Address Register (n = 4)"]
-    pub hstdmanxtdsc4: HSTDMANXTDSC4,
-    #[doc = "0x744 - Host DMA Channel Address Register (n = 4)"]
-    pub hstdmaaddress4: HSTDMAADDRESS4,
-    #[doc = "0x748 - Host DMA Channel Control Register (n = 4)"]
-    pub hstdmacontrol4: HSTDMACONTROL4,
-    #[doc = "0x74c - Host DMA Channel Status Register (n = 4)"]
-    pub hstdmastatus4: HSTDMASTATUS4,
-    #[doc = "0x750 - Host DMA Channel Next Descriptor Address Register (n = 5)"]
-    pub hstdmanxtdsc5: HSTDMANXTDSC5,
-    #[doc = "0x754 - Host DMA Channel Address Register (n = 5)"]
-    pub hstdmaaddress5: HSTDMAADDRESS5,
-    #[doc = "0x758 - Host DMA Channel Control Register (n = 5)"]
-    pub hstdmacontrol5: HSTDMACONTROL5,
-    #[doc = "0x75c - Host DMA Channel Status Register (n = 5)"]
-    pub hstdmastatus5: HSTDMASTATUS5,
-    #[doc = "0x760 - Host DMA Channel Next Descriptor Address Register (n = 6)"]
-    pub hstdmanxtdsc6: HSTDMANXTDSC6,
-    #[doc = "0x764 - Host DMA Channel Address Register (n = 6)"]
-    pub hstdmaaddress6: HSTDMAADDRESS6,
-    #[doc = "0x768 - Host DMA Channel Control Register (n = 6)"]
-    pub hstdmacontrol6: HSTDMACONTROL6,
-    #[doc = "0x76c - Host DMA Channel Status Register (n = 6)"]
-    pub hstdmastatus6: HSTDMASTATUS6,
-    #[doc = "0x770 - Host DMA Channel Next Descriptor Address Register (n = 7)"]
-    pub hstdmanxtdsc7: HSTDMANXTDSC7,
-    #[doc = "0x774 - Host DMA Channel Address Register (n = 7)"]
-    pub hstdmaaddress7: HSTDMAADDRESS7,
-    #[doc = "0x778 - Host DMA Channel Control Register (n = 7)"]
-    pub hstdmacontrol7: HSTDMACONTROL7,
-    #[doc = "0x77c - Host DMA Channel Status Register (n = 7)"]
-    pub hstdmastatus7: HSTDMASTATUS7,
+    hstdmanxtdsc1: HSTDMANXTDSC1,
+    hstdmaaddress1: HSTDMAADDRESS1,
+    hstdmacontrol1: HSTDMACONTROL1,
+    hstdmastatus1: HSTDMASTATUS1,
+    hstdmanxtdsc2: HSTDMANXTDSC2,
+    hstdmaaddress2: HSTDMAADDRESS2,
+    hstdmacontrol2: HSTDMACONTROL2,
+    hstdmastatus2: HSTDMASTATUS2,
+    hstdmanxtdsc3: HSTDMANXTDSC3,
+    hstdmaaddress3: HSTDMAADDRESS3,
+    hstdmacontrol3: HSTDMACONTROL3,
+    hstdmastatus3: HSTDMASTATUS3,
+    hstdmanxtdsc4: HSTDMANXTDSC4,
+    hstdmaaddress4: HSTDMAADDRESS4,
+    hstdmacontrol4: HSTDMACONTROL4,
+    hstdmastatus4: HSTDMASTATUS4,
+    hstdmanxtdsc5: HSTDMANXTDSC5,
+    hstdmaaddress5: HSTDMAADDRESS5,
+    hstdmacontrol5: HSTDMACONTROL5,
+    hstdmastatus5: HSTDMASTATUS5,
+    hstdmanxtdsc6: HSTDMANXTDSC6,
+    hstdmaaddress6: HSTDMAADDRESS6,
+    hstdmacontrol6: HSTDMACONTROL6,
+    hstdmastatus6: HSTDMASTATUS6,
+    hstdmanxtdsc7: HSTDMANXTDSC7,
+    hstdmaaddress7: HSTDMAADDRESS7,
+    hstdmacontrol7: HSTDMACONTROL7,
+    hstdmastatus7: HSTDMASTATUS7,
     _reserved237: [u8; 0x80],
-    #[doc = "0x800 - General Control Register"]
-    pub ctrl: CTRL,
-    #[doc = "0x804 - General Status Register"]
-    pub sr: SR,
-    #[doc = "0x808 - General Status Clear Register"]
-    pub scr: SCR,
-    #[doc = "0x80c - General Status Set Register"]
-    pub sfr: SFR,
+    ctrl: CTRL,
+    sr: SR,
+    scr: SCR,
+    sfr: SFR,
     _reserved241: [u8; 0x1c],
-    #[doc = "0x82c - General Finite State Machine Register"]
-    pub fsm: FSM,
+    fsm: FSM,
 }
 impl RegisterBlock {
+    #[doc = "0x00 - Device General Control Register"]
+    #[inline(always)]
+    pub const fn devctrl(&self) -> &DEVCTRL {
+        &self.devctrl
+    }
+    #[doc = "0x04 - Device Global Interrupt Status Register"]
+    #[inline(always)]
+    pub const fn devisr(&self) -> &DEVISR {
+        &self.devisr
+    }
+    #[doc = "0x08 - Device Global Interrupt Clear Register"]
+    #[inline(always)]
+    pub const fn devicr(&self) -> &DEVICR {
+        &self.devicr
+    }
+    #[doc = "0x0c - Device Global Interrupt Set Register"]
+    #[inline(always)]
+    pub const fn devifr(&self) -> &DEVIFR {
+        &self.devifr
+    }
+    #[doc = "0x10 - Device Global Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn devimr(&self) -> &DEVIMR {
+        &self.devimr
+    }
+    #[doc = "0x14 - Device Global Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn devidr(&self) -> &DEVIDR {
+        &self.devidr
+    }
+    #[doc = "0x18 - Device Global Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn devier(&self) -> &DEVIER {
+        &self.devier
+    }
+    #[doc = "0x1c - Device Endpoint Register"]
+    #[inline(always)]
+    pub const fn devept(&self) -> &DEVEPT {
+        &self.devept
+    }
+    #[doc = "0x20 - Device Frame Number Register"]
+    #[inline(always)]
+    pub const fn devfnum(&self) -> &DEVFNUM {
+        &self.devfnum
+    }
+    #[doc = "0x100 - Device Endpoint Configuration Register (n = 0) 0"]
+    #[inline(always)]
+    pub const fn deveptcfg0(&self) -> &DEVEPTCFG0 {
+        &self.deveptcfg0
+    }
+    #[doc = "0x104 - Device Endpoint Configuration Register (n = 0) 1"]
+    #[inline(always)]
+    pub const fn deveptcfg1(&self) -> &DEVEPTCFG1 {
+        &self.deveptcfg1
+    }
+    #[doc = "0x108 - Device Endpoint Configuration Register (n = 0) 2"]
+    #[inline(always)]
+    pub const fn deveptcfg2(&self) -> &DEVEPTCFG2 {
+        &self.deveptcfg2
+    }
+    #[doc = "0x10c - Device Endpoint Configuration Register (n = 0) 3"]
+    #[inline(always)]
+    pub const fn deveptcfg3(&self) -> &DEVEPTCFG3 {
+        &self.deveptcfg3
+    }
+    #[doc = "0x110 - Device Endpoint Configuration Register (n = 0) 4"]
+    #[inline(always)]
+    pub const fn deveptcfg4(&self) -> &DEVEPTCFG4 {
+        &self.deveptcfg4
+    }
+    #[doc = "0x114 - Device Endpoint Configuration Register (n = 0) 5"]
+    #[inline(always)]
+    pub const fn deveptcfg5(&self) -> &DEVEPTCFG5 {
+        &self.deveptcfg5
+    }
+    #[doc = "0x118 - Device Endpoint Configuration Register (n = 0) 6"]
+    #[inline(always)]
+    pub const fn deveptcfg6(&self) -> &DEVEPTCFG6 {
+        &self.deveptcfg6
+    }
+    #[doc = "0x11c - Device Endpoint Configuration Register (n = 0) 7"]
+    #[inline(always)]
+    pub const fn deveptcfg7(&self) -> &DEVEPTCFG7 {
+        &self.deveptcfg7
+    }
+    #[doc = "0x120 - Device Endpoint Configuration Register (n = 0) 8"]
+    #[inline(always)]
+    pub const fn deveptcfg8(&self) -> &DEVEPTCFG8 {
+        &self.deveptcfg8
+    }
+    #[doc = "0x124 - Device Endpoint Configuration Register (n = 0) 9"]
+    #[inline(always)]
+    pub const fn deveptcfg9(&self) -> &DEVEPTCFG9 {
+        &self.deveptcfg9
+    }
     #[doc = "0x130 - Device Endpoint Status Register (n = 0)"]
     #[inline(always)]
     pub const fn isoenpt_deveptisr0_isoenpt(&self) -> &ISOENPT_DEVEPTISR0_ISOENPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(304usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(304).cast() }
     }
     #[doc = "0x130 - Device Endpoint Status Register (n = 0) 0"]
     #[inline(always)]
     pub const fn deveptisr0(&self) -> &DEVEPTISR0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(304usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(304).cast() }
+    }
+    #[doc = "0x134 - Device Endpoint Status Register (n = 0) 1"]
+    #[inline(always)]
+    pub const fn deveptisr1(&self) -> &DEVEPTISR1 {
+        &self.deveptisr1
+    }
+    #[doc = "0x138 - Device Endpoint Status Register (n = 0) 2"]
+    #[inline(always)]
+    pub const fn deveptisr2(&self) -> &DEVEPTISR2 {
+        &self.deveptisr2
+    }
+    #[doc = "0x13c - Device Endpoint Status Register (n = 0) 3"]
+    #[inline(always)]
+    pub const fn deveptisr3(&self) -> &DEVEPTISR3 {
+        &self.deveptisr3
+    }
+    #[doc = "0x140 - Device Endpoint Status Register (n = 0) 4"]
+    #[inline(always)]
+    pub const fn deveptisr4(&self) -> &DEVEPTISR4 {
+        &self.deveptisr4
+    }
+    #[doc = "0x144 - Device Endpoint Status Register (n = 0) 5"]
+    #[inline(always)]
+    pub const fn deveptisr5(&self) -> &DEVEPTISR5 {
+        &self.deveptisr5
+    }
+    #[doc = "0x148 - Device Endpoint Status Register (n = 0) 6"]
+    #[inline(always)]
+    pub const fn deveptisr6(&self) -> &DEVEPTISR6 {
+        &self.deveptisr6
+    }
+    #[doc = "0x14c - Device Endpoint Status Register (n = 0) 7"]
+    #[inline(always)]
+    pub const fn deveptisr7(&self) -> &DEVEPTISR7 {
+        &self.deveptisr7
+    }
+    #[doc = "0x150 - Device Endpoint Status Register (n = 0) 8"]
+    #[inline(always)]
+    pub const fn deveptisr8(&self) -> &DEVEPTISR8 {
+        &self.deveptisr8
+    }
+    #[doc = "0x154 - Device Endpoint Status Register (n = 0) 9"]
+    #[inline(always)]
+    pub const fn deveptisr9(&self) -> &DEVEPTISR9 {
+        &self.deveptisr9
     }
     #[doc = "0x160 - Device Endpoint Clear Register (n = 0)"]
     #[inline(always)]
     pub const fn isoenpt_devepticr0_isoenpt(&self) -> &ISOENPT_DEVEPTICR0_ISOENPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(352usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(352).cast() }
     }
     #[doc = "0x160 - Device Endpoint Clear Register (n = 0) 0"]
     #[inline(always)]
     pub const fn devepticr0(&self) -> &DEVEPTICR0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(352usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(352).cast() }
+    }
+    #[doc = "0x164 - Device Endpoint Clear Register (n = 0) 1"]
+    #[inline(always)]
+    pub const fn devepticr1(&self) -> &DEVEPTICR1 {
+        &self.devepticr1
+    }
+    #[doc = "0x168 - Device Endpoint Clear Register (n = 0) 2"]
+    #[inline(always)]
+    pub const fn devepticr2(&self) -> &DEVEPTICR2 {
+        &self.devepticr2
+    }
+    #[doc = "0x16c - Device Endpoint Clear Register (n = 0) 3"]
+    #[inline(always)]
+    pub const fn devepticr3(&self) -> &DEVEPTICR3 {
+        &self.devepticr3
+    }
+    #[doc = "0x170 - Device Endpoint Clear Register (n = 0) 4"]
+    #[inline(always)]
+    pub const fn devepticr4(&self) -> &DEVEPTICR4 {
+        &self.devepticr4
+    }
+    #[doc = "0x174 - Device Endpoint Clear Register (n = 0) 5"]
+    #[inline(always)]
+    pub const fn devepticr5(&self) -> &DEVEPTICR5 {
+        &self.devepticr5
+    }
+    #[doc = "0x178 - Device Endpoint Clear Register (n = 0) 6"]
+    #[inline(always)]
+    pub const fn devepticr6(&self) -> &DEVEPTICR6 {
+        &self.devepticr6
+    }
+    #[doc = "0x17c - Device Endpoint Clear Register (n = 0) 7"]
+    #[inline(always)]
+    pub const fn devepticr7(&self) -> &DEVEPTICR7 {
+        &self.devepticr7
+    }
+    #[doc = "0x180 - Device Endpoint Clear Register (n = 0) 8"]
+    #[inline(always)]
+    pub const fn devepticr8(&self) -> &DEVEPTICR8 {
+        &self.devepticr8
+    }
+    #[doc = "0x184 - Device Endpoint Clear Register (n = 0) 9"]
+    #[inline(always)]
+    pub const fn devepticr9(&self) -> &DEVEPTICR9 {
+        &self.devepticr9
     }
     #[doc = "0x190 - Device Endpoint Set Register (n = 0)"]
     #[inline(always)]
     pub const fn isoenpt_deveptifr0_isoenpt(&self) -> &ISOENPT_DEVEPTIFR0_ISOENPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(400usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(400).cast() }
     }
     #[doc = "0x190 - Device Endpoint Set Register (n = 0) 0"]
     #[inline(always)]
     pub const fn deveptifr0(&self) -> &DEVEPTIFR0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(400usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(400).cast() }
+    }
+    #[doc = "0x194 - Device Endpoint Set Register (n = 0) 1"]
+    #[inline(always)]
+    pub const fn deveptifr1(&self) -> &DEVEPTIFR1 {
+        &self.deveptifr1
+    }
+    #[doc = "0x198 - Device Endpoint Set Register (n = 0) 2"]
+    #[inline(always)]
+    pub const fn deveptifr2(&self) -> &DEVEPTIFR2 {
+        &self.deveptifr2
+    }
+    #[doc = "0x19c - Device Endpoint Set Register (n = 0) 3"]
+    #[inline(always)]
+    pub const fn deveptifr3(&self) -> &DEVEPTIFR3 {
+        &self.deveptifr3
+    }
+    #[doc = "0x1a0 - Device Endpoint Set Register (n = 0) 4"]
+    #[inline(always)]
+    pub const fn deveptifr4(&self) -> &DEVEPTIFR4 {
+        &self.deveptifr4
+    }
+    #[doc = "0x1a4 - Device Endpoint Set Register (n = 0) 5"]
+    #[inline(always)]
+    pub const fn deveptifr5(&self) -> &DEVEPTIFR5 {
+        &self.deveptifr5
+    }
+    #[doc = "0x1a8 - Device Endpoint Set Register (n = 0) 6"]
+    #[inline(always)]
+    pub const fn deveptifr6(&self) -> &DEVEPTIFR6 {
+        &self.deveptifr6
+    }
+    #[doc = "0x1ac - Device Endpoint Set Register (n = 0) 7"]
+    #[inline(always)]
+    pub const fn deveptifr7(&self) -> &DEVEPTIFR7 {
+        &self.deveptifr7
+    }
+    #[doc = "0x1b0 - Device Endpoint Set Register (n = 0) 8"]
+    #[inline(always)]
+    pub const fn deveptifr8(&self) -> &DEVEPTIFR8 {
+        &self.deveptifr8
+    }
+    #[doc = "0x1b4 - Device Endpoint Set Register (n = 0) 9"]
+    #[inline(always)]
+    pub const fn deveptifr9(&self) -> &DEVEPTIFR9 {
+        &self.deveptifr9
     }
     #[doc = "0x1c0 - Device Endpoint Mask Register (n = 0)"]
     #[inline(always)]
     pub const fn isoenpt_deveptimr0_isoenpt(&self) -> &ISOENPT_DEVEPTIMR0_ISOENPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(448usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(448).cast() }
     }
     #[doc = "0x1c0 - Device Endpoint Mask Register (n = 0) 0"]
     #[inline(always)]
     pub const fn deveptimr0(&self) -> &DEVEPTIMR0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(448usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(448).cast() }
+    }
+    #[doc = "0x1c4 - Device Endpoint Mask Register (n = 0) 1"]
+    #[inline(always)]
+    pub const fn deveptimr1(&self) -> &DEVEPTIMR1 {
+        &self.deveptimr1
+    }
+    #[doc = "0x1c8 - Device Endpoint Mask Register (n = 0) 2"]
+    #[inline(always)]
+    pub const fn deveptimr2(&self) -> &DEVEPTIMR2 {
+        &self.deveptimr2
+    }
+    #[doc = "0x1cc - Device Endpoint Mask Register (n = 0) 3"]
+    #[inline(always)]
+    pub const fn deveptimr3(&self) -> &DEVEPTIMR3 {
+        &self.deveptimr3
+    }
+    #[doc = "0x1d0 - Device Endpoint Mask Register (n = 0) 4"]
+    #[inline(always)]
+    pub const fn deveptimr4(&self) -> &DEVEPTIMR4 {
+        &self.deveptimr4
+    }
+    #[doc = "0x1d4 - Device Endpoint Mask Register (n = 0) 5"]
+    #[inline(always)]
+    pub const fn deveptimr5(&self) -> &DEVEPTIMR5 {
+        &self.deveptimr5
+    }
+    #[doc = "0x1d8 - Device Endpoint Mask Register (n = 0) 6"]
+    #[inline(always)]
+    pub const fn deveptimr6(&self) -> &DEVEPTIMR6 {
+        &self.deveptimr6
+    }
+    #[doc = "0x1dc - Device Endpoint Mask Register (n = 0) 7"]
+    #[inline(always)]
+    pub const fn deveptimr7(&self) -> &DEVEPTIMR7 {
+        &self.deveptimr7
+    }
+    #[doc = "0x1e0 - Device Endpoint Mask Register (n = 0) 8"]
+    #[inline(always)]
+    pub const fn deveptimr8(&self) -> &DEVEPTIMR8 {
+        &self.deveptimr8
+    }
+    #[doc = "0x1e4 - Device Endpoint Mask Register (n = 0) 9"]
+    #[inline(always)]
+    pub const fn deveptimr9(&self) -> &DEVEPTIMR9 {
+        &self.deveptimr9
     }
     #[doc = "0x1f0 - Device Endpoint Enable Register (n = 0)"]
     #[inline(always)]
     pub const fn isoenpt_deveptier0_isoenpt(&self) -> &ISOENPT_DEVEPTIER0_ISOENPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(496usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(496).cast() }
     }
     #[doc = "0x1f0 - Device Endpoint Enable Register (n = 0) 0"]
     #[inline(always)]
     pub const fn deveptier0(&self) -> &DEVEPTIER0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(496usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(496).cast() }
+    }
+    #[doc = "0x1f4 - Device Endpoint Enable Register (n = 0) 1"]
+    #[inline(always)]
+    pub const fn deveptier1(&self) -> &DEVEPTIER1 {
+        &self.deveptier1
+    }
+    #[doc = "0x1f8 - Device Endpoint Enable Register (n = 0) 2"]
+    #[inline(always)]
+    pub const fn deveptier2(&self) -> &DEVEPTIER2 {
+        &self.deveptier2
+    }
+    #[doc = "0x1fc - Device Endpoint Enable Register (n = 0) 3"]
+    #[inline(always)]
+    pub const fn deveptier3(&self) -> &DEVEPTIER3 {
+        &self.deveptier3
+    }
+    #[doc = "0x200 - Device Endpoint Enable Register (n = 0) 4"]
+    #[inline(always)]
+    pub const fn deveptier4(&self) -> &DEVEPTIER4 {
+        &self.deveptier4
+    }
+    #[doc = "0x204 - Device Endpoint Enable Register (n = 0) 5"]
+    #[inline(always)]
+    pub const fn deveptier5(&self) -> &DEVEPTIER5 {
+        &self.deveptier5
+    }
+    #[doc = "0x208 - Device Endpoint Enable Register (n = 0) 6"]
+    #[inline(always)]
+    pub const fn deveptier6(&self) -> &DEVEPTIER6 {
+        &self.deveptier6
+    }
+    #[doc = "0x20c - Device Endpoint Enable Register (n = 0) 7"]
+    #[inline(always)]
+    pub const fn deveptier7(&self) -> &DEVEPTIER7 {
+        &self.deveptier7
+    }
+    #[doc = "0x210 - Device Endpoint Enable Register (n = 0) 8"]
+    #[inline(always)]
+    pub const fn deveptier8(&self) -> &DEVEPTIER8 {
+        &self.deveptier8
+    }
+    #[doc = "0x214 - Device Endpoint Enable Register (n = 0) 9"]
+    #[inline(always)]
+    pub const fn deveptier9(&self) -> &DEVEPTIER9 {
+        &self.deveptier9
     }
     #[doc = "0x220 - Device Endpoint Disable Register (n = 0)"]
     #[inline(always)]
     pub const fn isoenpt_deveptidr0_isoenpt(&self) -> &ISOENPT_DEVEPTIDR0_ISOENPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(544usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(544).cast() }
     }
     #[doc = "0x220 - Device Endpoint Disable Register (n = 0) 0"]
     #[inline(always)]
     pub const fn deveptidr0(&self) -> &DEVEPTIDR0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(544usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(544).cast() }
+    }
+    #[doc = "0x224 - Device Endpoint Disable Register (n = 0) 1"]
+    #[inline(always)]
+    pub const fn deveptidr1(&self) -> &DEVEPTIDR1 {
+        &self.deveptidr1
+    }
+    #[doc = "0x228 - Device Endpoint Disable Register (n = 0) 2"]
+    #[inline(always)]
+    pub const fn deveptidr2(&self) -> &DEVEPTIDR2 {
+        &self.deveptidr2
+    }
+    #[doc = "0x22c - Device Endpoint Disable Register (n = 0) 3"]
+    #[inline(always)]
+    pub const fn deveptidr3(&self) -> &DEVEPTIDR3 {
+        &self.deveptidr3
+    }
+    #[doc = "0x230 - Device Endpoint Disable Register (n = 0) 4"]
+    #[inline(always)]
+    pub const fn deveptidr4(&self) -> &DEVEPTIDR4 {
+        &self.deveptidr4
+    }
+    #[doc = "0x234 - Device Endpoint Disable Register (n = 0) 5"]
+    #[inline(always)]
+    pub const fn deveptidr5(&self) -> &DEVEPTIDR5 {
+        &self.deveptidr5
+    }
+    #[doc = "0x238 - Device Endpoint Disable Register (n = 0) 6"]
+    #[inline(always)]
+    pub const fn deveptidr6(&self) -> &DEVEPTIDR6 {
+        &self.deveptidr6
+    }
+    #[doc = "0x23c - Device Endpoint Disable Register (n = 0) 7"]
+    #[inline(always)]
+    pub const fn deveptidr7(&self) -> &DEVEPTIDR7 {
+        &self.deveptidr7
+    }
+    #[doc = "0x240 - Device Endpoint Disable Register (n = 0) 8"]
+    #[inline(always)]
+    pub const fn deveptidr8(&self) -> &DEVEPTIDR8 {
+        &self.deveptidr8
+    }
+    #[doc = "0x244 - Device Endpoint Disable Register (n = 0) 9"]
+    #[inline(always)]
+    pub const fn deveptidr9(&self) -> &DEVEPTIDR9 {
+        &self.deveptidr9
+    }
+    #[doc = "0x310 - Device DMA Channel Next Descriptor Address Register (n = 1)"]
+    #[inline(always)]
+    pub const fn devdmanxtdsc1(&self) -> &DEVDMANXTDSC1 {
+        &self.devdmanxtdsc1
+    }
+    #[doc = "0x314 - Device DMA Channel Address Register (n = 1)"]
+    #[inline(always)]
+    pub const fn devdmaaddress1(&self) -> &DEVDMAADDRESS1 {
+        &self.devdmaaddress1
+    }
+    #[doc = "0x318 - Device DMA Channel Control Register (n = 1)"]
+    #[inline(always)]
+    pub const fn devdmacontrol1(&self) -> &DEVDMACONTROL1 {
+        &self.devdmacontrol1
+    }
+    #[doc = "0x31c - Device DMA Channel Status Register (n = 1)"]
+    #[inline(always)]
+    pub const fn devdmastatus1(&self) -> &DEVDMASTATUS1 {
+        &self.devdmastatus1
+    }
+    #[doc = "0x320 - Device DMA Channel Next Descriptor Address Register (n = 2)"]
+    #[inline(always)]
+    pub const fn devdmanxtdsc2(&self) -> &DEVDMANXTDSC2 {
+        &self.devdmanxtdsc2
+    }
+    #[doc = "0x324 - Device DMA Channel Address Register (n = 2)"]
+    #[inline(always)]
+    pub const fn devdmaaddress2(&self) -> &DEVDMAADDRESS2 {
+        &self.devdmaaddress2
+    }
+    #[doc = "0x328 - Device DMA Channel Control Register (n = 2)"]
+    #[inline(always)]
+    pub const fn devdmacontrol2(&self) -> &DEVDMACONTROL2 {
+        &self.devdmacontrol2
+    }
+    #[doc = "0x32c - Device DMA Channel Status Register (n = 2)"]
+    #[inline(always)]
+    pub const fn devdmastatus2(&self) -> &DEVDMASTATUS2 {
+        &self.devdmastatus2
+    }
+    #[doc = "0x330 - Device DMA Channel Next Descriptor Address Register (n = 3)"]
+    #[inline(always)]
+    pub const fn devdmanxtdsc3(&self) -> &DEVDMANXTDSC3 {
+        &self.devdmanxtdsc3
+    }
+    #[doc = "0x334 - Device DMA Channel Address Register (n = 3)"]
+    #[inline(always)]
+    pub const fn devdmaaddress3(&self) -> &DEVDMAADDRESS3 {
+        &self.devdmaaddress3
+    }
+    #[doc = "0x338 - Device DMA Channel Control Register (n = 3)"]
+    #[inline(always)]
+    pub const fn devdmacontrol3(&self) -> &DEVDMACONTROL3 {
+        &self.devdmacontrol3
+    }
+    #[doc = "0x33c - Device DMA Channel Status Register (n = 3)"]
+    #[inline(always)]
+    pub const fn devdmastatus3(&self) -> &DEVDMASTATUS3 {
+        &self.devdmastatus3
+    }
+    #[doc = "0x340 - Device DMA Channel Next Descriptor Address Register (n = 4)"]
+    #[inline(always)]
+    pub const fn devdmanxtdsc4(&self) -> &DEVDMANXTDSC4 {
+        &self.devdmanxtdsc4
+    }
+    #[doc = "0x344 - Device DMA Channel Address Register (n = 4)"]
+    #[inline(always)]
+    pub const fn devdmaaddress4(&self) -> &DEVDMAADDRESS4 {
+        &self.devdmaaddress4
+    }
+    #[doc = "0x348 - Device DMA Channel Control Register (n = 4)"]
+    #[inline(always)]
+    pub const fn devdmacontrol4(&self) -> &DEVDMACONTROL4 {
+        &self.devdmacontrol4
+    }
+    #[doc = "0x34c - Device DMA Channel Status Register (n = 4)"]
+    #[inline(always)]
+    pub const fn devdmastatus4(&self) -> &DEVDMASTATUS4 {
+        &self.devdmastatus4
+    }
+    #[doc = "0x350 - Device DMA Channel Next Descriptor Address Register (n = 5)"]
+    #[inline(always)]
+    pub const fn devdmanxtdsc5(&self) -> &DEVDMANXTDSC5 {
+        &self.devdmanxtdsc5
+    }
+    #[doc = "0x354 - Device DMA Channel Address Register (n = 5)"]
+    #[inline(always)]
+    pub const fn devdmaaddress5(&self) -> &DEVDMAADDRESS5 {
+        &self.devdmaaddress5
+    }
+    #[doc = "0x358 - Device DMA Channel Control Register (n = 5)"]
+    #[inline(always)]
+    pub const fn devdmacontrol5(&self) -> &DEVDMACONTROL5 {
+        &self.devdmacontrol5
+    }
+    #[doc = "0x35c - Device DMA Channel Status Register (n = 5)"]
+    #[inline(always)]
+    pub const fn devdmastatus5(&self) -> &DEVDMASTATUS5 {
+        &self.devdmastatus5
+    }
+    #[doc = "0x360 - Device DMA Channel Next Descriptor Address Register (n = 6)"]
+    #[inline(always)]
+    pub const fn devdmanxtdsc6(&self) -> &DEVDMANXTDSC6 {
+        &self.devdmanxtdsc6
+    }
+    #[doc = "0x364 - Device DMA Channel Address Register (n = 6)"]
+    #[inline(always)]
+    pub const fn devdmaaddress6(&self) -> &DEVDMAADDRESS6 {
+        &self.devdmaaddress6
+    }
+    #[doc = "0x368 - Device DMA Channel Control Register (n = 6)"]
+    #[inline(always)]
+    pub const fn devdmacontrol6(&self) -> &DEVDMACONTROL6 {
+        &self.devdmacontrol6
+    }
+    #[doc = "0x36c - Device DMA Channel Status Register (n = 6)"]
+    #[inline(always)]
+    pub const fn devdmastatus6(&self) -> &DEVDMASTATUS6 {
+        &self.devdmastatus6
+    }
+    #[doc = "0x370 - Device DMA Channel Next Descriptor Address Register (n = 7)"]
+    #[inline(always)]
+    pub const fn devdmanxtdsc7(&self) -> &DEVDMANXTDSC7 {
+        &self.devdmanxtdsc7
+    }
+    #[doc = "0x374 - Device DMA Channel Address Register (n = 7)"]
+    #[inline(always)]
+    pub const fn devdmaaddress7(&self) -> &DEVDMAADDRESS7 {
+        &self.devdmaaddress7
+    }
+    #[doc = "0x378 - Device DMA Channel Control Register (n = 7)"]
+    #[inline(always)]
+    pub const fn devdmacontrol7(&self) -> &DEVDMACONTROL7 {
+        &self.devdmacontrol7
+    }
+    #[doc = "0x37c - Device DMA Channel Status Register (n = 7)"]
+    #[inline(always)]
+    pub const fn devdmastatus7(&self) -> &DEVDMASTATUS7 {
+        &self.devdmastatus7
+    }
+    #[doc = "0x400 - Host General Control Register"]
+    #[inline(always)]
+    pub const fn hstctrl(&self) -> &HSTCTRL {
+        &self.hstctrl
+    }
+    #[doc = "0x404 - Host Global Interrupt Status Register"]
+    #[inline(always)]
+    pub const fn hstisr(&self) -> &HSTISR {
+        &self.hstisr
+    }
+    #[doc = "0x408 - Host Global Interrupt Clear Register"]
+    #[inline(always)]
+    pub const fn hsticr(&self) -> &HSTICR {
+        &self.hsticr
+    }
+    #[doc = "0x40c - Host Global Interrupt Set Register"]
+    #[inline(always)]
+    pub const fn hstifr(&self) -> &HSTIFR {
+        &self.hstifr
+    }
+    #[doc = "0x410 - Host Global Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn hstimr(&self) -> &HSTIMR {
+        &self.hstimr
+    }
+    #[doc = "0x414 - Host Global Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn hstidr(&self) -> &HSTIDR {
+        &self.hstidr
+    }
+    #[doc = "0x418 - Host Global Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn hstier(&self) -> &HSTIER {
+        &self.hstier
+    }
+    #[doc = "0x41c - Host Pipe Register"]
+    #[inline(always)]
+    pub const fn hstpip(&self) -> &HSTPIP {
+        &self.hstpip
+    }
+    #[doc = "0x420 - Host Frame Number Register"]
+    #[inline(always)]
+    pub const fn hstfnum(&self) -> &HSTFNUM {
+        &self.hstfnum
+    }
+    #[doc = "0x424 - Host Address 1 Register"]
+    #[inline(always)]
+    pub const fn hstaddr1(&self) -> &HSTADDR1 {
+        &self.hstaddr1
+    }
+    #[doc = "0x428 - Host Address 2 Register"]
+    #[inline(always)]
+    pub const fn hstaddr2(&self) -> &HSTADDR2 {
+        &self.hstaddr2
+    }
+    #[doc = "0x42c - Host Address 3 Register"]
+    #[inline(always)]
+    pub const fn hstaddr3(&self) -> &HSTADDR3 {
+        &self.hstaddr3
     }
     #[doc = "0x500 - Host Pipe Configuration Register (n = 0)"]
     #[inline(always)]
     pub const fn hsbohscp_hstpipcfg0_hsbohscp(&self) -> &HSBOHSCP_HSTPIPCFG0_HSBOHSCP {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1280usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1280).cast() }
     }
     #[doc = "0x500 - Host Pipe Configuration Register (n = 0) 0"]
     #[inline(always)]
     pub const fn hstpipcfg0(&self) -> &HSTPIPCFG0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1280usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1280).cast() }
+    }
+    #[doc = "0x504 - Host Pipe Configuration Register (n = 0) 1"]
+    #[inline(always)]
+    pub const fn hstpipcfg1(&self) -> &HSTPIPCFG1 {
+        &self.hstpipcfg1
+    }
+    #[doc = "0x508 - Host Pipe Configuration Register (n = 0) 2"]
+    #[inline(always)]
+    pub const fn hstpipcfg2(&self) -> &HSTPIPCFG2 {
+        &self.hstpipcfg2
+    }
+    #[doc = "0x50c - Host Pipe Configuration Register (n = 0) 3"]
+    #[inline(always)]
+    pub const fn hstpipcfg3(&self) -> &HSTPIPCFG3 {
+        &self.hstpipcfg3
+    }
+    #[doc = "0x510 - Host Pipe Configuration Register (n = 0) 4"]
+    #[inline(always)]
+    pub const fn hstpipcfg4(&self) -> &HSTPIPCFG4 {
+        &self.hstpipcfg4
+    }
+    #[doc = "0x514 - Host Pipe Configuration Register (n = 0) 5"]
+    #[inline(always)]
+    pub const fn hstpipcfg5(&self) -> &HSTPIPCFG5 {
+        &self.hstpipcfg5
+    }
+    #[doc = "0x518 - Host Pipe Configuration Register (n = 0) 6"]
+    #[inline(always)]
+    pub const fn hstpipcfg6(&self) -> &HSTPIPCFG6 {
+        &self.hstpipcfg6
+    }
+    #[doc = "0x51c - Host Pipe Configuration Register (n = 0) 7"]
+    #[inline(always)]
+    pub const fn hstpipcfg7(&self) -> &HSTPIPCFG7 {
+        &self.hstpipcfg7
+    }
+    #[doc = "0x520 - Host Pipe Configuration Register (n = 0) 8"]
+    #[inline(always)]
+    pub const fn hstpipcfg8(&self) -> &HSTPIPCFG8 {
+        &self.hstpipcfg8
+    }
+    #[doc = "0x524 - Host Pipe Configuration Register (n = 0) 9"]
+    #[inline(always)]
+    pub const fn hstpipcfg9(&self) -> &HSTPIPCFG9 {
+        &self.hstpipcfg9
     }
     #[doc = "0x530 - Host Pipe Status Register (n = 0)"]
     #[inline(always)]
     pub const fn isopipes_hstpipisr0_isopipes(&self) -> &ISOPIPES_HSTPIPISR0_ISOPIPES {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1328usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1328).cast() }
     }
     #[doc = "0x530 - Host Pipe Status Register (n = 0)"]
     #[inline(always)]
     pub const fn intpipes_hstpipisr0_intpipes(&self) -> &INTPIPES_HSTPIPISR0_INTPIPES {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1328usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1328).cast() }
     }
     #[doc = "0x530 - Host Pipe Status Register (n = 0) 0"]
     #[inline(always)]
     pub const fn hstpipisr0(&self) -> &HSTPIPISR0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1328usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1328).cast() }
+    }
+    #[doc = "0x534 - Host Pipe Status Register (n = 0) 1"]
+    #[inline(always)]
+    pub const fn hstpipisr1(&self) -> &HSTPIPISR1 {
+        &self.hstpipisr1
+    }
+    #[doc = "0x538 - Host Pipe Status Register (n = 0) 2"]
+    #[inline(always)]
+    pub const fn hstpipisr2(&self) -> &HSTPIPISR2 {
+        &self.hstpipisr2
+    }
+    #[doc = "0x53c - Host Pipe Status Register (n = 0) 3"]
+    #[inline(always)]
+    pub const fn hstpipisr3(&self) -> &HSTPIPISR3 {
+        &self.hstpipisr3
+    }
+    #[doc = "0x540 - Host Pipe Status Register (n = 0) 4"]
+    #[inline(always)]
+    pub const fn hstpipisr4(&self) -> &HSTPIPISR4 {
+        &self.hstpipisr4
+    }
+    #[doc = "0x544 - Host Pipe Status Register (n = 0) 5"]
+    #[inline(always)]
+    pub const fn hstpipisr5(&self) -> &HSTPIPISR5 {
+        &self.hstpipisr5
+    }
+    #[doc = "0x548 - Host Pipe Status Register (n = 0) 6"]
+    #[inline(always)]
+    pub const fn hstpipisr6(&self) -> &HSTPIPISR6 {
+        &self.hstpipisr6
+    }
+    #[doc = "0x54c - Host Pipe Status Register (n = 0) 7"]
+    #[inline(always)]
+    pub const fn hstpipisr7(&self) -> &HSTPIPISR7 {
+        &self.hstpipisr7
+    }
+    #[doc = "0x550 - Host Pipe Status Register (n = 0) 8"]
+    #[inline(always)]
+    pub const fn hstpipisr8(&self) -> &HSTPIPISR8 {
+        &self.hstpipisr8
+    }
+    #[doc = "0x554 - Host Pipe Status Register (n = 0) 9"]
+    #[inline(always)]
+    pub const fn hstpipisr9(&self) -> &HSTPIPISR9 {
+        &self.hstpipisr9
     }
     #[doc = "0x560 - Host Pipe Clear Register (n = 0)"]
     #[inline(always)]
     pub const fn isopipes_hstpipicr0_isopipes(&self) -> &ISOPIPES_HSTPIPICR0_ISOPIPES {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1376usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1376).cast() }
     }
     #[doc = "0x560 - Host Pipe Clear Register (n = 0)"]
     #[inline(always)]
     pub const fn intpipes_hstpipicr0_intpipes(&self) -> &INTPIPES_HSTPIPICR0_INTPIPES {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1376usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1376).cast() }
     }
     #[doc = "0x560 - Host Pipe Clear Register (n = 0) 0"]
     #[inline(always)]
     pub const fn hstpipicr0(&self) -> &HSTPIPICR0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1376usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1376).cast() }
+    }
+    #[doc = "0x564 - Host Pipe Clear Register (n = 0) 1"]
+    #[inline(always)]
+    pub const fn hstpipicr1(&self) -> &HSTPIPICR1 {
+        &self.hstpipicr1
+    }
+    #[doc = "0x568 - Host Pipe Clear Register (n = 0) 2"]
+    #[inline(always)]
+    pub const fn hstpipicr2(&self) -> &HSTPIPICR2 {
+        &self.hstpipicr2
+    }
+    #[doc = "0x56c - Host Pipe Clear Register (n = 0) 3"]
+    #[inline(always)]
+    pub const fn hstpipicr3(&self) -> &HSTPIPICR3 {
+        &self.hstpipicr3
+    }
+    #[doc = "0x570 - Host Pipe Clear Register (n = 0) 4"]
+    #[inline(always)]
+    pub const fn hstpipicr4(&self) -> &HSTPIPICR4 {
+        &self.hstpipicr4
+    }
+    #[doc = "0x574 - Host Pipe Clear Register (n = 0) 5"]
+    #[inline(always)]
+    pub const fn hstpipicr5(&self) -> &HSTPIPICR5 {
+        &self.hstpipicr5
+    }
+    #[doc = "0x578 - Host Pipe Clear Register (n = 0) 6"]
+    #[inline(always)]
+    pub const fn hstpipicr6(&self) -> &HSTPIPICR6 {
+        &self.hstpipicr6
+    }
+    #[doc = "0x57c - Host Pipe Clear Register (n = 0) 7"]
+    #[inline(always)]
+    pub const fn hstpipicr7(&self) -> &HSTPIPICR7 {
+        &self.hstpipicr7
+    }
+    #[doc = "0x580 - Host Pipe Clear Register (n = 0) 8"]
+    #[inline(always)]
+    pub const fn hstpipicr8(&self) -> &HSTPIPICR8 {
+        &self.hstpipicr8
+    }
+    #[doc = "0x584 - Host Pipe Clear Register (n = 0) 9"]
+    #[inline(always)]
+    pub const fn hstpipicr9(&self) -> &HSTPIPICR9 {
+        &self.hstpipicr9
     }
     #[doc = "0x590 - Host Pipe Set Register (n = 0)"]
     #[inline(always)]
     pub const fn isopipes_hstpipifr0_isopipes(&self) -> &ISOPIPES_HSTPIPIFR0_ISOPIPES {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1424usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1424).cast() }
     }
     #[doc = "0x590 - Host Pipe Set Register (n = 0)"]
     #[inline(always)]
     pub const fn intpipes_hstpipifr0_intpipes(&self) -> &INTPIPES_HSTPIPIFR0_INTPIPES {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1424usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1424).cast() }
     }
     #[doc = "0x590 - Host Pipe Set Register (n = 0) 0"]
     #[inline(always)]
     pub const fn hstpipifr0(&self) -> &HSTPIPIFR0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1424usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1424).cast() }
+    }
+    #[doc = "0x594 - Host Pipe Set Register (n = 0) 1"]
+    #[inline(always)]
+    pub const fn hstpipifr1(&self) -> &HSTPIPIFR1 {
+        &self.hstpipifr1
+    }
+    #[doc = "0x598 - Host Pipe Set Register (n = 0) 2"]
+    #[inline(always)]
+    pub const fn hstpipifr2(&self) -> &HSTPIPIFR2 {
+        &self.hstpipifr2
+    }
+    #[doc = "0x59c - Host Pipe Set Register (n = 0) 3"]
+    #[inline(always)]
+    pub const fn hstpipifr3(&self) -> &HSTPIPIFR3 {
+        &self.hstpipifr3
+    }
+    #[doc = "0x5a0 - Host Pipe Set Register (n = 0) 4"]
+    #[inline(always)]
+    pub const fn hstpipifr4(&self) -> &HSTPIPIFR4 {
+        &self.hstpipifr4
+    }
+    #[doc = "0x5a4 - Host Pipe Set Register (n = 0) 5"]
+    #[inline(always)]
+    pub const fn hstpipifr5(&self) -> &HSTPIPIFR5 {
+        &self.hstpipifr5
+    }
+    #[doc = "0x5a8 - Host Pipe Set Register (n = 0) 6"]
+    #[inline(always)]
+    pub const fn hstpipifr6(&self) -> &HSTPIPIFR6 {
+        &self.hstpipifr6
+    }
+    #[doc = "0x5ac - Host Pipe Set Register (n = 0) 7"]
+    #[inline(always)]
+    pub const fn hstpipifr7(&self) -> &HSTPIPIFR7 {
+        &self.hstpipifr7
+    }
+    #[doc = "0x5b0 - Host Pipe Set Register (n = 0) 8"]
+    #[inline(always)]
+    pub const fn hstpipifr8(&self) -> &HSTPIPIFR8 {
+        &self.hstpipifr8
+    }
+    #[doc = "0x5b4 - Host Pipe Set Register (n = 0) 9"]
+    #[inline(always)]
+    pub const fn hstpipifr9(&self) -> &HSTPIPIFR9 {
+        &self.hstpipifr9
     }
     #[doc = "0x5c0 - Host Pipe Mask Register (n = 0)"]
     #[inline(always)]
     pub const fn isopipes_hstpipimr0_isopipes(&self) -> &ISOPIPES_HSTPIPIMR0_ISOPIPES {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1472usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1472).cast() }
     }
     #[doc = "0x5c0 - Host Pipe Mask Register (n = 0)"]
     #[inline(always)]
     pub const fn intpipes_hstpipimr0_intpipes(&self) -> &INTPIPES_HSTPIPIMR0_INTPIPES {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1472usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1472).cast() }
     }
     #[doc = "0x5c0 - Host Pipe Mask Register (n = 0) 0"]
     #[inline(always)]
     pub const fn hstpipimr0(&self) -> &HSTPIPIMR0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1472usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1472).cast() }
+    }
+    #[doc = "0x5c4 - Host Pipe Mask Register (n = 0) 1"]
+    #[inline(always)]
+    pub const fn hstpipimr1(&self) -> &HSTPIPIMR1 {
+        &self.hstpipimr1
+    }
+    #[doc = "0x5c8 - Host Pipe Mask Register (n = 0) 2"]
+    #[inline(always)]
+    pub const fn hstpipimr2(&self) -> &HSTPIPIMR2 {
+        &self.hstpipimr2
+    }
+    #[doc = "0x5cc - Host Pipe Mask Register (n = 0) 3"]
+    #[inline(always)]
+    pub const fn hstpipimr3(&self) -> &HSTPIPIMR3 {
+        &self.hstpipimr3
+    }
+    #[doc = "0x5d0 - Host Pipe Mask Register (n = 0) 4"]
+    #[inline(always)]
+    pub const fn hstpipimr4(&self) -> &HSTPIPIMR4 {
+        &self.hstpipimr4
+    }
+    #[doc = "0x5d4 - Host Pipe Mask Register (n = 0) 5"]
+    #[inline(always)]
+    pub const fn hstpipimr5(&self) -> &HSTPIPIMR5 {
+        &self.hstpipimr5
+    }
+    #[doc = "0x5d8 - Host Pipe Mask Register (n = 0) 6"]
+    #[inline(always)]
+    pub const fn hstpipimr6(&self) -> &HSTPIPIMR6 {
+        &self.hstpipimr6
+    }
+    #[doc = "0x5dc - Host Pipe Mask Register (n = 0) 7"]
+    #[inline(always)]
+    pub const fn hstpipimr7(&self) -> &HSTPIPIMR7 {
+        &self.hstpipimr7
+    }
+    #[doc = "0x5e0 - Host Pipe Mask Register (n = 0) 8"]
+    #[inline(always)]
+    pub const fn hstpipimr8(&self) -> &HSTPIPIMR8 {
+        &self.hstpipimr8
+    }
+    #[doc = "0x5e4 - Host Pipe Mask Register (n = 0) 9"]
+    #[inline(always)]
+    pub const fn hstpipimr9(&self) -> &HSTPIPIMR9 {
+        &self.hstpipimr9
     }
     #[doc = "0x5f0 - Host Pipe Enable Register (n = 0)"]
     #[inline(always)]
     pub const fn isopipes_hstpipier0_isopipes(&self) -> &ISOPIPES_HSTPIPIER0_ISOPIPES {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1520usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1520).cast() }
     }
     #[doc = "0x5f0 - Host Pipe Enable Register (n = 0)"]
     #[inline(always)]
     pub const fn intpipes_hstpipier0_intpipes(&self) -> &INTPIPES_HSTPIPIER0_INTPIPES {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1520usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1520).cast() }
     }
     #[doc = "0x5f0 - Host Pipe Enable Register (n = 0) 0"]
     #[inline(always)]
     pub const fn hstpipier0(&self) -> &HSTPIPIER0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1520usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1520).cast() }
+    }
+    #[doc = "0x5f4 - Host Pipe Enable Register (n = 0) 1"]
+    #[inline(always)]
+    pub const fn hstpipier1(&self) -> &HSTPIPIER1 {
+        &self.hstpipier1
+    }
+    #[doc = "0x5f8 - Host Pipe Enable Register (n = 0) 2"]
+    #[inline(always)]
+    pub const fn hstpipier2(&self) -> &HSTPIPIER2 {
+        &self.hstpipier2
+    }
+    #[doc = "0x5fc - Host Pipe Enable Register (n = 0) 3"]
+    #[inline(always)]
+    pub const fn hstpipier3(&self) -> &HSTPIPIER3 {
+        &self.hstpipier3
+    }
+    #[doc = "0x600 - Host Pipe Enable Register (n = 0) 4"]
+    #[inline(always)]
+    pub const fn hstpipier4(&self) -> &HSTPIPIER4 {
+        &self.hstpipier4
+    }
+    #[doc = "0x604 - Host Pipe Enable Register (n = 0) 5"]
+    #[inline(always)]
+    pub const fn hstpipier5(&self) -> &HSTPIPIER5 {
+        &self.hstpipier5
+    }
+    #[doc = "0x608 - Host Pipe Enable Register (n = 0) 6"]
+    #[inline(always)]
+    pub const fn hstpipier6(&self) -> &HSTPIPIER6 {
+        &self.hstpipier6
+    }
+    #[doc = "0x60c - Host Pipe Enable Register (n = 0) 7"]
+    #[inline(always)]
+    pub const fn hstpipier7(&self) -> &HSTPIPIER7 {
+        &self.hstpipier7
+    }
+    #[doc = "0x610 - Host Pipe Enable Register (n = 0) 8"]
+    #[inline(always)]
+    pub const fn hstpipier8(&self) -> &HSTPIPIER8 {
+        &self.hstpipier8
+    }
+    #[doc = "0x614 - Host Pipe Enable Register (n = 0) 9"]
+    #[inline(always)]
+    pub const fn hstpipier9(&self) -> &HSTPIPIER9 {
+        &self.hstpipier9
     }
     #[doc = "0x620 - Host Pipe Disable Register (n = 0)"]
     #[inline(always)]
     pub const fn isopipes_hstpipidr0_isopipes(&self) -> &ISOPIPES_HSTPIPIDR0_ISOPIPES {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1568usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1568).cast() }
     }
     #[doc = "0x620 - Host Pipe Disable Register (n = 0)"]
     #[inline(always)]
     pub const fn intpipes_hstpipidr0_intpipes(&self) -> &INTPIPES_HSTPIPIDR0_INTPIPES {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1568usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1568).cast() }
     }
     #[doc = "0x620 - Host Pipe Disable Register (n = 0) 0"]
     #[inline(always)]
     pub const fn hstpipidr0(&self) -> &HSTPIPIDR0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(1568usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(1568).cast() }
+    }
+    #[doc = "0x624 - Host Pipe Disable Register (n = 0) 1"]
+    #[inline(always)]
+    pub const fn hstpipidr1(&self) -> &HSTPIPIDR1 {
+        &self.hstpipidr1
+    }
+    #[doc = "0x628 - Host Pipe Disable Register (n = 0) 2"]
+    #[inline(always)]
+    pub const fn hstpipidr2(&self) -> &HSTPIPIDR2 {
+        &self.hstpipidr2
+    }
+    #[doc = "0x62c - Host Pipe Disable Register (n = 0) 3"]
+    #[inline(always)]
+    pub const fn hstpipidr3(&self) -> &HSTPIPIDR3 {
+        &self.hstpipidr3
+    }
+    #[doc = "0x630 - Host Pipe Disable Register (n = 0) 4"]
+    #[inline(always)]
+    pub const fn hstpipidr4(&self) -> &HSTPIPIDR4 {
+        &self.hstpipidr4
+    }
+    #[doc = "0x634 - Host Pipe Disable Register (n = 0) 5"]
+    #[inline(always)]
+    pub const fn hstpipidr5(&self) -> &HSTPIPIDR5 {
+        &self.hstpipidr5
+    }
+    #[doc = "0x638 - Host Pipe Disable Register (n = 0) 6"]
+    #[inline(always)]
+    pub const fn hstpipidr6(&self) -> &HSTPIPIDR6 {
+        &self.hstpipidr6
+    }
+    #[doc = "0x63c - Host Pipe Disable Register (n = 0) 7"]
+    #[inline(always)]
+    pub const fn hstpipidr7(&self) -> &HSTPIPIDR7 {
+        &self.hstpipidr7
+    }
+    #[doc = "0x640 - Host Pipe Disable Register (n = 0) 8"]
+    #[inline(always)]
+    pub const fn hstpipidr8(&self) -> &HSTPIPIDR8 {
+        &self.hstpipidr8
+    }
+    #[doc = "0x644 - Host Pipe Disable Register (n = 0) 9"]
+    #[inline(always)]
+    pub const fn hstpipidr9(&self) -> &HSTPIPIDR9 {
+        &self.hstpipidr9
+    }
+    #[doc = "0x650 - Host Pipe IN Request Register (n = 0) 0"]
+    #[inline(always)]
+    pub const fn hstpipinrq0(&self) -> &HSTPIPINRQ0 {
+        &self.hstpipinrq0
+    }
+    #[doc = "0x654 - Host Pipe IN Request Register (n = 0) 1"]
+    #[inline(always)]
+    pub const fn hstpipinrq1(&self) -> &HSTPIPINRQ1 {
+        &self.hstpipinrq1
+    }
+    #[doc = "0x658 - Host Pipe IN Request Register (n = 0) 2"]
+    #[inline(always)]
+    pub const fn hstpipinrq2(&self) -> &HSTPIPINRQ2 {
+        &self.hstpipinrq2
+    }
+    #[doc = "0x65c - Host Pipe IN Request Register (n = 0) 3"]
+    #[inline(always)]
+    pub const fn hstpipinrq3(&self) -> &HSTPIPINRQ3 {
+        &self.hstpipinrq3
+    }
+    #[doc = "0x660 - Host Pipe IN Request Register (n = 0) 4"]
+    #[inline(always)]
+    pub const fn hstpipinrq4(&self) -> &HSTPIPINRQ4 {
+        &self.hstpipinrq4
+    }
+    #[doc = "0x664 - Host Pipe IN Request Register (n = 0) 5"]
+    #[inline(always)]
+    pub const fn hstpipinrq5(&self) -> &HSTPIPINRQ5 {
+        &self.hstpipinrq5
+    }
+    #[doc = "0x668 - Host Pipe IN Request Register (n = 0) 6"]
+    #[inline(always)]
+    pub const fn hstpipinrq6(&self) -> &HSTPIPINRQ6 {
+        &self.hstpipinrq6
+    }
+    #[doc = "0x66c - Host Pipe IN Request Register (n = 0) 7"]
+    #[inline(always)]
+    pub const fn hstpipinrq7(&self) -> &HSTPIPINRQ7 {
+        &self.hstpipinrq7
+    }
+    #[doc = "0x670 - Host Pipe IN Request Register (n = 0) 8"]
+    #[inline(always)]
+    pub const fn hstpipinrq8(&self) -> &HSTPIPINRQ8 {
+        &self.hstpipinrq8
+    }
+    #[doc = "0x674 - Host Pipe IN Request Register (n = 0) 9"]
+    #[inline(always)]
+    pub const fn hstpipinrq9(&self) -> &HSTPIPINRQ9 {
+        &self.hstpipinrq9
+    }
+    #[doc = "0x680 - Host Pipe Error Register (n = 0) 0"]
+    #[inline(always)]
+    pub const fn hstpiperr0(&self) -> &HSTPIPERR0 {
+        &self.hstpiperr0
+    }
+    #[doc = "0x684 - Host Pipe Error Register (n = 0) 1"]
+    #[inline(always)]
+    pub const fn hstpiperr1(&self) -> &HSTPIPERR1 {
+        &self.hstpiperr1
+    }
+    #[doc = "0x688 - Host Pipe Error Register (n = 0) 2"]
+    #[inline(always)]
+    pub const fn hstpiperr2(&self) -> &HSTPIPERR2 {
+        &self.hstpiperr2
+    }
+    #[doc = "0x68c - Host Pipe Error Register (n = 0) 3"]
+    #[inline(always)]
+    pub const fn hstpiperr3(&self) -> &HSTPIPERR3 {
+        &self.hstpiperr3
+    }
+    #[doc = "0x690 - Host Pipe Error Register (n = 0) 4"]
+    #[inline(always)]
+    pub const fn hstpiperr4(&self) -> &HSTPIPERR4 {
+        &self.hstpiperr4
+    }
+    #[doc = "0x694 - Host Pipe Error Register (n = 0) 5"]
+    #[inline(always)]
+    pub const fn hstpiperr5(&self) -> &HSTPIPERR5 {
+        &self.hstpiperr5
+    }
+    #[doc = "0x698 - Host Pipe Error Register (n = 0) 6"]
+    #[inline(always)]
+    pub const fn hstpiperr6(&self) -> &HSTPIPERR6 {
+        &self.hstpiperr6
+    }
+    #[doc = "0x69c - Host Pipe Error Register (n = 0) 7"]
+    #[inline(always)]
+    pub const fn hstpiperr7(&self) -> &HSTPIPERR7 {
+        &self.hstpiperr7
+    }
+    #[doc = "0x6a0 - Host Pipe Error Register (n = 0) 8"]
+    #[inline(always)]
+    pub const fn hstpiperr8(&self) -> &HSTPIPERR8 {
+        &self.hstpiperr8
+    }
+    #[doc = "0x6a4 - Host Pipe Error Register (n = 0) 9"]
+    #[inline(always)]
+    pub const fn hstpiperr9(&self) -> &HSTPIPERR9 {
+        &self.hstpiperr9
+    }
+    #[doc = "0x710 - Host DMA Channel Next Descriptor Address Register (n = 1)"]
+    #[inline(always)]
+    pub const fn hstdmanxtdsc1(&self) -> &HSTDMANXTDSC1 {
+        &self.hstdmanxtdsc1
+    }
+    #[doc = "0x714 - Host DMA Channel Address Register (n = 1)"]
+    #[inline(always)]
+    pub const fn hstdmaaddress1(&self) -> &HSTDMAADDRESS1 {
+        &self.hstdmaaddress1
+    }
+    #[doc = "0x718 - Host DMA Channel Control Register (n = 1)"]
+    #[inline(always)]
+    pub const fn hstdmacontrol1(&self) -> &HSTDMACONTROL1 {
+        &self.hstdmacontrol1
+    }
+    #[doc = "0x71c - Host DMA Channel Status Register (n = 1)"]
+    #[inline(always)]
+    pub const fn hstdmastatus1(&self) -> &HSTDMASTATUS1 {
+        &self.hstdmastatus1
+    }
+    #[doc = "0x720 - Host DMA Channel Next Descriptor Address Register (n = 2)"]
+    #[inline(always)]
+    pub const fn hstdmanxtdsc2(&self) -> &HSTDMANXTDSC2 {
+        &self.hstdmanxtdsc2
+    }
+    #[doc = "0x724 - Host DMA Channel Address Register (n = 2)"]
+    #[inline(always)]
+    pub const fn hstdmaaddress2(&self) -> &HSTDMAADDRESS2 {
+        &self.hstdmaaddress2
+    }
+    #[doc = "0x728 - Host DMA Channel Control Register (n = 2)"]
+    #[inline(always)]
+    pub const fn hstdmacontrol2(&self) -> &HSTDMACONTROL2 {
+        &self.hstdmacontrol2
+    }
+    #[doc = "0x72c - Host DMA Channel Status Register (n = 2)"]
+    #[inline(always)]
+    pub const fn hstdmastatus2(&self) -> &HSTDMASTATUS2 {
+        &self.hstdmastatus2
+    }
+    #[doc = "0x730 - Host DMA Channel Next Descriptor Address Register (n = 3)"]
+    #[inline(always)]
+    pub const fn hstdmanxtdsc3(&self) -> &HSTDMANXTDSC3 {
+        &self.hstdmanxtdsc3
+    }
+    #[doc = "0x734 - Host DMA Channel Address Register (n = 3)"]
+    #[inline(always)]
+    pub const fn hstdmaaddress3(&self) -> &HSTDMAADDRESS3 {
+        &self.hstdmaaddress3
+    }
+    #[doc = "0x738 - Host DMA Channel Control Register (n = 3)"]
+    #[inline(always)]
+    pub const fn hstdmacontrol3(&self) -> &HSTDMACONTROL3 {
+        &self.hstdmacontrol3
+    }
+    #[doc = "0x73c - Host DMA Channel Status Register (n = 3)"]
+    #[inline(always)]
+    pub const fn hstdmastatus3(&self) -> &HSTDMASTATUS3 {
+        &self.hstdmastatus3
+    }
+    #[doc = "0x740 - Host DMA Channel Next Descriptor Address Register (n = 4)"]
+    #[inline(always)]
+    pub const fn hstdmanxtdsc4(&self) -> &HSTDMANXTDSC4 {
+        &self.hstdmanxtdsc4
+    }
+    #[doc = "0x744 - Host DMA Channel Address Register (n = 4)"]
+    #[inline(always)]
+    pub const fn hstdmaaddress4(&self) -> &HSTDMAADDRESS4 {
+        &self.hstdmaaddress4
+    }
+    #[doc = "0x748 - Host DMA Channel Control Register (n = 4)"]
+    #[inline(always)]
+    pub const fn hstdmacontrol4(&self) -> &HSTDMACONTROL4 {
+        &self.hstdmacontrol4
+    }
+    #[doc = "0x74c - Host DMA Channel Status Register (n = 4)"]
+    #[inline(always)]
+    pub const fn hstdmastatus4(&self) -> &HSTDMASTATUS4 {
+        &self.hstdmastatus4
+    }
+    #[doc = "0x750 - Host DMA Channel Next Descriptor Address Register (n = 5)"]
+    #[inline(always)]
+    pub const fn hstdmanxtdsc5(&self) -> &HSTDMANXTDSC5 {
+        &self.hstdmanxtdsc5
+    }
+    #[doc = "0x754 - Host DMA Channel Address Register (n = 5)"]
+    #[inline(always)]
+    pub const fn hstdmaaddress5(&self) -> &HSTDMAADDRESS5 {
+        &self.hstdmaaddress5
+    }
+    #[doc = "0x758 - Host DMA Channel Control Register (n = 5)"]
+    #[inline(always)]
+    pub const fn hstdmacontrol5(&self) -> &HSTDMACONTROL5 {
+        &self.hstdmacontrol5
+    }
+    #[doc = "0x75c - Host DMA Channel Status Register (n = 5)"]
+    #[inline(always)]
+    pub const fn hstdmastatus5(&self) -> &HSTDMASTATUS5 {
+        &self.hstdmastatus5
+    }
+    #[doc = "0x760 - Host DMA Channel Next Descriptor Address Register (n = 6)"]
+    #[inline(always)]
+    pub const fn hstdmanxtdsc6(&self) -> &HSTDMANXTDSC6 {
+        &self.hstdmanxtdsc6
+    }
+    #[doc = "0x764 - Host DMA Channel Address Register (n = 6)"]
+    #[inline(always)]
+    pub const fn hstdmaaddress6(&self) -> &HSTDMAADDRESS6 {
+        &self.hstdmaaddress6
+    }
+    #[doc = "0x768 - Host DMA Channel Control Register (n = 6)"]
+    #[inline(always)]
+    pub const fn hstdmacontrol6(&self) -> &HSTDMACONTROL6 {
+        &self.hstdmacontrol6
+    }
+    #[doc = "0x76c - Host DMA Channel Status Register (n = 6)"]
+    #[inline(always)]
+    pub const fn hstdmastatus6(&self) -> &HSTDMASTATUS6 {
+        &self.hstdmastatus6
+    }
+    #[doc = "0x770 - Host DMA Channel Next Descriptor Address Register (n = 7)"]
+    #[inline(always)]
+    pub const fn hstdmanxtdsc7(&self) -> &HSTDMANXTDSC7 {
+        &self.hstdmanxtdsc7
+    }
+    #[doc = "0x774 - Host DMA Channel Address Register (n = 7)"]
+    #[inline(always)]
+    pub const fn hstdmaaddress7(&self) -> &HSTDMAADDRESS7 {
+        &self.hstdmaaddress7
+    }
+    #[doc = "0x778 - Host DMA Channel Control Register (n = 7)"]
+    #[inline(always)]
+    pub const fn hstdmacontrol7(&self) -> &HSTDMACONTROL7 {
+        &self.hstdmacontrol7
+    }
+    #[doc = "0x77c - Host DMA Channel Status Register (n = 7)"]
+    #[inline(always)]
+    pub const fn hstdmastatus7(&self) -> &HSTDMASTATUS7 {
+        &self.hstdmastatus7
+    }
+    #[doc = "0x800 - General Control Register"]
+    #[inline(always)]
+    pub const fn ctrl(&self) -> &CTRL {
+        &self.ctrl
+    }
+    #[doc = "0x804 - General Status Register"]
+    #[inline(always)]
+    pub const fn sr(&self) -> &SR {
+        &self.sr
+    }
+    #[doc = "0x808 - General Status Clear Register"]
+    #[inline(always)]
+    pub const fn scr(&self) -> &SCR {
+        &self.scr
+    }
+    #[doc = "0x80c - General Status Set Register"]
+    #[inline(always)]
+    pub const fn sfr(&self) -> &SFR {
+        &self.sfr
+    }
+    #[doc = "0x82c - General Finite State Machine Register"]
+    #[inline(always)]
+    pub const fn fsm(&self) -> &FSM {
+        &self.fsm
     }
 }
 #[doc = "DEVCTRL (rw) register accessor: Device General Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`devctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`devctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@devctrl`]

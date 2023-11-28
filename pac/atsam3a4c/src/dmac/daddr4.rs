@@ -5,7 +5,7 @@ pub type W = crate::W<DADDR4_SPEC>;
 #[doc = "Field `DADDR` reader - Channel x Destination Address"]
 pub type DADDR_R = crate::FieldReader<u32>;
 #[doc = "Field `DADDR` writer - Channel x Destination Address"]
-pub type DADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type DADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Channel x Destination Address"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Channel x Destination Address"]
     #[inline(always)]
     #[must_use]
-    pub fn daddr(&mut self) -> DADDR_W<DADDR4_SPEC, 0> {
-        DADDR_W::new(self)
+    pub fn daddr(&mut self) -> DADDR_W<DADDR4_SPEC> {
+        DADDR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

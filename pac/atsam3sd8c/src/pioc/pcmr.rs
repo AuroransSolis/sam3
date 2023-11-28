@@ -5,7 +5,7 @@ pub type W = crate::W<PCMR_SPEC>;
 #[doc = "Field `PCEN` reader - Parallel Capture Mode Enable"]
 pub type PCEN_R = crate::BitReader;
 #[doc = "Field `PCEN` writer - Parallel Capture Mode Enable"]
-pub type PCEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PCEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DSIZE` reader - Parallel Capture Mode Data Size"]
 pub type DSIZE_R = crate::FieldReader<DSIZE_A>;
 #[doc = "Parallel Capture Mode Data Size\n\nValue on reset: 0"]
@@ -56,8 +56,8 @@ impl DSIZE_R {
     }
 }
 #[doc = "Field `DSIZE` writer - Parallel Capture Mode Data Size"]
-pub type DSIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, DSIZE_A>;
-impl<'a, REG, const O: u8> DSIZE_W<'a, REG, O>
+pub type DSIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 2, DSIZE_A>;
+impl<'a, REG> DSIZE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -81,15 +81,15 @@ where
 #[doc = "Field `ALWYS` reader - Parallel Capture Mode Always Sampling"]
 pub type ALWYS_R = crate::BitReader;
 #[doc = "Field `ALWYS` writer - Parallel Capture Mode Always Sampling"]
-pub type ALWYS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ALWYS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HALFS` reader - Parallel Capture Mode Half Sampling"]
 pub type HALFS_R = crate::BitReader;
 #[doc = "Field `HALFS` writer - Parallel Capture Mode Half Sampling"]
-pub type HALFS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HALFS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FRSTS` reader - Parallel Capture Mode First Sample"]
 pub type FRSTS_R = crate::BitReader;
 #[doc = "Field `FRSTS` writer - Parallel Capture Mode First Sample"]
-pub type FRSTS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FRSTS_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Parallel Capture Mode Enable"]
     #[inline(always)]
@@ -121,32 +121,32 @@ impl W {
     #[doc = "Bit 0 - Parallel Capture Mode Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pcen(&mut self) -> PCEN_W<PCMR_SPEC, 0> {
-        PCEN_W::new(self)
+    pub fn pcen(&mut self) -> PCEN_W<PCMR_SPEC> {
+        PCEN_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Parallel Capture Mode Data Size"]
     #[inline(always)]
     #[must_use]
-    pub fn dsize(&mut self) -> DSIZE_W<PCMR_SPEC, 4> {
-        DSIZE_W::new(self)
+    pub fn dsize(&mut self) -> DSIZE_W<PCMR_SPEC> {
+        DSIZE_W::new(self, 4)
     }
     #[doc = "Bit 9 - Parallel Capture Mode Always Sampling"]
     #[inline(always)]
     #[must_use]
-    pub fn alwys(&mut self) -> ALWYS_W<PCMR_SPEC, 9> {
-        ALWYS_W::new(self)
+    pub fn alwys(&mut self) -> ALWYS_W<PCMR_SPEC> {
+        ALWYS_W::new(self, 9)
     }
     #[doc = "Bit 10 - Parallel Capture Mode Half Sampling"]
     #[inline(always)]
     #[must_use]
-    pub fn halfs(&mut self) -> HALFS_W<PCMR_SPEC, 10> {
-        HALFS_W::new(self)
+    pub fn halfs(&mut self) -> HALFS_W<PCMR_SPEC> {
+        HALFS_W::new(self, 10)
     }
     #[doc = "Bit 11 - Parallel Capture Mode First Sample"]
     #[inline(always)]
     #[must_use]
-    pub fn frsts(&mut self) -> FRSTS_W<PCMR_SPEC, 11> {
-        FRSTS_W::new(self)
+    pub fn frsts(&mut self) -> FRSTS_W<PCMR_SPEC> {
+        FRSTS_W::new(self, 11)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

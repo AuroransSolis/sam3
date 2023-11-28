@@ -1,197 +1,377 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - SMC NFC Configuration Register"]
-    pub cfg: CFG,
-    #[doc = "0x04 - SMC NFC Control Register"]
-    pub ctrl: CTRL,
-    #[doc = "0x08 - SMC NFC Status Register"]
-    pub sr: SR,
-    #[doc = "0x0c - SMC NFC Interrupt Enable Register"]
-    pub ier: IER,
-    #[doc = "0x10 - SMC NFC Interrupt Disable Register"]
-    pub idr: IDR,
-    #[doc = "0x14 - SMC NFC Interrupt Mask Register"]
-    pub imr: IMR,
-    #[doc = "0x18 - SMC NFC Address Cycle Zero Register"]
-    pub addr: ADDR,
-    #[doc = "0x1c - SMC Bank Address Register"]
-    pub bank: BANK,
-    #[doc = "0x20 - SMC ECC Control Register"]
-    pub ecc_ctrl: ECC_CTRL,
-    #[doc = "0x24 - SMC ECC Mode Register"]
-    pub ecc_md: ECC_MD,
-    #[doc = "0x28 - SMC ECC Status 1 Register"]
-    pub ecc_sr1: ECC_SR1,
+    cfg: CFG,
+    ctrl: CTRL,
+    sr: SR,
+    ier: IER,
+    idr: IDR,
+    imr: IMR,
+    addr: ADDR,
+    bank: BANK,
+    ecc_ctrl: ECC_CTRL,
+    ecc_md: ECC_MD,
+    ecc_sr1: ECC_SR1,
     _reserved_11_ecc_pr0: [u8; 0x04],
     _reserved_12_ecc_pr1: [u8; 0x04],
-    #[doc = "0x34 - SMC ECC status 2 Register"]
-    pub ecc_sr2: ECC_SR2,
+    ecc_sr2: ECC_SR2,
     _reserved_14_ecc_pr2: [u8; 0x04],
     _reserved_15_ecc_pr3: [u8; 0x04],
     _reserved_16_ecc_pr4: [u8; 0x04],
     _reserved_17_ecc_pr5: [u8; 0x04],
     _reserved_18_ecc_pr6: [u8; 0x04],
     _reserved_19_ecc_pr7: [u8; 0x04],
-    #[doc = "0x50 - SMC ECC parity 8 Register"]
-    pub ecc_pr8: ECC_PR8,
-    #[doc = "0x54 - SMC ECC parity 9 Register"]
-    pub ecc_pr9: ECC_PR9,
-    #[doc = "0x58 - SMC ECC parity 10 Register"]
-    pub ecc_pr10: ECC_PR10,
-    #[doc = "0x5c - SMC ECC parity 11 Register"]
-    pub ecc_pr11: ECC_PR11,
-    #[doc = "0x60 - SMC ECC parity 12 Register"]
-    pub ecc_pr12: ECC_PR12,
-    #[doc = "0x64 - SMC ECC parity 13 Register"]
-    pub ecc_pr13: ECC_PR13,
-    #[doc = "0x68 - SMC ECC parity 14 Register"]
-    pub ecc_pr14: ECC_PR14,
-    #[doc = "0x6c - SMC ECC parity 15 Register"]
-    pub ecc_pr15: ECC_PR15,
-    #[doc = "0x70 - SMC Setup Register (CS_number = 0)"]
-    pub setup0: SETUP0,
-    #[doc = "0x74 - SMC Pulse Register (CS_number = 0)"]
-    pub pulse0: PULSE0,
-    #[doc = "0x78 - SMC Cycle Register (CS_number = 0)"]
-    pub cycle0: CYCLE0,
-    #[doc = "0x7c - SMC Timings Register (CS_number = 0)"]
-    pub timings0: TIMINGS0,
-    #[doc = "0x80 - SMC Mode Register (CS_number = 0)"]
-    pub mode0: MODE0,
-    #[doc = "0x84 - SMC Setup Register (CS_number = 1)"]
-    pub setup1: SETUP1,
-    #[doc = "0x88 - SMC Pulse Register (CS_number = 1)"]
-    pub pulse1: PULSE1,
-    #[doc = "0x8c - SMC Cycle Register (CS_number = 1)"]
-    pub cycle1: CYCLE1,
-    #[doc = "0x90 - SMC Timings Register (CS_number = 1)"]
-    pub timings1: TIMINGS1,
-    #[doc = "0x94 - SMC Mode Register (CS_number = 1)"]
-    pub mode1: MODE1,
-    #[doc = "0x98 - SMC Setup Register (CS_number = 2)"]
-    pub setup2: SETUP2,
-    #[doc = "0x9c - SMC Pulse Register (CS_number = 2)"]
-    pub pulse2: PULSE2,
-    #[doc = "0xa0 - SMC Cycle Register (CS_number = 2)"]
-    pub cycle2: CYCLE2,
-    #[doc = "0xa4 - SMC Timings Register (CS_number = 2)"]
-    pub timings2: TIMINGS2,
-    #[doc = "0xa8 - SMC Mode Register (CS_number = 2)"]
-    pub mode2: MODE2,
-    #[doc = "0xac - SMC Setup Register (CS_number = 3)"]
-    pub setup3: SETUP3,
-    #[doc = "0xb0 - SMC Pulse Register (CS_number = 3)"]
-    pub pulse3: PULSE3,
-    #[doc = "0xb4 - SMC Cycle Register (CS_number = 3)"]
-    pub cycle3: CYCLE3,
-    #[doc = "0xb8 - SMC Timings Register (CS_number = 3)"]
-    pub timings3: TIMINGS3,
-    #[doc = "0xbc - SMC Mode Register (CS_number = 3)"]
-    pub mode3: MODE3,
+    ecc_pr8: ECC_PR8,
+    ecc_pr9: ECC_PR9,
+    ecc_pr10: ECC_PR10,
+    ecc_pr11: ECC_PR11,
+    ecc_pr12: ECC_PR12,
+    ecc_pr13: ECC_PR13,
+    ecc_pr14: ECC_PR14,
+    ecc_pr15: ECC_PR15,
+    setup0: SETUP0,
+    pulse0: PULSE0,
+    cycle0: CYCLE0,
+    timings0: TIMINGS0,
+    mode0: MODE0,
+    setup1: SETUP1,
+    pulse1: PULSE1,
+    cycle1: CYCLE1,
+    timings1: TIMINGS1,
+    mode1: MODE1,
+    setup2: SETUP2,
+    pulse2: PULSE2,
+    cycle2: CYCLE2,
+    timings2: TIMINGS2,
+    mode2: MODE2,
+    setup3: SETUP3,
+    pulse3: PULSE3,
+    cycle3: CYCLE3,
+    timings3: TIMINGS3,
+    mode3: MODE3,
     _reserved48: [u8; 0x50],
-    #[doc = "0x110 - SMC OCMS Register"]
-    pub ocms: OCMS,
-    #[doc = "0x114 - SMC OCMS KEY1 Register"]
-    pub key1: KEY1,
-    #[doc = "0x118 - SMC OCMS KEY2 Register"]
-    pub key2: KEY2,
+    ocms: OCMS,
+    key1: KEY1,
+    key2: KEY2,
     _reserved51: [u8; 0xc8],
-    #[doc = "0x1e4 - Write Protection Control Register"]
-    pub wpcr: WPCR,
-    #[doc = "0x1e8 - Write Protection Status Register"]
-    pub wpsr: WPSR,
+    wpcr: WPCR,
+    wpsr: WPSR,
 }
 impl RegisterBlock {
+    #[doc = "0x00 - SMC NFC Configuration Register"]
+    #[inline(always)]
+    pub const fn cfg(&self) -> &CFG {
+        &self.cfg
+    }
+    #[doc = "0x04 - SMC NFC Control Register"]
+    #[inline(always)]
+    pub const fn ctrl(&self) -> &CTRL {
+        &self.ctrl
+    }
+    #[doc = "0x08 - SMC NFC Status Register"]
+    #[inline(always)]
+    pub const fn sr(&self) -> &SR {
+        &self.sr
+    }
+    #[doc = "0x0c - SMC NFC Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn ier(&self) -> &IER {
+        &self.ier
+    }
+    #[doc = "0x10 - SMC NFC Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn idr(&self) -> &IDR {
+        &self.idr
+    }
+    #[doc = "0x14 - SMC NFC Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn imr(&self) -> &IMR {
+        &self.imr
+    }
+    #[doc = "0x18 - SMC NFC Address Cycle Zero Register"]
+    #[inline(always)]
+    pub const fn addr(&self) -> &ADDR {
+        &self.addr
+    }
+    #[doc = "0x1c - SMC Bank Address Register"]
+    #[inline(always)]
+    pub const fn bank(&self) -> &BANK {
+        &self.bank
+    }
+    #[doc = "0x20 - SMC ECC Control Register"]
+    #[inline(always)]
+    pub const fn ecc_ctrl(&self) -> &ECC_CTRL {
+        &self.ecc_ctrl
+    }
+    #[doc = "0x24 - SMC ECC Mode Register"]
+    #[inline(always)]
+    pub const fn ecc_md(&self) -> &ECC_MD {
+        &self.ecc_md
+    }
+    #[doc = "0x28 - SMC ECC Status 1 Register"]
+    #[inline(always)]
+    pub const fn ecc_sr1(&self) -> &ECC_SR1 {
+        &self.ecc_sr1
+    }
     #[doc = "0x2c - SMC ECC Parity 0 Register"]
     #[inline(always)]
     pub const fn w8bit_ecc_pr0_w8bit(&self) -> &W8BIT_ECC_PR0_W8BIT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(44usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(44).cast() }
     }
     #[doc = "0x2c - SMC ECC Parity 0 Register"]
     #[inline(always)]
     pub const fn w9bit_ecc_pr0_w9bit(&self) -> &W9BIT_ECC_PR0_W9BIT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(44usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(44).cast() }
     }
     #[doc = "0x2c - SMC ECC Parity 0 Register"]
     #[inline(always)]
     pub const fn ecc_pr0(&self) -> &ECC_PR0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(44usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(44).cast() }
     }
     #[doc = "0x30 - SMC ECC parity 1 Register"]
     #[inline(always)]
     pub const fn w8bit_ecc_pr1_w8bit(&self) -> &W8BIT_ECC_PR1_W8BIT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(48usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(48).cast() }
     }
     #[doc = "0x30 - SMC ECC parity 1 Register"]
     #[inline(always)]
     pub const fn w9bit_ecc_pr1_w9bit(&self) -> &W9BIT_ECC_PR1_W9BIT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(48usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(48).cast() }
     }
     #[doc = "0x30 - SMC ECC parity 1 Register"]
     #[inline(always)]
     pub const fn ecc_pr1(&self) -> &ECC_PR1 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(48usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(48).cast() }
+    }
+    #[doc = "0x34 - SMC ECC status 2 Register"]
+    #[inline(always)]
+    pub const fn ecc_sr2(&self) -> &ECC_SR2 {
+        &self.ecc_sr2
     }
     #[doc = "0x38 - SMC ECC parity 2 Register"]
     #[inline(always)]
     pub const fn w8bit_ecc_pr2_w8bit(&self) -> &W8BIT_ECC_PR2_W8BIT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(56usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(56).cast() }
     }
     #[doc = "0x38 - SMC ECC parity 2 Register"]
     #[inline(always)]
     pub const fn ecc_pr2(&self) -> &ECC_PR2 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(56usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(56).cast() }
     }
     #[doc = "0x3c - SMC ECC parity 3 Register"]
     #[inline(always)]
     pub const fn w8bit_ecc_pr3_w8bit(&self) -> &W8BIT_ECC_PR3_W8BIT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(60usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(60).cast() }
     }
     #[doc = "0x3c - SMC ECC parity 3 Register"]
     #[inline(always)]
     pub const fn ecc_pr3(&self) -> &ECC_PR3 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(60usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(60).cast() }
     }
     #[doc = "0x40 - SMC ECC parity 4 Register"]
     #[inline(always)]
     pub const fn w8bit_ecc_pr4_w8bit(&self) -> &W8BIT_ECC_PR4_W8BIT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(64usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(64).cast() }
     }
     #[doc = "0x40 - SMC ECC parity 4 Register"]
     #[inline(always)]
     pub const fn ecc_pr4(&self) -> &ECC_PR4 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(64usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(64).cast() }
     }
     #[doc = "0x44 - SMC ECC parity 5 Register"]
     #[inline(always)]
     pub const fn w8bit_ecc_pr5_w8bit(&self) -> &W8BIT_ECC_PR5_W8BIT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(68usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(68).cast() }
     }
     #[doc = "0x44 - SMC ECC parity 5 Register"]
     #[inline(always)]
     pub const fn ecc_pr5(&self) -> &ECC_PR5 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(68usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(68).cast() }
     }
     #[doc = "0x48 - SMC ECC parity 6 Register"]
     #[inline(always)]
     pub const fn w8bit_ecc_pr6_w8bit(&self) -> &W8BIT_ECC_PR6_W8BIT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(72usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(72).cast() }
     }
     #[doc = "0x48 - SMC ECC parity 6 Register"]
     #[inline(always)]
     pub const fn ecc_pr6(&self) -> &ECC_PR6 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(72usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(72).cast() }
     }
     #[doc = "0x4c - SMC ECC parity 7 Register"]
     #[inline(always)]
     pub const fn w8bit_ecc_pr7_w8bit(&self) -> &W8BIT_ECC_PR7_W8BIT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(76usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(76).cast() }
     }
     #[doc = "0x4c - SMC ECC parity 7 Register"]
     #[inline(always)]
     pub const fn ecc_pr7(&self) -> &ECC_PR7 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(76usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(76).cast() }
+    }
+    #[doc = "0x50 - SMC ECC parity 8 Register"]
+    #[inline(always)]
+    pub const fn ecc_pr8(&self) -> &ECC_PR8 {
+        &self.ecc_pr8
+    }
+    #[doc = "0x54 - SMC ECC parity 9 Register"]
+    #[inline(always)]
+    pub const fn ecc_pr9(&self) -> &ECC_PR9 {
+        &self.ecc_pr9
+    }
+    #[doc = "0x58 - SMC ECC parity 10 Register"]
+    #[inline(always)]
+    pub const fn ecc_pr10(&self) -> &ECC_PR10 {
+        &self.ecc_pr10
+    }
+    #[doc = "0x5c - SMC ECC parity 11 Register"]
+    #[inline(always)]
+    pub const fn ecc_pr11(&self) -> &ECC_PR11 {
+        &self.ecc_pr11
+    }
+    #[doc = "0x60 - SMC ECC parity 12 Register"]
+    #[inline(always)]
+    pub const fn ecc_pr12(&self) -> &ECC_PR12 {
+        &self.ecc_pr12
+    }
+    #[doc = "0x64 - SMC ECC parity 13 Register"]
+    #[inline(always)]
+    pub const fn ecc_pr13(&self) -> &ECC_PR13 {
+        &self.ecc_pr13
+    }
+    #[doc = "0x68 - SMC ECC parity 14 Register"]
+    #[inline(always)]
+    pub const fn ecc_pr14(&self) -> &ECC_PR14 {
+        &self.ecc_pr14
+    }
+    #[doc = "0x6c - SMC ECC parity 15 Register"]
+    #[inline(always)]
+    pub const fn ecc_pr15(&self) -> &ECC_PR15 {
+        &self.ecc_pr15
+    }
+    #[doc = "0x70 - SMC Setup Register (CS_number = 0)"]
+    #[inline(always)]
+    pub const fn setup0(&self) -> &SETUP0 {
+        &self.setup0
+    }
+    #[doc = "0x74 - SMC Pulse Register (CS_number = 0)"]
+    #[inline(always)]
+    pub const fn pulse0(&self) -> &PULSE0 {
+        &self.pulse0
+    }
+    #[doc = "0x78 - SMC Cycle Register (CS_number = 0)"]
+    #[inline(always)]
+    pub const fn cycle0(&self) -> &CYCLE0 {
+        &self.cycle0
+    }
+    #[doc = "0x7c - SMC Timings Register (CS_number = 0)"]
+    #[inline(always)]
+    pub const fn timings0(&self) -> &TIMINGS0 {
+        &self.timings0
+    }
+    #[doc = "0x80 - SMC Mode Register (CS_number = 0)"]
+    #[inline(always)]
+    pub const fn mode0(&self) -> &MODE0 {
+        &self.mode0
+    }
+    #[doc = "0x84 - SMC Setup Register (CS_number = 1)"]
+    #[inline(always)]
+    pub const fn setup1(&self) -> &SETUP1 {
+        &self.setup1
+    }
+    #[doc = "0x88 - SMC Pulse Register (CS_number = 1)"]
+    #[inline(always)]
+    pub const fn pulse1(&self) -> &PULSE1 {
+        &self.pulse1
+    }
+    #[doc = "0x8c - SMC Cycle Register (CS_number = 1)"]
+    #[inline(always)]
+    pub const fn cycle1(&self) -> &CYCLE1 {
+        &self.cycle1
+    }
+    #[doc = "0x90 - SMC Timings Register (CS_number = 1)"]
+    #[inline(always)]
+    pub const fn timings1(&self) -> &TIMINGS1 {
+        &self.timings1
+    }
+    #[doc = "0x94 - SMC Mode Register (CS_number = 1)"]
+    #[inline(always)]
+    pub const fn mode1(&self) -> &MODE1 {
+        &self.mode1
+    }
+    #[doc = "0x98 - SMC Setup Register (CS_number = 2)"]
+    #[inline(always)]
+    pub const fn setup2(&self) -> &SETUP2 {
+        &self.setup2
+    }
+    #[doc = "0x9c - SMC Pulse Register (CS_number = 2)"]
+    #[inline(always)]
+    pub const fn pulse2(&self) -> &PULSE2 {
+        &self.pulse2
+    }
+    #[doc = "0xa0 - SMC Cycle Register (CS_number = 2)"]
+    #[inline(always)]
+    pub const fn cycle2(&self) -> &CYCLE2 {
+        &self.cycle2
+    }
+    #[doc = "0xa4 - SMC Timings Register (CS_number = 2)"]
+    #[inline(always)]
+    pub const fn timings2(&self) -> &TIMINGS2 {
+        &self.timings2
+    }
+    #[doc = "0xa8 - SMC Mode Register (CS_number = 2)"]
+    #[inline(always)]
+    pub const fn mode2(&self) -> &MODE2 {
+        &self.mode2
+    }
+    #[doc = "0xac - SMC Setup Register (CS_number = 3)"]
+    #[inline(always)]
+    pub const fn setup3(&self) -> &SETUP3 {
+        &self.setup3
+    }
+    #[doc = "0xb0 - SMC Pulse Register (CS_number = 3)"]
+    #[inline(always)]
+    pub const fn pulse3(&self) -> &PULSE3 {
+        &self.pulse3
+    }
+    #[doc = "0xb4 - SMC Cycle Register (CS_number = 3)"]
+    #[inline(always)]
+    pub const fn cycle3(&self) -> &CYCLE3 {
+        &self.cycle3
+    }
+    #[doc = "0xb8 - SMC Timings Register (CS_number = 3)"]
+    #[inline(always)]
+    pub const fn timings3(&self) -> &TIMINGS3 {
+        &self.timings3
+    }
+    #[doc = "0xbc - SMC Mode Register (CS_number = 3)"]
+    #[inline(always)]
+    pub const fn mode3(&self) -> &MODE3 {
+        &self.mode3
+    }
+    #[doc = "0x110 - SMC OCMS Register"]
+    #[inline(always)]
+    pub const fn ocms(&self) -> &OCMS {
+        &self.ocms
+    }
+    #[doc = "0x114 - SMC OCMS KEY1 Register"]
+    #[inline(always)]
+    pub const fn key1(&self) -> &KEY1 {
+        &self.key1
+    }
+    #[doc = "0x118 - SMC OCMS KEY2 Register"]
+    #[inline(always)]
+    pub const fn key2(&self) -> &KEY2 {
+        &self.key2
+    }
+    #[doc = "0x1e4 - Write Protection Control Register"]
+    #[inline(always)]
+    pub const fn wpcr(&self) -> &WPCR {
+        &self.wpcr
+    }
+    #[doc = "0x1e8 - Write Protection Status Register"]
+    #[inline(always)]
+    pub const fn wpsr(&self) -> &WPSR {
+        &self.wpsr
     }
 }
 #[doc = "CFG (rw) register accessor: SMC NFC Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cfg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cfg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

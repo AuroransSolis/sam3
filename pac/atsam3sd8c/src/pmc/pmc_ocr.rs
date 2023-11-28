@@ -5,27 +5,27 @@ pub type W = crate::W<PMC_OCR_SPEC>;
 #[doc = "Field `CAL4` reader - RC Oscillator Calibration bits for 4 Mhz"]
 pub type CAL4_R = crate::FieldReader;
 #[doc = "Field `CAL4` writer - RC Oscillator Calibration bits for 4 Mhz"]
-pub type CAL4_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type CAL4_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `SEL4` reader - Selection of RC Oscillator Calibration bits for 4 Mhz"]
 pub type SEL4_R = crate::BitReader;
 #[doc = "Field `SEL4` writer - Selection of RC Oscillator Calibration bits for 4 Mhz"]
-pub type SEL4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SEL4_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CAL8` reader - RC Oscillator Calibration bits for 8 Mhz"]
 pub type CAL8_R = crate::FieldReader;
 #[doc = "Field `CAL8` writer - RC Oscillator Calibration bits for 8 Mhz"]
-pub type CAL8_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type CAL8_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `SEL8` reader - Selection of RC Oscillator Calibration bits for 8 Mhz"]
 pub type SEL8_R = crate::BitReader;
 #[doc = "Field `SEL8` writer - Selection of RC Oscillator Calibration bits for 8 Mhz"]
-pub type SEL8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SEL8_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CAL12` reader - RC Oscillator Calibration bits for 12 Mhz"]
 pub type CAL12_R = crate::FieldReader;
 #[doc = "Field `CAL12` writer - RC Oscillator Calibration bits for 12 Mhz"]
-pub type CAL12_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type CAL12_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `SEL12` reader - Selection of RC Oscillator Calibration bits for 12 Mhz"]
 pub type SEL12_R = crate::BitReader;
 #[doc = "Field `SEL12` writer - Selection of RC Oscillator Calibration bits for 12 Mhz"]
-pub type SEL12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SEL12_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:6 - RC Oscillator Calibration bits for 4 Mhz"]
     #[inline(always)]
@@ -62,38 +62,38 @@ impl W {
     #[doc = "Bits 0:6 - RC Oscillator Calibration bits for 4 Mhz"]
     #[inline(always)]
     #[must_use]
-    pub fn cal4(&mut self) -> CAL4_W<PMC_OCR_SPEC, 0> {
-        CAL4_W::new(self)
+    pub fn cal4(&mut self) -> CAL4_W<PMC_OCR_SPEC> {
+        CAL4_W::new(self, 0)
     }
     #[doc = "Bit 7 - Selection of RC Oscillator Calibration bits for 4 Mhz"]
     #[inline(always)]
     #[must_use]
-    pub fn sel4(&mut self) -> SEL4_W<PMC_OCR_SPEC, 7> {
-        SEL4_W::new(self)
+    pub fn sel4(&mut self) -> SEL4_W<PMC_OCR_SPEC> {
+        SEL4_W::new(self, 7)
     }
     #[doc = "Bits 8:14 - RC Oscillator Calibration bits for 8 Mhz"]
     #[inline(always)]
     #[must_use]
-    pub fn cal8(&mut self) -> CAL8_W<PMC_OCR_SPEC, 8> {
-        CAL8_W::new(self)
+    pub fn cal8(&mut self) -> CAL8_W<PMC_OCR_SPEC> {
+        CAL8_W::new(self, 8)
     }
     #[doc = "Bit 15 - Selection of RC Oscillator Calibration bits for 8 Mhz"]
     #[inline(always)]
     #[must_use]
-    pub fn sel8(&mut self) -> SEL8_W<PMC_OCR_SPEC, 15> {
-        SEL8_W::new(self)
+    pub fn sel8(&mut self) -> SEL8_W<PMC_OCR_SPEC> {
+        SEL8_W::new(self, 15)
     }
     #[doc = "Bits 16:22 - RC Oscillator Calibration bits for 12 Mhz"]
     #[inline(always)]
     #[must_use]
-    pub fn cal12(&mut self) -> CAL12_W<PMC_OCR_SPEC, 16> {
-        CAL12_W::new(self)
+    pub fn cal12(&mut self) -> CAL12_W<PMC_OCR_SPEC> {
+        CAL12_W::new(self, 16)
     }
     #[doc = "Bit 23 - Selection of RC Oscillator Calibration bits for 12 Mhz"]
     #[inline(always)]
     #[must_use]
-    pub fn sel12(&mut self) -> SEL12_W<PMC_OCR_SPEC, 23> {
-        SEL12_W::new(self)
+    pub fn sel12(&mut self) -> SEL12_W<PMC_OCR_SPEC> {
+        SEL12_W::new(self, 23)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

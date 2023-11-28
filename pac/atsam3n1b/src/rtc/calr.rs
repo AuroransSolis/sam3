@@ -5,23 +5,23 @@ pub type W = crate::W<CALR_SPEC>;
 #[doc = "Field `CENT` reader - Current Century"]
 pub type CENT_R = crate::FieldReader;
 #[doc = "Field `CENT` writer - Current Century"]
-pub type CENT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type CENT_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `YEAR` reader - Current Year"]
 pub type YEAR_R = crate::FieldReader;
 #[doc = "Field `YEAR` writer - Current Year"]
-pub type YEAR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type YEAR_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `MONTH` reader - Current Month"]
 pub type MONTH_R = crate::FieldReader;
 #[doc = "Field `MONTH` writer - Current Month"]
-pub type MONTH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type MONTH_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `DAY` reader - Current Day in Current Week"]
 pub type DAY_R = crate::FieldReader;
 #[doc = "Field `DAY` writer - Current Day in Current Week"]
-pub type DAY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type DAY_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `DATE` reader - Current Day in Current Month"]
 pub type DATE_R = crate::FieldReader;
 #[doc = "Field `DATE` writer - Current Day in Current Month"]
-pub type DATE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type DATE_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     #[doc = "Bits 0:6 - Current Century"]
     #[inline(always)]
@@ -53,32 +53,32 @@ impl W {
     #[doc = "Bits 0:6 - Current Century"]
     #[inline(always)]
     #[must_use]
-    pub fn cent(&mut self) -> CENT_W<CALR_SPEC, 0> {
-        CENT_W::new(self)
+    pub fn cent(&mut self) -> CENT_W<CALR_SPEC> {
+        CENT_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Current Year"]
     #[inline(always)]
     #[must_use]
-    pub fn year(&mut self) -> YEAR_W<CALR_SPEC, 8> {
-        YEAR_W::new(self)
+    pub fn year(&mut self) -> YEAR_W<CALR_SPEC> {
+        YEAR_W::new(self, 8)
     }
     #[doc = "Bits 16:20 - Current Month"]
     #[inline(always)]
     #[must_use]
-    pub fn month(&mut self) -> MONTH_W<CALR_SPEC, 16> {
-        MONTH_W::new(self)
+    pub fn month(&mut self) -> MONTH_W<CALR_SPEC> {
+        MONTH_W::new(self, 16)
     }
     #[doc = "Bits 21:23 - Current Day in Current Week"]
     #[inline(always)]
     #[must_use]
-    pub fn day(&mut self) -> DAY_W<CALR_SPEC, 21> {
-        DAY_W::new(self)
+    pub fn day(&mut self) -> DAY_W<CALR_SPEC> {
+        DAY_W::new(self, 21)
     }
     #[doc = "Bits 24:29 - Current Day in Current Month"]
     #[inline(always)]
     #[must_use]
-    pub fn date(&mut self) -> DATE_W<CALR_SPEC, 24> {
-        DATE_W::new(self)
+    pub fn date(&mut self) -> DATE_W<CALR_SPEC> {
+        DATE_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

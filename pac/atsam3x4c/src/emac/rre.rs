@@ -5,7 +5,7 @@ pub type W = crate::W<RRE_SPEC>;
 #[doc = "Field `RRE` reader - Receive Resource Errors"]
 pub type RRE_R = crate::FieldReader<u16>;
 #[doc = "Field `RRE` writer - Receive Resource Errors"]
-pub type RRE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type RRE_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Receive Resource Errors"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - Receive Resource Errors"]
     #[inline(always)]
     #[must_use]
-    pub fn rre(&mut self) -> RRE_W<RRE_SPEC, 0> {
-        RRE_W::new(self)
+    pub fn rre(&mut self) -> RRE_W<RRE_SPEC> {
+        RRE_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

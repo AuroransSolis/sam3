@@ -5,19 +5,19 @@ pub type W = crate::W<CFG_SPEC>;
 #[doc = "Field `FIFOMODE` reader - HSMCI Internal FIFO control mode"]
 pub type FIFOMODE_R = crate::BitReader;
 #[doc = "Field `FIFOMODE` writer - HSMCI Internal FIFO control mode"]
-pub type FIFOMODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FIFOMODE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FERRCTRL` reader - Flow Error flag reset control mode"]
 pub type FERRCTRL_R = crate::BitReader;
 #[doc = "Field `FERRCTRL` writer - Flow Error flag reset control mode"]
-pub type FERRCTRL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FERRCTRL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HSMODE` reader - High Speed Mode"]
 pub type HSMODE_R = crate::BitReader;
 #[doc = "Field `HSMODE` writer - High Speed Mode"]
-pub type HSMODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HSMODE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LSYNC` reader - Synchronize on the last block"]
 pub type LSYNC_R = crate::BitReader;
 #[doc = "Field `LSYNC` writer - Synchronize on the last block"]
-pub type LSYNC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LSYNC_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - HSMCI Internal FIFO control mode"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bit 0 - HSMCI Internal FIFO control mode"]
     #[inline(always)]
     #[must_use]
-    pub fn fifomode(&mut self) -> FIFOMODE_W<CFG_SPEC, 0> {
-        FIFOMODE_W::new(self)
+    pub fn fifomode(&mut self) -> FIFOMODE_W<CFG_SPEC> {
+        FIFOMODE_W::new(self, 0)
     }
     #[doc = "Bit 4 - Flow Error flag reset control mode"]
     #[inline(always)]
     #[must_use]
-    pub fn ferrctrl(&mut self) -> FERRCTRL_W<CFG_SPEC, 4> {
-        FERRCTRL_W::new(self)
+    pub fn ferrctrl(&mut self) -> FERRCTRL_W<CFG_SPEC> {
+        FERRCTRL_W::new(self, 4)
     }
     #[doc = "Bit 8 - High Speed Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn hsmode(&mut self) -> HSMODE_W<CFG_SPEC, 8> {
-        HSMODE_W::new(self)
+    pub fn hsmode(&mut self) -> HSMODE_W<CFG_SPEC> {
+        HSMODE_W::new(self, 8)
     }
     #[doc = "Bit 12 - Synchronize on the last block"]
     #[inline(always)]
     #[must_use]
-    pub fn lsync(&mut self) -> LSYNC_W<CFG_SPEC, 12> {
-        LSYNC_W::new(self)
+    pub fn lsync(&mut self) -> LSYNC_W<CFG_SPEC> {
+        LSYNC_W::new(self, 12)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -1,21 +1,21 @@
 #[doc = "Register `CTRL` writer"]
 pub type W = crate::W<CTRL_SPEC>;
 #[doc = "Field `NFCEN` writer - NAND Flash Controller Enable"]
-pub type NFCEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NFCEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NFCDIS` writer - NAND Flash Controller Disable"]
-pub type NFCDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NFCDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - NAND Flash Controller Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn nfcen(&mut self) -> NFCEN_W<CTRL_SPEC, 0> {
-        NFCEN_W::new(self)
+    pub fn nfcen(&mut self) -> NFCEN_W<CTRL_SPEC> {
+        NFCEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - NAND Flash Controller Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn nfcdis(&mut self) -> NFCDIS_W<CTRL_SPEC, 1> {
-        NFCDIS_W::new(self)
+    pub fn nfcdis(&mut self) -> NFCDIS_W<CTRL_SPEC> {
+        NFCDIS_W::new(self, 1)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

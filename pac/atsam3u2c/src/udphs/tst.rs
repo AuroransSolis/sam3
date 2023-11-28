@@ -52,8 +52,8 @@ impl SPEED_CFG_R {
     }
 }
 #[doc = "Field `SPEED_CFG` writer - Speed Configuration"]
-pub type SPEED_CFG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, SPEED_CFG_A>;
-impl<'a, REG, const O: u8> SPEED_CFG_W<'a, REG, O>
+pub type SPEED_CFG_W<'a, REG> = crate::FieldWriter<'a, REG, 2, SPEED_CFG_A>;
+impl<'a, REG> SPEED_CFG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -77,19 +77,19 @@ where
 #[doc = "Field `TST_J` reader - Test J Mode"]
 pub type TST_J_R = crate::BitReader;
 #[doc = "Field `TST_J` writer - Test J Mode"]
-pub type TST_J_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TST_J_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TST_K` reader - Test K Mode"]
 pub type TST_K_R = crate::BitReader;
 #[doc = "Field `TST_K` writer - Test K Mode"]
-pub type TST_K_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TST_K_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TST_PKT` reader - Test Packet Mode"]
 pub type TST_PKT_R = crate::BitReader;
 #[doc = "Field `TST_PKT` writer - Test Packet Mode"]
-pub type TST_PKT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TST_PKT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OPMODE2` reader - OpMode2"]
 pub type OPMODE2_R = crate::BitReader;
 #[doc = "Field `OPMODE2` writer - OpMode2"]
-pub type OPMODE2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OPMODE2_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:1 - Speed Configuration"]
     #[inline(always)]
@@ -121,32 +121,32 @@ impl W {
     #[doc = "Bits 0:1 - Speed Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn speed_cfg(&mut self) -> SPEED_CFG_W<TST_SPEC, 0> {
-        SPEED_CFG_W::new(self)
+    pub fn speed_cfg(&mut self) -> SPEED_CFG_W<TST_SPEC> {
+        SPEED_CFG_W::new(self, 0)
     }
     #[doc = "Bit 2 - Test J Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn tst_j(&mut self) -> TST_J_W<TST_SPEC, 2> {
-        TST_J_W::new(self)
+    pub fn tst_j(&mut self) -> TST_J_W<TST_SPEC> {
+        TST_J_W::new(self, 2)
     }
     #[doc = "Bit 3 - Test K Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn tst_k(&mut self) -> TST_K_W<TST_SPEC, 3> {
-        TST_K_W::new(self)
+    pub fn tst_k(&mut self) -> TST_K_W<TST_SPEC> {
+        TST_K_W::new(self, 3)
     }
     #[doc = "Bit 4 - Test Packet Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn tst_pkt(&mut self) -> TST_PKT_W<TST_SPEC, 4> {
-        TST_PKT_W::new(self)
+    pub fn tst_pkt(&mut self) -> TST_PKT_W<TST_SPEC> {
+        TST_PKT_W::new(self, 4)
     }
     #[doc = "Bit 5 - OpMode2"]
     #[inline(always)]
     #[must_use]
-    pub fn opmode2(&mut self) -> OPMODE2_W<TST_SPEC, 5> {
-        OPMODE2_W::new(self)
+    pub fn opmode2(&mut self) -> OPMODE2_W<TST_SPEC> {
+        OPMODE2_W::new(self, 5)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

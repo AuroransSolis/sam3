@@ -92,8 +92,8 @@ impl EPT_SIZE_R {
     }
 }
 #[doc = "Field `EPT_SIZE` writer - Endpoint Size"]
-pub type EPT_SIZE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, EPT_SIZE_A>;
-impl<'a, REG, const O: u8> EPT_SIZE_W<'a, REG, O>
+pub type EPT_SIZE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, EPT_SIZE_A>;
+impl<'a, REG> EPT_SIZE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -142,7 +142,7 @@ where
 #[doc = "Field `EPT_DIR` reader - Endpoint Direction"]
 pub type EPT_DIR_R = crate::BitReader;
 #[doc = "Field `EPT_DIR` writer - Endpoint Direction"]
-pub type EPT_DIR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPT_DIR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPT_TYPE` reader - Endpoint Type"]
 pub type EPT_TYPE_R = crate::FieldReader<EPT_TYPE_A>;
 #[doc = "Endpoint Type\n\nValue on reset: 0"]
@@ -201,8 +201,8 @@ impl EPT_TYPE_R {
     }
 }
 #[doc = "Field `EPT_TYPE` writer - Endpoint Type"]
-pub type EPT_TYPE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EPT_TYPE_A>;
-impl<'a, REG, const O: u8> EPT_TYPE_W<'a, REG, O>
+pub type EPT_TYPE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EPT_TYPE_A>;
+impl<'a, REG> EPT_TYPE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -286,8 +286,8 @@ impl BK_NUMBER_R {
     }
 }
 #[doc = "Field `BK_NUMBER` writer - Number of Banks"]
-pub type BK_NUMBER_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, BK_NUMBER_A>;
-impl<'a, REG, const O: u8> BK_NUMBER_W<'a, REG, O>
+pub type BK_NUMBER_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, BK_NUMBER_A>;
+impl<'a, REG> BK_NUMBER_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -316,11 +316,11 @@ where
 #[doc = "Field `NB_TRANS` reader - Number Of Transaction per Microframe"]
 pub type NB_TRANS_R = crate::FieldReader;
 #[doc = "Field `NB_TRANS` writer - Number Of Transaction per Microframe"]
-pub type NB_TRANS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type NB_TRANS_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `EPT_MAPD` reader - Endpoint Mapped"]
 pub type EPT_MAPD_R = crate::BitReader;
 #[doc = "Field `EPT_MAPD` writer - Endpoint Mapped"]
-pub type EPT_MAPD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPT_MAPD_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:2 - Endpoint Size"]
     #[inline(always)]
@@ -357,38 +357,38 @@ impl W {
     #[doc = "Bits 0:2 - Endpoint Size"]
     #[inline(always)]
     #[must_use]
-    pub fn ept_size(&mut self) -> EPT_SIZE_W<EPTCFG0_SPEC, 0> {
-        EPT_SIZE_W::new(self)
+    pub fn ept_size(&mut self) -> EPT_SIZE_W<EPTCFG0_SPEC> {
+        EPT_SIZE_W::new(self, 0)
     }
     #[doc = "Bit 3 - Endpoint Direction"]
     #[inline(always)]
     #[must_use]
-    pub fn ept_dir(&mut self) -> EPT_DIR_W<EPTCFG0_SPEC, 3> {
-        EPT_DIR_W::new(self)
+    pub fn ept_dir(&mut self) -> EPT_DIR_W<EPTCFG0_SPEC> {
+        EPT_DIR_W::new(self, 3)
     }
     #[doc = "Bits 4:5 - Endpoint Type"]
     #[inline(always)]
     #[must_use]
-    pub fn ept_type(&mut self) -> EPT_TYPE_W<EPTCFG0_SPEC, 4> {
-        EPT_TYPE_W::new(self)
+    pub fn ept_type(&mut self) -> EPT_TYPE_W<EPTCFG0_SPEC> {
+        EPT_TYPE_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Number of Banks"]
     #[inline(always)]
     #[must_use]
-    pub fn bk_number(&mut self) -> BK_NUMBER_W<EPTCFG0_SPEC, 6> {
-        BK_NUMBER_W::new(self)
+    pub fn bk_number(&mut self) -> BK_NUMBER_W<EPTCFG0_SPEC> {
+        BK_NUMBER_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Number Of Transaction per Microframe"]
     #[inline(always)]
     #[must_use]
-    pub fn nb_trans(&mut self) -> NB_TRANS_W<EPTCFG0_SPEC, 8> {
-        NB_TRANS_W::new(self)
+    pub fn nb_trans(&mut self) -> NB_TRANS_W<EPTCFG0_SPEC> {
+        NB_TRANS_W::new(self, 8)
     }
     #[doc = "Bit 31 - Endpoint Mapped"]
     #[inline(always)]
     #[must_use]
-    pub fn ept_mapd(&mut self) -> EPT_MAPD_W<EPTCFG0_SPEC, 31> {
-        EPT_MAPD_W::new(self)
+    pub fn ept_mapd(&mut self) -> EPT_MAPD_W<EPTCFG0_SPEC> {
+        EPT_MAPD_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

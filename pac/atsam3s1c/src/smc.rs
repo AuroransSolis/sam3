@@ -1,50 +1,136 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - SMC Setup Register (CS_number = 0)"]
-    pub setup0: SETUP0,
-    #[doc = "0x04 - SMC Pulse Register (CS_number = 0)"]
-    pub pulse0: PULSE0,
-    #[doc = "0x08 - SMC Cycle Register (CS_number = 0)"]
-    pub cycle0: CYCLE0,
-    #[doc = "0x0c - SMC Mode Register (CS_number = 0)"]
-    pub mode0: MODE0,
-    #[doc = "0x10 - SMC Setup Register (CS_number = 1)"]
-    pub setup1: SETUP1,
-    #[doc = "0x14 - SMC Pulse Register (CS_number = 1)"]
-    pub pulse1: PULSE1,
-    #[doc = "0x18 - SMC Cycle Register (CS_number = 1)"]
-    pub cycle1: CYCLE1,
-    #[doc = "0x1c - SMC Mode Register (CS_number = 1)"]
-    pub mode1: MODE1,
-    #[doc = "0x20 - SMC Setup Register (CS_number = 2)"]
-    pub setup2: SETUP2,
-    #[doc = "0x24 - SMC Pulse Register (CS_number = 2)"]
-    pub pulse2: PULSE2,
-    #[doc = "0x28 - SMC Cycle Register (CS_number = 2)"]
-    pub cycle2: CYCLE2,
-    #[doc = "0x2c - SMC Mode Register (CS_number = 2)"]
-    pub mode2: MODE2,
-    #[doc = "0x30 - SMC Setup Register (CS_number = 3)"]
-    pub setup3: SETUP3,
-    #[doc = "0x34 - SMC Pulse Register (CS_number = 3)"]
-    pub pulse3: PULSE3,
-    #[doc = "0x38 - SMC Cycle Register (CS_number = 3)"]
-    pub cycle3: CYCLE3,
-    #[doc = "0x3c - SMC Mode Register (CS_number = 3)"]
-    pub mode3: MODE3,
+    setup0: SETUP0,
+    pulse0: PULSE0,
+    cycle0: CYCLE0,
+    mode0: MODE0,
+    setup1: SETUP1,
+    pulse1: PULSE1,
+    cycle1: CYCLE1,
+    mode1: MODE1,
+    setup2: SETUP2,
+    pulse2: PULSE2,
+    cycle2: CYCLE2,
+    mode2: MODE2,
+    setup3: SETUP3,
+    pulse3: PULSE3,
+    cycle3: CYCLE3,
+    mode3: MODE3,
     _reserved16: [u8; 0x40],
-    #[doc = "0x80 - SMC OCMS MODE Register"]
-    pub ocms: OCMS,
-    #[doc = "0x84 - SMC OCMS KEY1 Register"]
-    pub key1: KEY1,
-    #[doc = "0x88 - SMC OCMS KEY2 Register"]
-    pub key2: KEY2,
+    ocms: OCMS,
+    key1: KEY1,
+    key2: KEY2,
     _reserved19: [u8; 0x58],
+    wpmr: WPMR,
+    wpsr: WPSR,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - SMC Setup Register (CS_number = 0)"]
+    #[inline(always)]
+    pub const fn setup0(&self) -> &SETUP0 {
+        &self.setup0
+    }
+    #[doc = "0x04 - SMC Pulse Register (CS_number = 0)"]
+    #[inline(always)]
+    pub const fn pulse0(&self) -> &PULSE0 {
+        &self.pulse0
+    }
+    #[doc = "0x08 - SMC Cycle Register (CS_number = 0)"]
+    #[inline(always)]
+    pub const fn cycle0(&self) -> &CYCLE0 {
+        &self.cycle0
+    }
+    #[doc = "0x0c - SMC Mode Register (CS_number = 0)"]
+    #[inline(always)]
+    pub const fn mode0(&self) -> &MODE0 {
+        &self.mode0
+    }
+    #[doc = "0x10 - SMC Setup Register (CS_number = 1)"]
+    #[inline(always)]
+    pub const fn setup1(&self) -> &SETUP1 {
+        &self.setup1
+    }
+    #[doc = "0x14 - SMC Pulse Register (CS_number = 1)"]
+    #[inline(always)]
+    pub const fn pulse1(&self) -> &PULSE1 {
+        &self.pulse1
+    }
+    #[doc = "0x18 - SMC Cycle Register (CS_number = 1)"]
+    #[inline(always)]
+    pub const fn cycle1(&self) -> &CYCLE1 {
+        &self.cycle1
+    }
+    #[doc = "0x1c - SMC Mode Register (CS_number = 1)"]
+    #[inline(always)]
+    pub const fn mode1(&self) -> &MODE1 {
+        &self.mode1
+    }
+    #[doc = "0x20 - SMC Setup Register (CS_number = 2)"]
+    #[inline(always)]
+    pub const fn setup2(&self) -> &SETUP2 {
+        &self.setup2
+    }
+    #[doc = "0x24 - SMC Pulse Register (CS_number = 2)"]
+    #[inline(always)]
+    pub const fn pulse2(&self) -> &PULSE2 {
+        &self.pulse2
+    }
+    #[doc = "0x28 - SMC Cycle Register (CS_number = 2)"]
+    #[inline(always)]
+    pub const fn cycle2(&self) -> &CYCLE2 {
+        &self.cycle2
+    }
+    #[doc = "0x2c - SMC Mode Register (CS_number = 2)"]
+    #[inline(always)]
+    pub const fn mode2(&self) -> &MODE2 {
+        &self.mode2
+    }
+    #[doc = "0x30 - SMC Setup Register (CS_number = 3)"]
+    #[inline(always)]
+    pub const fn setup3(&self) -> &SETUP3 {
+        &self.setup3
+    }
+    #[doc = "0x34 - SMC Pulse Register (CS_number = 3)"]
+    #[inline(always)]
+    pub const fn pulse3(&self) -> &PULSE3 {
+        &self.pulse3
+    }
+    #[doc = "0x38 - SMC Cycle Register (CS_number = 3)"]
+    #[inline(always)]
+    pub const fn cycle3(&self) -> &CYCLE3 {
+        &self.cycle3
+    }
+    #[doc = "0x3c - SMC Mode Register (CS_number = 3)"]
+    #[inline(always)]
+    pub const fn mode3(&self) -> &MODE3 {
+        &self.mode3
+    }
+    #[doc = "0x80 - SMC OCMS MODE Register"]
+    #[inline(always)]
+    pub const fn ocms(&self) -> &OCMS {
+        &self.ocms
+    }
+    #[doc = "0x84 - SMC OCMS KEY1 Register"]
+    #[inline(always)]
+    pub const fn key1(&self) -> &KEY1 {
+        &self.key1
+    }
+    #[doc = "0x88 - SMC OCMS KEY2 Register"]
+    #[inline(always)]
+    pub const fn key2(&self) -> &KEY2 {
+        &self.key2
+    }
     #[doc = "0xe4 - SMC Write Protect Mode Register"]
-    pub wpmr: WPMR,
+    #[inline(always)]
+    pub const fn wpmr(&self) -> &WPMR {
+        &self.wpmr
+    }
     #[doc = "0xe8 - SMC Write Protect Status Register"]
-    pub wpsr: WPSR,
+    #[inline(always)]
+    pub const fn wpsr(&self) -> &WPSR {
+        &self.wpsr
+    }
 }
 #[doc = "SETUP0 (rw) register accessor: SMC Setup Register (CS_number = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`setup0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`setup0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@setup0`]
 module"]

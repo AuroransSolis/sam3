@@ -5,7 +5,7 @@ pub type W = crate::W<LCOL_SPEC>;
 #[doc = "Field `LCOL` reader - Late Collisions"]
 pub type LCOL_R = crate::FieldReader;
 #[doc = "Field `LCOL` writer - Late Collisions"]
-pub type LCOL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type LCOL_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Late Collisions"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - Late Collisions"]
     #[inline(always)]
     #[must_use]
-    pub fn lcol(&mut self) -> LCOL_W<LCOL_SPEC, 0> {
-        LCOL_W::new(self)
+    pub fn lcol(&mut self) -> LCOL_W<LCOL_SPEC> {
+        LCOL_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

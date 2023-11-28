@@ -1,66 +1,180 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - PWM Mode Register"]
-    pub mr: MR,
-    #[doc = "0x04 - PWM Enable Register"]
-    pub ena: ENA,
-    #[doc = "0x08 - PWM Disable Register"]
-    pub dis: DIS,
-    #[doc = "0x0c - PWM Status Register"]
-    pub sr: SR,
-    #[doc = "0x10 - PWM Interrupt Enable Register"]
-    pub ier: IER,
-    #[doc = "0x14 - PWM Interrupt Disable Register"]
-    pub idr: IDR,
-    #[doc = "0x18 - PWM Interrupt Mask Register"]
-    pub imr: IMR,
-    #[doc = "0x1c - PWM Interrupt Status Register"]
-    pub isr: ISR,
+    mr: MR,
+    ena: ENA,
+    dis: DIS,
+    sr: SR,
+    ier: IER,
+    idr: IDR,
+    imr: IMR,
+    isr: ISR,
     _reserved8: [u8; 0x01e0],
-    #[doc = "0x200 - PWM Channel Mode Register (ch_num = 0)"]
-    pub cmr0: CMR0,
-    #[doc = "0x204 - PWM Channel Duty Cycle Register (ch_num = 0)"]
-    pub cdty0: CDTY0,
-    #[doc = "0x208 - PWM Channel Period Register (ch_num = 0)"]
-    pub cprd0: CPRD0,
-    #[doc = "0x20c - PWM Channel Counter Register (ch_num = 0)"]
-    pub ccnt0: CCNT0,
-    #[doc = "0x210 - PWM Channel Update Register (ch_num = 0)"]
-    pub cupd0: CUPD0,
+    cmr0: CMR0,
+    cdty0: CDTY0,
+    cprd0: CPRD0,
+    ccnt0: CCNT0,
+    cupd0: CUPD0,
     _reserved13: [u8; 0x0c],
-    #[doc = "0x220 - PWM Channel Mode Register (ch_num = 1)"]
-    pub cmr1: CMR1,
-    #[doc = "0x224 - PWM Channel Duty Cycle Register (ch_num = 1)"]
-    pub cdty1: CDTY1,
-    #[doc = "0x228 - PWM Channel Period Register (ch_num = 1)"]
-    pub cprd1: CPRD1,
-    #[doc = "0x22c - PWM Channel Counter Register (ch_num = 1)"]
-    pub ccnt1: CCNT1,
-    #[doc = "0x230 - PWM Channel Update Register (ch_num = 1)"]
-    pub cupd1: CUPD1,
+    cmr1: CMR1,
+    cdty1: CDTY1,
+    cprd1: CPRD1,
+    ccnt1: CCNT1,
+    cupd1: CUPD1,
     _reserved18: [u8; 0x0c],
-    #[doc = "0x240 - PWM Channel Mode Register (ch_num = 2)"]
-    pub cmr2: CMR2,
-    #[doc = "0x244 - PWM Channel Duty Cycle Register (ch_num = 2)"]
-    pub cdty2: CDTY2,
-    #[doc = "0x248 - PWM Channel Period Register (ch_num = 2)"]
-    pub cprd2: CPRD2,
-    #[doc = "0x24c - PWM Channel Counter Register (ch_num = 2)"]
-    pub ccnt2: CCNT2,
-    #[doc = "0x250 - PWM Channel Update Register (ch_num = 2)"]
-    pub cupd2: CUPD2,
+    cmr2: CMR2,
+    cdty2: CDTY2,
+    cprd2: CPRD2,
+    ccnt2: CCNT2,
+    cupd2: CUPD2,
     _reserved23: [u8; 0x0c],
+    cmr3: CMR3,
+    cdty3: CDTY3,
+    cprd3: CPRD3,
+    ccnt3: CCNT3,
+    cupd3: CUPD3,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - PWM Mode Register"]
+    #[inline(always)]
+    pub const fn mr(&self) -> &MR {
+        &self.mr
+    }
+    #[doc = "0x04 - PWM Enable Register"]
+    #[inline(always)]
+    pub const fn ena(&self) -> &ENA {
+        &self.ena
+    }
+    #[doc = "0x08 - PWM Disable Register"]
+    #[inline(always)]
+    pub const fn dis(&self) -> &DIS {
+        &self.dis
+    }
+    #[doc = "0x0c - PWM Status Register"]
+    #[inline(always)]
+    pub const fn sr(&self) -> &SR {
+        &self.sr
+    }
+    #[doc = "0x10 - PWM Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn ier(&self) -> &IER {
+        &self.ier
+    }
+    #[doc = "0x14 - PWM Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn idr(&self) -> &IDR {
+        &self.idr
+    }
+    #[doc = "0x18 - PWM Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn imr(&self) -> &IMR {
+        &self.imr
+    }
+    #[doc = "0x1c - PWM Interrupt Status Register"]
+    #[inline(always)]
+    pub const fn isr(&self) -> &ISR {
+        &self.isr
+    }
+    #[doc = "0x200 - PWM Channel Mode Register (ch_num = 0)"]
+    #[inline(always)]
+    pub const fn cmr0(&self) -> &CMR0 {
+        &self.cmr0
+    }
+    #[doc = "0x204 - PWM Channel Duty Cycle Register (ch_num = 0)"]
+    #[inline(always)]
+    pub const fn cdty0(&self) -> &CDTY0 {
+        &self.cdty0
+    }
+    #[doc = "0x208 - PWM Channel Period Register (ch_num = 0)"]
+    #[inline(always)]
+    pub const fn cprd0(&self) -> &CPRD0 {
+        &self.cprd0
+    }
+    #[doc = "0x20c - PWM Channel Counter Register (ch_num = 0)"]
+    #[inline(always)]
+    pub const fn ccnt0(&self) -> &CCNT0 {
+        &self.ccnt0
+    }
+    #[doc = "0x210 - PWM Channel Update Register (ch_num = 0)"]
+    #[inline(always)]
+    pub const fn cupd0(&self) -> &CUPD0 {
+        &self.cupd0
+    }
+    #[doc = "0x220 - PWM Channel Mode Register (ch_num = 1)"]
+    #[inline(always)]
+    pub const fn cmr1(&self) -> &CMR1 {
+        &self.cmr1
+    }
+    #[doc = "0x224 - PWM Channel Duty Cycle Register (ch_num = 1)"]
+    #[inline(always)]
+    pub const fn cdty1(&self) -> &CDTY1 {
+        &self.cdty1
+    }
+    #[doc = "0x228 - PWM Channel Period Register (ch_num = 1)"]
+    #[inline(always)]
+    pub const fn cprd1(&self) -> &CPRD1 {
+        &self.cprd1
+    }
+    #[doc = "0x22c - PWM Channel Counter Register (ch_num = 1)"]
+    #[inline(always)]
+    pub const fn ccnt1(&self) -> &CCNT1 {
+        &self.ccnt1
+    }
+    #[doc = "0x230 - PWM Channel Update Register (ch_num = 1)"]
+    #[inline(always)]
+    pub const fn cupd1(&self) -> &CUPD1 {
+        &self.cupd1
+    }
+    #[doc = "0x240 - PWM Channel Mode Register (ch_num = 2)"]
+    #[inline(always)]
+    pub const fn cmr2(&self) -> &CMR2 {
+        &self.cmr2
+    }
+    #[doc = "0x244 - PWM Channel Duty Cycle Register (ch_num = 2)"]
+    #[inline(always)]
+    pub const fn cdty2(&self) -> &CDTY2 {
+        &self.cdty2
+    }
+    #[doc = "0x248 - PWM Channel Period Register (ch_num = 2)"]
+    #[inline(always)]
+    pub const fn cprd2(&self) -> &CPRD2 {
+        &self.cprd2
+    }
+    #[doc = "0x24c - PWM Channel Counter Register (ch_num = 2)"]
+    #[inline(always)]
+    pub const fn ccnt2(&self) -> &CCNT2 {
+        &self.ccnt2
+    }
+    #[doc = "0x250 - PWM Channel Update Register (ch_num = 2)"]
+    #[inline(always)]
+    pub const fn cupd2(&self) -> &CUPD2 {
+        &self.cupd2
+    }
     #[doc = "0x260 - PWM Channel Mode Register (ch_num = 3)"]
-    pub cmr3: CMR3,
+    #[inline(always)]
+    pub const fn cmr3(&self) -> &CMR3 {
+        &self.cmr3
+    }
     #[doc = "0x264 - PWM Channel Duty Cycle Register (ch_num = 3)"]
-    pub cdty3: CDTY3,
+    #[inline(always)]
+    pub const fn cdty3(&self) -> &CDTY3 {
+        &self.cdty3
+    }
     #[doc = "0x268 - PWM Channel Period Register (ch_num = 3)"]
-    pub cprd3: CPRD3,
+    #[inline(always)]
+    pub const fn cprd3(&self) -> &CPRD3 {
+        &self.cprd3
+    }
     #[doc = "0x26c - PWM Channel Counter Register (ch_num = 3)"]
-    pub ccnt3: CCNT3,
+    #[inline(always)]
+    pub const fn ccnt3(&self) -> &CCNT3 {
+        &self.ccnt3
+    }
     #[doc = "0x270 - PWM Channel Update Register (ch_num = 3)"]
-    pub cupd3: CUPD3,
+    #[inline(always)]
+    pub const fn cupd3(&self) -> &CUPD3 {
+        &self.cupd3
+    }
 }
 #[doc = "MR (rw) register accessor: PWM Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mr`]
 module"]

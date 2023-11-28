@@ -1,13 +1,13 @@
 #[doc = "Register `CDTYUPD6` writer"]
 pub type W = crate::W<CDTYUPD6_SPEC>;
 #[doc = "Field `CDTYUPD` writer - Channel Duty-Cycle Update"]
-pub type CDTYUPD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 24, O, u32>;
+pub type CDTYUPD_W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl W {
     #[doc = "Bits 0:23 - Channel Duty-Cycle Update"]
     #[inline(always)]
     #[must_use]
-    pub fn cdtyupd(&mut self) -> CDTYUPD_W<CDTYUPD6_SPEC, 0> {
-        CDTYUPD_W::new(self)
+    pub fn cdtyupd(&mut self) -> CDTYUPD_W<CDTYUPD6_SPEC> {
+        CDTYUPD_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

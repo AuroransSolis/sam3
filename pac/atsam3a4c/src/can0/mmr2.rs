@@ -5,11 +5,11 @@ pub type W = crate::W<MMR2_SPEC>;
 #[doc = "Field `MTIMEMARK` reader - Mailbox Timemark"]
 pub type MTIMEMARK_R = crate::FieldReader<u16>;
 #[doc = "Field `MTIMEMARK` writer - Mailbox Timemark"]
-pub type MTIMEMARK_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type MTIMEMARK_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `PRIOR` reader - Mailbox Priority"]
 pub type PRIOR_R = crate::FieldReader;
 #[doc = "Field `PRIOR` writer - Mailbox Priority"]
-pub type PRIOR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type PRIOR_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `MOT` reader - Mailbox Object Type"]
 pub type MOT_R = crate::FieldReader<MOT_A>;
 #[doc = "Mailbox Object Type\n\nValue on reset: 0"]
@@ -84,8 +84,8 @@ impl MOT_R {
     }
 }
 #[doc = "Field `MOT` writer - Mailbox Object Type"]
-pub type MOT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, MOT_A>;
-impl<'a, REG, const O: u8> MOT_W<'a, REG, O>
+pub type MOT_W<'a, REG> = crate::FieldWriter<'a, REG, 3, MOT_A>;
+impl<'a, REG> MOT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -142,20 +142,20 @@ impl W {
     #[doc = "Bits 0:15 - Mailbox Timemark"]
     #[inline(always)]
     #[must_use]
-    pub fn mtimemark(&mut self) -> MTIMEMARK_W<MMR2_SPEC, 0> {
-        MTIMEMARK_W::new(self)
+    pub fn mtimemark(&mut self) -> MTIMEMARK_W<MMR2_SPEC> {
+        MTIMEMARK_W::new(self, 0)
     }
     #[doc = "Bits 16:19 - Mailbox Priority"]
     #[inline(always)]
     #[must_use]
-    pub fn prior(&mut self) -> PRIOR_W<MMR2_SPEC, 16> {
-        PRIOR_W::new(self)
+    pub fn prior(&mut self) -> PRIOR_W<MMR2_SPEC> {
+        PRIOR_W::new(self, 16)
     }
     #[doc = "Bits 24:26 - Mailbox Object Type"]
     #[inline(always)]
     #[must_use]
-    pub fn mot(&mut self) -> MOT_W<MMR2_SPEC, 24> {
-        MOT_W::new(self)
+    pub fn mot(&mut self) -> MOT_W<MMR2_SPEC> {
+        MOT_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

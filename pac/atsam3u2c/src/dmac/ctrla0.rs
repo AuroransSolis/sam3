@@ -5,7 +5,7 @@ pub type W = crate::W<CTRLA0_SPEC>;
 #[doc = "Field `BTSIZE` reader - Buffer Transfer Size"]
 pub type BTSIZE_R = crate::FieldReader<u16>;
 #[doc = "Field `BTSIZE` writer - Buffer Transfer Size"]
-pub type BTSIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type BTSIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `SRC_WIDTH` reader - Transfer Width for the Source"]
 pub type SRC_WIDTH_R = crate::FieldReader<SRC_WIDTH_A>;
 #[doc = "Transfer Width for the Source\n\nValue on reset: 0"]
@@ -56,8 +56,8 @@ impl SRC_WIDTH_R {
     }
 }
 #[doc = "Field `SRC_WIDTH` writer - Transfer Width for the Source"]
-pub type SRC_WIDTH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, SRC_WIDTH_A>;
-impl<'a, REG, const O: u8> SRC_WIDTH_W<'a, REG, O>
+pub type SRC_WIDTH_W<'a, REG> = crate::FieldWriter<'a, REG, 2, SRC_WIDTH_A>;
+impl<'a, REG> SRC_WIDTH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -128,8 +128,8 @@ impl DST_WIDTH_R {
     }
 }
 #[doc = "Field `DST_WIDTH` writer - Transfer Width for the Destination"]
-pub type DST_WIDTH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, DST_WIDTH_A>;
-impl<'a, REG, const O: u8> DST_WIDTH_W<'a, REG, O>
+pub type DST_WIDTH_W<'a, REG> = crate::FieldWriter<'a, REG, 2, DST_WIDTH_A>;
+impl<'a, REG> DST_WIDTH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -153,7 +153,7 @@ where
 #[doc = "Field `DONE` reader - Current Descriptor Stop Command and Transfer Completed Memory Indicator"]
 pub type DONE_R = crate::BitReader;
 #[doc = "Field `DONE` writer - Current Descriptor Stop Command and Transfer Completed Memory Indicator"]
-pub type DONE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DONE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:15 - Buffer Transfer Size"]
     #[inline(always)]
@@ -180,26 +180,26 @@ impl W {
     #[doc = "Bits 0:15 - Buffer Transfer Size"]
     #[inline(always)]
     #[must_use]
-    pub fn btsize(&mut self) -> BTSIZE_W<CTRLA0_SPEC, 0> {
-        BTSIZE_W::new(self)
+    pub fn btsize(&mut self) -> BTSIZE_W<CTRLA0_SPEC> {
+        BTSIZE_W::new(self, 0)
     }
     #[doc = "Bits 24:25 - Transfer Width for the Source"]
     #[inline(always)]
     #[must_use]
-    pub fn src_width(&mut self) -> SRC_WIDTH_W<CTRLA0_SPEC, 24> {
-        SRC_WIDTH_W::new(self)
+    pub fn src_width(&mut self) -> SRC_WIDTH_W<CTRLA0_SPEC> {
+        SRC_WIDTH_W::new(self, 24)
     }
     #[doc = "Bits 28:29 - Transfer Width for the Destination"]
     #[inline(always)]
     #[must_use]
-    pub fn dst_width(&mut self) -> DST_WIDTH_W<CTRLA0_SPEC, 28> {
-        DST_WIDTH_W::new(self)
+    pub fn dst_width(&mut self) -> DST_WIDTH_W<CTRLA0_SPEC> {
+        DST_WIDTH_W::new(self, 28)
     }
     #[doc = "Bit 31 - Current Descriptor Stop Command and Transfer Completed Memory Indicator"]
     #[inline(always)]
     #[must_use]
-    pub fn done(&mut self) -> DONE_W<CTRLA0_SPEC, 31> {
-        DONE_W::new(self)
+    pub fn done(&mut self) -> DONE_W<CTRLA0_SPEC> {
+        DONE_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

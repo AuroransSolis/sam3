@@ -5,7 +5,7 @@ pub type W = crate::W<RC2_SPEC>;
 #[doc = "Field `RC` reader - Register C"]
 pub type RC_R = crate::FieldReader<u32>;
 #[doc = "Field `RC` writer - Register C"]
-pub type RC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type RC_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Register C"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Register C"]
     #[inline(always)]
     #[must_use]
-    pub fn rc(&mut self) -> RC_W<RC2_SPEC, 0> {
-        RC_W::new(self)
+    pub fn rc(&mut self) -> RC_W<RC2_SPEC> {
+        RC_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,51 +5,51 @@ pub type W = crate::W<SREQ_SPEC>;
 #[doc = "Field `SSREQ0` reader - Source Request"]
 pub type SSREQ0_R = crate::BitReader;
 #[doc = "Field `SSREQ0` writer - Source Request"]
-pub type SSREQ0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SSREQ0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DSREQ0` reader - Destination Request"]
 pub type DSREQ0_R = crate::BitReader;
 #[doc = "Field `DSREQ0` writer - Destination Request"]
-pub type DSREQ0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DSREQ0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SSREQ1` reader - Source Request"]
 pub type SSREQ1_R = crate::BitReader;
 #[doc = "Field `SSREQ1` writer - Source Request"]
-pub type SSREQ1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SSREQ1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DSREQ1` reader - Destination Request"]
 pub type DSREQ1_R = crate::BitReader;
 #[doc = "Field `DSREQ1` writer - Destination Request"]
-pub type DSREQ1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DSREQ1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SSREQ2` reader - Source Request"]
 pub type SSREQ2_R = crate::BitReader;
 #[doc = "Field `SSREQ2` writer - Source Request"]
-pub type SSREQ2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SSREQ2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DSREQ2` reader - Destination Request"]
 pub type DSREQ2_R = crate::BitReader;
 #[doc = "Field `DSREQ2` writer - Destination Request"]
-pub type DSREQ2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DSREQ2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SSREQ3` reader - Source Request"]
 pub type SSREQ3_R = crate::BitReader;
 #[doc = "Field `SSREQ3` writer - Source Request"]
-pub type SSREQ3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SSREQ3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DSREQ3` reader - Destination Request"]
 pub type DSREQ3_R = crate::BitReader;
 #[doc = "Field `DSREQ3` writer - Destination Request"]
-pub type DSREQ3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DSREQ3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SSREQ4` reader - Source Request"]
 pub type SSREQ4_R = crate::BitReader;
 #[doc = "Field `SSREQ4` writer - Source Request"]
-pub type SSREQ4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SSREQ4_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DSREQ4` reader - Destination Request"]
 pub type DSREQ4_R = crate::BitReader;
 #[doc = "Field `DSREQ4` writer - Destination Request"]
-pub type DSREQ4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DSREQ4_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SSREQ5` reader - Source Request"]
 pub type SSREQ5_R = crate::BitReader;
 #[doc = "Field `SSREQ5` writer - Source Request"]
-pub type SSREQ5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SSREQ5_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DSREQ5` reader - Destination Request"]
 pub type DSREQ5_R = crate::BitReader;
 #[doc = "Field `DSREQ5` writer - Destination Request"]
-pub type DSREQ5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DSREQ5_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Source Request"]
     #[inline(always)]
@@ -116,74 +116,74 @@ impl W {
     #[doc = "Bit 0 - Source Request"]
     #[inline(always)]
     #[must_use]
-    pub fn ssreq0(&mut self) -> SSREQ0_W<SREQ_SPEC, 0> {
-        SSREQ0_W::new(self)
+    pub fn ssreq0(&mut self) -> SSREQ0_W<SREQ_SPEC> {
+        SSREQ0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Destination Request"]
     #[inline(always)]
     #[must_use]
-    pub fn dsreq0(&mut self) -> DSREQ0_W<SREQ_SPEC, 1> {
-        DSREQ0_W::new(self)
+    pub fn dsreq0(&mut self) -> DSREQ0_W<SREQ_SPEC> {
+        DSREQ0_W::new(self, 1)
     }
     #[doc = "Bit 2 - Source Request"]
     #[inline(always)]
     #[must_use]
-    pub fn ssreq1(&mut self) -> SSREQ1_W<SREQ_SPEC, 2> {
-        SSREQ1_W::new(self)
+    pub fn ssreq1(&mut self) -> SSREQ1_W<SREQ_SPEC> {
+        SSREQ1_W::new(self, 2)
     }
     #[doc = "Bit 3 - Destination Request"]
     #[inline(always)]
     #[must_use]
-    pub fn dsreq1(&mut self) -> DSREQ1_W<SREQ_SPEC, 3> {
-        DSREQ1_W::new(self)
+    pub fn dsreq1(&mut self) -> DSREQ1_W<SREQ_SPEC> {
+        DSREQ1_W::new(self, 3)
     }
     #[doc = "Bit 4 - Source Request"]
     #[inline(always)]
     #[must_use]
-    pub fn ssreq2(&mut self) -> SSREQ2_W<SREQ_SPEC, 4> {
-        SSREQ2_W::new(self)
+    pub fn ssreq2(&mut self) -> SSREQ2_W<SREQ_SPEC> {
+        SSREQ2_W::new(self, 4)
     }
     #[doc = "Bit 5 - Destination Request"]
     #[inline(always)]
     #[must_use]
-    pub fn dsreq2(&mut self) -> DSREQ2_W<SREQ_SPEC, 5> {
-        DSREQ2_W::new(self)
+    pub fn dsreq2(&mut self) -> DSREQ2_W<SREQ_SPEC> {
+        DSREQ2_W::new(self, 5)
     }
     #[doc = "Bit 6 - Source Request"]
     #[inline(always)]
     #[must_use]
-    pub fn ssreq3(&mut self) -> SSREQ3_W<SREQ_SPEC, 6> {
-        SSREQ3_W::new(self)
+    pub fn ssreq3(&mut self) -> SSREQ3_W<SREQ_SPEC> {
+        SSREQ3_W::new(self, 6)
     }
     #[doc = "Bit 7 - Destination Request"]
     #[inline(always)]
     #[must_use]
-    pub fn dsreq3(&mut self) -> DSREQ3_W<SREQ_SPEC, 7> {
-        DSREQ3_W::new(self)
+    pub fn dsreq3(&mut self) -> DSREQ3_W<SREQ_SPEC> {
+        DSREQ3_W::new(self, 7)
     }
     #[doc = "Bit 8 - Source Request"]
     #[inline(always)]
     #[must_use]
-    pub fn ssreq4(&mut self) -> SSREQ4_W<SREQ_SPEC, 8> {
-        SSREQ4_W::new(self)
+    pub fn ssreq4(&mut self) -> SSREQ4_W<SREQ_SPEC> {
+        SSREQ4_W::new(self, 8)
     }
     #[doc = "Bit 9 - Destination Request"]
     #[inline(always)]
     #[must_use]
-    pub fn dsreq4(&mut self) -> DSREQ4_W<SREQ_SPEC, 9> {
-        DSREQ4_W::new(self)
+    pub fn dsreq4(&mut self) -> DSREQ4_W<SREQ_SPEC> {
+        DSREQ4_W::new(self, 9)
     }
     #[doc = "Bit 10 - Source Request"]
     #[inline(always)]
     #[must_use]
-    pub fn ssreq5(&mut self) -> SSREQ5_W<SREQ_SPEC, 10> {
-        SSREQ5_W::new(self)
+    pub fn ssreq5(&mut self) -> SSREQ5_W<SREQ_SPEC> {
+        SSREQ5_W::new(self, 10)
     }
     #[doc = "Bit 11 - Destination Request"]
     #[inline(always)]
     #[must_use]
-    pub fn dsreq5(&mut self) -> DSREQ5_W<SREQ_SPEC, 11> {
-        DSREQ5_W::new(self)
+    pub fn dsreq5(&mut self) -> DSREQ5_W<SREQ_SPEC> {
+        DSREQ5_W::new(self, 11)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

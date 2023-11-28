@@ -5,11 +5,11 @@ pub type W = crate::W<USRIO_SPEC>;
 #[doc = "Field `RMII` reader - Reduce MII"]
 pub type RMII_R = crate::BitReader;
 #[doc = "Field `RMII` writer - Reduce MII"]
-pub type RMII_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RMII_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CLKEN` reader - Clock Enable"]
 pub type CLKEN_R = crate::BitReader;
 #[doc = "Field `CLKEN` writer - Clock Enable"]
-pub type CLKEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CLKEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Reduce MII"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bit 0 - Reduce MII"]
     #[inline(always)]
     #[must_use]
-    pub fn rmii(&mut self) -> RMII_W<USRIO_SPEC, 0> {
-        RMII_W::new(self)
+    pub fn rmii(&mut self) -> RMII_W<USRIO_SPEC> {
+        RMII_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn clken(&mut self) -> CLKEN_W<USRIO_SPEC, 1> {
-        CLKEN_W::new(self)
+    pub fn clken(&mut self) -> CLKEN_W<USRIO_SPEC> {
+        CLKEN_W::new(self, 1)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

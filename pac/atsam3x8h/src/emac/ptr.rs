@@ -5,7 +5,7 @@ pub type W = crate::W<PTR_SPEC>;
 #[doc = "Field `PTIME` reader - Pause Time"]
 pub type PTIME_R = crate::FieldReader<u16>;
 #[doc = "Field `PTIME` writer - Pause Time"]
-pub type PTIME_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type PTIME_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Pause Time"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - Pause Time"]
     #[inline(always)]
     #[must_use]
-    pub fn ptime(&mut self) -> PTIME_W<PTR_SPEC, 0> {
-        PTIME_W::new(self)
+    pub fn ptime(&mut self) -> PTIME_W<PTR_SPEC> {
+        PTIME_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,47 +5,47 @@ pub type W = crate::W<NCR_SPEC>;
 #[doc = "Field `LB` reader - LoopBack"]
 pub type LB_R = crate::BitReader;
 #[doc = "Field `LB` writer - LoopBack"]
-pub type LB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LB_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LLB` reader - Loopback local"]
 pub type LLB_R = crate::BitReader;
 #[doc = "Field `LLB` writer - Loopback local"]
-pub type LLB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LLB_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RE` reader - Receive enable"]
 pub type RE_R = crate::BitReader;
 #[doc = "Field `RE` writer - Receive enable"]
-pub type RE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TE` reader - Transmit enable"]
 pub type TE_R = crate::BitReader;
 #[doc = "Field `TE` writer - Transmit enable"]
-pub type TE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MPE` reader - Management port enable"]
 pub type MPE_R = crate::BitReader;
 #[doc = "Field `MPE` writer - Management port enable"]
-pub type MPE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MPE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CLRSTAT` reader - Clear statistics registers"]
 pub type CLRSTAT_R = crate::BitReader;
 #[doc = "Field `CLRSTAT` writer - Clear statistics registers"]
-pub type CLRSTAT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CLRSTAT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INCSTAT` reader - Increment statistics registers"]
 pub type INCSTAT_R = crate::BitReader;
 #[doc = "Field `INCSTAT` writer - Increment statistics registers"]
-pub type INCSTAT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INCSTAT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WESTAT` reader - Write enable for statistics registers"]
 pub type WESTAT_R = crate::BitReader;
 #[doc = "Field `WESTAT` writer - Write enable for statistics registers"]
-pub type WESTAT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type WESTAT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BP` reader - Back pressure"]
 pub type BP_R = crate::BitReader;
 #[doc = "Field `BP` writer - Back pressure"]
-pub type BP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TSTART` reader - Start transmission"]
 pub type TSTART_R = crate::BitReader;
 #[doc = "Field `TSTART` writer - Start transmission"]
-pub type TSTART_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TSTART_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `THALT` reader - Transmit halt"]
 pub type THALT_R = crate::BitReader;
 #[doc = "Field `THALT` writer - Transmit halt"]
-pub type THALT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type THALT_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - LoopBack"]
     #[inline(always)]
@@ -107,68 +107,68 @@ impl W {
     #[doc = "Bit 0 - LoopBack"]
     #[inline(always)]
     #[must_use]
-    pub fn lb(&mut self) -> LB_W<NCR_SPEC, 0> {
-        LB_W::new(self)
+    pub fn lb(&mut self) -> LB_W<NCR_SPEC> {
+        LB_W::new(self, 0)
     }
     #[doc = "Bit 1 - Loopback local"]
     #[inline(always)]
     #[must_use]
-    pub fn llb(&mut self) -> LLB_W<NCR_SPEC, 1> {
-        LLB_W::new(self)
+    pub fn llb(&mut self) -> LLB_W<NCR_SPEC> {
+        LLB_W::new(self, 1)
     }
     #[doc = "Bit 2 - Receive enable"]
     #[inline(always)]
     #[must_use]
-    pub fn re(&mut self) -> RE_W<NCR_SPEC, 2> {
-        RE_W::new(self)
+    pub fn re(&mut self) -> RE_W<NCR_SPEC> {
+        RE_W::new(self, 2)
     }
     #[doc = "Bit 3 - Transmit enable"]
     #[inline(always)]
     #[must_use]
-    pub fn te(&mut self) -> TE_W<NCR_SPEC, 3> {
-        TE_W::new(self)
+    pub fn te(&mut self) -> TE_W<NCR_SPEC> {
+        TE_W::new(self, 3)
     }
     #[doc = "Bit 4 - Management port enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mpe(&mut self) -> MPE_W<NCR_SPEC, 4> {
-        MPE_W::new(self)
+    pub fn mpe(&mut self) -> MPE_W<NCR_SPEC> {
+        MPE_W::new(self, 4)
     }
     #[doc = "Bit 5 - Clear statistics registers"]
     #[inline(always)]
     #[must_use]
-    pub fn clrstat(&mut self) -> CLRSTAT_W<NCR_SPEC, 5> {
-        CLRSTAT_W::new(self)
+    pub fn clrstat(&mut self) -> CLRSTAT_W<NCR_SPEC> {
+        CLRSTAT_W::new(self, 5)
     }
     #[doc = "Bit 6 - Increment statistics registers"]
     #[inline(always)]
     #[must_use]
-    pub fn incstat(&mut self) -> INCSTAT_W<NCR_SPEC, 6> {
-        INCSTAT_W::new(self)
+    pub fn incstat(&mut self) -> INCSTAT_W<NCR_SPEC> {
+        INCSTAT_W::new(self, 6)
     }
     #[doc = "Bit 7 - Write enable for statistics registers"]
     #[inline(always)]
     #[must_use]
-    pub fn westat(&mut self) -> WESTAT_W<NCR_SPEC, 7> {
-        WESTAT_W::new(self)
+    pub fn westat(&mut self) -> WESTAT_W<NCR_SPEC> {
+        WESTAT_W::new(self, 7)
     }
     #[doc = "Bit 8 - Back pressure"]
     #[inline(always)]
     #[must_use]
-    pub fn bp(&mut self) -> BP_W<NCR_SPEC, 8> {
-        BP_W::new(self)
+    pub fn bp(&mut self) -> BP_W<NCR_SPEC> {
+        BP_W::new(self, 8)
     }
     #[doc = "Bit 9 - Start transmission"]
     #[inline(always)]
     #[must_use]
-    pub fn tstart(&mut self) -> TSTART_W<NCR_SPEC, 9> {
-        TSTART_W::new(self)
+    pub fn tstart(&mut self) -> TSTART_W<NCR_SPEC> {
+        TSTART_W::new(self, 9)
     }
     #[doc = "Bit 10 - Transmit halt"]
     #[inline(always)]
     #[must_use]
-    pub fn thalt(&mut self) -> THALT_W<NCR_SPEC, 10> {
-        THALT_W::new(self)
+    pub fn thalt(&mut self) -> THALT_W<NCR_SPEC> {
+        THALT_W::new(self, 10)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

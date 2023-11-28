@@ -52,8 +52,8 @@ impl CKS_R {
     }
 }
 #[doc = "Field `CKS` writer - Transmit Clock Selection"]
-pub type CKS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, CKS_A>;
-impl<'a, REG, const O: u8> CKS_W<'a, REG, O>
+pub type CKS_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CKS_A>;
+impl<'a, REG> CKS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -124,8 +124,8 @@ impl CKO_R {
     }
 }
 #[doc = "Field `CKO` writer - Transmit Clock Output Mode Selection"]
-pub type CKO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, CKO_A>;
-impl<'a, REG, const O: u8> CKO_W<'a, REG, O>
+pub type CKO_W<'a, REG> = crate::FieldWriter<'a, REG, 3, CKO_A>;
+impl<'a, REG> CKO_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -149,7 +149,7 @@ where
 #[doc = "Field `CKI` reader - Transmit Clock Inversion"]
 pub type CKI_R = crate::BitReader;
 #[doc = "Field `CKI` writer - Transmit Clock Inversion"]
-pub type CKI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CKI_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CKG` reader - Transmit Clock Gating Selection"]
 pub type CKG_R = crate::FieldReader<CKG_A>;
 #[doc = "Transmit Clock Gating Selection\n\nValue on reset: 0"]
@@ -200,8 +200,8 @@ impl CKG_R {
     }
 }
 #[doc = "Field `CKG` writer - Transmit Clock Gating Selection"]
-pub type CKG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, CKG_A>;
-impl<'a, REG, const O: u8> CKG_W<'a, REG, O>
+pub type CKG_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CKG_A>;
+impl<'a, REG> CKG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -312,8 +312,8 @@ impl START_R {
     }
 }
 #[doc = "Field `START` writer - Transmit Start Selection"]
-pub type START_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, START_A>;
-impl<'a, REG, const O: u8> START_W<'a, REG, O>
+pub type START_W<'a, REG> = crate::FieldWriter<'a, REG, 4, START_A>;
+impl<'a, REG> START_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -362,11 +362,11 @@ where
 #[doc = "Field `STTDLY` reader - Transmit Start Delay"]
 pub type STTDLY_R = crate::FieldReader;
 #[doc = "Field `STTDLY` writer - Transmit Start Delay"]
-pub type STTDLY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type STTDLY_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `PERIOD` reader - Transmit Period Divider Selection"]
 pub type PERIOD_R = crate::FieldReader;
 #[doc = "Field `PERIOD` writer - Transmit Period Divider Selection"]
-pub type PERIOD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type PERIOD_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:1 - Transmit Clock Selection"]
     #[inline(always)]
@@ -408,44 +408,44 @@ impl W {
     #[doc = "Bits 0:1 - Transmit Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn cks(&mut self) -> CKS_W<TCMR_SPEC, 0> {
-        CKS_W::new(self)
+    pub fn cks(&mut self) -> CKS_W<TCMR_SPEC> {
+        CKS_W::new(self, 0)
     }
     #[doc = "Bits 2:4 - Transmit Clock Output Mode Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn cko(&mut self) -> CKO_W<TCMR_SPEC, 2> {
-        CKO_W::new(self)
+    pub fn cko(&mut self) -> CKO_W<TCMR_SPEC> {
+        CKO_W::new(self, 2)
     }
     #[doc = "Bit 5 - Transmit Clock Inversion"]
     #[inline(always)]
     #[must_use]
-    pub fn cki(&mut self) -> CKI_W<TCMR_SPEC, 5> {
-        CKI_W::new(self)
+    pub fn cki(&mut self) -> CKI_W<TCMR_SPEC> {
+        CKI_W::new(self, 5)
     }
     #[doc = "Bits 6:7 - Transmit Clock Gating Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ckg(&mut self) -> CKG_W<TCMR_SPEC, 6> {
-        CKG_W::new(self)
+    pub fn ckg(&mut self) -> CKG_W<TCMR_SPEC> {
+        CKG_W::new(self, 6)
     }
     #[doc = "Bits 8:11 - Transmit Start Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn start(&mut self) -> START_W<TCMR_SPEC, 8> {
-        START_W::new(self)
+    pub fn start(&mut self) -> START_W<TCMR_SPEC> {
+        START_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Transmit Start Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn sttdly(&mut self) -> STTDLY_W<TCMR_SPEC, 16> {
-        STTDLY_W::new(self)
+    pub fn sttdly(&mut self) -> STTDLY_W<TCMR_SPEC> {
+        STTDLY_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Transmit Period Divider Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn period(&mut self) -> PERIOD_W<TCMR_SPEC, 24> {
-        PERIOD_W::new(self)
+    pub fn period(&mut self) -> PERIOD_W<TCMR_SPEC> {
+        PERIOD_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

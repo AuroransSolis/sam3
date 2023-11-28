@@ -5,7 +5,7 @@ pub type W = crate::W<SMMR_SPEC>;
 #[doc = "Field `SMTH` reader - Supply Monitor Threshold"]
 pub type SMTH_R = crate::FieldReader;
 #[doc = "Field `SMTH` writer - Supply Monitor Threshold"]
-pub type SMTH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type SMTH_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `SMSMPL` reader - Supply Monitor Sampling Period"]
 pub type SMSMPL_R = crate::FieldReader<SMSMPL_A>;
 #[doc = "Supply Monitor Sampling Period\n\nValue on reset: 0"]
@@ -72,8 +72,8 @@ impl SMSMPL_R {
     }
 }
 #[doc = "Field `SMSMPL` writer - Supply Monitor Sampling Period"]
-pub type SMSMPL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, SMSMPL_A>;
-impl<'a, REG, const O: u8> SMSMPL_W<'a, REG, O>
+pub type SMSMPL_W<'a, REG> = crate::FieldWriter<'a, REG, 3, SMSMPL_A>;
+impl<'a, REG> SMSMPL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -141,8 +141,8 @@ impl SMRSTEN_R {
     }
 }
 #[doc = "Field `SMRSTEN` writer - Supply Monitor Reset Enable"]
-pub type SMRSTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMRSTEN_A>;
-impl<'a, REG, const O: u8> SMRSTEN_W<'a, REG, O>
+pub type SMRSTEN_W<'a, REG> = crate::BitWriter<'a, REG, SMRSTEN_A>;
+impl<'a, REG> SMRSTEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -194,8 +194,8 @@ impl SMIEN_R {
     }
 }
 #[doc = "Field `SMIEN` writer - Supply Monitor Interrupt Enable"]
-pub type SMIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMIEN_A>;
-impl<'a, REG, const O: u8> SMIEN_W<'a, REG, O>
+pub type SMIEN_W<'a, REG> = crate::BitWriter<'a, REG, SMIEN_A>;
+impl<'a, REG> SMIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -236,26 +236,26 @@ impl W {
     #[doc = "Bits 0:3 - Supply Monitor Threshold"]
     #[inline(always)]
     #[must_use]
-    pub fn smth(&mut self) -> SMTH_W<SMMR_SPEC, 0> {
-        SMTH_W::new(self)
+    pub fn smth(&mut self) -> SMTH_W<SMMR_SPEC> {
+        SMTH_W::new(self, 0)
     }
     #[doc = "Bits 8:10 - Supply Monitor Sampling Period"]
     #[inline(always)]
     #[must_use]
-    pub fn smsmpl(&mut self) -> SMSMPL_W<SMMR_SPEC, 8> {
-        SMSMPL_W::new(self)
+    pub fn smsmpl(&mut self) -> SMSMPL_W<SMMR_SPEC> {
+        SMSMPL_W::new(self, 8)
     }
     #[doc = "Bit 12 - Supply Monitor Reset Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn smrsten(&mut self) -> SMRSTEN_W<SMMR_SPEC, 12> {
-        SMRSTEN_W::new(self)
+    pub fn smrsten(&mut self) -> SMRSTEN_W<SMMR_SPEC> {
+        SMRSTEN_W::new(self, 12)
     }
     #[doc = "Bit 13 - Supply Monitor Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn smien(&mut self) -> SMIEN_W<SMMR_SPEC, 13> {
-        SMIEN_W::new(self)
+    pub fn smien(&mut self) -> SMIEN_W<SMMR_SPEC> {
+        SMIEN_W::new(self, 13)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

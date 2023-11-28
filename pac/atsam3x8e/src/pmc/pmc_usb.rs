@@ -5,11 +5,11 @@ pub type W = crate::W<PMC_USB_SPEC>;
 #[doc = "Field `USBS` reader - USB Input Clock Selection"]
 pub type USBS_R = crate::BitReader;
 #[doc = "Field `USBS` writer - USB Input Clock Selection"]
-pub type USBS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type USBS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `USBDIV` reader - Divider for USB Clock."]
 pub type USBDIV_R = crate::FieldReader;
 #[doc = "Field `USBDIV` writer - Divider for USB Clock."]
-pub type USBDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type USBDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bit 0 - USB Input Clock Selection"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bit 0 - USB Input Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn usbs(&mut self) -> USBS_W<PMC_USB_SPEC, 0> {
-        USBS_W::new(self)
+    pub fn usbs(&mut self) -> USBS_W<PMC_USB_SPEC> {
+        USBS_W::new(self, 0)
     }
     #[doc = "Bits 8:11 - Divider for USB Clock."]
     #[inline(always)]
     #[must_use]
-    pub fn usbdiv(&mut self) -> USBDIV_W<PMC_USB_SPEC, 8> {
-        USBDIV_W::new(self)
+    pub fn usbdiv(&mut self) -> USBDIV_W<PMC_USB_SPEC> {
+        USBDIV_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

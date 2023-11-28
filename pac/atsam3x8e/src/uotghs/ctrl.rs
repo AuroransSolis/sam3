@@ -5,79 +5,79 @@ pub type W = crate::W<CTRL_SPEC>;
 #[doc = "Field `IDTE` reader - ID Transition Interrupt Enable"]
 pub type IDTE_R = crate::BitReader;
 #[doc = "Field `IDTE` writer - ID Transition Interrupt Enable"]
-pub type IDTE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type IDTE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `VBUSTE` reader - VBus Transition Interrupt Enable"]
 pub type VBUSTE_R = crate::BitReader;
 #[doc = "Field `VBUSTE` writer - VBus Transition Interrupt Enable"]
-pub type VBUSTE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type VBUSTE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SRPE` reader - SRP Interrupt Enable"]
 pub type SRPE_R = crate::BitReader;
 #[doc = "Field `SRPE` writer - SRP Interrupt Enable"]
-pub type SRPE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SRPE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `VBERRE` reader - VBus Error Interrupt Enable"]
 pub type VBERRE_R = crate::BitReader;
 #[doc = "Field `VBERRE` writer - VBus Error Interrupt Enable"]
-pub type VBERRE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type VBERRE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BCERRE` reader - B-Connection Error Interrupt Enable"]
 pub type BCERRE_R = crate::BitReader;
 #[doc = "Field `BCERRE` writer - B-Connection Error Interrupt Enable"]
-pub type BCERRE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BCERRE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ROLEEXE` reader - Role Exchange Interrupt Enable"]
 pub type ROLEEXE_R = crate::BitReader;
 #[doc = "Field `ROLEEXE` writer - Role Exchange Interrupt Enable"]
-pub type ROLEEXE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ROLEEXE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HNPERRE` reader - HNP Error Interrupt Enable"]
 pub type HNPERRE_R = crate::BitReader;
 #[doc = "Field `HNPERRE` writer - HNP Error Interrupt Enable"]
-pub type HNPERRE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HNPERRE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `STOE` reader - Suspend Time-Out Interrupt Enable"]
 pub type STOE_R = crate::BitReader;
 #[doc = "Field `STOE` writer - Suspend Time-Out Interrupt Enable"]
-pub type STOE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STOE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `VBUSHWC` reader - VBus Hardware Control"]
 pub type VBUSHWC_R = crate::BitReader;
 #[doc = "Field `VBUSHWC` writer - VBus Hardware Control"]
-pub type VBUSHWC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type VBUSHWC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SRPSEL` reader - SRP Selection"]
 pub type SRPSEL_R = crate::BitReader;
 #[doc = "Field `SRPSEL` writer - SRP Selection"]
-pub type SRPSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SRPSEL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SRPREQ` reader - SRP Request"]
 pub type SRPREQ_R = crate::BitReader;
 #[doc = "Field `SRPREQ` writer - SRP Request"]
-pub type SRPREQ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SRPREQ_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HNPREQ` reader - HNP Request"]
 pub type HNPREQ_R = crate::BitReader;
 #[doc = "Field `HNPREQ` writer - HNP Request"]
-pub type HNPREQ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HNPREQ_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OTGPADE` reader - OTG Pad Enable"]
 pub type OTGPADE_R = crate::BitReader;
 #[doc = "Field `OTGPADE` writer - OTG Pad Enable"]
-pub type OTGPADE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OTGPADE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `VBUSPO` reader - VBus Polarity Off"]
 pub type VBUSPO_R = crate::BitReader;
 #[doc = "Field `VBUSPO` writer - VBus Polarity Off"]
-pub type VBUSPO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type VBUSPO_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FRZCLK` reader - Freeze USB Clock"]
 pub type FRZCLK_R = crate::BitReader;
 #[doc = "Field `FRZCLK` writer - Freeze USB Clock"]
-pub type FRZCLK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FRZCLK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `USBE` reader - UOTGHS Enable"]
 pub type USBE_R = crate::BitReader;
 #[doc = "Field `USBE` writer - UOTGHS Enable"]
-pub type USBE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type USBE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TIMVALUE` reader - Timer Value"]
 pub type TIMVALUE_R = crate::FieldReader;
 #[doc = "Field `TIMVALUE` writer - Timer Value"]
-pub type TIMVALUE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type TIMVALUE_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `TIMPAGE` reader - Timer Page"]
 pub type TIMPAGE_R = crate::FieldReader;
 #[doc = "Field `TIMPAGE` writer - Timer Page"]
-pub type TIMPAGE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type TIMPAGE_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `UNLOCK` reader - Timer Access Unlock"]
 pub type UNLOCK_R = crate::BitReader;
 #[doc = "Field `UNLOCK` writer - Timer Access Unlock"]
-pub type UNLOCK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type UNLOCK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UIDE` reader - UOTGID Pin Enable"]
 pub type UIDE_R = crate::BitReader<UIDE_A>;
 #[doc = "UOTGID Pin Enable\n\nValue on reset: 1"]
@@ -115,8 +115,8 @@ impl UIDE_R {
     }
 }
 #[doc = "Field `UIDE` writer - UOTGID Pin Enable"]
-pub type UIDE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, UIDE_A>;
-impl<'a, REG, const O: u8> UIDE_W<'a, REG, O>
+pub type UIDE_W<'a, REG> = crate::BitWriter<'a, REG, UIDE_A>;
+impl<'a, REG> UIDE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -168,8 +168,8 @@ impl UIMOD_R {
     }
 }
 #[doc = "Field `UIMOD` writer - UOTGHS Mode"]
-pub type UIMOD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, UIMOD_A>;
-impl<'a, REG, const O: u8> UIMOD_W<'a, REG, O>
+pub type UIMOD_W<'a, REG> = crate::BitWriter<'a, REG, UIMOD_A>;
+impl<'a, REG> UIMOD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -295,128 +295,128 @@ impl W {
     #[doc = "Bit 0 - ID Transition Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn idte(&mut self) -> IDTE_W<CTRL_SPEC, 0> {
-        IDTE_W::new(self)
+    pub fn idte(&mut self) -> IDTE_W<CTRL_SPEC> {
+        IDTE_W::new(self, 0)
     }
     #[doc = "Bit 1 - VBus Transition Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn vbuste(&mut self) -> VBUSTE_W<CTRL_SPEC, 1> {
-        VBUSTE_W::new(self)
+    pub fn vbuste(&mut self) -> VBUSTE_W<CTRL_SPEC> {
+        VBUSTE_W::new(self, 1)
     }
     #[doc = "Bit 2 - SRP Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn srpe(&mut self) -> SRPE_W<CTRL_SPEC, 2> {
-        SRPE_W::new(self)
+    pub fn srpe(&mut self) -> SRPE_W<CTRL_SPEC> {
+        SRPE_W::new(self, 2)
     }
     #[doc = "Bit 3 - VBus Error Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn vberre(&mut self) -> VBERRE_W<CTRL_SPEC, 3> {
-        VBERRE_W::new(self)
+    pub fn vberre(&mut self) -> VBERRE_W<CTRL_SPEC> {
+        VBERRE_W::new(self, 3)
     }
     #[doc = "Bit 4 - B-Connection Error Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn bcerre(&mut self) -> BCERRE_W<CTRL_SPEC, 4> {
-        BCERRE_W::new(self)
+    pub fn bcerre(&mut self) -> BCERRE_W<CTRL_SPEC> {
+        BCERRE_W::new(self, 4)
     }
     #[doc = "Bit 5 - Role Exchange Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn roleexe(&mut self) -> ROLEEXE_W<CTRL_SPEC, 5> {
-        ROLEEXE_W::new(self)
+    pub fn roleexe(&mut self) -> ROLEEXE_W<CTRL_SPEC> {
+        ROLEEXE_W::new(self, 5)
     }
     #[doc = "Bit 6 - HNP Error Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hnperre(&mut self) -> HNPERRE_W<CTRL_SPEC, 6> {
-        HNPERRE_W::new(self)
+    pub fn hnperre(&mut self) -> HNPERRE_W<CTRL_SPEC> {
+        HNPERRE_W::new(self, 6)
     }
     #[doc = "Bit 7 - Suspend Time-Out Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn stoe(&mut self) -> STOE_W<CTRL_SPEC, 7> {
-        STOE_W::new(self)
+    pub fn stoe(&mut self) -> STOE_W<CTRL_SPEC> {
+        STOE_W::new(self, 7)
     }
     #[doc = "Bit 8 - VBus Hardware Control"]
     #[inline(always)]
     #[must_use]
-    pub fn vbushwc(&mut self) -> VBUSHWC_W<CTRL_SPEC, 8> {
-        VBUSHWC_W::new(self)
+    pub fn vbushwc(&mut self) -> VBUSHWC_W<CTRL_SPEC> {
+        VBUSHWC_W::new(self, 8)
     }
     #[doc = "Bit 9 - SRP Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn srpsel(&mut self) -> SRPSEL_W<CTRL_SPEC, 9> {
-        SRPSEL_W::new(self)
+    pub fn srpsel(&mut self) -> SRPSEL_W<CTRL_SPEC> {
+        SRPSEL_W::new(self, 9)
     }
     #[doc = "Bit 10 - SRP Request"]
     #[inline(always)]
     #[must_use]
-    pub fn srpreq(&mut self) -> SRPREQ_W<CTRL_SPEC, 10> {
-        SRPREQ_W::new(self)
+    pub fn srpreq(&mut self) -> SRPREQ_W<CTRL_SPEC> {
+        SRPREQ_W::new(self, 10)
     }
     #[doc = "Bit 11 - HNP Request"]
     #[inline(always)]
     #[must_use]
-    pub fn hnpreq(&mut self) -> HNPREQ_W<CTRL_SPEC, 11> {
-        HNPREQ_W::new(self)
+    pub fn hnpreq(&mut self) -> HNPREQ_W<CTRL_SPEC> {
+        HNPREQ_W::new(self, 11)
     }
     #[doc = "Bit 12 - OTG Pad Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn otgpade(&mut self) -> OTGPADE_W<CTRL_SPEC, 12> {
-        OTGPADE_W::new(self)
+    pub fn otgpade(&mut self) -> OTGPADE_W<CTRL_SPEC> {
+        OTGPADE_W::new(self, 12)
     }
     #[doc = "Bit 13 - VBus Polarity Off"]
     #[inline(always)]
     #[must_use]
-    pub fn vbuspo(&mut self) -> VBUSPO_W<CTRL_SPEC, 13> {
-        VBUSPO_W::new(self)
+    pub fn vbuspo(&mut self) -> VBUSPO_W<CTRL_SPEC> {
+        VBUSPO_W::new(self, 13)
     }
     #[doc = "Bit 14 - Freeze USB Clock"]
     #[inline(always)]
     #[must_use]
-    pub fn frzclk(&mut self) -> FRZCLK_W<CTRL_SPEC, 14> {
-        FRZCLK_W::new(self)
+    pub fn frzclk(&mut self) -> FRZCLK_W<CTRL_SPEC> {
+        FRZCLK_W::new(self, 14)
     }
     #[doc = "Bit 15 - UOTGHS Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn usbe(&mut self) -> USBE_W<CTRL_SPEC, 15> {
-        USBE_W::new(self)
+    pub fn usbe(&mut self) -> USBE_W<CTRL_SPEC> {
+        USBE_W::new(self, 15)
     }
     #[doc = "Bits 16:17 - Timer Value"]
     #[inline(always)]
     #[must_use]
-    pub fn timvalue(&mut self) -> TIMVALUE_W<CTRL_SPEC, 16> {
-        TIMVALUE_W::new(self)
+    pub fn timvalue(&mut self) -> TIMVALUE_W<CTRL_SPEC> {
+        TIMVALUE_W::new(self, 16)
     }
     #[doc = "Bits 20:21 - Timer Page"]
     #[inline(always)]
     #[must_use]
-    pub fn timpage(&mut self) -> TIMPAGE_W<CTRL_SPEC, 20> {
-        TIMPAGE_W::new(self)
+    pub fn timpage(&mut self) -> TIMPAGE_W<CTRL_SPEC> {
+        TIMPAGE_W::new(self, 20)
     }
     #[doc = "Bit 22 - Timer Access Unlock"]
     #[inline(always)]
     #[must_use]
-    pub fn unlock(&mut self) -> UNLOCK_W<CTRL_SPEC, 22> {
-        UNLOCK_W::new(self)
+    pub fn unlock(&mut self) -> UNLOCK_W<CTRL_SPEC> {
+        UNLOCK_W::new(self, 22)
     }
     #[doc = "Bit 24 - UOTGID Pin Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn uide(&mut self) -> UIDE_W<CTRL_SPEC, 24> {
-        UIDE_W::new(self)
+    pub fn uide(&mut self) -> UIDE_W<CTRL_SPEC> {
+        UIDE_W::new(self, 24)
     }
     #[doc = "Bit 25 - UOTGHS Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn uimod(&mut self) -> UIMOD_W<CTRL_SPEC, 25> {
-        UIMOD_W::new(self)
+    pub fn uimod(&mut self) -> UIMOD_W<CTRL_SPEC> {
+        UIMOD_W::new(self, 25)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

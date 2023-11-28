@@ -5,7 +5,7 @@ pub type W = crate::W<DEVEPTCFG3_SPEC>;
 #[doc = "Field `ALLOC` reader - Endpoint Memory Allocate"]
 pub type ALLOC_R = crate::BitReader;
 #[doc = "Field `ALLOC` writer - Endpoint Memory Allocate"]
-pub type ALLOC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ALLOC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPBK` reader - Endpoint Banks"]
 pub type EPBK_R = crate::FieldReader<EPBK_A>;
 #[doc = "Endpoint Banks"]
@@ -56,8 +56,8 @@ impl EPBK_R {
     }
 }
 #[doc = "Field `EPBK` writer - Endpoint Banks"]
-pub type EPBK_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, EPBK_A>;
-impl<'a, REG, const O: u8> EPBK_W<'a, REG, O>
+pub type EPBK_W<'a, REG> = crate::FieldWriter<'a, REG, 2, EPBK_A>;
+impl<'a, REG> EPBK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -168,8 +168,8 @@ impl EPSIZE_R {
     }
 }
 #[doc = "Field `EPSIZE` writer - Endpoint Size"]
-pub type EPSIZE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, EPSIZE_A>;
-impl<'a, REG, const O: u8> EPSIZE_W<'a, REG, O>
+pub type EPSIZE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, EPSIZE_A>;
+impl<'a, REG> EPSIZE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -252,8 +252,8 @@ impl EPDIR_R {
     }
 }
 #[doc = "Field `EPDIR` writer - Endpoint Direction"]
-pub type EPDIR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EPDIR_A>;
-impl<'a, REG, const O: u8> EPDIR_W<'a, REG, O>
+pub type EPDIR_W<'a, REG> = crate::BitWriter<'a, REG, EPDIR_A>;
+impl<'a, REG> EPDIR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -271,7 +271,7 @@ where
 #[doc = "Field `AUTOSW` reader - Automatic Switch"]
 pub type AUTOSW_R = crate::BitReader;
 #[doc = "Field `AUTOSW` writer - Automatic Switch"]
-pub type AUTOSW_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type AUTOSW_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPTYPE` reader - Endpoint Type"]
 pub type EPTYPE_R = crate::FieldReader<EPTYPE_A>;
 #[doc = "Endpoint Type"]
@@ -330,8 +330,8 @@ impl EPTYPE_R {
     }
 }
 #[doc = "Field `EPTYPE` writer - Endpoint Type"]
-pub type EPTYPE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EPTYPE_A>;
-impl<'a, REG, const O: u8> EPTYPE_W<'a, REG, O>
+pub type EPTYPE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EPTYPE_A>;
+impl<'a, REG> EPTYPE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -415,8 +415,8 @@ impl NBTRANS_R {
     }
 }
 #[doc = "Field `NBTRANS` writer - Number of transaction per microframe for isochronous endpoint"]
-pub type NBTRANS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, NBTRANS_A>;
-impl<'a, REG, const O: u8> NBTRANS_W<'a, REG, O>
+pub type NBTRANS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, NBTRANS_A>;
+impl<'a, REG> NBTRANS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -483,44 +483,44 @@ impl W {
     #[doc = "Bit 1 - Endpoint Memory Allocate"]
     #[inline(always)]
     #[must_use]
-    pub fn alloc(&mut self) -> ALLOC_W<DEVEPTCFG3_SPEC, 1> {
-        ALLOC_W::new(self)
+    pub fn alloc(&mut self) -> ALLOC_W<DEVEPTCFG3_SPEC> {
+        ALLOC_W::new(self, 1)
     }
     #[doc = "Bits 2:3 - Endpoint Banks"]
     #[inline(always)]
     #[must_use]
-    pub fn epbk(&mut self) -> EPBK_W<DEVEPTCFG3_SPEC, 2> {
-        EPBK_W::new(self)
+    pub fn epbk(&mut self) -> EPBK_W<DEVEPTCFG3_SPEC> {
+        EPBK_W::new(self, 2)
     }
     #[doc = "Bits 4:6 - Endpoint Size"]
     #[inline(always)]
     #[must_use]
-    pub fn epsize(&mut self) -> EPSIZE_W<DEVEPTCFG3_SPEC, 4> {
-        EPSIZE_W::new(self)
+    pub fn epsize(&mut self) -> EPSIZE_W<DEVEPTCFG3_SPEC> {
+        EPSIZE_W::new(self, 4)
     }
     #[doc = "Bit 8 - Endpoint Direction"]
     #[inline(always)]
     #[must_use]
-    pub fn epdir(&mut self) -> EPDIR_W<DEVEPTCFG3_SPEC, 8> {
-        EPDIR_W::new(self)
+    pub fn epdir(&mut self) -> EPDIR_W<DEVEPTCFG3_SPEC> {
+        EPDIR_W::new(self, 8)
     }
     #[doc = "Bit 9 - Automatic Switch"]
     #[inline(always)]
     #[must_use]
-    pub fn autosw(&mut self) -> AUTOSW_W<DEVEPTCFG3_SPEC, 9> {
-        AUTOSW_W::new(self)
+    pub fn autosw(&mut self) -> AUTOSW_W<DEVEPTCFG3_SPEC> {
+        AUTOSW_W::new(self, 9)
     }
     #[doc = "Bits 11:12 - Endpoint Type"]
     #[inline(always)]
     #[must_use]
-    pub fn eptype(&mut self) -> EPTYPE_W<DEVEPTCFG3_SPEC, 11> {
-        EPTYPE_W::new(self)
+    pub fn eptype(&mut self) -> EPTYPE_W<DEVEPTCFG3_SPEC> {
+        EPTYPE_W::new(self, 11)
     }
     #[doc = "Bits 13:14 - Number of transaction per microframe for isochronous endpoint"]
     #[inline(always)]
     #[must_use]
-    pub fn nbtrans(&mut self) -> NBTRANS_W<DEVEPTCFG3_SPEC, 13> {
-        NBTRANS_W::new(self)
+    pub fn nbtrans(&mut self) -> NBTRANS_W<DEVEPTCFG3_SPEC> {
+        NBTRANS_W::new(self, 13)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

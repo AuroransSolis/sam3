@@ -5,7 +5,7 @@ pub type W = crate::W<MR_SPEC>;
 #[doc = "Field `TRGEN` reader - Trigger Enable"]
 pub type TRGEN_R = crate::BitReader;
 #[doc = "Field `TRGEN` writer - Trigger Enable"]
-pub type TRGEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TRGEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TRGSEL` reader - Trigger Selection"]
 pub type TRGSEL_R = crate::FieldReader<TRGSEL_A>;
 #[doc = "Trigger Selection\n\nValue on reset: 0"]
@@ -64,8 +64,8 @@ impl TRGSEL_R {
     }
 }
 #[doc = "Field `TRGSEL` writer - Trigger Selection"]
-pub type TRGSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, TRGSEL_A>;
-impl<'a, REG, const O: u8> TRGSEL_W<'a, REG, O>
+pub type TRGSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3, TRGSEL_A>;
+impl<'a, REG> TRGSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -94,19 +94,19 @@ where
 #[doc = "Field `DACEN` reader - DAC enable"]
 pub type DACEN_R = crate::BitReader;
 #[doc = "Field `DACEN` writer - DAC enable"]
-pub type DACEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DACEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WORD` reader - Word Transfer"]
 pub type WORD_R = crate::BitReader;
 #[doc = "Field `WORD` writer - Word Transfer"]
-pub type WORD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type WORD_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `STARTUP` reader - Startup Time Selection"]
 pub type STARTUP_R = crate::FieldReader;
 #[doc = "Field `STARTUP` writer - Startup Time Selection"]
-pub type STARTUP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type STARTUP_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `CLKDIV` reader - DAC Clock Divider for Internal Trigger"]
 pub type CLKDIV_R = crate::FieldReader<u16>;
 #[doc = "Field `CLKDIV` writer - DAC Clock Divider for Internal Trigger"]
-pub type CLKDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type CLKDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - Trigger Enable"]
     #[inline(always)]
@@ -143,38 +143,38 @@ impl W {
     #[doc = "Bit 0 - Trigger Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn trgen(&mut self) -> TRGEN_W<MR_SPEC, 0> {
-        TRGEN_W::new(self)
+    pub fn trgen(&mut self) -> TRGEN_W<MR_SPEC> {
+        TRGEN_W::new(self, 0)
     }
     #[doc = "Bits 1:3 - Trigger Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn trgsel(&mut self) -> TRGSEL_W<MR_SPEC, 1> {
-        TRGSEL_W::new(self)
+    pub fn trgsel(&mut self) -> TRGSEL_W<MR_SPEC> {
+        TRGSEL_W::new(self, 1)
     }
     #[doc = "Bit 4 - DAC enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dacen(&mut self) -> DACEN_W<MR_SPEC, 4> {
-        DACEN_W::new(self)
+    pub fn dacen(&mut self) -> DACEN_W<MR_SPEC> {
+        DACEN_W::new(self, 4)
     }
     #[doc = "Bit 5 - Word Transfer"]
     #[inline(always)]
     #[must_use]
-    pub fn word(&mut self) -> WORD_W<MR_SPEC, 5> {
-        WORD_W::new(self)
+    pub fn word(&mut self) -> WORD_W<MR_SPEC> {
+        WORD_W::new(self, 5)
     }
     #[doc = "Bits 8:15 - Startup Time Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn startup(&mut self) -> STARTUP_W<MR_SPEC, 8> {
-        STARTUP_W::new(self)
+    pub fn startup(&mut self) -> STARTUP_W<MR_SPEC> {
+        STARTUP_W::new(self, 8)
     }
     #[doc = "Bits 16:31 - DAC Clock Divider for Internal Trigger"]
     #[inline(always)]
     #[must_use]
-    pub fn clkdiv(&mut self) -> CLKDIV_W<MR_SPEC, 16> {
-        CLKDIV_W::new(self)
+    pub fn clkdiv(&mut self) -> CLKDIV_W<MR_SPEC> {
+        CLKDIV_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,7 +5,7 @@ pub type W = crate::W<FIDI_SPEC>;
 #[doc = "Field `FI_DI_RATIO` reader - FI Over DI Ratio Value"]
 pub type FI_DI_RATIO_R = crate::FieldReader<u16>;
 #[doc = "Field `FI_DI_RATIO` writer - FI Over DI Ratio Value"]
-pub type FI_DI_RATIO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type FI_DI_RATIO_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - FI Over DI Ratio Value"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - FI Over DI Ratio Value"]
     #[inline(always)]
     #[must_use]
-    pub fn fi_di_ratio(&mut self) -> FI_DI_RATIO_W<FIDI_SPEC, 0> {
-        FI_DI_RATIO_W::new(self)
+    pub fn fi_di_ratio(&mut self) -> FI_DI_RATIO_W<FIDI_SPEC> {
+        FI_DI_RATIO_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

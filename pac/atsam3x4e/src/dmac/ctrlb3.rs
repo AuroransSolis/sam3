@@ -39,8 +39,8 @@ impl SRC_DSCR_R {
     }
 }
 #[doc = "Field `SRC_DSCR` writer - Source Address Descriptor"]
-pub type SRC_DSCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRC_DSCR_A>;
-impl<'a, REG, const O: u8> SRC_DSCR_W<'a, REG, O>
+pub type SRC_DSCR_W<'a, REG> = crate::BitWriter<'a, REG, SRC_DSCR_A>;
+impl<'a, REG> SRC_DSCR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl DST_DSCR_R {
     }
 }
 #[doc = "Field `DST_DSCR` writer - Destination Address Descriptor"]
-pub type DST_DSCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DST_DSCR_A>;
-impl<'a, REG, const O: u8> DST_DSCR_W<'a, REG, O>
+pub type DST_DSCR_W<'a, REG> = crate::BitWriter<'a, REG, DST_DSCR_A>;
+impl<'a, REG> DST_DSCR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -166,8 +166,8 @@ impl FC_R {
     }
 }
 #[doc = "Field `FC` writer - Flow Control"]
-pub type FC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, FC_A>;
-impl<'a, REG, const O: u8> FC_W<'a, REG, O>
+pub type FC_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, FC_A>;
+impl<'a, REG> FC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -243,8 +243,8 @@ impl SRC_INCR_R {
     }
 }
 #[doc = "Field `SRC_INCR` writer - Incrementing, Decrementing or Fixed Address for the Source"]
-pub type SRC_INCR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, SRC_INCR_A>;
-impl<'a, REG, const O: u8> SRC_INCR_W<'a, REG, O>
+pub type SRC_INCR_W<'a, REG> = crate::FieldWriter<'a, REG, 2, SRC_INCR_A>;
+impl<'a, REG> SRC_INCR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -315,8 +315,8 @@ impl DST_INCR_R {
     }
 }
 #[doc = "Field `DST_INCR` writer - Incrementing, Decrementing or Fixed Address for the Destination"]
-pub type DST_INCR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, DST_INCR_A>;
-impl<'a, REG, const O: u8> DST_INCR_W<'a, REG, O>
+pub type DST_INCR_W<'a, REG> = crate::FieldWriter<'a, REG, 2, DST_INCR_A>;
+impl<'a, REG> DST_INCR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -340,7 +340,7 @@ where
 #[doc = "Field `IEN` reader - Interrupt Enable Not"]
 pub type IEN_R = crate::BitReader;
 #[doc = "Field `IEN` writer - Interrupt Enable Not"]
-pub type IEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type IEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 16 - Source Address Descriptor"]
     #[inline(always)]
@@ -377,38 +377,38 @@ impl W {
     #[doc = "Bit 16 - Source Address Descriptor"]
     #[inline(always)]
     #[must_use]
-    pub fn src_dscr(&mut self) -> SRC_DSCR_W<CTRLB3_SPEC, 16> {
-        SRC_DSCR_W::new(self)
+    pub fn src_dscr(&mut self) -> SRC_DSCR_W<CTRLB3_SPEC> {
+        SRC_DSCR_W::new(self, 16)
     }
     #[doc = "Bit 20 - Destination Address Descriptor"]
     #[inline(always)]
     #[must_use]
-    pub fn dst_dscr(&mut self) -> DST_DSCR_W<CTRLB3_SPEC, 20> {
-        DST_DSCR_W::new(self)
+    pub fn dst_dscr(&mut self) -> DST_DSCR_W<CTRLB3_SPEC> {
+        DST_DSCR_W::new(self, 20)
     }
     #[doc = "Bits 21:22 - Flow Control"]
     #[inline(always)]
     #[must_use]
-    pub fn fc(&mut self) -> FC_W<CTRLB3_SPEC, 21> {
-        FC_W::new(self)
+    pub fn fc(&mut self) -> FC_W<CTRLB3_SPEC> {
+        FC_W::new(self, 21)
     }
     #[doc = "Bits 24:25 - Incrementing, Decrementing or Fixed Address for the Source"]
     #[inline(always)]
     #[must_use]
-    pub fn src_incr(&mut self) -> SRC_INCR_W<CTRLB3_SPEC, 24> {
-        SRC_INCR_W::new(self)
+    pub fn src_incr(&mut self) -> SRC_INCR_W<CTRLB3_SPEC> {
+        SRC_INCR_W::new(self, 24)
     }
     #[doc = "Bits 28:29 - Incrementing, Decrementing or Fixed Address for the Destination"]
     #[inline(always)]
     #[must_use]
-    pub fn dst_incr(&mut self) -> DST_INCR_W<CTRLB3_SPEC, 28> {
-        DST_INCR_W::new(self)
+    pub fn dst_incr(&mut self) -> DST_INCR_W<CTRLB3_SPEC> {
+        DST_INCR_W::new(self, 28)
     }
     #[doc = "Bit 30 - Interrupt Enable Not"]
     #[inline(always)]
     #[must_use]
-    pub fn ien(&mut self) -> IEN_W<CTRLB3_SPEC, 30> {
-        IEN_W::new(self)
+    pub fn ien(&mut self) -> IEN_W<CTRLB3_SPEC> {
+        IEN_W::new(self, 30)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

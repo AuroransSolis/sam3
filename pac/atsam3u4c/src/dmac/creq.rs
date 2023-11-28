@@ -5,35 +5,35 @@ pub type W = crate::W<CREQ_SPEC>;
 #[doc = "Field `SCREQ0` reader - Source Chunk Request"]
 pub type SCREQ0_R = crate::BitReader;
 #[doc = "Field `SCREQ0` writer - Source Chunk Request"]
-pub type SCREQ0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCREQ0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DCREQ0` reader - Destination Chunk Request"]
 pub type DCREQ0_R = crate::BitReader;
 #[doc = "Field `DCREQ0` writer - Destination Chunk Request"]
-pub type DCREQ0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DCREQ0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCREQ1` reader - Source Chunk Request"]
 pub type SCREQ1_R = crate::BitReader;
 #[doc = "Field `SCREQ1` writer - Source Chunk Request"]
-pub type SCREQ1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCREQ1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DCREQ1` reader - Destination Chunk Request"]
 pub type DCREQ1_R = crate::BitReader;
 #[doc = "Field `DCREQ1` writer - Destination Chunk Request"]
-pub type DCREQ1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DCREQ1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCREQ2` reader - Source Chunk Request"]
 pub type SCREQ2_R = crate::BitReader;
 #[doc = "Field `SCREQ2` writer - Source Chunk Request"]
-pub type SCREQ2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCREQ2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DCREQ2` reader - Destination Chunk Request"]
 pub type DCREQ2_R = crate::BitReader;
 #[doc = "Field `DCREQ2` writer - Destination Chunk Request"]
-pub type DCREQ2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DCREQ2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCREQ3` reader - Source Chunk Request"]
 pub type SCREQ3_R = crate::BitReader;
 #[doc = "Field `SCREQ3` writer - Source Chunk Request"]
-pub type SCREQ3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCREQ3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DCREQ3` reader - Destination Chunk Request"]
 pub type DCREQ3_R = crate::BitReader;
 #[doc = "Field `DCREQ3` writer - Destination Chunk Request"]
-pub type DCREQ3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DCREQ3_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Source Chunk Request"]
     #[inline(always)]
@@ -80,50 +80,50 @@ impl W {
     #[doc = "Bit 0 - Source Chunk Request"]
     #[inline(always)]
     #[must_use]
-    pub fn screq0(&mut self) -> SCREQ0_W<CREQ_SPEC, 0> {
-        SCREQ0_W::new(self)
+    pub fn screq0(&mut self) -> SCREQ0_W<CREQ_SPEC> {
+        SCREQ0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Destination Chunk Request"]
     #[inline(always)]
     #[must_use]
-    pub fn dcreq0(&mut self) -> DCREQ0_W<CREQ_SPEC, 1> {
-        DCREQ0_W::new(self)
+    pub fn dcreq0(&mut self) -> DCREQ0_W<CREQ_SPEC> {
+        DCREQ0_W::new(self, 1)
     }
     #[doc = "Bit 2 - Source Chunk Request"]
     #[inline(always)]
     #[must_use]
-    pub fn screq1(&mut self) -> SCREQ1_W<CREQ_SPEC, 2> {
-        SCREQ1_W::new(self)
+    pub fn screq1(&mut self) -> SCREQ1_W<CREQ_SPEC> {
+        SCREQ1_W::new(self, 2)
     }
     #[doc = "Bit 3 - Destination Chunk Request"]
     #[inline(always)]
     #[must_use]
-    pub fn dcreq1(&mut self) -> DCREQ1_W<CREQ_SPEC, 3> {
-        DCREQ1_W::new(self)
+    pub fn dcreq1(&mut self) -> DCREQ1_W<CREQ_SPEC> {
+        DCREQ1_W::new(self, 3)
     }
     #[doc = "Bit 4 - Source Chunk Request"]
     #[inline(always)]
     #[must_use]
-    pub fn screq2(&mut self) -> SCREQ2_W<CREQ_SPEC, 4> {
-        SCREQ2_W::new(self)
+    pub fn screq2(&mut self) -> SCREQ2_W<CREQ_SPEC> {
+        SCREQ2_W::new(self, 4)
     }
     #[doc = "Bit 5 - Destination Chunk Request"]
     #[inline(always)]
     #[must_use]
-    pub fn dcreq2(&mut self) -> DCREQ2_W<CREQ_SPEC, 5> {
-        DCREQ2_W::new(self)
+    pub fn dcreq2(&mut self) -> DCREQ2_W<CREQ_SPEC> {
+        DCREQ2_W::new(self, 5)
     }
     #[doc = "Bit 6 - Source Chunk Request"]
     #[inline(always)]
     #[must_use]
-    pub fn screq3(&mut self) -> SCREQ3_W<CREQ_SPEC, 6> {
-        SCREQ3_W::new(self)
+    pub fn screq3(&mut self) -> SCREQ3_W<CREQ_SPEC> {
+        SCREQ3_W::new(self, 6)
     }
     #[doc = "Bit 7 - Destination Chunk Request"]
     #[inline(always)]
     #[must_use]
-    pub fn dcreq3(&mut self) -> DCREQ3_W<CREQ_SPEC, 7> {
-        DCREQ3_W::new(self)
+    pub fn dcreq3(&mut self) -> DCREQ3_W<CREQ_SPEC> {
+        DCREQ3_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

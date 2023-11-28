@@ -1,162 +1,472 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Mode Register"]
-    pub mr: MR,
-    #[doc = "0x04 - Interrupt Enable Register"]
-    pub ier: IER,
-    #[doc = "0x08 - Interrupt Disable Register"]
-    pub idr: IDR,
-    #[doc = "0x0c - Interrupt Mask Register"]
-    pub imr: IMR,
-    #[doc = "0x10 - Status Register"]
-    pub sr: SR,
-    #[doc = "0x14 - Baudrate Register"]
-    pub br: BR,
-    #[doc = "0x18 - Timer Register"]
-    pub tim: TIM,
-    #[doc = "0x1c - Timestamp Register"]
-    pub timestp: TIMESTP,
-    #[doc = "0x20 - Error Counter Register"]
-    pub ecr: ECR,
-    #[doc = "0x24 - Transfer Command Register"]
-    pub tcr: TCR,
-    #[doc = "0x28 - Abort Command Register"]
-    pub acr: ACR,
+    mr: MR,
+    ier: IER,
+    idr: IDR,
+    imr: IMR,
+    sr: SR,
+    br: BR,
+    tim: TIM,
+    timestp: TIMESTP,
+    ecr: ECR,
+    tcr: TCR,
+    acr: ACR,
     _reserved11: [u8; 0xb8],
-    #[doc = "0xe4 - Write Protect Mode Register"]
-    pub wpmr: WPMR,
-    #[doc = "0xe8 - Write Protect Status Register"]
-    pub wpsr: WPSR,
+    wpmr: WPMR,
+    wpsr: WPSR,
     _reserved13: [u8; 0x0114],
+    mmr0: MMR0,
+    mam0: MAM0,
+    mid0: MID0,
+    mfid0: MFID0,
+    msr0: MSR0,
+    mdl0: MDL0,
+    mdh0: MDH0,
+    mcr0: MCR0,
+    mmr1: MMR1,
+    mam1: MAM1,
+    mid1: MID1,
+    mfid1: MFID1,
+    msr1: MSR1,
+    mdl1: MDL1,
+    mdh1: MDH1,
+    mcr1: MCR1,
+    mmr2: MMR2,
+    mam2: MAM2,
+    mid2: MID2,
+    mfid2: MFID2,
+    msr2: MSR2,
+    mdl2: MDL2,
+    mdh2: MDH2,
+    mcr2: MCR2,
+    mmr3: MMR3,
+    mam3: MAM3,
+    mid3: MID3,
+    mfid3: MFID3,
+    msr3: MSR3,
+    mdl3: MDL3,
+    mdh3: MDH3,
+    mcr3: MCR3,
+    mmr4: MMR4,
+    mam4: MAM4,
+    mid4: MID4,
+    mfid4: MFID4,
+    msr4: MSR4,
+    mdl4: MDL4,
+    mdh4: MDH4,
+    mcr4: MCR4,
+    mmr5: MMR5,
+    mam5: MAM5,
+    mid5: MID5,
+    mfid5: MFID5,
+    msr5: MSR5,
+    mdl5: MDL5,
+    mdh5: MDH5,
+    mcr5: MCR5,
+    mmr6: MMR6,
+    mam6: MAM6,
+    mid6: MID6,
+    mfid6: MFID6,
+    msr6: MSR6,
+    mdl6: MDL6,
+    mdh6: MDH6,
+    mcr6: MCR6,
+    mmr7: MMR7,
+    mam7: MAM7,
+    mid7: MID7,
+    mfid7: MFID7,
+    msr7: MSR7,
+    mdl7: MDL7,
+    mdh7: MDH7,
+    mcr7: MCR7,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Mode Register"]
+    #[inline(always)]
+    pub const fn mr(&self) -> &MR {
+        &self.mr
+    }
+    #[doc = "0x04 - Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn ier(&self) -> &IER {
+        &self.ier
+    }
+    #[doc = "0x08 - Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn idr(&self) -> &IDR {
+        &self.idr
+    }
+    #[doc = "0x0c - Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn imr(&self) -> &IMR {
+        &self.imr
+    }
+    #[doc = "0x10 - Status Register"]
+    #[inline(always)]
+    pub const fn sr(&self) -> &SR {
+        &self.sr
+    }
+    #[doc = "0x14 - Baudrate Register"]
+    #[inline(always)]
+    pub const fn br(&self) -> &BR {
+        &self.br
+    }
+    #[doc = "0x18 - Timer Register"]
+    #[inline(always)]
+    pub const fn tim(&self) -> &TIM {
+        &self.tim
+    }
+    #[doc = "0x1c - Timestamp Register"]
+    #[inline(always)]
+    pub const fn timestp(&self) -> &TIMESTP {
+        &self.timestp
+    }
+    #[doc = "0x20 - Error Counter Register"]
+    #[inline(always)]
+    pub const fn ecr(&self) -> &ECR {
+        &self.ecr
+    }
+    #[doc = "0x24 - Transfer Command Register"]
+    #[inline(always)]
+    pub const fn tcr(&self) -> &TCR {
+        &self.tcr
+    }
+    #[doc = "0x28 - Abort Command Register"]
+    #[inline(always)]
+    pub const fn acr(&self) -> &ACR {
+        &self.acr
+    }
+    #[doc = "0xe4 - Write Protect Mode Register"]
+    #[inline(always)]
+    pub const fn wpmr(&self) -> &WPMR {
+        &self.wpmr
+    }
+    #[doc = "0xe8 - Write Protect Status Register"]
+    #[inline(always)]
+    pub const fn wpsr(&self) -> &WPSR {
+        &self.wpsr
+    }
     #[doc = "0x200 - Mailbox Mode Register (MB = 0)"]
-    pub mmr0: MMR0,
+    #[inline(always)]
+    pub const fn mmr0(&self) -> &MMR0 {
+        &self.mmr0
+    }
     #[doc = "0x204 - Mailbox Acceptance Mask Register (MB = 0)"]
-    pub mam0: MAM0,
+    #[inline(always)]
+    pub const fn mam0(&self) -> &MAM0 {
+        &self.mam0
+    }
     #[doc = "0x208 - Mailbox ID Register (MB = 0)"]
-    pub mid0: MID0,
+    #[inline(always)]
+    pub const fn mid0(&self) -> &MID0 {
+        &self.mid0
+    }
     #[doc = "0x20c - Mailbox Family ID Register (MB = 0)"]
-    pub mfid0: MFID0,
+    #[inline(always)]
+    pub const fn mfid0(&self) -> &MFID0 {
+        &self.mfid0
+    }
     #[doc = "0x210 - Mailbox Status Register (MB = 0)"]
-    pub msr0: MSR0,
+    #[inline(always)]
+    pub const fn msr0(&self) -> &MSR0 {
+        &self.msr0
+    }
     #[doc = "0x214 - Mailbox Data Low Register (MB = 0)"]
-    pub mdl0: MDL0,
+    #[inline(always)]
+    pub const fn mdl0(&self) -> &MDL0 {
+        &self.mdl0
+    }
     #[doc = "0x218 - Mailbox Data High Register (MB = 0)"]
-    pub mdh0: MDH0,
+    #[inline(always)]
+    pub const fn mdh0(&self) -> &MDH0 {
+        &self.mdh0
+    }
     #[doc = "0x21c - Mailbox Control Register (MB = 0)"]
-    pub mcr0: MCR0,
+    #[inline(always)]
+    pub const fn mcr0(&self) -> &MCR0 {
+        &self.mcr0
+    }
     #[doc = "0x220 - Mailbox Mode Register (MB = 1)"]
-    pub mmr1: MMR1,
+    #[inline(always)]
+    pub const fn mmr1(&self) -> &MMR1 {
+        &self.mmr1
+    }
     #[doc = "0x224 - Mailbox Acceptance Mask Register (MB = 1)"]
-    pub mam1: MAM1,
+    #[inline(always)]
+    pub const fn mam1(&self) -> &MAM1 {
+        &self.mam1
+    }
     #[doc = "0x228 - Mailbox ID Register (MB = 1)"]
-    pub mid1: MID1,
+    #[inline(always)]
+    pub const fn mid1(&self) -> &MID1 {
+        &self.mid1
+    }
     #[doc = "0x22c - Mailbox Family ID Register (MB = 1)"]
-    pub mfid1: MFID1,
+    #[inline(always)]
+    pub const fn mfid1(&self) -> &MFID1 {
+        &self.mfid1
+    }
     #[doc = "0x230 - Mailbox Status Register (MB = 1)"]
-    pub msr1: MSR1,
+    #[inline(always)]
+    pub const fn msr1(&self) -> &MSR1 {
+        &self.msr1
+    }
     #[doc = "0x234 - Mailbox Data Low Register (MB = 1)"]
-    pub mdl1: MDL1,
+    #[inline(always)]
+    pub const fn mdl1(&self) -> &MDL1 {
+        &self.mdl1
+    }
     #[doc = "0x238 - Mailbox Data High Register (MB = 1)"]
-    pub mdh1: MDH1,
+    #[inline(always)]
+    pub const fn mdh1(&self) -> &MDH1 {
+        &self.mdh1
+    }
     #[doc = "0x23c - Mailbox Control Register (MB = 1)"]
-    pub mcr1: MCR1,
+    #[inline(always)]
+    pub const fn mcr1(&self) -> &MCR1 {
+        &self.mcr1
+    }
     #[doc = "0x240 - Mailbox Mode Register (MB = 2)"]
-    pub mmr2: MMR2,
+    #[inline(always)]
+    pub const fn mmr2(&self) -> &MMR2 {
+        &self.mmr2
+    }
     #[doc = "0x244 - Mailbox Acceptance Mask Register (MB = 2)"]
-    pub mam2: MAM2,
+    #[inline(always)]
+    pub const fn mam2(&self) -> &MAM2 {
+        &self.mam2
+    }
     #[doc = "0x248 - Mailbox ID Register (MB = 2)"]
-    pub mid2: MID2,
+    #[inline(always)]
+    pub const fn mid2(&self) -> &MID2 {
+        &self.mid2
+    }
     #[doc = "0x24c - Mailbox Family ID Register (MB = 2)"]
-    pub mfid2: MFID2,
+    #[inline(always)]
+    pub const fn mfid2(&self) -> &MFID2 {
+        &self.mfid2
+    }
     #[doc = "0x250 - Mailbox Status Register (MB = 2)"]
-    pub msr2: MSR2,
+    #[inline(always)]
+    pub const fn msr2(&self) -> &MSR2 {
+        &self.msr2
+    }
     #[doc = "0x254 - Mailbox Data Low Register (MB = 2)"]
-    pub mdl2: MDL2,
+    #[inline(always)]
+    pub const fn mdl2(&self) -> &MDL2 {
+        &self.mdl2
+    }
     #[doc = "0x258 - Mailbox Data High Register (MB = 2)"]
-    pub mdh2: MDH2,
+    #[inline(always)]
+    pub const fn mdh2(&self) -> &MDH2 {
+        &self.mdh2
+    }
     #[doc = "0x25c - Mailbox Control Register (MB = 2)"]
-    pub mcr2: MCR2,
+    #[inline(always)]
+    pub const fn mcr2(&self) -> &MCR2 {
+        &self.mcr2
+    }
     #[doc = "0x260 - Mailbox Mode Register (MB = 3)"]
-    pub mmr3: MMR3,
+    #[inline(always)]
+    pub const fn mmr3(&self) -> &MMR3 {
+        &self.mmr3
+    }
     #[doc = "0x264 - Mailbox Acceptance Mask Register (MB = 3)"]
-    pub mam3: MAM3,
+    #[inline(always)]
+    pub const fn mam3(&self) -> &MAM3 {
+        &self.mam3
+    }
     #[doc = "0x268 - Mailbox ID Register (MB = 3)"]
-    pub mid3: MID3,
+    #[inline(always)]
+    pub const fn mid3(&self) -> &MID3 {
+        &self.mid3
+    }
     #[doc = "0x26c - Mailbox Family ID Register (MB = 3)"]
-    pub mfid3: MFID3,
+    #[inline(always)]
+    pub const fn mfid3(&self) -> &MFID3 {
+        &self.mfid3
+    }
     #[doc = "0x270 - Mailbox Status Register (MB = 3)"]
-    pub msr3: MSR3,
+    #[inline(always)]
+    pub const fn msr3(&self) -> &MSR3 {
+        &self.msr3
+    }
     #[doc = "0x274 - Mailbox Data Low Register (MB = 3)"]
-    pub mdl3: MDL3,
+    #[inline(always)]
+    pub const fn mdl3(&self) -> &MDL3 {
+        &self.mdl3
+    }
     #[doc = "0x278 - Mailbox Data High Register (MB = 3)"]
-    pub mdh3: MDH3,
+    #[inline(always)]
+    pub const fn mdh3(&self) -> &MDH3 {
+        &self.mdh3
+    }
     #[doc = "0x27c - Mailbox Control Register (MB = 3)"]
-    pub mcr3: MCR3,
+    #[inline(always)]
+    pub const fn mcr3(&self) -> &MCR3 {
+        &self.mcr3
+    }
     #[doc = "0x280 - Mailbox Mode Register (MB = 4)"]
-    pub mmr4: MMR4,
+    #[inline(always)]
+    pub const fn mmr4(&self) -> &MMR4 {
+        &self.mmr4
+    }
     #[doc = "0x284 - Mailbox Acceptance Mask Register (MB = 4)"]
-    pub mam4: MAM4,
+    #[inline(always)]
+    pub const fn mam4(&self) -> &MAM4 {
+        &self.mam4
+    }
     #[doc = "0x288 - Mailbox ID Register (MB = 4)"]
-    pub mid4: MID4,
+    #[inline(always)]
+    pub const fn mid4(&self) -> &MID4 {
+        &self.mid4
+    }
     #[doc = "0x28c - Mailbox Family ID Register (MB = 4)"]
-    pub mfid4: MFID4,
+    #[inline(always)]
+    pub const fn mfid4(&self) -> &MFID4 {
+        &self.mfid4
+    }
     #[doc = "0x290 - Mailbox Status Register (MB = 4)"]
-    pub msr4: MSR4,
+    #[inline(always)]
+    pub const fn msr4(&self) -> &MSR4 {
+        &self.msr4
+    }
     #[doc = "0x294 - Mailbox Data Low Register (MB = 4)"]
-    pub mdl4: MDL4,
+    #[inline(always)]
+    pub const fn mdl4(&self) -> &MDL4 {
+        &self.mdl4
+    }
     #[doc = "0x298 - Mailbox Data High Register (MB = 4)"]
-    pub mdh4: MDH4,
+    #[inline(always)]
+    pub const fn mdh4(&self) -> &MDH4 {
+        &self.mdh4
+    }
     #[doc = "0x29c - Mailbox Control Register (MB = 4)"]
-    pub mcr4: MCR4,
+    #[inline(always)]
+    pub const fn mcr4(&self) -> &MCR4 {
+        &self.mcr4
+    }
     #[doc = "0x2a0 - Mailbox Mode Register (MB = 5)"]
-    pub mmr5: MMR5,
+    #[inline(always)]
+    pub const fn mmr5(&self) -> &MMR5 {
+        &self.mmr5
+    }
     #[doc = "0x2a4 - Mailbox Acceptance Mask Register (MB = 5)"]
-    pub mam5: MAM5,
+    #[inline(always)]
+    pub const fn mam5(&self) -> &MAM5 {
+        &self.mam5
+    }
     #[doc = "0x2a8 - Mailbox ID Register (MB = 5)"]
-    pub mid5: MID5,
+    #[inline(always)]
+    pub const fn mid5(&self) -> &MID5 {
+        &self.mid5
+    }
     #[doc = "0x2ac - Mailbox Family ID Register (MB = 5)"]
-    pub mfid5: MFID5,
+    #[inline(always)]
+    pub const fn mfid5(&self) -> &MFID5 {
+        &self.mfid5
+    }
     #[doc = "0x2b0 - Mailbox Status Register (MB = 5)"]
-    pub msr5: MSR5,
+    #[inline(always)]
+    pub const fn msr5(&self) -> &MSR5 {
+        &self.msr5
+    }
     #[doc = "0x2b4 - Mailbox Data Low Register (MB = 5)"]
-    pub mdl5: MDL5,
+    #[inline(always)]
+    pub const fn mdl5(&self) -> &MDL5 {
+        &self.mdl5
+    }
     #[doc = "0x2b8 - Mailbox Data High Register (MB = 5)"]
-    pub mdh5: MDH5,
+    #[inline(always)]
+    pub const fn mdh5(&self) -> &MDH5 {
+        &self.mdh5
+    }
     #[doc = "0x2bc - Mailbox Control Register (MB = 5)"]
-    pub mcr5: MCR5,
+    #[inline(always)]
+    pub const fn mcr5(&self) -> &MCR5 {
+        &self.mcr5
+    }
     #[doc = "0x2c0 - Mailbox Mode Register (MB = 6)"]
-    pub mmr6: MMR6,
+    #[inline(always)]
+    pub const fn mmr6(&self) -> &MMR6 {
+        &self.mmr6
+    }
     #[doc = "0x2c4 - Mailbox Acceptance Mask Register (MB = 6)"]
-    pub mam6: MAM6,
+    #[inline(always)]
+    pub const fn mam6(&self) -> &MAM6 {
+        &self.mam6
+    }
     #[doc = "0x2c8 - Mailbox ID Register (MB = 6)"]
-    pub mid6: MID6,
+    #[inline(always)]
+    pub const fn mid6(&self) -> &MID6 {
+        &self.mid6
+    }
     #[doc = "0x2cc - Mailbox Family ID Register (MB = 6)"]
-    pub mfid6: MFID6,
+    #[inline(always)]
+    pub const fn mfid6(&self) -> &MFID6 {
+        &self.mfid6
+    }
     #[doc = "0x2d0 - Mailbox Status Register (MB = 6)"]
-    pub msr6: MSR6,
+    #[inline(always)]
+    pub const fn msr6(&self) -> &MSR6 {
+        &self.msr6
+    }
     #[doc = "0x2d4 - Mailbox Data Low Register (MB = 6)"]
-    pub mdl6: MDL6,
+    #[inline(always)]
+    pub const fn mdl6(&self) -> &MDL6 {
+        &self.mdl6
+    }
     #[doc = "0x2d8 - Mailbox Data High Register (MB = 6)"]
-    pub mdh6: MDH6,
+    #[inline(always)]
+    pub const fn mdh6(&self) -> &MDH6 {
+        &self.mdh6
+    }
     #[doc = "0x2dc - Mailbox Control Register (MB = 6)"]
-    pub mcr6: MCR6,
+    #[inline(always)]
+    pub const fn mcr6(&self) -> &MCR6 {
+        &self.mcr6
+    }
     #[doc = "0x2e0 - Mailbox Mode Register (MB = 7)"]
-    pub mmr7: MMR7,
+    #[inline(always)]
+    pub const fn mmr7(&self) -> &MMR7 {
+        &self.mmr7
+    }
     #[doc = "0x2e4 - Mailbox Acceptance Mask Register (MB = 7)"]
-    pub mam7: MAM7,
+    #[inline(always)]
+    pub const fn mam7(&self) -> &MAM7 {
+        &self.mam7
+    }
     #[doc = "0x2e8 - Mailbox ID Register (MB = 7)"]
-    pub mid7: MID7,
+    #[inline(always)]
+    pub const fn mid7(&self) -> &MID7 {
+        &self.mid7
+    }
     #[doc = "0x2ec - Mailbox Family ID Register (MB = 7)"]
-    pub mfid7: MFID7,
+    #[inline(always)]
+    pub const fn mfid7(&self) -> &MFID7 {
+        &self.mfid7
+    }
     #[doc = "0x2f0 - Mailbox Status Register (MB = 7)"]
-    pub msr7: MSR7,
+    #[inline(always)]
+    pub const fn msr7(&self) -> &MSR7 {
+        &self.msr7
+    }
     #[doc = "0x2f4 - Mailbox Data Low Register (MB = 7)"]
-    pub mdl7: MDL7,
+    #[inline(always)]
+    pub const fn mdl7(&self) -> &MDL7 {
+        &self.mdl7
+    }
     #[doc = "0x2f8 - Mailbox Data High Register (MB = 7)"]
-    pub mdh7: MDH7,
+    #[inline(always)]
+    pub const fn mdh7(&self) -> &MDH7 {
+        &self.mdh7
+    }
     #[doc = "0x2fc - Mailbox Control Register (MB = 7)"]
-    pub mcr7: MCR7,
+    #[inline(always)]
+    pub const fn mcr7(&self) -> &MCR7 {
+        &self.mcr7
+    }
 }
 #[doc = "MR (rw) register accessor: Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mr`]
 module"]

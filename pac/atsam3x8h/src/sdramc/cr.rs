@@ -60,8 +60,8 @@ impl NC_R {
     }
 }
 #[doc = "Field `NC` writer - Number of Column Bits"]
-pub type NC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, NC_A>;
-impl<'a, REG, const O: u8> NC_W<'a, REG, O>
+pub type NC_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, NC_A>;
+impl<'a, REG> NC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -137,8 +137,8 @@ impl NR_R {
     }
 }
 #[doc = "Field `NR` writer - Number of Row Bits"]
-pub type NR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, NR_A>;
-impl<'a, REG, const O: u8> NR_W<'a, REG, O>
+pub type NR_W<'a, REG> = crate::FieldWriter<'a, REG, 2, NR_A>;
+impl<'a, REG> NR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -196,8 +196,8 @@ impl NB_R {
     }
 }
 #[doc = "Field `NB` writer - Number of Banks"]
-pub type NB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, NB_A>;
-impl<'a, REG, const O: u8> NB_W<'a, REG, O>
+pub type NB_W<'a, REG> = crate::BitWriter<'a, REG, NB_A>;
+impl<'a, REG> NB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -262,8 +262,8 @@ impl CAS_R {
     }
 }
 #[doc = "Field `CAS` writer - CAS Latency"]
-pub type CAS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, CAS_A>;
-impl<'a, REG, const O: u8> CAS_W<'a, REG, O>
+pub type CAS_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CAS_A>;
+impl<'a, REG> CAS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -287,31 +287,31 @@ where
 #[doc = "Field `DBW` reader - Data Bus Width"]
 pub type DBW_R = crate::BitReader;
 #[doc = "Field `DBW` writer - Data Bus Width"]
-pub type DBW_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DBW_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TWR` reader - Write Recovery Delay"]
 pub type TWR_R = crate::FieldReader;
 #[doc = "Field `TWR` writer - Write Recovery Delay"]
-pub type TWR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TWR_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `TRC_TRFC` reader - Row Cycle Delay and Row Refresh Cycle"]
 pub type TRC_TRFC_R = crate::FieldReader;
 #[doc = "Field `TRC_TRFC` writer - Row Cycle Delay and Row Refresh Cycle"]
-pub type TRC_TRFC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TRC_TRFC_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `TRP` reader - Row Precharge Delay"]
 pub type TRP_R = crate::FieldReader;
 #[doc = "Field `TRP` writer - Row Precharge Delay"]
-pub type TRP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TRP_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `TRCD` reader - Row to Column Delay"]
 pub type TRCD_R = crate::FieldReader;
 #[doc = "Field `TRCD` writer - Row to Column Delay"]
-pub type TRCD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TRCD_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `TRAS` reader - Active to Precharge Delay"]
 pub type TRAS_R = crate::FieldReader;
 #[doc = "Field `TRAS` writer - Active to Precharge Delay"]
-pub type TRAS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TRAS_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `TXSR` reader - Exit Self Refresh to Active Delay"]
 pub type TXSR_R = crate::FieldReader;
 #[doc = "Field `TXSR` writer - Exit Self Refresh to Active Delay"]
-pub type TXSR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TXSR_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:1 - Number of Column Bits"]
     #[inline(always)]
@@ -373,68 +373,68 @@ impl W {
     #[doc = "Bits 0:1 - Number of Column Bits"]
     #[inline(always)]
     #[must_use]
-    pub fn nc(&mut self) -> NC_W<CR_SPEC, 0> {
-        NC_W::new(self)
+    pub fn nc(&mut self) -> NC_W<CR_SPEC> {
+        NC_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Number of Row Bits"]
     #[inline(always)]
     #[must_use]
-    pub fn nr(&mut self) -> NR_W<CR_SPEC, 2> {
-        NR_W::new(self)
+    pub fn nr(&mut self) -> NR_W<CR_SPEC> {
+        NR_W::new(self, 2)
     }
     #[doc = "Bit 4 - Number of Banks"]
     #[inline(always)]
     #[must_use]
-    pub fn nb(&mut self) -> NB_W<CR_SPEC, 4> {
-        NB_W::new(self)
+    pub fn nb(&mut self) -> NB_W<CR_SPEC> {
+        NB_W::new(self, 4)
     }
     #[doc = "Bits 5:6 - CAS Latency"]
     #[inline(always)]
     #[must_use]
-    pub fn cas(&mut self) -> CAS_W<CR_SPEC, 5> {
-        CAS_W::new(self)
+    pub fn cas(&mut self) -> CAS_W<CR_SPEC> {
+        CAS_W::new(self, 5)
     }
     #[doc = "Bit 7 - Data Bus Width"]
     #[inline(always)]
     #[must_use]
-    pub fn dbw(&mut self) -> DBW_W<CR_SPEC, 7> {
-        DBW_W::new(self)
+    pub fn dbw(&mut self) -> DBW_W<CR_SPEC> {
+        DBW_W::new(self, 7)
     }
     #[doc = "Bits 8:11 - Write Recovery Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn twr(&mut self) -> TWR_W<CR_SPEC, 8> {
-        TWR_W::new(self)
+    pub fn twr(&mut self) -> TWR_W<CR_SPEC> {
+        TWR_W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Row Cycle Delay and Row Refresh Cycle"]
     #[inline(always)]
     #[must_use]
-    pub fn trc_trfc(&mut self) -> TRC_TRFC_W<CR_SPEC, 12> {
-        TRC_TRFC_W::new(self)
+    pub fn trc_trfc(&mut self) -> TRC_TRFC_W<CR_SPEC> {
+        TRC_TRFC_W::new(self, 12)
     }
     #[doc = "Bits 16:19 - Row Precharge Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn trp(&mut self) -> TRP_W<CR_SPEC, 16> {
-        TRP_W::new(self)
+    pub fn trp(&mut self) -> TRP_W<CR_SPEC> {
+        TRP_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Row to Column Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn trcd(&mut self) -> TRCD_W<CR_SPEC, 20> {
-        TRCD_W::new(self)
+    pub fn trcd(&mut self) -> TRCD_W<CR_SPEC> {
+        TRCD_W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Active to Precharge Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn tras(&mut self) -> TRAS_W<CR_SPEC, 24> {
-        TRAS_W::new(self)
+    pub fn tras(&mut self) -> TRAS_W<CR_SPEC> {
+        TRAS_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Exit Self Refresh to Active Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn txsr(&mut self) -> TXSR_W<CR_SPEC, 28> {
-        TXSR_W::new(self)
+    pub fn txsr(&mut self) -> TXSR_W<CR_SPEC> {
+        TXSR_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

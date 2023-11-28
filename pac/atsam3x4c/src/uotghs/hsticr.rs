@@ -1,61 +1,61 @@
 #[doc = "Register `HSTICR` writer"]
 pub type W = crate::W<HSTICR_SPEC>;
 #[doc = "Field `DCONNIC` writer - Device Connection Interrupt Clear"]
-pub type DCONNIC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DCONNIC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DDISCIC` writer - Device Disconnection Interrupt Clear"]
-pub type DDISCIC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DDISCIC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RSTIC` writer - USB Reset Sent Interrupt Clear"]
-pub type RSTIC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RSTIC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RSMEDIC` writer - Downstream Resume Sent Interrupt Clear"]
-pub type RSMEDIC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RSMEDIC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXRSMIC` writer - Upstream Resume Received Interrupt Clear"]
-pub type RXRSMIC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXRSMIC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HSOFIC` writer - Host Start of Frame Interrupt Clear"]
-pub type HSOFIC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HSOFIC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HWUPIC` writer - Host Wake-Up Interrupt Clear"]
-pub type HWUPIC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HWUPIC_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Device Connection Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn dconnic(&mut self) -> DCONNIC_W<HSTICR_SPEC, 0> {
-        DCONNIC_W::new(self)
+    pub fn dconnic(&mut self) -> DCONNIC_W<HSTICR_SPEC> {
+        DCONNIC_W::new(self, 0)
     }
     #[doc = "Bit 1 - Device Disconnection Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ddiscic(&mut self) -> DDISCIC_W<HSTICR_SPEC, 1> {
-        DDISCIC_W::new(self)
+    pub fn ddiscic(&mut self) -> DDISCIC_W<HSTICR_SPEC> {
+        DDISCIC_W::new(self, 1)
     }
     #[doc = "Bit 2 - USB Reset Sent Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn rstic(&mut self) -> RSTIC_W<HSTICR_SPEC, 2> {
-        RSTIC_W::new(self)
+    pub fn rstic(&mut self) -> RSTIC_W<HSTICR_SPEC> {
+        RSTIC_W::new(self, 2)
     }
     #[doc = "Bit 3 - Downstream Resume Sent Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn rsmedic(&mut self) -> RSMEDIC_W<HSTICR_SPEC, 3> {
-        RSMEDIC_W::new(self)
+    pub fn rsmedic(&mut self) -> RSMEDIC_W<HSTICR_SPEC> {
+        RSMEDIC_W::new(self, 3)
     }
     #[doc = "Bit 4 - Upstream Resume Received Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn rxrsmic(&mut self) -> RXRSMIC_W<HSTICR_SPEC, 4> {
-        RXRSMIC_W::new(self)
+    pub fn rxrsmic(&mut self) -> RXRSMIC_W<HSTICR_SPEC> {
+        RXRSMIC_W::new(self, 4)
     }
     #[doc = "Bit 5 - Host Start of Frame Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn hsofic(&mut self) -> HSOFIC_W<HSTICR_SPEC, 5> {
-        HSOFIC_W::new(self)
+    pub fn hsofic(&mut self) -> HSOFIC_W<HSTICR_SPEC> {
+        HSOFIC_W::new(self, 5)
     }
     #[doc = "Bit 6 - Host Wake-Up Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn hwupic(&mut self) -> HWUPIC_W<HSTICR_SPEC, 6> {
-        HWUPIC_W::new(self)
+    pub fn hwupic(&mut self) -> HWUPIC_W<HSTICR_SPEC> {
+        HWUPIC_W::new(self, 6)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

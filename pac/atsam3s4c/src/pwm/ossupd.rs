@@ -1,69 +1,69 @@
 #[doc = "Register `OSSUPD` writer"]
 pub type W = crate::W<OSSUPD_SPEC>;
 #[doc = "Field `OSSUPH0` writer - Output Selection Set for PWMH output of the channel 0"]
-pub type OSSUPH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSSUPH0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSSUPH1` writer - Output Selection Set for PWMH output of the channel 1"]
-pub type OSSUPH1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSSUPH1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSSUPH2` writer - Output Selection Set for PWMH output of the channel 2"]
-pub type OSSUPH2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSSUPH2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSSUPH3` writer - Output Selection Set for PWMH output of the channel 3"]
-pub type OSSUPH3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSSUPH3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSSUPL0` writer - Output Selection Set for PWML output of the channel 0"]
-pub type OSSUPL0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSSUPL0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSSUPL1` writer - Output Selection Set for PWML output of the channel 1"]
-pub type OSSUPL1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSSUPL1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSSUPL2` writer - Output Selection Set for PWML output of the channel 2"]
-pub type OSSUPL2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSSUPL2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSSUPL3` writer - Output Selection Set for PWML output of the channel 3"]
-pub type OSSUPL3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSSUPL3_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Output Selection Set for PWMH output of the channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn ossuph0(&mut self) -> OSSUPH0_W<OSSUPD_SPEC, 0> {
-        OSSUPH0_W::new(self)
+    pub fn ossuph0(&mut self) -> OSSUPH0_W<OSSUPD_SPEC> {
+        OSSUPH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Output Selection Set for PWMH output of the channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn ossuph1(&mut self) -> OSSUPH1_W<OSSUPD_SPEC, 1> {
-        OSSUPH1_W::new(self)
+    pub fn ossuph1(&mut self) -> OSSUPH1_W<OSSUPD_SPEC> {
+        OSSUPH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Output Selection Set for PWMH output of the channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn ossuph2(&mut self) -> OSSUPH2_W<OSSUPD_SPEC, 2> {
-        OSSUPH2_W::new(self)
+    pub fn ossuph2(&mut self) -> OSSUPH2_W<OSSUPD_SPEC> {
+        OSSUPH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Output Selection Set for PWMH output of the channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn ossuph3(&mut self) -> OSSUPH3_W<OSSUPD_SPEC, 3> {
-        OSSUPH3_W::new(self)
+    pub fn ossuph3(&mut self) -> OSSUPH3_W<OSSUPD_SPEC> {
+        OSSUPH3_W::new(self, 3)
     }
     #[doc = "Bit 16 - Output Selection Set for PWML output of the channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn ossupl0(&mut self) -> OSSUPL0_W<OSSUPD_SPEC, 16> {
-        OSSUPL0_W::new(self)
+    pub fn ossupl0(&mut self) -> OSSUPL0_W<OSSUPD_SPEC> {
+        OSSUPL0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Output Selection Set for PWML output of the channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn ossupl1(&mut self) -> OSSUPL1_W<OSSUPD_SPEC, 17> {
-        OSSUPL1_W::new(self)
+    pub fn ossupl1(&mut self) -> OSSUPL1_W<OSSUPD_SPEC> {
+        OSSUPL1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Output Selection Set for PWML output of the channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn ossupl2(&mut self) -> OSSUPL2_W<OSSUPD_SPEC, 18> {
-        OSSUPL2_W::new(self)
+    pub fn ossupl2(&mut self) -> OSSUPL2_W<OSSUPD_SPEC> {
+        OSSUPL2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Output Selection Set for PWML output of the channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn ossupl3(&mut self) -> OSSUPL3_W<OSSUPD_SPEC, 19> {
-        OSSUPL3_W::new(self)
+    pub fn ossupl3(&mut self) -> OSSUPL3_W<OSSUPD_SPEC> {
+        OSSUPL3_W::new(self, 19)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

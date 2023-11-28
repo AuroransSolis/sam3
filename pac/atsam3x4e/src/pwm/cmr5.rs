@@ -132,8 +132,8 @@ impl CPRE_R {
     }
 }
 #[doc = "Field `CPRE` writer - Channel Pre-scaler"]
-pub type CPRE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, CPRE_A>;
-impl<'a, REG, const O: u8> CPRE_W<'a, REG, O>
+pub type CPRE_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CPRE_A>;
+impl<'a, REG> CPRE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -207,27 +207,27 @@ where
 #[doc = "Field `CALG` reader - Channel Alignment"]
 pub type CALG_R = crate::BitReader;
 #[doc = "Field `CALG` writer - Channel Alignment"]
-pub type CALG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CALG_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CPOL` reader - Channel Polarity"]
 pub type CPOL_R = crate::BitReader;
 #[doc = "Field `CPOL` writer - Channel Polarity"]
-pub type CPOL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CPOL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CES` reader - Counter Event Selection"]
 pub type CES_R = crate::BitReader;
 #[doc = "Field `CES` writer - Counter Event Selection"]
-pub type CES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CES_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DTE` reader - Dead-Time Generator Enable"]
 pub type DTE_R = crate::BitReader;
 #[doc = "Field `DTE` writer - Dead-Time Generator Enable"]
-pub type DTE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DTE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DTHI` reader - Dead-Time PWMHx Output Inverted"]
 pub type DTHI_R = crate::BitReader;
 #[doc = "Field `DTHI` writer - Dead-Time PWMHx Output Inverted"]
-pub type DTHI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DTHI_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DTLI` reader - Dead-Time PWMLx Output Inverted"]
 pub type DTLI_R = crate::BitReader;
 #[doc = "Field `DTLI` writer - Dead-Time PWMLx Output Inverted"]
-pub type DTLI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DTLI_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - Channel Pre-scaler"]
     #[inline(always)]
@@ -269,44 +269,44 @@ impl W {
     #[doc = "Bits 0:3 - Channel Pre-scaler"]
     #[inline(always)]
     #[must_use]
-    pub fn cpre(&mut self) -> CPRE_W<CMR5_SPEC, 0> {
-        CPRE_W::new(self)
+    pub fn cpre(&mut self) -> CPRE_W<CMR5_SPEC> {
+        CPRE_W::new(self, 0)
     }
     #[doc = "Bit 8 - Channel Alignment"]
     #[inline(always)]
     #[must_use]
-    pub fn calg(&mut self) -> CALG_W<CMR5_SPEC, 8> {
-        CALG_W::new(self)
+    pub fn calg(&mut self) -> CALG_W<CMR5_SPEC> {
+        CALG_W::new(self, 8)
     }
     #[doc = "Bit 9 - Channel Polarity"]
     #[inline(always)]
     #[must_use]
-    pub fn cpol(&mut self) -> CPOL_W<CMR5_SPEC, 9> {
-        CPOL_W::new(self)
+    pub fn cpol(&mut self) -> CPOL_W<CMR5_SPEC> {
+        CPOL_W::new(self, 9)
     }
     #[doc = "Bit 10 - Counter Event Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ces(&mut self) -> CES_W<CMR5_SPEC, 10> {
-        CES_W::new(self)
+    pub fn ces(&mut self) -> CES_W<CMR5_SPEC> {
+        CES_W::new(self, 10)
     }
     #[doc = "Bit 16 - Dead-Time Generator Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dte(&mut self) -> DTE_W<CMR5_SPEC, 16> {
-        DTE_W::new(self)
+    pub fn dte(&mut self) -> DTE_W<CMR5_SPEC> {
+        DTE_W::new(self, 16)
     }
     #[doc = "Bit 17 - Dead-Time PWMHx Output Inverted"]
     #[inline(always)]
     #[must_use]
-    pub fn dthi(&mut self) -> DTHI_W<CMR5_SPEC, 17> {
-        DTHI_W::new(self)
+    pub fn dthi(&mut self) -> DTHI_W<CMR5_SPEC> {
+        DTHI_W::new(self, 17)
     }
     #[doc = "Bit 18 - Dead-Time PWMLx Output Inverted"]
     #[inline(always)]
     #[must_use]
-    pub fn dtli(&mut self) -> DTLI_W<CMR5_SPEC, 18> {
-        DTLI_W::new(self)
+    pub fn dtli(&mut self) -> DTLI_W<CMR5_SPEC> {
+        DTLI_W::new(self, 18)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

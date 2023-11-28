@@ -1,21 +1,21 @@
 #[doc = "Register `CMPVUPD3` writer"]
 pub type W = crate::W<CMPVUPD3_SPEC>;
 #[doc = "Field `CVUPD` writer - Comparison x Value Update"]
-pub type CVUPD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 24, O, u32>;
+pub type CVUPD_W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 #[doc = "Field `CVMUPD` writer - Comparison x Value Mode Update"]
-pub type CVMUPD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CVMUPD_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bits 0:23 - Comparison x Value Update"]
     #[inline(always)]
     #[must_use]
-    pub fn cvupd(&mut self) -> CVUPD_W<CMPVUPD3_SPEC, 0> {
-        CVUPD_W::new(self)
+    pub fn cvupd(&mut self) -> CVUPD_W<CMPVUPD3_SPEC> {
+        CVUPD_W::new(self, 0)
     }
     #[doc = "Bit 24 - Comparison x Value Mode Update"]
     #[inline(always)]
     #[must_use]
-    pub fn cvmupd(&mut self) -> CVMUPD_W<CMPVUPD3_SPEC, 24> {
-        CVMUPD_W::new(self)
+    pub fn cvmupd(&mut self) -> CVMUPD_W<CMPVUPD3_SPEC> {
+        CVMUPD_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

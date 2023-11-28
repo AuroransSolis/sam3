@@ -5,7 +5,7 @@ pub type W = crate::W<LINIR_SPEC>;
 #[doc = "Field `IDCHR` reader - Identifier Character"]
 pub type IDCHR_R = crate::FieldReader;
 #[doc = "Field `IDCHR` writer - Identifier Character"]
-pub type IDCHR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type IDCHR_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Identifier Character"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - Identifier Character"]
     #[inline(always)]
     #[must_use]
-    pub fn idchr(&mut self) -> IDCHR_W<LINIR_SPEC, 0> {
-        IDCHR_W::new(self)
+    pub fn idchr(&mut self) -> IDCHR_W<LINIR_SPEC> {
+        IDCHR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

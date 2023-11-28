@@ -1,128 +1,346 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - PIO Enable Register"]
-    pub per: PER,
-    #[doc = "0x04 - PIO Disable Register"]
-    pub pdr: PDR,
-    #[doc = "0x08 - PIO Status Register"]
-    pub psr: PSR,
+    per: PER,
+    pdr: PDR,
+    psr: PSR,
     _reserved3: [u8; 0x04],
-    #[doc = "0x10 - Output Enable Register"]
-    pub oer: OER,
-    #[doc = "0x14 - Output Disable Register"]
-    pub odr: ODR,
-    #[doc = "0x18 - Output Status Register"]
-    pub osr: OSR,
+    oer: OER,
+    odr: ODR,
+    osr: OSR,
     _reserved6: [u8; 0x04],
-    #[doc = "0x20 - Glitch Input Filter Enable Register"]
-    pub ifer: IFER,
-    #[doc = "0x24 - Glitch Input Filter Disable Register"]
-    pub ifdr: IFDR,
-    #[doc = "0x28 - Glitch Input Filter Status Register"]
-    pub ifsr: IFSR,
+    ifer: IFER,
+    ifdr: IFDR,
+    ifsr: IFSR,
     _reserved9: [u8; 0x04],
-    #[doc = "0x30 - Set Output Data Register"]
-    pub sodr: SODR,
-    #[doc = "0x34 - Clear Output Data Register"]
-    pub codr: CODR,
-    #[doc = "0x38 - Output Data Status Register"]
-    pub odsr: ODSR,
-    #[doc = "0x3c - Pin Data Status Register"]
-    pub pdsr: PDSR,
-    #[doc = "0x40 - Interrupt Enable Register"]
-    pub ier: IER,
-    #[doc = "0x44 - Interrupt Disable Register"]
-    pub idr: IDR,
-    #[doc = "0x48 - Interrupt Mask Register"]
-    pub imr: IMR,
-    #[doc = "0x4c - Interrupt Status Register"]
-    pub isr: ISR,
-    #[doc = "0x50 - Multi-driver Enable Register"]
-    pub mder: MDER,
-    #[doc = "0x54 - Multi-driver Disable Register"]
-    pub mddr: MDDR,
-    #[doc = "0x58 - Multi-driver Status Register"]
-    pub mdsr: MDSR,
+    sodr: SODR,
+    codr: CODR,
+    odsr: ODSR,
+    pdsr: PDSR,
+    ier: IER,
+    idr: IDR,
+    imr: IMR,
+    isr: ISR,
+    mder: MDER,
+    mddr: MDDR,
+    mdsr: MDSR,
     _reserved20: [u8; 0x04],
-    #[doc = "0x60 - Pull-up Disable Register"]
-    pub pudr: PUDR,
-    #[doc = "0x64 - Pull-up Enable Register"]
-    pub puer: PUER,
-    #[doc = "0x68 - Pad Pull-up Status Register"]
-    pub pusr: PUSR,
+    pudr: PUDR,
+    puer: PUER,
+    pusr: PUSR,
     _reserved23: [u8; 0x04],
-    #[doc = "0x70 - Peripheral Select Register 0"]
-    pub abcdsr0: ABCDSR0,
-    #[doc = "0x74 - Peripheral Select Register 1"]
-    pub abcdsr1: ABCDSR1,
+    abcdsr0: ABCDSR0,
+    abcdsr1: ABCDSR1,
     _reserved25: [u8; 0x08],
-    #[doc = "0x80 - Input Filter Slow Clock Disable Register"]
-    pub ifscdr: IFSCDR,
-    #[doc = "0x84 - Input Filter Slow Clock Enable Register"]
-    pub ifscer: IFSCER,
-    #[doc = "0x88 - Input Filter Slow Clock Status Register"]
-    pub ifscsr: IFSCSR,
-    #[doc = "0x8c - Slow Clock Divider Debouncing Register"]
-    pub scdr: SCDR,
-    #[doc = "0x90 - Pad Pull-down Disable Register"]
-    pub ppddr: PPDDR,
-    #[doc = "0x94 - Pad Pull-down Enable Register"]
-    pub ppder: PPDER,
-    #[doc = "0x98 - Pad Pull-down Status Register"]
-    pub ppdsr: PPDSR,
+    ifscdr: IFSCDR,
+    ifscer: IFSCER,
+    ifscsr: IFSCSR,
+    scdr: SCDR,
+    ppddr: PPDDR,
+    ppder: PPDER,
+    ppdsr: PPDSR,
     _reserved32: [u8; 0x04],
-    #[doc = "0xa0 - Output Write Enable"]
-    pub ower: OWER,
-    #[doc = "0xa4 - Output Write Disable"]
-    pub owdr: OWDR,
-    #[doc = "0xa8 - Output Write Status Register"]
-    pub owsr: OWSR,
+    ower: OWER,
+    owdr: OWDR,
+    owsr: OWSR,
     _reserved35: [u8; 0x04],
-    #[doc = "0xb0 - Additional Interrupt Modes Enable Register"]
-    pub aimer: AIMER,
-    #[doc = "0xb4 - Additional Interrupt Modes Disables Register"]
-    pub aimdr: AIMDR,
-    #[doc = "0xb8 - Additional Interrupt Modes Mask Register"]
-    pub aimmr: AIMMR,
+    aimer: AIMER,
+    aimdr: AIMDR,
+    aimmr: AIMMR,
     _reserved38: [u8; 0x04],
-    #[doc = "0xc0 - Edge Select Register"]
-    pub esr: ESR,
-    #[doc = "0xc4 - Level Select Register"]
-    pub lsr: LSR,
-    #[doc = "0xc8 - Edge/Level Status Register"]
-    pub elsr: ELSR,
+    esr: ESR,
+    lsr: LSR,
+    elsr: ELSR,
     _reserved41: [u8; 0x04],
-    #[doc = "0xd0 - Falling Edge/Low Level Select Register"]
-    pub fellsr: FELLSR,
-    #[doc = "0xd4 - Rising Edge/ High Level Select Register"]
-    pub rehlsr: REHLSR,
-    #[doc = "0xd8 - Fall/Rise - Low/High Status Register"]
-    pub frlhsr: FRLHSR,
+    fellsr: FELLSR,
+    rehlsr: REHLSR,
+    frlhsr: FRLHSR,
     _reserved44: [u8; 0x04],
-    #[doc = "0xe0 - Lock Status"]
-    pub locksr: LOCKSR,
-    #[doc = "0xe4 - Write Protect Mode Register"]
-    pub wpmr: WPMR,
-    #[doc = "0xe8 - Write Protect Status Register"]
-    pub wpsr: WPSR,
+    locksr: LOCKSR,
+    wpmr: WPMR,
+    wpsr: WPSR,
     _reserved47: [u8; 0x14],
-    #[doc = "0x100 - Schmitt Trigger Register"]
-    pub schmitt: SCHMITT,
-    #[doc = "0x104 - Receive Pointer Register"]
-    pub rpr: RPR,
-    #[doc = "0x108 - Receive Counter Register"]
-    pub rcr: RCR,
+    schmitt: SCHMITT,
+    rpr: RPR,
+    rcr: RCR,
     _reserved50: [u8; 0x08],
-    #[doc = "0x114 - Receive Next Pointer Register"]
-    pub rnpr: RNPR,
-    #[doc = "0x118 - Receive Next Counter Register"]
-    pub rncr: RNCR,
+    rnpr: RNPR,
+    rncr: RNCR,
     _reserved52: [u8; 0x08],
+    ptcr: PTCR,
+    ptsr: PTSR,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - PIO Enable Register"]
+    #[inline(always)]
+    pub const fn per(&self) -> &PER {
+        &self.per
+    }
+    #[doc = "0x04 - PIO Disable Register"]
+    #[inline(always)]
+    pub const fn pdr(&self) -> &PDR {
+        &self.pdr
+    }
+    #[doc = "0x08 - PIO Status Register"]
+    #[inline(always)]
+    pub const fn psr(&self) -> &PSR {
+        &self.psr
+    }
+    #[doc = "0x10 - Output Enable Register"]
+    #[inline(always)]
+    pub const fn oer(&self) -> &OER {
+        &self.oer
+    }
+    #[doc = "0x14 - Output Disable Register"]
+    #[inline(always)]
+    pub const fn odr(&self) -> &ODR {
+        &self.odr
+    }
+    #[doc = "0x18 - Output Status Register"]
+    #[inline(always)]
+    pub const fn osr(&self) -> &OSR {
+        &self.osr
+    }
+    #[doc = "0x20 - Glitch Input Filter Enable Register"]
+    #[inline(always)]
+    pub const fn ifer(&self) -> &IFER {
+        &self.ifer
+    }
+    #[doc = "0x24 - Glitch Input Filter Disable Register"]
+    #[inline(always)]
+    pub const fn ifdr(&self) -> &IFDR {
+        &self.ifdr
+    }
+    #[doc = "0x28 - Glitch Input Filter Status Register"]
+    #[inline(always)]
+    pub const fn ifsr(&self) -> &IFSR {
+        &self.ifsr
+    }
+    #[doc = "0x30 - Set Output Data Register"]
+    #[inline(always)]
+    pub const fn sodr(&self) -> &SODR {
+        &self.sodr
+    }
+    #[doc = "0x34 - Clear Output Data Register"]
+    #[inline(always)]
+    pub const fn codr(&self) -> &CODR {
+        &self.codr
+    }
+    #[doc = "0x38 - Output Data Status Register"]
+    #[inline(always)]
+    pub const fn odsr(&self) -> &ODSR {
+        &self.odsr
+    }
+    #[doc = "0x3c - Pin Data Status Register"]
+    #[inline(always)]
+    pub const fn pdsr(&self) -> &PDSR {
+        &self.pdsr
+    }
+    #[doc = "0x40 - Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn ier(&self) -> &IER {
+        &self.ier
+    }
+    #[doc = "0x44 - Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn idr(&self) -> &IDR {
+        &self.idr
+    }
+    #[doc = "0x48 - Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn imr(&self) -> &IMR {
+        &self.imr
+    }
+    #[doc = "0x4c - Interrupt Status Register"]
+    #[inline(always)]
+    pub const fn isr(&self) -> &ISR {
+        &self.isr
+    }
+    #[doc = "0x50 - Multi-driver Enable Register"]
+    #[inline(always)]
+    pub const fn mder(&self) -> &MDER {
+        &self.mder
+    }
+    #[doc = "0x54 - Multi-driver Disable Register"]
+    #[inline(always)]
+    pub const fn mddr(&self) -> &MDDR {
+        &self.mddr
+    }
+    #[doc = "0x58 - Multi-driver Status Register"]
+    #[inline(always)]
+    pub const fn mdsr(&self) -> &MDSR {
+        &self.mdsr
+    }
+    #[doc = "0x60 - Pull-up Disable Register"]
+    #[inline(always)]
+    pub const fn pudr(&self) -> &PUDR {
+        &self.pudr
+    }
+    #[doc = "0x64 - Pull-up Enable Register"]
+    #[inline(always)]
+    pub const fn puer(&self) -> &PUER {
+        &self.puer
+    }
+    #[doc = "0x68 - Pad Pull-up Status Register"]
+    #[inline(always)]
+    pub const fn pusr(&self) -> &PUSR {
+        &self.pusr
+    }
+    #[doc = "0x70 - Peripheral Select Register 0"]
+    #[inline(always)]
+    pub const fn abcdsr0(&self) -> &ABCDSR0 {
+        &self.abcdsr0
+    }
+    #[doc = "0x74 - Peripheral Select Register 1"]
+    #[inline(always)]
+    pub const fn abcdsr1(&self) -> &ABCDSR1 {
+        &self.abcdsr1
+    }
+    #[doc = "0x80 - Input Filter Slow Clock Disable Register"]
+    #[inline(always)]
+    pub const fn ifscdr(&self) -> &IFSCDR {
+        &self.ifscdr
+    }
+    #[doc = "0x84 - Input Filter Slow Clock Enable Register"]
+    #[inline(always)]
+    pub const fn ifscer(&self) -> &IFSCER {
+        &self.ifscer
+    }
+    #[doc = "0x88 - Input Filter Slow Clock Status Register"]
+    #[inline(always)]
+    pub const fn ifscsr(&self) -> &IFSCSR {
+        &self.ifscsr
+    }
+    #[doc = "0x8c - Slow Clock Divider Debouncing Register"]
+    #[inline(always)]
+    pub const fn scdr(&self) -> &SCDR {
+        &self.scdr
+    }
+    #[doc = "0x90 - Pad Pull-down Disable Register"]
+    #[inline(always)]
+    pub const fn ppddr(&self) -> &PPDDR {
+        &self.ppddr
+    }
+    #[doc = "0x94 - Pad Pull-down Enable Register"]
+    #[inline(always)]
+    pub const fn ppder(&self) -> &PPDER {
+        &self.ppder
+    }
+    #[doc = "0x98 - Pad Pull-down Status Register"]
+    #[inline(always)]
+    pub const fn ppdsr(&self) -> &PPDSR {
+        &self.ppdsr
+    }
+    #[doc = "0xa0 - Output Write Enable"]
+    #[inline(always)]
+    pub const fn ower(&self) -> &OWER {
+        &self.ower
+    }
+    #[doc = "0xa4 - Output Write Disable"]
+    #[inline(always)]
+    pub const fn owdr(&self) -> &OWDR {
+        &self.owdr
+    }
+    #[doc = "0xa8 - Output Write Status Register"]
+    #[inline(always)]
+    pub const fn owsr(&self) -> &OWSR {
+        &self.owsr
+    }
+    #[doc = "0xb0 - Additional Interrupt Modes Enable Register"]
+    #[inline(always)]
+    pub const fn aimer(&self) -> &AIMER {
+        &self.aimer
+    }
+    #[doc = "0xb4 - Additional Interrupt Modes Disables Register"]
+    #[inline(always)]
+    pub const fn aimdr(&self) -> &AIMDR {
+        &self.aimdr
+    }
+    #[doc = "0xb8 - Additional Interrupt Modes Mask Register"]
+    #[inline(always)]
+    pub const fn aimmr(&self) -> &AIMMR {
+        &self.aimmr
+    }
+    #[doc = "0xc0 - Edge Select Register"]
+    #[inline(always)]
+    pub const fn esr(&self) -> &ESR {
+        &self.esr
+    }
+    #[doc = "0xc4 - Level Select Register"]
+    #[inline(always)]
+    pub const fn lsr(&self) -> &LSR {
+        &self.lsr
+    }
+    #[doc = "0xc8 - Edge/Level Status Register"]
+    #[inline(always)]
+    pub const fn elsr(&self) -> &ELSR {
+        &self.elsr
+    }
+    #[doc = "0xd0 - Falling Edge/Low Level Select Register"]
+    #[inline(always)]
+    pub const fn fellsr(&self) -> &FELLSR {
+        &self.fellsr
+    }
+    #[doc = "0xd4 - Rising Edge/ High Level Select Register"]
+    #[inline(always)]
+    pub const fn rehlsr(&self) -> &REHLSR {
+        &self.rehlsr
+    }
+    #[doc = "0xd8 - Fall/Rise - Low/High Status Register"]
+    #[inline(always)]
+    pub const fn frlhsr(&self) -> &FRLHSR {
+        &self.frlhsr
+    }
+    #[doc = "0xe0 - Lock Status"]
+    #[inline(always)]
+    pub const fn locksr(&self) -> &LOCKSR {
+        &self.locksr
+    }
+    #[doc = "0xe4 - Write Protect Mode Register"]
+    #[inline(always)]
+    pub const fn wpmr(&self) -> &WPMR {
+        &self.wpmr
+    }
+    #[doc = "0xe8 - Write Protect Status Register"]
+    #[inline(always)]
+    pub const fn wpsr(&self) -> &WPSR {
+        &self.wpsr
+    }
+    #[doc = "0x100 - Schmitt Trigger Register"]
+    #[inline(always)]
+    pub const fn schmitt(&self) -> &SCHMITT {
+        &self.schmitt
+    }
+    #[doc = "0x104 - Receive Pointer Register"]
+    #[inline(always)]
+    pub const fn rpr(&self) -> &RPR {
+        &self.rpr
+    }
+    #[doc = "0x108 - Receive Counter Register"]
+    #[inline(always)]
+    pub const fn rcr(&self) -> &RCR {
+        &self.rcr
+    }
+    #[doc = "0x114 - Receive Next Pointer Register"]
+    #[inline(always)]
+    pub const fn rnpr(&self) -> &RNPR {
+        &self.rnpr
+    }
+    #[doc = "0x118 - Receive Next Counter Register"]
+    #[inline(always)]
+    pub const fn rncr(&self) -> &RNCR {
+        &self.rncr
+    }
     #[doc = "0x124 - Transfer Control Register"]
-    pub ptcr: PTCR,
+    #[inline(always)]
+    pub const fn ptcr(&self) -> &PTCR {
+        &self.ptcr
+    }
     #[doc = "0x128 - Transfer Status Register"]
-    pub ptsr: PTSR,
+    #[inline(always)]
+    pub const fn ptsr(&self) -> &PTSR {
+        &self.ptsr
+    }
 }
 #[doc = "PER (w) register accessor: PIO Enable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`per::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@per`]
 module"]

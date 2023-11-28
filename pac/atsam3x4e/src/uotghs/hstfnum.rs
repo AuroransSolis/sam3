@@ -5,15 +5,15 @@ pub type W = crate::W<HSTFNUM_SPEC>;
 #[doc = "Field `MFNUM` reader - Micro Frame Number"]
 pub type MFNUM_R = crate::FieldReader;
 #[doc = "Field `MFNUM` writer - Micro Frame Number"]
-pub type MFNUM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type MFNUM_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `FNUM` reader - Frame Number"]
 pub type FNUM_R = crate::FieldReader<u16>;
 #[doc = "Field `FNUM` writer - Frame Number"]
-pub type FNUM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 11, O, u16>;
+pub type FNUM_W<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 #[doc = "Field `FLENHIGH` reader - Frame Length"]
 pub type FLENHIGH_R = crate::FieldReader;
 #[doc = "Field `FLENHIGH` writer - Frame Length"]
-pub type FLENHIGH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type FLENHIGH_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:2 - Micro Frame Number"]
     #[inline(always)]
@@ -35,20 +35,20 @@ impl W {
     #[doc = "Bits 0:2 - Micro Frame Number"]
     #[inline(always)]
     #[must_use]
-    pub fn mfnum(&mut self) -> MFNUM_W<HSTFNUM_SPEC, 0> {
-        MFNUM_W::new(self)
+    pub fn mfnum(&mut self) -> MFNUM_W<HSTFNUM_SPEC> {
+        MFNUM_W::new(self, 0)
     }
     #[doc = "Bits 3:13 - Frame Number"]
     #[inline(always)]
     #[must_use]
-    pub fn fnum(&mut self) -> FNUM_W<HSTFNUM_SPEC, 3> {
-        FNUM_W::new(self)
+    pub fn fnum(&mut self) -> FNUM_W<HSTFNUM_SPEC> {
+        FNUM_W::new(self, 3)
     }
     #[doc = "Bits 16:23 - Frame Length"]
     #[inline(always)]
     #[must_use]
-    pub fn flenhigh(&mut self) -> FLENHIGH_W<HSTFNUM_SPEC, 16> {
-        FLENHIGH_W::new(self)
+    pub fn flenhigh(&mut self) -> FLENHIGH_W<HSTFNUM_SPEC> {
+        FLENHIGH_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

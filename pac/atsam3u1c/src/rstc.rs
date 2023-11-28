@@ -1,12 +1,26 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
+    cr: CR,
+    sr: SR,
+    mr: MR,
+}
+impl RegisterBlock {
     #[doc = "0x00 - Control Register"]
-    pub cr: CR,
+    #[inline(always)]
+    pub const fn cr(&self) -> &CR {
+        &self.cr
+    }
     #[doc = "0x04 - Status Register"]
-    pub sr: SR,
+    #[inline(always)]
+    pub const fn sr(&self) -> &SR {
+        &self.sr
+    }
     #[doc = "0x08 - Mode Register"]
-    pub mr: MR,
+    #[inline(always)]
+    pub const fn mr(&self) -> &MR {
+        &self.mr
+    }
 }
 #[doc = "CR (w) register accessor: Control Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
 module"]

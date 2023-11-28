@@ -44,8 +44,8 @@ impl MD_R {
     }
 }
 #[doc = "Field `MD` writer - Memory Device Type"]
-pub type MD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, MD_A>;
-impl<'a, REG, const O: u8> MD_W<'a, REG, O>
+pub type MD_W<'a, REG> = crate::FieldWriter<'a, REG, 2, MD_A>;
+impl<'a, REG> MD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -72,8 +72,8 @@ impl W {
     #[doc = "Bits 0:1 - Memory Device Type"]
     #[inline(always)]
     #[must_use]
-    pub fn md(&mut self) -> MD_W<MDR_SPEC, 0> {
-        MD_W::new(self)
+    pub fn md(&mut self) -> MD_W<MDR_SPEC> {
+        MD_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

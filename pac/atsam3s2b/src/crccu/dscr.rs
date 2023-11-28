@@ -5,7 +5,7 @@ pub type W = crate::W<DSCR_SPEC>;
 #[doc = "Field `DSCR` reader - Descriptor Base Address"]
 pub type DSCR_R = crate::FieldReader<u32>;
 #[doc = "Field `DSCR` writer - Descriptor Base Address"]
-pub type DSCR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 23, O, u32>;
+pub type DSCR_W<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 impl R {
     #[doc = "Bits 9:31 - Descriptor Base Address"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 9:31 - Descriptor Base Address"]
     #[inline(always)]
     #[must_use]
-    pub fn dscr(&mut self) -> DSCR_W<DSCR_SPEC, 9> {
-        DSCR_W::new(self)
+    pub fn dscr(&mut self) -> DSCR_W<DSCR_SPEC> {
+        DSCR_W::new(self, 9)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

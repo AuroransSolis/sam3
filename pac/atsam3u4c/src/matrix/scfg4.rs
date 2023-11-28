@@ -5,19 +5,19 @@ pub type W = crate::W<SCFG4_SPEC>;
 #[doc = "Field `SLOT_CYCLE` reader - Maximum Number of Allowed Cycles for a Burst"]
 pub type SLOT_CYCLE_R = crate::FieldReader;
 #[doc = "Field `SLOT_CYCLE` writer - Maximum Number of Allowed Cycles for a Burst"]
-pub type SLOT_CYCLE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type SLOT_CYCLE_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `DEFMSTR_TYPE` reader - Default Master Type"]
 pub type DEFMSTR_TYPE_R = crate::FieldReader;
 #[doc = "Field `DEFMSTR_TYPE` writer - Default Master Type"]
-pub type DEFMSTR_TYPE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type DEFMSTR_TYPE_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `FIXED_DEFMSTR` reader - Fixed Default Master"]
 pub type FIXED_DEFMSTR_R = crate::FieldReader;
 #[doc = "Field `FIXED_DEFMSTR` writer - Fixed Default Master"]
-pub type FIXED_DEFMSTR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type FIXED_DEFMSTR_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `ARBT` reader - Arbitration Type"]
 pub type ARBT_R = crate::FieldReader;
 #[doc = "Field `ARBT` writer - Arbitration Type"]
-pub type ARBT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type ARBT_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     #[doc = "Bits 0:7 - Maximum Number of Allowed Cycles for a Burst"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:7 - Maximum Number of Allowed Cycles for a Burst"]
     #[inline(always)]
     #[must_use]
-    pub fn slot_cycle(&mut self) -> SLOT_CYCLE_W<SCFG4_SPEC, 0> {
-        SLOT_CYCLE_W::new(self)
+    pub fn slot_cycle(&mut self) -> SLOT_CYCLE_W<SCFG4_SPEC> {
+        SLOT_CYCLE_W::new(self, 0)
     }
     #[doc = "Bits 16:17 - Default Master Type"]
     #[inline(always)]
     #[must_use]
-    pub fn defmstr_type(&mut self) -> DEFMSTR_TYPE_W<SCFG4_SPEC, 16> {
-        DEFMSTR_TYPE_W::new(self)
+    pub fn defmstr_type(&mut self) -> DEFMSTR_TYPE_W<SCFG4_SPEC> {
+        DEFMSTR_TYPE_W::new(self, 16)
     }
     #[doc = "Bits 18:20 - Fixed Default Master"]
     #[inline(always)]
     #[must_use]
-    pub fn fixed_defmstr(&mut self) -> FIXED_DEFMSTR_W<SCFG4_SPEC, 18> {
-        FIXED_DEFMSTR_W::new(self)
+    pub fn fixed_defmstr(&mut self) -> FIXED_DEFMSTR_W<SCFG4_SPEC> {
+        FIXED_DEFMSTR_W::new(self, 18)
     }
     #[doc = "Bits 24:25 - Arbitration Type"]
     #[inline(always)]
     #[must_use]
-    pub fn arbt(&mut self) -> ARBT_W<SCFG4_SPEC, 24> {
-        ARBT_W::new(self)
+    pub fn arbt(&mut self) -> ARBT_W<SCFG4_SPEC> {
+        ARBT_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

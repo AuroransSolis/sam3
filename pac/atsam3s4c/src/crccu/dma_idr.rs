@@ -1,13 +1,13 @@
 #[doc = "Register `DMA_IDR` writer"]
 pub type W = crate::W<DMA_IDR_SPEC>;
 #[doc = "Field `DMAIDR` writer - Interrupt Disable register"]
-pub type DMAIDR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DMAIDR_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Interrupt Disable register"]
     #[inline(always)]
     #[must_use]
-    pub fn dmaidr(&mut self) -> DMAIDR_W<DMA_IDR_SPEC, 0> {
-        DMAIDR_W::new(self)
+    pub fn dmaidr(&mut self) -> DMAIDR_W<DMA_IDR_SPEC> {
+        DMAIDR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

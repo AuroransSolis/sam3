@@ -1,37 +1,37 @@
 #[doc = "Register `PMC_SCDR` writer"]
 pub type W = crate::W<PMC_SCDR_SPEC>;
 #[doc = "Field `UOTGCLK` writer - Disable USB OTG Clock (48 MHz, USB_48M) for UTMI"]
-pub type UOTGCLK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type UOTGCLK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PCK0` writer - Programmable Clock 0 Output Disable"]
-pub type PCK0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PCK0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PCK1` writer - Programmable Clock 1 Output Disable"]
-pub type PCK1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PCK1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PCK2` writer - Programmable Clock 2 Output Disable"]
-pub type PCK2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PCK2_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 5 - Disable USB OTG Clock (48 MHz, USB_48M) for UTMI"]
     #[inline(always)]
     #[must_use]
-    pub fn uotgclk(&mut self) -> UOTGCLK_W<PMC_SCDR_SPEC, 5> {
-        UOTGCLK_W::new(self)
+    pub fn uotgclk(&mut self) -> UOTGCLK_W<PMC_SCDR_SPEC> {
+        UOTGCLK_W::new(self, 5)
     }
     #[doc = "Bit 8 - Programmable Clock 0 Output Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn pck0(&mut self) -> PCK0_W<PMC_SCDR_SPEC, 8> {
-        PCK0_W::new(self)
+    pub fn pck0(&mut self) -> PCK0_W<PMC_SCDR_SPEC> {
+        PCK0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Programmable Clock 1 Output Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn pck1(&mut self) -> PCK1_W<PMC_SCDR_SPEC, 9> {
-        PCK1_W::new(self)
+    pub fn pck1(&mut self) -> PCK1_W<PMC_SCDR_SPEC> {
+        PCK1_W::new(self, 9)
     }
     #[doc = "Bit 10 - Programmable Clock 2 Output Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn pck2(&mut self) -> PCK2_W<PMC_SCDR_SPEC, 10> {
-        PCK2_W::new(self)
+    pub fn pck2(&mut self) -> PCK2_W<PMC_SCDR_SPEC> {
+        PCK2_W::new(self, 10)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

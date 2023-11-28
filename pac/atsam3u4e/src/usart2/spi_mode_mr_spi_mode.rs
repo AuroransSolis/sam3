@@ -44,8 +44,8 @@ impl USART_MODE_R {
     }
 }
 #[doc = "Field `USART_MODE` writer - USART Mode of Operation"]
-pub type USART_MODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, USART_MODE_A>;
-impl<'a, REG, const O: u8> USART_MODE_W<'a, REG, O>
+pub type USART_MODE_W<'a, REG> = crate::FieldWriter<'a, REG, 4, USART_MODE_A>;
+impl<'a, REG> USART_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -111,8 +111,8 @@ impl USCLKS_R {
     }
 }
 #[doc = "Field `USCLKS` writer - Clock Selection"]
-pub type USCLKS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, USCLKS_A>;
-impl<'a, REG, const O: u8> USCLKS_W<'a, REG, O>
+pub type USCLKS_W<'a, REG> = crate::FieldWriter<'a, REG, 2, USCLKS_A>;
+impl<'a, REG> USCLKS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -167,8 +167,8 @@ impl CHRL_R {
     }
 }
 #[doc = "Field `CHRL` writer - Character Length."]
-pub type CHRL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, CHRL_A>;
-impl<'a, REG, const O: u8> CHRL_W<'a, REG, O>
+pub type CHRL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CHRL_A>;
+impl<'a, REG> CHRL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -182,15 +182,15 @@ where
 #[doc = "Field `CPHA` reader - SPI Clock Phase"]
 pub type CPHA_R = crate::BitReader;
 #[doc = "Field `CPHA` writer - SPI Clock Phase"]
-pub type CPHA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CPHA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CPOL` reader - SPI Clock Polarity"]
 pub type CPOL_R = crate::BitReader;
 #[doc = "Field `CPOL` writer - SPI Clock Polarity"]
-pub type CPOL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CPOL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WRDBT` reader - Wait Read Data Before Transfer"]
 pub type WRDBT_R = crate::BitReader;
 #[doc = "Field `WRDBT` writer - Wait Read Data Before Transfer"]
-pub type WRDBT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type WRDBT_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - USART Mode of Operation"]
     #[inline(always)]
@@ -227,38 +227,38 @@ impl W {
     #[doc = "Bits 0:3 - USART Mode of Operation"]
     #[inline(always)]
     #[must_use]
-    pub fn usart_mode(&mut self) -> USART_MODE_W<SPI_MODE_MR_SPI_MODE_SPEC, 0> {
-        USART_MODE_W::new(self)
+    pub fn usart_mode(&mut self) -> USART_MODE_W<SPI_MODE_MR_SPI_MODE_SPEC> {
+        USART_MODE_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn usclks(&mut self) -> USCLKS_W<SPI_MODE_MR_SPI_MODE_SPEC, 4> {
-        USCLKS_W::new(self)
+    pub fn usclks(&mut self) -> USCLKS_W<SPI_MODE_MR_SPI_MODE_SPEC> {
+        USCLKS_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Character Length."]
     #[inline(always)]
     #[must_use]
-    pub fn chrl(&mut self) -> CHRL_W<SPI_MODE_MR_SPI_MODE_SPEC, 6> {
-        CHRL_W::new(self)
+    pub fn chrl(&mut self) -> CHRL_W<SPI_MODE_MR_SPI_MODE_SPEC> {
+        CHRL_W::new(self, 6)
     }
     #[doc = "Bit 8 - SPI Clock Phase"]
     #[inline(always)]
     #[must_use]
-    pub fn cpha(&mut self) -> CPHA_W<SPI_MODE_MR_SPI_MODE_SPEC, 8> {
-        CPHA_W::new(self)
+    pub fn cpha(&mut self) -> CPHA_W<SPI_MODE_MR_SPI_MODE_SPEC> {
+        CPHA_W::new(self, 8)
     }
     #[doc = "Bit 16 - SPI Clock Polarity"]
     #[inline(always)]
     #[must_use]
-    pub fn cpol(&mut self) -> CPOL_W<SPI_MODE_MR_SPI_MODE_SPEC, 16> {
-        CPOL_W::new(self)
+    pub fn cpol(&mut self) -> CPOL_W<SPI_MODE_MR_SPI_MODE_SPEC> {
+        CPOL_W::new(self, 16)
     }
     #[doc = "Bit 20 - Wait Read Data Before Transfer"]
     #[inline(always)]
     #[must_use]
-    pub fn wrdbt(&mut self) -> WRDBT_W<SPI_MODE_MR_SPI_MODE_SPEC, 20> {
-        WRDBT_W::new(self)
+    pub fn wrdbt(&mut self) -> WRDBT_W<SPI_MODE_MR_SPI_MODE_SPEC> {
+        WRDBT_W::new(self, 20)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

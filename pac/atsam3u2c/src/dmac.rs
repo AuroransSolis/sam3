@@ -1,88 +1,242 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - DMAC Global Configuration Register"]
-    pub gcfg: GCFG,
-    #[doc = "0x04 - DMAC Enable Register"]
-    pub en: EN,
-    #[doc = "0x08 - DMAC Software Single Request Register"]
-    pub sreq: SREQ,
-    #[doc = "0x0c - DMAC Software Chunk Transfer Request Register"]
-    pub creq: CREQ,
-    #[doc = "0x10 - DMAC Software Last Transfer Flag Register"]
-    pub last: LAST,
+    gcfg: GCFG,
+    en: EN,
+    sreq: SREQ,
+    creq: CREQ,
+    last: LAST,
     _reserved5: [u8; 0x04],
-    #[doc = "0x18 - DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Enable register."]
-    pub ebcier: EBCIER,
-    #[doc = "0x1c - DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Disable register."]
-    pub ebcidr: EBCIDR,
-    #[doc = "0x20 - DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Mask Register."]
-    pub ebcimr: EBCIMR,
-    #[doc = "0x24 - DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Status Register."]
-    pub ebcisr: EBCISR,
-    #[doc = "0x28 - DMAC Channel Handler Enable Register"]
-    pub cher: CHER,
-    #[doc = "0x2c - DMAC Channel Handler Disable Register"]
-    pub chdr: CHDR,
-    #[doc = "0x30 - DMAC Channel Handler Status Register"]
-    pub chsr: CHSR,
+    ebcier: EBCIER,
+    ebcidr: EBCIDR,
+    ebcimr: EBCIMR,
+    ebcisr: EBCISR,
+    cher: CHER,
+    chdr: CHDR,
+    chsr: CHSR,
     _reserved12: [u8; 0x08],
-    #[doc = "0x3c - DMAC Channel Source Address Register (ch_num = 0)"]
-    pub saddr0: SADDR0,
-    #[doc = "0x40 - DMAC Channel Destination Address Register (ch_num = 0)"]
-    pub daddr0: DADDR0,
-    #[doc = "0x44 - DMAC Channel Descriptor Address Register (ch_num = 0)"]
-    pub dscr0: DSCR0,
-    #[doc = "0x48 - DMAC Channel Control A Register (ch_num = 0)"]
-    pub ctrla0: CTRLA0,
-    #[doc = "0x4c - DMAC Channel Control B Register (ch_num = 0)"]
-    pub ctrlb0: CTRLB0,
-    #[doc = "0x50 - DMAC Channel Configuration Register (ch_num = 0)"]
-    pub cfg0: CFG0,
+    saddr0: SADDR0,
+    daddr0: DADDR0,
+    dscr0: DSCR0,
+    ctrla0: CTRLA0,
+    ctrlb0: CTRLB0,
+    cfg0: CFG0,
     _reserved18: [u8; 0x10],
-    #[doc = "0x64 - DMAC Channel Source Address Register (ch_num = 1)"]
-    pub saddr1: SADDR1,
-    #[doc = "0x68 - DMAC Channel Destination Address Register (ch_num = 1)"]
-    pub daddr1: DADDR1,
-    #[doc = "0x6c - DMAC Channel Descriptor Address Register (ch_num = 1)"]
-    pub dscr1: DSCR1,
-    #[doc = "0x70 - DMAC Channel Control A Register (ch_num = 1)"]
-    pub ctrla1: CTRLA1,
-    #[doc = "0x74 - DMAC Channel Control B Register (ch_num = 1)"]
-    pub ctrlb1: CTRLB1,
-    #[doc = "0x78 - DMAC Channel Configuration Register (ch_num = 1)"]
-    pub cfg1: CFG1,
+    saddr1: SADDR1,
+    daddr1: DADDR1,
+    dscr1: DSCR1,
+    ctrla1: CTRLA1,
+    ctrlb1: CTRLB1,
+    cfg1: CFG1,
     _reserved24: [u8; 0x10],
-    #[doc = "0x8c - DMAC Channel Source Address Register (ch_num = 2)"]
-    pub saddr2: SADDR2,
-    #[doc = "0x90 - DMAC Channel Destination Address Register (ch_num = 2)"]
-    pub daddr2: DADDR2,
-    #[doc = "0x94 - DMAC Channel Descriptor Address Register (ch_num = 2)"]
-    pub dscr2: DSCR2,
-    #[doc = "0x98 - DMAC Channel Control A Register (ch_num = 2)"]
-    pub ctrla2: CTRLA2,
-    #[doc = "0x9c - DMAC Channel Control B Register (ch_num = 2)"]
-    pub ctrlb2: CTRLB2,
-    #[doc = "0xa0 - DMAC Channel Configuration Register (ch_num = 2)"]
-    pub cfg2: CFG2,
+    saddr2: SADDR2,
+    daddr2: DADDR2,
+    dscr2: DSCR2,
+    ctrla2: CTRLA2,
+    ctrlb2: CTRLB2,
+    cfg2: CFG2,
     _reserved30: [u8; 0x10],
-    #[doc = "0xb4 - DMAC Channel Source Address Register (ch_num = 3)"]
-    pub saddr3: SADDR3,
-    #[doc = "0xb8 - DMAC Channel Destination Address Register (ch_num = 3)"]
-    pub daddr3: DADDR3,
-    #[doc = "0xbc - DMAC Channel Descriptor Address Register (ch_num = 3)"]
-    pub dscr3: DSCR3,
-    #[doc = "0xc0 - DMAC Channel Control A Register (ch_num = 3)"]
-    pub ctrla3: CTRLA3,
-    #[doc = "0xc4 - DMAC Channel Control B Register (ch_num = 3)"]
-    pub ctrlb3: CTRLB3,
-    #[doc = "0xc8 - DMAC Channel Configuration Register (ch_num = 3)"]
-    pub cfg3: CFG3,
+    saddr3: SADDR3,
+    daddr3: DADDR3,
+    dscr3: DSCR3,
+    ctrla3: CTRLA3,
+    ctrlb3: CTRLB3,
+    cfg3: CFG3,
     _reserved36: [u8; 0x0118],
+    wpmr: WPMR,
+    wpsr: WPSR,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - DMAC Global Configuration Register"]
+    #[inline(always)]
+    pub const fn gcfg(&self) -> &GCFG {
+        &self.gcfg
+    }
+    #[doc = "0x04 - DMAC Enable Register"]
+    #[inline(always)]
+    pub const fn en(&self) -> &EN {
+        &self.en
+    }
+    #[doc = "0x08 - DMAC Software Single Request Register"]
+    #[inline(always)]
+    pub const fn sreq(&self) -> &SREQ {
+        &self.sreq
+    }
+    #[doc = "0x0c - DMAC Software Chunk Transfer Request Register"]
+    #[inline(always)]
+    pub const fn creq(&self) -> &CREQ {
+        &self.creq
+    }
+    #[doc = "0x10 - DMAC Software Last Transfer Flag Register"]
+    #[inline(always)]
+    pub const fn last(&self) -> &LAST {
+        &self.last
+    }
+    #[doc = "0x18 - DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Enable register."]
+    #[inline(always)]
+    pub const fn ebcier(&self) -> &EBCIER {
+        &self.ebcier
+    }
+    #[doc = "0x1c - DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Disable register."]
+    #[inline(always)]
+    pub const fn ebcidr(&self) -> &EBCIDR {
+        &self.ebcidr
+    }
+    #[doc = "0x20 - DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Mask Register."]
+    #[inline(always)]
+    pub const fn ebcimr(&self) -> &EBCIMR {
+        &self.ebcimr
+    }
+    #[doc = "0x24 - DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Status Register."]
+    #[inline(always)]
+    pub const fn ebcisr(&self) -> &EBCISR {
+        &self.ebcisr
+    }
+    #[doc = "0x28 - DMAC Channel Handler Enable Register"]
+    #[inline(always)]
+    pub const fn cher(&self) -> &CHER {
+        &self.cher
+    }
+    #[doc = "0x2c - DMAC Channel Handler Disable Register"]
+    #[inline(always)]
+    pub const fn chdr(&self) -> &CHDR {
+        &self.chdr
+    }
+    #[doc = "0x30 - DMAC Channel Handler Status Register"]
+    #[inline(always)]
+    pub const fn chsr(&self) -> &CHSR {
+        &self.chsr
+    }
+    #[doc = "0x3c - DMAC Channel Source Address Register (ch_num = 0)"]
+    #[inline(always)]
+    pub const fn saddr0(&self) -> &SADDR0 {
+        &self.saddr0
+    }
+    #[doc = "0x40 - DMAC Channel Destination Address Register (ch_num = 0)"]
+    #[inline(always)]
+    pub const fn daddr0(&self) -> &DADDR0 {
+        &self.daddr0
+    }
+    #[doc = "0x44 - DMAC Channel Descriptor Address Register (ch_num = 0)"]
+    #[inline(always)]
+    pub const fn dscr0(&self) -> &DSCR0 {
+        &self.dscr0
+    }
+    #[doc = "0x48 - DMAC Channel Control A Register (ch_num = 0)"]
+    #[inline(always)]
+    pub const fn ctrla0(&self) -> &CTRLA0 {
+        &self.ctrla0
+    }
+    #[doc = "0x4c - DMAC Channel Control B Register (ch_num = 0)"]
+    #[inline(always)]
+    pub const fn ctrlb0(&self) -> &CTRLB0 {
+        &self.ctrlb0
+    }
+    #[doc = "0x50 - DMAC Channel Configuration Register (ch_num = 0)"]
+    #[inline(always)]
+    pub const fn cfg0(&self) -> &CFG0 {
+        &self.cfg0
+    }
+    #[doc = "0x64 - DMAC Channel Source Address Register (ch_num = 1)"]
+    #[inline(always)]
+    pub const fn saddr1(&self) -> &SADDR1 {
+        &self.saddr1
+    }
+    #[doc = "0x68 - DMAC Channel Destination Address Register (ch_num = 1)"]
+    #[inline(always)]
+    pub const fn daddr1(&self) -> &DADDR1 {
+        &self.daddr1
+    }
+    #[doc = "0x6c - DMAC Channel Descriptor Address Register (ch_num = 1)"]
+    #[inline(always)]
+    pub const fn dscr1(&self) -> &DSCR1 {
+        &self.dscr1
+    }
+    #[doc = "0x70 - DMAC Channel Control A Register (ch_num = 1)"]
+    #[inline(always)]
+    pub const fn ctrla1(&self) -> &CTRLA1 {
+        &self.ctrla1
+    }
+    #[doc = "0x74 - DMAC Channel Control B Register (ch_num = 1)"]
+    #[inline(always)]
+    pub const fn ctrlb1(&self) -> &CTRLB1 {
+        &self.ctrlb1
+    }
+    #[doc = "0x78 - DMAC Channel Configuration Register (ch_num = 1)"]
+    #[inline(always)]
+    pub const fn cfg1(&self) -> &CFG1 {
+        &self.cfg1
+    }
+    #[doc = "0x8c - DMAC Channel Source Address Register (ch_num = 2)"]
+    #[inline(always)]
+    pub const fn saddr2(&self) -> &SADDR2 {
+        &self.saddr2
+    }
+    #[doc = "0x90 - DMAC Channel Destination Address Register (ch_num = 2)"]
+    #[inline(always)]
+    pub const fn daddr2(&self) -> &DADDR2 {
+        &self.daddr2
+    }
+    #[doc = "0x94 - DMAC Channel Descriptor Address Register (ch_num = 2)"]
+    #[inline(always)]
+    pub const fn dscr2(&self) -> &DSCR2 {
+        &self.dscr2
+    }
+    #[doc = "0x98 - DMAC Channel Control A Register (ch_num = 2)"]
+    #[inline(always)]
+    pub const fn ctrla2(&self) -> &CTRLA2 {
+        &self.ctrla2
+    }
+    #[doc = "0x9c - DMAC Channel Control B Register (ch_num = 2)"]
+    #[inline(always)]
+    pub const fn ctrlb2(&self) -> &CTRLB2 {
+        &self.ctrlb2
+    }
+    #[doc = "0xa0 - DMAC Channel Configuration Register (ch_num = 2)"]
+    #[inline(always)]
+    pub const fn cfg2(&self) -> &CFG2 {
+        &self.cfg2
+    }
+    #[doc = "0xb4 - DMAC Channel Source Address Register (ch_num = 3)"]
+    #[inline(always)]
+    pub const fn saddr3(&self) -> &SADDR3 {
+        &self.saddr3
+    }
+    #[doc = "0xb8 - DMAC Channel Destination Address Register (ch_num = 3)"]
+    #[inline(always)]
+    pub const fn daddr3(&self) -> &DADDR3 {
+        &self.daddr3
+    }
+    #[doc = "0xbc - DMAC Channel Descriptor Address Register (ch_num = 3)"]
+    #[inline(always)]
+    pub const fn dscr3(&self) -> &DSCR3 {
+        &self.dscr3
+    }
+    #[doc = "0xc0 - DMAC Channel Control A Register (ch_num = 3)"]
+    #[inline(always)]
+    pub const fn ctrla3(&self) -> &CTRLA3 {
+        &self.ctrla3
+    }
+    #[doc = "0xc4 - DMAC Channel Control B Register (ch_num = 3)"]
+    #[inline(always)]
+    pub const fn ctrlb3(&self) -> &CTRLB3 {
+        &self.ctrlb3
+    }
+    #[doc = "0xc8 - DMAC Channel Configuration Register (ch_num = 3)"]
+    #[inline(always)]
+    pub const fn cfg3(&self) -> &CFG3 {
+        &self.cfg3
+    }
     #[doc = "0x1e4 - DMAC Write Protect Mode Register"]
-    pub wpmr: WPMR,
+    #[inline(always)]
+    pub const fn wpmr(&self) -> &WPMR {
+        &self.wpmr
+    }
     #[doc = "0x1e8 - DMAC Write Protect Status Register"]
-    pub wpsr: WPSR,
+    #[inline(always)]
+    pub const fn wpsr(&self) -> &WPSR {
+        &self.wpsr
+    }
 }
 #[doc = "GCFG (rw) register accessor: DMAC Global Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gcfg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gcfg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gcfg`]
 module"]

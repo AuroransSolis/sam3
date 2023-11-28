@@ -1,25 +1,17 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - UDPHS Control Register"]
-    pub ctrl: CTRL,
-    #[doc = "0x04 - UDPHS Frame Number Register"]
-    pub fnum: FNUM,
+    ctrl: CTRL,
+    fnum: FNUM,
     _reserved2: [u8; 0x08],
-    #[doc = "0x10 - UDPHS Interrupt Enable Register"]
-    pub ien: IEN,
-    #[doc = "0x14 - UDPHS Interrupt Status Register"]
-    pub intsta: INTSTA,
-    #[doc = "0x18 - UDPHS Clear Interrupt Register"]
-    pub clrint: CLRINT,
-    #[doc = "0x1c - UDPHS Endpoints Reset Register"]
-    pub eptrst: EPTRST,
+    ien: IEN,
+    intsta: INTSTA,
+    clrint: CLRINT,
+    eptrst: EPTRST,
     _reserved6: [u8; 0xc0],
-    #[doc = "0xe0 - UDPHS Test Register"]
-    pub tst: TST,
+    tst: TST,
     _reserved7: [u8; 0x1c],
-    #[doc = "0x100 - UDPHS Endpoint Configuration Register (endpoint = 0)"]
-    pub eptcfg0: EPTCFG0,
+    eptcfg0: EPTCFG0,
     _reserved_8_eptctlenb0: [u8; 0x04],
     _reserved_9_eptctldis0: [u8; 0x04],
     _reserved_10_eptctl0: [u8; 0x04],
@@ -27,8 +19,7 @@ pub struct RegisterBlock {
     _reserved_11_eptsetsta0: [u8; 0x04],
     _reserved_12_eptclrsta0: [u8; 0x04],
     _reserved_13_eptsta0: [u8; 0x04],
-    #[doc = "0x120 - UDPHS Endpoint Configuration Register (endpoint = 1)"]
-    pub eptcfg1: EPTCFG1,
+    eptcfg1: EPTCFG1,
     _reserved_15_eptctlenb1: [u8; 0x04],
     _reserved_16_eptctldis1: [u8; 0x04],
     _reserved_17_eptctl1: [u8; 0x04],
@@ -36,8 +27,7 @@ pub struct RegisterBlock {
     _reserved_18_eptsetsta1: [u8; 0x04],
     _reserved_19_eptclrsta1: [u8; 0x04],
     _reserved_20_eptsta1: [u8; 0x04],
-    #[doc = "0x140 - UDPHS Endpoint Configuration Register (endpoint = 2)"]
-    pub eptcfg2: EPTCFG2,
+    eptcfg2: EPTCFG2,
     _reserved_22_eptctlenb2: [u8; 0x04],
     _reserved_23_eptctldis2: [u8; 0x04],
     _reserved_24_eptctl2: [u8; 0x04],
@@ -45,8 +35,7 @@ pub struct RegisterBlock {
     _reserved_25_eptsetsta2: [u8; 0x04],
     _reserved_26_eptclrsta2: [u8; 0x04],
     _reserved_27_eptsta2: [u8; 0x04],
-    #[doc = "0x160 - UDPHS Endpoint Configuration Register (endpoint = 3)"]
-    pub eptcfg3: EPTCFG3,
+    eptcfg3: EPTCFG3,
     _reserved_29_eptctlenb3: [u8; 0x04],
     _reserved_30_eptctldis3: [u8; 0x04],
     _reserved_31_eptctl3: [u8; 0x04],
@@ -54,8 +43,7 @@ pub struct RegisterBlock {
     _reserved_32_eptsetsta3: [u8; 0x04],
     _reserved_33_eptclrsta3: [u8; 0x04],
     _reserved_34_eptsta3: [u8; 0x04],
-    #[doc = "0x180 - UDPHS Endpoint Configuration Register (endpoint = 4)"]
-    pub eptcfg4: EPTCFG4,
+    eptcfg4: EPTCFG4,
     _reserved_36_eptctlenb4: [u8; 0x04],
     _reserved_37_eptctldis4: [u8; 0x04],
     _reserved_38_eptctl4: [u8; 0x04],
@@ -63,8 +51,7 @@ pub struct RegisterBlock {
     _reserved_39_eptsetsta4: [u8; 0x04],
     _reserved_40_eptclrsta4: [u8; 0x04],
     _reserved_41_eptsta4: [u8; 0x04],
-    #[doc = "0x1a0 - UDPHS Endpoint Configuration Register (endpoint = 5)"]
-    pub eptcfg5: EPTCFG5,
+    eptcfg5: EPTCFG5,
     _reserved_43_eptctlenb5: [u8; 0x04],
     _reserved_44_eptctldis5: [u8; 0x04],
     _reserved_45_eptctl5: [u8; 0x04],
@@ -72,8 +59,7 @@ pub struct RegisterBlock {
     _reserved_46_eptsetsta5: [u8; 0x04],
     _reserved_47_eptclrsta5: [u8; 0x04],
     _reserved_48_eptsta5: [u8; 0x04],
-    #[doc = "0x1c0 - UDPHS Endpoint Configuration Register (endpoint = 6)"]
-    pub eptcfg6: EPTCFG6,
+    eptcfg6: EPTCFG6,
     _reserved_50_eptctlenb6: [u8; 0x04],
     _reserved_51_eptctldis6: [u8; 0x04],
     _reserved_52_eptctl6: [u8; 0x04],
@@ -82,475 +68,641 @@ pub struct RegisterBlock {
     _reserved_54_eptclrsta6: [u8; 0x04],
     _reserved_55_eptsta6: [u8; 0x04],
     _reserved56: [u8; 0x0120],
-    #[doc = "0x300 - UDPHS DMA Next Descriptor Address Register (channel = 0)"]
-    pub dmanxtdsc0: DMANXTDSC0,
-    #[doc = "0x304 - UDPHS DMA Channel Address Register (channel = 0)"]
-    pub dmaaddress0: DMAADDRESS0,
-    #[doc = "0x308 - UDPHS DMA Channel Control Register (channel = 0)"]
-    pub dmacontrol0: DMACONTROL0,
-    #[doc = "0x30c - UDPHS DMA Channel Status Register (channel = 0)"]
-    pub dmastatus0: DMASTATUS0,
-    #[doc = "0x310 - UDPHS DMA Next Descriptor Address Register (channel = 1)"]
-    pub dmanxtdsc1: DMANXTDSC1,
-    #[doc = "0x314 - UDPHS DMA Channel Address Register (channel = 1)"]
-    pub dmaaddress1: DMAADDRESS1,
-    #[doc = "0x318 - UDPHS DMA Channel Control Register (channel = 1)"]
-    pub dmacontrol1: DMACONTROL1,
-    #[doc = "0x31c - UDPHS DMA Channel Status Register (channel = 1)"]
-    pub dmastatus1: DMASTATUS1,
-    #[doc = "0x320 - UDPHS DMA Next Descriptor Address Register (channel = 2)"]
-    pub dmanxtdsc2: DMANXTDSC2,
-    #[doc = "0x324 - UDPHS DMA Channel Address Register (channel = 2)"]
-    pub dmaaddress2: DMAADDRESS2,
-    #[doc = "0x328 - UDPHS DMA Channel Control Register (channel = 2)"]
-    pub dmacontrol2: DMACONTROL2,
-    #[doc = "0x32c - UDPHS DMA Channel Status Register (channel = 2)"]
-    pub dmastatus2: DMASTATUS2,
-    #[doc = "0x330 - UDPHS DMA Next Descriptor Address Register (channel = 3)"]
-    pub dmanxtdsc3: DMANXTDSC3,
-    #[doc = "0x334 - UDPHS DMA Channel Address Register (channel = 3)"]
-    pub dmaaddress3: DMAADDRESS3,
-    #[doc = "0x338 - UDPHS DMA Channel Control Register (channel = 3)"]
-    pub dmacontrol3: DMACONTROL3,
-    #[doc = "0x33c - UDPHS DMA Channel Status Register (channel = 3)"]
-    pub dmastatus3: DMASTATUS3,
-    #[doc = "0x340 - UDPHS DMA Next Descriptor Address Register (channel = 4)"]
-    pub dmanxtdsc4: DMANXTDSC4,
-    #[doc = "0x344 - UDPHS DMA Channel Address Register (channel = 4)"]
-    pub dmaaddress4: DMAADDRESS4,
-    #[doc = "0x348 - UDPHS DMA Channel Control Register (channel = 4)"]
-    pub dmacontrol4: DMACONTROL4,
-    #[doc = "0x34c - UDPHS DMA Channel Status Register (channel = 4)"]
-    pub dmastatus4: DMASTATUS4,
-    #[doc = "0x350 - UDPHS DMA Next Descriptor Address Register (channel = 5)"]
-    pub dmanxtdsc5: DMANXTDSC5,
-    #[doc = "0x354 - UDPHS DMA Channel Address Register (channel = 5)"]
-    pub dmaaddress5: DMAADDRESS5,
-    #[doc = "0x358 - UDPHS DMA Channel Control Register (channel = 5)"]
-    pub dmacontrol5: DMACONTROL5,
-    #[doc = "0x35c - UDPHS DMA Channel Status Register (channel = 5)"]
-    pub dmastatus5: DMASTATUS5,
+    dmanxtdsc0: DMANXTDSC0,
+    dmaaddress0: DMAADDRESS0,
+    dmacontrol0: DMACONTROL0,
+    dmastatus0: DMASTATUS0,
+    dmanxtdsc1: DMANXTDSC1,
+    dmaaddress1: DMAADDRESS1,
+    dmacontrol1: DMACONTROL1,
+    dmastatus1: DMASTATUS1,
+    dmanxtdsc2: DMANXTDSC2,
+    dmaaddress2: DMAADDRESS2,
+    dmacontrol2: DMACONTROL2,
+    dmastatus2: DMASTATUS2,
+    dmanxtdsc3: DMANXTDSC3,
+    dmaaddress3: DMAADDRESS3,
+    dmacontrol3: DMACONTROL3,
+    dmastatus3: DMASTATUS3,
+    dmanxtdsc4: DMANXTDSC4,
+    dmaaddress4: DMAADDRESS4,
+    dmacontrol4: DMACONTROL4,
+    dmastatus4: DMASTATUS4,
+    dmanxtdsc5: DMANXTDSC5,
+    dmaaddress5: DMAADDRESS5,
+    dmacontrol5: DMACONTROL5,
+    dmastatus5: DMASTATUS5,
 }
 impl RegisterBlock {
+    #[doc = "0x00 - UDPHS Control Register"]
+    #[inline(always)]
+    pub const fn ctrl(&self) -> &CTRL {
+        &self.ctrl
+    }
+    #[doc = "0x04 - UDPHS Frame Number Register"]
+    #[inline(always)]
+    pub const fn fnum(&self) -> &FNUM {
+        &self.fnum
+    }
+    #[doc = "0x10 - UDPHS Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn ien(&self) -> &IEN {
+        &self.ien
+    }
+    #[doc = "0x14 - UDPHS Interrupt Status Register"]
+    #[inline(always)]
+    pub const fn intsta(&self) -> &INTSTA {
+        &self.intsta
+    }
+    #[doc = "0x18 - UDPHS Clear Interrupt Register"]
+    #[inline(always)]
+    pub const fn clrint(&self) -> &CLRINT {
+        &self.clrint
+    }
+    #[doc = "0x1c - UDPHS Endpoints Reset Register"]
+    #[inline(always)]
+    pub const fn eptrst(&self) -> &EPTRST {
+        &self.eptrst
+    }
+    #[doc = "0xe0 - UDPHS Test Register"]
+    #[inline(always)]
+    pub const fn tst(&self) -> &TST {
+        &self.tst
+    }
+    #[doc = "0x100 - UDPHS Endpoint Configuration Register (endpoint = 0)"]
+    #[inline(always)]
+    pub const fn eptcfg0(&self) -> &EPTCFG0 {
+        &self.eptcfg0
+    }
     #[doc = "0x104 - UDPHS Endpoint Control Enable Register (endpoint = 0)"]
     #[inline(always)]
     pub const fn isoendpt_eptctlenb0_isoendpt(&self) -> &ISOENDPT_EPTCTLENB0_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(260usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(260).cast() }
     }
     #[doc = "0x104 - UDPHS Endpoint Control Enable Register (endpoint = 0)"]
     #[inline(always)]
     pub const fn eptctlenb0(&self) -> &EPTCTLENB0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(260usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(260).cast() }
     }
     #[doc = "0x108 - UDPHS Endpoint Control Disable Register (endpoint = 0)"]
     #[inline(always)]
     pub const fn isoendpt_eptctldis0_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS0_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(264usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(264).cast() }
     }
     #[doc = "0x108 - UDPHS Endpoint Control Disable Register (endpoint = 0)"]
     #[inline(always)]
     pub const fn eptctldis0(&self) -> &EPTCTLDIS0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(264usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(264).cast() }
     }
     #[doc = "0x10c - UDPHS Endpoint Control Register (endpoint = 0)"]
     #[inline(always)]
     pub const fn isoendpt_eptctl0_isoendpt(&self) -> &ISOENDPT_EPTCTL0_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(268usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(268).cast() }
     }
     #[doc = "0x10c - UDPHS Endpoint Control Register (endpoint = 0)"]
     #[inline(always)]
     pub const fn eptctl0(&self) -> &EPTCTL0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(268usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(268).cast() }
     }
     #[doc = "0x114 - UDPHS Endpoint Set Status Register (endpoint = 0)"]
     #[inline(always)]
     pub const fn isoendpt_eptsetsta0_isoendpt(&self) -> &ISOENDPT_EPTSETSTA0_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(276usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(276).cast() }
     }
     #[doc = "0x114 - UDPHS Endpoint Set Status Register (endpoint = 0)"]
     #[inline(always)]
     pub const fn eptsetsta0(&self) -> &EPTSETSTA0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(276usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(276).cast() }
     }
     #[doc = "0x118 - UDPHS Endpoint Clear Status Register (endpoint = 0)"]
     #[inline(always)]
     pub const fn isoendpt_eptclrsta0_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA0_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(280usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(280).cast() }
     }
     #[doc = "0x118 - UDPHS Endpoint Clear Status Register (endpoint = 0)"]
     #[inline(always)]
     pub const fn eptclrsta0(&self) -> &EPTCLRSTA0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(280usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(280).cast() }
     }
     #[doc = "0x11c - UDPHS Endpoint Status Register (endpoint = 0)"]
     #[inline(always)]
     pub const fn isoendpt_eptsta0_isoendpt(&self) -> &ISOENDPT_EPTSTA0_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(284usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(284).cast() }
     }
     #[doc = "0x11c - UDPHS Endpoint Status Register (endpoint = 0)"]
     #[inline(always)]
     pub const fn eptsta0(&self) -> &EPTSTA0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(284usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(284).cast() }
+    }
+    #[doc = "0x120 - UDPHS Endpoint Configuration Register (endpoint = 1)"]
+    #[inline(always)]
+    pub const fn eptcfg1(&self) -> &EPTCFG1 {
+        &self.eptcfg1
     }
     #[doc = "0x124 - UDPHS Endpoint Control Enable Register (endpoint = 1)"]
     #[inline(always)]
     pub const fn isoendpt_eptctlenb1_isoendpt(&self) -> &ISOENDPT_EPTCTLENB1_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(292usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(292).cast() }
     }
     #[doc = "0x124 - UDPHS Endpoint Control Enable Register (endpoint = 1)"]
     #[inline(always)]
     pub const fn eptctlenb1(&self) -> &EPTCTLENB1 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(292usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(292).cast() }
     }
     #[doc = "0x128 - UDPHS Endpoint Control Disable Register (endpoint = 1)"]
     #[inline(always)]
     pub const fn isoendpt_eptctldis1_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS1_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(296usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(296).cast() }
     }
     #[doc = "0x128 - UDPHS Endpoint Control Disable Register (endpoint = 1)"]
     #[inline(always)]
     pub const fn eptctldis1(&self) -> &EPTCTLDIS1 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(296usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(296).cast() }
     }
     #[doc = "0x12c - UDPHS Endpoint Control Register (endpoint = 1)"]
     #[inline(always)]
     pub const fn isoendpt_eptctl1_isoendpt(&self) -> &ISOENDPT_EPTCTL1_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(300usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(300).cast() }
     }
     #[doc = "0x12c - UDPHS Endpoint Control Register (endpoint = 1)"]
     #[inline(always)]
     pub const fn eptctl1(&self) -> &EPTCTL1 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(300usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(300).cast() }
     }
     #[doc = "0x134 - UDPHS Endpoint Set Status Register (endpoint = 1)"]
     #[inline(always)]
     pub const fn isoendpt_eptsetsta1_isoendpt(&self) -> &ISOENDPT_EPTSETSTA1_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(308usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(308).cast() }
     }
     #[doc = "0x134 - UDPHS Endpoint Set Status Register (endpoint = 1)"]
     #[inline(always)]
     pub const fn eptsetsta1(&self) -> &EPTSETSTA1 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(308usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(308).cast() }
     }
     #[doc = "0x138 - UDPHS Endpoint Clear Status Register (endpoint = 1)"]
     #[inline(always)]
     pub const fn isoendpt_eptclrsta1_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA1_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(312usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(312).cast() }
     }
     #[doc = "0x138 - UDPHS Endpoint Clear Status Register (endpoint = 1)"]
     #[inline(always)]
     pub const fn eptclrsta1(&self) -> &EPTCLRSTA1 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(312usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(312).cast() }
     }
     #[doc = "0x13c - UDPHS Endpoint Status Register (endpoint = 1)"]
     #[inline(always)]
     pub const fn isoendpt_eptsta1_isoendpt(&self) -> &ISOENDPT_EPTSTA1_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(316usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(316).cast() }
     }
     #[doc = "0x13c - UDPHS Endpoint Status Register (endpoint = 1)"]
     #[inline(always)]
     pub const fn eptsta1(&self) -> &EPTSTA1 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(316usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(316).cast() }
+    }
+    #[doc = "0x140 - UDPHS Endpoint Configuration Register (endpoint = 2)"]
+    #[inline(always)]
+    pub const fn eptcfg2(&self) -> &EPTCFG2 {
+        &self.eptcfg2
     }
     #[doc = "0x144 - UDPHS Endpoint Control Enable Register (endpoint = 2)"]
     #[inline(always)]
     pub const fn isoendpt_eptctlenb2_isoendpt(&self) -> &ISOENDPT_EPTCTLENB2_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(324usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(324).cast() }
     }
     #[doc = "0x144 - UDPHS Endpoint Control Enable Register (endpoint = 2)"]
     #[inline(always)]
     pub const fn eptctlenb2(&self) -> &EPTCTLENB2 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(324usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(324).cast() }
     }
     #[doc = "0x148 - UDPHS Endpoint Control Disable Register (endpoint = 2)"]
     #[inline(always)]
     pub const fn isoendpt_eptctldis2_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS2_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(328usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(328).cast() }
     }
     #[doc = "0x148 - UDPHS Endpoint Control Disable Register (endpoint = 2)"]
     #[inline(always)]
     pub const fn eptctldis2(&self) -> &EPTCTLDIS2 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(328usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(328).cast() }
     }
     #[doc = "0x14c - UDPHS Endpoint Control Register (endpoint = 2)"]
     #[inline(always)]
     pub const fn isoendpt_eptctl2_isoendpt(&self) -> &ISOENDPT_EPTCTL2_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(332usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(332).cast() }
     }
     #[doc = "0x14c - UDPHS Endpoint Control Register (endpoint = 2)"]
     #[inline(always)]
     pub const fn eptctl2(&self) -> &EPTCTL2 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(332usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(332).cast() }
     }
     #[doc = "0x154 - UDPHS Endpoint Set Status Register (endpoint = 2)"]
     #[inline(always)]
     pub const fn isoendpt_eptsetsta2_isoendpt(&self) -> &ISOENDPT_EPTSETSTA2_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(340usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(340).cast() }
     }
     #[doc = "0x154 - UDPHS Endpoint Set Status Register (endpoint = 2)"]
     #[inline(always)]
     pub const fn eptsetsta2(&self) -> &EPTSETSTA2 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(340usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(340).cast() }
     }
     #[doc = "0x158 - UDPHS Endpoint Clear Status Register (endpoint = 2)"]
     #[inline(always)]
     pub const fn isoendpt_eptclrsta2_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA2_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(344usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(344).cast() }
     }
     #[doc = "0x158 - UDPHS Endpoint Clear Status Register (endpoint = 2)"]
     #[inline(always)]
     pub const fn eptclrsta2(&self) -> &EPTCLRSTA2 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(344usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(344).cast() }
     }
     #[doc = "0x15c - UDPHS Endpoint Status Register (endpoint = 2)"]
     #[inline(always)]
     pub const fn isoendpt_eptsta2_isoendpt(&self) -> &ISOENDPT_EPTSTA2_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(348usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(348).cast() }
     }
     #[doc = "0x15c - UDPHS Endpoint Status Register (endpoint = 2)"]
     #[inline(always)]
     pub const fn eptsta2(&self) -> &EPTSTA2 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(348usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(348).cast() }
+    }
+    #[doc = "0x160 - UDPHS Endpoint Configuration Register (endpoint = 3)"]
+    #[inline(always)]
+    pub const fn eptcfg3(&self) -> &EPTCFG3 {
+        &self.eptcfg3
     }
     #[doc = "0x164 - UDPHS Endpoint Control Enable Register (endpoint = 3)"]
     #[inline(always)]
     pub const fn isoendpt_eptctlenb3_isoendpt(&self) -> &ISOENDPT_EPTCTLENB3_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(356usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(356).cast() }
     }
     #[doc = "0x164 - UDPHS Endpoint Control Enable Register (endpoint = 3)"]
     #[inline(always)]
     pub const fn eptctlenb3(&self) -> &EPTCTLENB3 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(356usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(356).cast() }
     }
     #[doc = "0x168 - UDPHS Endpoint Control Disable Register (endpoint = 3)"]
     #[inline(always)]
     pub const fn isoendpt_eptctldis3_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS3_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(360usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(360).cast() }
     }
     #[doc = "0x168 - UDPHS Endpoint Control Disable Register (endpoint = 3)"]
     #[inline(always)]
     pub const fn eptctldis3(&self) -> &EPTCTLDIS3 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(360usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(360).cast() }
     }
     #[doc = "0x16c - UDPHS Endpoint Control Register (endpoint = 3)"]
     #[inline(always)]
     pub const fn isoendpt_eptctl3_isoendpt(&self) -> &ISOENDPT_EPTCTL3_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(364usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(364).cast() }
     }
     #[doc = "0x16c - UDPHS Endpoint Control Register (endpoint = 3)"]
     #[inline(always)]
     pub const fn eptctl3(&self) -> &EPTCTL3 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(364usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(364).cast() }
     }
     #[doc = "0x174 - UDPHS Endpoint Set Status Register (endpoint = 3)"]
     #[inline(always)]
     pub const fn isoendpt_eptsetsta3_isoendpt(&self) -> &ISOENDPT_EPTSETSTA3_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(372usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(372).cast() }
     }
     #[doc = "0x174 - UDPHS Endpoint Set Status Register (endpoint = 3)"]
     #[inline(always)]
     pub const fn eptsetsta3(&self) -> &EPTSETSTA3 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(372usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(372).cast() }
     }
     #[doc = "0x178 - UDPHS Endpoint Clear Status Register (endpoint = 3)"]
     #[inline(always)]
     pub const fn isoendpt_eptclrsta3_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA3_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(376usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(376).cast() }
     }
     #[doc = "0x178 - UDPHS Endpoint Clear Status Register (endpoint = 3)"]
     #[inline(always)]
     pub const fn eptclrsta3(&self) -> &EPTCLRSTA3 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(376usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(376).cast() }
     }
     #[doc = "0x17c - UDPHS Endpoint Status Register (endpoint = 3)"]
     #[inline(always)]
     pub const fn isoendpt_eptsta3_isoendpt(&self) -> &ISOENDPT_EPTSTA3_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(380usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(380).cast() }
     }
     #[doc = "0x17c - UDPHS Endpoint Status Register (endpoint = 3)"]
     #[inline(always)]
     pub const fn eptsta3(&self) -> &EPTSTA3 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(380usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(380).cast() }
+    }
+    #[doc = "0x180 - UDPHS Endpoint Configuration Register (endpoint = 4)"]
+    #[inline(always)]
+    pub const fn eptcfg4(&self) -> &EPTCFG4 {
+        &self.eptcfg4
     }
     #[doc = "0x184 - UDPHS Endpoint Control Enable Register (endpoint = 4)"]
     #[inline(always)]
     pub const fn isoendpt_eptctlenb4_isoendpt(&self) -> &ISOENDPT_EPTCTLENB4_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(388usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(388).cast() }
     }
     #[doc = "0x184 - UDPHS Endpoint Control Enable Register (endpoint = 4)"]
     #[inline(always)]
     pub const fn eptctlenb4(&self) -> &EPTCTLENB4 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(388usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(388).cast() }
     }
     #[doc = "0x188 - UDPHS Endpoint Control Disable Register (endpoint = 4)"]
     #[inline(always)]
     pub const fn isoendpt_eptctldis4_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS4_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(392usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(392).cast() }
     }
     #[doc = "0x188 - UDPHS Endpoint Control Disable Register (endpoint = 4)"]
     #[inline(always)]
     pub const fn eptctldis4(&self) -> &EPTCTLDIS4 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(392usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(392).cast() }
     }
     #[doc = "0x18c - UDPHS Endpoint Control Register (endpoint = 4)"]
     #[inline(always)]
     pub const fn isoendpt_eptctl4_isoendpt(&self) -> &ISOENDPT_EPTCTL4_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(396usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(396).cast() }
     }
     #[doc = "0x18c - UDPHS Endpoint Control Register (endpoint = 4)"]
     #[inline(always)]
     pub const fn eptctl4(&self) -> &EPTCTL4 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(396usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(396).cast() }
     }
     #[doc = "0x194 - UDPHS Endpoint Set Status Register (endpoint = 4)"]
     #[inline(always)]
     pub const fn isoendpt_eptsetsta4_isoendpt(&self) -> &ISOENDPT_EPTSETSTA4_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(404usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(404).cast() }
     }
     #[doc = "0x194 - UDPHS Endpoint Set Status Register (endpoint = 4)"]
     #[inline(always)]
     pub const fn eptsetsta4(&self) -> &EPTSETSTA4 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(404usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(404).cast() }
     }
     #[doc = "0x198 - UDPHS Endpoint Clear Status Register (endpoint = 4)"]
     #[inline(always)]
     pub const fn isoendpt_eptclrsta4_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA4_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(408usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(408).cast() }
     }
     #[doc = "0x198 - UDPHS Endpoint Clear Status Register (endpoint = 4)"]
     #[inline(always)]
     pub const fn eptclrsta4(&self) -> &EPTCLRSTA4 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(408usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(408).cast() }
     }
     #[doc = "0x19c - UDPHS Endpoint Status Register (endpoint = 4)"]
     #[inline(always)]
     pub const fn isoendpt_eptsta4_isoendpt(&self) -> &ISOENDPT_EPTSTA4_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(412usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(412).cast() }
     }
     #[doc = "0x19c - UDPHS Endpoint Status Register (endpoint = 4)"]
     #[inline(always)]
     pub const fn eptsta4(&self) -> &EPTSTA4 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(412usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(412).cast() }
+    }
+    #[doc = "0x1a0 - UDPHS Endpoint Configuration Register (endpoint = 5)"]
+    #[inline(always)]
+    pub const fn eptcfg5(&self) -> &EPTCFG5 {
+        &self.eptcfg5
     }
     #[doc = "0x1a4 - UDPHS Endpoint Control Enable Register (endpoint = 5)"]
     #[inline(always)]
     pub const fn isoendpt_eptctlenb5_isoendpt(&self) -> &ISOENDPT_EPTCTLENB5_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(420usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(420).cast() }
     }
     #[doc = "0x1a4 - UDPHS Endpoint Control Enable Register (endpoint = 5)"]
     #[inline(always)]
     pub const fn eptctlenb5(&self) -> &EPTCTLENB5 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(420usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(420).cast() }
     }
     #[doc = "0x1a8 - UDPHS Endpoint Control Disable Register (endpoint = 5)"]
     #[inline(always)]
     pub const fn isoendpt_eptctldis5_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS5_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(424usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(424).cast() }
     }
     #[doc = "0x1a8 - UDPHS Endpoint Control Disable Register (endpoint = 5)"]
     #[inline(always)]
     pub const fn eptctldis5(&self) -> &EPTCTLDIS5 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(424usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(424).cast() }
     }
     #[doc = "0x1ac - UDPHS Endpoint Control Register (endpoint = 5)"]
     #[inline(always)]
     pub const fn isoendpt_eptctl5_isoendpt(&self) -> &ISOENDPT_EPTCTL5_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(428usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(428).cast() }
     }
     #[doc = "0x1ac - UDPHS Endpoint Control Register (endpoint = 5)"]
     #[inline(always)]
     pub const fn eptctl5(&self) -> &EPTCTL5 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(428usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(428).cast() }
     }
     #[doc = "0x1b4 - UDPHS Endpoint Set Status Register (endpoint = 5)"]
     #[inline(always)]
     pub const fn isoendpt_eptsetsta5_isoendpt(&self) -> &ISOENDPT_EPTSETSTA5_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(436usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(436).cast() }
     }
     #[doc = "0x1b4 - UDPHS Endpoint Set Status Register (endpoint = 5)"]
     #[inline(always)]
     pub const fn eptsetsta5(&self) -> &EPTSETSTA5 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(436usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(436).cast() }
     }
     #[doc = "0x1b8 - UDPHS Endpoint Clear Status Register (endpoint = 5)"]
     #[inline(always)]
     pub const fn isoendpt_eptclrsta5_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA5_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(440usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(440).cast() }
     }
     #[doc = "0x1b8 - UDPHS Endpoint Clear Status Register (endpoint = 5)"]
     #[inline(always)]
     pub const fn eptclrsta5(&self) -> &EPTCLRSTA5 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(440usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(440).cast() }
     }
     #[doc = "0x1bc - UDPHS Endpoint Status Register (endpoint = 5)"]
     #[inline(always)]
     pub const fn isoendpt_eptsta5_isoendpt(&self) -> &ISOENDPT_EPTSTA5_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(444usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(444).cast() }
     }
     #[doc = "0x1bc - UDPHS Endpoint Status Register (endpoint = 5)"]
     #[inline(always)]
     pub const fn eptsta5(&self) -> &EPTSTA5 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(444usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(444).cast() }
+    }
+    #[doc = "0x1c0 - UDPHS Endpoint Configuration Register (endpoint = 6)"]
+    #[inline(always)]
+    pub const fn eptcfg6(&self) -> &EPTCFG6 {
+        &self.eptcfg6
     }
     #[doc = "0x1c4 - UDPHS Endpoint Control Enable Register (endpoint = 6)"]
     #[inline(always)]
     pub const fn isoendpt_eptctlenb6_isoendpt(&self) -> &ISOENDPT_EPTCTLENB6_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(452usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(452).cast() }
     }
     #[doc = "0x1c4 - UDPHS Endpoint Control Enable Register (endpoint = 6)"]
     #[inline(always)]
     pub const fn eptctlenb6(&self) -> &EPTCTLENB6 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(452usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(452).cast() }
     }
     #[doc = "0x1c8 - UDPHS Endpoint Control Disable Register (endpoint = 6)"]
     #[inline(always)]
     pub const fn isoendpt_eptctldis6_isoendpt(&self) -> &ISOENDPT_EPTCTLDIS6_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(456usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(456).cast() }
     }
     #[doc = "0x1c8 - UDPHS Endpoint Control Disable Register (endpoint = 6)"]
     #[inline(always)]
     pub const fn eptctldis6(&self) -> &EPTCTLDIS6 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(456usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(456).cast() }
     }
     #[doc = "0x1cc - UDPHS Endpoint Control Register (endpoint = 6)"]
     #[inline(always)]
     pub const fn isoendpt_eptctl6_isoendpt(&self) -> &ISOENDPT_EPTCTL6_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(460usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(460).cast() }
     }
     #[doc = "0x1cc - UDPHS Endpoint Control Register (endpoint = 6)"]
     #[inline(always)]
     pub const fn eptctl6(&self) -> &EPTCTL6 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(460usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(460).cast() }
     }
     #[doc = "0x1d4 - UDPHS Endpoint Set Status Register (endpoint = 6)"]
     #[inline(always)]
     pub const fn isoendpt_eptsetsta6_isoendpt(&self) -> &ISOENDPT_EPTSETSTA6_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(468usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(468).cast() }
     }
     #[doc = "0x1d4 - UDPHS Endpoint Set Status Register (endpoint = 6)"]
     #[inline(always)]
     pub const fn eptsetsta6(&self) -> &EPTSETSTA6 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(468usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(468).cast() }
     }
     #[doc = "0x1d8 - UDPHS Endpoint Clear Status Register (endpoint = 6)"]
     #[inline(always)]
     pub const fn isoendpt_eptclrsta6_isoendpt(&self) -> &ISOENDPT_EPTCLRSTA6_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(472usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(472).cast() }
     }
     #[doc = "0x1d8 - UDPHS Endpoint Clear Status Register (endpoint = 6)"]
     #[inline(always)]
     pub const fn eptclrsta6(&self) -> &EPTCLRSTA6 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(472usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(472).cast() }
     }
     #[doc = "0x1dc - UDPHS Endpoint Status Register (endpoint = 6)"]
     #[inline(always)]
     pub const fn isoendpt_eptsta6_isoendpt(&self) -> &ISOENDPT_EPTSTA6_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(476usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(476).cast() }
     }
     #[doc = "0x1dc - UDPHS Endpoint Status Register (endpoint = 6)"]
     #[inline(always)]
     pub const fn eptsta6(&self) -> &EPTSTA6 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(476usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(476).cast() }
+    }
+    #[doc = "0x300 - UDPHS DMA Next Descriptor Address Register (channel = 0)"]
+    #[inline(always)]
+    pub const fn dmanxtdsc0(&self) -> &DMANXTDSC0 {
+        &self.dmanxtdsc0
+    }
+    #[doc = "0x304 - UDPHS DMA Channel Address Register (channel = 0)"]
+    #[inline(always)]
+    pub const fn dmaaddress0(&self) -> &DMAADDRESS0 {
+        &self.dmaaddress0
+    }
+    #[doc = "0x308 - UDPHS DMA Channel Control Register (channel = 0)"]
+    #[inline(always)]
+    pub const fn dmacontrol0(&self) -> &DMACONTROL0 {
+        &self.dmacontrol0
+    }
+    #[doc = "0x30c - UDPHS DMA Channel Status Register (channel = 0)"]
+    #[inline(always)]
+    pub const fn dmastatus0(&self) -> &DMASTATUS0 {
+        &self.dmastatus0
+    }
+    #[doc = "0x310 - UDPHS DMA Next Descriptor Address Register (channel = 1)"]
+    #[inline(always)]
+    pub const fn dmanxtdsc1(&self) -> &DMANXTDSC1 {
+        &self.dmanxtdsc1
+    }
+    #[doc = "0x314 - UDPHS DMA Channel Address Register (channel = 1)"]
+    #[inline(always)]
+    pub const fn dmaaddress1(&self) -> &DMAADDRESS1 {
+        &self.dmaaddress1
+    }
+    #[doc = "0x318 - UDPHS DMA Channel Control Register (channel = 1)"]
+    #[inline(always)]
+    pub const fn dmacontrol1(&self) -> &DMACONTROL1 {
+        &self.dmacontrol1
+    }
+    #[doc = "0x31c - UDPHS DMA Channel Status Register (channel = 1)"]
+    #[inline(always)]
+    pub const fn dmastatus1(&self) -> &DMASTATUS1 {
+        &self.dmastatus1
+    }
+    #[doc = "0x320 - UDPHS DMA Next Descriptor Address Register (channel = 2)"]
+    #[inline(always)]
+    pub const fn dmanxtdsc2(&self) -> &DMANXTDSC2 {
+        &self.dmanxtdsc2
+    }
+    #[doc = "0x324 - UDPHS DMA Channel Address Register (channel = 2)"]
+    #[inline(always)]
+    pub const fn dmaaddress2(&self) -> &DMAADDRESS2 {
+        &self.dmaaddress2
+    }
+    #[doc = "0x328 - UDPHS DMA Channel Control Register (channel = 2)"]
+    #[inline(always)]
+    pub const fn dmacontrol2(&self) -> &DMACONTROL2 {
+        &self.dmacontrol2
+    }
+    #[doc = "0x32c - UDPHS DMA Channel Status Register (channel = 2)"]
+    #[inline(always)]
+    pub const fn dmastatus2(&self) -> &DMASTATUS2 {
+        &self.dmastatus2
+    }
+    #[doc = "0x330 - UDPHS DMA Next Descriptor Address Register (channel = 3)"]
+    #[inline(always)]
+    pub const fn dmanxtdsc3(&self) -> &DMANXTDSC3 {
+        &self.dmanxtdsc3
+    }
+    #[doc = "0x334 - UDPHS DMA Channel Address Register (channel = 3)"]
+    #[inline(always)]
+    pub const fn dmaaddress3(&self) -> &DMAADDRESS3 {
+        &self.dmaaddress3
+    }
+    #[doc = "0x338 - UDPHS DMA Channel Control Register (channel = 3)"]
+    #[inline(always)]
+    pub const fn dmacontrol3(&self) -> &DMACONTROL3 {
+        &self.dmacontrol3
+    }
+    #[doc = "0x33c - UDPHS DMA Channel Status Register (channel = 3)"]
+    #[inline(always)]
+    pub const fn dmastatus3(&self) -> &DMASTATUS3 {
+        &self.dmastatus3
+    }
+    #[doc = "0x340 - UDPHS DMA Next Descriptor Address Register (channel = 4)"]
+    #[inline(always)]
+    pub const fn dmanxtdsc4(&self) -> &DMANXTDSC4 {
+        &self.dmanxtdsc4
+    }
+    #[doc = "0x344 - UDPHS DMA Channel Address Register (channel = 4)"]
+    #[inline(always)]
+    pub const fn dmaaddress4(&self) -> &DMAADDRESS4 {
+        &self.dmaaddress4
+    }
+    #[doc = "0x348 - UDPHS DMA Channel Control Register (channel = 4)"]
+    #[inline(always)]
+    pub const fn dmacontrol4(&self) -> &DMACONTROL4 {
+        &self.dmacontrol4
+    }
+    #[doc = "0x34c - UDPHS DMA Channel Status Register (channel = 4)"]
+    #[inline(always)]
+    pub const fn dmastatus4(&self) -> &DMASTATUS4 {
+        &self.dmastatus4
+    }
+    #[doc = "0x350 - UDPHS DMA Next Descriptor Address Register (channel = 5)"]
+    #[inline(always)]
+    pub const fn dmanxtdsc5(&self) -> &DMANXTDSC5 {
+        &self.dmanxtdsc5
+    }
+    #[doc = "0x354 - UDPHS DMA Channel Address Register (channel = 5)"]
+    #[inline(always)]
+    pub const fn dmaaddress5(&self) -> &DMAADDRESS5 {
+        &self.dmaaddress5
+    }
+    #[doc = "0x358 - UDPHS DMA Channel Control Register (channel = 5)"]
+    #[inline(always)]
+    pub const fn dmacontrol5(&self) -> &DMACONTROL5 {
+        &self.dmacontrol5
+    }
+    #[doc = "0x35c - UDPHS DMA Channel Status Register (channel = 5)"]
+    #[inline(always)]
+    pub const fn dmastatus5(&self) -> &DMASTATUS5 {
+        &self.dmastatus5
     }
 }
 #[doc = "CTRL (rw) register accessor: UDPHS Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctrl`]

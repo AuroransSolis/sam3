@@ -5,7 +5,7 @@ pub type W = crate::W<SMR_SPEC>;
 #[doc = "Field `SADR` reader - Slave Address"]
 pub type SADR_R = crate::FieldReader;
 #[doc = "Field `SADR` writer - Slave Address"]
-pub type SADR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type SADR_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 impl R {
     #[doc = "Bits 16:22 - Slave Address"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 16:22 - Slave Address"]
     #[inline(always)]
     #[must_use]
-    pub fn sadr(&mut self) -> SADR_W<SMR_SPEC, 16> {
-        SADR_W::new(self)
+    pub fn sadr(&mut self) -> SADR_W<SMR_SPEC> {
+        SADR_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

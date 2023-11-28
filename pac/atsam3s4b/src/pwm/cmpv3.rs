@@ -5,11 +5,11 @@ pub type W = crate::W<CMPV3_SPEC>;
 #[doc = "Field `CV` reader - Comparison x Value"]
 pub type CV_R = crate::FieldReader<u32>;
 #[doc = "Field `CV` writer - Comparison x Value"]
-pub type CV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 24, O, u32>;
+pub type CV_W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 #[doc = "Field `CVM` reader - Comparison x Value Mode"]
 pub type CVM_R = crate::BitReader;
 #[doc = "Field `CVM` writer - Comparison x Value Mode"]
-pub type CVM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CVM_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:23 - Comparison x Value"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:23 - Comparison x Value"]
     #[inline(always)]
     #[must_use]
-    pub fn cv(&mut self) -> CV_W<CMPV3_SPEC, 0> {
-        CV_W::new(self)
+    pub fn cv(&mut self) -> CV_W<CMPV3_SPEC> {
+        CV_W::new(self, 0)
     }
     #[doc = "Bit 24 - Comparison x Value Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn cvm(&mut self) -> CVM_W<CMPV3_SPEC, 24> {
-        CVM_W::new(self)
+    pub fn cvm(&mut self) -> CVM_W<CMPV3_SPEC> {
+        CVM_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,27 +5,27 @@ pub type W = crate::W<MR_SPEC>;
 #[doc = "Field `RTPRES` reader - Real-time Timer Prescaler Value"]
 pub type RTPRES_R = crate::FieldReader<u16>;
 #[doc = "Field `RTPRES` writer - Real-time Timer Prescaler Value"]
-pub type RTPRES_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type RTPRES_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `ALMIEN` reader - Alarm Interrupt Enable"]
 pub type ALMIEN_R = crate::BitReader;
 #[doc = "Field `ALMIEN` writer - Alarm Interrupt Enable"]
-pub type ALMIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ALMIEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RTTINCIEN` reader - Real-time Timer Increment Interrupt Enable"]
 pub type RTTINCIEN_R = crate::BitReader;
 #[doc = "Field `RTTINCIEN` writer - Real-time Timer Increment Interrupt Enable"]
-pub type RTTINCIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RTTINCIEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RTTRST` reader - Real-time Timer Restart"]
 pub type RTTRST_R = crate::BitReader;
 #[doc = "Field `RTTRST` writer - Real-time Timer Restart"]
-pub type RTTRST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RTTRST_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RTTDIS` reader - Real-time Timer Disable"]
 pub type RTTDIS_R = crate::BitReader;
 #[doc = "Field `RTTDIS` writer - Real-time Timer Disable"]
-pub type RTTDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RTTDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RTC1HZ` reader - Real-Time Clock 1Hz Clock Selection"]
 pub type RTC1HZ_R = crate::BitReader;
 #[doc = "Field `RTC1HZ` writer - Real-Time Clock 1Hz Clock Selection"]
-pub type RTC1HZ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RTC1HZ_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:15 - Real-time Timer Prescaler Value"]
     #[inline(always)]
@@ -62,38 +62,38 @@ impl W {
     #[doc = "Bits 0:15 - Real-time Timer Prescaler Value"]
     #[inline(always)]
     #[must_use]
-    pub fn rtpres(&mut self) -> RTPRES_W<MR_SPEC, 0> {
-        RTPRES_W::new(self)
+    pub fn rtpres(&mut self) -> RTPRES_W<MR_SPEC> {
+        RTPRES_W::new(self, 0)
     }
     #[doc = "Bit 16 - Alarm Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn almien(&mut self) -> ALMIEN_W<MR_SPEC, 16> {
-        ALMIEN_W::new(self)
+    pub fn almien(&mut self) -> ALMIEN_W<MR_SPEC> {
+        ALMIEN_W::new(self, 16)
     }
     #[doc = "Bit 17 - Real-time Timer Increment Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rttincien(&mut self) -> RTTINCIEN_W<MR_SPEC, 17> {
-        RTTINCIEN_W::new(self)
+    pub fn rttincien(&mut self) -> RTTINCIEN_W<MR_SPEC> {
+        RTTINCIEN_W::new(self, 17)
     }
     #[doc = "Bit 18 - Real-time Timer Restart"]
     #[inline(always)]
     #[must_use]
-    pub fn rttrst(&mut self) -> RTTRST_W<MR_SPEC, 18> {
-        RTTRST_W::new(self)
+    pub fn rttrst(&mut self) -> RTTRST_W<MR_SPEC> {
+        RTTRST_W::new(self, 18)
     }
     #[doc = "Bit 20 - Real-time Timer Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn rttdis(&mut self) -> RTTDIS_W<MR_SPEC, 20> {
-        RTTDIS_W::new(self)
+    pub fn rttdis(&mut self) -> RTTDIS_W<MR_SPEC> {
+        RTTDIS_W::new(self, 20)
     }
     #[doc = "Bit 24 - Real-Time Clock 1Hz Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn rtc1hz(&mut self) -> RTC1HZ_W<MR_SPEC, 24> {
-        RTC1HZ_W::new(self)
+    pub fn rtc1hz(&mut self) -> RTC1HZ_W<MR_SPEC> {
+        RTC1HZ_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

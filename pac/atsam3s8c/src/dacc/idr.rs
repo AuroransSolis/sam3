@@ -1,37 +1,37 @@
 #[doc = "Register `IDR` writer"]
 pub type W = crate::W<IDR_SPEC>;
 #[doc = "Field `TXRDY` writer - Transmit Ready Interrupt Disable."]
-pub type TXRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXRDY_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EOC` writer - End of Conversion Interrupt Disable"]
-pub type EOC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EOC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ENDTX` writer - End of Transmit Buffer Interrupt Disable"]
-pub type ENDTX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ENDTX_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXBUFE` writer - Transmit Buffer Empty Interrupt Disable"]
-pub type TXBUFE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXBUFE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Transmit Ready Interrupt Disable."]
     #[inline(always)]
     #[must_use]
-    pub fn txrdy(&mut self) -> TXRDY_W<IDR_SPEC, 0> {
-        TXRDY_W::new(self)
+    pub fn txrdy(&mut self) -> TXRDY_W<IDR_SPEC> {
+        TXRDY_W::new(self, 0)
     }
     #[doc = "Bit 1 - End of Conversion Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn eoc(&mut self) -> EOC_W<IDR_SPEC, 1> {
-        EOC_W::new(self)
+    pub fn eoc(&mut self) -> EOC_W<IDR_SPEC> {
+        EOC_W::new(self, 1)
     }
     #[doc = "Bit 2 - End of Transmit Buffer Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn endtx(&mut self) -> ENDTX_W<IDR_SPEC, 2> {
-        ENDTX_W::new(self)
+    pub fn endtx(&mut self) -> ENDTX_W<IDR_SPEC> {
+        ENDTX_W::new(self, 2)
     }
     #[doc = "Bit 3 - Transmit Buffer Empty Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn txbufe(&mut self) -> TXBUFE_W<IDR_SPEC, 3> {
-        TXBUFE_W::new(self)
+    pub fn txbufe(&mut self) -> TXBUFE_W<IDR_SPEC> {
+        TXBUFE_W::new(self, 3)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

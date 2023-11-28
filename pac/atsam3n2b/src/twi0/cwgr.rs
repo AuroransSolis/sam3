@@ -5,15 +5,15 @@ pub type W = crate::W<CWGR_SPEC>;
 #[doc = "Field `CLDIV` reader - Clock Low Divider"]
 pub type CLDIV_R = crate::FieldReader;
 #[doc = "Field `CLDIV` writer - Clock Low Divider"]
-pub type CLDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type CLDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `CHDIV` reader - Clock High Divider"]
 pub type CHDIV_R = crate::FieldReader;
 #[doc = "Field `CHDIV` writer - Clock High Divider"]
-pub type CHDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type CHDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `CKDIV` reader - Clock Divider"]
 pub type CKDIV_R = crate::FieldReader;
 #[doc = "Field `CKDIV` writer - Clock Divider"]
-pub type CKDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type CKDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 0:7 - Clock Low Divider"]
     #[inline(always)]
@@ -35,20 +35,20 @@ impl W {
     #[doc = "Bits 0:7 - Clock Low Divider"]
     #[inline(always)]
     #[must_use]
-    pub fn cldiv(&mut self) -> CLDIV_W<CWGR_SPEC, 0> {
-        CLDIV_W::new(self)
+    pub fn cldiv(&mut self) -> CLDIV_W<CWGR_SPEC> {
+        CLDIV_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Clock High Divider"]
     #[inline(always)]
     #[must_use]
-    pub fn chdiv(&mut self) -> CHDIV_W<CWGR_SPEC, 8> {
-        CHDIV_W::new(self)
+    pub fn chdiv(&mut self) -> CHDIV_W<CWGR_SPEC> {
+        CHDIV_W::new(self, 8)
     }
     #[doc = "Bits 16:18 - Clock Divider"]
     #[inline(always)]
     #[must_use]
-    pub fn ckdiv(&mut self) -> CKDIV_W<CWGR_SPEC, 16> {
-        CKDIV_W::new(self)
+    pub fn ckdiv(&mut self) -> CKDIV_W<CWGR_SPEC> {
+        CKDIV_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,7 +5,7 @@ pub type W = crate::W<TUND_SPEC>;
 #[doc = "Field `TUND` reader - Transmit Underruns"]
 pub type TUND_R = crate::FieldReader;
 #[doc = "Field `TUND` writer - Transmit Underruns"]
-pub type TUND_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type TUND_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Transmit Underruns"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - Transmit Underruns"]
     #[inline(always)]
     #[must_use]
-    pub fn tund(&mut self) -> TUND_W<TUND_SPEC, 0> {
-        TUND_W::new(self)
+    pub fn tund(&mut self) -> TUND_W<TUND_SPEC> {
+        TUND_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -1,121 +1,269 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Channel Control Register (channel = 0)"]
-    pub ccr0: CCR0,
+    ccr0: CCR0,
     _reserved_1_cmr0: [u8; 0x04],
-    #[doc = "0x08 - Stepper Motor Mode Register (channel = 0)"]
-    pub smmr0: SMMR0,
+    smmr0: SMMR0,
     _reserved3: [u8; 0x04],
-    #[doc = "0x10 - Counter Value (channel = 0)"]
-    pub cv0: CV0,
-    #[doc = "0x14 - Register A (channel = 0)"]
-    pub ra0: RA0,
-    #[doc = "0x18 - Register B (channel = 0)"]
-    pub rb0: RB0,
-    #[doc = "0x1c - Register C (channel = 0)"]
-    pub rc0: RC0,
-    #[doc = "0x20 - Status Register (channel = 0)"]
-    pub sr0: SR0,
-    #[doc = "0x24 - Interrupt Enable Register (channel = 0)"]
-    pub ier0: IER0,
-    #[doc = "0x28 - Interrupt Disable Register (channel = 0)"]
-    pub idr0: IDR0,
-    #[doc = "0x2c - Interrupt Mask Register (channel = 0)"]
-    pub imr0: IMR0,
+    cv0: CV0,
+    ra0: RA0,
+    rb0: RB0,
+    rc0: RC0,
+    sr0: SR0,
+    ier0: IER0,
+    idr0: IDR0,
+    imr0: IMR0,
     _reserved11: [u8; 0x10],
-    #[doc = "0x40 - Channel Control Register (channel = 1)"]
-    pub ccr1: CCR1,
+    ccr1: CCR1,
     _reserved_12_cmr1: [u8; 0x04],
-    #[doc = "0x48 - Stepper Motor Mode Register (channel = 1)"]
-    pub smmr1: SMMR1,
+    smmr1: SMMR1,
     _reserved14: [u8; 0x04],
-    #[doc = "0x50 - Counter Value (channel = 1)"]
-    pub cv1: CV1,
-    #[doc = "0x54 - Register A (channel = 1)"]
-    pub ra1: RA1,
-    #[doc = "0x58 - Register B (channel = 1)"]
-    pub rb1: RB1,
-    #[doc = "0x5c - Register C (channel = 1)"]
-    pub rc1: RC1,
-    #[doc = "0x60 - Status Register (channel = 1)"]
-    pub sr1: SR1,
-    #[doc = "0x64 - Interrupt Enable Register (channel = 1)"]
-    pub ier1: IER1,
-    #[doc = "0x68 - Interrupt Disable Register (channel = 1)"]
-    pub idr1: IDR1,
-    #[doc = "0x6c - Interrupt Mask Register (channel = 1)"]
-    pub imr1: IMR1,
+    cv1: CV1,
+    ra1: RA1,
+    rb1: RB1,
+    rc1: RC1,
+    sr1: SR1,
+    ier1: IER1,
+    idr1: IDR1,
+    imr1: IMR1,
     _reserved22: [u8; 0x10],
-    #[doc = "0x80 - Channel Control Register (channel = 2)"]
-    pub ccr2: CCR2,
+    ccr2: CCR2,
     _reserved_23_cmr2: [u8; 0x04],
-    #[doc = "0x88 - Stepper Motor Mode Register (channel = 2)"]
-    pub smmr2: SMMR2,
+    smmr2: SMMR2,
     _reserved25: [u8; 0x04],
-    #[doc = "0x90 - Counter Value (channel = 2)"]
-    pub cv2: CV2,
-    #[doc = "0x94 - Register A (channel = 2)"]
-    pub ra2: RA2,
-    #[doc = "0x98 - Register B (channel = 2)"]
-    pub rb2: RB2,
-    #[doc = "0x9c - Register C (channel = 2)"]
-    pub rc2: RC2,
-    #[doc = "0xa0 - Status Register (channel = 2)"]
-    pub sr2: SR2,
-    #[doc = "0xa4 - Interrupt Enable Register (channel = 2)"]
-    pub ier2: IER2,
-    #[doc = "0xa8 - Interrupt Disable Register (channel = 2)"]
-    pub idr2: IDR2,
-    #[doc = "0xac - Interrupt Mask Register (channel = 2)"]
-    pub imr2: IMR2,
+    cv2: CV2,
+    ra2: RA2,
+    rb2: RB2,
+    rc2: RC2,
+    sr2: SR2,
+    ier2: IER2,
+    idr2: IDR2,
+    imr2: IMR2,
     _reserved33: [u8; 0x10],
-    #[doc = "0xc0 - Block Control Register"]
-    pub bcr: BCR,
-    #[doc = "0xc4 - Block Mode Register"]
-    pub bmr: BMR,
-    #[doc = "0xc8 - QDEC Interrupt Enable Register"]
-    pub qier: QIER,
-    #[doc = "0xcc - QDEC Interrupt Disable Register"]
-    pub qidr: QIDR,
-    #[doc = "0xd0 - QDEC Interrupt Mask Register"]
-    pub qimr: QIMR,
-    #[doc = "0xd4 - QDEC Interrupt Status Register"]
-    pub qisr: QISR,
+    bcr: BCR,
+    bmr: BMR,
+    qier: QIER,
+    qidr: QIDR,
+    qimr: QIMR,
+    qisr: QISR,
     _reserved39: [u8; 0x0c],
-    #[doc = "0xe4 - Write Protection Mode Register"]
-    pub wpmr: WPMR,
+    wpmr: WPMR,
 }
 impl RegisterBlock {
+    #[doc = "0x00 - Channel Control Register (channel = 0)"]
+    #[inline(always)]
+    pub const fn ccr0(&self) -> &CCR0 {
+        &self.ccr0
+    }
     #[doc = "0x04 - Channel Mode Register (channel = 0)"]
     #[inline(always)]
     pub const fn waveform_mode_cmr0_waveform_mode(&self) -> &WAVEFORM_MODE_CMR0_WAVEFORM_MODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(4usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(4).cast() }
     }
     #[doc = "0x04 - Channel Mode Register (channel = 0)"]
     #[inline(always)]
     pub const fn cmr0(&self) -> &CMR0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(4usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(4).cast() }
+    }
+    #[doc = "0x08 - Stepper Motor Mode Register (channel = 0)"]
+    #[inline(always)]
+    pub const fn smmr0(&self) -> &SMMR0 {
+        &self.smmr0
+    }
+    #[doc = "0x10 - Counter Value (channel = 0)"]
+    #[inline(always)]
+    pub const fn cv0(&self) -> &CV0 {
+        &self.cv0
+    }
+    #[doc = "0x14 - Register A (channel = 0)"]
+    #[inline(always)]
+    pub const fn ra0(&self) -> &RA0 {
+        &self.ra0
+    }
+    #[doc = "0x18 - Register B (channel = 0)"]
+    #[inline(always)]
+    pub const fn rb0(&self) -> &RB0 {
+        &self.rb0
+    }
+    #[doc = "0x1c - Register C (channel = 0)"]
+    #[inline(always)]
+    pub const fn rc0(&self) -> &RC0 {
+        &self.rc0
+    }
+    #[doc = "0x20 - Status Register (channel = 0)"]
+    #[inline(always)]
+    pub const fn sr0(&self) -> &SR0 {
+        &self.sr0
+    }
+    #[doc = "0x24 - Interrupt Enable Register (channel = 0)"]
+    #[inline(always)]
+    pub const fn ier0(&self) -> &IER0 {
+        &self.ier0
+    }
+    #[doc = "0x28 - Interrupt Disable Register (channel = 0)"]
+    #[inline(always)]
+    pub const fn idr0(&self) -> &IDR0 {
+        &self.idr0
+    }
+    #[doc = "0x2c - Interrupt Mask Register (channel = 0)"]
+    #[inline(always)]
+    pub const fn imr0(&self) -> &IMR0 {
+        &self.imr0
+    }
+    #[doc = "0x40 - Channel Control Register (channel = 1)"]
+    #[inline(always)]
+    pub const fn ccr1(&self) -> &CCR1 {
+        &self.ccr1
     }
     #[doc = "0x44 - Channel Mode Register (channel = 1)"]
     #[inline(always)]
     pub const fn waveform_mode_cmr1_waveform_mode(&self) -> &WAVEFORM_MODE_CMR1_WAVEFORM_MODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(68usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(68).cast() }
     }
     #[doc = "0x44 - Channel Mode Register (channel = 1)"]
     #[inline(always)]
     pub const fn cmr1(&self) -> &CMR1 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(68usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(68).cast() }
+    }
+    #[doc = "0x48 - Stepper Motor Mode Register (channel = 1)"]
+    #[inline(always)]
+    pub const fn smmr1(&self) -> &SMMR1 {
+        &self.smmr1
+    }
+    #[doc = "0x50 - Counter Value (channel = 1)"]
+    #[inline(always)]
+    pub const fn cv1(&self) -> &CV1 {
+        &self.cv1
+    }
+    #[doc = "0x54 - Register A (channel = 1)"]
+    #[inline(always)]
+    pub const fn ra1(&self) -> &RA1 {
+        &self.ra1
+    }
+    #[doc = "0x58 - Register B (channel = 1)"]
+    #[inline(always)]
+    pub const fn rb1(&self) -> &RB1 {
+        &self.rb1
+    }
+    #[doc = "0x5c - Register C (channel = 1)"]
+    #[inline(always)]
+    pub const fn rc1(&self) -> &RC1 {
+        &self.rc1
+    }
+    #[doc = "0x60 - Status Register (channel = 1)"]
+    #[inline(always)]
+    pub const fn sr1(&self) -> &SR1 {
+        &self.sr1
+    }
+    #[doc = "0x64 - Interrupt Enable Register (channel = 1)"]
+    #[inline(always)]
+    pub const fn ier1(&self) -> &IER1 {
+        &self.ier1
+    }
+    #[doc = "0x68 - Interrupt Disable Register (channel = 1)"]
+    #[inline(always)]
+    pub const fn idr1(&self) -> &IDR1 {
+        &self.idr1
+    }
+    #[doc = "0x6c - Interrupt Mask Register (channel = 1)"]
+    #[inline(always)]
+    pub const fn imr1(&self) -> &IMR1 {
+        &self.imr1
+    }
+    #[doc = "0x80 - Channel Control Register (channel = 2)"]
+    #[inline(always)]
+    pub const fn ccr2(&self) -> &CCR2 {
+        &self.ccr2
     }
     #[doc = "0x84 - Channel Mode Register (channel = 2)"]
     #[inline(always)]
     pub const fn waveform_mode_cmr2_waveform_mode(&self) -> &WAVEFORM_MODE_CMR2_WAVEFORM_MODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(132usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(132).cast() }
     }
     #[doc = "0x84 - Channel Mode Register (channel = 2)"]
     #[inline(always)]
     pub const fn cmr2(&self) -> &CMR2 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(132usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(132).cast() }
+    }
+    #[doc = "0x88 - Stepper Motor Mode Register (channel = 2)"]
+    #[inline(always)]
+    pub const fn smmr2(&self) -> &SMMR2 {
+        &self.smmr2
+    }
+    #[doc = "0x90 - Counter Value (channel = 2)"]
+    #[inline(always)]
+    pub const fn cv2(&self) -> &CV2 {
+        &self.cv2
+    }
+    #[doc = "0x94 - Register A (channel = 2)"]
+    #[inline(always)]
+    pub const fn ra2(&self) -> &RA2 {
+        &self.ra2
+    }
+    #[doc = "0x98 - Register B (channel = 2)"]
+    #[inline(always)]
+    pub const fn rb2(&self) -> &RB2 {
+        &self.rb2
+    }
+    #[doc = "0x9c - Register C (channel = 2)"]
+    #[inline(always)]
+    pub const fn rc2(&self) -> &RC2 {
+        &self.rc2
+    }
+    #[doc = "0xa0 - Status Register (channel = 2)"]
+    #[inline(always)]
+    pub const fn sr2(&self) -> &SR2 {
+        &self.sr2
+    }
+    #[doc = "0xa4 - Interrupt Enable Register (channel = 2)"]
+    #[inline(always)]
+    pub const fn ier2(&self) -> &IER2 {
+        &self.ier2
+    }
+    #[doc = "0xa8 - Interrupt Disable Register (channel = 2)"]
+    #[inline(always)]
+    pub const fn idr2(&self) -> &IDR2 {
+        &self.idr2
+    }
+    #[doc = "0xac - Interrupt Mask Register (channel = 2)"]
+    #[inline(always)]
+    pub const fn imr2(&self) -> &IMR2 {
+        &self.imr2
+    }
+    #[doc = "0xc0 - Block Control Register"]
+    #[inline(always)]
+    pub const fn bcr(&self) -> &BCR {
+        &self.bcr
+    }
+    #[doc = "0xc4 - Block Mode Register"]
+    #[inline(always)]
+    pub const fn bmr(&self) -> &BMR {
+        &self.bmr
+    }
+    #[doc = "0xc8 - QDEC Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn qier(&self) -> &QIER {
+        &self.qier
+    }
+    #[doc = "0xcc - QDEC Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn qidr(&self) -> &QIDR {
+        &self.qidr
+    }
+    #[doc = "0xd0 - QDEC Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn qimr(&self) -> &QIMR {
+        &self.qimr
+    }
+    #[doc = "0xd4 - QDEC Interrupt Status Register"]
+    #[inline(always)]
+    pub const fn qisr(&self) -> &QISR {
+        &self.qisr
+    }
+    #[doc = "0xe4 - Write Protection Mode Register"]
+    #[inline(always)]
+    pub const fn wpmr(&self) -> &WPMR {
+        &self.wpmr
     }
 }
 #[doc = "CCR0 (w) register accessor: Channel Control Register (channel = 0)\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ccr0::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ccr0`]

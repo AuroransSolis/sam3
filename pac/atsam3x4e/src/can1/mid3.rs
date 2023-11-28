@@ -5,15 +5,15 @@ pub type W = crate::W<MID3_SPEC>;
 #[doc = "Field `MIDvB` reader - Complementary bits for identifier in extended frame mode"]
 pub type MIDV_B_R = crate::FieldReader<u32>;
 #[doc = "Field `MIDvB` writer - Complementary bits for identifier in extended frame mode"]
-pub type MIDV_B_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 18, O, u32>;
+pub type MIDV_B_W<'a, REG> = crate::FieldWriter<'a, REG, 18, u32>;
 #[doc = "Field `MIDvA` reader - Identifier for standard frame mode"]
 pub type MIDV_A_R = crate::FieldReader<u16>;
 #[doc = "Field `MIDvA` writer - Identifier for standard frame mode"]
-pub type MIDV_A_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 11, O, u16>;
+pub type MIDV_A_W<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 #[doc = "Field `MIDE` reader - Identifier Version"]
 pub type MIDE_R = crate::BitReader;
 #[doc = "Field `MIDE` writer - Identifier Version"]
-pub type MIDE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MIDE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:17 - Complementary bits for identifier in extended frame mode"]
     #[inline(always)]
@@ -35,20 +35,20 @@ impl W {
     #[doc = "Bits 0:17 - Complementary bits for identifier in extended frame mode"]
     #[inline(always)]
     #[must_use]
-    pub fn midv_b(&mut self) -> MIDV_B_W<MID3_SPEC, 0> {
-        MIDV_B_W::new(self)
+    pub fn midv_b(&mut self) -> MIDV_B_W<MID3_SPEC> {
+        MIDV_B_W::new(self, 0)
     }
     #[doc = "Bits 18:28 - Identifier for standard frame mode"]
     #[inline(always)]
     #[must_use]
-    pub fn midv_a(&mut self) -> MIDV_A_W<MID3_SPEC, 18> {
-        MIDV_A_W::new(self)
+    pub fn midv_a(&mut self) -> MIDV_A_W<MID3_SPEC> {
+        MIDV_A_W::new(self, 18)
     }
     #[doc = "Bit 29 - Identifier Version"]
     #[inline(always)]
     #[must_use]
-    pub fn mide(&mut self) -> MIDE_W<MID3_SPEC, 29> {
-        MIDE_W::new(self)
+    pub fn mide(&mut self) -> MIDE_W<MID3_SPEC> {
+        MIDE_W::new(self, 29)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

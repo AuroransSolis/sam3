@@ -5,7 +5,7 @@ pub type W = crate::W<STE_SPEC>;
 #[doc = "Field `SQER` reader - SQE test errors"]
 pub type SQER_R = crate::FieldReader;
 #[doc = "Field `SQER` writer - SQE test errors"]
-pub type SQER_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type SQER_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - SQE test errors"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - SQE test errors"]
     #[inline(always)]
     #[must_use]
-    pub fn sqer(&mut self) -> SQER_W<STE_SPEC, 0> {
-        SQER_W::new(self)
+    pub fn sqer(&mut self) -> SQER_W<STE_SPEC> {
+        SQER_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

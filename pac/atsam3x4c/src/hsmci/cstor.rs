@@ -5,7 +5,7 @@ pub type W = crate::W<CSTOR_SPEC>;
 #[doc = "Field `CSTOCYC` reader - Completion Signal Timeout Cycle Number"]
 pub type CSTOCYC_R = crate::FieldReader;
 #[doc = "Field `CSTOCYC` writer - Completion Signal Timeout Cycle Number"]
-pub type CSTOCYC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type CSTOCYC_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CSTOMUL` reader - Completion Signal Timeout Multiplier"]
 pub type CSTOMUL_R = crate::FieldReader<CSTOMUL_A>;
 #[doc = "Completion Signal Timeout Multiplier\n\nValue on reset: 0"]
@@ -96,8 +96,8 @@ impl CSTOMUL_R {
     }
 }
 #[doc = "Field `CSTOMUL` writer - Completion Signal Timeout Multiplier"]
-pub type CSTOMUL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, CSTOMUL_A>;
-impl<'a, REG, const O: u8> CSTOMUL_W<'a, REG, O>
+pub type CSTOMUL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, CSTOMUL_A>;
+impl<'a, REG> CSTOMUL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -159,14 +159,14 @@ impl W {
     #[doc = "Bits 0:3 - Completion Signal Timeout Cycle Number"]
     #[inline(always)]
     #[must_use]
-    pub fn cstocyc(&mut self) -> CSTOCYC_W<CSTOR_SPEC, 0> {
-        CSTOCYC_W::new(self)
+    pub fn cstocyc(&mut self) -> CSTOCYC_W<CSTOR_SPEC> {
+        CSTOCYC_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Completion Signal Timeout Multiplier"]
     #[inline(always)]
     #[must_use]
-    pub fn cstomul(&mut self) -> CSTOMUL_W<CSTOR_SPEC, 4> {
-        CSTOMUL_W::new(self)
+    pub fn cstomul(&mut self) -> CSTOMUL_W<CSTOR_SPEC> {
+        CSTOMUL_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

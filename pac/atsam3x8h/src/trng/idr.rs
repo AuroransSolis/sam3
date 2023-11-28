@@ -1,13 +1,13 @@
 #[doc = "Register `IDR` writer"]
 pub type W = crate::W<IDR_SPEC>;
 #[doc = "Field `DATRDY` writer - Data Ready Interrupt Disable"]
-pub type DATRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DATRDY_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Data Ready Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn datrdy(&mut self) -> DATRDY_W<IDR_SPEC, 0> {
-        DATRDY_W::new(self)
+    pub fn datrdy(&mut self) -> DATRDY_W<IDR_SPEC> {
+        DATRDY_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

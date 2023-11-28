@@ -5,7 +5,7 @@ pub type W = crate::W<ELE_SPEC>;
 #[doc = "Field `EXL` reader - Excessive Length Errors"]
 pub type EXL_R = crate::FieldReader;
 #[doc = "Field `EXL` writer - Excessive Length Errors"]
-pub type EXL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type EXL_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Excessive Length Errors"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - Excessive Length Errors"]
     #[inline(always)]
     #[must_use]
-    pub fn exl(&mut self) -> EXL_W<ELE_SPEC, 0> {
-        EXL_W::new(self)
+    pub fn exl(&mut self) -> EXL_W<ELE_SPEC> {
+        EXL_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

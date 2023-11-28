@@ -1,13 +1,13 @@
 #[doc = "Register `SCUPUPD` writer"]
 pub type W = crate::W<SCUPUPD_SPEC>;
 #[doc = "Field `UPRUPD` writer - Update Period Update"]
-pub type UPRUPD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type UPRUPD_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl W {
     #[doc = "Bits 0:3 - Update Period Update"]
     #[inline(always)]
     #[must_use]
-    pub fn uprupd(&mut self) -> UPRUPD_W<SCUPUPD_SPEC, 0> {
-        UPRUPD_W::new(self)
+    pub fn uprupd(&mut self) -> UPRUPD_W<SCUPUPD_SPEC> {
+        UPRUPD_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

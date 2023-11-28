@@ -5,19 +5,19 @@ pub type W = crate::W<CLK_SPEC>;
 #[doc = "Field `DIVA` reader - CLKA, CLKB Divide Factor"]
 pub type DIVA_R = crate::FieldReader;
 #[doc = "Field `DIVA` writer - CLKA, CLKB Divide Factor"]
-pub type DIVA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type DIVA_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `PREA` reader - CLKA, CLKB Source Clock Selection"]
 pub type PREA_R = crate::FieldReader;
 #[doc = "Field `PREA` writer - CLKA, CLKB Source Clock Selection"]
-pub type PREA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type PREA_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `DIVB` reader - CLKA, CLKB Divide Factor"]
 pub type DIVB_R = crate::FieldReader;
 #[doc = "Field `DIVB` writer - CLKA, CLKB Divide Factor"]
-pub type DIVB_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type DIVB_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `PREB` reader - CLKA, CLKB Source Clock Selection"]
 pub type PREB_R = crate::FieldReader;
 #[doc = "Field `PREB` writer - CLKA, CLKB Source Clock Selection"]
-pub type PREB_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type PREB_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:7 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:7 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
     #[must_use]
-    pub fn diva(&mut self) -> DIVA_W<CLK_SPEC, 0> {
-        DIVA_W::new(self)
+    pub fn diva(&mut self) -> DIVA_W<CLK_SPEC> {
+        DIVA_W::new(self, 0)
     }
     #[doc = "Bits 8:11 - CLKA, CLKB Source Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn prea(&mut self) -> PREA_W<CLK_SPEC, 8> {
-        PREA_W::new(self)
+    pub fn prea(&mut self) -> PREA_W<CLK_SPEC> {
+        PREA_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
     #[must_use]
-    pub fn divb(&mut self) -> DIVB_W<CLK_SPEC, 16> {
-        DIVB_W::new(self)
+    pub fn divb(&mut self) -> DIVB_W<CLK_SPEC> {
+        DIVB_W::new(self, 16)
     }
     #[doc = "Bits 24:27 - CLKA, CLKB Source Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn preb(&mut self) -> PREB_W<CLK_SPEC, 24> {
-        PREB_W::new(self)
+    pub fn preb(&mut self) -> PREB_W<CLK_SPEC> {
+        PREB_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

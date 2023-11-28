@@ -60,9 +60,8 @@ impl ECC_PAGESIZE_R {
     }
 }
 #[doc = "Field `ECC_PAGESIZE` writer - ECC Page Size"]
-pub type ECC_PAGESIZE_W<'a, REG, const O: u8> =
-    crate::FieldWriterSafe<'a, REG, 2, O, ECC_PAGESIZE_A>;
-impl<'a, REG, const O: u8> ECC_PAGESIZE_W<'a, REG, O>
+pub type ECC_PAGESIZE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ECC_PAGESIZE_A>;
+impl<'a, REG> ECC_PAGESIZE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -138,8 +137,8 @@ impl TYPCORREC_R {
     }
 }
 #[doc = "Field `TYPCORREC` writer - Type of Correction"]
-pub type TYPCORREC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, TYPCORREC_A>;
-impl<'a, REG, const O: u8> TYPCORREC_W<'a, REG, O>
+pub type TYPCORREC_W<'a, REG> = crate::FieldWriter<'a, REG, 2, TYPCORREC_A>;
+impl<'a, REG> TYPCORREC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -176,14 +175,14 @@ impl W {
     #[doc = "Bits 0:1 - ECC Page Size"]
     #[inline(always)]
     #[must_use]
-    pub fn ecc_pagesize(&mut self) -> ECC_PAGESIZE_W<ECC_MD_SPEC, 0> {
-        ECC_PAGESIZE_W::new(self)
+    pub fn ecc_pagesize(&mut self) -> ECC_PAGESIZE_W<ECC_MD_SPEC> {
+        ECC_PAGESIZE_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Type of Correction"]
     #[inline(always)]
     #[must_use]
-    pub fn typcorrec(&mut self) -> TYPCORREC_W<ECC_MD_SPEC, 4> {
-        TYPCORREC_W::new(self)
+    pub fn typcorrec(&mut self) -> TYPCORREC_W<ECC_MD_SPEC> {
+        TYPCORREC_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

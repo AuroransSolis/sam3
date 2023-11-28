@@ -1,61 +1,61 @@
 #[doc = "Register `HSTPIPICR2` writer"]
 pub type W = crate::W<HSTPIPICR2_SPEC>;
 #[doc = "Field `RXINIC` writer - Received IN Data Interrupt Clear"]
-pub type RXINIC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXINIC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXOUTIC` writer - Transmitted OUT Data Interrupt Clear"]
-pub type TXOUTIC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXOUTIC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXSTPIC` writer - Transmitted SETUP Interrupt Clear"]
-pub type TXSTPIC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXSTPIC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NAKEDIC` writer - NAKed Interrupt Clear"]
-pub type NAKEDIC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NAKEDIC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OVERFIC` writer - Overflow Interrupt Clear"]
-pub type OVERFIC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OVERFIC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXSTALLDIC` writer - Received STALLed Interrupt Clear"]
-pub type RXSTALLDIC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXSTALLDIC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SHORTPACKETIC` writer - Short Packet Interrupt Clear"]
-pub type SHORTPACKETIC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SHORTPACKETIC_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Received IN Data Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn rxinic(&mut self) -> RXINIC_W<HSTPIPICR2_SPEC, 0> {
-        RXINIC_W::new(self)
+    pub fn rxinic(&mut self) -> RXINIC_W<HSTPIPICR2_SPEC> {
+        RXINIC_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transmitted OUT Data Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn txoutic(&mut self) -> TXOUTIC_W<HSTPIPICR2_SPEC, 1> {
-        TXOUTIC_W::new(self)
+    pub fn txoutic(&mut self) -> TXOUTIC_W<HSTPIPICR2_SPEC> {
+        TXOUTIC_W::new(self, 1)
     }
     #[doc = "Bit 2 - Transmitted SETUP Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn txstpic(&mut self) -> TXSTPIC_W<HSTPIPICR2_SPEC, 2> {
-        TXSTPIC_W::new(self)
+    pub fn txstpic(&mut self) -> TXSTPIC_W<HSTPIPICR2_SPEC> {
+        TXSTPIC_W::new(self, 2)
     }
     #[doc = "Bit 4 - NAKed Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn nakedic(&mut self) -> NAKEDIC_W<HSTPIPICR2_SPEC, 4> {
-        NAKEDIC_W::new(self)
+    pub fn nakedic(&mut self) -> NAKEDIC_W<HSTPIPICR2_SPEC> {
+        NAKEDIC_W::new(self, 4)
     }
     #[doc = "Bit 5 - Overflow Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn overfic(&mut self) -> OVERFIC_W<HSTPIPICR2_SPEC, 5> {
-        OVERFIC_W::new(self)
+    pub fn overfic(&mut self) -> OVERFIC_W<HSTPIPICR2_SPEC> {
+        OVERFIC_W::new(self, 5)
     }
     #[doc = "Bit 6 - Received STALLed Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn rxstalldic(&mut self) -> RXSTALLDIC_W<HSTPIPICR2_SPEC, 6> {
-        RXSTALLDIC_W::new(self)
+    pub fn rxstalldic(&mut self) -> RXSTALLDIC_W<HSTPIPICR2_SPEC> {
+        RXSTALLDIC_W::new(self, 6)
     }
     #[doc = "Bit 7 - Short Packet Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn shortpacketic(&mut self) -> SHORTPACKETIC_W<HSTPIPICR2_SPEC, 7> {
-        SHORTPACKETIC_W::new(self)
+    pub fn shortpacketic(&mut self) -> SHORTPACKETIC_W<HSTPIPICR2_SPEC> {
+        SHORTPACKETIC_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

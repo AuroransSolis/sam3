@@ -5,7 +5,7 @@ pub type W = crate::W<RC1R_SPEC>;
 #[doc = "Field `CP1` reader - Receive Compare Data 1"]
 pub type CP1_R = crate::FieldReader<u16>;
 #[doc = "Field `CP1` writer - Receive Compare Data 1"]
-pub type CP1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type CP1_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Receive Compare Data 1"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - Receive Compare Data 1"]
     #[inline(always)]
     #[must_use]
-    pub fn cp1(&mut self) -> CP1_W<RC1R_SPEC, 0> {
-        CP1_W::new(self)
+    pub fn cp1(&mut self) -> CP1_W<RC1R_SPEC> {
+        CP1_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -39,8 +39,8 @@ impl WKUPEN0_R {
     }
 }
 #[doc = "Field `WKUPEN0` writer - Wake Up Input Enable 0"]
-pub type WKUPEN0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPEN0_A>;
-impl<'a, REG, const O: u8> WKUPEN0_W<'a, REG, O>
+pub type WKUPEN0_W<'a, REG> = crate::BitWriter<'a, REG, WKUPEN0_A>;
+impl<'a, REG> WKUPEN0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl WKUPEN1_R {
     }
 }
 #[doc = "Field `WKUPEN1` writer - Wake Up Input Enable 1"]
-pub type WKUPEN1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPEN1_A>;
-impl<'a, REG, const O: u8> WKUPEN1_W<'a, REG, O>
+pub type WKUPEN1_W<'a, REG> = crate::BitWriter<'a, REG, WKUPEN1_A>;
+impl<'a, REG> WKUPEN1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl WKUPEN2_R {
     }
 }
 #[doc = "Field `WKUPEN2` writer - Wake Up Input Enable 2"]
-pub type WKUPEN2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPEN2_A>;
-impl<'a, REG, const O: u8> WKUPEN2_W<'a, REG, O>
+pub type WKUPEN2_W<'a, REG> = crate::BitWriter<'a, REG, WKUPEN2_A>;
+impl<'a, REG> WKUPEN2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl WKUPEN3_R {
     }
 }
 #[doc = "Field `WKUPEN3` writer - Wake Up Input Enable 3"]
-pub type WKUPEN3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPEN3_A>;
-impl<'a, REG, const O: u8> WKUPEN3_W<'a, REG, O>
+pub type WKUPEN3_W<'a, REG> = crate::BitWriter<'a, REG, WKUPEN3_A>;
+impl<'a, REG> WKUPEN3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl WKUPEN4_R {
     }
 }
 #[doc = "Field `WKUPEN4` writer - Wake Up Input Enable 4"]
-pub type WKUPEN4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPEN4_A>;
-impl<'a, REG, const O: u8> WKUPEN4_W<'a, REG, O>
+pub type WKUPEN4_W<'a, REG> = crate::BitWriter<'a, REG, WKUPEN4_A>;
+impl<'a, REG> WKUPEN4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl WKUPEN5_R {
     }
 }
 #[doc = "Field `WKUPEN5` writer - Wake Up Input Enable 5"]
-pub type WKUPEN5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPEN5_A>;
-impl<'a, REG, const O: u8> WKUPEN5_W<'a, REG, O>
+pub type WKUPEN5_W<'a, REG> = crate::BitWriter<'a, REG, WKUPEN5_A>;
+impl<'a, REG> WKUPEN5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl WKUPEN6_R {
     }
 }
 #[doc = "Field `WKUPEN6` writer - Wake Up Input Enable 6"]
-pub type WKUPEN6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPEN6_A>;
-impl<'a, REG, const O: u8> WKUPEN6_W<'a, REG, O>
+pub type WKUPEN6_W<'a, REG> = crate::BitWriter<'a, REG, WKUPEN6_A>;
+impl<'a, REG> WKUPEN6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl WKUPEN7_R {
     }
 }
 #[doc = "Field `WKUPEN7` writer - Wake Up Input Enable 7"]
-pub type WKUPEN7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPEN7_A>;
-impl<'a, REG, const O: u8> WKUPEN7_W<'a, REG, O>
+pub type WKUPEN7_W<'a, REG> = crate::BitWriter<'a, REG, WKUPEN7_A>;
+impl<'a, REG> WKUPEN7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -463,8 +463,8 @@ impl WKUPEN8_R {
     }
 }
 #[doc = "Field `WKUPEN8` writer - Wake Up Input Enable 8"]
-pub type WKUPEN8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPEN8_A>;
-impl<'a, REG, const O: u8> WKUPEN8_W<'a, REG, O>
+pub type WKUPEN8_W<'a, REG> = crate::BitWriter<'a, REG, WKUPEN8_A>;
+impl<'a, REG> WKUPEN8_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -516,8 +516,8 @@ impl WKUPEN9_R {
     }
 }
 #[doc = "Field `WKUPEN9` writer - Wake Up Input Enable 9"]
-pub type WKUPEN9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPEN9_A>;
-impl<'a, REG, const O: u8> WKUPEN9_W<'a, REG, O>
+pub type WKUPEN9_W<'a, REG> = crate::BitWriter<'a, REG, WKUPEN9_A>;
+impl<'a, REG> WKUPEN9_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -569,8 +569,8 @@ impl WKUPEN10_R {
     }
 }
 #[doc = "Field `WKUPEN10` writer - Wake Up Input Enable 10"]
-pub type WKUPEN10_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPEN10_A>;
-impl<'a, REG, const O: u8> WKUPEN10_W<'a, REG, O>
+pub type WKUPEN10_W<'a, REG> = crate::BitWriter<'a, REG, WKUPEN10_A>;
+impl<'a, REG> WKUPEN10_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -622,8 +622,8 @@ impl WKUPEN11_R {
     }
 }
 #[doc = "Field `WKUPEN11` writer - Wake Up Input Enable 11"]
-pub type WKUPEN11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPEN11_A>;
-impl<'a, REG, const O: u8> WKUPEN11_W<'a, REG, O>
+pub type WKUPEN11_W<'a, REG> = crate::BitWriter<'a, REG, WKUPEN11_A>;
+impl<'a, REG> WKUPEN11_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -675,8 +675,8 @@ impl WKUPEN12_R {
     }
 }
 #[doc = "Field `WKUPEN12` writer - Wake Up Input Enable 12"]
-pub type WKUPEN12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPEN12_A>;
-impl<'a, REG, const O: u8> WKUPEN12_W<'a, REG, O>
+pub type WKUPEN12_W<'a, REG> = crate::BitWriter<'a, REG, WKUPEN12_A>;
+impl<'a, REG> WKUPEN12_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -728,8 +728,8 @@ impl WKUPEN13_R {
     }
 }
 #[doc = "Field `WKUPEN13` writer - Wake Up Input Enable 13"]
-pub type WKUPEN13_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPEN13_A>;
-impl<'a, REG, const O: u8> WKUPEN13_W<'a, REG, O>
+pub type WKUPEN13_W<'a, REG> = crate::BitWriter<'a, REG, WKUPEN13_A>;
+impl<'a, REG> WKUPEN13_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -781,8 +781,8 @@ impl WKUPEN14_R {
     }
 }
 #[doc = "Field `WKUPEN14` writer - Wake Up Input Enable 14"]
-pub type WKUPEN14_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPEN14_A>;
-impl<'a, REG, const O: u8> WKUPEN14_W<'a, REG, O>
+pub type WKUPEN14_W<'a, REG> = crate::BitWriter<'a, REG, WKUPEN14_A>;
+impl<'a, REG> WKUPEN14_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -834,8 +834,8 @@ impl WKUPEN15_R {
     }
 }
 #[doc = "Field `WKUPEN15` writer - Wake Up Input Enable 15"]
-pub type WKUPEN15_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPEN15_A>;
-impl<'a, REG, const O: u8> WKUPEN15_W<'a, REG, O>
+pub type WKUPEN15_W<'a, REG> = crate::BitWriter<'a, REG, WKUPEN15_A>;
+impl<'a, REG> WKUPEN15_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -887,8 +887,8 @@ impl WKUPT0_R {
     }
 }
 #[doc = "Field `WKUPT0` writer - Wake Up Input Type 0"]
-pub type WKUPT0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPT0_A>;
-impl<'a, REG, const O: u8> WKUPT0_W<'a, REG, O>
+pub type WKUPT0_W<'a, REG> = crate::BitWriter<'a, REG, WKUPT0_A>;
+impl<'a, REG> WKUPT0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -940,8 +940,8 @@ impl WKUPT1_R {
     }
 }
 #[doc = "Field `WKUPT1` writer - Wake Up Input Type 1"]
-pub type WKUPT1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPT1_A>;
-impl<'a, REG, const O: u8> WKUPT1_W<'a, REG, O>
+pub type WKUPT1_W<'a, REG> = crate::BitWriter<'a, REG, WKUPT1_A>;
+impl<'a, REG> WKUPT1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -993,8 +993,8 @@ impl WKUPT2_R {
     }
 }
 #[doc = "Field `WKUPT2` writer - Wake Up Input Type 2"]
-pub type WKUPT2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPT2_A>;
-impl<'a, REG, const O: u8> WKUPT2_W<'a, REG, O>
+pub type WKUPT2_W<'a, REG> = crate::BitWriter<'a, REG, WKUPT2_A>;
+impl<'a, REG> WKUPT2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1046,8 +1046,8 @@ impl WKUPT3_R {
     }
 }
 #[doc = "Field `WKUPT3` writer - Wake Up Input Type 3"]
-pub type WKUPT3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPT3_A>;
-impl<'a, REG, const O: u8> WKUPT3_W<'a, REG, O>
+pub type WKUPT3_W<'a, REG> = crate::BitWriter<'a, REG, WKUPT3_A>;
+impl<'a, REG> WKUPT3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1099,8 +1099,8 @@ impl WKUPT4_R {
     }
 }
 #[doc = "Field `WKUPT4` writer - Wake Up Input Type 4"]
-pub type WKUPT4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPT4_A>;
-impl<'a, REG, const O: u8> WKUPT4_W<'a, REG, O>
+pub type WKUPT4_W<'a, REG> = crate::BitWriter<'a, REG, WKUPT4_A>;
+impl<'a, REG> WKUPT4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1152,8 +1152,8 @@ impl WKUPT5_R {
     }
 }
 #[doc = "Field `WKUPT5` writer - Wake Up Input Type 5"]
-pub type WKUPT5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPT5_A>;
-impl<'a, REG, const O: u8> WKUPT5_W<'a, REG, O>
+pub type WKUPT5_W<'a, REG> = crate::BitWriter<'a, REG, WKUPT5_A>;
+impl<'a, REG> WKUPT5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1205,8 +1205,8 @@ impl WKUPT6_R {
     }
 }
 #[doc = "Field `WKUPT6` writer - Wake Up Input Type 6"]
-pub type WKUPT6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPT6_A>;
-impl<'a, REG, const O: u8> WKUPT6_W<'a, REG, O>
+pub type WKUPT6_W<'a, REG> = crate::BitWriter<'a, REG, WKUPT6_A>;
+impl<'a, REG> WKUPT6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1258,8 +1258,8 @@ impl WKUPT7_R {
     }
 }
 #[doc = "Field `WKUPT7` writer - Wake Up Input Type 7"]
-pub type WKUPT7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPT7_A>;
-impl<'a, REG, const O: u8> WKUPT7_W<'a, REG, O>
+pub type WKUPT7_W<'a, REG> = crate::BitWriter<'a, REG, WKUPT7_A>;
+impl<'a, REG> WKUPT7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1311,8 +1311,8 @@ impl WKUPT8_R {
     }
 }
 #[doc = "Field `WKUPT8` writer - Wake Up Input Type 8"]
-pub type WKUPT8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPT8_A>;
-impl<'a, REG, const O: u8> WKUPT8_W<'a, REG, O>
+pub type WKUPT8_W<'a, REG> = crate::BitWriter<'a, REG, WKUPT8_A>;
+impl<'a, REG> WKUPT8_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1364,8 +1364,8 @@ impl WKUPT9_R {
     }
 }
 #[doc = "Field `WKUPT9` writer - Wake Up Input Type 9"]
-pub type WKUPT9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPT9_A>;
-impl<'a, REG, const O: u8> WKUPT9_W<'a, REG, O>
+pub type WKUPT9_W<'a, REG> = crate::BitWriter<'a, REG, WKUPT9_A>;
+impl<'a, REG> WKUPT9_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1417,8 +1417,8 @@ impl WKUPT10_R {
     }
 }
 #[doc = "Field `WKUPT10` writer - Wake Up Input Type 10"]
-pub type WKUPT10_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPT10_A>;
-impl<'a, REG, const O: u8> WKUPT10_W<'a, REG, O>
+pub type WKUPT10_W<'a, REG> = crate::BitWriter<'a, REG, WKUPT10_A>;
+impl<'a, REG> WKUPT10_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1470,8 +1470,8 @@ impl WKUPT11_R {
     }
 }
 #[doc = "Field `WKUPT11` writer - Wake Up Input Type 11"]
-pub type WKUPT11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPT11_A>;
-impl<'a, REG, const O: u8> WKUPT11_W<'a, REG, O>
+pub type WKUPT11_W<'a, REG> = crate::BitWriter<'a, REG, WKUPT11_A>;
+impl<'a, REG> WKUPT11_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1523,8 +1523,8 @@ impl WKUPT12_R {
     }
 }
 #[doc = "Field `WKUPT12` writer - Wake Up Input Type 12"]
-pub type WKUPT12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPT12_A>;
-impl<'a, REG, const O: u8> WKUPT12_W<'a, REG, O>
+pub type WKUPT12_W<'a, REG> = crate::BitWriter<'a, REG, WKUPT12_A>;
+impl<'a, REG> WKUPT12_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1576,8 +1576,8 @@ impl WKUPT13_R {
     }
 }
 #[doc = "Field `WKUPT13` writer - Wake Up Input Type 13"]
-pub type WKUPT13_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPT13_A>;
-impl<'a, REG, const O: u8> WKUPT13_W<'a, REG, O>
+pub type WKUPT13_W<'a, REG> = crate::BitWriter<'a, REG, WKUPT13_A>;
+impl<'a, REG> WKUPT13_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1629,8 +1629,8 @@ impl WKUPT14_R {
     }
 }
 #[doc = "Field `WKUPT14` writer - Wake Up Input Type 14"]
-pub type WKUPT14_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPT14_A>;
-impl<'a, REG, const O: u8> WKUPT14_W<'a, REG, O>
+pub type WKUPT14_W<'a, REG> = crate::BitWriter<'a, REG, WKUPT14_A>;
+impl<'a, REG> WKUPT14_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1682,8 +1682,8 @@ impl WKUPT15_R {
     }
 }
 #[doc = "Field `WKUPT15` writer - Wake Up Input Type 15"]
-pub type WKUPT15_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPT15_A>;
-impl<'a, REG, const O: u8> WKUPT15_W<'a, REG, O>
+pub type WKUPT15_W<'a, REG> = crate::BitWriter<'a, REG, WKUPT15_A>;
+impl<'a, REG> WKUPT15_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1864,194 +1864,194 @@ impl W {
     #[doc = "Bit 0 - Wake Up Input Enable 0"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupen0(&mut self) -> WKUPEN0_W<WUIR_SPEC, 0> {
-        WKUPEN0_W::new(self)
+    pub fn wkupen0(&mut self) -> WKUPEN0_W<WUIR_SPEC> {
+        WKUPEN0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Wake Up Input Enable 1"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupen1(&mut self) -> WKUPEN1_W<WUIR_SPEC, 1> {
-        WKUPEN1_W::new(self)
+    pub fn wkupen1(&mut self) -> WKUPEN1_W<WUIR_SPEC> {
+        WKUPEN1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Wake Up Input Enable 2"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupen2(&mut self) -> WKUPEN2_W<WUIR_SPEC, 2> {
-        WKUPEN2_W::new(self)
+    pub fn wkupen2(&mut self) -> WKUPEN2_W<WUIR_SPEC> {
+        WKUPEN2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Wake Up Input Enable 3"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupen3(&mut self) -> WKUPEN3_W<WUIR_SPEC, 3> {
-        WKUPEN3_W::new(self)
+    pub fn wkupen3(&mut self) -> WKUPEN3_W<WUIR_SPEC> {
+        WKUPEN3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Wake Up Input Enable 4"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupen4(&mut self) -> WKUPEN4_W<WUIR_SPEC, 4> {
-        WKUPEN4_W::new(self)
+    pub fn wkupen4(&mut self) -> WKUPEN4_W<WUIR_SPEC> {
+        WKUPEN4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Wake Up Input Enable 5"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupen5(&mut self) -> WKUPEN5_W<WUIR_SPEC, 5> {
-        WKUPEN5_W::new(self)
+    pub fn wkupen5(&mut self) -> WKUPEN5_W<WUIR_SPEC> {
+        WKUPEN5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Wake Up Input Enable 6"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupen6(&mut self) -> WKUPEN6_W<WUIR_SPEC, 6> {
-        WKUPEN6_W::new(self)
+    pub fn wkupen6(&mut self) -> WKUPEN6_W<WUIR_SPEC> {
+        WKUPEN6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Wake Up Input Enable 7"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupen7(&mut self) -> WKUPEN7_W<WUIR_SPEC, 7> {
-        WKUPEN7_W::new(self)
+    pub fn wkupen7(&mut self) -> WKUPEN7_W<WUIR_SPEC> {
+        WKUPEN7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Wake Up Input Enable 8"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupen8(&mut self) -> WKUPEN8_W<WUIR_SPEC, 8> {
-        WKUPEN8_W::new(self)
+    pub fn wkupen8(&mut self) -> WKUPEN8_W<WUIR_SPEC> {
+        WKUPEN8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Wake Up Input Enable 9"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupen9(&mut self) -> WKUPEN9_W<WUIR_SPEC, 9> {
-        WKUPEN9_W::new(self)
+    pub fn wkupen9(&mut self) -> WKUPEN9_W<WUIR_SPEC> {
+        WKUPEN9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Wake Up Input Enable 10"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupen10(&mut self) -> WKUPEN10_W<WUIR_SPEC, 10> {
-        WKUPEN10_W::new(self)
+    pub fn wkupen10(&mut self) -> WKUPEN10_W<WUIR_SPEC> {
+        WKUPEN10_W::new(self, 10)
     }
     #[doc = "Bit 11 - Wake Up Input Enable 11"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupen11(&mut self) -> WKUPEN11_W<WUIR_SPEC, 11> {
-        WKUPEN11_W::new(self)
+    pub fn wkupen11(&mut self) -> WKUPEN11_W<WUIR_SPEC> {
+        WKUPEN11_W::new(self, 11)
     }
     #[doc = "Bit 12 - Wake Up Input Enable 12"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupen12(&mut self) -> WKUPEN12_W<WUIR_SPEC, 12> {
-        WKUPEN12_W::new(self)
+    pub fn wkupen12(&mut self) -> WKUPEN12_W<WUIR_SPEC> {
+        WKUPEN12_W::new(self, 12)
     }
     #[doc = "Bit 13 - Wake Up Input Enable 13"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupen13(&mut self) -> WKUPEN13_W<WUIR_SPEC, 13> {
-        WKUPEN13_W::new(self)
+    pub fn wkupen13(&mut self) -> WKUPEN13_W<WUIR_SPEC> {
+        WKUPEN13_W::new(self, 13)
     }
     #[doc = "Bit 14 - Wake Up Input Enable 14"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupen14(&mut self) -> WKUPEN14_W<WUIR_SPEC, 14> {
-        WKUPEN14_W::new(self)
+    pub fn wkupen14(&mut self) -> WKUPEN14_W<WUIR_SPEC> {
+        WKUPEN14_W::new(self, 14)
     }
     #[doc = "Bit 15 - Wake Up Input Enable 15"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupen15(&mut self) -> WKUPEN15_W<WUIR_SPEC, 15> {
-        WKUPEN15_W::new(self)
+    pub fn wkupen15(&mut self) -> WKUPEN15_W<WUIR_SPEC> {
+        WKUPEN15_W::new(self, 15)
     }
     #[doc = "Bit 16 - Wake Up Input Type 0"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupt0(&mut self) -> WKUPT0_W<WUIR_SPEC, 16> {
-        WKUPT0_W::new(self)
+    pub fn wkupt0(&mut self) -> WKUPT0_W<WUIR_SPEC> {
+        WKUPT0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Wake Up Input Type 1"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupt1(&mut self) -> WKUPT1_W<WUIR_SPEC, 17> {
-        WKUPT1_W::new(self)
+    pub fn wkupt1(&mut self) -> WKUPT1_W<WUIR_SPEC> {
+        WKUPT1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Wake Up Input Type 2"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupt2(&mut self) -> WKUPT2_W<WUIR_SPEC, 18> {
-        WKUPT2_W::new(self)
+    pub fn wkupt2(&mut self) -> WKUPT2_W<WUIR_SPEC> {
+        WKUPT2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Wake Up Input Type 3"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupt3(&mut self) -> WKUPT3_W<WUIR_SPEC, 19> {
-        WKUPT3_W::new(self)
+    pub fn wkupt3(&mut self) -> WKUPT3_W<WUIR_SPEC> {
+        WKUPT3_W::new(self, 19)
     }
     #[doc = "Bit 20 - Wake Up Input Type 4"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupt4(&mut self) -> WKUPT4_W<WUIR_SPEC, 20> {
-        WKUPT4_W::new(self)
+    pub fn wkupt4(&mut self) -> WKUPT4_W<WUIR_SPEC> {
+        WKUPT4_W::new(self, 20)
     }
     #[doc = "Bit 21 - Wake Up Input Type 5"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupt5(&mut self) -> WKUPT5_W<WUIR_SPEC, 21> {
-        WKUPT5_W::new(self)
+    pub fn wkupt5(&mut self) -> WKUPT5_W<WUIR_SPEC> {
+        WKUPT5_W::new(self, 21)
     }
     #[doc = "Bit 22 - Wake Up Input Type 6"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupt6(&mut self) -> WKUPT6_W<WUIR_SPEC, 22> {
-        WKUPT6_W::new(self)
+    pub fn wkupt6(&mut self) -> WKUPT6_W<WUIR_SPEC> {
+        WKUPT6_W::new(self, 22)
     }
     #[doc = "Bit 23 - Wake Up Input Type 7"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupt7(&mut self) -> WKUPT7_W<WUIR_SPEC, 23> {
-        WKUPT7_W::new(self)
+    pub fn wkupt7(&mut self) -> WKUPT7_W<WUIR_SPEC> {
+        WKUPT7_W::new(self, 23)
     }
     #[doc = "Bit 24 - Wake Up Input Type 8"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupt8(&mut self) -> WKUPT8_W<WUIR_SPEC, 24> {
-        WKUPT8_W::new(self)
+    pub fn wkupt8(&mut self) -> WKUPT8_W<WUIR_SPEC> {
+        WKUPT8_W::new(self, 24)
     }
     #[doc = "Bit 25 - Wake Up Input Type 9"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupt9(&mut self) -> WKUPT9_W<WUIR_SPEC, 25> {
-        WKUPT9_W::new(self)
+    pub fn wkupt9(&mut self) -> WKUPT9_W<WUIR_SPEC> {
+        WKUPT9_W::new(self, 25)
     }
     #[doc = "Bit 26 - Wake Up Input Type 10"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupt10(&mut self) -> WKUPT10_W<WUIR_SPEC, 26> {
-        WKUPT10_W::new(self)
+    pub fn wkupt10(&mut self) -> WKUPT10_W<WUIR_SPEC> {
+        WKUPT10_W::new(self, 26)
     }
     #[doc = "Bit 27 - Wake Up Input Type 11"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupt11(&mut self) -> WKUPT11_W<WUIR_SPEC, 27> {
-        WKUPT11_W::new(self)
+    pub fn wkupt11(&mut self) -> WKUPT11_W<WUIR_SPEC> {
+        WKUPT11_W::new(self, 27)
     }
     #[doc = "Bit 28 - Wake Up Input Type 12"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupt12(&mut self) -> WKUPT12_W<WUIR_SPEC, 28> {
-        WKUPT12_W::new(self)
+    pub fn wkupt12(&mut self) -> WKUPT12_W<WUIR_SPEC> {
+        WKUPT12_W::new(self, 28)
     }
     #[doc = "Bit 29 - Wake Up Input Type 13"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupt13(&mut self) -> WKUPT13_W<WUIR_SPEC, 29> {
-        WKUPT13_W::new(self)
+    pub fn wkupt13(&mut self) -> WKUPT13_W<WUIR_SPEC> {
+        WKUPT13_W::new(self, 29)
     }
     #[doc = "Bit 30 - Wake Up Input Type 14"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupt14(&mut self) -> WKUPT14_W<WUIR_SPEC, 30> {
-        WKUPT14_W::new(self)
+    pub fn wkupt14(&mut self) -> WKUPT14_W<WUIR_SPEC> {
+        WKUPT14_W::new(self, 30)
     }
     #[doc = "Bit 31 - Wake Up Input Type 15"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupt15(&mut self) -> WKUPT15_W<WUIR_SPEC, 31> {
-        WKUPT15_W::new(self)
+    pub fn wkupt15(&mut self) -> WKUPT15_W<WUIR_SPEC> {
+        WKUPT15_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

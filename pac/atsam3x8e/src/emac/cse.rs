@@ -5,7 +5,7 @@ pub type W = crate::W<CSE_SPEC>;
 #[doc = "Field `CSE` reader - Carrier Sense Errors"]
 pub type CSE_R = crate::FieldReader;
 #[doc = "Field `CSE` writer - Carrier Sense Errors"]
-pub type CSE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type CSE_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Carrier Sense Errors"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - Carrier Sense Errors"]
     #[inline(always)]
     #[must_use]
-    pub fn cse(&mut self) -> CSE_W<CSE_SPEC, 0> {
-        CSE_W::new(self)
+    pub fn cse(&mut self) -> CSE_W<CSE_SPEC> {
+        CSE_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,19 +5,19 @@ pub type W = crate::W<PULSE1_SPEC>;
 #[doc = "Field `NWE_PULSE` reader - NWE Pulse Length"]
 pub type NWE_PULSE_R = crate::FieldReader;
 #[doc = "Field `NWE_PULSE` writer - NWE Pulse Length"]
-pub type NWE_PULSE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type NWE_PULSE_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `NCS_WR_PULSE` reader - NCS Pulse Length in WRITE Access"]
 pub type NCS_WR_PULSE_R = crate::FieldReader;
 #[doc = "Field `NCS_WR_PULSE` writer - NCS Pulse Length in WRITE Access"]
-pub type NCS_WR_PULSE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type NCS_WR_PULSE_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `NRD_PULSE` reader - NRD Pulse Length"]
 pub type NRD_PULSE_R = crate::FieldReader;
 #[doc = "Field `NRD_PULSE` writer - NRD Pulse Length"]
-pub type NRD_PULSE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type NRD_PULSE_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `NCS_RD_PULSE` reader - NCS Pulse Length in READ Access"]
 pub type NCS_RD_PULSE_R = crate::FieldReader;
 #[doc = "Field `NCS_RD_PULSE` writer - NCS Pulse Length in READ Access"]
-pub type NCS_RD_PULSE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type NCS_RD_PULSE_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     #[doc = "Bits 0:5 - NWE Pulse Length"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:5 - NWE Pulse Length"]
     #[inline(always)]
     #[must_use]
-    pub fn nwe_pulse(&mut self) -> NWE_PULSE_W<PULSE1_SPEC, 0> {
-        NWE_PULSE_W::new(self)
+    pub fn nwe_pulse(&mut self) -> NWE_PULSE_W<PULSE1_SPEC> {
+        NWE_PULSE_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - NCS Pulse Length in WRITE Access"]
     #[inline(always)]
     #[must_use]
-    pub fn ncs_wr_pulse(&mut self) -> NCS_WR_PULSE_W<PULSE1_SPEC, 8> {
-        NCS_WR_PULSE_W::new(self)
+    pub fn ncs_wr_pulse(&mut self) -> NCS_WR_PULSE_W<PULSE1_SPEC> {
+        NCS_WR_PULSE_W::new(self, 8)
     }
     #[doc = "Bits 16:21 - NRD Pulse Length"]
     #[inline(always)]
     #[must_use]
-    pub fn nrd_pulse(&mut self) -> NRD_PULSE_W<PULSE1_SPEC, 16> {
-        NRD_PULSE_W::new(self)
+    pub fn nrd_pulse(&mut self) -> NRD_PULSE_W<PULSE1_SPEC> {
+        NRD_PULSE_W::new(self, 16)
     }
     #[doc = "Bits 24:29 - NCS Pulse Length in READ Access"]
     #[inline(always)]
     #[must_use]
-    pub fn ncs_rd_pulse(&mut self) -> NCS_RD_PULSE_W<PULSE1_SPEC, 24> {
-        NCS_RD_PULSE_W::new(self)
+    pub fn ncs_rd_pulse(&mut self) -> NCS_RD_PULSE_W<PULSE1_SPEC> {
+        NCS_RD_PULSE_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

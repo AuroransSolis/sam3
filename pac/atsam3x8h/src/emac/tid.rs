@@ -5,7 +5,7 @@ pub type W = crate::W<TID_SPEC>;
 #[doc = "Field `TID` reader - Type ID checking"]
 pub type TID_R = crate::FieldReader<u16>;
 #[doc = "Field `TID` writer - Type ID checking"]
-pub type TID_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type TID_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Type ID checking"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - Type ID checking"]
     #[inline(always)]
     #[must_use]
-    pub fn tid(&mut self) -> TID_W<TID_SPEC, 0> {
-        TID_W::new(self)
+    pub fn tid(&mut self) -> TID_W<TID_SPEC> {
+        TID_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

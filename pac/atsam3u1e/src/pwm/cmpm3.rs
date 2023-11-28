@@ -5,27 +5,27 @@ pub type W = crate::W<CMPM3_SPEC>;
 #[doc = "Field `CEN` reader - Comparison x Enable"]
 pub type CEN_R = crate::BitReader;
 #[doc = "Field `CEN` writer - Comparison x Enable"]
-pub type CEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CTR` reader - Comparison x Trigger"]
 pub type CTR_R = crate::FieldReader;
 #[doc = "Field `CTR` writer - Comparison x Trigger"]
-pub type CTR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type CTR_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CPR` reader - Comparison x Period"]
 pub type CPR_R = crate::FieldReader;
 #[doc = "Field `CPR` writer - Comparison x Period"]
-pub type CPR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type CPR_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CPRCNT` reader - Comparison x Period Counter"]
 pub type CPRCNT_R = crate::FieldReader;
 #[doc = "Field `CPRCNT` writer - Comparison x Period Counter"]
-pub type CPRCNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type CPRCNT_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CUPR` reader - Comparison x Update Period"]
 pub type CUPR_R = crate::FieldReader;
 #[doc = "Field `CUPR` writer - Comparison x Update Period"]
-pub type CUPR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type CUPR_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CUPRCNT` reader - Comparison x Update Period Counter"]
 pub type CUPRCNT_R = crate::FieldReader;
 #[doc = "Field `CUPRCNT` writer - Comparison x Update Period Counter"]
-pub type CUPRCNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type CUPRCNT_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bit 0 - Comparison x Enable"]
     #[inline(always)]
@@ -62,38 +62,38 @@ impl W {
     #[doc = "Bit 0 - Comparison x Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cen(&mut self) -> CEN_W<CMPM3_SPEC, 0> {
-        CEN_W::new(self)
+    pub fn cen(&mut self) -> CEN_W<CMPM3_SPEC> {
+        CEN_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Comparison x Trigger"]
     #[inline(always)]
     #[must_use]
-    pub fn ctr(&mut self) -> CTR_W<CMPM3_SPEC, 4> {
-        CTR_W::new(self)
+    pub fn ctr(&mut self) -> CTR_W<CMPM3_SPEC> {
+        CTR_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Comparison x Period"]
     #[inline(always)]
     #[must_use]
-    pub fn cpr(&mut self) -> CPR_W<CMPM3_SPEC, 8> {
-        CPR_W::new(self)
+    pub fn cpr(&mut self) -> CPR_W<CMPM3_SPEC> {
+        CPR_W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Comparison x Period Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn cprcnt(&mut self) -> CPRCNT_W<CMPM3_SPEC, 12> {
-        CPRCNT_W::new(self)
+    pub fn cprcnt(&mut self) -> CPRCNT_W<CMPM3_SPEC> {
+        CPRCNT_W::new(self, 12)
     }
     #[doc = "Bits 16:19 - Comparison x Update Period"]
     #[inline(always)]
     #[must_use]
-    pub fn cupr(&mut self) -> CUPR_W<CMPM3_SPEC, 16> {
-        CUPR_W::new(self)
+    pub fn cupr(&mut self) -> CUPR_W<CMPM3_SPEC> {
+        CUPR_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Comparison x Update Period Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn cuprcnt(&mut self) -> CUPRCNT_W<CMPM3_SPEC, 20> {
-        CUPRCNT_W::new(self)
+    pub fn cuprcnt(&mut self) -> CUPRCNT_W<CMPM3_SPEC> {
+        CUPRCNT_W::new(self, 20)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,11 +5,11 @@ pub type W = crate::W<CKGR_UCKR_SPEC>;
 #[doc = "Field `UPLLEN` reader - UTMI PLL Enable"]
 pub type UPLLEN_R = crate::BitReader;
 #[doc = "Field `UPLLEN` writer - UTMI PLL Enable"]
-pub type UPLLEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type UPLLEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UPLLCOUNT` reader - UTMI PLL Start-up Time"]
 pub type UPLLCOUNT_R = crate::FieldReader;
 #[doc = "Field `UPLLCOUNT` writer - UTMI PLL Start-up Time"]
-pub type UPLLCOUNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type UPLLCOUNT_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bit 16 - UTMI PLL Enable"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bit 16 - UTMI PLL Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn upllen(&mut self) -> UPLLEN_W<CKGR_UCKR_SPEC, 16> {
-        UPLLEN_W::new(self)
+    pub fn upllen(&mut self) -> UPLLEN_W<CKGR_UCKR_SPEC> {
+        UPLLEN_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - UTMI PLL Start-up Time"]
     #[inline(always)]
     #[must_use]
-    pub fn upllcount(&mut self) -> UPLLCOUNT_W<CKGR_UCKR_SPEC, 20> {
-        UPLLCOUNT_W::new(self)
+    pub fn upllcount(&mut self) -> UPLLCOUNT_W<CKGR_UCKR_SPEC> {
+        UPLLCOUNT_W::new(self, 20)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

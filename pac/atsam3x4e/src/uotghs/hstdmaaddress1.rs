@@ -5,7 +5,7 @@ pub type W = crate::W<HSTDMAADDRESS1_SPEC>;
 #[doc = "Field `BUFF_ADD` reader - Buffer Address"]
 pub type BUFF_ADD_R = crate::FieldReader<u32>;
 #[doc = "Field `BUFF_ADD` writer - Buffer Address"]
-pub type BUFF_ADD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type BUFF_ADD_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Buffer Address"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Buffer Address"]
     #[inline(always)]
     #[must_use]
-    pub fn buff_add(&mut self) -> BUFF_ADD_W<HSTDMAADDRESS1_SPEC, 0> {
-        BUFF_ADD_W::new(self)
+    pub fn buff_add(&mut self) -> BUFF_ADD_W<HSTDMAADDRESS1_SPEC> {
+        BUFF_ADD_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

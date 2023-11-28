@@ -60,8 +60,8 @@ impl PAGESIZE_R {
     }
 }
 #[doc = "Field `PAGESIZE` writer - "]
-pub type PAGESIZE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PAGESIZE_A>;
-impl<'a, REG, const O: u8> PAGESIZE_W<'a, REG, O>
+pub type PAGESIZE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PAGESIZE_A>;
+impl<'a, REG> PAGESIZE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -90,23 +90,23 @@ where
 #[doc = "Field `WSPARE` reader - Write Spare Area"]
 pub type WSPARE_R = crate::BitReader;
 #[doc = "Field `WSPARE` writer - Write Spare Area"]
-pub type WSPARE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type WSPARE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RSPARE` reader - Read Spare Area"]
 pub type RSPARE_R = crate::BitReader;
 #[doc = "Field `RSPARE` writer - Read Spare Area"]
-pub type RSPARE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RSPARE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EDGECTRL` reader - Rising/Falling Edge Detection Control"]
 pub type EDGECTRL_R = crate::BitReader;
 #[doc = "Field `EDGECTRL` writer - Rising/Falling Edge Detection Control"]
-pub type EDGECTRL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EDGECTRL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RBEDGE` reader - Ready/Busy Signal Edge Detection"]
 pub type RBEDGE_R = crate::BitReader;
 #[doc = "Field `RBEDGE` writer - Ready/Busy Signal Edge Detection"]
-pub type RBEDGE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RBEDGE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DTOCYC` reader - Data Timeout Cycle Number"]
 pub type DTOCYC_R = crate::FieldReader;
 #[doc = "Field `DTOCYC` writer - Data Timeout Cycle Number"]
-pub type DTOCYC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type DTOCYC_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `DTOMUL` reader - Data Timeout Multiplier"]
 pub type DTOMUL_R = crate::FieldReader<DTOMUL_A>;
 #[doc = "Data Timeout Multiplier\n\nValue on reset: 0"]
@@ -197,8 +197,8 @@ impl DTOMUL_R {
     }
 }
 #[doc = "Field `DTOMUL` writer - Data Timeout Multiplier"]
-pub type DTOMUL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, DTOMUL_A>;
-impl<'a, REG, const O: u8> DTOMUL_W<'a, REG, O>
+pub type DTOMUL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, DTOMUL_A>;
+impl<'a, REG> DTOMUL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -285,44 +285,44 @@ impl W {
     #[doc = "Bits 0:1"]
     #[inline(always)]
     #[must_use]
-    pub fn pagesize(&mut self) -> PAGESIZE_W<CFG_SPEC, 0> {
-        PAGESIZE_W::new(self)
+    pub fn pagesize(&mut self) -> PAGESIZE_W<CFG_SPEC> {
+        PAGESIZE_W::new(self, 0)
     }
     #[doc = "Bit 8 - Write Spare Area"]
     #[inline(always)]
     #[must_use]
-    pub fn wspare(&mut self) -> WSPARE_W<CFG_SPEC, 8> {
-        WSPARE_W::new(self)
+    pub fn wspare(&mut self) -> WSPARE_W<CFG_SPEC> {
+        WSPARE_W::new(self, 8)
     }
     #[doc = "Bit 9 - Read Spare Area"]
     #[inline(always)]
     #[must_use]
-    pub fn rspare(&mut self) -> RSPARE_W<CFG_SPEC, 9> {
-        RSPARE_W::new(self)
+    pub fn rspare(&mut self) -> RSPARE_W<CFG_SPEC> {
+        RSPARE_W::new(self, 9)
     }
     #[doc = "Bit 12 - Rising/Falling Edge Detection Control"]
     #[inline(always)]
     #[must_use]
-    pub fn edgectrl(&mut self) -> EDGECTRL_W<CFG_SPEC, 12> {
-        EDGECTRL_W::new(self)
+    pub fn edgectrl(&mut self) -> EDGECTRL_W<CFG_SPEC> {
+        EDGECTRL_W::new(self, 12)
     }
     #[doc = "Bit 13 - Ready/Busy Signal Edge Detection"]
     #[inline(always)]
     #[must_use]
-    pub fn rbedge(&mut self) -> RBEDGE_W<CFG_SPEC, 13> {
-        RBEDGE_W::new(self)
+    pub fn rbedge(&mut self) -> RBEDGE_W<CFG_SPEC> {
+        RBEDGE_W::new(self, 13)
     }
     #[doc = "Bits 16:19 - Data Timeout Cycle Number"]
     #[inline(always)]
     #[must_use]
-    pub fn dtocyc(&mut self) -> DTOCYC_W<CFG_SPEC, 16> {
-        DTOCYC_W::new(self)
+    pub fn dtocyc(&mut self) -> DTOCYC_W<CFG_SPEC> {
+        DTOCYC_W::new(self, 16)
     }
     #[doc = "Bits 20:22 - Data Timeout Multiplier"]
     #[inline(always)]
     #[must_use]
-    pub fn dtomul(&mut self) -> DTOMUL_W<CFG_SPEC, 20> {
-        DTOMUL_W::new(self)
+    pub fn dtomul(&mut self) -> DTOMUL_W<CFG_SPEC> {
+        DTOMUL_W::new(self, 20)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

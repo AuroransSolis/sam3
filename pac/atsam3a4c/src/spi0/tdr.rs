@@ -1,29 +1,29 @@
 #[doc = "Register `TDR` writer"]
 pub type W = crate::W<TDR_SPEC>;
 #[doc = "Field `TD` writer - Transmit Data"]
-pub type TD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type TD_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `PCS` writer - Peripheral Chip Select"]
-pub type PCS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type PCS_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `LASTXFER` writer - Last Transfer"]
-pub type LASTXFER_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LASTXFER_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bits 0:15 - Transmit Data"]
     #[inline(always)]
     #[must_use]
-    pub fn td(&mut self) -> TD_W<TDR_SPEC, 0> {
-        TD_W::new(self)
+    pub fn td(&mut self) -> TD_W<TDR_SPEC> {
+        TD_W::new(self, 0)
     }
     #[doc = "Bits 16:19 - Peripheral Chip Select"]
     #[inline(always)]
     #[must_use]
-    pub fn pcs(&mut self) -> PCS_W<TDR_SPEC, 16> {
-        PCS_W::new(self)
+    pub fn pcs(&mut self) -> PCS_W<TDR_SPEC> {
+        PCS_W::new(self, 16)
     }
     #[doc = "Bit 24 - Last Transfer"]
     #[inline(always)]
     #[must_use]
-    pub fn lastxfer(&mut self) -> LASTXFER_W<TDR_SPEC, 24> {
-        LASTXFER_W::new(self)
+    pub fn lastxfer(&mut self) -> LASTXFER_W<TDR_SPEC> {
+        LASTXFER_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,7 +5,7 @@ pub type W = crate::W<TNPR_SPEC>;
 #[doc = "Field `TXNPTR` reader - Transmit Next Pointer"]
 pub type TXNPTR_R = crate::FieldReader<u32>;
 #[doc = "Field `TXNPTR` writer - Transmit Next Pointer"]
-pub type TXNPTR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type TXNPTR_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Transmit Next Pointer"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Transmit Next Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn txnptr(&mut self) -> TXNPTR_W<TNPR_SPEC, 0> {
-        TXNPTR_W::new(self)
+    pub fn txnptr(&mut self) -> TXNPTR_W<TNPR_SPEC> {
+        TXNPTR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

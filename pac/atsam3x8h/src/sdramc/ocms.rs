@@ -5,7 +5,7 @@ pub type W = crate::W<OCMS_SPEC>;
 #[doc = "Field `SDR_SE` reader - SDRAM Memory Controller Scrambling Enable"]
 pub type SDR_SE_R = crate::BitReader;
 #[doc = "Field `SDR_SE` writer - SDRAM Memory Controller Scrambling Enable"]
-pub type SDR_SE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SDR_SE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - SDRAM Memory Controller Scrambling Enable"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bit 0 - SDRAM Memory Controller Scrambling Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn sdr_se(&mut self) -> SDR_SE_W<OCMS_SPEC, 0> {
-        SDR_SE_W::new(self)
+    pub fn sdr_se(&mut self) -> SDR_SE_W<OCMS_SPEC> {
+        SDR_SE_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

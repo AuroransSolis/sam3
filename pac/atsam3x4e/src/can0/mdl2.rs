@@ -5,7 +5,7 @@ pub type W = crate::W<MDL2_SPEC>;
 #[doc = "Field `MDL` reader - Message Data Low Value"]
 pub type MDL_R = crate::FieldReader<u32>;
 #[doc = "Field `MDL` writer - Message Data Low Value"]
-pub type MDL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type MDL_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Message Data Low Value"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Message Data Low Value"]
     #[inline(always)]
     #[must_use]
-    pub fn mdl(&mut self) -> MDL_W<MDL2_SPEC, 0> {
-        MDL_W::new(self)
+    pub fn mdl(&mut self) -> MDL_W<MDL2_SPEC> {
+        MDL_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

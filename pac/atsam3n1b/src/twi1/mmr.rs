@@ -60,8 +60,8 @@ impl IADRSZ_R {
     }
 }
 #[doc = "Field `IADRSZ` writer - Internal Device Address Size"]
-pub type IADRSZ_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, IADRSZ_A>;
-impl<'a, REG, const O: u8> IADRSZ_W<'a, REG, O>
+pub type IADRSZ_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, IADRSZ_A>;
+impl<'a, REG> IADRSZ_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -90,11 +90,11 @@ where
 #[doc = "Field `MREAD` reader - Master Read Direction"]
 pub type MREAD_R = crate::BitReader;
 #[doc = "Field `MREAD` writer - Master Read Direction"]
-pub type MREAD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MREAD_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DADR` reader - Device Address"]
 pub type DADR_R = crate::FieldReader;
 #[doc = "Field `DADR` writer - Device Address"]
-pub type DADR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type DADR_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 impl R {
     #[doc = "Bits 8:9 - Internal Device Address Size"]
     #[inline(always)]
@@ -116,20 +116,20 @@ impl W {
     #[doc = "Bits 8:9 - Internal Device Address Size"]
     #[inline(always)]
     #[must_use]
-    pub fn iadrsz(&mut self) -> IADRSZ_W<MMR_SPEC, 8> {
-        IADRSZ_W::new(self)
+    pub fn iadrsz(&mut self) -> IADRSZ_W<MMR_SPEC> {
+        IADRSZ_W::new(self, 8)
     }
     #[doc = "Bit 12 - Master Read Direction"]
     #[inline(always)]
     #[must_use]
-    pub fn mread(&mut self) -> MREAD_W<MMR_SPEC, 12> {
-        MREAD_W::new(self)
+    pub fn mread(&mut self) -> MREAD_W<MMR_SPEC> {
+        MREAD_W::new(self, 12)
     }
     #[doc = "Bits 16:22 - Device Address"]
     #[inline(always)]
     #[must_use]
-    pub fn dadr(&mut self) -> DADR_W<MMR_SPEC, 16> {
-        DADR_W::new(self)
+    pub fn dadr(&mut self) -> DADR_W<MMR_SPEC> {
+        DADR_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

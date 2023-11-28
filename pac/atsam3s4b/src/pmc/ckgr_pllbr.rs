@@ -5,15 +5,15 @@ pub type W = crate::W<CKGR_PLLBR_SPEC>;
 #[doc = "Field `DIVB` reader - Divider"]
 pub type DIVB_R = crate::FieldReader;
 #[doc = "Field `DIVB` writer - Divider"]
-pub type DIVB_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type DIVB_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `PLLBCOUNT` reader - PLLB Counter"]
 pub type PLLBCOUNT_R = crate::FieldReader;
 #[doc = "Field `PLLBCOUNT` writer - PLLB Counter"]
-pub type PLLBCOUNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type PLLBCOUNT_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `MULB` reader - PLLB Multiplier"]
 pub type MULB_R = crate::FieldReader<u16>;
 #[doc = "Field `MULB` writer - PLLB Multiplier"]
-pub type MULB_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 11, O, u16>;
+pub type MULB_W<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 impl R {
     #[doc = "Bits 0:7 - Divider"]
     #[inline(always)]
@@ -35,20 +35,20 @@ impl W {
     #[doc = "Bits 0:7 - Divider"]
     #[inline(always)]
     #[must_use]
-    pub fn divb(&mut self) -> DIVB_W<CKGR_PLLBR_SPEC, 0> {
-        DIVB_W::new(self)
+    pub fn divb(&mut self) -> DIVB_W<CKGR_PLLBR_SPEC> {
+        DIVB_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - PLLB Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn pllbcount(&mut self) -> PLLBCOUNT_W<CKGR_PLLBR_SPEC, 8> {
-        PLLBCOUNT_W::new(self)
+    pub fn pllbcount(&mut self) -> PLLBCOUNT_W<CKGR_PLLBR_SPEC> {
+        PLLBCOUNT_W::new(self, 8)
     }
     #[doc = "Bits 16:26 - PLLB Multiplier"]
     #[inline(always)]
     #[must_use]
-    pub fn mulb(&mut self) -> MULB_W<CKGR_PLLBR_SPEC, 16> {
-        MULB_W::new(self)
+    pub fn mulb(&mut self) -> MULB_W<CKGR_PLLBR_SPEC> {
+        MULB_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,7 +5,7 @@ pub type W = crate::W<RTOR_SPEC>;
 #[doc = "Field `TO` reader - Time-out Value"]
 pub type TO_R = crate::FieldReader<u32>;
 #[doc = "Field `TO` writer - Time-out Value"]
-pub type TO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 17, O, u32>;
+pub type TO_W<'a, REG> = crate::FieldWriter<'a, REG, 17, u32>;
 impl R {
     #[doc = "Bits 0:16 - Time-out Value"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:16 - Time-out Value"]
     #[inline(always)]
     #[must_use]
-    pub fn to(&mut self) -> TO_W<RTOR_SPEC, 0> {
-        TO_W::new(self)
+    pub fn to(&mut self) -> TO_W<RTOR_SPEC> {
+        TO_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

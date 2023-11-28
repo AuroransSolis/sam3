@@ -5,7 +5,7 @@ pub type W = crate::W<GPBR5_SPEC>;
 #[doc = "Field `GPBR_VALUE` reader - Value of GPBR x"]
 pub type GPBR_VALUE_R = crate::FieldReader<u32>;
 #[doc = "Field `GPBR_VALUE` writer - Value of GPBR x"]
-pub type GPBR_VALUE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type GPBR_VALUE_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Value of GPBR x"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Value of GPBR x"]
     #[inline(always)]
     #[must_use]
-    pub fn gpbr_value(&mut self) -> GPBR_VALUE_W<GPBR5_SPEC, 0> {
-        GPBR_VALUE_W::new(self)
+    pub fn gpbr_value(&mut self) -> GPBR_VALUE_W<GPBR5_SPEC> {
+        GPBR_VALUE_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

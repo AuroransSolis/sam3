@@ -5,15 +5,15 @@ pub type W = crate::W<MR_SPEC>;
 #[doc = "Field `URSTEN` reader - User Reset Enable"]
 pub type URSTEN_R = crate::BitReader;
 #[doc = "Field `URSTEN` writer - User Reset Enable"]
-pub type URSTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type URSTEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `URSTIEN` reader - User Reset Interrupt Enable"]
 pub type URSTIEN_R = crate::BitReader;
 #[doc = "Field `URSTIEN` writer - User Reset Interrupt Enable"]
-pub type URSTIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type URSTIEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ERSTL` reader - External Reset Length"]
 pub type ERSTL_R = crate::FieldReader;
 #[doc = "Field `ERSTL` writer - External Reset Length"]
-pub type ERSTL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type ERSTL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `KEY` reader - Write Access Password"]
 pub type KEY_R = crate::FieldReader<KEY_A>;
 #[doc = "Write Access Password\n\nValue on reset: 0"]
@@ -48,8 +48,8 @@ impl KEY_R {
     }
 }
 #[doc = "Field `KEY` writer - Write Access Password"]
-pub type KEY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, KEY_A>;
-impl<'a, REG, const O: u8> KEY_W<'a, REG, O>
+pub type KEY_W<'a, REG> = crate::FieldWriter<'a, REG, 8, KEY_A>;
+impl<'a, REG> KEY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -86,26 +86,26 @@ impl W {
     #[doc = "Bit 0 - User Reset Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ursten(&mut self) -> URSTEN_W<MR_SPEC, 0> {
-        URSTEN_W::new(self)
+    pub fn ursten(&mut self) -> URSTEN_W<MR_SPEC> {
+        URSTEN_W::new(self, 0)
     }
     #[doc = "Bit 4 - User Reset Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn urstien(&mut self) -> URSTIEN_W<MR_SPEC, 4> {
-        URSTIEN_W::new(self)
+    pub fn urstien(&mut self) -> URSTIEN_W<MR_SPEC> {
+        URSTIEN_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - External Reset Length"]
     #[inline(always)]
     #[must_use]
-    pub fn erstl(&mut self) -> ERSTL_W<MR_SPEC, 8> {
-        ERSTL_W::new(self)
+    pub fn erstl(&mut self) -> ERSTL_W<MR_SPEC> {
+        ERSTL_W::new(self, 8)
     }
     #[doc = "Bits 24:31 - Write Access Password"]
     #[inline(always)]
     #[must_use]
-    pub fn key(&mut self) -> KEY_W<MR_SPEC, 24> {
-        KEY_W::new(self)
+    pub fn key(&mut self) -> KEY_W<MR_SPEC> {
+        KEY_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

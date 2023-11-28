@@ -5,11 +5,11 @@ pub type W = crate::W<HSTPIPINRQ1_SPEC>;
 #[doc = "Field `INRQ` reader - IN Request Number before Freeze"]
 pub type INRQ_R = crate::FieldReader;
 #[doc = "Field `INRQ` writer - IN Request Number before Freeze"]
-pub type INRQ_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type INRQ_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `INMODE` reader - IN Request Mode"]
 pub type INMODE_R = crate::BitReader;
 #[doc = "Field `INMODE` writer - IN Request Mode"]
-pub type INMODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INMODE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:7 - IN Request Number before Freeze"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:7 - IN Request Number before Freeze"]
     #[inline(always)]
     #[must_use]
-    pub fn inrq(&mut self) -> INRQ_W<HSTPIPINRQ1_SPEC, 0> {
-        INRQ_W::new(self)
+    pub fn inrq(&mut self) -> INRQ_W<HSTPIPINRQ1_SPEC> {
+        INRQ_W::new(self, 0)
     }
     #[doc = "Bit 8 - IN Request Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn inmode(&mut self) -> INMODE_W<HSTPIPINRQ1_SPEC, 8> {
-        INMODE_W::new(self)
+    pub fn inmode(&mut self) -> INMODE_W<HSTPIPINRQ1_SPEC> {
+        INMODE_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

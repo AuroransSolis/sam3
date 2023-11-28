@@ -5,23 +5,23 @@ pub type W = crate::W<PRAS5_SPEC>;
 #[doc = "Field `M0PR` reader - Master 0 Priority"]
 pub type M0PR_R = crate::FieldReader;
 #[doc = "Field `M0PR` writer - Master 0 Priority"]
-pub type M0PR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type M0PR_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `M1PR` reader - Master 1 Priority"]
 pub type M1PR_R = crate::FieldReader;
 #[doc = "Field `M1PR` writer - Master 1 Priority"]
-pub type M1PR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type M1PR_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `M2PR` reader - Master 2 Priority"]
 pub type M2PR_R = crate::FieldReader;
 #[doc = "Field `M2PR` writer - Master 2 Priority"]
-pub type M2PR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type M2PR_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `M3PR` reader - Master 3 Priority"]
 pub type M3PR_R = crate::FieldReader;
 #[doc = "Field `M3PR` writer - Master 3 Priority"]
-pub type M3PR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type M3PR_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `M4PR` reader - Master 4 Priority"]
 pub type M4PR_R = crate::FieldReader;
 #[doc = "Field `M4PR` writer - Master 4 Priority"]
-pub type M4PR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type M4PR_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     #[doc = "Bits 0:1 - Master 0 Priority"]
     #[inline(always)]
@@ -53,32 +53,32 @@ impl W {
     #[doc = "Bits 0:1 - Master 0 Priority"]
     #[inline(always)]
     #[must_use]
-    pub fn m0pr(&mut self) -> M0PR_W<PRAS5_SPEC, 0> {
-        M0PR_W::new(self)
+    pub fn m0pr(&mut self) -> M0PR_W<PRAS5_SPEC> {
+        M0PR_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Master 1 Priority"]
     #[inline(always)]
     #[must_use]
-    pub fn m1pr(&mut self) -> M1PR_W<PRAS5_SPEC, 4> {
-        M1PR_W::new(self)
+    pub fn m1pr(&mut self) -> M1PR_W<PRAS5_SPEC> {
+        M1PR_W::new(self, 4)
     }
     #[doc = "Bits 8:9 - Master 2 Priority"]
     #[inline(always)]
     #[must_use]
-    pub fn m2pr(&mut self) -> M2PR_W<PRAS5_SPEC, 8> {
-        M2PR_W::new(self)
+    pub fn m2pr(&mut self) -> M2PR_W<PRAS5_SPEC> {
+        M2PR_W::new(self, 8)
     }
     #[doc = "Bits 12:13 - Master 3 Priority"]
     #[inline(always)]
     #[must_use]
-    pub fn m3pr(&mut self) -> M3PR_W<PRAS5_SPEC, 12> {
-        M3PR_W::new(self)
+    pub fn m3pr(&mut self) -> M3PR_W<PRAS5_SPEC> {
+        M3PR_W::new(self, 12)
     }
     #[doc = "Bits 16:17 - Master 4 Priority"]
     #[inline(always)]
     #[must_use]
-    pub fn m4pr(&mut self) -> M4PR_W<PRAS5_SPEC, 16> {
-        M4PR_W::new(self)
+    pub fn m4pr(&mut self) -> M4PR_W<PRAS5_SPEC> {
+        M4PR_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

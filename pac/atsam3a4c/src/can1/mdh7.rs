@@ -5,7 +5,7 @@ pub type W = crate::W<MDH7_SPEC>;
 #[doc = "Field `MDH` reader - Message Data High Value"]
 pub type MDH_R = crate::FieldReader<u32>;
 #[doc = "Field `MDH` writer - Message Data High Value"]
-pub type MDH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type MDH_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Message Data High Value"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Message Data High Value"]
     #[inline(always)]
     #[must_use]
-    pub fn mdh(&mut self) -> MDH_W<MDH7_SPEC, 0> {
-        MDH_W::new(self)
+    pub fn mdh(&mut self) -> MDH_W<MDH7_SPEC> {
+        MDH_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

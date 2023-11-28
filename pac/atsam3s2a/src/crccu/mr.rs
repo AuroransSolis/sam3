@@ -5,11 +5,11 @@ pub type W = crate::W<MR_SPEC>;
 #[doc = "Field `ENABLE` reader - CRC Enable"]
 pub type ENABLE_R = crate::BitReader;
 #[doc = "Field `ENABLE` writer - CRC Enable"]
-pub type ENABLE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ENABLE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `COMPARE` reader - CRC Compare"]
 pub type COMPARE_R = crate::BitReader;
 #[doc = "Field `COMPARE` writer - CRC Compare"]
-pub type COMPARE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type COMPARE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PTYPE` reader - Primitive Polynomial"]
 pub type PTYPE_R = crate::FieldReader<PTYPE_A>;
 #[doc = "Primitive Polynomial\n\nValue on reset: 0"]
@@ -60,8 +60,8 @@ impl PTYPE_R {
     }
 }
 #[doc = "Field `PTYPE` writer - Primitive Polynomial"]
-pub type PTYPE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, PTYPE_A>;
-impl<'a, REG, const O: u8> PTYPE_W<'a, REG, O>
+pub type PTYPE_W<'a, REG> = crate::FieldWriter<'a, REG, 2, PTYPE_A>;
+impl<'a, REG> PTYPE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -85,7 +85,7 @@ where
 #[doc = "Field `DIVIDER` reader - Request Divider"]
 pub type DIVIDER_R = crate::FieldReader;
 #[doc = "Field `DIVIDER` writer - Request Divider"]
-pub type DIVIDER_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type DIVIDER_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bit 0 - CRC Enable"]
     #[inline(always)]
@@ -112,26 +112,26 @@ impl W {
     #[doc = "Bit 0 - CRC Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn enable(&mut self) -> ENABLE_W<MR_SPEC, 0> {
-        ENABLE_W::new(self)
+    pub fn enable(&mut self) -> ENABLE_W<MR_SPEC> {
+        ENABLE_W::new(self, 0)
     }
     #[doc = "Bit 1 - CRC Compare"]
     #[inline(always)]
     #[must_use]
-    pub fn compare(&mut self) -> COMPARE_W<MR_SPEC, 1> {
-        COMPARE_W::new(self)
+    pub fn compare(&mut self) -> COMPARE_W<MR_SPEC> {
+        COMPARE_W::new(self, 1)
     }
     #[doc = "Bits 2:3 - Primitive Polynomial"]
     #[inline(always)]
     #[must_use]
-    pub fn ptype(&mut self) -> PTYPE_W<MR_SPEC, 2> {
-        PTYPE_W::new(self)
+    pub fn ptype(&mut self) -> PTYPE_W<MR_SPEC> {
+        PTYPE_W::new(self, 2)
     }
     #[doc = "Bits 4:7 - Request Divider"]
     #[inline(always)]
     #[must_use]
-    pub fn divider(&mut self) -> DIVIDER_W<MR_SPEC, 4> {
-        DIVIDER_W::new(self)
+    pub fn divider(&mut self) -> DIVIDER_W<MR_SPEC> {
+        DIVIDER_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

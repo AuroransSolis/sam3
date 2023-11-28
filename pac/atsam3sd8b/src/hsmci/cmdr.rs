@@ -1,7 +1,7 @@
 #[doc = "Register `CMDR` writer"]
 pub type W = crate::W<CMDR_SPEC>;
 #[doc = "Field `CMDNB` writer - Command Number"]
-pub type CMDNB_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type CMDNB_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Response Type"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -25,8 +25,8 @@ impl crate::FieldSpec for RSPTYP_AW {
     type Ux = u8;
 }
 #[doc = "Field `RSPTYP` writer - Response Type"]
-pub type RSPTYP_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, RSPTYP_AW>;
-impl<'a, REG, const O: u8> RSPTYP_W<'a, REG, O>
+pub type RSPTYP_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, RSPTYP_AW>;
+impl<'a, REG> RSPTYP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -83,8 +83,8 @@ impl crate::FieldSpec for SPCMD_AW {
     type Ux = u8;
 }
 #[doc = "Field `SPCMD` writer - Special Command"]
-pub type SPCMD_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, SPCMD_AW>;
-impl<'a, REG, const O: u8> SPCMD_W<'a, REG, O>
+pub type SPCMD_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, SPCMD_AW>;
+impl<'a, REG> SPCMD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -145,8 +145,8 @@ impl From<OPDCMD_AW> for bool {
     }
 }
 #[doc = "Field `OPDCMD` writer - Open Drain Command"]
-pub type OPDCMD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OPDCMD_AW>;
-impl<'a, REG, const O: u8> OPDCMD_W<'a, REG, O>
+pub type OPDCMD_W<'a, REG> = crate::BitWriter<'a, REG, OPDCMD_AW>;
+impl<'a, REG> OPDCMD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -176,8 +176,8 @@ impl From<MAXLAT_AW> for bool {
     }
 }
 #[doc = "Field `MAXLAT` writer - Max Latency for Command to Response"]
-pub type MAXLAT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MAXLAT_AW>;
-impl<'a, REG, const O: u8> MAXLAT_W<'a, REG, O>
+pub type MAXLAT_W<'a, REG> = crate::BitWriter<'a, REG, MAXLAT_AW>;
+impl<'a, REG> MAXLAT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -213,8 +213,8 @@ impl crate::FieldSpec for TRCMD_AW {
     type Ux = u8;
 }
 #[doc = "Field `TRCMD` writer - Transfer Command"]
-pub type TRCMD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, TRCMD_AW>;
-impl<'a, REG, const O: u8> TRCMD_W<'a, REG, O>
+pub type TRCMD_W<'a, REG> = crate::FieldWriter<'a, REG, 2, TRCMD_AW>;
+impl<'a, REG> TRCMD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -250,8 +250,8 @@ impl From<TRDIR_AW> for bool {
     }
 }
 #[doc = "Field `TRDIR` writer - Transfer Direction"]
-pub type TRDIR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TRDIR_AW>;
-impl<'a, REG, const O: u8> TRDIR_W<'a, REG, O>
+pub type TRDIR_W<'a, REG> = crate::BitWriter<'a, REG, TRDIR_AW>;
+impl<'a, REG> TRDIR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -291,8 +291,8 @@ impl crate::FieldSpec for TRTYP_AW {
     type Ux = u8;
 }
 #[doc = "Field `TRTYP` writer - Transfer Type"]
-pub type TRTYP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, TRTYP_AW>;
-impl<'a, REG, const O: u8> TRTYP_W<'a, REG, O>
+pub type TRTYP_W<'a, REG> = crate::FieldWriter<'a, REG, 3, TRTYP_AW>;
+impl<'a, REG> TRTYP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -344,8 +344,8 @@ impl crate::FieldSpec for IOSPCMD_AW {
     type Ux = u8;
 }
 #[doc = "Field `IOSPCMD` writer - SDIO Special Command"]
-pub type IOSPCMD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, IOSPCMD_AW>;
-impl<'a, REG, const O: u8> IOSPCMD_W<'a, REG, O>
+pub type IOSPCMD_W<'a, REG> = crate::FieldWriter<'a, REG, 2, IOSPCMD_AW>;
+impl<'a, REG> IOSPCMD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -381,8 +381,8 @@ impl From<ATACS_AW> for bool {
     }
 }
 #[doc = "Field `ATACS` writer - ATA with Command Completion Signal"]
-pub type ATACS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ATACS_AW>;
-impl<'a, REG, const O: u8> ATACS_W<'a, REG, O>
+pub type ATACS_W<'a, REG> = crate::BitWriter<'a, REG, ATACS_AW>;
+impl<'a, REG> ATACS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -398,73 +398,73 @@ where
     }
 }
 #[doc = "Field `BOOT_ACK` writer - Boot Operation Acknowledge."]
-pub type BOOT_ACK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BOOT_ACK_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bits 0:5 - Command Number"]
     #[inline(always)]
     #[must_use]
-    pub fn cmdnb(&mut self) -> CMDNB_W<CMDR_SPEC, 0> {
-        CMDNB_W::new(self)
+    pub fn cmdnb(&mut self) -> CMDNB_W<CMDR_SPEC> {
+        CMDNB_W::new(self, 0)
     }
     #[doc = "Bits 6:7 - Response Type"]
     #[inline(always)]
     #[must_use]
-    pub fn rsptyp(&mut self) -> RSPTYP_W<CMDR_SPEC, 6> {
-        RSPTYP_W::new(self)
+    pub fn rsptyp(&mut self) -> RSPTYP_W<CMDR_SPEC> {
+        RSPTYP_W::new(self, 6)
     }
     #[doc = "Bits 8:10 - Special Command"]
     #[inline(always)]
     #[must_use]
-    pub fn spcmd(&mut self) -> SPCMD_W<CMDR_SPEC, 8> {
-        SPCMD_W::new(self)
+    pub fn spcmd(&mut self) -> SPCMD_W<CMDR_SPEC> {
+        SPCMD_W::new(self, 8)
     }
     #[doc = "Bit 11 - Open Drain Command"]
     #[inline(always)]
     #[must_use]
-    pub fn opdcmd(&mut self) -> OPDCMD_W<CMDR_SPEC, 11> {
-        OPDCMD_W::new(self)
+    pub fn opdcmd(&mut self) -> OPDCMD_W<CMDR_SPEC> {
+        OPDCMD_W::new(self, 11)
     }
     #[doc = "Bit 12 - Max Latency for Command to Response"]
     #[inline(always)]
     #[must_use]
-    pub fn maxlat(&mut self) -> MAXLAT_W<CMDR_SPEC, 12> {
-        MAXLAT_W::new(self)
+    pub fn maxlat(&mut self) -> MAXLAT_W<CMDR_SPEC> {
+        MAXLAT_W::new(self, 12)
     }
     #[doc = "Bits 16:17 - Transfer Command"]
     #[inline(always)]
     #[must_use]
-    pub fn trcmd(&mut self) -> TRCMD_W<CMDR_SPEC, 16> {
-        TRCMD_W::new(self)
+    pub fn trcmd(&mut self) -> TRCMD_W<CMDR_SPEC> {
+        TRCMD_W::new(self, 16)
     }
     #[doc = "Bit 18 - Transfer Direction"]
     #[inline(always)]
     #[must_use]
-    pub fn trdir(&mut self) -> TRDIR_W<CMDR_SPEC, 18> {
-        TRDIR_W::new(self)
+    pub fn trdir(&mut self) -> TRDIR_W<CMDR_SPEC> {
+        TRDIR_W::new(self, 18)
     }
     #[doc = "Bits 19:21 - Transfer Type"]
     #[inline(always)]
     #[must_use]
-    pub fn trtyp(&mut self) -> TRTYP_W<CMDR_SPEC, 19> {
-        TRTYP_W::new(self)
+    pub fn trtyp(&mut self) -> TRTYP_W<CMDR_SPEC> {
+        TRTYP_W::new(self, 19)
     }
     #[doc = "Bits 24:25 - SDIO Special Command"]
     #[inline(always)]
     #[must_use]
-    pub fn iospcmd(&mut self) -> IOSPCMD_W<CMDR_SPEC, 24> {
-        IOSPCMD_W::new(self)
+    pub fn iospcmd(&mut self) -> IOSPCMD_W<CMDR_SPEC> {
+        IOSPCMD_W::new(self, 24)
     }
     #[doc = "Bit 26 - ATA with Command Completion Signal"]
     #[inline(always)]
     #[must_use]
-    pub fn atacs(&mut self) -> ATACS_W<CMDR_SPEC, 26> {
-        ATACS_W::new(self)
+    pub fn atacs(&mut self) -> ATACS_W<CMDR_SPEC> {
+        ATACS_W::new(self, 26)
     }
     #[doc = "Bit 27 - Boot Operation Acknowledge."]
     #[inline(always)]
     #[must_use]
-    pub fn boot_ack(&mut self) -> BOOT_ACK_W<CMDR_SPEC, 27> {
-        BOOT_ACK_W::new(self)
+    pub fn boot_ack(&mut self) -> BOOT_ACK_W<CMDR_SPEC> {
+        BOOT_ACK_W::new(self, 27)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

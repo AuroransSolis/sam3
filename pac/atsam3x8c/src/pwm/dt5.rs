@@ -5,11 +5,11 @@ pub type W = crate::W<DT5_SPEC>;
 #[doc = "Field `DTH` reader - Dead-Time Value for PWMHx Output"]
 pub type DTH_R = crate::FieldReader<u16>;
 #[doc = "Field `DTH` writer - Dead-Time Value for PWMHx Output"]
-pub type DTH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type DTH_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `DTL` reader - Dead-Time Value for PWMLx Output"]
 pub type DTL_R = crate::FieldReader<u16>;
 #[doc = "Field `DTL` writer - Dead-Time Value for PWMLx Output"]
-pub type DTL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type DTL_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Dead-Time Value for PWMHx Output"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:15 - Dead-Time Value for PWMHx Output"]
     #[inline(always)]
     #[must_use]
-    pub fn dth(&mut self) -> DTH_W<DT5_SPEC, 0> {
-        DTH_W::new(self)
+    pub fn dth(&mut self) -> DTH_W<DT5_SPEC> {
+        DTH_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - Dead-Time Value for PWMLx Output"]
     #[inline(always)]
     #[must_use]
-    pub fn dtl(&mut self) -> DTL_W<DT5_SPEC, 16> {
-        DTL_W::new(self)
+    pub fn dtl(&mut self) -> DTL_W<DT5_SPEC> {
+        DTL_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

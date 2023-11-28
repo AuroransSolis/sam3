@@ -1,125 +1,125 @@
 #[doc = "Register `DEVEPTIER8` writer"]
 pub type W = crate::W<DEVEPTIER8_SPEC>;
 #[doc = "Field `TXINES` writer - Transmitted IN Data Interrupt Enable"]
-pub type TXINES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXINES_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXOUTES` writer - Received OUT Data Interrupt Enable"]
-pub type RXOUTES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXOUTES_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXSTPES` writer - Received SETUP Interrupt Enable"]
-pub type RXSTPES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXSTPES_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NAKOUTES` writer - NAKed OUT Interrupt Enable"]
-pub type NAKOUTES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NAKOUTES_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NAKINES` writer - NAKed IN Interrupt Enable"]
-pub type NAKINES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NAKINES_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OVERFES` writer - Overflow Interrupt Enable"]
-pub type OVERFES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OVERFES_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `STALLEDES` writer - STALLed Interrupt Enable"]
-pub type STALLEDES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STALLEDES_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SHORTPACKETES` writer - Short Packet Interrupt Enable"]
-pub type SHORTPACKETES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SHORTPACKETES_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NBUSYBKES` writer - Number of Busy Banks Interrupt Enable"]
-pub type NBUSYBKES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NBUSYBKES_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `KILLBKS` writer - Kill IN Bank"]
-pub type KILLBKS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type KILLBKS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FIFOCONS` writer - FIFO Control"]
-pub type FIFOCONS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FIFOCONS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPDISHDMAS` writer - Endpoint Interrupts Disable HDMA Request Enable"]
-pub type EPDISHDMAS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPDISHDMAS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NYETDISS` writer - NYET Token Disable Enable"]
-pub type NYETDISS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NYETDISS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RSTDTS` writer - Reset Data Toggle Enable"]
-pub type RSTDTS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RSTDTS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `STALLRQS` writer - STALL Request Enable"]
-pub type STALLRQS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STALLRQS_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Transmitted IN Data Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn txines(&mut self) -> TXINES_W<DEVEPTIER8_SPEC, 0> {
-        TXINES_W::new(self)
+    pub fn txines(&mut self) -> TXINES_W<DEVEPTIER8_SPEC> {
+        TXINES_W::new(self, 0)
     }
     #[doc = "Bit 1 - Received OUT Data Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxoutes(&mut self) -> RXOUTES_W<DEVEPTIER8_SPEC, 1> {
-        RXOUTES_W::new(self)
+    pub fn rxoutes(&mut self) -> RXOUTES_W<DEVEPTIER8_SPEC> {
+        RXOUTES_W::new(self, 1)
     }
     #[doc = "Bit 2 - Received SETUP Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxstpes(&mut self) -> RXSTPES_W<DEVEPTIER8_SPEC, 2> {
-        RXSTPES_W::new(self)
+    pub fn rxstpes(&mut self) -> RXSTPES_W<DEVEPTIER8_SPEC> {
+        RXSTPES_W::new(self, 2)
     }
     #[doc = "Bit 3 - NAKed OUT Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn nakoutes(&mut self) -> NAKOUTES_W<DEVEPTIER8_SPEC, 3> {
-        NAKOUTES_W::new(self)
+    pub fn nakoutes(&mut self) -> NAKOUTES_W<DEVEPTIER8_SPEC> {
+        NAKOUTES_W::new(self, 3)
     }
     #[doc = "Bit 4 - NAKed IN Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn nakines(&mut self) -> NAKINES_W<DEVEPTIER8_SPEC, 4> {
-        NAKINES_W::new(self)
+    pub fn nakines(&mut self) -> NAKINES_W<DEVEPTIER8_SPEC> {
+        NAKINES_W::new(self, 4)
     }
     #[doc = "Bit 5 - Overflow Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn overfes(&mut self) -> OVERFES_W<DEVEPTIER8_SPEC, 5> {
-        OVERFES_W::new(self)
+    pub fn overfes(&mut self) -> OVERFES_W<DEVEPTIER8_SPEC> {
+        OVERFES_W::new(self, 5)
     }
     #[doc = "Bit 6 - STALLed Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn stalledes(&mut self) -> STALLEDES_W<DEVEPTIER8_SPEC, 6> {
-        STALLEDES_W::new(self)
+    pub fn stalledes(&mut self) -> STALLEDES_W<DEVEPTIER8_SPEC> {
+        STALLEDES_W::new(self, 6)
     }
     #[doc = "Bit 7 - Short Packet Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn shortpacketes(&mut self) -> SHORTPACKETES_W<DEVEPTIER8_SPEC, 7> {
-        SHORTPACKETES_W::new(self)
+    pub fn shortpacketes(&mut self) -> SHORTPACKETES_W<DEVEPTIER8_SPEC> {
+        SHORTPACKETES_W::new(self, 7)
     }
     #[doc = "Bit 12 - Number of Busy Banks Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn nbusybkes(&mut self) -> NBUSYBKES_W<DEVEPTIER8_SPEC, 12> {
-        NBUSYBKES_W::new(self)
+    pub fn nbusybkes(&mut self) -> NBUSYBKES_W<DEVEPTIER8_SPEC> {
+        NBUSYBKES_W::new(self, 12)
     }
     #[doc = "Bit 13 - Kill IN Bank"]
     #[inline(always)]
     #[must_use]
-    pub fn killbks(&mut self) -> KILLBKS_W<DEVEPTIER8_SPEC, 13> {
-        KILLBKS_W::new(self)
+    pub fn killbks(&mut self) -> KILLBKS_W<DEVEPTIER8_SPEC> {
+        KILLBKS_W::new(self, 13)
     }
     #[doc = "Bit 14 - FIFO Control"]
     #[inline(always)]
     #[must_use]
-    pub fn fifocons(&mut self) -> FIFOCONS_W<DEVEPTIER8_SPEC, 14> {
-        FIFOCONS_W::new(self)
+    pub fn fifocons(&mut self) -> FIFOCONS_W<DEVEPTIER8_SPEC> {
+        FIFOCONS_W::new(self, 14)
     }
     #[doc = "Bit 16 - Endpoint Interrupts Disable HDMA Request Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn epdishdmas(&mut self) -> EPDISHDMAS_W<DEVEPTIER8_SPEC, 16> {
-        EPDISHDMAS_W::new(self)
+    pub fn epdishdmas(&mut self) -> EPDISHDMAS_W<DEVEPTIER8_SPEC> {
+        EPDISHDMAS_W::new(self, 16)
     }
     #[doc = "Bit 17 - NYET Token Disable Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn nyetdiss(&mut self) -> NYETDISS_W<DEVEPTIER8_SPEC, 17> {
-        NYETDISS_W::new(self)
+    pub fn nyetdiss(&mut self) -> NYETDISS_W<DEVEPTIER8_SPEC> {
+        NYETDISS_W::new(self, 17)
     }
     #[doc = "Bit 18 - Reset Data Toggle Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rstdts(&mut self) -> RSTDTS_W<DEVEPTIER8_SPEC, 18> {
-        RSTDTS_W::new(self)
+    pub fn rstdts(&mut self) -> RSTDTS_W<DEVEPTIER8_SPEC> {
+        RSTDTS_W::new(self, 18)
     }
     #[doc = "Bit 19 - STALL Request Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn stallrqs(&mut self) -> STALLRQS_W<DEVEPTIER8_SPEC, 19> {
-        STALLRQS_W::new(self)
+    pub fn stallrqs(&mut self) -> STALLRQS_W<DEVEPTIER8_SPEC> {
+        STALLRQS_W::new(self, 19)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

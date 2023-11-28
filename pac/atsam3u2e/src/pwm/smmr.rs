@@ -5,19 +5,19 @@ pub type W = crate::W<SMMR_SPEC>;
 #[doc = "Field `GCEN0` reader - Gray Count ENable"]
 pub type GCEN0_R = crate::BitReader;
 #[doc = "Field `GCEN0` writer - Gray Count ENable"]
-pub type GCEN0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type GCEN0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `GCEN1` reader - Gray Count ENable"]
 pub type GCEN1_R = crate::BitReader;
 #[doc = "Field `GCEN1` writer - Gray Count ENable"]
-pub type GCEN1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type GCEN1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DOWN0` reader - DOWN Count"]
 pub type DOWN0_R = crate::BitReader;
 #[doc = "Field `DOWN0` writer - DOWN Count"]
-pub type DOWN0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DOWN0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DOWN1` reader - DOWN Count"]
 pub type DOWN1_R = crate::BitReader;
 #[doc = "Field `DOWN1` writer - DOWN Count"]
-pub type DOWN1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DOWN1_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Gray Count ENable"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bit 0 - Gray Count ENable"]
     #[inline(always)]
     #[must_use]
-    pub fn gcen0(&mut self) -> GCEN0_W<SMMR_SPEC, 0> {
-        GCEN0_W::new(self)
+    pub fn gcen0(&mut self) -> GCEN0_W<SMMR_SPEC> {
+        GCEN0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Gray Count ENable"]
     #[inline(always)]
     #[must_use]
-    pub fn gcen1(&mut self) -> GCEN1_W<SMMR_SPEC, 1> {
-        GCEN1_W::new(self)
+    pub fn gcen1(&mut self) -> GCEN1_W<SMMR_SPEC> {
+        GCEN1_W::new(self, 1)
     }
     #[doc = "Bit 16 - DOWN Count"]
     #[inline(always)]
     #[must_use]
-    pub fn down0(&mut self) -> DOWN0_W<SMMR_SPEC, 16> {
-        DOWN0_W::new(self)
+    pub fn down0(&mut self) -> DOWN0_W<SMMR_SPEC> {
+        DOWN0_W::new(self, 16)
     }
     #[doc = "Bit 17 - DOWN Count"]
     #[inline(always)]
     #[must_use]
-    pub fn down1(&mut self) -> DOWN1_W<SMMR_SPEC, 17> {
-        DOWN1_W::new(self)
+    pub fn down1(&mut self) -> DOWN1_W<SMMR_SPEC> {
+        DOWN1_W::new(self, 17)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

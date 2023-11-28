@@ -5,11 +5,11 @@ pub type W = crate::W<PMC_PCR_SPEC>;
 #[doc = "Field `PID` reader - Peripheral ID"]
 pub type PID_R = crate::FieldReader;
 #[doc = "Field `PID` writer - Peripheral ID"]
-pub type PID_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type PID_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `CMD` reader - Command"]
 pub type CMD_R = crate::BitReader;
 #[doc = "Field `CMD` writer - Command"]
-pub type CMD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CMD_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DIV` reader - Divisor Value"]
 pub type DIV_R = crate::FieldReader<DIV_A>;
 #[doc = "Divisor Value\n\nValue on reset: 0"]
@@ -60,8 +60,8 @@ impl DIV_R {
     }
 }
 #[doc = "Field `DIV` writer - Divisor Value"]
-pub type DIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, DIV_A>;
-impl<'a, REG, const O: u8> DIV_W<'a, REG, O>
+pub type DIV_W<'a, REG> = crate::FieldWriter<'a, REG, 2, DIV_A>;
+impl<'a, REG> DIV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -85,7 +85,7 @@ where
 #[doc = "Field `EN` reader - Enable"]
 pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - Enable"]
-pub type EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:5 - Peripheral ID"]
     #[inline(always)]
@@ -112,26 +112,26 @@ impl W {
     #[doc = "Bits 0:5 - Peripheral ID"]
     #[inline(always)]
     #[must_use]
-    pub fn pid(&mut self) -> PID_W<PMC_PCR_SPEC, 0> {
-        PID_W::new(self)
+    pub fn pid(&mut self) -> PID_W<PMC_PCR_SPEC> {
+        PID_W::new(self, 0)
     }
     #[doc = "Bit 12 - Command"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd(&mut self) -> CMD_W<PMC_PCR_SPEC, 12> {
-        CMD_W::new(self)
+    pub fn cmd(&mut self) -> CMD_W<PMC_PCR_SPEC> {
+        CMD_W::new(self, 12)
     }
     #[doc = "Bits 16:17 - Divisor Value"]
     #[inline(always)]
     #[must_use]
-    pub fn div(&mut self) -> DIV_W<PMC_PCR_SPEC, 16> {
-        DIV_W::new(self)
+    pub fn div(&mut self) -> DIV_W<PMC_PCR_SPEC> {
+        DIV_W::new(self, 16)
     }
     #[doc = "Bit 28 - Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<PMC_PCR_SPEC, 28> {
-        EN_W::new(self)
+    pub fn en(&mut self) -> EN_W<PMC_PCR_SPEC> {
+        EN_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

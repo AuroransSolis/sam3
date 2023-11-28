@@ -5,11 +5,11 @@ pub type W = crate::W<CWR_SPEC>;
 #[doc = "Field `LOWTHRES` reader - Low Threshold"]
 pub type LOWTHRES_R = crate::FieldReader<u16>;
 #[doc = "Field `LOWTHRES` writer - Low Threshold"]
-pub type LOWTHRES_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 12, O, u16>;
+pub type LOWTHRES_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 #[doc = "Field `HIGHTHRES` reader - High Threshold"]
 pub type HIGHTHRES_R = crate::FieldReader<u16>;
 #[doc = "Field `HIGHTHRES` writer - High Threshold"]
-pub type HIGHTHRES_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 12, O, u16>;
+pub type HIGHTHRES_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
     #[doc = "Bits 0:11 - Low Threshold"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:11 - Low Threshold"]
     #[inline(always)]
     #[must_use]
-    pub fn lowthres(&mut self) -> LOWTHRES_W<CWR_SPEC, 0> {
-        LOWTHRES_W::new(self)
+    pub fn lowthres(&mut self) -> LOWTHRES_W<CWR_SPEC> {
+        LOWTHRES_W::new(self, 0)
     }
     #[doc = "Bits 16:27 - High Threshold"]
     #[inline(always)]
     #[must_use]
-    pub fn highthres(&mut self) -> HIGHTHRES_W<CWR_SPEC, 16> {
-        HIGHTHRES_W::new(self)
+    pub fn highthres(&mut self) -> HIGHTHRES_W<CWR_SPEC> {
+        HIGHTHRES_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

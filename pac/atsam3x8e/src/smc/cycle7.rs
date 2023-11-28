@@ -5,11 +5,11 @@ pub type W = crate::W<CYCLE7_SPEC>;
 #[doc = "Field `NWE_CYCLE` reader - Total Write Cycle Length"]
 pub type NWE_CYCLE_R = crate::FieldReader<u16>;
 #[doc = "Field `NWE_CYCLE` writer - Total Write Cycle Length"]
-pub type NWE_CYCLE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 9, O, u16>;
+pub type NWE_CYCLE_W<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 #[doc = "Field `NRD_CYCLE` reader - Total Read Cycle Length"]
 pub type NRD_CYCLE_R = crate::FieldReader<u16>;
 #[doc = "Field `NRD_CYCLE` writer - Total Read Cycle Length"]
-pub type NRD_CYCLE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 9, O, u16>;
+pub type NRD_CYCLE_W<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 impl R {
     #[doc = "Bits 0:8 - Total Write Cycle Length"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:8 - Total Write Cycle Length"]
     #[inline(always)]
     #[must_use]
-    pub fn nwe_cycle(&mut self) -> NWE_CYCLE_W<CYCLE7_SPEC, 0> {
-        NWE_CYCLE_W::new(self)
+    pub fn nwe_cycle(&mut self) -> NWE_CYCLE_W<CYCLE7_SPEC> {
+        NWE_CYCLE_W::new(self, 0)
     }
     #[doc = "Bits 16:24 - Total Read Cycle Length"]
     #[inline(always)]
     #[must_use]
-    pub fn nrd_cycle(&mut self) -> NRD_CYCLE_W<CYCLE7_SPEC, 16> {
-        NRD_CYCLE_W::new(self)
+    pub fn nrd_cycle(&mut self) -> NRD_CYCLE_W<CYCLE7_SPEC> {
+        NRD_CYCLE_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,7 +5,7 @@ pub type W = crate::W<RNCR_SPEC>;
 #[doc = "Field `RXNCTR` reader - Receive Next Counter"]
 pub type RXNCTR_R = crate::FieldReader<u16>;
 #[doc = "Field `RXNCTR` writer - Receive Next Counter"]
-pub type RXNCTR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type RXNCTR_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Receive Next Counter"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - Receive Next Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn rxnctr(&mut self) -> RXNCTR_W<RNCR_SPEC, 0> {
-        RXNCTR_W::new(self)
+    pub fn rxnctr(&mut self) -> RXNCTR_W<RNCR_SPEC> {
+        RXNCTR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

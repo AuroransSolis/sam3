@@ -5,7 +5,7 @@ pub type W = crate::W<FCSE_SPEC>;
 #[doc = "Field `FCSE` reader - Frame Check Sequence Errors"]
 pub type FCSE_R = crate::FieldReader;
 #[doc = "Field `FCSE` writer - Frame Check Sequence Errors"]
-pub type FCSE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type FCSE_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Frame Check Sequence Errors"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - Frame Check Sequence Errors"]
     #[inline(always)]
     #[must_use]
-    pub fn fcse(&mut self) -> FCSE_W<FCSE_SPEC, 0> {
-        FCSE_W::new(self)
+    pub fn fcse(&mut self) -> FCSE_W<FCSE_SPEC> {
+        FCSE_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

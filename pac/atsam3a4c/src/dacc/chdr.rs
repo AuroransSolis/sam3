@@ -1,21 +1,21 @@
 #[doc = "Register `CHDR` writer"]
 pub type W = crate::W<CHDR_SPEC>;
 #[doc = "Field `CH0` writer - Channel 0 Disable"]
-pub type CH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CH0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH1` writer - Channel 1 Disable"]
-pub type CH1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CH1_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Channel 0 Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn ch0(&mut self) -> CH0_W<CHDR_SPEC, 0> {
-        CH0_W::new(self)
+    pub fn ch0(&mut self) -> CH0_W<CHDR_SPEC> {
+        CH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channel 1 Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn ch1(&mut self) -> CH1_W<CHDR_SPEC, 1> {
-        CH1_W::new(self)
+    pub fn ch1(&mut self) -> CH1_W<CHDR_SPEC> {
+        CH1_W::new(self, 1)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

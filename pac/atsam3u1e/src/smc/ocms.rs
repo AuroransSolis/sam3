@@ -5,11 +5,11 @@ pub type W = crate::W<OCMS_SPEC>;
 #[doc = "Field `SMSE` reader - Static Memory Controller Scrambling Enable"]
 pub type SMSE_R = crate::BitReader;
 #[doc = "Field `SMSE` writer - Static Memory Controller Scrambling Enable"]
-pub type SMSE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SMSE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SRSE` reader - SRAM Scrambling Enable"]
 pub type SRSE_R = crate::BitReader;
 #[doc = "Field `SRSE` writer - SRAM Scrambling Enable"]
-pub type SRSE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SRSE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Static Memory Controller Scrambling Enable"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bit 0 - Static Memory Controller Scrambling Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn smse(&mut self) -> SMSE_W<OCMS_SPEC, 0> {
-        SMSE_W::new(self)
+    pub fn smse(&mut self) -> SMSE_W<OCMS_SPEC> {
+        SMSE_W::new(self, 0)
     }
     #[doc = "Bit 1 - SRAM Scrambling Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn srse(&mut self) -> SRSE_W<OCMS_SPEC, 1> {
-        SRSE_W::new(self)
+    pub fn srse(&mut self) -> SRSE_W<OCMS_SPEC> {
+        SRSE_W::new(self, 1)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

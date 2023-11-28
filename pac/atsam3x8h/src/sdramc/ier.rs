@@ -1,13 +1,13 @@
 #[doc = "Register `IER` writer"]
 pub type W = crate::W<IER_SPEC>;
 #[doc = "Field `RES` writer - Refresh Error Status"]
-pub type RES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RES_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Refresh Error Status"]
     #[inline(always)]
     #[must_use]
-    pub fn res(&mut self) -> RES_W<IER_SPEC, 0> {
-        RES_W::new(self)
+    pub fn res(&mut self) -> RES_W<IER_SPEC> {
+        RES_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,7 +5,7 @@ pub type W = crate::W<TTGR_SPEC>;
 #[doc = "Field `TG` reader - Timeguard Value"]
 pub type TG_R = crate::FieldReader;
 #[doc = "Field `TG` writer - Timeguard Value"]
-pub type TG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type TG_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Timeguard Value"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - Timeguard Value"]
     #[inline(always)]
     #[must_use]
-    pub fn tg(&mut self) -> TG_W<TTGR_SPEC, 0> {
-        TG_W::new(self)
+    pub fn tg(&mut self) -> TG_W<TTGR_SPEC> {
+        TG_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

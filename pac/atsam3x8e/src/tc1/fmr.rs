@@ -5,11 +5,11 @@ pub type W = crate::W<FMR_SPEC>;
 #[doc = "Field `ENCF0` reader - ENable Compare Fault Channel 0"]
 pub type ENCF0_R = crate::BitReader;
 #[doc = "Field `ENCF0` writer - ENable Compare Fault Channel 0"]
-pub type ENCF0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ENCF0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ENCF1` reader - ENable Compare Fault Channel 1"]
 pub type ENCF1_R = crate::BitReader;
 #[doc = "Field `ENCF1` writer - ENable Compare Fault Channel 1"]
-pub type ENCF1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ENCF1_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - ENable Compare Fault Channel 0"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bit 0 - ENable Compare Fault Channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn encf0(&mut self) -> ENCF0_W<FMR_SPEC, 0> {
-        ENCF0_W::new(self)
+    pub fn encf0(&mut self) -> ENCF0_W<FMR_SPEC> {
+        ENCF0_W::new(self, 0)
     }
     #[doc = "Bit 1 - ENable Compare Fault Channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn encf1(&mut self) -> ENCF1_W<FMR_SPEC, 1> {
-        ENCF1_W::new(self)
+    pub fn encf1(&mut self) -> ENCF1_W<FMR_SPEC> {
+        ENCF1_W::new(self, 1)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -1,38 +1,100 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - CRCCU Descriptor Base Register"]
-    pub dscr: DSCR,
+    dscr: DSCR,
     _reserved1: [u8; 0x04],
-    #[doc = "0x08 - CRCCU DMA Enable Register"]
-    pub dma_en: DMA_EN,
-    #[doc = "0x0c - CRCCU DMA Disable Register"]
-    pub dma_dis: DMA_DIS,
-    #[doc = "0x10 - CRCCU DMA Status Register"]
-    pub dma_sr: DMA_SR,
-    #[doc = "0x14 - CRCCU DMA Interrupt Enable Register"]
-    pub dma_ier: DMA_IER,
-    #[doc = "0x18 - CRCCU DMA Interrupt Disable Register"]
-    pub dma_idr: DMA_IDR,
-    #[doc = "0x1c - CRCCU DMA Interrupt Mask Register"]
-    pub dma_imr: DMA_IMR,
-    #[doc = "0x20 - CRCCU DMA Interrupt Status Register"]
-    pub dma_isr: DMA_ISR,
+    dma_en: DMA_EN,
+    dma_dis: DMA_DIS,
+    dma_sr: DMA_SR,
+    dma_ier: DMA_IER,
+    dma_idr: DMA_IDR,
+    dma_imr: DMA_IMR,
+    dma_isr: DMA_ISR,
     _reserved8: [u8; 0x10],
+    cr: CR,
+    mr: MR,
+    sr: SR,
+    ier: IER,
+    idr: IDR,
+    imr: IMR,
+    isr: ISR,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - CRCCU Descriptor Base Register"]
+    #[inline(always)]
+    pub const fn dscr(&self) -> &DSCR {
+        &self.dscr
+    }
+    #[doc = "0x08 - CRCCU DMA Enable Register"]
+    #[inline(always)]
+    pub const fn dma_en(&self) -> &DMA_EN {
+        &self.dma_en
+    }
+    #[doc = "0x0c - CRCCU DMA Disable Register"]
+    #[inline(always)]
+    pub const fn dma_dis(&self) -> &DMA_DIS {
+        &self.dma_dis
+    }
+    #[doc = "0x10 - CRCCU DMA Status Register"]
+    #[inline(always)]
+    pub const fn dma_sr(&self) -> &DMA_SR {
+        &self.dma_sr
+    }
+    #[doc = "0x14 - CRCCU DMA Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn dma_ier(&self) -> &DMA_IER {
+        &self.dma_ier
+    }
+    #[doc = "0x18 - CRCCU DMA Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn dma_idr(&self) -> &DMA_IDR {
+        &self.dma_idr
+    }
+    #[doc = "0x1c - CRCCU DMA Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn dma_imr(&self) -> &DMA_IMR {
+        &self.dma_imr
+    }
+    #[doc = "0x20 - CRCCU DMA Interrupt Status Register"]
+    #[inline(always)]
+    pub const fn dma_isr(&self) -> &DMA_ISR {
+        &self.dma_isr
+    }
     #[doc = "0x34 - CRCCU Control Register"]
-    pub cr: CR,
+    #[inline(always)]
+    pub const fn cr(&self) -> &CR {
+        &self.cr
+    }
     #[doc = "0x38 - CRCCU Mode Register"]
-    pub mr: MR,
+    #[inline(always)]
+    pub const fn mr(&self) -> &MR {
+        &self.mr
+    }
     #[doc = "0x3c - CRCCU Status Register"]
-    pub sr: SR,
+    #[inline(always)]
+    pub const fn sr(&self) -> &SR {
+        &self.sr
+    }
     #[doc = "0x40 - CRCCU Interrupt Enable Register"]
-    pub ier: IER,
+    #[inline(always)]
+    pub const fn ier(&self) -> &IER {
+        &self.ier
+    }
     #[doc = "0x44 - CRCCU Interrupt Disable Register"]
-    pub idr: IDR,
+    #[inline(always)]
+    pub const fn idr(&self) -> &IDR {
+        &self.idr
+    }
     #[doc = "0x48 - CRCCU Interrupt Mask Register"]
-    pub imr: IMR,
+    #[inline(always)]
+    pub const fn imr(&self) -> &IMR {
+        &self.imr
+    }
     #[doc = "0x4c - CRCCU Interrupt Status Register"]
-    pub isr: ISR,
+    #[inline(always)]
+    pub const fn isr(&self) -> &ISR {
+        &self.isr
+    }
 }
 #[doc = "DSCR (rw) register accessor: CRCCU Descriptor Base Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dscr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dscr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dscr`]
 module"]

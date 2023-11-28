@@ -92,8 +92,8 @@ impl TCCLKS_R {
     }
 }
 #[doc = "Field `TCCLKS` writer - Clock Selection"]
-pub type TCCLKS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, TCCLKS_A>;
-impl<'a, REG, const O: u8> TCCLKS_W<'a, REG, O>
+pub type TCCLKS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, TCCLKS_A>;
+impl<'a, REG> TCCLKS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -142,7 +142,7 @@ where
 #[doc = "Field `CLKI` reader - Clock Invert"]
 pub type CLKI_R = crate::BitReader;
 #[doc = "Field `CLKI` writer - Clock Invert"]
-pub type CLKI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CLKI_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BURST` reader - Burst Signal Selection"]
 pub type BURST_R = crate::FieldReader<BURST_A>;
 #[doc = "Burst Signal Selection\n\nValue on reset: 0"]
@@ -201,8 +201,8 @@ impl BURST_R {
     }
 }
 #[doc = "Field `BURST` writer - Burst Signal Selection"]
-pub type BURST_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, BURST_A>;
-impl<'a, REG, const O: u8> BURST_W<'a, REG, O>
+pub type BURST_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, BURST_A>;
+impl<'a, REG> BURST_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -231,11 +231,11 @@ where
 #[doc = "Field `CPCSTOP` reader - Counter Clock Stopped with RC Compare"]
 pub type CPCSTOP_R = crate::BitReader;
 #[doc = "Field `CPCSTOP` writer - Counter Clock Stopped with RC Compare"]
-pub type CPCSTOP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CPCSTOP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CPCDIS` reader - Counter Clock Disable with RC Compare"]
 pub type CPCDIS_R = crate::BitReader;
 #[doc = "Field `CPCDIS` writer - Counter Clock Disable with RC Compare"]
-pub type CPCDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CPCDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EEVTEDG` reader - External Event Edge Selection"]
 pub type EEVTEDG_R = crate::FieldReader<EEVTEDG_A>;
 #[doc = "External Event Edge Selection\n\nValue on reset: 0"]
@@ -294,8 +294,8 @@ impl EEVTEDG_R {
     }
 }
 #[doc = "Field `EEVTEDG` writer - External Event Edge Selection"]
-pub type EEVTEDG_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EEVTEDG_A>;
-impl<'a, REG, const O: u8> EEVTEDG_W<'a, REG, O>
+pub type EEVTEDG_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EEVTEDG_A>;
+impl<'a, REG> EEVTEDG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -379,8 +379,8 @@ impl EEVT_R {
     }
 }
 #[doc = "Field `EEVT` writer - External Event Selection"]
-pub type EEVT_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EEVT_A>;
-impl<'a, REG, const O: u8> EEVT_W<'a, REG, O>
+pub type EEVT_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EEVT_A>;
+impl<'a, REG> EEVT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -409,7 +409,7 @@ where
 #[doc = "Field `ENETRG` reader - External Event Trigger Enable"]
 pub type ENETRG_R = crate::BitReader;
 #[doc = "Field `ENETRG` writer - External Event Trigger Enable"]
-pub type ENETRG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ENETRG_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WAVSEL` reader - Waveform Selection"]
 pub type WAVSEL_R = crate::FieldReader<WAVSEL_A>;
 #[doc = "Waveform Selection\n\nValue on reset: 0"]
@@ -468,8 +468,8 @@ impl WAVSEL_R {
     }
 }
 #[doc = "Field `WAVSEL` writer - Waveform Selection"]
-pub type WAVSEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, WAVSEL_A>;
-impl<'a, REG, const O: u8> WAVSEL_W<'a, REG, O>
+pub type WAVSEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, WAVSEL_A>;
+impl<'a, REG> WAVSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -498,7 +498,7 @@ where
 #[doc = "Field `WAVE` reader - Waveform Mode"]
 pub type WAVE_R = crate::BitReader;
 #[doc = "Field `WAVE` writer - Waveform Mode"]
-pub type WAVE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type WAVE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ACPA` reader - RA Compare Effect on TIOA"]
 pub type ACPA_R = crate::FieldReader<ACPA_A>;
 #[doc = "RA Compare Effect on TIOA\n\nValue on reset: 0"]
@@ -557,8 +557,8 @@ impl ACPA_R {
     }
 }
 #[doc = "Field `ACPA` writer - RA Compare Effect on TIOA"]
-pub type ACPA_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ACPA_A>;
-impl<'a, REG, const O: u8> ACPA_W<'a, REG, O>
+pub type ACPA_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ACPA_A>;
+impl<'a, REG> ACPA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -642,8 +642,8 @@ impl ACPC_R {
     }
 }
 #[doc = "Field `ACPC` writer - RC Compare Effect on TIOA"]
-pub type ACPC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ACPC_A>;
-impl<'a, REG, const O: u8> ACPC_W<'a, REG, O>
+pub type ACPC_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ACPC_A>;
+impl<'a, REG> ACPC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -727,8 +727,8 @@ impl AEEVT_R {
     }
 }
 #[doc = "Field `AEEVT` writer - External Event Effect on TIOA"]
-pub type AEEVT_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, AEEVT_A>;
-impl<'a, REG, const O: u8> AEEVT_W<'a, REG, O>
+pub type AEEVT_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, AEEVT_A>;
+impl<'a, REG> AEEVT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -812,8 +812,8 @@ impl ASWTRG_R {
     }
 }
 #[doc = "Field `ASWTRG` writer - Software Trigger Effect on TIOA"]
-pub type ASWTRG_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ASWTRG_A>;
-impl<'a, REG, const O: u8> ASWTRG_W<'a, REG, O>
+pub type ASWTRG_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ASWTRG_A>;
+impl<'a, REG> ASWTRG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -897,8 +897,8 @@ impl BCPB_R {
     }
 }
 #[doc = "Field `BCPB` writer - RB Compare Effect on TIOB"]
-pub type BCPB_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, BCPB_A>;
-impl<'a, REG, const O: u8> BCPB_W<'a, REG, O>
+pub type BCPB_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, BCPB_A>;
+impl<'a, REG> BCPB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -982,8 +982,8 @@ impl BCPC_R {
     }
 }
 #[doc = "Field `BCPC` writer - RC Compare Effect on TIOB"]
-pub type BCPC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, BCPC_A>;
-impl<'a, REG, const O: u8> BCPC_W<'a, REG, O>
+pub type BCPC_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, BCPC_A>;
+impl<'a, REG> BCPC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1067,8 +1067,8 @@ impl BEEVT_R {
     }
 }
 #[doc = "Field `BEEVT` writer - External Event Effect on TIOB"]
-pub type BEEVT_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, BEEVT_A>;
-impl<'a, REG, const O: u8> BEEVT_W<'a, REG, O>
+pub type BEEVT_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, BEEVT_A>;
+impl<'a, REG> BEEVT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1152,8 +1152,8 @@ impl BSWTRG_R {
     }
 }
 #[doc = "Field `BSWTRG` writer - Software Trigger Effect on TIOB"]
-pub type BSWTRG_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, BSWTRG_A>;
-impl<'a, REG, const O: u8> BSWTRG_W<'a, REG, O>
+pub type BSWTRG_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, BSWTRG_A>;
+impl<'a, REG> BSWTRG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1275,110 +1275,110 @@ impl W {
     #[doc = "Bits 0:2 - Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn tcclks(&mut self) -> TCCLKS_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC, 0> {
-        TCCLKS_W::new(self)
+    pub fn tcclks(&mut self) -> TCCLKS_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC> {
+        TCCLKS_W::new(self, 0)
     }
     #[doc = "Bit 3 - Clock Invert"]
     #[inline(always)]
     #[must_use]
-    pub fn clki(&mut self) -> CLKI_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC, 3> {
-        CLKI_W::new(self)
+    pub fn clki(&mut self) -> CLKI_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC> {
+        CLKI_W::new(self, 3)
     }
     #[doc = "Bits 4:5 - Burst Signal Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn burst(&mut self) -> BURST_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC, 4> {
-        BURST_W::new(self)
+    pub fn burst(&mut self) -> BURST_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC> {
+        BURST_W::new(self, 4)
     }
     #[doc = "Bit 6 - Counter Clock Stopped with RC Compare"]
     #[inline(always)]
     #[must_use]
-    pub fn cpcstop(&mut self) -> CPCSTOP_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC, 6> {
-        CPCSTOP_W::new(self)
+    pub fn cpcstop(&mut self) -> CPCSTOP_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC> {
+        CPCSTOP_W::new(self, 6)
     }
     #[doc = "Bit 7 - Counter Clock Disable with RC Compare"]
     #[inline(always)]
     #[must_use]
-    pub fn cpcdis(&mut self) -> CPCDIS_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC, 7> {
-        CPCDIS_W::new(self)
+    pub fn cpcdis(&mut self) -> CPCDIS_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC> {
+        CPCDIS_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - External Event Edge Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn eevtedg(&mut self) -> EEVTEDG_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC, 8> {
-        EEVTEDG_W::new(self)
+    pub fn eevtedg(&mut self) -> EEVTEDG_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC> {
+        EEVTEDG_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - External Event Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn eevt(&mut self) -> EEVT_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC, 10> {
-        EEVT_W::new(self)
+    pub fn eevt(&mut self) -> EEVT_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC> {
+        EEVT_W::new(self, 10)
     }
     #[doc = "Bit 12 - External Event Trigger Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn enetrg(&mut self) -> ENETRG_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC, 12> {
-        ENETRG_W::new(self)
+    pub fn enetrg(&mut self) -> ENETRG_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC> {
+        ENETRG_W::new(self, 12)
     }
     #[doc = "Bits 13:14 - Waveform Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn wavsel(&mut self) -> WAVSEL_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC, 13> {
-        WAVSEL_W::new(self)
+    pub fn wavsel(&mut self) -> WAVSEL_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC> {
+        WAVSEL_W::new(self, 13)
     }
     #[doc = "Bit 15 - Waveform Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn wave(&mut self) -> WAVE_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC, 15> {
-        WAVE_W::new(self)
+    pub fn wave(&mut self) -> WAVE_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC> {
+        WAVE_W::new(self, 15)
     }
     #[doc = "Bits 16:17 - RA Compare Effect on TIOA"]
     #[inline(always)]
     #[must_use]
-    pub fn acpa(&mut self) -> ACPA_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC, 16> {
-        ACPA_W::new(self)
+    pub fn acpa(&mut self) -> ACPA_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC> {
+        ACPA_W::new(self, 16)
     }
     #[doc = "Bits 18:19 - RC Compare Effect on TIOA"]
     #[inline(always)]
     #[must_use]
-    pub fn acpc(&mut self) -> ACPC_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC, 18> {
-        ACPC_W::new(self)
+    pub fn acpc(&mut self) -> ACPC_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC> {
+        ACPC_W::new(self, 18)
     }
     #[doc = "Bits 20:21 - External Event Effect on TIOA"]
     #[inline(always)]
     #[must_use]
-    pub fn aeevt(&mut self) -> AEEVT_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC, 20> {
-        AEEVT_W::new(self)
+    pub fn aeevt(&mut self) -> AEEVT_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC> {
+        AEEVT_W::new(self, 20)
     }
     #[doc = "Bits 22:23 - Software Trigger Effect on TIOA"]
     #[inline(always)]
     #[must_use]
-    pub fn aswtrg(&mut self) -> ASWTRG_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC, 22> {
-        ASWTRG_W::new(self)
+    pub fn aswtrg(&mut self) -> ASWTRG_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC> {
+        ASWTRG_W::new(self, 22)
     }
     #[doc = "Bits 24:25 - RB Compare Effect on TIOB"]
     #[inline(always)]
     #[must_use]
-    pub fn bcpb(&mut self) -> BCPB_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC, 24> {
-        BCPB_W::new(self)
+    pub fn bcpb(&mut self) -> BCPB_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC> {
+        BCPB_W::new(self, 24)
     }
     #[doc = "Bits 26:27 - RC Compare Effect on TIOB"]
     #[inline(always)]
     #[must_use]
-    pub fn bcpc(&mut self) -> BCPC_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC, 26> {
-        BCPC_W::new(self)
+    pub fn bcpc(&mut self) -> BCPC_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC> {
+        BCPC_W::new(self, 26)
     }
     #[doc = "Bits 28:29 - External Event Effect on TIOB"]
     #[inline(always)]
     #[must_use]
-    pub fn beevt(&mut self) -> BEEVT_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC, 28> {
-        BEEVT_W::new(self)
+    pub fn beevt(&mut self) -> BEEVT_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC> {
+        BEEVT_W::new(self, 28)
     }
     #[doc = "Bits 30:31 - Software Trigger Effect on TIOB"]
     #[inline(always)]
     #[must_use]
-    pub fn bswtrg(&mut self) -> BSWTRG_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC, 30> {
-        BSWTRG_W::new(self)
+    pub fn bswtrg(&mut self) -> BSWTRG_W<WAVE_EQ_1_CMR2_WAVE_EQ_1_SPEC> {
+        BSWTRG_W::new(self, 30)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

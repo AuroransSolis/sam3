@@ -1,50 +1,128 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Control Register"]
-    pub cr: CR,
-    #[doc = "0x04 - Mode Register"]
-    pub mr: MR,
+    cr: CR,
+    mr: MR,
     _reserved2: [u8; 0x08],
-    #[doc = "0x10 - Channel Enable Register"]
-    pub cher: CHER,
-    #[doc = "0x14 - Channel Disable Register"]
-    pub chdr: CHDR,
-    #[doc = "0x18 - Channel Status Register"]
-    pub chsr: CHSR,
+    cher: CHER,
+    chdr: CHDR,
+    chsr: CHSR,
     _reserved5: [u8; 0x04],
-    #[doc = "0x20 - Conversion Data Register"]
-    pub cdr: CDR,
-    #[doc = "0x24 - Interrupt Enable Register"]
-    pub ier: IER,
-    #[doc = "0x28 - Interrupt Disable Register"]
-    pub idr: IDR,
-    #[doc = "0x2c - Interrupt Mask Register"]
-    pub imr: IMR,
-    #[doc = "0x30 - Interrupt Status Register"]
-    pub isr: ISR,
+    cdr: CDR,
+    ier: IER,
+    idr: IDR,
+    imr: IMR,
+    isr: ISR,
     _reserved10: [u8; 0x60],
-    #[doc = "0x94 - Analog Current Register"]
-    pub acr: ACR,
+    acr: ACR,
     _reserved11: [u8; 0x4c],
-    #[doc = "0xe4 - Write Protect Mode register"]
-    pub wpmr: WPMR,
-    #[doc = "0xe8 - Write Protect Status register"]
-    pub wpsr: WPSR,
+    wpmr: WPMR,
+    wpsr: WPSR,
     _reserved13: [u8; 0x1c],
-    #[doc = "0x108 - Transmit Pointer Register"]
-    pub tpr: TPR,
-    #[doc = "0x10c - Transmit Counter Register"]
-    pub tcr: TCR,
+    tpr: TPR,
+    tcr: TCR,
     _reserved15: [u8; 0x08],
+    tnpr: TNPR,
+    tncr: TNCR,
+    ptcr: PTCR,
+    ptsr: PTSR,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Control Register"]
+    #[inline(always)]
+    pub const fn cr(&self) -> &CR {
+        &self.cr
+    }
+    #[doc = "0x04 - Mode Register"]
+    #[inline(always)]
+    pub const fn mr(&self) -> &MR {
+        &self.mr
+    }
+    #[doc = "0x10 - Channel Enable Register"]
+    #[inline(always)]
+    pub const fn cher(&self) -> &CHER {
+        &self.cher
+    }
+    #[doc = "0x14 - Channel Disable Register"]
+    #[inline(always)]
+    pub const fn chdr(&self) -> &CHDR {
+        &self.chdr
+    }
+    #[doc = "0x18 - Channel Status Register"]
+    #[inline(always)]
+    pub const fn chsr(&self) -> &CHSR {
+        &self.chsr
+    }
+    #[doc = "0x20 - Conversion Data Register"]
+    #[inline(always)]
+    pub const fn cdr(&self) -> &CDR {
+        &self.cdr
+    }
+    #[doc = "0x24 - Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn ier(&self) -> &IER {
+        &self.ier
+    }
+    #[doc = "0x28 - Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn idr(&self) -> &IDR {
+        &self.idr
+    }
+    #[doc = "0x2c - Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn imr(&self) -> &IMR {
+        &self.imr
+    }
+    #[doc = "0x30 - Interrupt Status Register"]
+    #[inline(always)]
+    pub const fn isr(&self) -> &ISR {
+        &self.isr
+    }
+    #[doc = "0x94 - Analog Current Register"]
+    #[inline(always)]
+    pub const fn acr(&self) -> &ACR {
+        &self.acr
+    }
+    #[doc = "0xe4 - Write Protect Mode register"]
+    #[inline(always)]
+    pub const fn wpmr(&self) -> &WPMR {
+        &self.wpmr
+    }
+    #[doc = "0xe8 - Write Protect Status register"]
+    #[inline(always)]
+    pub const fn wpsr(&self) -> &WPSR {
+        &self.wpsr
+    }
+    #[doc = "0x108 - Transmit Pointer Register"]
+    #[inline(always)]
+    pub const fn tpr(&self) -> &TPR {
+        &self.tpr
+    }
+    #[doc = "0x10c - Transmit Counter Register"]
+    #[inline(always)]
+    pub const fn tcr(&self) -> &TCR {
+        &self.tcr
+    }
     #[doc = "0x118 - Transmit Next Pointer Register"]
-    pub tnpr: TNPR,
+    #[inline(always)]
+    pub const fn tnpr(&self) -> &TNPR {
+        &self.tnpr
+    }
     #[doc = "0x11c - Transmit Next Counter Register"]
-    pub tncr: TNCR,
+    #[inline(always)]
+    pub const fn tncr(&self) -> &TNCR {
+        &self.tncr
+    }
     #[doc = "0x120 - Transfer Control Register"]
-    pub ptcr: PTCR,
+    #[inline(always)]
+    pub const fn ptcr(&self) -> &PTCR {
+        &self.ptcr
+    }
     #[doc = "0x124 - Transfer Status Register"]
-    pub ptsr: PTSR,
+    #[inline(always)]
+    pub const fn ptsr(&self) -> &PTSR {
+        &self.ptsr
+    }
 }
 #[doc = "CR (w) register accessor: Control Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
 module"]

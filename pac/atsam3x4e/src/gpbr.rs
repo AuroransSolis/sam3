@@ -1,22 +1,56 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
+    gpbr0: GPBR0,
+    gpbr1: GPBR1,
+    gpbr2: GPBR2,
+    gpbr3: GPBR3,
+    gpbr4: GPBR4,
+    gpbr5: GPBR5,
+    gpbr6: GPBR6,
+    gpbr7: GPBR7,
+}
+impl RegisterBlock {
     #[doc = "0x00 - General Purpose Backup Register 0"]
-    pub gpbr0: GPBR0,
+    #[inline(always)]
+    pub const fn gpbr0(&self) -> &GPBR0 {
+        &self.gpbr0
+    }
     #[doc = "0x04 - General Purpose Backup Register 1"]
-    pub gpbr1: GPBR1,
+    #[inline(always)]
+    pub const fn gpbr1(&self) -> &GPBR1 {
+        &self.gpbr1
+    }
     #[doc = "0x08 - General Purpose Backup Register 2"]
-    pub gpbr2: GPBR2,
+    #[inline(always)]
+    pub const fn gpbr2(&self) -> &GPBR2 {
+        &self.gpbr2
+    }
     #[doc = "0x0c - General Purpose Backup Register 3"]
-    pub gpbr3: GPBR3,
+    #[inline(always)]
+    pub const fn gpbr3(&self) -> &GPBR3 {
+        &self.gpbr3
+    }
     #[doc = "0x10 - General Purpose Backup Register 4"]
-    pub gpbr4: GPBR4,
+    #[inline(always)]
+    pub const fn gpbr4(&self) -> &GPBR4 {
+        &self.gpbr4
+    }
     #[doc = "0x14 - General Purpose Backup Register 5"]
-    pub gpbr5: GPBR5,
+    #[inline(always)]
+    pub const fn gpbr5(&self) -> &GPBR5 {
+        &self.gpbr5
+    }
     #[doc = "0x18 - General Purpose Backup Register 6"]
-    pub gpbr6: GPBR6,
+    #[inline(always)]
+    pub const fn gpbr6(&self) -> &GPBR6 {
+        &self.gpbr6
+    }
     #[doc = "0x1c - General Purpose Backup Register 7"]
-    pub gpbr7: GPBR7,
+    #[inline(always)]
+    pub const fn gpbr7(&self) -> &GPBR7 {
+        &self.gpbr7
+    }
 }
 #[doc = "GPBR0 (rw) register accessor: General Purpose Backup Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpbr0::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpbr0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpbr0`]
 module"]

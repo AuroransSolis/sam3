@@ -43,8 +43,8 @@ impl crate::FieldSpec for FCMD_AW {
     type Ux = u8;
 }
 #[doc = "Field `FCMD` writer - Flash Command"]
-pub type FCMD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, FCMD_AW>;
-impl<'a, REG, const O: u8> FCMD_W<'a, REG, O>
+pub type FCMD_W<'a, REG> = crate::FieldWriter<'a, REG, 8, FCMD_AW>;
+impl<'a, REG> FCMD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -121,7 +121,7 @@ where
     }
 }
 #[doc = "Field `FARG` writer - Flash Command Argument"]
-pub type FARG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type FARG_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Flash Writing Protection Key"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -139,8 +139,8 @@ impl crate::FieldSpec for FKEY_AW {
     type Ux = u8;
 }
 #[doc = "Field `FKEY` writer - Flash Writing Protection Key"]
-pub type FKEY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, FKEY_AW>;
-impl<'a, REG, const O: u8> FKEY_W<'a, REG, O>
+pub type FKEY_W<'a, REG> = crate::FieldWriter<'a, REG, 8, FKEY_AW>;
+impl<'a, REG> FKEY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -155,20 +155,20 @@ impl W {
     #[doc = "Bits 0:7 - Flash Command"]
     #[inline(always)]
     #[must_use]
-    pub fn fcmd(&mut self) -> FCMD_W<FCR_SPEC, 0> {
-        FCMD_W::new(self)
+    pub fn fcmd(&mut self) -> FCMD_W<FCR_SPEC> {
+        FCMD_W::new(self, 0)
     }
     #[doc = "Bits 8:23 - Flash Command Argument"]
     #[inline(always)]
     #[must_use]
-    pub fn farg(&mut self) -> FARG_W<FCR_SPEC, 8> {
-        FARG_W::new(self)
+    pub fn farg(&mut self) -> FARG_W<FCR_SPEC> {
+        FARG_W::new(self, 8)
     }
     #[doc = "Bits 24:31 - Flash Writing Protection Key"]
     #[inline(always)]
     #[must_use]
-    pub fn fkey(&mut self) -> FKEY_W<FCR_SPEC, 24> {
-        FKEY_W::new(self)
+    pub fn fkey(&mut self) -> FKEY_W<FCR_SPEC> {
+        FKEY_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

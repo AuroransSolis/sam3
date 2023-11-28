@@ -1,72 +1,172 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Frame Number Register"]
-    pub frm_num: FRM_NUM,
-    #[doc = "0x04 - Global State Register"]
-    pub glb_stat: GLB_STAT,
-    #[doc = "0x08 - Function Address Register"]
-    pub faddr: FADDR,
+    frm_num: FRM_NUM,
+    glb_stat: GLB_STAT,
+    faddr: FADDR,
     _reserved3: [u8; 0x04],
-    #[doc = "0x10 - Interrupt Enable Register"]
-    pub ier: IER,
-    #[doc = "0x14 - Interrupt Disable Register"]
-    pub idr: IDR,
-    #[doc = "0x18 - Interrupt Mask Register"]
-    pub imr: IMR,
-    #[doc = "0x1c - Interrupt Status Register"]
-    pub isr: ISR,
-    #[doc = "0x20 - Interrupt Clear Register"]
-    pub icr: ICR,
+    ier: IER,
+    idr: IDR,
+    imr: IMR,
+    isr: ISR,
+    icr: ICR,
     _reserved8: [u8; 0x04],
-    #[doc = "0x28 - Reset Endpoint Register"]
-    pub rst_ep: RST_EP,
+    rst_ep: RST_EP,
     _reserved9: [u8; 0x04],
     _reserved_9_csr0: [u8; 0x04],
-    #[doc = "0x34 - Endpoint Control and Status Register 1"]
-    pub csr1: CSR1,
-    #[doc = "0x38 - Endpoint Control and Status Register 2"]
-    pub csr2: CSR2,
-    #[doc = "0x3c - Endpoint Control and Status Register 3"]
-    pub csr3: CSR3,
-    #[doc = "0x40 - Endpoint Control and Status Register 4"]
-    pub csr4: CSR4,
-    #[doc = "0x44 - Endpoint Control and Status Register 5"]
-    pub csr5: CSR5,
-    #[doc = "0x48 - Endpoint Control and Status Register 6"]
-    pub csr6: CSR6,
-    #[doc = "0x4c - Endpoint Control and Status Register 7"]
-    pub csr7: CSR7,
-    #[doc = "0x50 - Endpoint FIFO Data Register 0"]
-    pub fdr0: FDR0,
-    #[doc = "0x54 - Endpoint FIFO Data Register 1"]
-    pub fdr1: FDR1,
-    #[doc = "0x58 - Endpoint FIFO Data Register 2"]
-    pub fdr2: FDR2,
-    #[doc = "0x5c - Endpoint FIFO Data Register 3"]
-    pub fdr3: FDR3,
-    #[doc = "0x60 - Endpoint FIFO Data Register 4"]
-    pub fdr4: FDR4,
-    #[doc = "0x64 - Endpoint FIFO Data Register 5"]
-    pub fdr5: FDR5,
-    #[doc = "0x68 - Endpoint FIFO Data Register 6"]
-    pub fdr6: FDR6,
-    #[doc = "0x6c - Endpoint FIFO Data Register 7"]
-    pub fdr7: FDR7,
+    csr1: CSR1,
+    csr2: CSR2,
+    csr3: CSR3,
+    csr4: CSR4,
+    csr5: CSR5,
+    csr6: CSR6,
+    csr7: CSR7,
+    fdr0: FDR0,
+    fdr1: FDR1,
+    fdr2: FDR2,
+    fdr3: FDR3,
+    fdr4: FDR4,
+    fdr5: FDR5,
+    fdr6: FDR6,
+    fdr7: FDR7,
     _reserved25: [u8; 0x04],
-    #[doc = "0x74 - Transceiver Control Register"]
-    pub txvc: TXVC,
+    txvc: TXVC,
 }
 impl RegisterBlock {
+    #[doc = "0x00 - Frame Number Register"]
+    #[inline(always)]
+    pub const fn frm_num(&self) -> &FRM_NUM {
+        &self.frm_num
+    }
+    #[doc = "0x04 - Global State Register"]
+    #[inline(always)]
+    pub const fn glb_stat(&self) -> &GLB_STAT {
+        &self.glb_stat
+    }
+    #[doc = "0x08 - Function Address Register"]
+    #[inline(always)]
+    pub const fn faddr(&self) -> &FADDR {
+        &self.faddr
+    }
+    #[doc = "0x10 - Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn ier(&self) -> &IER {
+        &self.ier
+    }
+    #[doc = "0x14 - Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn idr(&self) -> &IDR {
+        &self.idr
+    }
+    #[doc = "0x18 - Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn imr(&self) -> &IMR {
+        &self.imr
+    }
+    #[doc = "0x1c - Interrupt Status Register"]
+    #[inline(always)]
+    pub const fn isr(&self) -> &ISR {
+        &self.isr
+    }
+    #[doc = "0x20 - Interrupt Clear Register"]
+    #[inline(always)]
+    pub const fn icr(&self) -> &ICR {
+        &self.icr
+    }
+    #[doc = "0x28 - Reset Endpoint Register"]
+    #[inline(always)]
+    pub const fn rst_ep(&self) -> &RST_EP {
+        &self.rst_ep
+    }
     #[doc = "0x30 - Endpoint Control and Status Register"]
     #[inline(always)]
     pub const fn isoendpt_csr0_isoendpt(&self) -> &ISOENDPT_CSR0_ISOENDPT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(48usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(48).cast() }
     }
     #[doc = "0x30 - Endpoint Control and Status Register 0"]
     #[inline(always)]
     pub const fn csr0(&self) -> &CSR0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(48usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(48).cast() }
+    }
+    #[doc = "0x34 - Endpoint Control and Status Register 1"]
+    #[inline(always)]
+    pub const fn csr1(&self) -> &CSR1 {
+        &self.csr1
+    }
+    #[doc = "0x38 - Endpoint Control and Status Register 2"]
+    #[inline(always)]
+    pub const fn csr2(&self) -> &CSR2 {
+        &self.csr2
+    }
+    #[doc = "0x3c - Endpoint Control and Status Register 3"]
+    #[inline(always)]
+    pub const fn csr3(&self) -> &CSR3 {
+        &self.csr3
+    }
+    #[doc = "0x40 - Endpoint Control and Status Register 4"]
+    #[inline(always)]
+    pub const fn csr4(&self) -> &CSR4 {
+        &self.csr4
+    }
+    #[doc = "0x44 - Endpoint Control and Status Register 5"]
+    #[inline(always)]
+    pub const fn csr5(&self) -> &CSR5 {
+        &self.csr5
+    }
+    #[doc = "0x48 - Endpoint Control and Status Register 6"]
+    #[inline(always)]
+    pub const fn csr6(&self) -> &CSR6 {
+        &self.csr6
+    }
+    #[doc = "0x4c - Endpoint Control and Status Register 7"]
+    #[inline(always)]
+    pub const fn csr7(&self) -> &CSR7 {
+        &self.csr7
+    }
+    #[doc = "0x50 - Endpoint FIFO Data Register 0"]
+    #[inline(always)]
+    pub const fn fdr0(&self) -> &FDR0 {
+        &self.fdr0
+    }
+    #[doc = "0x54 - Endpoint FIFO Data Register 1"]
+    #[inline(always)]
+    pub const fn fdr1(&self) -> &FDR1 {
+        &self.fdr1
+    }
+    #[doc = "0x58 - Endpoint FIFO Data Register 2"]
+    #[inline(always)]
+    pub const fn fdr2(&self) -> &FDR2 {
+        &self.fdr2
+    }
+    #[doc = "0x5c - Endpoint FIFO Data Register 3"]
+    #[inline(always)]
+    pub const fn fdr3(&self) -> &FDR3 {
+        &self.fdr3
+    }
+    #[doc = "0x60 - Endpoint FIFO Data Register 4"]
+    #[inline(always)]
+    pub const fn fdr4(&self) -> &FDR4 {
+        &self.fdr4
+    }
+    #[doc = "0x64 - Endpoint FIFO Data Register 5"]
+    #[inline(always)]
+    pub const fn fdr5(&self) -> &FDR5 {
+        &self.fdr5
+    }
+    #[doc = "0x68 - Endpoint FIFO Data Register 6"]
+    #[inline(always)]
+    pub const fn fdr6(&self) -> &FDR6 {
+        &self.fdr6
+    }
+    #[doc = "0x6c - Endpoint FIFO Data Register 7"]
+    #[inline(always)]
+    pub const fn fdr7(&self) -> &FDR7 {
+        &self.fdr7
+    }
+    #[doc = "0x74 - Transceiver Control Register"]
+    #[inline(always)]
+    pub const fn txvc(&self) -> &TXVC {
+        &self.txvc
     }
 }
 #[doc = "FRM_NUM (r) register accessor: Frame Number Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`frm_num::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@frm_num`]

@@ -60,8 +60,8 @@ impl CSS_R {
     }
 }
 #[doc = "Field `CSS` writer - Master Clock Source Selection"]
-pub type CSS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CSS_A>;
-impl<'a, REG, const O: u8> CSS_W<'a, REG, O>
+pub type CSS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CSS_A>;
+impl<'a, REG> CSS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -177,8 +177,8 @@ impl PRES_R {
     }
 }
 #[doc = "Field `PRES` writer - Processor Clock Prescaler"]
-pub type PRES_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, PRES_A>;
-impl<'a, REG, const O: u8> PRES_W<'a, REG, O>
+pub type PRES_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, PRES_A>;
+impl<'a, REG> PRES_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -227,11 +227,11 @@ where
 #[doc = "Field `PLLADIV2` reader - PLLA Divisor by 2"]
 pub type PLLADIV2_R = crate::BitReader;
 #[doc = "Field `PLLADIV2` writer - PLLA Divisor by 2"]
-pub type PLLADIV2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PLLADIV2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UPLLDIV2` reader - UPLL Divisor by 2"]
 pub type UPLLDIV2_R = crate::BitReader;
 #[doc = "Field `UPLLDIV2` writer - UPLL Divisor by 2"]
-pub type UPLLDIV2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type UPLLDIV2_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:1 - Master Clock Source Selection"]
     #[inline(always)]
@@ -258,26 +258,26 @@ impl W {
     #[doc = "Bits 0:1 - Master Clock Source Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn css(&mut self) -> CSS_W<PMC_MCKR_SPEC, 0> {
-        CSS_W::new(self)
+    pub fn css(&mut self) -> CSS_W<PMC_MCKR_SPEC> {
+        CSS_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Processor Clock Prescaler"]
     #[inline(always)]
     #[must_use]
-    pub fn pres(&mut self) -> PRES_W<PMC_MCKR_SPEC, 4> {
-        PRES_W::new(self)
+    pub fn pres(&mut self) -> PRES_W<PMC_MCKR_SPEC> {
+        PRES_W::new(self, 4)
     }
     #[doc = "Bit 12 - PLLA Divisor by 2"]
     #[inline(always)]
     #[must_use]
-    pub fn plladiv2(&mut self) -> PLLADIV2_W<PMC_MCKR_SPEC, 12> {
-        PLLADIV2_W::new(self)
+    pub fn plladiv2(&mut self) -> PLLADIV2_W<PMC_MCKR_SPEC> {
+        PLLADIV2_W::new(self, 12)
     }
     #[doc = "Bit 13 - UPLL Divisor by 2"]
     #[inline(always)]
     #[must_use]
-    pub fn uplldiv2(&mut self) -> UPLLDIV2_W<PMC_MCKR_SPEC, 13> {
-        UPLLDIV2_W::new(self)
+    pub fn uplldiv2(&mut self) -> UPLLDIV2_W<PMC_MCKR_SPEC> {
+        UPLLDIV2_W::new(self, 13)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

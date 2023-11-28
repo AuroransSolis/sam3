@@ -5,7 +5,7 @@ pub type W = crate::W<TR_SPEC>;
 #[doc = "Field `COUNT` reader - SDRAMC Refresh Timer Count"]
 pub type COUNT_R = crate::FieldReader<u16>;
 #[doc = "Field `COUNT` writer - SDRAMC Refresh Timer Count"]
-pub type COUNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 12, O, u16>;
+pub type COUNT_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
     #[doc = "Bits 0:11 - SDRAMC Refresh Timer Count"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:11 - SDRAMC Refresh Timer Count"]
     #[inline(always)]
     #[must_use]
-    pub fn count(&mut self) -> COUNT_W<TR_SPEC, 0> {
-        COUNT_W::new(self)
+    pub fn count(&mut self) -> COUNT_W<TR_SPEC> {
+        COUNT_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

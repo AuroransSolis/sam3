@@ -5,11 +5,11 @@ pub type W = crate::W<WPMR_SPEC>;
 #[doc = "Field `WP_EN` reader - Write Protection Enable"]
 pub type WP_EN_R = crate::BitReader;
 #[doc = "Field `WP_EN` writer - Write Protection Enable"]
-pub type WP_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type WP_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WP_KEY` reader - Write Protection Key password"]
 pub type WP_KEY_R = crate::FieldReader<u32>;
 #[doc = "Field `WP_KEY` writer - Write Protection Key password"]
-pub type WP_KEY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 24, O, u32>;
+pub type WP_KEY_W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     #[doc = "Bit 0 - Write Protection Enable"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bit 0 - Write Protection Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn wp_en(&mut self) -> WP_EN_W<WPMR_SPEC, 0> {
-        WP_EN_W::new(self)
+    pub fn wp_en(&mut self) -> WP_EN_W<WPMR_SPEC> {
+        WP_EN_W::new(self, 0)
     }
     #[doc = "Bits 8:31 - Write Protection Key password"]
     #[inline(always)]
     #[must_use]
-    pub fn wp_key(&mut self) -> WP_KEY_W<WPMR_SPEC, 8> {
-        WP_KEY_W::new(self)
+    pub fn wp_key(&mut self) -> WP_KEY_W<WPMR_SPEC> {
+        WP_KEY_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

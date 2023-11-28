@@ -92,8 +92,8 @@ impl SELMINUS_R {
     }
 }
 #[doc = "Field `SELMINUS` writer - SELection for MINUS comparator input"]
-pub type SELMINUS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, SELMINUS_A>;
-impl<'a, REG, const O: u8> SELMINUS_W<'a, REG, O>
+pub type SELMINUS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, SELMINUS_A>;
+impl<'a, REG> SELMINUS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -229,8 +229,8 @@ impl SELPLUS_R {
     }
 }
 #[doc = "Field `SELPLUS` writer - SELection for PLUS comparator input"]
-pub type SELPLUS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, SELPLUS_A>;
-impl<'a, REG, const O: u8> SELPLUS_W<'a, REG, O>
+pub type SELPLUS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, SELPLUS_A>;
+impl<'a, REG> SELPLUS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -313,8 +313,8 @@ impl ACEN_R {
     }
 }
 #[doc = "Field `ACEN` writer - Analog Comparator ENable"]
-pub type ACEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ACEN_A>;
-impl<'a, REG, const O: u8> ACEN_W<'a, REG, O>
+pub type ACEN_W<'a, REG> = crate::BitWriter<'a, REG, ACEN_A>;
+impl<'a, REG> ACEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -379,8 +379,8 @@ impl EDGETYP_R {
     }
 }
 #[doc = "Field `EDGETYP` writer - EDGE TYPe"]
-pub type EDGETYP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, EDGETYP_A>;
-impl<'a, REG, const O: u8> EDGETYP_W<'a, REG, O>
+pub type EDGETYP_W<'a, REG> = crate::FieldWriter<'a, REG, 2, EDGETYP_A>;
+impl<'a, REG> EDGETYP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -438,8 +438,8 @@ impl INV_R {
     }
 }
 #[doc = "Field `INV` writer - INVert comparator output"]
-pub type INV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, INV_A>;
-impl<'a, REG, const O: u8> INV_W<'a, REG, O>
+pub type INV_W<'a, REG> = crate::BitWriter<'a, REG, INV_A>;
+impl<'a, REG> INV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -491,8 +491,8 @@ impl SELFS_R {
     }
 }
 #[doc = "Field `SELFS` writer - SELection of Fault Source"]
-pub type SELFS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELFS_A>;
-impl<'a, REG, const O: u8> SELFS_W<'a, REG, O>
+pub type SELFS_W<'a, REG> = crate::BitWriter<'a, REG, SELFS_A>;
+impl<'a, REG> SELFS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -544,8 +544,8 @@ impl FE_R {
     }
 }
 #[doc = "Field `FE` writer - Fault Enable"]
-pub type FE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_A>;
-impl<'a, REG, const O: u8> FE_W<'a, REG, O>
+pub type FE_W<'a, REG> = crate::BitWriter<'a, REG, FE_A>;
+impl<'a, REG> FE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -601,44 +601,44 @@ impl W {
     #[doc = "Bits 0:2 - SELection for MINUS comparator input"]
     #[inline(always)]
     #[must_use]
-    pub fn selminus(&mut self) -> SELMINUS_W<MR_SPEC, 0> {
-        SELMINUS_W::new(self)
+    pub fn selminus(&mut self) -> SELMINUS_W<MR_SPEC> {
+        SELMINUS_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - SELection for PLUS comparator input"]
     #[inline(always)]
     #[must_use]
-    pub fn selplus(&mut self) -> SELPLUS_W<MR_SPEC, 4> {
-        SELPLUS_W::new(self)
+    pub fn selplus(&mut self) -> SELPLUS_W<MR_SPEC> {
+        SELPLUS_W::new(self, 4)
     }
     #[doc = "Bit 8 - Analog Comparator ENable"]
     #[inline(always)]
     #[must_use]
-    pub fn acen(&mut self) -> ACEN_W<MR_SPEC, 8> {
-        ACEN_W::new(self)
+    pub fn acen(&mut self) -> ACEN_W<MR_SPEC> {
+        ACEN_W::new(self, 8)
     }
     #[doc = "Bits 9:10 - EDGE TYPe"]
     #[inline(always)]
     #[must_use]
-    pub fn edgetyp(&mut self) -> EDGETYP_W<MR_SPEC, 9> {
-        EDGETYP_W::new(self)
+    pub fn edgetyp(&mut self) -> EDGETYP_W<MR_SPEC> {
+        EDGETYP_W::new(self, 9)
     }
     #[doc = "Bit 12 - INVert comparator output"]
     #[inline(always)]
     #[must_use]
-    pub fn inv(&mut self) -> INV_W<MR_SPEC, 12> {
-        INV_W::new(self)
+    pub fn inv(&mut self) -> INV_W<MR_SPEC> {
+        INV_W::new(self, 12)
     }
     #[doc = "Bit 13 - SELection of Fault Source"]
     #[inline(always)]
     #[must_use]
-    pub fn selfs(&mut self) -> SELFS_W<MR_SPEC, 13> {
-        SELFS_W::new(self)
+    pub fn selfs(&mut self) -> SELFS_W<MR_SPEC> {
+        SELFS_W::new(self, 13)
     }
     #[doc = "Bit 14 - Fault Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fe(&mut self) -> FE_W<MR_SPEC, 14> {
-        FE_W::new(self)
+    pub fn fe(&mut self) -> FE_W<MR_SPEC> {
+        FE_W::new(self, 14)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -1,36 +1,94 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Control Register"]
-    pub cr: CR,
-    #[doc = "0x04 - Mode Register"]
-    pub mr: MR,
-    #[doc = "0x08 - Receive Data Register"]
-    pub rdr: RDR,
-    #[doc = "0x0c - Transmit Data Register"]
-    pub tdr: TDR,
-    #[doc = "0x10 - Status Register"]
-    pub sr: SR,
-    #[doc = "0x14 - Interrupt Enable Register"]
-    pub ier: IER,
-    #[doc = "0x18 - Interrupt Disable Register"]
-    pub idr: IDR,
-    #[doc = "0x1c - Interrupt Mask Register"]
-    pub imr: IMR,
+    cr: CR,
+    mr: MR,
+    rdr: RDR,
+    tdr: TDR,
+    sr: SR,
+    ier: IER,
+    idr: IDR,
+    imr: IMR,
     _reserved8: [u8; 0x10],
-    #[doc = "0x30 - Chip Select Register 0"]
-    pub csr0: CSR0,
-    #[doc = "0x34 - Chip Select Register 1"]
-    pub csr1: CSR1,
-    #[doc = "0x38 - Chip Select Register 2"]
-    pub csr2: CSR2,
-    #[doc = "0x3c - Chip Select Register 3"]
-    pub csr3: CSR3,
+    csr0: CSR0,
+    csr1: CSR1,
+    csr2: CSR2,
+    csr3: CSR3,
     _reserved12: [u8; 0xa4],
+    wpmr: WPMR,
+    wpsr: WPSR,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Control Register"]
+    #[inline(always)]
+    pub const fn cr(&self) -> &CR {
+        &self.cr
+    }
+    #[doc = "0x04 - Mode Register"]
+    #[inline(always)]
+    pub const fn mr(&self) -> &MR {
+        &self.mr
+    }
+    #[doc = "0x08 - Receive Data Register"]
+    #[inline(always)]
+    pub const fn rdr(&self) -> &RDR {
+        &self.rdr
+    }
+    #[doc = "0x0c - Transmit Data Register"]
+    #[inline(always)]
+    pub const fn tdr(&self) -> &TDR {
+        &self.tdr
+    }
+    #[doc = "0x10 - Status Register"]
+    #[inline(always)]
+    pub const fn sr(&self) -> &SR {
+        &self.sr
+    }
+    #[doc = "0x14 - Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn ier(&self) -> &IER {
+        &self.ier
+    }
+    #[doc = "0x18 - Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn idr(&self) -> &IDR {
+        &self.idr
+    }
+    #[doc = "0x1c - Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn imr(&self) -> &IMR {
+        &self.imr
+    }
+    #[doc = "0x30 - Chip Select Register 0"]
+    #[inline(always)]
+    pub const fn csr0(&self) -> &CSR0 {
+        &self.csr0
+    }
+    #[doc = "0x34 - Chip Select Register 1"]
+    #[inline(always)]
+    pub const fn csr1(&self) -> &CSR1 {
+        &self.csr1
+    }
+    #[doc = "0x38 - Chip Select Register 2"]
+    #[inline(always)]
+    pub const fn csr2(&self) -> &CSR2 {
+        &self.csr2
+    }
+    #[doc = "0x3c - Chip Select Register 3"]
+    #[inline(always)]
+    pub const fn csr3(&self) -> &CSR3 {
+        &self.csr3
+    }
     #[doc = "0xe4 - Write Protection Control Register"]
-    pub wpmr: WPMR,
+    #[inline(always)]
+    pub const fn wpmr(&self) -> &WPMR {
+        &self.wpmr
+    }
     #[doc = "0xe8 - Write Protection Status Register"]
-    pub wpsr: WPSR,
+    #[inline(always)]
+    pub const fn wpsr(&self) -> &WPSR {
+        &self.wpsr
+    }
 }
 #[doc = "CR (w) register accessor: Control Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
 module"]

@@ -5,23 +5,23 @@ pub type W = crate::W<TFMR_SPEC>;
 #[doc = "Field `DATLEN` reader - Data Length"]
 pub type DATLEN_R = crate::FieldReader;
 #[doc = "Field `DATLEN` writer - Data Length"]
-pub type DATLEN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type DATLEN_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `DATDEF` reader - Data Default Value"]
 pub type DATDEF_R = crate::BitReader;
 #[doc = "Field `DATDEF` writer - Data Default Value"]
-pub type DATDEF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DATDEF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MSBF` reader - Most Significant Bit First"]
 pub type MSBF_R = crate::BitReader;
 #[doc = "Field `MSBF` writer - Most Significant Bit First"]
-pub type MSBF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MSBF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DATNB` reader - Data Number per frame"]
 pub type DATNB_R = crate::FieldReader;
 #[doc = "Field `DATNB` writer - Data Number per frame"]
-pub type DATNB_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type DATNB_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `FSLEN` reader - Transmit Frame Sync Length"]
 pub type FSLEN_R = crate::FieldReader;
 #[doc = "Field `FSLEN` writer - Transmit Frame Sync Length"]
-pub type FSLEN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type FSLEN_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `FSOS` reader - Transmit Frame Sync Output Selection"]
 pub type FSOS_R = crate::FieldReader<FSOS_A>;
 #[doc = "Transmit Frame Sync Output Selection\n\nValue on reset: 0"]
@@ -96,8 +96,8 @@ impl FSOS_R {
     }
 }
 #[doc = "Field `FSOS` writer - Transmit Frame Sync Output Selection"]
-pub type FSOS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, FSOS_A>;
-impl<'a, REG, const O: u8> FSOS_W<'a, REG, O>
+pub type FSOS_W<'a, REG> = crate::FieldWriter<'a, REG, 3, FSOS_A>;
+impl<'a, REG> FSOS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -136,7 +136,7 @@ where
 #[doc = "Field `FSDEN` reader - Frame Sync Data Enable"]
 pub type FSDEN_R = crate::BitReader;
 #[doc = "Field `FSDEN` writer - Frame Sync Data Enable"]
-pub type FSDEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FSDEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FSEDGE` reader - Frame Sync Edge Detection"]
 pub type FSEDGE_R = crate::BitReader<FSEDGE_A>;
 #[doc = "Frame Sync Edge Detection\n\nValue on reset: 0"]
@@ -174,8 +174,8 @@ impl FSEDGE_R {
     }
 }
 #[doc = "Field `FSEDGE` writer - Frame Sync Edge Detection"]
-pub type FSEDGE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FSEDGE_A>;
-impl<'a, REG, const O: u8> FSEDGE_W<'a, REG, O>
+pub type FSEDGE_W<'a, REG> = crate::BitWriter<'a, REG, FSEDGE_A>;
+impl<'a, REG> FSEDGE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -193,7 +193,7 @@ where
 #[doc = "Field `FSLEN_EXT` reader - FSLEN Field Extension"]
 pub type FSLEN_EXT_R = crate::FieldReader;
 #[doc = "Field `FSLEN_EXT` writer - FSLEN Field Extension"]
-pub type FSLEN_EXT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type FSLEN_EXT_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:4 - Data Length"]
     #[inline(always)]
@@ -245,56 +245,56 @@ impl W {
     #[doc = "Bits 0:4 - Data Length"]
     #[inline(always)]
     #[must_use]
-    pub fn datlen(&mut self) -> DATLEN_W<TFMR_SPEC, 0> {
-        DATLEN_W::new(self)
+    pub fn datlen(&mut self) -> DATLEN_W<TFMR_SPEC> {
+        DATLEN_W::new(self, 0)
     }
     #[doc = "Bit 5 - Data Default Value"]
     #[inline(always)]
     #[must_use]
-    pub fn datdef(&mut self) -> DATDEF_W<TFMR_SPEC, 5> {
-        DATDEF_W::new(self)
+    pub fn datdef(&mut self) -> DATDEF_W<TFMR_SPEC> {
+        DATDEF_W::new(self, 5)
     }
     #[doc = "Bit 7 - Most Significant Bit First"]
     #[inline(always)]
     #[must_use]
-    pub fn msbf(&mut self) -> MSBF_W<TFMR_SPEC, 7> {
-        MSBF_W::new(self)
+    pub fn msbf(&mut self) -> MSBF_W<TFMR_SPEC> {
+        MSBF_W::new(self, 7)
     }
     #[doc = "Bits 8:11 - Data Number per frame"]
     #[inline(always)]
     #[must_use]
-    pub fn datnb(&mut self) -> DATNB_W<TFMR_SPEC, 8> {
-        DATNB_W::new(self)
+    pub fn datnb(&mut self) -> DATNB_W<TFMR_SPEC> {
+        DATNB_W::new(self, 8)
     }
     #[doc = "Bits 16:19 - Transmit Frame Sync Length"]
     #[inline(always)]
     #[must_use]
-    pub fn fslen(&mut self) -> FSLEN_W<TFMR_SPEC, 16> {
-        FSLEN_W::new(self)
+    pub fn fslen(&mut self) -> FSLEN_W<TFMR_SPEC> {
+        FSLEN_W::new(self, 16)
     }
     #[doc = "Bits 20:22 - Transmit Frame Sync Output Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn fsos(&mut self) -> FSOS_W<TFMR_SPEC, 20> {
-        FSOS_W::new(self)
+    pub fn fsos(&mut self) -> FSOS_W<TFMR_SPEC> {
+        FSOS_W::new(self, 20)
     }
     #[doc = "Bit 23 - Frame Sync Data Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fsden(&mut self) -> FSDEN_W<TFMR_SPEC, 23> {
-        FSDEN_W::new(self)
+    pub fn fsden(&mut self) -> FSDEN_W<TFMR_SPEC> {
+        FSDEN_W::new(self, 23)
     }
     #[doc = "Bit 24 - Frame Sync Edge Detection"]
     #[inline(always)]
     #[must_use]
-    pub fn fsedge(&mut self) -> FSEDGE_W<TFMR_SPEC, 24> {
-        FSEDGE_W::new(self)
+    pub fn fsedge(&mut self) -> FSEDGE_W<TFMR_SPEC> {
+        FSEDGE_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - FSLEN Field Extension"]
     #[inline(always)]
     #[must_use]
-    pub fn fslen_ext(&mut self) -> FSLEN_EXT_W<TFMR_SPEC, 28> {
-        FSLEN_EXT_W::new(self)
+    pub fn fslen_ext(&mut self) -> FSLEN_EXT_W<TFMR_SPEC> {
+        FSLEN_EXT_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

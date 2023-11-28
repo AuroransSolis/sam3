@@ -5,75 +5,75 @@ pub type W = crate::W<DEVEPT_SPEC>;
 #[doc = "Field `EPEN0` reader - Endpoint 0 Enable"]
 pub type EPEN0_R = crate::BitReader;
 #[doc = "Field `EPEN0` writer - Endpoint 0 Enable"]
-pub type EPEN0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPEN0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPEN1` reader - Endpoint 1 Enable"]
 pub type EPEN1_R = crate::BitReader;
 #[doc = "Field `EPEN1` writer - Endpoint 1 Enable"]
-pub type EPEN1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPEN1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPEN2` reader - Endpoint 2 Enable"]
 pub type EPEN2_R = crate::BitReader;
 #[doc = "Field `EPEN2` writer - Endpoint 2 Enable"]
-pub type EPEN2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPEN2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPEN3` reader - Endpoint 3 Enable"]
 pub type EPEN3_R = crate::BitReader;
 #[doc = "Field `EPEN3` writer - Endpoint 3 Enable"]
-pub type EPEN3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPEN3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPEN4` reader - Endpoint 4 Enable"]
 pub type EPEN4_R = crate::BitReader;
 #[doc = "Field `EPEN4` writer - Endpoint 4 Enable"]
-pub type EPEN4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPEN4_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPEN5` reader - Endpoint 5 Enable"]
 pub type EPEN5_R = crate::BitReader;
 #[doc = "Field `EPEN5` writer - Endpoint 5 Enable"]
-pub type EPEN5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPEN5_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPEN6` reader - Endpoint 6 Enable"]
 pub type EPEN6_R = crate::BitReader;
 #[doc = "Field `EPEN6` writer - Endpoint 6 Enable"]
-pub type EPEN6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPEN6_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPEN7` reader - Endpoint 7 Enable"]
 pub type EPEN7_R = crate::BitReader;
 #[doc = "Field `EPEN7` writer - Endpoint 7 Enable"]
-pub type EPEN7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPEN7_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPEN8` reader - Endpoint 8 Enable"]
 pub type EPEN8_R = crate::BitReader;
 #[doc = "Field `EPEN8` writer - Endpoint 8 Enable"]
-pub type EPEN8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPEN8_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPRST0` reader - Endpoint 0 Reset"]
 pub type EPRST0_R = crate::BitReader;
 #[doc = "Field `EPRST0` writer - Endpoint 0 Reset"]
-pub type EPRST0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPRST0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPRST1` reader - Endpoint 1 Reset"]
 pub type EPRST1_R = crate::BitReader;
 #[doc = "Field `EPRST1` writer - Endpoint 1 Reset"]
-pub type EPRST1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPRST1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPRST2` reader - Endpoint 2 Reset"]
 pub type EPRST2_R = crate::BitReader;
 #[doc = "Field `EPRST2` writer - Endpoint 2 Reset"]
-pub type EPRST2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPRST2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPRST3` reader - Endpoint 3 Reset"]
 pub type EPRST3_R = crate::BitReader;
 #[doc = "Field `EPRST3` writer - Endpoint 3 Reset"]
-pub type EPRST3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPRST3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPRST4` reader - Endpoint 4 Reset"]
 pub type EPRST4_R = crate::BitReader;
 #[doc = "Field `EPRST4` writer - Endpoint 4 Reset"]
-pub type EPRST4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPRST4_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPRST5` reader - Endpoint 5 Reset"]
 pub type EPRST5_R = crate::BitReader;
 #[doc = "Field `EPRST5` writer - Endpoint 5 Reset"]
-pub type EPRST5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPRST5_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPRST6` reader - Endpoint 6 Reset"]
 pub type EPRST6_R = crate::BitReader;
 #[doc = "Field `EPRST6` writer - Endpoint 6 Reset"]
-pub type EPRST6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPRST6_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPRST7` reader - Endpoint 7 Reset"]
 pub type EPRST7_R = crate::BitReader;
 #[doc = "Field `EPRST7` writer - Endpoint 7 Reset"]
-pub type EPRST7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPRST7_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPRST8` reader - Endpoint 8 Reset"]
 pub type EPRST8_R = crate::BitReader;
 #[doc = "Field `EPRST8` writer - Endpoint 8 Reset"]
-pub type EPRST8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPRST8_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Endpoint 0 Enable"]
     #[inline(always)]
@@ -170,110 +170,110 @@ impl W {
     #[doc = "Bit 0 - Endpoint 0 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn epen0(&mut self) -> EPEN0_W<DEVEPT_SPEC, 0> {
-        EPEN0_W::new(self)
+    pub fn epen0(&mut self) -> EPEN0_W<DEVEPT_SPEC> {
+        EPEN0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Endpoint 1 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn epen1(&mut self) -> EPEN1_W<DEVEPT_SPEC, 1> {
-        EPEN1_W::new(self)
+    pub fn epen1(&mut self) -> EPEN1_W<DEVEPT_SPEC> {
+        EPEN1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Endpoint 2 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn epen2(&mut self) -> EPEN2_W<DEVEPT_SPEC, 2> {
-        EPEN2_W::new(self)
+    pub fn epen2(&mut self) -> EPEN2_W<DEVEPT_SPEC> {
+        EPEN2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Endpoint 3 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn epen3(&mut self) -> EPEN3_W<DEVEPT_SPEC, 3> {
-        EPEN3_W::new(self)
+    pub fn epen3(&mut self) -> EPEN3_W<DEVEPT_SPEC> {
+        EPEN3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Endpoint 4 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn epen4(&mut self) -> EPEN4_W<DEVEPT_SPEC, 4> {
-        EPEN4_W::new(self)
+    pub fn epen4(&mut self) -> EPEN4_W<DEVEPT_SPEC> {
+        EPEN4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Endpoint 5 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn epen5(&mut self) -> EPEN5_W<DEVEPT_SPEC, 5> {
-        EPEN5_W::new(self)
+    pub fn epen5(&mut self) -> EPEN5_W<DEVEPT_SPEC> {
+        EPEN5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Endpoint 6 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn epen6(&mut self) -> EPEN6_W<DEVEPT_SPEC, 6> {
-        EPEN6_W::new(self)
+    pub fn epen6(&mut self) -> EPEN6_W<DEVEPT_SPEC> {
+        EPEN6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Endpoint 7 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn epen7(&mut self) -> EPEN7_W<DEVEPT_SPEC, 7> {
-        EPEN7_W::new(self)
+    pub fn epen7(&mut self) -> EPEN7_W<DEVEPT_SPEC> {
+        EPEN7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Endpoint 8 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn epen8(&mut self) -> EPEN8_W<DEVEPT_SPEC, 8> {
-        EPEN8_W::new(self)
+    pub fn epen8(&mut self) -> EPEN8_W<DEVEPT_SPEC> {
+        EPEN8_W::new(self, 8)
     }
     #[doc = "Bit 16 - Endpoint 0 Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn eprst0(&mut self) -> EPRST0_W<DEVEPT_SPEC, 16> {
-        EPRST0_W::new(self)
+    pub fn eprst0(&mut self) -> EPRST0_W<DEVEPT_SPEC> {
+        EPRST0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Endpoint 1 Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn eprst1(&mut self) -> EPRST1_W<DEVEPT_SPEC, 17> {
-        EPRST1_W::new(self)
+    pub fn eprst1(&mut self) -> EPRST1_W<DEVEPT_SPEC> {
+        EPRST1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Endpoint 2 Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn eprst2(&mut self) -> EPRST2_W<DEVEPT_SPEC, 18> {
-        EPRST2_W::new(self)
+    pub fn eprst2(&mut self) -> EPRST2_W<DEVEPT_SPEC> {
+        EPRST2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Endpoint 3 Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn eprst3(&mut self) -> EPRST3_W<DEVEPT_SPEC, 19> {
-        EPRST3_W::new(self)
+    pub fn eprst3(&mut self) -> EPRST3_W<DEVEPT_SPEC> {
+        EPRST3_W::new(self, 19)
     }
     #[doc = "Bit 20 - Endpoint 4 Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn eprst4(&mut self) -> EPRST4_W<DEVEPT_SPEC, 20> {
-        EPRST4_W::new(self)
+    pub fn eprst4(&mut self) -> EPRST4_W<DEVEPT_SPEC> {
+        EPRST4_W::new(self, 20)
     }
     #[doc = "Bit 21 - Endpoint 5 Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn eprst5(&mut self) -> EPRST5_W<DEVEPT_SPEC, 21> {
-        EPRST5_W::new(self)
+    pub fn eprst5(&mut self) -> EPRST5_W<DEVEPT_SPEC> {
+        EPRST5_W::new(self, 21)
     }
     #[doc = "Bit 22 - Endpoint 6 Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn eprst6(&mut self) -> EPRST6_W<DEVEPT_SPEC, 22> {
-        EPRST6_W::new(self)
+    pub fn eprst6(&mut self) -> EPRST6_W<DEVEPT_SPEC> {
+        EPRST6_W::new(self, 22)
     }
     #[doc = "Bit 23 - Endpoint 7 Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn eprst7(&mut self) -> EPRST7_W<DEVEPT_SPEC, 23> {
-        EPRST7_W::new(self)
+    pub fn eprst7(&mut self) -> EPRST7_W<DEVEPT_SPEC> {
+        EPRST7_W::new(self, 23)
     }
     #[doc = "Bit 24 - Endpoint 8 Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn eprst8(&mut self) -> EPRST8_W<DEVEPT_SPEC, 24> {
-        EPRST8_W::new(self)
+    pub fn eprst8(&mut self) -> EPRST8_W<DEVEPT_SPEC> {
+        EPRST8_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

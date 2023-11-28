@@ -1,58 +1,156 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Control Register"]
-    pub cr: CR,
-    #[doc = "0x04 - Mode Register"]
-    pub mr: MR,
+    cr: CR,
+    mr: MR,
     _reserved2: [u8; 0x08],
-    #[doc = "0x10 - Channel Enable Register"]
-    pub cher: CHER,
-    #[doc = "0x14 - Channel Disable Register"]
-    pub chdr: CHDR,
-    #[doc = "0x18 - Channel Status Register"]
-    pub chsr: CHSR,
-    #[doc = "0x1c - Status Register"]
-    pub sr: SR,
-    #[doc = "0x20 - Last Converted Data Register"]
-    pub lcdr: LCDR,
-    #[doc = "0x24 - Interrupt Enable Register"]
-    pub ier: IER,
-    #[doc = "0x28 - Interrupt Disable Register"]
-    pub idr: IDR,
-    #[doc = "0x2c - Interrupt Mask Register"]
-    pub imr: IMR,
-    #[doc = "0x30 - Channel Data Register 0"]
-    pub cdr0: CDR0,
-    #[doc = "0x34 - Channel Data Register 1"]
-    pub cdr1: CDR1,
-    #[doc = "0x38 - Channel Data Register 2"]
-    pub cdr2: CDR2,
-    #[doc = "0x3c - Channel Data Register 3"]
-    pub cdr3: CDR3,
-    #[doc = "0x40 - Channel Data Register 4"]
-    pub cdr4: CDR4,
-    #[doc = "0x44 - Channel Data Register 5"]
-    pub cdr5: CDR5,
-    #[doc = "0x48 - Channel Data Register 6"]
-    pub cdr6: CDR6,
-    #[doc = "0x4c - Channel Data Register 7"]
-    pub cdr7: CDR7,
+    cher: CHER,
+    chdr: CHDR,
+    chsr: CHSR,
+    sr: SR,
+    lcdr: LCDR,
+    ier: IER,
+    idr: IDR,
+    imr: IMR,
+    cdr0: CDR0,
+    cdr1: CDR1,
+    cdr2: CDR2,
+    cdr3: CDR3,
+    cdr4: CDR4,
+    cdr5: CDR5,
+    cdr6: CDR6,
+    cdr7: CDR7,
     _reserved18: [u8; 0xb0],
-    #[doc = "0x100 - Receive Pointer Register"]
-    pub rpr: RPR,
-    #[doc = "0x104 - Receive Counter Register"]
-    pub rcr: RCR,
+    rpr: RPR,
+    rcr: RCR,
     _reserved20: [u8; 0x08],
-    #[doc = "0x110 - Receive Next Pointer Register"]
-    pub rnpr: RNPR,
-    #[doc = "0x114 - Receive Next Counter Register"]
-    pub rncr: RNCR,
+    rnpr: RNPR,
+    rncr: RNCR,
     _reserved22: [u8; 0x08],
+    ptcr: PTCR,
+    ptsr: PTSR,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Control Register"]
+    #[inline(always)]
+    pub const fn cr(&self) -> &CR {
+        &self.cr
+    }
+    #[doc = "0x04 - Mode Register"]
+    #[inline(always)]
+    pub const fn mr(&self) -> &MR {
+        &self.mr
+    }
+    #[doc = "0x10 - Channel Enable Register"]
+    #[inline(always)]
+    pub const fn cher(&self) -> &CHER {
+        &self.cher
+    }
+    #[doc = "0x14 - Channel Disable Register"]
+    #[inline(always)]
+    pub const fn chdr(&self) -> &CHDR {
+        &self.chdr
+    }
+    #[doc = "0x18 - Channel Status Register"]
+    #[inline(always)]
+    pub const fn chsr(&self) -> &CHSR {
+        &self.chsr
+    }
+    #[doc = "0x1c - Status Register"]
+    #[inline(always)]
+    pub const fn sr(&self) -> &SR {
+        &self.sr
+    }
+    #[doc = "0x20 - Last Converted Data Register"]
+    #[inline(always)]
+    pub const fn lcdr(&self) -> &LCDR {
+        &self.lcdr
+    }
+    #[doc = "0x24 - Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn ier(&self) -> &IER {
+        &self.ier
+    }
+    #[doc = "0x28 - Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn idr(&self) -> &IDR {
+        &self.idr
+    }
+    #[doc = "0x2c - Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn imr(&self) -> &IMR {
+        &self.imr
+    }
+    #[doc = "0x30 - Channel Data Register 0"]
+    #[inline(always)]
+    pub const fn cdr0(&self) -> &CDR0 {
+        &self.cdr0
+    }
+    #[doc = "0x34 - Channel Data Register 1"]
+    #[inline(always)]
+    pub const fn cdr1(&self) -> &CDR1 {
+        &self.cdr1
+    }
+    #[doc = "0x38 - Channel Data Register 2"]
+    #[inline(always)]
+    pub const fn cdr2(&self) -> &CDR2 {
+        &self.cdr2
+    }
+    #[doc = "0x3c - Channel Data Register 3"]
+    #[inline(always)]
+    pub const fn cdr3(&self) -> &CDR3 {
+        &self.cdr3
+    }
+    #[doc = "0x40 - Channel Data Register 4"]
+    #[inline(always)]
+    pub const fn cdr4(&self) -> &CDR4 {
+        &self.cdr4
+    }
+    #[doc = "0x44 - Channel Data Register 5"]
+    #[inline(always)]
+    pub const fn cdr5(&self) -> &CDR5 {
+        &self.cdr5
+    }
+    #[doc = "0x48 - Channel Data Register 6"]
+    #[inline(always)]
+    pub const fn cdr6(&self) -> &CDR6 {
+        &self.cdr6
+    }
+    #[doc = "0x4c - Channel Data Register 7"]
+    #[inline(always)]
+    pub const fn cdr7(&self) -> &CDR7 {
+        &self.cdr7
+    }
+    #[doc = "0x100 - Receive Pointer Register"]
+    #[inline(always)]
+    pub const fn rpr(&self) -> &RPR {
+        &self.rpr
+    }
+    #[doc = "0x104 - Receive Counter Register"]
+    #[inline(always)]
+    pub const fn rcr(&self) -> &RCR {
+        &self.rcr
+    }
+    #[doc = "0x110 - Receive Next Pointer Register"]
+    #[inline(always)]
+    pub const fn rnpr(&self) -> &RNPR {
+        &self.rnpr
+    }
+    #[doc = "0x114 - Receive Next Counter Register"]
+    #[inline(always)]
+    pub const fn rncr(&self) -> &RNCR {
+        &self.rncr
+    }
     #[doc = "0x120 - Transfer Control Register"]
-    pub ptcr: PTCR,
+    #[inline(always)]
+    pub const fn ptcr(&self) -> &PTCR {
+        &self.ptcr
+    }
     #[doc = "0x124 - Transfer Status Register"]
-    pub ptsr: PTSR,
+    #[inline(always)]
+    pub const fn ptsr(&self) -> &PTSR {
+        &self.ptsr
+    }
 }
 #[doc = "CR (w) register accessor: Control Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
 module"]

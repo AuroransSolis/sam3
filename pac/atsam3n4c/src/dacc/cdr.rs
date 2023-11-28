@@ -1,13 +1,13 @@
 #[doc = "Register `CDR` writer"]
 pub type W = crate::W<CDR_SPEC>;
 #[doc = "Field `DATA` writer - Data to Convert"]
-pub type DATA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type DATA_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl W {
     #[doc = "Bits 0:31 - Data to Convert"]
     #[inline(always)]
     #[must_use]
-    pub fn data(&mut self) -> DATA_W<CDR_SPEC, 0> {
-        DATA_W::new(self)
+    pub fn data(&mut self) -> DATA_W<CDR_SPEC> {
+        DATA_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

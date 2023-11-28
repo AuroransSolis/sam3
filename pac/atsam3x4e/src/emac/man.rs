@@ -5,27 +5,27 @@ pub type W = crate::W<MAN_SPEC>;
 #[doc = "Field `DATA` reader - "]
 pub type DATA_R = crate::FieldReader<u16>;
 #[doc = "Field `DATA` writer - "]
-pub type DATA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type DATA_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `CODE` reader - "]
 pub type CODE_R = crate::FieldReader;
 #[doc = "Field `CODE` writer - "]
-pub type CODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type CODE_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `REGA` reader - Register Address"]
 pub type REGA_R = crate::FieldReader;
 #[doc = "Field `REGA` writer - Register Address"]
-pub type REGA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type REGA_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `PHYA` reader - PHY Address"]
 pub type PHYA_R = crate::FieldReader;
 #[doc = "Field `PHYA` writer - PHY Address"]
-pub type PHYA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type PHYA_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `RW` reader - Read-write"]
 pub type RW_R = crate::FieldReader;
 #[doc = "Field `RW` writer - Read-write"]
-pub type RW_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type RW_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `SOF` reader - Start of frame"]
 pub type SOF_R = crate::FieldReader;
 #[doc = "Field `SOF` writer - Start of frame"]
-pub type SOF_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type SOF_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     #[doc = "Bits 0:15"]
     #[inline(always)]
@@ -62,38 +62,38 @@ impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
     #[must_use]
-    pub fn data(&mut self) -> DATA_W<MAN_SPEC, 0> {
-        DATA_W::new(self)
+    pub fn data(&mut self) -> DATA_W<MAN_SPEC> {
+        DATA_W::new(self, 0)
     }
     #[doc = "Bits 16:17"]
     #[inline(always)]
     #[must_use]
-    pub fn code(&mut self) -> CODE_W<MAN_SPEC, 16> {
-        CODE_W::new(self)
+    pub fn code(&mut self) -> CODE_W<MAN_SPEC> {
+        CODE_W::new(self, 16)
     }
     #[doc = "Bits 18:22 - Register Address"]
     #[inline(always)]
     #[must_use]
-    pub fn rega(&mut self) -> REGA_W<MAN_SPEC, 18> {
-        REGA_W::new(self)
+    pub fn rega(&mut self) -> REGA_W<MAN_SPEC> {
+        REGA_W::new(self, 18)
     }
     #[doc = "Bits 23:27 - PHY Address"]
     #[inline(always)]
     #[must_use]
-    pub fn phya(&mut self) -> PHYA_W<MAN_SPEC, 23> {
-        PHYA_W::new(self)
+    pub fn phya(&mut self) -> PHYA_W<MAN_SPEC> {
+        PHYA_W::new(self, 23)
     }
     #[doc = "Bits 28:29 - Read-write"]
     #[inline(always)]
     #[must_use]
-    pub fn rw(&mut self) -> RW_W<MAN_SPEC, 28> {
-        RW_W::new(self)
+    pub fn rw(&mut self) -> RW_W<MAN_SPEC> {
+        RW_W::new(self, 28)
     }
     #[doc = "Bits 30:31 - Start of frame"]
     #[inline(always)]
     #[must_use]
-    pub fn sof(&mut self) -> SOF_W<MAN_SPEC, 30> {
-        SOF_W::new(self)
+    pub fn sof(&mut self) -> SOF_W<MAN_SPEC> {
+        SOF_W::new(self, 30)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

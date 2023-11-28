@@ -1,37 +1,37 @@
 #[doc = "Register `CMPMUPD1` writer"]
 pub type W = crate::W<CMPMUPD1_SPEC>;
 #[doc = "Field `CENUPD` writer - Comparison x Enable Update"]
-pub type CENUPD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CENUPD_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CTRUPD` writer - Comparison x Trigger Update"]
-pub type CTRUPD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type CTRUPD_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CPRUPD` writer - Comparison x Period Update"]
-pub type CPRUPD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type CPRUPD_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CUPRUPD` writer - Comparison x Update Period Update"]
-pub type CUPRUPD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type CUPRUPD_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl W {
     #[doc = "Bit 0 - Comparison x Enable Update"]
     #[inline(always)]
     #[must_use]
-    pub fn cenupd(&mut self) -> CENUPD_W<CMPMUPD1_SPEC, 0> {
-        CENUPD_W::new(self)
+    pub fn cenupd(&mut self) -> CENUPD_W<CMPMUPD1_SPEC> {
+        CENUPD_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Comparison x Trigger Update"]
     #[inline(always)]
     #[must_use]
-    pub fn ctrupd(&mut self) -> CTRUPD_W<CMPMUPD1_SPEC, 4> {
-        CTRUPD_W::new(self)
+    pub fn ctrupd(&mut self) -> CTRUPD_W<CMPMUPD1_SPEC> {
+        CTRUPD_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Comparison x Period Update"]
     #[inline(always)]
     #[must_use]
-    pub fn cprupd(&mut self) -> CPRUPD_W<CMPMUPD1_SPEC, 8> {
-        CPRUPD_W::new(self)
+    pub fn cprupd(&mut self) -> CPRUPD_W<CMPMUPD1_SPEC> {
+        CPRUPD_W::new(self, 8)
     }
     #[doc = "Bits 16:19 - Comparison x Update Period Update"]
     #[inline(always)]
     #[must_use]
-    pub fn cuprupd(&mut self) -> CUPRUPD_W<CMPMUPD1_SPEC, 16> {
-        CUPRUPD_W::new(self)
+    pub fn cuprupd(&mut self) -> CUPRUPD_W<CMPMUPD1_SPEC> {
+        CUPRUPD_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

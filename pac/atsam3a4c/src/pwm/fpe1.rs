@@ -5,19 +5,19 @@ pub type W = crate::W<FPE1_SPEC>;
 #[doc = "Field `FPE0` reader - Fault Protection Enable for channel 0 (fault input bit varies from 0 to 5)"]
 pub type FPE0_R = crate::FieldReader;
 #[doc = "Field `FPE0` writer - Fault Protection Enable for channel 0 (fault input bit varies from 0 to 5)"]
-pub type FPE0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type FPE0_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `FPE1` reader - Fault Protection Enable for channel 1 (fault input bit varies from 0 to 5)"]
 pub type FPE1_R = crate::FieldReader;
 #[doc = "Field `FPE1` writer - Fault Protection Enable for channel 1 (fault input bit varies from 0 to 5)"]
-pub type FPE1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type FPE1_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `FPE2` reader - Fault Protection Enable for channel 2 (fault input bit varies from 0 to 5)"]
 pub type FPE2_R = crate::FieldReader;
 #[doc = "Field `FPE2` writer - Fault Protection Enable for channel 2 (fault input bit varies from 0 to 5)"]
-pub type FPE2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type FPE2_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `FPE3` reader - Fault Protection Enable for channel 3 (fault input bit varies from 0 to 5)"]
 pub type FPE3_R = crate::FieldReader;
 #[doc = "Field `FPE3` writer - Fault Protection Enable for channel 3 (fault input bit varies from 0 to 5)"]
-pub type FPE3_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type FPE3_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Fault Protection Enable for channel 0 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:7 - Fault Protection Enable for channel 0 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
     #[must_use]
-    pub fn fpe0(&mut self) -> FPE0_W<FPE1_SPEC, 0> {
-        FPE0_W::new(self)
+    pub fn fpe0(&mut self) -> FPE0_W<FPE1_SPEC> {
+        FPE0_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Fault Protection Enable for channel 1 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
     #[must_use]
-    pub fn fpe1(&mut self) -> FPE1_W<FPE1_SPEC, 8> {
-        FPE1_W::new(self)
+    pub fn fpe1(&mut self) -> FPE1_W<FPE1_SPEC> {
+        FPE1_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Fault Protection Enable for channel 2 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
     #[must_use]
-    pub fn fpe2(&mut self) -> FPE2_W<FPE1_SPEC, 16> {
-        FPE2_W::new(self)
+    pub fn fpe2(&mut self) -> FPE2_W<FPE1_SPEC> {
+        FPE2_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Fault Protection Enable for channel 3 (fault input bit varies from 0 to 5)"]
     #[inline(always)]
     #[must_use]
-    pub fn fpe3(&mut self) -> FPE3_W<FPE1_SPEC, 24> {
-        FPE3_W::new(self)
+    pub fn fpe3(&mut self) -> FPE3_W<FPE1_SPEC> {
+        FPE3_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

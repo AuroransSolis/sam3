@@ -5,35 +5,35 @@ pub type W = crate::W<MR_SPEC>;
 #[doc = "Field `MSTR` reader - Master/Slave Mode"]
 pub type MSTR_R = crate::BitReader;
 #[doc = "Field `MSTR` writer - Master/Slave Mode"]
-pub type MSTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MSTR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PS` reader - Peripheral Select"]
 pub type PS_R = crate::BitReader;
 #[doc = "Field `PS` writer - Peripheral Select"]
-pub type PS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PCSDEC` reader - Chip Select Decode"]
 pub type PCSDEC_R = crate::BitReader;
 #[doc = "Field `PCSDEC` writer - Chip Select Decode"]
-pub type PCSDEC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PCSDEC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MODFDIS` reader - Mode Fault Detection"]
 pub type MODFDIS_R = crate::BitReader;
 #[doc = "Field `MODFDIS` writer - Mode Fault Detection"]
-pub type MODFDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MODFDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WDRBT` reader - Wait Data Read Before Transfer"]
 pub type WDRBT_R = crate::BitReader;
 #[doc = "Field `WDRBT` writer - Wait Data Read Before Transfer"]
-pub type WDRBT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type WDRBT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LLB` reader - Local Loopback Enable"]
 pub type LLB_R = crate::BitReader;
 #[doc = "Field `LLB` writer - Local Loopback Enable"]
-pub type LLB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LLB_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PCS` reader - Peripheral Chip Select"]
 pub type PCS_R = crate::FieldReader;
 #[doc = "Field `PCS` writer - Peripheral Chip Select"]
-pub type PCS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type PCS_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `DLYBCS` reader - Delay Between Chip Selects"]
 pub type DLYBCS_R = crate::FieldReader;
 #[doc = "Field `DLYBCS` writer - Delay Between Chip Selects"]
-pub type DLYBCS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type DLYBCS_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bit 0 - Master/Slave Mode"]
     #[inline(always)]
@@ -80,50 +80,50 @@ impl W {
     #[doc = "Bit 0 - Master/Slave Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mstr(&mut self) -> MSTR_W<MR_SPEC, 0> {
-        MSTR_W::new(self)
+    pub fn mstr(&mut self) -> MSTR_W<MR_SPEC> {
+        MSTR_W::new(self, 0)
     }
     #[doc = "Bit 1 - Peripheral Select"]
     #[inline(always)]
     #[must_use]
-    pub fn ps(&mut self) -> PS_W<MR_SPEC, 1> {
-        PS_W::new(self)
+    pub fn ps(&mut self) -> PS_W<MR_SPEC> {
+        PS_W::new(self, 1)
     }
     #[doc = "Bit 2 - Chip Select Decode"]
     #[inline(always)]
     #[must_use]
-    pub fn pcsdec(&mut self) -> PCSDEC_W<MR_SPEC, 2> {
-        PCSDEC_W::new(self)
+    pub fn pcsdec(&mut self) -> PCSDEC_W<MR_SPEC> {
+        PCSDEC_W::new(self, 2)
     }
     #[doc = "Bit 4 - Mode Fault Detection"]
     #[inline(always)]
     #[must_use]
-    pub fn modfdis(&mut self) -> MODFDIS_W<MR_SPEC, 4> {
-        MODFDIS_W::new(self)
+    pub fn modfdis(&mut self) -> MODFDIS_W<MR_SPEC> {
+        MODFDIS_W::new(self, 4)
     }
     #[doc = "Bit 5 - Wait Data Read Before Transfer"]
     #[inline(always)]
     #[must_use]
-    pub fn wdrbt(&mut self) -> WDRBT_W<MR_SPEC, 5> {
-        WDRBT_W::new(self)
+    pub fn wdrbt(&mut self) -> WDRBT_W<MR_SPEC> {
+        WDRBT_W::new(self, 5)
     }
     #[doc = "Bit 7 - Local Loopback Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn llb(&mut self) -> LLB_W<MR_SPEC, 7> {
-        LLB_W::new(self)
+    pub fn llb(&mut self) -> LLB_W<MR_SPEC> {
+        LLB_W::new(self, 7)
     }
     #[doc = "Bits 16:19 - Peripheral Chip Select"]
     #[inline(always)]
     #[must_use]
-    pub fn pcs(&mut self) -> PCS_W<MR_SPEC, 16> {
-        PCS_W::new(self)
+    pub fn pcs(&mut self) -> PCS_W<MR_SPEC> {
+        PCS_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Delay Between Chip Selects"]
     #[inline(always)]
     #[must_use]
-    pub fn dlybcs(&mut self) -> DLYBCS_W<MR_SPEC, 24> {
-        DLYBCS_W::new(self)
+    pub fn dlybcs(&mut self) -> DLYBCS_W<MR_SPEC> {
+        DLYBCS_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,15 +5,15 @@ pub type W = crate::W<CKGR_MCFR_SPEC>;
 #[doc = "Field `MAINF` reader - Main Clock Frequency"]
 pub type MAINF_R = crate::FieldReader<u16>;
 #[doc = "Field `MAINF` writer - Main Clock Frequency"]
-pub type MAINF_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type MAINF_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `MAINFRDY` reader - Main Clock Ready"]
 pub type MAINFRDY_R = crate::BitReader;
 #[doc = "Field `MAINFRDY` writer - Main Clock Ready"]
-pub type MAINFRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MAINFRDY_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RCMEAS` reader - RC Oscillator Frequency Measure (write-only)"]
 pub type RCMEAS_R = crate::BitReader;
 #[doc = "Field `RCMEAS` writer - RC Oscillator Frequency Measure (write-only)"]
-pub type RCMEAS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RCMEAS_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:15 - Main Clock Frequency"]
     #[inline(always)]
@@ -35,20 +35,20 @@ impl W {
     #[doc = "Bits 0:15 - Main Clock Frequency"]
     #[inline(always)]
     #[must_use]
-    pub fn mainf(&mut self) -> MAINF_W<CKGR_MCFR_SPEC, 0> {
-        MAINF_W::new(self)
+    pub fn mainf(&mut self) -> MAINF_W<CKGR_MCFR_SPEC> {
+        MAINF_W::new(self, 0)
     }
     #[doc = "Bit 16 - Main Clock Ready"]
     #[inline(always)]
     #[must_use]
-    pub fn mainfrdy(&mut self) -> MAINFRDY_W<CKGR_MCFR_SPEC, 16> {
-        MAINFRDY_W::new(self)
+    pub fn mainfrdy(&mut self) -> MAINFRDY_W<CKGR_MCFR_SPEC> {
+        MAINFRDY_W::new(self, 16)
     }
     #[doc = "Bit 20 - RC Oscillator Frequency Measure (write-only)"]
     #[inline(always)]
     #[must_use]
-    pub fn rcmeas(&mut self) -> RCMEAS_W<CKGR_MCFR_SPEC, 20> {
-        RCMEAS_W::new(self)
+    pub fn rcmeas(&mut self) -> RCMEAS_W<CKGR_MCFR_SPEC> {
+        RCMEAS_W::new(self, 20)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

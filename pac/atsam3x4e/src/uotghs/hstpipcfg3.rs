@@ -5,7 +5,7 @@ pub type W = crate::W<HSTPIPCFG3_SPEC>;
 #[doc = "Field `ALLOC` reader - Pipe Memory Allocate"]
 pub type ALLOC_R = crate::BitReader;
 #[doc = "Field `ALLOC` writer - Pipe Memory Allocate"]
-pub type ALLOC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ALLOC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PBK` reader - Pipe Banks"]
 pub type PBK_R = crate::FieldReader<PBK_A>;
 #[doc = "Pipe Banks"]
@@ -56,8 +56,8 @@ impl PBK_R {
     }
 }
 #[doc = "Field `PBK` writer - Pipe Banks"]
-pub type PBK_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, PBK_A>;
-impl<'a, REG, const O: u8> PBK_W<'a, REG, O>
+pub type PBK_W<'a, REG> = crate::FieldWriter<'a, REG, 2, PBK_A>;
+impl<'a, REG> PBK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -168,8 +168,8 @@ impl PSIZE_R {
     }
 }
 #[doc = "Field `PSIZE` writer - Pipe Size"]
-pub type PSIZE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, PSIZE_A>;
-impl<'a, REG, const O: u8> PSIZE_W<'a, REG, O>
+pub type PSIZE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, PSIZE_A>;
+impl<'a, REG> PSIZE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -265,8 +265,8 @@ impl PTOKEN_R {
     }
 }
 #[doc = "Field `PTOKEN` writer - Pipe Token"]
-pub type PTOKEN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, PTOKEN_A>;
-impl<'a, REG, const O: u8> PTOKEN_W<'a, REG, O>
+pub type PTOKEN_W<'a, REG> = crate::FieldWriter<'a, REG, 2, PTOKEN_A>;
+impl<'a, REG> PTOKEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -290,7 +290,7 @@ where
 #[doc = "Field `AUTOSW` reader - Automatic Switch"]
 pub type AUTOSW_R = crate::BitReader;
 #[doc = "Field `AUTOSW` writer - Automatic Switch"]
-pub type AUTOSW_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type AUTOSW_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PTYPE` reader - Pipe Type"]
 pub type PTYPE_R = crate::FieldReader<PTYPE_A>;
 #[doc = "Pipe Type"]
@@ -349,8 +349,8 @@ impl PTYPE_R {
     }
 }
 #[doc = "Field `PTYPE` writer - Pipe Type"]
-pub type PTYPE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PTYPE_A>;
-impl<'a, REG, const O: u8> PTYPE_W<'a, REG, O>
+pub type PTYPE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PTYPE_A>;
+impl<'a, REG> PTYPE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -379,11 +379,11 @@ where
 #[doc = "Field `PEPNUM` reader - Pipe Endpoint Number"]
 pub type PEPNUM_R = crate::FieldReader;
 #[doc = "Field `PEPNUM` writer - Pipe Endpoint Number"]
-pub type PEPNUM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type PEPNUM_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `INTFRQ` reader - Pipe Interrupt Request Frequency"]
 pub type INTFRQ_R = crate::FieldReader;
 #[doc = "Field `INTFRQ` writer - Pipe Interrupt Request Frequency"]
-pub type INTFRQ_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type INTFRQ_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bit 1 - Pipe Memory Allocate"]
     #[inline(always)]
@@ -430,50 +430,50 @@ impl W {
     #[doc = "Bit 1 - Pipe Memory Allocate"]
     #[inline(always)]
     #[must_use]
-    pub fn alloc(&mut self) -> ALLOC_W<HSTPIPCFG3_SPEC, 1> {
-        ALLOC_W::new(self)
+    pub fn alloc(&mut self) -> ALLOC_W<HSTPIPCFG3_SPEC> {
+        ALLOC_W::new(self, 1)
     }
     #[doc = "Bits 2:3 - Pipe Banks"]
     #[inline(always)]
     #[must_use]
-    pub fn pbk(&mut self) -> PBK_W<HSTPIPCFG3_SPEC, 2> {
-        PBK_W::new(self)
+    pub fn pbk(&mut self) -> PBK_W<HSTPIPCFG3_SPEC> {
+        PBK_W::new(self, 2)
     }
     #[doc = "Bits 4:6 - Pipe Size"]
     #[inline(always)]
     #[must_use]
-    pub fn psize(&mut self) -> PSIZE_W<HSTPIPCFG3_SPEC, 4> {
-        PSIZE_W::new(self)
+    pub fn psize(&mut self) -> PSIZE_W<HSTPIPCFG3_SPEC> {
+        PSIZE_W::new(self, 4)
     }
     #[doc = "Bits 8:9 - Pipe Token"]
     #[inline(always)]
     #[must_use]
-    pub fn ptoken(&mut self) -> PTOKEN_W<HSTPIPCFG3_SPEC, 8> {
-        PTOKEN_W::new(self)
+    pub fn ptoken(&mut self) -> PTOKEN_W<HSTPIPCFG3_SPEC> {
+        PTOKEN_W::new(self, 8)
     }
     #[doc = "Bit 10 - Automatic Switch"]
     #[inline(always)]
     #[must_use]
-    pub fn autosw(&mut self) -> AUTOSW_W<HSTPIPCFG3_SPEC, 10> {
-        AUTOSW_W::new(self)
+    pub fn autosw(&mut self) -> AUTOSW_W<HSTPIPCFG3_SPEC> {
+        AUTOSW_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Pipe Type"]
     #[inline(always)]
     #[must_use]
-    pub fn ptype(&mut self) -> PTYPE_W<HSTPIPCFG3_SPEC, 12> {
-        PTYPE_W::new(self)
+    pub fn ptype(&mut self) -> PTYPE_W<HSTPIPCFG3_SPEC> {
+        PTYPE_W::new(self, 12)
     }
     #[doc = "Bits 16:19 - Pipe Endpoint Number"]
     #[inline(always)]
     #[must_use]
-    pub fn pepnum(&mut self) -> PEPNUM_W<HSTPIPCFG3_SPEC, 16> {
-        PEPNUM_W::new(self)
+    pub fn pepnum(&mut self) -> PEPNUM_W<HSTPIPCFG3_SPEC> {
+        PEPNUM_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Pipe Interrupt Request Frequency"]
     #[inline(always)]
     #[must_use]
-    pub fn intfrq(&mut self) -> INTFRQ_W<HSTPIPCFG3_SPEC, 24> {
-        INTFRQ_W::new(self)
+    pub fn intfrq(&mut self) -> INTFRQ_W<HSTPIPCFG3_SPEC> {
+        INTFRQ_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

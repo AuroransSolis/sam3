@@ -5,19 +5,19 @@ pub type W = crate::W<TIMR_SPEC>;
 #[doc = "Field `SEC` reader - Current Second"]
 pub type SEC_R = crate::FieldReader;
 #[doc = "Field `SEC` writer - Current Second"]
-pub type SEC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type SEC_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `MIN` reader - Current Minute"]
 pub type MIN_R = crate::FieldReader;
 #[doc = "Field `MIN` writer - Current Minute"]
-pub type MIN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type MIN_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `HOUR` reader - Current Hour"]
 pub type HOUR_R = crate::FieldReader;
 #[doc = "Field `HOUR` writer - Current Hour"]
-pub type HOUR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type HOUR_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `AMPM` reader - Ante Meridiem Post Meridiem Indicator"]
 pub type AMPM_R = crate::BitReader;
 #[doc = "Field `AMPM` writer - Ante Meridiem Post Meridiem Indicator"]
-pub type AMPM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type AMPM_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:6 - Current Second"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:6 - Current Second"]
     #[inline(always)]
     #[must_use]
-    pub fn sec(&mut self) -> SEC_W<TIMR_SPEC, 0> {
-        SEC_W::new(self)
+    pub fn sec(&mut self) -> SEC_W<TIMR_SPEC> {
+        SEC_W::new(self, 0)
     }
     #[doc = "Bits 8:14 - Current Minute"]
     #[inline(always)]
     #[must_use]
-    pub fn min(&mut self) -> MIN_W<TIMR_SPEC, 8> {
-        MIN_W::new(self)
+    pub fn min(&mut self) -> MIN_W<TIMR_SPEC> {
+        MIN_W::new(self, 8)
     }
     #[doc = "Bits 16:21 - Current Hour"]
     #[inline(always)]
     #[must_use]
-    pub fn hour(&mut self) -> HOUR_W<TIMR_SPEC, 16> {
-        HOUR_W::new(self)
+    pub fn hour(&mut self) -> HOUR_W<TIMR_SPEC> {
+        HOUR_W::new(self, 16)
     }
     #[doc = "Bit 22 - Ante Meridiem Post Meridiem Indicator"]
     #[inline(always)]
     #[must_use]
-    pub fn ampm(&mut self) -> AMPM_W<TIMR_SPEC, 22> {
-        AMPM_W::new(self)
+    pub fn ampm(&mut self) -> AMPM_W<TIMR_SPEC> {
+        AMPM_W::new(self, 22)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

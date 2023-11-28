@@ -1,69 +1,69 @@
 #[doc = "Register `OSC` writer"]
 pub type W = crate::W<OSC_SPEC>;
 #[doc = "Field `OSCH0` writer - Output Selection Clear for PWMH output of the channel 0"]
-pub type OSCH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSCH0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSCH1` writer - Output Selection Clear for PWMH output of the channel 1"]
-pub type OSCH1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSCH1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSCH2` writer - Output Selection Clear for PWMH output of the channel 2"]
-pub type OSCH2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSCH2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSCH3` writer - Output Selection Clear for PWMH output of the channel 3"]
-pub type OSCH3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSCH3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSCL0` writer - Output Selection Clear for PWML output of the channel 0"]
-pub type OSCL0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSCL0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSCL1` writer - Output Selection Clear for PWML output of the channel 1"]
-pub type OSCL1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSCL1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSCL2` writer - Output Selection Clear for PWML output of the channel 2"]
-pub type OSCL2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSCL2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSCL3` writer - Output Selection Clear for PWML output of the channel 3"]
-pub type OSCL3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSCL3_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Output Selection Clear for PWMH output of the channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn osch0(&mut self) -> OSCH0_W<OSC_SPEC, 0> {
-        OSCH0_W::new(self)
+    pub fn osch0(&mut self) -> OSCH0_W<OSC_SPEC> {
+        OSCH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Output Selection Clear for PWMH output of the channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn osch1(&mut self) -> OSCH1_W<OSC_SPEC, 1> {
-        OSCH1_W::new(self)
+    pub fn osch1(&mut self) -> OSCH1_W<OSC_SPEC> {
+        OSCH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Output Selection Clear for PWMH output of the channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn osch2(&mut self) -> OSCH2_W<OSC_SPEC, 2> {
-        OSCH2_W::new(self)
+    pub fn osch2(&mut self) -> OSCH2_W<OSC_SPEC> {
+        OSCH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Output Selection Clear for PWMH output of the channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn osch3(&mut self) -> OSCH3_W<OSC_SPEC, 3> {
-        OSCH3_W::new(self)
+    pub fn osch3(&mut self) -> OSCH3_W<OSC_SPEC> {
+        OSCH3_W::new(self, 3)
     }
     #[doc = "Bit 16 - Output Selection Clear for PWML output of the channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn oscl0(&mut self) -> OSCL0_W<OSC_SPEC, 16> {
-        OSCL0_W::new(self)
+    pub fn oscl0(&mut self) -> OSCL0_W<OSC_SPEC> {
+        OSCL0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Output Selection Clear for PWML output of the channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn oscl1(&mut self) -> OSCL1_W<OSC_SPEC, 17> {
-        OSCL1_W::new(self)
+    pub fn oscl1(&mut self) -> OSCL1_W<OSC_SPEC> {
+        OSCL1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Output Selection Clear for PWML output of the channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn oscl2(&mut self) -> OSCL2_W<OSC_SPEC, 18> {
-        OSCL2_W::new(self)
+    pub fn oscl2(&mut self) -> OSCL2_W<OSC_SPEC> {
+        OSCL2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Output Selection Clear for PWML output of the channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn oscl3(&mut self) -> OSCL3_W<OSC_SPEC, 19> {
-        OSCL3_W::new(self)
+    pub fn oscl3(&mut self) -> OSCL3_W<OSC_SPEC> {
+        OSCL3_W::new(self, 19)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

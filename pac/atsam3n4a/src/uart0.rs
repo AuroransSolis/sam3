@@ -1,45 +1,123 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Control Register"]
-    pub cr: CR,
-    #[doc = "0x04 - Mode Register"]
-    pub mr: MR,
-    #[doc = "0x08 - Interrupt Enable Register"]
-    pub ier: IER,
-    #[doc = "0x0c - Interrupt Disable Register"]
-    pub idr: IDR,
-    #[doc = "0x10 - Interrupt Mask Register"]
-    pub imr: IMR,
-    #[doc = "0x14 - Status Register"]
-    pub sr: SR,
-    #[doc = "0x18 - Receive Holding Register"]
-    pub rhr: RHR,
-    #[doc = "0x1c - Transmit Holding Register"]
-    pub thr: THR,
-    #[doc = "0x20 - Baud Rate Generator Register"]
-    pub brgr: BRGR,
+    cr: CR,
+    mr: MR,
+    ier: IER,
+    idr: IDR,
+    imr: IMR,
+    sr: SR,
+    rhr: RHR,
+    thr: THR,
+    brgr: BRGR,
     _reserved9: [u8; 0xdc],
+    rpr: RPR,
+    rcr: RCR,
+    tpr: TPR,
+    tcr: TCR,
+    rnpr: RNPR,
+    rncr: RNCR,
+    tnpr: TNPR,
+    tncr: TNCR,
+    ptcr: PTCR,
+    ptsr: PTSR,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Control Register"]
+    #[inline(always)]
+    pub const fn cr(&self) -> &CR {
+        &self.cr
+    }
+    #[doc = "0x04 - Mode Register"]
+    #[inline(always)]
+    pub const fn mr(&self) -> &MR {
+        &self.mr
+    }
+    #[doc = "0x08 - Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn ier(&self) -> &IER {
+        &self.ier
+    }
+    #[doc = "0x0c - Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn idr(&self) -> &IDR {
+        &self.idr
+    }
+    #[doc = "0x10 - Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn imr(&self) -> &IMR {
+        &self.imr
+    }
+    #[doc = "0x14 - Status Register"]
+    #[inline(always)]
+    pub const fn sr(&self) -> &SR {
+        &self.sr
+    }
+    #[doc = "0x18 - Receive Holding Register"]
+    #[inline(always)]
+    pub const fn rhr(&self) -> &RHR {
+        &self.rhr
+    }
+    #[doc = "0x1c - Transmit Holding Register"]
+    #[inline(always)]
+    pub const fn thr(&self) -> &THR {
+        &self.thr
+    }
+    #[doc = "0x20 - Baud Rate Generator Register"]
+    #[inline(always)]
+    pub const fn brgr(&self) -> &BRGR {
+        &self.brgr
+    }
     #[doc = "0x100 - Receive Pointer Register"]
-    pub rpr: RPR,
+    #[inline(always)]
+    pub const fn rpr(&self) -> &RPR {
+        &self.rpr
+    }
     #[doc = "0x104 - Receive Counter Register"]
-    pub rcr: RCR,
+    #[inline(always)]
+    pub const fn rcr(&self) -> &RCR {
+        &self.rcr
+    }
     #[doc = "0x108 - Transmit Pointer Register"]
-    pub tpr: TPR,
+    #[inline(always)]
+    pub const fn tpr(&self) -> &TPR {
+        &self.tpr
+    }
     #[doc = "0x10c - Transmit Counter Register"]
-    pub tcr: TCR,
+    #[inline(always)]
+    pub const fn tcr(&self) -> &TCR {
+        &self.tcr
+    }
     #[doc = "0x110 - Receive Next Pointer Register"]
-    pub rnpr: RNPR,
+    #[inline(always)]
+    pub const fn rnpr(&self) -> &RNPR {
+        &self.rnpr
+    }
     #[doc = "0x114 - Receive Next Counter Register"]
-    pub rncr: RNCR,
+    #[inline(always)]
+    pub const fn rncr(&self) -> &RNCR {
+        &self.rncr
+    }
     #[doc = "0x118 - Transmit Next Pointer Register"]
-    pub tnpr: TNPR,
+    #[inline(always)]
+    pub const fn tnpr(&self) -> &TNPR {
+        &self.tnpr
+    }
     #[doc = "0x11c - Transmit Next Counter Register"]
-    pub tncr: TNCR,
+    #[inline(always)]
+    pub const fn tncr(&self) -> &TNCR {
+        &self.tncr
+    }
     #[doc = "0x120 - Transfer Control Register"]
-    pub ptcr: PTCR,
+    #[inline(always)]
+    pub const fn ptcr(&self) -> &PTCR {
+        &self.ptcr
+    }
     #[doc = "0x124 - Transfer Status Register"]
-    pub ptsr: PTSR,
+    #[inline(always)]
+    pub const fn ptsr(&self) -> &PTSR {
+        &self.ptsr
+    }
 }
 #[doc = "CR (w) register accessor: Control Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
 module"]

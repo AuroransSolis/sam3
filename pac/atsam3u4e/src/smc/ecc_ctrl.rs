@@ -1,21 +1,21 @@
 #[doc = "Register `ECC_CTRL` writer"]
 pub type W = crate::W<ECC_CTRL_SPEC>;
 #[doc = "Field `RST` writer - Reset ECC"]
-pub type RST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RST_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SWRST` writer - Software Reset"]
-pub type SWRST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SWRST_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Reset ECC"]
     #[inline(always)]
     #[must_use]
-    pub fn rst(&mut self) -> RST_W<ECC_CTRL_SPEC, 0> {
-        RST_W::new(self)
+    pub fn rst(&mut self) -> RST_W<ECC_CTRL_SPEC> {
+        RST_W::new(self, 0)
     }
     #[doc = "Bit 1 - Software Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn swrst(&mut self) -> SWRST_W<ECC_CTRL_SPEC, 1> {
-        SWRST_W::new(self)
+    pub fn swrst(&mut self) -> SWRST_W<ECC_CTRL_SPEC> {
+        SWRST_W::new(self, 1)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -1,37 +1,37 @@
 #[doc = "Register `MCR5` writer"]
 pub type W = crate::W<MCR5_SPEC>;
 #[doc = "Field `MDLC` writer - Mailbox Data Length Code"]
-pub type MDLC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type MDLC_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `MRTR` writer - Mailbox Remote Transmission Request"]
-pub type MRTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MRTR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MACR` writer - Abort Request for Mailbox x"]
-pub type MACR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MACR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MTCR` writer - Mailbox Transfer Command"]
-pub type MTCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MTCR_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bits 16:19 - Mailbox Data Length Code"]
     #[inline(always)]
     #[must_use]
-    pub fn mdlc(&mut self) -> MDLC_W<MCR5_SPEC, 16> {
-        MDLC_W::new(self)
+    pub fn mdlc(&mut self) -> MDLC_W<MCR5_SPEC> {
+        MDLC_W::new(self, 16)
     }
     #[doc = "Bit 20 - Mailbox Remote Transmission Request"]
     #[inline(always)]
     #[must_use]
-    pub fn mrtr(&mut self) -> MRTR_W<MCR5_SPEC, 20> {
-        MRTR_W::new(self)
+    pub fn mrtr(&mut self) -> MRTR_W<MCR5_SPEC> {
+        MRTR_W::new(self, 20)
     }
     #[doc = "Bit 22 - Abort Request for Mailbox x"]
     #[inline(always)]
     #[must_use]
-    pub fn macr(&mut self) -> MACR_W<MCR5_SPEC, 22> {
-        MACR_W::new(self)
+    pub fn macr(&mut self) -> MACR_W<MCR5_SPEC> {
+        MACR_W::new(self, 22)
     }
     #[doc = "Bit 23 - Mailbox Transfer Command"]
     #[inline(always)]
     #[must_use]
-    pub fn mtcr(&mut self) -> MTCR_W<MCR5_SPEC, 23> {
-        MTCR_W::new(self)
+    pub fn mtcr(&mut self) -> MTCR_W<MCR5_SPEC> {
+        MTCR_W::new(self, 23)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

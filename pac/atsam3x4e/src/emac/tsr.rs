@@ -5,31 +5,31 @@ pub type W = crate::W<TSR_SPEC>;
 #[doc = "Field `UBR` reader - Used Bit Read"]
 pub type UBR_R = crate::BitReader;
 #[doc = "Field `UBR` writer - Used Bit Read"]
-pub type UBR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type UBR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `COL` reader - Collision Occurred"]
 pub type COL_R = crate::BitReader;
 #[doc = "Field `COL` writer - Collision Occurred"]
-pub type COL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type COL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RLES` reader - Retry Limit exceeded"]
 pub type RLES_R = crate::BitReader;
 #[doc = "Field `RLES` writer - Retry Limit exceeded"]
-pub type RLES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RLES_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TGO` reader - Transmit Go"]
 pub type TGO_R = crate::BitReader;
 #[doc = "Field `TGO` writer - Transmit Go"]
-pub type TGO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TGO_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BEX` reader - Buffers exhausted mid frame"]
 pub type BEX_R = crate::BitReader;
 #[doc = "Field `BEX` writer - Buffers exhausted mid frame"]
-pub type BEX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BEX_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `COMP` reader - Transmit Complete"]
 pub type COMP_R = crate::BitReader;
 #[doc = "Field `COMP` writer - Transmit Complete"]
-pub type COMP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type COMP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UND` reader - Transmit Underrun"]
 pub type UND_R = crate::BitReader;
 #[doc = "Field `UND` writer - Transmit Underrun"]
-pub type UND_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type UND_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Used Bit Read"]
     #[inline(always)]
@@ -71,44 +71,44 @@ impl W {
     #[doc = "Bit 0 - Used Bit Read"]
     #[inline(always)]
     #[must_use]
-    pub fn ubr(&mut self) -> UBR_W<TSR_SPEC, 0> {
-        UBR_W::new(self)
+    pub fn ubr(&mut self) -> UBR_W<TSR_SPEC> {
+        UBR_W::new(self, 0)
     }
     #[doc = "Bit 1 - Collision Occurred"]
     #[inline(always)]
     #[must_use]
-    pub fn col(&mut self) -> COL_W<TSR_SPEC, 1> {
-        COL_W::new(self)
+    pub fn col(&mut self) -> COL_W<TSR_SPEC> {
+        COL_W::new(self, 1)
     }
     #[doc = "Bit 2 - Retry Limit exceeded"]
     #[inline(always)]
     #[must_use]
-    pub fn rles(&mut self) -> RLES_W<TSR_SPEC, 2> {
-        RLES_W::new(self)
+    pub fn rles(&mut self) -> RLES_W<TSR_SPEC> {
+        RLES_W::new(self, 2)
     }
     #[doc = "Bit 3 - Transmit Go"]
     #[inline(always)]
     #[must_use]
-    pub fn tgo(&mut self) -> TGO_W<TSR_SPEC, 3> {
-        TGO_W::new(self)
+    pub fn tgo(&mut self) -> TGO_W<TSR_SPEC> {
+        TGO_W::new(self, 3)
     }
     #[doc = "Bit 4 - Buffers exhausted mid frame"]
     #[inline(always)]
     #[must_use]
-    pub fn bex(&mut self) -> BEX_W<TSR_SPEC, 4> {
-        BEX_W::new(self)
+    pub fn bex(&mut self) -> BEX_W<TSR_SPEC> {
+        BEX_W::new(self, 4)
     }
     #[doc = "Bit 5 - Transmit Complete"]
     #[inline(always)]
     #[must_use]
-    pub fn comp(&mut self) -> COMP_W<TSR_SPEC, 5> {
-        COMP_W::new(self)
+    pub fn comp(&mut self) -> COMP_W<TSR_SPEC> {
+        COMP_W::new(self, 5)
     }
     #[doc = "Bit 6 - Transmit Underrun"]
     #[inline(always)]
     #[must_use]
-    pub fn und(&mut self) -> UND_W<TSR_SPEC, 6> {
-        UND_W::new(self)
+    pub fn und(&mut self) -> UND_W<TSR_SPEC> {
+        UND_W::new(self, 6)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

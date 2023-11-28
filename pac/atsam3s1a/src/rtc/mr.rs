@@ -5,7 +5,7 @@ pub type W = crate::W<MR_SPEC>;
 #[doc = "Field `HRMOD` reader - 12-/24-hour Mode"]
 pub type HRMOD_R = crate::BitReader;
 #[doc = "Field `HRMOD` writer - 12-/24-hour Mode"]
-pub type HRMOD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HRMOD_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - 12-/24-hour Mode"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bit 0 - 12-/24-hour Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn hrmod(&mut self) -> HRMOD_W<MR_SPEC, 0> {
-        HRMOD_W::new(self)
+    pub fn hrmod(&mut self) -> HRMOD_W<MR_SPEC> {
+        HRMOD_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

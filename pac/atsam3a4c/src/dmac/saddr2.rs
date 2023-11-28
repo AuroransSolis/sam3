@@ -5,7 +5,7 @@ pub type W = crate::W<SADDR2_SPEC>;
 #[doc = "Field `SADDR` reader - Channel x Source Address"]
 pub type SADDR_R = crate::FieldReader<u32>;
 #[doc = "Field `SADDR` writer - Channel x Source Address"]
-pub type SADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type SADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Channel x Source Address"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Channel x Source Address"]
     #[inline(always)]
     #[must_use]
-    pub fn saddr(&mut self) -> SADDR_W<SADDR2_SPEC, 0> {
-        SADDR_W::new(self)
+    pub fn saddr(&mut self) -> SADDR_W<SADDR2_SPEC> {
+        SADDR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

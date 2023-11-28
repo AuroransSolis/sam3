@@ -39,8 +39,8 @@ impl READ_MODE_R {
     }
 }
 #[doc = "Field `READ_MODE` writer - Selection of the Control Signal for Read Operation"]
-pub type READ_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, READ_MODE_A>;
-impl<'a, REG, const O: u8> READ_MODE_W<'a, REG, O>
+pub type READ_MODE_W<'a, REG> = crate::BitWriter<'a, REG, READ_MODE_A>;
+impl<'a, REG> READ_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl WRITE_MODE_R {
     }
 }
 #[doc = "Field `WRITE_MODE` writer - Selection of the Control Signal for Write Operation"]
-pub type WRITE_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WRITE_MODE_A>;
-impl<'a, REG, const O: u8> WRITE_MODE_W<'a, REG, O>
+pub type WRITE_MODE_W<'a, REG> = crate::BitWriter<'a, REG, WRITE_MODE_A>;
+impl<'a, REG> WRITE_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -158,8 +158,8 @@ impl EXNW_MODE_R {
     }
 }
 #[doc = "Field `EXNW_MODE` writer - NWAIT Mode"]
-pub type EXNW_MODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, EXNW_MODE_A>;
-impl<'a, REG, const O: u8> EXNW_MODE_W<'a, REG, O>
+pub type EXNW_MODE_W<'a, REG> = crate::FieldWriter<'a, REG, 2, EXNW_MODE_A>;
+impl<'a, REG> EXNW_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -183,7 +183,7 @@ where
 #[doc = "Field `BAT` reader - Byte Access Type"]
 pub type BAT_R = crate::BitReader;
 #[doc = "Field `BAT` writer - Byte Access Type"]
-pub type BAT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BAT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DBW` reader - Data Bus Width"]
 pub type DBW_R = crate::BitReader<DBW_A>;
 #[doc = "Data Bus Width\n\nValue on reset: 0"]
@@ -221,8 +221,8 @@ impl DBW_R {
     }
 }
 #[doc = "Field `DBW` writer - Data Bus Width"]
-pub type DBW_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DBW_A>;
-impl<'a, REG, const O: u8> DBW_W<'a, REG, O>
+pub type DBW_W<'a, REG> = crate::BitWriter<'a, REG, DBW_A>;
+impl<'a, REG> DBW_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -240,11 +240,11 @@ where
 #[doc = "Field `TDF_CYCLES` reader - Data Float Time"]
 pub type TDF_CYCLES_R = crate::FieldReader;
 #[doc = "Field `TDF_CYCLES` writer - Data Float Time"]
-pub type TDF_CYCLES_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TDF_CYCLES_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `TDF_MODE` reader - TDF Optimization"]
 pub type TDF_MODE_R = crate::BitReader;
 #[doc = "Field `TDF_MODE` writer - TDF Optimization"]
-pub type TDF_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TDF_MODE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Selection of the Control Signal for Read Operation"]
     #[inline(always)]
@@ -286,44 +286,44 @@ impl W {
     #[doc = "Bit 0 - Selection of the Control Signal for Read Operation"]
     #[inline(always)]
     #[must_use]
-    pub fn read_mode(&mut self) -> READ_MODE_W<MODE6_SPEC, 0> {
-        READ_MODE_W::new(self)
+    pub fn read_mode(&mut self) -> READ_MODE_W<MODE6_SPEC> {
+        READ_MODE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Selection of the Control Signal for Write Operation"]
     #[inline(always)]
     #[must_use]
-    pub fn write_mode(&mut self) -> WRITE_MODE_W<MODE6_SPEC, 1> {
-        WRITE_MODE_W::new(self)
+    pub fn write_mode(&mut self) -> WRITE_MODE_W<MODE6_SPEC> {
+        WRITE_MODE_W::new(self, 1)
     }
     #[doc = "Bits 4:5 - NWAIT Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn exnw_mode(&mut self) -> EXNW_MODE_W<MODE6_SPEC, 4> {
-        EXNW_MODE_W::new(self)
+    pub fn exnw_mode(&mut self) -> EXNW_MODE_W<MODE6_SPEC> {
+        EXNW_MODE_W::new(self, 4)
     }
     #[doc = "Bit 8 - Byte Access Type"]
     #[inline(always)]
     #[must_use]
-    pub fn bat(&mut self) -> BAT_W<MODE6_SPEC, 8> {
-        BAT_W::new(self)
+    pub fn bat(&mut self) -> BAT_W<MODE6_SPEC> {
+        BAT_W::new(self, 8)
     }
     #[doc = "Bit 12 - Data Bus Width"]
     #[inline(always)]
     #[must_use]
-    pub fn dbw(&mut self) -> DBW_W<MODE6_SPEC, 12> {
-        DBW_W::new(self)
+    pub fn dbw(&mut self) -> DBW_W<MODE6_SPEC> {
+        DBW_W::new(self, 12)
     }
     #[doc = "Bits 16:19 - Data Float Time"]
     #[inline(always)]
     #[must_use]
-    pub fn tdf_cycles(&mut self) -> TDF_CYCLES_W<MODE6_SPEC, 16> {
-        TDF_CYCLES_W::new(self)
+    pub fn tdf_cycles(&mut self) -> TDF_CYCLES_W<MODE6_SPEC> {
+        TDF_CYCLES_W::new(self, 16)
     }
     #[doc = "Bit 20 - TDF Optimization"]
     #[inline(always)]
     #[must_use]
-    pub fn tdf_mode(&mut self) -> TDF_MODE_W<MODE6_SPEC, 20> {
-        TDF_MODE_W::new(self)
+    pub fn tdf_mode(&mut self) -> TDF_MODE_W<MODE6_SPEC> {
+        TDF_MODE_W::new(self, 20)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

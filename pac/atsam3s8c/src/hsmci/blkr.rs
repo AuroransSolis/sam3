@@ -52,8 +52,8 @@ impl BCNT_R {
     }
 }
 #[doc = "Field `BCNT` writer - MMC/SDIO Block Count - SDIO Byte Count"]
-pub type BCNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, BCNT_A>;
-impl<'a, REG, const O: u8> BCNT_W<'a, REG, O>
+pub type BCNT_W<'a, REG> = crate::FieldWriter<'a, REG, 16, BCNT_A>;
+impl<'a, REG> BCNT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u16>,
@@ -77,7 +77,7 @@ where
 #[doc = "Field `BLKLEN` reader - Data Block Length"]
 pub type BLKLEN_R = crate::FieldReader<u16>;
 #[doc = "Field `BLKLEN` writer - Data Block Length"]
-pub type BLKLEN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type BLKLEN_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - MMC/SDIO Block Count - SDIO Byte Count"]
     #[inline(always)]
@@ -94,14 +94,14 @@ impl W {
     #[doc = "Bits 0:15 - MMC/SDIO Block Count - SDIO Byte Count"]
     #[inline(always)]
     #[must_use]
-    pub fn bcnt(&mut self) -> BCNT_W<BLKR_SPEC, 0> {
-        BCNT_W::new(self)
+    pub fn bcnt(&mut self) -> BCNT_W<BLKR_SPEC> {
+        BCNT_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - Data Block Length"]
     #[inline(always)]
     #[must_use]
-    pub fn blklen(&mut self) -> BLKLEN_W<BLKR_SPEC, 16> {
-        BLKLEN_W::new(self)
+    pub fn blklen(&mut self) -> BLKLEN_W<BLKR_SPEC> {
+        BLKLEN_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

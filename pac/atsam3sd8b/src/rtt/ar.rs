@@ -5,7 +5,7 @@ pub type W = crate::W<AR_SPEC>;
 #[doc = "Field `ALMV` reader - Alarm Value"]
 pub type ALMV_R = crate::FieldReader<u32>;
 #[doc = "Field `ALMV` writer - Alarm Value"]
-pub type ALMV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type ALMV_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Alarm Value"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Alarm Value"]
     #[inline(always)]
     #[must_use]
-    pub fn almv(&mut self) -> ALMV_W<AR_SPEC, 0> {
-        ALMV_W::new(self)
+    pub fn almv(&mut self) -> ALMV_W<AR_SPEC> {
+        ALMV_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

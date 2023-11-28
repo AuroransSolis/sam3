@@ -5,7 +5,7 @@ pub type W = crate::W<TCR_SPEC>;
 #[doc = "Field `TXCTR` reader - Transmit Counter Register"]
 pub type TXCTR_R = crate::FieldReader<u16>;
 #[doc = "Field `TXCTR` writer - Transmit Counter Register"]
-pub type TXCTR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type TXCTR_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Transmit Counter Register"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - Transmit Counter Register"]
     #[inline(always)]
     #[must_use]
-    pub fn txctr(&mut self) -> TXCTR_W<TCR_SPEC, 0> {
-        TXCTR_W::new(self)
+    pub fn txctr(&mut self) -> TXCTR_W<TCR_SPEC> {
+        TXCTR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -1,10 +1,20 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
+    cidr: CIDR,
+    exid: EXID,
+}
+impl RegisterBlock {
     #[doc = "0x00 - Chip ID Register"]
-    pub cidr: CIDR,
+    #[inline(always)]
+    pub const fn cidr(&self) -> &CIDR {
+        &self.cidr
+    }
     #[doc = "0x04 - Chip ID Extension Register"]
-    pub exid: EXID,
+    #[inline(always)]
+    pub const fn exid(&self) -> &EXID {
+        &self.exid
+    }
 }
 #[doc = "CIDR (r) register accessor: Chip ID Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cidr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cidr`]
 module"]

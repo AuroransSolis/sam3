@@ -1,29 +1,29 @@
 #[doc = "Register `IER` writer"]
 pub type W = crate::W<IER_SPEC>;
 #[doc = "Field `TXRDY` writer - Transmission Ready Interrupt Enable"]
-pub type TXRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXRDY_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ENDTX` writer - End of PDC Interrupt Enable"]
-pub type ENDTX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ENDTX_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXBUFE` writer - Buffer Empty Interrupt Enable"]
-pub type TXBUFE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXBUFE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Transmission Ready Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn txrdy(&mut self) -> TXRDY_W<IER_SPEC, 0> {
-        TXRDY_W::new(self)
+    pub fn txrdy(&mut self) -> TXRDY_W<IER_SPEC> {
+        TXRDY_W::new(self, 0)
     }
     #[doc = "Bit 1 - End of PDC Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn endtx(&mut self) -> ENDTX_W<IER_SPEC, 1> {
-        ENDTX_W::new(self)
+    pub fn endtx(&mut self) -> ENDTX_W<IER_SPEC> {
+        ENDTX_W::new(self, 1)
     }
     #[doc = "Bit 2 - Buffer Empty Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn txbufe(&mut self) -> TXBUFE_W<IER_SPEC, 2> {
-        TXBUFE_W::new(self)
+    pub fn txbufe(&mut self) -> TXBUFE_W<IER_SPEC> {
+        TXBUFE_W::new(self, 2)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

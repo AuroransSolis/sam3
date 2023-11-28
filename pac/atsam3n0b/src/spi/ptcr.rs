@@ -1,37 +1,37 @@
 #[doc = "Register `PTCR` writer"]
 pub type W = crate::W<PTCR_SPEC>;
 #[doc = "Field `RXTEN` writer - Receiver Transfer Enable"]
-pub type RXTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXTEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXTDIS` writer - Receiver Transfer Disable"]
-pub type RXTDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXTDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXTEN` writer - Transmitter Transfer Enable"]
-pub type TXTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXTEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXTDIS` writer - Transmitter Transfer Disable"]
-pub type TXTDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXTDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Receiver Transfer Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxten(&mut self) -> RXTEN_W<PTCR_SPEC, 0> {
-        RXTEN_W::new(self)
+    pub fn rxten(&mut self) -> RXTEN_W<PTCR_SPEC> {
+        RXTEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Receiver Transfer Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxtdis(&mut self) -> RXTDIS_W<PTCR_SPEC, 1> {
-        RXTDIS_W::new(self)
+    pub fn rxtdis(&mut self) -> RXTDIS_W<PTCR_SPEC> {
+        RXTDIS_W::new(self, 1)
     }
     #[doc = "Bit 8 - Transmitter Transfer Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn txten(&mut self) -> TXTEN_W<PTCR_SPEC, 8> {
-        TXTEN_W::new(self)
+    pub fn txten(&mut self) -> TXTEN_W<PTCR_SPEC> {
+        TXTEN_W::new(self, 8)
     }
     #[doc = "Bit 9 - Transmitter Transfer Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn txtdis(&mut self) -> TXTDIS_W<PTCR_SPEC, 9> {
-        TXTDIS_W::new(self)
+    pub fn txtdis(&mut self) -> TXTDIS_W<PTCR_SPEC> {
+        TXTDIS_W::new(self, 9)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,131 +5,131 @@ pub type W = crate::W<SCHMITT_SPEC>;
 #[doc = "Field `SCHMITT0` reader - "]
 pub type SCHMITT0_R = crate::BitReader;
 #[doc = "Field `SCHMITT0` writer - "]
-pub type SCHMITT0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT1` reader - "]
 pub type SCHMITT1_R = crate::BitReader;
 #[doc = "Field `SCHMITT1` writer - "]
-pub type SCHMITT1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT2` reader - "]
 pub type SCHMITT2_R = crate::BitReader;
 #[doc = "Field `SCHMITT2` writer - "]
-pub type SCHMITT2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT3` reader - "]
 pub type SCHMITT3_R = crate::BitReader;
 #[doc = "Field `SCHMITT3` writer - "]
-pub type SCHMITT3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT4` reader - "]
 pub type SCHMITT4_R = crate::BitReader;
 #[doc = "Field `SCHMITT4` writer - "]
-pub type SCHMITT4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT4_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT5` reader - "]
 pub type SCHMITT5_R = crate::BitReader;
 #[doc = "Field `SCHMITT5` writer - "]
-pub type SCHMITT5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT5_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT6` reader - "]
 pub type SCHMITT6_R = crate::BitReader;
 #[doc = "Field `SCHMITT6` writer - "]
-pub type SCHMITT6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT6_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT7` reader - "]
 pub type SCHMITT7_R = crate::BitReader;
 #[doc = "Field `SCHMITT7` writer - "]
-pub type SCHMITT7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT7_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT8` reader - "]
 pub type SCHMITT8_R = crate::BitReader;
 #[doc = "Field `SCHMITT8` writer - "]
-pub type SCHMITT8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT8_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT9` reader - "]
 pub type SCHMITT9_R = crate::BitReader;
 #[doc = "Field `SCHMITT9` writer - "]
-pub type SCHMITT9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT9_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT10` reader - "]
 pub type SCHMITT10_R = crate::BitReader;
 #[doc = "Field `SCHMITT10` writer - "]
-pub type SCHMITT10_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT10_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT11` reader - "]
 pub type SCHMITT11_R = crate::BitReader;
 #[doc = "Field `SCHMITT11` writer - "]
-pub type SCHMITT11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT11_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT12` reader - "]
 pub type SCHMITT12_R = crate::BitReader;
 #[doc = "Field `SCHMITT12` writer - "]
-pub type SCHMITT12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT12_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT13` reader - "]
 pub type SCHMITT13_R = crate::BitReader;
 #[doc = "Field `SCHMITT13` writer - "]
-pub type SCHMITT13_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT13_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT14` reader - "]
 pub type SCHMITT14_R = crate::BitReader;
 #[doc = "Field `SCHMITT14` writer - "]
-pub type SCHMITT14_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT14_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT15` reader - "]
 pub type SCHMITT15_R = crate::BitReader;
 #[doc = "Field `SCHMITT15` writer - "]
-pub type SCHMITT15_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT15_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT16` reader - "]
 pub type SCHMITT16_R = crate::BitReader;
 #[doc = "Field `SCHMITT16` writer - "]
-pub type SCHMITT16_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT16_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT17` reader - "]
 pub type SCHMITT17_R = crate::BitReader;
 #[doc = "Field `SCHMITT17` writer - "]
-pub type SCHMITT17_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT17_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT18` reader - "]
 pub type SCHMITT18_R = crate::BitReader;
 #[doc = "Field `SCHMITT18` writer - "]
-pub type SCHMITT18_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT18_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT19` reader - "]
 pub type SCHMITT19_R = crate::BitReader;
 #[doc = "Field `SCHMITT19` writer - "]
-pub type SCHMITT19_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT19_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT20` reader - "]
 pub type SCHMITT20_R = crate::BitReader;
 #[doc = "Field `SCHMITT20` writer - "]
-pub type SCHMITT20_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT20_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT21` reader - "]
 pub type SCHMITT21_R = crate::BitReader;
 #[doc = "Field `SCHMITT21` writer - "]
-pub type SCHMITT21_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT21_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT22` reader - "]
 pub type SCHMITT22_R = crate::BitReader;
 #[doc = "Field `SCHMITT22` writer - "]
-pub type SCHMITT22_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT22_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT23` reader - "]
 pub type SCHMITT23_R = crate::BitReader;
 #[doc = "Field `SCHMITT23` writer - "]
-pub type SCHMITT23_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT23_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT24` reader - "]
 pub type SCHMITT24_R = crate::BitReader;
 #[doc = "Field `SCHMITT24` writer - "]
-pub type SCHMITT24_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT24_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT25` reader - "]
 pub type SCHMITT25_R = crate::BitReader;
 #[doc = "Field `SCHMITT25` writer - "]
-pub type SCHMITT25_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT25_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT26` reader - "]
 pub type SCHMITT26_R = crate::BitReader;
 #[doc = "Field `SCHMITT26` writer - "]
-pub type SCHMITT26_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT26_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT27` reader - "]
 pub type SCHMITT27_R = crate::BitReader;
 #[doc = "Field `SCHMITT27` writer - "]
-pub type SCHMITT27_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT27_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT28` reader - "]
 pub type SCHMITT28_R = crate::BitReader;
 #[doc = "Field `SCHMITT28` writer - "]
-pub type SCHMITT28_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT28_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT29` reader - "]
 pub type SCHMITT29_R = crate::BitReader;
 #[doc = "Field `SCHMITT29` writer - "]
-pub type SCHMITT29_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT29_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT30` reader - "]
 pub type SCHMITT30_R = crate::BitReader;
 #[doc = "Field `SCHMITT30` writer - "]
-pub type SCHMITT30_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT30_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCHMITT31` reader - "]
 pub type SCHMITT31_R = crate::BitReader;
 #[doc = "Field `SCHMITT31` writer - "]
-pub type SCHMITT31_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCHMITT31_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
@@ -296,194 +296,194 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt0(&mut self) -> SCHMITT0_W<SCHMITT_SPEC, 0> {
-        SCHMITT0_W::new(self)
+    pub fn schmitt0(&mut self) -> SCHMITT0_W<SCHMITT_SPEC> {
+        SCHMITT0_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt1(&mut self) -> SCHMITT1_W<SCHMITT_SPEC, 1> {
-        SCHMITT1_W::new(self)
+    pub fn schmitt1(&mut self) -> SCHMITT1_W<SCHMITT_SPEC> {
+        SCHMITT1_W::new(self, 1)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt2(&mut self) -> SCHMITT2_W<SCHMITT_SPEC, 2> {
-        SCHMITT2_W::new(self)
+    pub fn schmitt2(&mut self) -> SCHMITT2_W<SCHMITT_SPEC> {
+        SCHMITT2_W::new(self, 2)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt3(&mut self) -> SCHMITT3_W<SCHMITT_SPEC, 3> {
-        SCHMITT3_W::new(self)
+    pub fn schmitt3(&mut self) -> SCHMITT3_W<SCHMITT_SPEC> {
+        SCHMITT3_W::new(self, 3)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt4(&mut self) -> SCHMITT4_W<SCHMITT_SPEC, 4> {
-        SCHMITT4_W::new(self)
+    pub fn schmitt4(&mut self) -> SCHMITT4_W<SCHMITT_SPEC> {
+        SCHMITT4_W::new(self, 4)
     }
     #[doc = "Bit 5"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt5(&mut self) -> SCHMITT5_W<SCHMITT_SPEC, 5> {
-        SCHMITT5_W::new(self)
+    pub fn schmitt5(&mut self) -> SCHMITT5_W<SCHMITT_SPEC> {
+        SCHMITT5_W::new(self, 5)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt6(&mut self) -> SCHMITT6_W<SCHMITT_SPEC, 6> {
-        SCHMITT6_W::new(self)
+    pub fn schmitt6(&mut self) -> SCHMITT6_W<SCHMITT_SPEC> {
+        SCHMITT6_W::new(self, 6)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt7(&mut self) -> SCHMITT7_W<SCHMITT_SPEC, 7> {
-        SCHMITT7_W::new(self)
+    pub fn schmitt7(&mut self) -> SCHMITT7_W<SCHMITT_SPEC> {
+        SCHMITT7_W::new(self, 7)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt8(&mut self) -> SCHMITT8_W<SCHMITT_SPEC, 8> {
-        SCHMITT8_W::new(self)
+    pub fn schmitt8(&mut self) -> SCHMITT8_W<SCHMITT_SPEC> {
+        SCHMITT8_W::new(self, 8)
     }
     #[doc = "Bit 9"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt9(&mut self) -> SCHMITT9_W<SCHMITT_SPEC, 9> {
-        SCHMITT9_W::new(self)
+    pub fn schmitt9(&mut self) -> SCHMITT9_W<SCHMITT_SPEC> {
+        SCHMITT9_W::new(self, 9)
     }
     #[doc = "Bit 10"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt10(&mut self) -> SCHMITT10_W<SCHMITT_SPEC, 10> {
-        SCHMITT10_W::new(self)
+    pub fn schmitt10(&mut self) -> SCHMITT10_W<SCHMITT_SPEC> {
+        SCHMITT10_W::new(self, 10)
     }
     #[doc = "Bit 11"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt11(&mut self) -> SCHMITT11_W<SCHMITT_SPEC, 11> {
-        SCHMITT11_W::new(self)
+    pub fn schmitt11(&mut self) -> SCHMITT11_W<SCHMITT_SPEC> {
+        SCHMITT11_W::new(self, 11)
     }
     #[doc = "Bit 12"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt12(&mut self) -> SCHMITT12_W<SCHMITT_SPEC, 12> {
-        SCHMITT12_W::new(self)
+    pub fn schmitt12(&mut self) -> SCHMITT12_W<SCHMITT_SPEC> {
+        SCHMITT12_W::new(self, 12)
     }
     #[doc = "Bit 13"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt13(&mut self) -> SCHMITT13_W<SCHMITT_SPEC, 13> {
-        SCHMITT13_W::new(self)
+    pub fn schmitt13(&mut self) -> SCHMITT13_W<SCHMITT_SPEC> {
+        SCHMITT13_W::new(self, 13)
     }
     #[doc = "Bit 14"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt14(&mut self) -> SCHMITT14_W<SCHMITT_SPEC, 14> {
-        SCHMITT14_W::new(self)
+    pub fn schmitt14(&mut self) -> SCHMITT14_W<SCHMITT_SPEC> {
+        SCHMITT14_W::new(self, 14)
     }
     #[doc = "Bit 15"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt15(&mut self) -> SCHMITT15_W<SCHMITT_SPEC, 15> {
-        SCHMITT15_W::new(self)
+    pub fn schmitt15(&mut self) -> SCHMITT15_W<SCHMITT_SPEC> {
+        SCHMITT15_W::new(self, 15)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt16(&mut self) -> SCHMITT16_W<SCHMITT_SPEC, 16> {
-        SCHMITT16_W::new(self)
+    pub fn schmitt16(&mut self) -> SCHMITT16_W<SCHMITT_SPEC> {
+        SCHMITT16_W::new(self, 16)
     }
     #[doc = "Bit 17"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt17(&mut self) -> SCHMITT17_W<SCHMITT_SPEC, 17> {
-        SCHMITT17_W::new(self)
+    pub fn schmitt17(&mut self) -> SCHMITT17_W<SCHMITT_SPEC> {
+        SCHMITT17_W::new(self, 17)
     }
     #[doc = "Bit 18"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt18(&mut self) -> SCHMITT18_W<SCHMITT_SPEC, 18> {
-        SCHMITT18_W::new(self)
+    pub fn schmitt18(&mut self) -> SCHMITT18_W<SCHMITT_SPEC> {
+        SCHMITT18_W::new(self, 18)
     }
     #[doc = "Bit 19"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt19(&mut self) -> SCHMITT19_W<SCHMITT_SPEC, 19> {
-        SCHMITT19_W::new(self)
+    pub fn schmitt19(&mut self) -> SCHMITT19_W<SCHMITT_SPEC> {
+        SCHMITT19_W::new(self, 19)
     }
     #[doc = "Bit 20"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt20(&mut self) -> SCHMITT20_W<SCHMITT_SPEC, 20> {
-        SCHMITT20_W::new(self)
+    pub fn schmitt20(&mut self) -> SCHMITT20_W<SCHMITT_SPEC> {
+        SCHMITT20_W::new(self, 20)
     }
     #[doc = "Bit 21"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt21(&mut self) -> SCHMITT21_W<SCHMITT_SPEC, 21> {
-        SCHMITT21_W::new(self)
+    pub fn schmitt21(&mut self) -> SCHMITT21_W<SCHMITT_SPEC> {
+        SCHMITT21_W::new(self, 21)
     }
     #[doc = "Bit 22"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt22(&mut self) -> SCHMITT22_W<SCHMITT_SPEC, 22> {
-        SCHMITT22_W::new(self)
+    pub fn schmitt22(&mut self) -> SCHMITT22_W<SCHMITT_SPEC> {
+        SCHMITT22_W::new(self, 22)
     }
     #[doc = "Bit 23"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt23(&mut self) -> SCHMITT23_W<SCHMITT_SPEC, 23> {
-        SCHMITT23_W::new(self)
+    pub fn schmitt23(&mut self) -> SCHMITT23_W<SCHMITT_SPEC> {
+        SCHMITT23_W::new(self, 23)
     }
     #[doc = "Bit 24"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt24(&mut self) -> SCHMITT24_W<SCHMITT_SPEC, 24> {
-        SCHMITT24_W::new(self)
+    pub fn schmitt24(&mut self) -> SCHMITT24_W<SCHMITT_SPEC> {
+        SCHMITT24_W::new(self, 24)
     }
     #[doc = "Bit 25"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt25(&mut self) -> SCHMITT25_W<SCHMITT_SPEC, 25> {
-        SCHMITT25_W::new(self)
+    pub fn schmitt25(&mut self) -> SCHMITT25_W<SCHMITT_SPEC> {
+        SCHMITT25_W::new(self, 25)
     }
     #[doc = "Bit 26"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt26(&mut self) -> SCHMITT26_W<SCHMITT_SPEC, 26> {
-        SCHMITT26_W::new(self)
+    pub fn schmitt26(&mut self) -> SCHMITT26_W<SCHMITT_SPEC> {
+        SCHMITT26_W::new(self, 26)
     }
     #[doc = "Bit 27"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt27(&mut self) -> SCHMITT27_W<SCHMITT_SPEC, 27> {
-        SCHMITT27_W::new(self)
+    pub fn schmitt27(&mut self) -> SCHMITT27_W<SCHMITT_SPEC> {
+        SCHMITT27_W::new(self, 27)
     }
     #[doc = "Bit 28"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt28(&mut self) -> SCHMITT28_W<SCHMITT_SPEC, 28> {
-        SCHMITT28_W::new(self)
+    pub fn schmitt28(&mut self) -> SCHMITT28_W<SCHMITT_SPEC> {
+        SCHMITT28_W::new(self, 28)
     }
     #[doc = "Bit 29"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt29(&mut self) -> SCHMITT29_W<SCHMITT_SPEC, 29> {
-        SCHMITT29_W::new(self)
+    pub fn schmitt29(&mut self) -> SCHMITT29_W<SCHMITT_SPEC> {
+        SCHMITT29_W::new(self, 29)
     }
     #[doc = "Bit 30"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt30(&mut self) -> SCHMITT30_W<SCHMITT_SPEC, 30> {
-        SCHMITT30_W::new(self)
+    pub fn schmitt30(&mut self) -> SCHMITT30_W<SCHMITT_SPEC> {
+        SCHMITT30_W::new(self, 30)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
     #[must_use]
-    pub fn schmitt31(&mut self) -> SCHMITT31_W<SCHMITT_SPEC, 31> {
-        SCHMITT31_W::new(self)
+    pub fn schmitt31(&mut self) -> SCHMITT31_W<SCHMITT_SPEC> {
+        SCHMITT31_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,19 +5,19 @@ pub type W = crate::W<CALALR_SPEC>;
 #[doc = "Field `MONTH` reader - Month Alarm"]
 pub type MONTH_R = crate::FieldReader;
 #[doc = "Field `MONTH` writer - Month Alarm"]
-pub type MONTH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type MONTH_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `MTHEN` reader - Month Alarm Enable"]
 pub type MTHEN_R = crate::BitReader;
 #[doc = "Field `MTHEN` writer - Month Alarm Enable"]
-pub type MTHEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MTHEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DATE` reader - Date Alarm"]
 pub type DATE_R = crate::FieldReader;
 #[doc = "Field `DATE` writer - Date Alarm"]
-pub type DATE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type DATE_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `DATEEN` reader - Date Alarm Enable"]
 pub type DATEEN_R = crate::BitReader;
 #[doc = "Field `DATEEN` writer - Date Alarm Enable"]
-pub type DATEEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DATEEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 16:20 - Month Alarm"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 16:20 - Month Alarm"]
     #[inline(always)]
     #[must_use]
-    pub fn month(&mut self) -> MONTH_W<CALALR_SPEC, 16> {
-        MONTH_W::new(self)
+    pub fn month(&mut self) -> MONTH_W<CALALR_SPEC> {
+        MONTH_W::new(self, 16)
     }
     #[doc = "Bit 23 - Month Alarm Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mthen(&mut self) -> MTHEN_W<CALALR_SPEC, 23> {
-        MTHEN_W::new(self)
+    pub fn mthen(&mut self) -> MTHEN_W<CALALR_SPEC> {
+        MTHEN_W::new(self, 23)
     }
     #[doc = "Bits 24:29 - Date Alarm"]
     #[inline(always)]
     #[must_use]
-    pub fn date(&mut self) -> DATE_W<CALALR_SPEC, 24> {
-        DATE_W::new(self)
+    pub fn date(&mut self) -> DATE_W<CALALR_SPEC> {
+        DATE_W::new(self, 24)
     }
     #[doc = "Bit 31 - Date Alarm Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dateen(&mut self) -> DATEEN_W<CALALR_SPEC, 31> {
-        DATEEN_W::new(self)
+    pub fn dateen(&mut self) -> DATEEN_W<CALALR_SPEC> {
+        DATEEN_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

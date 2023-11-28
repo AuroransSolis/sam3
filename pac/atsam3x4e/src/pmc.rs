@@ -1,69 +1,183 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - System Clock Enable Register"]
-    pub pmc_scer: PMC_SCER,
-    #[doc = "0x04 - System Clock Disable Register"]
-    pub pmc_scdr: PMC_SCDR,
-    #[doc = "0x08 - System Clock Status Register"]
-    pub pmc_scsr: PMC_SCSR,
+    pmc_scer: PMC_SCER,
+    pmc_scdr: PMC_SCDR,
+    pmc_scsr: PMC_SCSR,
     _reserved3: [u8; 0x04],
-    #[doc = "0x10 - Peripheral Clock Enable Register 0"]
-    pub pmc_pcer0: PMC_PCER0,
-    #[doc = "0x14 - Peripheral Clock Disable Register 0"]
-    pub pmc_pcdr0: PMC_PCDR0,
-    #[doc = "0x18 - Peripheral Clock Status Register 0"]
-    pub pmc_pcsr0: PMC_PCSR0,
-    #[doc = "0x1c - UTMI Clock Register"]
-    pub ckgr_uckr: CKGR_UCKR,
-    #[doc = "0x20 - Main Oscillator Register"]
-    pub ckgr_mor: CKGR_MOR,
-    #[doc = "0x24 - Main Clock Frequency Register"]
-    pub ckgr_mcfr: CKGR_MCFR,
-    #[doc = "0x28 - PLLA Register"]
-    pub ckgr_pllar: CKGR_PLLAR,
+    pmc_pcer0: PMC_PCER0,
+    pmc_pcdr0: PMC_PCDR0,
+    pmc_pcsr0: PMC_PCSR0,
+    ckgr_uckr: CKGR_UCKR,
+    ckgr_mor: CKGR_MOR,
+    ckgr_mcfr: CKGR_MCFR,
+    ckgr_pllar: CKGR_PLLAR,
     _reserved10: [u8; 0x04],
-    #[doc = "0x30 - Master Clock Register"]
-    pub pmc_mckr: PMC_MCKR,
+    pmc_mckr: PMC_MCKR,
     _reserved11: [u8; 0x04],
-    #[doc = "0x38 - USB Clock Register"]
-    pub pmc_usb: PMC_USB,
+    pmc_usb: PMC_USB,
     _reserved12: [u8; 0x04],
-    #[doc = "0x40 - Programmable Clock 0 Register 0"]
-    pub pmc_pck0: PMC_PCK0,
-    #[doc = "0x44 - Programmable Clock 0 Register 1"]
-    pub pmc_pck1: PMC_PCK1,
-    #[doc = "0x48 - Programmable Clock 0 Register 2"]
-    pub pmc_pck2: PMC_PCK2,
+    pmc_pck0: PMC_PCK0,
+    pmc_pck1: PMC_PCK1,
+    pmc_pck2: PMC_PCK2,
     _reserved15: [u8; 0x14],
-    #[doc = "0x60 - Interrupt Enable Register"]
-    pub pmc_ier: PMC_IER,
-    #[doc = "0x64 - Interrupt Disable Register"]
-    pub pmc_idr: PMC_IDR,
-    #[doc = "0x68 - Status Register"]
-    pub pmc_sr: PMC_SR,
-    #[doc = "0x6c - Interrupt Mask Register"]
-    pub pmc_imr: PMC_IMR,
-    #[doc = "0x70 - Fast Start-up Mode Register"]
-    pub pmc_fsmr: PMC_FSMR,
-    #[doc = "0x74 - Fast Start-up Polarity Register"]
-    pub pmc_fspr: PMC_FSPR,
-    #[doc = "0x78 - Fault Output Clear Register"]
-    pub pmc_focr: PMC_FOCR,
+    pmc_ier: PMC_IER,
+    pmc_idr: PMC_IDR,
+    pmc_sr: PMC_SR,
+    pmc_imr: PMC_IMR,
+    pmc_fsmr: PMC_FSMR,
+    pmc_fspr: PMC_FSPR,
+    pmc_focr: PMC_FOCR,
     _reserved22: [u8; 0x68],
-    #[doc = "0xe4 - Write Protect Mode Register"]
-    pub pmc_wpmr: PMC_WPMR,
-    #[doc = "0xe8 - Write Protect Status Register"]
-    pub pmc_wpsr: PMC_WPSR,
+    pmc_wpmr: PMC_WPMR,
+    pmc_wpsr: PMC_WPSR,
     _reserved24: [u8; 0x14],
+    pmc_pcer1: PMC_PCER1,
+    pmc_pcdr1: PMC_PCDR1,
+    pmc_pcsr1: PMC_PCSR1,
+    pmc_pcr: PMC_PCR,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - System Clock Enable Register"]
+    #[inline(always)]
+    pub const fn pmc_scer(&self) -> &PMC_SCER {
+        &self.pmc_scer
+    }
+    #[doc = "0x04 - System Clock Disable Register"]
+    #[inline(always)]
+    pub const fn pmc_scdr(&self) -> &PMC_SCDR {
+        &self.pmc_scdr
+    }
+    #[doc = "0x08 - System Clock Status Register"]
+    #[inline(always)]
+    pub const fn pmc_scsr(&self) -> &PMC_SCSR {
+        &self.pmc_scsr
+    }
+    #[doc = "0x10 - Peripheral Clock Enable Register 0"]
+    #[inline(always)]
+    pub const fn pmc_pcer0(&self) -> &PMC_PCER0 {
+        &self.pmc_pcer0
+    }
+    #[doc = "0x14 - Peripheral Clock Disable Register 0"]
+    #[inline(always)]
+    pub const fn pmc_pcdr0(&self) -> &PMC_PCDR0 {
+        &self.pmc_pcdr0
+    }
+    #[doc = "0x18 - Peripheral Clock Status Register 0"]
+    #[inline(always)]
+    pub const fn pmc_pcsr0(&self) -> &PMC_PCSR0 {
+        &self.pmc_pcsr0
+    }
+    #[doc = "0x1c - UTMI Clock Register"]
+    #[inline(always)]
+    pub const fn ckgr_uckr(&self) -> &CKGR_UCKR {
+        &self.ckgr_uckr
+    }
+    #[doc = "0x20 - Main Oscillator Register"]
+    #[inline(always)]
+    pub const fn ckgr_mor(&self) -> &CKGR_MOR {
+        &self.ckgr_mor
+    }
+    #[doc = "0x24 - Main Clock Frequency Register"]
+    #[inline(always)]
+    pub const fn ckgr_mcfr(&self) -> &CKGR_MCFR {
+        &self.ckgr_mcfr
+    }
+    #[doc = "0x28 - PLLA Register"]
+    #[inline(always)]
+    pub const fn ckgr_pllar(&self) -> &CKGR_PLLAR {
+        &self.ckgr_pllar
+    }
+    #[doc = "0x30 - Master Clock Register"]
+    #[inline(always)]
+    pub const fn pmc_mckr(&self) -> &PMC_MCKR {
+        &self.pmc_mckr
+    }
+    #[doc = "0x38 - USB Clock Register"]
+    #[inline(always)]
+    pub const fn pmc_usb(&self) -> &PMC_USB {
+        &self.pmc_usb
+    }
+    #[doc = "0x40 - Programmable Clock 0 Register 0"]
+    #[inline(always)]
+    pub const fn pmc_pck0(&self) -> &PMC_PCK0 {
+        &self.pmc_pck0
+    }
+    #[doc = "0x44 - Programmable Clock 0 Register 1"]
+    #[inline(always)]
+    pub const fn pmc_pck1(&self) -> &PMC_PCK1 {
+        &self.pmc_pck1
+    }
+    #[doc = "0x48 - Programmable Clock 0 Register 2"]
+    #[inline(always)]
+    pub const fn pmc_pck2(&self) -> &PMC_PCK2 {
+        &self.pmc_pck2
+    }
+    #[doc = "0x60 - Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn pmc_ier(&self) -> &PMC_IER {
+        &self.pmc_ier
+    }
+    #[doc = "0x64 - Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn pmc_idr(&self) -> &PMC_IDR {
+        &self.pmc_idr
+    }
+    #[doc = "0x68 - Status Register"]
+    #[inline(always)]
+    pub const fn pmc_sr(&self) -> &PMC_SR {
+        &self.pmc_sr
+    }
+    #[doc = "0x6c - Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn pmc_imr(&self) -> &PMC_IMR {
+        &self.pmc_imr
+    }
+    #[doc = "0x70 - Fast Start-up Mode Register"]
+    #[inline(always)]
+    pub const fn pmc_fsmr(&self) -> &PMC_FSMR {
+        &self.pmc_fsmr
+    }
+    #[doc = "0x74 - Fast Start-up Polarity Register"]
+    #[inline(always)]
+    pub const fn pmc_fspr(&self) -> &PMC_FSPR {
+        &self.pmc_fspr
+    }
+    #[doc = "0x78 - Fault Output Clear Register"]
+    #[inline(always)]
+    pub const fn pmc_focr(&self) -> &PMC_FOCR {
+        &self.pmc_focr
+    }
+    #[doc = "0xe4 - Write Protect Mode Register"]
+    #[inline(always)]
+    pub const fn pmc_wpmr(&self) -> &PMC_WPMR {
+        &self.pmc_wpmr
+    }
+    #[doc = "0xe8 - Write Protect Status Register"]
+    #[inline(always)]
+    pub const fn pmc_wpsr(&self) -> &PMC_WPSR {
+        &self.pmc_wpsr
+    }
     #[doc = "0x100 - Peripheral Clock Enable Register 1"]
-    pub pmc_pcer1: PMC_PCER1,
+    #[inline(always)]
+    pub const fn pmc_pcer1(&self) -> &PMC_PCER1 {
+        &self.pmc_pcer1
+    }
     #[doc = "0x104 - Peripheral Clock Disable Register 1"]
-    pub pmc_pcdr1: PMC_PCDR1,
+    #[inline(always)]
+    pub const fn pmc_pcdr1(&self) -> &PMC_PCDR1 {
+        &self.pmc_pcdr1
+    }
     #[doc = "0x108 - Peripheral Clock Status Register 1"]
-    pub pmc_pcsr1: PMC_PCSR1,
+    #[inline(always)]
+    pub const fn pmc_pcsr1(&self) -> &PMC_PCSR1 {
+        &self.pmc_pcsr1
+    }
     #[doc = "0x10c - Peripheral Control Register"]
-    pub pmc_pcr: PMC_PCR,
+    #[inline(always)]
+    pub const fn pmc_pcr(&self) -> &PMC_PCR {
+        &self.pmc_pcr
+    }
 }
 #[doc = "PMC_SCER (w) register accessor: System Clock Enable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmc_scer::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmc_scer`]
 module"]

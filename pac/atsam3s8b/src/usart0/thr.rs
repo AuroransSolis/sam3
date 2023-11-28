@@ -1,21 +1,21 @@
 #[doc = "Register `THR` writer"]
 pub type W = crate::W<THR_SPEC>;
 #[doc = "Field `TXCHR` writer - Character to be Transmitted"]
-pub type TXCHR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 9, O, u16>;
+pub type TXCHR_W<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 #[doc = "Field `TXSYNH` writer - Sync Field to be transmitted"]
-pub type TXSYNH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXSYNH_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bits 0:8 - Character to be Transmitted"]
     #[inline(always)]
     #[must_use]
-    pub fn txchr(&mut self) -> TXCHR_W<THR_SPEC, 0> {
-        TXCHR_W::new(self)
+    pub fn txchr(&mut self) -> TXCHR_W<THR_SPEC> {
+        TXCHR_W::new(self, 0)
     }
     #[doc = "Bit 15 - Sync Field to be transmitted"]
     #[inline(always)]
     #[must_use]
-    pub fn txsynh(&mut self) -> TXSYNH_W<THR_SPEC, 15> {
-        TXSYNH_W::new(self)
+    pub fn txsynh(&mut self) -> TXSYNH_W<THR_SPEC> {
+        TXSYNH_W::new(self, 15)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

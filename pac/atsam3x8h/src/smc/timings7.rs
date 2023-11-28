@@ -5,35 +5,35 @@ pub type W = crate::W<TIMINGS7_SPEC>;
 #[doc = "Field `TCLR` reader - CLE to REN Low Delay"]
 pub type TCLR_R = crate::FieldReader;
 #[doc = "Field `TCLR` writer - CLE to REN Low Delay"]
-pub type TCLR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TCLR_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `TADL` reader - ALE to Data Start"]
 pub type TADL_R = crate::FieldReader;
 #[doc = "Field `TADL` writer - ALE to Data Start"]
-pub type TADL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TADL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `TAR` reader - ALE to REN Low Delay"]
 pub type TAR_R = crate::FieldReader;
 #[doc = "Field `TAR` writer - ALE to REN Low Delay"]
-pub type TAR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TAR_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `OCMS` reader - Off Chip Memory Scrambling Enable"]
 pub type OCMS_R = crate::BitReader;
 #[doc = "Field `OCMS` writer - Off Chip Memory Scrambling Enable"]
-pub type OCMS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OCMS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TRR` reader - Ready to REN Low Delay"]
 pub type TRR_R = crate::FieldReader;
 #[doc = "Field `TRR` writer - Ready to REN Low Delay"]
-pub type TRR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TRR_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `TWB` reader - WEN High to REN to Busy"]
 pub type TWB_R = crate::FieldReader;
 #[doc = "Field `TWB` writer - WEN High to REN to Busy"]
-pub type TWB_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TWB_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `RBNSEL` reader - Ready/Busy Line Selection"]
 pub type RBNSEL_R = crate::FieldReader;
 #[doc = "Field `RBNSEL` writer - Ready/Busy Line Selection"]
-pub type RBNSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type RBNSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `NFSEL` reader - NAND Flash Selection"]
 pub type NFSEL_R = crate::BitReader;
 #[doc = "Field `NFSEL` writer - NAND Flash Selection"]
-pub type NFSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NFSEL_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - CLE to REN Low Delay"]
     #[inline(always)]
@@ -80,50 +80,50 @@ impl W {
     #[doc = "Bits 0:3 - CLE to REN Low Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn tclr(&mut self) -> TCLR_W<TIMINGS7_SPEC, 0> {
-        TCLR_W::new(self)
+    pub fn tclr(&mut self) -> TCLR_W<TIMINGS7_SPEC> {
+        TCLR_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - ALE to Data Start"]
     #[inline(always)]
     #[must_use]
-    pub fn tadl(&mut self) -> TADL_W<TIMINGS7_SPEC, 4> {
-        TADL_W::new(self)
+    pub fn tadl(&mut self) -> TADL_W<TIMINGS7_SPEC> {
+        TADL_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - ALE to REN Low Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn tar(&mut self) -> TAR_W<TIMINGS7_SPEC, 8> {
-        TAR_W::new(self)
+    pub fn tar(&mut self) -> TAR_W<TIMINGS7_SPEC> {
+        TAR_W::new(self, 8)
     }
     #[doc = "Bit 12 - Off Chip Memory Scrambling Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ocms(&mut self) -> OCMS_W<TIMINGS7_SPEC, 12> {
-        OCMS_W::new(self)
+    pub fn ocms(&mut self) -> OCMS_W<TIMINGS7_SPEC> {
+        OCMS_W::new(self, 12)
     }
     #[doc = "Bits 16:19 - Ready to REN Low Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn trr(&mut self) -> TRR_W<TIMINGS7_SPEC, 16> {
-        TRR_W::new(self)
+    pub fn trr(&mut self) -> TRR_W<TIMINGS7_SPEC> {
+        TRR_W::new(self, 16)
     }
     #[doc = "Bits 24:27 - WEN High to REN to Busy"]
     #[inline(always)]
     #[must_use]
-    pub fn twb(&mut self) -> TWB_W<TIMINGS7_SPEC, 24> {
-        TWB_W::new(self)
+    pub fn twb(&mut self) -> TWB_W<TIMINGS7_SPEC> {
+        TWB_W::new(self, 24)
     }
     #[doc = "Bits 28:30 - Ready/Busy Line Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn rbnsel(&mut self) -> RBNSEL_W<TIMINGS7_SPEC, 28> {
-        RBNSEL_W::new(self)
+    pub fn rbnsel(&mut self) -> RBNSEL_W<TIMINGS7_SPEC> {
+        RBNSEL_W::new(self, 28)
     }
     #[doc = "Bit 31 - NAND Flash Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn nfsel(&mut self) -> NFSEL_W<TIMINGS7_SPEC, 31> {
-        NFSEL_W::new(self)
+    pub fn nfsel(&mut self) -> NFSEL_W<TIMINGS7_SPEC> {
+        NFSEL_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

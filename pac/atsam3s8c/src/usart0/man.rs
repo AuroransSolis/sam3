@@ -5,7 +5,7 @@ pub type W = crate::W<MAN_SPEC>;
 #[doc = "Field `TX_PL` reader - Transmitter Preamble Length"]
 pub type TX_PL_R = crate::FieldReader;
 #[doc = "Field `TX_PL` writer - Transmitter Preamble Length"]
-pub type TX_PL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TX_PL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `TX_PP` reader - Transmitter Preamble Pattern"]
 pub type TX_PP_R = crate::FieldReader<TX_PP_A>;
 #[doc = "Transmitter Preamble Pattern\n\nValue on reset: 0"]
@@ -64,8 +64,8 @@ impl TX_PP_R {
     }
 }
 #[doc = "Field `TX_PP` writer - Transmitter Preamble Pattern"]
-pub type TX_PP_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, TX_PP_A>;
-impl<'a, REG, const O: u8> TX_PP_W<'a, REG, O>
+pub type TX_PP_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, TX_PP_A>;
+impl<'a, REG> TX_PP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -94,11 +94,11 @@ where
 #[doc = "Field `TX_MPOL` reader - Transmitter Manchester Polarity"]
 pub type TX_MPOL_R = crate::BitReader;
 #[doc = "Field `TX_MPOL` writer - Transmitter Manchester Polarity"]
-pub type TX_MPOL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TX_MPOL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RX_PL` reader - Receiver Preamble Length"]
 pub type RX_PL_R = crate::FieldReader;
 #[doc = "Field `RX_PL` writer - Receiver Preamble Length"]
-pub type RX_PL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type RX_PL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `RX_PP` reader - Receiver Preamble Pattern detected"]
 pub type RX_PP_R = crate::FieldReader<RX_PP_A>;
 #[doc = "Receiver Preamble Pattern detected\n\nValue on reset: 0"]
@@ -157,8 +157,8 @@ impl RX_PP_R {
     }
 }
 #[doc = "Field `RX_PP` writer - Receiver Preamble Pattern detected"]
-pub type RX_PP_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, RX_PP_A>;
-impl<'a, REG, const O: u8> RX_PP_W<'a, REG, O>
+pub type RX_PP_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, RX_PP_A>;
+impl<'a, REG> RX_PP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -187,15 +187,15 @@ where
 #[doc = "Field `RX_MPOL` reader - Receiver Manchester Polarity"]
 pub type RX_MPOL_R = crate::BitReader;
 #[doc = "Field `RX_MPOL` writer - Receiver Manchester Polarity"]
-pub type RX_MPOL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RX_MPOL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ONE` reader - Must Be Set to 1"]
 pub type ONE_R = crate::BitReader;
 #[doc = "Field `ONE` writer - Must Be Set to 1"]
-pub type ONE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ONE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DRIFT` reader - Drift compensation"]
 pub type DRIFT_R = crate::BitReader;
 #[doc = "Field `DRIFT` writer - Drift compensation"]
-pub type DRIFT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DRIFT_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - Transmitter Preamble Length"]
     #[inline(always)]
@@ -242,50 +242,50 @@ impl W {
     #[doc = "Bits 0:3 - Transmitter Preamble Length"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_pl(&mut self) -> TX_PL_W<MAN_SPEC, 0> {
-        TX_PL_W::new(self)
+    pub fn tx_pl(&mut self) -> TX_PL_W<MAN_SPEC> {
+        TX_PL_W::new(self, 0)
     }
     #[doc = "Bits 8:9 - Transmitter Preamble Pattern"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_pp(&mut self) -> TX_PP_W<MAN_SPEC, 8> {
-        TX_PP_W::new(self)
+    pub fn tx_pp(&mut self) -> TX_PP_W<MAN_SPEC> {
+        TX_PP_W::new(self, 8)
     }
     #[doc = "Bit 12 - Transmitter Manchester Polarity"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_mpol(&mut self) -> TX_MPOL_W<MAN_SPEC, 12> {
-        TX_MPOL_W::new(self)
+    pub fn tx_mpol(&mut self) -> TX_MPOL_W<MAN_SPEC> {
+        TX_MPOL_W::new(self, 12)
     }
     #[doc = "Bits 16:19 - Receiver Preamble Length"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_pl(&mut self) -> RX_PL_W<MAN_SPEC, 16> {
-        RX_PL_W::new(self)
+    pub fn rx_pl(&mut self) -> RX_PL_W<MAN_SPEC> {
+        RX_PL_W::new(self, 16)
     }
     #[doc = "Bits 24:25 - Receiver Preamble Pattern detected"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_pp(&mut self) -> RX_PP_W<MAN_SPEC, 24> {
-        RX_PP_W::new(self)
+    pub fn rx_pp(&mut self) -> RX_PP_W<MAN_SPEC> {
+        RX_PP_W::new(self, 24)
     }
     #[doc = "Bit 28 - Receiver Manchester Polarity"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_mpol(&mut self) -> RX_MPOL_W<MAN_SPEC, 28> {
-        RX_MPOL_W::new(self)
+    pub fn rx_mpol(&mut self) -> RX_MPOL_W<MAN_SPEC> {
+        RX_MPOL_W::new(self, 28)
     }
     #[doc = "Bit 29 - Must Be Set to 1"]
     #[inline(always)]
     #[must_use]
-    pub fn one(&mut self) -> ONE_W<MAN_SPEC, 29> {
-        ONE_W::new(self)
+    pub fn one(&mut self) -> ONE_W<MAN_SPEC> {
+        ONE_W::new(self, 29)
     }
     #[doc = "Bit 30 - Drift compensation"]
     #[inline(always)]
     #[must_use]
-    pub fn drift(&mut self) -> DRIFT_W<MAN_SPEC, 30> {
-        DRIFT_W::new(self)
+    pub fn drift(&mut self) -> DRIFT_W<MAN_SPEC> {
+        DRIFT_W::new(self, 30)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

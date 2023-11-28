@@ -5,7 +5,7 @@ pub type W = crate::W<DTOR_SPEC>;
 #[doc = "Field `DTOCYC` reader - Data Timeout Cycle Number"]
 pub type DTOCYC_R = crate::FieldReader;
 #[doc = "Field `DTOCYC` writer - Data Timeout Cycle Number"]
-pub type DTOCYC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type DTOCYC_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `DTOMUL` reader - Data Timeout Multiplier"]
 pub type DTOMUL_R = crate::FieldReader<DTOMUL_A>;
 #[doc = "Data Timeout Multiplier\n\nValue on reset: 0"]
@@ -96,8 +96,8 @@ impl DTOMUL_R {
     }
 }
 #[doc = "Field `DTOMUL` writer - Data Timeout Multiplier"]
-pub type DTOMUL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, DTOMUL_A>;
-impl<'a, REG, const O: u8> DTOMUL_W<'a, REG, O>
+pub type DTOMUL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, DTOMUL_A>;
+impl<'a, REG> DTOMUL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -159,14 +159,14 @@ impl W {
     #[doc = "Bits 0:3 - Data Timeout Cycle Number"]
     #[inline(always)]
     #[must_use]
-    pub fn dtocyc(&mut self) -> DTOCYC_W<DTOR_SPEC, 0> {
-        DTOCYC_W::new(self)
+    pub fn dtocyc(&mut self) -> DTOCYC_W<DTOR_SPEC> {
+        DTOCYC_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Data Timeout Multiplier"]
     #[inline(always)]
     #[must_use]
-    pub fn dtomul(&mut self) -> DTOMUL_W<DTOR_SPEC, 4> {
-        DTOMUL_W::new(self)
+    pub fn dtomul(&mut self) -> DTOMUL_W<DTOR_SPEC> {
+        DTOMUL_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

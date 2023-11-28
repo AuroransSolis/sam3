@@ -5,15 +5,15 @@ pub type W = crate::W<RSR_SPEC>;
 #[doc = "Field `BNA` reader - Buffer Not Available"]
 pub type BNA_R = crate::BitReader;
 #[doc = "Field `BNA` writer - Buffer Not Available"]
-pub type BNA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BNA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `REC` reader - Frame Received"]
 pub type REC_R = crate::BitReader;
 #[doc = "Field `REC` writer - Frame Received"]
-pub type REC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type REC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OVR` reader - Receive Overrun"]
 pub type OVR_R = crate::BitReader;
 #[doc = "Field `OVR` writer - Receive Overrun"]
-pub type OVR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OVR_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Buffer Not Available"]
     #[inline(always)]
@@ -35,20 +35,20 @@ impl W {
     #[doc = "Bit 0 - Buffer Not Available"]
     #[inline(always)]
     #[must_use]
-    pub fn bna(&mut self) -> BNA_W<RSR_SPEC, 0> {
-        BNA_W::new(self)
+    pub fn bna(&mut self) -> BNA_W<RSR_SPEC> {
+        BNA_W::new(self, 0)
     }
     #[doc = "Bit 1 - Frame Received"]
     #[inline(always)]
     #[must_use]
-    pub fn rec(&mut self) -> REC_W<RSR_SPEC, 1> {
-        REC_W::new(self)
+    pub fn rec(&mut self) -> REC_W<RSR_SPEC> {
+        REC_W::new(self, 1)
     }
     #[doc = "Bit 2 - Receive Overrun"]
     #[inline(always)]
     #[must_use]
-    pub fn ovr(&mut self) -> OVR_W<RSR_SPEC, 2> {
-        OVR_W::new(self)
+    pub fn ovr(&mut self) -> OVR_W<RSR_SPEC> {
+        OVR_W::new(self, 2)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

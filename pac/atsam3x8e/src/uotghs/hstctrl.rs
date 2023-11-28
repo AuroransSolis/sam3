@@ -5,15 +5,15 @@ pub type W = crate::W<HSTCTRL_SPEC>;
 #[doc = "Field `SOFE` reader - Start of Frame Generation Enable"]
 pub type SOFE_R = crate::BitReader;
 #[doc = "Field `SOFE` writer - Start of Frame Generation Enable"]
-pub type SOFE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SOFE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RESET` reader - Send USB Reset"]
 pub type RESET_R = crate::BitReader;
 #[doc = "Field `RESET` writer - Send USB Reset"]
-pub type RESET_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RESET_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RESUME` reader - Send USB Resume"]
 pub type RESUME_R = crate::BitReader;
 #[doc = "Field `RESUME` writer - Send USB Resume"]
-pub type RESUME_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RESUME_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SPDCONF` reader - Mode Configuration"]
 pub type SPDCONF_R = crate::FieldReader<SPDCONF_A>;
 #[doc = "Mode Configuration\n\nValue on reset: 0"]
@@ -72,8 +72,8 @@ impl SPDCONF_R {
     }
 }
 #[doc = "Field `SPDCONF` writer - Mode Configuration"]
-pub type SPDCONF_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, SPDCONF_A>;
-impl<'a, REG, const O: u8> SPDCONF_W<'a, REG, O>
+pub type SPDCONF_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SPDCONF_A>;
+impl<'a, REG> SPDCONF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -125,26 +125,26 @@ impl W {
     #[doc = "Bit 8 - Start of Frame Generation Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn sofe(&mut self) -> SOFE_W<HSTCTRL_SPEC, 8> {
-        SOFE_W::new(self)
+    pub fn sofe(&mut self) -> SOFE_W<HSTCTRL_SPEC> {
+        SOFE_W::new(self, 8)
     }
     #[doc = "Bit 9 - Send USB Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn reset(&mut self) -> RESET_W<HSTCTRL_SPEC, 9> {
-        RESET_W::new(self)
+    pub fn reset(&mut self) -> RESET_W<HSTCTRL_SPEC> {
+        RESET_W::new(self, 9)
     }
     #[doc = "Bit 10 - Send USB Resume"]
     #[inline(always)]
     #[must_use]
-    pub fn resume(&mut self) -> RESUME_W<HSTCTRL_SPEC, 10> {
-        RESUME_W::new(self)
+    pub fn resume(&mut self) -> RESUME_W<HSTCTRL_SPEC> {
+        RESUME_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Mode Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn spdconf(&mut self) -> SPDCONF_W<HSTCTRL_SPEC, 12> {
-        SPDCONF_W::new(self)
+    pub fn spdconf(&mut self) -> SPDCONF_W<HSTCTRL_SPEC> {
+        SPDCONF_W::new(self, 12)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

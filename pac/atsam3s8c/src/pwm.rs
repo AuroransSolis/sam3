@@ -1,215 +1,621 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - PWM Clock Register"]
-    pub clk: CLK,
-    #[doc = "0x04 - PWM Enable Register"]
-    pub ena: ENA,
-    #[doc = "0x08 - PWM Disable Register"]
-    pub dis: DIS,
-    #[doc = "0x0c - PWM Status Register"]
-    pub sr: SR,
-    #[doc = "0x10 - PWM Interrupt Enable Register 1"]
-    pub ier1: IER1,
-    #[doc = "0x14 - PWM Interrupt Disable Register 1"]
-    pub idr1: IDR1,
-    #[doc = "0x18 - PWM Interrupt Mask Register 1"]
-    pub imr1: IMR1,
-    #[doc = "0x1c - PWM Interrupt Status Register 1"]
-    pub isr1: ISR1,
-    #[doc = "0x20 - PWM Sync Channels Mode Register"]
-    pub scm: SCM,
+    clk: CLK,
+    ena: ENA,
+    dis: DIS,
+    sr: SR,
+    ier1: IER1,
+    idr1: IDR1,
+    imr1: IMR1,
+    isr1: ISR1,
+    scm: SCM,
     _reserved9: [u8; 0x04],
-    #[doc = "0x28 - PWM Sync Channels Update Control Register"]
-    pub scuc: SCUC,
-    #[doc = "0x2c - PWM Sync Channels Update Period Register"]
-    pub scup: SCUP,
-    #[doc = "0x30 - PWM Sync Channels Update Period Update Register"]
-    pub scupupd: SCUPUPD,
-    #[doc = "0x34 - PWM Interrupt Enable Register 2"]
-    pub ier2: IER2,
-    #[doc = "0x38 - PWM Interrupt Disable Register 2"]
-    pub idr2: IDR2,
-    #[doc = "0x3c - PWM Interrupt Mask Register 2"]
-    pub imr2: IMR2,
-    #[doc = "0x40 - PWM Interrupt Status Register 2"]
-    pub isr2: ISR2,
-    #[doc = "0x44 - PWM Output Override Value Register"]
-    pub oov: OOV,
-    #[doc = "0x48 - PWM Output Selection Register"]
-    pub os: OS,
-    #[doc = "0x4c - PWM Output Selection Set Register"]
-    pub oss: OSS,
-    #[doc = "0x50 - PWM Output Selection Clear Register"]
-    pub osc: OSC,
-    #[doc = "0x54 - PWM Output Selection Set Update Register"]
-    pub ossupd: OSSUPD,
-    #[doc = "0x58 - PWM Output Selection Clear Update Register"]
-    pub oscupd: OSCUPD,
-    #[doc = "0x5c - PWM Fault Mode Register"]
-    pub fmr: FMR,
-    #[doc = "0x60 - PWM Fault Status Register"]
-    pub fsr: FSR,
-    #[doc = "0x64 - PWM Fault Clear Register"]
-    pub fcr: FCR,
-    #[doc = "0x68 - PWM Fault Protection Value Register"]
-    pub fpv: FPV,
-    #[doc = "0x6c - PWM Fault Protection Enable Register"]
-    pub fpe: FPE,
+    scuc: SCUC,
+    scup: SCUP,
+    scupupd: SCUPUPD,
+    ier2: IER2,
+    idr2: IDR2,
+    imr2: IMR2,
+    isr2: ISR2,
+    oov: OOV,
+    os: OS,
+    oss: OSS,
+    osc: OSC,
+    ossupd: OSSUPD,
+    oscupd: OSCUPD,
+    fmr: FMR,
+    fsr: FSR,
+    fcr: FCR,
+    fpv: FPV,
+    fpe: FPE,
     _reserved27: [u8; 0x0c],
-    #[doc = "0x7c - PWM Event Line 0 Mode Register 0"]
-    pub elmr0: ELMR0,
-    #[doc = "0x80 - PWM Event Line 0 Mode Register 1"]
-    pub elmr1: ELMR1,
+    elmr0: ELMR0,
+    elmr1: ELMR1,
     _reserved29: [u8; 0x60],
-    #[doc = "0xe4 - PWM Write Protect Control Register"]
-    pub wpcr: WPCR,
-    #[doc = "0xe8 - PWM Write Protect Status Register"]
-    pub wpsr: WPSR,
+    wpcr: WPCR,
+    wpsr: WPSR,
     _reserved31: [u8; 0x1c],
-    #[doc = "0x108 - Transmit Pointer Register"]
-    pub tpr: TPR,
-    #[doc = "0x10c - Transmit Counter Register"]
-    pub tcr: TCR,
+    tpr: TPR,
+    tcr: TCR,
     _reserved33: [u8; 0x08],
-    #[doc = "0x118 - Transmit Next Pointer Register"]
-    pub tnpr: TNPR,
-    #[doc = "0x11c - Transmit Next Counter Register"]
-    pub tncr: TNCR,
-    #[doc = "0x120 - Transfer Control Register"]
-    pub ptcr: PTCR,
-    #[doc = "0x124 - Transfer Status Register"]
-    pub ptsr: PTSR,
+    tnpr: TNPR,
+    tncr: TNCR,
+    ptcr: PTCR,
+    ptsr: PTSR,
     _reserved37: [u8; 0x08],
-    #[doc = "0x130 - PWM Comparison 0 Value Register"]
-    pub cmpv0: CMPV0,
-    #[doc = "0x134 - PWM Comparison 0 Value Update Register"]
-    pub cmpvupd0: CMPVUPD0,
-    #[doc = "0x138 - PWM Comparison 0 Mode Register"]
-    pub cmpm0: CMPM0,
-    #[doc = "0x13c - PWM Comparison 0 Mode Update Register"]
-    pub cmpmupd0: CMPMUPD0,
-    #[doc = "0x140 - PWM Comparison 1 Value Register"]
-    pub cmpv1: CMPV1,
-    #[doc = "0x144 - PWM Comparison 1 Value Update Register"]
-    pub cmpvupd1: CMPVUPD1,
-    #[doc = "0x148 - PWM Comparison 1 Mode Register"]
-    pub cmpm1: CMPM1,
-    #[doc = "0x14c - PWM Comparison 1 Mode Update Register"]
-    pub cmpmupd1: CMPMUPD1,
-    #[doc = "0x150 - PWM Comparison 2 Value Register"]
-    pub cmpv2: CMPV2,
-    #[doc = "0x154 - PWM Comparison 2 Value Update Register"]
-    pub cmpvupd2: CMPVUPD2,
-    #[doc = "0x158 - PWM Comparison 2 Mode Register"]
-    pub cmpm2: CMPM2,
-    #[doc = "0x15c - PWM Comparison 2 Mode Update Register"]
-    pub cmpmupd2: CMPMUPD2,
-    #[doc = "0x160 - PWM Comparison 3 Value Register"]
-    pub cmpv3: CMPV3,
-    #[doc = "0x164 - PWM Comparison 3 Value Update Register"]
-    pub cmpvupd3: CMPVUPD3,
-    #[doc = "0x168 - PWM Comparison 3 Mode Register"]
-    pub cmpm3: CMPM3,
-    #[doc = "0x16c - PWM Comparison 3 Mode Update Register"]
-    pub cmpmupd3: CMPMUPD3,
-    #[doc = "0x170 - PWM Comparison 4 Value Register"]
-    pub cmpv4: CMPV4,
-    #[doc = "0x174 - PWM Comparison 4 Value Update Register"]
-    pub cmpvupd4: CMPVUPD4,
-    #[doc = "0x178 - PWM Comparison 4 Mode Register"]
-    pub cmpm4: CMPM4,
-    #[doc = "0x17c - PWM Comparison 4 Mode Update Register"]
-    pub cmpmupd4: CMPMUPD4,
-    #[doc = "0x180 - PWM Comparison 5 Value Register"]
-    pub cmpv5: CMPV5,
-    #[doc = "0x184 - PWM Comparison 5 Value Update Register"]
-    pub cmpvupd5: CMPVUPD5,
-    #[doc = "0x188 - PWM Comparison 5 Mode Register"]
-    pub cmpm5: CMPM5,
-    #[doc = "0x18c - PWM Comparison 5 Mode Update Register"]
-    pub cmpmupd5: CMPMUPD5,
-    #[doc = "0x190 - PWM Comparison 6 Value Register"]
-    pub cmpv6: CMPV6,
-    #[doc = "0x194 - PWM Comparison 6 Value Update Register"]
-    pub cmpvupd6: CMPVUPD6,
-    #[doc = "0x198 - PWM Comparison 6 Mode Register"]
-    pub cmpm6: CMPM6,
-    #[doc = "0x19c - PWM Comparison 6 Mode Update Register"]
-    pub cmpmupd6: CMPMUPD6,
-    #[doc = "0x1a0 - PWM Comparison 7 Value Register"]
-    pub cmpv7: CMPV7,
-    #[doc = "0x1a4 - PWM Comparison 7 Value Update Register"]
-    pub cmpvupd7: CMPVUPD7,
-    #[doc = "0x1a8 - PWM Comparison 7 Mode Register"]
-    pub cmpm7: CMPM7,
-    #[doc = "0x1ac - PWM Comparison 7 Mode Update Register"]
-    pub cmpmupd7: CMPMUPD7,
+    cmpv0: CMPV0,
+    cmpvupd0: CMPVUPD0,
+    cmpm0: CMPM0,
+    cmpmupd0: CMPMUPD0,
+    cmpv1: CMPV1,
+    cmpvupd1: CMPVUPD1,
+    cmpm1: CMPM1,
+    cmpmupd1: CMPMUPD1,
+    cmpv2: CMPV2,
+    cmpvupd2: CMPVUPD2,
+    cmpm2: CMPM2,
+    cmpmupd2: CMPMUPD2,
+    cmpv3: CMPV3,
+    cmpvupd3: CMPVUPD3,
+    cmpm3: CMPM3,
+    cmpmupd3: CMPMUPD3,
+    cmpv4: CMPV4,
+    cmpvupd4: CMPVUPD4,
+    cmpm4: CMPM4,
+    cmpmupd4: CMPMUPD4,
+    cmpv5: CMPV5,
+    cmpvupd5: CMPVUPD5,
+    cmpm5: CMPM5,
+    cmpmupd5: CMPMUPD5,
+    cmpv6: CMPV6,
+    cmpvupd6: CMPVUPD6,
+    cmpm6: CMPM6,
+    cmpmupd6: CMPMUPD6,
+    cmpv7: CMPV7,
+    cmpvupd7: CMPVUPD7,
+    cmpm7: CMPM7,
+    cmpmupd7: CMPMUPD7,
     _reserved69: [u8; 0x50],
+    cmr0: CMR0,
+    cdty0: CDTY0,
+    cdtyupd0: CDTYUPD0,
+    cprd0: CPRD0,
+    cprdupd0: CPRDUPD0,
+    ccnt0: CCNT0,
+    dt0: DT0,
+    dtupd0: DTUPD0,
+    cmr1: CMR1,
+    cdty1: CDTY1,
+    cdtyupd1: CDTYUPD1,
+    cprd1: CPRD1,
+    cprdupd1: CPRDUPD1,
+    ccnt1: CCNT1,
+    dt1: DT1,
+    dtupd1: DTUPD1,
+    cmr2: CMR2,
+    cdty2: CDTY2,
+    cdtyupd2: CDTYUPD2,
+    cprd2: CPRD2,
+    cprdupd2: CPRDUPD2,
+    ccnt2: CCNT2,
+    dt2: DT2,
+    dtupd2: DTUPD2,
+    cmr3: CMR3,
+    cdty3: CDTY3,
+    cdtyupd3: CDTYUPD3,
+    cprd3: CPRD3,
+    cprdupd3: CPRDUPD3,
+    ccnt3: CCNT3,
+    dt3: DT3,
+    dtupd3: DTUPD3,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - PWM Clock Register"]
+    #[inline(always)]
+    pub const fn clk(&self) -> &CLK {
+        &self.clk
+    }
+    #[doc = "0x04 - PWM Enable Register"]
+    #[inline(always)]
+    pub const fn ena(&self) -> &ENA {
+        &self.ena
+    }
+    #[doc = "0x08 - PWM Disable Register"]
+    #[inline(always)]
+    pub const fn dis(&self) -> &DIS {
+        &self.dis
+    }
+    #[doc = "0x0c - PWM Status Register"]
+    #[inline(always)]
+    pub const fn sr(&self) -> &SR {
+        &self.sr
+    }
+    #[doc = "0x10 - PWM Interrupt Enable Register 1"]
+    #[inline(always)]
+    pub const fn ier1(&self) -> &IER1 {
+        &self.ier1
+    }
+    #[doc = "0x14 - PWM Interrupt Disable Register 1"]
+    #[inline(always)]
+    pub const fn idr1(&self) -> &IDR1 {
+        &self.idr1
+    }
+    #[doc = "0x18 - PWM Interrupt Mask Register 1"]
+    #[inline(always)]
+    pub const fn imr1(&self) -> &IMR1 {
+        &self.imr1
+    }
+    #[doc = "0x1c - PWM Interrupt Status Register 1"]
+    #[inline(always)]
+    pub const fn isr1(&self) -> &ISR1 {
+        &self.isr1
+    }
+    #[doc = "0x20 - PWM Sync Channels Mode Register"]
+    #[inline(always)]
+    pub const fn scm(&self) -> &SCM {
+        &self.scm
+    }
+    #[doc = "0x28 - PWM Sync Channels Update Control Register"]
+    #[inline(always)]
+    pub const fn scuc(&self) -> &SCUC {
+        &self.scuc
+    }
+    #[doc = "0x2c - PWM Sync Channels Update Period Register"]
+    #[inline(always)]
+    pub const fn scup(&self) -> &SCUP {
+        &self.scup
+    }
+    #[doc = "0x30 - PWM Sync Channels Update Period Update Register"]
+    #[inline(always)]
+    pub const fn scupupd(&self) -> &SCUPUPD {
+        &self.scupupd
+    }
+    #[doc = "0x34 - PWM Interrupt Enable Register 2"]
+    #[inline(always)]
+    pub const fn ier2(&self) -> &IER2 {
+        &self.ier2
+    }
+    #[doc = "0x38 - PWM Interrupt Disable Register 2"]
+    #[inline(always)]
+    pub const fn idr2(&self) -> &IDR2 {
+        &self.idr2
+    }
+    #[doc = "0x3c - PWM Interrupt Mask Register 2"]
+    #[inline(always)]
+    pub const fn imr2(&self) -> &IMR2 {
+        &self.imr2
+    }
+    #[doc = "0x40 - PWM Interrupt Status Register 2"]
+    #[inline(always)]
+    pub const fn isr2(&self) -> &ISR2 {
+        &self.isr2
+    }
+    #[doc = "0x44 - PWM Output Override Value Register"]
+    #[inline(always)]
+    pub const fn oov(&self) -> &OOV {
+        &self.oov
+    }
+    #[doc = "0x48 - PWM Output Selection Register"]
+    #[inline(always)]
+    pub const fn os(&self) -> &OS {
+        &self.os
+    }
+    #[doc = "0x4c - PWM Output Selection Set Register"]
+    #[inline(always)]
+    pub const fn oss(&self) -> &OSS {
+        &self.oss
+    }
+    #[doc = "0x50 - PWM Output Selection Clear Register"]
+    #[inline(always)]
+    pub const fn osc(&self) -> &OSC {
+        &self.osc
+    }
+    #[doc = "0x54 - PWM Output Selection Set Update Register"]
+    #[inline(always)]
+    pub const fn ossupd(&self) -> &OSSUPD {
+        &self.ossupd
+    }
+    #[doc = "0x58 - PWM Output Selection Clear Update Register"]
+    #[inline(always)]
+    pub const fn oscupd(&self) -> &OSCUPD {
+        &self.oscupd
+    }
+    #[doc = "0x5c - PWM Fault Mode Register"]
+    #[inline(always)]
+    pub const fn fmr(&self) -> &FMR {
+        &self.fmr
+    }
+    #[doc = "0x60 - PWM Fault Status Register"]
+    #[inline(always)]
+    pub const fn fsr(&self) -> &FSR {
+        &self.fsr
+    }
+    #[doc = "0x64 - PWM Fault Clear Register"]
+    #[inline(always)]
+    pub const fn fcr(&self) -> &FCR {
+        &self.fcr
+    }
+    #[doc = "0x68 - PWM Fault Protection Value Register"]
+    #[inline(always)]
+    pub const fn fpv(&self) -> &FPV {
+        &self.fpv
+    }
+    #[doc = "0x6c - PWM Fault Protection Enable Register"]
+    #[inline(always)]
+    pub const fn fpe(&self) -> &FPE {
+        &self.fpe
+    }
+    #[doc = "0x7c - PWM Event Line 0 Mode Register 0"]
+    #[inline(always)]
+    pub const fn elmr0(&self) -> &ELMR0 {
+        &self.elmr0
+    }
+    #[doc = "0x80 - PWM Event Line 0 Mode Register 1"]
+    #[inline(always)]
+    pub const fn elmr1(&self) -> &ELMR1 {
+        &self.elmr1
+    }
+    #[doc = "0xe4 - PWM Write Protect Control Register"]
+    #[inline(always)]
+    pub const fn wpcr(&self) -> &WPCR {
+        &self.wpcr
+    }
+    #[doc = "0xe8 - PWM Write Protect Status Register"]
+    #[inline(always)]
+    pub const fn wpsr(&self) -> &WPSR {
+        &self.wpsr
+    }
+    #[doc = "0x108 - Transmit Pointer Register"]
+    #[inline(always)]
+    pub const fn tpr(&self) -> &TPR {
+        &self.tpr
+    }
+    #[doc = "0x10c - Transmit Counter Register"]
+    #[inline(always)]
+    pub const fn tcr(&self) -> &TCR {
+        &self.tcr
+    }
+    #[doc = "0x118 - Transmit Next Pointer Register"]
+    #[inline(always)]
+    pub const fn tnpr(&self) -> &TNPR {
+        &self.tnpr
+    }
+    #[doc = "0x11c - Transmit Next Counter Register"]
+    #[inline(always)]
+    pub const fn tncr(&self) -> &TNCR {
+        &self.tncr
+    }
+    #[doc = "0x120 - Transfer Control Register"]
+    #[inline(always)]
+    pub const fn ptcr(&self) -> &PTCR {
+        &self.ptcr
+    }
+    #[doc = "0x124 - Transfer Status Register"]
+    #[inline(always)]
+    pub const fn ptsr(&self) -> &PTSR {
+        &self.ptsr
+    }
+    #[doc = "0x130 - PWM Comparison 0 Value Register"]
+    #[inline(always)]
+    pub const fn cmpv0(&self) -> &CMPV0 {
+        &self.cmpv0
+    }
+    #[doc = "0x134 - PWM Comparison 0 Value Update Register"]
+    #[inline(always)]
+    pub const fn cmpvupd0(&self) -> &CMPVUPD0 {
+        &self.cmpvupd0
+    }
+    #[doc = "0x138 - PWM Comparison 0 Mode Register"]
+    #[inline(always)]
+    pub const fn cmpm0(&self) -> &CMPM0 {
+        &self.cmpm0
+    }
+    #[doc = "0x13c - PWM Comparison 0 Mode Update Register"]
+    #[inline(always)]
+    pub const fn cmpmupd0(&self) -> &CMPMUPD0 {
+        &self.cmpmupd0
+    }
+    #[doc = "0x140 - PWM Comparison 1 Value Register"]
+    #[inline(always)]
+    pub const fn cmpv1(&self) -> &CMPV1 {
+        &self.cmpv1
+    }
+    #[doc = "0x144 - PWM Comparison 1 Value Update Register"]
+    #[inline(always)]
+    pub const fn cmpvupd1(&self) -> &CMPVUPD1 {
+        &self.cmpvupd1
+    }
+    #[doc = "0x148 - PWM Comparison 1 Mode Register"]
+    #[inline(always)]
+    pub const fn cmpm1(&self) -> &CMPM1 {
+        &self.cmpm1
+    }
+    #[doc = "0x14c - PWM Comparison 1 Mode Update Register"]
+    #[inline(always)]
+    pub const fn cmpmupd1(&self) -> &CMPMUPD1 {
+        &self.cmpmupd1
+    }
+    #[doc = "0x150 - PWM Comparison 2 Value Register"]
+    #[inline(always)]
+    pub const fn cmpv2(&self) -> &CMPV2 {
+        &self.cmpv2
+    }
+    #[doc = "0x154 - PWM Comparison 2 Value Update Register"]
+    #[inline(always)]
+    pub const fn cmpvupd2(&self) -> &CMPVUPD2 {
+        &self.cmpvupd2
+    }
+    #[doc = "0x158 - PWM Comparison 2 Mode Register"]
+    #[inline(always)]
+    pub const fn cmpm2(&self) -> &CMPM2 {
+        &self.cmpm2
+    }
+    #[doc = "0x15c - PWM Comparison 2 Mode Update Register"]
+    #[inline(always)]
+    pub const fn cmpmupd2(&self) -> &CMPMUPD2 {
+        &self.cmpmupd2
+    }
+    #[doc = "0x160 - PWM Comparison 3 Value Register"]
+    #[inline(always)]
+    pub const fn cmpv3(&self) -> &CMPV3 {
+        &self.cmpv3
+    }
+    #[doc = "0x164 - PWM Comparison 3 Value Update Register"]
+    #[inline(always)]
+    pub const fn cmpvupd3(&self) -> &CMPVUPD3 {
+        &self.cmpvupd3
+    }
+    #[doc = "0x168 - PWM Comparison 3 Mode Register"]
+    #[inline(always)]
+    pub const fn cmpm3(&self) -> &CMPM3 {
+        &self.cmpm3
+    }
+    #[doc = "0x16c - PWM Comparison 3 Mode Update Register"]
+    #[inline(always)]
+    pub const fn cmpmupd3(&self) -> &CMPMUPD3 {
+        &self.cmpmupd3
+    }
+    #[doc = "0x170 - PWM Comparison 4 Value Register"]
+    #[inline(always)]
+    pub const fn cmpv4(&self) -> &CMPV4 {
+        &self.cmpv4
+    }
+    #[doc = "0x174 - PWM Comparison 4 Value Update Register"]
+    #[inline(always)]
+    pub const fn cmpvupd4(&self) -> &CMPVUPD4 {
+        &self.cmpvupd4
+    }
+    #[doc = "0x178 - PWM Comparison 4 Mode Register"]
+    #[inline(always)]
+    pub const fn cmpm4(&self) -> &CMPM4 {
+        &self.cmpm4
+    }
+    #[doc = "0x17c - PWM Comparison 4 Mode Update Register"]
+    #[inline(always)]
+    pub const fn cmpmupd4(&self) -> &CMPMUPD4 {
+        &self.cmpmupd4
+    }
+    #[doc = "0x180 - PWM Comparison 5 Value Register"]
+    #[inline(always)]
+    pub const fn cmpv5(&self) -> &CMPV5 {
+        &self.cmpv5
+    }
+    #[doc = "0x184 - PWM Comparison 5 Value Update Register"]
+    #[inline(always)]
+    pub const fn cmpvupd5(&self) -> &CMPVUPD5 {
+        &self.cmpvupd5
+    }
+    #[doc = "0x188 - PWM Comparison 5 Mode Register"]
+    #[inline(always)]
+    pub const fn cmpm5(&self) -> &CMPM5 {
+        &self.cmpm5
+    }
+    #[doc = "0x18c - PWM Comparison 5 Mode Update Register"]
+    #[inline(always)]
+    pub const fn cmpmupd5(&self) -> &CMPMUPD5 {
+        &self.cmpmupd5
+    }
+    #[doc = "0x190 - PWM Comparison 6 Value Register"]
+    #[inline(always)]
+    pub const fn cmpv6(&self) -> &CMPV6 {
+        &self.cmpv6
+    }
+    #[doc = "0x194 - PWM Comparison 6 Value Update Register"]
+    #[inline(always)]
+    pub const fn cmpvupd6(&self) -> &CMPVUPD6 {
+        &self.cmpvupd6
+    }
+    #[doc = "0x198 - PWM Comparison 6 Mode Register"]
+    #[inline(always)]
+    pub const fn cmpm6(&self) -> &CMPM6 {
+        &self.cmpm6
+    }
+    #[doc = "0x19c - PWM Comparison 6 Mode Update Register"]
+    #[inline(always)]
+    pub const fn cmpmupd6(&self) -> &CMPMUPD6 {
+        &self.cmpmupd6
+    }
+    #[doc = "0x1a0 - PWM Comparison 7 Value Register"]
+    #[inline(always)]
+    pub const fn cmpv7(&self) -> &CMPV7 {
+        &self.cmpv7
+    }
+    #[doc = "0x1a4 - PWM Comparison 7 Value Update Register"]
+    #[inline(always)]
+    pub const fn cmpvupd7(&self) -> &CMPVUPD7 {
+        &self.cmpvupd7
+    }
+    #[doc = "0x1a8 - PWM Comparison 7 Mode Register"]
+    #[inline(always)]
+    pub const fn cmpm7(&self) -> &CMPM7 {
+        &self.cmpm7
+    }
+    #[doc = "0x1ac - PWM Comparison 7 Mode Update Register"]
+    #[inline(always)]
+    pub const fn cmpmupd7(&self) -> &CMPMUPD7 {
+        &self.cmpmupd7
+    }
     #[doc = "0x200 - PWM Channel Mode Register (ch_num = 0)"]
-    pub cmr0: CMR0,
+    #[inline(always)]
+    pub const fn cmr0(&self) -> &CMR0 {
+        &self.cmr0
+    }
     #[doc = "0x204 - PWM Channel Duty Cycle Register (ch_num = 0)"]
-    pub cdty0: CDTY0,
+    #[inline(always)]
+    pub const fn cdty0(&self) -> &CDTY0 {
+        &self.cdty0
+    }
     #[doc = "0x208 - PWM Channel Duty Cycle Update Register (ch_num = 0)"]
-    pub cdtyupd0: CDTYUPD0,
+    #[inline(always)]
+    pub const fn cdtyupd0(&self) -> &CDTYUPD0 {
+        &self.cdtyupd0
+    }
     #[doc = "0x20c - PWM Channel Period Register (ch_num = 0)"]
-    pub cprd0: CPRD0,
+    #[inline(always)]
+    pub const fn cprd0(&self) -> &CPRD0 {
+        &self.cprd0
+    }
     #[doc = "0x210 - PWM Channel Period Update Register (ch_num = 0)"]
-    pub cprdupd0: CPRDUPD0,
+    #[inline(always)]
+    pub const fn cprdupd0(&self) -> &CPRDUPD0 {
+        &self.cprdupd0
+    }
     #[doc = "0x214 - PWM Channel Counter Register (ch_num = 0)"]
-    pub ccnt0: CCNT0,
+    #[inline(always)]
+    pub const fn ccnt0(&self) -> &CCNT0 {
+        &self.ccnt0
+    }
     #[doc = "0x218 - PWM Channel Dead Time Register (ch_num = 0)"]
-    pub dt0: DT0,
+    #[inline(always)]
+    pub const fn dt0(&self) -> &DT0 {
+        &self.dt0
+    }
     #[doc = "0x21c - PWM Channel Dead Time Update Register (ch_num = 0)"]
-    pub dtupd0: DTUPD0,
+    #[inline(always)]
+    pub const fn dtupd0(&self) -> &DTUPD0 {
+        &self.dtupd0
+    }
     #[doc = "0x220 - PWM Channel Mode Register (ch_num = 1)"]
-    pub cmr1: CMR1,
+    #[inline(always)]
+    pub const fn cmr1(&self) -> &CMR1 {
+        &self.cmr1
+    }
     #[doc = "0x224 - PWM Channel Duty Cycle Register (ch_num = 1)"]
-    pub cdty1: CDTY1,
+    #[inline(always)]
+    pub const fn cdty1(&self) -> &CDTY1 {
+        &self.cdty1
+    }
     #[doc = "0x228 - PWM Channel Duty Cycle Update Register (ch_num = 1)"]
-    pub cdtyupd1: CDTYUPD1,
+    #[inline(always)]
+    pub const fn cdtyupd1(&self) -> &CDTYUPD1 {
+        &self.cdtyupd1
+    }
     #[doc = "0x22c - PWM Channel Period Register (ch_num = 1)"]
-    pub cprd1: CPRD1,
+    #[inline(always)]
+    pub const fn cprd1(&self) -> &CPRD1 {
+        &self.cprd1
+    }
     #[doc = "0x230 - PWM Channel Period Update Register (ch_num = 1)"]
-    pub cprdupd1: CPRDUPD1,
+    #[inline(always)]
+    pub const fn cprdupd1(&self) -> &CPRDUPD1 {
+        &self.cprdupd1
+    }
     #[doc = "0x234 - PWM Channel Counter Register (ch_num = 1)"]
-    pub ccnt1: CCNT1,
+    #[inline(always)]
+    pub const fn ccnt1(&self) -> &CCNT1 {
+        &self.ccnt1
+    }
     #[doc = "0x238 - PWM Channel Dead Time Register (ch_num = 1)"]
-    pub dt1: DT1,
+    #[inline(always)]
+    pub const fn dt1(&self) -> &DT1 {
+        &self.dt1
+    }
     #[doc = "0x23c - PWM Channel Dead Time Update Register (ch_num = 1)"]
-    pub dtupd1: DTUPD1,
+    #[inline(always)]
+    pub const fn dtupd1(&self) -> &DTUPD1 {
+        &self.dtupd1
+    }
     #[doc = "0x240 - PWM Channel Mode Register (ch_num = 2)"]
-    pub cmr2: CMR2,
+    #[inline(always)]
+    pub const fn cmr2(&self) -> &CMR2 {
+        &self.cmr2
+    }
     #[doc = "0x244 - PWM Channel Duty Cycle Register (ch_num = 2)"]
-    pub cdty2: CDTY2,
+    #[inline(always)]
+    pub const fn cdty2(&self) -> &CDTY2 {
+        &self.cdty2
+    }
     #[doc = "0x248 - PWM Channel Duty Cycle Update Register (ch_num = 2)"]
-    pub cdtyupd2: CDTYUPD2,
+    #[inline(always)]
+    pub const fn cdtyupd2(&self) -> &CDTYUPD2 {
+        &self.cdtyupd2
+    }
     #[doc = "0x24c - PWM Channel Period Register (ch_num = 2)"]
-    pub cprd2: CPRD2,
+    #[inline(always)]
+    pub const fn cprd2(&self) -> &CPRD2 {
+        &self.cprd2
+    }
     #[doc = "0x250 - PWM Channel Period Update Register (ch_num = 2)"]
-    pub cprdupd2: CPRDUPD2,
+    #[inline(always)]
+    pub const fn cprdupd2(&self) -> &CPRDUPD2 {
+        &self.cprdupd2
+    }
     #[doc = "0x254 - PWM Channel Counter Register (ch_num = 2)"]
-    pub ccnt2: CCNT2,
+    #[inline(always)]
+    pub const fn ccnt2(&self) -> &CCNT2 {
+        &self.ccnt2
+    }
     #[doc = "0x258 - PWM Channel Dead Time Register (ch_num = 2)"]
-    pub dt2: DT2,
+    #[inline(always)]
+    pub const fn dt2(&self) -> &DT2 {
+        &self.dt2
+    }
     #[doc = "0x25c - PWM Channel Dead Time Update Register (ch_num = 2)"]
-    pub dtupd2: DTUPD2,
+    #[inline(always)]
+    pub const fn dtupd2(&self) -> &DTUPD2 {
+        &self.dtupd2
+    }
     #[doc = "0x260 - PWM Channel Mode Register (ch_num = 3)"]
-    pub cmr3: CMR3,
+    #[inline(always)]
+    pub const fn cmr3(&self) -> &CMR3 {
+        &self.cmr3
+    }
     #[doc = "0x264 - PWM Channel Duty Cycle Register (ch_num = 3)"]
-    pub cdty3: CDTY3,
+    #[inline(always)]
+    pub const fn cdty3(&self) -> &CDTY3 {
+        &self.cdty3
+    }
     #[doc = "0x268 - PWM Channel Duty Cycle Update Register (ch_num = 3)"]
-    pub cdtyupd3: CDTYUPD3,
+    #[inline(always)]
+    pub const fn cdtyupd3(&self) -> &CDTYUPD3 {
+        &self.cdtyupd3
+    }
     #[doc = "0x26c - PWM Channel Period Register (ch_num = 3)"]
-    pub cprd3: CPRD3,
+    #[inline(always)]
+    pub const fn cprd3(&self) -> &CPRD3 {
+        &self.cprd3
+    }
     #[doc = "0x270 - PWM Channel Period Update Register (ch_num = 3)"]
-    pub cprdupd3: CPRDUPD3,
+    #[inline(always)]
+    pub const fn cprdupd3(&self) -> &CPRDUPD3 {
+        &self.cprdupd3
+    }
     #[doc = "0x274 - PWM Channel Counter Register (ch_num = 3)"]
-    pub ccnt3: CCNT3,
+    #[inline(always)]
+    pub const fn ccnt3(&self) -> &CCNT3 {
+        &self.ccnt3
+    }
     #[doc = "0x278 - PWM Channel Dead Time Register (ch_num = 3)"]
-    pub dt3: DT3,
+    #[inline(always)]
+    pub const fn dt3(&self) -> &DT3 {
+        &self.dt3
+    }
     #[doc = "0x27c - PWM Channel Dead Time Update Register (ch_num = 3)"]
-    pub dtupd3: DTUPD3,
+    #[inline(always)]
+    pub const fn dtupd3(&self) -> &DTUPD3 {
+        &self.dtupd3
+    }
 }
 #[doc = "CLK (rw) register accessor: PWM Clock Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clk::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clk::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clk`]
 module"]

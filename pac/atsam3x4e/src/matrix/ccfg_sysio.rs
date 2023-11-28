@@ -5,7 +5,7 @@ pub type W = crate::W<CCFG_SYSIO_SPEC>;
 #[doc = "Field `SYSIO12` reader - PC0 or ERASE Assignment"]
 pub type SYSIO12_R = crate::BitReader;
 #[doc = "Field `SYSIO12` writer - PC0 or ERASE Assignment"]
-pub type SYSIO12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SYSIO12_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 12 - PC0 or ERASE Assignment"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bit 12 - PC0 or ERASE Assignment"]
     #[inline(always)]
     #[must_use]
-    pub fn sysio12(&mut self) -> SYSIO12_W<CCFG_SYSIO_SPEC, 12> {
-        SYSIO12_W::new(self)
+    pub fn sysio12(&mut self) -> SYSIO12_W<CCFG_SYSIO_SPEC> {
+        SYSIO12_W::new(self, 12)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

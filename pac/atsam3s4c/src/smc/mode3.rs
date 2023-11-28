@@ -5,11 +5,11 @@ pub type W = crate::W<MODE3_SPEC>;
 #[doc = "Field `READ_MODE` reader - "]
 pub type READ_MODE_R = crate::BitReader;
 #[doc = "Field `READ_MODE` writer - "]
-pub type READ_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type READ_MODE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WRITE_MODE` reader - "]
 pub type WRITE_MODE_R = crate::BitReader;
 #[doc = "Field `WRITE_MODE` writer - "]
-pub type WRITE_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type WRITE_MODE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EXNW_MODE` reader - NWAIT Mode"]
 pub type EXNW_MODE_R = crate::FieldReader<EXNW_MODE_A>;
 #[doc = "NWAIT Mode\n\nValue on reset: 0"]
@@ -60,8 +60,8 @@ impl EXNW_MODE_R {
     }
 }
 #[doc = "Field `EXNW_MODE` writer - NWAIT Mode"]
-pub type EXNW_MODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, EXNW_MODE_A>;
-impl<'a, REG, const O: u8> EXNW_MODE_W<'a, REG, O>
+pub type EXNW_MODE_W<'a, REG> = crate::FieldWriter<'a, REG, 2, EXNW_MODE_A>;
+impl<'a, REG> EXNW_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -85,15 +85,15 @@ where
 #[doc = "Field `TDF_CYCLES` reader - Data Float Time"]
 pub type TDF_CYCLES_R = crate::FieldReader;
 #[doc = "Field `TDF_CYCLES` writer - Data Float Time"]
-pub type TDF_CYCLES_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TDF_CYCLES_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `TDF_MODE` reader - TDF Optimization"]
 pub type TDF_MODE_R = crate::BitReader;
 #[doc = "Field `TDF_MODE` writer - TDF Optimization"]
-pub type TDF_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TDF_MODE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PMEN` reader - Page Mode Enabled"]
 pub type PMEN_R = crate::BitReader;
 #[doc = "Field `PMEN` writer - Page Mode Enabled"]
-pub type PMEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PMEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PS` reader - Page Size"]
 pub type PS_R = crate::FieldReader<PS_A>;
 #[doc = "Page Size\n\nValue on reset: 1"]
@@ -152,8 +152,8 @@ impl PS_R {
     }
 }
 #[doc = "Field `PS` writer - Page Size"]
-pub type PS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PS_A>;
-impl<'a, REG, const O: u8> PS_W<'a, REG, O>
+pub type PS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PS_A>;
+impl<'a, REG> PS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -220,44 +220,44 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn read_mode(&mut self) -> READ_MODE_W<MODE3_SPEC, 0> {
-        READ_MODE_W::new(self)
+    pub fn read_mode(&mut self) -> READ_MODE_W<MODE3_SPEC> {
+        READ_MODE_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn write_mode(&mut self) -> WRITE_MODE_W<MODE3_SPEC, 1> {
-        WRITE_MODE_W::new(self)
+    pub fn write_mode(&mut self) -> WRITE_MODE_W<MODE3_SPEC> {
+        WRITE_MODE_W::new(self, 1)
     }
     #[doc = "Bits 4:5 - NWAIT Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn exnw_mode(&mut self) -> EXNW_MODE_W<MODE3_SPEC, 4> {
-        EXNW_MODE_W::new(self)
+    pub fn exnw_mode(&mut self) -> EXNW_MODE_W<MODE3_SPEC> {
+        EXNW_MODE_W::new(self, 4)
     }
     #[doc = "Bits 16:19 - Data Float Time"]
     #[inline(always)]
     #[must_use]
-    pub fn tdf_cycles(&mut self) -> TDF_CYCLES_W<MODE3_SPEC, 16> {
-        TDF_CYCLES_W::new(self)
+    pub fn tdf_cycles(&mut self) -> TDF_CYCLES_W<MODE3_SPEC> {
+        TDF_CYCLES_W::new(self, 16)
     }
     #[doc = "Bit 20 - TDF Optimization"]
     #[inline(always)]
     #[must_use]
-    pub fn tdf_mode(&mut self) -> TDF_MODE_W<MODE3_SPEC, 20> {
-        TDF_MODE_W::new(self)
+    pub fn tdf_mode(&mut self) -> TDF_MODE_W<MODE3_SPEC> {
+        TDF_MODE_W::new(self, 20)
     }
     #[doc = "Bit 24 - Page Mode Enabled"]
     #[inline(always)]
     #[must_use]
-    pub fn pmen(&mut self) -> PMEN_W<MODE3_SPEC, 24> {
-        PMEN_W::new(self)
+    pub fn pmen(&mut self) -> PMEN_W<MODE3_SPEC> {
+        PMEN_W::new(self, 24)
     }
     #[doc = "Bits 28:29 - Page Size"]
     #[inline(always)]
     #[must_use]
-    pub fn ps(&mut self) -> PS_W<MODE3_SPEC, 28> {
-        PS_W::new(self)
+    pub fn ps(&mut self) -> PS_W<MODE3_SPEC> {
+        PS_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

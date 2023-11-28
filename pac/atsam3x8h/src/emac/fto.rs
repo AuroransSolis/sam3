@@ -5,7 +5,7 @@ pub type W = crate::W<FTO_SPEC>;
 #[doc = "Field `FTOK` reader - Frames Transmitted OK"]
 pub type FTOK_R = crate::FieldReader<u32>;
 #[doc = "Field `FTOK` writer - Frames Transmitted OK"]
-pub type FTOK_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 24, O, u32>;
+pub type FTOK_W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     #[doc = "Bits 0:23 - Frames Transmitted OK"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:23 - Frames Transmitted OK"]
     #[inline(always)]
     #[must_use]
-    pub fn ftok(&mut self) -> FTOK_W<FTO_SPEC, 0> {
-        FTOK_W::new(self)
+    pub fn ftok(&mut self) -> FTOK_W<FTO_SPEC> {
+        FTOK_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

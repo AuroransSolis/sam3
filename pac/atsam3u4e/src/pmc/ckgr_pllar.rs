@@ -5,19 +5,19 @@ pub type W = crate::W<CKGR_PLLAR_SPEC>;
 #[doc = "Field `DIVA` reader - Divider"]
 pub type DIVA_R = crate::FieldReader;
 #[doc = "Field `DIVA` writer - Divider"]
-pub type DIVA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type DIVA_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `PLLACOUNT` reader - PLLA Counter"]
 pub type PLLACOUNT_R = crate::FieldReader;
 #[doc = "Field `PLLACOUNT` writer - PLLA Counter"]
-pub type PLLACOUNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type PLLACOUNT_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `MULA` reader - PLLA Multiplier"]
 pub type MULA_R = crate::FieldReader<u16>;
 #[doc = "Field `MULA` writer - PLLA Multiplier"]
-pub type MULA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 11, O, u16>;
+pub type MULA_W<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 #[doc = "Field `ONE` reader - Must Be Set to 1"]
 pub type ONE_R = crate::BitReader;
 #[doc = "Field `ONE` writer - Must Be Set to 1"]
-pub type ONE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ONE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:7 - Divider"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:7 - Divider"]
     #[inline(always)]
     #[must_use]
-    pub fn diva(&mut self) -> DIVA_W<CKGR_PLLAR_SPEC, 0> {
-        DIVA_W::new(self)
+    pub fn diva(&mut self) -> DIVA_W<CKGR_PLLAR_SPEC> {
+        DIVA_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - PLLA Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn pllacount(&mut self) -> PLLACOUNT_W<CKGR_PLLAR_SPEC, 8> {
-        PLLACOUNT_W::new(self)
+    pub fn pllacount(&mut self) -> PLLACOUNT_W<CKGR_PLLAR_SPEC> {
+        PLLACOUNT_W::new(self, 8)
     }
     #[doc = "Bits 16:26 - PLLA Multiplier"]
     #[inline(always)]
     #[must_use]
-    pub fn mula(&mut self) -> MULA_W<CKGR_PLLAR_SPEC, 16> {
-        MULA_W::new(self)
+    pub fn mula(&mut self) -> MULA_W<CKGR_PLLAR_SPEC> {
+        MULA_W::new(self, 16)
     }
     #[doc = "Bit 29 - Must Be Set to 1"]
     #[inline(always)]
     #[must_use]
-    pub fn one(&mut self) -> ONE_W<CKGR_PLLAR_SPEC, 29> {
-        ONE_W::new(self)
+    pub fn one(&mut self) -> ONE_W<CKGR_PLLAR_SPEC> {
+        ONE_W::new(self, 29)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

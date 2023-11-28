@@ -1,13 +1,13 @@
 #[doc = "Register `CR` writer"]
 pub type W = crate::W<CR_SPEC>;
 #[doc = "Field `SWRST` writer - Software Reset"]
-pub type SWRST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SWRST_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Software Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn swrst(&mut self) -> SWRST_W<CR_SPEC, 0> {
-        SWRST_W::new(self)
+    pub fn swrst(&mut self) -> SWRST_W<CR_SPEC> {
+        SWRST_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

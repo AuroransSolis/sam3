@@ -5,7 +5,7 @@ pub type W = crate::W<CMR_SPEC>;
 #[doc = "Field `DIV` reader - Clock Divider"]
 pub type DIV_R = crate::FieldReader<u16>;
 #[doc = "Field `DIV` writer - Clock Divider"]
-pub type DIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 12, O, u16>;
+pub type DIV_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
     #[doc = "Bits 0:11 - Clock Divider"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:11 - Clock Divider"]
     #[inline(always)]
     #[must_use]
-    pub fn div(&mut self) -> DIV_W<CMR_SPEC, 0> {
-        DIV_W::new(self)
+    pub fn div(&mut self) -> DIV_W<CMR_SPEC> {
+        DIV_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

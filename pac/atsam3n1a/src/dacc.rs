@@ -1,39 +1,101 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Control Register"]
-    pub cr: CR,
-    #[doc = "0x04 - Mode Register"]
-    pub mr: MR,
-    #[doc = "0x08 - Conversion Data Register"]
-    pub cdr: CDR,
-    #[doc = "0x0c - Interrupt Enable Register"]
-    pub ier: IER,
-    #[doc = "0x10 - Interrupt Disable Register"]
-    pub idr: IDR,
-    #[doc = "0x14 - Interrupt Mask Register"]
-    pub imr: IMR,
-    #[doc = "0x18 - Interrupt Status Register"]
-    pub isr: ISR,
+    cr: CR,
+    mr: MR,
+    cdr: CDR,
+    ier: IER,
+    idr: IDR,
+    imr: IMR,
+    isr: ISR,
     _reserved7: [u8; 0xc8],
-    #[doc = "0xe4 - Write Protect Mode Register"]
-    pub wpmr: WPMR,
-    #[doc = "0xe8 - Write Protect Status Register"]
-    pub wpsr: WPSR,
+    wpmr: WPMR,
+    wpsr: WPSR,
     _reserved9: [u8; 0x1c],
-    #[doc = "0x108 - Transmit Pointer Register"]
-    pub tpr: TPR,
-    #[doc = "0x10c - Transmit Counter Register"]
-    pub tcr: TCR,
+    tpr: TPR,
+    tcr: TCR,
     _reserved11: [u8; 0x08],
+    tnpr: TNPR,
+    tncr: TNCR,
+    ptcr: PTCR,
+    ptsr: PTSR,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Control Register"]
+    #[inline(always)]
+    pub const fn cr(&self) -> &CR {
+        &self.cr
+    }
+    #[doc = "0x04 - Mode Register"]
+    #[inline(always)]
+    pub const fn mr(&self) -> &MR {
+        &self.mr
+    }
+    #[doc = "0x08 - Conversion Data Register"]
+    #[inline(always)]
+    pub const fn cdr(&self) -> &CDR {
+        &self.cdr
+    }
+    #[doc = "0x0c - Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn ier(&self) -> &IER {
+        &self.ier
+    }
+    #[doc = "0x10 - Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn idr(&self) -> &IDR {
+        &self.idr
+    }
+    #[doc = "0x14 - Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn imr(&self) -> &IMR {
+        &self.imr
+    }
+    #[doc = "0x18 - Interrupt Status Register"]
+    #[inline(always)]
+    pub const fn isr(&self) -> &ISR {
+        &self.isr
+    }
+    #[doc = "0xe4 - Write Protect Mode Register"]
+    #[inline(always)]
+    pub const fn wpmr(&self) -> &WPMR {
+        &self.wpmr
+    }
+    #[doc = "0xe8 - Write Protect Status Register"]
+    #[inline(always)]
+    pub const fn wpsr(&self) -> &WPSR {
+        &self.wpsr
+    }
+    #[doc = "0x108 - Transmit Pointer Register"]
+    #[inline(always)]
+    pub const fn tpr(&self) -> &TPR {
+        &self.tpr
+    }
+    #[doc = "0x10c - Transmit Counter Register"]
+    #[inline(always)]
+    pub const fn tcr(&self) -> &TCR {
+        &self.tcr
+    }
     #[doc = "0x118 - Transmit Next Pointer Register"]
-    pub tnpr: TNPR,
+    #[inline(always)]
+    pub const fn tnpr(&self) -> &TNPR {
+        &self.tnpr
+    }
     #[doc = "0x11c - Transmit Next Counter Register"]
-    pub tncr: TNCR,
+    #[inline(always)]
+    pub const fn tncr(&self) -> &TNCR {
+        &self.tncr
+    }
     #[doc = "0x120 - Transfer Control Register"]
-    pub ptcr: PTCR,
+    #[inline(always)]
+    pub const fn ptcr(&self) -> &PTCR {
+        &self.ptcr
+    }
     #[doc = "0x124 - Transfer Status Register"]
-    pub ptsr: PTSR,
+    #[inline(always)]
+    pub const fn ptsr(&self) -> &PTSR {
+        &self.ptsr
+    }
 }
 #[doc = "CR (w) register accessor: Control Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
 module"]

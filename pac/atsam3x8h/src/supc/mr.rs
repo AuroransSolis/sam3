@@ -39,8 +39,8 @@ impl BODRSTEN_R {
     }
 }
 #[doc = "Field `BODRSTEN` writer - Brownout Detector Reset Enable"]
-pub type BODRSTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BODRSTEN_A>;
-impl<'a, REG, const O: u8> BODRSTEN_W<'a, REG, O>
+pub type BODRSTEN_W<'a, REG> = crate::BitWriter<'a, REG, BODRSTEN_A>;
+impl<'a, REG> BODRSTEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl BODDIS_R {
     }
 }
 #[doc = "Field `BODDIS` writer - Brownout Detector Disable"]
-pub type BODDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BODDIS_A>;
-impl<'a, REG, const O: u8> BODDIS_W<'a, REG, O>
+pub type BODDIS_W<'a, REG> = crate::BitWriter<'a, REG, BODDIS_A>;
+impl<'a, REG> BODDIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl VDDIORDY_R {
     }
 }
 #[doc = "Field `VDDIORDY` writer - VDDIO Ready"]
-pub type VDDIORDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VDDIORDY_A>;
-impl<'a, REG, const O: u8> VDDIORDY_W<'a, REG, O>
+pub type VDDIORDY_W<'a, REG> = crate::BitWriter<'a, REG, VDDIORDY_A>;
+impl<'a, REG> VDDIORDY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl OSCBYPASS_R {
     }
 }
 #[doc = "Field `OSCBYPASS` writer - Oscillator Bypass"]
-pub type OSCBYPASS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OSCBYPASS_A>;
-impl<'a, REG, const O: u8> OSCBYPASS_W<'a, REG, O>
+pub type OSCBYPASS_W<'a, REG> = crate::BitWriter<'a, REG, OSCBYPASS_A>;
+impl<'a, REG> OSCBYPASS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -248,8 +248,8 @@ impl KEY_R {
     }
 }
 #[doc = "Field `KEY` writer - Password Key"]
-pub type KEY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, KEY_A>;
-impl<'a, REG, const O: u8> KEY_W<'a, REG, O>
+pub type KEY_W<'a, REG> = crate::FieldWriter<'a, REG, 8, KEY_A>;
+impl<'a, REG> KEY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -291,32 +291,32 @@ impl W {
     #[doc = "Bit 12 - Brownout Detector Reset Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn bodrsten(&mut self) -> BODRSTEN_W<MR_SPEC, 12> {
-        BODRSTEN_W::new(self)
+    pub fn bodrsten(&mut self) -> BODRSTEN_W<MR_SPEC> {
+        BODRSTEN_W::new(self, 12)
     }
     #[doc = "Bit 13 - Brownout Detector Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn boddis(&mut self) -> BODDIS_W<MR_SPEC, 13> {
-        BODDIS_W::new(self)
+    pub fn boddis(&mut self) -> BODDIS_W<MR_SPEC> {
+        BODDIS_W::new(self, 13)
     }
     #[doc = "Bit 14 - VDDIO Ready"]
     #[inline(always)]
     #[must_use]
-    pub fn vddiordy(&mut self) -> VDDIORDY_W<MR_SPEC, 14> {
-        VDDIORDY_W::new(self)
+    pub fn vddiordy(&mut self) -> VDDIORDY_W<MR_SPEC> {
+        VDDIORDY_W::new(self, 14)
     }
     #[doc = "Bit 20 - Oscillator Bypass"]
     #[inline(always)]
     #[must_use]
-    pub fn oscbypass(&mut self) -> OSCBYPASS_W<MR_SPEC, 20> {
-        OSCBYPASS_W::new(self)
+    pub fn oscbypass(&mut self) -> OSCBYPASS_W<MR_SPEC> {
+        OSCBYPASS_W::new(self, 20)
     }
     #[doc = "Bits 24:31 - Password Key"]
     #[inline(always)]
     #[must_use]
-    pub fn key(&mut self) -> KEY_W<MR_SPEC, 24> {
-        KEY_W::new(self)
+    pub fn key(&mut self) -> KEY_W<MR_SPEC> {
+        KEY_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

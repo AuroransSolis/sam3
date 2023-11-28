@@ -1,13 +1,13 @@
 #[doc = "Register `DMA_EN` writer"]
 pub type W = crate::W<DMA_EN_SPEC>;
 #[doc = "Field `DMAEN` writer - DMA Enable Register"]
-pub type DMAEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DMAEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - DMA Enable Register"]
     #[inline(always)]
     #[must_use]
-    pub fn dmaen(&mut self) -> DMAEN_W<DMA_EN_SPEC, 0> {
-        DMAEN_W::new(self)
+    pub fn dmaen(&mut self) -> DMAEN_W<DMA_EN_SPEC> {
+        DMAEN_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

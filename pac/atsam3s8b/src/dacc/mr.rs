@@ -39,8 +39,8 @@ impl TRGEN_R {
     }
 }
 #[doc = "Field `TRGEN` writer - Trigger Enable"]
-pub type TRGEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TRGEN_A>;
-impl<'a, REG, const O: u8> TRGEN_W<'a, REG, O>
+pub type TRGEN_W<'a, REG> = crate::BitWriter<'a, REG, TRGEN_A>;
+impl<'a, REG> TRGEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -58,7 +58,7 @@ where
 #[doc = "Field `TRGSEL` reader - Trigger Selection"]
 pub type TRGSEL_R = crate::FieldReader;
 #[doc = "Field `TRGSEL` writer - Trigger Selection"]
-pub type TRGSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type TRGSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `WORD` reader - Word Transfer"]
 pub type WORD_R = crate::BitReader<WORD_A>;
 #[doc = "Word Transfer\n\nValue on reset: 0"]
@@ -96,8 +96,8 @@ impl WORD_R {
     }
 }
 #[doc = "Field `WORD` writer - Word Transfer"]
-pub type WORD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WORD_A>;
-impl<'a, REG, const O: u8> WORD_W<'a, REG, O>
+pub type WORD_W<'a, REG> = crate::BitWriter<'a, REG, WORD_A>;
+impl<'a, REG> WORD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -115,15 +115,15 @@ where
 #[doc = "Field `SLEEP` reader - Sleep Mode"]
 pub type SLEEP_R = crate::BitReader;
 #[doc = "Field `SLEEP` writer - Sleep Mode"]
-pub type SLEEP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SLEEP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FASTWKUP` reader - Fast Wake up Mode"]
 pub type FASTWKUP_R = crate::BitReader;
 #[doc = "Field `FASTWKUP` writer - Fast Wake up Mode"]
-pub type FASTWKUP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FASTWKUP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `REFRESH` reader - Refresh Period"]
 pub type REFRESH_R = crate::FieldReader;
 #[doc = "Field `REFRESH` writer - Refresh Period"]
-pub type REFRESH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type REFRESH_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `USER_SEL` reader - User Channel Selection"]
 pub type USER_SEL_R = crate::FieldReader<USER_SEL_A>;
 #[doc = "User Channel Selection\n\nValue on reset: 0"]
@@ -166,8 +166,8 @@ impl USER_SEL_R {
     }
 }
 #[doc = "Field `USER_SEL` writer - User Channel Selection"]
-pub type USER_SEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, USER_SEL_A>;
-impl<'a, REG, const O: u8> USER_SEL_W<'a, REG, O>
+pub type USER_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, USER_SEL_A>;
+impl<'a, REG> USER_SEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -220,8 +220,8 @@ impl TAG_R {
     }
 }
 #[doc = "Field `TAG` writer - Tag Selection Mode"]
-pub type TAG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TAG_A>;
-impl<'a, REG, const O: u8> TAG_W<'a, REG, O>
+pub type TAG_W<'a, REG> = crate::BitWriter<'a, REG, TAG_A>;
+impl<'a, REG> TAG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -273,8 +273,8 @@ impl MAXS_R {
     }
 }
 #[doc = "Field `MAXS` writer - Max Speed Mode"]
-pub type MAXS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MAXS_A>;
-impl<'a, REG, const O: u8> MAXS_W<'a, REG, O>
+pub type MAXS_W<'a, REG> = crate::BitWriter<'a, REG, MAXS_A>;
+impl<'a, REG> MAXS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -571,8 +571,8 @@ impl STARTUP_R {
     }
 }
 #[doc = "Field `STARTUP` writer - Startup Time Selection"]
-pub type STARTUP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O, STARTUP_A>;
-impl<'a, REG, const O: u8> STARTUP_W<'a, REG, O>
+pub type STARTUP_W<'a, REG> = crate::FieldWriter<'a, REG, 6, STARTUP_A>;
+impl<'a, REG> STARTUP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -794,62 +794,62 @@ impl W {
     #[doc = "Bit 0 - Trigger Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn trgen(&mut self) -> TRGEN_W<MR_SPEC, 0> {
-        TRGEN_W::new(self)
+    pub fn trgen(&mut self) -> TRGEN_W<MR_SPEC> {
+        TRGEN_W::new(self, 0)
     }
     #[doc = "Bits 1:3 - Trigger Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn trgsel(&mut self) -> TRGSEL_W<MR_SPEC, 1> {
-        TRGSEL_W::new(self)
+    pub fn trgsel(&mut self) -> TRGSEL_W<MR_SPEC> {
+        TRGSEL_W::new(self, 1)
     }
     #[doc = "Bit 4 - Word Transfer"]
     #[inline(always)]
     #[must_use]
-    pub fn word(&mut self) -> WORD_W<MR_SPEC, 4> {
-        WORD_W::new(self)
+    pub fn word(&mut self) -> WORD_W<MR_SPEC> {
+        WORD_W::new(self, 4)
     }
     #[doc = "Bit 5 - Sleep Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn sleep(&mut self) -> SLEEP_W<MR_SPEC, 5> {
-        SLEEP_W::new(self)
+    pub fn sleep(&mut self) -> SLEEP_W<MR_SPEC> {
+        SLEEP_W::new(self, 5)
     }
     #[doc = "Bit 6 - Fast Wake up Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn fastwkup(&mut self) -> FASTWKUP_W<MR_SPEC, 6> {
-        FASTWKUP_W::new(self)
+    pub fn fastwkup(&mut self) -> FASTWKUP_W<MR_SPEC> {
+        FASTWKUP_W::new(self, 6)
     }
     #[doc = "Bits 8:15 - Refresh Period"]
     #[inline(always)]
     #[must_use]
-    pub fn refresh(&mut self) -> REFRESH_W<MR_SPEC, 8> {
-        REFRESH_W::new(self)
+    pub fn refresh(&mut self) -> REFRESH_W<MR_SPEC> {
+        REFRESH_W::new(self, 8)
     }
     #[doc = "Bits 16:17 - User Channel Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn user_sel(&mut self) -> USER_SEL_W<MR_SPEC, 16> {
-        USER_SEL_W::new(self)
+    pub fn user_sel(&mut self) -> USER_SEL_W<MR_SPEC> {
+        USER_SEL_W::new(self, 16)
     }
     #[doc = "Bit 20 - Tag Selection Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn tag(&mut self) -> TAG_W<MR_SPEC, 20> {
-        TAG_W::new(self)
+    pub fn tag(&mut self) -> TAG_W<MR_SPEC> {
+        TAG_W::new(self, 20)
     }
     #[doc = "Bit 21 - Max Speed Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn maxs(&mut self) -> MAXS_W<MR_SPEC, 21> {
-        MAXS_W::new(self)
+    pub fn maxs(&mut self) -> MAXS_W<MR_SPEC> {
+        MAXS_W::new(self, 21)
     }
     #[doc = "Bits 24:29 - Startup Time Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn startup(&mut self) -> STARTUP_W<MR_SPEC, 24> {
-        STARTUP_W::new(self)
+    pub fn startup(&mut self) -> STARTUP_W<MR_SPEC> {
+        STARTUP_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

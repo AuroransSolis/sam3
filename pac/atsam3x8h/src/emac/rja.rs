@@ -5,7 +5,7 @@ pub type W = crate::W<RJA_SPEC>;
 #[doc = "Field `RJB` reader - Receive Jabbers"]
 pub type RJB_R = crate::FieldReader;
 #[doc = "Field `RJB` writer - Receive Jabbers"]
-pub type RJB_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type RJB_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Receive Jabbers"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - Receive Jabbers"]
     #[inline(always)]
     #[must_use]
-    pub fn rjb(&mut self) -> RJB_W<RJA_SPEC, 0> {
-        RJB_W::new(self)
+    pub fn rjb(&mut self) -> RJB_W<RJA_SPEC> {
+        RJB_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

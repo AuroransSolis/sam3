@@ -5,7 +5,7 @@ pub type W = crate::W<BANK_SPEC>;
 #[doc = "Field `BANK` reader - Bank Identifier"]
 pub type BANK_R = crate::FieldReader;
 #[doc = "Field `BANK` writer - Bank Identifier"]
-pub type BANK_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type BANK_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 0:2 - Bank Identifier"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:2 - Bank Identifier"]
     #[inline(always)]
     #[must_use]
-    pub fn bank(&mut self) -> BANK_W<BANK_SPEC, 0> {
-        BANK_W::new(self)
+    pub fn bank(&mut self) -> BANK_W<BANK_SPEC> {
+        BANK_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

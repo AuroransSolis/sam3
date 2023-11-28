@@ -5,23 +5,23 @@ pub type W = crate::W<OCMS_SPEC>;
 #[doc = "Field `SMSE` reader - Static Memory Controller Scrambling Enable"]
 pub type SMSE_R = crate::BitReader;
 #[doc = "Field `SMSE` writer - Static Memory Controller Scrambling Enable"]
-pub type SMSE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SMSE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CS0SE` reader - Chip Select (x = 0 to 3) Scrambling Enable"]
 pub type CS0SE_R = crate::BitReader;
 #[doc = "Field `CS0SE` writer - Chip Select (x = 0 to 3) Scrambling Enable"]
-pub type CS0SE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CS0SE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CS1SE` reader - Chip Select (x = 0 to 3) Scrambling Enable"]
 pub type CS1SE_R = crate::BitReader;
 #[doc = "Field `CS1SE` writer - Chip Select (x = 0 to 3) Scrambling Enable"]
-pub type CS1SE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CS1SE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CS2SE` reader - Chip Select (x = 0 to 3) Scrambling Enable"]
 pub type CS2SE_R = crate::BitReader;
 #[doc = "Field `CS2SE` writer - Chip Select (x = 0 to 3) Scrambling Enable"]
-pub type CS2SE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CS2SE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CS3SE` reader - Chip Select (x = 0 to 3) Scrambling Enable"]
 pub type CS3SE_R = crate::BitReader;
 #[doc = "Field `CS3SE` writer - Chip Select (x = 0 to 3) Scrambling Enable"]
-pub type CS3SE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CS3SE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Static Memory Controller Scrambling Enable"]
     #[inline(always)]
@@ -53,32 +53,32 @@ impl W {
     #[doc = "Bit 0 - Static Memory Controller Scrambling Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn smse(&mut self) -> SMSE_W<OCMS_SPEC, 0> {
-        SMSE_W::new(self)
+    pub fn smse(&mut self) -> SMSE_W<OCMS_SPEC> {
+        SMSE_W::new(self, 0)
     }
     #[doc = "Bit 16 - Chip Select (x = 0 to 3) Scrambling Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cs0se(&mut self) -> CS0SE_W<OCMS_SPEC, 16> {
-        CS0SE_W::new(self)
+    pub fn cs0se(&mut self) -> CS0SE_W<OCMS_SPEC> {
+        CS0SE_W::new(self, 16)
     }
     #[doc = "Bit 17 - Chip Select (x = 0 to 3) Scrambling Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cs1se(&mut self) -> CS1SE_W<OCMS_SPEC, 17> {
-        CS1SE_W::new(self)
+    pub fn cs1se(&mut self) -> CS1SE_W<OCMS_SPEC> {
+        CS1SE_W::new(self, 17)
     }
     #[doc = "Bit 18 - Chip Select (x = 0 to 3) Scrambling Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cs2se(&mut self) -> CS2SE_W<OCMS_SPEC, 18> {
-        CS2SE_W::new(self)
+    pub fn cs2se(&mut self) -> CS2SE_W<OCMS_SPEC> {
+        CS2SE_W::new(self, 18)
     }
     #[doc = "Bit 19 - Chip Select (x = 0 to 3) Scrambling Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cs3se(&mut self) -> CS3SE_W<OCMS_SPEC, 19> {
-        CS3SE_W::new(self)
+    pub fn cs3se(&mut self) -> CS3SE_W<OCMS_SPEC> {
+        CS3SE_W::new(self, 19)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

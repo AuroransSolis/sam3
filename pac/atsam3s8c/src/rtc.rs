@@ -1,30 +1,80 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
+    cr: CR,
+    mr: MR,
+    timr: TIMR,
+    calr: CALR,
+    timalr: TIMALR,
+    calalr: CALALR,
+    sr: SR,
+    sccr: SCCR,
+    ier: IER,
+    idr: IDR,
+    imr: IMR,
+    ver: VER,
+}
+impl RegisterBlock {
     #[doc = "0x00 - Control Register"]
-    pub cr: CR,
+    #[inline(always)]
+    pub const fn cr(&self) -> &CR {
+        &self.cr
+    }
     #[doc = "0x04 - Mode Register"]
-    pub mr: MR,
+    #[inline(always)]
+    pub const fn mr(&self) -> &MR {
+        &self.mr
+    }
     #[doc = "0x08 - Time Register"]
-    pub timr: TIMR,
+    #[inline(always)]
+    pub const fn timr(&self) -> &TIMR {
+        &self.timr
+    }
     #[doc = "0x0c - Calendar Register"]
-    pub calr: CALR,
+    #[inline(always)]
+    pub const fn calr(&self) -> &CALR {
+        &self.calr
+    }
     #[doc = "0x10 - Time Alarm Register"]
-    pub timalr: TIMALR,
+    #[inline(always)]
+    pub const fn timalr(&self) -> &TIMALR {
+        &self.timalr
+    }
     #[doc = "0x14 - Calendar Alarm Register"]
-    pub calalr: CALALR,
+    #[inline(always)]
+    pub const fn calalr(&self) -> &CALALR {
+        &self.calalr
+    }
     #[doc = "0x18 - Status Register"]
-    pub sr: SR,
+    #[inline(always)]
+    pub const fn sr(&self) -> &SR {
+        &self.sr
+    }
     #[doc = "0x1c - Status Clear Command Register"]
-    pub sccr: SCCR,
+    #[inline(always)]
+    pub const fn sccr(&self) -> &SCCR {
+        &self.sccr
+    }
     #[doc = "0x20 - Interrupt Enable Register"]
-    pub ier: IER,
+    #[inline(always)]
+    pub const fn ier(&self) -> &IER {
+        &self.ier
+    }
     #[doc = "0x24 - Interrupt Disable Register"]
-    pub idr: IDR,
+    #[inline(always)]
+    pub const fn idr(&self) -> &IDR {
+        &self.idr
+    }
     #[doc = "0x28 - Interrupt Mask Register"]
-    pub imr: IMR,
+    #[inline(always)]
+    pub const fn imr(&self) -> &IMR {
+        &self.imr
+    }
     #[doc = "0x2c - Valid Entry Register"]
-    pub ver: VER,
+    #[inline(always)]
+    pub const fn ver(&self) -> &VER {
+        &self.ver
+    }
 }
 #[doc = "CR (rw) register accessor: Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
 module"]

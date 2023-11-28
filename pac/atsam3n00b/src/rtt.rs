@@ -1,14 +1,32 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
+    mr: MR,
+    ar: AR,
+    vr: VR,
+    sr: SR,
+}
+impl RegisterBlock {
     #[doc = "0x00 - Mode Register"]
-    pub mr: MR,
+    #[inline(always)]
+    pub const fn mr(&self) -> &MR {
+        &self.mr
+    }
     #[doc = "0x04 - Alarm Register"]
-    pub ar: AR,
+    #[inline(always)]
+    pub const fn ar(&self) -> &AR {
+        &self.ar
+    }
     #[doc = "0x08 - Value Register"]
-    pub vr: VR,
+    #[inline(always)]
+    pub const fn vr(&self) -> &VR {
+        &self.vr
+    }
     #[doc = "0x0c - Status Register"]
-    pub sr: SR,
+    #[inline(always)]
+    pub const fn sr(&self) -> &SR {
+        &self.sr
+    }
 }
 #[doc = "MR (rw) register accessor: Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mr`]
 module"]

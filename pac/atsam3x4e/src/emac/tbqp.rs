@@ -5,7 +5,7 @@ pub type W = crate::W<TBQP_SPEC>;
 #[doc = "Field `ADDR` reader - Transmit buffer queue pointer address"]
 pub type ADDR_R = crate::FieldReader<u32>;
 #[doc = "Field `ADDR` writer - Transmit buffer queue pointer address"]
-pub type ADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 30, O, u32>;
+pub type ADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 30, u32>;
 impl R {
     #[doc = "Bits 2:31 - Transmit buffer queue pointer address"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 2:31 - Transmit buffer queue pointer address"]
     #[inline(always)]
     #[must_use]
-    pub fn addr(&mut self) -> ADDR_W<TBQP_SPEC, 2> {
-        ADDR_W::new(self)
+    pub fn addr(&mut self) -> ADDR_W<TBQP_SPEC> {
+        ADDR_W::new(self, 2)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

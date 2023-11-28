@@ -5,7 +5,7 @@ pub type W = crate::W<DMANXTDSC4_SPEC>;
 #[doc = "Field `NXT_DSC_ADD` reader - Next Descriptor Address"]
 pub type NXT_DSC_ADD_R = crate::FieldReader<u32>;
 #[doc = "Field `NXT_DSC_ADD` writer - Next Descriptor Address"]
-pub type NXT_DSC_ADD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type NXT_DSC_ADD_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Next Descriptor Address"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Next Descriptor Address"]
     #[inline(always)]
     #[must_use]
-    pub fn nxt_dsc_add(&mut self) -> NXT_DSC_ADD_W<DMANXTDSC4_SPEC, 0> {
-        NXT_DSC_ADD_W::new(self)
+    pub fn nxt_dsc_add(&mut self) -> NXT_DSC_ADD_W<DMANXTDSC4_SPEC> {
+        NXT_DSC_ADD_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,7 +5,7 @@ pub type W = crate::W<ADDR_SPEC>;
 #[doc = "Field `ADDR_CYCLE0` reader - NAND Flash Array Address cycle 0"]
 pub type ADDR_CYCLE0_R = crate::FieldReader;
 #[doc = "Field `ADDR_CYCLE0` writer - NAND Flash Array Address cycle 0"]
-pub type ADDR_CYCLE0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type ADDR_CYCLE0_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - NAND Flash Array Address cycle 0"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - NAND Flash Array Address cycle 0"]
     #[inline(always)]
     #[must_use]
-    pub fn addr_cycle0(&mut self) -> ADDR_CYCLE0_W<ADDR_SPEC, 0> {
-        ADDR_CYCLE0_W::new(self)
+    pub fn addr_cycle0(&mut self) -> ADDR_CYCLE0_W<ADDR_SPEC> {
+        ADDR_CYCLE0_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

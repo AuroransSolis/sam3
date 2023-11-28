@@ -5,7 +5,7 @@ pub type W = crate::W<ECOL_SPEC>;
 #[doc = "Field `EXCOL` reader - Excessive Collisions"]
 pub type EXCOL_R = crate::FieldReader;
 #[doc = "Field `EXCOL` writer - Excessive Collisions"]
-pub type EXCOL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type EXCOL_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Excessive Collisions"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - Excessive Collisions"]
     #[inline(always)]
     #[must_use]
-    pub fn excol(&mut self) -> EXCOL_W<ECOL_SPEC, 0> {
-        EXCOL_W::new(self)
+    pub fn excol(&mut self) -> EXCOL_W<ECOL_SPEC> {
+        EXCOL_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

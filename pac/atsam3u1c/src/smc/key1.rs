@@ -1,13 +1,13 @@
 #[doc = "Register `KEY1` writer"]
 pub type W = crate::W<KEY1_SPEC>;
 #[doc = "Field `KEY1` writer - Off Chip Memory Scrambling (OCMS) Key Part 1"]
-pub type KEY1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type KEY1_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl W {
     #[doc = "Bits 0:31 - Off Chip Memory Scrambling (OCMS) Key Part 1"]
     #[inline(always)]
     #[must_use]
-    pub fn key1(&mut self) -> KEY1_W<KEY1_SPEC, 0> {
-        KEY1_W::new(self)
+    pub fn key1(&mut self) -> KEY1_W<KEY1_SPEC> {
+        KEY1_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

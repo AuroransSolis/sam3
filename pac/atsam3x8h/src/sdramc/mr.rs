@@ -84,8 +84,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - SDRAMC Command Mode"]
-pub type MODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, MODE_A>;
-impl<'a, REG, const O: u8> MODE_W<'a, REG, O>
+pub type MODE_W<'a, REG> = crate::FieldWriter<'a, REG, 3, MODE_A>;
+impl<'a, REG> MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -137,8 +137,8 @@ impl W {
     #[doc = "Bits 0:2 - SDRAMC Command Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode(&mut self) -> MODE_W<MR_SPEC, 0> {
-        MODE_W::new(self)
+    pub fn mode(&mut self) -> MODE_W<MR_SPEC> {
+        MODE_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

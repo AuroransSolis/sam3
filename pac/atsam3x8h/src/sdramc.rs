@@ -1,29 +1,75 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - SDRAMC Mode Register"]
-    pub mr: MR,
-    #[doc = "0x04 - SDRAMC Refresh Timer Register"]
-    pub tr: TR,
-    #[doc = "0x08 - SDRAMC Configuration Register"]
-    pub cr: CR,
+    mr: MR,
+    tr: TR,
+    cr: CR,
     _reserved3: [u8; 0x04],
+    lpr: LPR,
+    ier: IER,
+    idr: IDR,
+    imr: IMR,
+    isr: ISR,
+    mdr: MDR,
+    cr1: CR1,
+    ocms: OCMS,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - SDRAMC Mode Register"]
+    #[inline(always)]
+    pub const fn mr(&self) -> &MR {
+        &self.mr
+    }
+    #[doc = "0x04 - SDRAMC Refresh Timer Register"]
+    #[inline(always)]
+    pub const fn tr(&self) -> &TR {
+        &self.tr
+    }
+    #[doc = "0x08 - SDRAMC Configuration Register"]
+    #[inline(always)]
+    pub const fn cr(&self) -> &CR {
+        &self.cr
+    }
     #[doc = "0x10 - SDRAMC Low Power Register"]
-    pub lpr: LPR,
+    #[inline(always)]
+    pub const fn lpr(&self) -> &LPR {
+        &self.lpr
+    }
     #[doc = "0x14 - SDRAMC Interrupt Enable Register"]
-    pub ier: IER,
+    #[inline(always)]
+    pub const fn ier(&self) -> &IER {
+        &self.ier
+    }
     #[doc = "0x18 - SDRAMC Interrupt Disable Register"]
-    pub idr: IDR,
+    #[inline(always)]
+    pub const fn idr(&self) -> &IDR {
+        &self.idr
+    }
     #[doc = "0x1c - SDRAMC Interrupt Mask Register"]
-    pub imr: IMR,
+    #[inline(always)]
+    pub const fn imr(&self) -> &IMR {
+        &self.imr
+    }
     #[doc = "0x20 - SDRAMC Interrupt Status Register"]
-    pub isr: ISR,
+    #[inline(always)]
+    pub const fn isr(&self) -> &ISR {
+        &self.isr
+    }
     #[doc = "0x24 - SDRAMC Memory Device Register"]
-    pub mdr: MDR,
+    #[inline(always)]
+    pub const fn mdr(&self) -> &MDR {
+        &self.mdr
+    }
     #[doc = "0x28 - SDRAMC Configuration Register 1"]
-    pub cr1: CR1,
+    #[inline(always)]
+    pub const fn cr1(&self) -> &CR1 {
+        &self.cr1
+    }
     #[doc = "0x2c - SDRAMC OCMS Register 1"]
-    pub ocms: OCMS,
+    #[inline(always)]
+    pub const fn ocms(&self) -> &OCMS {
+        &self.ocms
+    }
 }
 #[doc = "MR (rw) register accessor: SDRAMC Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mr`]
 module"]

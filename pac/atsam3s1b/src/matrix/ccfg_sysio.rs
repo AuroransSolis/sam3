@@ -5,31 +5,31 @@ pub type W = crate::W<CCFG_SYSIO_SPEC>;
 #[doc = "Field `SYSIO4` reader - PB4 or TDI Assignment"]
 pub type SYSIO4_R = crate::BitReader;
 #[doc = "Field `SYSIO4` writer - PB4 or TDI Assignment"]
-pub type SYSIO4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SYSIO4_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SYSIO5` reader - PB5 or TDO/TRACESWO Assignment"]
 pub type SYSIO5_R = crate::BitReader;
 #[doc = "Field `SYSIO5` writer - PB5 or TDO/TRACESWO Assignment"]
-pub type SYSIO5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SYSIO5_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SYSIO6` reader - PB6 or TMS/SWDIO Assignment"]
 pub type SYSIO6_R = crate::BitReader;
 #[doc = "Field `SYSIO6` writer - PB6 or TMS/SWDIO Assignment"]
-pub type SYSIO6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SYSIO6_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SYSIO7` reader - PB7 or TCK/SWCLK Assignment"]
 pub type SYSIO7_R = crate::BitReader;
 #[doc = "Field `SYSIO7` writer - PB7 or TCK/SWCLK Assignment"]
-pub type SYSIO7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SYSIO7_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SYSIO10` reader - PB10 or DDM Assignment"]
 pub type SYSIO10_R = crate::BitReader;
 #[doc = "Field `SYSIO10` writer - PB10 or DDM Assignment"]
-pub type SYSIO10_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SYSIO10_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SYSIO11` reader - PB11 or DDP Assignment"]
 pub type SYSIO11_R = crate::BitReader;
 #[doc = "Field `SYSIO11` writer - PB11 or DDP Assignment"]
-pub type SYSIO11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SYSIO11_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SYSIO12` reader - PB12 or ERASE Assignment"]
 pub type SYSIO12_R = crate::BitReader;
 #[doc = "Field `SYSIO12` writer - PB12 or ERASE Assignment"]
-pub type SYSIO12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SYSIO12_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 4 - PB4 or TDI Assignment"]
     #[inline(always)]
@@ -71,44 +71,44 @@ impl W {
     #[doc = "Bit 4 - PB4 or TDI Assignment"]
     #[inline(always)]
     #[must_use]
-    pub fn sysio4(&mut self) -> SYSIO4_W<CCFG_SYSIO_SPEC, 4> {
-        SYSIO4_W::new(self)
+    pub fn sysio4(&mut self) -> SYSIO4_W<CCFG_SYSIO_SPEC> {
+        SYSIO4_W::new(self, 4)
     }
     #[doc = "Bit 5 - PB5 or TDO/TRACESWO Assignment"]
     #[inline(always)]
     #[must_use]
-    pub fn sysio5(&mut self) -> SYSIO5_W<CCFG_SYSIO_SPEC, 5> {
-        SYSIO5_W::new(self)
+    pub fn sysio5(&mut self) -> SYSIO5_W<CCFG_SYSIO_SPEC> {
+        SYSIO5_W::new(self, 5)
     }
     #[doc = "Bit 6 - PB6 or TMS/SWDIO Assignment"]
     #[inline(always)]
     #[must_use]
-    pub fn sysio6(&mut self) -> SYSIO6_W<CCFG_SYSIO_SPEC, 6> {
-        SYSIO6_W::new(self)
+    pub fn sysio6(&mut self) -> SYSIO6_W<CCFG_SYSIO_SPEC> {
+        SYSIO6_W::new(self, 6)
     }
     #[doc = "Bit 7 - PB7 or TCK/SWCLK Assignment"]
     #[inline(always)]
     #[must_use]
-    pub fn sysio7(&mut self) -> SYSIO7_W<CCFG_SYSIO_SPEC, 7> {
-        SYSIO7_W::new(self)
+    pub fn sysio7(&mut self) -> SYSIO7_W<CCFG_SYSIO_SPEC> {
+        SYSIO7_W::new(self, 7)
     }
     #[doc = "Bit 10 - PB10 or DDM Assignment"]
     #[inline(always)]
     #[must_use]
-    pub fn sysio10(&mut self) -> SYSIO10_W<CCFG_SYSIO_SPEC, 10> {
-        SYSIO10_W::new(self)
+    pub fn sysio10(&mut self) -> SYSIO10_W<CCFG_SYSIO_SPEC> {
+        SYSIO10_W::new(self, 10)
     }
     #[doc = "Bit 11 - PB11 or DDP Assignment"]
     #[inline(always)]
     #[must_use]
-    pub fn sysio11(&mut self) -> SYSIO11_W<CCFG_SYSIO_SPEC, 11> {
-        SYSIO11_W::new(self)
+    pub fn sysio11(&mut self) -> SYSIO11_W<CCFG_SYSIO_SPEC> {
+        SYSIO11_W::new(self, 11)
     }
     #[doc = "Bit 12 - PB12 or ERASE Assignment"]
     #[inline(always)]
     #[must_use]
-    pub fn sysio12(&mut self) -> SYSIO12_W<CCFG_SYSIO_SPEC, 12> {
-        SYSIO12_W::new(self)
+    pub fn sysio12(&mut self) -> SYSIO12_W<CCFG_SYSIO_SPEC> {
+        SYSIO12_W::new(self, 12)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

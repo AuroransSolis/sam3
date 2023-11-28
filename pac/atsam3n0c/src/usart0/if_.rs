@@ -5,7 +5,7 @@ pub type W = crate::W<IF_SPEC>;
 #[doc = "Field `IRDA_FILTER` reader - IrDA Filter"]
 pub type IRDA_FILTER_R = crate::FieldReader;
 #[doc = "Field `IRDA_FILTER` writer - IrDA Filter"]
-pub type IRDA_FILTER_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type IRDA_FILTER_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - IrDA Filter"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - IrDA Filter"]
     #[inline(always)]
     #[must_use]
-    pub fn irda_filter(&mut self) -> IRDA_FILTER_W<IF_SPEC, 0> {
-        IRDA_FILTER_W::new(self)
+    pub fn irda_filter(&mut self) -> IRDA_FILTER_W<IF_SPEC> {
+        IRDA_FILTER_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

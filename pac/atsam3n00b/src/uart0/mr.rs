@@ -68,8 +68,8 @@ impl PAR_R {
     }
 }
 #[doc = "Field `PAR` writer - Parity Type"]
-pub type PAR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, PAR_A>;
-impl<'a, REG, const O: u8> PAR_W<'a, REG, O>
+pub type PAR_W<'a, REG> = crate::FieldWriter<'a, REG, 3, PAR_A>;
+impl<'a, REG> PAR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -158,8 +158,8 @@ impl CHMODE_R {
     }
 }
 #[doc = "Field `CHMODE` writer - Channel Mode"]
-pub type CHMODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CHMODE_A>;
-impl<'a, REG, const O: u8> CHMODE_W<'a, REG, O>
+pub type CHMODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CHMODE_A>;
+impl<'a, REG> CHMODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -201,14 +201,14 @@ impl W {
     #[doc = "Bits 9:11 - Parity Type"]
     #[inline(always)]
     #[must_use]
-    pub fn par(&mut self) -> PAR_W<MR_SPEC, 9> {
-        PAR_W::new(self)
+    pub fn par(&mut self) -> PAR_W<MR_SPEC> {
+        PAR_W::new(self, 9)
     }
     #[doc = "Bits 14:15 - Channel Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn chmode(&mut self) -> CHMODE_W<MR_SPEC, 14> {
-        CHMODE_W::new(self)
+    pub fn chmode(&mut self) -> CHMODE_W<MR_SPEC> {
+        CHMODE_W::new(self, 14)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

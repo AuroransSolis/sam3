@@ -52,8 +52,8 @@ impl TC0XC0S_R {
     }
 }
 #[doc = "Field `TC0XC0S` writer - External Clock Signal 0 Selection"]
-pub type TC0XC0S_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, TC0XC0S_A>;
-impl<'a, REG, const O: u8> TC0XC0S_W<'a, REG, O>
+pub type TC0XC0S_W<'a, REG> = crate::FieldWriter<'a, REG, 2, TC0XC0S_A>;
+impl<'a, REG> TC0XC0S_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -124,8 +124,8 @@ impl TC1XC1S_R {
     }
 }
 #[doc = "Field `TC1XC1S` writer - External Clock Signal 1 Selection"]
-pub type TC1XC1S_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, TC1XC1S_A>;
-impl<'a, REG, const O: u8> TC1XC1S_W<'a, REG, O>
+pub type TC1XC1S_W<'a, REG> = crate::FieldWriter<'a, REG, 2, TC1XC1S_A>;
+impl<'a, REG> TC1XC1S_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -196,8 +196,8 @@ impl TC2XC2S_R {
     }
 }
 #[doc = "Field `TC2XC2S` writer - External Clock Signal 2 Selection"]
-pub type TC2XC2S_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, TC2XC2S_A>;
-impl<'a, REG, const O: u8> TC2XC2S_W<'a, REG, O>
+pub type TC2XC2S_W<'a, REG> = crate::FieldWriter<'a, REG, 2, TC2XC2S_A>;
+impl<'a, REG> TC2XC2S_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -221,51 +221,51 @@ where
 #[doc = "Field `QDEN` reader - Quadrature Decoder ENabled"]
 pub type QDEN_R = crate::BitReader;
 #[doc = "Field `QDEN` writer - Quadrature Decoder ENabled"]
-pub type QDEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type QDEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `POSEN` reader - POSition ENabled"]
 pub type POSEN_R = crate::BitReader;
 #[doc = "Field `POSEN` writer - POSition ENabled"]
-pub type POSEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type POSEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SPEEDEN` reader - SPEED ENabled"]
 pub type SPEEDEN_R = crate::BitReader;
 #[doc = "Field `SPEEDEN` writer - SPEED ENabled"]
-pub type SPEEDEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SPEEDEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `QDTRANS` reader - Quadrature Decoding TRANSparent"]
 pub type QDTRANS_R = crate::BitReader;
 #[doc = "Field `QDTRANS` writer - Quadrature Decoding TRANSparent"]
-pub type QDTRANS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type QDTRANS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EDGPHA` reader - EDGe on PHA count mode"]
 pub type EDGPHA_R = crate::BitReader;
 #[doc = "Field `EDGPHA` writer - EDGe on PHA count mode"]
-pub type EDGPHA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EDGPHA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INVA` reader - INVerted phA"]
 pub type INVA_R = crate::BitReader;
 #[doc = "Field `INVA` writer - INVerted phA"]
-pub type INVA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INVA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INVB` reader - INVerted phB"]
 pub type INVB_R = crate::BitReader;
 #[doc = "Field `INVB` writer - INVerted phB"]
-pub type INVB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INVB_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INVIDX` reader - INVerted InDeX"]
 pub type INVIDX_R = crate::BitReader;
 #[doc = "Field `INVIDX` writer - INVerted InDeX"]
-pub type INVIDX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INVIDX_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SWAP` reader - SWAP PHA and PHB"]
 pub type SWAP_R = crate::BitReader;
 #[doc = "Field `SWAP` writer - SWAP PHA and PHB"]
-pub type SWAP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SWAP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `IDXPHB` reader - InDeX pin is PHB pin"]
 pub type IDXPHB_R = crate::BitReader;
 #[doc = "Field `IDXPHB` writer - InDeX pin is PHB pin"]
-pub type IDXPHB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type IDXPHB_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FILTER` reader - "]
 pub type FILTER_R = crate::BitReader;
 #[doc = "Field `FILTER` writer - "]
-pub type FILTER_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FILTER_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MAXFILT` reader - MAXimum FILTer"]
 pub type MAXFILT_R = crate::FieldReader;
 #[doc = "Field `MAXFILT` writer - MAXimum FILTer"]
-pub type MAXFILT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type MAXFILT_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     #[doc = "Bits 0:1 - External Clock Signal 0 Selection"]
     #[inline(always)]
@@ -347,92 +347,92 @@ impl W {
     #[doc = "Bits 0:1 - External Clock Signal 0 Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn tc0xc0s(&mut self) -> TC0XC0S_W<BMR_SPEC, 0> {
-        TC0XC0S_W::new(self)
+    pub fn tc0xc0s(&mut self) -> TC0XC0S_W<BMR_SPEC> {
+        TC0XC0S_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - External Clock Signal 1 Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn tc1xc1s(&mut self) -> TC1XC1S_W<BMR_SPEC, 2> {
-        TC1XC1S_W::new(self)
+    pub fn tc1xc1s(&mut self) -> TC1XC1S_W<BMR_SPEC> {
+        TC1XC1S_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - External Clock Signal 2 Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn tc2xc2s(&mut self) -> TC2XC2S_W<BMR_SPEC, 4> {
-        TC2XC2S_W::new(self)
+    pub fn tc2xc2s(&mut self) -> TC2XC2S_W<BMR_SPEC> {
+        TC2XC2S_W::new(self, 4)
     }
     #[doc = "Bit 8 - Quadrature Decoder ENabled"]
     #[inline(always)]
     #[must_use]
-    pub fn qden(&mut self) -> QDEN_W<BMR_SPEC, 8> {
-        QDEN_W::new(self)
+    pub fn qden(&mut self) -> QDEN_W<BMR_SPEC> {
+        QDEN_W::new(self, 8)
     }
     #[doc = "Bit 9 - POSition ENabled"]
     #[inline(always)]
     #[must_use]
-    pub fn posen(&mut self) -> POSEN_W<BMR_SPEC, 9> {
-        POSEN_W::new(self)
+    pub fn posen(&mut self) -> POSEN_W<BMR_SPEC> {
+        POSEN_W::new(self, 9)
     }
     #[doc = "Bit 10 - SPEED ENabled"]
     #[inline(always)]
     #[must_use]
-    pub fn speeden(&mut self) -> SPEEDEN_W<BMR_SPEC, 10> {
-        SPEEDEN_W::new(self)
+    pub fn speeden(&mut self) -> SPEEDEN_W<BMR_SPEC> {
+        SPEEDEN_W::new(self, 10)
     }
     #[doc = "Bit 11 - Quadrature Decoding TRANSparent"]
     #[inline(always)]
     #[must_use]
-    pub fn qdtrans(&mut self) -> QDTRANS_W<BMR_SPEC, 11> {
-        QDTRANS_W::new(self)
+    pub fn qdtrans(&mut self) -> QDTRANS_W<BMR_SPEC> {
+        QDTRANS_W::new(self, 11)
     }
     #[doc = "Bit 12 - EDGe on PHA count mode"]
     #[inline(always)]
     #[must_use]
-    pub fn edgpha(&mut self) -> EDGPHA_W<BMR_SPEC, 12> {
-        EDGPHA_W::new(self)
+    pub fn edgpha(&mut self) -> EDGPHA_W<BMR_SPEC> {
+        EDGPHA_W::new(self, 12)
     }
     #[doc = "Bit 13 - INVerted phA"]
     #[inline(always)]
     #[must_use]
-    pub fn inva(&mut self) -> INVA_W<BMR_SPEC, 13> {
-        INVA_W::new(self)
+    pub fn inva(&mut self) -> INVA_W<BMR_SPEC> {
+        INVA_W::new(self, 13)
     }
     #[doc = "Bit 14 - INVerted phB"]
     #[inline(always)]
     #[must_use]
-    pub fn invb(&mut self) -> INVB_W<BMR_SPEC, 14> {
-        INVB_W::new(self)
+    pub fn invb(&mut self) -> INVB_W<BMR_SPEC> {
+        INVB_W::new(self, 14)
     }
     #[doc = "Bit 15 - INVerted InDeX"]
     #[inline(always)]
     #[must_use]
-    pub fn invidx(&mut self) -> INVIDX_W<BMR_SPEC, 15> {
-        INVIDX_W::new(self)
+    pub fn invidx(&mut self) -> INVIDX_W<BMR_SPEC> {
+        INVIDX_W::new(self, 15)
     }
     #[doc = "Bit 16 - SWAP PHA and PHB"]
     #[inline(always)]
     #[must_use]
-    pub fn swap(&mut self) -> SWAP_W<BMR_SPEC, 16> {
-        SWAP_W::new(self)
+    pub fn swap(&mut self) -> SWAP_W<BMR_SPEC> {
+        SWAP_W::new(self, 16)
     }
     #[doc = "Bit 17 - InDeX pin is PHB pin"]
     #[inline(always)]
     #[must_use]
-    pub fn idxphb(&mut self) -> IDXPHB_W<BMR_SPEC, 17> {
-        IDXPHB_W::new(self)
+    pub fn idxphb(&mut self) -> IDXPHB_W<BMR_SPEC> {
+        IDXPHB_W::new(self, 17)
     }
     #[doc = "Bit 19"]
     #[inline(always)]
     #[must_use]
-    pub fn filter(&mut self) -> FILTER_W<BMR_SPEC, 19> {
-        FILTER_W::new(self)
+    pub fn filter(&mut self) -> FILTER_W<BMR_SPEC> {
+        FILTER_W::new(self, 19)
     }
     #[doc = "Bits 20:25 - MAXimum FILTer"]
     #[inline(always)]
     #[must_use]
-    pub fn maxfilt(&mut self) -> MAXFILT_W<BMR_SPEC, 20> {
-        MAXFILT_W::new(self)
+    pub fn maxfilt(&mut self) -> MAXFILT_W<BMR_SPEC> {
+        MAXFILT_W::new(self, 20)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

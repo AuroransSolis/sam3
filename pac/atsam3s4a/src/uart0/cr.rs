@@ -1,61 +1,61 @@
 #[doc = "Register `CR` writer"]
 pub type W = crate::W<CR_SPEC>;
 #[doc = "Field `RSTRX` writer - Reset Receiver"]
-pub type RSTRX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RSTRX_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RSTTX` writer - Reset Transmitter"]
-pub type RSTTX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RSTTX_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXEN` writer - Receiver Enable"]
-pub type RXEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXDIS` writer - Receiver Disable"]
-pub type RXDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXEN` writer - Transmitter Enable"]
-pub type TXEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXDIS` writer - Transmitter Disable"]
-pub type TXDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RSTSTA` writer - Reset Status Bits"]
-pub type RSTSTA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RSTSTA_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 2 - Reset Receiver"]
     #[inline(always)]
     #[must_use]
-    pub fn rstrx(&mut self) -> RSTRX_W<CR_SPEC, 2> {
-        RSTRX_W::new(self)
+    pub fn rstrx(&mut self) -> RSTRX_W<CR_SPEC> {
+        RSTRX_W::new(self, 2)
     }
     #[doc = "Bit 3 - Reset Transmitter"]
     #[inline(always)]
     #[must_use]
-    pub fn rsttx(&mut self) -> RSTTX_W<CR_SPEC, 3> {
-        RSTTX_W::new(self)
+    pub fn rsttx(&mut self) -> RSTTX_W<CR_SPEC> {
+        RSTTX_W::new(self, 3)
     }
     #[doc = "Bit 4 - Receiver Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxen(&mut self) -> RXEN_W<CR_SPEC, 4> {
-        RXEN_W::new(self)
+    pub fn rxen(&mut self) -> RXEN_W<CR_SPEC> {
+        RXEN_W::new(self, 4)
     }
     #[doc = "Bit 5 - Receiver Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxdis(&mut self) -> RXDIS_W<CR_SPEC, 5> {
-        RXDIS_W::new(self)
+    pub fn rxdis(&mut self) -> RXDIS_W<CR_SPEC> {
+        RXDIS_W::new(self, 5)
     }
     #[doc = "Bit 6 - Transmitter Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn txen(&mut self) -> TXEN_W<CR_SPEC, 6> {
-        TXEN_W::new(self)
+    pub fn txen(&mut self) -> TXEN_W<CR_SPEC> {
+        TXEN_W::new(self, 6)
     }
     #[doc = "Bit 7 - Transmitter Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn txdis(&mut self) -> TXDIS_W<CR_SPEC, 7> {
-        TXDIS_W::new(self)
+    pub fn txdis(&mut self) -> TXDIS_W<CR_SPEC> {
+        TXDIS_W::new(self, 7)
     }
     #[doc = "Bit 8 - Reset Status Bits"]
     #[inline(always)]
     #[must_use]
-    pub fn rststa(&mut self) -> RSTSTA_W<CR_SPEC, 8> {
-        RSTSTA_W::new(self)
+    pub fn rststa(&mut self) -> RSTSTA_W<CR_SPEC> {
+        RSTSTA_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

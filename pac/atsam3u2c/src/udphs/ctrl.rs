@@ -5,27 +5,27 @@ pub type W = crate::W<CTRL_SPEC>;
 #[doc = "Field `DEV_ADDR` reader - UDPHS Address"]
 pub type DEV_ADDR_R = crate::FieldReader;
 #[doc = "Field `DEV_ADDR` writer - UDPHS Address"]
-pub type DEV_ADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type DEV_ADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `FADDR_EN` reader - Function Address Enable"]
 pub type FADDR_EN_R = crate::BitReader;
 #[doc = "Field `FADDR_EN` writer - Function Address Enable"]
-pub type FADDR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FADDR_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EN_UDPHS` reader - UDPHS Enable"]
 pub type EN_UDPHS_R = crate::BitReader;
 #[doc = "Field `EN_UDPHS` writer - UDPHS Enable"]
-pub type EN_UDPHS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EN_UDPHS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DETACH` reader - Detach Command"]
 pub type DETACH_R = crate::BitReader;
 #[doc = "Field `DETACH` writer - Detach Command"]
-pub type DETACH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DETACH_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `REWAKEUP` reader - Send Remote Wake Up"]
 pub type REWAKEUP_R = crate::BitReader;
 #[doc = "Field `REWAKEUP` writer - Send Remote Wake Up"]
-pub type REWAKEUP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type REWAKEUP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PULLD_DIS` reader - Pull-Down Disable"]
 pub type PULLD_DIS_R = crate::BitReader;
 #[doc = "Field `PULLD_DIS` writer - Pull-Down Disable"]
-pub type PULLD_DIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PULLD_DIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:6 - UDPHS Address"]
     #[inline(always)]
@@ -62,38 +62,38 @@ impl W {
     #[doc = "Bits 0:6 - UDPHS Address"]
     #[inline(always)]
     #[must_use]
-    pub fn dev_addr(&mut self) -> DEV_ADDR_W<CTRL_SPEC, 0> {
-        DEV_ADDR_W::new(self)
+    pub fn dev_addr(&mut self) -> DEV_ADDR_W<CTRL_SPEC> {
+        DEV_ADDR_W::new(self, 0)
     }
     #[doc = "Bit 7 - Function Address Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn faddr_en(&mut self) -> FADDR_EN_W<CTRL_SPEC, 7> {
-        FADDR_EN_W::new(self)
+    pub fn faddr_en(&mut self) -> FADDR_EN_W<CTRL_SPEC> {
+        FADDR_EN_W::new(self, 7)
     }
     #[doc = "Bit 8 - UDPHS Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn en_udphs(&mut self) -> EN_UDPHS_W<CTRL_SPEC, 8> {
-        EN_UDPHS_W::new(self)
+    pub fn en_udphs(&mut self) -> EN_UDPHS_W<CTRL_SPEC> {
+        EN_UDPHS_W::new(self, 8)
     }
     #[doc = "Bit 9 - Detach Command"]
     #[inline(always)]
     #[must_use]
-    pub fn detach(&mut self) -> DETACH_W<CTRL_SPEC, 9> {
-        DETACH_W::new(self)
+    pub fn detach(&mut self) -> DETACH_W<CTRL_SPEC> {
+        DETACH_W::new(self, 9)
     }
     #[doc = "Bit 10 - Send Remote Wake Up"]
     #[inline(always)]
     #[must_use]
-    pub fn rewakeup(&mut self) -> REWAKEUP_W<CTRL_SPEC, 10> {
-        REWAKEUP_W::new(self)
+    pub fn rewakeup(&mut self) -> REWAKEUP_W<CTRL_SPEC> {
+        REWAKEUP_W::new(self, 10)
     }
     #[doc = "Bit 11 - Pull-Down Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn pulld_dis(&mut self) -> PULLD_DIS_W<CTRL_SPEC, 11> {
-        PULLD_DIS_W::new(self)
+    pub fn pulld_dis(&mut self) -> PULLD_DIS_W<CTRL_SPEC> {
+        PULLD_DIS_W::new(self, 11)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

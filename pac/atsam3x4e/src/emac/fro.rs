@@ -5,7 +5,7 @@ pub type W = crate::W<FRO_SPEC>;
 #[doc = "Field `FROK` reader - Frames Received OK"]
 pub type FROK_R = crate::FieldReader<u32>;
 #[doc = "Field `FROK` writer - Frames Received OK"]
-pub type FROK_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 24, O, u32>;
+pub type FROK_W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     #[doc = "Bits 0:23 - Frames Received OK"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:23 - Frames Received OK"]
     #[inline(always)]
     #[must_use]
-    pub fn frok(&mut self) -> FROK_W<FRO_SPEC, 0> {
-        FROK_W::new(self)
+    pub fn frok(&mut self) -> FROK_W<FRO_SPEC> {
+        FROK_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

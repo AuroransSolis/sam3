@@ -5,27 +5,27 @@ pub type W = crate::W<HSTPIPERR0_SPEC>;
 #[doc = "Field `DATATGL` reader - Data Toggle Error"]
 pub type DATATGL_R = crate::BitReader;
 #[doc = "Field `DATATGL` writer - Data Toggle Error"]
-pub type DATATGL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DATATGL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DATAPID` reader - Data PID Error"]
 pub type DATAPID_R = crate::BitReader;
 #[doc = "Field `DATAPID` writer - Data PID Error"]
-pub type DATAPID_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DATAPID_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PID` reader - PID Error"]
 pub type PID_R = crate::BitReader;
 #[doc = "Field `PID` writer - PID Error"]
-pub type PID_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PID_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TIMEOUT` reader - Time-Out Error"]
 pub type TIMEOUT_R = crate::BitReader;
 #[doc = "Field `TIMEOUT` writer - Time-Out Error"]
-pub type TIMEOUT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TIMEOUT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CRC16` reader - CRC16 Error"]
 pub type CRC16_R = crate::BitReader;
 #[doc = "Field `CRC16` writer - CRC16 Error"]
-pub type CRC16_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CRC16_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `COUNTER` reader - Error Counter"]
 pub type COUNTER_R = crate::FieldReader;
 #[doc = "Field `COUNTER` writer - Error Counter"]
-pub type COUNTER_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type COUNTER_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     #[doc = "Bit 0 - Data Toggle Error"]
     #[inline(always)]
@@ -62,38 +62,38 @@ impl W {
     #[doc = "Bit 0 - Data Toggle Error"]
     #[inline(always)]
     #[must_use]
-    pub fn datatgl(&mut self) -> DATATGL_W<HSTPIPERR0_SPEC, 0> {
-        DATATGL_W::new(self)
+    pub fn datatgl(&mut self) -> DATATGL_W<HSTPIPERR0_SPEC> {
+        DATATGL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Data PID Error"]
     #[inline(always)]
     #[must_use]
-    pub fn datapid(&mut self) -> DATAPID_W<HSTPIPERR0_SPEC, 1> {
-        DATAPID_W::new(self)
+    pub fn datapid(&mut self) -> DATAPID_W<HSTPIPERR0_SPEC> {
+        DATAPID_W::new(self, 1)
     }
     #[doc = "Bit 2 - PID Error"]
     #[inline(always)]
     #[must_use]
-    pub fn pid(&mut self) -> PID_W<HSTPIPERR0_SPEC, 2> {
-        PID_W::new(self)
+    pub fn pid(&mut self) -> PID_W<HSTPIPERR0_SPEC> {
+        PID_W::new(self, 2)
     }
     #[doc = "Bit 3 - Time-Out Error"]
     #[inline(always)]
     #[must_use]
-    pub fn timeout(&mut self) -> TIMEOUT_W<HSTPIPERR0_SPEC, 3> {
-        TIMEOUT_W::new(self)
+    pub fn timeout(&mut self) -> TIMEOUT_W<HSTPIPERR0_SPEC> {
+        TIMEOUT_W::new(self, 3)
     }
     #[doc = "Bit 4 - CRC16 Error"]
     #[inline(always)]
     #[must_use]
-    pub fn crc16(&mut self) -> CRC16_W<HSTPIPERR0_SPEC, 4> {
-        CRC16_W::new(self)
+    pub fn crc16(&mut self) -> CRC16_W<HSTPIPERR0_SPEC> {
+        CRC16_W::new(self, 4)
     }
     #[doc = "Bits 5:6 - Error Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn counter(&mut self) -> COUNTER_W<HSTPIPERR0_SPEC, 5> {
-        COUNTER_W::new(self)
+    pub fn counter(&mut self) -> COUNTER_W<HSTPIPERR0_SPEC> {
+        COUNTER_W::new(self, 5)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,19 +5,19 @@ pub type W = crate::W<FMR_SPEC>;
 #[doc = "Field `FRDY` reader - Ready Interrupt Enable"]
 pub type FRDY_R = crate::BitReader;
 #[doc = "Field `FRDY` writer - Ready Interrupt Enable"]
-pub type FRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FRDY_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FWS` reader - Flash Wait State"]
 pub type FWS_R = crate::FieldReader;
 #[doc = "Field `FWS` writer - Flash Wait State"]
-pub type FWS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type FWS_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `SCOD` reader - Sequential Code Optimization Disable"]
 pub type SCOD_R = crate::BitReader;
 #[doc = "Field `SCOD` writer - Sequential Code Optimization Disable"]
-pub type SCOD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCOD_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FAM` reader - Flash Access Mode"]
 pub type FAM_R = crate::BitReader;
 #[doc = "Field `FAM` writer - Flash Access Mode"]
-pub type FAM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FAM_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Ready Interrupt Enable"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bit 0 - Ready Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn frdy(&mut self) -> FRDY_W<FMR_SPEC, 0> {
-        FRDY_W::new(self)
+    pub fn frdy(&mut self) -> FRDY_W<FMR_SPEC> {
+        FRDY_W::new(self, 0)
     }
     #[doc = "Bits 8:11 - Flash Wait State"]
     #[inline(always)]
     #[must_use]
-    pub fn fws(&mut self) -> FWS_W<FMR_SPEC, 8> {
-        FWS_W::new(self)
+    pub fn fws(&mut self) -> FWS_W<FMR_SPEC> {
+        FWS_W::new(self, 8)
     }
     #[doc = "Bit 16 - Sequential Code Optimization Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn scod(&mut self) -> SCOD_W<FMR_SPEC, 16> {
-        SCOD_W::new(self)
+    pub fn scod(&mut self) -> SCOD_W<FMR_SPEC> {
+        SCOD_W::new(self, 16)
     }
     #[doc = "Bit 24 - Flash Access Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn fam(&mut self) -> FAM_W<FMR_SPEC, 24> {
-        FAM_W::new(self)
+    pub fn fam(&mut self) -> FAM_W<FMR_SPEC> {
+        FAM_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

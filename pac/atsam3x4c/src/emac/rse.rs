@@ -5,7 +5,7 @@ pub type W = crate::W<RSE_SPEC>;
 #[doc = "Field `RSE` reader - Receive Symbol Errors"]
 pub type RSE_R = crate::FieldReader;
 #[doc = "Field `RSE` writer - Receive Symbol Errors"]
-pub type RSE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type RSE_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Receive Symbol Errors"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - Receive Symbol Errors"]
     #[inline(always)]
     #[must_use]
-    pub fn rse(&mut self) -> RSE_W<RSE_SPEC, 0> {
-        RSE_W::new(self)
+    pub fn rse(&mut self) -> RSE_W<RSE_SPEC> {
+        RSE_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

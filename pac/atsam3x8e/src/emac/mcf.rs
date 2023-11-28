@@ -5,7 +5,7 @@ pub type W = crate::W<MCF_SPEC>;
 #[doc = "Field `MCF` reader - Multicollision Frames"]
 pub type MCF_R = crate::FieldReader<u16>;
 #[doc = "Field `MCF` writer - Multicollision Frames"]
-pub type MCF_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type MCF_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Multicollision Frames"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - Multicollision Frames"]
     #[inline(always)]
     #[must_use]
-    pub fn mcf(&mut self) -> MCF_W<MCF_SPEC, 0> {
-        MCF_W::new(self)
+    pub fn mcf(&mut self) -> MCF_W<MCF_SPEC> {
+        MCF_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

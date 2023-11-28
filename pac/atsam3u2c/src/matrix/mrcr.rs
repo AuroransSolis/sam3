@@ -5,23 +5,23 @@ pub type W = crate::W<MRCR_SPEC>;
 #[doc = "Field `RCB0` reader - Remap Command Bit for AHB Master 0"]
 pub type RCB0_R = crate::BitReader;
 #[doc = "Field `RCB0` writer - Remap Command Bit for AHB Master 0"]
-pub type RCB0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RCB0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RCB1` reader - Remap Command Bit for AHB Master 1"]
 pub type RCB1_R = crate::BitReader;
 #[doc = "Field `RCB1` writer - Remap Command Bit for AHB Master 1"]
-pub type RCB1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RCB1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RCB2` reader - Remap Command Bit for AHB Master 2"]
 pub type RCB2_R = crate::BitReader;
 #[doc = "Field `RCB2` writer - Remap Command Bit for AHB Master 2"]
-pub type RCB2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RCB2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RCB3` reader - Remap Command Bit for AHB Master 3"]
 pub type RCB3_R = crate::BitReader;
 #[doc = "Field `RCB3` writer - Remap Command Bit for AHB Master 3"]
-pub type RCB3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RCB3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RCB4` reader - Remap Command Bit for AHB Master 4"]
 pub type RCB4_R = crate::BitReader;
 #[doc = "Field `RCB4` writer - Remap Command Bit for AHB Master 4"]
-pub type RCB4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RCB4_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Remap Command Bit for AHB Master 0"]
     #[inline(always)]
@@ -53,32 +53,32 @@ impl W {
     #[doc = "Bit 0 - Remap Command Bit for AHB Master 0"]
     #[inline(always)]
     #[must_use]
-    pub fn rcb0(&mut self) -> RCB0_W<MRCR_SPEC, 0> {
-        RCB0_W::new(self)
+    pub fn rcb0(&mut self) -> RCB0_W<MRCR_SPEC> {
+        RCB0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Remap Command Bit for AHB Master 1"]
     #[inline(always)]
     #[must_use]
-    pub fn rcb1(&mut self) -> RCB1_W<MRCR_SPEC, 1> {
-        RCB1_W::new(self)
+    pub fn rcb1(&mut self) -> RCB1_W<MRCR_SPEC> {
+        RCB1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Remap Command Bit for AHB Master 2"]
     #[inline(always)]
     #[must_use]
-    pub fn rcb2(&mut self) -> RCB2_W<MRCR_SPEC, 2> {
-        RCB2_W::new(self)
+    pub fn rcb2(&mut self) -> RCB2_W<MRCR_SPEC> {
+        RCB2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Remap Command Bit for AHB Master 3"]
     #[inline(always)]
     #[must_use]
-    pub fn rcb3(&mut self) -> RCB3_W<MRCR_SPEC, 3> {
-        RCB3_W::new(self)
+    pub fn rcb3(&mut self) -> RCB3_W<MRCR_SPEC> {
+        RCB3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Remap Command Bit for AHB Master 4"]
     #[inline(always)]
     #[must_use]
-    pub fn rcb4(&mut self) -> RCB4_W<MRCR_SPEC, 4> {
-        RCB4_W::new(self)
+    pub fn rcb4(&mut self) -> RCB4_W<MRCR_SPEC> {
+        RCB4_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -1,69 +1,69 @@
 #[doc = "Register `IDR2` writer"]
 pub type W = crate::W<IDR2_SPEC>;
 #[doc = "Field `COVFS` writer - Counter Overflow"]
-pub type COVFS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type COVFS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LOVRS` writer - Load Overrun"]
-pub type LOVRS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LOVRS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CPAS` writer - RA Compare"]
-pub type CPAS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CPAS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CPBS` writer - RB Compare"]
-pub type CPBS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CPBS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CPCS` writer - RC Compare"]
-pub type CPCS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CPCS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LDRAS` writer - RA Loading"]
-pub type LDRAS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LDRAS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LDRBS` writer - RB Loading"]
-pub type LDRBS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LDRBS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ETRGS` writer - External Trigger"]
-pub type ETRGS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ETRGS_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Counter Overflow"]
     #[inline(always)]
     #[must_use]
-    pub fn covfs(&mut self) -> COVFS_W<IDR2_SPEC, 0> {
-        COVFS_W::new(self)
+    pub fn covfs(&mut self) -> COVFS_W<IDR2_SPEC> {
+        COVFS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Load Overrun"]
     #[inline(always)]
     #[must_use]
-    pub fn lovrs(&mut self) -> LOVRS_W<IDR2_SPEC, 1> {
-        LOVRS_W::new(self)
+    pub fn lovrs(&mut self) -> LOVRS_W<IDR2_SPEC> {
+        LOVRS_W::new(self, 1)
     }
     #[doc = "Bit 2 - RA Compare"]
     #[inline(always)]
     #[must_use]
-    pub fn cpas(&mut self) -> CPAS_W<IDR2_SPEC, 2> {
-        CPAS_W::new(self)
+    pub fn cpas(&mut self) -> CPAS_W<IDR2_SPEC> {
+        CPAS_W::new(self, 2)
     }
     #[doc = "Bit 3 - RB Compare"]
     #[inline(always)]
     #[must_use]
-    pub fn cpbs(&mut self) -> CPBS_W<IDR2_SPEC, 3> {
-        CPBS_W::new(self)
+    pub fn cpbs(&mut self) -> CPBS_W<IDR2_SPEC> {
+        CPBS_W::new(self, 3)
     }
     #[doc = "Bit 4 - RC Compare"]
     #[inline(always)]
     #[must_use]
-    pub fn cpcs(&mut self) -> CPCS_W<IDR2_SPEC, 4> {
-        CPCS_W::new(self)
+    pub fn cpcs(&mut self) -> CPCS_W<IDR2_SPEC> {
+        CPCS_W::new(self, 4)
     }
     #[doc = "Bit 5 - RA Loading"]
     #[inline(always)]
     #[must_use]
-    pub fn ldras(&mut self) -> LDRAS_W<IDR2_SPEC, 5> {
-        LDRAS_W::new(self)
+    pub fn ldras(&mut self) -> LDRAS_W<IDR2_SPEC> {
+        LDRAS_W::new(self, 5)
     }
     #[doc = "Bit 6 - RB Loading"]
     #[inline(always)]
     #[must_use]
-    pub fn ldrbs(&mut self) -> LDRBS_W<IDR2_SPEC, 6> {
-        LDRBS_W::new(self)
+    pub fn ldrbs(&mut self) -> LDRBS_W<IDR2_SPEC> {
+        LDRBS_W::new(self, 6)
     }
     #[doc = "Bit 7 - External Trigger"]
     #[inline(always)]
     #[must_use]
-    pub fn etrgs(&mut self) -> ETRGS_W<IDR2_SPEC, 7> {
-        ETRGS_W::new(self)
+    pub fn etrgs(&mut self) -> ETRGS_W<IDR2_SPEC> {
+        ETRGS_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

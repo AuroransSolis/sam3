@@ -60,8 +60,8 @@ impl LPCB_R {
     }
 }
 #[doc = "Field `LPCB` writer - Low-power Configuration Bits"]
-pub type LPCB_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, LPCB_A>;
-impl<'a, REG, const O: u8> LPCB_W<'a, REG, O>
+pub type LPCB_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, LPCB_A>;
+impl<'a, REG> LPCB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -90,15 +90,15 @@ where
 #[doc = "Field `PASR` reader - Partial Array Self-refresh (only for low-power SDRAM)"]
 pub type PASR_R = crate::FieldReader;
 #[doc = "Field `PASR` writer - Partial Array Self-refresh (only for low-power SDRAM)"]
-pub type PASR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type PASR_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `TCSR` reader - Temperature Compensated Self-Refresh (only for low-power SDRAM)"]
 pub type TCSR_R = crate::FieldReader;
 #[doc = "Field `TCSR` writer - Temperature Compensated Self-Refresh (only for low-power SDRAM)"]
-pub type TCSR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type TCSR_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `DS` reader - Drive Strength (only for low-power SDRAM)"]
 pub type DS_R = crate::FieldReader;
 #[doc = "Field `DS` writer - Drive Strength (only for low-power SDRAM)"]
-pub type DS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type DS_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `TIMEOUT` reader - Time to define when low-power mode is enable"]
 pub type TIMEOUT_R = crate::FieldReader<TIMEOUT_A>;
 #[doc = "Time to define when low-power mode is enable\n\nValue on reset: 0"]
@@ -149,8 +149,8 @@ impl TIMEOUT_R {
     }
 }
 #[doc = "Field `TIMEOUT` writer - Time to define when low-power mode is enable"]
-pub type TIMEOUT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, TIMEOUT_A>;
-impl<'a, REG, const O: u8> TIMEOUT_W<'a, REG, O>
+pub type TIMEOUT_W<'a, REG> = crate::FieldWriter<'a, REG, 2, TIMEOUT_A>;
+impl<'a, REG> TIMEOUT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -202,32 +202,32 @@ impl W {
     #[doc = "Bits 0:1 - Low-power Configuration Bits"]
     #[inline(always)]
     #[must_use]
-    pub fn lpcb(&mut self) -> LPCB_W<LPR_SPEC, 0> {
-        LPCB_W::new(self)
+    pub fn lpcb(&mut self) -> LPCB_W<LPR_SPEC> {
+        LPCB_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Partial Array Self-refresh (only for low-power SDRAM)"]
     #[inline(always)]
     #[must_use]
-    pub fn pasr(&mut self) -> PASR_W<LPR_SPEC, 4> {
-        PASR_W::new(self)
+    pub fn pasr(&mut self) -> PASR_W<LPR_SPEC> {
+        PASR_W::new(self, 4)
     }
     #[doc = "Bits 8:9 - Temperature Compensated Self-Refresh (only for low-power SDRAM)"]
     #[inline(always)]
     #[must_use]
-    pub fn tcsr(&mut self) -> TCSR_W<LPR_SPEC, 8> {
-        TCSR_W::new(self)
+    pub fn tcsr(&mut self) -> TCSR_W<LPR_SPEC> {
+        TCSR_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Drive Strength (only for low-power SDRAM)"]
     #[inline(always)]
     #[must_use]
-    pub fn ds(&mut self) -> DS_W<LPR_SPEC, 10> {
-        DS_W::new(self)
+    pub fn ds(&mut self) -> DS_W<LPR_SPEC> {
+        DS_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Time to define when low-power mode is enable"]
     #[inline(always)]
     #[must_use]
-    pub fn timeout(&mut self) -> TIMEOUT_W<LPR_SPEC, 12> {
-        TIMEOUT_W::new(self)
+    pub fn timeout(&mut self) -> TIMEOUT_W<LPR_SPEC> {
+        TIMEOUT_W::new(self, 12)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

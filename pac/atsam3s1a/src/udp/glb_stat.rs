@@ -5,23 +5,23 @@ pub type W = crate::W<GLB_STAT_SPEC>;
 #[doc = "Field `FADDEN` reader - Function Address Enable"]
 pub type FADDEN_R = crate::BitReader;
 #[doc = "Field `FADDEN` writer - Function Address Enable"]
-pub type FADDEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FADDEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CONFG` reader - Configured"]
 pub type CONFG_R = crate::BitReader;
 #[doc = "Field `CONFG` writer - Configured"]
-pub type CONFG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CONFG_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ESR` reader - Enable Send Resume"]
 pub type ESR_R = crate::BitReader;
 #[doc = "Field `ESR` writer - Enable Send Resume"]
-pub type ESR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ESR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RSMINPR` reader - "]
 pub type RSMINPR_R = crate::BitReader;
 #[doc = "Field `RSMINPR` writer - "]
-pub type RSMINPR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RSMINPR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RMWUPE` reader - Remote Wake Up Enable"]
 pub type RMWUPE_R = crate::BitReader;
 #[doc = "Field `RMWUPE` writer - Remote Wake Up Enable"]
-pub type RMWUPE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RMWUPE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Function Address Enable"]
     #[inline(always)]
@@ -53,32 +53,32 @@ impl W {
     #[doc = "Bit 0 - Function Address Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fadden(&mut self) -> FADDEN_W<GLB_STAT_SPEC, 0> {
-        FADDEN_W::new(self)
+    pub fn fadden(&mut self) -> FADDEN_W<GLB_STAT_SPEC> {
+        FADDEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Configured"]
     #[inline(always)]
     #[must_use]
-    pub fn confg(&mut self) -> CONFG_W<GLB_STAT_SPEC, 1> {
-        CONFG_W::new(self)
+    pub fn confg(&mut self) -> CONFG_W<GLB_STAT_SPEC> {
+        CONFG_W::new(self, 1)
     }
     #[doc = "Bit 2 - Enable Send Resume"]
     #[inline(always)]
     #[must_use]
-    pub fn esr(&mut self) -> ESR_W<GLB_STAT_SPEC, 2> {
-        ESR_W::new(self)
+    pub fn esr(&mut self) -> ESR_W<GLB_STAT_SPEC> {
+        ESR_W::new(self, 2)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     #[must_use]
-    pub fn rsminpr(&mut self) -> RSMINPR_W<GLB_STAT_SPEC, 3> {
-        RSMINPR_W::new(self)
+    pub fn rsminpr(&mut self) -> RSMINPR_W<GLB_STAT_SPEC> {
+        RSMINPR_W::new(self, 3)
     }
     #[doc = "Bit 4 - Remote Wake Up Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rmwupe(&mut self) -> RMWUPE_W<GLB_STAT_SPEC, 4> {
-        RMWUPE_W::new(self)
+    pub fn rmwupe(&mut self) -> RMWUPE_W<GLB_STAT_SPEC> {
+        RMWUPE_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

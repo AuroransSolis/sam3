@@ -5,7 +5,7 @@ pub type W = crate::W<RLE_SPEC>;
 #[doc = "Field `RLFM` reader - Receive Length Field Mismatch"]
 pub type RLFM_R = crate::FieldReader;
 #[doc = "Field `RLFM` writer - Receive Length Field Mismatch"]
-pub type RLFM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type RLFM_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Receive Length Field Mismatch"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - Receive Length Field Mismatch"]
     #[inline(always)]
     #[must_use]
-    pub fn rlfm(&mut self) -> RLFM_W<RLE_SPEC, 0> {
-        RLFM_W::new(self)
+    pub fn rlfm(&mut self) -> RLFM_W<RLE_SPEC> {
+        RLFM_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

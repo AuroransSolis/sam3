@@ -5,35 +5,35 @@ pub type W = crate::W<RST_EP_SPEC>;
 #[doc = "Field `EP0` reader - Reset Endpoint 0"]
 pub type EP0_R = crate::BitReader;
 #[doc = "Field `EP0` writer - Reset Endpoint 0"]
-pub type EP0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EP0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EP1` reader - Reset Endpoint 1"]
 pub type EP1_R = crate::BitReader;
 #[doc = "Field `EP1` writer - Reset Endpoint 1"]
-pub type EP1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EP1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EP2` reader - Reset Endpoint 2"]
 pub type EP2_R = crate::BitReader;
 #[doc = "Field `EP2` writer - Reset Endpoint 2"]
-pub type EP2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EP2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EP3` reader - Reset Endpoint 3"]
 pub type EP3_R = crate::BitReader;
 #[doc = "Field `EP3` writer - Reset Endpoint 3"]
-pub type EP3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EP3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EP4` reader - Reset Endpoint 4"]
 pub type EP4_R = crate::BitReader;
 #[doc = "Field `EP4` writer - Reset Endpoint 4"]
-pub type EP4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EP4_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EP5` reader - Reset Endpoint 5"]
 pub type EP5_R = crate::BitReader;
 #[doc = "Field `EP5` writer - Reset Endpoint 5"]
-pub type EP5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EP5_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EP6` reader - Reset Endpoint 6"]
 pub type EP6_R = crate::BitReader;
 #[doc = "Field `EP6` writer - Reset Endpoint 6"]
-pub type EP6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EP6_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EP7` reader - Reset Endpoint 7"]
 pub type EP7_R = crate::BitReader;
 #[doc = "Field `EP7` writer - Reset Endpoint 7"]
-pub type EP7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EP7_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Reset Endpoint 0"]
     #[inline(always)]
@@ -80,50 +80,50 @@ impl W {
     #[doc = "Bit 0 - Reset Endpoint 0"]
     #[inline(always)]
     #[must_use]
-    pub fn ep0(&mut self) -> EP0_W<RST_EP_SPEC, 0> {
-        EP0_W::new(self)
+    pub fn ep0(&mut self) -> EP0_W<RST_EP_SPEC> {
+        EP0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Reset Endpoint 1"]
     #[inline(always)]
     #[must_use]
-    pub fn ep1(&mut self) -> EP1_W<RST_EP_SPEC, 1> {
-        EP1_W::new(self)
+    pub fn ep1(&mut self) -> EP1_W<RST_EP_SPEC> {
+        EP1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Reset Endpoint 2"]
     #[inline(always)]
     #[must_use]
-    pub fn ep2(&mut self) -> EP2_W<RST_EP_SPEC, 2> {
-        EP2_W::new(self)
+    pub fn ep2(&mut self) -> EP2_W<RST_EP_SPEC> {
+        EP2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Reset Endpoint 3"]
     #[inline(always)]
     #[must_use]
-    pub fn ep3(&mut self) -> EP3_W<RST_EP_SPEC, 3> {
-        EP3_W::new(self)
+    pub fn ep3(&mut self) -> EP3_W<RST_EP_SPEC> {
+        EP3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Reset Endpoint 4"]
     #[inline(always)]
     #[must_use]
-    pub fn ep4(&mut self) -> EP4_W<RST_EP_SPEC, 4> {
-        EP4_W::new(self)
+    pub fn ep4(&mut self) -> EP4_W<RST_EP_SPEC> {
+        EP4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Reset Endpoint 5"]
     #[inline(always)]
     #[must_use]
-    pub fn ep5(&mut self) -> EP5_W<RST_EP_SPEC, 5> {
-        EP5_W::new(self)
+    pub fn ep5(&mut self) -> EP5_W<RST_EP_SPEC> {
+        EP5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Reset Endpoint 6"]
     #[inline(always)]
     #[must_use]
-    pub fn ep6(&mut self) -> EP6_W<RST_EP_SPEC, 6> {
-        EP6_W::new(self)
+    pub fn ep6(&mut self) -> EP6_W<RST_EP_SPEC> {
+        EP6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Reset Endpoint 7"]
     #[inline(always)]
     #[must_use]
-    pub fn ep7(&mut self) -> EP7_W<RST_EP_SPEC, 7> {
-        EP7_W::new(self)
+    pub fn ep7(&mut self) -> EP7_W<RST_EP_SPEC> {
+        EP7_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

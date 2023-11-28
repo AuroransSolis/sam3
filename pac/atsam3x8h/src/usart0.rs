@@ -7,139 +7,235 @@ pub struct RegisterBlock {
     _reserved_3_idr: [u8; 0x04],
     _reserved_4_imr: [u8; 0x04],
     _reserved_5_csr: [u8; 0x04],
-    #[doc = "0x18 - Receive Holding Register"]
-    pub rhr: RHR,
-    #[doc = "0x1c - Transmit Holding Register"]
-    pub thr: THR,
-    #[doc = "0x20 - Baud Rate Generator Register"]
-    pub brgr: BRGR,
-    #[doc = "0x24 - Receiver Time-out Register"]
-    pub rtor: RTOR,
-    #[doc = "0x28 - Transmitter Timeguard Register"]
-    pub ttgr: TTGR,
+    rhr: RHR,
+    thr: THR,
+    brgr: BRGR,
+    rtor: RTOR,
+    ttgr: TTGR,
     _reserved11: [u8; 0x14],
-    #[doc = "0x40 - FI DI Ratio Register"]
-    pub fidi: FIDI,
-    #[doc = "0x44 - Number of Errors Register"]
-    pub ner: NER,
+    fidi: FIDI,
+    ner: NER,
     _reserved13: [u8; 0x04],
-    #[doc = "0x4c - IrDA Filter Register"]
-    pub if_: IF,
-    #[doc = "0x50 - Manchester Configuration Register"]
-    pub man: MAN,
-    #[doc = "0x54 - LIN Mode Register"]
-    pub linmr: LINMR,
-    #[doc = "0x58 - LIN Identifier Register"]
-    pub linir: LINIR,
-    #[doc = "0x5c - LIN Baud Rate Register"]
-    pub linbrr: LINBRR,
+    if_: IF,
+    man: MAN,
+    linmr: LINMR,
+    linir: LINIR,
+    linbrr: LINBRR,
     _reserved18: [u8; 0x84],
-    #[doc = "0xe4 - Write Protection Mode Register"]
-    pub wpmr: WPMR,
-    #[doc = "0xe8 - Write Protection Status Register"]
-    pub wpsr: WPSR,
+    wpmr: WPMR,
+    wpsr: WPSR,
     _reserved20: [u8; 0x14],
-    #[doc = "0x100 - Receive Pointer Register"]
-    pub rpr: RPR,
-    #[doc = "0x104 - Receive Counter Register"]
-    pub rcr: RCR,
-    #[doc = "0x108 - Transmit Pointer Register"]
-    pub tpr: TPR,
-    #[doc = "0x10c - Transmit Counter Register"]
-    pub tcr: TCR,
-    #[doc = "0x110 - Receive Next Pointer Register"]
-    pub rnpr: RNPR,
-    #[doc = "0x114 - Receive Next Counter Register"]
-    pub rncr: RNCR,
-    #[doc = "0x118 - Transmit Next Pointer Register"]
-    pub tnpr: TNPR,
-    #[doc = "0x11c - Transmit Next Counter Register"]
-    pub tncr: TNCR,
-    #[doc = "0x120 - Transfer Control Register"]
-    pub ptcr: PTCR,
-    #[doc = "0x124 - Transfer Status Register"]
-    pub ptsr: PTSR,
+    rpr: RPR,
+    rcr: RCR,
+    tpr: TPR,
+    tcr: TCR,
+    rnpr: RNPR,
+    rncr: RNCR,
+    tnpr: TNPR,
+    tncr: TNCR,
+    ptcr: PTCR,
+    ptsr: PTSR,
 }
 impl RegisterBlock {
     #[doc = "0x00 - Control Register"]
     #[inline(always)]
     pub const fn spi_mode_cr_spi_mode(&self) -> &SPI_MODE_CR_SPI_MODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(0usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(0).cast() }
     }
     #[doc = "0x00 - Control Register"]
     #[inline(always)]
     pub const fn cr(&self) -> &CR {
-        unsafe { &*(self as *const Self).cast::<u8>().add(0usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(0).cast() }
     }
     #[doc = "0x04 - Mode Register"]
     #[inline(always)]
     pub const fn spi_mode_mr_spi_mode(&self) -> &SPI_MODE_MR_SPI_MODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(4usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(4).cast() }
     }
     #[doc = "0x04 - Mode Register"]
     #[inline(always)]
     pub const fn mr(&self) -> &MR {
-        unsafe { &*(self as *const Self).cast::<u8>().add(4usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(4).cast() }
     }
     #[doc = "0x08 - Interrupt Enable Register"]
     #[inline(always)]
     pub const fn lin_mode_ier_lin_mode(&self) -> &LIN_MODE_IER_LIN_MODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(8).cast() }
     }
     #[doc = "0x08 - Interrupt Enable Register"]
     #[inline(always)]
     pub const fn spi_mode_ier_spi_mode(&self) -> &SPI_MODE_IER_SPI_MODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(8).cast() }
     }
     #[doc = "0x08 - Interrupt Enable Register"]
     #[inline(always)]
     pub const fn ier(&self) -> &IER {
-        unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(8).cast() }
     }
     #[doc = "0x0c - Interrupt Disable Register"]
     #[inline(always)]
     pub const fn lin_mode_idr_lin_mode(&self) -> &LIN_MODE_IDR_LIN_MODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(12usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(12).cast() }
     }
     #[doc = "0x0c - Interrupt Disable Register"]
     #[inline(always)]
     pub const fn spi_mode_idr_spi_mode(&self) -> &SPI_MODE_IDR_SPI_MODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(12usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(12).cast() }
     }
     #[doc = "0x0c - Interrupt Disable Register"]
     #[inline(always)]
     pub const fn idr(&self) -> &IDR {
-        unsafe { &*(self as *const Self).cast::<u8>().add(12usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(12).cast() }
     }
     #[doc = "0x10 - Interrupt Mask Register"]
     #[inline(always)]
     pub const fn lin_mode_imr_lin_mode(&self) -> &LIN_MODE_IMR_LIN_MODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(16usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(16).cast() }
     }
     #[doc = "0x10 - Interrupt Mask Register"]
     #[inline(always)]
     pub const fn spi_mode_imr_spi_mode(&self) -> &SPI_MODE_IMR_SPI_MODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(16usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(16).cast() }
     }
     #[doc = "0x10 - Interrupt Mask Register"]
     #[inline(always)]
     pub const fn imr(&self) -> &IMR {
-        unsafe { &*(self as *const Self).cast::<u8>().add(16usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(16).cast() }
     }
     #[doc = "0x14 - Channel Status Register"]
     #[inline(always)]
     pub const fn lin_mode_csr_lin_mode(&self) -> &LIN_MODE_CSR_LIN_MODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(20usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(20).cast() }
     }
     #[doc = "0x14 - Channel Status Register"]
     #[inline(always)]
     pub const fn spi_mode_csr_spi_mode(&self) -> &SPI_MODE_CSR_SPI_MODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(20usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(20).cast() }
     }
     #[doc = "0x14 - Channel Status Register"]
     #[inline(always)]
     pub const fn csr(&self) -> &CSR {
-        unsafe { &*(self as *const Self).cast::<u8>().add(20usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(20).cast() }
+    }
+    #[doc = "0x18 - Receive Holding Register"]
+    #[inline(always)]
+    pub const fn rhr(&self) -> &RHR {
+        &self.rhr
+    }
+    #[doc = "0x1c - Transmit Holding Register"]
+    #[inline(always)]
+    pub const fn thr(&self) -> &THR {
+        &self.thr
+    }
+    #[doc = "0x20 - Baud Rate Generator Register"]
+    #[inline(always)]
+    pub const fn brgr(&self) -> &BRGR {
+        &self.brgr
+    }
+    #[doc = "0x24 - Receiver Time-out Register"]
+    #[inline(always)]
+    pub const fn rtor(&self) -> &RTOR {
+        &self.rtor
+    }
+    #[doc = "0x28 - Transmitter Timeguard Register"]
+    #[inline(always)]
+    pub const fn ttgr(&self) -> &TTGR {
+        &self.ttgr
+    }
+    #[doc = "0x40 - FI DI Ratio Register"]
+    #[inline(always)]
+    pub const fn fidi(&self) -> &FIDI {
+        &self.fidi
+    }
+    #[doc = "0x44 - Number of Errors Register"]
+    #[inline(always)]
+    pub const fn ner(&self) -> &NER {
+        &self.ner
+    }
+    #[doc = "0x4c - IrDA Filter Register"]
+    #[inline(always)]
+    pub const fn if_(&self) -> &IF {
+        &self.if_
+    }
+    #[doc = "0x50 - Manchester Configuration Register"]
+    #[inline(always)]
+    pub const fn man(&self) -> &MAN {
+        &self.man
+    }
+    #[doc = "0x54 - LIN Mode Register"]
+    #[inline(always)]
+    pub const fn linmr(&self) -> &LINMR {
+        &self.linmr
+    }
+    #[doc = "0x58 - LIN Identifier Register"]
+    #[inline(always)]
+    pub const fn linir(&self) -> &LINIR {
+        &self.linir
+    }
+    #[doc = "0x5c - LIN Baud Rate Register"]
+    #[inline(always)]
+    pub const fn linbrr(&self) -> &LINBRR {
+        &self.linbrr
+    }
+    #[doc = "0xe4 - Write Protection Mode Register"]
+    #[inline(always)]
+    pub const fn wpmr(&self) -> &WPMR {
+        &self.wpmr
+    }
+    #[doc = "0xe8 - Write Protection Status Register"]
+    #[inline(always)]
+    pub const fn wpsr(&self) -> &WPSR {
+        &self.wpsr
+    }
+    #[doc = "0x100 - Receive Pointer Register"]
+    #[inline(always)]
+    pub const fn rpr(&self) -> &RPR {
+        &self.rpr
+    }
+    #[doc = "0x104 - Receive Counter Register"]
+    #[inline(always)]
+    pub const fn rcr(&self) -> &RCR {
+        &self.rcr
+    }
+    #[doc = "0x108 - Transmit Pointer Register"]
+    #[inline(always)]
+    pub const fn tpr(&self) -> &TPR {
+        &self.tpr
+    }
+    #[doc = "0x10c - Transmit Counter Register"]
+    #[inline(always)]
+    pub const fn tcr(&self) -> &TCR {
+        &self.tcr
+    }
+    #[doc = "0x110 - Receive Next Pointer Register"]
+    #[inline(always)]
+    pub const fn rnpr(&self) -> &RNPR {
+        &self.rnpr
+    }
+    #[doc = "0x114 - Receive Next Counter Register"]
+    #[inline(always)]
+    pub const fn rncr(&self) -> &RNCR {
+        &self.rncr
+    }
+    #[doc = "0x118 - Transmit Next Pointer Register"]
+    #[inline(always)]
+    pub const fn tnpr(&self) -> &TNPR {
+        &self.tnpr
+    }
+    #[doc = "0x11c - Transmit Next Counter Register"]
+    #[inline(always)]
+    pub const fn tncr(&self) -> &TNCR {
+        &self.tncr
+    }
+    #[doc = "0x120 - Transfer Control Register"]
+    #[inline(always)]
+    pub const fn ptcr(&self) -> &PTCR {
+        &self.ptcr
+    }
+    #[doc = "0x124 - Transfer Status Register"]
+    #[inline(always)]
+    pub const fn ptsr(&self) -> &PTSR {
+        &self.ptsr
     }
 }
 #[doc = "CR (w) register accessor: Control Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]

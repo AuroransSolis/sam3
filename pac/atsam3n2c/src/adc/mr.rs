@@ -39,8 +39,8 @@ impl TRGEN_R {
     }
 }
 #[doc = "Field `TRGEN` writer - Trigger Enable"]
-pub type TRGEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TRGEN_A>;
-impl<'a, REG, const O: u8> TRGEN_W<'a, REG, O>
+pub type TRGEN_W<'a, REG> = crate::BitWriter<'a, REG, TRGEN_A>;
+impl<'a, REG> TRGEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -113,8 +113,8 @@ impl TRGSEL_R {
     }
 }
 #[doc = "Field `TRGSEL` writer - Trigger Selection"]
-pub type TRGSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, TRGSEL_A>;
-impl<'a, REG, const O: u8> TRGSEL_W<'a, REG, O>
+pub type TRGSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3, TRGSEL_A>;
+impl<'a, REG> TRGSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -177,8 +177,8 @@ impl LOWRES_R {
     }
 }
 #[doc = "Field `LOWRES` writer - Resolution"]
-pub type LOWRES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LOWRES_A>;
-impl<'a, REG, const O: u8> LOWRES_W<'a, REG, O>
+pub type LOWRES_W<'a, REG> = crate::BitWriter<'a, REG, LOWRES_A>;
+impl<'a, REG> LOWRES_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -230,8 +230,8 @@ impl SLEEP_R {
     }
 }
 #[doc = "Field `SLEEP` writer - Sleep Mode"]
-pub type SLEEP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SLEEP_A>;
-impl<'a, REG, const O: u8> SLEEP_W<'a, REG, O>
+pub type SLEEP_W<'a, REG> = crate::BitWriter<'a, REG, SLEEP_A>;
+impl<'a, REG> SLEEP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -283,8 +283,8 @@ impl FWUP_R {
     }
 }
 #[doc = "Field `FWUP` writer - Fast Wake Up"]
-pub type FWUP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FWUP_A>;
-impl<'a, REG, const O: u8> FWUP_W<'a, REG, O>
+pub type FWUP_W<'a, REG> = crate::BitWriter<'a, REG, FWUP_A>;
+impl<'a, REG> FWUP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -336,8 +336,8 @@ impl FREERUN_R {
     }
 }
 #[doc = "Field `FREERUN` writer - Free Run Mode"]
-pub type FREERUN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FREERUN_A>;
-impl<'a, REG, const O: u8> FREERUN_W<'a, REG, O>
+pub type FREERUN_W<'a, REG> = crate::BitWriter<'a, REG, FREERUN_A>;
+impl<'a, REG> FREERUN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -355,7 +355,7 @@ where
 #[doc = "Field `PRESCAL` reader - Prescaler Rate Selection"]
 pub type PRESCAL_R = crate::FieldReader;
 #[doc = "Field `PRESCAL` writer - Prescaler Rate Selection"]
-pub type PRESCAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type PRESCAL_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `STARTUP` reader - Start Up Time"]
 pub type STARTUP_R = crate::FieldReader<STARTUP_A>;
 #[doc = "Start Up Time\n\nValue on reset: 0"]
@@ -510,8 +510,8 @@ impl STARTUP_R {
     }
 }
 #[doc = "Field `STARTUP` writer - Start Up Time"]
-pub type STARTUP_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 4, O, STARTUP_A>;
-impl<'a, REG, const O: u8> STARTUP_W<'a, REG, O>
+pub type STARTUP_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, STARTUP_A>;
+impl<'a, REG> STARTUP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -600,7 +600,7 @@ where
 #[doc = "Field `TRACKTIM` reader - Tracking Time"]
 pub type TRACKTIM_R = crate::FieldReader;
 #[doc = "Field `TRACKTIM` writer - Tracking Time"]
-pub type TRACKTIM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TRACKTIM_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `USEQ` reader - Use Sequence Enable"]
 pub type USEQ_R = crate::BitReader<USEQ_A>;
 #[doc = "Use Sequence Enable\n\nValue on reset: 0"]
@@ -638,8 +638,8 @@ impl USEQ_R {
     }
 }
 #[doc = "Field `USEQ` writer - Use Sequence Enable"]
-pub type USEQ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USEQ_A>;
-impl<'a, REG, const O: u8> USEQ_W<'a, REG, O>
+pub type USEQ_W<'a, REG> = crate::BitWriter<'a, REG, USEQ_A>;
+impl<'a, REG> USEQ_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -710,62 +710,62 @@ impl W {
     #[doc = "Bit 0 - Trigger Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn trgen(&mut self) -> TRGEN_W<MR_SPEC, 0> {
-        TRGEN_W::new(self)
+    pub fn trgen(&mut self) -> TRGEN_W<MR_SPEC> {
+        TRGEN_W::new(self, 0)
     }
     #[doc = "Bits 1:3 - Trigger Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn trgsel(&mut self) -> TRGSEL_W<MR_SPEC, 1> {
-        TRGSEL_W::new(self)
+    pub fn trgsel(&mut self) -> TRGSEL_W<MR_SPEC> {
+        TRGSEL_W::new(self, 1)
     }
     #[doc = "Bit 4 - Resolution"]
     #[inline(always)]
     #[must_use]
-    pub fn lowres(&mut self) -> LOWRES_W<MR_SPEC, 4> {
-        LOWRES_W::new(self)
+    pub fn lowres(&mut self) -> LOWRES_W<MR_SPEC> {
+        LOWRES_W::new(self, 4)
     }
     #[doc = "Bit 5 - Sleep Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn sleep(&mut self) -> SLEEP_W<MR_SPEC, 5> {
-        SLEEP_W::new(self)
+    pub fn sleep(&mut self) -> SLEEP_W<MR_SPEC> {
+        SLEEP_W::new(self, 5)
     }
     #[doc = "Bit 6 - Fast Wake Up"]
     #[inline(always)]
     #[must_use]
-    pub fn fwup(&mut self) -> FWUP_W<MR_SPEC, 6> {
-        FWUP_W::new(self)
+    pub fn fwup(&mut self) -> FWUP_W<MR_SPEC> {
+        FWUP_W::new(self, 6)
     }
     #[doc = "Bit 7 - Free Run Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn freerun(&mut self) -> FREERUN_W<MR_SPEC, 7> {
-        FREERUN_W::new(self)
+    pub fn freerun(&mut self) -> FREERUN_W<MR_SPEC> {
+        FREERUN_W::new(self, 7)
     }
     #[doc = "Bits 8:15 - Prescaler Rate Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn prescal(&mut self) -> PRESCAL_W<MR_SPEC, 8> {
-        PRESCAL_W::new(self)
+    pub fn prescal(&mut self) -> PRESCAL_W<MR_SPEC> {
+        PRESCAL_W::new(self, 8)
     }
     #[doc = "Bits 16:19 - Start Up Time"]
     #[inline(always)]
     #[must_use]
-    pub fn startup(&mut self) -> STARTUP_W<MR_SPEC, 16> {
-        STARTUP_W::new(self)
+    pub fn startup(&mut self) -> STARTUP_W<MR_SPEC> {
+        STARTUP_W::new(self, 16)
     }
     #[doc = "Bits 24:27 - Tracking Time"]
     #[inline(always)]
     #[must_use]
-    pub fn tracktim(&mut self) -> TRACKTIM_W<MR_SPEC, 24> {
-        TRACKTIM_W::new(self)
+    pub fn tracktim(&mut self) -> TRACKTIM_W<MR_SPEC> {
+        TRACKTIM_W::new(self, 24)
     }
     #[doc = "Bit 31 - Use Sequence Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn useq(&mut self) -> USEQ_W<MR_SPEC, 31> {
-        USEQ_W::new(self)
+    pub fn useq(&mut self) -> USEQ_W<MR_SPEC> {
+        USEQ_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

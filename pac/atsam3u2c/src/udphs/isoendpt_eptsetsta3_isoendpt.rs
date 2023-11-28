@@ -1,21 +1,21 @@
 #[doc = "Register `EPTSETSTA3_ISOENDPT` writer"]
 pub type W = crate::W<ISOENDPT_EPTSETSTA3_ISOENDPT_SPEC>;
 #[doc = "Field `RXRDY_TXKL` writer - KILL Bank Set (for IN Endpoint)"]
-pub type RXRDY_TXKL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXRDY_TXKL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXRDY_TRER` writer - TX Packet Ready Set"]
-pub type TXRDY_TRER_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXRDY_TRER_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 9 - KILL Bank Set (for IN Endpoint)"]
     #[inline(always)]
     #[must_use]
-    pub fn rxrdy_txkl(&mut self) -> RXRDY_TXKL_W<ISOENDPT_EPTSETSTA3_ISOENDPT_SPEC, 9> {
-        RXRDY_TXKL_W::new(self)
+    pub fn rxrdy_txkl(&mut self) -> RXRDY_TXKL_W<ISOENDPT_EPTSETSTA3_ISOENDPT_SPEC> {
+        RXRDY_TXKL_W::new(self, 9)
     }
     #[doc = "Bit 11 - TX Packet Ready Set"]
     #[inline(always)]
     #[must_use]
-    pub fn txrdy_trer(&mut self) -> TXRDY_TRER_W<ISOENDPT_EPTSETSTA3_ISOENDPT_SPEC, 11> {
-        TXRDY_TRER_W::new(self)
+    pub fn txrdy_trer(&mut self) -> TXRDY_TRER_W<ISOENDPT_EPTSETSTA3_ISOENDPT_SPEC> {
+        TXRDY_TRER_W::new(self, 11)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

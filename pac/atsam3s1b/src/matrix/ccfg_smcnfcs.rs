@@ -5,19 +5,19 @@ pub type W = crate::W<CCFG_SMCNFCS_SPEC>;
 #[doc = "Field `SMC_NFCS0` reader - SMC NAND Flash Chip Select 0 Assignment"]
 pub type SMC_NFCS0_R = crate::BitReader;
 #[doc = "Field `SMC_NFCS0` writer - SMC NAND Flash Chip Select 0 Assignment"]
-pub type SMC_NFCS0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SMC_NFCS0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SMC_NFCS1` reader - SMC NAND Flash Chip Select 1 Assignment"]
 pub type SMC_NFCS1_R = crate::BitReader;
 #[doc = "Field `SMC_NFCS1` writer - SMC NAND Flash Chip Select 1 Assignment"]
-pub type SMC_NFCS1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SMC_NFCS1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SMC_NFCS2` reader - SMC NAND Flash Chip Select 2 Assignment"]
 pub type SMC_NFCS2_R = crate::BitReader;
 #[doc = "Field `SMC_NFCS2` writer - SMC NAND Flash Chip Select 2 Assignment"]
-pub type SMC_NFCS2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SMC_NFCS2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SMC_NFCS3` reader - SMC NAND Flash Chip Select 3 Assignment"]
 pub type SMC_NFCS3_R = crate::BitReader;
 #[doc = "Field `SMC_NFCS3` writer - SMC NAND Flash Chip Select 3 Assignment"]
-pub type SMC_NFCS3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SMC_NFCS3_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - SMC NAND Flash Chip Select 0 Assignment"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bit 0 - SMC NAND Flash Chip Select 0 Assignment"]
     #[inline(always)]
     #[must_use]
-    pub fn smc_nfcs0(&mut self) -> SMC_NFCS0_W<CCFG_SMCNFCS_SPEC, 0> {
-        SMC_NFCS0_W::new(self)
+    pub fn smc_nfcs0(&mut self) -> SMC_NFCS0_W<CCFG_SMCNFCS_SPEC> {
+        SMC_NFCS0_W::new(self, 0)
     }
     #[doc = "Bit 1 - SMC NAND Flash Chip Select 1 Assignment"]
     #[inline(always)]
     #[must_use]
-    pub fn smc_nfcs1(&mut self) -> SMC_NFCS1_W<CCFG_SMCNFCS_SPEC, 1> {
-        SMC_NFCS1_W::new(self)
+    pub fn smc_nfcs1(&mut self) -> SMC_NFCS1_W<CCFG_SMCNFCS_SPEC> {
+        SMC_NFCS1_W::new(self, 1)
     }
     #[doc = "Bit 2 - SMC NAND Flash Chip Select 2 Assignment"]
     #[inline(always)]
     #[must_use]
-    pub fn smc_nfcs2(&mut self) -> SMC_NFCS2_W<CCFG_SMCNFCS_SPEC, 2> {
-        SMC_NFCS2_W::new(self)
+    pub fn smc_nfcs2(&mut self) -> SMC_NFCS2_W<CCFG_SMCNFCS_SPEC> {
+        SMC_NFCS2_W::new(self, 2)
     }
     #[doc = "Bit 3 - SMC NAND Flash Chip Select 3 Assignment"]
     #[inline(always)]
     #[must_use]
-    pub fn smc_nfcs3(&mut self) -> SMC_NFCS3_W<CCFG_SMCNFCS_SPEC, 3> {
-        SMC_NFCS3_W::new(self)
+    pub fn smc_nfcs3(&mut self) -> SMC_NFCS3_W<CCFG_SMCNFCS_SPEC> {
+        SMC_NFCS3_W::new(self, 3)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,23 +5,23 @@ pub type W = crate::W<BR_SPEC>;
 #[doc = "Field `PHASE2` reader - Phase 2 segment"]
 pub type PHASE2_R = crate::FieldReader;
 #[doc = "Field `PHASE2` writer - Phase 2 segment"]
-pub type PHASE2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type PHASE2_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `PHASE1` reader - Phase 1 segment"]
 pub type PHASE1_R = crate::FieldReader;
 #[doc = "Field `PHASE1` writer - Phase 1 segment"]
-pub type PHASE1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type PHASE1_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `PROPAG` reader - Programming time segment"]
 pub type PROPAG_R = crate::FieldReader;
 #[doc = "Field `PROPAG` writer - Programming time segment"]
-pub type PROPAG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type PROPAG_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `SJW` reader - Re-synchronization jump width"]
 pub type SJW_R = crate::FieldReader;
 #[doc = "Field `SJW` writer - Re-synchronization jump width"]
-pub type SJW_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type SJW_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `BRP` reader - Baudrate Prescaler."]
 pub type BRP_R = crate::FieldReader;
 #[doc = "Field `BRP` writer - Baudrate Prescaler."]
-pub type BRP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type BRP_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `SMP` reader - Sampling Mode"]
 pub type SMP_R = crate::BitReader<SMP_A>;
 #[doc = "Sampling Mode\n\nValue on reset: 0"]
@@ -59,8 +59,8 @@ impl SMP_R {
     }
 }
 #[doc = "Field `SMP` writer - Sampling Mode"]
-pub type SMP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMP_A>;
-impl<'a, REG, const O: u8> SMP_W<'a, REG, O>
+pub type SMP_W<'a, REG> = crate::BitWriter<'a, REG, SMP_A>;
+impl<'a, REG> SMP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -111,38 +111,38 @@ impl W {
     #[doc = "Bits 0:2 - Phase 2 segment"]
     #[inline(always)]
     #[must_use]
-    pub fn phase2(&mut self) -> PHASE2_W<BR_SPEC, 0> {
-        PHASE2_W::new(self)
+    pub fn phase2(&mut self) -> PHASE2_W<BR_SPEC> {
+        PHASE2_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Phase 1 segment"]
     #[inline(always)]
     #[must_use]
-    pub fn phase1(&mut self) -> PHASE1_W<BR_SPEC, 4> {
-        PHASE1_W::new(self)
+    pub fn phase1(&mut self) -> PHASE1_W<BR_SPEC> {
+        PHASE1_W::new(self, 4)
     }
     #[doc = "Bits 8:10 - Programming time segment"]
     #[inline(always)]
     #[must_use]
-    pub fn propag(&mut self) -> PROPAG_W<BR_SPEC, 8> {
-        PROPAG_W::new(self)
+    pub fn propag(&mut self) -> PROPAG_W<BR_SPEC> {
+        PROPAG_W::new(self, 8)
     }
     #[doc = "Bits 12:13 - Re-synchronization jump width"]
     #[inline(always)]
     #[must_use]
-    pub fn sjw(&mut self) -> SJW_W<BR_SPEC, 12> {
-        SJW_W::new(self)
+    pub fn sjw(&mut self) -> SJW_W<BR_SPEC> {
+        SJW_W::new(self, 12)
     }
     #[doc = "Bits 16:22 - Baudrate Prescaler."]
     #[inline(always)]
     #[must_use]
-    pub fn brp(&mut self) -> BRP_W<BR_SPEC, 16> {
-        BRP_W::new(self)
+    pub fn brp(&mut self) -> BRP_W<BR_SPEC> {
+        BRP_W::new(self, 16)
     }
     #[doc = "Bit 24 - Sampling Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn smp(&mut self) -> SMP_W<BR_SPEC, 24> {
-        SMP_W::new(self)
+    pub fn smp(&mut self) -> SMP_W<BR_SPEC> {
+        SMP_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

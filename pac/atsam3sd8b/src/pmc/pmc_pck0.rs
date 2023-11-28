@@ -68,8 +68,8 @@ impl CSS_R {
     }
 }
 #[doc = "Field `CSS` writer - Master Clock Source Selection"]
-pub type CSS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, CSS_A>;
-impl<'a, REG, const O: u8> CSS_W<'a, REG, O>
+pub type CSS_W<'a, REG> = crate::FieldWriter<'a, REG, 3, CSS_A>;
+impl<'a, REG> CSS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -182,8 +182,8 @@ impl PRES_R {
     }
 }
 #[doc = "Field `PRES` writer - Programmable Clock Prescaler"]
-pub type PRES_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, PRES_A>;
-impl<'a, REG, const O: u8> PRES_W<'a, REG, O>
+pub type PRES_W<'a, REG> = crate::FieldWriter<'a, REG, 3, PRES_A>;
+impl<'a, REG> PRES_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -240,14 +240,14 @@ impl W {
     #[doc = "Bits 0:2 - Master Clock Source Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn css(&mut self) -> CSS_W<PMC_PCK0_SPEC, 0> {
-        CSS_W::new(self)
+    pub fn css(&mut self) -> CSS_W<PMC_PCK0_SPEC> {
+        CSS_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Programmable Clock Prescaler"]
     #[inline(always)]
     #[must_use]
-    pub fn pres(&mut self) -> PRES_W<PMC_PCK0_SPEC, 4> {
-        PRES_W::new(self)
+    pub fn pres(&mut self) -> PRES_W<PMC_PCK0_SPEC> {
+        PRES_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

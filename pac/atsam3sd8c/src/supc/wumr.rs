@@ -39,8 +39,8 @@ impl SMEN_R {
     }
 }
 #[doc = "Field `SMEN` writer - Supply Monitor Wake Up Enable"]
-pub type SMEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMEN_A>;
-impl<'a, REG, const O: u8> SMEN_W<'a, REG, O>
+pub type SMEN_W<'a, REG> = crate::BitWriter<'a, REG, SMEN_A>;
+impl<'a, REG> SMEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl RTTEN_R {
     }
 }
 #[doc = "Field `RTTEN` writer - Real Time Timer Wake Up Enable"]
-pub type RTTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTTEN_A>;
-impl<'a, REG, const O: u8> RTTEN_W<'a, REG, O>
+pub type RTTEN_W<'a, REG> = crate::BitWriter<'a, REG, RTTEN_A>;
+impl<'a, REG> RTTEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl RTCEN_R {
     }
 }
 #[doc = "Field `RTCEN` writer - Real Time Clock Wake Up Enable"]
-pub type RTCEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTCEN_A>;
-impl<'a, REG, const O: u8> RTCEN_W<'a, REG, O>
+pub type RTCEN_W<'a, REG> = crate::BitWriter<'a, REG, RTCEN_A>;
+impl<'a, REG> RTCEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl LPDBCEN0_R {
     }
 }
 #[doc = "Field `LPDBCEN0` writer - Low power Debouncer ENable WKUP0"]
-pub type LPDBCEN0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LPDBCEN0_A>;
-impl<'a, REG, const O: u8> LPDBCEN0_W<'a, REG, O>
+pub type LPDBCEN0_W<'a, REG> = crate::BitWriter<'a, REG, LPDBCEN0_A>;
+impl<'a, REG> LPDBCEN0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl LPDBCEN1_R {
     }
 }
 #[doc = "Field `LPDBCEN1` writer - Low power Debouncer ENable WKUP1"]
-pub type LPDBCEN1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LPDBCEN1_A>;
-impl<'a, REG, const O: u8> LPDBCEN1_W<'a, REG, O>
+pub type LPDBCEN1_W<'a, REG> = crate::BitWriter<'a, REG, LPDBCEN1_A>;
+impl<'a, REG> LPDBCEN1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl LPDBCCLR_R {
     }
 }
 #[doc = "Field `LPDBCCLR` writer - Low power Debouncer Clear"]
-pub type LPDBCCLR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LPDBCCLR_A>;
-impl<'a, REG, const O: u8> LPDBCCLR_W<'a, REG, O>
+pub type LPDBCCLR_W<'a, REG> = crate::BitWriter<'a, REG, LPDBCCLR_A>;
+impl<'a, REG> LPDBCCLR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -394,8 +394,8 @@ impl WKUPDBC_R {
     }
 }
 #[doc = "Field `WKUPDBC` writer - Wake Up Inputs Debouncer Period"]
-pub type WKUPDBC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, WKUPDBC_A>;
-impl<'a, REG, const O: u8> WKUPDBC_W<'a, REG, O>
+pub type WKUPDBC_W<'a, REG> = crate::FieldWriter<'a, REG, 3, WKUPDBC_A>;
+impl<'a, REG> WKUPDBC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -521,8 +521,8 @@ impl LPDBC_R {
     }
 }
 #[doc = "Field `LPDBC` writer - Low Power DeBounCer Period"]
-pub type LPDBC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, LPDBC_A>;
-impl<'a, REG, const O: u8> LPDBC_W<'a, REG, O>
+pub type LPDBC_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, LPDBC_A>;
+impl<'a, REG> LPDBC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -614,50 +614,50 @@ impl W {
     #[doc = "Bit 1 - Supply Monitor Wake Up Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn smen(&mut self) -> SMEN_W<WUMR_SPEC, 1> {
-        SMEN_W::new(self)
+    pub fn smen(&mut self) -> SMEN_W<WUMR_SPEC> {
+        SMEN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Real Time Timer Wake Up Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rtten(&mut self) -> RTTEN_W<WUMR_SPEC, 2> {
-        RTTEN_W::new(self)
+    pub fn rtten(&mut self) -> RTTEN_W<WUMR_SPEC> {
+        RTTEN_W::new(self, 2)
     }
     #[doc = "Bit 3 - Real Time Clock Wake Up Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rtcen(&mut self) -> RTCEN_W<WUMR_SPEC, 3> {
-        RTCEN_W::new(self)
+    pub fn rtcen(&mut self) -> RTCEN_W<WUMR_SPEC> {
+        RTCEN_W::new(self, 3)
     }
     #[doc = "Bit 5 - Low power Debouncer ENable WKUP0"]
     #[inline(always)]
     #[must_use]
-    pub fn lpdbcen0(&mut self) -> LPDBCEN0_W<WUMR_SPEC, 5> {
-        LPDBCEN0_W::new(self)
+    pub fn lpdbcen0(&mut self) -> LPDBCEN0_W<WUMR_SPEC> {
+        LPDBCEN0_W::new(self, 5)
     }
     #[doc = "Bit 6 - Low power Debouncer ENable WKUP1"]
     #[inline(always)]
     #[must_use]
-    pub fn lpdbcen1(&mut self) -> LPDBCEN1_W<WUMR_SPEC, 6> {
-        LPDBCEN1_W::new(self)
+    pub fn lpdbcen1(&mut self) -> LPDBCEN1_W<WUMR_SPEC> {
+        LPDBCEN1_W::new(self, 6)
     }
     #[doc = "Bit 7 - Low power Debouncer Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn lpdbcclr(&mut self) -> LPDBCCLR_W<WUMR_SPEC, 7> {
-        LPDBCCLR_W::new(self)
+    pub fn lpdbcclr(&mut self) -> LPDBCCLR_W<WUMR_SPEC> {
+        LPDBCCLR_W::new(self, 7)
     }
     #[doc = "Bits 12:14 - Wake Up Inputs Debouncer Period"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupdbc(&mut self) -> WKUPDBC_W<WUMR_SPEC, 12> {
-        WKUPDBC_W::new(self)
+    pub fn wkupdbc(&mut self) -> WKUPDBC_W<WUMR_SPEC> {
+        WKUPDBC_W::new(self, 12)
     }
     #[doc = "Bits 16:18 - Low Power DeBounCer Period"]
     #[inline(always)]
     #[must_use]
-    pub fn lpdbc(&mut self) -> LPDBC_W<WUMR_SPEC, 16> {
-        LPDBC_W::new(self)
+    pub fn lpdbc(&mut self) -> LPDBC_W<WUMR_SPEC> {
+        LPDBC_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

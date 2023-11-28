@@ -5,7 +5,7 @@ pub type W = crate::W<ROV_SPEC>;
 #[doc = "Field `ROVR` reader - Receive Overrun"]
 pub type ROVR_R = crate::FieldReader;
 #[doc = "Field `ROVR` writer - Receive Overrun"]
-pub type ROVR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type ROVR_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Receive Overrun"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - Receive Overrun"]
     #[inline(always)]
     #[must_use]
-    pub fn rovr(&mut self) -> ROVR_W<ROV_SPEC, 0> {
-        ROVR_W::new(self)
+    pub fn rovr(&mut self) -> ROVR_W<ROV_SPEC> {
+        ROVR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

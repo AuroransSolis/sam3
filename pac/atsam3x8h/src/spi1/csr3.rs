@@ -5,19 +5,19 @@ pub type W = crate::W<CSR3_SPEC>;
 #[doc = "Field `CPOL` reader - Clock Polarity"]
 pub type CPOL_R = crate::BitReader;
 #[doc = "Field `CPOL` writer - Clock Polarity"]
-pub type CPOL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CPOL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NCPHA` reader - Clock Phase"]
 pub type NCPHA_R = crate::BitReader;
 #[doc = "Field `NCPHA` writer - Clock Phase"]
-pub type NCPHA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NCPHA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CSNAAT` reader - Chip Select Not Active After Transfer (Ignored if CSAAT = 1)"]
 pub type CSNAAT_R = crate::BitReader;
 #[doc = "Field `CSNAAT` writer - Chip Select Not Active After Transfer (Ignored if CSAAT = 1)"]
-pub type CSNAAT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CSNAAT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CSAAT` reader - Chip Select Active After Transfer"]
 pub type CSAAT_R = crate::BitReader;
 #[doc = "Field `CSAAT` writer - Chip Select Active After Transfer"]
-pub type CSAAT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CSAAT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BITS` reader - Bits Per Transfer"]
 pub type BITS_R = crate::FieldReader<BITS_A>;
 #[doc = "Bits Per Transfer"]
@@ -116,8 +116,8 @@ impl BITS_R {
     }
 }
 #[doc = "Field `BITS` writer - Bits Per Transfer"]
-pub type BITS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, BITS_A>;
-impl<'a, REG, const O: u8> BITS_W<'a, REG, O>
+pub type BITS_W<'a, REG> = crate::FieldWriter<'a, REG, 4, BITS_A>;
+impl<'a, REG> BITS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -171,15 +171,15 @@ where
 #[doc = "Field `SCBR` reader - Serial Clock Baud Rate"]
 pub type SCBR_R = crate::FieldReader;
 #[doc = "Field `SCBR` writer - Serial Clock Baud Rate"]
-pub type SCBR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type SCBR_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `DLYBS` reader - Delay Before SPCK"]
 pub type DLYBS_R = crate::FieldReader;
 #[doc = "Field `DLYBS` writer - Delay Before SPCK"]
-pub type DLYBS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type DLYBS_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `DLYBCT` reader - Delay Between Consecutive Transfers"]
 pub type DLYBCT_R = crate::FieldReader;
 #[doc = "Field `DLYBCT` writer - Delay Between Consecutive Transfers"]
-pub type DLYBCT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type DLYBCT_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bit 0 - Clock Polarity"]
     #[inline(always)]
@@ -226,50 +226,50 @@ impl W {
     #[doc = "Bit 0 - Clock Polarity"]
     #[inline(always)]
     #[must_use]
-    pub fn cpol(&mut self) -> CPOL_W<CSR3_SPEC, 0> {
-        CPOL_W::new(self)
+    pub fn cpol(&mut self) -> CPOL_W<CSR3_SPEC> {
+        CPOL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clock Phase"]
     #[inline(always)]
     #[must_use]
-    pub fn ncpha(&mut self) -> NCPHA_W<CSR3_SPEC, 1> {
-        NCPHA_W::new(self)
+    pub fn ncpha(&mut self) -> NCPHA_W<CSR3_SPEC> {
+        NCPHA_W::new(self, 1)
     }
     #[doc = "Bit 2 - Chip Select Not Active After Transfer (Ignored if CSAAT = 1)"]
     #[inline(always)]
     #[must_use]
-    pub fn csnaat(&mut self) -> CSNAAT_W<CSR3_SPEC, 2> {
-        CSNAAT_W::new(self)
+    pub fn csnaat(&mut self) -> CSNAAT_W<CSR3_SPEC> {
+        CSNAAT_W::new(self, 2)
     }
     #[doc = "Bit 3 - Chip Select Active After Transfer"]
     #[inline(always)]
     #[must_use]
-    pub fn csaat(&mut self) -> CSAAT_W<CSR3_SPEC, 3> {
-        CSAAT_W::new(self)
+    pub fn csaat(&mut self) -> CSAAT_W<CSR3_SPEC> {
+        CSAAT_W::new(self, 3)
     }
     #[doc = "Bits 4:7 - Bits Per Transfer"]
     #[inline(always)]
     #[must_use]
-    pub fn bits_(&mut self) -> BITS_W<CSR3_SPEC, 4> {
-        BITS_W::new(self)
+    pub fn bits_(&mut self) -> BITS_W<CSR3_SPEC> {
+        BITS_W::new(self, 4)
     }
     #[doc = "Bits 8:15 - Serial Clock Baud Rate"]
     #[inline(always)]
     #[must_use]
-    pub fn scbr(&mut self) -> SCBR_W<CSR3_SPEC, 8> {
-        SCBR_W::new(self)
+    pub fn scbr(&mut self) -> SCBR_W<CSR3_SPEC> {
+        SCBR_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Delay Before SPCK"]
     #[inline(always)]
     #[must_use]
-    pub fn dlybs(&mut self) -> DLYBS_W<CSR3_SPEC, 16> {
-        DLYBS_W::new(self)
+    pub fn dlybs(&mut self) -> DLYBS_W<CSR3_SPEC> {
+        DLYBS_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Delay Between Consecutive Transfers"]
     #[inline(always)]
     #[must_use]
-    pub fn dlybct(&mut self) -> DLYBCT_W<CSR3_SPEC, 24> {
-        DLYBCT_W::new(self)
+    pub fn dlybct(&mut self) -> DLYBCT_W<CSR3_SPEC> {
+        DLYBCT_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

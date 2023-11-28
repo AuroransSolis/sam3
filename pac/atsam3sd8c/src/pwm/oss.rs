@@ -1,69 +1,69 @@
 #[doc = "Register `OSS` writer"]
 pub type W = crate::W<OSS_SPEC>;
 #[doc = "Field `OSSH0` writer - Output Selection Set for PWMH output of the channel 0"]
-pub type OSSH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSSH0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSSH1` writer - Output Selection Set for PWMH output of the channel 1"]
-pub type OSSH1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSSH1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSSH2` writer - Output Selection Set for PWMH output of the channel 2"]
-pub type OSSH2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSSH2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSSH3` writer - Output Selection Set for PWMH output of the channel 3"]
-pub type OSSH3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSSH3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSSL0` writer - Output Selection Set for PWML output of the channel 0"]
-pub type OSSL0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSSL0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSSL1` writer - Output Selection Set for PWML output of the channel 1"]
-pub type OSSL1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSSL1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSSL2` writer - Output Selection Set for PWML output of the channel 2"]
-pub type OSSL2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSSL2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSSL3` writer - Output Selection Set for PWML output of the channel 3"]
-pub type OSSL3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSSL3_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Output Selection Set for PWMH output of the channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn ossh0(&mut self) -> OSSH0_W<OSS_SPEC, 0> {
-        OSSH0_W::new(self)
+    pub fn ossh0(&mut self) -> OSSH0_W<OSS_SPEC> {
+        OSSH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Output Selection Set for PWMH output of the channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn ossh1(&mut self) -> OSSH1_W<OSS_SPEC, 1> {
-        OSSH1_W::new(self)
+    pub fn ossh1(&mut self) -> OSSH1_W<OSS_SPEC> {
+        OSSH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Output Selection Set for PWMH output of the channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn ossh2(&mut self) -> OSSH2_W<OSS_SPEC, 2> {
-        OSSH2_W::new(self)
+    pub fn ossh2(&mut self) -> OSSH2_W<OSS_SPEC> {
+        OSSH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Output Selection Set for PWMH output of the channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn ossh3(&mut self) -> OSSH3_W<OSS_SPEC, 3> {
-        OSSH3_W::new(self)
+    pub fn ossh3(&mut self) -> OSSH3_W<OSS_SPEC> {
+        OSSH3_W::new(self, 3)
     }
     #[doc = "Bit 16 - Output Selection Set for PWML output of the channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn ossl0(&mut self) -> OSSL0_W<OSS_SPEC, 16> {
-        OSSL0_W::new(self)
+    pub fn ossl0(&mut self) -> OSSL0_W<OSS_SPEC> {
+        OSSL0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Output Selection Set for PWML output of the channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn ossl1(&mut self) -> OSSL1_W<OSS_SPEC, 17> {
-        OSSL1_W::new(self)
+    pub fn ossl1(&mut self) -> OSSL1_W<OSS_SPEC> {
+        OSSL1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Output Selection Set for PWML output of the channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn ossl2(&mut self) -> OSSL2_W<OSS_SPEC, 18> {
-        OSSL2_W::new(self)
+    pub fn ossl2(&mut self) -> OSSL2_W<OSS_SPEC> {
+        OSSL2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Output Selection Set for PWML output of the channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn ossl3(&mut self) -> OSSL3_W<OSS_SPEC, 19> {
-        OSSL3_W::new(self)
+    pub fn ossl3(&mut self) -> OSSL3_W<OSS_SPEC> {
+        OSSL3_W::new(self, 19)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

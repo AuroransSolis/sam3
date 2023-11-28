@@ -1,13 +1,13 @@
 #[doc = "Register `IDR` writer"]
 pub type W = crate::W<IDR_SPEC>;
 #[doc = "Field `ERRIDR` writer - CRC Error Interrupt Disable"]
-pub type ERRIDR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ERRIDR_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - CRC Error Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn erridr(&mut self) -> ERRIDR_W<IDR_SPEC, 0> {
-        ERRIDR_W::new(self)
+    pub fn erridr(&mut self) -> ERRIDR_W<IDR_SPEC> {
+        ERRIDR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

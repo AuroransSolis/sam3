@@ -5,131 +5,131 @@ pub type W = crate::W<ODSR_SPEC>;
 #[doc = "Field `P0` reader - Output Data Status"]
 pub type P0_R = crate::BitReader;
 #[doc = "Field `P0` writer - Output Data Status"]
-pub type P0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P1` reader - Output Data Status"]
 pub type P1_R = crate::BitReader;
 #[doc = "Field `P1` writer - Output Data Status"]
-pub type P1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P2` reader - Output Data Status"]
 pub type P2_R = crate::BitReader;
 #[doc = "Field `P2` writer - Output Data Status"]
-pub type P2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P3` reader - Output Data Status"]
 pub type P3_R = crate::BitReader;
 #[doc = "Field `P3` writer - Output Data Status"]
-pub type P3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P4` reader - Output Data Status"]
 pub type P4_R = crate::BitReader;
 #[doc = "Field `P4` writer - Output Data Status"]
-pub type P4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P4_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P5` reader - Output Data Status"]
 pub type P5_R = crate::BitReader;
 #[doc = "Field `P5` writer - Output Data Status"]
-pub type P5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P5_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P6` reader - Output Data Status"]
 pub type P6_R = crate::BitReader;
 #[doc = "Field `P6` writer - Output Data Status"]
-pub type P6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P6_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P7` reader - Output Data Status"]
 pub type P7_R = crate::BitReader;
 #[doc = "Field `P7` writer - Output Data Status"]
-pub type P7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P7_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P8` reader - Output Data Status"]
 pub type P8_R = crate::BitReader;
 #[doc = "Field `P8` writer - Output Data Status"]
-pub type P8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P8_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P9` reader - Output Data Status"]
 pub type P9_R = crate::BitReader;
 #[doc = "Field `P9` writer - Output Data Status"]
-pub type P9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P9_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P10` reader - Output Data Status"]
 pub type P10_R = crate::BitReader;
 #[doc = "Field `P10` writer - Output Data Status"]
-pub type P10_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P10_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P11` reader - Output Data Status"]
 pub type P11_R = crate::BitReader;
 #[doc = "Field `P11` writer - Output Data Status"]
-pub type P11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P11_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P12` reader - Output Data Status"]
 pub type P12_R = crate::BitReader;
 #[doc = "Field `P12` writer - Output Data Status"]
-pub type P12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P12_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P13` reader - Output Data Status"]
 pub type P13_R = crate::BitReader;
 #[doc = "Field `P13` writer - Output Data Status"]
-pub type P13_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P13_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P14` reader - Output Data Status"]
 pub type P14_R = crate::BitReader;
 #[doc = "Field `P14` writer - Output Data Status"]
-pub type P14_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P14_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P15` reader - Output Data Status"]
 pub type P15_R = crate::BitReader;
 #[doc = "Field `P15` writer - Output Data Status"]
-pub type P15_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P15_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P16` reader - Output Data Status"]
 pub type P16_R = crate::BitReader;
 #[doc = "Field `P16` writer - Output Data Status"]
-pub type P16_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P16_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P17` reader - Output Data Status"]
 pub type P17_R = crate::BitReader;
 #[doc = "Field `P17` writer - Output Data Status"]
-pub type P17_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P17_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P18` reader - Output Data Status"]
 pub type P18_R = crate::BitReader;
 #[doc = "Field `P18` writer - Output Data Status"]
-pub type P18_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P18_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P19` reader - Output Data Status"]
 pub type P19_R = crate::BitReader;
 #[doc = "Field `P19` writer - Output Data Status"]
-pub type P19_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P19_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P20` reader - Output Data Status"]
 pub type P20_R = crate::BitReader;
 #[doc = "Field `P20` writer - Output Data Status"]
-pub type P20_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P20_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P21` reader - Output Data Status"]
 pub type P21_R = crate::BitReader;
 #[doc = "Field `P21` writer - Output Data Status"]
-pub type P21_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P21_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P22` reader - Output Data Status"]
 pub type P22_R = crate::BitReader;
 #[doc = "Field `P22` writer - Output Data Status"]
-pub type P22_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P22_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P23` reader - Output Data Status"]
 pub type P23_R = crate::BitReader;
 #[doc = "Field `P23` writer - Output Data Status"]
-pub type P23_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P23_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P24` reader - Output Data Status"]
 pub type P24_R = crate::BitReader;
 #[doc = "Field `P24` writer - Output Data Status"]
-pub type P24_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P24_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P25` reader - Output Data Status"]
 pub type P25_R = crate::BitReader;
 #[doc = "Field `P25` writer - Output Data Status"]
-pub type P25_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P25_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P26` reader - Output Data Status"]
 pub type P26_R = crate::BitReader;
 #[doc = "Field `P26` writer - Output Data Status"]
-pub type P26_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P26_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P27` reader - Output Data Status"]
 pub type P27_R = crate::BitReader;
 #[doc = "Field `P27` writer - Output Data Status"]
-pub type P27_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P27_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P28` reader - Output Data Status"]
 pub type P28_R = crate::BitReader;
 #[doc = "Field `P28` writer - Output Data Status"]
-pub type P28_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P28_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P29` reader - Output Data Status"]
 pub type P29_R = crate::BitReader;
 #[doc = "Field `P29` writer - Output Data Status"]
-pub type P29_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P29_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P30` reader - Output Data Status"]
 pub type P30_R = crate::BitReader;
 #[doc = "Field `P30` writer - Output Data Status"]
-pub type P30_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P30_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `P31` reader - Output Data Status"]
 pub type P31_R = crate::BitReader;
 #[doc = "Field `P31` writer - Output Data Status"]
-pub type P31_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type P31_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Output Data Status"]
     #[inline(always)]
@@ -296,194 +296,194 @@ impl W {
     #[doc = "Bit 0 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p0(&mut self) -> P0_W<ODSR_SPEC, 0> {
-        P0_W::new(self)
+    pub fn p0(&mut self) -> P0_W<ODSR_SPEC> {
+        P0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p1(&mut self) -> P1_W<ODSR_SPEC, 1> {
-        P1_W::new(self)
+    pub fn p1(&mut self) -> P1_W<ODSR_SPEC> {
+        P1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p2(&mut self) -> P2_W<ODSR_SPEC, 2> {
-        P2_W::new(self)
+    pub fn p2(&mut self) -> P2_W<ODSR_SPEC> {
+        P2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p3(&mut self) -> P3_W<ODSR_SPEC, 3> {
-        P3_W::new(self)
+    pub fn p3(&mut self) -> P3_W<ODSR_SPEC> {
+        P3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p4(&mut self) -> P4_W<ODSR_SPEC, 4> {
-        P4_W::new(self)
+    pub fn p4(&mut self) -> P4_W<ODSR_SPEC> {
+        P4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p5(&mut self) -> P5_W<ODSR_SPEC, 5> {
-        P5_W::new(self)
+    pub fn p5(&mut self) -> P5_W<ODSR_SPEC> {
+        P5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p6(&mut self) -> P6_W<ODSR_SPEC, 6> {
-        P6_W::new(self)
+    pub fn p6(&mut self) -> P6_W<ODSR_SPEC> {
+        P6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p7(&mut self) -> P7_W<ODSR_SPEC, 7> {
-        P7_W::new(self)
+    pub fn p7(&mut self) -> P7_W<ODSR_SPEC> {
+        P7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p8(&mut self) -> P8_W<ODSR_SPEC, 8> {
-        P8_W::new(self)
+    pub fn p8(&mut self) -> P8_W<ODSR_SPEC> {
+        P8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p9(&mut self) -> P9_W<ODSR_SPEC, 9> {
-        P9_W::new(self)
+    pub fn p9(&mut self) -> P9_W<ODSR_SPEC> {
+        P9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p10(&mut self) -> P10_W<ODSR_SPEC, 10> {
-        P10_W::new(self)
+    pub fn p10(&mut self) -> P10_W<ODSR_SPEC> {
+        P10_W::new(self, 10)
     }
     #[doc = "Bit 11 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p11(&mut self) -> P11_W<ODSR_SPEC, 11> {
-        P11_W::new(self)
+    pub fn p11(&mut self) -> P11_W<ODSR_SPEC> {
+        P11_W::new(self, 11)
     }
     #[doc = "Bit 12 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p12(&mut self) -> P12_W<ODSR_SPEC, 12> {
-        P12_W::new(self)
+    pub fn p12(&mut self) -> P12_W<ODSR_SPEC> {
+        P12_W::new(self, 12)
     }
     #[doc = "Bit 13 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p13(&mut self) -> P13_W<ODSR_SPEC, 13> {
-        P13_W::new(self)
+    pub fn p13(&mut self) -> P13_W<ODSR_SPEC> {
+        P13_W::new(self, 13)
     }
     #[doc = "Bit 14 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p14(&mut self) -> P14_W<ODSR_SPEC, 14> {
-        P14_W::new(self)
+    pub fn p14(&mut self) -> P14_W<ODSR_SPEC> {
+        P14_W::new(self, 14)
     }
     #[doc = "Bit 15 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p15(&mut self) -> P15_W<ODSR_SPEC, 15> {
-        P15_W::new(self)
+    pub fn p15(&mut self) -> P15_W<ODSR_SPEC> {
+        P15_W::new(self, 15)
     }
     #[doc = "Bit 16 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p16(&mut self) -> P16_W<ODSR_SPEC, 16> {
-        P16_W::new(self)
+    pub fn p16(&mut self) -> P16_W<ODSR_SPEC> {
+        P16_W::new(self, 16)
     }
     #[doc = "Bit 17 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p17(&mut self) -> P17_W<ODSR_SPEC, 17> {
-        P17_W::new(self)
+    pub fn p17(&mut self) -> P17_W<ODSR_SPEC> {
+        P17_W::new(self, 17)
     }
     #[doc = "Bit 18 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p18(&mut self) -> P18_W<ODSR_SPEC, 18> {
-        P18_W::new(self)
+    pub fn p18(&mut self) -> P18_W<ODSR_SPEC> {
+        P18_W::new(self, 18)
     }
     #[doc = "Bit 19 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p19(&mut self) -> P19_W<ODSR_SPEC, 19> {
-        P19_W::new(self)
+    pub fn p19(&mut self) -> P19_W<ODSR_SPEC> {
+        P19_W::new(self, 19)
     }
     #[doc = "Bit 20 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p20(&mut self) -> P20_W<ODSR_SPEC, 20> {
-        P20_W::new(self)
+    pub fn p20(&mut self) -> P20_W<ODSR_SPEC> {
+        P20_W::new(self, 20)
     }
     #[doc = "Bit 21 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p21(&mut self) -> P21_W<ODSR_SPEC, 21> {
-        P21_W::new(self)
+    pub fn p21(&mut self) -> P21_W<ODSR_SPEC> {
+        P21_W::new(self, 21)
     }
     #[doc = "Bit 22 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p22(&mut self) -> P22_W<ODSR_SPEC, 22> {
-        P22_W::new(self)
+    pub fn p22(&mut self) -> P22_W<ODSR_SPEC> {
+        P22_W::new(self, 22)
     }
     #[doc = "Bit 23 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p23(&mut self) -> P23_W<ODSR_SPEC, 23> {
-        P23_W::new(self)
+    pub fn p23(&mut self) -> P23_W<ODSR_SPEC> {
+        P23_W::new(self, 23)
     }
     #[doc = "Bit 24 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p24(&mut self) -> P24_W<ODSR_SPEC, 24> {
-        P24_W::new(self)
+    pub fn p24(&mut self) -> P24_W<ODSR_SPEC> {
+        P24_W::new(self, 24)
     }
     #[doc = "Bit 25 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p25(&mut self) -> P25_W<ODSR_SPEC, 25> {
-        P25_W::new(self)
+    pub fn p25(&mut self) -> P25_W<ODSR_SPEC> {
+        P25_W::new(self, 25)
     }
     #[doc = "Bit 26 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p26(&mut self) -> P26_W<ODSR_SPEC, 26> {
-        P26_W::new(self)
+    pub fn p26(&mut self) -> P26_W<ODSR_SPEC> {
+        P26_W::new(self, 26)
     }
     #[doc = "Bit 27 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p27(&mut self) -> P27_W<ODSR_SPEC, 27> {
-        P27_W::new(self)
+    pub fn p27(&mut self) -> P27_W<ODSR_SPEC> {
+        P27_W::new(self, 27)
     }
     #[doc = "Bit 28 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p28(&mut self) -> P28_W<ODSR_SPEC, 28> {
-        P28_W::new(self)
+    pub fn p28(&mut self) -> P28_W<ODSR_SPEC> {
+        P28_W::new(self, 28)
     }
     #[doc = "Bit 29 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p29(&mut self) -> P29_W<ODSR_SPEC, 29> {
-        P29_W::new(self)
+    pub fn p29(&mut self) -> P29_W<ODSR_SPEC> {
+        P29_W::new(self, 29)
     }
     #[doc = "Bit 30 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p30(&mut self) -> P30_W<ODSR_SPEC, 30> {
-        P30_W::new(self)
+    pub fn p30(&mut self) -> P30_W<ODSR_SPEC> {
+        P30_W::new(self, 30)
     }
     #[doc = "Bit 31 - Output Data Status"]
     #[inline(always)]
     #[must_use]
-    pub fn p31(&mut self) -> P31_W<ODSR_SPEC, 31> {
-        P31_W::new(self)
+    pub fn p31(&mut self) -> P31_W<ODSR_SPEC> {
+        P31_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

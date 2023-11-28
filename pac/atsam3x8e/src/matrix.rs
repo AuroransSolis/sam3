@@ -1,75 +1,189 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Master Configuration Register 0"]
-    pub matrix_mcfg0: MATRIX_MCFG0,
-    #[doc = "0x04 - Master Configuration Register 1"]
-    pub matrix_mcfg1: MATRIX_MCFG1,
-    #[doc = "0x08 - Master Configuration Register 2"]
-    pub matrix_mcfg2: MATRIX_MCFG2,
-    #[doc = "0x0c - Master Configuration Register 3"]
-    pub matrix_mcfg3: MATRIX_MCFG3,
-    #[doc = "0x10 - Master Configuration Register 4"]
-    pub matrix_mcfg4: MATRIX_MCFG4,
-    #[doc = "0x14 - Master Configuration Register 5"]
-    pub matrix_mcfg5: MATRIX_MCFG5,
+    matrix_mcfg0: MATRIX_MCFG0,
+    matrix_mcfg1: MATRIX_MCFG1,
+    matrix_mcfg2: MATRIX_MCFG2,
+    matrix_mcfg3: MATRIX_MCFG3,
+    matrix_mcfg4: MATRIX_MCFG4,
+    matrix_mcfg5: MATRIX_MCFG5,
     _reserved6: [u8; 0x28],
-    #[doc = "0x40 - Slave Configuration Register 0"]
-    pub matrix_scfg0: MATRIX_SCFG0,
-    #[doc = "0x44 - Slave Configuration Register 1"]
-    pub matrix_scfg1: MATRIX_SCFG1,
-    #[doc = "0x48 - Slave Configuration Register 2"]
-    pub matrix_scfg2: MATRIX_SCFG2,
-    #[doc = "0x4c - Slave Configuration Register 3"]
-    pub matrix_scfg3: MATRIX_SCFG3,
-    #[doc = "0x50 - Slave Configuration Register 4"]
-    pub matrix_scfg4: MATRIX_SCFG4,
-    #[doc = "0x54 - Slave Configuration Register 5"]
-    pub matrix_scfg5: MATRIX_SCFG5,
-    #[doc = "0x58 - Slave Configuration Register 6"]
-    pub matrix_scfg6: MATRIX_SCFG6,
-    #[doc = "0x5c - Slave Configuration Register 7"]
-    pub matrix_scfg7: MATRIX_SCFG7,
-    #[doc = "0x60 - Slave Configuration Register 8"]
-    pub matrix_scfg8: MATRIX_SCFG8,
+    matrix_scfg0: MATRIX_SCFG0,
+    matrix_scfg1: MATRIX_SCFG1,
+    matrix_scfg2: MATRIX_SCFG2,
+    matrix_scfg3: MATRIX_SCFG3,
+    matrix_scfg4: MATRIX_SCFG4,
+    matrix_scfg5: MATRIX_SCFG5,
+    matrix_scfg6: MATRIX_SCFG6,
+    matrix_scfg7: MATRIX_SCFG7,
+    matrix_scfg8: MATRIX_SCFG8,
     _reserved15: [u8; 0x1c],
-    #[doc = "0x80 - Priority Register A for Slave 0"]
-    pub matrix_pras0: MATRIX_PRAS0,
+    matrix_pras0: MATRIX_PRAS0,
     _reserved16: [u8; 0x04],
-    #[doc = "0x88 - Priority Register A for Slave 1"]
-    pub matrix_pras1: MATRIX_PRAS1,
+    matrix_pras1: MATRIX_PRAS1,
     _reserved17: [u8; 0x04],
-    #[doc = "0x90 - Priority Register A for Slave 2"]
-    pub matrix_pras2: MATRIX_PRAS2,
+    matrix_pras2: MATRIX_PRAS2,
     _reserved18: [u8; 0x04],
-    #[doc = "0x98 - Priority Register A for Slave 3"]
-    pub matrix_pras3: MATRIX_PRAS3,
+    matrix_pras3: MATRIX_PRAS3,
     _reserved19: [u8; 0x04],
-    #[doc = "0xa0 - Priority Register A for Slave 4"]
-    pub matrix_pras4: MATRIX_PRAS4,
+    matrix_pras4: MATRIX_PRAS4,
     _reserved20: [u8; 0x04],
-    #[doc = "0xa8 - Priority Register A for Slave 5"]
-    pub matrix_pras5: MATRIX_PRAS5,
+    matrix_pras5: MATRIX_PRAS5,
     _reserved21: [u8; 0x04],
-    #[doc = "0xb0 - Priority Register A for Slave 6"]
-    pub matrix_pras6: MATRIX_PRAS6,
+    matrix_pras6: MATRIX_PRAS6,
     _reserved22: [u8; 0x04],
-    #[doc = "0xb8 - Priority Register A for Slave 7"]
-    pub matrix_pras7: MATRIX_PRAS7,
+    matrix_pras7: MATRIX_PRAS7,
     _reserved23: [u8; 0x04],
-    #[doc = "0xc0 - Priority Register A for Slave 8"]
-    pub matrix_pras8: MATRIX_PRAS8,
+    matrix_pras8: MATRIX_PRAS8,
     _reserved24: [u8; 0x3c],
-    #[doc = "0x100 - Master Remap Control Register"]
-    pub matrix_mrcr: MATRIX_MRCR,
+    matrix_mrcr: MATRIX_MRCR,
     _reserved25: [u8; 0x10],
-    #[doc = "0x114 - System I/O Configuration register"]
-    pub ccfg_sysio: CCFG_SYSIO,
+    ccfg_sysio: CCFG_SYSIO,
     _reserved26: [u8; 0xcc],
+    matrix_wpmr: MATRIX_WPMR,
+    matrix_wpsr: MATRIX_WPSR,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Master Configuration Register 0"]
+    #[inline(always)]
+    pub const fn matrix_mcfg0(&self) -> &MATRIX_MCFG0 {
+        &self.matrix_mcfg0
+    }
+    #[doc = "0x04 - Master Configuration Register 1"]
+    #[inline(always)]
+    pub const fn matrix_mcfg1(&self) -> &MATRIX_MCFG1 {
+        &self.matrix_mcfg1
+    }
+    #[doc = "0x08 - Master Configuration Register 2"]
+    #[inline(always)]
+    pub const fn matrix_mcfg2(&self) -> &MATRIX_MCFG2 {
+        &self.matrix_mcfg2
+    }
+    #[doc = "0x0c - Master Configuration Register 3"]
+    #[inline(always)]
+    pub const fn matrix_mcfg3(&self) -> &MATRIX_MCFG3 {
+        &self.matrix_mcfg3
+    }
+    #[doc = "0x10 - Master Configuration Register 4"]
+    #[inline(always)]
+    pub const fn matrix_mcfg4(&self) -> &MATRIX_MCFG4 {
+        &self.matrix_mcfg4
+    }
+    #[doc = "0x14 - Master Configuration Register 5"]
+    #[inline(always)]
+    pub const fn matrix_mcfg5(&self) -> &MATRIX_MCFG5 {
+        &self.matrix_mcfg5
+    }
+    #[doc = "0x40 - Slave Configuration Register 0"]
+    #[inline(always)]
+    pub const fn matrix_scfg0(&self) -> &MATRIX_SCFG0 {
+        &self.matrix_scfg0
+    }
+    #[doc = "0x44 - Slave Configuration Register 1"]
+    #[inline(always)]
+    pub const fn matrix_scfg1(&self) -> &MATRIX_SCFG1 {
+        &self.matrix_scfg1
+    }
+    #[doc = "0x48 - Slave Configuration Register 2"]
+    #[inline(always)]
+    pub const fn matrix_scfg2(&self) -> &MATRIX_SCFG2 {
+        &self.matrix_scfg2
+    }
+    #[doc = "0x4c - Slave Configuration Register 3"]
+    #[inline(always)]
+    pub const fn matrix_scfg3(&self) -> &MATRIX_SCFG3 {
+        &self.matrix_scfg3
+    }
+    #[doc = "0x50 - Slave Configuration Register 4"]
+    #[inline(always)]
+    pub const fn matrix_scfg4(&self) -> &MATRIX_SCFG4 {
+        &self.matrix_scfg4
+    }
+    #[doc = "0x54 - Slave Configuration Register 5"]
+    #[inline(always)]
+    pub const fn matrix_scfg5(&self) -> &MATRIX_SCFG5 {
+        &self.matrix_scfg5
+    }
+    #[doc = "0x58 - Slave Configuration Register 6"]
+    #[inline(always)]
+    pub const fn matrix_scfg6(&self) -> &MATRIX_SCFG6 {
+        &self.matrix_scfg6
+    }
+    #[doc = "0x5c - Slave Configuration Register 7"]
+    #[inline(always)]
+    pub const fn matrix_scfg7(&self) -> &MATRIX_SCFG7 {
+        &self.matrix_scfg7
+    }
+    #[doc = "0x60 - Slave Configuration Register 8"]
+    #[inline(always)]
+    pub const fn matrix_scfg8(&self) -> &MATRIX_SCFG8 {
+        &self.matrix_scfg8
+    }
+    #[doc = "0x80 - Priority Register A for Slave 0"]
+    #[inline(always)]
+    pub const fn matrix_pras0(&self) -> &MATRIX_PRAS0 {
+        &self.matrix_pras0
+    }
+    #[doc = "0x88 - Priority Register A for Slave 1"]
+    #[inline(always)]
+    pub const fn matrix_pras1(&self) -> &MATRIX_PRAS1 {
+        &self.matrix_pras1
+    }
+    #[doc = "0x90 - Priority Register A for Slave 2"]
+    #[inline(always)]
+    pub const fn matrix_pras2(&self) -> &MATRIX_PRAS2 {
+        &self.matrix_pras2
+    }
+    #[doc = "0x98 - Priority Register A for Slave 3"]
+    #[inline(always)]
+    pub const fn matrix_pras3(&self) -> &MATRIX_PRAS3 {
+        &self.matrix_pras3
+    }
+    #[doc = "0xa0 - Priority Register A for Slave 4"]
+    #[inline(always)]
+    pub const fn matrix_pras4(&self) -> &MATRIX_PRAS4 {
+        &self.matrix_pras4
+    }
+    #[doc = "0xa8 - Priority Register A for Slave 5"]
+    #[inline(always)]
+    pub const fn matrix_pras5(&self) -> &MATRIX_PRAS5 {
+        &self.matrix_pras5
+    }
+    #[doc = "0xb0 - Priority Register A for Slave 6"]
+    #[inline(always)]
+    pub const fn matrix_pras6(&self) -> &MATRIX_PRAS6 {
+        &self.matrix_pras6
+    }
+    #[doc = "0xb8 - Priority Register A for Slave 7"]
+    #[inline(always)]
+    pub const fn matrix_pras7(&self) -> &MATRIX_PRAS7 {
+        &self.matrix_pras7
+    }
+    #[doc = "0xc0 - Priority Register A for Slave 8"]
+    #[inline(always)]
+    pub const fn matrix_pras8(&self) -> &MATRIX_PRAS8 {
+        &self.matrix_pras8
+    }
+    #[doc = "0x100 - Master Remap Control Register"]
+    #[inline(always)]
+    pub const fn matrix_mrcr(&self) -> &MATRIX_MRCR {
+        &self.matrix_mrcr
+    }
+    #[doc = "0x114 - System I/O Configuration register"]
+    #[inline(always)]
+    pub const fn ccfg_sysio(&self) -> &CCFG_SYSIO {
+        &self.ccfg_sysio
+    }
     #[doc = "0x1e4 - Write Protect Mode Register"]
-    pub matrix_wpmr: MATRIX_WPMR,
+    #[inline(always)]
+    pub const fn matrix_wpmr(&self) -> &MATRIX_WPMR {
+        &self.matrix_wpmr
+    }
     #[doc = "0x1e8 - Write Protect Status Register"]
-    pub matrix_wpsr: MATRIX_WPSR,
+    #[inline(always)]
+    pub const fn matrix_wpsr(&self) -> &MATRIX_WPSR {
+        &self.matrix_wpsr
+    }
 }
 #[doc = "MATRIX_MCFG0 (rw) register accessor: Master Configuration Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`matrix_mcfg0::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`matrix_mcfg0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@matrix_mcfg0`]
 module"]

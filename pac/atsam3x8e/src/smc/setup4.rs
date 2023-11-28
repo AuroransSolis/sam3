@@ -5,19 +5,19 @@ pub type W = crate::W<SETUP4_SPEC>;
 #[doc = "Field `NWE_SETUP` reader - NWE Setup Length"]
 pub type NWE_SETUP_R = crate::FieldReader;
 #[doc = "Field `NWE_SETUP` writer - NWE Setup Length"]
-pub type NWE_SETUP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type NWE_SETUP_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `NCS_WR_SETUP` reader - NCS Setup Length in Write Access"]
 pub type NCS_WR_SETUP_R = crate::FieldReader;
 #[doc = "Field `NCS_WR_SETUP` writer - NCS Setup Length in Write Access"]
-pub type NCS_WR_SETUP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type NCS_WR_SETUP_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `NRD_SETUP` reader - NRD Setup Length"]
 pub type NRD_SETUP_R = crate::FieldReader;
 #[doc = "Field `NRD_SETUP` writer - NRD Setup Length"]
-pub type NRD_SETUP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type NRD_SETUP_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `NCS_RD_SETUP` reader - NCS Setup Length in Read Access"]
 pub type NCS_RD_SETUP_R = crate::FieldReader;
 #[doc = "Field `NCS_RD_SETUP` writer - NCS Setup Length in Read Access"]
-pub type NCS_RD_SETUP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type NCS_RD_SETUP_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     #[doc = "Bits 0:5 - NWE Setup Length"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:5 - NWE Setup Length"]
     #[inline(always)]
     #[must_use]
-    pub fn nwe_setup(&mut self) -> NWE_SETUP_W<SETUP4_SPEC, 0> {
-        NWE_SETUP_W::new(self)
+    pub fn nwe_setup(&mut self) -> NWE_SETUP_W<SETUP4_SPEC> {
+        NWE_SETUP_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - NCS Setup Length in Write Access"]
     #[inline(always)]
     #[must_use]
-    pub fn ncs_wr_setup(&mut self) -> NCS_WR_SETUP_W<SETUP4_SPEC, 8> {
-        NCS_WR_SETUP_W::new(self)
+    pub fn ncs_wr_setup(&mut self) -> NCS_WR_SETUP_W<SETUP4_SPEC> {
+        NCS_WR_SETUP_W::new(self, 8)
     }
     #[doc = "Bits 16:21 - NRD Setup Length"]
     #[inline(always)]
     #[must_use]
-    pub fn nrd_setup(&mut self) -> NRD_SETUP_W<SETUP4_SPEC, 16> {
-        NRD_SETUP_W::new(self)
+    pub fn nrd_setup(&mut self) -> NRD_SETUP_W<SETUP4_SPEC> {
+        NRD_SETUP_W::new(self, 16)
     }
     #[doc = "Bits 24:29 - NCS Setup Length in Read Access"]
     #[inline(always)]
     #[must_use]
-    pub fn ncs_rd_setup(&mut self) -> NCS_RD_SETUP_W<SETUP4_SPEC, 24> {
-        NCS_RD_SETUP_W::new(self)
+    pub fn ncs_rd_setup(&mut self) -> NCS_RD_SETUP_W<SETUP4_SPEC> {
+        NCS_RD_SETUP_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

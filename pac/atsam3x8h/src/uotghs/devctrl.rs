@@ -5,19 +5,19 @@ pub type W = crate::W<DEVCTRL_SPEC>;
 #[doc = "Field `UADD` reader - USB Address"]
 pub type UADD_R = crate::FieldReader;
 #[doc = "Field `UADD` writer - USB Address"]
-pub type UADD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type UADD_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `ADDEN` reader - Address Enable"]
 pub type ADDEN_R = crate::BitReader;
 #[doc = "Field `ADDEN` writer - Address Enable"]
-pub type ADDEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ADDEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DETACH` reader - Detach"]
 pub type DETACH_R = crate::BitReader;
 #[doc = "Field `DETACH` writer - Detach"]
-pub type DETACH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DETACH_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RMWKUP` reader - Remote Wake-Up"]
 pub type RMWKUP_R = crate::BitReader;
 #[doc = "Field `RMWKUP` writer - Remote Wake-Up"]
-pub type RMWKUP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RMWKUP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SPDCONF` reader - Mode Configuration"]
 pub type SPDCONF_R = crate::FieldReader<SPDCONF_A>;
 #[doc = "Mode Configuration\n\nValue on reset: 0"]
@@ -76,8 +76,8 @@ impl SPDCONF_R {
     }
 }
 #[doc = "Field `SPDCONF` writer - Mode Configuration"]
-pub type SPDCONF_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, SPDCONF_A>;
-impl<'a, REG, const O: u8> SPDCONF_W<'a, REG, O>
+pub type SPDCONF_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SPDCONF_A>;
+impl<'a, REG> SPDCONF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -106,23 +106,23 @@ where
 #[doc = "Field `LS` reader - Low-Speed Mode Force"]
 pub type LS_R = crate::BitReader;
 #[doc = "Field `LS` writer - Low-Speed Mode Force"]
-pub type LS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TSTJ` reader - Test mode J"]
 pub type TSTJ_R = crate::BitReader;
 #[doc = "Field `TSTJ` writer - Test mode J"]
-pub type TSTJ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TSTJ_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TSTK` reader - Test mode K"]
 pub type TSTK_R = crate::BitReader;
 #[doc = "Field `TSTK` writer - Test mode K"]
-pub type TSTK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TSTK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TSTPCKT` reader - Test packet mode"]
 pub type TSTPCKT_R = crate::BitReader;
 #[doc = "Field `TSTPCKT` writer - Test packet mode"]
-pub type TSTPCKT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TSTPCKT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OPMODE2` reader - Specific Operational mode"]
 pub type OPMODE2_R = crate::BitReader;
 #[doc = "Field `OPMODE2` writer - Specific Operational mode"]
-pub type OPMODE2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OPMODE2_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:6 - USB Address"]
     #[inline(always)]
@@ -179,62 +179,62 @@ impl W {
     #[doc = "Bits 0:6 - USB Address"]
     #[inline(always)]
     #[must_use]
-    pub fn uadd(&mut self) -> UADD_W<DEVCTRL_SPEC, 0> {
-        UADD_W::new(self)
+    pub fn uadd(&mut self) -> UADD_W<DEVCTRL_SPEC> {
+        UADD_W::new(self, 0)
     }
     #[doc = "Bit 7 - Address Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn adden(&mut self) -> ADDEN_W<DEVCTRL_SPEC, 7> {
-        ADDEN_W::new(self)
+    pub fn adden(&mut self) -> ADDEN_W<DEVCTRL_SPEC> {
+        ADDEN_W::new(self, 7)
     }
     #[doc = "Bit 8 - Detach"]
     #[inline(always)]
     #[must_use]
-    pub fn detach(&mut self) -> DETACH_W<DEVCTRL_SPEC, 8> {
-        DETACH_W::new(self)
+    pub fn detach(&mut self) -> DETACH_W<DEVCTRL_SPEC> {
+        DETACH_W::new(self, 8)
     }
     #[doc = "Bit 9 - Remote Wake-Up"]
     #[inline(always)]
     #[must_use]
-    pub fn rmwkup(&mut self) -> RMWKUP_W<DEVCTRL_SPEC, 9> {
-        RMWKUP_W::new(self)
+    pub fn rmwkup(&mut self) -> RMWKUP_W<DEVCTRL_SPEC> {
+        RMWKUP_W::new(self, 9)
     }
     #[doc = "Bits 10:11 - Mode Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn spdconf(&mut self) -> SPDCONF_W<DEVCTRL_SPEC, 10> {
-        SPDCONF_W::new(self)
+    pub fn spdconf(&mut self) -> SPDCONF_W<DEVCTRL_SPEC> {
+        SPDCONF_W::new(self, 10)
     }
     #[doc = "Bit 12 - Low-Speed Mode Force"]
     #[inline(always)]
     #[must_use]
-    pub fn ls(&mut self) -> LS_W<DEVCTRL_SPEC, 12> {
-        LS_W::new(self)
+    pub fn ls(&mut self) -> LS_W<DEVCTRL_SPEC> {
+        LS_W::new(self, 12)
     }
     #[doc = "Bit 13 - Test mode J"]
     #[inline(always)]
     #[must_use]
-    pub fn tstj(&mut self) -> TSTJ_W<DEVCTRL_SPEC, 13> {
-        TSTJ_W::new(self)
+    pub fn tstj(&mut self) -> TSTJ_W<DEVCTRL_SPEC> {
+        TSTJ_W::new(self, 13)
     }
     #[doc = "Bit 14 - Test mode K"]
     #[inline(always)]
     #[must_use]
-    pub fn tstk(&mut self) -> TSTK_W<DEVCTRL_SPEC, 14> {
-        TSTK_W::new(self)
+    pub fn tstk(&mut self) -> TSTK_W<DEVCTRL_SPEC> {
+        TSTK_W::new(self, 14)
     }
     #[doc = "Bit 15 - Test packet mode"]
     #[inline(always)]
     #[must_use]
-    pub fn tstpckt(&mut self) -> TSTPCKT_W<DEVCTRL_SPEC, 15> {
-        TSTPCKT_W::new(self)
+    pub fn tstpckt(&mut self) -> TSTPCKT_W<DEVCTRL_SPEC> {
+        TSTPCKT_W::new(self, 15)
     }
     #[doc = "Bit 16 - Specific Operational mode"]
     #[inline(always)]
     #[must_use]
-    pub fn opmode2(&mut self) -> OPMODE2_W<DEVCTRL_SPEC, 16> {
-        OPMODE2_W::new(self)
+    pub fn opmode2(&mut self) -> OPMODE2_W<DEVCTRL_SPEC> {
+        OPMODE2_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

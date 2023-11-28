@@ -5,11 +5,11 @@ pub type W = crate::W<EMR_SPEC>;
 #[doc = "Field `OFFMODES` reader - Off Mode if Sleep Bit (ADC12B_MR) = 1"]
 pub type OFFMODES_R = crate::BitReader;
 #[doc = "Field `OFFMODES` writer - Off Mode if Sleep Bit (ADC12B_MR) = 1"]
-pub type OFFMODES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OFFMODES_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OFF_MODE_STARTUP_TIME` reader - Startup Time"]
 pub type OFF_MODE_STARTUP_TIME_R = crate::FieldReader;
 #[doc = "Field `OFF_MODE_STARTUP_TIME` writer - Startup Time"]
-pub type OFF_MODE_STARTUP_TIME_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type OFF_MODE_STARTUP_TIME_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bit 0 - Off Mode if Sleep Bit (ADC12B_MR) = 1"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bit 0 - Off Mode if Sleep Bit (ADC12B_MR) = 1"]
     #[inline(always)]
     #[must_use]
-    pub fn offmodes(&mut self) -> OFFMODES_W<EMR_SPEC, 0> {
-        OFFMODES_W::new(self)
+    pub fn offmodes(&mut self) -> OFFMODES_W<EMR_SPEC> {
+        OFFMODES_W::new(self, 0)
     }
     #[doc = "Bits 16:23 - Startup Time"]
     #[inline(always)]
     #[must_use]
-    pub fn off_mode_startup_time(&mut self) -> OFF_MODE_STARTUP_TIME_W<EMR_SPEC, 16> {
-        OFF_MODE_STARTUP_TIME_W::new(self)
+    pub fn off_mode_startup_time(&mut self) -> OFF_MODE_STARTUP_TIME_W<EMR_SPEC> {
+        OFF_MODE_STARTUP_TIME_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

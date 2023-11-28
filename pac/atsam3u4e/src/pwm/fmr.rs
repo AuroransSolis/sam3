@@ -5,15 +5,15 @@ pub type W = crate::W<FMR_SPEC>;
 #[doc = "Field `FPOL` reader - Fault Polarity (fault input bit varies from 0 to 3)"]
 pub type FPOL_R = crate::FieldReader;
 #[doc = "Field `FPOL` writer - Fault Polarity (fault input bit varies from 0 to 3)"]
-pub type FPOL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type FPOL_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `FMOD` reader - Fault Activation Mode (fault input bit varies from 0 to 3)"]
 pub type FMOD_R = crate::FieldReader;
 #[doc = "Field `FMOD` writer - Fault Activation Mode (fault input bit varies from 0 to 3)"]
-pub type FMOD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type FMOD_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `FFIL` reader - Fault Filtering (fault input bit varies from 0 to 3)"]
 pub type FFIL_R = crate::FieldReader;
 #[doc = "Field `FFIL` writer - Fault Filtering (fault input bit varies from 0 to 3)"]
-pub type FFIL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type FFIL_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Fault Polarity (fault input bit varies from 0 to 3)"]
     #[inline(always)]
@@ -35,20 +35,20 @@ impl W {
     #[doc = "Bits 0:7 - Fault Polarity (fault input bit varies from 0 to 3)"]
     #[inline(always)]
     #[must_use]
-    pub fn fpol(&mut self) -> FPOL_W<FMR_SPEC, 0> {
-        FPOL_W::new(self)
+    pub fn fpol(&mut self) -> FPOL_W<FMR_SPEC> {
+        FPOL_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Fault Activation Mode (fault input bit varies from 0 to 3)"]
     #[inline(always)]
     #[must_use]
-    pub fn fmod(&mut self) -> FMOD_W<FMR_SPEC, 8> {
-        FMOD_W::new(self)
+    pub fn fmod(&mut self) -> FMOD_W<FMR_SPEC> {
+        FMOD_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Fault Filtering (fault input bit varies from 0 to 3)"]
     #[inline(always)]
     #[must_use]
-    pub fn ffil(&mut self) -> FFIL_W<FMR_SPEC, 16> {
-        FFIL_W::new(self)
+    pub fn ffil(&mut self) -> FFIL_W<FMR_SPEC> {
+        FFIL_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

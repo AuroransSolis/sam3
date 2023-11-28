@@ -5,7 +5,7 @@ pub type W = crate::W<CPRD3_SPEC>;
 #[doc = "Field `CPRD` reader - Channel Period"]
 pub type CPRD_R = crate::FieldReader<u32>;
 #[doc = "Field `CPRD` writer - Channel Period"]
-pub type CPRD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type CPRD_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Channel Period"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Channel Period"]
     #[inline(always)]
     #[must_use]
-    pub fn cprd(&mut self) -> CPRD_W<CPRD3_SPEC, 0> {
-        CPRD_W::new(self)
+    pub fn cprd(&mut self) -> CPRD_W<CPRD3_SPEC> {
+        CPRD_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

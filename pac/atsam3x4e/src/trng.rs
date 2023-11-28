@@ -1,20 +1,46 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Control Register"]
-    pub cr: CR,
+    cr: CR,
     _reserved1: [u8; 0x0c],
-    #[doc = "0x10 - Interrupt Enable Register"]
-    pub ier: IER,
-    #[doc = "0x14 - Interrupt Disable Register"]
-    pub idr: IDR,
-    #[doc = "0x18 - Interrupt Mask Register"]
-    pub imr: IMR,
-    #[doc = "0x1c - Interrupt Status Register"]
-    pub isr: ISR,
+    ier: IER,
+    idr: IDR,
+    imr: IMR,
+    isr: ISR,
     _reserved5: [u8; 0x30],
+    odata: ODATA,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Control Register"]
+    #[inline(always)]
+    pub const fn cr(&self) -> &CR {
+        &self.cr
+    }
+    #[doc = "0x10 - Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn ier(&self) -> &IER {
+        &self.ier
+    }
+    #[doc = "0x14 - Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn idr(&self) -> &IDR {
+        &self.idr
+    }
+    #[doc = "0x18 - Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn imr(&self) -> &IMR {
+        &self.imr
+    }
+    #[doc = "0x1c - Interrupt Status Register"]
+    #[inline(always)]
+    pub const fn isr(&self) -> &ISR {
+        &self.isr
+    }
     #[doc = "0x50 - Output Data Register"]
-    pub odata: ODATA,
+    #[inline(always)]
+    pub const fn odata(&self) -> &ODATA {
+        &self.odata
+    }
 }
 #[doc = "CR (w) register accessor: Control Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
 module"]

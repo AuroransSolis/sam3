@@ -108,8 +108,8 @@ impl USART_MODE_R {
     }
 }
 #[doc = "Field `USART_MODE` writer - USART Mode of Operation"]
-pub type USART_MODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, USART_MODE_A>;
-impl<'a, REG, const O: u8> USART_MODE_W<'a, REG, O>
+pub type USART_MODE_W<'a, REG> = crate::FieldWriter<'a, REG, 4, USART_MODE_A>;
+impl<'a, REG> USART_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -215,8 +215,8 @@ impl USCLKS_R {
     }
 }
 #[doc = "Field `USCLKS` writer - Clock Selection"]
-pub type USCLKS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, USCLKS_A>;
-impl<'a, REG, const O: u8> USCLKS_W<'a, REG, O>
+pub type USCLKS_W<'a, REG> = crate::FieldWriter<'a, REG, 2, USCLKS_A>;
+impl<'a, REG> USCLKS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -295,8 +295,8 @@ impl CHRL_R {
     }
 }
 #[doc = "Field `CHRL` writer - Character Length"]
-pub type CHRL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CHRL_A>;
-impl<'a, REG, const O: u8> CHRL_W<'a, REG, O>
+pub type CHRL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CHRL_A>;
+impl<'a, REG> CHRL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -325,7 +325,7 @@ where
 #[doc = "Field `SYNC` reader - Synchronous Mode Select"]
 pub type SYNC_R = crate::BitReader;
 #[doc = "Field `SYNC` writer - Synchronous Mode Select"]
-pub type SYNC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SYNC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PAR` reader - Parity Type"]
 pub type PAR_R = crate::FieldReader<PAR_A>;
 #[doc = "Parity Type"]
@@ -400,8 +400,8 @@ impl PAR_R {
     }
 }
 #[doc = "Field `PAR` writer - Parity Type"]
-pub type PAR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, PAR_A>;
-impl<'a, REG, const O: u8> PAR_W<'a, REG, O>
+pub type PAR_W<'a, REG> = crate::FieldWriter<'a, REG, 3, PAR_A>;
+impl<'a, REG> PAR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -487,8 +487,8 @@ impl NBSTOP_R {
     }
 }
 #[doc = "Field `NBSTOP` writer - Number of Stop Bits"]
-pub type NBSTOP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, NBSTOP_A>;
-impl<'a, REG, const O: u8> NBSTOP_W<'a, REG, O>
+pub type NBSTOP_W<'a, REG> = crate::FieldWriter<'a, REG, 2, NBSTOP_A>;
+impl<'a, REG> NBSTOP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -567,8 +567,8 @@ impl CHMODE_R {
     }
 }
 #[doc = "Field `CHMODE` writer - Channel Mode"]
-pub type CHMODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CHMODE_A>;
-impl<'a, REG, const O: u8> CHMODE_W<'a, REG, O>
+pub type CHMODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CHMODE_A>;
+impl<'a, REG> CHMODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -597,55 +597,55 @@ where
 #[doc = "Field `MSBF` reader - Bit Order"]
 pub type MSBF_R = crate::BitReader;
 #[doc = "Field `MSBF` writer - Bit Order"]
-pub type MSBF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MSBF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MODE9` reader - 9-bit Character Length"]
 pub type MODE9_R = crate::BitReader;
 #[doc = "Field `MODE9` writer - 9-bit Character Length"]
-pub type MODE9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MODE9_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CLKO` reader - Clock Output Select"]
 pub type CLKO_R = crate::BitReader;
 #[doc = "Field `CLKO` writer - Clock Output Select"]
-pub type CLKO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CLKO_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OVER` reader - Oversampling Mode"]
 pub type OVER_R = crate::BitReader;
 #[doc = "Field `OVER` writer - Oversampling Mode"]
-pub type OVER_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OVER_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INACK` reader - Inhibit Non Acknowledge"]
 pub type INACK_R = crate::BitReader;
 #[doc = "Field `INACK` writer - Inhibit Non Acknowledge"]
-pub type INACK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INACK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DSNACK` reader - Disable Successive NACK"]
 pub type DSNACK_R = crate::BitReader;
 #[doc = "Field `DSNACK` writer - Disable Successive NACK"]
-pub type DSNACK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DSNACK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `VAR_SYNC` reader - Variable Synchronization of Command/Data Sync Start Frame Delimiter"]
 pub type VAR_SYNC_R = crate::BitReader;
 #[doc = "Field `VAR_SYNC` writer - Variable Synchronization of Command/Data Sync Start Frame Delimiter"]
-pub type VAR_SYNC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type VAR_SYNC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INVDATA` reader - Inverted Data"]
 pub type INVDATA_R = crate::BitReader;
 #[doc = "Field `INVDATA` writer - Inverted Data"]
-pub type INVDATA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INVDATA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MAX_ITERATION` reader - Maximum Number of Automatic Iteration"]
 pub type MAX_ITERATION_R = crate::FieldReader;
 #[doc = "Field `MAX_ITERATION` writer - Maximum Number of Automatic Iteration"]
-pub type MAX_ITERATION_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type MAX_ITERATION_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `FILTER` reader - Infrared Receive Line Filter"]
 pub type FILTER_R = crate::BitReader;
 #[doc = "Field `FILTER` writer - Infrared Receive Line Filter"]
-pub type FILTER_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FILTER_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MAN` reader - Manchester Encoder/Decoder Enable"]
 pub type MAN_R = crate::BitReader;
 #[doc = "Field `MAN` writer - Manchester Encoder/Decoder Enable"]
-pub type MAN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MAN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MODSYNC` reader - Manchester Synchronization Mode"]
 pub type MODSYNC_R = crate::BitReader;
 #[doc = "Field `MODSYNC` writer - Manchester Synchronization Mode"]
-pub type MODSYNC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MODSYNC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ONEBIT` reader - Start Frame Delimiter Selector"]
 pub type ONEBIT_R = crate::BitReader;
 #[doc = "Field `ONEBIT` writer - Start Frame Delimiter Selector"]
-pub type ONEBIT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ONEBIT_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - USART Mode of Operation"]
     #[inline(always)]
@@ -752,122 +752,122 @@ impl W {
     #[doc = "Bits 0:3 - USART Mode of Operation"]
     #[inline(always)]
     #[must_use]
-    pub fn usart_mode(&mut self) -> USART_MODE_W<MR_SPEC, 0> {
-        USART_MODE_W::new(self)
+    pub fn usart_mode(&mut self) -> USART_MODE_W<MR_SPEC> {
+        USART_MODE_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn usclks(&mut self) -> USCLKS_W<MR_SPEC, 4> {
-        USCLKS_W::new(self)
+    pub fn usclks(&mut self) -> USCLKS_W<MR_SPEC> {
+        USCLKS_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Character Length"]
     #[inline(always)]
     #[must_use]
-    pub fn chrl(&mut self) -> CHRL_W<MR_SPEC, 6> {
-        CHRL_W::new(self)
+    pub fn chrl(&mut self) -> CHRL_W<MR_SPEC> {
+        CHRL_W::new(self, 6)
     }
     #[doc = "Bit 8 - Synchronous Mode Select"]
     #[inline(always)]
     #[must_use]
-    pub fn sync(&mut self) -> SYNC_W<MR_SPEC, 8> {
-        SYNC_W::new(self)
+    pub fn sync(&mut self) -> SYNC_W<MR_SPEC> {
+        SYNC_W::new(self, 8)
     }
     #[doc = "Bits 9:11 - Parity Type"]
     #[inline(always)]
     #[must_use]
-    pub fn par(&mut self) -> PAR_W<MR_SPEC, 9> {
-        PAR_W::new(self)
+    pub fn par(&mut self) -> PAR_W<MR_SPEC> {
+        PAR_W::new(self, 9)
     }
     #[doc = "Bits 12:13 - Number of Stop Bits"]
     #[inline(always)]
     #[must_use]
-    pub fn nbstop(&mut self) -> NBSTOP_W<MR_SPEC, 12> {
-        NBSTOP_W::new(self)
+    pub fn nbstop(&mut self) -> NBSTOP_W<MR_SPEC> {
+        NBSTOP_W::new(self, 12)
     }
     #[doc = "Bits 14:15 - Channel Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn chmode(&mut self) -> CHMODE_W<MR_SPEC, 14> {
-        CHMODE_W::new(self)
+    pub fn chmode(&mut self) -> CHMODE_W<MR_SPEC> {
+        CHMODE_W::new(self, 14)
     }
     #[doc = "Bit 16 - Bit Order"]
     #[inline(always)]
     #[must_use]
-    pub fn msbf(&mut self) -> MSBF_W<MR_SPEC, 16> {
-        MSBF_W::new(self)
+    pub fn msbf(&mut self) -> MSBF_W<MR_SPEC> {
+        MSBF_W::new(self, 16)
     }
     #[doc = "Bit 17 - 9-bit Character Length"]
     #[inline(always)]
     #[must_use]
-    pub fn mode9(&mut self) -> MODE9_W<MR_SPEC, 17> {
-        MODE9_W::new(self)
+    pub fn mode9(&mut self) -> MODE9_W<MR_SPEC> {
+        MODE9_W::new(self, 17)
     }
     #[doc = "Bit 18 - Clock Output Select"]
     #[inline(always)]
     #[must_use]
-    pub fn clko(&mut self) -> CLKO_W<MR_SPEC, 18> {
-        CLKO_W::new(self)
+    pub fn clko(&mut self) -> CLKO_W<MR_SPEC> {
+        CLKO_W::new(self, 18)
     }
     #[doc = "Bit 19 - Oversampling Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn over(&mut self) -> OVER_W<MR_SPEC, 19> {
-        OVER_W::new(self)
+    pub fn over(&mut self) -> OVER_W<MR_SPEC> {
+        OVER_W::new(self, 19)
     }
     #[doc = "Bit 20 - Inhibit Non Acknowledge"]
     #[inline(always)]
     #[must_use]
-    pub fn inack(&mut self) -> INACK_W<MR_SPEC, 20> {
-        INACK_W::new(self)
+    pub fn inack(&mut self) -> INACK_W<MR_SPEC> {
+        INACK_W::new(self, 20)
     }
     #[doc = "Bit 21 - Disable Successive NACK"]
     #[inline(always)]
     #[must_use]
-    pub fn dsnack(&mut self) -> DSNACK_W<MR_SPEC, 21> {
-        DSNACK_W::new(self)
+    pub fn dsnack(&mut self) -> DSNACK_W<MR_SPEC> {
+        DSNACK_W::new(self, 21)
     }
     #[doc = "Bit 22 - Variable Synchronization of Command/Data Sync Start Frame Delimiter"]
     #[inline(always)]
     #[must_use]
-    pub fn var_sync(&mut self) -> VAR_SYNC_W<MR_SPEC, 22> {
-        VAR_SYNC_W::new(self)
+    pub fn var_sync(&mut self) -> VAR_SYNC_W<MR_SPEC> {
+        VAR_SYNC_W::new(self, 22)
     }
     #[doc = "Bit 23 - Inverted Data"]
     #[inline(always)]
     #[must_use]
-    pub fn invdata(&mut self) -> INVDATA_W<MR_SPEC, 23> {
-        INVDATA_W::new(self)
+    pub fn invdata(&mut self) -> INVDATA_W<MR_SPEC> {
+        INVDATA_W::new(self, 23)
     }
     #[doc = "Bits 24:26 - Maximum Number of Automatic Iteration"]
     #[inline(always)]
     #[must_use]
-    pub fn max_iteration(&mut self) -> MAX_ITERATION_W<MR_SPEC, 24> {
-        MAX_ITERATION_W::new(self)
+    pub fn max_iteration(&mut self) -> MAX_ITERATION_W<MR_SPEC> {
+        MAX_ITERATION_W::new(self, 24)
     }
     #[doc = "Bit 28 - Infrared Receive Line Filter"]
     #[inline(always)]
     #[must_use]
-    pub fn filter(&mut self) -> FILTER_W<MR_SPEC, 28> {
-        FILTER_W::new(self)
+    pub fn filter(&mut self) -> FILTER_W<MR_SPEC> {
+        FILTER_W::new(self, 28)
     }
     #[doc = "Bit 29 - Manchester Encoder/Decoder Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn man(&mut self) -> MAN_W<MR_SPEC, 29> {
-        MAN_W::new(self)
+    pub fn man(&mut self) -> MAN_W<MR_SPEC> {
+        MAN_W::new(self, 29)
     }
     #[doc = "Bit 30 - Manchester Synchronization Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn modsync(&mut self) -> MODSYNC_W<MR_SPEC, 30> {
-        MODSYNC_W::new(self)
+    pub fn modsync(&mut self) -> MODSYNC_W<MR_SPEC> {
+        MODSYNC_W::new(self, 30)
     }
     #[doc = "Bit 31 - Start Frame Delimiter Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn onebit(&mut self) -> ONEBIT_W<MR_SPEC, 31> {
-        ONEBIT_W::new(self)
+    pub fn onebit(&mut self) -> ONEBIT_W<MR_SPEC> {
+        ONEBIT_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

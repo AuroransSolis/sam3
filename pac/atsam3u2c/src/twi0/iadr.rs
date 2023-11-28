@@ -5,7 +5,7 @@ pub type W = crate::W<IADR_SPEC>;
 #[doc = "Field `IADR` reader - Internal Address"]
 pub type IADR_R = crate::FieldReader<u32>;
 #[doc = "Field `IADR` writer - Internal Address"]
-pub type IADR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 24, O, u32>;
+pub type IADR_W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     #[doc = "Bits 0:23 - Internal Address"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:23 - Internal Address"]
     #[inline(always)]
     #[must_use]
-    pub fn iadr(&mut self) -> IADR_W<IADR_SPEC, 0> {
-        IADR_W::new(self)
+    pub fn iadr(&mut self) -> IADR_W<IADR_SPEC> {
+        IADR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

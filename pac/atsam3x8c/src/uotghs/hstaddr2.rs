@@ -5,19 +5,19 @@ pub type W = crate::W<HSTADDR2_SPEC>;
 #[doc = "Field `HSTADDRP4` reader - USB Host Address"]
 pub type HSTADDRP4_R = crate::FieldReader;
 #[doc = "Field `HSTADDRP4` writer - USB Host Address"]
-pub type HSTADDRP4_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type HSTADDRP4_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `HSTADDRP5` reader - USB Host Address"]
 pub type HSTADDRP5_R = crate::FieldReader;
 #[doc = "Field `HSTADDRP5` writer - USB Host Address"]
-pub type HSTADDRP5_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type HSTADDRP5_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `HSTADDRP6` reader - USB Host Address"]
 pub type HSTADDRP6_R = crate::FieldReader;
 #[doc = "Field `HSTADDRP6` writer - USB Host Address"]
-pub type HSTADDRP6_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type HSTADDRP6_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `HSTADDRP7` reader - USB Host Address"]
 pub type HSTADDRP7_R = crate::FieldReader;
 #[doc = "Field `HSTADDRP7` writer - USB Host Address"]
-pub type HSTADDRP7_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type HSTADDRP7_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 impl R {
     #[doc = "Bits 0:6 - USB Host Address"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:6 - USB Host Address"]
     #[inline(always)]
     #[must_use]
-    pub fn hstaddrp4(&mut self) -> HSTADDRP4_W<HSTADDR2_SPEC, 0> {
-        HSTADDRP4_W::new(self)
+    pub fn hstaddrp4(&mut self) -> HSTADDRP4_W<HSTADDR2_SPEC> {
+        HSTADDRP4_W::new(self, 0)
     }
     #[doc = "Bits 8:14 - USB Host Address"]
     #[inline(always)]
     #[must_use]
-    pub fn hstaddrp5(&mut self) -> HSTADDRP5_W<HSTADDR2_SPEC, 8> {
-        HSTADDRP5_W::new(self)
+    pub fn hstaddrp5(&mut self) -> HSTADDRP5_W<HSTADDR2_SPEC> {
+        HSTADDRP5_W::new(self, 8)
     }
     #[doc = "Bits 16:22 - USB Host Address"]
     #[inline(always)]
     #[must_use]
-    pub fn hstaddrp6(&mut self) -> HSTADDRP6_W<HSTADDR2_SPEC, 16> {
-        HSTADDRP6_W::new(self)
+    pub fn hstaddrp6(&mut self) -> HSTADDRP6_W<HSTADDR2_SPEC> {
+        HSTADDRP6_W::new(self, 16)
     }
     #[doc = "Bits 24:30 - USB Host Address"]
     #[inline(always)]
     #[must_use]
-    pub fn hstaddrp7(&mut self) -> HSTADDRP7_W<HSTADDR2_SPEC, 24> {
-        HSTADDRP7_W::new(self)
+    pub fn hstaddrp7(&mut self) -> HSTADDRP7_W<HSTADDR2_SPEC> {
+        HSTADDRP7_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

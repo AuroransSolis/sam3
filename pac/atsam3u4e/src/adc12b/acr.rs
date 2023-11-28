@@ -5,19 +5,19 @@ pub type W = crate::W<ACR_SPEC>;
 #[doc = "Field `GAIN` reader - Input Gain"]
 pub type GAIN_R = crate::FieldReader;
 #[doc = "Field `GAIN` writer - Input Gain"]
-pub type GAIN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type GAIN_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `IBCTL` reader - Bias Current Control"]
 pub type IBCTL_R = crate::FieldReader;
 #[doc = "Field `IBCTL` writer - Bias Current Control"]
-pub type IBCTL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type IBCTL_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `DIFF` reader - Differential Mode"]
 pub type DIFF_R = crate::BitReader;
 #[doc = "Field `DIFF` writer - Differential Mode"]
-pub type DIFF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DIFF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OFFSET` reader - Input OFFSET"]
 pub type OFFSET_R = crate::BitReader;
 #[doc = "Field `OFFSET` writer - Input OFFSET"]
-pub type OFFSET_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OFFSET_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:1 - Input Gain"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:1 - Input Gain"]
     #[inline(always)]
     #[must_use]
-    pub fn gain(&mut self) -> GAIN_W<ACR_SPEC, 0> {
-        GAIN_W::new(self)
+    pub fn gain(&mut self) -> GAIN_W<ACR_SPEC> {
+        GAIN_W::new(self, 0)
     }
     #[doc = "Bits 8:9 - Bias Current Control"]
     #[inline(always)]
     #[must_use]
-    pub fn ibctl(&mut self) -> IBCTL_W<ACR_SPEC, 8> {
-        IBCTL_W::new(self)
+    pub fn ibctl(&mut self) -> IBCTL_W<ACR_SPEC> {
+        IBCTL_W::new(self, 8)
     }
     #[doc = "Bit 16 - Differential Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn diff(&mut self) -> DIFF_W<ACR_SPEC, 16> {
-        DIFF_W::new(self)
+    pub fn diff(&mut self) -> DIFF_W<ACR_SPEC> {
+        DIFF_W::new(self, 16)
     }
     #[doc = "Bit 17 - Input OFFSET"]
     #[inline(always)]
     #[must_use]
-    pub fn offset(&mut self) -> OFFSET_W<ACR_SPEC, 17> {
-        OFFSET_W::new(self)
+    pub fn offset(&mut self) -> OFFSET_W<ACR_SPEC> {
+        OFFSET_W::new(self, 17)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

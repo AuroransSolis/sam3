@@ -39,8 +39,8 @@ impl ARB_CFG_R {
     }
 }
 #[doc = "Field `ARB_CFG` writer - Arbiter Configuration"]
-pub type ARB_CFG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ARB_CFG_A>;
-impl<'a, REG, const O: u8> ARB_CFG_W<'a, REG, O>
+pub type ARB_CFG_W<'a, REG> = crate::BitWriter<'a, REG, ARB_CFG_A>;
+impl<'a, REG> ARB_CFG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -66,8 +66,8 @@ impl W {
     #[doc = "Bit 4 - Arbiter Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn arb_cfg(&mut self) -> ARB_CFG_W<GCFG_SPEC, 4> {
-        ARB_CFG_W::new(self)
+    pub fn arb_cfg(&mut self) -> ARB_CFG_W<GCFG_SPEC> {
+        ARB_CFG_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

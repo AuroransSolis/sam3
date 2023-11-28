@@ -1,13 +1,13 @@
 #[doc = "Register `BCR` writer"]
 pub type W = crate::W<BCR_SPEC>;
 #[doc = "Field `SYNC` writer - Synchro Command"]
-pub type SYNC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SYNC_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Synchro Command"]
     #[inline(always)]
     #[must_use]
-    pub fn sync(&mut self) -> SYNC_W<BCR_SPEC, 0> {
-        SYNC_W::new(self)
+    pub fn sync(&mut self) -> SYNC_W<BCR_SPEC> {
+        SYNC_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

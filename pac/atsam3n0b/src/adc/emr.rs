@@ -60,8 +60,8 @@ impl CMPMODE_R {
     }
 }
 #[doc = "Field `CMPMODE` writer - Comparison Mode"]
-pub type CMPMODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CMPMODE_A>;
-impl<'a, REG, const O: u8> CMPMODE_W<'a, REG, O>
+pub type CMPMODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CMPMODE_A>;
+impl<'a, REG> CMPMODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -90,15 +90,15 @@ where
 #[doc = "Field `CMPSEL` reader - Comparison Selected Channel"]
 pub type CMPSEL_R = crate::FieldReader;
 #[doc = "Field `CMPSEL` writer - Comparison Selected Channel"]
-pub type CMPSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type CMPSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CMPALL` reader - Compare All Channels"]
 pub type CMPALL_R = crate::BitReader;
 #[doc = "Field `CMPALL` writer - Compare All Channels"]
-pub type CMPALL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CMPALL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TAG` reader - TAG of ADC_LDCR register"]
 pub type TAG_R = crate::BitReader;
 #[doc = "Field `TAG` writer - TAG of ADC_LDCR register"]
-pub type TAG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TAG_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:1 - Comparison Mode"]
     #[inline(always)]
@@ -125,26 +125,26 @@ impl W {
     #[doc = "Bits 0:1 - Comparison Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn cmpmode(&mut self) -> CMPMODE_W<EMR_SPEC, 0> {
-        CMPMODE_W::new(self)
+    pub fn cmpmode(&mut self) -> CMPMODE_W<EMR_SPEC> {
+        CMPMODE_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Comparison Selected Channel"]
     #[inline(always)]
     #[must_use]
-    pub fn cmpsel(&mut self) -> CMPSEL_W<EMR_SPEC, 4> {
-        CMPSEL_W::new(self)
+    pub fn cmpsel(&mut self) -> CMPSEL_W<EMR_SPEC> {
+        CMPSEL_W::new(self, 4)
     }
     #[doc = "Bit 9 - Compare All Channels"]
     #[inline(always)]
     #[must_use]
-    pub fn cmpall(&mut self) -> CMPALL_W<EMR_SPEC, 9> {
-        CMPALL_W::new(self)
+    pub fn cmpall(&mut self) -> CMPALL_W<EMR_SPEC> {
+        CMPALL_W::new(self, 9)
     }
     #[doc = "Bit 24 - TAG of ADC_LDCR register"]
     #[inline(always)]
     #[must_use]
-    pub fn tag(&mut self) -> TAG_W<EMR_SPEC, 24> {
-        TAG_W::new(self)
+    pub fn tag(&mut self) -> TAG_W<EMR_SPEC> {
+        TAG_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

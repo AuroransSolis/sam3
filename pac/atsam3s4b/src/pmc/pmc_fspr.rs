@@ -5,67 +5,67 @@ pub type W = crate::W<PMC_FSPR_SPEC>;
 #[doc = "Field `FSTP0` reader - Fast Start-up Input Polarityx"]
 pub type FSTP0_R = crate::BitReader;
 #[doc = "Field `FSTP0` writer - Fast Start-up Input Polarityx"]
-pub type FSTP0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FSTP0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FSTP1` reader - Fast Start-up Input Polarityx"]
 pub type FSTP1_R = crate::BitReader;
 #[doc = "Field `FSTP1` writer - Fast Start-up Input Polarityx"]
-pub type FSTP1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FSTP1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FSTP2` reader - Fast Start-up Input Polarityx"]
 pub type FSTP2_R = crate::BitReader;
 #[doc = "Field `FSTP2` writer - Fast Start-up Input Polarityx"]
-pub type FSTP2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FSTP2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FSTP3` reader - Fast Start-up Input Polarityx"]
 pub type FSTP3_R = crate::BitReader;
 #[doc = "Field `FSTP3` writer - Fast Start-up Input Polarityx"]
-pub type FSTP3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FSTP3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FSTP4` reader - Fast Start-up Input Polarityx"]
 pub type FSTP4_R = crate::BitReader;
 #[doc = "Field `FSTP4` writer - Fast Start-up Input Polarityx"]
-pub type FSTP4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FSTP4_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FSTP5` reader - Fast Start-up Input Polarityx"]
 pub type FSTP5_R = crate::BitReader;
 #[doc = "Field `FSTP5` writer - Fast Start-up Input Polarityx"]
-pub type FSTP5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FSTP5_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FSTP6` reader - Fast Start-up Input Polarityx"]
 pub type FSTP6_R = crate::BitReader;
 #[doc = "Field `FSTP6` writer - Fast Start-up Input Polarityx"]
-pub type FSTP6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FSTP6_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FSTP7` reader - Fast Start-up Input Polarityx"]
 pub type FSTP7_R = crate::BitReader;
 #[doc = "Field `FSTP7` writer - Fast Start-up Input Polarityx"]
-pub type FSTP7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FSTP7_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FSTP8` reader - Fast Start-up Input Polarityx"]
 pub type FSTP8_R = crate::BitReader;
 #[doc = "Field `FSTP8` writer - Fast Start-up Input Polarityx"]
-pub type FSTP8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FSTP8_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FSTP9` reader - Fast Start-up Input Polarityx"]
 pub type FSTP9_R = crate::BitReader;
 #[doc = "Field `FSTP9` writer - Fast Start-up Input Polarityx"]
-pub type FSTP9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FSTP9_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FSTP10` reader - Fast Start-up Input Polarityx"]
 pub type FSTP10_R = crate::BitReader;
 #[doc = "Field `FSTP10` writer - Fast Start-up Input Polarityx"]
-pub type FSTP10_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FSTP10_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FSTP11` reader - Fast Start-up Input Polarityx"]
 pub type FSTP11_R = crate::BitReader;
 #[doc = "Field `FSTP11` writer - Fast Start-up Input Polarityx"]
-pub type FSTP11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FSTP11_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FSTP12` reader - Fast Start-up Input Polarityx"]
 pub type FSTP12_R = crate::BitReader;
 #[doc = "Field `FSTP12` writer - Fast Start-up Input Polarityx"]
-pub type FSTP12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FSTP12_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FSTP13` reader - Fast Start-up Input Polarityx"]
 pub type FSTP13_R = crate::BitReader;
 #[doc = "Field `FSTP13` writer - Fast Start-up Input Polarityx"]
-pub type FSTP13_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FSTP13_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FSTP14` reader - Fast Start-up Input Polarityx"]
 pub type FSTP14_R = crate::BitReader;
 #[doc = "Field `FSTP14` writer - Fast Start-up Input Polarityx"]
-pub type FSTP14_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FSTP14_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FSTP15` reader - Fast Start-up Input Polarityx"]
 pub type FSTP15_R = crate::BitReader;
 #[doc = "Field `FSTP15` writer - Fast Start-up Input Polarityx"]
-pub type FSTP15_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FSTP15_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Fast Start-up Input Polarityx"]
     #[inline(always)]
@@ -152,98 +152,98 @@ impl W {
     #[doc = "Bit 0 - Fast Start-up Input Polarityx"]
     #[inline(always)]
     #[must_use]
-    pub fn fstp0(&mut self) -> FSTP0_W<PMC_FSPR_SPEC, 0> {
-        FSTP0_W::new(self)
+    pub fn fstp0(&mut self) -> FSTP0_W<PMC_FSPR_SPEC> {
+        FSTP0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Fast Start-up Input Polarityx"]
     #[inline(always)]
     #[must_use]
-    pub fn fstp1(&mut self) -> FSTP1_W<PMC_FSPR_SPEC, 1> {
-        FSTP1_W::new(self)
+    pub fn fstp1(&mut self) -> FSTP1_W<PMC_FSPR_SPEC> {
+        FSTP1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Fast Start-up Input Polarityx"]
     #[inline(always)]
     #[must_use]
-    pub fn fstp2(&mut self) -> FSTP2_W<PMC_FSPR_SPEC, 2> {
-        FSTP2_W::new(self)
+    pub fn fstp2(&mut self) -> FSTP2_W<PMC_FSPR_SPEC> {
+        FSTP2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Fast Start-up Input Polarityx"]
     #[inline(always)]
     #[must_use]
-    pub fn fstp3(&mut self) -> FSTP3_W<PMC_FSPR_SPEC, 3> {
-        FSTP3_W::new(self)
+    pub fn fstp3(&mut self) -> FSTP3_W<PMC_FSPR_SPEC> {
+        FSTP3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Fast Start-up Input Polarityx"]
     #[inline(always)]
     #[must_use]
-    pub fn fstp4(&mut self) -> FSTP4_W<PMC_FSPR_SPEC, 4> {
-        FSTP4_W::new(self)
+    pub fn fstp4(&mut self) -> FSTP4_W<PMC_FSPR_SPEC> {
+        FSTP4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Fast Start-up Input Polarityx"]
     #[inline(always)]
     #[must_use]
-    pub fn fstp5(&mut self) -> FSTP5_W<PMC_FSPR_SPEC, 5> {
-        FSTP5_W::new(self)
+    pub fn fstp5(&mut self) -> FSTP5_W<PMC_FSPR_SPEC> {
+        FSTP5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Fast Start-up Input Polarityx"]
     #[inline(always)]
     #[must_use]
-    pub fn fstp6(&mut self) -> FSTP6_W<PMC_FSPR_SPEC, 6> {
-        FSTP6_W::new(self)
+    pub fn fstp6(&mut self) -> FSTP6_W<PMC_FSPR_SPEC> {
+        FSTP6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Fast Start-up Input Polarityx"]
     #[inline(always)]
     #[must_use]
-    pub fn fstp7(&mut self) -> FSTP7_W<PMC_FSPR_SPEC, 7> {
-        FSTP7_W::new(self)
+    pub fn fstp7(&mut self) -> FSTP7_W<PMC_FSPR_SPEC> {
+        FSTP7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Fast Start-up Input Polarityx"]
     #[inline(always)]
     #[must_use]
-    pub fn fstp8(&mut self) -> FSTP8_W<PMC_FSPR_SPEC, 8> {
-        FSTP8_W::new(self)
+    pub fn fstp8(&mut self) -> FSTP8_W<PMC_FSPR_SPEC> {
+        FSTP8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Fast Start-up Input Polarityx"]
     #[inline(always)]
     #[must_use]
-    pub fn fstp9(&mut self) -> FSTP9_W<PMC_FSPR_SPEC, 9> {
-        FSTP9_W::new(self)
+    pub fn fstp9(&mut self) -> FSTP9_W<PMC_FSPR_SPEC> {
+        FSTP9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Fast Start-up Input Polarityx"]
     #[inline(always)]
     #[must_use]
-    pub fn fstp10(&mut self) -> FSTP10_W<PMC_FSPR_SPEC, 10> {
-        FSTP10_W::new(self)
+    pub fn fstp10(&mut self) -> FSTP10_W<PMC_FSPR_SPEC> {
+        FSTP10_W::new(self, 10)
     }
     #[doc = "Bit 11 - Fast Start-up Input Polarityx"]
     #[inline(always)]
     #[must_use]
-    pub fn fstp11(&mut self) -> FSTP11_W<PMC_FSPR_SPEC, 11> {
-        FSTP11_W::new(self)
+    pub fn fstp11(&mut self) -> FSTP11_W<PMC_FSPR_SPEC> {
+        FSTP11_W::new(self, 11)
     }
     #[doc = "Bit 12 - Fast Start-up Input Polarityx"]
     #[inline(always)]
     #[must_use]
-    pub fn fstp12(&mut self) -> FSTP12_W<PMC_FSPR_SPEC, 12> {
-        FSTP12_W::new(self)
+    pub fn fstp12(&mut self) -> FSTP12_W<PMC_FSPR_SPEC> {
+        FSTP12_W::new(self, 12)
     }
     #[doc = "Bit 13 - Fast Start-up Input Polarityx"]
     #[inline(always)]
     #[must_use]
-    pub fn fstp13(&mut self) -> FSTP13_W<PMC_FSPR_SPEC, 13> {
-        FSTP13_W::new(self)
+    pub fn fstp13(&mut self) -> FSTP13_W<PMC_FSPR_SPEC> {
+        FSTP13_W::new(self, 13)
     }
     #[doc = "Bit 14 - Fast Start-up Input Polarityx"]
     #[inline(always)]
     #[must_use]
-    pub fn fstp14(&mut self) -> FSTP14_W<PMC_FSPR_SPEC, 14> {
-        FSTP14_W::new(self)
+    pub fn fstp14(&mut self) -> FSTP14_W<PMC_FSPR_SPEC> {
+        FSTP14_W::new(self, 14)
     }
     #[doc = "Bit 15 - Fast Start-up Input Polarityx"]
     #[inline(always)]
     #[must_use]
-    pub fn fstp15(&mut self) -> FSTP15_W<PMC_FSPR_SPEC, 15> {
-        FSTP15_W::new(self)
+    pub fn fstp15(&mut self) -> FSTP15_W<PMC_FSPR_SPEC> {
+        FSTP15_W::new(self, 15)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

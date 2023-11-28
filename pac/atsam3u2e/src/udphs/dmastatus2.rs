@@ -5,27 +5,27 @@ pub type W = crate::W<DMASTATUS2_SPEC>;
 #[doc = "Field `CHANN_ENB` reader - Channel Enable Status"]
 pub type CHANN_ENB_R = crate::BitReader;
 #[doc = "Field `CHANN_ENB` writer - Channel Enable Status"]
-pub type CHANN_ENB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CHANN_ENB_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CHANN_ACT` reader - Channel Active Status"]
 pub type CHANN_ACT_R = crate::BitReader;
 #[doc = "Field `CHANN_ACT` writer - Channel Active Status"]
-pub type CHANN_ACT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CHANN_ACT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `END_TR_ST` reader - End of Channel Transfer Status"]
 pub type END_TR_ST_R = crate::BitReader;
 #[doc = "Field `END_TR_ST` writer - End of Channel Transfer Status"]
-pub type END_TR_ST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type END_TR_ST_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `END_BF_ST` reader - End of Channel Buffer Status"]
 pub type END_BF_ST_R = crate::BitReader;
 #[doc = "Field `END_BF_ST` writer - End of Channel Buffer Status"]
-pub type END_BF_ST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type END_BF_ST_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DESC_LDST` reader - Descriptor Loaded Status"]
 pub type DESC_LDST_R = crate::BitReader;
 #[doc = "Field `DESC_LDST` writer - Descriptor Loaded Status"]
-pub type DESC_LDST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DESC_LDST_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BUFF_COUNT` reader - Buffer Byte Count"]
 pub type BUFF_COUNT_R = crate::FieldReader<u16>;
 #[doc = "Field `BUFF_COUNT` writer - Buffer Byte Count"]
-pub type BUFF_COUNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type BUFF_COUNT_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - Channel Enable Status"]
     #[inline(always)]
@@ -62,38 +62,38 @@ impl W {
     #[doc = "Bit 0 - Channel Enable Status"]
     #[inline(always)]
     #[must_use]
-    pub fn chann_enb(&mut self) -> CHANN_ENB_W<DMASTATUS2_SPEC, 0> {
-        CHANN_ENB_W::new(self)
+    pub fn chann_enb(&mut self) -> CHANN_ENB_W<DMASTATUS2_SPEC> {
+        CHANN_ENB_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channel Active Status"]
     #[inline(always)]
     #[must_use]
-    pub fn chann_act(&mut self) -> CHANN_ACT_W<DMASTATUS2_SPEC, 1> {
-        CHANN_ACT_W::new(self)
+    pub fn chann_act(&mut self) -> CHANN_ACT_W<DMASTATUS2_SPEC> {
+        CHANN_ACT_W::new(self, 1)
     }
     #[doc = "Bit 4 - End of Channel Transfer Status"]
     #[inline(always)]
     #[must_use]
-    pub fn end_tr_st(&mut self) -> END_TR_ST_W<DMASTATUS2_SPEC, 4> {
-        END_TR_ST_W::new(self)
+    pub fn end_tr_st(&mut self) -> END_TR_ST_W<DMASTATUS2_SPEC> {
+        END_TR_ST_W::new(self, 4)
     }
     #[doc = "Bit 5 - End of Channel Buffer Status"]
     #[inline(always)]
     #[must_use]
-    pub fn end_bf_st(&mut self) -> END_BF_ST_W<DMASTATUS2_SPEC, 5> {
-        END_BF_ST_W::new(self)
+    pub fn end_bf_st(&mut self) -> END_BF_ST_W<DMASTATUS2_SPEC> {
+        END_BF_ST_W::new(self, 5)
     }
     #[doc = "Bit 6 - Descriptor Loaded Status"]
     #[inline(always)]
     #[must_use]
-    pub fn desc_ldst(&mut self) -> DESC_LDST_W<DMASTATUS2_SPEC, 6> {
-        DESC_LDST_W::new(self)
+    pub fn desc_ldst(&mut self) -> DESC_LDST_W<DMASTATUS2_SPEC> {
+        DESC_LDST_W::new(self, 6)
     }
     #[doc = "Bits 16:31 - Buffer Byte Count"]
     #[inline(always)]
     #[must_use]
-    pub fn buff_count(&mut self) -> BUFF_COUNT_W<DMASTATUS2_SPEC, 16> {
-        BUFF_COUNT_W::new(self)
+    pub fn buff_count(&mut self) -> BUFF_COUNT_W<DMASTATUS2_SPEC> {
+        BUFF_COUNT_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

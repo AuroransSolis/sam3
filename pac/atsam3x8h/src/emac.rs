@@ -1,101 +1,283 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Network Control Register"]
-    pub ncr: NCR,
-    #[doc = "0x04 - Network Configuration Register"]
-    pub ncfgr: NCFGR,
-    #[doc = "0x08 - Network Status Register"]
-    pub nsr: NSR,
+    ncr: NCR,
+    ncfgr: NCFGR,
+    nsr: NSR,
     _reserved3: [u8; 0x08],
-    #[doc = "0x14 - Transmit Status Register"]
-    pub tsr: TSR,
-    #[doc = "0x18 - Receive Buffer Queue Pointer Register"]
-    pub rbqp: RBQP,
-    #[doc = "0x1c - Transmit Buffer Queue Pointer Register"]
-    pub tbqp: TBQP,
-    #[doc = "0x20 - Receive Status Register"]
-    pub rsr: RSR,
-    #[doc = "0x24 - Interrupt Status Register"]
-    pub isr: ISR,
-    #[doc = "0x28 - Interrupt Enable Register"]
-    pub ier: IER,
-    #[doc = "0x2c - Interrupt Disable Register"]
-    pub idr: IDR,
-    #[doc = "0x30 - Interrupt Mask Register"]
-    pub imr: IMR,
-    #[doc = "0x34 - Phy Maintenance Register"]
-    pub man: MAN,
-    #[doc = "0x38 - Pause Time Register"]
-    pub ptr: PTR,
-    #[doc = "0x3c - Pause Frames Received Register"]
-    pub pfr: PFR,
-    #[doc = "0x40 - Frames Transmitted Ok Register"]
-    pub fto: FTO,
-    #[doc = "0x44 - Single Collision Frames Register"]
-    pub scf: SCF,
-    #[doc = "0x48 - Multiple Collision Frames Register"]
-    pub mcf: MCF,
-    #[doc = "0x4c - Frames Received Ok Register"]
-    pub fro: FRO,
-    #[doc = "0x50 - Frame Check Sequence Errors Register"]
-    pub fcse: FCSE,
-    #[doc = "0x54 - Alignment Errors Register"]
-    pub ale: ALE,
-    #[doc = "0x58 - Deferred Transmission Frames Register"]
-    pub dtf: DTF,
-    #[doc = "0x5c - Late Collisions Register"]
-    pub lcol: LCOL,
-    #[doc = "0x60 - Excessive Collisions Register"]
-    pub ecol: ECOL,
-    #[doc = "0x64 - Transmit Underrun Errors Register"]
-    pub tund: TUND,
-    #[doc = "0x68 - Carrier Sense Errors Register"]
-    pub cse: CSE,
-    #[doc = "0x6c - Receive Resource Errors Register"]
-    pub rre: RRE,
-    #[doc = "0x70 - Receive Overrun Errors Register"]
-    pub rov: ROV,
-    #[doc = "0x74 - Receive Symbol Errors Register"]
-    pub rse: RSE,
-    #[doc = "0x78 - Excessive Length Errors Register"]
-    pub ele: ELE,
-    #[doc = "0x7c - Receive Jabbers Register"]
-    pub rja: RJA,
-    #[doc = "0x80 - Undersize Frames Register"]
-    pub usf: USF,
-    #[doc = "0x84 - SQE Test Errors Register"]
-    pub ste: STE,
-    #[doc = "0x88 - Received Length Field Mismatch Register"]
-    pub rle: RLE,
+    tsr: TSR,
+    rbqp: RBQP,
+    tbqp: TBQP,
+    rsr: RSR,
+    isr: ISR,
+    ier: IER,
+    idr: IDR,
+    imr: IMR,
+    man: MAN,
+    ptr: PTR,
+    pfr: PFR,
+    fto: FTO,
+    scf: SCF,
+    mcf: MCF,
+    fro: FRO,
+    fcse: FCSE,
+    ale: ALE,
+    dtf: DTF,
+    lcol: LCOL,
+    ecol: ECOL,
+    tund: TUND,
+    cse: CSE,
+    rre: RRE,
+    rov: ROV,
+    rse: RSE,
+    ele: ELE,
+    rja: RJA,
+    usf: USF,
+    ste: STE,
+    rle: RLE,
     _reserved33: [u8; 0x04],
+    hrb: HRB,
+    hrt: HRT,
+    sa1b: SA1B,
+    sa1t: SA1T,
+    sa2b: SA2B,
+    sa2t: SA2T,
+    sa3b: SA3B,
+    sa3t: SA3T,
+    sa4b: SA4B,
+    sa4t: SA4T,
+    tid: TID,
+    _reserved44: [u8; 0x04],
+    usrio: USRIO,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Network Control Register"]
+    #[inline(always)]
+    pub const fn ncr(&self) -> &NCR {
+        &self.ncr
+    }
+    #[doc = "0x04 - Network Configuration Register"]
+    #[inline(always)]
+    pub const fn ncfgr(&self) -> &NCFGR {
+        &self.ncfgr
+    }
+    #[doc = "0x08 - Network Status Register"]
+    #[inline(always)]
+    pub const fn nsr(&self) -> &NSR {
+        &self.nsr
+    }
+    #[doc = "0x14 - Transmit Status Register"]
+    #[inline(always)]
+    pub const fn tsr(&self) -> &TSR {
+        &self.tsr
+    }
+    #[doc = "0x18 - Receive Buffer Queue Pointer Register"]
+    #[inline(always)]
+    pub const fn rbqp(&self) -> &RBQP {
+        &self.rbqp
+    }
+    #[doc = "0x1c - Transmit Buffer Queue Pointer Register"]
+    #[inline(always)]
+    pub const fn tbqp(&self) -> &TBQP {
+        &self.tbqp
+    }
+    #[doc = "0x20 - Receive Status Register"]
+    #[inline(always)]
+    pub const fn rsr(&self) -> &RSR {
+        &self.rsr
+    }
+    #[doc = "0x24 - Interrupt Status Register"]
+    #[inline(always)]
+    pub const fn isr(&self) -> &ISR {
+        &self.isr
+    }
+    #[doc = "0x28 - Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn ier(&self) -> &IER {
+        &self.ier
+    }
+    #[doc = "0x2c - Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn idr(&self) -> &IDR {
+        &self.idr
+    }
+    #[doc = "0x30 - Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn imr(&self) -> &IMR {
+        &self.imr
+    }
+    #[doc = "0x34 - Phy Maintenance Register"]
+    #[inline(always)]
+    pub const fn man(&self) -> &MAN {
+        &self.man
+    }
+    #[doc = "0x38 - Pause Time Register"]
+    #[inline(always)]
+    pub const fn ptr(&self) -> &PTR {
+        &self.ptr
+    }
+    #[doc = "0x3c - Pause Frames Received Register"]
+    #[inline(always)]
+    pub const fn pfr(&self) -> &PFR {
+        &self.pfr
+    }
+    #[doc = "0x40 - Frames Transmitted Ok Register"]
+    #[inline(always)]
+    pub const fn fto(&self) -> &FTO {
+        &self.fto
+    }
+    #[doc = "0x44 - Single Collision Frames Register"]
+    #[inline(always)]
+    pub const fn scf(&self) -> &SCF {
+        &self.scf
+    }
+    #[doc = "0x48 - Multiple Collision Frames Register"]
+    #[inline(always)]
+    pub const fn mcf(&self) -> &MCF {
+        &self.mcf
+    }
+    #[doc = "0x4c - Frames Received Ok Register"]
+    #[inline(always)]
+    pub const fn fro(&self) -> &FRO {
+        &self.fro
+    }
+    #[doc = "0x50 - Frame Check Sequence Errors Register"]
+    #[inline(always)]
+    pub const fn fcse(&self) -> &FCSE {
+        &self.fcse
+    }
+    #[doc = "0x54 - Alignment Errors Register"]
+    #[inline(always)]
+    pub const fn ale(&self) -> &ALE {
+        &self.ale
+    }
+    #[doc = "0x58 - Deferred Transmission Frames Register"]
+    #[inline(always)]
+    pub const fn dtf(&self) -> &DTF {
+        &self.dtf
+    }
+    #[doc = "0x5c - Late Collisions Register"]
+    #[inline(always)]
+    pub const fn lcol(&self) -> &LCOL {
+        &self.lcol
+    }
+    #[doc = "0x60 - Excessive Collisions Register"]
+    #[inline(always)]
+    pub const fn ecol(&self) -> &ECOL {
+        &self.ecol
+    }
+    #[doc = "0x64 - Transmit Underrun Errors Register"]
+    #[inline(always)]
+    pub const fn tund(&self) -> &TUND {
+        &self.tund
+    }
+    #[doc = "0x68 - Carrier Sense Errors Register"]
+    #[inline(always)]
+    pub const fn cse(&self) -> &CSE {
+        &self.cse
+    }
+    #[doc = "0x6c - Receive Resource Errors Register"]
+    #[inline(always)]
+    pub const fn rre(&self) -> &RRE {
+        &self.rre
+    }
+    #[doc = "0x70 - Receive Overrun Errors Register"]
+    #[inline(always)]
+    pub const fn rov(&self) -> &ROV {
+        &self.rov
+    }
+    #[doc = "0x74 - Receive Symbol Errors Register"]
+    #[inline(always)]
+    pub const fn rse(&self) -> &RSE {
+        &self.rse
+    }
+    #[doc = "0x78 - Excessive Length Errors Register"]
+    #[inline(always)]
+    pub const fn ele(&self) -> &ELE {
+        &self.ele
+    }
+    #[doc = "0x7c - Receive Jabbers Register"]
+    #[inline(always)]
+    pub const fn rja(&self) -> &RJA {
+        &self.rja
+    }
+    #[doc = "0x80 - Undersize Frames Register"]
+    #[inline(always)]
+    pub const fn usf(&self) -> &USF {
+        &self.usf
+    }
+    #[doc = "0x84 - SQE Test Errors Register"]
+    #[inline(always)]
+    pub const fn ste(&self) -> &STE {
+        &self.ste
+    }
+    #[doc = "0x88 - Received Length Field Mismatch Register"]
+    #[inline(always)]
+    pub const fn rle(&self) -> &RLE {
+        &self.rle
+    }
     #[doc = "0x90 - Hash Register Bottom \\[31:0\\]
 Register"]
-    pub hrb: HRB,
+    #[inline(always)]
+    pub const fn hrb(&self) -> &HRB {
+        &self.hrb
+    }
     #[doc = "0x94 - Hash Register Top \\[63:32\\]
 Register"]
-    pub hrt: HRT,
+    #[inline(always)]
+    pub const fn hrt(&self) -> &HRT {
+        &self.hrt
+    }
     #[doc = "0x98 - Specific Address 1 Bottom Register"]
-    pub sa1b: SA1B,
+    #[inline(always)]
+    pub const fn sa1b(&self) -> &SA1B {
+        &self.sa1b
+    }
     #[doc = "0x9c - Specific Address 1 Top Register"]
-    pub sa1t: SA1T,
+    #[inline(always)]
+    pub const fn sa1t(&self) -> &SA1T {
+        &self.sa1t
+    }
     #[doc = "0xa0 - Specific Address 2 Bottom Register"]
-    pub sa2b: SA2B,
+    #[inline(always)]
+    pub const fn sa2b(&self) -> &SA2B {
+        &self.sa2b
+    }
     #[doc = "0xa4 - Specific Address 2 Top Register"]
-    pub sa2t: SA2T,
+    #[inline(always)]
+    pub const fn sa2t(&self) -> &SA2T {
+        &self.sa2t
+    }
     #[doc = "0xa8 - Specific Address 3 Bottom Register"]
-    pub sa3b: SA3B,
+    #[inline(always)]
+    pub const fn sa3b(&self) -> &SA3B {
+        &self.sa3b
+    }
     #[doc = "0xac - Specific Address 3 Top Register"]
-    pub sa3t: SA3T,
+    #[inline(always)]
+    pub const fn sa3t(&self) -> &SA3T {
+        &self.sa3t
+    }
     #[doc = "0xb0 - Specific Address 4 Bottom Register"]
-    pub sa4b: SA4B,
+    #[inline(always)]
+    pub const fn sa4b(&self) -> &SA4B {
+        &self.sa4b
+    }
     #[doc = "0xb4 - Specific Address 4 Top Register"]
-    pub sa4t: SA4T,
+    #[inline(always)]
+    pub const fn sa4t(&self) -> &SA4T {
+        &self.sa4t
+    }
     #[doc = "0xb8 - Type ID Checking Register"]
-    pub tid: TID,
-    _reserved44: [u8; 0x04],
+    #[inline(always)]
+    pub const fn tid(&self) -> &TID {
+        &self.tid
+    }
     #[doc = "0xc0 - User Input/Output Register"]
-    pub usrio: USRIO,
+    #[inline(always)]
+    pub const fn usrio(&self) -> &USRIO {
+        &self.usrio
+    }
 }
 #[doc = "NCR (rw) register accessor: Network Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ncr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ncr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ncr`]
 module"]

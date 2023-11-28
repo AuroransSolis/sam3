@@ -5,19 +5,19 @@ pub type W = crate::W<SCM_SPEC>;
 #[doc = "Field `SYNC0` reader - Synchronous Channel 0"]
 pub type SYNC0_R = crate::BitReader;
 #[doc = "Field `SYNC0` writer - Synchronous Channel 0"]
-pub type SYNC0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SYNC0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SYNC1` reader - Synchronous Channel 1"]
 pub type SYNC1_R = crate::BitReader;
 #[doc = "Field `SYNC1` writer - Synchronous Channel 1"]
-pub type SYNC1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SYNC1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SYNC2` reader - Synchronous Channel 2"]
 pub type SYNC2_R = crate::BitReader;
 #[doc = "Field `SYNC2` writer - Synchronous Channel 2"]
-pub type SYNC2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SYNC2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SYNC3` reader - Synchronous Channel 3"]
 pub type SYNC3_R = crate::BitReader;
 #[doc = "Field `SYNC3` writer - Synchronous Channel 3"]
-pub type SYNC3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SYNC3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UPDM` reader - Synchronous Channels Update Mode"]
 pub type UPDM_R = crate::FieldReader<UPDM_A>;
 #[doc = "Synchronous Channels Update Mode\n\nValue on reset: 0"]
@@ -68,8 +68,8 @@ impl UPDM_R {
     }
 }
 #[doc = "Field `UPDM` writer - Synchronous Channels Update Mode"]
-pub type UPDM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, UPDM_A>;
-impl<'a, REG, const O: u8> UPDM_W<'a, REG, O>
+pub type UPDM_W<'a, REG> = crate::FieldWriter<'a, REG, 2, UPDM_A>;
+impl<'a, REG> UPDM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -93,11 +93,11 @@ where
 #[doc = "Field `PTRM` reader - PDC Transfer Request Mode"]
 pub type PTRM_R = crate::BitReader;
 #[doc = "Field `PTRM` writer - PDC Transfer Request Mode"]
-pub type PTRM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PTRM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PTRCS` reader - PDC Transfer Request Comparison Selection"]
 pub type PTRCS_R = crate::FieldReader;
 #[doc = "Field `PTRCS` writer - PDC Transfer Request Comparison Selection"]
-pub type PTRCS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type PTRCS_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bit 0 - Synchronous Channel 0"]
     #[inline(always)]
@@ -139,44 +139,44 @@ impl W {
     #[doc = "Bit 0 - Synchronous Channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn sync0(&mut self) -> SYNC0_W<SCM_SPEC, 0> {
-        SYNC0_W::new(self)
+    pub fn sync0(&mut self) -> SYNC0_W<SCM_SPEC> {
+        SYNC0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Synchronous Channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn sync1(&mut self) -> SYNC1_W<SCM_SPEC, 1> {
-        SYNC1_W::new(self)
+    pub fn sync1(&mut self) -> SYNC1_W<SCM_SPEC> {
+        SYNC1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Synchronous Channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn sync2(&mut self) -> SYNC2_W<SCM_SPEC, 2> {
-        SYNC2_W::new(self)
+    pub fn sync2(&mut self) -> SYNC2_W<SCM_SPEC> {
+        SYNC2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Synchronous Channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn sync3(&mut self) -> SYNC3_W<SCM_SPEC, 3> {
-        SYNC3_W::new(self)
+    pub fn sync3(&mut self) -> SYNC3_W<SCM_SPEC> {
+        SYNC3_W::new(self, 3)
     }
     #[doc = "Bits 16:17 - Synchronous Channels Update Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn updm(&mut self) -> UPDM_W<SCM_SPEC, 16> {
-        UPDM_W::new(self)
+    pub fn updm(&mut self) -> UPDM_W<SCM_SPEC> {
+        UPDM_W::new(self, 16)
     }
     #[doc = "Bit 20 - PDC Transfer Request Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn ptrm(&mut self) -> PTRM_W<SCM_SPEC, 20> {
-        PTRM_W::new(self)
+    pub fn ptrm(&mut self) -> PTRM_W<SCM_SPEC> {
+        PTRM_W::new(self, 20)
     }
     #[doc = "Bits 21:23 - PDC Transfer Request Comparison Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ptrcs(&mut self) -> PTRCS_W<SCM_SPEC, 21> {
-        PTRCS_W::new(self)
+    pub fn ptrcs(&mut self) -> PTRCS_W<SCM_SPEC> {
+        PTRCS_W::new(self, 21)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

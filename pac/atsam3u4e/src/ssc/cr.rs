@@ -1,45 +1,45 @@
 #[doc = "Register `CR` writer"]
 pub type W = crate::W<CR_SPEC>;
 #[doc = "Field `RXEN` writer - Receive Enable"]
-pub type RXEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXDIS` writer - Receive Disable"]
-pub type RXDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXEN` writer - Transmit Enable"]
-pub type TXEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXDIS` writer - Transmit Disable"]
-pub type TXDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SWRST` writer - Software Reset"]
-pub type SWRST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SWRST_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Receive Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxen(&mut self) -> RXEN_W<CR_SPEC, 0> {
-        RXEN_W::new(self)
+    pub fn rxen(&mut self) -> RXEN_W<CR_SPEC> {
+        RXEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Receive Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxdis(&mut self) -> RXDIS_W<CR_SPEC, 1> {
-        RXDIS_W::new(self)
+    pub fn rxdis(&mut self) -> RXDIS_W<CR_SPEC> {
+        RXDIS_W::new(self, 1)
     }
     #[doc = "Bit 8 - Transmit Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn txen(&mut self) -> TXEN_W<CR_SPEC, 8> {
-        TXEN_W::new(self)
+    pub fn txen(&mut self) -> TXEN_W<CR_SPEC> {
+        TXEN_W::new(self, 8)
     }
     #[doc = "Bit 9 - Transmit Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn txdis(&mut self) -> TXDIS_W<CR_SPEC, 9> {
-        TXDIS_W::new(self)
+    pub fn txdis(&mut self) -> TXDIS_W<CR_SPEC> {
+        TXDIS_W::new(self, 9)
     }
     #[doc = "Bit 15 - Software Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn swrst(&mut self) -> SWRST_W<CR_SPEC, 15> {
-        SWRST_W::new(self)
+    pub fn swrst(&mut self) -> SWRST_W<CR_SPEC> {
+        SWRST_W::new(self, 15)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

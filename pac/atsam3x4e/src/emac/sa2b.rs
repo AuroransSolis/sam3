@@ -5,7 +5,7 @@ pub type W = crate::W<SA2B_SPEC>;
 #[doc = "Field `ADDR` reader - "]
 pub type ADDR_R = crate::FieldReader<u32>;
 #[doc = "Field `ADDR` writer - "]
-pub type ADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type ADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31"]
     #[inline(always)]
     #[must_use]
-    pub fn addr(&mut self) -> ADDR_W<SA2B_SPEC, 0> {
-        ADDR_W::new(self)
+    pub fn addr(&mut self) -> ADDR_W<SA2B_SPEC> {
+        ADDR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

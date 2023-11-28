@@ -1,21 +1,21 @@
 #[doc = "Register `DTUPD3` writer"]
 pub type W = crate::W<DTUPD3_SPEC>;
 #[doc = "Field `DTHUPD` writer - Dead-Time Value Update for PWMHx Output"]
-pub type DTHUPD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type DTHUPD_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `DTLUPD` writer - Dead-Time Value Update for PWMLx Output"]
-pub type DTLUPD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type DTLUPD_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl W {
     #[doc = "Bits 0:15 - Dead-Time Value Update for PWMHx Output"]
     #[inline(always)]
     #[must_use]
-    pub fn dthupd(&mut self) -> DTHUPD_W<DTUPD3_SPEC, 0> {
-        DTHUPD_W::new(self)
+    pub fn dthupd(&mut self) -> DTHUPD_W<DTUPD3_SPEC> {
+        DTHUPD_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - Dead-Time Value Update for PWMLx Output"]
     #[inline(always)]
     #[must_use]
-    pub fn dtlupd(&mut self) -> DTLUPD_W<DTUPD3_SPEC, 16> {
-        DTLUPD_W::new(self)
+    pub fn dtlupd(&mut self) -> DTLUPD_W<DTUPD3_SPEC> {
+        DTLUPD_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

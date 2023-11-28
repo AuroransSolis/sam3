@@ -5,7 +5,7 @@ pub type W = crate::W<FDR0_SPEC>;
 #[doc = "Field `FIFO_DATA` reader - FIFO Data Value"]
 pub type FIFO_DATA_R = crate::FieldReader;
 #[doc = "Field `FIFO_DATA` writer - FIFO Data Value"]
-pub type FIFO_DATA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type FIFO_DATA_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - FIFO Data Value"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - FIFO Data Value"]
     #[inline(always)]
     #[must_use]
-    pub fn fifo_data(&mut self) -> FIFO_DATA_W<FDR0_SPEC, 0> {
-        FIFO_DATA_W::new(self)
+    pub fn fifo_data(&mut self) -> FIFO_DATA_W<FDR0_SPEC> {
+        FIFO_DATA_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

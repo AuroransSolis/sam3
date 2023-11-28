@@ -5,7 +5,7 @@ pub type W = crate::W<SCUC_SPEC>;
 #[doc = "Field `UPDULOCK` reader - Synchronous Channels Update Unlock"]
 pub type UPDULOCK_R = crate::BitReader;
 #[doc = "Field `UPDULOCK` writer - Synchronous Channels Update Unlock"]
-pub type UPDULOCK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type UPDULOCK_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Synchronous Channels Update Unlock"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bit 0 - Synchronous Channels Update Unlock"]
     #[inline(always)]
     #[must_use]
-    pub fn updulock(&mut self) -> UPDULOCK_W<SCUC_SPEC, 0> {
-        UPDULOCK_W::new(self)
+    pub fn updulock(&mut self) -> UPDULOCK_W<SCUC_SPEC> {
+        UPDULOCK_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

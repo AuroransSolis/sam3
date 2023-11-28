@@ -5,7 +5,7 @@ pub type W = crate::W<USF_SPEC>;
 #[doc = "Field `USF` reader - Undersize frames"]
 pub type USF_R = crate::FieldReader;
 #[doc = "Field `USF` writer - Undersize frames"]
-pub type USF_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type USF_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Undersize frames"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - Undersize frames"]
     #[inline(always)]
     #[must_use]
-    pub fn usf(&mut self) -> USF_W<USF_SPEC, 0> {
-        USF_W::new(self)
+    pub fn usf(&mut self) -> USF_W<USF_SPEC> {
+        USF_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

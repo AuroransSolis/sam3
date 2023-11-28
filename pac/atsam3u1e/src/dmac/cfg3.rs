@@ -5,11 +5,11 @@ pub type W = crate::W<CFG3_SPEC>;
 #[doc = "Field `SRC_PER` reader - Source with Peripheral identifier"]
 pub type SRC_PER_R = crate::FieldReader;
 #[doc = "Field `SRC_PER` writer - Source with Peripheral identifier"]
-pub type SRC_PER_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type SRC_PER_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `DST_PER` reader - Destination with Peripheral identifier"]
 pub type DST_PER_R = crate::FieldReader;
 #[doc = "Field `DST_PER` writer - Destination with Peripheral identifier"]
-pub type DST_PER_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type DST_PER_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `SRC_H2SEL` reader - Software or Hardware Selection for the Source"]
 pub type SRC_H2SEL_R = crate::BitReader<SRC_H2SEL_A>;
 #[doc = "Software or Hardware Selection for the Source\n\nValue on reset: 0"]
@@ -47,8 +47,8 @@ impl SRC_H2SEL_R {
     }
 }
 #[doc = "Field `SRC_H2SEL` writer - Software or Hardware Selection for the Source"]
-pub type SRC_H2SEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRC_H2SEL_A>;
-impl<'a, REG, const O: u8> SRC_H2SEL_W<'a, REG, O>
+pub type SRC_H2SEL_W<'a, REG> = crate::BitWriter<'a, REG, SRC_H2SEL_A>;
+impl<'a, REG> SRC_H2SEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -100,8 +100,8 @@ impl DST_H2SEL_R {
     }
 }
 #[doc = "Field `DST_H2SEL` writer - Software or Hardware Selection for the Destination"]
-pub type DST_H2SEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DST_H2SEL_A>;
-impl<'a, REG, const O: u8> DST_H2SEL_W<'a, REG, O>
+pub type DST_H2SEL_W<'a, REG> = crate::BitWriter<'a, REG, DST_H2SEL_A>;
+impl<'a, REG> DST_H2SEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -153,8 +153,8 @@ impl SOD_R {
     }
 }
 #[doc = "Field `SOD` writer - Stop On Done"]
-pub type SOD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SOD_A>;
-impl<'a, REG, const O: u8> SOD_W<'a, REG, O>
+pub type SOD_W<'a, REG> = crate::BitWriter<'a, REG, SOD_A>;
+impl<'a, REG> SOD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -206,8 +206,8 @@ impl LOCK_IF_R {
     }
 }
 #[doc = "Field `LOCK_IF` writer - Interface Lock"]
-pub type LOCK_IF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LOCK_IF_A>;
-impl<'a, REG, const O: u8> LOCK_IF_W<'a, REG, O>
+pub type LOCK_IF_W<'a, REG> = crate::BitWriter<'a, REG, LOCK_IF_A>;
+impl<'a, REG> LOCK_IF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -252,8 +252,8 @@ impl LOCK_B_R {
     }
 }
 #[doc = "Field `LOCK_B` writer - Bus Lock"]
-pub type LOCK_B_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LOCK_B_A>;
-impl<'a, REG, const O: u8> LOCK_B_W<'a, REG, O>
+pub type LOCK_B_W<'a, REG> = crate::BitWriter<'a, REG, LOCK_B_A>;
+impl<'a, REG> LOCK_B_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -300,8 +300,8 @@ impl LOCK_IF_L_R {
     }
 }
 #[doc = "Field `LOCK_IF_L` writer - Master Interface Arbiter Lock"]
-pub type LOCK_IF_L_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LOCK_IF_L_A>;
-impl<'a, REG, const O: u8> LOCK_IF_L_W<'a, REG, O>
+pub type LOCK_IF_L_W<'a, REG> = crate::BitWriter<'a, REG, LOCK_IF_L_A>;
+impl<'a, REG> LOCK_IF_L_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -319,7 +319,7 @@ where
 #[doc = "Field `AHB_PROT` reader - AHB Protection"]
 pub type AHB_PROT_R = crate::FieldReader;
 #[doc = "Field `AHB_PROT` writer - AHB Protection"]
-pub type AHB_PROT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type AHB_PROT_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `FIFOCFG` reader - FIFO Configuration"]
 pub type FIFOCFG_R = crate::FieldReader<FIFOCFG_A>;
 #[doc = "FIFO Configuration\n\nValue on reset: 0"]
@@ -370,8 +370,8 @@ impl FIFOCFG_R {
     }
 }
 #[doc = "Field `FIFOCFG` writer - FIFO Configuration"]
-pub type FIFOCFG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, FIFOCFG_A>;
-impl<'a, REG, const O: u8> FIFOCFG_W<'a, REG, O>
+pub type FIFOCFG_W<'a, REG> = crate::FieldWriter<'a, REG, 2, FIFOCFG_A>;
+impl<'a, REG> FIFOCFG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -448,62 +448,62 @@ impl W {
     #[doc = "Bits 0:3 - Source with Peripheral identifier"]
     #[inline(always)]
     #[must_use]
-    pub fn src_per(&mut self) -> SRC_PER_W<CFG3_SPEC, 0> {
-        SRC_PER_W::new(self)
+    pub fn src_per(&mut self) -> SRC_PER_W<CFG3_SPEC> {
+        SRC_PER_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Destination with Peripheral identifier"]
     #[inline(always)]
     #[must_use]
-    pub fn dst_per(&mut self) -> DST_PER_W<CFG3_SPEC, 4> {
-        DST_PER_W::new(self)
+    pub fn dst_per(&mut self) -> DST_PER_W<CFG3_SPEC> {
+        DST_PER_W::new(self, 4)
     }
     #[doc = "Bit 9 - Software or Hardware Selection for the Source"]
     #[inline(always)]
     #[must_use]
-    pub fn src_h2sel(&mut self) -> SRC_H2SEL_W<CFG3_SPEC, 9> {
-        SRC_H2SEL_W::new(self)
+    pub fn src_h2sel(&mut self) -> SRC_H2SEL_W<CFG3_SPEC> {
+        SRC_H2SEL_W::new(self, 9)
     }
     #[doc = "Bit 13 - Software or Hardware Selection for the Destination"]
     #[inline(always)]
     #[must_use]
-    pub fn dst_h2sel(&mut self) -> DST_H2SEL_W<CFG3_SPEC, 13> {
-        DST_H2SEL_W::new(self)
+    pub fn dst_h2sel(&mut self) -> DST_H2SEL_W<CFG3_SPEC> {
+        DST_H2SEL_W::new(self, 13)
     }
     #[doc = "Bit 16 - Stop On Done"]
     #[inline(always)]
     #[must_use]
-    pub fn sod(&mut self) -> SOD_W<CFG3_SPEC, 16> {
-        SOD_W::new(self)
+    pub fn sod(&mut self) -> SOD_W<CFG3_SPEC> {
+        SOD_W::new(self, 16)
     }
     #[doc = "Bit 20 - Interface Lock"]
     #[inline(always)]
     #[must_use]
-    pub fn lock_if(&mut self) -> LOCK_IF_W<CFG3_SPEC, 20> {
-        LOCK_IF_W::new(self)
+    pub fn lock_if(&mut self) -> LOCK_IF_W<CFG3_SPEC> {
+        LOCK_IF_W::new(self, 20)
     }
     #[doc = "Bit 21 - Bus Lock"]
     #[inline(always)]
     #[must_use]
-    pub fn lock_b(&mut self) -> LOCK_B_W<CFG3_SPEC, 21> {
-        LOCK_B_W::new(self)
+    pub fn lock_b(&mut self) -> LOCK_B_W<CFG3_SPEC> {
+        LOCK_B_W::new(self, 21)
     }
     #[doc = "Bit 22 - Master Interface Arbiter Lock"]
     #[inline(always)]
     #[must_use]
-    pub fn lock_if_l(&mut self) -> LOCK_IF_L_W<CFG3_SPEC, 22> {
-        LOCK_IF_L_W::new(self)
+    pub fn lock_if_l(&mut self) -> LOCK_IF_L_W<CFG3_SPEC> {
+        LOCK_IF_L_W::new(self, 22)
     }
     #[doc = "Bits 24:26 - AHB Protection"]
     #[inline(always)]
     #[must_use]
-    pub fn ahb_prot(&mut self) -> AHB_PROT_W<CFG3_SPEC, 24> {
-        AHB_PROT_W::new(self)
+    pub fn ahb_prot(&mut self) -> AHB_PROT_W<CFG3_SPEC> {
+        AHB_PROT_W::new(self, 24)
     }
     #[doc = "Bits 28:29 - FIFO Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn fifocfg(&mut self) -> FIFOCFG_W<CFG3_SPEC, 28> {
-        FIFOCFG_W::new(self)
+    pub fn fifocfg(&mut self) -> FIFOCFG_W<CFG3_SPEC> {
+        FIFOCFG_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

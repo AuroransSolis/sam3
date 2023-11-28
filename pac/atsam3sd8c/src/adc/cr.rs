@@ -1,29 +1,29 @@
 #[doc = "Register `CR` writer"]
 pub type W = crate::W<CR_SPEC>;
 #[doc = "Field `SWRST` writer - Software Reset"]
-pub type SWRST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SWRST_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `START` writer - Start Conversion"]
-pub type START_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type START_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `AUTOCAL` writer - Automatic Calibration of ADC"]
-pub type AUTOCAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type AUTOCAL_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Software Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn swrst(&mut self) -> SWRST_W<CR_SPEC, 0> {
-        SWRST_W::new(self)
+    pub fn swrst(&mut self) -> SWRST_W<CR_SPEC> {
+        SWRST_W::new(self, 0)
     }
     #[doc = "Bit 1 - Start Conversion"]
     #[inline(always)]
     #[must_use]
-    pub fn start(&mut self) -> START_W<CR_SPEC, 1> {
-        START_W::new(self)
+    pub fn start(&mut self) -> START_W<CR_SPEC> {
+        START_W::new(self, 1)
     }
     #[doc = "Bit 3 - Automatic Calibration of ADC"]
     #[inline(always)]
     #[must_use]
-    pub fn autocal(&mut self) -> AUTOCAL_W<CR_SPEC, 3> {
-        AUTOCAL_W::new(self)
+    pub fn autocal(&mut self) -> AUTOCAL_W<CR_SPEC> {
+        AUTOCAL_W::new(self, 3)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

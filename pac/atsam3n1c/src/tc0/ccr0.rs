@@ -1,29 +1,29 @@
 #[doc = "Register `CCR0` writer"]
 pub type W = crate::W<CCR0_SPEC>;
 #[doc = "Field `CLKEN` writer - Counter Clock Enable Command"]
-pub type CLKEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CLKEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CLKDIS` writer - Counter Clock Disable Command"]
-pub type CLKDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CLKDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SWTRG` writer - Software Trigger Command"]
-pub type SWTRG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SWTRG_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Counter Clock Enable Command"]
     #[inline(always)]
     #[must_use]
-    pub fn clken(&mut self) -> CLKEN_W<CCR0_SPEC, 0> {
-        CLKEN_W::new(self)
+    pub fn clken(&mut self) -> CLKEN_W<CCR0_SPEC> {
+        CLKEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Counter Clock Disable Command"]
     #[inline(always)]
     #[must_use]
-    pub fn clkdis(&mut self) -> CLKDIS_W<CCR0_SPEC, 1> {
-        CLKDIS_W::new(self)
+    pub fn clkdis(&mut self) -> CLKDIS_W<CCR0_SPEC> {
+        CLKDIS_W::new(self, 1)
     }
     #[doc = "Bit 2 - Software Trigger Command"]
     #[inline(always)]
     #[must_use]
-    pub fn swtrg(&mut self) -> SWTRG_W<CCR0_SPEC, 2> {
-        SWTRG_W::new(self)
+    pub fn swtrg(&mut self) -> SWTRG_W<CCR0_SPEC> {
+        SWTRG_W::new(self, 2)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

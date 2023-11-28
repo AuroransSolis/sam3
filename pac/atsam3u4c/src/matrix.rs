@@ -1,75 +1,189 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Master Configuration Register 0"]
-    pub mcfg0: MCFG0,
-    #[doc = "0x04 - Master Configuration Register 1"]
-    pub mcfg1: MCFG1,
-    #[doc = "0x08 - Master Configuration Register 2"]
-    pub mcfg2: MCFG2,
-    #[doc = "0x0c - Master Configuration Register 3"]
-    pub mcfg3: MCFG3,
-    #[doc = "0x10 - Master Configuration Register 4"]
-    pub mcfg4: MCFG4,
+    mcfg0: MCFG0,
+    mcfg1: MCFG1,
+    mcfg2: MCFG2,
+    mcfg3: MCFG3,
+    mcfg4: MCFG4,
     _reserved5: [u8; 0x2c],
-    #[doc = "0x40 - Slave Configuration Register 0"]
-    pub scfg0: SCFG0,
-    #[doc = "0x44 - Slave Configuration Register 1"]
-    pub scfg1: SCFG1,
-    #[doc = "0x48 - Slave Configuration Register 2"]
-    pub scfg2: SCFG2,
-    #[doc = "0x4c - Slave Configuration Register 3"]
-    pub scfg3: SCFG3,
-    #[doc = "0x50 - Slave Configuration Register 4"]
-    pub scfg4: SCFG4,
-    #[doc = "0x54 - Slave Configuration Register 5"]
-    pub scfg5: SCFG5,
-    #[doc = "0x58 - Slave Configuration Register 6"]
-    pub scfg6: SCFG6,
-    #[doc = "0x5c - Slave Configuration Register 7"]
-    pub scfg7: SCFG7,
-    #[doc = "0x60 - Slave Configuration Register 8"]
-    pub scfg8: SCFG8,
-    #[doc = "0x64 - Slave Configuration Register 9"]
-    pub scfg9: SCFG9,
+    scfg0: SCFG0,
+    scfg1: SCFG1,
+    scfg2: SCFG2,
+    scfg3: SCFG3,
+    scfg4: SCFG4,
+    scfg5: SCFG5,
+    scfg6: SCFG6,
+    scfg7: SCFG7,
+    scfg8: SCFG8,
+    scfg9: SCFG9,
     _reserved15: [u8; 0x18],
-    #[doc = "0x80 - Priority Register A for Slave 0"]
-    pub pras0: PRAS0,
+    pras0: PRAS0,
     _reserved16: [u8; 0x04],
-    #[doc = "0x88 - Priority Register A for Slave 1"]
-    pub pras1: PRAS1,
+    pras1: PRAS1,
     _reserved17: [u8; 0x04],
-    #[doc = "0x90 - Priority Register A for Slave 2"]
-    pub pras2: PRAS2,
+    pras2: PRAS2,
     _reserved18: [u8; 0x04],
-    #[doc = "0x98 - Priority Register A for Slave 3"]
-    pub pras3: PRAS3,
+    pras3: PRAS3,
     _reserved19: [u8; 0x04],
-    #[doc = "0xa0 - Priority Register A for Slave 4"]
-    pub pras4: PRAS4,
+    pras4: PRAS4,
     _reserved20: [u8; 0x04],
-    #[doc = "0xa8 - Priority Register A for Slave 5"]
-    pub pras5: PRAS5,
+    pras5: PRAS5,
     _reserved21: [u8; 0x04],
-    #[doc = "0xb0 - Priority Register A for Slave 6"]
-    pub pras6: PRAS6,
+    pras6: PRAS6,
     _reserved22: [u8; 0x04],
-    #[doc = "0xb8 - Priority Register A for Slave 7"]
-    pub pras7: PRAS7,
+    pras7: PRAS7,
     _reserved23: [u8; 0x04],
-    #[doc = "0xc0 - Priority Register A for Slave 8"]
-    pub pras8: PRAS8,
+    pras8: PRAS8,
     _reserved24: [u8; 0x04],
-    #[doc = "0xc8 - Priority Register A for Slave 9"]
-    pub pras9: PRAS9,
+    pras9: PRAS9,
     _reserved25: [u8; 0x34],
-    #[doc = "0x100 - Master Remap Control Register"]
-    pub mrcr: MRCR,
+    mrcr: MRCR,
     _reserved26: [u8; 0xe0],
+    wpmr: WPMR,
+    wpsr: WPSR,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Master Configuration Register 0"]
+    #[inline(always)]
+    pub const fn mcfg0(&self) -> &MCFG0 {
+        &self.mcfg0
+    }
+    #[doc = "0x04 - Master Configuration Register 1"]
+    #[inline(always)]
+    pub const fn mcfg1(&self) -> &MCFG1 {
+        &self.mcfg1
+    }
+    #[doc = "0x08 - Master Configuration Register 2"]
+    #[inline(always)]
+    pub const fn mcfg2(&self) -> &MCFG2 {
+        &self.mcfg2
+    }
+    #[doc = "0x0c - Master Configuration Register 3"]
+    #[inline(always)]
+    pub const fn mcfg3(&self) -> &MCFG3 {
+        &self.mcfg3
+    }
+    #[doc = "0x10 - Master Configuration Register 4"]
+    #[inline(always)]
+    pub const fn mcfg4(&self) -> &MCFG4 {
+        &self.mcfg4
+    }
+    #[doc = "0x40 - Slave Configuration Register 0"]
+    #[inline(always)]
+    pub const fn scfg0(&self) -> &SCFG0 {
+        &self.scfg0
+    }
+    #[doc = "0x44 - Slave Configuration Register 1"]
+    #[inline(always)]
+    pub const fn scfg1(&self) -> &SCFG1 {
+        &self.scfg1
+    }
+    #[doc = "0x48 - Slave Configuration Register 2"]
+    #[inline(always)]
+    pub const fn scfg2(&self) -> &SCFG2 {
+        &self.scfg2
+    }
+    #[doc = "0x4c - Slave Configuration Register 3"]
+    #[inline(always)]
+    pub const fn scfg3(&self) -> &SCFG3 {
+        &self.scfg3
+    }
+    #[doc = "0x50 - Slave Configuration Register 4"]
+    #[inline(always)]
+    pub const fn scfg4(&self) -> &SCFG4 {
+        &self.scfg4
+    }
+    #[doc = "0x54 - Slave Configuration Register 5"]
+    #[inline(always)]
+    pub const fn scfg5(&self) -> &SCFG5 {
+        &self.scfg5
+    }
+    #[doc = "0x58 - Slave Configuration Register 6"]
+    #[inline(always)]
+    pub const fn scfg6(&self) -> &SCFG6 {
+        &self.scfg6
+    }
+    #[doc = "0x5c - Slave Configuration Register 7"]
+    #[inline(always)]
+    pub const fn scfg7(&self) -> &SCFG7 {
+        &self.scfg7
+    }
+    #[doc = "0x60 - Slave Configuration Register 8"]
+    #[inline(always)]
+    pub const fn scfg8(&self) -> &SCFG8 {
+        &self.scfg8
+    }
+    #[doc = "0x64 - Slave Configuration Register 9"]
+    #[inline(always)]
+    pub const fn scfg9(&self) -> &SCFG9 {
+        &self.scfg9
+    }
+    #[doc = "0x80 - Priority Register A for Slave 0"]
+    #[inline(always)]
+    pub const fn pras0(&self) -> &PRAS0 {
+        &self.pras0
+    }
+    #[doc = "0x88 - Priority Register A for Slave 1"]
+    #[inline(always)]
+    pub const fn pras1(&self) -> &PRAS1 {
+        &self.pras1
+    }
+    #[doc = "0x90 - Priority Register A for Slave 2"]
+    #[inline(always)]
+    pub const fn pras2(&self) -> &PRAS2 {
+        &self.pras2
+    }
+    #[doc = "0x98 - Priority Register A for Slave 3"]
+    #[inline(always)]
+    pub const fn pras3(&self) -> &PRAS3 {
+        &self.pras3
+    }
+    #[doc = "0xa0 - Priority Register A for Slave 4"]
+    #[inline(always)]
+    pub const fn pras4(&self) -> &PRAS4 {
+        &self.pras4
+    }
+    #[doc = "0xa8 - Priority Register A for Slave 5"]
+    #[inline(always)]
+    pub const fn pras5(&self) -> &PRAS5 {
+        &self.pras5
+    }
+    #[doc = "0xb0 - Priority Register A for Slave 6"]
+    #[inline(always)]
+    pub const fn pras6(&self) -> &PRAS6 {
+        &self.pras6
+    }
+    #[doc = "0xb8 - Priority Register A for Slave 7"]
+    #[inline(always)]
+    pub const fn pras7(&self) -> &PRAS7 {
+        &self.pras7
+    }
+    #[doc = "0xc0 - Priority Register A for Slave 8"]
+    #[inline(always)]
+    pub const fn pras8(&self) -> &PRAS8 {
+        &self.pras8
+    }
+    #[doc = "0xc8 - Priority Register A for Slave 9"]
+    #[inline(always)]
+    pub const fn pras9(&self) -> &PRAS9 {
+        &self.pras9
+    }
+    #[doc = "0x100 - Master Remap Control Register"]
+    #[inline(always)]
+    pub const fn mrcr(&self) -> &MRCR {
+        &self.mrcr
+    }
     #[doc = "0x1e4 - Write Protect Mode Register"]
-    pub wpmr: WPMR,
+    #[inline(always)]
+    pub const fn wpmr(&self) -> &WPMR {
+        &self.wpmr
+    }
     #[doc = "0x1e8 - Write Protect Status Register"]
-    pub wpsr: WPSR,
+    #[inline(always)]
+    pub const fn wpsr(&self) -> &WPSR {
+        &self.wpsr
+    }
 }
 #[doc = "MCFG0 (rw) register accessor: Master Configuration Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mcfg0::R`].  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mcfg0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mcfg0`]
 module"]

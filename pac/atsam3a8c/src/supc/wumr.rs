@@ -39,8 +39,8 @@ impl FWUPEN_R {
     }
 }
 #[doc = "Field `FWUPEN` writer - Force Wake-up Enable"]
-pub type FWUPEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FWUPEN_A>;
-impl<'a, REG, const O: u8> FWUPEN_W<'a, REG, O>
+pub type FWUPEN_W<'a, REG> = crate::BitWriter<'a, REG, FWUPEN_A>;
+impl<'a, REG> FWUPEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl SMEN_R {
     }
 }
 #[doc = "Field `SMEN` writer - Supply Monitor Wake-up Enable"]
-pub type SMEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMEN_A>;
-impl<'a, REG, const O: u8> SMEN_W<'a, REG, O>
+pub type SMEN_W<'a, REG> = crate::BitWriter<'a, REG, SMEN_A>;
+impl<'a, REG> SMEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl RTTEN_R {
     }
 }
 #[doc = "Field `RTTEN` writer - Real Time Timer Wake-up Enable"]
-pub type RTTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTTEN_A>;
-impl<'a, REG, const O: u8> RTTEN_W<'a, REG, O>
+pub type RTTEN_W<'a, REG> = crate::BitWriter<'a, REG, RTTEN_A>;
+impl<'a, REG> RTTEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl RTCEN_R {
     }
 }
 #[doc = "Field `RTCEN` writer - Real Time Clock Wake-up Enable"]
-pub type RTCEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTCEN_A>;
-impl<'a, REG, const O: u8> RTCEN_W<'a, REG, O>
+pub type RTCEN_W<'a, REG> = crate::BitWriter<'a, REG, RTCEN_A>;
+impl<'a, REG> RTCEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -288,8 +288,8 @@ impl FWUPDBC_R {
     }
 }
 #[doc = "Field `FWUPDBC` writer - Force Wake-up Debouncer Period"]
-pub type FWUPDBC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, FWUPDBC_A>;
-impl<'a, REG, const O: u8> FWUPDBC_W<'a, REG, O>
+pub type FWUPDBC_W<'a, REG> = crate::FieldWriter<'a, REG, 3, FWUPDBC_A>;
+impl<'a, REG> FWUPDBC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -399,8 +399,8 @@ impl WKUPDBC_R {
     }
 }
 #[doc = "Field `WKUPDBC` writer - Wake-up Inputs Debouncer Period"]
-pub type WKUPDBC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, WKUPDBC_A>;
-impl<'a, REG, const O: u8> WKUPDBC_W<'a, REG, O>
+pub type WKUPDBC_W<'a, REG> = crate::FieldWriter<'a, REG, 3, WKUPDBC_A>;
+impl<'a, REG> WKUPDBC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -472,38 +472,38 @@ impl W {
     #[doc = "Bit 0 - Force Wake-up Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fwupen(&mut self) -> FWUPEN_W<WUMR_SPEC, 0> {
-        FWUPEN_W::new(self)
+    pub fn fwupen(&mut self) -> FWUPEN_W<WUMR_SPEC> {
+        FWUPEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Supply Monitor Wake-up Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn smen(&mut self) -> SMEN_W<WUMR_SPEC, 1> {
-        SMEN_W::new(self)
+    pub fn smen(&mut self) -> SMEN_W<WUMR_SPEC> {
+        SMEN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Real Time Timer Wake-up Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rtten(&mut self) -> RTTEN_W<WUMR_SPEC, 2> {
-        RTTEN_W::new(self)
+    pub fn rtten(&mut self) -> RTTEN_W<WUMR_SPEC> {
+        RTTEN_W::new(self, 2)
     }
     #[doc = "Bit 3 - Real Time Clock Wake-up Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rtcen(&mut self) -> RTCEN_W<WUMR_SPEC, 3> {
-        RTCEN_W::new(self)
+    pub fn rtcen(&mut self) -> RTCEN_W<WUMR_SPEC> {
+        RTCEN_W::new(self, 3)
     }
     #[doc = "Bits 8:10 - Force Wake-up Debouncer Period"]
     #[inline(always)]
     #[must_use]
-    pub fn fwupdbc(&mut self) -> FWUPDBC_W<WUMR_SPEC, 8> {
-        FWUPDBC_W::new(self)
+    pub fn fwupdbc(&mut self) -> FWUPDBC_W<WUMR_SPEC> {
+        FWUPDBC_W::new(self, 8)
     }
     #[doc = "Bits 12:14 - Wake-up Inputs Debouncer Period"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupdbc(&mut self) -> WKUPDBC_W<WUMR_SPEC, 12> {
-        WKUPDBC_W::new(self)
+    pub fn wkupdbc(&mut self) -> WKUPDBC_W<WUMR_SPEC> {
+        WKUPDBC_W::new(self, 12)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -1,13 +1,13 @@
 #[doc = "Register `THR` writer"]
 pub type W = crate::W<THR_SPEC>;
 #[doc = "Field `TXCHR` writer - Character to be Transmitted"]
-pub type TXCHR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type TXCHR_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl W {
     #[doc = "Bits 0:7 - Character to be Transmitted"]
     #[inline(always)]
     #[must_use]
-    pub fn txchr(&mut self) -> TXCHR_W<THR_SPEC, 0> {
-        TXCHR_W::new(self)
+    pub fn txchr(&mut self) -> TXCHR_W<THR_SPEC> {
+        TXCHR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

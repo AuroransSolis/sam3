@@ -5,11 +5,11 @@ pub type W = crate::W<SMMR0_SPEC>;
 #[doc = "Field `GCEN` reader - Gray Count Enable"]
 pub type GCEN_R = crate::BitReader;
 #[doc = "Field `GCEN` writer - Gray Count Enable"]
-pub type GCEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type GCEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DOWN` reader - DOWN Count"]
 pub type DOWN_R = crate::BitReader;
 #[doc = "Field `DOWN` writer - DOWN Count"]
-pub type DOWN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DOWN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Gray Count Enable"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bit 0 - Gray Count Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn gcen(&mut self) -> GCEN_W<SMMR0_SPEC, 0> {
-        GCEN_W::new(self)
+    pub fn gcen(&mut self) -> GCEN_W<SMMR0_SPEC> {
+        GCEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - DOWN Count"]
     #[inline(always)]
     #[must_use]
-    pub fn down(&mut self) -> DOWN_W<SMMR0_SPEC, 1> {
-        DOWN_W::new(self)
+    pub fn down(&mut self) -> DOWN_W<SMMR0_SPEC> {
+        DOWN_W::new(self, 1)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

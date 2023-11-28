@@ -5,39 +5,39 @@ pub type W = crate::W<DEVDMACONTROL6_SPEC>;
 #[doc = "Field `CHANN_ENB` reader - Channel Enable Command"]
 pub type CHANN_ENB_R = crate::BitReader;
 #[doc = "Field `CHANN_ENB` writer - Channel Enable Command"]
-pub type CHANN_ENB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CHANN_ENB_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LDNXT_DSC` reader - Load Next Channel Transfer Descriptor Enable Command"]
 pub type LDNXT_DSC_R = crate::BitReader;
 #[doc = "Field `LDNXT_DSC` writer - Load Next Channel Transfer Descriptor Enable Command"]
-pub type LDNXT_DSC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LDNXT_DSC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `END_TR_EN` reader - End of Transfer Enable Control"]
 pub type END_TR_EN_R = crate::BitReader;
 #[doc = "Field `END_TR_EN` writer - End of Transfer Enable Control"]
-pub type END_TR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type END_TR_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `END_B_EN` reader - End of Buffer Enable Control"]
 pub type END_B_EN_R = crate::BitReader;
 #[doc = "Field `END_B_EN` writer - End of Buffer Enable Control"]
-pub type END_B_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type END_B_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `END_TR_IT` reader - End of Transfer Interrupt Enable"]
 pub type END_TR_IT_R = crate::BitReader;
 #[doc = "Field `END_TR_IT` writer - End of Transfer Interrupt Enable"]
-pub type END_TR_IT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type END_TR_IT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `END_BUFFIT` reader - End of Buffer Interrupt Enable"]
 pub type END_BUFFIT_R = crate::BitReader;
 #[doc = "Field `END_BUFFIT` writer - End of Buffer Interrupt Enable"]
-pub type END_BUFFIT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type END_BUFFIT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DESC_LD_IT` reader - Descriptor Loaded Interrupt Enable"]
 pub type DESC_LD_IT_R = crate::BitReader;
 #[doc = "Field `DESC_LD_IT` writer - Descriptor Loaded Interrupt Enable"]
-pub type DESC_LD_IT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DESC_LD_IT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BURST_LCK` reader - Burst Lock Enable"]
 pub type BURST_LCK_R = crate::BitReader;
 #[doc = "Field `BURST_LCK` writer - Burst Lock Enable"]
-pub type BURST_LCK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BURST_LCK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BUFF_LENGTH` reader - Buffer Byte Length (Write-only)"]
 pub type BUFF_LENGTH_R = crate::FieldReader<u16>;
 #[doc = "Field `BUFF_LENGTH` writer - Buffer Byte Length (Write-only)"]
-pub type BUFF_LENGTH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type BUFF_LENGTH_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - Channel Enable Command"]
     #[inline(always)]
@@ -89,56 +89,56 @@ impl W {
     #[doc = "Bit 0 - Channel Enable Command"]
     #[inline(always)]
     #[must_use]
-    pub fn chann_enb(&mut self) -> CHANN_ENB_W<DEVDMACONTROL6_SPEC, 0> {
-        CHANN_ENB_W::new(self)
+    pub fn chann_enb(&mut self) -> CHANN_ENB_W<DEVDMACONTROL6_SPEC> {
+        CHANN_ENB_W::new(self, 0)
     }
     #[doc = "Bit 1 - Load Next Channel Transfer Descriptor Enable Command"]
     #[inline(always)]
     #[must_use]
-    pub fn ldnxt_dsc(&mut self) -> LDNXT_DSC_W<DEVDMACONTROL6_SPEC, 1> {
-        LDNXT_DSC_W::new(self)
+    pub fn ldnxt_dsc(&mut self) -> LDNXT_DSC_W<DEVDMACONTROL6_SPEC> {
+        LDNXT_DSC_W::new(self, 1)
     }
     #[doc = "Bit 2 - End of Transfer Enable Control"]
     #[inline(always)]
     #[must_use]
-    pub fn end_tr_en(&mut self) -> END_TR_EN_W<DEVDMACONTROL6_SPEC, 2> {
-        END_TR_EN_W::new(self)
+    pub fn end_tr_en(&mut self) -> END_TR_EN_W<DEVDMACONTROL6_SPEC> {
+        END_TR_EN_W::new(self, 2)
     }
     #[doc = "Bit 3 - End of Buffer Enable Control"]
     #[inline(always)]
     #[must_use]
-    pub fn end_b_en(&mut self) -> END_B_EN_W<DEVDMACONTROL6_SPEC, 3> {
-        END_B_EN_W::new(self)
+    pub fn end_b_en(&mut self) -> END_B_EN_W<DEVDMACONTROL6_SPEC> {
+        END_B_EN_W::new(self, 3)
     }
     #[doc = "Bit 4 - End of Transfer Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn end_tr_it(&mut self) -> END_TR_IT_W<DEVDMACONTROL6_SPEC, 4> {
-        END_TR_IT_W::new(self)
+    pub fn end_tr_it(&mut self) -> END_TR_IT_W<DEVDMACONTROL6_SPEC> {
+        END_TR_IT_W::new(self, 4)
     }
     #[doc = "Bit 5 - End of Buffer Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn end_buffit(&mut self) -> END_BUFFIT_W<DEVDMACONTROL6_SPEC, 5> {
-        END_BUFFIT_W::new(self)
+    pub fn end_buffit(&mut self) -> END_BUFFIT_W<DEVDMACONTROL6_SPEC> {
+        END_BUFFIT_W::new(self, 5)
     }
     #[doc = "Bit 6 - Descriptor Loaded Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn desc_ld_it(&mut self) -> DESC_LD_IT_W<DEVDMACONTROL6_SPEC, 6> {
-        DESC_LD_IT_W::new(self)
+    pub fn desc_ld_it(&mut self) -> DESC_LD_IT_W<DEVDMACONTROL6_SPEC> {
+        DESC_LD_IT_W::new(self, 6)
     }
     #[doc = "Bit 7 - Burst Lock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn burst_lck(&mut self) -> BURST_LCK_W<DEVDMACONTROL6_SPEC, 7> {
-        BURST_LCK_W::new(self)
+    pub fn burst_lck(&mut self) -> BURST_LCK_W<DEVDMACONTROL6_SPEC> {
+        BURST_LCK_W::new(self, 7)
     }
     #[doc = "Bits 16:31 - Buffer Byte Length (Write-only)"]
     #[inline(always)]
     #[must_use]
-    pub fn buff_length(&mut self) -> BUFF_LENGTH_W<DEVDMACONTROL6_SPEC, 16> {
-        BUFF_LENGTH_W::new(self)
+    pub fn buff_length(&mut self) -> BUFF_LENGTH_W<DEVDMACONTROL6_SPEC> {
+        BUFF_LENGTH_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

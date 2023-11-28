@@ -5,35 +5,35 @@ pub type W = crate::W<FPV_SPEC>;
 #[doc = "Field `FPVH0` reader - Fault Protection Value for PWMH output on channel 0"]
 pub type FPVH0_R = crate::BitReader;
 #[doc = "Field `FPVH0` writer - Fault Protection Value for PWMH output on channel 0"]
-pub type FPVH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FPVH0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FPVH1` reader - Fault Protection Value for PWMH output on channel 1"]
 pub type FPVH1_R = crate::BitReader;
 #[doc = "Field `FPVH1` writer - Fault Protection Value for PWMH output on channel 1"]
-pub type FPVH1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FPVH1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FPVH2` reader - Fault Protection Value for PWMH output on channel 2"]
 pub type FPVH2_R = crate::BitReader;
 #[doc = "Field `FPVH2` writer - Fault Protection Value for PWMH output on channel 2"]
-pub type FPVH2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FPVH2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FPVH3` reader - Fault Protection Value for PWMH output on channel 3"]
 pub type FPVH3_R = crate::BitReader;
 #[doc = "Field `FPVH3` writer - Fault Protection Value for PWMH output on channel 3"]
-pub type FPVH3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FPVH3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FPVL0` reader - Fault Protection Value for PWML output on channel 0"]
 pub type FPVL0_R = crate::BitReader;
 #[doc = "Field `FPVL0` writer - Fault Protection Value for PWML output on channel 0"]
-pub type FPVL0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FPVL0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FPVL1` reader - Fault Protection Value for PWML output on channel 1"]
 pub type FPVL1_R = crate::BitReader;
 #[doc = "Field `FPVL1` writer - Fault Protection Value for PWML output on channel 1"]
-pub type FPVL1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FPVL1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FPVL2` reader - Fault Protection Value for PWML output on channel 2"]
 pub type FPVL2_R = crate::BitReader;
 #[doc = "Field `FPVL2` writer - Fault Protection Value for PWML output on channel 2"]
-pub type FPVL2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FPVL2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FPVL3` reader - Fault Protection Value for PWML output on channel 3"]
 pub type FPVL3_R = crate::BitReader;
 #[doc = "Field `FPVL3` writer - Fault Protection Value for PWML output on channel 3"]
-pub type FPVL3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FPVL3_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Fault Protection Value for PWMH output on channel 0"]
     #[inline(always)]
@@ -80,50 +80,50 @@ impl W {
     #[doc = "Bit 0 - Fault Protection Value for PWMH output on channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn fpvh0(&mut self) -> FPVH0_W<FPV_SPEC, 0> {
-        FPVH0_W::new(self)
+    pub fn fpvh0(&mut self) -> FPVH0_W<FPV_SPEC> {
+        FPVH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Fault Protection Value for PWMH output on channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn fpvh1(&mut self) -> FPVH1_W<FPV_SPEC, 1> {
-        FPVH1_W::new(self)
+    pub fn fpvh1(&mut self) -> FPVH1_W<FPV_SPEC> {
+        FPVH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Fault Protection Value for PWMH output on channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn fpvh2(&mut self) -> FPVH2_W<FPV_SPEC, 2> {
-        FPVH2_W::new(self)
+    pub fn fpvh2(&mut self) -> FPVH2_W<FPV_SPEC> {
+        FPVH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Fault Protection Value for PWMH output on channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn fpvh3(&mut self) -> FPVH3_W<FPV_SPEC, 3> {
-        FPVH3_W::new(self)
+    pub fn fpvh3(&mut self) -> FPVH3_W<FPV_SPEC> {
+        FPVH3_W::new(self, 3)
     }
     #[doc = "Bit 16 - Fault Protection Value for PWML output on channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn fpvl0(&mut self) -> FPVL0_W<FPV_SPEC, 16> {
-        FPVL0_W::new(self)
+    pub fn fpvl0(&mut self) -> FPVL0_W<FPV_SPEC> {
+        FPVL0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Fault Protection Value for PWML output on channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn fpvl1(&mut self) -> FPVL1_W<FPV_SPEC, 17> {
-        FPVL1_W::new(self)
+    pub fn fpvl1(&mut self) -> FPVL1_W<FPV_SPEC> {
+        FPVL1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Fault Protection Value for PWML output on channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn fpvl2(&mut self) -> FPVL2_W<FPV_SPEC, 18> {
-        FPVL2_W::new(self)
+    pub fn fpvl2(&mut self) -> FPVL2_W<FPV_SPEC> {
+        FPVL2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Fault Protection Value for PWML output on channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn fpvl3(&mut self) -> FPVL3_W<FPV_SPEC, 19> {
-        FPVL3_W::new(self)
+    pub fn fpvl3(&mut self) -> FPVL3_W<FPV_SPEC> {
+        FPVL3_W::new(self, 19)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

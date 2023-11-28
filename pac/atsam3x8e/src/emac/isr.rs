@@ -5,51 +5,51 @@ pub type W = crate::W<ISR_SPEC>;
 #[doc = "Field `MFD` reader - Management Frame Done"]
 pub type MFD_R = crate::BitReader;
 #[doc = "Field `MFD` writer - Management Frame Done"]
-pub type MFD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MFD_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RCOMP` reader - Receive Complete"]
 pub type RCOMP_R = crate::BitReader;
 #[doc = "Field `RCOMP` writer - Receive Complete"]
-pub type RCOMP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RCOMP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXUBR` reader - Receive Used Bit Read"]
 pub type RXUBR_R = crate::BitReader;
 #[doc = "Field `RXUBR` writer - Receive Used Bit Read"]
-pub type RXUBR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXUBR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXUBR` reader - Transmit Used Bit Read"]
 pub type TXUBR_R = crate::BitReader;
 #[doc = "Field `TXUBR` writer - Transmit Used Bit Read"]
-pub type TXUBR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXUBR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TUND` reader - Ethernet Transmit Buffer Underrun"]
 pub type TUND_R = crate::BitReader;
 #[doc = "Field `TUND` writer - Ethernet Transmit Buffer Underrun"]
-pub type TUND_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TUND_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RLEX` reader - Retry Limit Exceeded"]
 pub type RLEX_R = crate::BitReader;
 #[doc = "Field `RLEX` writer - Retry Limit Exceeded"]
-pub type RLEX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RLEX_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXERR` reader - Transmit Error"]
 pub type TXERR_R = crate::BitReader;
 #[doc = "Field `TXERR` writer - Transmit Error"]
-pub type TXERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXERR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TCOMP` reader - Transmit Complete"]
 pub type TCOMP_R = crate::BitReader;
 #[doc = "Field `TCOMP` writer - Transmit Complete"]
-pub type TCOMP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TCOMP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ROVR` reader - Receive Overrun"]
 pub type ROVR_R = crate::BitReader;
 #[doc = "Field `ROVR` writer - Receive Overrun"]
-pub type ROVR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ROVR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HRESP` reader - Hresp not OK"]
 pub type HRESP_R = crate::BitReader;
 #[doc = "Field `HRESP` writer - Hresp not OK"]
-pub type HRESP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HRESP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PFRE` reader - Pause Frame Received"]
 pub type PFRE_R = crate::BitReader;
 #[doc = "Field `PFRE` writer - Pause Frame Received"]
-pub type PFRE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PFRE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PTZ` reader - Pause Time Zero"]
 pub type PTZ_R = crate::BitReader;
 #[doc = "Field `PTZ` writer - Pause Time Zero"]
-pub type PTZ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PTZ_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Management Frame Done"]
     #[inline(always)]
@@ -116,74 +116,74 @@ impl W {
     #[doc = "Bit 0 - Management Frame Done"]
     #[inline(always)]
     #[must_use]
-    pub fn mfd(&mut self) -> MFD_W<ISR_SPEC, 0> {
-        MFD_W::new(self)
+    pub fn mfd(&mut self) -> MFD_W<ISR_SPEC> {
+        MFD_W::new(self, 0)
     }
     #[doc = "Bit 1 - Receive Complete"]
     #[inline(always)]
     #[must_use]
-    pub fn rcomp(&mut self) -> RCOMP_W<ISR_SPEC, 1> {
-        RCOMP_W::new(self)
+    pub fn rcomp(&mut self) -> RCOMP_W<ISR_SPEC> {
+        RCOMP_W::new(self, 1)
     }
     #[doc = "Bit 2 - Receive Used Bit Read"]
     #[inline(always)]
     #[must_use]
-    pub fn rxubr(&mut self) -> RXUBR_W<ISR_SPEC, 2> {
-        RXUBR_W::new(self)
+    pub fn rxubr(&mut self) -> RXUBR_W<ISR_SPEC> {
+        RXUBR_W::new(self, 2)
     }
     #[doc = "Bit 3 - Transmit Used Bit Read"]
     #[inline(always)]
     #[must_use]
-    pub fn txubr(&mut self) -> TXUBR_W<ISR_SPEC, 3> {
-        TXUBR_W::new(self)
+    pub fn txubr(&mut self) -> TXUBR_W<ISR_SPEC> {
+        TXUBR_W::new(self, 3)
     }
     #[doc = "Bit 4 - Ethernet Transmit Buffer Underrun"]
     #[inline(always)]
     #[must_use]
-    pub fn tund(&mut self) -> TUND_W<ISR_SPEC, 4> {
-        TUND_W::new(self)
+    pub fn tund(&mut self) -> TUND_W<ISR_SPEC> {
+        TUND_W::new(self, 4)
     }
     #[doc = "Bit 5 - Retry Limit Exceeded"]
     #[inline(always)]
     #[must_use]
-    pub fn rlex(&mut self) -> RLEX_W<ISR_SPEC, 5> {
-        RLEX_W::new(self)
+    pub fn rlex(&mut self) -> RLEX_W<ISR_SPEC> {
+        RLEX_W::new(self, 5)
     }
     #[doc = "Bit 6 - Transmit Error"]
     #[inline(always)]
     #[must_use]
-    pub fn txerr(&mut self) -> TXERR_W<ISR_SPEC, 6> {
-        TXERR_W::new(self)
+    pub fn txerr(&mut self) -> TXERR_W<ISR_SPEC> {
+        TXERR_W::new(self, 6)
     }
     #[doc = "Bit 7 - Transmit Complete"]
     #[inline(always)]
     #[must_use]
-    pub fn tcomp(&mut self) -> TCOMP_W<ISR_SPEC, 7> {
-        TCOMP_W::new(self)
+    pub fn tcomp(&mut self) -> TCOMP_W<ISR_SPEC> {
+        TCOMP_W::new(self, 7)
     }
     #[doc = "Bit 10 - Receive Overrun"]
     #[inline(always)]
     #[must_use]
-    pub fn rovr(&mut self) -> ROVR_W<ISR_SPEC, 10> {
-        ROVR_W::new(self)
+    pub fn rovr(&mut self) -> ROVR_W<ISR_SPEC> {
+        ROVR_W::new(self, 10)
     }
     #[doc = "Bit 11 - Hresp not OK"]
     #[inline(always)]
     #[must_use]
-    pub fn hresp(&mut self) -> HRESP_W<ISR_SPEC, 11> {
-        HRESP_W::new(self)
+    pub fn hresp(&mut self) -> HRESP_W<ISR_SPEC> {
+        HRESP_W::new(self, 11)
     }
     #[doc = "Bit 12 - Pause Frame Received"]
     #[inline(always)]
     #[must_use]
-    pub fn pfre(&mut self) -> PFRE_W<ISR_SPEC, 12> {
-        PFRE_W::new(self)
+    pub fn pfre(&mut self) -> PFRE_W<ISR_SPEC> {
+        PFRE_W::new(self, 12)
     }
     #[doc = "Bit 13 - Pause Time Zero"]
     #[inline(always)]
     #[must_use]
-    pub fn ptz(&mut self) -> PTZ_W<ISR_SPEC, 13> {
-        PTZ_W::new(self)
+    pub fn ptz(&mut self) -> PTZ_W<ISR_SPEC> {
+        PTZ_W::new(self, 13)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

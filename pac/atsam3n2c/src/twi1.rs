@@ -1,29 +1,75 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Control Register"]
-    pub cr: CR,
-    #[doc = "0x04 - Master Mode Register"]
-    pub mmr: MMR,
-    #[doc = "0x08 - Slave Mode Register"]
-    pub smr: SMR,
-    #[doc = "0x0c - Internal Address Register"]
-    pub iadr: IADR,
-    #[doc = "0x10 - Clock Waveform Generator Register"]
-    pub cwgr: CWGR,
+    cr: CR,
+    mmr: MMR,
+    smr: SMR,
+    iadr: IADR,
+    cwgr: CWGR,
     _reserved5: [u8; 0x0c],
+    sr: SR,
+    ier: IER,
+    idr: IDR,
+    imr: IMR,
+    rhr: RHR,
+    thr: THR,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Control Register"]
+    #[inline(always)]
+    pub const fn cr(&self) -> &CR {
+        &self.cr
+    }
+    #[doc = "0x04 - Master Mode Register"]
+    #[inline(always)]
+    pub const fn mmr(&self) -> &MMR {
+        &self.mmr
+    }
+    #[doc = "0x08 - Slave Mode Register"]
+    #[inline(always)]
+    pub const fn smr(&self) -> &SMR {
+        &self.smr
+    }
+    #[doc = "0x0c - Internal Address Register"]
+    #[inline(always)]
+    pub const fn iadr(&self) -> &IADR {
+        &self.iadr
+    }
+    #[doc = "0x10 - Clock Waveform Generator Register"]
+    #[inline(always)]
+    pub const fn cwgr(&self) -> &CWGR {
+        &self.cwgr
+    }
     #[doc = "0x20 - Status Register"]
-    pub sr: SR,
+    #[inline(always)]
+    pub const fn sr(&self) -> &SR {
+        &self.sr
+    }
     #[doc = "0x24 - Interrupt Enable Register"]
-    pub ier: IER,
+    #[inline(always)]
+    pub const fn ier(&self) -> &IER {
+        &self.ier
+    }
     #[doc = "0x28 - Interrupt Disable Register"]
-    pub idr: IDR,
+    #[inline(always)]
+    pub const fn idr(&self) -> &IDR {
+        &self.idr
+    }
     #[doc = "0x2c - Interrupt Mask Register"]
-    pub imr: IMR,
+    #[inline(always)]
+    pub const fn imr(&self) -> &IMR {
+        &self.imr
+    }
     #[doc = "0x30 - Receive Holding Register"]
-    pub rhr: RHR,
+    #[inline(always)]
+    pub const fn rhr(&self) -> &RHR {
+        &self.rhr
+    }
     #[doc = "0x34 - Transmit Holding Register"]
-    pub thr: THR,
+    #[inline(always)]
+    pub const fn thr(&self) -> &THR {
+        &self.thr
+    }
 }
 #[doc = "CR (w) register accessor: Control Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
 module"]

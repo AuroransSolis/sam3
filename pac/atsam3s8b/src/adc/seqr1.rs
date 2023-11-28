@@ -5,35 +5,35 @@ pub type W = crate::W<SEQR1_SPEC>;
 #[doc = "Field `USCH1` reader - User Sequence Number 1"]
 pub type USCH1_R = crate::FieldReader;
 #[doc = "Field `USCH1` writer - User Sequence Number 1"]
-pub type USCH1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type USCH1_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `USCH2` reader - User Sequence Number 2"]
 pub type USCH2_R = crate::FieldReader;
 #[doc = "Field `USCH2` writer - User Sequence Number 2"]
-pub type USCH2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type USCH2_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `USCH3` reader - User Sequence Number 3"]
 pub type USCH3_R = crate::FieldReader;
 #[doc = "Field `USCH3` writer - User Sequence Number 3"]
-pub type USCH3_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type USCH3_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `USCH4` reader - User Sequence Number 4"]
 pub type USCH4_R = crate::FieldReader;
 #[doc = "Field `USCH4` writer - User Sequence Number 4"]
-pub type USCH4_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type USCH4_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `USCH5` reader - User Sequence Number 5"]
 pub type USCH5_R = crate::FieldReader;
 #[doc = "Field `USCH5` writer - User Sequence Number 5"]
-pub type USCH5_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type USCH5_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `USCH6` reader - User Sequence Number 6"]
 pub type USCH6_R = crate::FieldReader;
 #[doc = "Field `USCH6` writer - User Sequence Number 6"]
-pub type USCH6_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type USCH6_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `USCH7` reader - User Sequence Number 7"]
 pub type USCH7_R = crate::FieldReader;
 #[doc = "Field `USCH7` writer - User Sequence Number 7"]
-pub type USCH7_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type USCH7_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `USCH8` reader - User Sequence Number 8"]
 pub type USCH8_R = crate::FieldReader;
 #[doc = "Field `USCH8` writer - User Sequence Number 8"]
-pub type USCH8_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type USCH8_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 0:2 - User Sequence Number 1"]
     #[inline(always)]
@@ -80,50 +80,50 @@ impl W {
     #[doc = "Bits 0:2 - User Sequence Number 1"]
     #[inline(always)]
     #[must_use]
-    pub fn usch1(&mut self) -> USCH1_W<SEQR1_SPEC, 0> {
-        USCH1_W::new(self)
+    pub fn usch1(&mut self) -> USCH1_W<SEQR1_SPEC> {
+        USCH1_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - User Sequence Number 2"]
     #[inline(always)]
     #[must_use]
-    pub fn usch2(&mut self) -> USCH2_W<SEQR1_SPEC, 4> {
-        USCH2_W::new(self)
+    pub fn usch2(&mut self) -> USCH2_W<SEQR1_SPEC> {
+        USCH2_W::new(self, 4)
     }
     #[doc = "Bits 8:10 - User Sequence Number 3"]
     #[inline(always)]
     #[must_use]
-    pub fn usch3(&mut self) -> USCH3_W<SEQR1_SPEC, 8> {
-        USCH3_W::new(self)
+    pub fn usch3(&mut self) -> USCH3_W<SEQR1_SPEC> {
+        USCH3_W::new(self, 8)
     }
     #[doc = "Bits 12:14 - User Sequence Number 4"]
     #[inline(always)]
     #[must_use]
-    pub fn usch4(&mut self) -> USCH4_W<SEQR1_SPEC, 12> {
-        USCH4_W::new(self)
+    pub fn usch4(&mut self) -> USCH4_W<SEQR1_SPEC> {
+        USCH4_W::new(self, 12)
     }
     #[doc = "Bits 16:18 - User Sequence Number 5"]
     #[inline(always)]
     #[must_use]
-    pub fn usch5(&mut self) -> USCH5_W<SEQR1_SPEC, 16> {
-        USCH5_W::new(self)
+    pub fn usch5(&mut self) -> USCH5_W<SEQR1_SPEC> {
+        USCH5_W::new(self, 16)
     }
     #[doc = "Bits 20:22 - User Sequence Number 6"]
     #[inline(always)]
     #[must_use]
-    pub fn usch6(&mut self) -> USCH6_W<SEQR1_SPEC, 20> {
-        USCH6_W::new(self)
+    pub fn usch6(&mut self) -> USCH6_W<SEQR1_SPEC> {
+        USCH6_W::new(self, 20)
     }
     #[doc = "Bits 24:26 - User Sequence Number 7"]
     #[inline(always)]
     #[must_use]
-    pub fn usch7(&mut self) -> USCH7_W<SEQR1_SPEC, 24> {
-        USCH7_W::new(self)
+    pub fn usch7(&mut self) -> USCH7_W<SEQR1_SPEC> {
+        USCH7_W::new(self, 24)
     }
     #[doc = "Bits 28:30 - User Sequence Number 8"]
     #[inline(always)]
     #[must_use]
-    pub fn usch8(&mut self) -> USCH8_W<SEQR1_SPEC, 28> {
-        USCH8_W::new(self)
+    pub fn usch8(&mut self) -> USCH8_W<SEQR1_SPEC> {
+        USCH8_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

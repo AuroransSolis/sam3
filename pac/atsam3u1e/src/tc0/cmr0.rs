@@ -92,8 +92,8 @@ impl TCCLKS_R {
     }
 }
 #[doc = "Field `TCCLKS` writer - Clock Selection"]
-pub type TCCLKS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, TCCLKS_A>;
-impl<'a, REG, const O: u8> TCCLKS_W<'a, REG, O>
+pub type TCCLKS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, TCCLKS_A>;
+impl<'a, REG> TCCLKS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -142,7 +142,7 @@ where
 #[doc = "Field `CLKI` reader - Clock Invert"]
 pub type CLKI_R = crate::BitReader;
 #[doc = "Field `CLKI` writer - Clock Invert"]
-pub type CLKI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CLKI_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BURST` reader - Burst Signal Selection"]
 pub type BURST_R = crate::FieldReader<BURST_A>;
 #[doc = "Burst Signal Selection\n\nValue on reset: 0"]
@@ -201,8 +201,8 @@ impl BURST_R {
     }
 }
 #[doc = "Field `BURST` writer - Burst Signal Selection"]
-pub type BURST_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, BURST_A>;
-impl<'a, REG, const O: u8> BURST_W<'a, REG, O>
+pub type BURST_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, BURST_A>;
+impl<'a, REG> BURST_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -231,11 +231,11 @@ where
 #[doc = "Field `LDBSTOP` reader - Counter Clock Stopped with RB Loading"]
 pub type LDBSTOP_R = crate::BitReader;
 #[doc = "Field `LDBSTOP` writer - Counter Clock Stopped with RB Loading"]
-pub type LDBSTOP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LDBSTOP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LDBDIS` reader - Counter Clock Disable with RB Loading"]
 pub type LDBDIS_R = crate::BitReader;
 #[doc = "Field `LDBDIS` writer - Counter Clock Disable with RB Loading"]
-pub type LDBDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LDBDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ETRGEDG` reader - External Trigger Edge Selection"]
 pub type ETRGEDG_R = crate::FieldReader<ETRGEDG_A>;
 #[doc = "External Trigger Edge Selection\n\nValue on reset: 0"]
@@ -294,8 +294,8 @@ impl ETRGEDG_R {
     }
 }
 #[doc = "Field `ETRGEDG` writer - External Trigger Edge Selection"]
-pub type ETRGEDG_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ETRGEDG_A>;
-impl<'a, REG, const O: u8> ETRGEDG_W<'a, REG, O>
+pub type ETRGEDG_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ETRGEDG_A>;
+impl<'a, REG> ETRGEDG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -324,15 +324,15 @@ where
 #[doc = "Field `ABETRG` reader - TIOA or TIOB External Trigger Selection"]
 pub type ABETRG_R = crate::BitReader;
 #[doc = "Field `ABETRG` writer - TIOA or TIOB External Trigger Selection"]
-pub type ABETRG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ABETRG_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CPCTRG` reader - RC Compare Trigger Enable"]
 pub type CPCTRG_R = crate::BitReader;
 #[doc = "Field `CPCTRG` writer - RC Compare Trigger Enable"]
-pub type CPCTRG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CPCTRG_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WAVE` reader - Waveform Mode"]
 pub type WAVE_R = crate::BitReader;
 #[doc = "Field `WAVE` writer - Waveform Mode"]
-pub type WAVE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type WAVE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LDRA` reader - RA Loading Edge Selection"]
 pub type LDRA_R = crate::FieldReader<LDRA_A>;
 #[doc = "RA Loading Edge Selection\n\nValue on reset: 0"]
@@ -391,8 +391,8 @@ impl LDRA_R {
     }
 }
 #[doc = "Field `LDRA` writer - RA Loading Edge Selection"]
-pub type LDRA_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, LDRA_A>;
-impl<'a, REG, const O: u8> LDRA_W<'a, REG, O>
+pub type LDRA_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, LDRA_A>;
+impl<'a, REG> LDRA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -476,8 +476,8 @@ impl LDRB_R {
     }
 }
 #[doc = "Field `LDRB` writer - RB Loading Edge Selection"]
-pub type LDRB_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, LDRB_A>;
-impl<'a, REG, const O: u8> LDRB_W<'a, REG, O>
+pub type LDRB_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, LDRB_A>;
+impl<'a, REG> LDRB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -564,68 +564,68 @@ impl W {
     #[doc = "Bits 0:2 - Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn tcclks(&mut self) -> TCCLKS_W<CMR0_SPEC, 0> {
-        TCCLKS_W::new(self)
+    pub fn tcclks(&mut self) -> TCCLKS_W<CMR0_SPEC> {
+        TCCLKS_W::new(self, 0)
     }
     #[doc = "Bit 3 - Clock Invert"]
     #[inline(always)]
     #[must_use]
-    pub fn clki(&mut self) -> CLKI_W<CMR0_SPEC, 3> {
-        CLKI_W::new(self)
+    pub fn clki(&mut self) -> CLKI_W<CMR0_SPEC> {
+        CLKI_W::new(self, 3)
     }
     #[doc = "Bits 4:5 - Burst Signal Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn burst(&mut self) -> BURST_W<CMR0_SPEC, 4> {
-        BURST_W::new(self)
+    pub fn burst(&mut self) -> BURST_W<CMR0_SPEC> {
+        BURST_W::new(self, 4)
     }
     #[doc = "Bit 6 - Counter Clock Stopped with RB Loading"]
     #[inline(always)]
     #[must_use]
-    pub fn ldbstop(&mut self) -> LDBSTOP_W<CMR0_SPEC, 6> {
-        LDBSTOP_W::new(self)
+    pub fn ldbstop(&mut self) -> LDBSTOP_W<CMR0_SPEC> {
+        LDBSTOP_W::new(self, 6)
     }
     #[doc = "Bit 7 - Counter Clock Disable with RB Loading"]
     #[inline(always)]
     #[must_use]
-    pub fn ldbdis(&mut self) -> LDBDIS_W<CMR0_SPEC, 7> {
-        LDBDIS_W::new(self)
+    pub fn ldbdis(&mut self) -> LDBDIS_W<CMR0_SPEC> {
+        LDBDIS_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - External Trigger Edge Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn etrgedg(&mut self) -> ETRGEDG_W<CMR0_SPEC, 8> {
-        ETRGEDG_W::new(self)
+    pub fn etrgedg(&mut self) -> ETRGEDG_W<CMR0_SPEC> {
+        ETRGEDG_W::new(self, 8)
     }
     #[doc = "Bit 10 - TIOA or TIOB External Trigger Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn abetrg(&mut self) -> ABETRG_W<CMR0_SPEC, 10> {
-        ABETRG_W::new(self)
+    pub fn abetrg(&mut self) -> ABETRG_W<CMR0_SPEC> {
+        ABETRG_W::new(self, 10)
     }
     #[doc = "Bit 14 - RC Compare Trigger Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cpctrg(&mut self) -> CPCTRG_W<CMR0_SPEC, 14> {
-        CPCTRG_W::new(self)
+    pub fn cpctrg(&mut self) -> CPCTRG_W<CMR0_SPEC> {
+        CPCTRG_W::new(self, 14)
     }
     #[doc = "Bit 15 - Waveform Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn wave(&mut self) -> WAVE_W<CMR0_SPEC, 15> {
-        WAVE_W::new(self)
+    pub fn wave(&mut self) -> WAVE_W<CMR0_SPEC> {
+        WAVE_W::new(self, 15)
     }
     #[doc = "Bits 16:17 - RA Loading Edge Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ldra(&mut self) -> LDRA_W<CMR0_SPEC, 16> {
-        LDRA_W::new(self)
+    pub fn ldra(&mut self) -> LDRA_W<CMR0_SPEC> {
+        LDRA_W::new(self, 16)
     }
     #[doc = "Bits 18:19 - RB Loading Edge Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ldrb(&mut self) -> LDRB_W<CMR0_SPEC, 18> {
-        LDRB_W::new(self)
+    pub fn ldrb(&mut self) -> LDRB_W<CMR0_SPEC> {
+        LDRB_W::new(self, 18)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

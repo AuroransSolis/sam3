@@ -5,31 +5,31 @@ pub type W = crate::W<TIMALR_SPEC>;
 #[doc = "Field `SEC` reader - Second Alarm"]
 pub type SEC_R = crate::FieldReader;
 #[doc = "Field `SEC` writer - Second Alarm"]
-pub type SEC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type SEC_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `SECEN` reader - Second Alarm Enable"]
 pub type SECEN_R = crate::BitReader;
 #[doc = "Field `SECEN` writer - Second Alarm Enable"]
-pub type SECEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SECEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MIN` reader - Minute Alarm"]
 pub type MIN_R = crate::FieldReader;
 #[doc = "Field `MIN` writer - Minute Alarm"]
-pub type MIN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type MIN_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `MINEN` reader - Minute Alarm Enable"]
 pub type MINEN_R = crate::BitReader;
 #[doc = "Field `MINEN` writer - Minute Alarm Enable"]
-pub type MINEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MINEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HOUR` reader - Hour Alarm"]
 pub type HOUR_R = crate::FieldReader;
 #[doc = "Field `HOUR` writer - Hour Alarm"]
-pub type HOUR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type HOUR_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `AMPM` reader - AM/PM Indicator"]
 pub type AMPM_R = crate::BitReader;
 #[doc = "Field `AMPM` writer - AM/PM Indicator"]
-pub type AMPM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type AMPM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HOUREN` reader - Hour Alarm Enable"]
 pub type HOUREN_R = crate::BitReader;
 #[doc = "Field `HOUREN` writer - Hour Alarm Enable"]
-pub type HOUREN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HOUREN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:6 - Second Alarm"]
     #[inline(always)]
@@ -71,44 +71,44 @@ impl W {
     #[doc = "Bits 0:6 - Second Alarm"]
     #[inline(always)]
     #[must_use]
-    pub fn sec(&mut self) -> SEC_W<TIMALR_SPEC, 0> {
-        SEC_W::new(self)
+    pub fn sec(&mut self) -> SEC_W<TIMALR_SPEC> {
+        SEC_W::new(self, 0)
     }
     #[doc = "Bit 7 - Second Alarm Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn secen(&mut self) -> SECEN_W<TIMALR_SPEC, 7> {
-        SECEN_W::new(self)
+    pub fn secen(&mut self) -> SECEN_W<TIMALR_SPEC> {
+        SECEN_W::new(self, 7)
     }
     #[doc = "Bits 8:14 - Minute Alarm"]
     #[inline(always)]
     #[must_use]
-    pub fn min(&mut self) -> MIN_W<TIMALR_SPEC, 8> {
-        MIN_W::new(self)
+    pub fn min(&mut self) -> MIN_W<TIMALR_SPEC> {
+        MIN_W::new(self, 8)
     }
     #[doc = "Bit 15 - Minute Alarm Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn minen(&mut self) -> MINEN_W<TIMALR_SPEC, 15> {
-        MINEN_W::new(self)
+    pub fn minen(&mut self) -> MINEN_W<TIMALR_SPEC> {
+        MINEN_W::new(self, 15)
     }
     #[doc = "Bits 16:21 - Hour Alarm"]
     #[inline(always)]
     #[must_use]
-    pub fn hour(&mut self) -> HOUR_W<TIMALR_SPEC, 16> {
-        HOUR_W::new(self)
+    pub fn hour(&mut self) -> HOUR_W<TIMALR_SPEC> {
+        HOUR_W::new(self, 16)
     }
     #[doc = "Bit 22 - AM/PM Indicator"]
     #[inline(always)]
     #[must_use]
-    pub fn ampm(&mut self) -> AMPM_W<TIMALR_SPEC, 22> {
-        AMPM_W::new(self)
+    pub fn ampm(&mut self) -> AMPM_W<TIMALR_SPEC> {
+        AMPM_W::new(self, 22)
     }
     #[doc = "Bit 23 - Hour Alarm Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn houren(&mut self) -> HOUREN_W<TIMALR_SPEC, 23> {
-        HOUREN_W::new(self)
+    pub fn houren(&mut self) -> HOUREN_W<TIMALR_SPEC> {
+        HOUREN_W::new(self, 23)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

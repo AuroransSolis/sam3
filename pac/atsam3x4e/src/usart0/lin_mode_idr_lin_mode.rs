@@ -1,157 +1,157 @@
 #[doc = "Register `IDR_LIN_MODE` writer"]
 pub type W = crate::W<LIN_MODE_IDR_LIN_MODE_SPEC>;
 #[doc = "Field `RXRDY` writer - RXRDY Interrupt Disable"]
-pub type RXRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXRDY_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXRDY` writer - TXRDY Interrupt Disable"]
-pub type TXRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXRDY_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ENDRX` writer - "]
-pub type ENDRX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ENDRX_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ENDTX` writer - "]
-pub type ENDTX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ENDTX_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OVRE` writer - Overrun Error Interrupt Disable"]
-pub type OVRE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OVRE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FRAME` writer - Framing Error Interrupt Disable"]
-pub type FRAME_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FRAME_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PARE` writer - Parity Error Interrupt Disable"]
-pub type PARE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PARE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TIMEOUT` writer - Time-out Interrupt Disable"]
-pub type TIMEOUT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TIMEOUT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXEMPTY` writer - TXEMPTY Interrupt Disable"]
-pub type TXEMPTY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXEMPTY_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXBUFE` writer - "]
-pub type TXBUFE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXBUFE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXBUFF` writer - "]
-pub type RXBUFF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXBUFF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LINBK` writer - LIN Break Sent or LIN Break Received Interrupt Disable"]
-pub type LINBK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LINBK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LINID` writer - LIN Identifier Sent or LIN Identifier Received Interrupt Disable"]
-pub type LINID_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LINID_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LINTC` writer - LIN Transfer Completed Interrupt Disable"]
-pub type LINTC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LINTC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LINBE` writer - LIN Bus Error Interrupt Disable"]
-pub type LINBE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LINBE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LINISFE` writer - LIN Inconsistent Synch Field Error Interrupt Disable"]
-pub type LINISFE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LINISFE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LINIPE` writer - LIN Identifier Parity Interrupt Disable"]
-pub type LINIPE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LINIPE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LINCE` writer - LIN Checksum Error Interrupt Disable"]
-pub type LINCE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LINCE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LINSNRE` writer - LIN Slave Not Responding Error Interrupt Disable"]
-pub type LINSNRE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LINSNRE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - RXRDY Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxrdy(&mut self) -> RXRDY_W<LIN_MODE_IDR_LIN_MODE_SPEC, 0> {
-        RXRDY_W::new(self)
+    pub fn rxrdy(&mut self) -> RXRDY_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        RXRDY_W::new(self, 0)
     }
     #[doc = "Bit 1 - TXRDY Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn txrdy(&mut self) -> TXRDY_W<LIN_MODE_IDR_LIN_MODE_SPEC, 1> {
-        TXRDY_W::new(self)
+    pub fn txrdy(&mut self) -> TXRDY_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        TXRDY_W::new(self, 1)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     #[must_use]
-    pub fn endrx(&mut self) -> ENDRX_W<LIN_MODE_IDR_LIN_MODE_SPEC, 3> {
-        ENDRX_W::new(self)
+    pub fn endrx(&mut self) -> ENDRX_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        ENDRX_W::new(self, 3)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
     #[must_use]
-    pub fn endtx(&mut self) -> ENDTX_W<LIN_MODE_IDR_LIN_MODE_SPEC, 4> {
-        ENDTX_W::new(self)
+    pub fn endtx(&mut self) -> ENDTX_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        ENDTX_W::new(self, 4)
     }
     #[doc = "Bit 5 - Overrun Error Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn ovre(&mut self) -> OVRE_W<LIN_MODE_IDR_LIN_MODE_SPEC, 5> {
-        OVRE_W::new(self)
+    pub fn ovre(&mut self) -> OVRE_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        OVRE_W::new(self, 5)
     }
     #[doc = "Bit 6 - Framing Error Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn frame(&mut self) -> FRAME_W<LIN_MODE_IDR_LIN_MODE_SPEC, 6> {
-        FRAME_W::new(self)
+    pub fn frame(&mut self) -> FRAME_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        FRAME_W::new(self, 6)
     }
     #[doc = "Bit 7 - Parity Error Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn pare(&mut self) -> PARE_W<LIN_MODE_IDR_LIN_MODE_SPEC, 7> {
-        PARE_W::new(self)
+    pub fn pare(&mut self) -> PARE_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        PARE_W::new(self, 7)
     }
     #[doc = "Bit 8 - Time-out Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn timeout(&mut self) -> TIMEOUT_W<LIN_MODE_IDR_LIN_MODE_SPEC, 8> {
-        TIMEOUT_W::new(self)
+    pub fn timeout(&mut self) -> TIMEOUT_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        TIMEOUT_W::new(self, 8)
     }
     #[doc = "Bit 9 - TXEMPTY Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn txempty(&mut self) -> TXEMPTY_W<LIN_MODE_IDR_LIN_MODE_SPEC, 9> {
-        TXEMPTY_W::new(self)
+    pub fn txempty(&mut self) -> TXEMPTY_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        TXEMPTY_W::new(self, 9)
     }
     #[doc = "Bit 11"]
     #[inline(always)]
     #[must_use]
-    pub fn txbufe(&mut self) -> TXBUFE_W<LIN_MODE_IDR_LIN_MODE_SPEC, 11> {
-        TXBUFE_W::new(self)
+    pub fn txbufe(&mut self) -> TXBUFE_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        TXBUFE_W::new(self, 11)
     }
     #[doc = "Bit 12"]
     #[inline(always)]
     #[must_use]
-    pub fn rxbuff(&mut self) -> RXBUFF_W<LIN_MODE_IDR_LIN_MODE_SPEC, 12> {
-        RXBUFF_W::new(self)
+    pub fn rxbuff(&mut self) -> RXBUFF_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        RXBUFF_W::new(self, 12)
     }
     #[doc = "Bit 13 - LIN Break Sent or LIN Break Received Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn linbk(&mut self) -> LINBK_W<LIN_MODE_IDR_LIN_MODE_SPEC, 13> {
-        LINBK_W::new(self)
+    pub fn linbk(&mut self) -> LINBK_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        LINBK_W::new(self, 13)
     }
     #[doc = "Bit 14 - LIN Identifier Sent or LIN Identifier Received Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn linid(&mut self) -> LINID_W<LIN_MODE_IDR_LIN_MODE_SPEC, 14> {
-        LINID_W::new(self)
+    pub fn linid(&mut self) -> LINID_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        LINID_W::new(self, 14)
     }
     #[doc = "Bit 15 - LIN Transfer Completed Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn lintc(&mut self) -> LINTC_W<LIN_MODE_IDR_LIN_MODE_SPEC, 15> {
-        LINTC_W::new(self)
+    pub fn lintc(&mut self) -> LINTC_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        LINTC_W::new(self, 15)
     }
     #[doc = "Bit 25 - LIN Bus Error Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn linbe(&mut self) -> LINBE_W<LIN_MODE_IDR_LIN_MODE_SPEC, 25> {
-        LINBE_W::new(self)
+    pub fn linbe(&mut self) -> LINBE_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        LINBE_W::new(self, 25)
     }
     #[doc = "Bit 26 - LIN Inconsistent Synch Field Error Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn linisfe(&mut self) -> LINISFE_W<LIN_MODE_IDR_LIN_MODE_SPEC, 26> {
-        LINISFE_W::new(self)
+    pub fn linisfe(&mut self) -> LINISFE_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        LINISFE_W::new(self, 26)
     }
     #[doc = "Bit 27 - LIN Identifier Parity Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn linipe(&mut self) -> LINIPE_W<LIN_MODE_IDR_LIN_MODE_SPEC, 27> {
-        LINIPE_W::new(self)
+    pub fn linipe(&mut self) -> LINIPE_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        LINIPE_W::new(self, 27)
     }
     #[doc = "Bit 28 - LIN Checksum Error Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn lince(&mut self) -> LINCE_W<LIN_MODE_IDR_LIN_MODE_SPEC, 28> {
-        LINCE_W::new(self)
+    pub fn lince(&mut self) -> LINCE_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        LINCE_W::new(self, 28)
     }
     #[doc = "Bit 29 - LIN Slave Not Responding Error Interrupt Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn linsnre(&mut self) -> LINSNRE_W<LIN_MODE_IDR_LIN_MODE_SPEC, 29> {
-        LINSNRE_W::new(self)
+    pub fn linsnre(&mut self) -> LINSNRE_W<LIN_MODE_IDR_LIN_MODE_SPEC> {
+        LINSNRE_W::new(self, 29)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

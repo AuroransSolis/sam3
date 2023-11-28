@@ -1,45 +1,119 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Control Register"]
-    pub cr: CR,
-    #[doc = "0x04 - Clock Mode Register"]
-    pub cmr: CMR,
+    cr: CR,
+    cmr: CMR,
     _reserved2: [u8; 0x08],
-    #[doc = "0x10 - Receive Clock Mode Register"]
-    pub rcmr: RCMR,
-    #[doc = "0x14 - Receive Frame Mode Register"]
-    pub rfmr: RFMR,
-    #[doc = "0x18 - Transmit Clock Mode Register"]
-    pub tcmr: TCMR,
-    #[doc = "0x1c - Transmit Frame Mode Register"]
-    pub tfmr: TFMR,
-    #[doc = "0x20 - Receive Holding Register"]
-    pub rhr: RHR,
-    #[doc = "0x24 - Transmit Holding Register"]
-    pub thr: THR,
+    rcmr: RCMR,
+    rfmr: RFMR,
+    tcmr: TCMR,
+    tfmr: TFMR,
+    rhr: RHR,
+    thr: THR,
     _reserved8: [u8; 0x08],
-    #[doc = "0x30 - Receive Sync. Holding Register"]
-    pub rshr: RSHR,
-    #[doc = "0x34 - Transmit Sync. Holding Register"]
-    pub tshr: TSHR,
-    #[doc = "0x38 - Receive Compare 0 Register"]
-    pub rc0r: RC0R,
-    #[doc = "0x3c - Receive Compare 1 Register"]
-    pub rc1r: RC1R,
-    #[doc = "0x40 - Status Register"]
-    pub sr: SR,
-    #[doc = "0x44 - Interrupt Enable Register"]
-    pub ier: IER,
-    #[doc = "0x48 - Interrupt Disable Register"]
-    pub idr: IDR,
-    #[doc = "0x4c - Interrupt Mask Register"]
-    pub imr: IMR,
+    rshr: RSHR,
+    tshr: TSHR,
+    rc0r: RC0R,
+    rc1r: RC1R,
+    sr: SR,
+    ier: IER,
+    idr: IDR,
+    imr: IMR,
     _reserved16: [u8; 0x94],
+    wpmr: WPMR,
+    wpsr: WPSR,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Control Register"]
+    #[inline(always)]
+    pub const fn cr(&self) -> &CR {
+        &self.cr
+    }
+    #[doc = "0x04 - Clock Mode Register"]
+    #[inline(always)]
+    pub const fn cmr(&self) -> &CMR {
+        &self.cmr
+    }
+    #[doc = "0x10 - Receive Clock Mode Register"]
+    #[inline(always)]
+    pub const fn rcmr(&self) -> &RCMR {
+        &self.rcmr
+    }
+    #[doc = "0x14 - Receive Frame Mode Register"]
+    #[inline(always)]
+    pub const fn rfmr(&self) -> &RFMR {
+        &self.rfmr
+    }
+    #[doc = "0x18 - Transmit Clock Mode Register"]
+    #[inline(always)]
+    pub const fn tcmr(&self) -> &TCMR {
+        &self.tcmr
+    }
+    #[doc = "0x1c - Transmit Frame Mode Register"]
+    #[inline(always)]
+    pub const fn tfmr(&self) -> &TFMR {
+        &self.tfmr
+    }
+    #[doc = "0x20 - Receive Holding Register"]
+    #[inline(always)]
+    pub const fn rhr(&self) -> &RHR {
+        &self.rhr
+    }
+    #[doc = "0x24 - Transmit Holding Register"]
+    #[inline(always)]
+    pub const fn thr(&self) -> &THR {
+        &self.thr
+    }
+    #[doc = "0x30 - Receive Sync. Holding Register"]
+    #[inline(always)]
+    pub const fn rshr(&self) -> &RSHR {
+        &self.rshr
+    }
+    #[doc = "0x34 - Transmit Sync. Holding Register"]
+    #[inline(always)]
+    pub const fn tshr(&self) -> &TSHR {
+        &self.tshr
+    }
+    #[doc = "0x38 - Receive Compare 0 Register"]
+    #[inline(always)]
+    pub const fn rc0r(&self) -> &RC0R {
+        &self.rc0r
+    }
+    #[doc = "0x3c - Receive Compare 1 Register"]
+    #[inline(always)]
+    pub const fn rc1r(&self) -> &RC1R {
+        &self.rc1r
+    }
+    #[doc = "0x40 - Status Register"]
+    #[inline(always)]
+    pub const fn sr(&self) -> &SR {
+        &self.sr
+    }
+    #[doc = "0x44 - Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn ier(&self) -> &IER {
+        &self.ier
+    }
+    #[doc = "0x48 - Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn idr(&self) -> &IDR {
+        &self.idr
+    }
+    #[doc = "0x4c - Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn imr(&self) -> &IMR {
+        &self.imr
+    }
     #[doc = "0xe4 - Write Protect Mode Register"]
-    pub wpmr: WPMR,
+    #[inline(always)]
+    pub const fn wpmr(&self) -> &WPMR {
+        &self.wpmr
+    }
     #[doc = "0xe8 - Write Protect Status Register"]
-    pub wpsr: WPSR,
+    #[inline(always)]
+    pub const fn wpsr(&self) -> &WPSR {
+        &self.wpsr
+    }
 }
 #[doc = "CR (w) register accessor: Control Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
 module"]

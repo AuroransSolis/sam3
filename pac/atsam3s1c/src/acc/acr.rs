@@ -39,8 +39,8 @@ impl ISEL_R {
     }
 }
 #[doc = "Field `ISEL` writer - Current SELection"]
-pub type ISEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ISEL_A>;
-impl<'a, REG, const O: u8> ISEL_W<'a, REG, O>
+pub type ISEL_W<'a, REG> = crate::BitWriter<'a, REG, ISEL_A>;
+impl<'a, REG> ISEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -58,7 +58,7 @@ where
 #[doc = "Field `HYST` reader - HYSTeresis selection"]
 pub type HYST_R = crate::FieldReader;
 #[doc = "Field `HYST` writer - HYSTeresis selection"]
-pub type HYST_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type HYST_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     #[doc = "Bit 0 - Current SELection"]
     #[inline(always)]
@@ -75,14 +75,14 @@ impl W {
     #[doc = "Bit 0 - Current SELection"]
     #[inline(always)]
     #[must_use]
-    pub fn isel(&mut self) -> ISEL_W<ACR_SPEC, 0> {
-        ISEL_W::new(self)
+    pub fn isel(&mut self) -> ISEL_W<ACR_SPEC> {
+        ISEL_W::new(self, 0)
     }
     #[doc = "Bits 1:2 - HYSTeresis selection"]
     #[inline(always)]
     #[must_use]
-    pub fn hyst(&mut self) -> HYST_W<ACR_SPEC, 1> {
-        HYST_W::new(self)
+    pub fn hyst(&mut self) -> HYST_W<ACR_SPEC> {
+        HYST_W::new(self, 1)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

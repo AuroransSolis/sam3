@@ -15,8 +15,8 @@ impl From<VROFF_AW> for bool {
     }
 }
 #[doc = "Field `VROFF` writer - Voltage Regulator Off"]
-pub type VROFF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VROFF_AW>;
-impl<'a, REG, const O: u8> VROFF_W<'a, REG, O>
+pub type VROFF_W<'a, REG> = crate::BitWriter<'a, REG, VROFF_AW>;
+impl<'a, REG> VROFF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<XTALSEL_AW> for bool {
     }
 }
 #[doc = "Field `XTALSEL` writer - Crystal Oscillator Select"]
-pub type XTALSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, XTALSEL_AW>;
-impl<'a, REG, const O: u8> XTALSEL_W<'a, REG, O>
+pub type XTALSEL_W<'a, REG> = crate::BitWriter<'a, REG, XTALSEL_AW>;
+impl<'a, REG> XTALSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -63,25 +63,25 @@ where
     }
 }
 #[doc = "Field `KEY` writer - Password"]
-pub type KEY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type KEY_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl W {
     #[doc = "Bit 2 - Voltage Regulator Off"]
     #[inline(always)]
     #[must_use]
-    pub fn vroff(&mut self) -> VROFF_W<CR_SPEC, 2> {
-        VROFF_W::new(self)
+    pub fn vroff(&mut self) -> VROFF_W<CR_SPEC> {
+        VROFF_W::new(self, 2)
     }
     #[doc = "Bit 3 - Crystal Oscillator Select"]
     #[inline(always)]
     #[must_use]
-    pub fn xtalsel(&mut self) -> XTALSEL_W<CR_SPEC, 3> {
-        XTALSEL_W::new(self)
+    pub fn xtalsel(&mut self) -> XTALSEL_W<CR_SPEC> {
+        XTALSEL_W::new(self, 3)
     }
     #[doc = "Bits 24:31 - Password"]
     #[inline(always)]
     #[must_use]
-    pub fn key(&mut self) -> KEY_W<CR_SPEC, 24> {
-        KEY_W::new(self)
+    pub fn key(&mut self) -> KEY_W<CR_SPEC> {
+        KEY_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

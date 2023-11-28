@@ -1,13 +1,13 @@
 #[doc = "Register `CUPD2` writer"]
 pub type W = crate::W<CUPD2_SPEC>;
 #[doc = "Field `CUPD` writer - "]
-pub type CUPD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type CUPD_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl W {
     #[doc = "Bits 0:31"]
     #[inline(always)]
     #[must_use]
-    pub fn cupd(&mut self) -> CUPD_W<CUPD2_SPEC, 0> {
-        CUPD_W::new(self)
+    pub fn cupd(&mut self) -> CUPD_W<CUPD2_SPEC> {
+        CUPD_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

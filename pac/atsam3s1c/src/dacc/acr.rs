@@ -5,15 +5,15 @@ pub type W = crate::W<ACR_SPEC>;
 #[doc = "Field `IBCTLCH0` reader - Analog Output Current Control"]
 pub type IBCTLCH0_R = crate::FieldReader;
 #[doc = "Field `IBCTLCH0` writer - Analog Output Current Control"]
-pub type IBCTLCH0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type IBCTLCH0_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `IBCTLCH1` reader - Analog Output Current Control"]
 pub type IBCTLCH1_R = crate::FieldReader;
 #[doc = "Field `IBCTLCH1` writer - Analog Output Current Control"]
-pub type IBCTLCH1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type IBCTLCH1_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `IBCTLDACCORE` reader - Bias Current Control for DAC Core"]
 pub type IBCTLDACCORE_R = crate::FieldReader;
 #[doc = "Field `IBCTLDACCORE` writer - Bias Current Control for DAC Core"]
-pub type IBCTLDACCORE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type IBCTLDACCORE_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     #[doc = "Bits 0:1 - Analog Output Current Control"]
     #[inline(always)]
@@ -35,20 +35,20 @@ impl W {
     #[doc = "Bits 0:1 - Analog Output Current Control"]
     #[inline(always)]
     #[must_use]
-    pub fn ibctlch0(&mut self) -> IBCTLCH0_W<ACR_SPEC, 0> {
-        IBCTLCH0_W::new(self)
+    pub fn ibctlch0(&mut self) -> IBCTLCH0_W<ACR_SPEC> {
+        IBCTLCH0_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Analog Output Current Control"]
     #[inline(always)]
     #[must_use]
-    pub fn ibctlch1(&mut self) -> IBCTLCH1_W<ACR_SPEC, 2> {
-        IBCTLCH1_W::new(self)
+    pub fn ibctlch1(&mut self) -> IBCTLCH1_W<ACR_SPEC> {
+        IBCTLCH1_W::new(self, 2)
     }
     #[doc = "Bits 8:9 - Bias Current Control for DAC Core"]
     #[inline(always)]
     #[must_use]
-    pub fn ibctldaccore(&mut self) -> IBCTLDACCORE_W<ACR_SPEC, 8> {
-        IBCTLDACCORE_W::new(self)
+    pub fn ibctldaccore(&mut self) -> IBCTLDACCORE_W<ACR_SPEC> {
+        IBCTLDACCORE_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,11 +5,11 @@ pub type W = crate::W<FADDR_SPEC>;
 #[doc = "Field `FADD` reader - Function Address Value"]
 pub type FADD_R = crate::FieldReader;
 #[doc = "Field `FADD` writer - Function Address Value"]
-pub type FADD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type FADD_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `FEN` reader - Function Enable"]
 pub type FEN_R = crate::BitReader;
 #[doc = "Field `FEN` writer - Function Enable"]
-pub type FEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:6 - Function Address Value"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:6 - Function Address Value"]
     #[inline(always)]
     #[must_use]
-    pub fn fadd(&mut self) -> FADD_W<FADDR_SPEC, 0> {
-        FADD_W::new(self)
+    pub fn fadd(&mut self) -> FADD_W<FADDR_SPEC> {
+        FADD_W::new(self, 0)
     }
     #[doc = "Bit 8 - Function Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fen(&mut self) -> FEN_W<FADDR_SPEC, 8> {
-        FEN_W::new(self)
+    pub fn fen(&mut self) -> FEN_W<FADDR_SPEC> {
+        FEN_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

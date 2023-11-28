@@ -5,31 +5,31 @@ pub type W = crate::W<MR_SPEC>;
 #[doc = "Field `TRGEN` reader - Trigger Enable"]
 pub type TRGEN_R = crate::BitReader;
 #[doc = "Field `TRGEN` writer - Trigger Enable"]
-pub type TRGEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TRGEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TRGSEL` reader - Trigger Selection"]
 pub type TRGSEL_R = crate::FieldReader;
 #[doc = "Field `TRGSEL` writer - Trigger Selection"]
-pub type TRGSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type TRGSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `LOWRES` reader - Resolution"]
 pub type LOWRES_R = crate::BitReader;
 #[doc = "Field `LOWRES` writer - Resolution"]
-pub type LOWRES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LOWRES_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SLEEP` reader - Sleep Mode"]
 pub type SLEEP_R = crate::BitReader;
 #[doc = "Field `SLEEP` writer - Sleep Mode"]
-pub type SLEEP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SLEEP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PRESCAL` reader - Prescaler Rate Selection"]
 pub type PRESCAL_R = crate::FieldReader;
 #[doc = "Field `PRESCAL` writer - Prescaler Rate Selection"]
-pub type PRESCAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type PRESCAL_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `STARTUP` reader - Start Up Time"]
 pub type STARTUP_R = crate::FieldReader;
 #[doc = "Field `STARTUP` writer - Start Up Time"]
-pub type STARTUP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type STARTUP_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `SHTIM` reader - Sample &amp; Hold Time"]
 pub type SHTIM_R = crate::FieldReader;
 #[doc = "Field `SHTIM` writer - Sample &amp; Hold Time"]
-pub type SHTIM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type SHTIM_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bit 0 - Trigger Enable"]
     #[inline(always)]
@@ -71,44 +71,44 @@ impl W {
     #[doc = "Bit 0 - Trigger Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn trgen(&mut self) -> TRGEN_W<MR_SPEC, 0> {
-        TRGEN_W::new(self)
+    pub fn trgen(&mut self) -> TRGEN_W<MR_SPEC> {
+        TRGEN_W::new(self, 0)
     }
     #[doc = "Bits 1:3 - Trigger Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn trgsel(&mut self) -> TRGSEL_W<MR_SPEC, 1> {
-        TRGSEL_W::new(self)
+    pub fn trgsel(&mut self) -> TRGSEL_W<MR_SPEC> {
+        TRGSEL_W::new(self, 1)
     }
     #[doc = "Bit 4 - Resolution"]
     #[inline(always)]
     #[must_use]
-    pub fn lowres(&mut self) -> LOWRES_W<MR_SPEC, 4> {
-        LOWRES_W::new(self)
+    pub fn lowres(&mut self) -> LOWRES_W<MR_SPEC> {
+        LOWRES_W::new(self, 4)
     }
     #[doc = "Bit 5 - Sleep Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn sleep(&mut self) -> SLEEP_W<MR_SPEC, 5> {
-        SLEEP_W::new(self)
+    pub fn sleep(&mut self) -> SLEEP_W<MR_SPEC> {
+        SLEEP_W::new(self, 5)
     }
     #[doc = "Bits 8:15 - Prescaler Rate Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn prescal(&mut self) -> PRESCAL_W<MR_SPEC, 8> {
-        PRESCAL_W::new(self)
+    pub fn prescal(&mut self) -> PRESCAL_W<MR_SPEC> {
+        PRESCAL_W::new(self, 8)
     }
     #[doc = "Bits 16:22 - Start Up Time"]
     #[inline(always)]
     #[must_use]
-    pub fn startup(&mut self) -> STARTUP_W<MR_SPEC, 16> {
-        STARTUP_W::new(self)
+    pub fn startup(&mut self) -> STARTUP_W<MR_SPEC> {
+        STARTUP_W::new(self, 16)
     }
     #[doc = "Bits 24:27 - Sample &amp; Hold Time"]
     #[inline(always)]
     #[must_use]
-    pub fn shtim(&mut self) -> SHTIM_W<MR_SPEC, 24> {
-        SHTIM_W::new(self)
+    pub fn shtim(&mut self) -> SHTIM_W<MR_SPEC> {
+        SHTIM_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

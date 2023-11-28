@@ -5,15 +5,15 @@ pub type W = crate::W<CKGR_MOR_SPEC>;
 #[doc = "Field `MOSCXTEN` reader - Main Crystal Oscillator Enable"]
 pub type MOSCXTEN_R = crate::BitReader;
 #[doc = "Field `MOSCXTEN` writer - Main Crystal Oscillator Enable"]
-pub type MOSCXTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MOSCXTEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MOSCXTBY` reader - Main Crystal Oscillator Bypass"]
 pub type MOSCXTBY_R = crate::BitReader;
 #[doc = "Field `MOSCXTBY` writer - Main Crystal Oscillator Bypass"]
-pub type MOSCXTBY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MOSCXTBY_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MOSCRCEN` reader - Main On-Chip RC Oscillator Enable"]
 pub type MOSCRCEN_R = crate::BitReader;
 #[doc = "Field `MOSCRCEN` writer - Main On-Chip RC Oscillator Enable"]
-pub type MOSCRCEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MOSCRCEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MOSCRCF` reader - Main On-Chip RC Oscillator Frequency Selection"]
 pub type MOSCRCF_R = crate::FieldReader<MOSCRCF_A>;
 #[doc = "Main On-Chip RC Oscillator Frequency Selection\n\nValue on reset: 0"]
@@ -64,8 +64,8 @@ impl MOSCRCF_R {
     }
 }
 #[doc = "Field `MOSCRCF` writer - Main On-Chip RC Oscillator Frequency Selection"]
-pub type MOSCRCF_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, MOSCRCF_A>;
-impl<'a, REG, const O: u8> MOSCRCF_W<'a, REG, O>
+pub type MOSCRCF_W<'a, REG> = crate::FieldWriter<'a, REG, 3, MOSCRCF_A>;
+impl<'a, REG> MOSCRCF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -89,19 +89,19 @@ where
 #[doc = "Field `MOSCXTST` reader - Main Crystal Oscillator Start-up Time"]
 pub type MOSCXTST_R = crate::FieldReader;
 #[doc = "Field `MOSCXTST` writer - Main Crystal Oscillator Start-up Time"]
-pub type MOSCXTST_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type MOSCXTST_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `KEY` reader - Password"]
 pub type KEY_R = crate::FieldReader;
 #[doc = "Field `KEY` writer - Password"]
-pub type KEY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type KEY_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `MOSCSEL` reader - Main Oscillator Selection"]
 pub type MOSCSEL_R = crate::BitReader;
 #[doc = "Field `MOSCSEL` writer - Main Oscillator Selection"]
-pub type MOSCSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MOSCSEL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CFDEN` reader - Clock Failure Detector Enable"]
 pub type CFDEN_R = crate::BitReader;
 #[doc = "Field `CFDEN` writer - Clock Failure Detector Enable"]
-pub type CFDEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CFDEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Main Crystal Oscillator Enable"]
     #[inline(always)]
@@ -148,50 +148,50 @@ impl W {
     #[doc = "Bit 0 - Main Crystal Oscillator Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn moscxten(&mut self) -> MOSCXTEN_W<CKGR_MOR_SPEC, 0> {
-        MOSCXTEN_W::new(self)
+    pub fn moscxten(&mut self) -> MOSCXTEN_W<CKGR_MOR_SPEC> {
+        MOSCXTEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Main Crystal Oscillator Bypass"]
     #[inline(always)]
     #[must_use]
-    pub fn moscxtby(&mut self) -> MOSCXTBY_W<CKGR_MOR_SPEC, 1> {
-        MOSCXTBY_W::new(self)
+    pub fn moscxtby(&mut self) -> MOSCXTBY_W<CKGR_MOR_SPEC> {
+        MOSCXTBY_W::new(self, 1)
     }
     #[doc = "Bit 3 - Main On-Chip RC Oscillator Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn moscrcen(&mut self) -> MOSCRCEN_W<CKGR_MOR_SPEC, 3> {
-        MOSCRCEN_W::new(self)
+    pub fn moscrcen(&mut self) -> MOSCRCEN_W<CKGR_MOR_SPEC> {
+        MOSCRCEN_W::new(self, 3)
     }
     #[doc = "Bits 4:6 - Main On-Chip RC Oscillator Frequency Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn moscrcf(&mut self) -> MOSCRCF_W<CKGR_MOR_SPEC, 4> {
-        MOSCRCF_W::new(self)
+    pub fn moscrcf(&mut self) -> MOSCRCF_W<CKGR_MOR_SPEC> {
+        MOSCRCF_W::new(self, 4)
     }
     #[doc = "Bits 8:15 - Main Crystal Oscillator Start-up Time"]
     #[inline(always)]
     #[must_use]
-    pub fn moscxtst(&mut self) -> MOSCXTST_W<CKGR_MOR_SPEC, 8> {
-        MOSCXTST_W::new(self)
+    pub fn moscxtst(&mut self) -> MOSCXTST_W<CKGR_MOR_SPEC> {
+        MOSCXTST_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Password"]
     #[inline(always)]
     #[must_use]
-    pub fn key(&mut self) -> KEY_W<CKGR_MOR_SPEC, 16> {
-        KEY_W::new(self)
+    pub fn key(&mut self) -> KEY_W<CKGR_MOR_SPEC> {
+        KEY_W::new(self, 16)
     }
     #[doc = "Bit 24 - Main Oscillator Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn moscsel(&mut self) -> MOSCSEL_W<CKGR_MOR_SPEC, 24> {
-        MOSCSEL_W::new(self)
+    pub fn moscsel(&mut self) -> MOSCSEL_W<CKGR_MOR_SPEC> {
+        MOSCSEL_W::new(self, 24)
     }
     #[doc = "Bit 25 - Clock Failure Detector Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cfden(&mut self) -> CFDEN_W<CKGR_MOR_SPEC, 25> {
-        CFDEN_W::new(self)
+    pub fn cfden(&mut self) -> CFDEN_W<CKGR_MOR_SPEC> {
+        CFDEN_W::new(self, 25)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -1,18 +1,44 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
+    cr: CR,
+    smmr: SMMR,
+    mr: MR,
+    wumr: WUMR,
+    wuir: WUIR,
+    sr: SR,
+}
+impl RegisterBlock {
     #[doc = "0x00 - Supply Controller Control Register"]
-    pub cr: CR,
+    #[inline(always)]
+    pub const fn cr(&self) -> &CR {
+        &self.cr
+    }
     #[doc = "0x04 - Supply Controller Supply Monitor Mode Register"]
-    pub smmr: SMMR,
+    #[inline(always)]
+    pub const fn smmr(&self) -> &SMMR {
+        &self.smmr
+    }
     #[doc = "0x08 - Supply Controller Mode Register"]
-    pub mr: MR,
+    #[inline(always)]
+    pub const fn mr(&self) -> &MR {
+        &self.mr
+    }
     #[doc = "0x0c - Supply Controller Wake Up Mode Register"]
-    pub wumr: WUMR,
+    #[inline(always)]
+    pub const fn wumr(&self) -> &WUMR {
+        &self.wumr
+    }
     #[doc = "0x10 - Supply Controller Wake Up Inputs Register"]
-    pub wuir: WUIR,
+    #[inline(always)]
+    pub const fn wuir(&self) -> &WUIR {
+        &self.wuir
+    }
     #[doc = "0x14 - Supply Controller Status Register"]
-    pub sr: SR,
+    #[inline(always)]
+    pub const fn sr(&self) -> &SR {
+        &self.sr
+    }
 }
 #[doc = "CR (w) register accessor: Supply Controller Control Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
 module"]

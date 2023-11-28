@@ -5,11 +5,11 @@ pub type W = crate::W<CR_SPEC>;
 #[doc = "Field `UPDTIM` reader - Update Request Time Register"]
 pub type UPDTIM_R = crate::BitReader;
 #[doc = "Field `UPDTIM` writer - Update Request Time Register"]
-pub type UPDTIM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type UPDTIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UPDCAL` reader - Update Request Calendar Register"]
 pub type UPDCAL_R = crate::BitReader;
 #[doc = "Field `UPDCAL` writer - Update Request Calendar Register"]
-pub type UPDCAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type UPDCAL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TIMEVSEL` reader - Time Event Selection"]
 pub type TIMEVSEL_R = crate::FieldReader<TIMEVSEL_A>;
 #[doc = "Time Event Selection\n\nValue on reset: 0"]
@@ -68,8 +68,8 @@ impl TIMEVSEL_R {
     }
 }
 #[doc = "Field `TIMEVSEL` writer - Time Event Selection"]
-pub type TIMEVSEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, TIMEVSEL_A>;
-impl<'a, REG, const O: u8> TIMEVSEL_W<'a, REG, O>
+pub type TIMEVSEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, TIMEVSEL_A>;
+impl<'a, REG> TIMEVSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -145,8 +145,8 @@ impl CALEVSEL_R {
     }
 }
 #[doc = "Field `CALEVSEL` writer - Calendar Event Selection"]
-pub type CALEVSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, CALEVSEL_A>;
-impl<'a, REG, const O: u8> CALEVSEL_W<'a, REG, O>
+pub type CALEVSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CALEVSEL_A>;
+impl<'a, REG> CALEVSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -193,26 +193,26 @@ impl W {
     #[doc = "Bit 0 - Update Request Time Register"]
     #[inline(always)]
     #[must_use]
-    pub fn updtim(&mut self) -> UPDTIM_W<CR_SPEC, 0> {
-        UPDTIM_W::new(self)
+    pub fn updtim(&mut self) -> UPDTIM_W<CR_SPEC> {
+        UPDTIM_W::new(self, 0)
     }
     #[doc = "Bit 1 - Update Request Calendar Register"]
     #[inline(always)]
     #[must_use]
-    pub fn updcal(&mut self) -> UPDCAL_W<CR_SPEC, 1> {
-        UPDCAL_W::new(self)
+    pub fn updcal(&mut self) -> UPDCAL_W<CR_SPEC> {
+        UPDCAL_W::new(self, 1)
     }
     #[doc = "Bits 8:9 - Time Event Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn timevsel(&mut self) -> TIMEVSEL_W<CR_SPEC, 8> {
-        TIMEVSEL_W::new(self)
+    pub fn timevsel(&mut self) -> TIMEVSEL_W<CR_SPEC> {
+        TIMEVSEL_W::new(self, 8)
     }
     #[doc = "Bits 16:17 - Calendar Event Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn calevsel(&mut self) -> CALEVSEL_W<CR_SPEC, 16> {
-        CALEVSEL_W::new(self)
+    pub fn calevsel(&mut self) -> CALEVSEL_W<CR_SPEC> {
+        CALEVSEL_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

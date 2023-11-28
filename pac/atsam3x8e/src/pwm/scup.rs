@@ -5,11 +5,11 @@ pub type W = crate::W<SCUP_SPEC>;
 #[doc = "Field `UPR` reader - Update Period"]
 pub type UPR_R = crate::FieldReader;
 #[doc = "Field `UPR` writer - Update Period"]
-pub type UPR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type UPR_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `UPRCNT` reader - Update Period Counter"]
 pub type UPRCNT_R = crate::FieldReader;
 #[doc = "Field `UPRCNT` writer - Update Period Counter"]
-pub type UPRCNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type UPRCNT_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:3 - Update Period"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:3 - Update Period"]
     #[inline(always)]
     #[must_use]
-    pub fn upr(&mut self) -> UPR_W<SCUP_SPEC, 0> {
-        UPR_W::new(self)
+    pub fn upr(&mut self) -> UPR_W<SCUP_SPEC> {
+        UPR_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Update Period Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn uprcnt(&mut self) -> UPRCNT_W<SCUP_SPEC, 4> {
-        UPRCNT_W::new(self)
+    pub fn uprcnt(&mut self) -> UPRCNT_W<SCUP_SPEC> {
+        UPRCNT_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

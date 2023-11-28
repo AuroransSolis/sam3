@@ -44,8 +44,8 @@ impl DIVA_R {
     }
 }
 #[doc = "Field `DIVA` writer - CLKA, CLKB Divide Factor"]
-pub type DIVA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, DIVA_A>;
-impl<'a, REG, const O: u8> DIVA_W<'a, REG, O>
+pub type DIVA_W<'a, REG> = crate::FieldWriter<'a, REG, 8, DIVA_A>;
+impl<'a, REG> DIVA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -175,8 +175,8 @@ impl PREA_R {
     }
 }
 #[doc = "Field `PREA` writer - "]
-pub type PREA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, PREA_A>;
-impl<'a, REG, const O: u8> PREA_W<'a, REG, O>
+pub type PREA_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PREA_A>;
+impl<'a, REG> PREA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -279,8 +279,8 @@ impl DIVB_R {
     }
 }
 #[doc = "Field `DIVB` writer - CLKA, CLKB Divide Factor"]
-pub type DIVB_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, DIVB_A>;
-impl<'a, REG, const O: u8> DIVB_W<'a, REG, O>
+pub type DIVB_W<'a, REG> = crate::FieldWriter<'a, REG, 8, DIVB_A>;
+impl<'a, REG> DIVB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -410,8 +410,8 @@ impl PREB_R {
     }
 }
 #[doc = "Field `PREB` writer - "]
-pub type PREB_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, PREB_A>;
-impl<'a, REG, const O: u8> PREB_W<'a, REG, O>
+pub type PREB_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PREB_A>;
+impl<'a, REG> PREB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -498,26 +498,26 @@ impl W {
     #[doc = "Bits 0:7 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
     #[must_use]
-    pub fn diva(&mut self) -> DIVA_W<MR_SPEC, 0> {
-        DIVA_W::new(self)
+    pub fn diva(&mut self) -> DIVA_W<MR_SPEC> {
+        DIVA_W::new(self, 0)
     }
     #[doc = "Bits 8:11"]
     #[inline(always)]
     #[must_use]
-    pub fn prea(&mut self) -> PREA_W<MR_SPEC, 8> {
-        PREA_W::new(self)
+    pub fn prea(&mut self) -> PREA_W<MR_SPEC> {
+        PREA_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
     #[must_use]
-    pub fn divb(&mut self) -> DIVB_W<MR_SPEC, 16> {
-        DIVB_W::new(self)
+    pub fn divb(&mut self) -> DIVB_W<MR_SPEC> {
+        DIVB_W::new(self, 16)
     }
     #[doc = "Bits 24:27"]
     #[inline(always)]
     #[must_use]
-    pub fn preb(&mut self) -> PREB_W<MR_SPEC, 24> {
-        PREB_W::new(self)
+    pub fn preb(&mut self) -> PREB_W<MR_SPEC> {
+        PREB_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

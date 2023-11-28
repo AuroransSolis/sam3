@@ -5,35 +5,35 @@ pub type W = crate::W<ELMR0_SPEC>;
 #[doc = "Field `CSEL0` reader - Comparison 0 Selection"]
 pub type CSEL0_R = crate::BitReader;
 #[doc = "Field `CSEL0` writer - Comparison 0 Selection"]
-pub type CSEL0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CSEL0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CSEL1` reader - Comparison 1 Selection"]
 pub type CSEL1_R = crate::BitReader;
 #[doc = "Field `CSEL1` writer - Comparison 1 Selection"]
-pub type CSEL1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CSEL1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CSEL2` reader - Comparison 2 Selection"]
 pub type CSEL2_R = crate::BitReader;
 #[doc = "Field `CSEL2` writer - Comparison 2 Selection"]
-pub type CSEL2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CSEL2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CSEL3` reader - Comparison 3 Selection"]
 pub type CSEL3_R = crate::BitReader;
 #[doc = "Field `CSEL3` writer - Comparison 3 Selection"]
-pub type CSEL3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CSEL3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CSEL4` reader - Comparison 4 Selection"]
 pub type CSEL4_R = crate::BitReader;
 #[doc = "Field `CSEL4` writer - Comparison 4 Selection"]
-pub type CSEL4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CSEL4_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CSEL5` reader - Comparison 5 Selection"]
 pub type CSEL5_R = crate::BitReader;
 #[doc = "Field `CSEL5` writer - Comparison 5 Selection"]
-pub type CSEL5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CSEL5_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CSEL6` reader - Comparison 6 Selection"]
 pub type CSEL6_R = crate::BitReader;
 #[doc = "Field `CSEL6` writer - Comparison 6 Selection"]
-pub type CSEL6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CSEL6_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CSEL7` reader - Comparison 7 Selection"]
 pub type CSEL7_R = crate::BitReader;
 #[doc = "Field `CSEL7` writer - Comparison 7 Selection"]
-pub type CSEL7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CSEL7_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Comparison 0 Selection"]
     #[inline(always)]
@@ -80,50 +80,50 @@ impl W {
     #[doc = "Bit 0 - Comparison 0 Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn csel0(&mut self) -> CSEL0_W<ELMR0_SPEC, 0> {
-        CSEL0_W::new(self)
+    pub fn csel0(&mut self) -> CSEL0_W<ELMR0_SPEC> {
+        CSEL0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Comparison 1 Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn csel1(&mut self) -> CSEL1_W<ELMR0_SPEC, 1> {
-        CSEL1_W::new(self)
+    pub fn csel1(&mut self) -> CSEL1_W<ELMR0_SPEC> {
+        CSEL1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Comparison 2 Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn csel2(&mut self) -> CSEL2_W<ELMR0_SPEC, 2> {
-        CSEL2_W::new(self)
+    pub fn csel2(&mut self) -> CSEL2_W<ELMR0_SPEC> {
+        CSEL2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Comparison 3 Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn csel3(&mut self) -> CSEL3_W<ELMR0_SPEC, 3> {
-        CSEL3_W::new(self)
+    pub fn csel3(&mut self) -> CSEL3_W<ELMR0_SPEC> {
+        CSEL3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Comparison 4 Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn csel4(&mut self) -> CSEL4_W<ELMR0_SPEC, 4> {
-        CSEL4_W::new(self)
+    pub fn csel4(&mut self) -> CSEL4_W<ELMR0_SPEC> {
+        CSEL4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Comparison 5 Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn csel5(&mut self) -> CSEL5_W<ELMR0_SPEC, 5> {
-        CSEL5_W::new(self)
+    pub fn csel5(&mut self) -> CSEL5_W<ELMR0_SPEC> {
+        CSEL5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Comparison 6 Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn csel6(&mut self) -> CSEL6_W<ELMR0_SPEC, 6> {
-        CSEL6_W::new(self)
+    pub fn csel6(&mut self) -> CSEL6_W<ELMR0_SPEC> {
+        CSEL6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Comparison 7 Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn csel7(&mut self) -> CSEL7_W<ELMR0_SPEC, 7> {
-        CSEL7_W::new(self)
+    pub fn csel7(&mut self) -> CSEL7_W<ELMR0_SPEC> {
+        CSEL7_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

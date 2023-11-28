@@ -1,13 +1,13 @@
 #[doc = "Register `PMC_FOCR` writer"]
 pub type W = crate::W<PMC_FOCR_SPEC>;
 #[doc = "Field `FOCLR` writer - Fault Output Clear"]
-pub type FOCLR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FOCLR_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Fault Output Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn foclr(&mut self) -> FOCLR_W<PMC_FOCR_SPEC, 0> {
-        FOCLR_W::new(self)
+    pub fn foclr(&mut self) -> FOCLR_W<PMC_FOCR_SPEC> {
+        FOCLR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
