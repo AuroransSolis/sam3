@@ -39,7 +39,6 @@ function build_pac() {
     xsltproc -o "${pac_dir}/${chip_upper}.out" "svd/patches/expand-dim.xsl" "${1}"
     xsltproc "${xsl}" "${pac_dir}/${chip_upper}.out" \
         | svd2rust \
-            --const_generic \
             --target cortex-m \
             --strict \
             --pascal_enum_values \
