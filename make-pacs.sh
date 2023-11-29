@@ -41,9 +41,11 @@ function build_pac() {
         | svd2rust \
             --target cortex-m \
             --strict \
+            --generic-mod \
             --pascal_enum_values \
             --output-dir "${pac_dir}"
     form -i "${pac_dir}/lib.rs" -o "${pac_dir}/src/"
+    mv "${pac_dir}/generic.rs" "${pac_dir}/src/"
     rm "${pac_dir}/lib.rs"
     rm "${pac_dir}/${chip_upper}.out"
 
