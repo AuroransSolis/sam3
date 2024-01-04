@@ -123,5 +123,5 @@ impl crate::RegisterSpec for CHSR_SPEC {
 impl crate::Readable for CHSR_SPEC {}
 #[doc = "`reset()` method sets CHSR to value 0x00ff_0000"]
 impl crate::Resettable for CHSR_SPEC {
-    const RESET_VALUE: Self::Ux = 0x00ff_0000;
+    const RESET_VALUE: u32 = 0x00ff_0000;
 }

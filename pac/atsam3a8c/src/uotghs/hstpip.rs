@@ -295,10 +295,10 @@ impl crate::RegisterSpec for HSTPIP_SPEC {
 impl crate::Readable for HSTPIP_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hstpip::W`](W) writer structure"]
 impl crate::Writable for HSTPIP_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HSTPIP to value 0"]
 impl crate::Resettable for HSTPIP_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

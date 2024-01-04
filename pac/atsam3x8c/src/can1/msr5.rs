@@ -53,5 +53,5 @@ impl crate::RegisterSpec for MSR5_SPEC {
 impl crate::Readable for MSR5_SPEC {}
 #[doc = "`reset()` method sets MSR5 to value 0"]
 impl crate::Resettable for MSR5_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

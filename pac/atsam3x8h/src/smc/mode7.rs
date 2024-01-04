@@ -345,10 +345,10 @@ impl crate::RegisterSpec for MODE7_SPEC {
 impl crate::Readable for MODE7_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mode7::W`](W) writer structure"]
 impl crate::Writable for MODE7_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MODE7 to value 0x1000_0003"]
 impl crate::Resettable for MODE7_SPEC {
-    const RESET_VALUE: Self::Ux = 0x1000_0003;
+    const RESET_VALUE: u32 = 0x1000_0003;
 }

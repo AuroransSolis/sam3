@@ -172,5 +172,5 @@ impl crate::RegisterSpec for HSTISR_SPEC {
 impl crate::Readable for HSTISR_SPEC {}
 #[doc = "`reset()` method sets HSTISR to value 0"]
 impl crate::Resettable for HSTISR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

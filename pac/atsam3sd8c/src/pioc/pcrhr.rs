@@ -18,5 +18,5 @@ impl crate::RegisterSpec for PCRHR_SPEC {
 impl crate::Readable for PCRHR_SPEC {}
 #[doc = "`reset()` method sets PCRHR to value 0"]
 impl crate::Resettable for PCRHR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

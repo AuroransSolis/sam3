@@ -55,10 +55,10 @@ impl crate::RegisterSpec for EMR_SPEC {
 impl crate::Readable for EMR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`emr::W`](W) writer structure"]
 impl crate::Writable for EMR_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets EMR to value 0"]
 impl crate::Resettable for EMR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

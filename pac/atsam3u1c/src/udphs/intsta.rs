@@ -158,5 +158,5 @@ impl crate::RegisterSpec for INTSTA_SPEC {
 impl crate::Readable for INTSTA_SPEC {}
 #[doc = "`reset()` method sets INTSTA to value 0"]
 impl crate::Resettable for INTSTA_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

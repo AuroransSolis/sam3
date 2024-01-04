@@ -32,5 +32,5 @@ impl crate::RegisterSpec for FNUM_SPEC {
 impl crate::Readable for FNUM_SPEC {}
 #[doc = "`reset()` method sets FNUM to value 0"]
 impl crate::Resettable for FNUM_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

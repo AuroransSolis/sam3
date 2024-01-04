@@ -144,5 +144,5 @@ impl crate::RegisterSpec for LIN_MODE_IMR_LIN_MODE_SPEC {
 impl crate::Readable for LIN_MODE_IMR_LIN_MODE_SPEC {}
 #[doc = "`reset()` method sets IMR_LIN_MODE to value 0"]
 impl crate::Resettable for LIN_MODE_IMR_LIN_MODE_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

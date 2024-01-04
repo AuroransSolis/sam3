@@ -25,5 +25,5 @@ impl crate::RegisterSpec for PMC_WPSR_SPEC {
 impl crate::Readable for PMC_WPSR_SPEC {}
 #[doc = "`reset()` method sets PMC_WPSR to value 0"]
 impl crate::Resettable for PMC_WPSR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

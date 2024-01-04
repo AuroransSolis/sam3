@@ -235,5 +235,5 @@ impl crate::RegisterSpec for AIMMR_SPEC {
 impl crate::Readable for AIMMR_SPEC {}
 #[doc = "`reset()` method sets AIMMR to value 0"]
 impl crate::Resettable for AIMMR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

@@ -1400,10 +1400,10 @@ impl crate::RegisterSpec for WAVE_EQ_1_CMR0_WAVE_EQ_1_SPEC {
 impl crate::Readable for WAVE_EQ_1_CMR0_WAVE_EQ_1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`wave_eq_1_cmr0_wave_eq_1::W`](W) writer structure"]
 impl crate::Writable for WAVE_EQ_1_CMR0_WAVE_EQ_1_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CMR0_WAVE_EQ_1 to value 0"]
 impl crate::Resettable for WAVE_EQ_1_CMR0_WAVE_EQ_1_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

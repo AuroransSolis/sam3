@@ -525,10 +525,10 @@ impl crate::RegisterSpec for CFG3_SPEC {
 impl crate::Readable for CFG3_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`cfg3::W`](W) writer structure"]
 impl crate::Writable for CFG3_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CFG3 to value 0x0100_0000"]
 impl crate::Resettable for CFG3_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0100_0000;
+    const RESET_VALUE: u32 = 0x0100_0000;
 }

@@ -32,5 +32,5 @@ impl crate::RegisterSpec for QIMR_SPEC {
 impl crate::Readable for QIMR_SPEC {}
 #[doc = "`reset()` method sets QIMR to value 0"]
 impl crate::Resettable for QIMR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

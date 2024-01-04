@@ -85,10 +85,10 @@ impl crate::RegisterSpec for SETUP4_SPEC {
 impl crate::Readable for SETUP4_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`setup4::W`](W) writer structure"]
 impl crate::Writable for SETUP4_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SETUP4 to value 0x0101_0101"]
 impl crate::Resettable for SETUP4_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0101_0101;
+    const RESET_VALUE: u32 = 0x0101_0101;
 }

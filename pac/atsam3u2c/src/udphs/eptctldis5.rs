@@ -131,6 +131,6 @@ impl crate::RegisterSpec for EPTCTLDIS5_SPEC {
 }
 #[doc = "`write(|w| ..)` method takes [`eptctldis5::W`](W) writer structure"]
 impl crate::Writable for EPTCTLDIS5_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

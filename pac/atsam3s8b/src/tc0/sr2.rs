@@ -88,5 +88,5 @@ impl crate::RegisterSpec for SR2_SPEC {
 impl crate::Readable for SR2_SPEC {}
 #[doc = "`reset()` method sets SR2 to value 0"]
 impl crate::Resettable for SR2_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

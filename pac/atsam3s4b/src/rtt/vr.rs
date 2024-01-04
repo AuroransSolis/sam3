@@ -18,5 +18,5 @@ impl crate::RegisterSpec for VR_SPEC {
 impl crate::Readable for VR_SPEC {}
 #[doc = "`reset()` method sets VR to value 0"]
 impl crate::Resettable for VR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

@@ -954,5 +954,5 @@ impl crate::RegisterSpec for SR_SPEC {
 impl crate::Readable for SR_SPEC {}
 #[doc = "`reset()` method sets SR to value 0x0800"]
 impl crate::Resettable for SR_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0800;
+    const RESET_VALUE: u32 = 0x0800;
 }

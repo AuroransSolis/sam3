@@ -91,6 +91,6 @@ impl crate::RegisterSpec for SPI_MODE_CR_SPI_MODE_SPEC {
 }
 #[doc = "`write(|w| ..)` method takes [`spi_mode_cr_spi_mode::W`](W) writer structure"]
 impl crate::Writable for SPI_MODE_CR_SPI_MODE_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

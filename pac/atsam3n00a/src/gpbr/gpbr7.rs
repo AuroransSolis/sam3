@@ -40,6 +40,6 @@ impl crate::RegisterSpec for GPBR7_SPEC {
 impl crate::Readable for GPBR7_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`gpbr7::W`](W) writer structure"]
 impl crate::Writable for GPBR7_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

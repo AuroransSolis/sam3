@@ -235,5 +235,5 @@ impl crate::RegisterSpec for OWSR_SPEC {
 impl crate::Readable for OWSR_SPEC {}
 #[doc = "`reset()` method sets OWSR to value 0"]
 impl crate::Resettable for OWSR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

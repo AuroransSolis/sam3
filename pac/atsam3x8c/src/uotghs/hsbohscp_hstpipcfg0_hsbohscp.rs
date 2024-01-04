@@ -484,6 +484,6 @@ impl crate::RegisterSpec for HSBOHSCP_HSTPIPCFG0_HSBOHSCP_SPEC {
 impl crate::Readable for HSBOHSCP_HSTPIPCFG0_HSBOHSCP_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hsbohscp_hstpipcfg0_hsbohscp::W`](W) writer structure"]
 impl crate::Writable for HSBOHSCP_HSTPIPCFG0_HSBOHSCP_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

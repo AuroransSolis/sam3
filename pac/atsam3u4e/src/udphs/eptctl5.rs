@@ -109,5 +109,5 @@ impl crate::RegisterSpec for EPTCTL5_SPEC {
 impl crate::Readable for EPTCTL5_SPEC {}
 #[doc = "`reset()` method sets EPTCTL5 to value 0"]
 impl crate::Resettable for EPTCTL5_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

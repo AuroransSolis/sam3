@@ -211,5 +211,5 @@ impl crate::RegisterSpec for EPTSTA2_SPEC {
 impl crate::Readable for EPTSTA2_SPEC {}
 #[doc = "`reset()` method sets EPTSTA2 to value 0x40"]
 impl crate::Resettable for EPTSTA2_SPEC {
-    const RESET_VALUE: Self::Ux = 0x40;
+    const RESET_VALUE: u32 = 0x40;
 }

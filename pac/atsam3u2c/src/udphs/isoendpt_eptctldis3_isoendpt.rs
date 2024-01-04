@@ -131,6 +131,6 @@ impl crate::RegisterSpec for ISOENDPT_EPTCTLDIS3_ISOENDPT_SPEC {
 }
 #[doc = "`write(|w| ..)` method takes [`isoendpt_eptctldis3_isoendpt::W`](W) writer structure"]
 impl crate::Writable for ISOENDPT_EPTCTLDIS3_ISOENDPT_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

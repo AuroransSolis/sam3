@@ -137,5 +137,5 @@ impl crate::RegisterSpec for EBCIMR_SPEC {
 impl crate::Readable for EBCIMR_SPEC {}
 #[doc = "`reset()` method sets EBCIMR to value 0"]
 impl crate::Resettable for EBCIMR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

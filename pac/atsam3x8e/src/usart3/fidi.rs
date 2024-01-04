@@ -40,10 +40,10 @@ impl crate::RegisterSpec for FIDI_SPEC {
 impl crate::Readable for FIDI_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`fidi::W`](W) writer structure"]
 impl crate::Writable for FIDI_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FIDI to value 0x0174"]
 impl crate::Resettable for FIDI_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0174;
+    const RESET_VALUE: u32 = 0x0174;
 }

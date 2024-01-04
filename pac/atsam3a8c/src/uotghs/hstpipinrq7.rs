@@ -55,6 +55,6 @@ impl crate::RegisterSpec for HSTPIPINRQ7_SPEC {
 impl crate::Readable for HSTPIPINRQ7_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hstpipinrq7::W`](W) writer structure"]
 impl crate::Writable for HSTPIPINRQ7_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

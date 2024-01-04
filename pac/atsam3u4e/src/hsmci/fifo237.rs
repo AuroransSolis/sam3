@@ -40,6 +40,6 @@ impl crate::RegisterSpec for FIFO237_SPEC {
 impl crate::Readable for FIFO237_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`fifo237::W`](W) writer structure"]
 impl crate::Writable for FIFO237_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

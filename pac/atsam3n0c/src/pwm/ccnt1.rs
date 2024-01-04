@@ -18,5 +18,5 @@ impl crate::RegisterSpec for CCNT1_SPEC {
 impl crate::Readable for CCNT1_SPEC {}
 #[doc = "`reset()` method sets CCNT1 to value 0"]
 impl crate::Resettable for CCNT1_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

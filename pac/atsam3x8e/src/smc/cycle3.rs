@@ -55,10 +55,10 @@ impl crate::RegisterSpec for CYCLE3_SPEC {
 impl crate::Readable for CYCLE3_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`cycle3::W`](W) writer structure"]
 impl crate::Writable for CYCLE3_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CYCLE3 to value 0x0003_0003"]
 impl crate::Resettable for CYCLE3_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0003_0003;
+    const RESET_VALUE: u32 = 0x0003_0003;
 }

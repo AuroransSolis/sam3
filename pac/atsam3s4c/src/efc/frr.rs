@@ -18,5 +18,5 @@ impl crate::RegisterSpec for FRR_SPEC {
 impl crate::Readable for FRR_SPEC {}
 #[doc = "`reset()` method sets FRR to value 0"]
 impl crate::Resettable for FRR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

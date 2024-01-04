@@ -495,6 +495,6 @@ impl crate::RegisterSpec for HSTPIPCFG5_SPEC {
 impl crate::Readable for HSTPIPCFG5_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hstpipcfg5::W`](W) writer structure"]
 impl crate::Writable for HSTPIPCFG5_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

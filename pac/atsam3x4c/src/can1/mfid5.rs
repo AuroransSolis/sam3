@@ -18,5 +18,5 @@ impl crate::RegisterSpec for MFID5_SPEC {
 impl crate::Readable for MFID5_SPEC {}
 #[doc = "`reset()` method sets MFID5 to value 0"]
 impl crate::Resettable for MFID5_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

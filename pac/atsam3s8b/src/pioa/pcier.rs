@@ -51,6 +51,6 @@ impl crate::RegisterSpec for PCIER_SPEC {
 }
 #[doc = "`write(|w| ..)` method takes [`pcier::W`](W) writer structure"]
 impl crate::Writable for PCIER_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

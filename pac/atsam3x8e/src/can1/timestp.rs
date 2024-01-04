@@ -18,5 +18,5 @@ impl crate::RegisterSpec for TIMESTP_SPEC {
 impl crate::Readable for TIMESTP_SPEC {}
 #[doc = "`reset()` method sets TIMESTP to value 0"]
 impl crate::Resettable for TIMESTP_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

@@ -109,5 +109,5 @@ impl crate::RegisterSpec for ISOENDPT_EPTCTL1_ISOENDPT_SPEC {
 impl crate::Readable for ISOENDPT_EPTCTL1_ISOENDPT_SPEC {}
 #[doc = "`reset()` method sets EPTCTL1_ISOENDPT to value 0"]
 impl crate::Resettable for ISOENDPT_EPTCTL1_ISOENDPT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

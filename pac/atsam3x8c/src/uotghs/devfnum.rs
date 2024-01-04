@@ -32,5 +32,5 @@ impl crate::RegisterSpec for DEVFNUM_SPEC {
 impl crate::Readable for DEVFNUM_SPEC {}
 #[doc = "`reset()` method sets DEVFNUM to value 0"]
 impl crate::Resettable for DEVFNUM_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

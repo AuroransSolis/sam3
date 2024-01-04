@@ -39,5 +39,5 @@ impl crate::RegisterSpec for ISR_SPEC {
 impl crate::Readable for ISR_SPEC {}
 #[doc = "`reset()` method sets ISR to value 0"]
 impl crate::Resettable for ISR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

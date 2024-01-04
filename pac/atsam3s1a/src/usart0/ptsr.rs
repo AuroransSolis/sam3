@@ -25,5 +25,5 @@ impl crate::RegisterSpec for PTSR_SPEC {
 impl crate::Readable for PTSR_SPEC {}
 #[doc = "`reset()` method sets PTSR to value 0"]
 impl crate::Resettable for PTSR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

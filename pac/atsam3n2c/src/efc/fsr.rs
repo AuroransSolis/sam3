@@ -32,5 +32,5 @@ impl crate::RegisterSpec for FSR_SPEC {
 impl crate::Readable for FSR_SPEC {}
 #[doc = "`reset()` method sets FSR to value 0x01"]
 impl crate::Resettable for FSR_SPEC {
-    const RESET_VALUE: Self::Ux = 0x01;
+    const RESET_VALUE: u32 = 0x01;
 }

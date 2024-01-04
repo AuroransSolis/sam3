@@ -171,6 +171,6 @@ impl crate::RegisterSpec for LIN_MODE_IDR_LIN_MODE_SPEC {
 }
 #[doc = "`write(|w| ..)` method takes [`lin_mode_idr_lin_mode::W`](W) writer structure"]
 impl crate::Writable for LIN_MODE_IDR_LIN_MODE_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

@@ -109,5 +109,5 @@ impl crate::RegisterSpec for WPSR_SPEC {
 impl crate::Readable for WPSR_SPEC {}
 #[doc = "`reset()` method sets WPSR to value 0"]
 impl crate::Resettable for WPSR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

@@ -244,5 +244,5 @@ impl crate::RegisterSpec for ISOENDPT_EPTSTA5_ISOENDPT_SPEC {
 impl crate::Readable for ISOENDPT_EPTSTA5_ISOENDPT_SPEC {}
 #[doc = "`reset()` method sets EPTSTA5_ISOENDPT to value 0x40"]
 impl crate::Resettable for ISOENDPT_EPTSTA5_ISOENDPT_SPEC {
-    const RESET_VALUE: Self::Ux = 0x40;
+    const RESET_VALUE: u32 = 0x40;
 }

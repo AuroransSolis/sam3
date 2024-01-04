@@ -33,6 +33,6 @@ impl crate::RegisterSpec for FIFO82_SPEC {
 impl crate::Readable for FIFO82_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`fifo82::W`](W) writer structure"]
 impl crate::Writable for FIFO82_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

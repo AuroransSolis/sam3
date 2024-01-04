@@ -25,5 +25,5 @@ impl crate::RegisterSpec for LINBRR_SPEC {
 impl crate::Readable for LINBRR_SPEC {}
 #[doc = "`reset()` method sets LINBRR to value 0"]
 impl crate::Resettable for LINBRR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

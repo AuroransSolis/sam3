@@ -89,10 +89,10 @@ impl crate::RegisterSpec for GCFG_SPEC {
 impl crate::Readable for GCFG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`gcfg::W`](W) writer structure"]
 impl crate::Writable for GCFG_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GCFG to value 0x10"]
 impl crate::Resettable for GCFG_SPEC {
-    const RESET_VALUE: Self::Ux = 0x10;
+    const RESET_VALUE: u32 = 0x10;
 }

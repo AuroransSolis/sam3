@@ -81,5 +81,5 @@ impl crate::RegisterSpec for PMC_IMR_SPEC {
 impl crate::Readable for PMC_IMR_SPEC {}
 #[doc = "`reset()` method sets PMC_IMR to value 0"]
 impl crate::Resettable for PMC_IMR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

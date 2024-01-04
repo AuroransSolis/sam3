@@ -123,6 +123,6 @@ impl crate::RegisterSpec for DEVEPTIDR1_SPEC {
 }
 #[doc = "`write(|w| ..)` method takes [`deveptidr1::W`](W) writer structure"]
 impl crate::Writable for DEVEPTIDR1_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

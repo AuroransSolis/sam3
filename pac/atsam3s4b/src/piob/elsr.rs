@@ -235,5 +235,5 @@ impl crate::RegisterSpec for ELSR_SPEC {
 impl crate::Readable for ELSR_SPEC {}
 #[doc = "`reset()` method sets ELSR to value 0"]
 impl crate::Resettable for ELSR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

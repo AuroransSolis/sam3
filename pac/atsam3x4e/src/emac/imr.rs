@@ -95,5 +95,5 @@ impl crate::RegisterSpec for IMR_SPEC {
 impl crate::Readable for IMR_SPEC {}
 #[doc = "`reset()` method sets IMR to value 0x3fff"]
 impl crate::Resettable for IMR_SPEC {
-    const RESET_VALUE: Self::Ux = 0x3fff;
+    const RESET_VALUE: u32 = 0x3fff;
 }

@@ -172,5 +172,5 @@ impl crate::RegisterSpec for DEVISR_SPEC {
 impl crate::Readable for DEVISR_SPEC {}
 #[doc = "`reset()` method sets DEVISR to value 0"]
 impl crate::Resettable for DEVISR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

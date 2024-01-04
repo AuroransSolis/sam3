@@ -115,6 +115,6 @@ impl crate::RegisterSpec for HSTPIPIER3_SPEC {
 }
 #[doc = "`write(|w| ..)` method takes [`hstpipier3::W`](W) writer structure"]
 impl crate::Writable for HSTPIPIER3_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

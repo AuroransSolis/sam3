@@ -235,5 +235,5 @@ impl crate::RegisterSpec for FRLHSR_SPEC {
 impl crate::Readable for FRLHSR_SPEC {}
 #[doc = "`reset()` method sets FRLHSR to value 0"]
 impl crate::Resettable for FRLHSR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

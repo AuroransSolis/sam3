@@ -95,5 +95,5 @@ impl crate::RegisterSpec for PMC_SR_SPEC {
 impl crate::Readable for PMC_SR_SPEC {}
 #[doc = "`reset()` method sets PMC_SR to value 0x0001_0008"]
 impl crate::Resettable for PMC_SR_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0001_0008;
+    const RESET_VALUE: u32 = 0x0001_0008;
 }

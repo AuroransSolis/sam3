@@ -179,5 +179,5 @@ impl crate::RegisterSpec for ECC_SR1_SPEC {
 impl crate::Readable for ECC_SR1_SPEC {}
 #[doc = "`reset()` method sets ECC_SR1 to value 0"]
 impl crate::Resettable for ECC_SR1_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

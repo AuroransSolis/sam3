@@ -427,10 +427,10 @@ impl crate::RegisterSpec for NCFGR_SPEC {
 impl crate::Readable for NCFGR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ncfgr::W`](W) writer structure"]
 impl crate::Writable for NCFGR_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets NCFGR to value 0x0800"]
 impl crate::Resettable for NCFGR_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0800;
+    const RESET_VALUE: u32 = 0x0800;
 }

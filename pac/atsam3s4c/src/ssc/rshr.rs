@@ -18,5 +18,5 @@ impl crate::RegisterSpec for RSHR_SPEC {
 impl crate::Readable for RSHR_SPEC {}
 #[doc = "`reset()` method sets RSHR to value 0"]
 impl crate::Resettable for RSHR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }
