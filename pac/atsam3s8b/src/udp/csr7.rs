@@ -1,45 +1,43 @@
 #[doc = "Register `CSR7` reader"]
-pub type R = crate::R<CSR7_SPEC>;
+pub type R = crate::R<Csr7Spec>;
 #[doc = "Register `CSR7` writer"]
-pub type W = crate::W<CSR7_SPEC>;
+pub type W = crate::W<Csr7Spec>;
 #[doc = "Field `TXCOMP` reader - Generates an IN Packet with Data Previously Written in the DPR"]
-pub type TXCOMP_R = crate::BitReader;
+pub type TxcompR = crate::BitReader;
 #[doc = "Field `TXCOMP` writer - Generates an IN Packet with Data Previously Written in the DPR"]
-pub type TXCOMP_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type TxcompW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RX_DATA_BK0` reader - Receive Data Bank 0"]
-pub type RX_DATA_BK0_R = crate::BitReader;
+pub type RxDataBk0R = crate::BitReader;
 #[doc = "Field `RX_DATA_BK0` writer - Receive Data Bank 0"]
-pub type RX_DATA_BK0_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type RxDataBk0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXSETUP` reader - Received Setup"]
-pub type RXSETUP_R = crate::BitReader;
+pub type RxsetupR = crate::BitReader;
 #[doc = "Field `RXSETUP` writer - Received Setup"]
-pub type RXSETUP_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type RxsetupW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `STALLSENT` reader - Stall Sent"]
-pub type STALLSENT_R = crate::BitReader;
+pub type StallsentR = crate::BitReader;
 #[doc = "Field `STALLSENT` writer - Stall Sent"]
-pub type STALLSENT_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type StallsentW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXPKTRDY` reader - Transmit Packet Ready"]
-pub type TXPKTRDY_R = crate::BitReader;
+pub type TxpktrdyR = crate::BitReader;
 #[doc = "Field `TXPKTRDY` writer - Transmit Packet Ready"]
-pub type TXPKTRDY_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type TxpktrdyW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FORCESTALL` reader - Force Stall (used by Control, Bulk and Isochronous Endpoints)"]
-pub type FORCESTALL_R = crate::BitReader;
+pub type ForcestallR = crate::BitReader;
 #[doc = "Field `FORCESTALL` writer - Force Stall (used by Control, Bulk and Isochronous Endpoints)"]
-pub type FORCESTALL_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type ForcestallW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RX_DATA_BK1` reader - Receive Data Bank 1 (only used by endpoints with ping-pong attributes)"]
-pub type RX_DATA_BK1_R = crate::BitReader;
+pub type RxDataBk1R = crate::BitReader;
 #[doc = "Field `RX_DATA_BK1` writer - Receive Data Bank 1 (only used by endpoints with ping-pong attributes)"]
-pub type RX_DATA_BK1_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type RxDataBk1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DIR` reader - Transfer Direction (only available for control endpoints)"]
-pub type DIR_R = crate::BitReader;
+pub type DirR = crate::BitReader;
 #[doc = "Field `DIR` writer - Transfer Direction (only available for control endpoints)"]
-pub type DIR_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `EPTYPE` reader - Endpoint Type"]
-pub type EPTYPE_R = crate::FieldReader<EPTYPE_A>;
+pub type DirW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Endpoint Type"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum EPTYPE_A {
+pub enum Eptype {
     #[doc = "0: Control"]
     Ctrl = 0,
     #[doc = "1: Isochronous OUT"]
@@ -55,69 +53,71 @@ pub enum EPTYPE_A {
     #[doc = "7: Interrupt IN"]
     IntIn = 7,
 }
-impl From<EPTYPE_A> for u8 {
+impl From<Eptype> for u8 {
     #[inline(always)]
-    fn from(variant: EPTYPE_A) -> Self {
+    fn from(variant: Eptype) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for EPTYPE_A {
+impl crate::FieldSpec for Eptype {
     type Ux = u8;
 }
-impl EPTYPE_R {
+#[doc = "Field `EPTYPE` reader - Endpoint Type"]
+pub type EptypeR = crate::FieldReader<Eptype>;
+impl EptypeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<EPTYPE_A> {
+    pub const fn variant(&self) -> Option<Eptype> {
         match self.bits {
-            0 => Some(EPTYPE_A::Ctrl),
-            1 => Some(EPTYPE_A::IsoOut),
-            2 => Some(EPTYPE_A::BulkOut),
-            3 => Some(EPTYPE_A::IntOut),
-            5 => Some(EPTYPE_A::IsoIn),
-            6 => Some(EPTYPE_A::BulkIn),
-            7 => Some(EPTYPE_A::IntIn),
+            0 => Some(Eptype::Ctrl),
+            1 => Some(Eptype::IsoOut),
+            2 => Some(Eptype::BulkOut),
+            3 => Some(Eptype::IntOut),
+            5 => Some(Eptype::IsoIn),
+            6 => Some(Eptype::BulkIn),
+            7 => Some(Eptype::IntIn),
             _ => None,
         }
     }
     #[doc = "Control"]
     #[inline(always)]
     pub fn is_ctrl(&self) -> bool {
-        *self == EPTYPE_A::Ctrl
+        *self == Eptype::Ctrl
     }
     #[doc = "Isochronous OUT"]
     #[inline(always)]
     pub fn is_iso_out(&self) -> bool {
-        *self == EPTYPE_A::IsoOut
+        *self == Eptype::IsoOut
     }
     #[doc = "Bulk OUT"]
     #[inline(always)]
     pub fn is_bulk_out(&self) -> bool {
-        *self == EPTYPE_A::BulkOut
+        *self == Eptype::BulkOut
     }
     #[doc = "Interrupt OUT"]
     #[inline(always)]
     pub fn is_int_out(&self) -> bool {
-        *self == EPTYPE_A::IntOut
+        *self == Eptype::IntOut
     }
     #[doc = "Isochronous IN"]
     #[inline(always)]
     pub fn is_iso_in(&self) -> bool {
-        *self == EPTYPE_A::IsoIn
+        *self == Eptype::IsoIn
     }
     #[doc = "Bulk IN"]
     #[inline(always)]
     pub fn is_bulk_in(&self) -> bool {
-        *self == EPTYPE_A::BulkIn
+        *self == Eptype::BulkIn
     }
     #[doc = "Interrupt IN"]
     #[inline(always)]
     pub fn is_int_in(&self) -> bool {
-        *self == EPTYPE_A::IntIn
+        *self == Eptype::IntIn
     }
 }
 #[doc = "Field `EPTYPE` writer - Endpoint Type"]
-pub type EPTYPE_W<'a, REG> = crate::FieldWriter<'a, REG, 3, EPTYPE_A>;
-impl<'a, REG> EPTYPE_W<'a, REG>
+pub type EptypeW<'a, REG> = crate::FieldWriter<'a, REG, 3, Eptype>;
+impl<'a, REG> EptypeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -125,206 +125,197 @@ where
     #[doc = "Control"]
     #[inline(always)]
     pub fn ctrl(self) -> &'a mut crate::W<REG> {
-        self.variant(EPTYPE_A::Ctrl)
+        self.variant(Eptype::Ctrl)
     }
     #[doc = "Isochronous OUT"]
     #[inline(always)]
     pub fn iso_out(self) -> &'a mut crate::W<REG> {
-        self.variant(EPTYPE_A::IsoOut)
+        self.variant(Eptype::IsoOut)
     }
     #[doc = "Bulk OUT"]
     #[inline(always)]
     pub fn bulk_out(self) -> &'a mut crate::W<REG> {
-        self.variant(EPTYPE_A::BulkOut)
+        self.variant(Eptype::BulkOut)
     }
     #[doc = "Interrupt OUT"]
     #[inline(always)]
     pub fn int_out(self) -> &'a mut crate::W<REG> {
-        self.variant(EPTYPE_A::IntOut)
+        self.variant(Eptype::IntOut)
     }
     #[doc = "Isochronous IN"]
     #[inline(always)]
     pub fn iso_in(self) -> &'a mut crate::W<REG> {
-        self.variant(EPTYPE_A::IsoIn)
+        self.variant(Eptype::IsoIn)
     }
     #[doc = "Bulk IN"]
     #[inline(always)]
     pub fn bulk_in(self) -> &'a mut crate::W<REG> {
-        self.variant(EPTYPE_A::BulkIn)
+        self.variant(Eptype::BulkIn)
     }
     #[doc = "Interrupt IN"]
     #[inline(always)]
     pub fn int_in(self) -> &'a mut crate::W<REG> {
-        self.variant(EPTYPE_A::IntIn)
+        self.variant(Eptype::IntIn)
     }
 }
 #[doc = "Field `DTGLE` reader - Data Toggle"]
-pub type DTGLE_R = crate::BitReader;
+pub type DtgleR = crate::BitReader;
 #[doc = "Field `DTGLE` writer - Data Toggle"]
-pub type DTGLE_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DtgleW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPEDS` reader - Endpoint Enable Disable"]
-pub type EPEDS_R = crate::BitReader;
+pub type EpedsR = crate::BitReader;
 #[doc = "Field `EPEDS` writer - Endpoint Enable Disable"]
-pub type EPEDS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type EpedsW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXBYTECNT` reader - Number of Bytes Available in the FIFO"]
-pub type RXBYTECNT_R = crate::FieldReader<u16>;
+pub type RxbytecntR = crate::FieldReader<u16>;
 #[doc = "Field `RXBYTECNT` writer - Number of Bytes Available in the FIFO"]
-pub type RXBYTECNT_W<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
+pub type RxbytecntW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 impl R {
     #[doc = "Bit 0 - Generates an IN Packet with Data Previously Written in the DPR"]
     #[inline(always)]
-    pub fn txcomp(&self) -> TXCOMP_R {
-        TXCOMP_R::new((self.bits & 1) != 0)
+    pub fn txcomp(&self) -> TxcompR {
+        TxcompR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Receive Data Bank 0"]
     #[inline(always)]
-    pub fn rx_data_bk0(&self) -> RX_DATA_BK0_R {
-        RX_DATA_BK0_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn rx_data_bk0(&self) -> RxDataBk0R {
+        RxDataBk0R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Received Setup"]
     #[inline(always)]
-    pub fn rxsetup(&self) -> RXSETUP_R {
-        RXSETUP_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn rxsetup(&self) -> RxsetupR {
+        RxsetupR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Stall Sent"]
     #[inline(always)]
-    pub fn stallsent(&self) -> STALLSENT_R {
-        STALLSENT_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn stallsent(&self) -> StallsentR {
+        StallsentR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Transmit Packet Ready"]
     #[inline(always)]
-    pub fn txpktrdy(&self) -> TXPKTRDY_R {
-        TXPKTRDY_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn txpktrdy(&self) -> TxpktrdyR {
+        TxpktrdyR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Force Stall (used by Control, Bulk and Isochronous Endpoints)"]
     #[inline(always)]
-    pub fn forcestall(&self) -> FORCESTALL_R {
-        FORCESTALL_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn forcestall(&self) -> ForcestallR {
+        ForcestallR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Receive Data Bank 1 (only used by endpoints with ping-pong attributes)"]
     #[inline(always)]
-    pub fn rx_data_bk1(&self) -> RX_DATA_BK1_R {
-        RX_DATA_BK1_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn rx_data_bk1(&self) -> RxDataBk1R {
+        RxDataBk1R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Transfer Direction (only available for control endpoints)"]
     #[inline(always)]
-    pub fn dir(&self) -> DIR_R {
-        DIR_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn dir(&self) -> DirR {
+        DirR::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:10 - Endpoint Type"]
     #[inline(always)]
-    pub fn eptype(&self) -> EPTYPE_R {
-        EPTYPE_R::new(((self.bits >> 8) & 7) as u8)
+    pub fn eptype(&self) -> EptypeR {
+        EptypeR::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bit 11 - Data Toggle"]
     #[inline(always)]
-    pub fn dtgle(&self) -> DTGLE_R {
-        DTGLE_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn dtgle(&self) -> DtgleR {
+        DtgleR::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 15 - Endpoint Enable Disable"]
     #[inline(always)]
-    pub fn epeds(&self) -> EPEDS_R {
-        EPEDS_R::new(((self.bits >> 15) & 1) != 0)
+    pub fn epeds(&self) -> EpedsR {
+        EpedsR::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:26 - Number of Bytes Available in the FIFO"]
     #[inline(always)]
-    pub fn rxbytecnt(&self) -> RXBYTECNT_R {
-        RXBYTECNT_R::new(((self.bits >> 16) & 0x07ff) as u16)
+    pub fn rxbytecnt(&self) -> RxbytecntR {
+        RxbytecntR::new(((self.bits >> 16) & 0x07ff) as u16)
     }
 }
 impl W {
     #[doc = "Bit 0 - Generates an IN Packet with Data Previously Written in the DPR"]
     #[inline(always)]
     #[must_use]
-    pub fn txcomp(&mut self) -> TXCOMP_W<CSR7_SPEC> {
-        TXCOMP_W::new(self, 0)
+    pub fn txcomp(&mut self) -> TxcompW<Csr7Spec> {
+        TxcompW::new(self, 0)
     }
     #[doc = "Bit 1 - Receive Data Bank 0"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_data_bk0(&mut self) -> RX_DATA_BK0_W<CSR7_SPEC> {
-        RX_DATA_BK0_W::new(self, 1)
+    pub fn rx_data_bk0(&mut self) -> RxDataBk0W<Csr7Spec> {
+        RxDataBk0W::new(self, 1)
     }
     #[doc = "Bit 2 - Received Setup"]
     #[inline(always)]
     #[must_use]
-    pub fn rxsetup(&mut self) -> RXSETUP_W<CSR7_SPEC> {
-        RXSETUP_W::new(self, 2)
+    pub fn rxsetup(&mut self) -> RxsetupW<Csr7Spec> {
+        RxsetupW::new(self, 2)
     }
     #[doc = "Bit 3 - Stall Sent"]
     #[inline(always)]
     #[must_use]
-    pub fn stallsent(&mut self) -> STALLSENT_W<CSR7_SPEC> {
-        STALLSENT_W::new(self, 3)
+    pub fn stallsent(&mut self) -> StallsentW<Csr7Spec> {
+        StallsentW::new(self, 3)
     }
     #[doc = "Bit 4 - Transmit Packet Ready"]
     #[inline(always)]
     #[must_use]
-    pub fn txpktrdy(&mut self) -> TXPKTRDY_W<CSR7_SPEC> {
-        TXPKTRDY_W::new(self, 4)
+    pub fn txpktrdy(&mut self) -> TxpktrdyW<Csr7Spec> {
+        TxpktrdyW::new(self, 4)
     }
     #[doc = "Bit 5 - Force Stall (used by Control, Bulk and Isochronous Endpoints)"]
     #[inline(always)]
     #[must_use]
-    pub fn forcestall(&mut self) -> FORCESTALL_W<CSR7_SPEC> {
-        FORCESTALL_W::new(self, 5)
+    pub fn forcestall(&mut self) -> ForcestallW<Csr7Spec> {
+        ForcestallW::new(self, 5)
     }
     #[doc = "Bit 6 - Receive Data Bank 1 (only used by endpoints with ping-pong attributes)"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_data_bk1(&mut self) -> RX_DATA_BK1_W<CSR7_SPEC> {
-        RX_DATA_BK1_W::new(self, 6)
+    pub fn rx_data_bk1(&mut self) -> RxDataBk1W<Csr7Spec> {
+        RxDataBk1W::new(self, 6)
     }
     #[doc = "Bit 7 - Transfer Direction (only available for control endpoints)"]
     #[inline(always)]
     #[must_use]
-    pub fn dir(&mut self) -> DIR_W<CSR7_SPEC> {
-        DIR_W::new(self, 7)
+    pub fn dir(&mut self) -> DirW<Csr7Spec> {
+        DirW::new(self, 7)
     }
     #[doc = "Bits 8:10 - Endpoint Type"]
     #[inline(always)]
     #[must_use]
-    pub fn eptype(&mut self) -> EPTYPE_W<CSR7_SPEC> {
-        EPTYPE_W::new(self, 8)
+    pub fn eptype(&mut self) -> EptypeW<Csr7Spec> {
+        EptypeW::new(self, 8)
     }
     #[doc = "Bit 11 - Data Toggle"]
     #[inline(always)]
     #[must_use]
-    pub fn dtgle(&mut self) -> DTGLE_W<CSR7_SPEC> {
-        DTGLE_W::new(self, 11)
+    pub fn dtgle(&mut self) -> DtgleW<Csr7Spec> {
+        DtgleW::new(self, 11)
     }
     #[doc = "Bit 15 - Endpoint Enable Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn epeds(&mut self) -> EPEDS_W<CSR7_SPEC> {
-        EPEDS_W::new(self, 15)
+    pub fn epeds(&mut self) -> EpedsW<Csr7Spec> {
+        EpedsW::new(self, 15)
     }
     #[doc = "Bits 16:26 - Number of Bytes Available in the FIFO"]
     #[inline(always)]
     #[must_use]
-    pub fn rxbytecnt(&mut self) -> RXBYTECNT_W<CSR7_SPEC> {
-        RXBYTECNT_W::new(self, 16)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn rxbytecnt(&mut self) -> RxbytecntW<Csr7Spec> {
+        RxbytecntW::new(self, 16)
     }
 }
 #[doc = "Endpoint Control and Status Register 7\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr7::R`](R).  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csr7::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CSR7_SPEC;
-impl crate::RegisterSpec for CSR7_SPEC {
+pub struct Csr7Spec;
+impl crate::RegisterSpec for Csr7Spec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`csr7::R`](R) reader structure"]
-impl crate::Readable for CSR7_SPEC {}
+impl crate::Readable for Csr7Spec {}
 #[doc = "`write(|w| ..)` method takes [`csr7::W`](W) writer structure"]
-impl crate::Writable for CSR7_SPEC {
+impl crate::Writable for Csr7Spec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

@@ -1,17 +1,15 @@
 #[doc = "Register `CTRLA4` reader"]
-pub type R = crate::R<CTRLA4_SPEC>;
+pub type R = crate::R<Ctrla4Spec>;
 #[doc = "Register `CTRLA4` writer"]
-pub type W = crate::W<CTRLA4_SPEC>;
+pub type W = crate::W<Ctrla4Spec>;
 #[doc = "Field `BTSIZE` reader - Buffer Transfer Size"]
-pub type BTSIZE_R = crate::FieldReader<u16>;
+pub type BtsizeR = crate::FieldReader<u16>;
 #[doc = "Field `BTSIZE` writer - Buffer Transfer Size"]
-pub type BTSIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-#[doc = "Field `SCSIZE` reader - Source Chunk Transfer Size."]
-pub type SCSIZE_R = crate::FieldReader<SCSIZE_A>;
+pub type BtsizeW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Source Chunk Transfer Size.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum SCSIZE_A {
+pub enum Scsize {
     #[doc = "0: 1 data transferred"]
     Chk1 = 0,
     #[doc = "1: 4 data transferred"]
@@ -21,51 +19,53 @@ pub enum SCSIZE_A {
     #[doc = "3: 16 data transferred"]
     Chk16 = 3,
 }
-impl From<SCSIZE_A> for u8 {
+impl From<Scsize> for u8 {
     #[inline(always)]
-    fn from(variant: SCSIZE_A) -> Self {
+    fn from(variant: Scsize) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for SCSIZE_A {
+impl crate::FieldSpec for Scsize {
     type Ux = u8;
 }
-impl SCSIZE_R {
+#[doc = "Field `SCSIZE` reader - Source Chunk Transfer Size."]
+pub type ScsizeR = crate::FieldReader<Scsize>;
+impl ScsizeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<SCSIZE_A> {
+    pub const fn variant(&self) -> Option<Scsize> {
         match self.bits {
-            0 => Some(SCSIZE_A::Chk1),
-            1 => Some(SCSIZE_A::Chk4),
-            2 => Some(SCSIZE_A::Chk8),
-            3 => Some(SCSIZE_A::Chk16),
+            0 => Some(Scsize::Chk1),
+            1 => Some(Scsize::Chk4),
+            2 => Some(Scsize::Chk8),
+            3 => Some(Scsize::Chk16),
             _ => None,
         }
     }
     #[doc = "1 data transferred"]
     #[inline(always)]
     pub fn is_chk_1(&self) -> bool {
-        *self == SCSIZE_A::Chk1
+        *self == Scsize::Chk1
     }
     #[doc = "4 data transferred"]
     #[inline(always)]
     pub fn is_chk_4(&self) -> bool {
-        *self == SCSIZE_A::Chk4
+        *self == Scsize::Chk4
     }
     #[doc = "8 data transferred"]
     #[inline(always)]
     pub fn is_chk_8(&self) -> bool {
-        *self == SCSIZE_A::Chk8
+        *self == Scsize::Chk8
     }
     #[doc = "16 data transferred"]
     #[inline(always)]
     pub fn is_chk_16(&self) -> bool {
-        *self == SCSIZE_A::Chk16
+        *self == Scsize::Chk16
     }
 }
 #[doc = "Field `SCSIZE` writer - Source Chunk Transfer Size."]
-pub type SCSIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 3, SCSIZE_A>;
-impl<'a, REG> SCSIZE_W<'a, REG>
+pub type ScsizeW<'a, REG> = crate::FieldWriter<'a, REG, 3, Scsize>;
+impl<'a, REG> ScsizeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -73,30 +73,28 @@ where
     #[doc = "1 data transferred"]
     #[inline(always)]
     pub fn chk_1(self) -> &'a mut crate::W<REG> {
-        self.variant(SCSIZE_A::Chk1)
+        self.variant(Scsize::Chk1)
     }
     #[doc = "4 data transferred"]
     #[inline(always)]
     pub fn chk_4(self) -> &'a mut crate::W<REG> {
-        self.variant(SCSIZE_A::Chk4)
+        self.variant(Scsize::Chk4)
     }
     #[doc = "8 data transferred"]
     #[inline(always)]
     pub fn chk_8(self) -> &'a mut crate::W<REG> {
-        self.variant(SCSIZE_A::Chk8)
+        self.variant(Scsize::Chk8)
     }
     #[doc = "16 data transferred"]
     #[inline(always)]
     pub fn chk_16(self) -> &'a mut crate::W<REG> {
-        self.variant(SCSIZE_A::Chk16)
+        self.variant(Scsize::Chk16)
     }
 }
-#[doc = "Field `DCSIZE` reader - Destination Chunk Transfer Size"]
-pub type DCSIZE_R = crate::FieldReader<DCSIZE_A>;
 #[doc = "Destination Chunk Transfer Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum DCSIZE_A {
+pub enum Dcsize {
     #[doc = "0: 1 data transferred"]
     Chk1 = 0,
     #[doc = "1: 4 data transferred"]
@@ -106,51 +104,53 @@ pub enum DCSIZE_A {
     #[doc = "3: 16 data transferred"]
     Chk16 = 3,
 }
-impl From<DCSIZE_A> for u8 {
+impl From<Dcsize> for u8 {
     #[inline(always)]
-    fn from(variant: DCSIZE_A) -> Self {
+    fn from(variant: Dcsize) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for DCSIZE_A {
+impl crate::FieldSpec for Dcsize {
     type Ux = u8;
 }
-impl DCSIZE_R {
+#[doc = "Field `DCSIZE` reader - Destination Chunk Transfer Size"]
+pub type DcsizeR = crate::FieldReader<Dcsize>;
+impl DcsizeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<DCSIZE_A> {
+    pub const fn variant(&self) -> Option<Dcsize> {
         match self.bits {
-            0 => Some(DCSIZE_A::Chk1),
-            1 => Some(DCSIZE_A::Chk4),
-            2 => Some(DCSIZE_A::Chk8),
-            3 => Some(DCSIZE_A::Chk16),
+            0 => Some(Dcsize::Chk1),
+            1 => Some(Dcsize::Chk4),
+            2 => Some(Dcsize::Chk8),
+            3 => Some(Dcsize::Chk16),
             _ => None,
         }
     }
     #[doc = "1 data transferred"]
     #[inline(always)]
     pub fn is_chk_1(&self) -> bool {
-        *self == DCSIZE_A::Chk1
+        *self == Dcsize::Chk1
     }
     #[doc = "4 data transferred"]
     #[inline(always)]
     pub fn is_chk_4(&self) -> bool {
-        *self == DCSIZE_A::Chk4
+        *self == Dcsize::Chk4
     }
     #[doc = "8 data transferred"]
     #[inline(always)]
     pub fn is_chk_8(&self) -> bool {
-        *self == DCSIZE_A::Chk8
+        *self == Dcsize::Chk8
     }
     #[doc = "16 data transferred"]
     #[inline(always)]
     pub fn is_chk_16(&self) -> bool {
-        *self == DCSIZE_A::Chk16
+        *self == Dcsize::Chk16
     }
 }
 #[doc = "Field `DCSIZE` writer - Destination Chunk Transfer Size"]
-pub type DCSIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 3, DCSIZE_A>;
-impl<'a, REG> DCSIZE_W<'a, REG>
+pub type DcsizeW<'a, REG> = crate::FieldWriter<'a, REG, 3, Dcsize>;
+impl<'a, REG> DcsizeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -158,30 +158,28 @@ where
     #[doc = "1 data transferred"]
     #[inline(always)]
     pub fn chk_1(self) -> &'a mut crate::W<REG> {
-        self.variant(DCSIZE_A::Chk1)
+        self.variant(Dcsize::Chk1)
     }
     #[doc = "4 data transferred"]
     #[inline(always)]
     pub fn chk_4(self) -> &'a mut crate::W<REG> {
-        self.variant(DCSIZE_A::Chk4)
+        self.variant(Dcsize::Chk4)
     }
     #[doc = "8 data transferred"]
     #[inline(always)]
     pub fn chk_8(self) -> &'a mut crate::W<REG> {
-        self.variant(DCSIZE_A::Chk8)
+        self.variant(Dcsize::Chk8)
     }
     #[doc = "16 data transferred"]
     #[inline(always)]
     pub fn chk_16(self) -> &'a mut crate::W<REG> {
-        self.variant(DCSIZE_A::Chk16)
+        self.variant(Dcsize::Chk16)
     }
 }
-#[doc = "Field `SRC_WIDTH` reader - Transfer Width for the Source"]
-pub type SRC_WIDTH_R = crate::FieldReader<SRC_WIDTH_A>;
 #[doc = "Transfer Width for the Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum SRC_WIDTH_A {
+pub enum SrcWidth {
     #[doc = "0: the transfer size is set to 8-bit width"]
     Byte = 0,
     #[doc = "1: the transfer size is set to 16-bit width"]
@@ -189,45 +187,47 @@ pub enum SRC_WIDTH_A {
     #[doc = "2: the transfer size is set to 32-bit width"]
     Word = 2,
 }
-impl From<SRC_WIDTH_A> for u8 {
+impl From<SrcWidth> for u8 {
     #[inline(always)]
-    fn from(variant: SRC_WIDTH_A) -> Self {
+    fn from(variant: SrcWidth) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for SRC_WIDTH_A {
+impl crate::FieldSpec for SrcWidth {
     type Ux = u8;
 }
-impl SRC_WIDTH_R {
+#[doc = "Field `SRC_WIDTH` reader - Transfer Width for the Source"]
+pub type SrcWidthR = crate::FieldReader<SrcWidth>;
+impl SrcWidthR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<SRC_WIDTH_A> {
+    pub const fn variant(&self) -> Option<SrcWidth> {
         match self.bits {
-            0 => Some(SRC_WIDTH_A::Byte),
-            1 => Some(SRC_WIDTH_A::HalfWord),
-            2 => Some(SRC_WIDTH_A::Word),
+            0 => Some(SrcWidth::Byte),
+            1 => Some(SrcWidth::HalfWord),
+            2 => Some(SrcWidth::Word),
             _ => None,
         }
     }
     #[doc = "the transfer size is set to 8-bit width"]
     #[inline(always)]
     pub fn is_byte(&self) -> bool {
-        *self == SRC_WIDTH_A::Byte
+        *self == SrcWidth::Byte
     }
     #[doc = "the transfer size is set to 16-bit width"]
     #[inline(always)]
     pub fn is_half_word(&self) -> bool {
-        *self == SRC_WIDTH_A::HalfWord
+        *self == SrcWidth::HalfWord
     }
     #[doc = "the transfer size is set to 32-bit width"]
     #[inline(always)]
     pub fn is_word(&self) -> bool {
-        *self == SRC_WIDTH_A::Word
+        *self == SrcWidth::Word
     }
 }
 #[doc = "Field `SRC_WIDTH` writer - Transfer Width for the Source"]
-pub type SRC_WIDTH_W<'a, REG> = crate::FieldWriter<'a, REG, 2, SRC_WIDTH_A>;
-impl<'a, REG> SRC_WIDTH_W<'a, REG>
+pub type SrcWidthW<'a, REG> = crate::FieldWriter<'a, REG, 2, SrcWidth>;
+impl<'a, REG> SrcWidthW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -235,25 +235,23 @@ where
     #[doc = "the transfer size is set to 8-bit width"]
     #[inline(always)]
     pub fn byte(self) -> &'a mut crate::W<REG> {
-        self.variant(SRC_WIDTH_A::Byte)
+        self.variant(SrcWidth::Byte)
     }
     #[doc = "the transfer size is set to 16-bit width"]
     #[inline(always)]
     pub fn half_word(self) -> &'a mut crate::W<REG> {
-        self.variant(SRC_WIDTH_A::HalfWord)
+        self.variant(SrcWidth::HalfWord)
     }
     #[doc = "the transfer size is set to 32-bit width"]
     #[inline(always)]
     pub fn word(self) -> &'a mut crate::W<REG> {
-        self.variant(SRC_WIDTH_A::Word)
+        self.variant(SrcWidth::Word)
     }
 }
-#[doc = "Field `DST_WIDTH` reader - Transfer Width for the Destination"]
-pub type DST_WIDTH_R = crate::FieldReader<DST_WIDTH_A>;
 #[doc = "Transfer Width for the Destination\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum DST_WIDTH_A {
+pub enum DstWidth {
     #[doc = "0: the transfer size is set to 8-bit width"]
     Byte = 0,
     #[doc = "1: the transfer size is set to 16-bit width"]
@@ -261,45 +259,47 @@ pub enum DST_WIDTH_A {
     #[doc = "2: the transfer size is set to 32-bit width"]
     Word = 2,
 }
-impl From<DST_WIDTH_A> for u8 {
+impl From<DstWidth> for u8 {
     #[inline(always)]
-    fn from(variant: DST_WIDTH_A) -> Self {
+    fn from(variant: DstWidth) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for DST_WIDTH_A {
+impl crate::FieldSpec for DstWidth {
     type Ux = u8;
 }
-impl DST_WIDTH_R {
+#[doc = "Field `DST_WIDTH` reader - Transfer Width for the Destination"]
+pub type DstWidthR = crate::FieldReader<DstWidth>;
+impl DstWidthR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<DST_WIDTH_A> {
+    pub const fn variant(&self) -> Option<DstWidth> {
         match self.bits {
-            0 => Some(DST_WIDTH_A::Byte),
-            1 => Some(DST_WIDTH_A::HalfWord),
-            2 => Some(DST_WIDTH_A::Word),
+            0 => Some(DstWidth::Byte),
+            1 => Some(DstWidth::HalfWord),
+            2 => Some(DstWidth::Word),
             _ => None,
         }
     }
     #[doc = "the transfer size is set to 8-bit width"]
     #[inline(always)]
     pub fn is_byte(&self) -> bool {
-        *self == DST_WIDTH_A::Byte
+        *self == DstWidth::Byte
     }
     #[doc = "the transfer size is set to 16-bit width"]
     #[inline(always)]
     pub fn is_half_word(&self) -> bool {
-        *self == DST_WIDTH_A::HalfWord
+        *self == DstWidth::HalfWord
     }
     #[doc = "the transfer size is set to 32-bit width"]
     #[inline(always)]
     pub fn is_word(&self) -> bool {
-        *self == DST_WIDTH_A::Word
+        *self == DstWidth::Word
     }
 }
 #[doc = "Field `DST_WIDTH` writer - Transfer Width for the Destination"]
-pub type DST_WIDTH_W<'a, REG> = crate::FieldWriter<'a, REG, 2, DST_WIDTH_A>;
-impl<'a, REG> DST_WIDTH_W<'a, REG>
+pub type DstWidthW<'a, REG> = crate::FieldWriter<'a, REG, 2, DstWidth>;
+impl<'a, REG> DstWidthW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -307,116 +307,107 @@ where
     #[doc = "the transfer size is set to 8-bit width"]
     #[inline(always)]
     pub fn byte(self) -> &'a mut crate::W<REG> {
-        self.variant(DST_WIDTH_A::Byte)
+        self.variant(DstWidth::Byte)
     }
     #[doc = "the transfer size is set to 16-bit width"]
     #[inline(always)]
     pub fn half_word(self) -> &'a mut crate::W<REG> {
-        self.variant(DST_WIDTH_A::HalfWord)
+        self.variant(DstWidth::HalfWord)
     }
     #[doc = "the transfer size is set to 32-bit width"]
     #[inline(always)]
     pub fn word(self) -> &'a mut crate::W<REG> {
-        self.variant(DST_WIDTH_A::Word)
+        self.variant(DstWidth::Word)
     }
 }
 #[doc = "Field `DONE` reader - Current Descriptor Stop Command and Transfer Completed Memory Indicator"]
-pub type DONE_R = crate::BitReader;
+pub type DoneR = crate::BitReader;
 #[doc = "Field `DONE` writer - Current Descriptor Stop Command and Transfer Completed Memory Indicator"]
-pub type DONE_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DoneW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:15 - Buffer Transfer Size"]
     #[inline(always)]
-    pub fn btsize(&self) -> BTSIZE_R {
-        BTSIZE_R::new((self.bits & 0xffff) as u16)
+    pub fn btsize(&self) -> BtsizeR {
+        BtsizeR::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:18 - Source Chunk Transfer Size."]
     #[inline(always)]
-    pub fn scsize(&self) -> SCSIZE_R {
-        SCSIZE_R::new(((self.bits >> 16) & 7) as u8)
+    pub fn scsize(&self) -> ScsizeR {
+        ScsizeR::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bits 20:22 - Destination Chunk Transfer Size"]
     #[inline(always)]
-    pub fn dcsize(&self) -> DCSIZE_R {
-        DCSIZE_R::new(((self.bits >> 20) & 7) as u8)
+    pub fn dcsize(&self) -> DcsizeR {
+        DcsizeR::new(((self.bits >> 20) & 7) as u8)
     }
     #[doc = "Bits 24:25 - Transfer Width for the Source"]
     #[inline(always)]
-    pub fn src_width(&self) -> SRC_WIDTH_R {
-        SRC_WIDTH_R::new(((self.bits >> 24) & 3) as u8)
+    pub fn src_width(&self) -> SrcWidthR {
+        SrcWidthR::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bits 28:29 - Transfer Width for the Destination"]
     #[inline(always)]
-    pub fn dst_width(&self) -> DST_WIDTH_R {
-        DST_WIDTH_R::new(((self.bits >> 28) & 3) as u8)
+    pub fn dst_width(&self) -> DstWidthR {
+        DstWidthR::new(((self.bits >> 28) & 3) as u8)
     }
     #[doc = "Bit 31 - Current Descriptor Stop Command and Transfer Completed Memory Indicator"]
     #[inline(always)]
-    pub fn done(&self) -> DONE_R {
-        DONE_R::new(((self.bits >> 31) & 1) != 0)
+    pub fn done(&self) -> DoneR {
+        DoneR::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Buffer Transfer Size"]
     #[inline(always)]
     #[must_use]
-    pub fn btsize(&mut self) -> BTSIZE_W<CTRLA4_SPEC> {
-        BTSIZE_W::new(self, 0)
+    pub fn btsize(&mut self) -> BtsizeW<Ctrla4Spec> {
+        BtsizeW::new(self, 0)
     }
     #[doc = "Bits 16:18 - Source Chunk Transfer Size."]
     #[inline(always)]
     #[must_use]
-    pub fn scsize(&mut self) -> SCSIZE_W<CTRLA4_SPEC> {
-        SCSIZE_W::new(self, 16)
+    pub fn scsize(&mut self) -> ScsizeW<Ctrla4Spec> {
+        ScsizeW::new(self, 16)
     }
     #[doc = "Bits 20:22 - Destination Chunk Transfer Size"]
     #[inline(always)]
     #[must_use]
-    pub fn dcsize(&mut self) -> DCSIZE_W<CTRLA4_SPEC> {
-        DCSIZE_W::new(self, 20)
+    pub fn dcsize(&mut self) -> DcsizeW<Ctrla4Spec> {
+        DcsizeW::new(self, 20)
     }
     #[doc = "Bits 24:25 - Transfer Width for the Source"]
     #[inline(always)]
     #[must_use]
-    pub fn src_width(&mut self) -> SRC_WIDTH_W<CTRLA4_SPEC> {
-        SRC_WIDTH_W::new(self, 24)
+    pub fn src_width(&mut self) -> SrcWidthW<Ctrla4Spec> {
+        SrcWidthW::new(self, 24)
     }
     #[doc = "Bits 28:29 - Transfer Width for the Destination"]
     #[inline(always)]
     #[must_use]
-    pub fn dst_width(&mut self) -> DST_WIDTH_W<CTRLA4_SPEC> {
-        DST_WIDTH_W::new(self, 28)
+    pub fn dst_width(&mut self) -> DstWidthW<Ctrla4Spec> {
+        DstWidthW::new(self, 28)
     }
     #[doc = "Bit 31 - Current Descriptor Stop Command and Transfer Completed Memory Indicator"]
     #[inline(always)]
     #[must_use]
-    pub fn done(&mut self) -> DONE_W<CTRLA4_SPEC> {
-        DONE_W::new(self, 31)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn done(&mut self) -> DoneW<Ctrla4Spec> {
+        DoneW::new(self, 31)
     }
 }
 #[doc = "DMAC Channel Control A Register (ch_num = 4)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrla4::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrla4::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CTRLA4_SPEC;
-impl crate::RegisterSpec for CTRLA4_SPEC {
+pub struct Ctrla4Spec;
+impl crate::RegisterSpec for Ctrla4Spec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`ctrla4::R`](R) reader structure"]
-impl crate::Readable for CTRLA4_SPEC {}
+impl crate::Readable for Ctrla4Spec {}
 #[doc = "`write(|w| ..)` method takes [`ctrla4::W`](W) writer structure"]
-impl crate::Writable for CTRLA4_SPEC {
+impl crate::Writable for Ctrla4Spec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CTRLA4 to value 0"]
-impl crate::Resettable for CTRLA4_SPEC {
+impl crate::Resettable for Ctrla4Spec {
     const RESET_VALUE: u32 = 0;
 }

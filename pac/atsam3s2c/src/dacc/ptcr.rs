@@ -1,60 +1,51 @@
 #[doc = "Register `PTCR` writer"]
-pub type W = crate::W<PTCR_SPEC>;
+pub type W = crate::W<PtcrSpec>;
 #[doc = "Field `RXTEN` writer - Receiver Transfer Enable"]
-pub type RXTEN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type RxtenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXTDIS` writer - Receiver Transfer Disable"]
-pub type RXTDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type RxtdisW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXTEN` writer - Transmitter Transfer Enable"]
-pub type TXTEN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type TxtenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXTDIS` writer - Transmitter Transfer Disable"]
-pub type TXTDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type TxtdisW<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Receiver Transfer Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxten(&mut self) -> RXTEN_W<PTCR_SPEC> {
-        RXTEN_W::new(self, 0)
+    pub fn rxten(&mut self) -> RxtenW<PtcrSpec> {
+        RxtenW::new(self, 0)
     }
     #[doc = "Bit 1 - Receiver Transfer Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxtdis(&mut self) -> RXTDIS_W<PTCR_SPEC> {
-        RXTDIS_W::new(self, 1)
+    pub fn rxtdis(&mut self) -> RxtdisW<PtcrSpec> {
+        RxtdisW::new(self, 1)
     }
     #[doc = "Bit 8 - Transmitter Transfer Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn txten(&mut self) -> TXTEN_W<PTCR_SPEC> {
-        TXTEN_W::new(self, 8)
+    pub fn txten(&mut self) -> TxtenW<PtcrSpec> {
+        TxtenW::new(self, 8)
     }
     #[doc = "Bit 9 - Transmitter Transfer Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn txtdis(&mut self) -> TXTDIS_W<PTCR_SPEC> {
-        TXTDIS_W::new(self, 9)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn txtdis(&mut self) -> TxtdisW<PtcrSpec> {
+        TxtdisW::new(self, 9)
     }
 }
 #[doc = "Transfer Control Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ptcr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PTCR_SPEC;
-impl crate::RegisterSpec for PTCR_SPEC {
+pub struct PtcrSpec;
+impl crate::RegisterSpec for PtcrSpec {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`ptcr::W`](W) writer structure"]
-impl crate::Writable for PTCR_SPEC {
+impl crate::Writable for PtcrSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PTCR to value 0"]
-impl crate::Resettable for PTCR_SPEC {
+impl crate::Resettable for PtcrSpec {
     const RESET_VALUE: u32 = 0;
 }

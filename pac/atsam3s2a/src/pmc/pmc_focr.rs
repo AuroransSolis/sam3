@@ -1,32 +1,23 @@
 #[doc = "Register `PMC_FOCR` writer"]
-pub type W = crate::W<PMC_FOCR_SPEC>;
+pub type W = crate::W<PmcFocrSpec>;
 #[doc = "Field `FOCLR` writer - Fault Output Clear"]
-pub type FOCLR_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type FoclrW<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Fault Output Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn foclr(&mut self) -> FOCLR_W<PMC_FOCR_SPEC> {
-        FOCLR_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn foclr(&mut self) -> FoclrW<PmcFocrSpec> {
+        FoclrW::new(self, 0)
     }
 }
 #[doc = "Fault Output Clear Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmc_focr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PMC_FOCR_SPEC;
-impl crate::RegisterSpec for PMC_FOCR_SPEC {
+pub struct PmcFocrSpec;
+impl crate::RegisterSpec for PmcFocrSpec {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`pmc_focr::W`](W) writer structure"]
-impl crate::Writable for PMC_FOCR_SPEC {
+impl crate::Writable for PmcFocrSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

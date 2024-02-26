@@ -1,51 +1,51 @@
 #[doc = "Register `MR` reader"]
-pub type R = crate::R<MR_SPEC>;
+pub type R = crate::R<MrSpec>;
 #[doc = "Register `MR` writer"]
-pub type W = crate::W<MR_SPEC>;
-#[doc = "Field `DIVA` reader - CLKA, CLKB Divide Factor"]
-pub type DIVA_R = crate::FieldReader<DIVA_A>;
+pub type W = crate::W<MrSpec>;
 #[doc = "CLKA, CLKB Divide Factor\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum DIVA_A {
+pub enum Diva {
     #[doc = "0: CLKA, CLKB clock is turned off"]
     ClkOff = 0,
     #[doc = "1: CLKA, CLKB clock is clock selected by PREA, PREB"]
     ClkDiv1 = 1,
 }
-impl From<DIVA_A> for u8 {
+impl From<Diva> for u8 {
     #[inline(always)]
-    fn from(variant: DIVA_A) -> Self {
+    fn from(variant: Diva) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for DIVA_A {
+impl crate::FieldSpec for Diva {
     type Ux = u8;
 }
-impl DIVA_R {
+#[doc = "Field `DIVA` reader - CLKA, CLKB Divide Factor"]
+pub type DivaR = crate::FieldReader<Diva>;
+impl DivaR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<DIVA_A> {
+    pub const fn variant(&self) -> Option<Diva> {
         match self.bits {
-            0 => Some(DIVA_A::ClkOff),
-            1 => Some(DIVA_A::ClkDiv1),
+            0 => Some(Diva::ClkOff),
+            1 => Some(Diva::ClkDiv1),
             _ => None,
         }
     }
     #[doc = "CLKA, CLKB clock is turned off"]
     #[inline(always)]
     pub fn is_clk_off(&self) -> bool {
-        *self == DIVA_A::ClkOff
+        *self == Diva::ClkOff
     }
     #[doc = "CLKA, CLKB clock is clock selected by PREA, PREB"]
     #[inline(always)]
     pub fn is_clk_div1(&self) -> bool {
-        *self == DIVA_A::ClkDiv1
+        *self == Diva::ClkDiv1
     }
 }
 #[doc = "Field `DIVA` writer - CLKA, CLKB Divide Factor"]
-pub type DIVA_W<'a, REG> = crate::FieldWriter<'a, REG, 8, DIVA_A>;
-impl<'a, REG> DIVA_W<'a, REG>
+pub type DivaW<'a, REG> = crate::FieldWriter<'a, REG, 8, Diva>;
+impl<'a, REG> DivaW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -53,20 +53,18 @@ where
     #[doc = "CLKA, CLKB clock is turned off"]
     #[inline(always)]
     pub fn clk_off(self) -> &'a mut crate::W<REG> {
-        self.variant(DIVA_A::ClkOff)
+        self.variant(Diva::ClkOff)
     }
     #[doc = "CLKA, CLKB clock is clock selected by PREA, PREB"]
     #[inline(always)]
     pub fn clk_div1(self) -> &'a mut crate::W<REG> {
-        self.variant(DIVA_A::ClkDiv1)
+        self.variant(Diva::ClkDiv1)
     }
 }
-#[doc = "Field `PREA` reader - "]
-pub type PREA_R = crate::FieldReader<PREA_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum PREA_A {
+pub enum Prea {
     #[doc = "0: Master Clock"]
     Mck = 0,
     #[doc = "1: Master Clock divided by 2"]
@@ -90,93 +88,95 @@ pub enum PREA_A {
     #[doc = "10: Master Clock divided by 1024"]
     Mckdiv1024 = 10,
 }
-impl From<PREA_A> for u8 {
+impl From<Prea> for u8 {
     #[inline(always)]
-    fn from(variant: PREA_A) -> Self {
+    fn from(variant: Prea) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for PREA_A {
+impl crate::FieldSpec for Prea {
     type Ux = u8;
 }
-impl PREA_R {
+#[doc = "Field `PREA` reader - "]
+pub type PreaR = crate::FieldReader<Prea>;
+impl PreaR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<PREA_A> {
+    pub const fn variant(&self) -> Option<Prea> {
         match self.bits {
-            0 => Some(PREA_A::Mck),
-            1 => Some(PREA_A::Mckdiv2),
-            2 => Some(PREA_A::Mckdiv4),
-            3 => Some(PREA_A::Mckdiv8),
-            4 => Some(PREA_A::Mckdiv16),
-            5 => Some(PREA_A::Mckdiv32),
-            6 => Some(PREA_A::Mckdiv64),
-            7 => Some(PREA_A::Mckdiv128),
-            8 => Some(PREA_A::Mckdiv256),
-            9 => Some(PREA_A::Mckdiv512),
-            10 => Some(PREA_A::Mckdiv1024),
+            0 => Some(Prea::Mck),
+            1 => Some(Prea::Mckdiv2),
+            2 => Some(Prea::Mckdiv4),
+            3 => Some(Prea::Mckdiv8),
+            4 => Some(Prea::Mckdiv16),
+            5 => Some(Prea::Mckdiv32),
+            6 => Some(Prea::Mckdiv64),
+            7 => Some(Prea::Mckdiv128),
+            8 => Some(Prea::Mckdiv256),
+            9 => Some(Prea::Mckdiv512),
+            10 => Some(Prea::Mckdiv1024),
             _ => None,
         }
     }
     #[doc = "Master Clock"]
     #[inline(always)]
     pub fn is_mck(&self) -> bool {
-        *self == PREA_A::Mck
+        *self == Prea::Mck
     }
     #[doc = "Master Clock divided by 2"]
     #[inline(always)]
     pub fn is_mckdiv2(&self) -> bool {
-        *self == PREA_A::Mckdiv2
+        *self == Prea::Mckdiv2
     }
     #[doc = "Master Clock divided by 4"]
     #[inline(always)]
     pub fn is_mckdiv4(&self) -> bool {
-        *self == PREA_A::Mckdiv4
+        *self == Prea::Mckdiv4
     }
     #[doc = "Master Clock divided by 8"]
     #[inline(always)]
     pub fn is_mckdiv8(&self) -> bool {
-        *self == PREA_A::Mckdiv8
+        *self == Prea::Mckdiv8
     }
     #[doc = "Master Clock divided by 16"]
     #[inline(always)]
     pub fn is_mckdiv16(&self) -> bool {
-        *self == PREA_A::Mckdiv16
+        *self == Prea::Mckdiv16
     }
     #[doc = "Master Clock divided by 32"]
     #[inline(always)]
     pub fn is_mckdiv32(&self) -> bool {
-        *self == PREA_A::Mckdiv32
+        *self == Prea::Mckdiv32
     }
     #[doc = "Master Clock divided by 64"]
     #[inline(always)]
     pub fn is_mckdiv64(&self) -> bool {
-        *self == PREA_A::Mckdiv64
+        *self == Prea::Mckdiv64
     }
     #[doc = "Master Clock divided by 128"]
     #[inline(always)]
     pub fn is_mckdiv128(&self) -> bool {
-        *self == PREA_A::Mckdiv128
+        *self == Prea::Mckdiv128
     }
     #[doc = "Master Clock divided by 256"]
     #[inline(always)]
     pub fn is_mckdiv256(&self) -> bool {
-        *self == PREA_A::Mckdiv256
+        *self == Prea::Mckdiv256
     }
     #[doc = "Master Clock divided by 512"]
     #[inline(always)]
     pub fn is_mckdiv512(&self) -> bool {
-        *self == PREA_A::Mckdiv512
+        *self == Prea::Mckdiv512
     }
     #[doc = "Master Clock divided by 1024"]
     #[inline(always)]
     pub fn is_mckdiv1024(&self) -> bool {
-        *self == PREA_A::Mckdiv1024
+        *self == Prea::Mckdiv1024
     }
 }
 #[doc = "Field `PREA` writer - "]
-pub type PREA_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PREA_A>;
-impl<'a, REG> PREA_W<'a, REG>
+pub type PreaW<'a, REG> = crate::FieldWriter<'a, REG, 4, Prea>;
+impl<'a, REG> PreaW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -184,103 +184,103 @@ where
     #[doc = "Master Clock"]
     #[inline(always)]
     pub fn mck(self) -> &'a mut crate::W<REG> {
-        self.variant(PREA_A::Mck)
+        self.variant(Prea::Mck)
     }
     #[doc = "Master Clock divided by 2"]
     #[inline(always)]
     pub fn mckdiv2(self) -> &'a mut crate::W<REG> {
-        self.variant(PREA_A::Mckdiv2)
+        self.variant(Prea::Mckdiv2)
     }
     #[doc = "Master Clock divided by 4"]
     #[inline(always)]
     pub fn mckdiv4(self) -> &'a mut crate::W<REG> {
-        self.variant(PREA_A::Mckdiv4)
+        self.variant(Prea::Mckdiv4)
     }
     #[doc = "Master Clock divided by 8"]
     #[inline(always)]
     pub fn mckdiv8(self) -> &'a mut crate::W<REG> {
-        self.variant(PREA_A::Mckdiv8)
+        self.variant(Prea::Mckdiv8)
     }
     #[doc = "Master Clock divided by 16"]
     #[inline(always)]
     pub fn mckdiv16(self) -> &'a mut crate::W<REG> {
-        self.variant(PREA_A::Mckdiv16)
+        self.variant(Prea::Mckdiv16)
     }
     #[doc = "Master Clock divided by 32"]
     #[inline(always)]
     pub fn mckdiv32(self) -> &'a mut crate::W<REG> {
-        self.variant(PREA_A::Mckdiv32)
+        self.variant(Prea::Mckdiv32)
     }
     #[doc = "Master Clock divided by 64"]
     #[inline(always)]
     pub fn mckdiv64(self) -> &'a mut crate::W<REG> {
-        self.variant(PREA_A::Mckdiv64)
+        self.variant(Prea::Mckdiv64)
     }
     #[doc = "Master Clock divided by 128"]
     #[inline(always)]
     pub fn mckdiv128(self) -> &'a mut crate::W<REG> {
-        self.variant(PREA_A::Mckdiv128)
+        self.variant(Prea::Mckdiv128)
     }
     #[doc = "Master Clock divided by 256"]
     #[inline(always)]
     pub fn mckdiv256(self) -> &'a mut crate::W<REG> {
-        self.variant(PREA_A::Mckdiv256)
+        self.variant(Prea::Mckdiv256)
     }
     #[doc = "Master Clock divided by 512"]
     #[inline(always)]
     pub fn mckdiv512(self) -> &'a mut crate::W<REG> {
-        self.variant(PREA_A::Mckdiv512)
+        self.variant(Prea::Mckdiv512)
     }
     #[doc = "Master Clock divided by 1024"]
     #[inline(always)]
     pub fn mckdiv1024(self) -> &'a mut crate::W<REG> {
-        self.variant(PREA_A::Mckdiv1024)
+        self.variant(Prea::Mckdiv1024)
     }
 }
-#[doc = "Field `DIVB` reader - CLKA, CLKB Divide Factor"]
-pub type DIVB_R = crate::FieldReader<DIVB_A>;
 #[doc = "CLKA, CLKB Divide Factor\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum DIVB_A {
+pub enum Divb {
     #[doc = "0: CLKA, CLKB clock is turned off"]
     ClkOff = 0,
     #[doc = "1: CLKA, CLKB clock is clock selected by PREA, PREB"]
     ClkDiv1 = 1,
 }
-impl From<DIVB_A> for u8 {
+impl From<Divb> for u8 {
     #[inline(always)]
-    fn from(variant: DIVB_A) -> Self {
+    fn from(variant: Divb) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for DIVB_A {
+impl crate::FieldSpec for Divb {
     type Ux = u8;
 }
-impl DIVB_R {
+#[doc = "Field `DIVB` reader - CLKA, CLKB Divide Factor"]
+pub type DivbR = crate::FieldReader<Divb>;
+impl DivbR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<DIVB_A> {
+    pub const fn variant(&self) -> Option<Divb> {
         match self.bits {
-            0 => Some(DIVB_A::ClkOff),
-            1 => Some(DIVB_A::ClkDiv1),
+            0 => Some(Divb::ClkOff),
+            1 => Some(Divb::ClkDiv1),
             _ => None,
         }
     }
     #[doc = "CLKA, CLKB clock is turned off"]
     #[inline(always)]
     pub fn is_clk_off(&self) -> bool {
-        *self == DIVB_A::ClkOff
+        *self == Divb::ClkOff
     }
     #[doc = "CLKA, CLKB clock is clock selected by PREA, PREB"]
     #[inline(always)]
     pub fn is_clk_div1(&self) -> bool {
-        *self == DIVB_A::ClkDiv1
+        *self == Divb::ClkDiv1
     }
 }
 #[doc = "Field `DIVB` writer - CLKA, CLKB Divide Factor"]
-pub type DIVB_W<'a, REG> = crate::FieldWriter<'a, REG, 8, DIVB_A>;
-impl<'a, REG> DIVB_W<'a, REG>
+pub type DivbW<'a, REG> = crate::FieldWriter<'a, REG, 8, Divb>;
+impl<'a, REG> DivbW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -288,20 +288,18 @@ where
     #[doc = "CLKA, CLKB clock is turned off"]
     #[inline(always)]
     pub fn clk_off(self) -> &'a mut crate::W<REG> {
-        self.variant(DIVB_A::ClkOff)
+        self.variant(Divb::ClkOff)
     }
     #[doc = "CLKA, CLKB clock is clock selected by PREA, PREB"]
     #[inline(always)]
     pub fn clk_div1(self) -> &'a mut crate::W<REG> {
-        self.variant(DIVB_A::ClkDiv1)
+        self.variant(Divb::ClkDiv1)
     }
 }
-#[doc = "Field `PREB` reader - "]
-pub type PREB_R = crate::FieldReader<PREB_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum PREB_A {
+pub enum Preb {
     #[doc = "0: Master Clock"]
     Mck = 0,
     #[doc = "1: Master Clock divided by 2"]
@@ -325,93 +323,95 @@ pub enum PREB_A {
     #[doc = "10: Master Clock divided by 1024"]
     Mckdiv1024 = 10,
 }
-impl From<PREB_A> for u8 {
+impl From<Preb> for u8 {
     #[inline(always)]
-    fn from(variant: PREB_A) -> Self {
+    fn from(variant: Preb) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for PREB_A {
+impl crate::FieldSpec for Preb {
     type Ux = u8;
 }
-impl PREB_R {
+#[doc = "Field `PREB` reader - "]
+pub type PrebR = crate::FieldReader<Preb>;
+impl PrebR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<PREB_A> {
+    pub const fn variant(&self) -> Option<Preb> {
         match self.bits {
-            0 => Some(PREB_A::Mck),
-            1 => Some(PREB_A::Mckdiv2),
-            2 => Some(PREB_A::Mckdiv4),
-            3 => Some(PREB_A::Mckdiv8),
-            4 => Some(PREB_A::Mckdiv16),
-            5 => Some(PREB_A::Mckdiv32),
-            6 => Some(PREB_A::Mckdiv64),
-            7 => Some(PREB_A::Mckdiv128),
-            8 => Some(PREB_A::Mckdiv256),
-            9 => Some(PREB_A::Mckdiv512),
-            10 => Some(PREB_A::Mckdiv1024),
+            0 => Some(Preb::Mck),
+            1 => Some(Preb::Mckdiv2),
+            2 => Some(Preb::Mckdiv4),
+            3 => Some(Preb::Mckdiv8),
+            4 => Some(Preb::Mckdiv16),
+            5 => Some(Preb::Mckdiv32),
+            6 => Some(Preb::Mckdiv64),
+            7 => Some(Preb::Mckdiv128),
+            8 => Some(Preb::Mckdiv256),
+            9 => Some(Preb::Mckdiv512),
+            10 => Some(Preb::Mckdiv1024),
             _ => None,
         }
     }
     #[doc = "Master Clock"]
     #[inline(always)]
     pub fn is_mck(&self) -> bool {
-        *self == PREB_A::Mck
+        *self == Preb::Mck
     }
     #[doc = "Master Clock divided by 2"]
     #[inline(always)]
     pub fn is_mckdiv2(&self) -> bool {
-        *self == PREB_A::Mckdiv2
+        *self == Preb::Mckdiv2
     }
     #[doc = "Master Clock divided by 4"]
     #[inline(always)]
     pub fn is_mckdiv4(&self) -> bool {
-        *self == PREB_A::Mckdiv4
+        *self == Preb::Mckdiv4
     }
     #[doc = "Master Clock divided by 8"]
     #[inline(always)]
     pub fn is_mckdiv8(&self) -> bool {
-        *self == PREB_A::Mckdiv8
+        *self == Preb::Mckdiv8
     }
     #[doc = "Master Clock divided by 16"]
     #[inline(always)]
     pub fn is_mckdiv16(&self) -> bool {
-        *self == PREB_A::Mckdiv16
+        *self == Preb::Mckdiv16
     }
     #[doc = "Master Clock divided by 32"]
     #[inline(always)]
     pub fn is_mckdiv32(&self) -> bool {
-        *self == PREB_A::Mckdiv32
+        *self == Preb::Mckdiv32
     }
     #[doc = "Master Clock divided by 64"]
     #[inline(always)]
     pub fn is_mckdiv64(&self) -> bool {
-        *self == PREB_A::Mckdiv64
+        *self == Preb::Mckdiv64
     }
     #[doc = "Master Clock divided by 128"]
     #[inline(always)]
     pub fn is_mckdiv128(&self) -> bool {
-        *self == PREB_A::Mckdiv128
+        *self == Preb::Mckdiv128
     }
     #[doc = "Master Clock divided by 256"]
     #[inline(always)]
     pub fn is_mckdiv256(&self) -> bool {
-        *self == PREB_A::Mckdiv256
+        *self == Preb::Mckdiv256
     }
     #[doc = "Master Clock divided by 512"]
     #[inline(always)]
     pub fn is_mckdiv512(&self) -> bool {
-        *self == PREB_A::Mckdiv512
+        *self == Preb::Mckdiv512
     }
     #[doc = "Master Clock divided by 1024"]
     #[inline(always)]
     pub fn is_mckdiv1024(&self) -> bool {
-        *self == PREB_A::Mckdiv1024
+        *self == Preb::Mckdiv1024
     }
 }
 #[doc = "Field `PREB` writer - "]
-pub type PREB_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PREB_A>;
-impl<'a, REG> PREB_W<'a, REG>
+pub type PrebW<'a, REG> = crate::FieldWriter<'a, REG, 4, Preb>;
+impl<'a, REG> PrebW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -419,130 +419,121 @@ where
     #[doc = "Master Clock"]
     #[inline(always)]
     pub fn mck(self) -> &'a mut crate::W<REG> {
-        self.variant(PREB_A::Mck)
+        self.variant(Preb::Mck)
     }
     #[doc = "Master Clock divided by 2"]
     #[inline(always)]
     pub fn mckdiv2(self) -> &'a mut crate::W<REG> {
-        self.variant(PREB_A::Mckdiv2)
+        self.variant(Preb::Mckdiv2)
     }
     #[doc = "Master Clock divided by 4"]
     #[inline(always)]
     pub fn mckdiv4(self) -> &'a mut crate::W<REG> {
-        self.variant(PREB_A::Mckdiv4)
+        self.variant(Preb::Mckdiv4)
     }
     #[doc = "Master Clock divided by 8"]
     #[inline(always)]
     pub fn mckdiv8(self) -> &'a mut crate::W<REG> {
-        self.variant(PREB_A::Mckdiv8)
+        self.variant(Preb::Mckdiv8)
     }
     #[doc = "Master Clock divided by 16"]
     #[inline(always)]
     pub fn mckdiv16(self) -> &'a mut crate::W<REG> {
-        self.variant(PREB_A::Mckdiv16)
+        self.variant(Preb::Mckdiv16)
     }
     #[doc = "Master Clock divided by 32"]
     #[inline(always)]
     pub fn mckdiv32(self) -> &'a mut crate::W<REG> {
-        self.variant(PREB_A::Mckdiv32)
+        self.variant(Preb::Mckdiv32)
     }
     #[doc = "Master Clock divided by 64"]
     #[inline(always)]
     pub fn mckdiv64(self) -> &'a mut crate::W<REG> {
-        self.variant(PREB_A::Mckdiv64)
+        self.variant(Preb::Mckdiv64)
     }
     #[doc = "Master Clock divided by 128"]
     #[inline(always)]
     pub fn mckdiv128(self) -> &'a mut crate::W<REG> {
-        self.variant(PREB_A::Mckdiv128)
+        self.variant(Preb::Mckdiv128)
     }
     #[doc = "Master Clock divided by 256"]
     #[inline(always)]
     pub fn mckdiv256(self) -> &'a mut crate::W<REG> {
-        self.variant(PREB_A::Mckdiv256)
+        self.variant(Preb::Mckdiv256)
     }
     #[doc = "Master Clock divided by 512"]
     #[inline(always)]
     pub fn mckdiv512(self) -> &'a mut crate::W<REG> {
-        self.variant(PREB_A::Mckdiv512)
+        self.variant(Preb::Mckdiv512)
     }
     #[doc = "Master Clock divided by 1024"]
     #[inline(always)]
     pub fn mckdiv1024(self) -> &'a mut crate::W<REG> {
-        self.variant(PREB_A::Mckdiv1024)
+        self.variant(Preb::Mckdiv1024)
     }
 }
 impl R {
     #[doc = "Bits 0:7 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
-    pub fn diva(&self) -> DIVA_R {
-        DIVA_R::new((self.bits & 0xff) as u8)
+    pub fn diva(&self) -> DivaR {
+        DivaR::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:11"]
     #[inline(always)]
-    pub fn prea(&self) -> PREA_R {
-        PREA_R::new(((self.bits >> 8) & 0x0f) as u8)
+    pub fn prea(&self) -> PreaR {
+        PreaR::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 16:23 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
-    pub fn divb(&self) -> DIVB_R {
-        DIVB_R::new(((self.bits >> 16) & 0xff) as u8)
+    pub fn divb(&self) -> DivbR {
+        DivbR::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:27"]
     #[inline(always)]
-    pub fn preb(&self) -> PREB_R {
-        PREB_R::new(((self.bits >> 24) & 0x0f) as u8)
+    pub fn preb(&self) -> PrebR {
+        PrebR::new(((self.bits >> 24) & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
     #[must_use]
-    pub fn diva(&mut self) -> DIVA_W<MR_SPEC> {
-        DIVA_W::new(self, 0)
+    pub fn diva(&mut self) -> DivaW<MrSpec> {
+        DivaW::new(self, 0)
     }
     #[doc = "Bits 8:11"]
     #[inline(always)]
     #[must_use]
-    pub fn prea(&mut self) -> PREA_W<MR_SPEC> {
-        PREA_W::new(self, 8)
+    pub fn prea(&mut self) -> PreaW<MrSpec> {
+        PreaW::new(self, 8)
     }
     #[doc = "Bits 16:23 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
     #[must_use]
-    pub fn divb(&mut self) -> DIVB_W<MR_SPEC> {
-        DIVB_W::new(self, 16)
+    pub fn divb(&mut self) -> DivbW<MrSpec> {
+        DivbW::new(self, 16)
     }
     #[doc = "Bits 24:27"]
     #[inline(always)]
     #[must_use]
-    pub fn preb(&mut self) -> PREB_W<MR_SPEC> {
-        PREB_W::new(self, 24)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn preb(&mut self) -> PrebW<MrSpec> {
+        PrebW::new(self, 24)
     }
 }
 #[doc = "PWM Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct MR_SPEC;
-impl crate::RegisterSpec for MR_SPEC {
+pub struct MrSpec;
+impl crate::RegisterSpec for MrSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`mr::R`](R) reader structure"]
-impl crate::Readable for MR_SPEC {}
+impl crate::Readable for MrSpec {}
 #[doc = "`write(|w| ..)` method takes [`mr::W`](W) writer structure"]
-impl crate::Writable for MR_SPEC {
+impl crate::Writable for MrSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MR to value 0"]
-impl crate::Resettable for MR_SPEC {
+impl crate::Resettable for MrSpec {
     const RESET_VALUE: u32 = 0;
 }

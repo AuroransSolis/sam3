@@ -1,28 +1,28 @@
 #[doc = "Register `CDR` writer"]
-pub type W = crate::W<CDR_SPEC>;
+pub type W = crate::W<CdrSpec>;
 #[doc = "Field `CDR_HW0_DATA` writer - Data field of the lower CDR half-word"]
-pub type CDR_HW0_DATA_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
+pub type CdrHw0DataW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 #[doc = "Channel select field of the lower CDR half-word\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum CDR_HW0_CHSEL_AW {
+pub enum CdrHw0Chsel {
     #[doc = "0: Channel 0"]
     Channel0 = 0,
     #[doc = "1: Channel 1"]
     Channel1 = 1,
 }
-impl From<CDR_HW0_CHSEL_AW> for u8 {
+impl From<CdrHw0Chsel> for u8 {
     #[inline(always)]
-    fn from(variant: CDR_HW0_CHSEL_AW) -> Self {
+    fn from(variant: CdrHw0Chsel) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for CDR_HW0_CHSEL_AW {
+impl crate::FieldSpec for CdrHw0Chsel {
     type Ux = u8;
 }
 #[doc = "Field `CDR_HW0_CHSEL` writer - Channel select field of the lower CDR half-word"]
-pub type CDR_HW0_CHSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CDR_HW0_CHSEL_AW>;
-impl<'a, REG> CDR_HW0_CHSEL_W<'a, REG>
+pub type CdrHw0ChselW<'a, REG> = crate::FieldWriter<'a, REG, 2, CdrHw0Chsel>;
+impl<'a, REG> CdrHw0ChselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -30,37 +30,37 @@ where
     #[doc = "Channel 0"]
     #[inline(always)]
     pub fn channel0(self) -> &'a mut crate::W<REG> {
-        self.variant(CDR_HW0_CHSEL_AW::Channel0)
+        self.variant(CdrHw0Chsel::Channel0)
     }
     #[doc = "Channel 1"]
     #[inline(always)]
     pub fn channel1(self) -> &'a mut crate::W<REG> {
-        self.variant(CDR_HW0_CHSEL_AW::Channel1)
+        self.variant(CdrHw0Chsel::Channel1)
     }
 }
 #[doc = "Field `CDR_HW1_DATA` writer - Data field of the upper CDR half-word"]
-pub type CDR_HW1_DATA_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
+pub type CdrHw1DataW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 #[doc = "Channel select field of the upper CDR half-word\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum CDR_HW1_CHSEL_AW {
+pub enum CdrHw1Chsel {
     #[doc = "0: Channel 0"]
     Channel0 = 0,
     #[doc = "1: Channel 1"]
     Channel1 = 1,
 }
-impl From<CDR_HW1_CHSEL_AW> for u8 {
+impl From<CdrHw1Chsel> for u8 {
     #[inline(always)]
-    fn from(variant: CDR_HW1_CHSEL_AW) -> Self {
+    fn from(variant: CdrHw1Chsel) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for CDR_HW1_CHSEL_AW {
+impl crate::FieldSpec for CdrHw1Chsel {
     type Ux = u8;
 }
 #[doc = "Field `CDR_HW1_CHSEL` writer - Channel select field of the upper CDR half-word"]
-pub type CDR_HW1_CHSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CDR_HW1_CHSEL_AW>;
-impl<'a, REG> CDR_HW1_CHSEL_W<'a, REG>
+pub type CdrHw1ChselW<'a, REG> = crate::FieldWriter<'a, REG, 2, CdrHw1Chsel>;
+impl<'a, REG> CdrHw1ChselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -68,61 +68,52 @@ where
     #[doc = "Channel 0"]
     #[inline(always)]
     pub fn channel0(self) -> &'a mut crate::W<REG> {
-        self.variant(CDR_HW1_CHSEL_AW::Channel0)
+        self.variant(CdrHw1Chsel::Channel0)
     }
     #[doc = "Channel 1"]
     #[inline(always)]
     pub fn channel1(self) -> &'a mut crate::W<REG> {
-        self.variant(CDR_HW1_CHSEL_AW::Channel1)
+        self.variant(CdrHw1Chsel::Channel1)
     }
 }
 impl W {
     #[doc = "Bits 0:11 - Data field of the lower CDR half-word"]
     #[inline(always)]
     #[must_use]
-    pub fn cdr_hw0_data(&mut self) -> CDR_HW0_DATA_W<CDR_SPEC> {
-        CDR_HW0_DATA_W::new(self, 0)
+    pub fn cdr_hw0_data(&mut self) -> CdrHw0DataW<CdrSpec> {
+        CdrHw0DataW::new(self, 0)
     }
     #[doc = "Bits 12:13 - Channel select field of the lower CDR half-word"]
     #[inline(always)]
     #[must_use]
-    pub fn cdr_hw0_chsel(&mut self) -> CDR_HW0_CHSEL_W<CDR_SPEC> {
-        CDR_HW0_CHSEL_W::new(self, 12)
+    pub fn cdr_hw0_chsel(&mut self) -> CdrHw0ChselW<CdrSpec> {
+        CdrHw0ChselW::new(self, 12)
     }
     #[doc = "Bits 16:27 - Data field of the upper CDR half-word"]
     #[inline(always)]
     #[must_use]
-    pub fn cdr_hw1_data(&mut self) -> CDR_HW1_DATA_W<CDR_SPEC> {
-        CDR_HW1_DATA_W::new(self, 16)
+    pub fn cdr_hw1_data(&mut self) -> CdrHw1DataW<CdrSpec> {
+        CdrHw1DataW::new(self, 16)
     }
     #[doc = "Bits 28:29 - Channel select field of the upper CDR half-word"]
     #[inline(always)]
     #[must_use]
-    pub fn cdr_hw1_chsel(&mut self) -> CDR_HW1_CHSEL_W<CDR_SPEC> {
-        CDR_HW1_CHSEL_W::new(self, 28)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn cdr_hw1_chsel(&mut self) -> CdrHw1ChselW<CdrSpec> {
+        CdrHw1ChselW::new(self, 28)
     }
 }
 #[doc = "Conversion Data Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cdr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CDR_SPEC;
-impl crate::RegisterSpec for CDR_SPEC {
+pub struct CdrSpec;
+impl crate::RegisterSpec for CdrSpec {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`cdr::W`](W) writer structure"]
-impl crate::Writable for CDR_SPEC {
+impl crate::Writable for CdrSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CDR to value 0"]
-impl crate::Resettable for CDR_SPEC {
+impl crate::Resettable for CdrSpec {
     const RESET_VALUE: u32 = 0;
 }

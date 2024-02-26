@@ -1,49 +1,40 @@
 #[doc = "Register `DSCR5` reader"]
-pub type R = crate::R<DSCR5_SPEC>;
+pub type R = crate::R<Dscr5Spec>;
 #[doc = "Register `DSCR5` writer"]
-pub type W = crate::W<DSCR5_SPEC>;
+pub type W = crate::W<Dscr5Spec>;
 #[doc = "Field `DSCR` reader - Buffer Transfer Descriptor Address"]
-pub type DSCR_R = crate::FieldReader<u32>;
+pub type DscrR = crate::FieldReader<u32>;
 #[doc = "Field `DSCR` writer - Buffer Transfer Descriptor Address"]
-pub type DSCR_W<'a, REG> = crate::FieldWriter<'a, REG, 30, u32>;
+pub type DscrW<'a, REG> = crate::FieldWriter<'a, REG, 30, u32>;
 impl R {
     #[doc = "Bits 2:31 - Buffer Transfer Descriptor Address"]
     #[inline(always)]
-    pub fn dscr(&self) -> DSCR_R {
-        DSCR_R::new((self.bits >> 2) & 0x3fff_ffff)
+    pub fn dscr(&self) -> DscrR {
+        DscrR::new((self.bits >> 2) & 0x3fff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 2:31 - Buffer Transfer Descriptor Address"]
     #[inline(always)]
     #[must_use]
-    pub fn dscr(&mut self) -> DSCR_W<DSCR5_SPEC> {
-        DSCR_W::new(self, 2)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn dscr(&mut self) -> DscrW<Dscr5Spec> {
+        DscrW::new(self, 2)
     }
 }
 #[doc = "DMAC Channel Descriptor Address Register (ch_num = 5)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dscr5::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dscr5::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DSCR5_SPEC;
-impl crate::RegisterSpec for DSCR5_SPEC {
+pub struct Dscr5Spec;
+impl crate::RegisterSpec for Dscr5Spec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`dscr5::R`](R) reader structure"]
-impl crate::Readable for DSCR5_SPEC {}
+impl crate::Readable for Dscr5Spec {}
 #[doc = "`write(|w| ..)` method takes [`dscr5::W`](W) writer structure"]
-impl crate::Writable for DSCR5_SPEC {
+impl crate::Writable for Dscr5Spec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DSCR5 to value 0"]
-impl crate::Resettable for DSCR5_SPEC {
+impl crate::Resettable for Dscr5Spec {
     const RESET_VALUE: u32 = 0;
 }

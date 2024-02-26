@@ -1,154 +1,145 @@
 #[doc = "Register `LAST` reader"]
-pub type R = crate::R<LAST_SPEC>;
+pub type R = crate::R<LastSpec>;
 #[doc = "Register `LAST` writer"]
-pub type W = crate::W<LAST_SPEC>;
+pub type W = crate::W<LastSpec>;
 #[doc = "Field `SLAST0` reader - Source Last"]
-pub type SLAST0_R = crate::BitReader;
+pub type Slast0R = crate::BitReader;
 #[doc = "Field `SLAST0` writer - Source Last"]
-pub type SLAST0_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Slast0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DLAST0` reader - Destination Last"]
-pub type DLAST0_R = crate::BitReader;
+pub type Dlast0R = crate::BitReader;
 #[doc = "Field `DLAST0` writer - Destination Last"]
-pub type DLAST0_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Dlast0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SLAST1` reader - Source Last"]
-pub type SLAST1_R = crate::BitReader;
+pub type Slast1R = crate::BitReader;
 #[doc = "Field `SLAST1` writer - Source Last"]
-pub type SLAST1_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Slast1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DLAST1` reader - Destination Last"]
-pub type DLAST1_R = crate::BitReader;
+pub type Dlast1R = crate::BitReader;
 #[doc = "Field `DLAST1` writer - Destination Last"]
-pub type DLAST1_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Dlast1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SLAST2` reader - Source Last"]
-pub type SLAST2_R = crate::BitReader;
+pub type Slast2R = crate::BitReader;
 #[doc = "Field `SLAST2` writer - Source Last"]
-pub type SLAST2_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Slast2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DLAST2` reader - Destination Last"]
-pub type DLAST2_R = crate::BitReader;
+pub type Dlast2R = crate::BitReader;
 #[doc = "Field `DLAST2` writer - Destination Last"]
-pub type DLAST2_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Dlast2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SLAST3` reader - Source Last"]
-pub type SLAST3_R = crate::BitReader;
+pub type Slast3R = crate::BitReader;
 #[doc = "Field `SLAST3` writer - Source Last"]
-pub type SLAST3_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Slast3W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DLAST3` reader - Destination Last"]
-pub type DLAST3_R = crate::BitReader;
+pub type Dlast3R = crate::BitReader;
 #[doc = "Field `DLAST3` writer - Destination Last"]
-pub type DLAST3_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Dlast3W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Source Last"]
     #[inline(always)]
-    pub fn slast0(&self) -> SLAST0_R {
-        SLAST0_R::new((self.bits & 1) != 0)
+    pub fn slast0(&self) -> Slast0R {
+        Slast0R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Destination Last"]
     #[inline(always)]
-    pub fn dlast0(&self) -> DLAST0_R {
-        DLAST0_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn dlast0(&self) -> Dlast0R {
+        Dlast0R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Source Last"]
     #[inline(always)]
-    pub fn slast1(&self) -> SLAST1_R {
-        SLAST1_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn slast1(&self) -> Slast1R {
+        Slast1R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Destination Last"]
     #[inline(always)]
-    pub fn dlast1(&self) -> DLAST1_R {
-        DLAST1_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn dlast1(&self) -> Dlast1R {
+        Dlast1R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Source Last"]
     #[inline(always)]
-    pub fn slast2(&self) -> SLAST2_R {
-        SLAST2_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn slast2(&self) -> Slast2R {
+        Slast2R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Destination Last"]
     #[inline(always)]
-    pub fn dlast2(&self) -> DLAST2_R {
-        DLAST2_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn dlast2(&self) -> Dlast2R {
+        Dlast2R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Source Last"]
     #[inline(always)]
-    pub fn slast3(&self) -> SLAST3_R {
-        SLAST3_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn slast3(&self) -> Slast3R {
+        Slast3R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Destination Last"]
     #[inline(always)]
-    pub fn dlast3(&self) -> DLAST3_R {
-        DLAST3_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn dlast3(&self) -> Dlast3R {
+        Dlast3R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Source Last"]
     #[inline(always)]
     #[must_use]
-    pub fn slast0(&mut self) -> SLAST0_W<LAST_SPEC> {
-        SLAST0_W::new(self, 0)
+    pub fn slast0(&mut self) -> Slast0W<LastSpec> {
+        Slast0W::new(self, 0)
     }
     #[doc = "Bit 1 - Destination Last"]
     #[inline(always)]
     #[must_use]
-    pub fn dlast0(&mut self) -> DLAST0_W<LAST_SPEC> {
-        DLAST0_W::new(self, 1)
+    pub fn dlast0(&mut self) -> Dlast0W<LastSpec> {
+        Dlast0W::new(self, 1)
     }
     #[doc = "Bit 2 - Source Last"]
     #[inline(always)]
     #[must_use]
-    pub fn slast1(&mut self) -> SLAST1_W<LAST_SPEC> {
-        SLAST1_W::new(self, 2)
+    pub fn slast1(&mut self) -> Slast1W<LastSpec> {
+        Slast1W::new(self, 2)
     }
     #[doc = "Bit 3 - Destination Last"]
     #[inline(always)]
     #[must_use]
-    pub fn dlast1(&mut self) -> DLAST1_W<LAST_SPEC> {
-        DLAST1_W::new(self, 3)
+    pub fn dlast1(&mut self) -> Dlast1W<LastSpec> {
+        Dlast1W::new(self, 3)
     }
     #[doc = "Bit 4 - Source Last"]
     #[inline(always)]
     #[must_use]
-    pub fn slast2(&mut self) -> SLAST2_W<LAST_SPEC> {
-        SLAST2_W::new(self, 4)
+    pub fn slast2(&mut self) -> Slast2W<LastSpec> {
+        Slast2W::new(self, 4)
     }
     #[doc = "Bit 5 - Destination Last"]
     #[inline(always)]
     #[must_use]
-    pub fn dlast2(&mut self) -> DLAST2_W<LAST_SPEC> {
-        DLAST2_W::new(self, 5)
+    pub fn dlast2(&mut self) -> Dlast2W<LastSpec> {
+        Dlast2W::new(self, 5)
     }
     #[doc = "Bit 6 - Source Last"]
     #[inline(always)]
     #[must_use]
-    pub fn slast3(&mut self) -> SLAST3_W<LAST_SPEC> {
-        SLAST3_W::new(self, 6)
+    pub fn slast3(&mut self) -> Slast3W<LastSpec> {
+        Slast3W::new(self, 6)
     }
     #[doc = "Bit 7 - Destination Last"]
     #[inline(always)]
     #[must_use]
-    pub fn dlast3(&mut self) -> DLAST3_W<LAST_SPEC> {
-        DLAST3_W::new(self, 7)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn dlast3(&mut self) -> Dlast3W<LastSpec> {
+        Dlast3W::new(self, 7)
     }
 }
 #[doc = "DMAC Software Last Transfer Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`last::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`last::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct LAST_SPEC;
-impl crate::RegisterSpec for LAST_SPEC {
+pub struct LastSpec;
+impl crate::RegisterSpec for LastSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`last::R`](R) reader structure"]
-impl crate::Readable for LAST_SPEC {}
+impl crate::Readable for LastSpec {}
 #[doc = "`write(|w| ..)` method takes [`last::W`](W) writer structure"]
-impl crate::Writable for LAST_SPEC {
+impl crate::Writable for LastSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets LAST to value 0"]
-impl crate::Resettable for LAST_SPEC {
+impl crate::Resettable for LastSpec {
     const RESET_VALUE: u32 = 0;
 }

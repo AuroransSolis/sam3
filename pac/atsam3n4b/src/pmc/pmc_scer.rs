@@ -1,48 +1,39 @@
 #[doc = "Register `PMC_SCER` writer"]
-pub type W = crate::W<PMC_SCER_SPEC>;
+pub type W = crate::W<PmcScerSpec>;
 #[doc = "Field `PCK0` writer - Programmable Clock 0 Output Enable"]
-pub type PCK0_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Pck0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PCK1` writer - Programmable Clock 1 Output Enable"]
-pub type PCK1_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Pck1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PCK2` writer - Programmable Clock 2 Output Enable"]
-pub type PCK2_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Pck2W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 8 - Programmable Clock 0 Output Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pck0(&mut self) -> PCK0_W<PMC_SCER_SPEC> {
-        PCK0_W::new(self, 8)
+    pub fn pck0(&mut self) -> Pck0W<PmcScerSpec> {
+        Pck0W::new(self, 8)
     }
     #[doc = "Bit 9 - Programmable Clock 1 Output Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pck1(&mut self) -> PCK1_W<PMC_SCER_SPEC> {
-        PCK1_W::new(self, 9)
+    pub fn pck1(&mut self) -> Pck1W<PmcScerSpec> {
+        Pck1W::new(self, 9)
     }
     #[doc = "Bit 10 - Programmable Clock 2 Output Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pck2(&mut self) -> PCK2_W<PMC_SCER_SPEC> {
-        PCK2_W::new(self, 10)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn pck2(&mut self) -> Pck2W<PmcScerSpec> {
+        Pck2W::new(self, 10)
     }
 }
 #[doc = "System Clock Enable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmc_scer::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PMC_SCER_SPEC;
-impl crate::RegisterSpec for PMC_SCER_SPEC {
+pub struct PmcScerSpec;
+impl crate::RegisterSpec for PmcScerSpec {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`pmc_scer::W`](W) writer structure"]
-impl crate::Writable for PMC_SCER_SPEC {
+impl crate::Writable for PmcScerSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

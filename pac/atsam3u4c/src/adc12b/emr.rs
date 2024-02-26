@@ -1,64 +1,55 @@
 #[doc = "Register `EMR` reader"]
-pub type R = crate::R<EMR_SPEC>;
+pub type R = crate::R<EmrSpec>;
 #[doc = "Register `EMR` writer"]
-pub type W = crate::W<EMR_SPEC>;
+pub type W = crate::W<EmrSpec>;
 #[doc = "Field `OFFMODES` reader - Off Mode if Sleep Bit (ADC12B_MR) = 1"]
-pub type OFFMODES_R = crate::BitReader;
+pub type OffmodesR = crate::BitReader;
 #[doc = "Field `OFFMODES` writer - Off Mode if Sleep Bit (ADC12B_MR) = 1"]
-pub type OFFMODES_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type OffmodesW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OFF_MODE_STARTUP_TIME` reader - Startup Time"]
-pub type OFF_MODE_STARTUP_TIME_R = crate::FieldReader;
+pub type OffModeStartupTimeR = crate::FieldReader;
 #[doc = "Field `OFF_MODE_STARTUP_TIME` writer - Startup Time"]
-pub type OFF_MODE_STARTUP_TIME_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+pub type OffModeStartupTimeW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bit 0 - Off Mode if Sleep Bit (ADC12B_MR) = 1"]
     #[inline(always)]
-    pub fn offmodes(&self) -> OFFMODES_R {
-        OFFMODES_R::new((self.bits & 1) != 0)
+    pub fn offmodes(&self) -> OffmodesR {
+        OffmodesR::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 16:23 - Startup Time"]
     #[inline(always)]
-    pub fn off_mode_startup_time(&self) -> OFF_MODE_STARTUP_TIME_R {
-        OFF_MODE_STARTUP_TIME_R::new(((self.bits >> 16) & 0xff) as u8)
+    pub fn off_mode_startup_time(&self) -> OffModeStartupTimeR {
+        OffModeStartupTimeR::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Off Mode if Sleep Bit (ADC12B_MR) = 1"]
     #[inline(always)]
     #[must_use]
-    pub fn offmodes(&mut self) -> OFFMODES_W<EMR_SPEC> {
-        OFFMODES_W::new(self, 0)
+    pub fn offmodes(&mut self) -> OffmodesW<EmrSpec> {
+        OffmodesW::new(self, 0)
     }
     #[doc = "Bits 16:23 - Startup Time"]
     #[inline(always)]
     #[must_use]
-    pub fn off_mode_startup_time(&mut self) -> OFF_MODE_STARTUP_TIME_W<EMR_SPEC> {
-        OFF_MODE_STARTUP_TIME_W::new(self, 16)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn off_mode_startup_time(&mut self) -> OffModeStartupTimeW<EmrSpec> {
+        OffModeStartupTimeW::new(self, 16)
     }
 }
 #[doc = "Extended Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct EMR_SPEC;
-impl crate::RegisterSpec for EMR_SPEC {
+pub struct EmrSpec;
+impl crate::RegisterSpec for EmrSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`emr::R`](R) reader structure"]
-impl crate::Readable for EMR_SPEC {}
+impl crate::Readable for EmrSpec {}
 #[doc = "`write(|w| ..)` method takes [`emr::W`](W) writer structure"]
-impl crate::Writable for EMR_SPEC {
+impl crate::Writable for EmrSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets EMR to value 0"]
-impl crate::Resettable for EMR_SPEC {
+impl crate::Resettable for EmrSpec {
     const RESET_VALUE: u32 = 0;
 }

@@ -1,29 +1,29 @@
 #[doc = "Register `RDR` reader"]
-pub type R = crate::R<RDR_SPEC>;
+pub type R = crate::R<RdrSpec>;
 #[doc = "Field `RD` reader - Receive Data"]
-pub type RD_R = crate::FieldReader<u16>;
+pub type RdR = crate::FieldReader<u16>;
 #[doc = "Field `PCS` reader - Peripheral Chip Select"]
-pub type PCS_R = crate::FieldReader;
+pub type PcsR = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:15 - Receive Data"]
     #[inline(always)]
-    pub fn rd(&self) -> RD_R {
-        RD_R::new((self.bits & 0xffff) as u16)
+    pub fn rd(&self) -> RdR {
+        RdR::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:19 - Peripheral Chip Select"]
     #[inline(always)]
-    pub fn pcs(&self) -> PCS_R {
-        PCS_R::new(((self.bits >> 16) & 0x0f) as u8)
+    pub fn pcs(&self) -> PcsR {
+        PcsR::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
 #[doc = "Receive Data Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rdr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct RDR_SPEC;
-impl crate::RegisterSpec for RDR_SPEC {
+pub struct RdrSpec;
+impl crate::RegisterSpec for RdrSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`rdr::R`](R) reader structure"]
-impl crate::Readable for RDR_SPEC {}
+impl crate::Readable for RdrSpec {}
 #[doc = "`reset()` method sets RDR to value 0"]
-impl crate::Resettable for RDR_SPEC {
+impl crate::Resettable for RdrSpec {
     const RESET_VALUE: u32 = 0;
 }

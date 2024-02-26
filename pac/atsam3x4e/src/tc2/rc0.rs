@@ -1,49 +1,40 @@
 #[doc = "Register `RC0` reader"]
-pub type R = crate::R<RC0_SPEC>;
+pub type R = crate::R<Rc0Spec>;
 #[doc = "Register `RC0` writer"]
-pub type W = crate::W<RC0_SPEC>;
+pub type W = crate::W<Rc0Spec>;
 #[doc = "Field `RC` reader - Register C"]
-pub type RC_R = crate::FieldReader<u32>;
+pub type RcR = crate::FieldReader<u32>;
 #[doc = "Field `RC` writer - Register C"]
-pub type RC_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
+pub type RcW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Register C"]
     #[inline(always)]
-    pub fn rc(&self) -> RC_R {
-        RC_R::new(self.bits)
+    pub fn rc(&self) -> RcR {
+        RcR::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Register C"]
     #[inline(always)]
     #[must_use]
-    pub fn rc(&mut self) -> RC_W<RC0_SPEC> {
-        RC_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn rc(&mut self) -> RcW<Rc0Spec> {
+        RcW::new(self, 0)
     }
 }
 #[doc = "Register C (channel = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rc0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rc0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct RC0_SPEC;
-impl crate::RegisterSpec for RC0_SPEC {
+pub struct Rc0Spec;
+impl crate::RegisterSpec for Rc0Spec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`rc0::R`](R) reader structure"]
-impl crate::Readable for RC0_SPEC {}
+impl crate::Readable for Rc0Spec {}
 #[doc = "`write(|w| ..)` method takes [`rc0::W`](W) writer structure"]
-impl crate::Writable for RC0_SPEC {
+impl crate::Writable for Rc0Spec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RC0 to value 0"]
-impl crate::Resettable for RC0_SPEC {
+impl crate::Resettable for Rc0Spec {
     const RESET_VALUE: u32 = 0;
 }

@@ -1,49 +1,40 @@
 #[doc = "Register `SMR` reader"]
-pub type R = crate::R<SMR_SPEC>;
+pub type R = crate::R<SmrSpec>;
 #[doc = "Register `SMR` writer"]
-pub type W = crate::W<SMR_SPEC>;
+pub type W = crate::W<SmrSpec>;
 #[doc = "Field `SADR` reader - Slave Address"]
-pub type SADR_R = crate::FieldReader;
+pub type SadrR = crate::FieldReader;
 #[doc = "Field `SADR` writer - Slave Address"]
-pub type SADR_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
+pub type SadrW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 impl R {
     #[doc = "Bits 16:22 - Slave Address"]
     #[inline(always)]
-    pub fn sadr(&self) -> SADR_R {
-        SADR_R::new(((self.bits >> 16) & 0x7f) as u8)
+    pub fn sadr(&self) -> SadrR {
+        SadrR::new(((self.bits >> 16) & 0x7f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 16:22 - Slave Address"]
     #[inline(always)]
     #[must_use]
-    pub fn sadr(&mut self) -> SADR_W<SMR_SPEC> {
-        SADR_W::new(self, 16)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn sadr(&mut self) -> SadrW<SmrSpec> {
+        SadrW::new(self, 16)
     }
 }
 #[doc = "Slave Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`smr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`smr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct SMR_SPEC;
-impl crate::RegisterSpec for SMR_SPEC {
+pub struct SmrSpec;
+impl crate::RegisterSpec for SmrSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`smr::R`](R) reader structure"]
-impl crate::Readable for SMR_SPEC {}
+impl crate::Readable for SmrSpec {}
 #[doc = "`write(|w| ..)` method takes [`smr::W`](W) writer structure"]
-impl crate::Writable for SMR_SPEC {
+impl crate::Writable for SmrSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SMR to value 0"]
-impl crate::Resettable for SMR_SPEC {
+impl crate::Resettable for SmrSpec {
     const RESET_VALUE: u32 = 0;
 }

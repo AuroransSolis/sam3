@@ -1,49 +1,40 @@
 #[doc = "Register `DTF` reader"]
-pub type R = crate::R<DTF_SPEC>;
+pub type R = crate::R<DtfSpec>;
 #[doc = "Register `DTF` writer"]
-pub type W = crate::W<DTF_SPEC>;
+pub type W = crate::W<DtfSpec>;
 #[doc = "Field `DTF` reader - Deferred Transmission Frames"]
-pub type DTF_R = crate::FieldReader<u16>;
+pub type DtfR = crate::FieldReader<u16>;
 #[doc = "Field `DTF` writer - Deferred Transmission Frames"]
-pub type DTF_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
+pub type DtfW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Deferred Transmission Frames"]
     #[inline(always)]
-    pub fn dtf(&self) -> DTF_R {
-        DTF_R::new((self.bits & 0xffff) as u16)
+    pub fn dtf(&self) -> DtfR {
+        DtfR::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Deferred Transmission Frames"]
     #[inline(always)]
     #[must_use]
-    pub fn dtf(&mut self) -> DTF_W<DTF_SPEC> {
-        DTF_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn dtf(&mut self) -> DtfW<DtfSpec> {
+        DtfW::new(self, 0)
     }
 }
 #[doc = "Deferred Transmission Frames Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dtf::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dtf::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DTF_SPEC;
-impl crate::RegisterSpec for DTF_SPEC {
+pub struct DtfSpec;
+impl crate::RegisterSpec for DtfSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`dtf::R`](R) reader structure"]
-impl crate::Readable for DTF_SPEC {}
+impl crate::Readable for DtfSpec {}
 #[doc = "`write(|w| ..)` method takes [`dtf::W`](W) writer structure"]
-impl crate::Writable for DTF_SPEC {
+impl crate::Writable for DtfSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DTF to value 0"]
-impl crate::Resettable for DTF_SPEC {
+impl crate::Resettable for DtfSpec {
     const RESET_VALUE: u32 = 0;
 }

@@ -1,13 +1,11 @@
 #[doc = "Register `LPR` reader"]
-pub type R = crate::R<LPR_SPEC>;
+pub type R = crate::R<LprSpec>;
 #[doc = "Register `LPR` writer"]
-pub type W = crate::W<LPR_SPEC>;
-#[doc = "Field `LPCB` reader - Low-power Configuration Bits"]
-pub type LPCB_R = crate::FieldReader<LPCB_A>;
+pub type W = crate::W<LprSpec>;
 #[doc = "Low-power Configuration Bits\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum LPCB_A {
+pub enum Lpcb {
     #[doc = "0: Low Power Feature is inhibited: no Power-down, Self-refresh or Deep Power-down command is issued to the SDRAM device."]
     Disabled = 0,
     #[doc = "1: The SDRAM Controller issues a Self-refresh command to the SDRAM device, the SDCK clock is deactivated and the SDCKE signal is set low. The SDRAM device leaves the Self Refresh Mode when accessed and enters it after the access."]
@@ -17,51 +15,53 @@ pub enum LPCB_A {
     #[doc = "3: The SDRAM Controller issues a Deep Power-down command to the SDRAM device. This mode is unique to low-power SDRAM."]
     DeepPowerDown = 3,
 }
-impl From<LPCB_A> for u8 {
+impl From<Lpcb> for u8 {
     #[inline(always)]
-    fn from(variant: LPCB_A) -> Self {
+    fn from(variant: Lpcb) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for LPCB_A {
+impl crate::FieldSpec for Lpcb {
     type Ux = u8;
 }
-impl LPCB_R {
+#[doc = "Field `LPCB` reader - Low-power Configuration Bits"]
+pub type LpcbR = crate::FieldReader<Lpcb>;
+impl LpcbR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> LPCB_A {
+    pub const fn variant(&self) -> Lpcb {
         match self.bits {
-            0 => LPCB_A::Disabled,
-            1 => LPCB_A::SelfRefresh,
-            2 => LPCB_A::PowerDown,
-            3 => LPCB_A::DeepPowerDown,
+            0 => Lpcb::Disabled,
+            1 => Lpcb::SelfRefresh,
+            2 => Lpcb::PowerDown,
+            3 => Lpcb::DeepPowerDown,
             _ => unreachable!(),
         }
     }
     #[doc = "Low Power Feature is inhibited: no Power-down, Self-refresh or Deep Power-down command is issued to the SDRAM device."]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == LPCB_A::Disabled
+        *self == Lpcb::Disabled
     }
     #[doc = "The SDRAM Controller issues a Self-refresh command to the SDRAM device, the SDCK clock is deactivated and the SDCKE signal is set low. The SDRAM device leaves the Self Refresh Mode when accessed and enters it after the access."]
     #[inline(always)]
     pub fn is_self_refresh(&self) -> bool {
-        *self == LPCB_A::SelfRefresh
+        *self == Lpcb::SelfRefresh
     }
     #[doc = "The SDRAM Controller issues a Power-down Command to the SDRAM device after each access, the SDCKE signal is set to low. The SDRAM device leaves the Power-down Mode when accessed and enters it after the access."]
     #[inline(always)]
     pub fn is_power_down(&self) -> bool {
-        *self == LPCB_A::PowerDown
+        *self == Lpcb::PowerDown
     }
     #[doc = "The SDRAM Controller issues a Deep Power-down command to the SDRAM device. This mode is unique to low-power SDRAM."]
     #[inline(always)]
     pub fn is_deep_power_down(&self) -> bool {
-        *self == LPCB_A::DeepPowerDown
+        *self == Lpcb::DeepPowerDown
     }
 }
 #[doc = "Field `LPCB` writer - Low-power Configuration Bits"]
-pub type LPCB_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, LPCB_A>;
-impl<'a, REG> LPCB_W<'a, REG>
+pub type LpcbW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Lpcb>;
+impl<'a, REG> LpcbW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -69,42 +69,40 @@ where
     #[doc = "Low Power Feature is inhibited: no Power-down, Self-refresh or Deep Power-down command is issued to the SDRAM device."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut crate::W<REG> {
-        self.variant(LPCB_A::Disabled)
+        self.variant(Lpcb::Disabled)
     }
     #[doc = "The SDRAM Controller issues a Self-refresh command to the SDRAM device, the SDCK clock is deactivated and the SDCKE signal is set low. The SDRAM device leaves the Self Refresh Mode when accessed and enters it after the access."]
     #[inline(always)]
     pub fn self_refresh(self) -> &'a mut crate::W<REG> {
-        self.variant(LPCB_A::SelfRefresh)
+        self.variant(Lpcb::SelfRefresh)
     }
     #[doc = "The SDRAM Controller issues a Power-down Command to the SDRAM device after each access, the SDCKE signal is set to low. The SDRAM device leaves the Power-down Mode when accessed and enters it after the access."]
     #[inline(always)]
     pub fn power_down(self) -> &'a mut crate::W<REG> {
-        self.variant(LPCB_A::PowerDown)
+        self.variant(Lpcb::PowerDown)
     }
     #[doc = "The SDRAM Controller issues a Deep Power-down command to the SDRAM device. This mode is unique to low-power SDRAM."]
     #[inline(always)]
     pub fn deep_power_down(self) -> &'a mut crate::W<REG> {
-        self.variant(LPCB_A::DeepPowerDown)
+        self.variant(Lpcb::DeepPowerDown)
     }
 }
 #[doc = "Field `PASR` reader - Partial Array Self-refresh (only for low-power SDRAM)"]
-pub type PASR_R = crate::FieldReader;
+pub type PasrR = crate::FieldReader;
 #[doc = "Field `PASR` writer - Partial Array Self-refresh (only for low-power SDRAM)"]
-pub type PASR_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
+pub type PasrW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `TCSR` reader - Temperature Compensated Self-Refresh (only for low-power SDRAM)"]
-pub type TCSR_R = crate::FieldReader;
+pub type TcsrR = crate::FieldReader;
 #[doc = "Field `TCSR` writer - Temperature Compensated Self-Refresh (only for low-power SDRAM)"]
-pub type TCSR_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
+pub type TcsrW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `DS` reader - Drive Strength (only for low-power SDRAM)"]
-pub type DS_R = crate::FieldReader;
+pub type DsR = crate::FieldReader;
 #[doc = "Field `DS` writer - Drive Strength (only for low-power SDRAM)"]
-pub type DS_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `TIMEOUT` reader - Time to define when low-power mode is enable"]
-pub type TIMEOUT_R = crate::FieldReader<TIMEOUT_A>;
+pub type DsW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Time to define when low-power mode is enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum TIMEOUT_A {
+pub enum Timeout {
     #[doc = "0: The SDRAM controller activates the SDRAM low-power mode immediately after the end of the last transfer."]
     LpLastXfer = 0,
     #[doc = "1: The SDRAM controller activates the SDRAM low-power mode 64 clock cycles after the end of the last transfer."]
@@ -112,45 +110,47 @@ pub enum TIMEOUT_A {
     #[doc = "2: The SDRAM controller activates the SDRAM low-power mode 128 clock cycles after the end of the last transfer."]
     LpLastXfer128 = 2,
 }
-impl From<TIMEOUT_A> for u8 {
+impl From<Timeout> for u8 {
     #[inline(always)]
-    fn from(variant: TIMEOUT_A) -> Self {
+    fn from(variant: Timeout) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for TIMEOUT_A {
+impl crate::FieldSpec for Timeout {
     type Ux = u8;
 }
-impl TIMEOUT_R {
+#[doc = "Field `TIMEOUT` reader - Time to define when low-power mode is enable"]
+pub type TimeoutR = crate::FieldReader<Timeout>;
+impl TimeoutR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<TIMEOUT_A> {
+    pub const fn variant(&self) -> Option<Timeout> {
         match self.bits {
-            0 => Some(TIMEOUT_A::LpLastXfer),
-            1 => Some(TIMEOUT_A::LpLastXfer64),
-            2 => Some(TIMEOUT_A::LpLastXfer128),
+            0 => Some(Timeout::LpLastXfer),
+            1 => Some(Timeout::LpLastXfer64),
+            2 => Some(Timeout::LpLastXfer128),
             _ => None,
         }
     }
     #[doc = "The SDRAM controller activates the SDRAM low-power mode immediately after the end of the last transfer."]
     #[inline(always)]
     pub fn is_lp_last_xfer(&self) -> bool {
-        *self == TIMEOUT_A::LpLastXfer
+        *self == Timeout::LpLastXfer
     }
     #[doc = "The SDRAM controller activates the SDRAM low-power mode 64 clock cycles after the end of the last transfer."]
     #[inline(always)]
     pub fn is_lp_last_xfer_64(&self) -> bool {
-        *self == TIMEOUT_A::LpLastXfer64
+        *self == Timeout::LpLastXfer64
     }
     #[doc = "The SDRAM controller activates the SDRAM low-power mode 128 clock cycles after the end of the last transfer."]
     #[inline(always)]
     pub fn is_lp_last_xfer_128(&self) -> bool {
-        *self == TIMEOUT_A::LpLastXfer128
+        *self == Timeout::LpLastXfer128
     }
 }
 #[doc = "Field `TIMEOUT` writer - Time to define when low-power mode is enable"]
-pub type TIMEOUT_W<'a, REG> = crate::FieldWriter<'a, REG, 2, TIMEOUT_A>;
-impl<'a, REG> TIMEOUT_W<'a, REG>
+pub type TimeoutW<'a, REG> = crate::FieldWriter<'a, REG, 2, Timeout>;
+impl<'a, REG> TimeoutW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -158,101 +158,92 @@ where
     #[doc = "The SDRAM controller activates the SDRAM low-power mode immediately after the end of the last transfer."]
     #[inline(always)]
     pub fn lp_last_xfer(self) -> &'a mut crate::W<REG> {
-        self.variant(TIMEOUT_A::LpLastXfer)
+        self.variant(Timeout::LpLastXfer)
     }
     #[doc = "The SDRAM controller activates the SDRAM low-power mode 64 clock cycles after the end of the last transfer."]
     #[inline(always)]
     pub fn lp_last_xfer_64(self) -> &'a mut crate::W<REG> {
-        self.variant(TIMEOUT_A::LpLastXfer64)
+        self.variant(Timeout::LpLastXfer64)
     }
     #[doc = "The SDRAM controller activates the SDRAM low-power mode 128 clock cycles after the end of the last transfer."]
     #[inline(always)]
     pub fn lp_last_xfer_128(self) -> &'a mut crate::W<REG> {
-        self.variant(TIMEOUT_A::LpLastXfer128)
+        self.variant(Timeout::LpLastXfer128)
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Low-power Configuration Bits"]
     #[inline(always)]
-    pub fn lpcb(&self) -> LPCB_R {
-        LPCB_R::new((self.bits & 3) as u8)
+    pub fn lpcb(&self) -> LpcbR {
+        LpcbR::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 4:6 - Partial Array Self-refresh (only for low-power SDRAM)"]
     #[inline(always)]
-    pub fn pasr(&self) -> PASR_R {
-        PASR_R::new(((self.bits >> 4) & 7) as u8)
+    pub fn pasr(&self) -> PasrR {
+        PasrR::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bits 8:9 - Temperature Compensated Self-Refresh (only for low-power SDRAM)"]
     #[inline(always)]
-    pub fn tcsr(&self) -> TCSR_R {
-        TCSR_R::new(((self.bits >> 8) & 3) as u8)
+    pub fn tcsr(&self) -> TcsrR {
+        TcsrR::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - Drive Strength (only for low-power SDRAM)"]
     #[inline(always)]
-    pub fn ds(&self) -> DS_R {
-        DS_R::new(((self.bits >> 10) & 3) as u8)
+    pub fn ds(&self) -> DsR {
+        DsR::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bits 12:13 - Time to define when low-power mode is enable"]
     #[inline(always)]
-    pub fn timeout(&self) -> TIMEOUT_R {
-        TIMEOUT_R::new(((self.bits >> 12) & 3) as u8)
+    pub fn timeout(&self) -> TimeoutR {
+        TimeoutR::new(((self.bits >> 12) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Low-power Configuration Bits"]
     #[inline(always)]
     #[must_use]
-    pub fn lpcb(&mut self) -> LPCB_W<LPR_SPEC> {
-        LPCB_W::new(self, 0)
+    pub fn lpcb(&mut self) -> LpcbW<LprSpec> {
+        LpcbW::new(self, 0)
     }
     #[doc = "Bits 4:6 - Partial Array Self-refresh (only for low-power SDRAM)"]
     #[inline(always)]
     #[must_use]
-    pub fn pasr(&mut self) -> PASR_W<LPR_SPEC> {
-        PASR_W::new(self, 4)
+    pub fn pasr(&mut self) -> PasrW<LprSpec> {
+        PasrW::new(self, 4)
     }
     #[doc = "Bits 8:9 - Temperature Compensated Self-Refresh (only for low-power SDRAM)"]
     #[inline(always)]
     #[must_use]
-    pub fn tcsr(&mut self) -> TCSR_W<LPR_SPEC> {
-        TCSR_W::new(self, 8)
+    pub fn tcsr(&mut self) -> TcsrW<LprSpec> {
+        TcsrW::new(self, 8)
     }
     #[doc = "Bits 10:11 - Drive Strength (only for low-power SDRAM)"]
     #[inline(always)]
     #[must_use]
-    pub fn ds(&mut self) -> DS_W<LPR_SPEC> {
-        DS_W::new(self, 10)
+    pub fn ds(&mut self) -> DsW<LprSpec> {
+        DsW::new(self, 10)
     }
     #[doc = "Bits 12:13 - Time to define when low-power mode is enable"]
     #[inline(always)]
     #[must_use]
-    pub fn timeout(&mut self) -> TIMEOUT_W<LPR_SPEC> {
-        TIMEOUT_W::new(self, 12)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn timeout(&mut self) -> TimeoutW<LprSpec> {
+        TimeoutW::new(self, 12)
     }
 }
 #[doc = "SDRAMC Low Power Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lpr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lpr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct LPR_SPEC;
-impl crate::RegisterSpec for LPR_SPEC {
+pub struct LprSpec;
+impl crate::RegisterSpec for LprSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`lpr::R`](R) reader structure"]
-impl crate::Readable for LPR_SPEC {}
+impl crate::Readable for LprSpec {}
 #[doc = "`write(|w| ..)` method takes [`lpr::W`](W) writer structure"]
-impl crate::Writable for LPR_SPEC {
+impl crate::Writable for LprSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets LPR to value 0"]
-impl crate::Resettable for LPR_SPEC {
+impl crate::Resettable for LprSpec {
     const RESET_VALUE: u32 = 0;
 }

@@ -1,25 +1,25 @@
 #[doc = "Register `VERSION` reader"]
-pub type R = crate::R<VERSION_SPEC>;
+pub type R = crate::R<VersionSpec>;
 #[doc = "Field `VERSION` reader - Harware Module Version"]
-pub type VERSION_R = crate::FieldReader<u16>;
+pub type VersionR = crate::FieldReader<u16>;
 #[doc = "Field `MFN` reader - Metal Fix Number"]
-pub type MFN_R = crate::FieldReader;
+pub type MfnR = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:11 - Harware Module Version"]
     #[inline(always)]
-    pub fn version(&self) -> VERSION_R {
-        VERSION_R::new((self.bits & 0x0fff) as u16)
+    pub fn version(&self) -> VersionR {
+        VersionR::new((self.bits & 0x0fff) as u16)
     }
     #[doc = "Bits 16:18 - Metal Fix Number"]
     #[inline(always)]
-    pub fn mfn(&self) -> MFN_R {
-        MFN_R::new(((self.bits >> 16) & 7) as u8)
+    pub fn mfn(&self) -> MfnR {
+        MfnR::new(((self.bits >> 16) & 7) as u8)
     }
 }
 #[doc = "Version Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`version::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct VERSION_SPEC;
-impl crate::RegisterSpec for VERSION_SPEC {
+pub struct VersionSpec;
+impl crate::RegisterSpec for VersionSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`version::R`](R) reader structure"]
-impl crate::Readable for VERSION_SPEC {}
+impl crate::Readable for VersionSpec {}

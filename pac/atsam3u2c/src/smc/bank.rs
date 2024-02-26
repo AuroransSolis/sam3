@@ -1,49 +1,40 @@
 #[doc = "Register `BANK` reader"]
-pub type R = crate::R<BANK_SPEC>;
+pub type R = crate::R<BankSpec>;
 #[doc = "Register `BANK` writer"]
-pub type W = crate::W<BANK_SPEC>;
+pub type W = crate::W<BankSpec>;
 #[doc = "Field `BANK` reader - Bank Identifier"]
-pub type BANK_R = crate::FieldReader;
+pub type BankR = crate::FieldReader;
 #[doc = "Field `BANK` writer - Bank Identifier"]
-pub type BANK_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
+pub type BankW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 0:2 - Bank Identifier"]
     #[inline(always)]
-    pub fn bank(&self) -> BANK_R {
-        BANK_R::new((self.bits & 7) as u8)
+    pub fn bank(&self) -> BankR {
+        BankR::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Bank Identifier"]
     #[inline(always)]
     #[must_use]
-    pub fn bank(&mut self) -> BANK_W<BANK_SPEC> {
-        BANK_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn bank(&mut self) -> BankW<BankSpec> {
+        BankW::new(self, 0)
     }
 }
 #[doc = "SMC Bank Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`bank::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`bank::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct BANK_SPEC;
-impl crate::RegisterSpec for BANK_SPEC {
+pub struct BankSpec;
+impl crate::RegisterSpec for BankSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`bank::R`](R) reader structure"]
-impl crate::Readable for BANK_SPEC {}
+impl crate::Readable for BankSpec {}
 #[doc = "`write(|w| ..)` method takes [`bank::W`](W) writer structure"]
-impl crate::Writable for BANK_SPEC {
+impl crate::Writable for BankSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BANK to value 0"]
-impl crate::Resettable for BANK_SPEC {
+impl crate::Resettable for BankSpec {
     const RESET_VALUE: u32 = 0;
 }

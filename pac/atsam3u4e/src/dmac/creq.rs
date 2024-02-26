@@ -1,154 +1,145 @@
 #[doc = "Register `CREQ` reader"]
-pub type R = crate::R<CREQ_SPEC>;
+pub type R = crate::R<CreqSpec>;
 #[doc = "Register `CREQ` writer"]
-pub type W = crate::W<CREQ_SPEC>;
+pub type W = crate::W<CreqSpec>;
 #[doc = "Field `SCREQ0` reader - Source Chunk Request"]
-pub type SCREQ0_R = crate::BitReader;
+pub type Screq0R = crate::BitReader;
 #[doc = "Field `SCREQ0` writer - Source Chunk Request"]
-pub type SCREQ0_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Screq0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DCREQ0` reader - Destination Chunk Request"]
-pub type DCREQ0_R = crate::BitReader;
+pub type Dcreq0R = crate::BitReader;
 #[doc = "Field `DCREQ0` writer - Destination Chunk Request"]
-pub type DCREQ0_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Dcreq0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCREQ1` reader - Source Chunk Request"]
-pub type SCREQ1_R = crate::BitReader;
+pub type Screq1R = crate::BitReader;
 #[doc = "Field `SCREQ1` writer - Source Chunk Request"]
-pub type SCREQ1_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Screq1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DCREQ1` reader - Destination Chunk Request"]
-pub type DCREQ1_R = crate::BitReader;
+pub type Dcreq1R = crate::BitReader;
 #[doc = "Field `DCREQ1` writer - Destination Chunk Request"]
-pub type DCREQ1_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Dcreq1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCREQ2` reader - Source Chunk Request"]
-pub type SCREQ2_R = crate::BitReader;
+pub type Screq2R = crate::BitReader;
 #[doc = "Field `SCREQ2` writer - Source Chunk Request"]
-pub type SCREQ2_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Screq2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DCREQ2` reader - Destination Chunk Request"]
-pub type DCREQ2_R = crate::BitReader;
+pub type Dcreq2R = crate::BitReader;
 #[doc = "Field `DCREQ2` writer - Destination Chunk Request"]
-pub type DCREQ2_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Dcreq2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCREQ3` reader - Source Chunk Request"]
-pub type SCREQ3_R = crate::BitReader;
+pub type Screq3R = crate::BitReader;
 #[doc = "Field `SCREQ3` writer - Source Chunk Request"]
-pub type SCREQ3_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Screq3W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DCREQ3` reader - Destination Chunk Request"]
-pub type DCREQ3_R = crate::BitReader;
+pub type Dcreq3R = crate::BitReader;
 #[doc = "Field `DCREQ3` writer - Destination Chunk Request"]
-pub type DCREQ3_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Dcreq3W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Source Chunk Request"]
     #[inline(always)]
-    pub fn screq0(&self) -> SCREQ0_R {
-        SCREQ0_R::new((self.bits & 1) != 0)
+    pub fn screq0(&self) -> Screq0R {
+        Screq0R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Destination Chunk Request"]
     #[inline(always)]
-    pub fn dcreq0(&self) -> DCREQ0_R {
-        DCREQ0_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn dcreq0(&self) -> Dcreq0R {
+        Dcreq0R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Source Chunk Request"]
     #[inline(always)]
-    pub fn screq1(&self) -> SCREQ1_R {
-        SCREQ1_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn screq1(&self) -> Screq1R {
+        Screq1R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Destination Chunk Request"]
     #[inline(always)]
-    pub fn dcreq1(&self) -> DCREQ1_R {
-        DCREQ1_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn dcreq1(&self) -> Dcreq1R {
+        Dcreq1R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Source Chunk Request"]
     #[inline(always)]
-    pub fn screq2(&self) -> SCREQ2_R {
-        SCREQ2_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn screq2(&self) -> Screq2R {
+        Screq2R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Destination Chunk Request"]
     #[inline(always)]
-    pub fn dcreq2(&self) -> DCREQ2_R {
-        DCREQ2_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn dcreq2(&self) -> Dcreq2R {
+        Dcreq2R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Source Chunk Request"]
     #[inline(always)]
-    pub fn screq3(&self) -> SCREQ3_R {
-        SCREQ3_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn screq3(&self) -> Screq3R {
+        Screq3R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Destination Chunk Request"]
     #[inline(always)]
-    pub fn dcreq3(&self) -> DCREQ3_R {
-        DCREQ3_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn dcreq3(&self) -> Dcreq3R {
+        Dcreq3R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Source Chunk Request"]
     #[inline(always)]
     #[must_use]
-    pub fn screq0(&mut self) -> SCREQ0_W<CREQ_SPEC> {
-        SCREQ0_W::new(self, 0)
+    pub fn screq0(&mut self) -> Screq0W<CreqSpec> {
+        Screq0W::new(self, 0)
     }
     #[doc = "Bit 1 - Destination Chunk Request"]
     #[inline(always)]
     #[must_use]
-    pub fn dcreq0(&mut self) -> DCREQ0_W<CREQ_SPEC> {
-        DCREQ0_W::new(self, 1)
+    pub fn dcreq0(&mut self) -> Dcreq0W<CreqSpec> {
+        Dcreq0W::new(self, 1)
     }
     #[doc = "Bit 2 - Source Chunk Request"]
     #[inline(always)]
     #[must_use]
-    pub fn screq1(&mut self) -> SCREQ1_W<CREQ_SPEC> {
-        SCREQ1_W::new(self, 2)
+    pub fn screq1(&mut self) -> Screq1W<CreqSpec> {
+        Screq1W::new(self, 2)
     }
     #[doc = "Bit 3 - Destination Chunk Request"]
     #[inline(always)]
     #[must_use]
-    pub fn dcreq1(&mut self) -> DCREQ1_W<CREQ_SPEC> {
-        DCREQ1_W::new(self, 3)
+    pub fn dcreq1(&mut self) -> Dcreq1W<CreqSpec> {
+        Dcreq1W::new(self, 3)
     }
     #[doc = "Bit 4 - Source Chunk Request"]
     #[inline(always)]
     #[must_use]
-    pub fn screq2(&mut self) -> SCREQ2_W<CREQ_SPEC> {
-        SCREQ2_W::new(self, 4)
+    pub fn screq2(&mut self) -> Screq2W<CreqSpec> {
+        Screq2W::new(self, 4)
     }
     #[doc = "Bit 5 - Destination Chunk Request"]
     #[inline(always)]
     #[must_use]
-    pub fn dcreq2(&mut self) -> DCREQ2_W<CREQ_SPEC> {
-        DCREQ2_W::new(self, 5)
+    pub fn dcreq2(&mut self) -> Dcreq2W<CreqSpec> {
+        Dcreq2W::new(self, 5)
     }
     #[doc = "Bit 6 - Source Chunk Request"]
     #[inline(always)]
     #[must_use]
-    pub fn screq3(&mut self) -> SCREQ3_W<CREQ_SPEC> {
-        SCREQ3_W::new(self, 6)
+    pub fn screq3(&mut self) -> Screq3W<CreqSpec> {
+        Screq3W::new(self, 6)
     }
     #[doc = "Bit 7 - Destination Chunk Request"]
     #[inline(always)]
     #[must_use]
-    pub fn dcreq3(&mut self) -> DCREQ3_W<CREQ_SPEC> {
-        DCREQ3_W::new(self, 7)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn dcreq3(&mut self) -> Dcreq3W<CreqSpec> {
+        Dcreq3W::new(self, 7)
     }
 }
 #[doc = "DMAC Software Chunk Transfer Request Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`creq::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`creq::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CREQ_SPEC;
-impl crate::RegisterSpec for CREQ_SPEC {
+pub struct CreqSpec;
+impl crate::RegisterSpec for CreqSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`creq::R`](R) reader structure"]
-impl crate::Readable for CREQ_SPEC {}
+impl crate::Readable for CreqSpec {}
 #[doc = "`write(|w| ..)` method takes [`creq::W`](W) writer structure"]
-impl crate::Writable for CREQ_SPEC {
+impl crate::Writable for CreqSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CREQ to value 0"]
-impl crate::Resettable for CREQ_SPEC {
+impl crate::Resettable for CreqSpec {
     const RESET_VALUE: u32 = 0;
 }

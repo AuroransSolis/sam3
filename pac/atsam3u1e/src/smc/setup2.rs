@@ -1,94 +1,85 @@
 #[doc = "Register `SETUP2` reader"]
-pub type R = crate::R<SETUP2_SPEC>;
+pub type R = crate::R<Setup2Spec>;
 #[doc = "Register `SETUP2` writer"]
-pub type W = crate::W<SETUP2_SPEC>;
+pub type W = crate::W<Setup2Spec>;
 #[doc = "Field `NWE_SETUP` reader - NWE Setup Length"]
-pub type NWE_SETUP_R = crate::FieldReader;
+pub type NweSetupR = crate::FieldReader;
 #[doc = "Field `NWE_SETUP` writer - NWE Setup Length"]
-pub type NWE_SETUP_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
+pub type NweSetupW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `NCS_WR_SETUP` reader - NCS Setup Length in Write Access"]
-pub type NCS_WR_SETUP_R = crate::FieldReader;
+pub type NcsWrSetupR = crate::FieldReader;
 #[doc = "Field `NCS_WR_SETUP` writer - NCS Setup Length in Write Access"]
-pub type NCS_WR_SETUP_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
+pub type NcsWrSetupW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `NRD_SETUP` reader - NRD Setup Length"]
-pub type NRD_SETUP_R = crate::FieldReader;
+pub type NrdSetupR = crate::FieldReader;
 #[doc = "Field `NRD_SETUP` writer - NRD Setup Length"]
-pub type NRD_SETUP_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
+pub type NrdSetupW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `NCS_RD_SETUP` reader - NCS Setup Length in Read Access"]
-pub type NCS_RD_SETUP_R = crate::FieldReader;
+pub type NcsRdSetupR = crate::FieldReader;
 #[doc = "Field `NCS_RD_SETUP` writer - NCS Setup Length in Read Access"]
-pub type NCS_RD_SETUP_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
+pub type NcsRdSetupW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     #[doc = "Bits 0:5 - NWE Setup Length"]
     #[inline(always)]
-    pub fn nwe_setup(&self) -> NWE_SETUP_R {
-        NWE_SETUP_R::new((self.bits & 0x3f) as u8)
+    pub fn nwe_setup(&self) -> NweSetupR {
+        NweSetupR::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bits 8:13 - NCS Setup Length in Write Access"]
     #[inline(always)]
-    pub fn ncs_wr_setup(&self) -> NCS_WR_SETUP_R {
-        NCS_WR_SETUP_R::new(((self.bits >> 8) & 0x3f) as u8)
+    pub fn ncs_wr_setup(&self) -> NcsWrSetupR {
+        NcsWrSetupR::new(((self.bits >> 8) & 0x3f) as u8)
     }
     #[doc = "Bits 16:21 - NRD Setup Length"]
     #[inline(always)]
-    pub fn nrd_setup(&self) -> NRD_SETUP_R {
-        NRD_SETUP_R::new(((self.bits >> 16) & 0x3f) as u8)
+    pub fn nrd_setup(&self) -> NrdSetupR {
+        NrdSetupR::new(((self.bits >> 16) & 0x3f) as u8)
     }
     #[doc = "Bits 24:29 - NCS Setup Length in Read Access"]
     #[inline(always)]
-    pub fn ncs_rd_setup(&self) -> NCS_RD_SETUP_R {
-        NCS_RD_SETUP_R::new(((self.bits >> 24) & 0x3f) as u8)
+    pub fn ncs_rd_setup(&self) -> NcsRdSetupR {
+        NcsRdSetupR::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:5 - NWE Setup Length"]
     #[inline(always)]
     #[must_use]
-    pub fn nwe_setup(&mut self) -> NWE_SETUP_W<SETUP2_SPEC> {
-        NWE_SETUP_W::new(self, 0)
+    pub fn nwe_setup(&mut self) -> NweSetupW<Setup2Spec> {
+        NweSetupW::new(self, 0)
     }
     #[doc = "Bits 8:13 - NCS Setup Length in Write Access"]
     #[inline(always)]
     #[must_use]
-    pub fn ncs_wr_setup(&mut self) -> NCS_WR_SETUP_W<SETUP2_SPEC> {
-        NCS_WR_SETUP_W::new(self, 8)
+    pub fn ncs_wr_setup(&mut self) -> NcsWrSetupW<Setup2Spec> {
+        NcsWrSetupW::new(self, 8)
     }
     #[doc = "Bits 16:21 - NRD Setup Length"]
     #[inline(always)]
     #[must_use]
-    pub fn nrd_setup(&mut self) -> NRD_SETUP_W<SETUP2_SPEC> {
-        NRD_SETUP_W::new(self, 16)
+    pub fn nrd_setup(&mut self) -> NrdSetupW<Setup2Spec> {
+        NrdSetupW::new(self, 16)
     }
     #[doc = "Bits 24:29 - NCS Setup Length in Read Access"]
     #[inline(always)]
     #[must_use]
-    pub fn ncs_rd_setup(&mut self) -> NCS_RD_SETUP_W<SETUP2_SPEC> {
-        NCS_RD_SETUP_W::new(self, 24)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn ncs_rd_setup(&mut self) -> NcsRdSetupW<Setup2Spec> {
+        NcsRdSetupW::new(self, 24)
     }
 }
 #[doc = "SMC Setup Register (CS_number = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`setup2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`setup2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct SETUP2_SPEC;
-impl crate::RegisterSpec for SETUP2_SPEC {
+pub struct Setup2Spec;
+impl crate::RegisterSpec for Setup2Spec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`setup2::R`](R) reader structure"]
-impl crate::Readable for SETUP2_SPEC {}
+impl crate::Readable for Setup2Spec {}
 #[doc = "`write(|w| ..)` method takes [`setup2::W`](W) writer structure"]
-impl crate::Writable for SETUP2_SPEC {
+impl crate::Writable for Setup2Spec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SETUP2 to value 0x0101_0101"]
-impl crate::Resettable for SETUP2_SPEC {
+impl crate::Resettable for Setup2Spec {
     const RESET_VALUE: u32 = 0x0101_0101;
 }

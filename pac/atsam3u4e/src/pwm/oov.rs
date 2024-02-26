@@ -1,154 +1,145 @@
 #[doc = "Register `OOV` reader"]
-pub type R = crate::R<OOV_SPEC>;
+pub type R = crate::R<OovSpec>;
 #[doc = "Register `OOV` writer"]
-pub type W = crate::W<OOV_SPEC>;
+pub type W = crate::W<OovSpec>;
 #[doc = "Field `OOVH0` reader - Output Override Value for PWMH output of the channel 0"]
-pub type OOVH0_R = crate::BitReader;
+pub type Oovh0R = crate::BitReader;
 #[doc = "Field `OOVH0` writer - Output Override Value for PWMH output of the channel 0"]
-pub type OOVH0_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Oovh0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OOVH1` reader - Output Override Value for PWMH output of the channel 1"]
-pub type OOVH1_R = crate::BitReader;
+pub type Oovh1R = crate::BitReader;
 #[doc = "Field `OOVH1` writer - Output Override Value for PWMH output of the channel 1"]
-pub type OOVH1_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Oovh1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OOVH2` reader - Output Override Value for PWMH output of the channel 2"]
-pub type OOVH2_R = crate::BitReader;
+pub type Oovh2R = crate::BitReader;
 #[doc = "Field `OOVH2` writer - Output Override Value for PWMH output of the channel 2"]
-pub type OOVH2_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Oovh2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OOVH3` reader - Output Override Value for PWMH output of the channel 3"]
-pub type OOVH3_R = crate::BitReader;
+pub type Oovh3R = crate::BitReader;
 #[doc = "Field `OOVH3` writer - Output Override Value for PWMH output of the channel 3"]
-pub type OOVH3_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Oovh3W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OOVL0` reader - Output Override Value for PWML output of the channel 0"]
-pub type OOVL0_R = crate::BitReader;
+pub type Oovl0R = crate::BitReader;
 #[doc = "Field `OOVL0` writer - Output Override Value for PWML output of the channel 0"]
-pub type OOVL0_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Oovl0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OOVL1` reader - Output Override Value for PWML output of the channel 1"]
-pub type OOVL1_R = crate::BitReader;
+pub type Oovl1R = crate::BitReader;
 #[doc = "Field `OOVL1` writer - Output Override Value for PWML output of the channel 1"]
-pub type OOVL1_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Oovl1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OOVL2` reader - Output Override Value for PWML output of the channel 2"]
-pub type OOVL2_R = crate::BitReader;
+pub type Oovl2R = crate::BitReader;
 #[doc = "Field `OOVL2` writer - Output Override Value for PWML output of the channel 2"]
-pub type OOVL2_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Oovl2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OOVL3` reader - Output Override Value for PWML output of the channel 3"]
-pub type OOVL3_R = crate::BitReader;
+pub type Oovl3R = crate::BitReader;
 #[doc = "Field `OOVL3` writer - Output Override Value for PWML output of the channel 3"]
-pub type OOVL3_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Oovl3W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Output Override Value for PWMH output of the channel 0"]
     #[inline(always)]
-    pub fn oovh0(&self) -> OOVH0_R {
-        OOVH0_R::new((self.bits & 1) != 0)
+    pub fn oovh0(&self) -> Oovh0R {
+        Oovh0R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Output Override Value for PWMH output of the channel 1"]
     #[inline(always)]
-    pub fn oovh1(&self) -> OOVH1_R {
-        OOVH1_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn oovh1(&self) -> Oovh1R {
+        Oovh1R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Output Override Value for PWMH output of the channel 2"]
     #[inline(always)]
-    pub fn oovh2(&self) -> OOVH2_R {
-        OOVH2_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn oovh2(&self) -> Oovh2R {
+        Oovh2R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Output Override Value for PWMH output of the channel 3"]
     #[inline(always)]
-    pub fn oovh3(&self) -> OOVH3_R {
-        OOVH3_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn oovh3(&self) -> Oovh3R {
+        Oovh3R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 16 - Output Override Value for PWML output of the channel 0"]
     #[inline(always)]
-    pub fn oovl0(&self) -> OOVL0_R {
-        OOVL0_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn oovl0(&self) -> Oovl0R {
+        Oovl0R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Output Override Value for PWML output of the channel 1"]
     #[inline(always)]
-    pub fn oovl1(&self) -> OOVL1_R {
-        OOVL1_R::new(((self.bits >> 17) & 1) != 0)
+    pub fn oovl1(&self) -> Oovl1R {
+        Oovl1R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Output Override Value for PWML output of the channel 2"]
     #[inline(always)]
-    pub fn oovl2(&self) -> OOVL2_R {
-        OOVL2_R::new(((self.bits >> 18) & 1) != 0)
+    pub fn oovl2(&self) -> Oovl2R {
+        Oovl2R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Output Override Value for PWML output of the channel 3"]
     #[inline(always)]
-    pub fn oovl3(&self) -> OOVL3_R {
-        OOVL3_R::new(((self.bits >> 19) & 1) != 0)
+    pub fn oovl3(&self) -> Oovl3R {
+        Oovl3R::new(((self.bits >> 19) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Output Override Value for PWMH output of the channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn oovh0(&mut self) -> OOVH0_W<OOV_SPEC> {
-        OOVH0_W::new(self, 0)
+    pub fn oovh0(&mut self) -> Oovh0W<OovSpec> {
+        Oovh0W::new(self, 0)
     }
     #[doc = "Bit 1 - Output Override Value for PWMH output of the channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn oovh1(&mut self) -> OOVH1_W<OOV_SPEC> {
-        OOVH1_W::new(self, 1)
+    pub fn oovh1(&mut self) -> Oovh1W<OovSpec> {
+        Oovh1W::new(self, 1)
     }
     #[doc = "Bit 2 - Output Override Value for PWMH output of the channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn oovh2(&mut self) -> OOVH2_W<OOV_SPEC> {
-        OOVH2_W::new(self, 2)
+    pub fn oovh2(&mut self) -> Oovh2W<OovSpec> {
+        Oovh2W::new(self, 2)
     }
     #[doc = "Bit 3 - Output Override Value for PWMH output of the channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn oovh3(&mut self) -> OOVH3_W<OOV_SPEC> {
-        OOVH3_W::new(self, 3)
+    pub fn oovh3(&mut self) -> Oovh3W<OovSpec> {
+        Oovh3W::new(self, 3)
     }
     #[doc = "Bit 16 - Output Override Value for PWML output of the channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn oovl0(&mut self) -> OOVL0_W<OOV_SPEC> {
-        OOVL0_W::new(self, 16)
+    pub fn oovl0(&mut self) -> Oovl0W<OovSpec> {
+        Oovl0W::new(self, 16)
     }
     #[doc = "Bit 17 - Output Override Value for PWML output of the channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn oovl1(&mut self) -> OOVL1_W<OOV_SPEC> {
-        OOVL1_W::new(self, 17)
+    pub fn oovl1(&mut self) -> Oovl1W<OovSpec> {
+        Oovl1W::new(self, 17)
     }
     #[doc = "Bit 18 - Output Override Value for PWML output of the channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn oovl2(&mut self) -> OOVL2_W<OOV_SPEC> {
-        OOVL2_W::new(self, 18)
+    pub fn oovl2(&mut self) -> Oovl2W<OovSpec> {
+        Oovl2W::new(self, 18)
     }
     #[doc = "Bit 19 - Output Override Value for PWML output of the channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn oovl3(&mut self) -> OOVL3_W<OOV_SPEC> {
-        OOVL3_W::new(self, 19)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn oovl3(&mut self) -> Oovl3W<OovSpec> {
+        Oovl3W::new(self, 19)
     }
 }
 #[doc = "PWM Output Override Value Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`oov::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`oov::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct OOV_SPEC;
-impl crate::RegisterSpec for OOV_SPEC {
+pub struct OovSpec;
+impl crate::RegisterSpec for OovSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`oov::R`](R) reader structure"]
-impl crate::Readable for OOV_SPEC {}
+impl crate::Readable for OovSpec {}
 #[doc = "`write(|w| ..)` method takes [`oov::W`](W) writer structure"]
-impl crate::Writable for OOV_SPEC {
+impl crate::Writable for OovSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets OOV to value 0"]
-impl crate::Resettable for OOV_SPEC {
+impl crate::Resettable for OovSpec {
     const RESET_VALUE: u32 = 0;
 }

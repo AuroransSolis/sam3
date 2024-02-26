@@ -1,13 +1,11 @@
 #[doc = "Register `CIDR` reader"]
-pub type R = crate::R<CIDR_SPEC>;
+pub type R = crate::R<CidrSpec>;
 #[doc = "Field `VERSION` reader - Version of the Device"]
-pub type VERSION_R = crate::FieldReader;
-#[doc = "Field `EPROC` reader - Embedded Processor"]
-pub type EPROC_R = crate::FieldReader<EPROC_A>;
+pub type VersionR = crate::FieldReader;
 #[doc = "Embedded Processor"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum EPROC_A {
+pub enum Eproc {
     #[doc = "1: ARM946ES"]
     Arm946es = 1,
     #[doc = "2: ARM7TDMI"]
@@ -23,72 +21,72 @@ pub enum EPROC_A {
     #[doc = "7: Cortex-M4"]
     Cm4 = 7,
 }
-impl From<EPROC_A> for u8 {
+impl From<Eproc> for u8 {
     #[inline(always)]
-    fn from(variant: EPROC_A) -> Self {
+    fn from(variant: Eproc) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for EPROC_A {
+impl crate::FieldSpec for Eproc {
     type Ux = u8;
 }
-impl EPROC_R {
+#[doc = "Field `EPROC` reader - Embedded Processor"]
+pub type EprocR = crate::FieldReader<Eproc>;
+impl EprocR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<EPROC_A> {
+    pub const fn variant(&self) -> Option<Eproc> {
         match self.bits {
-            1 => Some(EPROC_A::Arm946es),
-            2 => Some(EPROC_A::Arm7tdmi),
-            3 => Some(EPROC_A::Cm3),
-            4 => Some(EPROC_A::Arm920t),
-            5 => Some(EPROC_A::Arm926ejs),
-            6 => Some(EPROC_A::Ca5),
-            7 => Some(EPROC_A::Cm4),
+            1 => Some(Eproc::Arm946es),
+            2 => Some(Eproc::Arm7tdmi),
+            3 => Some(Eproc::Cm3),
+            4 => Some(Eproc::Arm920t),
+            5 => Some(Eproc::Arm926ejs),
+            6 => Some(Eproc::Ca5),
+            7 => Some(Eproc::Cm4),
             _ => None,
         }
     }
     #[doc = "ARM946ES"]
     #[inline(always)]
     pub fn is_arm946es(&self) -> bool {
-        *self == EPROC_A::Arm946es
+        *self == Eproc::Arm946es
     }
     #[doc = "ARM7TDMI"]
     #[inline(always)]
     pub fn is_arm7tdmi(&self) -> bool {
-        *self == EPROC_A::Arm7tdmi
+        *self == Eproc::Arm7tdmi
     }
     #[doc = "Cortex-M3"]
     #[inline(always)]
     pub fn is_cm3(&self) -> bool {
-        *self == EPROC_A::Cm3
+        *self == Eproc::Cm3
     }
     #[doc = "ARM920T"]
     #[inline(always)]
     pub fn is_arm920t(&self) -> bool {
-        *self == EPROC_A::Arm920t
+        *self == Eproc::Arm920t
     }
     #[doc = "ARM926EJS"]
     #[inline(always)]
     pub fn is_arm926ejs(&self) -> bool {
-        *self == EPROC_A::Arm926ejs
+        *self == Eproc::Arm926ejs
     }
     #[doc = "Cortex-A5"]
     #[inline(always)]
     pub fn is_ca5(&self) -> bool {
-        *self == EPROC_A::Ca5
+        *self == Eproc::Ca5
     }
     #[doc = "Cortex-M4"]
     #[inline(always)]
     pub fn is_cm4(&self) -> bool {
-        *self == EPROC_A::Cm4
+        *self == Eproc::Cm4
     }
 }
-#[doc = "Field `NVPSIZ` reader - Nonvolatile Program Memory Size"]
-pub type NVPSIZ_R = crate::FieldReader<NVPSIZ_A>;
 #[doc = "Nonvolatile Program Memory Size"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum NVPSIZ_A {
+pub enum Nvpsiz {
     #[doc = "0: None"]
     None = 0,
     #[doc = "1: 8 Kbytes"]
@@ -110,90 +108,90 @@ pub enum NVPSIZ_A {
     #[doc = "14: 2048 Kbytes"]
     _2048k = 14,
 }
-impl From<NVPSIZ_A> for u8 {
+impl From<Nvpsiz> for u8 {
     #[inline(always)]
-    fn from(variant: NVPSIZ_A) -> Self {
+    fn from(variant: Nvpsiz) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for NVPSIZ_A {
+impl crate::FieldSpec for Nvpsiz {
     type Ux = u8;
 }
-impl NVPSIZ_R {
+#[doc = "Field `NVPSIZ` reader - Nonvolatile Program Memory Size"]
+pub type NvpsizR = crate::FieldReader<Nvpsiz>;
+impl NvpsizR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<NVPSIZ_A> {
+    pub const fn variant(&self) -> Option<Nvpsiz> {
         match self.bits {
-            0 => Some(NVPSIZ_A::None),
-            1 => Some(NVPSIZ_A::_8k),
-            2 => Some(NVPSIZ_A::_16k),
-            3 => Some(NVPSIZ_A::_32k),
-            5 => Some(NVPSIZ_A::_64k),
-            7 => Some(NVPSIZ_A::_128k),
-            9 => Some(NVPSIZ_A::_256k),
-            10 => Some(NVPSIZ_A::_512k),
-            12 => Some(NVPSIZ_A::_1024k),
-            14 => Some(NVPSIZ_A::_2048k),
+            0 => Some(Nvpsiz::None),
+            1 => Some(Nvpsiz::_8k),
+            2 => Some(Nvpsiz::_16k),
+            3 => Some(Nvpsiz::_32k),
+            5 => Some(Nvpsiz::_64k),
+            7 => Some(Nvpsiz::_128k),
+            9 => Some(Nvpsiz::_256k),
+            10 => Some(Nvpsiz::_512k),
+            12 => Some(Nvpsiz::_1024k),
+            14 => Some(Nvpsiz::_2048k),
             _ => None,
         }
     }
     #[doc = "None"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == NVPSIZ_A::None
+        *self == Nvpsiz::None
     }
     #[doc = "8 Kbytes"]
     #[inline(always)]
     pub fn is_8k(&self) -> bool {
-        *self == NVPSIZ_A::_8k
+        *self == Nvpsiz::_8k
     }
     #[doc = "16 Kbytes"]
     #[inline(always)]
     pub fn is_16k(&self) -> bool {
-        *self == NVPSIZ_A::_16k
+        *self == Nvpsiz::_16k
     }
     #[doc = "32 Kbytes"]
     #[inline(always)]
     pub fn is_32k(&self) -> bool {
-        *self == NVPSIZ_A::_32k
+        *self == Nvpsiz::_32k
     }
     #[doc = "64 Kbytes"]
     #[inline(always)]
     pub fn is_64k(&self) -> bool {
-        *self == NVPSIZ_A::_64k
+        *self == Nvpsiz::_64k
     }
     #[doc = "128 Kbytes"]
     #[inline(always)]
     pub fn is_128k(&self) -> bool {
-        *self == NVPSIZ_A::_128k
+        *self == Nvpsiz::_128k
     }
     #[doc = "256 Kbytes"]
     #[inline(always)]
     pub fn is_256k(&self) -> bool {
-        *self == NVPSIZ_A::_256k
+        *self == Nvpsiz::_256k
     }
     #[doc = "512 Kbytes"]
     #[inline(always)]
     pub fn is_512k(&self) -> bool {
-        *self == NVPSIZ_A::_512k
+        *self == Nvpsiz::_512k
     }
     #[doc = "1024 Kbytes"]
     #[inline(always)]
     pub fn is_1024k(&self) -> bool {
-        *self == NVPSIZ_A::_1024k
+        *self == Nvpsiz::_1024k
     }
     #[doc = "2048 Kbytes"]
     #[inline(always)]
     pub fn is_2048k(&self) -> bool {
-        *self == NVPSIZ_A::_2048k
+        *self == Nvpsiz::_2048k
     }
 }
-#[doc = "Field `NVPSIZ2` reader - Second Nonvolatile Program Memory Size"]
-pub type NVPSIZ2_R = crate::FieldReader<NVPSIZ2_A>;
 #[doc = "Second Nonvolatile Program Memory Size"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum NVPSIZ2_A {
+pub enum Nvpsiz2 {
     #[doc = "0: None"]
     None = 0,
     #[doc = "1: 8 Kbytes"]
@@ -215,90 +213,90 @@ pub enum NVPSIZ2_A {
     #[doc = "14: 2048 Kbytes"]
     _2048k = 14,
 }
-impl From<NVPSIZ2_A> for u8 {
+impl From<Nvpsiz2> for u8 {
     #[inline(always)]
-    fn from(variant: NVPSIZ2_A) -> Self {
+    fn from(variant: Nvpsiz2) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for NVPSIZ2_A {
+impl crate::FieldSpec for Nvpsiz2 {
     type Ux = u8;
 }
-impl NVPSIZ2_R {
+#[doc = "Field `NVPSIZ2` reader - Second Nonvolatile Program Memory Size"]
+pub type Nvpsiz2R = crate::FieldReader<Nvpsiz2>;
+impl Nvpsiz2R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<NVPSIZ2_A> {
+    pub const fn variant(&self) -> Option<Nvpsiz2> {
         match self.bits {
-            0 => Some(NVPSIZ2_A::None),
-            1 => Some(NVPSIZ2_A::_8k),
-            2 => Some(NVPSIZ2_A::_16k),
-            3 => Some(NVPSIZ2_A::_32k),
-            5 => Some(NVPSIZ2_A::_64k),
-            7 => Some(NVPSIZ2_A::_128k),
-            9 => Some(NVPSIZ2_A::_256k),
-            10 => Some(NVPSIZ2_A::_512k),
-            12 => Some(NVPSIZ2_A::_1024k),
-            14 => Some(NVPSIZ2_A::_2048k),
+            0 => Some(Nvpsiz2::None),
+            1 => Some(Nvpsiz2::_8k),
+            2 => Some(Nvpsiz2::_16k),
+            3 => Some(Nvpsiz2::_32k),
+            5 => Some(Nvpsiz2::_64k),
+            7 => Some(Nvpsiz2::_128k),
+            9 => Some(Nvpsiz2::_256k),
+            10 => Some(Nvpsiz2::_512k),
+            12 => Some(Nvpsiz2::_1024k),
+            14 => Some(Nvpsiz2::_2048k),
             _ => None,
         }
     }
     #[doc = "None"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == NVPSIZ2_A::None
+        *self == Nvpsiz2::None
     }
     #[doc = "8 Kbytes"]
     #[inline(always)]
     pub fn is_8k(&self) -> bool {
-        *self == NVPSIZ2_A::_8k
+        *self == Nvpsiz2::_8k
     }
     #[doc = "16 Kbytes"]
     #[inline(always)]
     pub fn is_16k(&self) -> bool {
-        *self == NVPSIZ2_A::_16k
+        *self == Nvpsiz2::_16k
     }
     #[doc = "32 Kbytes"]
     #[inline(always)]
     pub fn is_32k(&self) -> bool {
-        *self == NVPSIZ2_A::_32k
+        *self == Nvpsiz2::_32k
     }
     #[doc = "64 Kbytes"]
     #[inline(always)]
     pub fn is_64k(&self) -> bool {
-        *self == NVPSIZ2_A::_64k
+        *self == Nvpsiz2::_64k
     }
     #[doc = "128 Kbytes"]
     #[inline(always)]
     pub fn is_128k(&self) -> bool {
-        *self == NVPSIZ2_A::_128k
+        *self == Nvpsiz2::_128k
     }
     #[doc = "256 Kbytes"]
     #[inline(always)]
     pub fn is_256k(&self) -> bool {
-        *self == NVPSIZ2_A::_256k
+        *self == Nvpsiz2::_256k
     }
     #[doc = "512 Kbytes"]
     #[inline(always)]
     pub fn is_512k(&self) -> bool {
-        *self == NVPSIZ2_A::_512k
+        *self == Nvpsiz2::_512k
     }
     #[doc = "1024 Kbytes"]
     #[inline(always)]
     pub fn is_1024k(&self) -> bool {
-        *self == NVPSIZ2_A::_1024k
+        *self == Nvpsiz2::_1024k
     }
     #[doc = "2048 Kbytes"]
     #[inline(always)]
     pub fn is_2048k(&self) -> bool {
-        *self == NVPSIZ2_A::_2048k
+        *self == Nvpsiz2::_2048k
     }
 }
-#[doc = "Field `SRAMSIZ` reader - Internal SRAM Size"]
-pub type SRAMSIZ_R = crate::FieldReader<SRAMSIZ_A>;
 #[doc = "Internal SRAM Size"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum SRAMSIZ_A {
+pub enum Sramsiz {
     #[doc = "0: 48 Kbytes"]
     _48k = 0,
     #[doc = "1: 192 Kbytes"]
@@ -332,126 +330,126 @@ pub enum SRAMSIZ_A {
     #[doc = "15: 512 Kbytes"]
     _512k = 15,
 }
-impl From<SRAMSIZ_A> for u8 {
+impl From<Sramsiz> for u8 {
     #[inline(always)]
-    fn from(variant: SRAMSIZ_A) -> Self {
+    fn from(variant: Sramsiz) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for SRAMSIZ_A {
+impl crate::FieldSpec for Sramsiz {
     type Ux = u8;
 }
-impl SRAMSIZ_R {
+#[doc = "Field `SRAMSIZ` reader - Internal SRAM Size"]
+pub type SramsizR = crate::FieldReader<Sramsiz>;
+impl SramsizR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SRAMSIZ_A {
+    pub const fn variant(&self) -> Sramsiz {
         match self.bits {
-            0 => SRAMSIZ_A::_48k,
-            1 => SRAMSIZ_A::_192k,
-            2 => SRAMSIZ_A::_2k,
-            3 => SRAMSIZ_A::_6k,
-            4 => SRAMSIZ_A::_24k,
-            5 => SRAMSIZ_A::_4k,
-            6 => SRAMSIZ_A::_80k,
-            7 => SRAMSIZ_A::_160k,
-            8 => SRAMSIZ_A::_8k,
-            9 => SRAMSIZ_A::_16k,
-            10 => SRAMSIZ_A::_32k,
-            11 => SRAMSIZ_A::_64k,
-            12 => SRAMSIZ_A::_128k,
-            13 => SRAMSIZ_A::_256k,
-            14 => SRAMSIZ_A::_96k,
-            15 => SRAMSIZ_A::_512k,
+            0 => Sramsiz::_48k,
+            1 => Sramsiz::_192k,
+            2 => Sramsiz::_2k,
+            3 => Sramsiz::_6k,
+            4 => Sramsiz::_24k,
+            5 => Sramsiz::_4k,
+            6 => Sramsiz::_80k,
+            7 => Sramsiz::_160k,
+            8 => Sramsiz::_8k,
+            9 => Sramsiz::_16k,
+            10 => Sramsiz::_32k,
+            11 => Sramsiz::_64k,
+            12 => Sramsiz::_128k,
+            13 => Sramsiz::_256k,
+            14 => Sramsiz::_96k,
+            15 => Sramsiz::_512k,
             _ => unreachable!(),
         }
     }
     #[doc = "48 Kbytes"]
     #[inline(always)]
     pub fn is_48k(&self) -> bool {
-        *self == SRAMSIZ_A::_48k
+        *self == Sramsiz::_48k
     }
     #[doc = "192 Kbytes"]
     #[inline(always)]
     pub fn is_192k(&self) -> bool {
-        *self == SRAMSIZ_A::_192k
+        *self == Sramsiz::_192k
     }
     #[doc = "2 Kbytes"]
     #[inline(always)]
     pub fn is_2k(&self) -> bool {
-        *self == SRAMSIZ_A::_2k
+        *self == Sramsiz::_2k
     }
     #[doc = "6 Kbytes"]
     #[inline(always)]
     pub fn is_6k(&self) -> bool {
-        *self == SRAMSIZ_A::_6k
+        *self == Sramsiz::_6k
     }
     #[doc = "24 Kbytes"]
     #[inline(always)]
     pub fn is_24k(&self) -> bool {
-        *self == SRAMSIZ_A::_24k
+        *self == Sramsiz::_24k
     }
     #[doc = "4 Kbytes"]
     #[inline(always)]
     pub fn is_4k(&self) -> bool {
-        *self == SRAMSIZ_A::_4k
+        *self == Sramsiz::_4k
     }
     #[doc = "80 Kbytes"]
     #[inline(always)]
     pub fn is_80k(&self) -> bool {
-        *self == SRAMSIZ_A::_80k
+        *self == Sramsiz::_80k
     }
     #[doc = "160 Kbytes"]
     #[inline(always)]
     pub fn is_160k(&self) -> bool {
-        *self == SRAMSIZ_A::_160k
+        *self == Sramsiz::_160k
     }
     #[doc = "8 Kbytes"]
     #[inline(always)]
     pub fn is_8k(&self) -> bool {
-        *self == SRAMSIZ_A::_8k
+        *self == Sramsiz::_8k
     }
     #[doc = "16 Kbytes"]
     #[inline(always)]
     pub fn is_16k(&self) -> bool {
-        *self == SRAMSIZ_A::_16k
+        *self == Sramsiz::_16k
     }
     #[doc = "32 Kbytes"]
     #[inline(always)]
     pub fn is_32k(&self) -> bool {
-        *self == SRAMSIZ_A::_32k
+        *self == Sramsiz::_32k
     }
     #[doc = "64 Kbytes"]
     #[inline(always)]
     pub fn is_64k(&self) -> bool {
-        *self == SRAMSIZ_A::_64k
+        *self == Sramsiz::_64k
     }
     #[doc = "128 Kbytes"]
     #[inline(always)]
     pub fn is_128k(&self) -> bool {
-        *self == SRAMSIZ_A::_128k
+        *self == Sramsiz::_128k
     }
     #[doc = "256 Kbytes"]
     #[inline(always)]
     pub fn is_256k(&self) -> bool {
-        *self == SRAMSIZ_A::_256k
+        *self == Sramsiz::_256k
     }
     #[doc = "96 Kbytes"]
     #[inline(always)]
     pub fn is_96k(&self) -> bool {
-        *self == SRAMSIZ_A::_96k
+        *self == Sramsiz::_96k
     }
     #[doc = "512 Kbytes"]
     #[inline(always)]
     pub fn is_512k(&self) -> bool {
-        *self == SRAMSIZ_A::_512k
+        *self == Sramsiz::_512k
     }
 }
-#[doc = "Field `ARCH` reader - Architecture Identifier"]
-pub type ARCH_R = crate::FieldReader<ARCH_A>;
 #[doc = "Architecture Identifier"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum ARCH_A {
+pub enum Arch {
     #[doc = "131: SAM3AxC (100-pin version)"]
     Sam3axC = 131,
     #[doc = "132: SAM3XxC (100-pin version)"]
@@ -461,54 +459,54 @@ pub enum ARCH_A {
     #[doc = "134: SAM3XxG (208/217-pin version)"]
     Sam3xxG = 134,
 }
-impl From<ARCH_A> for u8 {
+impl From<Arch> for u8 {
     #[inline(always)]
-    fn from(variant: ARCH_A) -> Self {
+    fn from(variant: Arch) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for ARCH_A {
+impl crate::FieldSpec for Arch {
     type Ux = u8;
 }
-impl ARCH_R {
+#[doc = "Field `ARCH` reader - Architecture Identifier"]
+pub type ArchR = crate::FieldReader<Arch>;
+impl ArchR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<ARCH_A> {
+    pub const fn variant(&self) -> Option<Arch> {
         match self.bits {
-            131 => Some(ARCH_A::Sam3axC),
-            132 => Some(ARCH_A::Sam3xxC),
-            133 => Some(ARCH_A::Sam3xxE),
-            134 => Some(ARCH_A::Sam3xxG),
+            131 => Some(Arch::Sam3axC),
+            132 => Some(Arch::Sam3xxC),
+            133 => Some(Arch::Sam3xxE),
+            134 => Some(Arch::Sam3xxG),
             _ => None,
         }
     }
     #[doc = "SAM3AxC (100-pin version)"]
     #[inline(always)]
     pub fn is_sam3ax_c(&self) -> bool {
-        *self == ARCH_A::Sam3axC
+        *self == Arch::Sam3axC
     }
     #[doc = "SAM3XxC (100-pin version)"]
     #[inline(always)]
     pub fn is_sam3xx_c(&self) -> bool {
-        *self == ARCH_A::Sam3xxC
+        *self == Arch::Sam3xxC
     }
     #[doc = "SAM3XxE (144-pin version)"]
     #[inline(always)]
     pub fn is_sam3xx_e(&self) -> bool {
-        *self == ARCH_A::Sam3xxE
+        *self == Arch::Sam3xxE
     }
     #[doc = "SAM3XxG (208/217-pin version)"]
     #[inline(always)]
     pub fn is_sam3xx_g(&self) -> bool {
-        *self == ARCH_A::Sam3xxG
+        *self == Arch::Sam3xxG
     }
 }
-#[doc = "Field `NVPTYP` reader - Nonvolatile Program Memory Type"]
-pub type NVPTYP_R = crate::FieldReader<NVPTYP_A>;
 #[doc = "Nonvolatile Program Memory Type"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum NVPTYP_A {
+pub enum Nvptyp {
     #[doc = "0: ROM"]
     Rom = 0,
     #[doc = "1: ROMless or on-chip Flash"]
@@ -520,102 +518,104 @@ pub enum NVPTYP_A {
     #[doc = "4: SRAM emulating ROM"]
     Sram = 4,
 }
-impl From<NVPTYP_A> for u8 {
+impl From<Nvptyp> for u8 {
     #[inline(always)]
-    fn from(variant: NVPTYP_A) -> Self {
+    fn from(variant: Nvptyp) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for NVPTYP_A {
+impl crate::FieldSpec for Nvptyp {
     type Ux = u8;
 }
-impl NVPTYP_R {
+#[doc = "Field `NVPTYP` reader - Nonvolatile Program Memory Type"]
+pub type NvptypR = crate::FieldReader<Nvptyp>;
+impl NvptypR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<NVPTYP_A> {
+    pub const fn variant(&self) -> Option<Nvptyp> {
         match self.bits {
-            0 => Some(NVPTYP_A::Rom),
-            1 => Some(NVPTYP_A::Romless),
-            2 => Some(NVPTYP_A::Flash),
-            3 => Some(NVPTYP_A::RomFlash),
-            4 => Some(NVPTYP_A::Sram),
+            0 => Some(Nvptyp::Rom),
+            1 => Some(Nvptyp::Romless),
+            2 => Some(Nvptyp::Flash),
+            3 => Some(Nvptyp::RomFlash),
+            4 => Some(Nvptyp::Sram),
             _ => None,
         }
     }
     #[doc = "ROM"]
     #[inline(always)]
     pub fn is_rom(&self) -> bool {
-        *self == NVPTYP_A::Rom
+        *self == Nvptyp::Rom
     }
     #[doc = "ROMless or on-chip Flash"]
     #[inline(always)]
     pub fn is_romless(&self) -> bool {
-        *self == NVPTYP_A::Romless
+        *self == Nvptyp::Romless
     }
     #[doc = "Embedded Flash Memory"]
     #[inline(always)]
     pub fn is_flash(&self) -> bool {
-        *self == NVPTYP_A::Flash
+        *self == Nvptyp::Flash
     }
     #[doc = "ROM and Embedded Flash Memory- NVPSIZ is ROM size- NVPSIZ2 is Flash size"]
     #[inline(always)]
     pub fn is_rom_flash(&self) -> bool {
-        *self == NVPTYP_A::RomFlash
+        *self == Nvptyp::RomFlash
     }
     #[doc = "SRAM emulating ROM"]
     #[inline(always)]
     pub fn is_sram(&self) -> bool {
-        *self == NVPTYP_A::Sram
+        *self == Nvptyp::Sram
     }
 }
 #[doc = "Field `EXT` reader - Extension Flag"]
-pub type EXT_R = crate::BitReader;
+pub type ExtR = crate::BitReader;
 impl R {
     #[doc = "Bits 0:4 - Version of the Device"]
     #[inline(always)]
-    pub fn version(&self) -> VERSION_R {
-        VERSION_R::new((self.bits & 0x1f) as u8)
+    pub fn version(&self) -> VersionR {
+        VersionR::new((self.bits & 0x1f) as u8)
     }
     #[doc = "Bits 5:7 - Embedded Processor"]
     #[inline(always)]
-    pub fn eproc(&self) -> EPROC_R {
-        EPROC_R::new(((self.bits >> 5) & 7) as u8)
+    pub fn eproc(&self) -> EprocR {
+        EprocR::new(((self.bits >> 5) & 7) as u8)
     }
     #[doc = "Bits 8:11 - Nonvolatile Program Memory Size"]
     #[inline(always)]
-    pub fn nvpsiz(&self) -> NVPSIZ_R {
-        NVPSIZ_R::new(((self.bits >> 8) & 0x0f) as u8)
+    pub fn nvpsiz(&self) -> NvpsizR {
+        NvpsizR::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 12:15 - Second Nonvolatile Program Memory Size"]
     #[inline(always)]
-    pub fn nvpsiz2(&self) -> NVPSIZ2_R {
-        NVPSIZ2_R::new(((self.bits >> 12) & 0x0f) as u8)
+    pub fn nvpsiz2(&self) -> Nvpsiz2R {
+        Nvpsiz2R::new(((self.bits >> 12) & 0x0f) as u8)
     }
     #[doc = "Bits 16:19 - Internal SRAM Size"]
     #[inline(always)]
-    pub fn sramsiz(&self) -> SRAMSIZ_R {
-        SRAMSIZ_R::new(((self.bits >> 16) & 0x0f) as u8)
+    pub fn sramsiz(&self) -> SramsizR {
+        SramsizR::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bits 20:27 - Architecture Identifier"]
     #[inline(always)]
-    pub fn arch(&self) -> ARCH_R {
-        ARCH_R::new(((self.bits >> 20) & 0xff) as u8)
+    pub fn arch(&self) -> ArchR {
+        ArchR::new(((self.bits >> 20) & 0xff) as u8)
     }
     #[doc = "Bits 28:30 - Nonvolatile Program Memory Type"]
     #[inline(always)]
-    pub fn nvptyp(&self) -> NVPTYP_R {
-        NVPTYP_R::new(((self.bits >> 28) & 7) as u8)
+    pub fn nvptyp(&self) -> NvptypR {
+        NvptypR::new(((self.bits >> 28) & 7) as u8)
     }
     #[doc = "Bit 31 - Extension Flag"]
     #[inline(always)]
-    pub fn ext(&self) -> EXT_R {
-        EXT_R::new(((self.bits >> 31) & 1) != 0)
+    pub fn ext(&self) -> ExtR {
+        ExtR::new(((self.bits >> 31) & 1) != 0)
     }
 }
 #[doc = "Chip ID Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cidr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CIDR_SPEC;
-impl crate::RegisterSpec for CIDR_SPEC {
+pub struct CidrSpec;
+impl crate::RegisterSpec for CidrSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`cidr::R`](R) reader structure"]
-impl crate::Readable for CIDR_SPEC {}
+impl crate::Readable for CidrSpec {}

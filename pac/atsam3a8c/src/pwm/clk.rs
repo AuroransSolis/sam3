@@ -1,94 +1,85 @@
 #[doc = "Register `CLK` reader"]
-pub type R = crate::R<CLK_SPEC>;
+pub type R = crate::R<ClkSpec>;
 #[doc = "Register `CLK` writer"]
-pub type W = crate::W<CLK_SPEC>;
+pub type W = crate::W<ClkSpec>;
 #[doc = "Field `DIVA` reader - CLKA, CLKB Divide Factor"]
-pub type DIVA_R = crate::FieldReader;
+pub type DivaR = crate::FieldReader;
 #[doc = "Field `DIVA` writer - CLKA, CLKB Divide Factor"]
-pub type DIVA_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+pub type DivaW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `PREA` reader - CLKA, CLKB Source Clock Selection"]
-pub type PREA_R = crate::FieldReader;
+pub type PreaR = crate::FieldReader;
 #[doc = "Field `PREA` writer - CLKA, CLKB Source Clock Selection"]
-pub type PREA_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type PreaW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `DIVB` reader - CLKA, CLKB Divide Factor"]
-pub type DIVB_R = crate::FieldReader;
+pub type DivbR = crate::FieldReader;
 #[doc = "Field `DIVB` writer - CLKA, CLKB Divide Factor"]
-pub type DIVB_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+pub type DivbW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `PREB` reader - CLKA, CLKB Source Clock Selection"]
-pub type PREB_R = crate::FieldReader;
+pub type PrebR = crate::FieldReader;
 #[doc = "Field `PREB` writer - CLKA, CLKB Source Clock Selection"]
-pub type PREB_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type PrebW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:7 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
-    pub fn diva(&self) -> DIVA_R {
-        DIVA_R::new((self.bits & 0xff) as u8)
+    pub fn diva(&self) -> DivaR {
+        DivaR::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:11 - CLKA, CLKB Source Clock Selection"]
     #[inline(always)]
-    pub fn prea(&self) -> PREA_R {
-        PREA_R::new(((self.bits >> 8) & 0x0f) as u8)
+    pub fn prea(&self) -> PreaR {
+        PreaR::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 16:23 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
-    pub fn divb(&self) -> DIVB_R {
-        DIVB_R::new(((self.bits >> 16) & 0xff) as u8)
+    pub fn divb(&self) -> DivbR {
+        DivbR::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:27 - CLKA, CLKB Source Clock Selection"]
     #[inline(always)]
-    pub fn preb(&self) -> PREB_R {
-        PREB_R::new(((self.bits >> 24) & 0x0f) as u8)
+    pub fn preb(&self) -> PrebR {
+        PrebR::new(((self.bits >> 24) & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
     #[must_use]
-    pub fn diva(&mut self) -> DIVA_W<CLK_SPEC> {
-        DIVA_W::new(self, 0)
+    pub fn diva(&mut self) -> DivaW<ClkSpec> {
+        DivaW::new(self, 0)
     }
     #[doc = "Bits 8:11 - CLKA, CLKB Source Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn prea(&mut self) -> PREA_W<CLK_SPEC> {
-        PREA_W::new(self, 8)
+    pub fn prea(&mut self) -> PreaW<ClkSpec> {
+        PreaW::new(self, 8)
     }
     #[doc = "Bits 16:23 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
     #[must_use]
-    pub fn divb(&mut self) -> DIVB_W<CLK_SPEC> {
-        DIVB_W::new(self, 16)
+    pub fn divb(&mut self) -> DivbW<ClkSpec> {
+        DivbW::new(self, 16)
     }
     #[doc = "Bits 24:27 - CLKA, CLKB Source Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn preb(&mut self) -> PREB_W<CLK_SPEC> {
-        PREB_W::new(self, 24)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn preb(&mut self) -> PrebW<ClkSpec> {
+        PrebW::new(self, 24)
     }
 }
 #[doc = "PWM Clock Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clk::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clk::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CLK_SPEC;
-impl crate::RegisterSpec for CLK_SPEC {
+pub struct ClkSpec;
+impl crate::RegisterSpec for ClkSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`clk::R`](R) reader structure"]
-impl crate::Readable for CLK_SPEC {}
+impl crate::Readable for ClkSpec {}
 #[doc = "`write(|w| ..)` method takes [`clk::W`](W) writer structure"]
-impl crate::Writable for CLK_SPEC {
+impl crate::Writable for ClkSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CLK to value 0"]
-impl crate::Resettable for CLK_SPEC {
+impl crate::Resettable for ClkSpec {
     const RESET_VALUE: u32 = 0;
 }

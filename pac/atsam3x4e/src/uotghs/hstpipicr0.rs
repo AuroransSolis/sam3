@@ -1,80 +1,71 @@
 #[doc = "Register `HSTPIPICR0` writer"]
-pub type W = crate::W<HSTPIPICR0_SPEC>;
+pub type W = crate::W<Hstpipicr0Spec>;
 #[doc = "Field `RXINIC` writer - Received IN Data Interrupt Clear"]
-pub type RXINIC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type RxinicW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXOUTIC` writer - Transmitted OUT Data Interrupt Clear"]
-pub type TXOUTIC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type TxouticW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXSTPIC` writer - Transmitted SETUP Interrupt Clear"]
-pub type TXSTPIC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type TxstpicW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NAKEDIC` writer - NAKed Interrupt Clear"]
-pub type NAKEDIC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type NakedicW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OVERFIC` writer - Overflow Interrupt Clear"]
-pub type OVERFIC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type OverficW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXSTALLDIC` writer - Received STALLed Interrupt Clear"]
-pub type RXSTALLDIC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type RxstalldicW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SHORTPACKETIC` writer - Short Packet Interrupt Clear"]
-pub type SHORTPACKETIC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type ShortpacketicW<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Received IN Data Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn rxinic(&mut self) -> RXINIC_W<HSTPIPICR0_SPEC> {
-        RXINIC_W::new(self, 0)
+    pub fn rxinic(&mut self) -> RxinicW<Hstpipicr0Spec> {
+        RxinicW::new(self, 0)
     }
     #[doc = "Bit 1 - Transmitted OUT Data Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn txoutic(&mut self) -> TXOUTIC_W<HSTPIPICR0_SPEC> {
-        TXOUTIC_W::new(self, 1)
+    pub fn txoutic(&mut self) -> TxouticW<Hstpipicr0Spec> {
+        TxouticW::new(self, 1)
     }
     #[doc = "Bit 2 - Transmitted SETUP Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn txstpic(&mut self) -> TXSTPIC_W<HSTPIPICR0_SPEC> {
-        TXSTPIC_W::new(self, 2)
+    pub fn txstpic(&mut self) -> TxstpicW<Hstpipicr0Spec> {
+        TxstpicW::new(self, 2)
     }
     #[doc = "Bit 4 - NAKed Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn nakedic(&mut self) -> NAKEDIC_W<HSTPIPICR0_SPEC> {
-        NAKEDIC_W::new(self, 4)
+    pub fn nakedic(&mut self) -> NakedicW<Hstpipicr0Spec> {
+        NakedicW::new(self, 4)
     }
     #[doc = "Bit 5 - Overflow Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn overfic(&mut self) -> OVERFIC_W<HSTPIPICR0_SPEC> {
-        OVERFIC_W::new(self, 5)
+    pub fn overfic(&mut self) -> OverficW<Hstpipicr0Spec> {
+        OverficW::new(self, 5)
     }
     #[doc = "Bit 6 - Received STALLed Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn rxstalldic(&mut self) -> RXSTALLDIC_W<HSTPIPICR0_SPEC> {
-        RXSTALLDIC_W::new(self, 6)
+    pub fn rxstalldic(&mut self) -> RxstalldicW<Hstpipicr0Spec> {
+        RxstalldicW::new(self, 6)
     }
     #[doc = "Bit 7 - Short Packet Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn shortpacketic(&mut self) -> SHORTPACKETIC_W<HSTPIPICR0_SPEC> {
-        SHORTPACKETIC_W::new(self, 7)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn shortpacketic(&mut self) -> ShortpacketicW<Hstpipicr0Spec> {
+        ShortpacketicW::new(self, 7)
     }
 }
 #[doc = "Host Pipe Clear Register (n = 0) 0\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hstpipicr0::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct HSTPIPICR0_SPEC;
-impl crate::RegisterSpec for HSTPIPICR0_SPEC {
+pub struct Hstpipicr0Spec;
+impl crate::RegisterSpec for Hstpipicr0Spec {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`hstpipicr0::W`](W) writer structure"]
-impl crate::Writable for HSTPIPICR0_SPEC {
+impl crate::Writable for Hstpipicr0Spec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

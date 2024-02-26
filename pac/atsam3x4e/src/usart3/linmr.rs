@@ -1,13 +1,11 @@
 #[doc = "Register `LINMR` reader"]
-pub type R = crate::R<LINMR_SPEC>;
+pub type R = crate::R<LinmrSpec>;
 #[doc = "Register `LINMR` writer"]
-pub type W = crate::W<LINMR_SPEC>;
-#[doc = "Field `NACT` reader - LIN Node Action"]
-pub type NACT_R = crate::FieldReader<NACT_A>;
+pub type W = crate::W<LinmrSpec>;
 #[doc = "LIN Node Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum NACT_A {
+pub enum Nact {
     #[doc = "0: The USART transmits the response."]
     Publish = 0,
     #[doc = "1: The USART receives the response."]
@@ -15,45 +13,47 @@ pub enum NACT_A {
     #[doc = "2: The USART does not transmit and does not receive the response."]
     Ignore = 2,
 }
-impl From<NACT_A> for u8 {
+impl From<Nact> for u8 {
     #[inline(always)]
-    fn from(variant: NACT_A) -> Self {
+    fn from(variant: Nact) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for NACT_A {
+impl crate::FieldSpec for Nact {
     type Ux = u8;
 }
-impl NACT_R {
+#[doc = "Field `NACT` reader - LIN Node Action"]
+pub type NactR = crate::FieldReader<Nact>;
+impl NactR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<NACT_A> {
+    pub const fn variant(&self) -> Option<Nact> {
         match self.bits {
-            0 => Some(NACT_A::Publish),
-            1 => Some(NACT_A::Subscribe),
-            2 => Some(NACT_A::Ignore),
+            0 => Some(Nact::Publish),
+            1 => Some(Nact::Subscribe),
+            2 => Some(Nact::Ignore),
             _ => None,
         }
     }
     #[doc = "The USART transmits the response."]
     #[inline(always)]
     pub fn is_publish(&self) -> bool {
-        *self == NACT_A::Publish
+        *self == Nact::Publish
     }
     #[doc = "The USART receives the response."]
     #[inline(always)]
     pub fn is_subscribe(&self) -> bool {
-        *self == NACT_A::Subscribe
+        *self == Nact::Subscribe
     }
     #[doc = "The USART does not transmit and does not receive the response."]
     #[inline(always)]
     pub fn is_ignore(&self) -> bool {
-        *self == NACT_A::Ignore
+        *self == Nact::Ignore
     }
 }
 #[doc = "Field `NACT` writer - LIN Node Action"]
-pub type NACT_W<'a, REG> = crate::FieldWriter<'a, REG, 2, NACT_A>;
-impl<'a, REG> NACT_W<'a, REG>
+pub type NactW<'a, REG> = crate::FieldWriter<'a, REG, 2, Nact>;
+impl<'a, REG> NactW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -61,177 +61,168 @@ where
     #[doc = "The USART transmits the response."]
     #[inline(always)]
     pub fn publish(self) -> &'a mut crate::W<REG> {
-        self.variant(NACT_A::Publish)
+        self.variant(Nact::Publish)
     }
     #[doc = "The USART receives the response."]
     #[inline(always)]
     pub fn subscribe(self) -> &'a mut crate::W<REG> {
-        self.variant(NACT_A::Subscribe)
+        self.variant(Nact::Subscribe)
     }
     #[doc = "The USART does not transmit and does not receive the response."]
     #[inline(always)]
     pub fn ignore(self) -> &'a mut crate::W<REG> {
-        self.variant(NACT_A::Ignore)
+        self.variant(Nact::Ignore)
     }
 }
 #[doc = "Field `PARDIS` reader - Parity Disable"]
-pub type PARDIS_R = crate::BitReader;
+pub type PardisR = crate::BitReader;
 #[doc = "Field `PARDIS` writer - Parity Disable"]
-pub type PARDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type PardisW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CHKDIS` reader - Checksum Disable"]
-pub type CHKDIS_R = crate::BitReader;
+pub type ChkdisR = crate::BitReader;
 #[doc = "Field `CHKDIS` writer - Checksum Disable"]
-pub type CHKDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type ChkdisW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CHKTYP` reader - Checksum Type"]
-pub type CHKTYP_R = crate::BitReader;
+pub type ChktypR = crate::BitReader;
 #[doc = "Field `CHKTYP` writer - Checksum Type"]
-pub type CHKTYP_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type ChktypW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DLM` reader - Data Length Mode"]
-pub type DLM_R = crate::BitReader;
+pub type DlmR = crate::BitReader;
 #[doc = "Field `DLM` writer - Data Length Mode"]
-pub type DLM_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DlmW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FSDIS` reader - Frame Slot Mode Disable"]
-pub type FSDIS_R = crate::BitReader;
+pub type FsdisR = crate::BitReader;
 #[doc = "Field `FSDIS` writer - Frame Slot Mode Disable"]
-pub type FSDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type FsdisW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WKUPTYP` reader - Wakeup Signal Type"]
-pub type WKUPTYP_R = crate::BitReader;
+pub type WkuptypR = crate::BitReader;
 #[doc = "Field `WKUPTYP` writer - Wakeup Signal Type"]
-pub type WKUPTYP_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type WkuptypW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DLC` reader - Data Length Control"]
-pub type DLC_R = crate::FieldReader;
+pub type DlcR = crate::FieldReader;
 #[doc = "Field `DLC` writer - Data Length Control"]
-pub type DLC_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+pub type DlcW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `PDCM` reader - PDC Mode"]
-pub type PDCM_R = crate::BitReader;
+pub type PdcmR = crate::BitReader;
 #[doc = "Field `PDCM` writer - PDC Mode"]
-pub type PDCM_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type PdcmW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:1 - LIN Node Action"]
     #[inline(always)]
-    pub fn nact(&self) -> NACT_R {
-        NACT_R::new((self.bits & 3) as u8)
+    pub fn nact(&self) -> NactR {
+        NactR::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 2 - Parity Disable"]
     #[inline(always)]
-    pub fn pardis(&self) -> PARDIS_R {
-        PARDIS_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn pardis(&self) -> PardisR {
+        PardisR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Checksum Disable"]
     #[inline(always)]
-    pub fn chkdis(&self) -> CHKDIS_R {
-        CHKDIS_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn chkdis(&self) -> ChkdisR {
+        ChkdisR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Checksum Type"]
     #[inline(always)]
-    pub fn chktyp(&self) -> CHKTYP_R {
-        CHKTYP_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn chktyp(&self) -> ChktypR {
+        ChktypR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Data Length Mode"]
     #[inline(always)]
-    pub fn dlm(&self) -> DLM_R {
-        DLM_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn dlm(&self) -> DlmR {
+        DlmR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Frame Slot Mode Disable"]
     #[inline(always)]
-    pub fn fsdis(&self) -> FSDIS_R {
-        FSDIS_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn fsdis(&self) -> FsdisR {
+        FsdisR::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Wakeup Signal Type"]
     #[inline(always)]
-    pub fn wkuptyp(&self) -> WKUPTYP_R {
-        WKUPTYP_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn wkuptyp(&self) -> WkuptypR {
+        WkuptypR::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:15 - Data Length Control"]
     #[inline(always)]
-    pub fn dlc(&self) -> DLC_R {
-        DLC_R::new(((self.bits >> 8) & 0xff) as u8)
+    pub fn dlc(&self) -> DlcR {
+        DlcR::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bit 16 - PDC Mode"]
     #[inline(always)]
-    pub fn pdcm(&self) -> PDCM_R {
-        PDCM_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn pdcm(&self) -> PdcmR {
+        PdcmR::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - LIN Node Action"]
     #[inline(always)]
     #[must_use]
-    pub fn nact(&mut self) -> NACT_W<LINMR_SPEC> {
-        NACT_W::new(self, 0)
+    pub fn nact(&mut self) -> NactW<LinmrSpec> {
+        NactW::new(self, 0)
     }
     #[doc = "Bit 2 - Parity Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn pardis(&mut self) -> PARDIS_W<LINMR_SPEC> {
-        PARDIS_W::new(self, 2)
+    pub fn pardis(&mut self) -> PardisW<LinmrSpec> {
+        PardisW::new(self, 2)
     }
     #[doc = "Bit 3 - Checksum Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn chkdis(&mut self) -> CHKDIS_W<LINMR_SPEC> {
-        CHKDIS_W::new(self, 3)
+    pub fn chkdis(&mut self) -> ChkdisW<LinmrSpec> {
+        ChkdisW::new(self, 3)
     }
     #[doc = "Bit 4 - Checksum Type"]
     #[inline(always)]
     #[must_use]
-    pub fn chktyp(&mut self) -> CHKTYP_W<LINMR_SPEC> {
-        CHKTYP_W::new(self, 4)
+    pub fn chktyp(&mut self) -> ChktypW<LinmrSpec> {
+        ChktypW::new(self, 4)
     }
     #[doc = "Bit 5 - Data Length Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn dlm(&mut self) -> DLM_W<LINMR_SPEC> {
-        DLM_W::new(self, 5)
+    pub fn dlm(&mut self) -> DlmW<LinmrSpec> {
+        DlmW::new(self, 5)
     }
     #[doc = "Bit 6 - Frame Slot Mode Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn fsdis(&mut self) -> FSDIS_W<LINMR_SPEC> {
-        FSDIS_W::new(self, 6)
+    pub fn fsdis(&mut self) -> FsdisW<LinmrSpec> {
+        FsdisW::new(self, 6)
     }
     #[doc = "Bit 7 - Wakeup Signal Type"]
     #[inline(always)]
     #[must_use]
-    pub fn wkuptyp(&mut self) -> WKUPTYP_W<LINMR_SPEC> {
-        WKUPTYP_W::new(self, 7)
+    pub fn wkuptyp(&mut self) -> WkuptypW<LinmrSpec> {
+        WkuptypW::new(self, 7)
     }
     #[doc = "Bits 8:15 - Data Length Control"]
     #[inline(always)]
     #[must_use]
-    pub fn dlc(&mut self) -> DLC_W<LINMR_SPEC> {
-        DLC_W::new(self, 8)
+    pub fn dlc(&mut self) -> DlcW<LinmrSpec> {
+        DlcW::new(self, 8)
     }
     #[doc = "Bit 16 - PDC Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn pdcm(&mut self) -> PDCM_W<LINMR_SPEC> {
-        PDCM_W::new(self, 16)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn pdcm(&mut self) -> PdcmW<LinmrSpec> {
+        PdcmW::new(self, 16)
     }
 }
 #[doc = "LIN Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`linmr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`linmr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct LINMR_SPEC;
-impl crate::RegisterSpec for LINMR_SPEC {
+pub struct LinmrSpec;
+impl crate::RegisterSpec for LinmrSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`linmr::R`](R) reader structure"]
-impl crate::Readable for LINMR_SPEC {}
+impl crate::Readable for LinmrSpec {}
 #[doc = "`write(|w| ..)` method takes [`linmr::W`](W) writer structure"]
-impl crate::Writable for LINMR_SPEC {
+impl crate::Writable for LinmrSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets LINMR to value 0"]
-impl crate::Resettable for LINMR_SPEC {
+impl crate::Resettable for LinmrSpec {
     const RESET_VALUE: u32 = 0;
 }

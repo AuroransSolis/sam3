@@ -1,40 +1,31 @@
 #[doc = "Register `EPTSETSTA2_ISOENDPT` writer"]
-pub type W = crate::W<ISOENDPT_EPTSETSTA2_ISOENDPT_SPEC>;
+pub type W = crate::W<IsoendptEptsetsta2IsoendptSpec>;
 #[doc = "Field `RXRDY_TXKL` writer - KILL Bank Set (for IN Endpoint)"]
-pub type RXRDY_TXKL_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type RxrdyTxklW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXRDY_TRER` writer - TX Packet Ready Set"]
-pub type TXRDY_TRER_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type TxrdyTrerW<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 9 - KILL Bank Set (for IN Endpoint)"]
     #[inline(always)]
     #[must_use]
-    pub fn rxrdy_txkl(&mut self) -> RXRDY_TXKL_W<ISOENDPT_EPTSETSTA2_ISOENDPT_SPEC> {
-        RXRDY_TXKL_W::new(self, 9)
+    pub fn rxrdy_txkl(&mut self) -> RxrdyTxklW<IsoendptEptsetsta2IsoendptSpec> {
+        RxrdyTxklW::new(self, 9)
     }
     #[doc = "Bit 11 - TX Packet Ready Set"]
     #[inline(always)]
     #[must_use]
-    pub fn txrdy_trer(&mut self) -> TXRDY_TRER_W<ISOENDPT_EPTSETSTA2_ISOENDPT_SPEC> {
-        TXRDY_TRER_W::new(self, 11)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn txrdy_trer(&mut self) -> TxrdyTrerW<IsoendptEptsetsta2IsoendptSpec> {
+        TxrdyTrerW::new(self, 11)
     }
 }
 #[doc = "UDPHS Endpoint Set Status Register (endpoint = 2)\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`isoendpt_eptsetsta2_isoendpt::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct ISOENDPT_EPTSETSTA2_ISOENDPT_SPEC;
-impl crate::RegisterSpec for ISOENDPT_EPTSETSTA2_ISOENDPT_SPEC {
+pub struct IsoendptEptsetsta2IsoendptSpec;
+impl crate::RegisterSpec for IsoendptEptsetsta2IsoendptSpec {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`isoendpt_eptsetsta2_isoendpt::W`](W) writer structure"]
-impl crate::Writable for ISOENDPT_EPTSETSTA2_ISOENDPT_SPEC {
+impl crate::Writable for IsoendptEptsetsta2IsoendptSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

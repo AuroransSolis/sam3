@@ -1,43 +1,43 @@
 #[doc = "Register `PMC_SCSR` reader"]
-pub type R = crate::R<PMC_SCSR_SPEC>;
+pub type R = crate::R<PmcScsrSpec>;
 #[doc = "Field `UDP` reader - USB Device Port Clock Status"]
-pub type UDP_R = crate::BitReader;
+pub type UdpR = crate::BitReader;
 #[doc = "Field `PCK0` reader - Programmable Clock 0 Output Status"]
-pub type PCK0_R = crate::BitReader;
+pub type Pck0R = crate::BitReader;
 #[doc = "Field `PCK1` reader - Programmable Clock 1 Output Status"]
-pub type PCK1_R = crate::BitReader;
+pub type Pck1R = crate::BitReader;
 #[doc = "Field `PCK2` reader - Programmable Clock 2 Output Status"]
-pub type PCK2_R = crate::BitReader;
+pub type Pck2R = crate::BitReader;
 impl R {
     #[doc = "Bit 7 - USB Device Port Clock Status"]
     #[inline(always)]
-    pub fn udp(&self) -> UDP_R {
-        UDP_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn udp(&self) -> UdpR {
+        UdpR::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Programmable Clock 0 Output Status"]
     #[inline(always)]
-    pub fn pck0(&self) -> PCK0_R {
-        PCK0_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn pck0(&self) -> Pck0R {
+        Pck0R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Programmable Clock 1 Output Status"]
     #[inline(always)]
-    pub fn pck1(&self) -> PCK1_R {
-        PCK1_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn pck1(&self) -> Pck1R {
+        Pck1R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Programmable Clock 2 Output Status"]
     #[inline(always)]
-    pub fn pck2(&self) -> PCK2_R {
-        PCK2_R::new(((self.bits >> 10) & 1) != 0)
+    pub fn pck2(&self) -> Pck2R {
+        Pck2R::new(((self.bits >> 10) & 1) != 0)
     }
 }
 #[doc = "System Clock Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmc_scsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PMC_SCSR_SPEC;
-impl crate::RegisterSpec for PMC_SCSR_SPEC {
+pub struct PmcScsrSpec;
+impl crate::RegisterSpec for PmcScsrSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`pmc_scsr::R`](R) reader structure"]
-impl crate::Readable for PMC_SCSR_SPEC {}
+impl crate::Readable for PmcScsrSpec {}
 #[doc = "`reset()` method sets PMC_SCSR to value 0x01"]
-impl crate::Resettable for PMC_SCSR_SPEC {
+impl crate::Resettable for PmcScsrSpec {
     const RESET_VALUE: u32 = 0x01;
 }

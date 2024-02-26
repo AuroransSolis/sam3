@@ -1,13 +1,11 @@
 #[doc = "Register `CMR2_WAVEFORM_MODE` reader"]
-pub type R = crate::R<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC>;
+pub type R = crate::R<WaveformModeCmr2WaveformModeSpec>;
 #[doc = "Register `CMR2_WAVEFORM_MODE` writer"]
-pub type W = crate::W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC>;
-#[doc = "Field `TCCLKS` reader - Clock Selection"]
-pub type TCCLKS_R = crate::FieldReader<TCCLKS_A>;
+pub type W = crate::W<WaveformModeCmr2WaveformModeSpec>;
 #[doc = "Clock Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum TCCLKS_A {
+pub enum Tcclks {
     #[doc = "0: Clock selected: internal MCK/2 clock signal (from PMC)"]
     TimerClock1 = 0,
     #[doc = "1: Clock selected: internal MCK/8 clock signal (from PMC)"]
@@ -25,75 +23,77 @@ pub enum TCCLKS_A {
     #[doc = "7: Clock selected: XC2"]
     Xc2 = 7,
 }
-impl From<TCCLKS_A> for u8 {
+impl From<Tcclks> for u8 {
     #[inline(always)]
-    fn from(variant: TCCLKS_A) -> Self {
+    fn from(variant: Tcclks) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for TCCLKS_A {
+impl crate::FieldSpec for Tcclks {
     type Ux = u8;
 }
-impl TCCLKS_R {
+#[doc = "Field `TCCLKS` reader - Clock Selection"]
+pub type TcclksR = crate::FieldReader<Tcclks>;
+impl TcclksR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> TCCLKS_A {
+    pub const fn variant(&self) -> Tcclks {
         match self.bits {
-            0 => TCCLKS_A::TimerClock1,
-            1 => TCCLKS_A::TimerClock2,
-            2 => TCCLKS_A::TimerClock3,
-            3 => TCCLKS_A::TimerClock4,
-            4 => TCCLKS_A::TimerClock5,
-            5 => TCCLKS_A::Xc0,
-            6 => TCCLKS_A::Xc1,
-            7 => TCCLKS_A::Xc2,
+            0 => Tcclks::TimerClock1,
+            1 => Tcclks::TimerClock2,
+            2 => Tcclks::TimerClock3,
+            3 => Tcclks::TimerClock4,
+            4 => Tcclks::TimerClock5,
+            5 => Tcclks::Xc0,
+            6 => Tcclks::Xc1,
+            7 => Tcclks::Xc2,
             _ => unreachable!(),
         }
     }
     #[doc = "Clock selected: internal MCK/2 clock signal (from PMC)"]
     #[inline(always)]
     pub fn is_timer_clock1(&self) -> bool {
-        *self == TCCLKS_A::TimerClock1
+        *self == Tcclks::TimerClock1
     }
     #[doc = "Clock selected: internal MCK/8 clock signal (from PMC)"]
     #[inline(always)]
     pub fn is_timer_clock2(&self) -> bool {
-        *self == TCCLKS_A::TimerClock2
+        *self == Tcclks::TimerClock2
     }
     #[doc = "Clock selected: internal MCK/32 clock signal (from PMC)"]
     #[inline(always)]
     pub fn is_timer_clock3(&self) -> bool {
-        *self == TCCLKS_A::TimerClock3
+        *self == Tcclks::TimerClock3
     }
     #[doc = "Clock selected: internal MCK/128 clock signal (from PMC)"]
     #[inline(always)]
     pub fn is_timer_clock4(&self) -> bool {
-        *self == TCCLKS_A::TimerClock4
+        *self == Tcclks::TimerClock4
     }
     #[doc = "Clock selected: internal SLCK clock signal (from PMC)"]
     #[inline(always)]
     pub fn is_timer_clock5(&self) -> bool {
-        *self == TCCLKS_A::TimerClock5
+        *self == Tcclks::TimerClock5
     }
     #[doc = "Clock selected: XC0"]
     #[inline(always)]
     pub fn is_xc0(&self) -> bool {
-        *self == TCCLKS_A::Xc0
+        *self == Tcclks::Xc0
     }
     #[doc = "Clock selected: XC1"]
     #[inline(always)]
     pub fn is_xc1(&self) -> bool {
-        *self == TCCLKS_A::Xc1
+        *self == Tcclks::Xc1
     }
     #[doc = "Clock selected: XC2"]
     #[inline(always)]
     pub fn is_xc2(&self) -> bool {
-        *self == TCCLKS_A::Xc2
+        *self == Tcclks::Xc2
     }
 }
 #[doc = "Field `TCCLKS` writer - Clock Selection"]
-pub type TCCLKS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, TCCLKS_A>;
-impl<'a, REG> TCCLKS_W<'a, REG>
+pub type TcclksW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Tcclks>;
+impl<'a, REG> TcclksW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -101,54 +101,52 @@ where
     #[doc = "Clock selected: internal MCK/2 clock signal (from PMC)"]
     #[inline(always)]
     pub fn timer_clock1(self) -> &'a mut crate::W<REG> {
-        self.variant(TCCLKS_A::TimerClock1)
+        self.variant(Tcclks::TimerClock1)
     }
     #[doc = "Clock selected: internal MCK/8 clock signal (from PMC)"]
     #[inline(always)]
     pub fn timer_clock2(self) -> &'a mut crate::W<REG> {
-        self.variant(TCCLKS_A::TimerClock2)
+        self.variant(Tcclks::TimerClock2)
     }
     #[doc = "Clock selected: internal MCK/32 clock signal (from PMC)"]
     #[inline(always)]
     pub fn timer_clock3(self) -> &'a mut crate::W<REG> {
-        self.variant(TCCLKS_A::TimerClock3)
+        self.variant(Tcclks::TimerClock3)
     }
     #[doc = "Clock selected: internal MCK/128 clock signal (from PMC)"]
     #[inline(always)]
     pub fn timer_clock4(self) -> &'a mut crate::W<REG> {
-        self.variant(TCCLKS_A::TimerClock4)
+        self.variant(Tcclks::TimerClock4)
     }
     #[doc = "Clock selected: internal SLCK clock signal (from PMC)"]
     #[inline(always)]
     pub fn timer_clock5(self) -> &'a mut crate::W<REG> {
-        self.variant(TCCLKS_A::TimerClock5)
+        self.variant(Tcclks::TimerClock5)
     }
     #[doc = "Clock selected: XC0"]
     #[inline(always)]
     pub fn xc0(self) -> &'a mut crate::W<REG> {
-        self.variant(TCCLKS_A::Xc0)
+        self.variant(Tcclks::Xc0)
     }
     #[doc = "Clock selected: XC1"]
     #[inline(always)]
     pub fn xc1(self) -> &'a mut crate::W<REG> {
-        self.variant(TCCLKS_A::Xc1)
+        self.variant(Tcclks::Xc1)
     }
     #[doc = "Clock selected: XC2"]
     #[inline(always)]
     pub fn xc2(self) -> &'a mut crate::W<REG> {
-        self.variant(TCCLKS_A::Xc2)
+        self.variant(Tcclks::Xc2)
     }
 }
 #[doc = "Field `CLKI` reader - Clock Invert"]
-pub type CLKI_R = crate::BitReader;
+pub type ClkiR = crate::BitReader;
 #[doc = "Field `CLKI` writer - Clock Invert"]
-pub type CLKI_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `BURST` reader - Burst Signal Selection"]
-pub type BURST_R = crate::FieldReader<BURST_A>;
+pub type ClkiW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Burst Signal Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum BURST_A {
+pub enum Burst {
     #[doc = "0: The clock is not gated by an external signal."]
     None = 0,
     #[doc = "1: XC0 is ANDed with the selected clock."]
@@ -158,51 +156,53 @@ pub enum BURST_A {
     #[doc = "3: XC2 is ANDed with the selected clock."]
     Xc2 = 3,
 }
-impl From<BURST_A> for u8 {
+impl From<Burst> for u8 {
     #[inline(always)]
-    fn from(variant: BURST_A) -> Self {
+    fn from(variant: Burst) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for BURST_A {
+impl crate::FieldSpec for Burst {
     type Ux = u8;
 }
-impl BURST_R {
+#[doc = "Field `BURST` reader - Burst Signal Selection"]
+pub type BurstR = crate::FieldReader<Burst>;
+impl BurstR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> BURST_A {
+    pub const fn variant(&self) -> Burst {
         match self.bits {
-            0 => BURST_A::None,
-            1 => BURST_A::Xc0,
-            2 => BURST_A::Xc1,
-            3 => BURST_A::Xc2,
+            0 => Burst::None,
+            1 => Burst::Xc0,
+            2 => Burst::Xc1,
+            3 => Burst::Xc2,
             _ => unreachable!(),
         }
     }
     #[doc = "The clock is not gated by an external signal."]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == BURST_A::None
+        *self == Burst::None
     }
     #[doc = "XC0 is ANDed with the selected clock."]
     #[inline(always)]
     pub fn is_xc0(&self) -> bool {
-        *self == BURST_A::Xc0
+        *self == Burst::Xc0
     }
     #[doc = "XC1 is ANDed with the selected clock."]
     #[inline(always)]
     pub fn is_xc1(&self) -> bool {
-        *self == BURST_A::Xc1
+        *self == Burst::Xc1
     }
     #[doc = "XC2 is ANDed with the selected clock."]
     #[inline(always)]
     pub fn is_xc2(&self) -> bool {
-        *self == BURST_A::Xc2
+        *self == Burst::Xc2
     }
 }
 #[doc = "Field `BURST` writer - Burst Signal Selection"]
-pub type BURST_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, BURST_A>;
-impl<'a, REG> BURST_W<'a, REG>
+pub type BurstW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Burst>;
+impl<'a, REG> BurstW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -210,38 +210,36 @@ where
     #[doc = "The clock is not gated by an external signal."]
     #[inline(always)]
     pub fn none(self) -> &'a mut crate::W<REG> {
-        self.variant(BURST_A::None)
+        self.variant(Burst::None)
     }
     #[doc = "XC0 is ANDed with the selected clock."]
     #[inline(always)]
     pub fn xc0(self) -> &'a mut crate::W<REG> {
-        self.variant(BURST_A::Xc0)
+        self.variant(Burst::Xc0)
     }
     #[doc = "XC1 is ANDed with the selected clock."]
     #[inline(always)]
     pub fn xc1(self) -> &'a mut crate::W<REG> {
-        self.variant(BURST_A::Xc1)
+        self.variant(Burst::Xc1)
     }
     #[doc = "XC2 is ANDed with the selected clock."]
     #[inline(always)]
     pub fn xc2(self) -> &'a mut crate::W<REG> {
-        self.variant(BURST_A::Xc2)
+        self.variant(Burst::Xc2)
     }
 }
 #[doc = "Field `CPCSTOP` reader - Counter Clock Stopped with RC Compare"]
-pub type CPCSTOP_R = crate::BitReader;
+pub type CpcstopR = crate::BitReader;
 #[doc = "Field `CPCSTOP` writer - Counter Clock Stopped with RC Compare"]
-pub type CPCSTOP_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type CpcstopW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CPCDIS` reader - Counter Clock Disable with RC Compare"]
-pub type CPCDIS_R = crate::BitReader;
+pub type CpcdisR = crate::BitReader;
 #[doc = "Field `CPCDIS` writer - Counter Clock Disable with RC Compare"]
-pub type CPCDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `EEVTEDG` reader - External Event Edge Selection"]
-pub type EEVTEDG_R = crate::FieldReader<EEVTEDG_A>;
+pub type CpcdisW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "External Event Edge Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum EEVTEDG_A {
+pub enum Eevtedg {
     #[doc = "0: None"]
     None = 0,
     #[doc = "1: Rising edge"]
@@ -251,51 +249,53 @@ pub enum EEVTEDG_A {
     #[doc = "3: Each edge"]
     Edge = 3,
 }
-impl From<EEVTEDG_A> for u8 {
+impl From<Eevtedg> for u8 {
     #[inline(always)]
-    fn from(variant: EEVTEDG_A) -> Self {
+    fn from(variant: Eevtedg) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for EEVTEDG_A {
+impl crate::FieldSpec for Eevtedg {
     type Ux = u8;
 }
-impl EEVTEDG_R {
+#[doc = "Field `EEVTEDG` reader - External Event Edge Selection"]
+pub type EevtedgR = crate::FieldReader<Eevtedg>;
+impl EevtedgR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> EEVTEDG_A {
+    pub const fn variant(&self) -> Eevtedg {
         match self.bits {
-            0 => EEVTEDG_A::None,
-            1 => EEVTEDG_A::Rising,
-            2 => EEVTEDG_A::Falling,
-            3 => EEVTEDG_A::Edge,
+            0 => Eevtedg::None,
+            1 => Eevtedg::Rising,
+            2 => Eevtedg::Falling,
+            3 => Eevtedg::Edge,
             _ => unreachable!(),
         }
     }
     #[doc = "None"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == EEVTEDG_A::None
+        *self == Eevtedg::None
     }
     #[doc = "Rising edge"]
     #[inline(always)]
     pub fn is_rising(&self) -> bool {
-        *self == EEVTEDG_A::Rising
+        *self == Eevtedg::Rising
     }
     #[doc = "Falling edge"]
     #[inline(always)]
     pub fn is_falling(&self) -> bool {
-        *self == EEVTEDG_A::Falling
+        *self == Eevtedg::Falling
     }
     #[doc = "Each edge"]
     #[inline(always)]
     pub fn is_edge(&self) -> bool {
-        *self == EEVTEDG_A::Edge
+        *self == Eevtedg::Edge
     }
 }
 #[doc = "Field `EEVTEDG` writer - External Event Edge Selection"]
-pub type EEVTEDG_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EEVTEDG_A>;
-impl<'a, REG> EEVTEDG_W<'a, REG>
+pub type EevtedgW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Eevtedg>;
+impl<'a, REG> EevtedgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -303,30 +303,28 @@ where
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut crate::W<REG> {
-        self.variant(EEVTEDG_A::None)
+        self.variant(Eevtedg::None)
     }
     #[doc = "Rising edge"]
     #[inline(always)]
     pub fn rising(self) -> &'a mut crate::W<REG> {
-        self.variant(EEVTEDG_A::Rising)
+        self.variant(Eevtedg::Rising)
     }
     #[doc = "Falling edge"]
     #[inline(always)]
     pub fn falling(self) -> &'a mut crate::W<REG> {
-        self.variant(EEVTEDG_A::Falling)
+        self.variant(Eevtedg::Falling)
     }
     #[doc = "Each edge"]
     #[inline(always)]
     pub fn edge(self) -> &'a mut crate::W<REG> {
-        self.variant(EEVTEDG_A::Edge)
+        self.variant(Eevtedg::Edge)
     }
 }
-#[doc = "Field `EEVT` reader - External Event Selection"]
-pub type EEVT_R = crate::FieldReader<EEVT_A>;
 #[doc = "External Event Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum EEVT_A {
+pub enum Eevt {
     #[doc = "0: TIOB"]
     Tiob = 0,
     #[doc = "1: XC0"]
@@ -336,51 +334,53 @@ pub enum EEVT_A {
     #[doc = "3: XC2"]
     Xc2 = 3,
 }
-impl From<EEVT_A> for u8 {
+impl From<Eevt> for u8 {
     #[inline(always)]
-    fn from(variant: EEVT_A) -> Self {
+    fn from(variant: Eevt) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for EEVT_A {
+impl crate::FieldSpec for Eevt {
     type Ux = u8;
 }
-impl EEVT_R {
+#[doc = "Field `EEVT` reader - External Event Selection"]
+pub type EevtR = crate::FieldReader<Eevt>;
+impl EevtR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> EEVT_A {
+    pub const fn variant(&self) -> Eevt {
         match self.bits {
-            0 => EEVT_A::Tiob,
-            1 => EEVT_A::Xc0,
-            2 => EEVT_A::Xc1,
-            3 => EEVT_A::Xc2,
+            0 => Eevt::Tiob,
+            1 => Eevt::Xc0,
+            2 => Eevt::Xc1,
+            3 => Eevt::Xc2,
             _ => unreachable!(),
         }
     }
     #[doc = "TIOB"]
     #[inline(always)]
     pub fn is_tiob(&self) -> bool {
-        *self == EEVT_A::Tiob
+        *self == Eevt::Tiob
     }
     #[doc = "XC0"]
     #[inline(always)]
     pub fn is_xc0(&self) -> bool {
-        *self == EEVT_A::Xc0
+        *self == Eevt::Xc0
     }
     #[doc = "XC1"]
     #[inline(always)]
     pub fn is_xc1(&self) -> bool {
-        *self == EEVT_A::Xc1
+        *self == Eevt::Xc1
     }
     #[doc = "XC2"]
     #[inline(always)]
     pub fn is_xc2(&self) -> bool {
-        *self == EEVT_A::Xc2
+        *self == Eevt::Xc2
     }
 }
 #[doc = "Field `EEVT` writer - External Event Selection"]
-pub type EEVT_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EEVT_A>;
-impl<'a, REG> EEVT_W<'a, REG>
+pub type EevtW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Eevt>;
+impl<'a, REG> EevtW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -388,34 +388,32 @@ where
     #[doc = "TIOB"]
     #[inline(always)]
     pub fn tiob(self) -> &'a mut crate::W<REG> {
-        self.variant(EEVT_A::Tiob)
+        self.variant(Eevt::Tiob)
     }
     #[doc = "XC0"]
     #[inline(always)]
     pub fn xc0(self) -> &'a mut crate::W<REG> {
-        self.variant(EEVT_A::Xc0)
+        self.variant(Eevt::Xc0)
     }
     #[doc = "XC1"]
     #[inline(always)]
     pub fn xc1(self) -> &'a mut crate::W<REG> {
-        self.variant(EEVT_A::Xc1)
+        self.variant(Eevt::Xc1)
     }
     #[doc = "XC2"]
     #[inline(always)]
     pub fn xc2(self) -> &'a mut crate::W<REG> {
-        self.variant(EEVT_A::Xc2)
+        self.variant(Eevt::Xc2)
     }
 }
 #[doc = "Field `ENETRG` reader - External Event Trigger Enable"]
-pub type ENETRG_R = crate::BitReader;
+pub type EnetrgR = crate::BitReader;
 #[doc = "Field `ENETRG` writer - External Event Trigger Enable"]
-pub type ENETRG_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WAVSEL` reader - Waveform Selection"]
-pub type WAVSEL_R = crate::FieldReader<WAVSEL_A>;
+pub type EnetrgW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Waveform Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum WAVSEL_A {
+pub enum Wavsel {
     #[doc = "0: UP mode without automatic trigger on RC Compare"]
     Up = 0,
     #[doc = "1: UPDOWN mode without automatic trigger on RC Compare"]
@@ -425,51 +423,53 @@ pub enum WAVSEL_A {
     #[doc = "3: UPDOWN mode with automatic trigger on RC Compare"]
     UpdownRc = 3,
 }
-impl From<WAVSEL_A> for u8 {
+impl From<Wavsel> for u8 {
     #[inline(always)]
-    fn from(variant: WAVSEL_A) -> Self {
+    fn from(variant: Wavsel) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for WAVSEL_A {
+impl crate::FieldSpec for Wavsel {
     type Ux = u8;
 }
-impl WAVSEL_R {
+#[doc = "Field `WAVSEL` reader - Waveform Selection"]
+pub type WavselR = crate::FieldReader<Wavsel>;
+impl WavselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> WAVSEL_A {
+    pub const fn variant(&self) -> Wavsel {
         match self.bits {
-            0 => WAVSEL_A::Up,
-            1 => WAVSEL_A::Updown,
-            2 => WAVSEL_A::UpRc,
-            3 => WAVSEL_A::UpdownRc,
+            0 => Wavsel::Up,
+            1 => Wavsel::Updown,
+            2 => Wavsel::UpRc,
+            3 => Wavsel::UpdownRc,
             _ => unreachable!(),
         }
     }
     #[doc = "UP mode without automatic trigger on RC Compare"]
     #[inline(always)]
     pub fn is_up(&self) -> bool {
-        *self == WAVSEL_A::Up
+        *self == Wavsel::Up
     }
     #[doc = "UPDOWN mode without automatic trigger on RC Compare"]
     #[inline(always)]
     pub fn is_updown(&self) -> bool {
-        *self == WAVSEL_A::Updown
+        *self == Wavsel::Updown
     }
     #[doc = "UP mode with automatic trigger on RC Compare"]
     #[inline(always)]
     pub fn is_up_rc(&self) -> bool {
-        *self == WAVSEL_A::UpRc
+        *self == Wavsel::UpRc
     }
     #[doc = "UPDOWN mode with automatic trigger on RC Compare"]
     #[inline(always)]
     pub fn is_updown_rc(&self) -> bool {
-        *self == WAVSEL_A::UpdownRc
+        *self == Wavsel::UpdownRc
     }
 }
 #[doc = "Field `WAVSEL` writer - Waveform Selection"]
-pub type WAVSEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, WAVSEL_A>;
-impl<'a, REG> WAVSEL_W<'a, REG>
+pub type WavselW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Wavsel>;
+impl<'a, REG> WavselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -477,34 +477,32 @@ where
     #[doc = "UP mode without automatic trigger on RC Compare"]
     #[inline(always)]
     pub fn up(self) -> &'a mut crate::W<REG> {
-        self.variant(WAVSEL_A::Up)
+        self.variant(Wavsel::Up)
     }
     #[doc = "UPDOWN mode without automatic trigger on RC Compare"]
     #[inline(always)]
     pub fn updown(self) -> &'a mut crate::W<REG> {
-        self.variant(WAVSEL_A::Updown)
+        self.variant(Wavsel::Updown)
     }
     #[doc = "UP mode with automatic trigger on RC Compare"]
     #[inline(always)]
     pub fn up_rc(self) -> &'a mut crate::W<REG> {
-        self.variant(WAVSEL_A::UpRc)
+        self.variant(Wavsel::UpRc)
     }
     #[doc = "UPDOWN mode with automatic trigger on RC Compare"]
     #[inline(always)]
     pub fn updown_rc(self) -> &'a mut crate::W<REG> {
-        self.variant(WAVSEL_A::UpdownRc)
+        self.variant(Wavsel::UpdownRc)
     }
 }
 #[doc = "Field `WAVE` reader - Waveform Mode"]
-pub type WAVE_R = crate::BitReader;
+pub type WaveR = crate::BitReader;
 #[doc = "Field `WAVE` writer - Waveform Mode"]
-pub type WAVE_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACPA` reader - RA Compare Effect on TIOA"]
-pub type ACPA_R = crate::FieldReader<ACPA_A>;
+pub type WaveW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "RA Compare Effect on TIOA\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum ACPA_A {
+pub enum Acpa {
     #[doc = "0: None"]
     None = 0,
     #[doc = "1: Set"]
@@ -514,51 +512,53 @@ pub enum ACPA_A {
     #[doc = "3: Toggle"]
     Toggle = 3,
 }
-impl From<ACPA_A> for u8 {
+impl From<Acpa> for u8 {
     #[inline(always)]
-    fn from(variant: ACPA_A) -> Self {
+    fn from(variant: Acpa) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for ACPA_A {
+impl crate::FieldSpec for Acpa {
     type Ux = u8;
 }
-impl ACPA_R {
+#[doc = "Field `ACPA` reader - RA Compare Effect on TIOA"]
+pub type AcpaR = crate::FieldReader<Acpa>;
+impl AcpaR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ACPA_A {
+    pub const fn variant(&self) -> Acpa {
         match self.bits {
-            0 => ACPA_A::None,
-            1 => ACPA_A::Set,
-            2 => ACPA_A::Clear,
-            3 => ACPA_A::Toggle,
+            0 => Acpa::None,
+            1 => Acpa::Set,
+            2 => Acpa::Clear,
+            3 => Acpa::Toggle,
             _ => unreachable!(),
         }
     }
     #[doc = "None"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == ACPA_A::None
+        *self == Acpa::None
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == ACPA_A::Set
+        *self == Acpa::Set
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == ACPA_A::Clear
+        *self == Acpa::Clear
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == ACPA_A::Toggle
+        *self == Acpa::Toggle
     }
 }
 #[doc = "Field `ACPA` writer - RA Compare Effect on TIOA"]
-pub type ACPA_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ACPA_A>;
-impl<'a, REG> ACPA_W<'a, REG>
+pub type AcpaW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Acpa>;
+impl<'a, REG> AcpaW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -566,30 +566,28 @@ where
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut crate::W<REG> {
-        self.variant(ACPA_A::None)
+        self.variant(Acpa::None)
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn set(self) -> &'a mut crate::W<REG> {
-        self.variant(ACPA_A::Set)
+        self.variant(Acpa::Set)
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut crate::W<REG> {
-        self.variant(ACPA_A::Clear)
+        self.variant(Acpa::Clear)
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn toggle(self) -> &'a mut crate::W<REG> {
-        self.variant(ACPA_A::Toggle)
+        self.variant(Acpa::Toggle)
     }
 }
-#[doc = "Field `ACPC` reader - RC Compare Effect on TIOA"]
-pub type ACPC_R = crate::FieldReader<ACPC_A>;
 #[doc = "RC Compare Effect on TIOA\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum ACPC_A {
+pub enum Acpc {
     #[doc = "0: None"]
     None = 0,
     #[doc = "1: Set"]
@@ -599,51 +597,53 @@ pub enum ACPC_A {
     #[doc = "3: Toggle"]
     Toggle = 3,
 }
-impl From<ACPC_A> for u8 {
+impl From<Acpc> for u8 {
     #[inline(always)]
-    fn from(variant: ACPC_A) -> Self {
+    fn from(variant: Acpc) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for ACPC_A {
+impl crate::FieldSpec for Acpc {
     type Ux = u8;
 }
-impl ACPC_R {
+#[doc = "Field `ACPC` reader - RC Compare Effect on TIOA"]
+pub type AcpcR = crate::FieldReader<Acpc>;
+impl AcpcR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ACPC_A {
+    pub const fn variant(&self) -> Acpc {
         match self.bits {
-            0 => ACPC_A::None,
-            1 => ACPC_A::Set,
-            2 => ACPC_A::Clear,
-            3 => ACPC_A::Toggle,
+            0 => Acpc::None,
+            1 => Acpc::Set,
+            2 => Acpc::Clear,
+            3 => Acpc::Toggle,
             _ => unreachable!(),
         }
     }
     #[doc = "None"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == ACPC_A::None
+        *self == Acpc::None
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == ACPC_A::Set
+        *self == Acpc::Set
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == ACPC_A::Clear
+        *self == Acpc::Clear
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == ACPC_A::Toggle
+        *self == Acpc::Toggle
     }
 }
 #[doc = "Field `ACPC` writer - RC Compare Effect on TIOA"]
-pub type ACPC_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ACPC_A>;
-impl<'a, REG> ACPC_W<'a, REG>
+pub type AcpcW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Acpc>;
+impl<'a, REG> AcpcW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -651,30 +651,28 @@ where
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut crate::W<REG> {
-        self.variant(ACPC_A::None)
+        self.variant(Acpc::None)
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn set(self) -> &'a mut crate::W<REG> {
-        self.variant(ACPC_A::Set)
+        self.variant(Acpc::Set)
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut crate::W<REG> {
-        self.variant(ACPC_A::Clear)
+        self.variant(Acpc::Clear)
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn toggle(self) -> &'a mut crate::W<REG> {
-        self.variant(ACPC_A::Toggle)
+        self.variant(Acpc::Toggle)
     }
 }
-#[doc = "Field `AEEVT` reader - External Event Effect on TIOA"]
-pub type AEEVT_R = crate::FieldReader<AEEVT_A>;
 #[doc = "External Event Effect on TIOA\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum AEEVT_A {
+pub enum Aeevt {
     #[doc = "0: None"]
     None = 0,
     #[doc = "1: Set"]
@@ -684,51 +682,53 @@ pub enum AEEVT_A {
     #[doc = "3: Toggle"]
     Toggle = 3,
 }
-impl From<AEEVT_A> for u8 {
+impl From<Aeevt> for u8 {
     #[inline(always)]
-    fn from(variant: AEEVT_A) -> Self {
+    fn from(variant: Aeevt) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for AEEVT_A {
+impl crate::FieldSpec for Aeevt {
     type Ux = u8;
 }
-impl AEEVT_R {
+#[doc = "Field `AEEVT` reader - External Event Effect on TIOA"]
+pub type AeevtR = crate::FieldReader<Aeevt>;
+impl AeevtR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> AEEVT_A {
+    pub const fn variant(&self) -> Aeevt {
         match self.bits {
-            0 => AEEVT_A::None,
-            1 => AEEVT_A::Set,
-            2 => AEEVT_A::Clear,
-            3 => AEEVT_A::Toggle,
+            0 => Aeevt::None,
+            1 => Aeevt::Set,
+            2 => Aeevt::Clear,
+            3 => Aeevt::Toggle,
             _ => unreachable!(),
         }
     }
     #[doc = "None"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == AEEVT_A::None
+        *self == Aeevt::None
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == AEEVT_A::Set
+        *self == Aeevt::Set
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == AEEVT_A::Clear
+        *self == Aeevt::Clear
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == AEEVT_A::Toggle
+        *self == Aeevt::Toggle
     }
 }
 #[doc = "Field `AEEVT` writer - External Event Effect on TIOA"]
-pub type AEEVT_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, AEEVT_A>;
-impl<'a, REG> AEEVT_W<'a, REG>
+pub type AeevtW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Aeevt>;
+impl<'a, REG> AeevtW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -736,30 +736,28 @@ where
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut crate::W<REG> {
-        self.variant(AEEVT_A::None)
+        self.variant(Aeevt::None)
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn set(self) -> &'a mut crate::W<REG> {
-        self.variant(AEEVT_A::Set)
+        self.variant(Aeevt::Set)
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut crate::W<REG> {
-        self.variant(AEEVT_A::Clear)
+        self.variant(Aeevt::Clear)
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn toggle(self) -> &'a mut crate::W<REG> {
-        self.variant(AEEVT_A::Toggle)
+        self.variant(Aeevt::Toggle)
     }
 }
-#[doc = "Field `ASWTRG` reader - Software Trigger Effect on TIOA"]
-pub type ASWTRG_R = crate::FieldReader<ASWTRG_A>;
 #[doc = "Software Trigger Effect on TIOA\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum ASWTRG_A {
+pub enum Aswtrg {
     #[doc = "0: None"]
     None = 0,
     #[doc = "1: Set"]
@@ -769,51 +767,53 @@ pub enum ASWTRG_A {
     #[doc = "3: Toggle"]
     Toggle = 3,
 }
-impl From<ASWTRG_A> for u8 {
+impl From<Aswtrg> for u8 {
     #[inline(always)]
-    fn from(variant: ASWTRG_A) -> Self {
+    fn from(variant: Aswtrg) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for ASWTRG_A {
+impl crate::FieldSpec for Aswtrg {
     type Ux = u8;
 }
-impl ASWTRG_R {
+#[doc = "Field `ASWTRG` reader - Software Trigger Effect on TIOA"]
+pub type AswtrgR = crate::FieldReader<Aswtrg>;
+impl AswtrgR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ASWTRG_A {
+    pub const fn variant(&self) -> Aswtrg {
         match self.bits {
-            0 => ASWTRG_A::None,
-            1 => ASWTRG_A::Set,
-            2 => ASWTRG_A::Clear,
-            3 => ASWTRG_A::Toggle,
+            0 => Aswtrg::None,
+            1 => Aswtrg::Set,
+            2 => Aswtrg::Clear,
+            3 => Aswtrg::Toggle,
             _ => unreachable!(),
         }
     }
     #[doc = "None"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == ASWTRG_A::None
+        *self == Aswtrg::None
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == ASWTRG_A::Set
+        *self == Aswtrg::Set
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == ASWTRG_A::Clear
+        *self == Aswtrg::Clear
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == ASWTRG_A::Toggle
+        *self == Aswtrg::Toggle
     }
 }
 #[doc = "Field `ASWTRG` writer - Software Trigger Effect on TIOA"]
-pub type ASWTRG_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ASWTRG_A>;
-impl<'a, REG> ASWTRG_W<'a, REG>
+pub type AswtrgW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Aswtrg>;
+impl<'a, REG> AswtrgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -821,30 +821,28 @@ where
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut crate::W<REG> {
-        self.variant(ASWTRG_A::None)
+        self.variant(Aswtrg::None)
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn set(self) -> &'a mut crate::W<REG> {
-        self.variant(ASWTRG_A::Set)
+        self.variant(Aswtrg::Set)
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut crate::W<REG> {
-        self.variant(ASWTRG_A::Clear)
+        self.variant(Aswtrg::Clear)
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn toggle(self) -> &'a mut crate::W<REG> {
-        self.variant(ASWTRG_A::Toggle)
+        self.variant(Aswtrg::Toggle)
     }
 }
-#[doc = "Field `BCPB` reader - RB Compare Effect on TIOB"]
-pub type BCPB_R = crate::FieldReader<BCPB_A>;
 #[doc = "RB Compare Effect on TIOB\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum BCPB_A {
+pub enum Bcpb {
     #[doc = "0: None"]
     None = 0,
     #[doc = "1: Set"]
@@ -854,51 +852,53 @@ pub enum BCPB_A {
     #[doc = "3: Toggle"]
     Toggle = 3,
 }
-impl From<BCPB_A> for u8 {
+impl From<Bcpb> for u8 {
     #[inline(always)]
-    fn from(variant: BCPB_A) -> Self {
+    fn from(variant: Bcpb) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for BCPB_A {
+impl crate::FieldSpec for Bcpb {
     type Ux = u8;
 }
-impl BCPB_R {
+#[doc = "Field `BCPB` reader - RB Compare Effect on TIOB"]
+pub type BcpbR = crate::FieldReader<Bcpb>;
+impl BcpbR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> BCPB_A {
+    pub const fn variant(&self) -> Bcpb {
         match self.bits {
-            0 => BCPB_A::None,
-            1 => BCPB_A::Set,
-            2 => BCPB_A::Clear,
-            3 => BCPB_A::Toggle,
+            0 => Bcpb::None,
+            1 => Bcpb::Set,
+            2 => Bcpb::Clear,
+            3 => Bcpb::Toggle,
             _ => unreachable!(),
         }
     }
     #[doc = "None"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == BCPB_A::None
+        *self == Bcpb::None
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == BCPB_A::Set
+        *self == Bcpb::Set
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == BCPB_A::Clear
+        *self == Bcpb::Clear
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == BCPB_A::Toggle
+        *self == Bcpb::Toggle
     }
 }
 #[doc = "Field `BCPB` writer - RB Compare Effect on TIOB"]
-pub type BCPB_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, BCPB_A>;
-impl<'a, REG> BCPB_W<'a, REG>
+pub type BcpbW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Bcpb>;
+impl<'a, REG> BcpbW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -906,30 +906,28 @@ where
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut crate::W<REG> {
-        self.variant(BCPB_A::None)
+        self.variant(Bcpb::None)
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn set(self) -> &'a mut crate::W<REG> {
-        self.variant(BCPB_A::Set)
+        self.variant(Bcpb::Set)
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut crate::W<REG> {
-        self.variant(BCPB_A::Clear)
+        self.variant(Bcpb::Clear)
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn toggle(self) -> &'a mut crate::W<REG> {
-        self.variant(BCPB_A::Toggle)
+        self.variant(Bcpb::Toggle)
     }
 }
-#[doc = "Field `BCPC` reader - RC Compare Effect on TIOB"]
-pub type BCPC_R = crate::FieldReader<BCPC_A>;
 #[doc = "RC Compare Effect on TIOB\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum BCPC_A {
+pub enum Bcpc {
     #[doc = "0: None"]
     None = 0,
     #[doc = "1: Set"]
@@ -939,51 +937,53 @@ pub enum BCPC_A {
     #[doc = "3: Toggle"]
     Toggle = 3,
 }
-impl From<BCPC_A> for u8 {
+impl From<Bcpc> for u8 {
     #[inline(always)]
-    fn from(variant: BCPC_A) -> Self {
+    fn from(variant: Bcpc) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for BCPC_A {
+impl crate::FieldSpec for Bcpc {
     type Ux = u8;
 }
-impl BCPC_R {
+#[doc = "Field `BCPC` reader - RC Compare Effect on TIOB"]
+pub type BcpcR = crate::FieldReader<Bcpc>;
+impl BcpcR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> BCPC_A {
+    pub const fn variant(&self) -> Bcpc {
         match self.bits {
-            0 => BCPC_A::None,
-            1 => BCPC_A::Set,
-            2 => BCPC_A::Clear,
-            3 => BCPC_A::Toggle,
+            0 => Bcpc::None,
+            1 => Bcpc::Set,
+            2 => Bcpc::Clear,
+            3 => Bcpc::Toggle,
             _ => unreachable!(),
         }
     }
     #[doc = "None"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == BCPC_A::None
+        *self == Bcpc::None
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == BCPC_A::Set
+        *self == Bcpc::Set
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == BCPC_A::Clear
+        *self == Bcpc::Clear
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == BCPC_A::Toggle
+        *self == Bcpc::Toggle
     }
 }
 #[doc = "Field `BCPC` writer - RC Compare Effect on TIOB"]
-pub type BCPC_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, BCPC_A>;
-impl<'a, REG> BCPC_W<'a, REG>
+pub type BcpcW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Bcpc>;
+impl<'a, REG> BcpcW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -991,30 +991,28 @@ where
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut crate::W<REG> {
-        self.variant(BCPC_A::None)
+        self.variant(Bcpc::None)
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn set(self) -> &'a mut crate::W<REG> {
-        self.variant(BCPC_A::Set)
+        self.variant(Bcpc::Set)
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut crate::W<REG> {
-        self.variant(BCPC_A::Clear)
+        self.variant(Bcpc::Clear)
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn toggle(self) -> &'a mut crate::W<REG> {
-        self.variant(BCPC_A::Toggle)
+        self.variant(Bcpc::Toggle)
     }
 }
-#[doc = "Field `BEEVT` reader - External Event Effect on TIOB"]
-pub type BEEVT_R = crate::FieldReader<BEEVT_A>;
 #[doc = "External Event Effect on TIOB\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum BEEVT_A {
+pub enum Beevt {
     #[doc = "0: None"]
     None = 0,
     #[doc = "1: Set"]
@@ -1024,51 +1022,53 @@ pub enum BEEVT_A {
     #[doc = "3: Toggle"]
     Toggle = 3,
 }
-impl From<BEEVT_A> for u8 {
+impl From<Beevt> for u8 {
     #[inline(always)]
-    fn from(variant: BEEVT_A) -> Self {
+    fn from(variant: Beevt) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for BEEVT_A {
+impl crate::FieldSpec for Beevt {
     type Ux = u8;
 }
-impl BEEVT_R {
+#[doc = "Field `BEEVT` reader - External Event Effect on TIOB"]
+pub type BeevtR = crate::FieldReader<Beevt>;
+impl BeevtR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> BEEVT_A {
+    pub const fn variant(&self) -> Beevt {
         match self.bits {
-            0 => BEEVT_A::None,
-            1 => BEEVT_A::Set,
-            2 => BEEVT_A::Clear,
-            3 => BEEVT_A::Toggle,
+            0 => Beevt::None,
+            1 => Beevt::Set,
+            2 => Beevt::Clear,
+            3 => Beevt::Toggle,
             _ => unreachable!(),
         }
     }
     #[doc = "None"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == BEEVT_A::None
+        *self == Beevt::None
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == BEEVT_A::Set
+        *self == Beevt::Set
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == BEEVT_A::Clear
+        *self == Beevt::Clear
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == BEEVT_A::Toggle
+        *self == Beevt::Toggle
     }
 }
 #[doc = "Field `BEEVT` writer - External Event Effect on TIOB"]
-pub type BEEVT_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, BEEVT_A>;
-impl<'a, REG> BEEVT_W<'a, REG>
+pub type BeevtW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Beevt>;
+impl<'a, REG> BeevtW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1076,30 +1076,28 @@ where
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut crate::W<REG> {
-        self.variant(BEEVT_A::None)
+        self.variant(Beevt::None)
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn set(self) -> &'a mut crate::W<REG> {
-        self.variant(BEEVT_A::Set)
+        self.variant(Beevt::Set)
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut crate::W<REG> {
-        self.variant(BEEVT_A::Clear)
+        self.variant(Beevt::Clear)
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn toggle(self) -> &'a mut crate::W<REG> {
-        self.variant(BEEVT_A::Toggle)
+        self.variant(Beevt::Toggle)
     }
 }
-#[doc = "Field `BSWTRG` reader - Software Trigger Effect on TIOB"]
-pub type BSWTRG_R = crate::FieldReader<BSWTRG_A>;
 #[doc = "Software Trigger Effect on TIOB\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum BSWTRG_A {
+pub enum Bswtrg {
     #[doc = "0: None"]
     None = 0,
     #[doc = "1: Set"]
@@ -1109,51 +1107,53 @@ pub enum BSWTRG_A {
     #[doc = "3: Toggle"]
     Toggle = 3,
 }
-impl From<BSWTRG_A> for u8 {
+impl From<Bswtrg> for u8 {
     #[inline(always)]
-    fn from(variant: BSWTRG_A) -> Self {
+    fn from(variant: Bswtrg) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for BSWTRG_A {
+impl crate::FieldSpec for Bswtrg {
     type Ux = u8;
 }
-impl BSWTRG_R {
+#[doc = "Field `BSWTRG` reader - Software Trigger Effect on TIOB"]
+pub type BswtrgR = crate::FieldReader<Bswtrg>;
+impl BswtrgR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> BSWTRG_A {
+    pub const fn variant(&self) -> Bswtrg {
         match self.bits {
-            0 => BSWTRG_A::None,
-            1 => BSWTRG_A::Set,
-            2 => BSWTRG_A::Clear,
-            3 => BSWTRG_A::Toggle,
+            0 => Bswtrg::None,
+            1 => Bswtrg::Set,
+            2 => Bswtrg::Clear,
+            3 => Bswtrg::Toggle,
             _ => unreachable!(),
         }
     }
     #[doc = "None"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == BSWTRG_A::None
+        *self == Bswtrg::None
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == BSWTRG_A::Set
+        *self == Bswtrg::Set
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == BSWTRG_A::Clear
+        *self == Bswtrg::Clear
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == BSWTRG_A::Toggle
+        *self == Bswtrg::Toggle
     }
 }
 #[doc = "Field `BSWTRG` writer - Software Trigger Effect on TIOB"]
-pub type BSWTRG_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, BSWTRG_A>;
-impl<'a, REG> BSWTRG_W<'a, REG>
+pub type BswtrgW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Bswtrg>;
+impl<'a, REG> BswtrgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1161,249 +1161,240 @@ where
     #[doc = "None"]
     #[inline(always)]
     pub fn none(self) -> &'a mut crate::W<REG> {
-        self.variant(BSWTRG_A::None)
+        self.variant(Bswtrg::None)
     }
     #[doc = "Set"]
     #[inline(always)]
     pub fn set(self) -> &'a mut crate::W<REG> {
-        self.variant(BSWTRG_A::Set)
+        self.variant(Bswtrg::Set)
     }
     #[doc = "Clear"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut crate::W<REG> {
-        self.variant(BSWTRG_A::Clear)
+        self.variant(Bswtrg::Clear)
     }
     #[doc = "Toggle"]
     #[inline(always)]
     pub fn toggle(self) -> &'a mut crate::W<REG> {
-        self.variant(BSWTRG_A::Toggle)
+        self.variant(Bswtrg::Toggle)
     }
 }
 impl R {
     #[doc = "Bits 0:2 - Clock Selection"]
     #[inline(always)]
-    pub fn tcclks(&self) -> TCCLKS_R {
-        TCCLKS_R::new((self.bits & 7) as u8)
+    pub fn tcclks(&self) -> TcclksR {
+        TcclksR::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 3 - Clock Invert"]
     #[inline(always)]
-    pub fn clki(&self) -> CLKI_R {
-        CLKI_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn clki(&self) -> ClkiR {
+        ClkiR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:5 - Burst Signal Selection"]
     #[inline(always)]
-    pub fn burst(&self) -> BURST_R {
-        BURST_R::new(((self.bits >> 4) & 3) as u8)
+    pub fn burst(&self) -> BurstR {
+        BurstR::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 6 - Counter Clock Stopped with RC Compare"]
     #[inline(always)]
-    pub fn cpcstop(&self) -> CPCSTOP_R {
-        CPCSTOP_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn cpcstop(&self) -> CpcstopR {
+        CpcstopR::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Counter Clock Disable with RC Compare"]
     #[inline(always)]
-    pub fn cpcdis(&self) -> CPCDIS_R {
-        CPCDIS_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn cpcdis(&self) -> CpcdisR {
+        CpcdisR::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:9 - External Event Edge Selection"]
     #[inline(always)]
-    pub fn eevtedg(&self) -> EEVTEDG_R {
-        EEVTEDG_R::new(((self.bits >> 8) & 3) as u8)
+    pub fn eevtedg(&self) -> EevtedgR {
+        EevtedgR::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - External Event Selection"]
     #[inline(always)]
-    pub fn eevt(&self) -> EEVT_R {
-        EEVT_R::new(((self.bits >> 10) & 3) as u8)
+    pub fn eevt(&self) -> EevtR {
+        EevtR::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bit 12 - External Event Trigger Enable"]
     #[inline(always)]
-    pub fn enetrg(&self) -> ENETRG_R {
-        ENETRG_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn enetrg(&self) -> EnetrgR {
+        EnetrgR::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bits 13:14 - Waveform Selection"]
     #[inline(always)]
-    pub fn wavsel(&self) -> WAVSEL_R {
-        WAVSEL_R::new(((self.bits >> 13) & 3) as u8)
+    pub fn wavsel(&self) -> WavselR {
+        WavselR::new(((self.bits >> 13) & 3) as u8)
     }
     #[doc = "Bit 15 - Waveform Mode"]
     #[inline(always)]
-    pub fn wave(&self) -> WAVE_R {
-        WAVE_R::new(((self.bits >> 15) & 1) != 0)
+    pub fn wave(&self) -> WaveR {
+        WaveR::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:17 - RA Compare Effect on TIOA"]
     #[inline(always)]
-    pub fn acpa(&self) -> ACPA_R {
-        ACPA_R::new(((self.bits >> 16) & 3) as u8)
+    pub fn acpa(&self) -> AcpaR {
+        AcpaR::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 18:19 - RC Compare Effect on TIOA"]
     #[inline(always)]
-    pub fn acpc(&self) -> ACPC_R {
-        ACPC_R::new(((self.bits >> 18) & 3) as u8)
+    pub fn acpc(&self) -> AcpcR {
+        AcpcR::new(((self.bits >> 18) & 3) as u8)
     }
     #[doc = "Bits 20:21 - External Event Effect on TIOA"]
     #[inline(always)]
-    pub fn aeevt(&self) -> AEEVT_R {
-        AEEVT_R::new(((self.bits >> 20) & 3) as u8)
+    pub fn aeevt(&self) -> AeevtR {
+        AeevtR::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bits 22:23 - Software Trigger Effect on TIOA"]
     #[inline(always)]
-    pub fn aswtrg(&self) -> ASWTRG_R {
-        ASWTRG_R::new(((self.bits >> 22) & 3) as u8)
+    pub fn aswtrg(&self) -> AswtrgR {
+        AswtrgR::new(((self.bits >> 22) & 3) as u8)
     }
     #[doc = "Bits 24:25 - RB Compare Effect on TIOB"]
     #[inline(always)]
-    pub fn bcpb(&self) -> BCPB_R {
-        BCPB_R::new(((self.bits >> 24) & 3) as u8)
+    pub fn bcpb(&self) -> BcpbR {
+        BcpbR::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bits 26:27 - RC Compare Effect on TIOB"]
     #[inline(always)]
-    pub fn bcpc(&self) -> BCPC_R {
-        BCPC_R::new(((self.bits >> 26) & 3) as u8)
+    pub fn bcpc(&self) -> BcpcR {
+        BcpcR::new(((self.bits >> 26) & 3) as u8)
     }
     #[doc = "Bits 28:29 - External Event Effect on TIOB"]
     #[inline(always)]
-    pub fn beevt(&self) -> BEEVT_R {
-        BEEVT_R::new(((self.bits >> 28) & 3) as u8)
+    pub fn beevt(&self) -> BeevtR {
+        BeevtR::new(((self.bits >> 28) & 3) as u8)
     }
     #[doc = "Bits 30:31 - Software Trigger Effect on TIOB"]
     #[inline(always)]
-    pub fn bswtrg(&self) -> BSWTRG_R {
-        BSWTRG_R::new(((self.bits >> 30) & 3) as u8)
+    pub fn bswtrg(&self) -> BswtrgR {
+        BswtrgR::new(((self.bits >> 30) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn tcclks(&mut self) -> TCCLKS_W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC> {
-        TCCLKS_W::new(self, 0)
+    pub fn tcclks(&mut self) -> TcclksW<WaveformModeCmr2WaveformModeSpec> {
+        TcclksW::new(self, 0)
     }
     #[doc = "Bit 3 - Clock Invert"]
     #[inline(always)]
     #[must_use]
-    pub fn clki(&mut self) -> CLKI_W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC> {
-        CLKI_W::new(self, 3)
+    pub fn clki(&mut self) -> ClkiW<WaveformModeCmr2WaveformModeSpec> {
+        ClkiW::new(self, 3)
     }
     #[doc = "Bits 4:5 - Burst Signal Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn burst(&mut self) -> BURST_W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC> {
-        BURST_W::new(self, 4)
+    pub fn burst(&mut self) -> BurstW<WaveformModeCmr2WaveformModeSpec> {
+        BurstW::new(self, 4)
     }
     #[doc = "Bit 6 - Counter Clock Stopped with RC Compare"]
     #[inline(always)]
     #[must_use]
-    pub fn cpcstop(&mut self) -> CPCSTOP_W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC> {
-        CPCSTOP_W::new(self, 6)
+    pub fn cpcstop(&mut self) -> CpcstopW<WaveformModeCmr2WaveformModeSpec> {
+        CpcstopW::new(self, 6)
     }
     #[doc = "Bit 7 - Counter Clock Disable with RC Compare"]
     #[inline(always)]
     #[must_use]
-    pub fn cpcdis(&mut self) -> CPCDIS_W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC> {
-        CPCDIS_W::new(self, 7)
+    pub fn cpcdis(&mut self) -> CpcdisW<WaveformModeCmr2WaveformModeSpec> {
+        CpcdisW::new(self, 7)
     }
     #[doc = "Bits 8:9 - External Event Edge Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn eevtedg(&mut self) -> EEVTEDG_W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC> {
-        EEVTEDG_W::new(self, 8)
+    pub fn eevtedg(&mut self) -> EevtedgW<WaveformModeCmr2WaveformModeSpec> {
+        EevtedgW::new(self, 8)
     }
     #[doc = "Bits 10:11 - External Event Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn eevt(&mut self) -> EEVT_W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC> {
-        EEVT_W::new(self, 10)
+    pub fn eevt(&mut self) -> EevtW<WaveformModeCmr2WaveformModeSpec> {
+        EevtW::new(self, 10)
     }
     #[doc = "Bit 12 - External Event Trigger Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn enetrg(&mut self) -> ENETRG_W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC> {
-        ENETRG_W::new(self, 12)
+    pub fn enetrg(&mut self) -> EnetrgW<WaveformModeCmr2WaveformModeSpec> {
+        EnetrgW::new(self, 12)
     }
     #[doc = "Bits 13:14 - Waveform Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn wavsel(&mut self) -> WAVSEL_W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC> {
-        WAVSEL_W::new(self, 13)
+    pub fn wavsel(&mut self) -> WavselW<WaveformModeCmr2WaveformModeSpec> {
+        WavselW::new(self, 13)
     }
     #[doc = "Bit 15 - Waveform Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn wave(&mut self) -> WAVE_W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC> {
-        WAVE_W::new(self, 15)
+    pub fn wave(&mut self) -> WaveW<WaveformModeCmr2WaveformModeSpec> {
+        WaveW::new(self, 15)
     }
     #[doc = "Bits 16:17 - RA Compare Effect on TIOA"]
     #[inline(always)]
     #[must_use]
-    pub fn acpa(&mut self) -> ACPA_W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC> {
-        ACPA_W::new(self, 16)
+    pub fn acpa(&mut self) -> AcpaW<WaveformModeCmr2WaveformModeSpec> {
+        AcpaW::new(self, 16)
     }
     #[doc = "Bits 18:19 - RC Compare Effect on TIOA"]
     #[inline(always)]
     #[must_use]
-    pub fn acpc(&mut self) -> ACPC_W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC> {
-        ACPC_W::new(self, 18)
+    pub fn acpc(&mut self) -> AcpcW<WaveformModeCmr2WaveformModeSpec> {
+        AcpcW::new(self, 18)
     }
     #[doc = "Bits 20:21 - External Event Effect on TIOA"]
     #[inline(always)]
     #[must_use]
-    pub fn aeevt(&mut self) -> AEEVT_W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC> {
-        AEEVT_W::new(self, 20)
+    pub fn aeevt(&mut self) -> AeevtW<WaveformModeCmr2WaveformModeSpec> {
+        AeevtW::new(self, 20)
     }
     #[doc = "Bits 22:23 - Software Trigger Effect on TIOA"]
     #[inline(always)]
     #[must_use]
-    pub fn aswtrg(&mut self) -> ASWTRG_W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC> {
-        ASWTRG_W::new(self, 22)
+    pub fn aswtrg(&mut self) -> AswtrgW<WaveformModeCmr2WaveformModeSpec> {
+        AswtrgW::new(self, 22)
     }
     #[doc = "Bits 24:25 - RB Compare Effect on TIOB"]
     #[inline(always)]
     #[must_use]
-    pub fn bcpb(&mut self) -> BCPB_W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC> {
-        BCPB_W::new(self, 24)
+    pub fn bcpb(&mut self) -> BcpbW<WaveformModeCmr2WaveformModeSpec> {
+        BcpbW::new(self, 24)
     }
     #[doc = "Bits 26:27 - RC Compare Effect on TIOB"]
     #[inline(always)]
     #[must_use]
-    pub fn bcpc(&mut self) -> BCPC_W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC> {
-        BCPC_W::new(self, 26)
+    pub fn bcpc(&mut self) -> BcpcW<WaveformModeCmr2WaveformModeSpec> {
+        BcpcW::new(self, 26)
     }
     #[doc = "Bits 28:29 - External Event Effect on TIOB"]
     #[inline(always)]
     #[must_use]
-    pub fn beevt(&mut self) -> BEEVT_W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC> {
-        BEEVT_W::new(self, 28)
+    pub fn beevt(&mut self) -> BeevtW<WaveformModeCmr2WaveformModeSpec> {
+        BeevtW::new(self, 28)
     }
     #[doc = "Bits 30:31 - Software Trigger Effect on TIOB"]
     #[inline(always)]
     #[must_use]
-    pub fn bswtrg(&mut self) -> BSWTRG_W<WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC> {
-        BSWTRG_W::new(self, 30)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn bswtrg(&mut self) -> BswtrgW<WaveformModeCmr2WaveformModeSpec> {
+        BswtrgW::new(self, 30)
     }
 }
 #[doc = "Channel Mode Register (channel = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`waveform_mode_cmr2_waveform_mode::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`waveform_mode_cmr2_waveform_mode::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC;
-impl crate::RegisterSpec for WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC {
+pub struct WaveformModeCmr2WaveformModeSpec;
+impl crate::RegisterSpec for WaveformModeCmr2WaveformModeSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`waveform_mode_cmr2_waveform_mode::R`](R) reader structure"]
-impl crate::Readable for WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC {}
+impl crate::Readable for WaveformModeCmr2WaveformModeSpec {}
 #[doc = "`write(|w| ..)` method takes [`waveform_mode_cmr2_waveform_mode::W`](W) writer structure"]
-impl crate::Writable for WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC {
+impl crate::Writable for WaveformModeCmr2WaveformModeSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CMR2_WAVEFORM_MODE to value 0"]
-impl crate::Resettable for WAVEFORM_MODE_CMR2_WAVEFORM_MODE_SPEC {
+impl crate::Resettable for WaveformModeCmr2WaveformModeSpec {
     const RESET_VALUE: u32 = 0;
 }

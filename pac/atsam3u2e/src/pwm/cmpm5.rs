@@ -1,124 +1,115 @@
 #[doc = "Register `CMPM5` reader"]
-pub type R = crate::R<CMPM5_SPEC>;
+pub type R = crate::R<Cmpm5Spec>;
 #[doc = "Register `CMPM5` writer"]
-pub type W = crate::W<CMPM5_SPEC>;
+pub type W = crate::W<Cmpm5Spec>;
 #[doc = "Field `CEN` reader - Comparison x Enable"]
-pub type CEN_R = crate::BitReader;
+pub type CenR = crate::BitReader;
 #[doc = "Field `CEN` writer - Comparison x Enable"]
-pub type CEN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type CenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CTR` reader - Comparison x Trigger"]
-pub type CTR_R = crate::FieldReader;
+pub type CtrR = crate::FieldReader;
 #[doc = "Field `CTR` writer - Comparison x Trigger"]
-pub type CTR_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type CtrW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CPR` reader - Comparison x Period"]
-pub type CPR_R = crate::FieldReader;
+pub type CprR = crate::FieldReader;
 #[doc = "Field `CPR` writer - Comparison x Period"]
-pub type CPR_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type CprW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CPRCNT` reader - Comparison x Period Counter"]
-pub type CPRCNT_R = crate::FieldReader;
+pub type CprcntR = crate::FieldReader;
 #[doc = "Field `CPRCNT` writer - Comparison x Period Counter"]
-pub type CPRCNT_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type CprcntW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CUPR` reader - Comparison x Update Period"]
-pub type CUPR_R = crate::FieldReader;
+pub type CuprR = crate::FieldReader;
 #[doc = "Field `CUPR` writer - Comparison x Update Period"]
-pub type CUPR_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type CuprW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CUPRCNT` reader - Comparison x Update Period Counter"]
-pub type CUPRCNT_R = crate::FieldReader;
+pub type CuprcntR = crate::FieldReader;
 #[doc = "Field `CUPRCNT` writer - Comparison x Update Period Counter"]
-pub type CUPRCNT_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type CuprcntW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bit 0 - Comparison x Enable"]
     #[inline(always)]
-    pub fn cen(&self) -> CEN_R {
-        CEN_R::new((self.bits & 1) != 0)
+    pub fn cen(&self) -> CenR {
+        CenR::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 4:7 - Comparison x Trigger"]
     #[inline(always)]
-    pub fn ctr(&self) -> CTR_R {
-        CTR_R::new(((self.bits >> 4) & 0x0f) as u8)
+    pub fn ctr(&self) -> CtrR {
+        CtrR::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 8:11 - Comparison x Period"]
     #[inline(always)]
-    pub fn cpr(&self) -> CPR_R {
-        CPR_R::new(((self.bits >> 8) & 0x0f) as u8)
+    pub fn cpr(&self) -> CprR {
+        CprR::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 12:15 - Comparison x Period Counter"]
     #[inline(always)]
-    pub fn cprcnt(&self) -> CPRCNT_R {
-        CPRCNT_R::new(((self.bits >> 12) & 0x0f) as u8)
+    pub fn cprcnt(&self) -> CprcntR {
+        CprcntR::new(((self.bits >> 12) & 0x0f) as u8)
     }
     #[doc = "Bits 16:19 - Comparison x Update Period"]
     #[inline(always)]
-    pub fn cupr(&self) -> CUPR_R {
-        CUPR_R::new(((self.bits >> 16) & 0x0f) as u8)
+    pub fn cupr(&self) -> CuprR {
+        CuprR::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bits 20:23 - Comparison x Update Period Counter"]
     #[inline(always)]
-    pub fn cuprcnt(&self) -> CUPRCNT_R {
-        CUPRCNT_R::new(((self.bits >> 20) & 0x0f) as u8)
+    pub fn cuprcnt(&self) -> CuprcntR {
+        CuprcntR::new(((self.bits >> 20) & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Comparison x Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cen(&mut self) -> CEN_W<CMPM5_SPEC> {
-        CEN_W::new(self, 0)
+    pub fn cen(&mut self) -> CenW<Cmpm5Spec> {
+        CenW::new(self, 0)
     }
     #[doc = "Bits 4:7 - Comparison x Trigger"]
     #[inline(always)]
     #[must_use]
-    pub fn ctr(&mut self) -> CTR_W<CMPM5_SPEC> {
-        CTR_W::new(self, 4)
+    pub fn ctr(&mut self) -> CtrW<Cmpm5Spec> {
+        CtrW::new(self, 4)
     }
     #[doc = "Bits 8:11 - Comparison x Period"]
     #[inline(always)]
     #[must_use]
-    pub fn cpr(&mut self) -> CPR_W<CMPM5_SPEC> {
-        CPR_W::new(self, 8)
+    pub fn cpr(&mut self) -> CprW<Cmpm5Spec> {
+        CprW::new(self, 8)
     }
     #[doc = "Bits 12:15 - Comparison x Period Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn cprcnt(&mut self) -> CPRCNT_W<CMPM5_SPEC> {
-        CPRCNT_W::new(self, 12)
+    pub fn cprcnt(&mut self) -> CprcntW<Cmpm5Spec> {
+        CprcntW::new(self, 12)
     }
     #[doc = "Bits 16:19 - Comparison x Update Period"]
     #[inline(always)]
     #[must_use]
-    pub fn cupr(&mut self) -> CUPR_W<CMPM5_SPEC> {
-        CUPR_W::new(self, 16)
+    pub fn cupr(&mut self) -> CuprW<Cmpm5Spec> {
+        CuprW::new(self, 16)
     }
     #[doc = "Bits 20:23 - Comparison x Update Period Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn cuprcnt(&mut self) -> CUPRCNT_W<CMPM5_SPEC> {
-        CUPRCNT_W::new(self, 20)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn cuprcnt(&mut self) -> CuprcntW<Cmpm5Spec> {
+        CuprcntW::new(self, 20)
     }
 }
 #[doc = "PWM Comparison 5 Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cmpm5::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmpm5::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CMPM5_SPEC;
-impl crate::RegisterSpec for CMPM5_SPEC {
+pub struct Cmpm5Spec;
+impl crate::RegisterSpec for Cmpm5Spec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`cmpm5::R`](R) reader structure"]
-impl crate::Readable for CMPM5_SPEC {}
+impl crate::Readable for Cmpm5Spec {}
 #[doc = "`write(|w| ..)` method takes [`cmpm5::W`](W) writer structure"]
-impl crate::Writable for CMPM5_SPEC {
+impl crate::Writable for Cmpm5Spec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CMPM5 to value 0"]
-impl crate::Resettable for CMPM5_SPEC {
+impl crate::Resettable for Cmpm5Spec {
     const RESET_VALUE: u32 = 0;
 }

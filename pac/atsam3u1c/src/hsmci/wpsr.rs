@@ -1,11 +1,9 @@
 #[doc = "Register `WPSR` reader"]
-pub type R = crate::R<WPSR_SPEC>;
-#[doc = "Field `WPVS` reader - Write Protection Violation Status"]
-pub type WPVS_R = crate::FieldReader<WPVS_A>;
+pub type R = crate::R<WpsrSpec>;
 #[doc = "Write Protection Violation Status"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum WPVS_A {
+pub enum Wpvs {
     #[doc = "0: No Write Protection Violation occurred since the last read of this register (HSMCI_WPSR)"]
     None = 0,
     #[doc = "1: Write Protection detected unauthorized attempt to write a control register had occurred (since the last read.)"]
@@ -15,66 +13,68 @@ pub enum WPVS_A {
     #[doc = "3: Both Write Protection violation and software reset with Write Protection enabled have occurred since the last read."]
     Both = 3,
 }
-impl From<WPVS_A> for u8 {
+impl From<Wpvs> for u8 {
     #[inline(always)]
-    fn from(variant: WPVS_A) -> Self {
+    fn from(variant: Wpvs) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for WPVS_A {
+impl crate::FieldSpec for Wpvs {
     type Ux = u8;
 }
-impl WPVS_R {
+#[doc = "Field `WPVS` reader - Write Protection Violation Status"]
+pub type WpvsR = crate::FieldReader<Wpvs>;
+impl WpvsR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<WPVS_A> {
+    pub const fn variant(&self) -> Option<Wpvs> {
         match self.bits {
-            0 => Some(WPVS_A::None),
-            1 => Some(WPVS_A::Write),
-            2 => Some(WPVS_A::Reset),
-            3 => Some(WPVS_A::Both),
+            0 => Some(Wpvs::None),
+            1 => Some(Wpvs::Write),
+            2 => Some(Wpvs::Reset),
+            3 => Some(Wpvs::Both),
             _ => None,
         }
     }
     #[doc = "No Write Protection Violation occurred since the last read of this register (HSMCI_WPSR)"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == WPVS_A::None
+        *self == Wpvs::None
     }
     #[doc = "Write Protection detected unauthorized attempt to write a control register had occurred (since the last read.)"]
     #[inline(always)]
     pub fn is_write(&self) -> bool {
-        *self == WPVS_A::Write
+        *self == Wpvs::Write
     }
     #[doc = "Software reset had been performed while Write Protection was enabled (since the last read)."]
     #[inline(always)]
     pub fn is_reset(&self) -> bool {
-        *self == WPVS_A::Reset
+        *self == Wpvs::Reset
     }
     #[doc = "Both Write Protection violation and software reset with Write Protection enabled have occurred since the last read."]
     #[inline(always)]
     pub fn is_both(&self) -> bool {
-        *self == WPVS_A::Both
+        *self == Wpvs::Both
     }
 }
 #[doc = "Field `WPVSRC` reader - Write Protection Violation SouRCe"]
-pub type WPVSRC_R = crate::FieldReader<u16>;
+pub type WpvsrcR = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:3 - Write Protection Violation Status"]
     #[inline(always)]
-    pub fn wpvs(&self) -> WPVS_R {
-        WPVS_R::new((self.bits & 0x0f) as u8)
+    pub fn wpvs(&self) -> WpvsR {
+        WpvsR::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 8:23 - Write Protection Violation SouRCe"]
     #[inline(always)]
-    pub fn wpvsrc(&self) -> WPVSRC_R {
-        WPVSRC_R::new(((self.bits >> 8) & 0xffff) as u16)
+    pub fn wpvsrc(&self) -> WpvsrcR {
+        WpvsrcR::new(((self.bits >> 8) & 0xffff) as u16)
     }
 }
 #[doc = "Write Protection Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wpsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct WPSR_SPEC;
-impl crate::RegisterSpec for WPSR_SPEC {
+pub struct WpsrSpec;
+impl crate::RegisterSpec for WpsrSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`wpsr::R`](R) reader structure"]
-impl crate::Readable for WPSR_SPEC {}
+impl crate::Readable for WpsrSpec {}

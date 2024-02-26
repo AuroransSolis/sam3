@@ -1,33 +1,31 @@
 #[doc = "Register `MR` reader"]
-pub type R = crate::R<MR_SPEC>;
+pub type R = crate::R<MrSpec>;
 #[doc = "Register `MR` writer"]
-pub type W = crate::W<MR_SPEC>;
+pub type W = crate::W<MrSpec>;
 #[doc = "Field `HRMOD` reader - 12-/24-hour Mode"]
-pub type HRMOD_R = crate::BitReader;
+pub type HrmodR = crate::BitReader;
 #[doc = "Field `HRMOD` writer - 12-/24-hour Mode"]
-pub type HRMOD_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type HrmodW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PERSIAN` reader - PERSIAN Calendar"]
-pub type PERSIAN_R = crate::BitReader;
+pub type PersianR = crate::BitReader;
 #[doc = "Field `PERSIAN` writer - PERSIAN Calendar"]
-pub type PERSIAN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type PersianW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NEGPPM` reader - NEGative PPM Correction"]
-pub type NEGPPM_R = crate::BitReader;
+pub type NegppmR = crate::BitReader;
 #[doc = "Field `NEGPPM` writer - NEGative PPM Correction"]
-pub type NEGPPM_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type NegppmW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CORRECTION` reader - Slow Clock Correction"]
-pub type CORRECTION_R = crate::FieldReader;
+pub type CorrectionR = crate::FieldReader;
 #[doc = "Field `CORRECTION` writer - Slow Clock Correction"]
-pub type CORRECTION_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
+pub type CorrectionW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `HIGHPPM` reader - HIGH PPM Correction"]
-pub type HIGHPPM_R = crate::BitReader;
+pub type HighppmR = crate::BitReader;
 #[doc = "Field `HIGHPPM` writer - HIGH PPM Correction"]
-pub type HIGHPPM_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `OUT0` reader - RTCOUT0 Output Source Selection"]
-pub type OUT0_R = crate::FieldReader<OUT0_A>;
+pub type HighppmW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "RTCOUT0 Output Source Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum OUT0_A {
+pub enum Out0 {
     #[doc = "0: no waveform, stuck at '0'"]
     NoWave = 0,
     #[doc = "1: 1 Hz square wave"]
@@ -45,75 +43,77 @@ pub enum OUT0_A {
     #[doc = "7: duty cycle programmable pulse"]
     ProgPulse = 7,
 }
-impl From<OUT0_A> for u8 {
+impl From<Out0> for u8 {
     #[inline(always)]
-    fn from(variant: OUT0_A) -> Self {
+    fn from(variant: Out0) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for OUT0_A {
+impl crate::FieldSpec for Out0 {
     type Ux = u8;
 }
-impl OUT0_R {
+#[doc = "Field `OUT0` reader - RTCOUT0 Output Source Selection"]
+pub type Out0R = crate::FieldReader<Out0>;
+impl Out0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> OUT0_A {
+    pub const fn variant(&self) -> Out0 {
         match self.bits {
-            0 => OUT0_A::NoWave,
-            1 => OUT0_A::Freq1hz,
-            2 => OUT0_A::Freq32hz,
-            3 => OUT0_A::Freq64hz,
-            4 => OUT0_A::Freq512hz,
-            5 => OUT0_A::AlarmToggle,
-            6 => OUT0_A::AlarmFlag,
-            7 => OUT0_A::ProgPulse,
+            0 => Out0::NoWave,
+            1 => Out0::Freq1hz,
+            2 => Out0::Freq32hz,
+            3 => Out0::Freq64hz,
+            4 => Out0::Freq512hz,
+            5 => Out0::AlarmToggle,
+            6 => Out0::AlarmFlag,
+            7 => Out0::ProgPulse,
             _ => unreachable!(),
         }
     }
     #[doc = "no waveform, stuck at '0'"]
     #[inline(always)]
     pub fn is_no_wave(&self) -> bool {
-        *self == OUT0_A::NoWave
+        *self == Out0::NoWave
     }
     #[doc = "1 Hz square wave"]
     #[inline(always)]
     pub fn is_freq1hz(&self) -> bool {
-        *self == OUT0_A::Freq1hz
+        *self == Out0::Freq1hz
     }
     #[doc = "32 Hz square wave"]
     #[inline(always)]
     pub fn is_freq32hz(&self) -> bool {
-        *self == OUT0_A::Freq32hz
+        *self == Out0::Freq32hz
     }
     #[doc = "64 Hz square wave"]
     #[inline(always)]
     pub fn is_freq64hz(&self) -> bool {
-        *self == OUT0_A::Freq64hz
+        *self == Out0::Freq64hz
     }
     #[doc = "512 Hz square wave"]
     #[inline(always)]
     pub fn is_freq512hz(&self) -> bool {
-        *self == OUT0_A::Freq512hz
+        *self == Out0::Freq512hz
     }
     #[doc = "output toggles when alarm flag rises"]
     #[inline(always)]
     pub fn is_alarm_toggle(&self) -> bool {
-        *self == OUT0_A::AlarmToggle
+        *self == Out0::AlarmToggle
     }
     #[doc = "output is a copy of the alarm flag"]
     #[inline(always)]
     pub fn is_alarm_flag(&self) -> bool {
-        *self == OUT0_A::AlarmFlag
+        *self == Out0::AlarmFlag
     }
     #[doc = "duty cycle programmable pulse"]
     #[inline(always)]
     pub fn is_prog_pulse(&self) -> bool {
-        *self == OUT0_A::ProgPulse
+        *self == Out0::ProgPulse
     }
 }
 #[doc = "Field `OUT0` writer - RTCOUT0 Output Source Selection"]
-pub type OUT0_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, OUT0_A>;
-impl<'a, REG> OUT0_W<'a, REG>
+pub type Out0W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Out0>;
+impl<'a, REG> Out0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -121,50 +121,48 @@ where
     #[doc = "no waveform, stuck at '0'"]
     #[inline(always)]
     pub fn no_wave(self) -> &'a mut crate::W<REG> {
-        self.variant(OUT0_A::NoWave)
+        self.variant(Out0::NoWave)
     }
     #[doc = "1 Hz square wave"]
     #[inline(always)]
     pub fn freq1hz(self) -> &'a mut crate::W<REG> {
-        self.variant(OUT0_A::Freq1hz)
+        self.variant(Out0::Freq1hz)
     }
     #[doc = "32 Hz square wave"]
     #[inline(always)]
     pub fn freq32hz(self) -> &'a mut crate::W<REG> {
-        self.variant(OUT0_A::Freq32hz)
+        self.variant(Out0::Freq32hz)
     }
     #[doc = "64 Hz square wave"]
     #[inline(always)]
     pub fn freq64hz(self) -> &'a mut crate::W<REG> {
-        self.variant(OUT0_A::Freq64hz)
+        self.variant(Out0::Freq64hz)
     }
     #[doc = "512 Hz square wave"]
     #[inline(always)]
     pub fn freq512hz(self) -> &'a mut crate::W<REG> {
-        self.variant(OUT0_A::Freq512hz)
+        self.variant(Out0::Freq512hz)
     }
     #[doc = "output toggles when alarm flag rises"]
     #[inline(always)]
     pub fn alarm_toggle(self) -> &'a mut crate::W<REG> {
-        self.variant(OUT0_A::AlarmToggle)
+        self.variant(Out0::AlarmToggle)
     }
     #[doc = "output is a copy of the alarm flag"]
     #[inline(always)]
     pub fn alarm_flag(self) -> &'a mut crate::W<REG> {
-        self.variant(OUT0_A::AlarmFlag)
+        self.variant(Out0::AlarmFlag)
     }
     #[doc = "duty cycle programmable pulse"]
     #[inline(always)]
     pub fn prog_pulse(self) -> &'a mut crate::W<REG> {
-        self.variant(OUT0_A::ProgPulse)
+        self.variant(Out0::ProgPulse)
     }
 }
-#[doc = "Field `OUT1` reader - RTCOUT1 Output Source Selection"]
-pub type OUT1_R = crate::FieldReader<OUT1_A>;
 #[doc = "RTCOUT1 Output Source Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum OUT1_A {
+pub enum Out1 {
     #[doc = "0: no waveform, stuck at '0'"]
     NoWave = 0,
     #[doc = "1: 1 Hz square wave"]
@@ -182,75 +180,77 @@ pub enum OUT1_A {
     #[doc = "7: duty cycle programmable pulse"]
     ProgPulse = 7,
 }
-impl From<OUT1_A> for u8 {
+impl From<Out1> for u8 {
     #[inline(always)]
-    fn from(variant: OUT1_A) -> Self {
+    fn from(variant: Out1) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for OUT1_A {
+impl crate::FieldSpec for Out1 {
     type Ux = u8;
 }
-impl OUT1_R {
+#[doc = "Field `OUT1` reader - RTCOUT1 Output Source Selection"]
+pub type Out1R = crate::FieldReader<Out1>;
+impl Out1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> OUT1_A {
+    pub const fn variant(&self) -> Out1 {
         match self.bits {
-            0 => OUT1_A::NoWave,
-            1 => OUT1_A::Freq1hz,
-            2 => OUT1_A::Freq32hz,
-            3 => OUT1_A::Freq64hz,
-            4 => OUT1_A::Freq512hz,
-            5 => OUT1_A::AlarmToggle,
-            6 => OUT1_A::AlarmFlag,
-            7 => OUT1_A::ProgPulse,
+            0 => Out1::NoWave,
+            1 => Out1::Freq1hz,
+            2 => Out1::Freq32hz,
+            3 => Out1::Freq64hz,
+            4 => Out1::Freq512hz,
+            5 => Out1::AlarmToggle,
+            6 => Out1::AlarmFlag,
+            7 => Out1::ProgPulse,
             _ => unreachable!(),
         }
     }
     #[doc = "no waveform, stuck at '0'"]
     #[inline(always)]
     pub fn is_no_wave(&self) -> bool {
-        *self == OUT1_A::NoWave
+        *self == Out1::NoWave
     }
     #[doc = "1 Hz square wave"]
     #[inline(always)]
     pub fn is_freq1hz(&self) -> bool {
-        *self == OUT1_A::Freq1hz
+        *self == Out1::Freq1hz
     }
     #[doc = "32 Hz square wave"]
     #[inline(always)]
     pub fn is_freq32hz(&self) -> bool {
-        *self == OUT1_A::Freq32hz
+        *self == Out1::Freq32hz
     }
     #[doc = "64 Hz square wave"]
     #[inline(always)]
     pub fn is_freq64hz(&self) -> bool {
-        *self == OUT1_A::Freq64hz
+        *self == Out1::Freq64hz
     }
     #[doc = "512 Hz square wave"]
     #[inline(always)]
     pub fn is_freq512hz(&self) -> bool {
-        *self == OUT1_A::Freq512hz
+        *self == Out1::Freq512hz
     }
     #[doc = "output toggles when alarm flag rises"]
     #[inline(always)]
     pub fn is_alarm_toggle(&self) -> bool {
-        *self == OUT1_A::AlarmToggle
+        *self == Out1::AlarmToggle
     }
     #[doc = "output is a copy of the alarm flag"]
     #[inline(always)]
     pub fn is_alarm_flag(&self) -> bool {
-        *self == OUT1_A::AlarmFlag
+        *self == Out1::AlarmFlag
     }
     #[doc = "duty cycle programmable pulse"]
     #[inline(always)]
     pub fn is_prog_pulse(&self) -> bool {
-        *self == OUT1_A::ProgPulse
+        *self == Out1::ProgPulse
     }
 }
 #[doc = "Field `OUT1` writer - RTCOUT1 Output Source Selection"]
-pub type OUT1_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, OUT1_A>;
-impl<'a, REG> OUT1_W<'a, REG>
+pub type Out1W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Out1>;
+impl<'a, REG> Out1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -258,50 +258,48 @@ where
     #[doc = "no waveform, stuck at '0'"]
     #[inline(always)]
     pub fn no_wave(self) -> &'a mut crate::W<REG> {
-        self.variant(OUT1_A::NoWave)
+        self.variant(Out1::NoWave)
     }
     #[doc = "1 Hz square wave"]
     #[inline(always)]
     pub fn freq1hz(self) -> &'a mut crate::W<REG> {
-        self.variant(OUT1_A::Freq1hz)
+        self.variant(Out1::Freq1hz)
     }
     #[doc = "32 Hz square wave"]
     #[inline(always)]
     pub fn freq32hz(self) -> &'a mut crate::W<REG> {
-        self.variant(OUT1_A::Freq32hz)
+        self.variant(Out1::Freq32hz)
     }
     #[doc = "64 Hz square wave"]
     #[inline(always)]
     pub fn freq64hz(self) -> &'a mut crate::W<REG> {
-        self.variant(OUT1_A::Freq64hz)
+        self.variant(Out1::Freq64hz)
     }
     #[doc = "512 Hz square wave"]
     #[inline(always)]
     pub fn freq512hz(self) -> &'a mut crate::W<REG> {
-        self.variant(OUT1_A::Freq512hz)
+        self.variant(Out1::Freq512hz)
     }
     #[doc = "output toggles when alarm flag rises"]
     #[inline(always)]
     pub fn alarm_toggle(self) -> &'a mut crate::W<REG> {
-        self.variant(OUT1_A::AlarmToggle)
+        self.variant(Out1::AlarmToggle)
     }
     #[doc = "output is a copy of the alarm flag"]
     #[inline(always)]
     pub fn alarm_flag(self) -> &'a mut crate::W<REG> {
-        self.variant(OUT1_A::AlarmFlag)
+        self.variant(Out1::AlarmFlag)
     }
     #[doc = "duty cycle programmable pulse"]
     #[inline(always)]
     pub fn prog_pulse(self) -> &'a mut crate::W<REG> {
-        self.variant(OUT1_A::ProgPulse)
+        self.variant(Out1::ProgPulse)
     }
 }
-#[doc = "Field `THIGH` reader - High Duration of the Output Pulse"]
-pub type THIGH_R = crate::FieldReader<THIGH_A>;
 #[doc = "High Duration of the Output Pulse\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum THIGH_A {
+pub enum Thigh {
     #[doc = "0: 31.2 ms"]
     H31ms = 0,
     #[doc = "1: 15.6 ms"]
@@ -319,75 +317,77 @@ pub enum THIGH_A {
     #[doc = "7: 15.2 us"]
     H15us = 7,
 }
-impl From<THIGH_A> for u8 {
+impl From<Thigh> for u8 {
     #[inline(always)]
-    fn from(variant: THIGH_A) -> Self {
+    fn from(variant: Thigh) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for THIGH_A {
+impl crate::FieldSpec for Thigh {
     type Ux = u8;
 }
-impl THIGH_R {
+#[doc = "Field `THIGH` reader - High Duration of the Output Pulse"]
+pub type ThighR = crate::FieldReader<Thigh>;
+impl ThighR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> THIGH_A {
+    pub const fn variant(&self) -> Thigh {
         match self.bits {
-            0 => THIGH_A::H31ms,
-            1 => THIGH_A::H16ms,
-            2 => THIGH_A::H4ms,
-            3 => THIGH_A::H976us,
-            4 => THIGH_A::H488us,
-            5 => THIGH_A::H122us,
-            6 => THIGH_A::H30us,
-            7 => THIGH_A::H15us,
+            0 => Thigh::H31ms,
+            1 => Thigh::H16ms,
+            2 => Thigh::H4ms,
+            3 => Thigh::H976us,
+            4 => Thigh::H488us,
+            5 => Thigh::H122us,
+            6 => Thigh::H30us,
+            7 => Thigh::H15us,
             _ => unreachable!(),
         }
     }
     #[doc = "31.2 ms"]
     #[inline(always)]
     pub fn is_h_31ms(&self) -> bool {
-        *self == THIGH_A::H31ms
+        *self == Thigh::H31ms
     }
     #[doc = "15.6 ms"]
     #[inline(always)]
     pub fn is_h_16ms(&self) -> bool {
-        *self == THIGH_A::H16ms
+        *self == Thigh::H16ms
     }
     #[doc = "3.91 ms"]
     #[inline(always)]
     pub fn is_h_4ms(&self) -> bool {
-        *self == THIGH_A::H4ms
+        *self == Thigh::H4ms
     }
     #[doc = "976 us"]
     #[inline(always)]
     pub fn is_h_976us(&self) -> bool {
-        *self == THIGH_A::H976us
+        *self == Thigh::H976us
     }
     #[doc = "488 us"]
     #[inline(always)]
     pub fn is_h_488us(&self) -> bool {
-        *self == THIGH_A::H488us
+        *self == Thigh::H488us
     }
     #[doc = "122 us"]
     #[inline(always)]
     pub fn is_h_122us(&self) -> bool {
-        *self == THIGH_A::H122us
+        *self == Thigh::H122us
     }
     #[doc = "30.5 us"]
     #[inline(always)]
     pub fn is_h_30us(&self) -> bool {
-        *self == THIGH_A::H30us
+        *self == Thigh::H30us
     }
     #[doc = "15.2 us"]
     #[inline(always)]
     pub fn is_h_15us(&self) -> bool {
-        *self == THIGH_A::H15us
+        *self == Thigh::H15us
     }
 }
 #[doc = "Field `THIGH` writer - High Duration of the Output Pulse"]
-pub type THIGH_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, THIGH_A>;
-impl<'a, REG> THIGH_W<'a, REG>
+pub type ThighW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Thigh>;
+impl<'a, REG> ThighW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -395,50 +395,48 @@ where
     #[doc = "31.2 ms"]
     #[inline(always)]
     pub fn h_31ms(self) -> &'a mut crate::W<REG> {
-        self.variant(THIGH_A::H31ms)
+        self.variant(Thigh::H31ms)
     }
     #[doc = "15.6 ms"]
     #[inline(always)]
     pub fn h_16ms(self) -> &'a mut crate::W<REG> {
-        self.variant(THIGH_A::H16ms)
+        self.variant(Thigh::H16ms)
     }
     #[doc = "3.91 ms"]
     #[inline(always)]
     pub fn h_4ms(self) -> &'a mut crate::W<REG> {
-        self.variant(THIGH_A::H4ms)
+        self.variant(Thigh::H4ms)
     }
     #[doc = "976 us"]
     #[inline(always)]
     pub fn h_976us(self) -> &'a mut crate::W<REG> {
-        self.variant(THIGH_A::H976us)
+        self.variant(Thigh::H976us)
     }
     #[doc = "488 us"]
     #[inline(always)]
     pub fn h_488us(self) -> &'a mut crate::W<REG> {
-        self.variant(THIGH_A::H488us)
+        self.variant(Thigh::H488us)
     }
     #[doc = "122 us"]
     #[inline(always)]
     pub fn h_122us(self) -> &'a mut crate::W<REG> {
-        self.variant(THIGH_A::H122us)
+        self.variant(Thigh::H122us)
     }
     #[doc = "30.5 us"]
     #[inline(always)]
     pub fn h_30us(self) -> &'a mut crate::W<REG> {
-        self.variant(THIGH_A::H30us)
+        self.variant(Thigh::H30us)
     }
     #[doc = "15.2 us"]
     #[inline(always)]
     pub fn h_15us(self) -> &'a mut crate::W<REG> {
-        self.variant(THIGH_A::H15us)
+        self.variant(Thigh::H15us)
     }
 }
-#[doc = "Field `TPERIOD` reader - Period of the Output Pulse"]
-pub type TPERIOD_R = crate::FieldReader<TPERIOD_A>;
 #[doc = "Period of the Output Pulse\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum TPERIOD_A {
+pub enum Tperiod {
     #[doc = "0: 1 second"]
     P1s = 0,
     #[doc = "1: 500 ms"]
@@ -448,51 +446,53 @@ pub enum TPERIOD_A {
     #[doc = "3: 125 ms"]
     P125ms = 3,
 }
-impl From<TPERIOD_A> for u8 {
+impl From<Tperiod> for u8 {
     #[inline(always)]
-    fn from(variant: TPERIOD_A) -> Self {
+    fn from(variant: Tperiod) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for TPERIOD_A {
+impl crate::FieldSpec for Tperiod {
     type Ux = u8;
 }
-impl TPERIOD_R {
+#[doc = "Field `TPERIOD` reader - Period of the Output Pulse"]
+pub type TperiodR = crate::FieldReader<Tperiod>;
+impl TperiodR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> TPERIOD_A {
+    pub const fn variant(&self) -> Tperiod {
         match self.bits {
-            0 => TPERIOD_A::P1s,
-            1 => TPERIOD_A::P500ms,
-            2 => TPERIOD_A::P250ms,
-            3 => TPERIOD_A::P125ms,
+            0 => Tperiod::P1s,
+            1 => Tperiod::P500ms,
+            2 => Tperiod::P250ms,
+            3 => Tperiod::P125ms,
             _ => unreachable!(),
         }
     }
     #[doc = "1 second"]
     #[inline(always)]
     pub fn is_p_1s(&self) -> bool {
-        *self == TPERIOD_A::P1s
+        *self == Tperiod::P1s
     }
     #[doc = "500 ms"]
     #[inline(always)]
     pub fn is_p_500ms(&self) -> bool {
-        *self == TPERIOD_A::P500ms
+        *self == Tperiod::P500ms
     }
     #[doc = "250 ms"]
     #[inline(always)]
     pub fn is_p_250ms(&self) -> bool {
-        *self == TPERIOD_A::P250ms
+        *self == Tperiod::P250ms
     }
     #[doc = "125 ms"]
     #[inline(always)]
     pub fn is_p_125ms(&self) -> bool {
-        *self == TPERIOD_A::P125ms
+        *self == Tperiod::P125ms
     }
 }
 #[doc = "Field `TPERIOD` writer - Period of the Output Pulse"]
-pub type TPERIOD_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, TPERIOD_A>;
-impl<'a, REG> TPERIOD_W<'a, REG>
+pub type TperiodW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Tperiod>;
+impl<'a, REG> TperiodW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -500,150 +500,141 @@ where
     #[doc = "1 second"]
     #[inline(always)]
     pub fn p_1s(self) -> &'a mut crate::W<REG> {
-        self.variant(TPERIOD_A::P1s)
+        self.variant(Tperiod::P1s)
     }
     #[doc = "500 ms"]
     #[inline(always)]
     pub fn p_500ms(self) -> &'a mut crate::W<REG> {
-        self.variant(TPERIOD_A::P500ms)
+        self.variant(Tperiod::P500ms)
     }
     #[doc = "250 ms"]
     #[inline(always)]
     pub fn p_250ms(self) -> &'a mut crate::W<REG> {
-        self.variant(TPERIOD_A::P250ms)
+        self.variant(Tperiod::P250ms)
     }
     #[doc = "125 ms"]
     #[inline(always)]
     pub fn p_125ms(self) -> &'a mut crate::W<REG> {
-        self.variant(TPERIOD_A::P125ms)
+        self.variant(Tperiod::P125ms)
     }
 }
 impl R {
     #[doc = "Bit 0 - 12-/24-hour Mode"]
     #[inline(always)]
-    pub fn hrmod(&self) -> HRMOD_R {
-        HRMOD_R::new((self.bits & 1) != 0)
+    pub fn hrmod(&self) -> HrmodR {
+        HrmodR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - PERSIAN Calendar"]
     #[inline(always)]
-    pub fn persian(&self) -> PERSIAN_R {
-        PERSIAN_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn persian(&self) -> PersianR {
+        PersianR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 4 - NEGative PPM Correction"]
     #[inline(always)]
-    pub fn negppm(&self) -> NEGPPM_R {
-        NEGPPM_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn negppm(&self) -> NegppmR {
+        NegppmR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 8:14 - Slow Clock Correction"]
     #[inline(always)]
-    pub fn correction(&self) -> CORRECTION_R {
-        CORRECTION_R::new(((self.bits >> 8) & 0x7f) as u8)
+    pub fn correction(&self) -> CorrectionR {
+        CorrectionR::new(((self.bits >> 8) & 0x7f) as u8)
     }
     #[doc = "Bit 15 - HIGH PPM Correction"]
     #[inline(always)]
-    pub fn highppm(&self) -> HIGHPPM_R {
-        HIGHPPM_R::new(((self.bits >> 15) & 1) != 0)
+    pub fn highppm(&self) -> HighppmR {
+        HighppmR::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:18 - RTCOUT0 Output Source Selection"]
     #[inline(always)]
-    pub fn out0(&self) -> OUT0_R {
-        OUT0_R::new(((self.bits >> 16) & 7) as u8)
+    pub fn out0(&self) -> Out0R {
+        Out0R::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bits 20:22 - RTCOUT1 Output Source Selection"]
     #[inline(always)]
-    pub fn out1(&self) -> OUT1_R {
-        OUT1_R::new(((self.bits >> 20) & 7) as u8)
+    pub fn out1(&self) -> Out1R {
+        Out1R::new(((self.bits >> 20) & 7) as u8)
     }
     #[doc = "Bits 24:26 - High Duration of the Output Pulse"]
     #[inline(always)]
-    pub fn thigh(&self) -> THIGH_R {
-        THIGH_R::new(((self.bits >> 24) & 7) as u8)
+    pub fn thigh(&self) -> ThighR {
+        ThighR::new(((self.bits >> 24) & 7) as u8)
     }
     #[doc = "Bits 28:29 - Period of the Output Pulse"]
     #[inline(always)]
-    pub fn tperiod(&self) -> TPERIOD_R {
-        TPERIOD_R::new(((self.bits >> 28) & 3) as u8)
+    pub fn tperiod(&self) -> TperiodR {
+        TperiodR::new(((self.bits >> 28) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - 12-/24-hour Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn hrmod(&mut self) -> HRMOD_W<MR_SPEC> {
-        HRMOD_W::new(self, 0)
+    pub fn hrmod(&mut self) -> HrmodW<MrSpec> {
+        HrmodW::new(self, 0)
     }
     #[doc = "Bit 1 - PERSIAN Calendar"]
     #[inline(always)]
     #[must_use]
-    pub fn persian(&mut self) -> PERSIAN_W<MR_SPEC> {
-        PERSIAN_W::new(self, 1)
+    pub fn persian(&mut self) -> PersianW<MrSpec> {
+        PersianW::new(self, 1)
     }
     #[doc = "Bit 4 - NEGative PPM Correction"]
     #[inline(always)]
     #[must_use]
-    pub fn negppm(&mut self) -> NEGPPM_W<MR_SPEC> {
-        NEGPPM_W::new(self, 4)
+    pub fn negppm(&mut self) -> NegppmW<MrSpec> {
+        NegppmW::new(self, 4)
     }
     #[doc = "Bits 8:14 - Slow Clock Correction"]
     #[inline(always)]
     #[must_use]
-    pub fn correction(&mut self) -> CORRECTION_W<MR_SPEC> {
-        CORRECTION_W::new(self, 8)
+    pub fn correction(&mut self) -> CorrectionW<MrSpec> {
+        CorrectionW::new(self, 8)
     }
     #[doc = "Bit 15 - HIGH PPM Correction"]
     #[inline(always)]
     #[must_use]
-    pub fn highppm(&mut self) -> HIGHPPM_W<MR_SPEC> {
-        HIGHPPM_W::new(self, 15)
+    pub fn highppm(&mut self) -> HighppmW<MrSpec> {
+        HighppmW::new(self, 15)
     }
     #[doc = "Bits 16:18 - RTCOUT0 Output Source Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn out0(&mut self) -> OUT0_W<MR_SPEC> {
-        OUT0_W::new(self, 16)
+    pub fn out0(&mut self) -> Out0W<MrSpec> {
+        Out0W::new(self, 16)
     }
     #[doc = "Bits 20:22 - RTCOUT1 Output Source Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn out1(&mut self) -> OUT1_W<MR_SPEC> {
-        OUT1_W::new(self, 20)
+    pub fn out1(&mut self) -> Out1W<MrSpec> {
+        Out1W::new(self, 20)
     }
     #[doc = "Bits 24:26 - High Duration of the Output Pulse"]
     #[inline(always)]
     #[must_use]
-    pub fn thigh(&mut self) -> THIGH_W<MR_SPEC> {
-        THIGH_W::new(self, 24)
+    pub fn thigh(&mut self) -> ThighW<MrSpec> {
+        ThighW::new(self, 24)
     }
     #[doc = "Bits 28:29 - Period of the Output Pulse"]
     #[inline(always)]
     #[must_use]
-    pub fn tperiod(&mut self) -> TPERIOD_W<MR_SPEC> {
-        TPERIOD_W::new(self, 28)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn tperiod(&mut self) -> TperiodW<MrSpec> {
+        TperiodW::new(self, 28)
     }
 }
 #[doc = "Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct MR_SPEC;
-impl crate::RegisterSpec for MR_SPEC {
+pub struct MrSpec;
+impl crate::RegisterSpec for MrSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`mr::R`](R) reader structure"]
-impl crate::Readable for MR_SPEC {}
+impl crate::Readable for MrSpec {}
 #[doc = "`write(|w| ..)` method takes [`mr::W`](W) writer structure"]
-impl crate::Writable for MR_SPEC {
+impl crate::Writable for MrSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MR to value 0"]
-impl crate::Resettable for MR_SPEC {
+impl crate::Resettable for MrSpec {
     const RESET_VALUE: u32 = 0;
 }

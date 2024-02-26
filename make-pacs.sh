@@ -42,7 +42,6 @@ function build_pac() {
             --target cortex-m \
             --strict \
             --generic-mod \
-            --pascal_enum_values \
             --output-dir "${pac_dir}"
     form -i "${pac_dir}/lib.rs" -o "${pac_dir}/src/"
     mv "${pac_dir}/generic.rs" "${pac_dir}/src/"

@@ -1,128 +1,119 @@
 #[doc = "Register `DEVEPTIDR7` writer"]
-pub type W = crate::W<DEVEPTIDR7_SPEC>;
+pub type W = crate::W<Deveptidr7Spec>;
 #[doc = "Field `TXINEC` writer - Transmitted IN Interrupt Clear"]
-pub type TXINEC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type TxinecW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXOUTEC` writer - Received OUT Data Interrupt Clear"]
-pub type RXOUTEC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type RxoutecW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXSTPEC` writer - Received SETUP Interrupt Clear"]
-pub type RXSTPEC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type RxstpecW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NAKOUTEC` writer - NAKed OUT Interrupt Clear"]
-pub type NAKOUTEC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type NakoutecW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NAKINEC` writer - NAKed IN Interrupt Clear"]
-pub type NAKINEC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type NakinecW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OVERFEC` writer - Overflow Interrupt Clear"]
-pub type OVERFEC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type OverfecW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `STALLEDEC` writer - STALLed Interrupt Clear"]
-pub type STALLEDEC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type StalledecW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SHORTPACKETEC` writer - Shortpacket Interrupt Clear"]
-pub type SHORTPACKETEC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type ShortpacketecW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NBUSYBKEC` writer - Number of Busy Banks Interrupt Clear"]
-pub type NBUSYBKEC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type NbusybkecW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FIFOCONC` writer - FIFO Control Clear"]
-pub type FIFOCONC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type FifoconcW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPDISHDMAC` writer - Endpoint Interrupts Disable HDMA Request Clear"]
-pub type EPDISHDMAC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type EpdishdmacW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NYETDISC` writer - NYET Token Disable Clear"]
-pub type NYETDISC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type NyetdiscW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `STALLRQC` writer - STALL Request Clear"]
-pub type STALLRQC_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type StallrqcW<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Transmitted IN Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn txinec(&mut self) -> TXINEC_W<DEVEPTIDR7_SPEC> {
-        TXINEC_W::new(self, 0)
+    pub fn txinec(&mut self) -> TxinecW<Deveptidr7Spec> {
+        TxinecW::new(self, 0)
     }
     #[doc = "Bit 1 - Received OUT Data Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn rxoutec(&mut self) -> RXOUTEC_W<DEVEPTIDR7_SPEC> {
-        RXOUTEC_W::new(self, 1)
+    pub fn rxoutec(&mut self) -> RxoutecW<Deveptidr7Spec> {
+        RxoutecW::new(self, 1)
     }
     #[doc = "Bit 2 - Received SETUP Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn rxstpec(&mut self) -> RXSTPEC_W<DEVEPTIDR7_SPEC> {
-        RXSTPEC_W::new(self, 2)
+    pub fn rxstpec(&mut self) -> RxstpecW<Deveptidr7Spec> {
+        RxstpecW::new(self, 2)
     }
     #[doc = "Bit 3 - NAKed OUT Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn nakoutec(&mut self) -> NAKOUTEC_W<DEVEPTIDR7_SPEC> {
-        NAKOUTEC_W::new(self, 3)
+    pub fn nakoutec(&mut self) -> NakoutecW<Deveptidr7Spec> {
+        NakoutecW::new(self, 3)
     }
     #[doc = "Bit 4 - NAKed IN Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn nakinec(&mut self) -> NAKINEC_W<DEVEPTIDR7_SPEC> {
-        NAKINEC_W::new(self, 4)
+    pub fn nakinec(&mut self) -> NakinecW<Deveptidr7Spec> {
+        NakinecW::new(self, 4)
     }
     #[doc = "Bit 5 - Overflow Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn overfec(&mut self) -> OVERFEC_W<DEVEPTIDR7_SPEC> {
-        OVERFEC_W::new(self, 5)
+    pub fn overfec(&mut self) -> OverfecW<Deveptidr7Spec> {
+        OverfecW::new(self, 5)
     }
     #[doc = "Bit 6 - STALLed Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn stalledec(&mut self) -> STALLEDEC_W<DEVEPTIDR7_SPEC> {
-        STALLEDEC_W::new(self, 6)
+    pub fn stalledec(&mut self) -> StalledecW<Deveptidr7Spec> {
+        StalledecW::new(self, 6)
     }
     #[doc = "Bit 7 - Shortpacket Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn shortpacketec(&mut self) -> SHORTPACKETEC_W<DEVEPTIDR7_SPEC> {
-        SHORTPACKETEC_W::new(self, 7)
+    pub fn shortpacketec(&mut self) -> ShortpacketecW<Deveptidr7Spec> {
+        ShortpacketecW::new(self, 7)
     }
     #[doc = "Bit 12 - Number of Busy Banks Interrupt Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn nbusybkec(&mut self) -> NBUSYBKEC_W<DEVEPTIDR7_SPEC> {
-        NBUSYBKEC_W::new(self, 12)
+    pub fn nbusybkec(&mut self) -> NbusybkecW<Deveptidr7Spec> {
+        NbusybkecW::new(self, 12)
     }
     #[doc = "Bit 14 - FIFO Control Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn fifoconc(&mut self) -> FIFOCONC_W<DEVEPTIDR7_SPEC> {
-        FIFOCONC_W::new(self, 14)
+    pub fn fifoconc(&mut self) -> FifoconcW<Deveptidr7Spec> {
+        FifoconcW::new(self, 14)
     }
     #[doc = "Bit 16 - Endpoint Interrupts Disable HDMA Request Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn epdishdmac(&mut self) -> EPDISHDMAC_W<DEVEPTIDR7_SPEC> {
-        EPDISHDMAC_W::new(self, 16)
+    pub fn epdishdmac(&mut self) -> EpdishdmacW<Deveptidr7Spec> {
+        EpdishdmacW::new(self, 16)
     }
     #[doc = "Bit 17 - NYET Token Disable Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn nyetdisc(&mut self) -> NYETDISC_W<DEVEPTIDR7_SPEC> {
-        NYETDISC_W::new(self, 17)
+    pub fn nyetdisc(&mut self) -> NyetdiscW<Deveptidr7Spec> {
+        NyetdiscW::new(self, 17)
     }
     #[doc = "Bit 19 - STALL Request Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn stallrqc(&mut self) -> STALLRQC_W<DEVEPTIDR7_SPEC> {
-        STALLRQC_W::new(self, 19)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn stallrqc(&mut self) -> StallrqcW<Deveptidr7Spec> {
+        StallrqcW::new(self, 19)
     }
 }
 #[doc = "Device Endpoint Disable Register (n = 0) 7\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`deveptidr7::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DEVEPTIDR7_SPEC;
-impl crate::RegisterSpec for DEVEPTIDR7_SPEC {
+pub struct Deveptidr7Spec;
+impl crate::RegisterSpec for Deveptidr7Spec {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`deveptidr7::W`](W) writer structure"]
-impl crate::Writable for DEVEPTIDR7_SPEC {
+impl crate::Writable for Deveptidr7Spec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

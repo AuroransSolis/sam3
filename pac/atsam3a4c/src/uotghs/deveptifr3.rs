@@ -1,96 +1,87 @@
 #[doc = "Register `DEVEPTIFR3` writer"]
-pub type W = crate::W<DEVEPTIFR3_SPEC>;
+pub type W = crate::W<Deveptifr3Spec>;
 #[doc = "Field `TXINIS` writer - Transmitted IN Data Interrupt Set"]
-pub type TXINIS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type TxinisW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXOUTIS` writer - Received OUT Data Interrupt Set"]
-pub type RXOUTIS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type RxoutisW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXSTPIS` writer - Received SETUP Interrupt Set"]
-pub type RXSTPIS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type RxstpisW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NAKOUTIS` writer - NAKed OUT Interrupt Set"]
-pub type NAKOUTIS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type NakoutisW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NAKINIS` writer - NAKed IN Interrupt Set"]
-pub type NAKINIS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type NakinisW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OVERFIS` writer - Overflow Interrupt Set"]
-pub type OVERFIS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type OverfisW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `STALLEDIS` writer - STALLed Interrupt Set"]
-pub type STALLEDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type StalledisW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SHORTPACKETS` writer - Short Packet Interrupt Set"]
-pub type SHORTPACKETS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type ShortpacketsW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NBUSYBKS` writer - Number of Busy Banks Interrupt Set"]
-pub type NBUSYBKS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type NbusybksW<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Transmitted IN Data Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn txinis(&mut self) -> TXINIS_W<DEVEPTIFR3_SPEC> {
-        TXINIS_W::new(self, 0)
+    pub fn txinis(&mut self) -> TxinisW<Deveptifr3Spec> {
+        TxinisW::new(self, 0)
     }
     #[doc = "Bit 1 - Received OUT Data Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn rxoutis(&mut self) -> RXOUTIS_W<DEVEPTIFR3_SPEC> {
-        RXOUTIS_W::new(self, 1)
+    pub fn rxoutis(&mut self) -> RxoutisW<Deveptifr3Spec> {
+        RxoutisW::new(self, 1)
     }
     #[doc = "Bit 2 - Received SETUP Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn rxstpis(&mut self) -> RXSTPIS_W<DEVEPTIFR3_SPEC> {
-        RXSTPIS_W::new(self, 2)
+    pub fn rxstpis(&mut self) -> RxstpisW<Deveptifr3Spec> {
+        RxstpisW::new(self, 2)
     }
     #[doc = "Bit 3 - NAKed OUT Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn nakoutis(&mut self) -> NAKOUTIS_W<DEVEPTIFR3_SPEC> {
-        NAKOUTIS_W::new(self, 3)
+    pub fn nakoutis(&mut self) -> NakoutisW<Deveptifr3Spec> {
+        NakoutisW::new(self, 3)
     }
     #[doc = "Bit 4 - NAKed IN Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn nakinis(&mut self) -> NAKINIS_W<DEVEPTIFR3_SPEC> {
-        NAKINIS_W::new(self, 4)
+    pub fn nakinis(&mut self) -> NakinisW<Deveptifr3Spec> {
+        NakinisW::new(self, 4)
     }
     #[doc = "Bit 5 - Overflow Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn overfis(&mut self) -> OVERFIS_W<DEVEPTIFR3_SPEC> {
-        OVERFIS_W::new(self, 5)
+    pub fn overfis(&mut self) -> OverfisW<Deveptifr3Spec> {
+        OverfisW::new(self, 5)
     }
     #[doc = "Bit 6 - STALLed Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn stalledis(&mut self) -> STALLEDIS_W<DEVEPTIFR3_SPEC> {
-        STALLEDIS_W::new(self, 6)
+    pub fn stalledis(&mut self) -> StalledisW<Deveptifr3Spec> {
+        StalledisW::new(self, 6)
     }
     #[doc = "Bit 7 - Short Packet Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn shortpackets(&mut self) -> SHORTPACKETS_W<DEVEPTIFR3_SPEC> {
-        SHORTPACKETS_W::new(self, 7)
+    pub fn shortpackets(&mut self) -> ShortpacketsW<Deveptifr3Spec> {
+        ShortpacketsW::new(self, 7)
     }
     #[doc = "Bit 12 - Number of Busy Banks Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn nbusybks(&mut self) -> NBUSYBKS_W<DEVEPTIFR3_SPEC> {
-        NBUSYBKS_W::new(self, 12)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn nbusybks(&mut self) -> NbusybksW<Deveptifr3Spec> {
+        NbusybksW::new(self, 12)
     }
 }
 #[doc = "Device Endpoint Set Register (n = 0) 3\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`deveptifr3::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DEVEPTIFR3_SPEC;
-impl crate::RegisterSpec for DEVEPTIFR3_SPEC {
+pub struct Deveptifr3Spec;
+impl crate::RegisterSpec for Deveptifr3Spec {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`deveptifr3::W`](W) writer structure"]
-impl crate::Writable for DEVEPTIFR3_SPEC {
+impl crate::Writable for Deveptifr3Spec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

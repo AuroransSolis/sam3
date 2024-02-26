@@ -1,17 +1,15 @@
 #[doc = "Register `PCMR` reader"]
-pub type R = crate::R<PCMR_SPEC>;
+pub type R = crate::R<PcmrSpec>;
 #[doc = "Register `PCMR` writer"]
-pub type W = crate::W<PCMR_SPEC>;
+pub type W = crate::W<PcmrSpec>;
 #[doc = "Field `PCEN` reader - Parallel Capture Mode Enable"]
-pub type PCEN_R = crate::BitReader;
+pub type PcenR = crate::BitReader;
 #[doc = "Field `PCEN` writer - Parallel Capture Mode Enable"]
-pub type PCEN_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `DSIZE` reader - Parallel Capture Mode Data Size"]
-pub type DSIZE_R = crate::FieldReader<DSIZE_A>;
+pub type PcenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Parallel Capture Mode Data Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum DSIZE_A {
+pub enum Dsize {
     #[doc = "0: The reception data in the PIO_PCRHR register is a BYTE (8-bit)"]
     Byte = 0,
     #[doc = "1: The reception data in the PIO_PCRHR register is a HALF-WORD (16-bit)"]
@@ -19,45 +17,47 @@ pub enum DSIZE_A {
     #[doc = "2: The reception data in the PIO_PCRHR register is a WORD (32-bit)"]
     Word = 2,
 }
-impl From<DSIZE_A> for u8 {
+impl From<Dsize> for u8 {
     #[inline(always)]
-    fn from(variant: DSIZE_A) -> Self {
+    fn from(variant: Dsize) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for DSIZE_A {
+impl crate::FieldSpec for Dsize {
     type Ux = u8;
 }
-impl DSIZE_R {
+#[doc = "Field `DSIZE` reader - Parallel Capture Mode Data Size"]
+pub type DsizeR = crate::FieldReader<Dsize>;
+impl DsizeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<DSIZE_A> {
+    pub const fn variant(&self) -> Option<Dsize> {
         match self.bits {
-            0 => Some(DSIZE_A::Byte),
-            1 => Some(DSIZE_A::Halfword),
-            2 => Some(DSIZE_A::Word),
+            0 => Some(Dsize::Byte),
+            1 => Some(Dsize::Halfword),
+            2 => Some(Dsize::Word),
             _ => None,
         }
     }
     #[doc = "The reception data in the PIO_PCRHR register is a BYTE (8-bit)"]
     #[inline(always)]
     pub fn is_byte(&self) -> bool {
-        *self == DSIZE_A::Byte
+        *self == Dsize::Byte
     }
     #[doc = "The reception data in the PIO_PCRHR register is a HALF-WORD (16-bit)"]
     #[inline(always)]
     pub fn is_halfword(&self) -> bool {
-        *self == DSIZE_A::Halfword
+        *self == Dsize::Halfword
     }
     #[doc = "The reception data in the PIO_PCRHR register is a WORD (32-bit)"]
     #[inline(always)]
     pub fn is_word(&self) -> bool {
-        *self == DSIZE_A::Word
+        *self == Dsize::Word
     }
 }
 #[doc = "Field `DSIZE` writer - Parallel Capture Mode Data Size"]
-pub type DSIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 2, DSIZE_A>;
-impl<'a, REG> DSIZE_W<'a, REG>
+pub type DsizeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Dsize>;
+impl<'a, REG> DsizeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -65,113 +65,104 @@ where
     #[doc = "The reception data in the PIO_PCRHR register is a BYTE (8-bit)"]
     #[inline(always)]
     pub fn byte(self) -> &'a mut crate::W<REG> {
-        self.variant(DSIZE_A::Byte)
+        self.variant(Dsize::Byte)
     }
     #[doc = "The reception data in the PIO_PCRHR register is a HALF-WORD (16-bit)"]
     #[inline(always)]
     pub fn halfword(self) -> &'a mut crate::W<REG> {
-        self.variant(DSIZE_A::Halfword)
+        self.variant(Dsize::Halfword)
     }
     #[doc = "The reception data in the PIO_PCRHR register is a WORD (32-bit)"]
     #[inline(always)]
     pub fn word(self) -> &'a mut crate::W<REG> {
-        self.variant(DSIZE_A::Word)
+        self.variant(Dsize::Word)
     }
 }
 #[doc = "Field `ALWYS` reader - Parallel Capture Mode Always Sampling"]
-pub type ALWYS_R = crate::BitReader;
+pub type AlwysR = crate::BitReader;
 #[doc = "Field `ALWYS` writer - Parallel Capture Mode Always Sampling"]
-pub type ALWYS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type AlwysW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HALFS` reader - Parallel Capture Mode Half Sampling"]
-pub type HALFS_R = crate::BitReader;
+pub type HalfsR = crate::BitReader;
 #[doc = "Field `HALFS` writer - Parallel Capture Mode Half Sampling"]
-pub type HALFS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type HalfsW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FRSTS` reader - Parallel Capture Mode First Sample"]
-pub type FRSTS_R = crate::BitReader;
+pub type FrstsR = crate::BitReader;
 #[doc = "Field `FRSTS` writer - Parallel Capture Mode First Sample"]
-pub type FRSTS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type FrstsW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Parallel Capture Mode Enable"]
     #[inline(always)]
-    pub fn pcen(&self) -> PCEN_R {
-        PCEN_R::new((self.bits & 1) != 0)
+    pub fn pcen(&self) -> PcenR {
+        PcenR::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 4:5 - Parallel Capture Mode Data Size"]
     #[inline(always)]
-    pub fn dsize(&self) -> DSIZE_R {
-        DSIZE_R::new(((self.bits >> 4) & 3) as u8)
+    pub fn dsize(&self) -> DsizeR {
+        DsizeR::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 9 - Parallel Capture Mode Always Sampling"]
     #[inline(always)]
-    pub fn alwys(&self) -> ALWYS_R {
-        ALWYS_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn alwys(&self) -> AlwysR {
+        AlwysR::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Parallel Capture Mode Half Sampling"]
     #[inline(always)]
-    pub fn halfs(&self) -> HALFS_R {
-        HALFS_R::new(((self.bits >> 10) & 1) != 0)
+    pub fn halfs(&self) -> HalfsR {
+        HalfsR::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Parallel Capture Mode First Sample"]
     #[inline(always)]
-    pub fn frsts(&self) -> FRSTS_R {
-        FRSTS_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn frsts(&self) -> FrstsR {
+        FrstsR::new(((self.bits >> 11) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Parallel Capture Mode Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pcen(&mut self) -> PCEN_W<PCMR_SPEC> {
-        PCEN_W::new(self, 0)
+    pub fn pcen(&mut self) -> PcenW<PcmrSpec> {
+        PcenW::new(self, 0)
     }
     #[doc = "Bits 4:5 - Parallel Capture Mode Data Size"]
     #[inline(always)]
     #[must_use]
-    pub fn dsize(&mut self) -> DSIZE_W<PCMR_SPEC> {
-        DSIZE_W::new(self, 4)
+    pub fn dsize(&mut self) -> DsizeW<PcmrSpec> {
+        DsizeW::new(self, 4)
     }
     #[doc = "Bit 9 - Parallel Capture Mode Always Sampling"]
     #[inline(always)]
     #[must_use]
-    pub fn alwys(&mut self) -> ALWYS_W<PCMR_SPEC> {
-        ALWYS_W::new(self, 9)
+    pub fn alwys(&mut self) -> AlwysW<PcmrSpec> {
+        AlwysW::new(self, 9)
     }
     #[doc = "Bit 10 - Parallel Capture Mode Half Sampling"]
     #[inline(always)]
     #[must_use]
-    pub fn halfs(&mut self) -> HALFS_W<PCMR_SPEC> {
-        HALFS_W::new(self, 10)
+    pub fn halfs(&mut self) -> HalfsW<PcmrSpec> {
+        HalfsW::new(self, 10)
     }
     #[doc = "Bit 11 - Parallel Capture Mode First Sample"]
     #[inline(always)]
     #[must_use]
-    pub fn frsts(&mut self) -> FRSTS_W<PCMR_SPEC> {
-        FRSTS_W::new(self, 11)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn frsts(&mut self) -> FrstsW<PcmrSpec> {
+        FrstsW::new(self, 11)
     }
 }
 #[doc = "Parallel Capture Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcmr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcmr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PCMR_SPEC;
-impl crate::RegisterSpec for PCMR_SPEC {
+pub struct PcmrSpec;
+impl crate::RegisterSpec for PcmrSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`pcmr::R`](R) reader structure"]
-impl crate::Readable for PCMR_SPEC {}
+impl crate::Readable for PcmrSpec {}
 #[doc = "`write(|w| ..)` method takes [`pcmr::W`](W) writer structure"]
-impl crate::Writable for PCMR_SPEC {
+impl crate::Writable for PcmrSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PCMR to value 0"]
-impl crate::Resettable for PCMR_SPEC {
+impl crate::Resettable for PcmrSpec {
     const RESET_VALUE: u32 = 0;
 }

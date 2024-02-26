@@ -1,13 +1,11 @@
 #[doc = "Register `CMR2` reader"]
-pub type R = crate::R<CMR2_SPEC>;
+pub type R = crate::R<Cmr2Spec>;
 #[doc = "Register `CMR2` writer"]
-pub type W = crate::W<CMR2_SPEC>;
-#[doc = "Field `CPRE` reader - Channel Pre-scaler"]
-pub type CPRE_R = crate::FieldReader<CPRE_A>;
+pub type W = crate::W<Cmr2Spec>;
 #[doc = "Channel Pre-scaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum CPRE_A {
+pub enum Cpre {
     #[doc = "0: Master Clock"]
     Mck = 0,
     #[doc = "1: Master Clock divided by 2"]
@@ -35,105 +33,107 @@ pub enum CPRE_A {
     #[doc = "12: Clock B"]
     Clkb = 12,
 }
-impl From<CPRE_A> for u8 {
+impl From<Cpre> for u8 {
     #[inline(always)]
-    fn from(variant: CPRE_A) -> Self {
+    fn from(variant: Cpre) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for CPRE_A {
+impl crate::FieldSpec for Cpre {
     type Ux = u8;
 }
-impl CPRE_R {
+#[doc = "Field `CPRE` reader - Channel Pre-scaler"]
+pub type CpreR = crate::FieldReader<Cpre>;
+impl CpreR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<CPRE_A> {
+    pub const fn variant(&self) -> Option<Cpre> {
         match self.bits {
-            0 => Some(CPRE_A::Mck),
-            1 => Some(CPRE_A::Mckdiv2),
-            2 => Some(CPRE_A::Mckdiv4),
-            3 => Some(CPRE_A::Mckdiv8),
-            4 => Some(CPRE_A::Mckdiv16),
-            5 => Some(CPRE_A::Mckdiv32),
-            6 => Some(CPRE_A::Mckdiv64),
-            7 => Some(CPRE_A::Mckdiv128),
-            8 => Some(CPRE_A::Mckdiv256),
-            9 => Some(CPRE_A::Mckdiv512),
-            10 => Some(CPRE_A::Mckdiv1024),
-            11 => Some(CPRE_A::Clka),
-            12 => Some(CPRE_A::Clkb),
+            0 => Some(Cpre::Mck),
+            1 => Some(Cpre::Mckdiv2),
+            2 => Some(Cpre::Mckdiv4),
+            3 => Some(Cpre::Mckdiv8),
+            4 => Some(Cpre::Mckdiv16),
+            5 => Some(Cpre::Mckdiv32),
+            6 => Some(Cpre::Mckdiv64),
+            7 => Some(Cpre::Mckdiv128),
+            8 => Some(Cpre::Mckdiv256),
+            9 => Some(Cpre::Mckdiv512),
+            10 => Some(Cpre::Mckdiv1024),
+            11 => Some(Cpre::Clka),
+            12 => Some(Cpre::Clkb),
             _ => None,
         }
     }
     #[doc = "Master Clock"]
     #[inline(always)]
     pub fn is_mck(&self) -> bool {
-        *self == CPRE_A::Mck
+        *self == Cpre::Mck
     }
     #[doc = "Master Clock divided by 2"]
     #[inline(always)]
     pub fn is_mckdiv2(&self) -> bool {
-        *self == CPRE_A::Mckdiv2
+        *self == Cpre::Mckdiv2
     }
     #[doc = "Master Clock divided by 4"]
     #[inline(always)]
     pub fn is_mckdiv4(&self) -> bool {
-        *self == CPRE_A::Mckdiv4
+        *self == Cpre::Mckdiv4
     }
     #[doc = "Master Clock divided by 8"]
     #[inline(always)]
     pub fn is_mckdiv8(&self) -> bool {
-        *self == CPRE_A::Mckdiv8
+        *self == Cpre::Mckdiv8
     }
     #[doc = "Master Clock divided by 16"]
     #[inline(always)]
     pub fn is_mckdiv16(&self) -> bool {
-        *self == CPRE_A::Mckdiv16
+        *self == Cpre::Mckdiv16
     }
     #[doc = "Master Clock divided by 32"]
     #[inline(always)]
     pub fn is_mckdiv32(&self) -> bool {
-        *self == CPRE_A::Mckdiv32
+        *self == Cpre::Mckdiv32
     }
     #[doc = "Master Clock divided by 64"]
     #[inline(always)]
     pub fn is_mckdiv64(&self) -> bool {
-        *self == CPRE_A::Mckdiv64
+        *self == Cpre::Mckdiv64
     }
     #[doc = "Master Clock divided by 128"]
     #[inline(always)]
     pub fn is_mckdiv128(&self) -> bool {
-        *self == CPRE_A::Mckdiv128
+        *self == Cpre::Mckdiv128
     }
     #[doc = "Master Clock divided by 256"]
     #[inline(always)]
     pub fn is_mckdiv256(&self) -> bool {
-        *self == CPRE_A::Mckdiv256
+        *self == Cpre::Mckdiv256
     }
     #[doc = "Master Clock divided by 512"]
     #[inline(always)]
     pub fn is_mckdiv512(&self) -> bool {
-        *self == CPRE_A::Mckdiv512
+        *self == Cpre::Mckdiv512
     }
     #[doc = "Master Clock divided by 1024"]
     #[inline(always)]
     pub fn is_mckdiv1024(&self) -> bool {
-        *self == CPRE_A::Mckdiv1024
+        *self == Cpre::Mckdiv1024
     }
     #[doc = "Clock A"]
     #[inline(always)]
     pub fn is_clka(&self) -> bool {
-        *self == CPRE_A::Clka
+        *self == Cpre::Clka
     }
     #[doc = "Clock B"]
     #[inline(always)]
     pub fn is_clkb(&self) -> bool {
-        *self == CPRE_A::Clkb
+        *self == Cpre::Clkb
     }
 }
 #[doc = "Field `CPRE` writer - Channel Pre-scaler"]
-pub type CPRE_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CPRE_A>;
-impl<'a, REG> CPRE_W<'a, REG>
+pub type CpreW<'a, REG> = crate::FieldWriter<'a, REG, 4, Cpre>;
+impl<'a, REG> CpreW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -141,152 +141,143 @@ where
     #[doc = "Master Clock"]
     #[inline(always)]
     pub fn mck(self) -> &'a mut crate::W<REG> {
-        self.variant(CPRE_A::Mck)
+        self.variant(Cpre::Mck)
     }
     #[doc = "Master Clock divided by 2"]
     #[inline(always)]
     pub fn mckdiv2(self) -> &'a mut crate::W<REG> {
-        self.variant(CPRE_A::Mckdiv2)
+        self.variant(Cpre::Mckdiv2)
     }
     #[doc = "Master Clock divided by 4"]
     #[inline(always)]
     pub fn mckdiv4(self) -> &'a mut crate::W<REG> {
-        self.variant(CPRE_A::Mckdiv4)
+        self.variant(Cpre::Mckdiv4)
     }
     #[doc = "Master Clock divided by 8"]
     #[inline(always)]
     pub fn mckdiv8(self) -> &'a mut crate::W<REG> {
-        self.variant(CPRE_A::Mckdiv8)
+        self.variant(Cpre::Mckdiv8)
     }
     #[doc = "Master Clock divided by 16"]
     #[inline(always)]
     pub fn mckdiv16(self) -> &'a mut crate::W<REG> {
-        self.variant(CPRE_A::Mckdiv16)
+        self.variant(Cpre::Mckdiv16)
     }
     #[doc = "Master Clock divided by 32"]
     #[inline(always)]
     pub fn mckdiv32(self) -> &'a mut crate::W<REG> {
-        self.variant(CPRE_A::Mckdiv32)
+        self.variant(Cpre::Mckdiv32)
     }
     #[doc = "Master Clock divided by 64"]
     #[inline(always)]
     pub fn mckdiv64(self) -> &'a mut crate::W<REG> {
-        self.variant(CPRE_A::Mckdiv64)
+        self.variant(Cpre::Mckdiv64)
     }
     #[doc = "Master Clock divided by 128"]
     #[inline(always)]
     pub fn mckdiv128(self) -> &'a mut crate::W<REG> {
-        self.variant(CPRE_A::Mckdiv128)
+        self.variant(Cpre::Mckdiv128)
     }
     #[doc = "Master Clock divided by 256"]
     #[inline(always)]
     pub fn mckdiv256(self) -> &'a mut crate::W<REG> {
-        self.variant(CPRE_A::Mckdiv256)
+        self.variant(Cpre::Mckdiv256)
     }
     #[doc = "Master Clock divided by 512"]
     #[inline(always)]
     pub fn mckdiv512(self) -> &'a mut crate::W<REG> {
-        self.variant(CPRE_A::Mckdiv512)
+        self.variant(Cpre::Mckdiv512)
     }
     #[doc = "Master Clock divided by 1024"]
     #[inline(always)]
     pub fn mckdiv1024(self) -> &'a mut crate::W<REG> {
-        self.variant(CPRE_A::Mckdiv1024)
+        self.variant(Cpre::Mckdiv1024)
     }
     #[doc = "Clock A"]
     #[inline(always)]
     pub fn clka(self) -> &'a mut crate::W<REG> {
-        self.variant(CPRE_A::Clka)
+        self.variant(Cpre::Clka)
     }
     #[doc = "Clock B"]
     #[inline(always)]
     pub fn clkb(self) -> &'a mut crate::W<REG> {
-        self.variant(CPRE_A::Clkb)
+        self.variant(Cpre::Clkb)
     }
 }
 #[doc = "Field `CALG` reader - Channel Alignment"]
-pub type CALG_R = crate::BitReader;
+pub type CalgR = crate::BitReader;
 #[doc = "Field `CALG` writer - Channel Alignment"]
-pub type CALG_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type CalgW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CPOL` reader - Channel Polarity"]
-pub type CPOL_R = crate::BitReader;
+pub type CpolR = crate::BitReader;
 #[doc = "Field `CPOL` writer - Channel Polarity"]
-pub type CPOL_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type CpolW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CPD` reader - Channel Update Period"]
-pub type CPD_R = crate::BitReader;
+pub type CpdR = crate::BitReader;
 #[doc = "Field `CPD` writer - Channel Update Period"]
-pub type CPD_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type CpdW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - Channel Pre-scaler"]
     #[inline(always)]
-    pub fn cpre(&self) -> CPRE_R {
-        CPRE_R::new((self.bits & 0x0f) as u8)
+    pub fn cpre(&self) -> CpreR {
+        CpreR::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bit 8 - Channel Alignment"]
     #[inline(always)]
-    pub fn calg(&self) -> CALG_R {
-        CALG_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn calg(&self) -> CalgR {
+        CalgR::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Channel Polarity"]
     #[inline(always)]
-    pub fn cpol(&self) -> CPOL_R {
-        CPOL_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn cpol(&self) -> CpolR {
+        CpolR::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Channel Update Period"]
     #[inline(always)]
-    pub fn cpd(&self) -> CPD_R {
-        CPD_R::new(((self.bits >> 10) & 1) != 0)
+    pub fn cpd(&self) -> CpdR {
+        CpdR::new(((self.bits >> 10) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Channel Pre-scaler"]
     #[inline(always)]
     #[must_use]
-    pub fn cpre(&mut self) -> CPRE_W<CMR2_SPEC> {
-        CPRE_W::new(self, 0)
+    pub fn cpre(&mut self) -> CpreW<Cmr2Spec> {
+        CpreW::new(self, 0)
     }
     #[doc = "Bit 8 - Channel Alignment"]
     #[inline(always)]
     #[must_use]
-    pub fn calg(&mut self) -> CALG_W<CMR2_SPEC> {
-        CALG_W::new(self, 8)
+    pub fn calg(&mut self) -> CalgW<Cmr2Spec> {
+        CalgW::new(self, 8)
     }
     #[doc = "Bit 9 - Channel Polarity"]
     #[inline(always)]
     #[must_use]
-    pub fn cpol(&mut self) -> CPOL_W<CMR2_SPEC> {
-        CPOL_W::new(self, 9)
+    pub fn cpol(&mut self) -> CpolW<Cmr2Spec> {
+        CpolW::new(self, 9)
     }
     #[doc = "Bit 10 - Channel Update Period"]
     #[inline(always)]
     #[must_use]
-    pub fn cpd(&mut self) -> CPD_W<CMR2_SPEC> {
-        CPD_W::new(self, 10)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn cpd(&mut self) -> CpdW<Cmr2Spec> {
+        CpdW::new(self, 10)
     }
 }
 #[doc = "PWM Channel Mode Register (ch_num = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cmr2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmr2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CMR2_SPEC;
-impl crate::RegisterSpec for CMR2_SPEC {
+pub struct Cmr2Spec;
+impl crate::RegisterSpec for Cmr2Spec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`cmr2::R`](R) reader structure"]
-impl crate::Readable for CMR2_SPEC {}
+impl crate::Readable for Cmr2Spec {}
 #[doc = "`write(|w| ..)` method takes [`cmr2::W`](W) writer structure"]
-impl crate::Writable for CMR2_SPEC {
+impl crate::Writable for Cmr2Spec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CMR2 to value 0"]
-impl crate::Resettable for CMR2_SPEC {
+impl crate::Resettable for Cmr2Spec {
     const RESET_VALUE: u32 = 0;
 }

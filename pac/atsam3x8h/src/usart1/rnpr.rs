@@ -1,49 +1,40 @@
 #[doc = "Register `RNPR` reader"]
-pub type R = crate::R<RNPR_SPEC>;
+pub type R = crate::R<RnprSpec>;
 #[doc = "Register `RNPR` writer"]
-pub type W = crate::W<RNPR_SPEC>;
+pub type W = crate::W<RnprSpec>;
 #[doc = "Field `RXNPTR` reader - Receive Next Pointer"]
-pub type RXNPTR_R = crate::FieldReader<u32>;
+pub type RxnptrR = crate::FieldReader<u32>;
 #[doc = "Field `RXNPTR` writer - Receive Next Pointer"]
-pub type RXNPTR_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
+pub type RxnptrW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Receive Next Pointer"]
     #[inline(always)]
-    pub fn rxnptr(&self) -> RXNPTR_R {
-        RXNPTR_R::new(self.bits)
+    pub fn rxnptr(&self) -> RxnptrR {
+        RxnptrR::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Receive Next Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn rxnptr(&mut self) -> RXNPTR_W<RNPR_SPEC> {
-        RXNPTR_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn rxnptr(&mut self) -> RxnptrW<RnprSpec> {
+        RxnptrW::new(self, 0)
     }
 }
 #[doc = "Receive Next Pointer Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rnpr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rnpr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct RNPR_SPEC;
-impl crate::RegisterSpec for RNPR_SPEC {
+pub struct RnprSpec;
+impl crate::RegisterSpec for RnprSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`rnpr::R`](R) reader structure"]
-impl crate::Readable for RNPR_SPEC {}
+impl crate::Readable for RnprSpec {}
 #[doc = "`write(|w| ..)` method takes [`rnpr::W`](W) writer structure"]
-impl crate::Writable for RNPR_SPEC {
+impl crate::Writable for RnprSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RNPR to value 0"]
-impl crate::Resettable for RNPR_SPEC {
+impl crate::Resettable for RnprSpec {
     const RESET_VALUE: u32 = 0;
 }
