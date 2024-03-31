@@ -30,6 +30,7 @@ impl From<Div> for u8 {
 impl crate::FieldSpec for Div {
     type Ux = u8;
 }
+impl crate::IsEnum for Div {}
 #[doc = "Field `DIV` reader - Divisor Value"]
 pub type DivR = crate::FieldReader<Div>;
 impl DivR {

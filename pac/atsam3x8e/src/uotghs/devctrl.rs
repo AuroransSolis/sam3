@@ -40,6 +40,7 @@ impl From<Spdconf> for u8 {
 impl crate::FieldSpec for Spdconf {
     type Ux = u8;
 }
+impl crate::IsEnum for Spdconf {}
 #[doc = "Field `SPDCONF` reader - Mode Configuration"]
 pub type SpdconfR = crate::FieldReader<Spdconf>;
 impl SpdconfR {
@@ -76,7 +77,7 @@ impl SpdconfR {
     }
 }
 #[doc = "Field `SPDCONF` writer - Mode Configuration"]
-pub type SpdconfW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Spdconf>;
+pub type SpdconfW<'a, REG> = crate::FieldWriter<'a, REG, 2, Spdconf, crate::Safe>;
 impl<'a, REG> SpdconfW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

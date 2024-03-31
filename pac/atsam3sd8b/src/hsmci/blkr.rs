@@ -22,6 +22,7 @@ impl From<Bcnt> for u16 {
 impl crate::FieldSpec for Bcnt {
     type Ux = u16;
 }
+impl crate::IsEnum for Bcnt {}
 #[doc = "Field `BCNT` reader - MMC/SDIO Block Count - SDIO Byte Count"]
 pub type BcntR = crate::FieldReader<Bcnt>;
 impl BcntR {

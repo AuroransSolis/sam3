@@ -24,6 +24,7 @@ impl From<EccPagesize> for u8 {
 impl crate::FieldSpec for EccPagesize {
     type Ux = u8;
 }
+impl crate::IsEnum for EccPagesize {}
 #[doc = "Field `ECC_PAGESIZE` reader - ECC Page Size"]
 pub type EccPagesizeR = crate::FieldReader<EccPagesize>;
 impl EccPagesizeR {
@@ -60,7 +61,7 @@ impl EccPagesizeR {
     }
 }
 #[doc = "Field `ECC_PAGESIZE` writer - ECC Page Size"]
-pub type EccPagesizeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EccPagesize>;
+pub type EccPagesizeW<'a, REG> = crate::FieldWriter<'a, REG, 2, EccPagesize, crate::Safe>;
 impl<'a, REG> EccPagesizeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -107,6 +108,7 @@ impl From<Typcorrec> for u8 {
 impl crate::FieldSpec for Typcorrec {
     type Ux = u8;
 }
+impl crate::IsEnum for Typcorrec {}
 #[doc = "Field `TYPCORREC` reader - Type of Correction"]
 pub type TypcorrecR = crate::FieldReader<Typcorrec>;
 impl TypcorrecR {

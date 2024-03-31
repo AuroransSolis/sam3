@@ -48,6 +48,7 @@ impl From<Fsos> for u8 {
 impl crate::FieldSpec for Fsos {
     type Ux = u8;
 }
+impl crate::IsEnum for Fsos {}
 #[doc = "Field `FSOS` reader - Transmit Frame Sync Output Selection"]
 pub type FsosR = crate::FieldReader<Fsos>;
 impl FsosR {

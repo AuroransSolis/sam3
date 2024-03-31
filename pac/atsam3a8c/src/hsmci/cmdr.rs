@@ -24,8 +24,9 @@ impl From<Rsptyp> for u8 {
 impl crate::FieldSpec for Rsptyp {
     type Ux = u8;
 }
+impl crate::IsEnum for Rsptyp {}
 #[doc = "Field `RSPTYP` writer - Response Type"]
-pub type RsptypW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Rsptyp>;
+pub type RsptypW<'a, REG> = crate::FieldWriter<'a, REG, 2, Rsptyp, crate::Safe>;
 impl<'a, REG> RsptypW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -82,8 +83,9 @@ impl From<Spcmd> for u8 {
 impl crate::FieldSpec for Spcmd {
     type Ux = u8;
 }
+impl crate::IsEnum for Spcmd {}
 #[doc = "Field `SPCMD` writer - Special Command"]
-pub type SpcmdW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Spcmd>;
+pub type SpcmdW<'a, REG> = crate::FieldWriter<'a, REG, 3, Spcmd, crate::Safe>;
 impl<'a, REG> SpcmdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -212,6 +214,7 @@ impl From<Trcmd> for u8 {
 impl crate::FieldSpec for Trcmd {
     type Ux = u8;
 }
+impl crate::IsEnum for Trcmd {}
 #[doc = "Field `TRCMD` writer - Transfer Command"]
 pub type TrcmdW<'a, REG> = crate::FieldWriter<'a, REG, 2, Trcmd>;
 impl<'a, REG> TrcmdW<'a, REG>
@@ -290,6 +293,7 @@ impl From<Trtyp> for u8 {
 impl crate::FieldSpec for Trtyp {
     type Ux = u8;
 }
+impl crate::IsEnum for Trtyp {}
 #[doc = "Field `TRTYP` writer - Transfer Type"]
 pub type TrtypW<'a, REG> = crate::FieldWriter<'a, REG, 3, Trtyp>;
 impl<'a, REG> TrtypW<'a, REG>
@@ -343,6 +347,7 @@ impl From<Iospcmd> for u8 {
 impl crate::FieldSpec for Iospcmd {
     type Ux = u8;
 }
+impl crate::IsEnum for Iospcmd {}
 #[doc = "Field `IOSPCMD` writer - SDIO Special Command"]
 pub type IospcmdW<'a, REG> = crate::FieldWriter<'a, REG, 2, Iospcmd>;
 impl<'a, REG> IospcmdW<'a, REG>

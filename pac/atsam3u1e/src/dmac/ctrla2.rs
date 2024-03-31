@@ -26,6 +26,7 @@ impl From<SrcWidth> for u8 {
 impl crate::FieldSpec for SrcWidth {
     type Ux = u8;
 }
+impl crate::IsEnum for SrcWidth {}
 #[doc = "Field `SRC_WIDTH` reader - Transfer Width for the Source"]
 pub type SrcWidthR = crate::FieldReader<SrcWidth>;
 impl SrcWidthR {
@@ -98,6 +99,7 @@ impl From<DstWidth> for u8 {
 impl crate::FieldSpec for DstWidth {
     type Ux = u8;
 }
+impl crate::IsEnum for DstWidth {}
 #[doc = "Field `DST_WIDTH` reader - Transfer Width for the Destination"]
 pub type DstWidthR = crate::FieldReader<DstWidth>;
 impl DstWidthR {

@@ -50,6 +50,7 @@ impl From<Bits> for u8 {
 impl crate::FieldSpec for Bits {
     type Ux = u8;
 }
+impl crate::IsEnum for Bits {}
 #[doc = "Field `BITS` reader - Bits Per Transfer"]
 pub type BitsR = crate::FieldReader<Bits>;
 impl BitsR {

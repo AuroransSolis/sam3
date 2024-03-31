@@ -32,6 +32,7 @@ impl From<Tcclks> for u8 {
 impl crate::FieldSpec for Tcclks {
     type Ux = u8;
 }
+impl crate::IsEnum for Tcclks {}
 #[doc = "Field `TCCLKS` reader - Clock Selection"]
 pub type TcclksR = crate::FieldReader<Tcclks>;
 impl TcclksR {
@@ -92,7 +93,7 @@ impl TcclksR {
     }
 }
 #[doc = "Field `TCCLKS` writer - Clock Selection"]
-pub type TcclksW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Tcclks>;
+pub type TcclksW<'a, REG> = crate::FieldWriter<'a, REG, 3, Tcclks, crate::Safe>;
 impl<'a, REG> TcclksW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -165,6 +166,7 @@ impl From<Burst> for u8 {
 impl crate::FieldSpec for Burst {
     type Ux = u8;
 }
+impl crate::IsEnum for Burst {}
 #[doc = "Field `BURST` reader - Burst Signal Selection"]
 pub type BurstR = crate::FieldReader<Burst>;
 impl BurstR {
@@ -201,7 +203,7 @@ impl BurstR {
     }
 }
 #[doc = "Field `BURST` writer - Burst Signal Selection"]
-pub type BurstW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Burst>;
+pub type BurstW<'a, REG> = crate::FieldWriter<'a, REG, 2, Burst, crate::Safe>;
 impl<'a, REG> BurstW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -258,6 +260,7 @@ impl From<Eevtedg> for u8 {
 impl crate::FieldSpec for Eevtedg {
     type Ux = u8;
 }
+impl crate::IsEnum for Eevtedg {}
 #[doc = "Field `EEVTEDG` reader - External Event Edge Selection"]
 pub type EevtedgR = crate::FieldReader<Eevtedg>;
 impl EevtedgR {
@@ -294,7 +297,7 @@ impl EevtedgR {
     }
 }
 #[doc = "Field `EEVTEDG` writer - External Event Edge Selection"]
-pub type EevtedgW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Eevtedg>;
+pub type EevtedgW<'a, REG> = crate::FieldWriter<'a, REG, 2, Eevtedg, crate::Safe>;
 impl<'a, REG> EevtedgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -343,6 +346,7 @@ impl From<Eevt> for u8 {
 impl crate::FieldSpec for Eevt {
     type Ux = u8;
 }
+impl crate::IsEnum for Eevt {}
 #[doc = "Field `EEVT` reader - External Event Selection"]
 pub type EevtR = crate::FieldReader<Eevt>;
 impl EevtR {
@@ -379,7 +383,7 @@ impl EevtR {
     }
 }
 #[doc = "Field `EEVT` writer - External Event Selection"]
-pub type EevtW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Eevt>;
+pub type EevtW<'a, REG> = crate::FieldWriter<'a, REG, 2, Eevt, crate::Safe>;
 impl<'a, REG> EevtW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -432,6 +436,7 @@ impl From<Wavsel> for u8 {
 impl crate::FieldSpec for Wavsel {
     type Ux = u8;
 }
+impl crate::IsEnum for Wavsel {}
 #[doc = "Field `WAVSEL` reader - Waveform Selection"]
 pub type WavselR = crate::FieldReader<Wavsel>;
 impl WavselR {
@@ -468,7 +473,7 @@ impl WavselR {
     }
 }
 #[doc = "Field `WAVSEL` writer - Waveform Selection"]
-pub type WavselW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Wavsel>;
+pub type WavselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Wavsel, crate::Safe>;
 impl<'a, REG> WavselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -521,6 +526,7 @@ impl From<Acpa> for u8 {
 impl crate::FieldSpec for Acpa {
     type Ux = u8;
 }
+impl crate::IsEnum for Acpa {}
 #[doc = "Field `ACPA` reader - RA Compare Effect on TIOA"]
 pub type AcpaR = crate::FieldReader<Acpa>;
 impl AcpaR {
@@ -557,7 +563,7 @@ impl AcpaR {
     }
 }
 #[doc = "Field `ACPA` writer - RA Compare Effect on TIOA"]
-pub type AcpaW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Acpa>;
+pub type AcpaW<'a, REG> = crate::FieldWriter<'a, REG, 2, Acpa, crate::Safe>;
 impl<'a, REG> AcpaW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -570,7 +576,7 @@ where
     }
     #[doc = "Set"]
     #[inline(always)]
-    pub fn set(self) -> &'a mut crate::W<REG> {
+    pub fn set_(self) -> &'a mut crate::W<REG> {
         self.variant(Acpa::Set)
     }
     #[doc = "Clear"]
@@ -606,6 +612,7 @@ impl From<Acpc> for u8 {
 impl crate::FieldSpec for Acpc {
     type Ux = u8;
 }
+impl crate::IsEnum for Acpc {}
 #[doc = "Field `ACPC` reader - RC Compare Effect on TIOA"]
 pub type AcpcR = crate::FieldReader<Acpc>;
 impl AcpcR {
@@ -642,7 +649,7 @@ impl AcpcR {
     }
 }
 #[doc = "Field `ACPC` writer - RC Compare Effect on TIOA"]
-pub type AcpcW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Acpc>;
+pub type AcpcW<'a, REG> = crate::FieldWriter<'a, REG, 2, Acpc, crate::Safe>;
 impl<'a, REG> AcpcW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -655,7 +662,7 @@ where
     }
     #[doc = "Set"]
     #[inline(always)]
-    pub fn set(self) -> &'a mut crate::W<REG> {
+    pub fn set_(self) -> &'a mut crate::W<REG> {
         self.variant(Acpc::Set)
     }
     #[doc = "Clear"]
@@ -691,6 +698,7 @@ impl From<Aeevt> for u8 {
 impl crate::FieldSpec for Aeevt {
     type Ux = u8;
 }
+impl crate::IsEnum for Aeevt {}
 #[doc = "Field `AEEVT` reader - External Event Effect on TIOA"]
 pub type AeevtR = crate::FieldReader<Aeevt>;
 impl AeevtR {
@@ -727,7 +735,7 @@ impl AeevtR {
     }
 }
 #[doc = "Field `AEEVT` writer - External Event Effect on TIOA"]
-pub type AeevtW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Aeevt>;
+pub type AeevtW<'a, REG> = crate::FieldWriter<'a, REG, 2, Aeevt, crate::Safe>;
 impl<'a, REG> AeevtW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -740,7 +748,7 @@ where
     }
     #[doc = "Set"]
     #[inline(always)]
-    pub fn set(self) -> &'a mut crate::W<REG> {
+    pub fn set_(self) -> &'a mut crate::W<REG> {
         self.variant(Aeevt::Set)
     }
     #[doc = "Clear"]
@@ -776,6 +784,7 @@ impl From<Aswtrg> for u8 {
 impl crate::FieldSpec for Aswtrg {
     type Ux = u8;
 }
+impl crate::IsEnum for Aswtrg {}
 #[doc = "Field `ASWTRG` reader - Software Trigger Effect on TIOA"]
 pub type AswtrgR = crate::FieldReader<Aswtrg>;
 impl AswtrgR {
@@ -812,7 +821,7 @@ impl AswtrgR {
     }
 }
 #[doc = "Field `ASWTRG` writer - Software Trigger Effect on TIOA"]
-pub type AswtrgW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Aswtrg>;
+pub type AswtrgW<'a, REG> = crate::FieldWriter<'a, REG, 2, Aswtrg, crate::Safe>;
 impl<'a, REG> AswtrgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -825,7 +834,7 @@ where
     }
     #[doc = "Set"]
     #[inline(always)]
-    pub fn set(self) -> &'a mut crate::W<REG> {
+    pub fn set_(self) -> &'a mut crate::W<REG> {
         self.variant(Aswtrg::Set)
     }
     #[doc = "Clear"]
@@ -861,6 +870,7 @@ impl From<Bcpb> for u8 {
 impl crate::FieldSpec for Bcpb {
     type Ux = u8;
 }
+impl crate::IsEnum for Bcpb {}
 #[doc = "Field `BCPB` reader - RB Compare Effect on TIOB"]
 pub type BcpbR = crate::FieldReader<Bcpb>;
 impl BcpbR {
@@ -897,7 +907,7 @@ impl BcpbR {
     }
 }
 #[doc = "Field `BCPB` writer - RB Compare Effect on TIOB"]
-pub type BcpbW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Bcpb>;
+pub type BcpbW<'a, REG> = crate::FieldWriter<'a, REG, 2, Bcpb, crate::Safe>;
 impl<'a, REG> BcpbW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -910,7 +920,7 @@ where
     }
     #[doc = "Set"]
     #[inline(always)]
-    pub fn set(self) -> &'a mut crate::W<REG> {
+    pub fn set_(self) -> &'a mut crate::W<REG> {
         self.variant(Bcpb::Set)
     }
     #[doc = "Clear"]
@@ -946,6 +956,7 @@ impl From<Bcpc> for u8 {
 impl crate::FieldSpec for Bcpc {
     type Ux = u8;
 }
+impl crate::IsEnum for Bcpc {}
 #[doc = "Field `BCPC` reader - RC Compare Effect on TIOB"]
 pub type BcpcR = crate::FieldReader<Bcpc>;
 impl BcpcR {
@@ -982,7 +993,7 @@ impl BcpcR {
     }
 }
 #[doc = "Field `BCPC` writer - RC Compare Effect on TIOB"]
-pub type BcpcW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Bcpc>;
+pub type BcpcW<'a, REG> = crate::FieldWriter<'a, REG, 2, Bcpc, crate::Safe>;
 impl<'a, REG> BcpcW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -995,7 +1006,7 @@ where
     }
     #[doc = "Set"]
     #[inline(always)]
-    pub fn set(self) -> &'a mut crate::W<REG> {
+    pub fn set_(self) -> &'a mut crate::W<REG> {
         self.variant(Bcpc::Set)
     }
     #[doc = "Clear"]
@@ -1031,6 +1042,7 @@ impl From<Beevt> for u8 {
 impl crate::FieldSpec for Beevt {
     type Ux = u8;
 }
+impl crate::IsEnum for Beevt {}
 #[doc = "Field `BEEVT` reader - External Event Effect on TIOB"]
 pub type BeevtR = crate::FieldReader<Beevt>;
 impl BeevtR {
@@ -1067,7 +1079,7 @@ impl BeevtR {
     }
 }
 #[doc = "Field `BEEVT` writer - External Event Effect on TIOB"]
-pub type BeevtW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Beevt>;
+pub type BeevtW<'a, REG> = crate::FieldWriter<'a, REG, 2, Beevt, crate::Safe>;
 impl<'a, REG> BeevtW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -1080,7 +1092,7 @@ where
     }
     #[doc = "Set"]
     #[inline(always)]
-    pub fn set(self) -> &'a mut crate::W<REG> {
+    pub fn set_(self) -> &'a mut crate::W<REG> {
         self.variant(Beevt::Set)
     }
     #[doc = "Clear"]
@@ -1116,6 +1128,7 @@ impl From<Bswtrg> for u8 {
 impl crate::FieldSpec for Bswtrg {
     type Ux = u8;
 }
+impl crate::IsEnum for Bswtrg {}
 #[doc = "Field `BSWTRG` reader - Software Trigger Effect on TIOB"]
 pub type BswtrgR = crate::FieldReader<Bswtrg>;
 impl BswtrgR {
@@ -1152,7 +1165,7 @@ impl BswtrgR {
     }
 }
 #[doc = "Field `BSWTRG` writer - Software Trigger Effect on TIOB"]
-pub type BswtrgW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Bswtrg>;
+pub type BswtrgW<'a, REG> = crate::FieldWriter<'a, REG, 2, Bswtrg, crate::Safe>;
 impl<'a, REG> BswtrgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -1165,7 +1178,7 @@ where
     }
     #[doc = "Set"]
     #[inline(always)]
-    pub fn set(self) -> &'a mut crate::W<REG> {
+    pub fn set_(self) -> &'a mut crate::W<REG> {
         self.variant(Bswtrg::Set)
     }
     #[doc = "Clear"]

@@ -187,6 +187,7 @@ impl From<Wkupdbc> for u8 {
 impl crate::FieldSpec for Wkupdbc {
     type Ux = u8;
 }
+impl crate::IsEnum for Wkupdbc {}
 #[doc = "Field `WKUPDBC` reader - Wake Up Inputs Debouncer Period"]
 pub type WkupdbcR = crate::FieldReader<Wkupdbc>;
 impl WkupdbcR {

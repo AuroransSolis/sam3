@@ -18,6 +18,7 @@ impl From<WpKey> for u32 {
 impl crate::FieldSpec for WpKey {
     type Ux = u32;
 }
+impl crate::IsEnum for WpKey {}
 #[doc = "Field `WP_KEY` writer - Write Protection KEY Password"]
 pub type WpKeyW<'a, REG> = crate::FieldWriter<'a, REG, 24, WpKey>;
 impl<'a, REG> WpKeyW<'a, REG>

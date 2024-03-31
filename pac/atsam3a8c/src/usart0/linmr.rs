@@ -22,6 +22,7 @@ impl From<Nact> for u8 {
 impl crate::FieldSpec for Nact {
     type Ux = u8;
 }
+impl crate::IsEnum for Nact {}
 #[doc = "Field `NACT` reader - LIN Node Action"]
 pub type NactR = crate::FieldReader<Nact>;
 impl NactR {

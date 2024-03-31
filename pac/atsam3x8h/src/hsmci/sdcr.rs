@@ -24,6 +24,7 @@ impl From<Sdcsel> for u8 {
 impl crate::FieldSpec for Sdcsel {
     type Ux = u8;
 }
+impl crate::IsEnum for Sdcsel {}
 #[doc = "Field `SDCSEL` reader - SDCard/SDIO Slot"]
 pub type SdcselR = crate::FieldReader<Sdcsel>;
 impl SdcselR {
@@ -60,7 +61,7 @@ impl SdcselR {
     }
 }
 #[doc = "Field `SDCSEL` writer - SDCard/SDIO Slot"]
-pub type SdcselW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Sdcsel>;
+pub type SdcselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Sdcsel, crate::Safe>;
 impl<'a, REG> SdcselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -107,6 +108,7 @@ impl From<Sdcbus> for u8 {
 impl crate::FieldSpec for Sdcbus {
     type Ux = u8;
 }
+impl crate::IsEnum for Sdcbus {}
 #[doc = "Field `SDCBUS` reader - SDCard/SDIO Bus Width"]
 pub type SdcbusR = crate::FieldReader<Sdcbus>;
 impl SdcbusR {

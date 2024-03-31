@@ -26,6 +26,7 @@ impl From<Rsttyp> for u8 {
 impl crate::FieldSpec for Rsttyp {
     type Ux = u8;
 }
+impl crate::IsEnum for Rsttyp {}
 #[doc = "Field `RSTTYP` reader - Reset Type"]
 pub type RsttypR = crate::FieldReader<Rsttyp>;
 impl RsttypR {

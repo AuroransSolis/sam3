@@ -42,6 +42,7 @@ impl From<Speed> for u8 {
 impl crate::FieldSpec for Speed {
     type Ux = u8;
 }
+impl crate::IsEnum for Speed {}
 #[doc = "Field `SPEED` reader - Speed Status"]
 pub type SpeedR = crate::FieldReader<Speed>;
 impl SpeedR {

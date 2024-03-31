@@ -26,6 +26,7 @@ impl From<Dsize> for u8 {
 impl crate::FieldSpec for Dsize {
     type Ux = u8;
 }
+impl crate::IsEnum for Dsize {}
 #[doc = "Field `DSIZE` reader - Parallel Capture Mode Data Size"]
 pub type DsizeR = crate::FieldReader<Dsize>;
 impl DsizeR {

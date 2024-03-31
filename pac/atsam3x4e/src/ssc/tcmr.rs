@@ -22,6 +22,7 @@ impl From<Cks> for u8 {
 impl crate::FieldSpec for Cks {
     type Ux = u8;
 }
+impl crate::IsEnum for Cks {}
 #[doc = "Field `CKS` reader - Transmit Clock Selection"]
 pub type CksR = crate::FieldReader<Cks>;
 impl CksR {
@@ -94,6 +95,7 @@ impl From<Cko> for u8 {
 impl crate::FieldSpec for Cko {
     type Ux = u8;
 }
+impl crate::IsEnum for Cko {}
 #[doc = "Field `CKO` reader - Transmit Clock Output Mode Selection"]
 pub type CkoR = crate::FieldReader<Cko>;
 impl CkoR {
@@ -170,6 +172,7 @@ impl From<Ckg> for u8 {
 impl crate::FieldSpec for Ckg {
     type Ux = u8;
 }
+impl crate::IsEnum for Ckg {}
 #[doc = "Field `CKG` reader - Transmit Clock Gating Selection"]
 pub type CkgR = crate::FieldReader<Ckg>;
 impl CkgR {
@@ -252,6 +255,7 @@ impl From<Start> for u8 {
 impl crate::FieldSpec for Start {
     type Ux = u8;
 }
+impl crate::IsEnum for Start {}
 #[doc = "Field `START` reader - Transmit Start Selection"]
 pub type StartR = crate::FieldReader<Start>;
 impl StartR {

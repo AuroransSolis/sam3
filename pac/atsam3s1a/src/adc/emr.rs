@@ -24,6 +24,7 @@ impl From<Cmpmode> for u8 {
 impl crate::FieldSpec for Cmpmode {
     type Ux = u8;
 }
+impl crate::IsEnum for Cmpmode {}
 #[doc = "Field `CMPMODE` reader - Comparison Mode"]
 pub type CmpmodeR = crate::FieldReader<Cmpmode>;
 impl CmpmodeR {
@@ -60,7 +61,7 @@ impl CmpmodeR {
     }
 }
 #[doc = "Field `CMPMODE` writer - Comparison Mode"]
-pub type CmpmodeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Cmpmode>;
+pub type CmpmodeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Cmpmode, crate::Safe>;
 impl<'a, REG> CmpmodeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

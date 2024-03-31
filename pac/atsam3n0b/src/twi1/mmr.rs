@@ -24,6 +24,7 @@ impl From<Iadrsz> for u8 {
 impl crate::FieldSpec for Iadrsz {
     type Ux = u8;
 }
+impl crate::IsEnum for Iadrsz {}
 #[doc = "Field `IADRSZ` reader - Internal Device Address Size"]
 pub type IadrszR = crate::FieldReader<Iadrsz>;
 impl IadrszR {
@@ -60,7 +61,7 @@ impl IadrszR {
     }
 }
 #[doc = "Field `IADRSZ` writer - Internal Device Address Size"]
-pub type IadrszW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Iadrsz>;
+pub type IadrszW<'a, REG> = crate::FieldWriter<'a, REG, 2, Iadrsz, crate::Safe>;
 impl<'a, REG> IadrszW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

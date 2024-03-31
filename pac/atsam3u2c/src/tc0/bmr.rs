@@ -22,6 +22,7 @@ impl From<Tc0xc0s> for u8 {
 impl crate::FieldSpec for Tc0xc0s {
     type Ux = u8;
 }
+impl crate::IsEnum for Tc0xc0s {}
 #[doc = "Field `TC0XC0S` reader - External Clock Signal 0 Selection"]
 pub type Tc0xc0sR = crate::FieldReader<Tc0xc0s>;
 impl Tc0xc0sR {
@@ -94,6 +95,7 @@ impl From<Tc1xc1s> for u8 {
 impl crate::FieldSpec for Tc1xc1s {
     type Ux = u8;
 }
+impl crate::IsEnum for Tc1xc1s {}
 #[doc = "Field `TC1XC1S` reader - External Clock Signal 1 Selection"]
 pub type Tc1xc1sR = crate::FieldReader<Tc1xc1s>;
 impl Tc1xc1sR {
@@ -166,6 +168,7 @@ impl From<Tc2xc2s> for u8 {
 impl crate::FieldSpec for Tc2xc2s {
     type Ux = u8;
 }
+impl crate::IsEnum for Tc2xc2s {}
 #[doc = "Field `TC2XC2S` reader - External Clock Signal 2 Selection"]
 pub type Tc2xc2sR = crate::FieldReader<Tc2xc2s>;
 impl Tc2xc2sR {

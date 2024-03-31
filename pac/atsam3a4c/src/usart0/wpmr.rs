@@ -22,6 +22,7 @@ impl From<Wpkey> for u32 {
 impl crate::FieldSpec for Wpkey {
     type Ux = u32;
 }
+impl crate::IsEnum for Wpkey {}
 #[doc = "Field `WPKEY` reader - Write Protection Key"]
 pub type WpkeyR = crate::FieldReader<Wpkey>;
 impl WpkeyR {

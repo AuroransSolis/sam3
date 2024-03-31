@@ -34,6 +34,7 @@ impl From<Moscrcf> for u8 {
 impl crate::FieldSpec for Moscrcf {
     type Ux = u8;
 }
+impl crate::IsEnum for Moscrcf {}
 #[doc = "Field `MOSCRCF` reader - Main On-Chip RC Oscillator Frequency Selection"]
 pub type MoscrcfR = crate::FieldReader<Moscrcf>;
 impl MoscrcfR {
@@ -106,6 +107,7 @@ impl From<Key> for u8 {
 impl crate::FieldSpec for Key {
     type Ux = u8;
 }
+impl crate::IsEnum for Key {}
 #[doc = "Field `KEY` reader - Write Access Password"]
 pub type KeyR = crate::FieldReader<Key>;
 impl KeyR {

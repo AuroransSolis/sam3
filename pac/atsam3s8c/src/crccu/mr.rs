@@ -30,6 +30,7 @@ impl From<Ptype> for u8 {
 impl crate::FieldSpec for Ptype {
     type Ux = u8;
 }
+impl crate::IsEnum for Ptype {}
 #[doc = "Field `PTYPE` reader - Primitive Polynomial"]
 pub type PtypeR = crate::FieldReader<Ptype>;
 impl PtypeR {

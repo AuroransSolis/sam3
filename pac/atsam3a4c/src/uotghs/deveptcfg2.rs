@@ -26,6 +26,7 @@ impl From<Epbk> for u8 {
 impl crate::FieldSpec for Epbk {
     type Ux = u8;
 }
+impl crate::IsEnum for Epbk {}
 #[doc = "Field `EPBK` reader - Endpoint Banks"]
 pub type EpbkR = crate::FieldReader<Epbk>;
 impl EpbkR {
@@ -108,6 +109,7 @@ impl From<Epsize> for u8 {
 impl crate::FieldSpec for Epsize {
     type Ux = u8;
 }
+impl crate::IsEnum for Epsize {}
 #[doc = "Field `EPSIZE` reader - Endpoint Size"]
 pub type EpsizeR = crate::FieldReader<Epsize>;
 impl EpsizeR {
@@ -168,7 +170,7 @@ impl EpsizeR {
     }
 }
 #[doc = "Field `EPSIZE` writer - Endpoint Size"]
-pub type EpsizeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Epsize>;
+pub type EpsizeW<'a, REG> = crate::FieldWriter<'a, REG, 3, Epsize, crate::Safe>;
 impl<'a, REG> EpsizeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -294,6 +296,7 @@ impl From<Eptype> for u8 {
 impl crate::FieldSpec for Eptype {
     type Ux = u8;
 }
+impl crate::IsEnum for Eptype {}
 #[doc = "Field `EPTYPE` reader - Endpoint Type"]
 pub type EptypeR = crate::FieldReader<Eptype>;
 impl EptypeR {
@@ -330,7 +333,7 @@ impl EptypeR {
     }
 }
 #[doc = "Field `EPTYPE` writer - Endpoint Type"]
-pub type EptypeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Eptype>;
+pub type EptypeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Eptype, crate::Safe>;
 impl<'a, REG> EptypeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -379,6 +382,7 @@ impl From<Nbtrans> for u8 {
 impl crate::FieldSpec for Nbtrans {
     type Ux = u8;
 }
+impl crate::IsEnum for Nbtrans {}
 #[doc = "Field `NBTRANS` reader - Number of transaction per microframe for isochronous endpoint"]
 pub type NbtransR = crate::FieldReader<Nbtrans>;
 impl NbtransR {
@@ -415,7 +419,7 @@ impl NbtransR {
     }
 }
 #[doc = "Field `NBTRANS` writer - Number of transaction per microframe for isochronous endpoint"]
-pub type NbtransW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Nbtrans>;
+pub type NbtransW<'a, REG> = crate::FieldWriter<'a, REG, 2, Nbtrans, crate::Safe>;
 impl<'a, REG> NbtransW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

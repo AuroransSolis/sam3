@@ -36,6 +36,7 @@ impl From<Dtomul> for u8 {
 impl crate::FieldSpec for Dtomul {
     type Ux = u8;
 }
+impl crate::IsEnum for Dtomul {}
 #[doc = "Field `DTOMUL` reader - Data Timeout Multiplier"]
 pub type DtomulR = crate::FieldReader<Dtomul>;
 impl DtomulR {
@@ -96,7 +97,7 @@ impl DtomulR {
     }
 }
 #[doc = "Field `DTOMUL` writer - Data Timeout Multiplier"]
-pub type DtomulW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Dtomul>;
+pub type DtomulW<'a, REG> = crate::FieldWriter<'a, REG, 3, Dtomul, crate::Safe>;
 impl<'a, REG> DtomulW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

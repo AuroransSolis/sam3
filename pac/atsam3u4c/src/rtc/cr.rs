@@ -32,6 +32,7 @@ impl From<Timevsel> for u8 {
 impl crate::FieldSpec for Timevsel {
     type Ux = u8;
 }
+impl crate::IsEnum for Timevsel {}
 #[doc = "Field `TIMEVSEL` reader - Time Event Selection"]
 pub type TimevselR = crate::FieldReader<Timevsel>;
 impl TimevselR {
@@ -68,7 +69,7 @@ impl TimevselR {
     }
 }
 #[doc = "Field `TIMEVSEL` writer - Time Event Selection"]
-pub type TimevselW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Timevsel>;
+pub type TimevselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Timevsel, crate::Safe>;
 impl<'a, REG> TimevselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -115,6 +116,7 @@ impl From<Calevsel> for u8 {
 impl crate::FieldSpec for Calevsel {
     type Ux = u8;
 }
+impl crate::IsEnum for Calevsel {}
 #[doc = "Field `CALEVSEL` reader - Calendar Event Selection"]
 pub type CalevselR = crate::FieldReader<Calevsel>;
 impl CalevselR {

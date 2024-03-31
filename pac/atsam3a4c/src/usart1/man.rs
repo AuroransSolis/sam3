@@ -28,6 +28,7 @@ impl From<TxPp> for u8 {
 impl crate::FieldSpec for TxPp {
     type Ux = u8;
 }
+impl crate::IsEnum for TxPp {}
 #[doc = "Field `TX_PP` reader - Transmitter Preamble Pattern"]
 pub type TxPpR = crate::FieldReader<TxPp>;
 impl TxPpR {
@@ -64,7 +65,7 @@ impl TxPpR {
     }
 }
 #[doc = "Field `TX_PP` writer - Transmitter Preamble Pattern"]
-pub type TxPpW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, TxPp>;
+pub type TxPpW<'a, REG> = crate::FieldWriter<'a, REG, 2, TxPp, crate::Safe>;
 impl<'a, REG> TxPpW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -121,6 +122,7 @@ impl From<RxPp> for u8 {
 impl crate::FieldSpec for RxPp {
     type Ux = u8;
 }
+impl crate::IsEnum for RxPp {}
 #[doc = "Field `RX_PP` reader - Receiver Preamble Pattern detected"]
 pub type RxPpR = crate::FieldReader<RxPp>;
 impl RxPpR {
@@ -157,7 +159,7 @@ impl RxPpR {
     }
 }
 #[doc = "Field `RX_PP` writer - Receiver Preamble Pattern detected"]
-pub type RxPpW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, RxPp>;
+pub type RxPpW<'a, REG> = crate::FieldWriter<'a, REG, 2, RxPp, crate::Safe>;
 impl<'a, REG> RxPpW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

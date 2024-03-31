@@ -28,6 +28,7 @@ impl From<Scsize> for u8 {
 impl crate::FieldSpec for Scsize {
     type Ux = u8;
 }
+impl crate::IsEnum for Scsize {}
 #[doc = "Field `SCSIZE` reader - Source Chunk Transfer Size."]
 pub type ScsizeR = crate::FieldReader<Scsize>;
 impl ScsizeR {
@@ -113,6 +114,7 @@ impl From<Dcsize> for u8 {
 impl crate::FieldSpec for Dcsize {
     type Ux = u8;
 }
+impl crate::IsEnum for Dcsize {}
 #[doc = "Field `DCSIZE` reader - Destination Chunk Transfer Size"]
 pub type DcsizeR = crate::FieldReader<Dcsize>;
 impl DcsizeR {
@@ -196,6 +198,7 @@ impl From<SrcWidth> for u8 {
 impl crate::FieldSpec for SrcWidth {
     type Ux = u8;
 }
+impl crate::IsEnum for SrcWidth {}
 #[doc = "Field `SRC_WIDTH` reader - Transfer Width for the Source"]
 pub type SrcWidthR = crate::FieldReader<SrcWidth>;
 impl SrcWidthR {
@@ -268,6 +271,7 @@ impl From<DstWidth> for u8 {
 impl crate::FieldSpec for DstWidth {
     type Ux = u8;
 }
+impl crate::IsEnum for DstWidth {}
 #[doc = "Field `DST_WIDTH` reader - Transfer Width for the Destination"]
 pub type DstWidthR = crate::FieldReader<DstWidth>;
 impl DstWidthR {

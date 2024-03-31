@@ -30,6 +30,7 @@ impl From<ExnwMode> for u8 {
 impl crate::FieldSpec for ExnwMode {
     type Ux = u8;
 }
+impl crate::IsEnum for ExnwMode {}
 #[doc = "Field `EXNW_MODE` reader - NWAIT Mode"]
 pub type ExnwModeR = crate::FieldReader<ExnwMode>;
 impl ExnwModeR {
@@ -116,6 +117,7 @@ impl From<Ps> for u8 {
 impl crate::FieldSpec for Ps {
     type Ux = u8;
 }
+impl crate::IsEnum for Ps {}
 #[doc = "Field `PS` reader - Page Size"]
 pub type PsR = crate::FieldReader<Ps>;
 impl PsR {
@@ -152,7 +154,7 @@ impl PsR {
     }
 }
 #[doc = "Field `PS` writer - Page Size"]
-pub type PsW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ps>;
+pub type PsW<'a, REG> = crate::FieldWriter<'a, REG, 2, Ps, crate::Safe>;
 impl<'a, REG> PsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

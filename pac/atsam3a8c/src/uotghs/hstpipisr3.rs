@@ -34,6 +34,7 @@ impl From<Dtseq> for u8 {
 impl crate::FieldSpec for Dtseq {
     type Ux = u8;
 }
+impl crate::IsEnum for Dtseq {}
 #[doc = "Field `DTSEQ` reader - Data Toggle Sequence"]
 pub type DtseqR = crate::FieldReader<Dtseq>;
 impl DtseqR {
@@ -79,6 +80,7 @@ impl From<Nbusybk> for u8 {
 impl crate::FieldSpec for Nbusybk {
     type Ux = u8;
 }
+impl crate::IsEnum for Nbusybk {}
 #[doc = "Field `NBUSYBK` reader - Number of Busy Banks"]
 pub type NbusybkR = crate::FieldReader<Nbusybk>;
 impl NbusybkR {
@@ -134,6 +136,7 @@ impl From<Currbk> for u8 {
 impl crate::FieldSpec for Currbk {
     type Ux = u8;
 }
+impl crate::IsEnum for Currbk {}
 #[doc = "Field `CURRBK` reader - Current Bank"]
 pub type CurrbkR = crate::FieldReader<Currbk>;
 impl CurrbkR {

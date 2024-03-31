@@ -230,6 +230,7 @@ impl From<Key> for u8 {
 impl crate::FieldSpec for Key {
     type Ux = u8;
 }
+impl crate::IsEnum for Key {}
 #[doc = "Field `KEY` reader - Password Key"]
 pub type KeyR = crate::FieldReader<Key>;
 impl KeyR {

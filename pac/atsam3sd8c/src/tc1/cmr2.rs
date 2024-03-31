@@ -32,6 +32,7 @@ impl From<Tcclks> for u8 {
 impl crate::FieldSpec for Tcclks {
     type Ux = u8;
 }
+impl crate::IsEnum for Tcclks {}
 #[doc = "Field `TCCLKS` reader - Clock Selection"]
 pub type TcclksR = crate::FieldReader<Tcclks>;
 impl TcclksR {
@@ -92,7 +93,7 @@ impl TcclksR {
     }
 }
 #[doc = "Field `TCCLKS` writer - Clock Selection"]
-pub type TcclksW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Tcclks>;
+pub type TcclksW<'a, REG> = crate::FieldWriter<'a, REG, 3, Tcclks, crate::Safe>;
 impl<'a, REG> TcclksW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -165,6 +166,7 @@ impl From<Burst> for u8 {
 impl crate::FieldSpec for Burst {
     type Ux = u8;
 }
+impl crate::IsEnum for Burst {}
 #[doc = "Field `BURST` reader - Burst Signal Selection"]
 pub type BurstR = crate::FieldReader<Burst>;
 impl BurstR {
@@ -201,7 +203,7 @@ impl BurstR {
     }
 }
 #[doc = "Field `BURST` writer - Burst Signal Selection"]
-pub type BurstW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Burst>;
+pub type BurstW<'a, REG> = crate::FieldWriter<'a, REG, 2, Burst, crate::Safe>;
 impl<'a, REG> BurstW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -258,6 +260,7 @@ impl From<Etrgedg> for u8 {
 impl crate::FieldSpec for Etrgedg {
     type Ux = u8;
 }
+impl crate::IsEnum for Etrgedg {}
 #[doc = "Field `ETRGEDG` reader - External Trigger Edge Selection"]
 pub type EtrgedgR = crate::FieldReader<Etrgedg>;
 impl EtrgedgR {
@@ -294,7 +297,7 @@ impl EtrgedgR {
     }
 }
 #[doc = "Field `ETRGEDG` writer - External Trigger Edge Selection"]
-pub type EtrgedgW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Etrgedg>;
+pub type EtrgedgW<'a, REG> = crate::FieldWriter<'a, REG, 2, Etrgedg, crate::Safe>;
 impl<'a, REG> EtrgedgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -355,6 +358,7 @@ impl From<Ldra> for u8 {
 impl crate::FieldSpec for Ldra {
     type Ux = u8;
 }
+impl crate::IsEnum for Ldra {}
 #[doc = "Field `LDRA` reader - RA Loading Edge Selection"]
 pub type LdraR = crate::FieldReader<Ldra>;
 impl LdraR {
@@ -391,7 +395,7 @@ impl LdraR {
     }
 }
 #[doc = "Field `LDRA` writer - RA Loading Edge Selection"]
-pub type LdraW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ldra>;
+pub type LdraW<'a, REG> = crate::FieldWriter<'a, REG, 2, Ldra, crate::Safe>;
 impl<'a, REG> LdraW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -440,6 +444,7 @@ impl From<Ldrb> for u8 {
 impl crate::FieldSpec for Ldrb {
     type Ux = u8;
 }
+impl crate::IsEnum for Ldrb {}
 #[doc = "Field `LDRB` reader - RB Loading Edge Selection"]
 pub type LdrbR = crate::FieldReader<Ldrb>;
 impl LdrbR {
@@ -476,7 +481,7 @@ impl LdrbR {
     }
 }
 #[doc = "Field `LDRB` writer - RB Loading Edge Selection"]
-pub type LdrbW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ldrb>;
+pub type LdrbW<'a, REG> = crate::FieldWriter<'a, REG, 2, Ldrb, crate::Safe>;
 impl<'a, REG> LdrbW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

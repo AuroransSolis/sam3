@@ -32,6 +32,7 @@ impl From<EptSize> for u8 {
 impl crate::FieldSpec for EptSize {
     type Ux = u8;
 }
+impl crate::IsEnum for EptSize {}
 #[doc = "Field `EPT_SIZE` reader - Endpoint Size"]
 pub type EptSizeR = crate::FieldReader<EptSize>;
 impl EptSizeR {
@@ -92,7 +93,7 @@ impl EptSizeR {
     }
 }
 #[doc = "Field `EPT_SIZE` writer - Endpoint Size"]
-pub type EptSizeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, EptSize>;
+pub type EptSizeW<'a, REG> = crate::FieldWriter<'a, REG, 3, EptSize, crate::Safe>;
 impl<'a, REG> EptSizeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -165,6 +166,7 @@ impl From<EptType> for u8 {
 impl crate::FieldSpec for EptType {
     type Ux = u8;
 }
+impl crate::IsEnum for EptType {}
 #[doc = "Field `EPT_TYPE` reader - Endpoint Type"]
 pub type EptTypeR = crate::FieldReader<EptType>;
 impl EptTypeR {
@@ -201,7 +203,7 @@ impl EptTypeR {
     }
 }
 #[doc = "Field `EPT_TYPE` writer - Endpoint Type"]
-pub type EptTypeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EptType>;
+pub type EptTypeW<'a, REG> = crate::FieldWriter<'a, REG, 2, EptType, crate::Safe>;
 impl<'a, REG> EptTypeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -250,6 +252,7 @@ impl From<BkNumber> for u8 {
 impl crate::FieldSpec for BkNumber {
     type Ux = u8;
 }
+impl crate::IsEnum for BkNumber {}
 #[doc = "Field `BK_NUMBER` reader - Number of Banks"]
 pub type BkNumberR = crate::FieldReader<BkNumber>;
 impl BkNumberR {
@@ -286,7 +289,7 @@ impl BkNumberR {
     }
 }
 #[doc = "Field `BK_NUMBER` writer - Number of Banks"]
-pub type BkNumberW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, BkNumber>;
+pub type BkNumberW<'a, REG> = crate::FieldWriter<'a, REG, 2, BkNumber, crate::Safe>;
 impl<'a, REG> BkNumberW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

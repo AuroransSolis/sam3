@@ -24,6 +24,7 @@ impl From<Lpcb> for u8 {
 impl crate::FieldSpec for Lpcb {
     type Ux = u8;
 }
+impl crate::IsEnum for Lpcb {}
 #[doc = "Field `LPCB` reader - Low-power Configuration Bits"]
 pub type LpcbR = crate::FieldReader<Lpcb>;
 impl LpcbR {
@@ -60,7 +61,7 @@ impl LpcbR {
     }
 }
 #[doc = "Field `LPCB` writer - Low-power Configuration Bits"]
-pub type LpcbW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Lpcb>;
+pub type LpcbW<'a, REG> = crate::FieldWriter<'a, REG, 2, Lpcb, crate::Safe>;
 impl<'a, REG> LpcbW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -119,6 +120,7 @@ impl From<Timeout> for u8 {
 impl crate::FieldSpec for Timeout {
     type Ux = u8;
 }
+impl crate::IsEnum for Timeout {}
 #[doc = "Field `TIMEOUT` reader - Time to define when low-power mode is enable"]
 pub type TimeoutR = crate::FieldReader<Timeout>;
 impl TimeoutR {

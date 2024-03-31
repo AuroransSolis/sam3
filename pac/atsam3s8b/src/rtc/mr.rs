@@ -52,6 +52,7 @@ impl From<Out0> for u8 {
 impl crate::FieldSpec for Out0 {
     type Ux = u8;
 }
+impl crate::IsEnum for Out0 {}
 #[doc = "Field `OUT0` reader - RTCOUT0 Output Source Selection"]
 pub type Out0R = crate::FieldReader<Out0>;
 impl Out0R {
@@ -112,7 +113,7 @@ impl Out0R {
     }
 }
 #[doc = "Field `OUT0` writer - RTCOUT0 Output Source Selection"]
-pub type Out0W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Out0>;
+pub type Out0W<'a, REG> = crate::FieldWriter<'a, REG, 3, Out0, crate::Safe>;
 impl<'a, REG> Out0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -189,6 +190,7 @@ impl From<Out1> for u8 {
 impl crate::FieldSpec for Out1 {
     type Ux = u8;
 }
+impl crate::IsEnum for Out1 {}
 #[doc = "Field `OUT1` reader - RTCOUT1 Output Source Selection"]
 pub type Out1R = crate::FieldReader<Out1>;
 impl Out1R {
@@ -249,7 +251,7 @@ impl Out1R {
     }
 }
 #[doc = "Field `OUT1` writer - RTCOUT1 Output Source Selection"]
-pub type Out1W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Out1>;
+pub type Out1W<'a, REG> = crate::FieldWriter<'a, REG, 3, Out1, crate::Safe>;
 impl<'a, REG> Out1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -326,6 +328,7 @@ impl From<Thigh> for u8 {
 impl crate::FieldSpec for Thigh {
     type Ux = u8;
 }
+impl crate::IsEnum for Thigh {}
 #[doc = "Field `THIGH` reader - High Duration of the Output Pulse"]
 pub type ThighR = crate::FieldReader<Thigh>;
 impl ThighR {
@@ -386,7 +389,7 @@ impl ThighR {
     }
 }
 #[doc = "Field `THIGH` writer - High Duration of the Output Pulse"]
-pub type ThighW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Thigh>;
+pub type ThighW<'a, REG> = crate::FieldWriter<'a, REG, 3, Thigh, crate::Safe>;
 impl<'a, REG> ThighW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -455,6 +458,7 @@ impl From<Tperiod> for u8 {
 impl crate::FieldSpec for Tperiod {
     type Ux = u8;
 }
+impl crate::IsEnum for Tperiod {}
 #[doc = "Field `TPERIOD` reader - Period of the Output Pulse"]
 pub type TperiodR = crate::FieldReader<Tperiod>;
 impl TperiodR {
@@ -491,7 +495,7 @@ impl TperiodR {
     }
 }
 #[doc = "Field `TPERIOD` writer - Period of the Output Pulse"]
-pub type TperiodW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Tperiod>;
+pub type TperiodW<'a, REG> = crate::FieldWriter<'a, REG, 2, Tperiod, crate::Safe>;
 impl<'a, REG> TperiodW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

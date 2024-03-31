@@ -20,6 +20,7 @@ impl From<CdrHw0Chsel> for u8 {
 impl crate::FieldSpec for CdrHw0Chsel {
     type Ux = u8;
 }
+impl crate::IsEnum for CdrHw0Chsel {}
 #[doc = "Field `CDR_HW0_CHSEL` writer - Channel select field of the lower CDR half-word"]
 pub type CdrHw0ChselW<'a, REG> = crate::FieldWriter<'a, REG, 2, CdrHw0Chsel>;
 impl<'a, REG> CdrHw0ChselW<'a, REG>
@@ -58,6 +59,7 @@ impl From<CdrHw1Chsel> for u8 {
 impl crate::FieldSpec for CdrHw1Chsel {
     type Ux = u8;
 }
+impl crate::IsEnum for CdrHw1Chsel {}
 #[doc = "Field `CDR_HW1_CHSEL` writer - Channel select field of the upper CDR half-word"]
 pub type CdrHw1ChselW<'a, REG> = crate::FieldWriter<'a, REG, 2, CdrHw1Chsel>;
 impl<'a, REG> CdrHw1ChselW<'a, REG>

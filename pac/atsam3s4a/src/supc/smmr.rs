@@ -30,6 +30,7 @@ impl From<Smsmpl> for u8 {
 impl crate::FieldSpec for Smsmpl {
     type Ux = u8;
 }
+impl crate::IsEnum for Smsmpl {}
 #[doc = "Field `SMSMPL` reader - Supply Monitor Sampling Period"]
 pub type SmsmplR = crate::FieldReader<Smsmpl>;
 impl SmsmplR {

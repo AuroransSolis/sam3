@@ -48,6 +48,7 @@ impl From<Smth> for u8 {
 impl crate::FieldSpec for Smth {
     type Ux = u8;
 }
+impl crate::IsEnum for Smth {}
 #[doc = "Field `SMTH` reader - Supply Monitor Threshold"]
 pub type SmthR = crate::FieldReader<Smth>;
 impl SmthR {
@@ -156,7 +157,7 @@ impl SmthR {
     }
 }
 #[doc = "Field `SMTH` writer - Supply Monitor Threshold"]
-pub type SmthW<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, Smth>;
+pub type SmthW<'a, REG> = crate::FieldWriter<'a, REG, 4, Smth, crate::Safe>;
 impl<'a, REG> SmthW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -267,6 +268,7 @@ impl From<Smsmpl> for u8 {
 impl crate::FieldSpec for Smsmpl {
     type Ux = u8;
 }
+impl crate::IsEnum for Smsmpl {}
 #[doc = "Field `SMSMPL` reader - Supply Monitor Sampling Period"]
 pub type SmsmplR = crate::FieldReader<Smsmpl>;
 impl SmsmplR {

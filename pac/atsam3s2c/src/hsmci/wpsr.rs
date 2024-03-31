@@ -22,6 +22,7 @@ impl From<WpVs> for u8 {
 impl crate::FieldSpec for WpVs {
     type Ux = u8;
 }
+impl crate::IsEnum for WpVs {}
 #[doc = "Field `WP_VS` reader - Write Protection Violation Status"]
 pub type WpVsR = crate::FieldReader<WpVs>;
 impl WpVsR {

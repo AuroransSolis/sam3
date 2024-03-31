@@ -81,6 +81,7 @@ impl From<Trgsel> for u8 {
 impl crate::FieldSpec for Trgsel {
     type Ux = u8;
 }
+impl crate::IsEnum for Trgsel {}
 #[doc = "Field `TRGSEL` reader - Trigger Selection"]
 pub type TrgselR = crate::FieldReader<Trgsel>;
 impl TrgselR {
@@ -428,6 +429,7 @@ impl From<Startup> for u8 {
 impl crate::FieldSpec for Startup {
     type Ux = u8;
 }
+impl crate::IsEnum for Startup {}
 #[doc = "Field `STARTUP` reader - Start Up Time"]
 pub type StartupR = crate::FieldReader<Startup>;
 impl StartupR {
@@ -536,7 +538,7 @@ impl StartupR {
     }
 }
 #[doc = "Field `STARTUP` writer - Start Up Time"]
-pub type StartupW<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, Startup>;
+pub type StartupW<'a, REG> = crate::FieldWriter<'a, REG, 4, Startup, crate::Safe>;
 impl<'a, REG> StartupW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -645,6 +647,7 @@ impl From<Settling> for u8 {
 impl crate::FieldSpec for Settling {
     type Ux = u8;
 }
+impl crate::IsEnum for Settling {}
 #[doc = "Field `SETTLING` reader - Analog Settling Time"]
 pub type SettlingR = crate::FieldReader<Settling>;
 impl SettlingR {
@@ -681,7 +684,7 @@ impl SettlingR {
     }
 }
 #[doc = "Field `SETTLING` writer - Analog Settling Time"]
-pub type SettlingW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Settling>;
+pub type SettlingW<'a, REG> = crate::FieldWriter<'a, REG, 2, Settling, crate::Safe>;
 impl<'a, REG> SettlingW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

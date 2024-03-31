@@ -34,6 +34,7 @@ impl From<UsartMode> for u8 {
 impl crate::FieldSpec for UsartMode {
     type Ux = u8;
 }
+impl crate::IsEnum for UsartMode {}
 #[doc = "Field `USART_MODE` reader - USART Mode of Operation"]
 pub type UsartModeR = crate::FieldReader<UsartMode>;
 impl UsartModeR {
@@ -172,6 +173,7 @@ impl From<Usclks> for u8 {
 impl crate::FieldSpec for Usclks {
     type Ux = u8;
 }
+impl crate::IsEnum for Usclks {}
 #[doc = "Field `USCLKS` reader - Clock Selection"]
 pub type UsclksR = crate::FieldReader<Usclks>;
 impl UsclksR {
@@ -246,6 +248,7 @@ impl From<Chrl> for u8 {
 impl crate::FieldSpec for Chrl {
     type Ux = u8;
 }
+impl crate::IsEnum for Chrl {}
 #[doc = "Field `CHRL` reader - Character Length."]
 pub type ChrlR = crate::FieldReader<Chrl>;
 impl ChrlR {
@@ -282,7 +285,7 @@ impl ChrlR {
     }
 }
 #[doc = "Field `CHRL` writer - Character Length."]
-pub type ChrlW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Chrl>;
+pub type ChrlW<'a, REG> = crate::FieldWriter<'a, REG, 2, Chrl, crate::Safe>;
 impl<'a, REG> ChrlW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -339,6 +342,7 @@ impl From<Par> for u8 {
 impl crate::FieldSpec for Par {
     type Ux = u8;
 }
+impl crate::IsEnum for Par {}
 #[doc = "Field `PAR` reader - Parity Type"]
 pub type ParR = crate::FieldReader<Par>;
 impl ParR {
@@ -444,6 +448,7 @@ impl From<Nbstop> for u8 {
 impl crate::FieldSpec for Nbstop {
     type Ux = u8;
 }
+impl crate::IsEnum for Nbstop {}
 #[doc = "Field `NBSTOP` reader - Number of Stop Bits"]
 pub type NbstopR = crate::FieldReader<Nbstop>;
 impl NbstopR {
@@ -518,6 +523,7 @@ impl From<Chmode> for u8 {
 impl crate::FieldSpec for Chmode {
     type Ux = u8;
 }
+impl crate::IsEnum for Chmode {}
 #[doc = "Field `CHMODE` reader - Channel Mode"]
 pub type ChmodeR = crate::FieldReader<Chmode>;
 impl ChmodeR {
@@ -554,7 +560,7 @@ impl ChmodeR {
     }
 }
 #[doc = "Field `CHMODE` writer - Channel Mode"]
-pub type ChmodeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Chmode>;
+pub type ChmodeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Chmode, crate::Safe>;
 impl<'a, REG> ChmodeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

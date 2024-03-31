@@ -26,6 +26,7 @@ impl From<Css> for u8 {
 impl crate::FieldSpec for Css {
     type Ux = u8;
 }
+impl crate::IsEnum for Css {}
 #[doc = "Field `CSS` reader - Master Clock Source Selection"]
 pub type CssR = crate::FieldReader<Css>;
 impl CssR {
@@ -128,6 +129,7 @@ impl From<Pres> for u8 {
 impl crate::FieldSpec for Pres {
     type Ux = u8;
 }
+impl crate::IsEnum for Pres {}
 #[doc = "Field `PRES` reader - Programmable Clock Prescaler"]
 pub type PresR = crate::FieldReader<Pres>;
 impl PresR {

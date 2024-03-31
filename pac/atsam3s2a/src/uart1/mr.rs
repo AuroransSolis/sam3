@@ -26,6 +26,7 @@ impl From<Par> for u8 {
 impl crate::FieldSpec for Par {
     type Ux = u8;
 }
+impl crate::IsEnum for Par {}
 #[doc = "Field `PAR` reader - Parity Type"]
 pub type ParR = crate::FieldReader<Par>;
 impl ParR {
@@ -122,6 +123,7 @@ impl From<Chmode> for u8 {
 impl crate::FieldSpec for Chmode {
     type Ux = u8;
 }
+impl crate::IsEnum for Chmode {}
 #[doc = "Field `CHMODE` reader - Channel Mode"]
 pub type ChmodeR = crate::FieldReader<Chmode>;
 impl ChmodeR {
@@ -158,7 +160,7 @@ impl ChmodeR {
     }
 }
 #[doc = "Field `CHMODE` writer - Channel Mode"]
-pub type ChmodeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Chmode>;
+pub type ChmodeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Chmode, crate::Safe>;
 impl<'a, REG> ChmodeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

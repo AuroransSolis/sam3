@@ -22,6 +22,7 @@ impl From<SpeedCfg> for u8 {
 impl crate::FieldSpec for SpeedCfg {
     type Ux = u8;
 }
+impl crate::IsEnum for SpeedCfg {}
 #[doc = "Field `SPEED_CFG` reader - Speed Configuration"]
 pub type SpeedCfgR = crate::FieldReader<SpeedCfg>;
 impl SpeedCfgR {

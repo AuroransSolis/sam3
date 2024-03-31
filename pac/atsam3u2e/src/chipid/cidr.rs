@@ -30,6 +30,7 @@ impl From<Eproc> for u8 {
 impl crate::FieldSpec for Eproc {
     type Ux = u8;
 }
+impl crate::IsEnum for Eproc {}
 #[doc = "Field `EPROC` reader - Embedded Processor"]
 pub type EprocR = crate::FieldReader<Eproc>;
 impl EprocR {
@@ -117,6 +118,7 @@ impl From<Nvpsiz> for u8 {
 impl crate::FieldSpec for Nvpsiz {
     type Ux = u8;
 }
+impl crate::IsEnum for Nvpsiz {}
 #[doc = "Field `NVPSIZ` reader - Nonvolatile Program Memory Size"]
 pub type NvpsizR = crate::FieldReader<Nvpsiz>;
 impl NvpsizR {
@@ -222,6 +224,7 @@ impl From<Nvpsiz2> for u8 {
 impl crate::FieldSpec for Nvpsiz2 {
     type Ux = u8;
 }
+impl crate::IsEnum for Nvpsiz2 {}
 #[doc = "Field `NVPSIZ2` reader - Second Nonvolatile Program Memory Size"]
 pub type Nvpsiz2R = crate::FieldReader<Nvpsiz2>;
 impl Nvpsiz2R {
@@ -339,6 +342,7 @@ impl From<Sramsiz> for u8 {
 impl crate::FieldSpec for Sramsiz {
     type Ux = u8;
 }
+impl crate::IsEnum for Sramsiz {}
 #[doc = "Field `SRAMSIZ` reader - Internal SRAM Size"]
 pub type SramsizR = crate::FieldReader<Sramsiz>;
 impl SramsizR {
@@ -528,6 +532,7 @@ impl From<Arch> for u8 {
 impl crate::FieldSpec for Arch {
     type Ux = u8;
 }
+impl crate::IsEnum for Arch {}
 #[doc = "Field `ARCH` reader - Architecture Identifier"]
 pub type ArchR = crate::FieldReader<Arch>;
 impl ArchR {
@@ -767,6 +772,7 @@ impl From<Nvptyp> for u8 {
 impl crate::FieldSpec for Nvptyp {
     type Ux = u8;
 }
+impl crate::IsEnum for Nvptyp {}
 #[doc = "Field `NVPTYP` reader - Nonvolatile Program Memory Type"]
 pub type NvptypR = crate::FieldReader<Nvptyp>;
 impl NvptypR {

@@ -56,6 +56,7 @@ impl From<Rxsync> for u8 {
 impl crate::FieldSpec for Rxsync {
     type Ux = u8;
 }
+impl crate::IsEnum for Rxsync {}
 #[doc = "Field `RXSYNC` reader - Reception Synchronization Stage (not readable)"]
 pub type RxsyncR = crate::FieldReader<Rxsync>;
 impl RxsyncR {

@@ -346,6 +346,7 @@ impl From<Wkupdbc> for u8 {
 impl crate::FieldSpec for Wkupdbc {
     type Ux = u8;
 }
+impl crate::IsEnum for Wkupdbc {}
 #[doc = "Field `WKUPDBC` reader - Wake Up Inputs Debouncer Period"]
 pub type WkupdbcR = crate::FieldReader<Wkupdbc>;
 impl WkupdbcR {
@@ -461,6 +462,7 @@ impl From<Lpdbc> for u8 {
 impl crate::FieldSpec for Lpdbc {
     type Ux = u8;
 }
+impl crate::IsEnum for Lpdbc {}
 #[doc = "Field `LPDBC` reader - Low Power DeBounCer Period"]
 pub type LpdbcR = crate::FieldReader<Lpdbc>;
 impl LpdbcR {
@@ -521,7 +523,7 @@ impl LpdbcR {
     }
 }
 #[doc = "Field `LPDBC` writer - Low Power DeBounCer Period"]
-pub type LpdbcW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Lpdbc>;
+pub type LpdbcW<'a, REG> = crate::FieldWriter<'a, REG, 3, Lpdbc, crate::Safe>;
 impl<'a, REG> LpdbcW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

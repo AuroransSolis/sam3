@@ -56,6 +56,7 @@ impl From<Clk> for u8 {
 impl crate::FieldSpec for Clk {
     type Ux = u8;
 }
+impl crate::IsEnum for Clk {}
 #[doc = "Field `CLK` reader - MDC clock divider"]
 pub type ClkR = crate::FieldReader<Clk>;
 impl ClkR {
@@ -92,7 +93,7 @@ impl ClkR {
     }
 }
 #[doc = "Field `CLK` writer - MDC clock divider"]
-pub type ClkW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Clk>;
+pub type ClkW<'a, REG> = crate::FieldWriter<'a, REG, 2, Clk, crate::Safe>;
 impl<'a, REG> ClkW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -149,6 +150,7 @@ impl From<Rbof> for u8 {
 impl crate::FieldSpec for Rbof {
     type Ux = u8;
 }
+impl crate::IsEnum for Rbof {}
 #[doc = "Field `RBOF` reader - Receive Buffer Offset"]
 pub type RbofR = crate::FieldReader<Rbof>;
 impl RbofR {
@@ -185,7 +187,7 @@ impl RbofR {
     }
 }
 #[doc = "Field `RBOF` writer - Receive Buffer Offset"]
-pub type RbofW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Rbof>;
+pub type RbofW<'a, REG> = crate::FieldWriter<'a, REG, 2, Rbof, crate::Safe>;
 impl<'a, REG> RbofW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

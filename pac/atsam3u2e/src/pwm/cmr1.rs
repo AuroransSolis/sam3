@@ -42,6 +42,7 @@ impl From<Cpre> for u8 {
 impl crate::FieldSpec for Cpre {
     type Ux = u8;
 }
+impl crate::IsEnum for Cpre {}
 #[doc = "Field `CPRE` reader - Channel Pre-scaler"]
 pub type CpreR = crate::FieldReader<Cpre>;
 impl CpreR {

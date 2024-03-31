@@ -32,6 +32,7 @@ impl From<Selminus> for u8 {
 impl crate::FieldSpec for Selminus {
     type Ux = u8;
 }
+impl crate::IsEnum for Selminus {}
 #[doc = "Field `SELMINUS` reader - SELection for MINUS comparator input"]
 pub type SelminusR = crate::FieldReader<Selminus>;
 impl SelminusR {
@@ -92,7 +93,7 @@ impl SelminusR {
     }
 }
 #[doc = "Field `SELMINUS` writer - SELection for MINUS comparator input"]
-pub type SelminusW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Selminus>;
+pub type SelminusW<'a, REG> = crate::FieldWriter<'a, REG, 3, Selminus, crate::Safe>;
 impl<'a, REG> SelminusW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -169,6 +170,7 @@ impl From<Selplus> for u8 {
 impl crate::FieldSpec for Selplus {
     type Ux = u8;
 }
+impl crate::IsEnum for Selplus {}
 #[doc = "Field `SELPLUS` reader - SELection for PLUS comparator input"]
 pub type SelplusR = crate::FieldReader<Selplus>;
 impl SelplusR {
@@ -229,7 +231,7 @@ impl SelplusR {
     }
 }
 #[doc = "Field `SELPLUS` writer - SELection for PLUS comparator input"]
-pub type SelplusW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Selplus>;
+pub type SelplusW<'a, REG> = crate::FieldWriter<'a, REG, 3, Selplus, crate::Safe>;
 impl<'a, REG> SelplusW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -349,6 +351,7 @@ impl From<Edgetyp> for u8 {
 impl crate::FieldSpec for Edgetyp {
     type Ux = u8;
 }
+impl crate::IsEnum for Edgetyp {}
 #[doc = "Field `EDGETYP` reader - EDGE TYPe"]
 pub type EdgetypR = crate::FieldReader<Edgetyp>;
 impl EdgetypR {

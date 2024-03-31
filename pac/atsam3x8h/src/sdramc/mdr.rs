@@ -20,6 +20,7 @@ impl From<Md> for u8 {
 impl crate::FieldSpec for Md {
     type Ux = u8;
 }
+impl crate::IsEnum for Md {}
 #[doc = "Field `MD` reader - Memory Device Type"]
 pub type MdR = crate::FieldReader<Md>;
 impl MdR {

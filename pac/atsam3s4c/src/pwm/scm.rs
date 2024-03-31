@@ -38,6 +38,7 @@ impl From<Updm> for u8 {
 impl crate::FieldSpec for Updm {
     type Ux = u8;
 }
+impl crate::IsEnum for Updm {}
 #[doc = "Field `UPDM` reader - Synchronous Channels Update Mode"]
 pub type UpdmR = crate::FieldReader<Updm>;
 impl UpdmR {

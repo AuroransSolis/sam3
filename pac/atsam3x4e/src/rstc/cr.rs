@@ -22,6 +22,7 @@ impl From<Key> for u8 {
 impl crate::FieldSpec for Key {
     type Ux = u8;
 }
+impl crate::IsEnum for Key {}
 #[doc = "Field `KEY` writer - System Reset Key"]
 pub type KeyW<'a, REG> = crate::FieldWriter<'a, REG, 8, Key>;
 impl<'a, REG> KeyW<'a, REG>

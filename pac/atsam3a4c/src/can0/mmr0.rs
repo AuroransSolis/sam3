@@ -36,6 +36,7 @@ impl From<Mot> for u8 {
 impl crate::FieldSpec for Mot {
     type Ux = u8;
 }
+impl crate::IsEnum for Mot {}
 #[doc = "Field `MOT` reader - Mailbox Object Type"]
 pub type MotR = crate::FieldReader<Mot>;
 impl MotR {

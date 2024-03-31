@@ -24,6 +24,7 @@ impl From<Css> for u8 {
 impl crate::FieldSpec for Css {
     type Ux = u8;
 }
+impl crate::IsEnum for Css {}
 #[doc = "Field `CSS` reader - Master Clock Source Selection"]
 pub type CssR = crate::FieldReader<Css>;
 impl CssR {
@@ -60,7 +61,7 @@ impl CssR {
     }
 }
 #[doc = "Field `CSS` writer - Master Clock Source Selection"]
-pub type CssW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Css>;
+pub type CssW<'a, REG> = crate::FieldWriter<'a, REG, 2, Css, crate::Safe>;
 impl<'a, REG> CssW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -117,6 +118,7 @@ impl From<Pres> for u8 {
 impl crate::FieldSpec for Pres {
     type Ux = u8;
 }
+impl crate::IsEnum for Pres {}
 #[doc = "Field `PRES` reader - Processor Clock Prescaler"]
 pub type PresR = crate::FieldReader<Pres>;
 impl PresR {
@@ -177,7 +179,7 @@ impl PresR {
     }
 }
 #[doc = "Field `PRES` writer - Processor Clock Prescaler"]
-pub type PresW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Pres>;
+pub type PresW<'a, REG> = crate::FieldWriter<'a, REG, 3, Pres, crate::Safe>;
 impl<'a, REG> PresW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

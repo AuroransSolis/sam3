@@ -20,6 +20,7 @@ impl From<UsartMode> for u8 {
 impl crate::FieldSpec for UsartMode {
     type Ux = u8;
 }
+impl crate::IsEnum for UsartMode {}
 #[doc = "Field `USART_MODE` reader - USART Mode of Operation"]
 pub type UsartModeR = crate::FieldReader<UsartMode>;
 impl UsartModeR {
@@ -81,6 +82,7 @@ impl From<Usclks> for u8 {
 impl crate::FieldSpec for Usclks {
     type Ux = u8;
 }
+impl crate::IsEnum for Usclks {}
 #[doc = "Field `USCLKS` reader - Clock Selection"]
 pub type UsclksR = crate::FieldReader<Usclks>;
 impl UsclksR {
@@ -149,6 +151,7 @@ impl From<Chrl> for u8 {
 impl crate::FieldSpec for Chrl {
     type Ux = u8;
 }
+impl crate::IsEnum for Chrl {}
 #[doc = "Field `CHRL` reader - Character Length"]
 pub type ChrlR = crate::FieldReader<Chrl>;
 impl ChrlR {

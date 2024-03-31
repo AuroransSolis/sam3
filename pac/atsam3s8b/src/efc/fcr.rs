@@ -42,6 +42,7 @@ impl From<Fcmd> for u8 {
 impl crate::FieldSpec for Fcmd {
     type Ux = u8;
 }
+impl crate::IsEnum for Fcmd {}
 #[doc = "Field `FCMD` writer - Flash Command"]
 pub type FcmdW<'a, REG> = crate::FieldWriter<'a, REG, 8, Fcmd>;
 impl<'a, REG> FcmdW<'a, REG>
@@ -138,6 +139,7 @@ impl From<Fkey> for u8 {
 impl crate::FieldSpec for Fkey {
     type Ux = u8;
 }
+impl crate::IsEnum for Fkey {}
 #[doc = "Field `FKEY` writer - Flash Writing Protection Key"]
 pub type FkeyW<'a, REG> = crate::FieldWriter<'a, REG, 8, Fkey>;
 impl<'a, REG> FkeyW<'a, REG>

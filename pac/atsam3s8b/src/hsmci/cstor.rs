@@ -36,6 +36,7 @@ impl From<Cstomul> for u8 {
 impl crate::FieldSpec for Cstomul {
     type Ux = u8;
 }
+impl crate::IsEnum for Cstomul {}
 #[doc = "Field `CSTOMUL` reader - Completion Signal Timeout Multiplier"]
 pub type CstomulR = crate::FieldReader<Cstomul>;
 impl CstomulR {
@@ -96,7 +97,7 @@ impl CstomulR {
     }
 }
 #[doc = "Field `CSTOMUL` writer - Completion Signal Timeout Multiplier"]
-pub type CstomulW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Cstomul>;
+pub type CstomulW<'a, REG> = crate::FieldWriter<'a, REG, 3, Cstomul, crate::Safe>;
 impl<'a, REG> CstomulW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

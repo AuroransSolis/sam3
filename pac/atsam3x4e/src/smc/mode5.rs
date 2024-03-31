@@ -128,6 +128,7 @@ impl From<ExnwMode> for u8 {
 impl crate::FieldSpec for ExnwMode {
     type Ux = u8;
 }
+impl crate::IsEnum for ExnwMode {}
 #[doc = "Field `EXNW_MODE` reader - NWAIT Mode"]
 pub type ExnwModeR = crate::FieldReader<ExnwMode>;
 impl ExnwModeR {

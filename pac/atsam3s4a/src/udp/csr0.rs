@@ -62,6 +62,7 @@ impl From<Eptype> for u8 {
 impl crate::FieldSpec for Eptype {
     type Ux = u8;
 }
+impl crate::IsEnum for Eptype {}
 #[doc = "Field `EPTYPE` reader - Endpoint Type"]
 pub type EptypeR = crate::FieldReader<Eptype>;
 impl EptypeR {

@@ -340,6 +340,7 @@ impl From<Fifocfg> for u8 {
 impl crate::FieldSpec for Fifocfg {
     type Ux = u8;
 }
+impl crate::IsEnum for Fifocfg {}
 #[doc = "Field `FIFOCFG` reader - FIFO Configuration"]
 pub type FifocfgR = crate::FieldReader<Fifocfg>;
 impl FifocfgR {

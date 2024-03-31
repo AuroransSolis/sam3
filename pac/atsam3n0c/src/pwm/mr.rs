@@ -20,6 +20,7 @@ impl From<Diva> for u8 {
 impl crate::FieldSpec for Diva {
     type Ux = u8;
 }
+impl crate::IsEnum for Diva {}
 #[doc = "Field `DIVA` reader - CLKA, CLKB Divide Factor"]
 pub type DivaR = crate::FieldReader<Diva>;
 impl DivaR {
@@ -97,6 +98,7 @@ impl From<Prea> for u8 {
 impl crate::FieldSpec for Prea {
     type Ux = u8;
 }
+impl crate::IsEnum for Prea {}
 #[doc = "Field `PREA` reader - "]
 pub type PreaR = crate::FieldReader<Prea>;
 impl PreaR {
@@ -255,6 +257,7 @@ impl From<Divb> for u8 {
 impl crate::FieldSpec for Divb {
     type Ux = u8;
 }
+impl crate::IsEnum for Divb {}
 #[doc = "Field `DIVB` reader - CLKA, CLKB Divide Factor"]
 pub type DivbR = crate::FieldReader<Divb>;
 impl DivbR {
@@ -332,6 +335,7 @@ impl From<Preb> for u8 {
 impl crate::FieldSpec for Preb {
     type Ux = u8;
 }
+impl crate::IsEnum for Preb {}
 #[doc = "Field `PREB` reader - "]
 pub type PrebR = crate::FieldReader<Preb>;
 impl PrebR {

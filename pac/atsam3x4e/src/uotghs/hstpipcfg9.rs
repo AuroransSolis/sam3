@@ -26,6 +26,7 @@ impl From<Pbk> for u8 {
 impl crate::FieldSpec for Pbk {
     type Ux = u8;
 }
+impl crate::IsEnum for Pbk {}
 #[doc = "Field `PBK` reader - Pipe Banks"]
 pub type PbkR = crate::FieldReader<Pbk>;
 impl PbkR {
@@ -108,6 +109,7 @@ impl From<Psize> for u8 {
 impl crate::FieldSpec for Psize {
     type Ux = u8;
 }
+impl crate::IsEnum for Psize {}
 #[doc = "Field `PSIZE` reader - Pipe Size"]
 pub type PsizeR = crate::FieldReader<Psize>;
 impl PsizeR {
@@ -168,7 +170,7 @@ impl PsizeR {
     }
 }
 #[doc = "Field `PSIZE` writer - Pipe Size"]
-pub type PsizeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Psize>;
+pub type PsizeW<'a, REG> = crate::FieldWriter<'a, REG, 3, Psize, crate::Safe>;
 impl<'a, REG> PsizeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -235,6 +237,7 @@ impl From<Ptoken> for u8 {
 impl crate::FieldSpec for Ptoken {
     type Ux = u8;
 }
+impl crate::IsEnum for Ptoken {}
 #[doc = "Field `PTOKEN` reader - Pipe Token"]
 pub type PtokenR = crate::FieldReader<Ptoken>;
 impl PtokenR {
@@ -313,6 +316,7 @@ impl From<Ptype> for u8 {
 impl crate::FieldSpec for Ptype {
     type Ux = u8;
 }
+impl crate::IsEnum for Ptype {}
 #[doc = "Field `PTYPE` reader - Pipe Type"]
 pub type PtypeR = crate::FieldReader<Ptype>;
 impl PtypeR {
@@ -349,7 +353,7 @@ impl PtypeR {
     }
 }
 #[doc = "Field `PTYPE` writer - Pipe Type"]
-pub type PtypeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ptype>;
+pub type PtypeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Ptype, crate::Safe>;
 impl<'a, REG> PtypeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

@@ -24,6 +24,7 @@ impl From<TogglesqSta> for u8 {
 impl crate::FieldSpec for TogglesqSta {
     type Ux = u8;
 }
+impl crate::IsEnum for TogglesqSta {}
 #[doc = "Field `TOGGLESQ_STA` reader - Toggle Sequencing"]
 pub type TogglesqStaR = crate::FieldReader<TogglesqSta>;
 impl TogglesqStaR {
@@ -97,6 +98,7 @@ impl From<BusyBankSta> for u8 {
 impl crate::FieldSpec for BusyBankSta {
     type Ux = u8;
 }
+impl crate::IsEnum for BusyBankSta {}
 #[doc = "Field `BUSY_BANK_STA` reader - Busy Bank Number"]
 pub type BusyBankStaR = crate::FieldReader<BusyBankSta>;
 impl BusyBankStaR {

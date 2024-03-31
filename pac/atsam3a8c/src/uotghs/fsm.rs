@@ -46,6 +46,7 @@ impl From<Drdstate> for u8 {
 impl crate::FieldSpec for Drdstate {
     type Ux = u8;
 }
+impl crate::IsEnum for Drdstate {}
 #[doc = "Field `DRDSTATE` reader - Dual Role Device State"]
 pub type DrdstateR = crate::FieldReader<Drdstate>;
 impl DrdstateR {

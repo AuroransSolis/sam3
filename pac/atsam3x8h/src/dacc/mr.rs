@@ -81,6 +81,7 @@ impl From<TrgselA> for u8 {
 impl crate::FieldSpec for TrgselA {
     type Ux = u8;
 }
+impl crate::IsEnum for TrgselA {}
 #[doc = "Field `TRGSEL` reader - Trigger Selection"]
 pub type TrgselR = crate::FieldReader<TrgselA>;
 impl TrgselR {
@@ -249,6 +250,7 @@ impl From<UserSel> for u8 {
 impl crate::FieldSpec for UserSel {
     type Ux = u8;
 }
+impl crate::IsEnum for UserSel {}
 #[doc = "Field `USER_SEL` reader - User Channel Selection"]
 pub type UserSelR = crate::FieldReader<UserSel>;
 impl UserSelR {
@@ -474,6 +476,7 @@ impl From<Startup> for u8 {
 impl crate::FieldSpec for Startup {
     type Ux = u8;
 }
+impl crate::IsEnum for Startup {}
 #[doc = "Field `STARTUP` reader - Startup Time Selection"]
 pub type StartupR = crate::FieldReader<Startup>;
 impl StartupR {

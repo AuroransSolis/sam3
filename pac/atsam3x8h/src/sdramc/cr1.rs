@@ -24,6 +24,7 @@ impl From<Nc> for u8 {
 impl crate::FieldSpec for Nc {
     type Ux = u8;
 }
+impl crate::IsEnum for Nc {}
 #[doc = "Field `NC` reader - Number of Column Bits"]
 pub type NcR = crate::FieldReader<Nc>;
 impl NcR {
@@ -60,7 +61,7 @@ impl NcR {
     }
 }
 #[doc = "Field `NC` writer - Number of Column Bits"]
-pub type NcW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Nc>;
+pub type NcW<'a, REG> = crate::FieldWriter<'a, REG, 2, Nc, crate::Safe>;
 impl<'a, REG> NcW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -107,6 +108,7 @@ impl From<Nr> for u8 {
 impl crate::FieldSpec for Nr {
     type Ux = u8;
 }
+impl crate::IsEnum for Nr {}
 #[doc = "Field `NR` reader - Number of Row Bits"]
 pub type NrR = crate::FieldReader<Nr>;
 impl NrR {
@@ -232,6 +234,7 @@ impl From<Cas> for u8 {
 impl crate::FieldSpec for Cas {
     type Ux = u8;
 }
+impl crate::IsEnum for Cas {}
 #[doc = "Field `CAS` reader - CAS Latency"]
 pub type CasR = crate::FieldReader<Cas>;
 impl CasR {

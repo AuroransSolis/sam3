@@ -130,6 +130,7 @@ impl From<Fc> for u8 {
 impl crate::FieldSpec for Fc {
     type Ux = u8;
 }
+impl crate::IsEnum for Fc {}
 #[doc = "Field `FC` reader - Flow Control"]
 pub type FcR = crate::FieldReader<Fc>;
 impl FcR {
@@ -166,7 +167,7 @@ impl FcR {
     }
 }
 #[doc = "Field `FC` writer - Flow Control"]
-pub type FcW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Fc>;
+pub type FcW<'a, REG> = crate::FieldWriter<'a, REG, 2, Fc, crate::Safe>;
 impl<'a, REG> FcW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -213,6 +214,7 @@ impl From<SrcIncr> for u8 {
 impl crate::FieldSpec for SrcIncr {
     type Ux = u8;
 }
+impl crate::IsEnum for SrcIncr {}
 #[doc = "Field `SRC_INCR` reader - Incrementing, Decrementing or Fixed Address for the Source"]
 pub type SrcIncrR = crate::FieldReader<SrcIncr>;
 impl SrcIncrR {
@@ -285,6 +287,7 @@ impl From<DstIncr> for u8 {
 impl crate::FieldSpec for DstIncr {
     type Ux = u8;
 }
+impl crate::IsEnum for DstIncr {}
 #[doc = "Field `DST_INCR` reader - Incrementing, Decrementing or Fixed Address for the Destination"]
 pub type DstIncrR = crate::FieldReader<DstIncr>;
 impl DstIncrR {

@@ -30,6 +30,7 @@ impl From<Mode> for u8 {
 impl crate::FieldSpec for Mode {
     type Ux = u8;
 }
+impl crate::IsEnum for Mode {}
 #[doc = "Field `MODE` reader - SDRAMC Command Mode"]
 pub type ModeR = crate::FieldReader<Mode>;
 impl ModeR {
