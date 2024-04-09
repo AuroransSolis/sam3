@@ -10,6 +10,7 @@ do
     pushd $pac >/dev/null
     if [ "$(cargo check 2>&1 | rg 'error')" == "" ]
     then
+        echo "pass: $pacname"
         passpacs+=("$pacname")
     else
         echo "fail: $pacname"
@@ -28,6 +29,7 @@ failcount=0
 pushd hal >/dev/null
 for name in ${passpacs[@]}
 do
+    echo "checking $name"
     shortname="$(echo $name | sd '.+(sam3.+)' '$1')"
 
     for suffix in {"","-rt"}
@@ -40,7 +42,7 @@ do
 
             if [ "$(echo $checkresult | rg 'error')" != "" ]
             then
-                echo "FAILURE: $featurelist"
+                echo "    FAILURE: $featurelist"
                 failcount=$(($failcount + 1))
             else
                 passcount=$(($passcount + 1))
