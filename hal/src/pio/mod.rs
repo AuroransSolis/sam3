@@ -1,7 +1,7 @@
 // pub mod dynpin;
 pub mod filter;
-pub mod interrupt;
-pub mod peripheral;
+// pub mod interrupt;
+// pub mod peripheral;
 pub mod pin;
 #[cfg(feature = "pioa")]
 pub mod pioa;
@@ -15,6 +15,7 @@ pub mod piod;
 pub mod pioe;
 #[cfg(feature = "piof")]
 pub mod piof;
+pub mod structure;
 
 use crate::write_protect::WriteProtect;
 #[cfg(feature = "pioa")]
