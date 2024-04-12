@@ -36,8 +36,12 @@ function build_pac() {
 
     mkdir -p "${pac_dir}"
 
-    xsltproc -o "${pac_dir}/${chip_upper}.out" "svd/patches/expand-dim.xsl" "${1}"
-    xsltproc "${xsl}" "${pac_dir}/${chip_upper}.out" \
+    xsltproc -o "${pac_dir}/${chip_upper}.out.1" "svd/patches/expand-dim.xsl" "${1}"
+    xsltproc \
+        -o "${pac_dir}/${chip_upper}.out.2" \
+        "svd/patches/fix-wpkey.xsl" \
+        "${pac_dir}/${chip_upper}.out.1"
+    xsltproc "${xsl}" "${pac_dir}/${chip_upper}.out.2" \
         | svd2rust \
             --target cortex-m \
             --strict \
@@ -48,7 +52,8 @@ function build_pac() {
     form -i "${pac_dir}/lib.rs" -o "${pac_dir}/src/"
     mv "${pac_dir}/generic.rs" "${pac_dir}/src/"
     rm "${pac_dir}/lib.rs"
-    rm "${pac_dir}/${chip_upper}.out"
+    rm "${pac_dir}/${chip_upper}.out.1"
+    rm "${pac_dir}/${chip_upper}.out.2"
 
     pushd "${pac_dir}"
     cargo +nightly fmt
