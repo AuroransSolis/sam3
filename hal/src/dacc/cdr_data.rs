@@ -1,4 +1,4 @@
-use crate::pac::dacc::cdr::{CDR_HW0_CHSEL_AW, CDR_HW1_CHSEL_AW};
+use crate::pac::dacc::cdr::{CdrHw0Chsel, CdrHw1Chsel};
 
 pub trait CdrData {
     fn bits(self) -> u32;
@@ -58,13 +58,13 @@ pub enum HalfCdrChannel {
     Channel1 = 1,
 }
 
-impl From<HalfCdrChannel> for CDR_HW0_CHSEL_AW {
+impl From<HalfCdrChannel> for CdrHw0Chsel {
     fn from(value: HalfCdrChannel) -> Self {
         unsafe { core::mem::transmute(value) }
     }
 }
 
-impl From<HalfCdrChannel> for CDR_HW1_CHSEL_AW {
+impl From<HalfCdrChannel> for CdrHw1Chsel {
     fn from(value: HalfCdrChannel) -> Self {
         unsafe { core::mem::transmute(value) }
     }

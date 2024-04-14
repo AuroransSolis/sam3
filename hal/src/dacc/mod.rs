@@ -140,7 +140,7 @@ pub mod cdr_data;
 
 use crate::{
     pac::{
-        dacc::mr::{STARTUP_A, TRGEN_A, TRGSEL_A_A, USER_SEL_A, WORD_A},
+        dacc::mr::{Startup, Trgen, TrgselA, UserSel, Word},
         DACC, PMC,
     },
     peripheral_id::PeripheralId,
@@ -186,7 +186,7 @@ impl Dacc {
     pub fn reset(&mut self) {
         unsafe {
             self.dacc
-                .cr
+                .cr()
                 .write_with_zero(|cr_reg| cr_reg.swrst().set_bit());
         }
     }
@@ -195,20 +195,20 @@ impl Dacc {
     ///
     /// Briefly, each trigger is as follows:
     ///
-    ///   - `TRGSEL_A::EXTERN`: Conversions triggered by external signal
-    ///   - `TRGSEL_A::TIOOTCC0`: **T**imer **I**/**O** **o**utput of the **t**imer **c**ounter
+    ///   - `TrgselA::External`: Conversions triggered by external signal
+    ///   - `TrgselA::Tiootcc0`: **T**imer **I**/**O** **o**utput of the **t**imer **c**ounter
     ///       **c**hannel **0**
-    ///   - `TRGSEL_A::TIOOTCC1`: **T**imer **I**/**O** **o**utput of the **t**imer **c**ounter
+    ///   - `TrgselA::Tiootcc1`: **T**imer **I**/**O** **o**utput of the **t**imer **c**ounter
     ///       **c**hannel **1**
-    ///   - `TRGSEL_A::TIOOTCC2`: **T**imer **I**/**O** **o**utput of the **t**imer **c**ounter
+    ///   - `TrgselA::Tiootcc2`: **T**imer **I**/**O** **o**utput of the **t**imer **c**ounter
     ///       **c**hannel **2**
-    ///   - `TRGSEL_A::PWM0`: **PWM** event line **0**
-    ///   - `TRGSEL_A::PWM1`: **PWM** event line **1**
+    ///   - `TrgselA::Pwm0`: **PWM** event line **0**
+    ///   - `TrgselA::Pwm1`: **PWM** event line **1**
     ///
     /// # Errors
     ///
     /// Fails if write protection is enabled.
-    pub fn set_trigger(&mut self, trigger: TRGSEL_A_A) -> DaccResult {
+    pub fn set_trigger(&mut self, trigger: TrgselA) -> DaccResult {
         if self.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
@@ -225,10 +225,10 @@ impl Dacc {
     ///
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     #[rustfmt::skip]
-    pub unsafe fn set_trigger_unchecked(&mut self, trigger: TRGSEL_A_A) {
-        self.dacc.mr.write(|mode_reg| {
+    pub unsafe fn set_trigger_unchecked(&mut self, trigger: TrgselA) {
+        self.dacc.mr().write(|mode_reg| {
             mode_reg
-                .trgen().variant(TRGEN_A::En)
+                .trgen().variant(Trgen::En)
                 .trgsel().variant(trigger)
         });
     }
@@ -256,8 +256,8 @@ impl Dacc {
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     pub unsafe fn disable_trigger_unchecked(&mut self) {
         self.dacc
-            .mr
-            .write(|mode_reg| mode_reg.trgen().variant(TRGEN_A::Dis));
+            .mr()
+            .write(|mode_reg| mode_reg.trgen().variant(Trgen::Dis));
     }
 
     /// Attempt to set the transfer mode.
@@ -268,7 +268,7 @@ impl Dacc {
     /// # Errors
     ///
     /// Fails if write protection is enabled.
-    pub fn set_transfer_mode(&mut self, mode: WORD_A) -> DaccResult {
+    pub fn set_transfer_mode(&mut self, mode: Word) -> DaccResult {
         if self.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
@@ -284,14 +284,16 @@ impl Dacc {
     /// Operation failure is silent apart from setting the `WPROTERR` flag in the `WPSR` register.
     ///
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
-    pub unsafe fn set_transfer_mode_unchecked(&mut self, mode: WORD_A) {
-        self.dacc.mr.write(|mode_reg| mode_reg.word().variant(mode));
+    pub unsafe fn set_transfer_mode_unchecked(&mut self, mode: Word) {
+        self.dacc
+            .mr()
+            .write(|mode_reg| mode_reg.word().variant(mode));
     }
 
     #[must_use]
     /// Get the current transfer mode.
-    pub fn get_transfer_mode(&self) -> WORD_A {
-        self.dacc.mr.read().word().variant()
+    pub fn get_transfer_mode(&self) -> Word {
+        self.dacc.mr().read().word().variant()
     }
 
     /// Enable interrupts flags. A brief description of each interrupt is as follows:
@@ -302,7 +304,7 @@ impl Dacc {
     ///   - `txbufe`: Transmit buffer empty
     pub fn enable_interrupts(&mut self, enable: DaccInterrupts) {
         unsafe {
-            self.dacc.ier.write_with_zero(|int_en_reg| {
+            self.dacc.ier().write_with_zero(|int_en_reg| {
                 if enable.txrdy {
                     int_en_reg.txrdy().set_bit();
                 }
@@ -323,7 +325,7 @@ impl Dacc {
     /// Disable interrupt flags.
     pub fn disable_interrupts(&mut self, disable: DaccInterrupts) {
         unsafe {
-            self.dacc.idr.write_with_zero(|int_dis_reg| {
+            self.dacc.idr().write_with_zero(|int_dis_reg| {
                 if disable.txrdy {
                     int_dis_reg.txrdy().set_bit();
                 }
@@ -344,7 +346,7 @@ impl Dacc {
     #[must_use]
     /// Get current interrupt mask.
     pub fn get_interrupts_mask(&self) -> DaccInterrupts {
-        let imr = self.dacc.imr.read();
+        let imr = self.dacc.imr().read();
         DaccInterrupts {
             txrdy: imr.txrdy().bit(),
             eoc: imr.eoc().bit(),
@@ -356,7 +358,7 @@ impl Dacc {
     #[must_use]
     /// Get current interrupt status.
     pub fn get_interrupts_status(&self) -> DaccInterrupts {
-        let isr = self.dacc.isr.read();
+        let isr = self.dacc.isr().read();
         DaccInterrupts {
             txrdy: isr.txrdy().bit(),
             eoc: isr.eoc().bit(),
@@ -371,7 +373,7 @@ impl Dacc {
     ///   - `false`: DACC is not ready to accept new conversion requests.
     ///   - `true`: DACC is ready to accept new conversion requests.
     pub fn transmit_ready(&self) -> bool {
-        self.dacc.isr.read().txrdy().bit()
+        self.dacc.isr().read().txrdy().bit()
     }
 
     #[must_use]
@@ -382,7 +384,7 @@ impl Dacc {
     ///   - `true`: At least one conversion has been performed since the last
     ///       [`DACC_ISR`](crate::pac::dacc::isr) read.
     pub fn end_of_conversion(&self) -> bool {
-        self.dacc.isr.read().eoc().bit()
+        self.dacc.isr().read().eoc().bit()
     }
 
     #[must_use]
@@ -393,7 +395,7 @@ impl Dacc {
     ///   - `true`: The transmit counter register has reached 0 since the last write in
     ///       [`DACC_TCR`](crate::pac::dacc::tcr) or [`DACC_TNCR`](crate::pac::dacc::tncr).
     pub fn end_of_transmit_buffer(&self) -> bool {
-        self.dacc.isr.read().endtx().bit()
+        self.dacc.isr().read().endtx().bit()
     }
 
     #[must_use]
@@ -404,7 +406,7 @@ impl Dacc {
     ///   - `true`: The transmit counter register has reached 0 since the last write in
     ///       [`DACC_TCR`](crate::pac::dacc::tcr) or [`DACC_TNCR`](crate::pac::dacc::tncr).
     pub fn transmit_buffer_empty(&self) -> bool {
-        self.dacc.isr.read().txbufe().bit()
+        self.dacc.isr().read().txbufe().bit()
     }
 
     /// Write data to be converted into the convert data register. The write will succeed only if
@@ -430,7 +432,7 @@ impl Dacc {
     /// If the `TXRDY` flag is not set, writing to the conversion data register may corrupt the
     /// DACC FIFO.
     pub unsafe fn write_conversion_data_unchecked<D: CdrData>(&mut self, data: D) {
-        self.dacc.cdr.write(|cdr| cdr.bits(data.bits()));
+        self.dacc.cdr().write(|cdr| cdr.bits(data.bits()));
     }
 
     /// Attempt to set startup time.
@@ -441,7 +443,7 @@ impl Dacc {
     /// # Errors
     ///
     /// Fails if write protection is enabled.
-    pub fn set_startup(&mut self, startup: STARTUP_A) -> DaccResult {
+    pub fn set_startup(&mut self, startup: Startup) -> DaccResult {
         if self.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
@@ -457,9 +459,9 @@ impl Dacc {
     /// Operation failure is silent apart from setting the `WPROTERR` flag in the `WPSR` register.
     ///
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
-    pub unsafe fn set_startup_unchecked(&mut self, startup: STARTUP_A) {
+    pub unsafe fn set_startup_unchecked(&mut self, startup: Startup) {
         self.dacc
-            .mr
+            .mr()
             .write(|mode_reg| mode_reg.startup().variant(startup));
     }
 
@@ -490,7 +492,7 @@ impl Dacc {
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     pub unsafe fn set_refresh_unchecked(&mut self, refresh: u8) {
         self.dacc
-            .mr
+            .mr()
             .write(|mode_reg| mode_reg.refresh().bits(refresh));
     }
 
@@ -499,7 +501,7 @@ impl Dacc {
     /// # Errors
     ///
     /// Fails if write protection is enabled.
-    pub fn select_channel(&mut self, channel: USER_SEL_A) -> DaccResult {
+    pub fn select_channel(&mut self, channel: UserSel) -> DaccResult {
         if self.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
@@ -515,9 +517,9 @@ impl Dacc {
     /// Operation failure is silent apart from setting the `WPROTERR` flag in the `WPSR` register.
     ///
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
-    pub unsafe fn select_channel_unchecked(&mut self, channel: USER_SEL_A) {
+    pub unsafe fn select_channel_unchecked(&mut self, channel: UserSel) {
         self.dacc
-            .mr
+            .mr()
             .write(|mode_reg| mode_reg.user_sel().variant(channel));
     }
 
@@ -554,7 +556,7 @@ impl Dacc {
     ///
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     pub unsafe fn enable_tag_bits_unchecked(&mut self) {
-        self.dacc.mr.write(|mode_reg| mode_reg.tag().en());
+        self.dacc.mr().write(|mode_reg| mode_reg.tag().en());
     }
 
     /// Attempt to disable use of tag bits in CDR halfwords.
@@ -579,7 +581,7 @@ impl Dacc {
     ///
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     pub unsafe fn disable_tag_bits_unchecked(&mut self) {
-        self.dacc.mr.write(|mode_reg| mode_reg.tag().dis());
+        self.dacc.mr().write(|mode_reg| mode_reg.tag().dis());
     }
 
     /// Attempt to enable sleep mode.
@@ -607,7 +609,7 @@ impl Dacc {
     ///
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     pub unsafe fn enable_sleep_mode_unchecked(&mut self) {
-        self.dacc.mr.write(|mode_reg| mode_reg.sleep().set_bit());
+        self.dacc.mr().write(|mode_reg| mode_reg.sleep().set_bit());
     }
 
     /// Attempt to disable sleep mode.
@@ -635,7 +637,9 @@ impl Dacc {
     ///
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     pub unsafe fn disable_sleep_mode_unchecked(&mut self) {
-        self.dacc.mr.write(|mode_reg| mode_reg.sleep().clear_bit());
+        self.dacc
+            .mr()
+            .write(|mode_reg| mode_reg.sleep().clear_bit());
     }
 
     /// Attempt to enable fast wake-up mode.
@@ -663,7 +667,9 @@ impl Dacc {
     ///
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     pub unsafe fn enable_fast_wakeup_unchecked(&mut self) {
-        self.dacc.mr.write(|mode_reg| mode_reg.fastwkup().set_bit());
+        self.dacc
+            .mr()
+            .write(|mode_reg| mode_reg.fastwkup().set_bit());
     }
 
     /// Attempt to disable fast wake-up mode.
@@ -691,7 +697,7 @@ impl Dacc {
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     pub unsafe fn disable_fast_wakeup_unchecked(&mut self) {
         self.dacc
-            .mr
+            .mr()
             .write(|mode_reg| mode_reg.fastwkup().clear_bit());
     }
 
@@ -726,7 +732,7 @@ impl Dacc {
     ///
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     pub unsafe fn enable_max_speed_unchecked(&mut self) {
-        self.dacc.mr.write(|mode_reg| mode_reg.maxs().set_bit());
+        self.dacc.mr().write(|mode_reg| mode_reg.maxs().set_bit());
     }
 
     /// Attempt to disable max speed mode.
@@ -751,7 +757,7 @@ impl Dacc {
     ///
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     pub unsafe fn disable_max_speed_unchecked(&mut self) {
-        self.dacc.mr.write(|mode_reg| mode_reg.maxs().clear_bit());
+        self.dacc.mr().write(|mode_reg| mode_reg.maxs().clear_bit());
     }
 
     /// Attempt to enable DAC output channels.
@@ -776,7 +782,7 @@ impl Dacc {
     ///
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     pub unsafe fn enable_channels_unchecked(&mut self, channels: DacChannels) {
-        self.dacc.cher.write_with_zero(|channel_en_reg| {
+        self.dacc.cher().write_with_zero(|channel_en_reg| {
             if channels.channel_0 {
                 channel_en_reg.ch0().set_bit();
             }
@@ -809,7 +815,7 @@ impl Dacc {
     ///
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     pub unsafe fn disable_channels_unchecked(&mut self, channels: DacChannels) {
-        self.dacc.chdr.write_with_zero(|channel_en_reg| {
+        self.dacc.chdr().write_with_zero(|channel_en_reg| {
             if channels.channel_0 {
                 channel_en_reg.ch0().clear_bit();
             }
@@ -844,7 +850,7 @@ impl Dacc {
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     #[rustfmt::skip]
     pub unsafe fn configure_channels_unchecked(&mut self, channels: DacChannels) {
-        self.dacc.chdr.write_with_zero(|chdr| {
+        self.dacc.chdr().write_with_zero(|chdr| {
             chdr
                 .ch0().bit(channels.channel_0)
                 .ch1().bit(channels.channel_1)
@@ -854,7 +860,7 @@ impl Dacc {
     #[must_use]
     /// Get the current status of the DAC channels.
     pub fn channels_status(&self) -> DacChannels {
-        let chsr = self.dacc.chsr.read();
+        let chsr = self.dacc.chsr().read();
         DacChannels {
             channel_0: chsr.ch0().bit(),
             channel_1: chsr.ch1().bit(),
@@ -885,7 +891,7 @@ impl Dacc {
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     #[rustfmt::skip]
     pub unsafe fn apply_default_bias_current_config_unchecked(&mut self) {
-        self.dacc.acr.write(|acr| {
+        self.dacc.acr().write(|acr| {
             acr
                 .ibctldaccore().bits(0b01)
                 .ibctlch0().bits(0b10)
@@ -959,14 +965,14 @@ impl Dacc {
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     pub unsafe fn set_daccore_current_bias_unchecked(&mut self, config: CurrentBias) {
         self.dacc
-            .acr
+            .acr()
             .write(|acr| acr.ibctldaccore().bits(config as u8));
     }
 
     #[must_use]
     /// Get the current bias configuration for the DAC core.
     pub fn get_daccore_current_bias(&self) -> CurrentBias {
-        unsafe { core::mem::transmute(self.dacc.acr.read().ibctldaccore().bits()) }
+        unsafe { core::mem::transmute(self.dacc.acr().read().ibctldaccore().bits()) }
     }
 
     /// Attempt to set the current bias on channel 0, which changes the slew rate of the analog
@@ -992,13 +998,15 @@ impl Dacc {
     ///
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     pub unsafe fn set_ch0_current_bias_unchecked(&mut self, config: CurrentBias) {
-        self.dacc.acr.write(|acr| acr.ibctlch0().bits(config as u8));
+        self.dacc
+            .acr()
+            .write(|acr| acr.ibctlch0().bits(config as u8));
     }
 
     #[must_use]
     /// Get the current bias configuration for channel 0.
     pub fn get_ch0_current_bias(&self) -> CurrentBias {
-        unsafe { core::mem::transmute(self.dacc.acr.read().ibctlch0().bits()) }
+        unsafe { core::mem::transmute(self.dacc.acr().read().ibctlch0().bits()) }
     }
 
     /// Attempt to set the current bias on channel 1, which changes the slew rate of the analog
@@ -1024,13 +1032,15 @@ impl Dacc {
     ///
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     pub unsafe fn set_ch1_current_bias_unchecked(&mut self, config: CurrentBias) {
-        self.dacc.acr.write(|acr| acr.ibctlch1().bits(config as u8));
+        self.dacc
+            .acr()
+            .write(|acr| acr.ibctlch1().bits(config as u8));
     }
 
     #[must_use]
     /// Get the current bias configuration for channel 1.
     pub fn get_ch1_current_bias(&self) -> CurrentBias {
-        unsafe { core::mem::transmute(self.dacc.acr.read().ibctlch1().bits()) }
+        unsafe { core::mem::transmute(self.dacc.acr().read().ibctlch1().bits()) }
     }
 
     /// Attempt to apply an analog current configuration to the DAC core and both output channels.
@@ -1058,7 +1068,7 @@ impl Dacc {
     /// May overwrite data in the `WPROTADDR` field of the `WPSR` register if the operation fails.
     #[rustfmt::skip]
     pub unsafe fn set_current_config_unchecked(&mut self, config: DaccCurrentConfig) {
-        self.dacc.acr.write(|acr| {
+        self.dacc.acr().write(|acr| {
             acr
                 .ibctldaccore().bits(config.daccore as u8)
                 .ibctlch0().bits(config.ch0 as u8)
