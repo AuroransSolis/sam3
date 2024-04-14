@@ -296,9 +296,7 @@ where
 
     unsafe fn enable_interrupt_unchecked(self) -> Self::Enabled {
         let pioreg = &*Pio::PTR;
-        pioreg
-            ._ier()
-            .write_with_zero(|w| w.bits(Pid::MASK));
+        pioreg._ier().write_with_zero(|w| w.bits(Pid::MASK));
         Pin::new()
     }
 
@@ -315,9 +313,7 @@ where
 
     unsafe fn disable_interrupt_unchecked(self) -> Self::Disabled {
         let pioreg = &*Pio::PTR;
-        pioreg
-            ._idr()
-            .write_with_zero(|w| w.bits(Pid::MASK));
+        pioreg._idr().write_with_zero(|w| w.bits(Pid::MASK));
         Pin::new()
     }
 }
@@ -354,9 +350,7 @@ where
 
     unsafe fn disable_interrupt_unchecked(self) -> Self::Disabled {
         let pioreg = &*Pio::PTR;
-        pioreg
-            ._idr()
-            .write_with_zero(|w| w.bits(Pid::MASK));
+        pioreg._idr().write_with_zero(|w| w.bits(Pid::MASK));
         Pin::new()
     }
 }
@@ -384,9 +378,7 @@ where
 
     unsafe fn enable_interrupt_unchecked(self) -> Self::Enabled {
         let pioreg = &*Pio::PTR;
-        pioreg
-            ._ier()
-            .write_with_zero(|w| w.bits(Pid::MASK));
+        pioreg._ier().write_with_zero(|w| w.bits(Pid::MASK));
         Pin::new()
     }
 
@@ -416,14 +408,8 @@ where
         InterruptEnabled<AdditionalInterruptModesEnabled<Unconfigured, Unconfigured>>,
         Filt,
     >;
-    type Disabled = Pin<
-        Pio,
-        Pid,
-        Mdvr,
-        Pupr,
-        InterruptEnabled<AdditionalInterruptModesDisabled>,
-        Filt,
-    >;
+    type Disabled =
+        Pin<Pio, Pid, Mdvr, Pupr, InterruptEnabled<AdditionalInterruptModesDisabled>, Filt>;
 
     fn enable_additional_interrupt_modes(self) -> Self::Enabled {
         unsafe {
@@ -438,9 +424,7 @@ where
 
     unsafe fn enable_additional_interrupt_modes_unchecked(self) -> Self::Enabled {
         let pioreg = &*Pio::PTR;
-        pioreg
-            ._aimer()
-            .write_with_zero(|w| w.bits(Pid::MASK));
+        pioreg._aimer().write_with_zero(|w| w.bits(Pid::MASK));
         Pin::new()
     }
 
@@ -457,9 +441,7 @@ where
 
     unsafe fn disable_additional_interrupt_modes_unchecked(self) -> Self::Disabled {
         let pioreg = &*Pio::PTR;
-        pioreg
-            ._aimdr()
-            .write_with_zero(|w| w.bits(Pid::MASK));
+        pioreg._aimdr().write_with_zero(|w| w.bits(Pid::MASK));
         Pin::new()
     }
 }
@@ -471,7 +453,7 @@ impl<Pio, Pid, Mdvr, Pupr, Edlv, Frlh, Filt> ConfigureAdditionalInterruptModes
         Mdvr,
         Pupr,
         InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, Frlh>>,
-        Filt
+        Filt,
     >
 where
     Pio: PioRegisters,
@@ -483,14 +465,8 @@ where
     Filt: InputFilterCfg,
 {
     type Enabled = Self;
-    type Disabled = Pin<
-        Pio,
-        Pid,
-        Mdvr,
-        Pupr,
-        InterruptEnabled<AdditionalInterruptModesDisabled>,
-        Filt,
-    >;
+    type Disabled =
+        Pin<Pio, Pid, Mdvr, Pupr, InterruptEnabled<AdditionalInterruptModesDisabled>, Filt>;
 
     fn enable_additional_interrupt_modes(self) -> Self::Enabled {
         self
@@ -511,22 +487,13 @@ where
 
     unsafe fn disable_additional_interrupt_modes_unchecked(self) -> Self::Disabled {
         let pioreg = &*Pio::PTR;
-        pioreg
-            ._aimdr()
-            .write_with_zero(|w| w.bits(Pid::MASK));
+        pioreg._aimdr().write_with_zero(|w| w.bits(Pid::MASK));
         Pin::new()
     }
 }
 
 impl<Pio, Pid, Mdvr, Pupr, Filt> ConfigureAdditionalInterruptModes
-    for Pin<
-        Pio,
-        Pid,
-        Mdvr,
-        Pupr,
-        InterruptEnabled<AdditionalInterruptModesDisabled>,
-        Filt,
-    >
+    for Pin<Pio, Pid, Mdvr, Pupr, InterruptEnabled<AdditionalInterruptModesDisabled>, Filt>
 where
     Pio: PioRegisters,
     Pid: PinId<Controller = Pio>,
@@ -555,9 +522,7 @@ where
 
     unsafe fn enable_additional_interrupt_modes_unchecked(self) -> Self::Enabled {
         let pioreg = &*Pio::PTR;
-        pioreg
-            ._aimer()
-            .write_with_zero(|w| w.bits(Pid::MASK));
+        pioreg._aimer().write_with_zero(|w| w.bits(Pid::MASK));
         Pin::new()
     }
 
@@ -609,7 +574,7 @@ where
             let pioreg = &*Pio::PTR;
             if pioreg._elsr().read().bits() & Pid::MASK != 0 {
                 let _ = self.detect_edges_unchecked();
-                while pioreg._elsr().read().bits() & Pid::MASK != 0 {} 
+                while pioreg._elsr().read().bits() & Pid::MASK != 0 {}
             }
             Pin::new()
         }
@@ -617,9 +582,7 @@ where
 
     unsafe fn detect_edges_unchecked(self) -> Self::Edge {
         let pioreg = &*Pio::PTR;
-        pioreg
-            ._esr()
-            .write_with_zero(|w| w.bits(Pid::MASK));
+        pioreg._esr().write_with_zero(|w| w.bits(Pid::MASK));
         Pin::new()
     }
 
@@ -628,7 +591,7 @@ where
             let pioreg = &*Pio::PTR;
             if pioreg._elsr().read().bits() & Pid::MASK == 0 {
                 let _ = self.detect_levels_unchecked();
-                while pioreg._elsr().read().bits() & Pid::MASK == 0 {} 
+                while pioreg._elsr().read().bits() & Pid::MASK == 0 {}
             }
             Pin::new()
         }
@@ -636,9 +599,7 @@ where
 
     unsafe fn detect_levels_unchecked(self) -> Self::Level {
         let pioreg = &*Pio::PTR;
-        pioreg
-            ._lsr()
-            .write_with_zero(|w| w.bits(Pid::MASK));
+        pioreg._lsr().write_with_zero(|w| w.bits(Pid::MASK));
         Pin::new()
     }
 }
@@ -689,9 +650,7 @@ where
 
     unsafe fn detect_levels_unchecked(self) -> Self::Level {
         let pioreg = &*Pio::PTR;
-        pioreg
-            ._lsr()
-            .write_with_zero(|w| w.bits(Pid::MASK));
+        pioreg._lsr().write_with_zero(|w| w.bits(Pid::MASK));
         Pin::new()
     }
 }
@@ -734,9 +693,7 @@ where
 
     unsafe fn detect_edges_unchecked(self) -> Self::Edge {
         let pioreg = &*Pio::PTR;
-        pioreg
-            ._esr()
-            .write_with_zero(|w| w.bits(Pid::MASK));
+        pioreg._esr().write_with_zero(|w| w.bits(Pid::MASK));
         Pin::new()
     }
 
@@ -796,9 +753,7 @@ where
 
     unsafe fn detect_falling_edge_low_level_unchecked(self) -> Self::Fell {
         let pioreg = &*Pio::PTR;
-        pioreg
-            ._fellsr()
-            .write_with_zero(|w| w.bits(Pid::MASK));
+        pioreg._fellsr().write_with_zero(|w| w.bits(Pid::MASK));
         Pin::new()
     }
 
@@ -815,9 +770,7 @@ where
 
     unsafe fn detect_rising_edge_high_level_unchecked(self) -> Self::Rehl {
         let pioreg = &*Pio::PTR;
-        pioreg
-            ._rehlsr()
-            .write_with_zero(|w| w.bits(Pid::MASK));
+        pioreg._rehlsr().write_with_zero(|w| w.bits(Pid::MASK));
         Pin::new()
     }
 }
@@ -869,9 +822,7 @@ where
     unsafe fn detect_rising_edge_high_level_unchecked(self) -> Self::Rehl {
         unsafe {
             let pioreg = &*Pio::PTR;
-            pioreg
-                ._rehlsr()
-                .write_with_zero(|w| w.bits(Pid::MASK));
+            pioreg._rehlsr().write_with_zero(|w| w.bits(Pid::MASK));
             Pin::new()
         }
     }
@@ -915,9 +866,7 @@ where
 
     unsafe fn detect_falling_edge_low_level_unchecked(self) -> Self::Fell {
         let pioreg = &*Pio::PTR;
-        pioreg
-            ._fellsr()
-            .write_with_zero(|w| w.bits(Pid::MASK));
+        pioreg._fellsr().write_with_zero(|w| w.bits(Pid::MASK));
         Pin::new()
     }
 
