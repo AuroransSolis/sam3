@@ -1,17 +1,18 @@
 use crate::pio::{
-    filter::InputFilterCfg, interrupt::InterruptCfg, peripheral::MultiDriverCfg, IsPio,
+    filter::InputFilterCfg, interrupt::InterruptCfg, peripheral::MultiDriverCfg,
+    structure::PioRegisters,
 };
 use core::marker::PhantomData;
 
 #[allow(clippy::module_name_repetitions)]
 pub trait PinId {
-    type Controller: IsPio;
+    type Controller: PioRegisters;
     const MASK: u32;
 }
 
 pub struct Pin<Pio, Pid, Mdvr, Pupr, Irpt, Filt>
 where
-    Pio: IsPio,
+    Pio: PioRegisters,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg,
     Pupr: PullupResistorCfg,
@@ -28,7 +29,7 @@ where
 
 impl<Pio, Pid, Mdvr, Pupr, Irpt, Filt> Pin<Pio, Pid, Mdvr, Pupr, Irpt, Filt>
 where
-    Pio: IsPio,
+    Pio: PioRegisters,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg,
     Pupr: PullupResistorCfg,
@@ -49,16 +50,17 @@ where
 
 pub trait Configured {}
 
-#[rustfmt::skip]
+// #[rustfmt::skip]
 impl<Pio, Pid, Mdvr, Pupr, Irpt, Filt> Configured for Pin<Pio, Pid, Mdvr, Pupr, Irpt, Filt>
 where
-    Pio: IsPio,
+    Pio: PioRegisters,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg + Configured,
     Pupr: PullupResistorCfg + Configured,
     Irpt: InterruptCfg + Configured,
     Filt: InputFilterCfg + Configured,
-{}
+{
+}
 
 pub struct Unconfigured;
 
