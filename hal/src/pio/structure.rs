@@ -12,6 +12,7 @@ seq_macro::seq! {N in 0..32 {
                 type [<P~N R>]: BRead;
                 fn p~N(&self) -> Self::[<P~N R>];
             )*
+            fn bits(&self) -> u32;
         }
     }
 }}
@@ -53,6 +54,7 @@ seq_macro::seq! {N in 0..32 {
                     Self: 'a + Sized;
                 fn p~N(&mut self) -> Self::[<P~N W>]<'_>;
             )*
+            unsafe fn bits(&mut self, bits: u32) -> &mut Self;
         }
     }
 }}
@@ -166,6 +168,11 @@ macro_rules! def_pio_regs {
         @defregs [$($opts:tt),+$(,)?]
     ) => {
         pub trait PioRegisters {
+            type Rb: PioRegisters;
+            const PTR: *const Self::Rb;
+            fn ptr() -> *const Self::Rb {
+                <Self as PioRegisters>::PTR
+            }
             $(
                 def_pio_regs! {
                     @defreg $opts
@@ -265,12 +272,26 @@ macro_rules! def_pio_regs {
     ) => {
         $(#[$meta])*
         const _: () = {
-            impl PioRegisters for crate::pac::$pio {
-                $(
-                    def_pio_regs! {
-                        @implpioreg $pio, $opts
-                    }
-                )+
+            paste::paste! {
+                impl PioRegisters for crate::pac::$pio {
+                    type Rb = crate::pac::[<$pio:lower>]::RegisterBlock;
+                    const PTR: *const Self::Rb = crate::pac::$pio::PTR;
+                    $(
+                        def_pio_regs! {
+                            @implpioreg $pio, $opts
+                        }
+                    )+
+                }
+
+                impl PioRegisters for crate::pac::[<$pio:lower>]::RegisterBlock {
+                    type Rb = Self;
+                    const PTR: *const Self = crate::pac::$pio::PTR;
+                    $(
+                        def_pio_regs! {
+                            @implpioreg $pio, $opts
+                        }
+                    )+
+                }
             }
 
             $(
@@ -319,6 +340,9 @@ macro_rules! def_pio_regs {
                                 self.p~N()
                             }
                         )*
+                        fn bits(&self) -> u32 {
+                            self.bits()
+                        }
                     }
                 }
             }}
@@ -401,6 +425,9 @@ macro_rules! def_pio_regs {
                                 self.p~N()
                             }
                         )*
+                        unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+                            self.bits(bits)
+                        }
                     }
                 }
             }}
@@ -436,6 +463,9 @@ macro_rules! def_pio_regs {
                                 self.p~N()
                             }
                         )*
+                        fn bits(&self) -> u32 {
+                            self.bits()
+                        }
                     }
                 }
             }}
@@ -480,6 +510,9 @@ macro_rules! def_pio_regs {
                                 self.p~N()
                             }
                         )*
+                        unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+                            self.bits(bits)
+                        }
                     }
                 }
             }}
@@ -529,6 +562,9 @@ macro_rules! def_pio_regs {
                                 self.p~N()
                             }
                         )*
+                        fn bits(&self) -> u32 {
+                            self.bits()
+                        }
                     }
                 }
             }}
@@ -558,6 +594,9 @@ macro_rules! def_pio_regs {
                                 self.p~N()
                             }
                         )*
+                        unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+                            self.bits(bits)
+                        }
                     }
                 }
             }}
