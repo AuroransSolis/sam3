@@ -11,23 +11,12 @@
 //!
 //! Please note that the PIO interrupt signal for the entire PIO bank is fired if the interrupt
 //! condition for any of the individual lines in that PIO bank is met.
-#[cfg(feature = "pioa")]
-use crate::pio::pioa::PioA;
-#[cfg(feature = "piob")]
-use crate::pio::piob::PioB;
-#[cfg(feature = "pioc")]
-use crate::pio::pioc::PioC;
-#[cfg(feature = "piod")]
-use crate::pio::piod::PioD;
-#[cfg(feature = "pioe")]
-use crate::pio::pioe::PioE;
-#[cfg(feature = "piof")]
-use crate::pio::piof::PioF;
+#[allow(clippy::wildcard_imports)]
 use crate::pio::{
     filter::InputFilterCfg,
     peripheral::MultiDriverCfg,
     pin::{Configured, Pin, PinId, PullupResistorCfg, Unconfigured},
-    IsPio,
+    structure::*,
 };
 use core::marker::PhantomData;
 
@@ -80,8 +69,8 @@ impl<Aint: AdditionalInterruptModesCfg + Configured> Configured for InterruptEna
 /// Interrupt is enabled on a "Level", the interrupt is generated as long as the interrupt source is
 /// not cleared, even if some read accesses in `PIO_ISR` are performed.
 pub trait ConfigureInterrupt {
-    type Enabled;
-    type Disabled;
+    type Enabled: ConfigureInterrupt;
+    type Disabled: ConfigureInterrupt;
 
     /// Enable interrupts on this pin. Waits for `PIO_IMR` to update accordingly.
     fn enable_interrupt(self) -> Self::Enabled;
@@ -140,8 +129,8 @@ impl AdditionalInterruptModesCfg for AdditionalInterruptModesDisabled {}
 ///   selected in the `PIO_ELSR`). The current status of this selection is accessible through the
 ///   `PIO_FRLHSR` (Fall/Rise - Low/High Status Register).
 pub trait ConfigureAdditionalInterruptModes {
-    type Enabled;
-    type Disabled;
+    type Enabled: ConfigureAdditionalInterruptModes;
+    type Disabled: ConfigureAdditionalInterruptModes;
 
     /// Enable additional interrupt modes on this pin. Waits for `PIO_AIMMR` to update accordingly.
     fn enable_additional_interrupt_modes(self) -> Self::Enabled;
@@ -198,8 +187,8 @@ impl EdgeLevelCfg for DetectEdges {}
 /// fall/rise - low/high configuration) or low level/high level (depending on fall/rise - low/high
 /// configuration).
 pub trait ConfigureEdgeLevel {
-    type Edge;
-    type Level;
+    type Edge: ConfigureEdgeLevel;
+    type Level: ConfigureEdgeLevel;
 
     /// Trigger interrupts on edges for this pin. Waits for `PIO_ELSR` to update accordingly.
     fn detect_edges(self) -> Self::Edge;
@@ -246,8 +235,8 @@ impl FallRiseLowHighCfg for DetectFallingEdgeLowLevel {}
 /// Determines whether an interrupt is triggered on a falling edge/low level (depending on
 /// edge/level configuration) or rising edge/high level (depending on edge/level configuration).
 pub trait ConfigureFallRiseLowHigh {
-    type Fell;
-    type Rehl;
+    type Fell: ConfigureFallRiseLowHigh;
+    type Rehl: ConfigureFallRiseLowHigh;
 
     /// Trigger interrupts on falling edges/low levels for this pin. Waits for `PIO_FRLHSR` to
     /// update accordingly.
@@ -282,658 +271,661 @@ pub struct DetectRisingEdgeHighLevel;
 impl Configured for DetectRisingEdgeHighLevel {}
 impl FallRiseLowHighCfg for DetectRisingEdgeHighLevel {}
 
-macro_rules! impl_interrupt_cfgs {
-    ($pio:ty) => {
-        impl<Pid, Mdvr, Pupr, Filt> ConfigureInterrupt
-            for Pin<$pio, Pid, Mdvr, Pupr, Unconfigured, Filt>
-        where
-            Pid: PinId<Controller = $pio>,
-            Mdvr: MultiDriverCfg,
-            Pupr: PullupResistorCfg,
-            Filt: InputFilterCfg,
-        {
-            type Enabled = Pin<$pio, Pid, Mdvr, Pupr, InterruptEnabled<Unconfigured>, Filt>;
-            type Disabled = Pin<$pio, Pid, Mdvr, Pupr, InterruptDisabled, Filt>;
+impl<Pio, Pid, Mdvr, Pupr, Filt> ConfigureInterrupt
+    for Pin<Pio, Pid, Mdvr, Pupr, Unconfigured, Filt>
+where
+    Pio: PioRegisters,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg,
+    Pupr: PullupResistorCfg,
+    Filt: InputFilterCfg,
+{
+    type Enabled = Pin<Pio, Pid, Mdvr, Pupr, InterruptEnabled<Unconfigured>, Filt>;
+    type Disabled = Pin<Pio, Pid, Mdvr, Pupr, InterruptDisabled, Filt>;
 
-            fn enable_interrupt(self) -> Self::Enabled {
-                unsafe {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    if pioreg.imr.read().bits() & <Pid as PinId>::MASK == 0 {
-                        let _ = self.enable_interrupt_unchecked();
-                        while pioreg.imr.read().bits() & <Pid as PinId>::MASK == 0 {}
-                    }
-                    Pin::new()
-                }
+    fn enable_interrupt(self) -> Self::Enabled {
+        unsafe {
+            let pioreg = &*Pio::PTR;
+            if pioreg._imr().read().bits() & Pid::MASK == 0 {
+                let _ = self.enable_interrupt_unchecked();
+                while pioreg._imr().read().bits() & Pid::MASK == 0 {}
             }
-
-            unsafe fn enable_interrupt_unchecked(self) -> Self::Enabled {
-                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                pioreg.ier.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                Pin::new()
-            }
-
-            fn disable_interrupt(self) -> Self::Disabled {
-                unsafe {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    if pioreg.imr.read().bits() & <Pid as PinId>::MASK != 0 {
-                        let _ = self.disable_interrupt_unchecked();
-                        while pioreg.imr.read().bits() & <Pid as PinId>::MASK != 0 {}
-                    }
-                    Pin::new()
-                }
-            }
-
-            unsafe fn disable_interrupt_unchecked(self) -> Self::Disabled {
-                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                pioreg.idr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                Pin::new()
-            }
+            Pin::new()
         }
+    }
 
-        impl<Pid, Mdvr, Pupr, Aint, Filt> ConfigureInterrupt
-            for Pin<$pio, Pid, Mdvr, Pupr, InterruptEnabled<Aint>, Filt>
-        where
-            Pid: PinId<Controller = $pio>,
-            Mdvr: MultiDriverCfg,
-            Pupr: PullupResistorCfg,
-            Aint: AdditionalInterruptModesCfg,
-            Filt: InputFilterCfg,
-        {
-            type Enabled = Self;
-            type Disabled = Pin<$pio, Pid, Mdvr, Pupr, InterruptDisabled, Filt>;
+    unsafe fn enable_interrupt_unchecked(self) -> Self::Enabled {
+        let pioreg = &*Pio::PTR;
+        pioreg
+            ._ier()
+            .write_with_zero(|w| w.bits(Pid::MASK));
+        Pin::new()
+    }
 
-            fn enable_interrupt(self) -> Self::Enabled {
-                self
+    fn disable_interrupt(self) -> Self::Disabled {
+        unsafe {
+            let pioreg = &*Pio::PTR;
+            if pioreg._imr().read().bits() & Pid::MASK != 0 {
+                let _ = self.enable_interrupt_unchecked();
+                while pioreg._imr().read().bits() & Pid::MASK != 0 {}
             }
-
-            unsafe fn enable_interrupt_unchecked(self) -> Self::Enabled {
-                self
-            }
-
-            fn disable_interrupt(self) -> Self::Disabled {
-                unsafe {
-                    let _ = self.disable_interrupt_unchecked();
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    while pioreg.imr.read().bits() & <Pid as PinId>::MASK != 0 {}
-                    Pin::new()
-                }
-            }
-
-            unsafe fn disable_interrupt_unchecked(self) -> Self::Disabled {
-                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                pioreg.idr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                Pin::new()
-            }
+            Pin::new()
         }
+    }
 
-        impl<Pid, Mdvr, Pupr, Filt> ConfigureInterrupt
-            for Pin<$pio, Pid, Mdvr, Pupr, InterruptDisabled, Filt>
-        where
-            Pid: PinId<Controller = $pio>,
-            Mdvr: MultiDriverCfg,
-            Pupr: PullupResistorCfg,
-            Filt: InputFilterCfg,
-        {
-            type Enabled = Pin<$pio, Pid, Mdvr, Pupr, InterruptEnabled<Unconfigured>, Filt>;
-            type Disabled = Self;
-
-            fn enable_interrupt(self) -> Self::Enabled {
-                unsafe {
-                    let _ = self.enable_interrupt_unchecked();
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    while pioreg.imr.read().bits() & <Pid as PinId>::MASK == 0 {}
-                    Pin::new()
-                }
-            }
-
-            unsafe fn enable_interrupt_unchecked(self) -> Self::Enabled {
-                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                pioreg.ier.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                Pin::new()
-            }
-
-            fn disable_interrupt(self) -> Self::Disabled {
-                self
-            }
-
-            unsafe fn disable_interrupt_unchecked(self) -> Self::Disabled {
-                self
-            }
-        }
-
-        impl<Pid, Mdvr, Pupr, Filt> ConfigureAdditionalInterruptModes
-            for Pin<$pio, Pid, Mdvr, Pupr, InterruptEnabled<Unconfigured>, Filt>
-        where
-            Pid: PinId<Controller = $pio>,
-            Mdvr: MultiDriverCfg,
-            Pupr: PullupResistorCfg,
-            Filt: InputFilterCfg,
-        {
-            type Enabled = Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesDisabled>,
-                Filt,
-            >;
-            type Disabled = Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesEnabled<Unconfigured, Unconfigured>>,
-                Filt,
-            >;
-
-            fn enable_additional_interrupt_modes(self) -> Self::Enabled {
-                unsafe {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    if pioreg.aimmr.read().bits() & <Pid as PinId>::MASK == 0 {
-                        let _ = self.enable_additional_interrupt_modes_unchecked();
-                        while pioreg.aimmr.read().bits() & <Pid as PinId>::MASK == 0 {}
-                    }
-                    Pin::new()
-                }
-            }
-
-            unsafe fn enable_additional_interrupt_modes_unchecked(self) -> Self::Enabled {
-                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                pioreg
-                    .aimer
-                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                Pin::new()
-            }
-
-            fn disable_additional_interrupt_modes(self) -> Self::Disabled {
-                unsafe {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    if pioreg.aimmr.read().bits() & <Pid as PinId>::MASK != 0 {
-                        let _ = self.disable_additional_interrupt_modes_unchecked();
-                        while pioreg.aimmr.read().bits() & <Pid as PinId>::MASK != 0 {}
-                    }
-                    Pin::new()
-                }
-            }
-
-            unsafe fn disable_additional_interrupt_modes_unchecked(self) -> Self::Disabled {
-                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                pioreg
-                    .aimdr
-                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                Pin::new()
-            }
-        }
-
-        impl<Pid, Mdvr, Pupr, Edlv, Frlh, Filt> ConfigureAdditionalInterruptModes
-            for Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, Frlh>>,
-                Filt,
-            >
-        where
-            Pid: PinId<Controller = $pio>,
-            Mdvr: MultiDriverCfg,
-            Pupr: PullupResistorCfg,
-            Edlv: EdgeLevelCfg,
-            Frlh: FallRiseLowHighCfg,
-            Filt: InputFilterCfg,
-        {
-            type Enabled = Self;
-            type Disabled = Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesDisabled>,
-                Filt,
-            >;
-
-            fn enable_additional_interrupt_modes(self) -> Self::Enabled {
-                self
-            }
-
-            unsafe fn enable_additional_interrupt_modes_unchecked(self) -> Self::Enabled {
-                self
-            }
-
-            fn disable_additional_interrupt_modes(self) -> Self::Disabled {
-                unsafe {
-                    let _ = self.disable_additional_interrupt_modes_unchecked();
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    while pioreg.aimmr.read().bits() & <Pid as PinId>::MASK > 0 {}
-                    Pin::new()
-                }
-            }
-
-            unsafe fn disable_additional_interrupt_modes_unchecked(self) -> Self::Disabled {
-                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                pioreg
-                    .aimdr
-                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                Pin::new()
-            }
-        }
-
-        impl<Pid, Mdvr, Pupr, Filt> ConfigureAdditionalInterruptModes
-            for Pin<$pio, Pid, Mdvr, Pupr, InterruptEnabled<AdditionalInterruptModesDisabled>, Filt>
-        where
-            Pid: PinId<Controller = $pio>,
-            Mdvr: MultiDriverCfg,
-            Pupr: PullupResistorCfg,
-            Filt: InputFilterCfg,
-        {
-            type Enabled = Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesEnabled<Unconfigured, Unconfigured>>,
-                Filt,
-            >;
-            type Disabled = Self;
-
-            fn enable_additional_interrupt_modes(self) -> Self::Enabled {
-                unsafe {
-                    let _ = self.enable_additional_interrupt_modes_unchecked();
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    while pioreg.aimmr.read().bits() & <Pid as PinId>::MASK == 0 {}
-                    Pin::new()
-                }
-            }
-
-            unsafe fn enable_additional_interrupt_modes_unchecked(self) -> Self::Enabled {
-                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                pioreg
-                    .aimer
-                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                Pin::new()
-            }
-
-            fn disable_additional_interrupt_modes(self) -> Self::Disabled {
-                self
-            }
-
-            unsafe fn disable_additional_interrupt_modes_unchecked(self) -> Self::Disabled {
-                self
-            }
-        }
-
-        impl<Pid, Mdvr, Pupr, Frlh, Filt> ConfigureEdgeLevel
-            for Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesEnabled<Unconfigured, Frlh>>,
-                Filt,
-            >
-        where
-            Pid: PinId<Controller = $pio>,
-            Mdvr: MultiDriverCfg,
-            Pupr: PullupResistorCfg,
-            Frlh: FallRiseLowHighCfg,
-            Filt: InputFilterCfg,
-        {
-            type Edge = Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesEnabled<DetectEdges, Frlh>>,
-                Filt,
-            >;
-            type Level = Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesEnabled<DetectLevels, Frlh>>,
-                Filt,
-            >;
-
-            fn detect_edges(self) -> Self::Edge {
-                unsafe {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    if pioreg.elsr.read().bits() & <Pid as PinId>::MASK > 0 {
-                        let _ = self.detect_edges_unchecked();
-                        while pioreg.elsr.read().bits() & <Pid as PinId>::MASK > 0 {}
-                    }
-                    Pin::new()
-                }
-            }
-
-            unsafe fn detect_edges_unchecked(self) -> Self::Edge {
-                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                pioreg.esr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                Pin::new()
-            }
-
-            fn detect_levels(self) -> Self::Level {
-                unsafe {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    if pioreg.elsr.read().bits() & <Pid as PinId>::MASK == 0 {
-                        let _ = self.detect_levels_unchecked();
-                        while pioreg.elsr.read().bits() & <Pid as PinId>::MASK == 0 {}
-                    }
-                    Pin::new()
-                }
-            }
-
-            unsafe fn detect_levels_unchecked(self) -> Self::Level {
-                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                pioreg.lsr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                Pin::new()
-            }
-        }
-
-        impl<Pid, Mdvr, Pupr, Frlh, Filt> ConfigureEdgeLevel
-            for Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesEnabled<DetectLevels, Frlh>>,
-                Filt,
-            >
-        where
-            Pid: PinId<Controller = $pio>,
-            Mdvr: MultiDriverCfg,
-            Pupr: PullupResistorCfg,
-            Frlh: FallRiseLowHighCfg,
-            Filt: InputFilterCfg,
-        {
-            type Edge = Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesEnabled<DetectEdges, Frlh>>,
-                Filt,
-            >;
-            type Level = Self;
-
-            fn detect_edges(self) -> Self::Edge {
-                unsafe {
-                    let _ = self.detect_edges_unchecked();
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    while pioreg.elsr.read().bits() & <Pid as PinId>::MASK > 0 {}
-                    Pin::new()
-                }
-            }
-
-            unsafe fn detect_edges_unchecked(self) -> Self::Edge {
-                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                pioreg.esr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                Pin::new()
-            }
-
-            fn detect_levels(self) -> Self::Level {
-                self
-            }
-
-            unsafe fn detect_levels_unchecked(self) -> Self::Level {
-                self
-            }
-        }
-
-        impl<Pid, Mdvr, Pupr, Frlh, Filt> ConfigureEdgeLevel
-            for Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesEnabled<DetectEdges, Frlh>>,
-                Filt,
-            >
-        where
-            Pid: PinId<Controller = $pio>,
-            Mdvr: MultiDriverCfg,
-            Pupr: PullupResistorCfg,
-            Frlh: FallRiseLowHighCfg,
-            Filt: InputFilterCfg,
-        {
-            type Edge = Self;
-            type Level = Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesEnabled<DetectLevels, Frlh>>,
-                Filt,
-            >;
-
-            fn detect_edges(self) -> Self::Edge {
-                self
-            }
-
-            unsafe fn detect_edges_unchecked(self) -> Self::Edge {
-                self
-            }
-
-            fn detect_levels(self) -> Self::Level {
-                unsafe {
-                    let _ = self.detect_levels_unchecked();
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    while pioreg.elsr.read().bits() & <Pid as PinId>::MASK == 0 {}
-                    Pin::new()
-                }
-            }
-
-            unsafe fn detect_levels_unchecked(self) -> Self::Level {
-                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                pioreg.lsr.write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                Pin::new()
-            }
-        }
-
-        impl<Pid, Mdvr, Pupr, Edlv, Filt> ConfigureFallRiseLowHigh
-            for Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, Unconfigured>>,
-                Filt,
-            >
-        where
-            Pid: PinId<Controller = $pio>,
-            Mdvr: MultiDriverCfg,
-            Pupr: PullupResistorCfg,
-            Edlv: EdgeLevelCfg,
-            Filt: InputFilterCfg,
-        {
-            type Fell = Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, DetectFallingEdgeLowLevel>>,
-                Filt,
-            >;
-            type Rehl = Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, DetectRisingEdgeHighLevel>>,
-                Filt,
-            >;
-
-            fn detect_falling_edge_low_level(self) -> Self::Fell {
-                unsafe {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    if pioreg.frlhsr.read().bits() & <Pid as PinId>::MASK > 0 {
-                        let _ = self.detect_falling_edge_low_level_unchecked();
-                        while pioreg.frlhsr.read().bits() & <Pid as PinId>::MASK > 0 {}
-                    }
-                    Pin::new()
-                }
-            }
-
-            unsafe fn detect_falling_edge_low_level_unchecked(self) -> Self::Fell {
-                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                pioreg
-                    .fellsr
-                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                Pin::new()
-            }
-
-            fn detect_rising_edge_high_level(self) -> Self::Rehl {
-                unsafe {
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    if pioreg.frlhsr.read().bits() & <Pid as PinId>::MASK == 0 {
-                        let _ = self.detect_rising_edge_high_level_unchecked();
-                        while pioreg.frlhsr.read().bits() & <Pid as PinId>::MASK == 0 {}
-                    }
-                    Pin::new()
-                }
-            }
-
-            unsafe fn detect_rising_edge_high_level_unchecked(self) -> Self::Rehl {
-                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                pioreg
-                    .rehlsr
-                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                Pin::new()
-            }
-        }
-
-        impl<Pid, Mdvr, Pupr, Edlv, Filt> ConfigureFallRiseLowHigh
-            for Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, DetectRisingEdgeHighLevel>>,
-                Filt,
-            >
-        where
-            Pid: PinId<Controller = $pio>,
-            Mdvr: MultiDriverCfg,
-            Pupr: PullupResistorCfg,
-            Edlv: EdgeLevelCfg,
-            Filt: InputFilterCfg,
-        {
-            type Fell = Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, DetectFallingEdgeLowLevel>>,
-                Filt,
-            >;
-            type Rehl = Self;
-
-            fn detect_falling_edge_low_level(self) -> Self::Fell {
-                unsafe {
-                    let _ = self.detect_falling_edge_low_level_unchecked();
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    while pioreg.frlhsr.read().bits() & <Pid as PinId>::MASK > 0 {}
-                    Pin::new()
-                }
-            }
-
-            unsafe fn detect_falling_edge_low_level_unchecked(self) -> Self::Fell {
-                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                pioreg
-                    .fellsr
-                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                Pin::new()
-            }
-
-            fn detect_rising_edge_high_level(self) -> Self::Rehl {
-                self
-            }
-
-            unsafe fn detect_rising_edge_high_level_unchecked(self) -> Self::Rehl {
-                self
-            }
-        }
-
-        impl<Pid, Mdvr, Pupr, Edlv, Filt> ConfigureFallRiseLowHigh
-            for Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, DetectFallingEdgeLowLevel>>,
-                Filt,
-            >
-        where
-            Pid: PinId<Controller = $pio>,
-            Mdvr: MultiDriverCfg,
-            Pupr: PullupResistorCfg,
-            Edlv: EdgeLevelCfg,
-            Filt: InputFilterCfg,
-        {
-            type Fell = Self;
-            type Rehl = Pin<
-                $pio,
-                Pid,
-                Mdvr,
-                Pupr,
-                InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, DetectRisingEdgeHighLevel>>,
-                Filt,
-            >;
-
-            fn detect_falling_edge_low_level(self) -> Self::Fell {
-                self
-            }
-
-            unsafe fn detect_falling_edge_low_level_unchecked(self) -> Self::Fell {
-                self
-            }
-
-            fn detect_rising_edge_high_level(self) -> Self::Rehl {
-                unsafe {
-                    let _ = self.detect_rising_edge_high_level_unchecked();
-                    let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                    while pioreg.frlhsr.read().bits() & <Pid as PinId>::MASK == 0 {}
-                    Pin::new()
-                }
-            }
-
-            unsafe fn detect_rising_edge_high_level_unchecked(self) -> Self::Rehl {
-                let pioreg = &mut *(<$pio>::PTR as *mut <$pio as IsPio>::RegType);
-                pioreg
-                    .rehlsr
-                    .write_with_zero(|w| w.bits(<Pid as PinId>::MASK));
-                Pin::new()
-            }
-        }
-    };
+    unsafe fn disable_interrupt_unchecked(self) -> Self::Disabled {
+        let pioreg = &*Pio::PTR;
+        pioreg
+            ._idr()
+            .write_with_zero(|w| w.bits(Pid::MASK));
+        Pin::new()
+    }
 }
 
-#[cfg(feature = "pioa")]
-impl_interrupt_cfgs! {
-    PioA
+impl<Pio, Pid, Mdvr, Pupr, Aint, Filt> ConfigureInterrupt
+    for Pin<Pio, Pid, Mdvr, Pupr, InterruptEnabled<Aint>, Filt>
+where
+    Pio: PioRegisters,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg,
+    Pupr: PullupResistorCfg,
+    Aint: AdditionalInterruptModesCfg,
+    Filt: InputFilterCfg,
+{
+    type Enabled = Self;
+    type Disabled = Pin<Pio, Pid, Mdvr, Pupr, InterruptDisabled, Filt>;
+
+    fn enable_interrupt(self) -> Self::Enabled {
+        self
+    }
+
+    unsafe fn enable_interrupt_unchecked(self) -> Self::Enabled {
+        self
+    }
+
+    fn disable_interrupt(self) -> Self::Disabled {
+        unsafe {
+            let pioreg = &*Pio::PTR;
+            let _ = self.disable_interrupt_unchecked();
+            while pioreg._imr().read().bits() & Pid::MASK != 0 {}
+            Pin::new()
+        }
+    }
+
+    unsafe fn disable_interrupt_unchecked(self) -> Self::Disabled {
+        let pioreg = &*Pio::PTR;
+        pioreg
+            ._idr()
+            .write_with_zero(|w| w.bits(Pid::MASK));
+        Pin::new()
+    }
 }
 
-#[cfg(feature = "piob")]
-impl_interrupt_cfgs! {
-    PioB
+impl<Pio, Pid, Mdvr, Pupr, Filt> ConfigureInterrupt
+    for Pin<Pio, Pid, Mdvr, Pupr, InterruptDisabled, Filt>
+where
+    Pio: PioRegisters,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg,
+    Pupr: PullupResistorCfg,
+    Filt: InputFilterCfg,
+{
+    type Enabled = Pin<Pio, Pid, Mdvr, Pupr, InterruptEnabled<Unconfigured>, Filt>;
+    type Disabled = Self;
+
+    fn enable_interrupt(self) -> Self::Enabled {
+        unsafe {
+            let pioreg = &*Pio::PTR;
+            let _ = self.enable_interrupt_unchecked();
+            while pioreg._imr().read().bits() & Pid::MASK == 0 {}
+            Pin::new()
+        }
+    }
+
+    unsafe fn enable_interrupt_unchecked(self) -> Self::Enabled {
+        let pioreg = &*Pio::PTR;
+        pioreg
+            ._ier()
+            .write_with_zero(|w| w.bits(Pid::MASK));
+        Pin::new()
+    }
+
+    fn disable_interrupt(self) -> Self::Disabled {
+        self
+    }
+
+    unsafe fn disable_interrupt_unchecked(self) -> Self::Disabled {
+        self
+    }
 }
 
-#[cfg(feature = "pioc")]
-impl_interrupt_cfgs! {
-    PioC
+impl<Pio, Pid, Mdvr, Pupr, Filt> ConfigureAdditionalInterruptModes
+    for Pin<Pio, Pid, Mdvr, Pupr, InterruptEnabled<Unconfigured>, Filt>
+where
+    Pio: PioRegisters,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg,
+    Pupr: PullupResistorCfg,
+    Filt: InputFilterCfg,
+{
+    type Enabled = Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesEnabled<Unconfigured, Unconfigured>>,
+        Filt,
+    >;
+    type Disabled = Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesDisabled>,
+        Filt,
+    >;
+
+    fn enable_additional_interrupt_modes(self) -> Self::Enabled {
+        unsafe {
+            let pioreg = &*Pio::PTR;
+            if pioreg._aimmr().read().bits() & Pid::MASK == 0 {
+                let _ = self.enable_additional_interrupt_modes_unchecked();
+                while pioreg._aimmr().read().bits() & Pid::MASK == 0 {}
+            }
+            Pin::new()
+        }
+    }
+
+    unsafe fn enable_additional_interrupt_modes_unchecked(self) -> Self::Enabled {
+        let pioreg = &*Pio::PTR;
+        pioreg
+            ._aimer()
+            .write_with_zero(|w| w.bits(Pid::MASK));
+        Pin::new()
+    }
+
+    fn disable_additional_interrupt_modes(self) -> Self::Disabled {
+        unsafe {
+            let pioreg = &*Pio::PTR;
+            if pioreg._aimmr().read().bits() & Pid::MASK != 0 {
+                let _ = self.disable_additional_interrupt_modes_unchecked();
+                while pioreg._aimmr().read().bits() & Pid::MASK != 0 {}
+            }
+            Pin::new()
+        }
+    }
+
+    unsafe fn disable_additional_interrupt_modes_unchecked(self) -> Self::Disabled {
+        let pioreg = &*Pio::PTR;
+        pioreg
+            ._aimdr()
+            .write_with_zero(|w| w.bits(Pid::MASK));
+        Pin::new()
+    }
 }
 
-#[cfg(feature = "piod")]
-impl_interrupt_cfgs! {
-    PioD
+impl<Pio, Pid, Mdvr, Pupr, Edlv, Frlh, Filt> ConfigureAdditionalInterruptModes
+    for Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, Frlh>>,
+        Filt
+    >
+where
+    Pio: PioRegisters,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg,
+    Pupr: PullupResistorCfg,
+    Edlv: EdgeLevelCfg,
+    Frlh: FallRiseLowHighCfg,
+    Filt: InputFilterCfg,
+{
+    type Enabled = Self;
+    type Disabled = Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesDisabled>,
+        Filt,
+    >;
+
+    fn enable_additional_interrupt_modes(self) -> Self::Enabled {
+        self
+    }
+
+    unsafe fn enable_additional_interrupt_modes_unchecked(self) -> Self::Enabled {
+        self
+    }
+
+    fn disable_additional_interrupt_modes(self) -> Self::Disabled {
+        unsafe {
+            let pioreg = &*Pio::PTR;
+            let _ = self.disable_additional_interrupt_modes_unchecked();
+            while pioreg._aimmr().read().bits() & Pid::MASK != 0 {}
+            Pin::new()
+        }
+    }
+
+    unsafe fn disable_additional_interrupt_modes_unchecked(self) -> Self::Disabled {
+        let pioreg = &*Pio::PTR;
+        pioreg
+            ._aimdr()
+            .write_with_zero(|w| w.bits(Pid::MASK));
+        Pin::new()
+    }
 }
 
-#[cfg(feature = "pioe")]
-impl_interrupt_cfgs! {
-    PioE
+impl<Pio, Pid, Mdvr, Pupr, Filt> ConfigureAdditionalInterruptModes
+    for Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesDisabled>,
+        Filt,
+    >
+where
+    Pio: PioRegisters,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg,
+    Pupr: PullupResistorCfg,
+    Filt: InputFilterCfg,
+{
+    type Enabled = Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesEnabled<Unconfigured, Unconfigured>>,
+        Filt,
+    >;
+    type Disabled = Self;
+
+    fn enable_additional_interrupt_modes(self) -> Self::Enabled {
+        unsafe {
+            let pioreg = &*Pio::PTR;
+            let _ = self.enable_additional_interrupt_modes_unchecked();
+            while pioreg._aimmr().read().bits() & Pid::MASK == 0 {}
+            Pin::new()
+        }
+    }
+
+    unsafe fn enable_additional_interrupt_modes_unchecked(self) -> Self::Enabled {
+        let pioreg = &*Pio::PTR;
+        pioreg
+            ._aimer()
+            .write_with_zero(|w| w.bits(Pid::MASK));
+        Pin::new()
+    }
+
+    fn disable_additional_interrupt_modes(self) -> Self::Disabled {
+        self
+    }
+
+    unsafe fn disable_additional_interrupt_modes_unchecked(self) -> Self::Disabled {
+        self
+    }
 }
 
-#[cfg(feature = "piof")]
-impl_interrupt_cfgs! {
-    PioF
+impl<Pio, Pid, Mdvr, Pupr, Frlh, Filt> ConfigureEdgeLevel
+    for Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesEnabled<Unconfigured, Frlh>>,
+        Filt,
+    >
+where
+    Pio: PioRegisters,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg,
+    Pupr: PullupResistorCfg,
+    Frlh: FallRiseLowHighCfg,
+    Filt: InputFilterCfg,
+{
+    type Edge = Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesEnabled<DetectEdges, Frlh>>,
+        Filt,
+    >;
+    type Level = Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesEnabled<DetectLevels, Frlh>>,
+        Filt,
+    >;
+
+    fn detect_edges(self) -> Self::Edge {
+        unsafe {
+            let pioreg = &*Pio::PTR;
+            if pioreg._elsr().read().bits() & Pid::MASK != 0 {
+                let _ = self.detect_edges_unchecked();
+                while pioreg._elsr().read().bits() & Pid::MASK != 0 {} 
+            }
+            Pin::new()
+        }
+    }
+
+    unsafe fn detect_edges_unchecked(self) -> Self::Edge {
+        let pioreg = &*Pio::PTR;
+        pioreg
+            ._esr()
+            .write_with_zero(|w| w.bits(Pid::MASK));
+        Pin::new()
+    }
+
+    fn detect_levels(self) -> Self::Level {
+        unsafe {
+            let pioreg = &*Pio::PTR;
+            if pioreg._elsr().read().bits() & Pid::MASK == 0 {
+                let _ = self.detect_levels_unchecked();
+                while pioreg._elsr().read().bits() & Pid::MASK == 0 {} 
+            }
+            Pin::new()
+        }
+    }
+
+    unsafe fn detect_levels_unchecked(self) -> Self::Level {
+        let pioreg = &*Pio::PTR;
+        pioreg
+            ._lsr()
+            .write_with_zero(|w| w.bits(Pid::MASK));
+        Pin::new()
+    }
+}
+
+impl<Pio, Pid, Mdvr, Pupr, Frlh, Filt> ConfigureEdgeLevel
+    for Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesEnabled<DetectEdges, Frlh>>,
+        Filt,
+    >
+where
+    Pio: PioRegisters,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg,
+    Pupr: PullupResistorCfg,
+    Frlh: FallRiseLowHighCfg,
+    Filt: InputFilterCfg,
+{
+    type Edge = Self;
+    type Level = Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesEnabled<DetectLevels, Frlh>>,
+        Filt,
+    >;
+
+    fn detect_edges(self) -> Self::Edge {
+        self
+    }
+
+    unsafe fn detect_edges_unchecked(self) -> Self::Edge {
+        self
+    }
+
+    fn detect_levels(self) -> Self::Level {
+        unsafe {
+            let pioreg = &*Pio::PTR;
+            let _ = self.detect_levels_unchecked();
+            while pioreg._elsr().read().bits() & Pid::MASK == 0 {}
+            Pin::new()
+        }
+    }
+
+    unsafe fn detect_levels_unchecked(self) -> Self::Level {
+        let pioreg = &*Pio::PTR;
+        pioreg
+            ._lsr()
+            .write_with_zero(|w| w.bits(Pid::MASK));
+        Pin::new()
+    }
+}
+
+impl<Pio, Pid, Mdvr, Pupr, Frlh, Filt> ConfigureEdgeLevel
+    for Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesEnabled<DetectLevels, Frlh>>,
+        Filt,
+    >
+where
+    Pio: PioRegisters,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg,
+    Pupr: PullupResistorCfg,
+    Frlh: FallRiseLowHighCfg,
+    Filt: InputFilterCfg,
+{
+    type Edge = Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesEnabled<DetectEdges, Frlh>>,
+        Filt,
+    >;
+    type Level = Self;
+
+    fn detect_edges(self) -> Self::Edge {
+        unsafe {
+            let pioreg = &*Pio::PTR;
+            let _ = self.detect_edges_unchecked();
+            while pioreg._elsr().read().bits() & Pid::MASK != 0 {}
+            Pin::new()
+        }
+    }
+
+    unsafe fn detect_edges_unchecked(self) -> Self::Edge {
+        let pioreg = &*Pio::PTR;
+        pioreg
+            ._esr()
+            .write_with_zero(|w| w.bits(Pid::MASK));
+        Pin::new()
+    }
+
+    fn detect_levels(self) -> Self::Level {
+        self
+    }
+
+    unsafe fn detect_levels_unchecked(self) -> Self::Level {
+        self
+    }
+}
+
+impl<Pio, Pid, Mdvr, Pupr, Edlv, Filt> ConfigureFallRiseLowHigh
+    for Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, Unconfigured>>,
+        Filt,
+    >
+where
+    Pio: PioRegisters,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg,
+    Pupr: PullupResistorCfg,
+    Edlv: EdgeLevelCfg,
+    Filt: InputFilterCfg,
+{
+    type Fell = Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, DetectFallingEdgeLowLevel>>,
+        Filt,
+    >;
+    type Rehl = Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, DetectRisingEdgeHighLevel>>,
+        Filt,
+    >;
+
+    fn detect_falling_edge_low_level(self) -> Self::Fell {
+        unsafe {
+            let pioreg = &*Pio::PTR;
+            if pioreg._frlhsr().read().bits() & Pid::MASK != 0 {
+                let _ = self.detect_falling_edge_low_level_unchecked();
+                while pioreg._frlhsr().read().bits() & Pid::MASK != 0 {}
+            }
+            Pin::new()
+        }
+    }
+
+    unsafe fn detect_falling_edge_low_level_unchecked(self) -> Self::Fell {
+        let pioreg = &*Pio::PTR;
+        pioreg
+            ._fellsr()
+            .write_with_zero(|w| w.bits(Pid::MASK));
+        Pin::new()
+    }
+
+    fn detect_rising_edge_high_level(self) -> Self::Rehl {
+        unsafe {
+            let pioreg = &*Pio::PTR;
+            if pioreg._frlhsr().read().bits() & Pid::MASK == 0 {
+                let _ = self.detect_rising_edge_high_level_unchecked();
+                while pioreg._frlhsr().read().bits() & Pid::MASK == 0 {}
+            }
+            Pin::new()
+        }
+    }
+
+    unsafe fn detect_rising_edge_high_level_unchecked(self) -> Self::Rehl {
+        let pioreg = &*Pio::PTR;
+        pioreg
+            ._rehlsr()
+            .write_with_zero(|w| w.bits(Pid::MASK));
+        Pin::new()
+    }
+}
+
+impl<Pio, Pid, Mdvr, Pupr, Edlv, Filt> ConfigureFallRiseLowHigh
+    for Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, DetectFallingEdgeLowLevel>>,
+        Filt,
+    >
+where
+    Pio: PioRegisters,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg,
+    Pupr: PullupResistorCfg,
+    Edlv: EdgeLevelCfg,
+    Filt: InputFilterCfg,
+{
+    type Fell = Self;
+    type Rehl = Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, DetectRisingEdgeHighLevel>>,
+        Filt,
+    >;
+
+    fn detect_falling_edge_low_level(self) -> Self::Fell {
+        self
+    }
+
+    unsafe fn detect_falling_edge_low_level_unchecked(self) -> Self::Fell {
+        self
+    }
+
+    fn detect_rising_edge_high_level(self) -> Self::Rehl {
+        unsafe {
+            let pioreg = &*Pio::PTR;
+            let _ = self.detect_rising_edge_high_level_unchecked();
+            while pioreg._frlhsr().read().bits() & Pid::MASK == 0 {}
+            Pin::new()
+        }
+    }
+
+    unsafe fn detect_rising_edge_high_level_unchecked(self) -> Self::Rehl {
+        unsafe {
+            let pioreg = &*Pio::PTR;
+            pioreg
+                ._rehlsr()
+                .write_with_zero(|w| w.bits(Pid::MASK));
+            Pin::new()
+        }
+    }
+}
+
+impl<Pio, Pid, Mdvr, Pupr, Edlv, Filt> ConfigureFallRiseLowHigh
+    for Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, DetectRisingEdgeHighLevel>>,
+        Filt,
+    >
+where
+    Pio: PioRegisters,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg,
+    Pupr: PullupResistorCfg,
+    Edlv: EdgeLevelCfg,
+    Filt: InputFilterCfg,
+{
+    type Fell = Pin<
+        Pio,
+        Pid,
+        Mdvr,
+        Pupr,
+        InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, DetectFallingEdgeLowLevel>>,
+        Filt,
+    >;
+    type Rehl = Self;
+
+    fn detect_falling_edge_low_level(self) -> Self::Fell {
+        unsafe {
+            let pioreg = &*Pio::PTR;
+            let _ = self.detect_falling_edge_low_level_unchecked();
+            while pioreg._frlhsr().read().bits() & Pid::MASK != 0 {}
+            Pin::new()
+        }
+    }
+
+    unsafe fn detect_falling_edge_low_level_unchecked(self) -> Self::Fell {
+        let pioreg = &*Pio::PTR;
+        pioreg
+            ._fellsr()
+            .write_with_zero(|w| w.bits(Pid::MASK));
+        Pin::new()
+    }
+
+    fn detect_rising_edge_high_level(self) -> Self::Rehl {
+        self
+    }
+
+    unsafe fn detect_rising_edge_high_level_unchecked(self) -> Self::Rehl {
+        self
+    }
 }
