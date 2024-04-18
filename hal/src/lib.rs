@@ -173,6 +173,8 @@ pub mod pio;
 #[cfg(all(feature = "device", any(feature = "sam3a", feature = "sam3x")))]
 mod pmc;
 #[cfg(feature = "device")]
+pub mod structure;
+#[cfg(feature = "device")]
 pub mod write_protect;
 
 #[cfg(all(feature = "device", feature = "unproven"))]

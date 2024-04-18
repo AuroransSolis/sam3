@@ -28,15 +28,16 @@ pub enum PeripheralId {
     PIOA = 11,
     /// Parallel I/O controller B
     PIOB = 12,
+    #[cfg(feature = "pioc")]
     /// Parallel I/O controller C
     PIOC = 13,
-    #[cfg(any(feature = "samd3x4e", feature = "samd3x8e", feature = "samd3x8h"))]
+    #[cfg(feature = "piod")]
     /// Parallel I/O controller D
     PIOD = 14,
-    #[cfg(feature = "samd3x8h")]
+    #[cfg(feature = "pioe")]
     /// Parallel I/O controller E
     PIOE = 15,
-    #[cfg(feature = "samd3x8h")]
+    #[cfg(feature = "piof")]
     /// Parallel I/O controller F
     PIOF = 16,
     /// USART 0

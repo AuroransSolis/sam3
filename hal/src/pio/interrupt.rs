@@ -12,10 +12,13 @@
 //! Please note that the PIO interrupt signal for the entire PIO bank is fired if the interrupt
 //! condition for any of the individual lines in that PIO bank is met.
 #[allow(clippy::wildcard_imports)]
-use crate::pio::{
-    filter::InputFilterCfg,
-    peripheral::MultiDriverCfg,
-    pin::{Configured, Pin, PinId, PullupResistorCfg, Unconfigured},
+use crate::{
+    pio::{
+        filter::InputFilterCfg,
+        peripheral::PioControlCfg,
+        pin::{Configured, MultiDriverCfg, PadResistorCfg, Pin, PinId, Unconfigured},
+        structure::*,
+    },
     structure::*,
 };
 use core::marker::PhantomData;
@@ -69,7 +72,7 @@ impl<Aint: AdditionalInterruptModesCfg + Configured> Configured for InterruptEna
 /// Interrupt is enabled on a "Level", the interrupt is generated as long as the interrupt source is
 /// not cleared, even if some read accesses in `PIO_ISR` are performed.
 pub trait ConfigureInterrupt {
-    type Enabled: ConfigureInterrupt;
+    type Enabled: ConfigureInterrupt + ConfigureAdditionalInterruptModes;
     type Disabled: ConfigureInterrupt;
 
     /// Enable interrupts on this pin. Waits for `PIO_IMR` to update accordingly.
@@ -129,7 +132,7 @@ impl AdditionalInterruptModesCfg for AdditionalInterruptModesDisabled {}
 ///   selected in the `PIO_ELSR`). The current status of this selection is accessible through the
 ///   `PIO_FRLHSR` (Fall/Rise - Low/High Status Register).
 pub trait ConfigureAdditionalInterruptModes {
-    type Enabled: ConfigureAdditionalInterruptModes;
+    type Enabled: ConfigureAdditionalInterruptModes + ConfigureEdgeLevel + ConfigureFallRiseLowHigh;
     type Disabled: ConfigureAdditionalInterruptModes;
 
     /// Enable additional interrupt modes on this pin. Waits for `PIO_AIMMR` to update accordingly.
@@ -271,17 +274,18 @@ pub struct DetectRisingEdgeHighLevel;
 impl Configured for DetectRisingEdgeHighLevel {}
 impl FallRiseLowHighCfg for DetectRisingEdgeHighLevel {}
 
-impl<Pio, Pid, Mdvr, Pupr, Filt> ConfigureInterrupt
-    for Pin<Pio, Pid, Mdvr, Pupr, Unconfigured, Filt>
+impl<Pio, Pid, Mdvr, Pioc, Padr, Filt> ConfigureInterrupt
+    for Pin<Pio, Pid, Mdvr, Pioc, Padr, Unconfigured, Filt>
 where
     Pio: PioRegisters,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg,
-    Pupr: PullupResistorCfg,
+    Pioc: PioControlCfg,
+    Padr: PadResistorCfg,
     Filt: InputFilterCfg,
 {
-    type Enabled = Pin<Pio, Pid, Mdvr, Pupr, InterruptEnabled<Unconfigured>, Filt>;
-    type Disabled = Pin<Pio, Pid, Mdvr, Pupr, InterruptDisabled, Filt>;
+    type Enabled = Pin<Pio, Pid, Mdvr, Pioc, Padr, InterruptEnabled<Unconfigured>, Filt>;
+    type Disabled = Pin<Pio, Pid, Mdvr, Pioc, Padr, InterruptDisabled, Filt>;
 
     fn enable_interrupt(self) -> Self::Enabled {
         unsafe {
@@ -318,18 +322,20 @@ where
     }
 }
 
-impl<Pio, Pid, Mdvr, Pupr, Aint, Filt> ConfigureInterrupt
-    for Pin<Pio, Pid, Mdvr, Pupr, InterruptEnabled<Aint>, Filt>
+impl<Pio, Pid, Mdvr, Pioc, Padr, Aint, Filt> ConfigureInterrupt
+    for Pin<Pio, Pid, Mdvr, Pioc, Padr, InterruptEnabled<Aint>, Filt>
 where
+    Self: ConfigureAdditionalInterruptModes,
     Pio: PioRegisters,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg,
-    Pupr: PullupResistorCfg,
+    Pioc: PioControlCfg,
+    Padr: PadResistorCfg,
     Aint: AdditionalInterruptModesCfg,
     Filt: InputFilterCfg,
 {
     type Enabled = Self;
-    type Disabled = Pin<Pio, Pid, Mdvr, Pupr, InterruptDisabled, Filt>;
+    type Disabled = Pin<Pio, Pid, Mdvr, Pioc, Padr, InterruptDisabled, Filt>;
 
     fn enable_interrupt(self) -> Self::Enabled {
         self
@@ -355,16 +361,17 @@ where
     }
 }
 
-impl<Pio, Pid, Mdvr, Pupr, Filt> ConfigureInterrupt
-    for Pin<Pio, Pid, Mdvr, Pupr, InterruptDisabled, Filt>
+impl<Pio, Pid, Mdvr, Pioc, Padr, Filt> ConfigureInterrupt
+    for Pin<Pio, Pid, Mdvr, Pioc, Padr, InterruptDisabled, Filt>
 where
     Pio: PioRegisters,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg,
-    Pupr: PullupResistorCfg,
+    Pioc: PioControlCfg,
+    Padr: PadResistorCfg,
     Filt: InputFilterCfg,
 {
-    type Enabled = Pin<Pio, Pid, Mdvr, Pupr, InterruptEnabled<Unconfigured>, Filt>;
+    type Enabled = Pin<Pio, Pid, Mdvr, Pioc, Padr, InterruptEnabled<Unconfigured>, Filt>;
     type Disabled = Self;
 
     fn enable_interrupt(self) -> Self::Enabled {
@@ -391,25 +398,27 @@ where
     }
 }
 
-impl<Pio, Pid, Mdvr, Pupr, Filt> ConfigureAdditionalInterruptModes
-    for Pin<Pio, Pid, Mdvr, Pupr, InterruptEnabled<Unconfigured>, Filt>
+impl<Pio, Pid, Mdvr, Pioc, Padr, Filt> ConfigureAdditionalInterruptModes
+    for Pin<Pio, Pid, Mdvr, Pioc, Padr, InterruptEnabled<Unconfigured>, Filt>
 where
     Pio: PioRegisters,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg,
-    Pupr: PullupResistorCfg,
+    Pioc: PioControlCfg,
+    Padr: PadResistorCfg,
     Filt: InputFilterCfg,
 {
     type Enabled = Pin<
         Pio,
         Pid,
         Mdvr,
-        Pupr,
+        Pioc,
+        Padr,
         InterruptEnabled<AdditionalInterruptModesEnabled<Unconfigured, Unconfigured>>,
         Filt,
     >;
     type Disabled =
-        Pin<Pio, Pid, Mdvr, Pupr, InterruptEnabled<AdditionalInterruptModesDisabled>, Filt>;
+        Pin<Pio, Pid, Mdvr, Pioc, Padr, InterruptEnabled<AdditionalInterruptModesDisabled>, Filt>;
 
     fn enable_additional_interrupt_modes(self) -> Self::Enabled {
         unsafe {
@@ -446,27 +455,30 @@ where
     }
 }
 
-impl<Pio, Pid, Mdvr, Pupr, Edlv, Frlh, Filt> ConfigureAdditionalInterruptModes
+impl<Pio, Pid, Mdvr, Pioc, Padr, Edlv, Frlh, Filt> ConfigureAdditionalInterruptModes
     for Pin<
         Pio,
         Pid,
         Mdvr,
-        Pupr,
+        Pioc,
+        Padr,
         InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, Frlh>>,
         Filt,
     >
 where
+    Self: ConfigureEdgeLevel + ConfigureFallRiseLowHigh,
     Pio: PioRegisters,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg,
-    Pupr: PullupResistorCfg,
+    Pioc: PioControlCfg,
+    Padr: PadResistorCfg,
     Edlv: EdgeLevelCfg,
     Frlh: FallRiseLowHighCfg,
     Filt: InputFilterCfg,
 {
     type Enabled = Self;
     type Disabled =
-        Pin<Pio, Pid, Mdvr, Pupr, InterruptEnabled<AdditionalInterruptModesDisabled>, Filt>;
+        Pin<Pio, Pid, Mdvr, Pioc, Padr, InterruptEnabled<AdditionalInterruptModesDisabled>, Filt>;
 
     fn enable_additional_interrupt_modes(self) -> Self::Enabled {
         self
@@ -492,20 +504,22 @@ where
     }
 }
 
-impl<Pio, Pid, Mdvr, Pupr, Filt> ConfigureAdditionalInterruptModes
-    for Pin<Pio, Pid, Mdvr, Pupr, InterruptEnabled<AdditionalInterruptModesDisabled>, Filt>
+impl<Pio, Pid, Mdvr, Pioc, Padr, Filt> ConfigureAdditionalInterruptModes
+    for Pin<Pio, Pid, Mdvr, Pioc, Padr, InterruptEnabled<AdditionalInterruptModesDisabled>, Filt>
 where
     Pio: PioRegisters,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg,
-    Pupr: PullupResistorCfg,
+    Pioc: PioControlCfg,
+    Padr: PadResistorCfg,
     Filt: InputFilterCfg,
 {
     type Enabled = Pin<
         Pio,
         Pid,
         Mdvr,
-        Pupr,
+        Pioc,
+        Padr,
         InterruptEnabled<AdditionalInterruptModesEnabled<Unconfigured, Unconfigured>>,
         Filt,
     >;
@@ -535,12 +549,13 @@ where
     }
 }
 
-impl<Pio, Pid, Mdvr, Pupr, Frlh, Filt> ConfigureEdgeLevel
+impl<Pio, Pid, Mdvr, Pioc, Padr, Frlh, Filt> ConfigureEdgeLevel
     for Pin<
         Pio,
         Pid,
         Mdvr,
-        Pupr,
+        Pioc,
+        Padr,
         InterruptEnabled<AdditionalInterruptModesEnabled<Unconfigured, Frlh>>,
         Filt,
     >
@@ -548,7 +563,8 @@ where
     Pio: PioRegisters,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg,
-    Pupr: PullupResistorCfg,
+    Pioc: PioControlCfg,
+    Padr: PadResistorCfg,
     Frlh: FallRiseLowHighCfg,
     Filt: InputFilterCfg,
 {
@@ -556,7 +572,8 @@ where
         Pio,
         Pid,
         Mdvr,
-        Pupr,
+        Pioc,
+        Padr,
         InterruptEnabled<AdditionalInterruptModesEnabled<DetectEdges, Frlh>>,
         Filt,
     >;
@@ -564,7 +581,8 @@ where
         Pio,
         Pid,
         Mdvr,
-        Pupr,
+        Pioc,
+        Padr,
         InterruptEnabled<AdditionalInterruptModesEnabled<DetectLevels, Frlh>>,
         Filt,
     >;
@@ -604,12 +622,13 @@ where
     }
 }
 
-impl<Pio, Pid, Mdvr, Pupr, Frlh, Filt> ConfigureEdgeLevel
+impl<Pio, Pid, Mdvr, Pioc, Padr, Frlh, Filt> ConfigureEdgeLevel
     for Pin<
         Pio,
         Pid,
         Mdvr,
-        Pupr,
+        Pioc,
+        Padr,
         InterruptEnabled<AdditionalInterruptModesEnabled<DetectEdges, Frlh>>,
         Filt,
     >
@@ -617,7 +636,8 @@ where
     Pio: PioRegisters,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg,
-    Pupr: PullupResistorCfg,
+    Pioc: PioControlCfg,
+    Padr: PadResistorCfg,
     Frlh: FallRiseLowHighCfg,
     Filt: InputFilterCfg,
 {
@@ -626,7 +646,8 @@ where
         Pio,
         Pid,
         Mdvr,
-        Pupr,
+        Pioc,
+        Padr,
         InterruptEnabled<AdditionalInterruptModesEnabled<DetectLevels, Frlh>>,
         Filt,
     >;
@@ -655,12 +676,13 @@ where
     }
 }
 
-impl<Pio, Pid, Mdvr, Pupr, Frlh, Filt> ConfigureEdgeLevel
+impl<Pio, Pid, Mdvr, Pioc, Padr, Frlh, Filt> ConfigureEdgeLevel
     for Pin<
         Pio,
         Pid,
         Mdvr,
-        Pupr,
+        Pioc,
+        Padr,
         InterruptEnabled<AdditionalInterruptModesEnabled<DetectLevels, Frlh>>,
         Filt,
     >
@@ -668,7 +690,8 @@ where
     Pio: PioRegisters,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg,
-    Pupr: PullupResistorCfg,
+    Pioc: PioControlCfg,
+    Padr: PadResistorCfg,
     Frlh: FallRiseLowHighCfg,
     Filt: InputFilterCfg,
 {
@@ -676,7 +699,8 @@ where
         Pio,
         Pid,
         Mdvr,
-        Pupr,
+        Pioc,
+        Padr,
         InterruptEnabled<AdditionalInterruptModesEnabled<DetectEdges, Frlh>>,
         Filt,
     >;
@@ -706,12 +730,13 @@ where
     }
 }
 
-impl<Pio, Pid, Mdvr, Pupr, Edlv, Filt> ConfigureFallRiseLowHigh
+impl<Pio, Pid, Mdvr, Pioc, Padr, Edlv, Filt> ConfigureFallRiseLowHigh
     for Pin<
         Pio,
         Pid,
         Mdvr,
-        Pupr,
+        Pioc,
+        Padr,
         InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, Unconfigured>>,
         Filt,
     >
@@ -719,7 +744,8 @@ where
     Pio: PioRegisters,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg,
-    Pupr: PullupResistorCfg,
+    Pioc: PioControlCfg,
+    Padr: PadResistorCfg,
     Edlv: EdgeLevelCfg,
     Filt: InputFilterCfg,
 {
@@ -727,7 +753,8 @@ where
         Pio,
         Pid,
         Mdvr,
-        Pupr,
+        Pioc,
+        Padr,
         InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, DetectFallingEdgeLowLevel>>,
         Filt,
     >;
@@ -735,7 +762,8 @@ where
         Pio,
         Pid,
         Mdvr,
-        Pupr,
+        Pioc,
+        Padr,
         InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, DetectRisingEdgeHighLevel>>,
         Filt,
     >;
@@ -775,12 +803,13 @@ where
     }
 }
 
-impl<Pio, Pid, Mdvr, Pupr, Edlv, Filt> ConfigureFallRiseLowHigh
+impl<Pio, Pid, Mdvr, Pioc, Padr, Edlv, Filt> ConfigureFallRiseLowHigh
     for Pin<
         Pio,
         Pid,
         Mdvr,
-        Pupr,
+        Pioc,
+        Padr,
         InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, DetectFallingEdgeLowLevel>>,
         Filt,
     >
@@ -788,7 +817,8 @@ where
     Pio: PioRegisters,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg,
-    Pupr: PullupResistorCfg,
+    Pioc: PioControlCfg,
+    Padr: PadResistorCfg,
     Edlv: EdgeLevelCfg,
     Filt: InputFilterCfg,
 {
@@ -797,7 +827,8 @@ where
         Pio,
         Pid,
         Mdvr,
-        Pupr,
+        Pioc,
+        Padr,
         InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, DetectRisingEdgeHighLevel>>,
         Filt,
     >;
@@ -828,12 +859,13 @@ where
     }
 }
 
-impl<Pio, Pid, Mdvr, Pupr, Edlv, Filt> ConfigureFallRiseLowHigh
+impl<Pio, Pid, Mdvr, Pioc, Padr, Edlv, Filt> ConfigureFallRiseLowHigh
     for Pin<
         Pio,
         Pid,
         Mdvr,
-        Pupr,
+        Pioc,
+        Padr,
         InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, DetectRisingEdgeHighLevel>>,
         Filt,
     >
@@ -841,7 +873,8 @@ where
     Pio: PioRegisters,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg,
-    Pupr: PullupResistorCfg,
+    Pioc: PioControlCfg,
+    Padr: PadResistorCfg,
     Edlv: EdgeLevelCfg,
     Filt: InputFilterCfg,
 {
@@ -849,7 +882,8 @@ where
         Pio,
         Pid,
         Mdvr,
-        Pupr,
+        Pioc,
+        Padr,
         InterruptEnabled<AdditionalInterruptModesEnabled<Edlv, DetectFallingEdgeLowLevel>>,
         Filt,
     >;

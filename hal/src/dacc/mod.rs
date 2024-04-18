@@ -145,7 +145,7 @@ use crate::{
     },
     peripheral_id::PeripheralId,
     pmc::{disable_peripheral_clk, enable_peripheral_clk},
-    write_protect::{wp_impl, WriteProtect},
+    write_protect::{wpmr_wpsr_impl, WriteProtect},
 };
 use cdr_data::CdrData;
 
@@ -156,13 +156,30 @@ pub struct Dacc {
     dacc: DACC,
 }
 
-wp_impl! {
-    ///   - Mode register (`DACC_MR`)
-    ///   - Channel enable register (`DACC_CHER`)
-    ///   - Channel disable register (`DACC_CHDR`)
-    ///   - Analog current register (`DACC_ACR`)
-    Dacc => dacc(wproterr, wprotaddr<u8>): b"DAC",
+// wp_impl! {
+//     ///   - Mode register (`DACC_MR`)
+//     ///   - Channel enable register (`DACC_CHER`)
+//     ///   - Channel disable register (`DACC_CHDR`)
+//     ///   - Analog current register (`DACC_ACR`)
+//     Dacc => dacc(wproterr, wprotaddr<u8>): b"DAC",
+// }
+
+wpmr_wpsr_impl! {
+    DACC: {
+        key: 0x444143,
+        addr: u8,
+        wpvs: Wproterr,
+        wpvsrc: Wprotaddr,
+    }
 }
+
+/// The DACC has write protection on the following fields:
+///
+///   - Mode register (`DACC_MR`)
+///   - Channel enable register (`DACC_CHER`)
+///   - Channel disable register (`DACC_CHDR`)
+///   - Analog current register (`DACC_ACR`)
+impl WriteProtect for DACC {}
 
 impl Dacc {
     #[must_use]
@@ -209,7 +226,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn set_trigger(&mut self, trigger: TrgselA) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.set_trigger_unchecked(trigger) };
@@ -239,7 +256,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn disable_trigger(&mut self) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.disable_trigger_unchecked() };
@@ -269,7 +286,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn set_transfer_mode(&mut self, mode: Word) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.set_transfer_mode_unchecked(mode) };
@@ -444,7 +461,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn set_startup(&mut self, startup: Startup) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.set_startup_unchecked(startup) };
@@ -475,7 +492,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn set_refresh(&mut self, refresh: u8) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.set_refresh_unchecked(refresh) };
@@ -502,7 +519,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn select_channel(&mut self, channel: UserSel) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.select_channel_unchecked(channel) };
@@ -540,7 +557,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn enable_tag_bits(&mut self) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.enable_tag_bits_unchecked() };
@@ -565,7 +582,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn disable_tag_bits(&mut self) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.disable_tag_bits_unchecked() };
@@ -593,7 +610,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn enable_sleep_mode(&mut self) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.enable_sleep_mode_unchecked() };
@@ -621,7 +638,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn disable_sleep_mode(&mut self) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.disable_sleep_mode_unchecked() };
@@ -651,7 +668,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn enable_fast_wakeup(&mut self) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.enable_fast_wakeup_unchecked() };
@@ -680,7 +697,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn disable_fast_wakeup(&mut self) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.disable_fast_wakeup_unchecked() };
@@ -716,7 +733,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn enable_max_speed(&mut self) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.enable_max_speed_unchecked() };
@@ -741,7 +758,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn disable_max_speed(&mut self) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.disable_max_speed_unchecked() };
@@ -766,7 +783,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn enable_channels(&mut self, channels: DacChannels) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.enable_channels_unchecked(channels) };
@@ -799,7 +816,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn disable_channels(&mut self, channels: DacChannels) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.disable_channels_unchecked(channels) };
@@ -832,7 +849,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn configure_channels(&mut self, channels: DacChannels) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.configure_channels_unchecked(channels) };
@@ -873,7 +890,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn apply_default_bias_current_config(&mut self) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.apply_default_bias_current_config_unchecked() };
@@ -947,7 +964,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn set_daccore_current_bias(&mut self, config: CurrentBias) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.set_daccore_current_bias_unchecked(config) };
@@ -982,7 +999,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn set_ch0_current_bias(&mut self, config: CurrentBias) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.set_ch0_current_bias_unchecked(config) };
@@ -1016,7 +1033,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn set_ch1_current_bias(&mut self, config: CurrentBias) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.set_ch1_current_bias_unchecked(config) };
@@ -1050,7 +1067,7 @@ impl Dacc {
     ///
     /// Fails if write protection is enabled.
     pub fn set_current_config(&mut self, config: DaccCurrentConfig) -> DaccResult {
-        if self.writeprotect_enabled() {
+        if self.dacc.writeprotect_enabled() {
             Err(DaccError::WriteProtected)
         } else {
             unsafe { self.set_current_config_unchecked(config) };

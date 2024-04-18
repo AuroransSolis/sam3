@@ -1,152 +1,5 @@
-use crate::pac::generic::{BitReader, BitWriter, FieldReader, FieldSpec, IsEnum};
-
-pub trait BReader {
-    type R: BReaderFields;
-    fn read(&self) -> Self::R;
-}
-
-seq_macro::seq! {N in 0..32 {
-    paste::paste! {
-        pub trait BReaderFields {
-            #(
-                type [<P~N R>]: BRead;
-                fn p~N(&self) -> Self::[<P~N R>];
-            )*
-            fn bits(&self) -> u32;
-        }
-    }
-}}
-
-pub trait BRead {
-    fn bit(&self) -> bool;
-    fn bit_is_clear(&self) -> bool;
-    fn bit_is_set(&self) -> bool;
-}
-
-impl BRead for BitReader {
-    fn bit(&self) -> bool {
-        self.bit()
-    }
-
-    fn bit_is_clear(&self) -> bool {
-        self.bit_is_clear()
-    }
-
-    fn bit_is_set(&self) -> bool {
-        self.bit_is_set()
-    }
-}
-
-pub trait BWriter {
-    fn reset(&self);
-    type W: BWriterFields;
-    fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut Self::W) -> &mut Self::W;
-}
-
-seq_macro::seq! {N in 0..32 {
-    paste::paste! {
-        pub trait BWriterFields: Sized {
-            #(
-                type [<P~N W>]<'a>: BWrite<'a, Self>
-                where
-                    Self: 'a + Sized;
-                fn p~N(&mut self) -> Self::[<P~N W>]<'_>;
-            )*
-            unsafe fn bits(&mut self, bits: u32) -> &mut Self;
-        }
-    }
-}}
-
-pub trait BWrite<'a, W> {
-    const WIDTH: u8 = 1u8;
-    fn width(&self) -> u8;
-    fn offset(&self) -> u8;
-    fn bit(self, value: bool) -> &'a mut W;
-    fn variant(self, variant: bool) -> &'a mut W;
-    fn set_bit(self) -> &'a mut W;
-    fn clear_bit(self) -> &'a mut W;
-}
-
-pub trait BWriterWithZero {
-    type W: BWriterFields;
-    unsafe fn write_with_zero<F>(&self, f: F)
-    where
-        F: FnOnce(&mut Self::W) -> &mut Self::W;
-}
-
-pub trait BModify: BReader + BWriterWithZero {
-    fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(
-            &<Self as BReader>::R,
-            &'w mut <Self as BWriterWithZero>::W,
-        ) -> &'w mut <Self as BWriterWithZero>::W;
-}
-
-pub trait FRead<FI: FieldSpec> {
-    fn bits(&self) -> FI::Ux;
-}
-
-pub trait FWrite<'a, const WI: u8, FI: FieldSpec, W> {
-    const WIDTH: u8 = WI;
-    fn width(&self) -> u8;
-    fn offset(&self) -> u8;
-    unsafe fn bits(self, value: FI::Ux) -> &'a mut W;
-}
-
-pub trait FWriteVariant<'a, const WI: u8, FI: IsEnum, W>: FWrite<'a, WI, FI, W> {
-    fn variant(self, variant: FI) -> &'a mut W;
-}
-
-pub trait FWriteSafe<'a, const WI: u8, FI: FieldSpec, W>: FWrite<'a, WI, FI, W> {
-    fn set(self, value: FI::Ux) -> &'a mut W;
-}
-
-impl<FI: FieldSpec> FRead<FI> for FieldReader<FI> {
-    fn bits(&self) -> FI::Ux {
-        self.bits()
-    }
-}
-
-macro_rules! bwrite_impl {
-    (
-        $(meta: [$(#[$meta:meta])*],)?
-        pio: $pio:ident,
-        reg: $reg:ident,
-    ) => {
-        paste::paste! {
-            $($(#[$meta])*)?
-            impl<'a> BWrite<'a, crate::pac::[<$pio:lower>]::[<$reg:lower>]::W>
-                for BitWriter<'a, crate::pac::[<$pio:lower>]::[<$reg:lower>]::[<$reg Spec>]>
-            {
-                const WIDTH: u8 = Self::WIDTH;
-                fn width(&self) -> u8 {
-                    self.width()
-                }
-                fn offset(&self) -> u8 {
-                    self.offset()
-                }
-                fn bit(self, value: bool) -> &'a mut crate::pac::[<$pio:lower>]::[<$reg:lower>]::W {
-                    self.bit(value)
-                }
-                fn variant(
-                    self,
-                    variant: bool,
-                ) -> &'a mut crate::pac::[<$pio:lower>]::[<$reg:lower>]::W {
-                    self.variant(variant)
-                }
-                fn set_bit(self) -> &'a mut crate::pac::[<$pio:lower>]::[<$reg:lower>]::W {
-                    self.set_bit()
-                }
-                fn clear_bit(self) -> &'a mut crate::pac::[<$pio:lower>]::[<$reg:lower>]::W {
-                    self.clear_bit()
-                }
-            }
-        }
-    }
-}
+#[allow(clippy::wildcard_imports)]
+use crate::{structure::*, write_protect::*};
 
 macro_rules! def_pio_regs {
     (
@@ -387,8 +240,8 @@ macro_rules! def_pio_regs {
                 }
             }}
 
-            bwrite_impl! {
-                pio: $pio,
+            crate::structure::bwrite_impl! {
+                ty: $pio,
                 reg: $reg,
             }
         };
@@ -432,8 +285,8 @@ macro_rules! def_pio_regs {
                 }
             }}
 
-            bwrite_impl! {
-                pio: $pio,
+            crate::structure::bwrite_impl! {
+                ty: $pio,
                 reg: $reg,
             }
         };
@@ -517,8 +370,8 @@ macro_rules! def_pio_regs {
                 }
             }}
 
-            bwrite_impl! {
-                pio: $pio,
+            crate::structure::bwrite_impl! {
+                ty: $pio,
                 reg: $reg,
             }
 
@@ -601,8 +454,8 @@ macro_rules! def_pio_regs {
                 }
             }}
 
-            bwrite_impl! {
-                pio: $pio,
+            crate::structure::bwrite_impl! {
+                ty: $pio,
                 reg: $reg,
             }
 
@@ -630,9 +483,7 @@ macro_rules! def_pio_regs {
 
 def_pio_regs! {
     pios: [
-        #[cfg(feature = "pioa")]
         PIOA,
-        #[cfg(feature = "piob")]
         PIOB,
         #[cfg(feature = "pioc")]
         PIOC,
@@ -710,17 +561,17 @@ def_pio_regs! {
         [Pdsr, r],
         [Per, wwz],
         [
-            #[cfg(any(feature = "sam3n", feature = "sam3s", feature = "sam3s8"))]
+            #[cfg(feature = "ppd")]
             Ppddr,
             wwz
         ],
         [
-            #[cfg(any(feature = "sam3n", feature = "sam3s", feature = "sam3s8"))]
+            #[cfg(feature = "ppd")]
             Ppder,
             wwz
         ],
         [
-            #[cfg(any(feature = "sam3n", feature = "sam3s", feature = "sam3s8"))]
+            #[cfg(feature = "ppd")]
             Ppdsr,
             r
         ],
@@ -841,70 +692,11 @@ pub trait SchmittModify: SchmittRead + SchmittWrite + SchmittWriteWithZero {
         ) -> &'w mut <Self as SchmittWrite>::W;
 }
 
-pub trait WpmrRead {
-    type R: WpmrReadFields;
-    fn read(&self) -> Self::R;
-}
-
-pub trait WpmrReadFields {
-    type Wpen: BRead;
-    fn wpen(&self) -> Self::Wpen;
-    type Wpkey: FRead<u32>;
-    fn wpkey(&self) -> Self::Wpkey;
-}
-
-pub trait WpmrWrite {
-    fn reset(&self);
-    type W: WpmrWriteFields;
-    fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut Self::W) -> &mut Self::W;
-}
-
-pub trait WpmrWriteWithZero {
-    type W: WpmrWriteFields;
-    unsafe fn write_with_zero<F>(&self, f: F)
-    where
-        F: FnOnce(&mut Self::W) -> &mut Self::W;
-}
-
-pub trait WpmrWriteFields: Sized {
-    type Wpen<'a>: BWrite<'a, Self>
-    where
-        Self: 'a + Sized;
-    fn wpen(&mut self) -> Self::Wpen<'_>;
-    type Wpkey<'a>: FWrite<'a, 24, u32, Self>
-    where
-        Self: 'a + Sized;
-    fn wpkey(&mut self) -> Self::Wpkey<'_>;
-}
-
-pub trait WpmrModify: WpmrRead + WpmrWrite + WpmrWriteWithZero {
-    fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(
-            &<Self as WpmrRead>::R,
-            &'w mut <Self as WpmrWrite>::W,
-        ) -> &'w mut <Self as WpmrWrite>::W;
-}
-
-pub trait WpsrRead {
-    type R: WpsrReadFields;
-    fn read(&self) -> Self::R;
-}
-
-pub trait WpsrReadFields {
-    type Wpvs: BRead;
-    fn wpvs(&self) -> Self::Wpvs;
-    type Wpvsrc: FRead<u16>;
-    fn wpvsrc(&self) -> Self::Wpvsrc;
-}
-
 macro_rules! other_impls {
-    ($($pio:ident),+$(,)?) => {
+    ($($(#[$meta:meta])*$pio:ident),+$(,)?) => {
         $(
             paste::paste! {
-                #[cfg(feature = "" [<$pio:lower>] "")]
+                $(#[$meta])*
                 const _: () = {
                     impl ScdrRead for crate::pac::[<$pio:lower>]::Scdr {
                         type R = crate::pac::[<$pio:lower>]::scdr::R;
@@ -1043,8 +835,8 @@ macro_rules! other_impls {
                         }
                     }
 
-                    bwrite_impl! {
-                        pio: $pio,
+                    crate::structure::bwrite_impl! {
+                        ty: $pio,
                         reg: Wpmr,
                     }
 
@@ -1092,6 +884,7 @@ macro_rules! other_impls {
                         fn wpvs(&self) -> Self::Wpvs {
                             self.wpvs()
                         }
+                        type Addr = u16;
                         type Wpvsrc = crate::pac::[<$pio:lower>]::wpsr::WpvsrcR;
                         fn wpvsrc(&self) -> Self::Wpvsrc {
                             self.wpvsrc()
@@ -1102,7 +895,8 @@ macro_rules! other_impls {
 
             seq_macro::seq! {N in 0..32 {
                 paste::paste! {
-                    #[cfg(all(feature = "" [<$pio:lower>] "", feature = "schmitt"))]
+                    $(#[$meta])*
+                    #[cfg(feature = "schmitt")]
                     const _: () = {
                         impl SchmittReadFields for crate::pac::[<$pio:lower>]::schmitt::R {
                             #(
@@ -1127,8 +921,8 @@ macro_rules! other_impls {
                             )*
                         }
 
-                        bwrite_impl! {
-                            pio: $pio,
+                        crate::structure::bwrite_impl! {
+                            ty: $pio,
                             reg: Schmitt,
                         }
                     };
@@ -1136,7 +930,8 @@ macro_rules! other_impls {
             }}
 
             paste::paste! {
-                #[cfg(all(feature = "" [<$pio:lower>] "", feature = "schmitt"))]
+                $(#[$meta])*
+                #[cfg(feature = "schmitt")]
                 const _: () = {
                     impl SchmittRead for crate::pac::[<$pio:lower>]::Schmitt {
                         type R = crate::pac::[<$pio:lower>]::schmitt::R;
@@ -1188,8 +983,12 @@ macro_rules! other_impls {
 other_impls! {
     PIOA,
     PIOB,
+    #[cfg(feature = "pioc")]
     PIOC,
+    #[cfg(feature = "piod")]
     PIOD,
+    #[cfg(feature = "pioe")]
     PIOE,
+    #[cfg(feature = "piof")]
     PIOF,
 }
