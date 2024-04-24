@@ -15,6 +15,10 @@ edition = "2021"
 # [package.metadata.docs.rs]
 # features = []
 
+[dev-dependencies.embedded-test]
+version = "0.3"
+features = ["log"]
+
 [dependencies]
 paste = "1"
 seq-macro = "0.3"
@@ -155,200 +159,240 @@ sam3x8h-rt = ["sam3x8h", "atsam3x8h/rt"]
 
 [dependencies.atsam3a4c]
 path = "../pac/atsam3a4c/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3a8c]
 path = "../pac/atsam3a8c/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3n0a]
 path = "../pac/atsam3n0a/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3n0b]
 path = "../pac/atsam3n0b/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3n0c]
 path = "../pac/atsam3n0c/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3n00a]
 path = "../pac/atsam3n00a/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3n00b]
 path = "../pac/atsam3n00b/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3n1a]
 path = "../pac/atsam3n1a/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3n1b]
 path = "../pac/atsam3n1b/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3n1c]
 path = "../pac/atsam3n1c/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3n2a]
 path = "../pac/atsam3n2a/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3n2b]
 path = "../pac/atsam3n2b/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3n2c]
 path = "../pac/atsam3n2c/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3n4a]
 path = "../pac/atsam3n4a/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3n4b]
 path = "../pac/atsam3n4b/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3n4c]
 path = "../pac/atsam3n4c/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3s1a]
 path = "../pac/atsam3s1a/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3s1b]
 path = "../pac/atsam3s1b/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3s1c]
 path = "../pac/atsam3s1c/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3s2a]
 path = "../pac/atsam3s2a/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3s2b]
 path = "../pac/atsam3s2b/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3s2c]
 path = "../pac/atsam3s2c/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3s4a]
 path = "../pac/atsam3s4a/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3s4b]
 path = "../pac/atsam3s4b/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3s4c]
 path = "../pac/atsam3s4c/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3s8b]
 path = "../pac/atsam3s8b/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3s8c]
 path = "../pac/atsam3s8c/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3sd8b]
 path = "../pac/atsam3sd8b/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3sd8c]
 path = "../pac/atsam3sd8c/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3u1c]
 path = "../pac/atsam3u1c/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3u1e]
 path = "../pac/atsam3u1e/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3u2c]
 path = "../pac/atsam3u2c/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3u2e]
 path = "../pac/atsam3u2e/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3u4c]
 path = "../pac/atsam3u4c/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3u4e]
 path = "../pac/atsam3u4e/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3x4c]
 path = "../pac/atsam3x4c/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3x4e]
 path = "../pac/atsam3x4e/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3x8c]
 path = "../pac/atsam3x8c/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3x8e]
 path = "../pac/atsam3x8e/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
 
 [dependencies.atsam3x8h]
 path = "../pac/atsam3x8h/"
+features = ["critical-section"]
 version = "0.1.0"
 optional = true
