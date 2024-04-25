@@ -1,6 +1,27 @@
 //! PIO peripheral configuration
 //!
-//! 
+//! # Pin Multiplexing
+//!
+//! Each pin is configurable, according to product definition as either a general-purpose I/O line
+//! only, or as an I/O line multiplexed with one or two peripheral I/Os. As the multiplexing is
+//! hardware defined and thus product-dependent, the hardware designer and programmer must carefully
+//! determine the configuration of the PIO controllers required by their application. When an I/O
+//! line is general-purpose only, i.e. not multiplexed with any peripheral I/O, programming of the
+//! PIO Controller regarding the assignment to a peripheral has no effect and only the PIO
+//! Controller can control how the pin is driven by the product.
+//!
+//! Relevant manual sections:
+//! - SAM3A, SAM3X: [manual][ax], pages 622-624 (31.5.2, 31.5.3, 31.5.4, 31.5.5, 31.5.7)
+//! - SAM3N: [manual][n], pages 380-382 (27.5.2, 27.5.3, 27.5.4, 27.5.5, 27.5.7)
+//! - SAM3S1, SAM3S2, SAM3S4: [manual][n], pages 471-473 (29.5.2, 29.5.3, 29.5.4, 29.5.5, 29.5.7)
+//! - SAM3S8, SAM3SD8: [manual][sd8], pages 480-482 (28.5.2, 28.5.3, 28.5.4, 28.5.5, 28.5.7)
+//! - SAM3U: [manual][u], pages 498-499 (29.5.2, 29.5.3, 29.5.4, 29.5.5, 29.5.7)
+//!
+//! [ax]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-11057-32-bit-Cortex-M3-Microcontroller-SAM3X-SAM3A_Datasheet.pdf
+//! [n]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-11011-32-bit-Cortex-M3-Microcontroller-SAM3N_Datasheet.pdf
+//! [s124]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-6500-32-bit-Cortex-M3-Microcontroller-SAM3S4-SAM3S2-SAM3S1_Datasheet.pdf
+//! [sd8]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-11090-32-bit%20Cortex-M3-Microcontroller-SAM-3S8-SD8_Datasheet.pdf
+//! [u]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-6430-32-bit-Cortex-M3-Microcontroller-SAM3U4-SAM3U2-SAM3U1_Datasheet.pdf
 
 use crate::{
     pio::{
@@ -15,6 +36,7 @@ use crate::{
 };
 use core::marker::PhantomData;
 
+/// Marker trait for line control configuration options.
 pub trait PioControlCfg {}
 
 impl PioControlCfg for Unconfigured {}
@@ -106,6 +128,7 @@ pub trait ConfigurePioControl: Sized {
 // only. When the bit is at 1, the corresponding I/O line is driven by the PIO controller.
 
 #[allow(clippy::module_name_repetitions)]
+/// Marker trait for peripheral selection configuration options.
 pub trait PeripheralSelectCfg {}
 
 impl PeripheralSelectCfg for Unconfigured {}
@@ -130,6 +153,7 @@ mod c {
     use super::*;
 
     #[allow(clippy::module_name_repetitions)]
+    /// Allow output from peripheral C to drive the I/O line.
     pub struct PeripheralC;
 
     impl PeripheralSelectCfg for PeripheralC {}
@@ -145,6 +169,7 @@ mod d {
     use super::*;
 
     #[allow(clippy::module_name_repetitions)]
+    /// Allow output from peripheral D to drive the I/O line.
     pub struct PeripheralD;
 
     impl PeripheralSelectCfg for PeripheralD {}
@@ -154,45 +179,42 @@ mod d {
 #[cfg(feature = "4fn")]
 pub use d::PeripheralD;
 
-pub trait PeripheralExistsFor<Pio: PioRegisters> {}
+/// Marks whether a given peripheral exists for a given PIO + pin ID combination.
+pub trait PeripheralExistsFor<Pio: PioRegisters, Pid: PinId<Controller = Pio>>:
+    PeripheralSelectCfg
+{
+}
 
-#[cfg(all(feature = "3fn", feature = "4fn"))]
-const _: () = {
-    impl<Psel: PeripheralSelectCfg> PeripheralExistsFor<crate::pac::PIOA> for Psel where
-        Psel: PeripheralSelectCfg
-    {
-    }
-
-    impl<Psel: PeripheralSelectCfg> PeripheralExistsFor<crate::pac::pioa::RegisterBlock> for Psel where
-        Psel: PeripheralSelectCfg
-    {
-    }
-
-    impl PeripheralExistsFor<crate::pac::PIOB> for PeripheralA {}
-    impl PeripheralExistsFor<crate::pac::piob::RegisterBlock> for PeripheralA {}
-    impl PeripheralExistsFor<crate::pac::PIOB> for PeripheralB {}
-    impl PeripheralExistsFor<crate::pac::piob::RegisterBlock> for PeripheralB {}
-    impl PeripheralExistsFor<crate::pac::PIOB> for PeripheralC {}
-    impl PeripheralExistsFor<crate::pac::piob::RegisterBlock> for PeripheralC {}
-
-    #[cfg(feature = "pioc")]
-    const _: () = {
-        impl PeripheralExistsFor<crate::pac::PIOC> for PeripheralA {}
-        impl PeripheralExistsFor<crate::pac::pioc::RegisterBlock> for PeripheralA {}
-        impl PeripheralExistsFor<crate::pac::PIOC> for PeripheralB {}
-        impl PeripheralExistsFor<crate::pac::pioc::RegisterBlock> for PeripheralB {}
-        impl PeripheralExistsFor<crate::pac::PIOC> for PeripheralC {}
-        impl PeripheralExistsFor<crate::pac::pioc::RegisterBlock> for PeripheralC {}
-    };
-};
-
+/// Marks it possible to execute a given function selection and provides methods to do so.
+///
+/// This is the preferred way to execute a function selection, since it should only be callable
+/// on types that are able to be configured to a given peripheral.
 pub trait ExecFnSel<Psel>: ConfigureFunctionSelect
 where
     Self: Sized,
     Psel: PeripheralSelectCfg,
 {
     type Configured;
+    /// Selects the given peripheral for this pin. Waits for the peripheral selection register(s)
+    /// to update.
+    ///
+    /// # Errors
+    ///
+    /// This function can fail if:
+    /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
+    ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
+    ///   controller.
+    /// - Write protection is enabled on the PIO controller. Write protection must first be
+    ///   disabled for any pins within the controller to have their configurations modified.
     fn configure_function(self) -> Result<Self::Configured, (Self, PioError)>;
+    /// Executes a given function selection without checking `PIO_LOCKSR`, `PIO_WPMR`, or waiting
+    /// for the peripheral selection register(s) to update.
+    ///
+    /// # Safety
+    ///
+    /// This function returns a type showing that this pin has selected the chosen peripheral, but
+    /// this may be at odds with the actual configuration state of the PIO controller. Writes to the
+    /// configuration may fail silently if the PIO line is locked or write protection is enabled.
     unsafe fn configure_function_unchecked(self) -> Self::Configured;
 }
 
@@ -200,12 +222,12 @@ impl<Pio, Pid, Mdvr, Psel, Padr, Irpt, Filt> ExecFnSel<PeripheralA>
     for Pin<Pio, Pid, Mdvr, PeripheralControlled<Psel>, Padr, Irpt, Filt>
 where
     Self: ConfigureFunctionSelect,
-    PeripheralA: PeripheralExistsFor<Pio>,
+    PeripheralA: PeripheralExistsFor<Pio, Pid>,
     Pio: PioRegisters,
     Pio::Rb: WriteProtect,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg,
-    Psel: PeripheralSelectCfg + PeripheralExistsFor<Pio>,
+    Psel: PeripheralSelectCfg,
     Padr: PadResistorCfg,
     Irpt: InterruptCfg,
     Filt: InputFilterCfg,
@@ -213,7 +235,7 @@ where
     type Configured = <Self as ConfigureFunctionSelect>::A;
 
     fn configure_function(self) -> Result<Self::Configured, (Self, PioError)> {
-        self.peripheral_a()
+        unsafe { self.peripheral_a() }
     }
 
     unsafe fn configure_function_unchecked(self) -> Self::Configured {
@@ -225,12 +247,12 @@ impl<Pio, Pid, Mdvr, Psel, Padr, Irpt, Filt> ExecFnSel<PeripheralB>
     for Pin<Pio, Pid, Mdvr, PeripheralControlled<Psel>, Padr, Irpt, Filt>
 where
     Self: ConfigureFunctionSelect,
-    PeripheralB: PeripheralExistsFor<Pio>,
+    PeripheralB: PeripheralExistsFor<Pio, Pid>,
     Pio: PioRegisters,
     Pio::Rb: WriteProtect,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg,
-    Psel: PeripheralSelectCfg + PeripheralExistsFor<Pio>,
+    Psel: PeripheralSelectCfg,
     Padr: PadResistorCfg,
     Irpt: InterruptCfg,
     Filt: InputFilterCfg,
@@ -238,7 +260,7 @@ where
     type Configured = <Self as ConfigureFunctionSelect>::B;
 
     fn configure_function(self) -> Result<Self::Configured, (Self, PioError)> {
-        self.peripheral_b()
+        unsafe { self.peripheral_b() }
     }
 
     unsafe fn configure_function_unchecked(self) -> Self::Configured {
@@ -251,12 +273,12 @@ impl<Pio, Pid, Mdvr, Psel, Padr, Irpt, Filt> ExecFnSel<PeripheralC>
     for Pin<Pio, Pid, Mdvr, PeripheralControlled<Psel>, Padr, Irpt, Filt>
 where
     Self: ConfigureFunctionSelect,
-    PeripheralC: PeripheralExistsFor<Pio>,
+    PeripheralC: PeripheralExistsFor<Pio, Pid>,
     Pio: PioRegisters,
     Pio::Rb: WriteProtect,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg,
-    Psel: PeripheralSelectCfg + PeripheralExistsFor<Pio>,
+    Psel: PeripheralSelectCfg,
     Padr: PadResistorCfg,
     Irpt: InterruptCfg,
     Filt: InputFilterCfg,
@@ -264,7 +286,7 @@ where
     type Configured = <Self as ConfigureFunctionSelect>::C;
 
     fn configure_function(self) -> Result<Self::Configured, (Self, PioError)> {
-        self.peripheral_c()
+        unsafe { self.peripheral_c() }
     }
 
     unsafe fn configure_function_unchecked(self) -> Self::Configured {
@@ -277,12 +299,12 @@ impl<Pio, Pid, Mdvr, Psel, Padr, Irpt, Filt> ExecFnSel<PeripheralD>
     for Pin<Pio, Pid, Mdvr, PeripheralControlled<Psel>, Padr, Irpt, Filt>
 where
     Self: ConfigureFunctionSelect,
-    PeripheralD: PeripheralExistsFor<Pio>,
+    PeripheralD: PeripheralExistsFor<Pio, Pid>,
     Pio: PioRegisters,
     Pio::Rb: WriteProtect,
     Pid: PinId<Controller = Pio>,
     Mdvr: MultiDriverCfg,
-    Psel: PeripheralSelectCfg + PeripheralExistsFor<Pio>,
+    Psel: PeripheralSelectCfg,
     Padr: PadResistorCfg,
     Irpt: InterruptCfg,
     Filt: InputFilterCfg,
@@ -311,21 +333,230 @@ where
     Irpt: InterruptCfg,
     Filt: InputFilterCfg,
 {
+    /// A sort of equivalent to `ExecFnSel::configure_function`, except the generic is on the
+    /// function instead of the trait.
+    ///
+    /// # Errors
+    ///
+    /// This function can fail if:
+    /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
+    ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
+    ///   controller.
+    /// - Write protection is enabled on the PIO controller. Write protection must first be
+    ///   disabled for any pins within the controller to have their configurations modified.
     pub fn select_peripheral<Psel2>(
         self,
     ) -> Result<<Self as ExecFnSel<Psel2>>::Configured, (Self, PioError)>
     where
         Self: ExecFnSel<Psel2>,
-        Psel2: PeripheralSelectCfg + PeripheralExistsFor<Pio>,
+        Psel2: PeripheralExistsFor<Pio, Pid>,
     {
         self.configure_function()
+    }
+
+    /// A sort of equivalent to `ExecFnSel::configure_function_unchecked`, except the generic is on
+    /// the function instead of the trait.
+    ///
+    /// # Safety
+    ///
+    /// This function returns a type showing that this pin selects peripheral A, but this may be
+    /// at odds with the actual configuration state of the PIO controller. Writes to the
+    /// configuration may fail silently if the PIO line is locked or write protection is
+    /// enabled.
+    pub unsafe fn select_peripheral_unchecked<Psel2>(self) -> <Self as ExecFnSel<Psel2>>::Configured
+    where
+        Self: ExecFnSel<Psel2>,
+        Psel2: PeripheralExistsFor<Pio, Pid>,
+    {
+        self.configure_function_unchecked()
+    }
+}
+
+impl<Pio, Pid, Mdvr, Psel, Padr, Irpt, Filt>
+    Pin<Pio, Pid, Mdvr, PeripheralControlled<Psel>, Padr, Irpt, Filt>
+where
+    Self: ConfigureFunctionSelect + ExecFnSel<PeripheralA>,
+    PeripheralA: PeripheralExistsFor<Pio, Pid>,
+    Pio: PioRegisters,
+    Pio::Rb: WriteProtect,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg,
+    Psel: PeripheralSelectCfg,
+    Padr: PadResistorCfg,
+    Irpt: InterruptCfg,
+    Filt: InputFilterCfg,
+{
+    /// Select peripheral A for this pin.
+    ///
+    /// # Errors
+    ///
+    /// This function can fail if:
+    /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
+    ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
+    ///   controller.
+    /// - Write protection is enabled on the PIO controller. Write protection must first be
+    ///   disabled for any pins within the controller to have their configurations modified.
+    pub fn select_peripheral_a(
+        self,
+    ) -> Result<<Self as ExecFnSel<PeripheralA>>::Configured, (Self, PioError)> {
+        self.configure_function()
+    }
+
+    /// Select peripheral A for this pin without checking `PIO_LOCKSR` or `PIO_WPMR`.
+    ///
+    /// # Safety
+    ///
+    /// This function returns a type showing that this pin selects peripheral A, but this may be
+    /// at odds with the actual configuration state of the PIO controller. Writes to the
+    /// configuration may fail silently if the PIO line is locked or write protection is
+    /// enabled.
+    pub unsafe fn select_peripheral_a_unchecked(
+        self,
+    ) -> <Self as ExecFnSel<PeripheralA>>::Configured {
+        self.configure_function_unchecked()
+    }
+}
+
+impl<Pio, Pid, Mdvr, Psel, Padr, Irpt, Filt>
+    Pin<Pio, Pid, Mdvr, PeripheralControlled<Psel>, Padr, Irpt, Filt>
+where
+    Self: ConfigureFunctionSelect + ExecFnSel<PeripheralB>,
+    PeripheralB: PeripheralExistsFor<Pio, Pid>,
+    Pio: PioRegisters,
+    Pio::Rb: WriteProtect,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg,
+    Psel: PeripheralSelectCfg,
+    Padr: PadResistorCfg,
+    Irpt: InterruptCfg,
+    Filt: InputFilterCfg,
+{
+    /// Select peripheral B for this pin.
+    ///
+    /// # Errors
+    ///
+    /// This function can fail if:
+    /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
+    ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
+    ///   controller.
+    /// - Write protection is enabled on the PIO controller. Write protection must first be
+    ///   disabled for any pins within the controller to have their configurations modified.
+    pub fn select_peripheral_b(
+        self,
+    ) -> Result<<Self as ExecFnSel<PeripheralB>>::Configured, (Self, PioError)> {
+        self.configure_function()
+    }
+
+    /// Select peripheral B for this pin without checking `PIO_LOCKSR` or `PIO_WPMR`.
+    ///
+    /// # Safety
+    ///
+    /// This function returns a type showing that this pin selects peripheral B, but this may be
+    /// at odds with the actual configuration state of the PIO controller. Writes to the
+    /// configuration may fail silently if the PIO line is locked or write protection is
+    /// enabled.
+    pub unsafe fn select_peripheral_b_unchecked(
+        self,
+    ) -> <Self as ExecFnSel<PeripheralB>>::Configured {
+        self.configure_function_unchecked()
+    }
+}
+
+#[cfg(feature = "3fn")]
+impl<Pio, Pid, Mdvr, Psel, Padr, Irpt, Filt>
+    Pin<Pio, Pid, Mdvr, PeripheralControlled<Psel>, Padr, Irpt, Filt>
+where
+    Self: ConfigureFunctionSelect + ExecFnSel<PeripheralC>,
+    PeripheralC: PeripheralExistsFor<Pio, Pid>,
+    Pio: PioRegisters,
+    Pio::Rb: WriteProtect,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg,
+    Psel: PeripheralSelectCfg,
+    Padr: PadResistorCfg,
+    Irpt: InterruptCfg,
+    Filt: InputFilterCfg,
+{
+    /// Select peripheral C for this pin.
+    ///
+    /// # Errors
+    ///
+    /// This function can fail if:
+    /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
+    ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
+    ///   controller.
+    /// - Write protection is enabled on the PIO controller. Write protection must first be
+    ///   disabled for any pins within the controller to have their configurations modified.
+    pub fn select_peripheral_c(
+        self,
+    ) -> Result<<Self as ExecFnSel<PeripheralC>>::Configured, (Self, PioError)> {
+        self.configure_function()
+    }
+
+    /// Select peripheral C for this pin without checking `PIO_LOCKSR` or `PIO_WPMR`.
+    ///
+    /// # Safety
+    ///
+    /// This function returns a type showing that this pin selects peripheral C, but this may be
+    /// at odds with the actual configuration state of the PIO controller. Writes to the
+    /// configuration may fail silently if the PIO line is locked or write protection is
+    /// enabled.
+    pub unsafe fn select_peripheral_c_unchecked(
+        self,
+    ) -> <Self as ExecFnSel<PeripheralC>>::Configured {
+        self.configure_function_unchecked()
+    }
+}
+
+#[cfg(feature = "4fn")]
+impl<Pio, Pid, Mdvr, Psel, Padr, Irpt, Filt>
+    Pin<Pio, Pid, Mdvr, PeripheralControlled<Psel>, Padr, Irpt, Filt>
+where
+    Self: ConfigureFunctionSelect + ExecFnSel<PeripheralD>,
+    PeripheralD: PeripheralExistsFor<Pio, Pid>,
+    Pio: PioRegisters,
+    Pio::Rb: WriteProtect,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg,
+    Psel: PeripheralSelectCfg,
+    Padr: PadResistorCfg,
+    Irpt: InterruptCfg,
+    Filt: InputFilterCfg,
+{
+    /// Select peripheral D for this pin.
+    ///
+    /// # Errors
+    ///
+    /// This function can fail if:
+    /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
+    ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
+    ///   controller.
+    /// - Write protection is enabled on the PIO controller. Write protection must first be
+    ///   disabled for any pins within the controller to have their configurations modified.
+    pub fn select_peripheral_d(
+        self,
+    ) -> Result<<Self as ExecFnSel<PeripheralD>>::Configured, (Self, PioError)> {
+        self.configure_function()
+    }
+
+    /// Select peripheral D for this pin without checking `PIO_LOCKSR` or `PIO_WPMR`.
+    ///
+    /// # Safety
+    ///
+    /// This function returns a type showing that this pin selects peripheral D, but this may be
+    /// at odds with the actual configuration state of the PIO controller. Writes to the
+    /// configuration may fail silently if the PIO line is locked or write protection is
+    /// enabled.
+    pub unsafe fn select_peripheral_d_unchecked(
+        self,
+    ) -> <Self as ExecFnSel<PeripheralD>>::Configured {
+        self.configure_function_unchecked()
     }
 }
 
 #[cfg(feature = "2fn")]
 mod fn_ab {
-    #[allow(clippy::wildcard_imports)]
-    use super::*;
+    use crate::pio::PioError;
 
     /// # Peripheral A or B Selection
     ///
@@ -344,11 +575,16 @@ mod fn_ab {
     /// Writing in `PIO_ABSR` manages the multiplexing regardless of the configuration of the pin.
     /// However, assignment of a pin to a peripheral function requires a write in the peripheral
     /// selection register (`PIO_ABSR`) in addition to a write in `PIO_PDR`.
-    pub trait ConfigureFunctionSelect: Sized {
-        type A: ConfigureFunctionSelect;
-        type B: ConfigureFunctionSelect;
+    /// ([`ConfigurePioControl::peripheral_controlled`][pc],
+    /// [`ConfigurePioControl::peripheral_controlled_unchecked`][pcu]).
+    ///
+    /// [pc]: crate::pio::peripheral::ConfigurePioControl::peripheral_controlled
+    /// [pcu]: crate::pio::peripheral::ConfigurePioControl::peripheral_controlled_unchecked
+    pub trait ConfigureFunctionSelect2Fn: Sized {
+        type A: ConfigureFunctionSelect2Fn;
+        type B: ConfigureFunctionSelect2Fn;
 
-        /// Select peripheral A for this pin. Waits for `PIO_ABSR` to update accordingly.
+        /// Select peripheral A for this pin.
         ///
         /// # Errors
         ///
@@ -358,8 +594,16 @@ mod fn_ab {
         ///   controller.
         /// - Write protection is enabled on the PIO controller. Write protection must first be
         ///   disabled for any pins within the controller to have their configurations modified.
-        fn peripheral_a(self) -> Result<Self::A, (Self, PioError)>;
-        /// Select peripheral A for this pin without waiting for `PIO_ABSR` to update.
+        ///
+        /// # Safety
+        ///
+        /// The device manuals do not specify what happens in the event that an unmapped peripheral
+        /// function is selected, and so this method is marked as unsafe. Please refer to
+        /// [`ExecFnSel`][efs] for a safe method to configure pins.
+        ///
+        /// [efs]: crate::pio::peripheral::ExecFnSel
+        unsafe fn peripheral_a(self) -> Result<Self::A, (Self, PioError)>;
+        /// Select peripheral A for this pin without checking `PIO_LOCKSR` or `PIO_WPMR`.
         ///
         /// # Safety
         ///
@@ -368,7 +612,7 @@ mod fn_ab {
         /// configuration may fail silently if the PIO line is locked or write protection is
         /// enabled.
         unsafe fn peripheral_a_unchecked(self) -> Self::A;
-        /// Enable select peripheral B for this pin. Waits for `PIO_ABSR` to update accordingly.
+        /// Enable select peripheral B for this pin.
         ///
         /// # Errors
         ///
@@ -378,8 +622,16 @@ mod fn_ab {
         ///   controller.
         /// - Write protection is enabled on the PIO controller. Write protection must first be
         ///   disabled for any pins within the controller to have their configurations modified.
-        fn peripheral_b(self) -> Result<Self::B, (Self, PioError)>;
-        /// Select peripheral B for this pin without waiting for `PIO_ABSR` to update.
+        ///
+        /// # Safety
+        ///
+        /// The device manuals do not specify what happens in the event that an unmapped peripheral
+        /// function is selected, and so this method is marked as unsafe. Please refer to
+        /// [`ExecFnSel`][efs] for a safe method to configure pins.
+        ///
+        /// [efs]: crate::pio::peripheral::ExecFnSel
+        unsafe fn peripheral_b(self) -> Result<Self::B, (Self, PioError)>;
+        /// Select peripheral B for this pin without checking `PIO_LOCKSR` or `PIO_WPMR`.
         ///
         /// # Safety
         ///
@@ -392,22 +644,131 @@ mod fn_ab {
 }
 
 #[cfg(feature = "2fn")]
-pub use fn_ab::ConfigureFunctionSelect;
+pub use fn_ab::ConfigureFunctionSelect2Fn as ConfigureFunctionSelect;
 
 #[cfg(all(feature = "3fn", not(feature = "4fn")))]
 mod fn_abc {
     use crate::pio::PioError;
 
+    /// # Peripheral A or B or C Selection
+    ///
+    /// The PIO Controller provides multiplexing of up to three peripheral functions on a single
+    /// pin. The selection is performed by writing to `PIO_ABCDSR0` and `PIO_ABCDSR1` (ABCD select
+    /// registers).
+    ///
+    /// The following is a table denoting the peripheral selected for all the select register
+    /// combinations:
+    ///
+    /// `PIO_ABCDSR0` | `PIO_ABCDSR1` | Selected
+    /// --------------|---------------|------------
+    ///             0 |             0 |           A
+    ///             1 |             0 |           B
+    ///             0 |             1 |           C
+    ///             1 |             0 | Unspecified
+    ///
+    /// Note that multiplexing of peripheral lines A, B, and C only affects the output line. The
+    /// peripheral input lines are always connected to the pin input.
+    ///
+    /// After reset, `PIO_ABCDSR0` and `PIO_ABCDSR1` are 0, thus indicating that all the PIO lines
+    /// are configured on peripheral A. However, peripheral A generally does not drive the pin as
+    /// the PIO controller resets in I/O line mode.
+    ///
+    /// Writing in `PIO_ABCDSR0` and `PIO_ABCDSR1` manages the multiplexing regardless of the
+    /// configuration of the pin. However, an assigment of a pin to a peripheral function requires a
+    /// write in the peripheral selection registers (`PIO_ABCDSR0` and `PIO_ABCDSR1`) in addition to
+    /// a write in `PIO_PDR` ([`ConfigurePioControl::peripheral_controlled`][pc],
+    /// [`ConfigurePioControl::peripheral_controlled_unchecked`][pcu]).
+    ///
+    /// [pc]: crate::pio::peripheral::ConfigurePioControl::peripheral_controlled
+    /// [pcu]: crate::pio::peripheral::ConfigurePioControl::peripheral_controlled_unchecked
     pub trait ConfigureFunctionSelect3Fn: Sized {
         type A: ConfigureFunctionSelect3Fn;
         type B: ConfigureFunctionSelect3Fn;
         type C: ConfigureFunctionSelect3Fn;
 
-        fn peripheral_a(self) -> Result<Self::A, (Self, PioError)>;
+        /// Select peripheral A for this pin.
+        ///
+        /// # Errors
+        ///
+        /// This function can fail if:
+        /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
+        ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
+        ///   controller.
+        /// - Write protection is enabled on the PIO controller. Write protection must first be
+        ///   disabled for any pins within the controller to have their configurations modified.
+        ///
+        /// # Safety
+        ///
+        /// The device manuals do not specify what happens in the event that an unmapped peripheral
+        /// function is selected, and so this method is marked as unsafe. Please refer to
+        /// [`ExecFnSel`][efs] for a safe method to configure pins.
+        ///
+        /// [efs]: crate::pio::peripheral::ExecFnSel
+        unsafe fn peripheral_a(self) -> Result<Self::A, (Self, PioError)>;
+        /// Select peripheral A for this pin without checking `PIO_LOCKSR` or `PIO_WPMR`.
+        ///
+        /// # Safety
+        ///
+        /// This function returns a type showing that this pin selects peripheral A, but this may be
+        /// at odds with the actual configuration state of the PIO controller. Writes to the
+        /// configuration may fail silently if the PIO line is locked or write protection is
+        /// enabled.
         unsafe fn peripheral_a_unchecked(self) -> Self::A;
-        fn peripheral_b(self) -> Result<Self::B, (Self, PioError)>;
+        /// Select peripheral B for this pin.
+        ///
+        /// # Errors
+        ///
+        /// This function can fail if:
+        /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
+        ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
+        ///   controller.
+        /// - Write protection is enabled on the PIO controller. Write protection must first be
+        ///   disabled for any pins within the controller to have their configurations modified.
+        ///
+        /// # Safety
+        ///
+        /// The device manuals do not specify what happens in the event that an unmapped peripheral
+        /// function is selected, and so this method is marked as unsafe. Please refer to
+        /// [`ExecFnSel`][efs] for a safe method to configure pins.
+        ///
+        /// [efs]: crate::pio::peripheral::ExecFnSel
+        unsafe fn peripheral_b(self) -> Result<Self::B, (Self, PioError)>;
+        /// Select peripheral B for this pin without checking `PIO_LOCKSR` or `PIO_WPMR`.
+        ///
+        /// # Safety
+        ///
+        /// This function returns a type showing that this pin selects peripheral B, but this may be
+        /// at odds with the actual configuration state of the PIO controller. Writes to the
+        /// configuration may fail silently if the PIO line is locked or write protection is
+        /// enabled.
         unsafe fn peripheral_b_unchecked(self) -> Self::B;
-        fn peripheral_c(self) -> Result<Self::C, (Self, PioError)>;
+        /// Select peripheral C for this pin.
+        ///
+        /// # Errors
+        ///
+        /// This function can fail if:
+        /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
+        ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
+        ///   controller.
+        /// - Write protection is enabled on the PIO controller. Write protection must first be
+        ///   disabled for any pins within the controller to have their configurations modified.
+        ///
+        /// # Safety
+        ///
+        /// The device manuals do not specify what happens in the event that an unmapped peripheral
+        /// function is selected, and so this method is marked as unsafe. Please refer to
+        /// [`ExecFnSel`][efs] for a safe method to configure pins.
+        ///
+        /// [efs]: crate::pio::peripheral::ExecFnSel
+        unsafe fn peripheral_c(self) -> Result<Self::C, (Self, PioError)>;
+        /// Select peripheral C for this pin without checking `PIO_LOCKSR` or `PIO_WPMR`.
+        ///
+        /// # Safety
+        ///
+        /// This function returns a type showing that this pin selects peripheral C, but this may be
+        /// at odds with the actual configuration state of the PIO controller. Writes to the
+        /// configuration may fail silently if the PIO line is locked or write protection is
+        /// enabled.
         unsafe fn peripheral_c_unchecked(self) -> Self::C;
     }
 }
@@ -419,19 +780,154 @@ pub use fn_abc::ConfigureFunctionSelect3Fn as ConfigureFunctionSelect;
 mod fn_abcd {
     use crate::pio::PioError;
 
+    /// # Peripheral A or B or C or D Selection
+    ///
+    /// The PIO Controller provides multiplexing of up to three peripheral functions on a single
+    /// pin. The selection is performed by writing to `PIO_ABCDSR0` and `PIO_ABCDSR1` (ABCD select
+    /// registers).
+    ///
+    /// The following is a table denoting the peripheral selected for all the select register
+    /// combinations:
+    ///
+    /// `PIO_ABCDSR0` | `PIO_ABCDSR1` | Selected
+    /// --------------|---------------|------------
+    ///             0 |             0 |           A
+    ///             1 |             0 |           B
+    ///             0 |             1 |           C
+    ///             1 |             0 |           D
+    ///
+    /// Note that multiplexing of peripheral lines A, B, C, and D only affects the output line. The
+    /// peripheral input lines are always connected to the pin input.
+    ///
+    /// After reset, `PIO_ABCDSR0` and `PIO_ABCDSR1` are 0, thus indicating that all the PIO lines
+    /// are configured on peripheral A. However, peripheral A generally does not drive the pin as
+    /// the PIO controller resets in I/O line mode.
+    ///
+    /// Writing in `PIO_ABCDSR0` and `PIO_ABCDSR1` manages the multiplexing regardless of the
+    /// configuration of the pin. However, an assigment of a pin to a peripheral function requires a
+    /// write in the peripheral selection registers (`PIO_ABCDSR0` and `PIO_ABCDSR1`) in addition to
+    /// a write in `PIO_PDR` ([`ConfigurePioControl::peripheral_controlled`],
+    /// [`ConfigurePioControl::peripheral_controlled_unchecked`][pcu]).
+    ///
+    /// [pc]: crate::pio::peripheral::ConfigurePioControl::peripheral_controlled
+    /// [pcu]: crate::pio::peripheral::ConfigurePioControl::peripheral_controlled_unchecked
     pub trait ConfigureFunctionSelect4Fn: Sized {
         type A: ConfigureFunctionSelect4Fn;
         type B: ConfigureFunctionSelect4Fn;
         type C: ConfigureFunctionSelect4Fn;
         type D: ConfigureFunctionSelect4Fn;
 
-        fn peripheral_a(self) -> Result<Self::A, (Self, PioError)>;
+        /// Select peripheral A for this pin.
+        ///
+        /// # Errors
+        ///
+        /// This function can fail if:
+        /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
+        ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
+        ///   controller.
+        /// - Write protection is enabled on the PIO controller. Write protection must first be
+        ///   disabled for any pins within the controller to have their configurations modified.
+        ///
+        /// # Safety
+        ///
+        /// The device manuals do not specify what happens in the event that an unmapped peripheral
+        /// function is selected, and so this method is marked as unsafe. Please refer to
+        /// [`ExecFnSel`][efs] for a safe method to configure pins.
+        ///
+        /// [efs]: crate::pio::peripheral::ExecFnSel
+        unsafe fn peripheral_a(self) -> Result<Self::A, (Self, PioError)>;
+        /// Select peripheral A for this pin without checking `PIO_LOCKSR` or `PIO_WPMR`.
+        ///
+        /// # Safety
+        ///
+        /// This function returns a type showing that this pin selects peripheral A, but this may be
+        /// at odds with the actual configuration state of the PIO controller. Writes to the
+        /// configuration may fail silently if the PIO line is locked or write protection is
+        /// enabled.
         unsafe fn peripheral_a_unchecked(self) -> Self::A;
-        fn peripheral_b(self) -> Result<Self::B, (Self, PioError)>;
+        /// Select peripheral B for this pin.
+        ///
+        /// # Errors
+        ///
+        /// This function can fail if:
+        /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
+        ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
+        ///   controller.
+        /// - Write protection is enabled on the PIO controller. Write protection must first be
+        ///   disabled for any pins within the controller to have their configurations modified.
+        ///
+        /// # Safety
+        ///
+        /// The device manuals do not specify what happens in the event that an unmapped peripheral
+        /// function is selected, and so this method is marked as unsafe. Please refer to
+        /// [`ExecFnSel`][efs] for a safe method to configure pins.
+        ///
+        /// [efs]: crate::pio::peripheral::ExecFnSel
+        unsafe fn peripheral_b(self) -> Result<Self::B, (Self, PioError)>;
+        /// Select peripheral B for this pin without checking `PIO_LOCKSR` or `PIO_WPMR`.
+        ///
+        /// # Safety
+        ///
+        /// This function returns a type showing that this pin selects peripheral B, but this may be
+        /// at odds with the actual configuration state of the PIO controller. Writes to the
+        /// configuration may fail silently if the PIO line is locked or write protection is
+        /// enabled.
         unsafe fn peripheral_b_unchecked(self) -> Self::B;
-        fn peripheral_c(self) -> Result<Self::C, (Self, PioError)>;
+        /// Select peripheral C for this pin.
+        ///
+        /// # Errors
+        ///
+        /// This function can fail if:
+        /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
+        ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
+        ///   controller.
+        /// - Write protection is enabled on the PIO controller. Write protection must first be
+        ///   disabled for any pins within the controller to have their configurations modified.
+        ///
+        /// # Safety
+        ///
+        /// The device manuals do not specify what happens in the event that an unmapped peripheral
+        /// function is selected, and so this method is marked as unsafe. Please refer to
+        /// [`ExecFnSel`][efs] for a safe method to configure pins.
+        ///
+        /// [efs]: crate::pio::peripheral::ExecFnSel
+        unsafe fn peripheral_c(self) -> Result<Self::C, (Self, PioError)>;
+        /// Select peripheral C for this pin without checking `PIO_LOCKSR` or `PIO_WPMR`.
+        ///
+        /// # Safety
+        ///
+        /// This function returns a type showing that this pin selects peripheral C, but this may be
+        /// at odds with the actual configuration state of the PIO controller. Writes to the
+        /// configuration may fail silently if the PIO line is locked or write protection is
+        /// enabled.
         unsafe fn peripheral_c_unchecked(self) -> Self::C;
+        /// Select peripheral D for this pin.
+        ///
+        /// # Errors
+        ///
+        /// This function can fail if:
+        /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
+        ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
+        ///   controller.
+        /// - Write protection is enabled on the PIO controller. Write protection must first be
+        ///   disabled for any pins within the controller to have their configurations modified.
+        ///
+        /// # Safety
+        ///
+        /// The device manuals do not specify what happens in the event that an unmapped peripheral
+        /// function is selected, and so this method is marked as unsafe. Please refer to
+        /// [`ExecFnSel`][efs] for a safe method to configure pins.
+        ///
+        /// [efs]: crate::pio::peripheral::ExecFnSel
         unsafe fn peripheral_d(self) -> Result<Self::D, (Self, PioError)>;
+        /// Select peripheral D for this pin without checking `PIO_LOCKSR` or `PIO_WPMR`.
+        ///
+        /// # Safety
+        ///
+        /// This function returns a type showing that this pin selects peripheral D, but this may be
+        /// at odds with the actual configuration state of the PIO controller. Writes to the
+        /// configuration may fail silently if the PIO line is locked or write protection is
+        /// enabled.
         unsafe fn peripheral_d_unchecked(self) -> Self::D;
     }
 }
@@ -439,15 +935,30 @@ mod fn_abcd {
 #[cfg(feature = "4fn")]
 pub use fn_abcd::ConfigureFunctionSelect4Fn as ConfigureFunctionSelect;
 
+/// Marker trait for PIO output control configuration options.
 pub trait OutputCfg {}
 
 impl OutputCfg for Unconfigured {}
 
+#[cfg(not(feature = "schmitt"))]
 /// Disable PIO control of the output.
 pub struct OutputDisabled;
 
+#[cfg(feature = "schmitt")]
+/// Disable PIO control of the output.
+pub struct OutputDisabled<Schm: SchmittTriggerCfg> {
+    _schm: PhantomData<Schm>,
+}
+
+#[cfg(not(feature = "schmitt"))]
 impl OutputCfg for OutputDisabled {}
+#[cfg(feature = "schmitt")]
+impl<Schm: SchmittTriggerCfg> OutputCfg for OutputDisabled<Schm> {}
+
+#[cfg(not(feature = "schmitt"))]
 impl Configured for OutputDisabled {}
+#[cfg(feature = "schmitt")]
+impl<Schm: SchmittTriggerCfg + Configured> Configured for OutputDisabled<Schm> {}
 
 /// Enable PIO control of the output.
 pub struct OutputEnabled<Sync: OutputSyncWriteCfg, Outw: OutputWriteCfg> {
@@ -461,7 +972,7 @@ impl<Sync: OutputSyncWriteCfg + Configured, Outw: OutputWriteCfg + Configured> C
 {
 }
 
-/// # Output Control
+/// # Output Control (enable/disable PIO driving output)
 ///
 /// When the I/O line is assigned to a peripheral function, i.e. the corresponding bit in `PIO_PSR`
 /// is at 0, the drive of the I/O line is controlled by the peripheral. Peripheral A or B depending
@@ -510,6 +1021,7 @@ pub trait ConfigurePioOutput: Sized {
     unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled;
 }
 
+/// Marker trait for synchronous output writing configuration options.
 pub trait OutputSyncWriteCfg {}
 
 impl OutputSyncWriteCfg for Unconfigured {}
@@ -589,6 +1101,7 @@ pub trait ConfigureOutputSyncWrite: Sized {
     unsafe fn disable_output_sync_write_unchecked(self) -> Self::Disabled;
 }
 
+/// Marker trait for PIO output configurations.
 pub trait OutputWriteCfg {}
 
 impl OutputWriteCfg for Unconfigured {}
@@ -645,6 +1158,59 @@ pub trait ConfigureOutputWrite {
     unsafe fn clear_output_unchecked(self) -> Self::Clear;
 }
 
+#[cfg(feature = "schmitt")]
+/// Marker trait for Schmitt input trigger configuration options.
+pub trait SchmittTriggerCfg {}
+
+#[cfg(feature = "schmitt")]
+impl SchmittTriggerCfg for Unconfigured {}
+
+#[cfg(feature = "schmitt")]
+/// Disables the Schmitt input trigger for this pin.
+pub struct SchmittDisabled;
+
+#[cfg(feature = "schmitt")]
+impl SchmittTriggerCfg for SchmittDisabled {}
+
+#[cfg(feature = "schmitt")]
+/// Enables the Schmitt input trigger for this pin.
+pub struct SchmittEnabled;
+
+#[cfg(feature = "schmitt")]
+impl SchmittTriggerCfg for SchmittEnabled {}
+
+#[cfg(feature = "schmitt")]
+/// # Programmable Schmitt Trigger
+///
+/// It is possible to configure each input for the Schmitt Trigger. By default the Schmitt trigger
+/// is active.
+///
+/// (Yes, this is actually all of the information given about this functionality in the manuals,
+/// sorry about that.)
+pub trait ConfigureSchmittTrigger {
+    type Disabled;
+    type Enabled;
+
+    /// Disable the Schmitt trigger on this I/O line. Waits for `PIO_SCHMITT` to update accordingly.
+    fn disable_schmitt_trigger(self) -> Self::Disabled;
+    /// Disable the Schmitt trigger on this I/O line without waiting for `PIO_SCHMITT` to update.
+    ///
+    /// # Safety
+    ///
+    /// This function returns a type showing that this pin has the Schmitt trigger disabled, but the
+    /// trigger won't be disabled until the corresponding bit in `PIO_SCHMITT` is set.
+    unsafe fn disable_schmitt_trigger_unchecked(self) -> Self::Disabled;
+    /// Enable the Schmitt trigger on this I/O line. Waits for `PIO_SCHMITT` to update accordingly.
+    fn enable_schmitt_trigger(self) -> Self::Enabled;
+    /// Enable the Schmitt trigger on this I/O line without waiting for `PIO_SCHMITT` to update.
+    ///
+    /// # Safety
+    ///
+    /// This function returns a type showing that this pin has the Schmitt trigger enabled, but the
+    /// trigger won't be enabled until the corresponding bit in `PIO_SCHMITT` is clear.
+    unsafe fn enable_schmitt_trigger_unchecked(self) -> Self::Enabled;
+}
+
 impl<Pio, Pid, Mdvr, Padr, Irpt, Filt> ConfigurePioControl
     for Pin<Pio, Pid, Mdvr, Unconfigured, Padr, Irpt, Filt>
 where
@@ -662,8 +1228,11 @@ where
     fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
         unsafe {
             let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(&pioreg) {
+            if Pio::Rb::writeprotect_enabled(pioreg) {
                 return Err((self, PioError::WriteProtected));
+            }
+            if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                return Err((self, PioError::LineLocked));
             }
             if pioreg._psr().read().bits() & Pid::MASK != 0 {
                 let _ = self.peripheral_controlled_unchecked();
@@ -682,8 +1251,11 @@ where
     fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
         unsafe {
             let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(&pioreg) {
+            if Pio::Rb::writeprotect_enabled(pioreg) {
                 return Err((self, PioError::WriteProtected));
+            }
+            if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                return Err((self, PioError::LineLocked));
             }
             if pioreg._psr().read().bits() & Pid::MASK == 0 {
                 let _ = self.pio_controlled_unchecked();
@@ -725,8 +1297,11 @@ where
     fn pio_controlled(self) -> Result<Self::Pio, (Self, PioError)> {
         unsafe {
             let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(&pioreg) {
+            if Pio::Rb::writeprotect_enabled(pioreg) {
                 return Err((self, PioError::WriteProtected));
+            }
+            if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                return Err((self, PioError::LineLocked));
             }
             let _ = self.pio_controlled_unchecked();
             while pioreg._psr().read().bits() & Pid::MASK == 0 {}
@@ -759,8 +1334,11 @@ where
     fn peripheral_controlled(self) -> Result<Self::Peripheral, (Self, PioError)> {
         unsafe {
             let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(&pioreg) {
+            if Pio::Rb::writeprotect_enabled(pioreg) {
                 return Err((self, PioError::WriteProtected));
+            }
+            if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                return Err((self, PioError::LineLocked));
             }
             let _ = self.peripheral_controlled_unchecked();
             while pioreg._psr().read().bits() & Pid::MASK != 0 {}
@@ -802,14 +1380,15 @@ where
     type D = Pin<Pio, Pid, Mdvr, PeripheralControlled<PeripheralD>, Padr, Irpt, Filt>;
 
     #[cfg(feature = "2fn")]
-    fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
-        unsafe {
-            let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
-            }
-            Ok(self.peripheral_a_unchecked())
+    unsafe fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
+        let pioreg = &*Pio::PTR;
+        if Pio::Rb::writeprotect_enabled(pioreg) {
+            return Err((self, PioError::WriteProtected));
         }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
+        }
+        Ok(self.peripheral_a_unchecked())
     }
 
     #[cfg(feature = "2fn")]
@@ -820,14 +1399,15 @@ where
     }
 
     #[cfg(feature = "2fn")]
-    fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
-        unsafe {
-            let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
-            }
-            Ok(self.peripheral_b_unchecked())
+    unsafe fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
+        let pioreg = &*Pio::PTR;
+        if Pio::Rb::writeprotect_enabled(pioreg) {
+            return Err((self, PioError::WriteProtected));
         }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
+        }
+        Ok(self.peripheral_b_unchecked())
     }
 
     #[cfg(feature = "2fn")]
@@ -838,14 +1418,15 @@ where
     }
 
     #[cfg(any(feature = "3fn", feature = "4fn"))]
-    fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
-        unsafe {
-            let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
-            }
-            Ok(self.peripheral_a_unchecked())
+    unsafe fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
+        let pioreg = &*Pio::PTR;
+        if Pio::Rb::writeprotect_enabled(pioreg) {
+            return Err((self, PioError::WriteProtected));
         }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
+        }
+        Ok(self.peripheral_a_unchecked())
     }
 
     #[cfg(any(feature = "3fn", feature = "4fn"))]
@@ -861,14 +1442,15 @@ where
     }
 
     #[cfg(any(feature = "3fn", feature = "4fn"))]
-    fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
-        unsafe {
-            let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
-            }
-            Ok(self.peripheral_b_unchecked())
+    unsafe fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
+        let pioreg = &*Pio::PTR;
+        if Pio::Rb::writeprotect_enabled(pioreg) {
+            return Err((self, PioError::WriteProtected));
         }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
+        }
+        Ok(self.peripheral_b_unchecked())
     }
 
     #[cfg(any(feature = "3fn", feature = "4fn"))]
@@ -884,14 +1466,15 @@ where
     }
 
     #[cfg(any(feature = "3fn", feature = "4fn"))]
-    fn peripheral_c(self) -> Result<Self::C, (Self, PioError)> {
-        unsafe {
-            let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
-            }
-            Ok(self.peripheral_c_unchecked())
+    unsafe fn peripheral_c(self) -> Result<Self::C, (Self, PioError)> {
+        let pioreg = &*Pio::PTR;
+        if Pio::Rb::writeprotect_enabled(pioreg) {
+            return Err((self, PioError::WriteProtected));
         }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
+        }
+        Ok(self.peripheral_c_unchecked())
     }
 
     #[cfg(any(feature = "3fn", feature = "4fn"))]
@@ -911,6 +1494,9 @@ where
         let pioreg = &*Pio::PTR;
         if Pio::Rb::writeprotect_enabled(pioreg) {
             return Err((self, PioError::WriteProtected));
+        }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
         }
         Ok(self.peripheral_d_unchecked())
     }
@@ -941,12 +1527,12 @@ where
 {
     type A = Self;
     type B = Pin<Pio, Pid, Mdvr, PeripheralControlled<PeripheralB>, Padr, Irpt, Filt>;
-    #[cfg(any(feature = "3fn"))]
+    #[cfg(feature = "3fn")]
     type C = Pin<Pio, Pid, Mdvr, PeripheralControlled<PeripheralC>, Padr, Irpt, Filt>;
-    #[cfg(any(feature = "4fn"))]
+    #[cfg(feature = "4fn")]
     type D = Pin<Pio, Pid, Mdvr, PeripheralControlled<PeripheralD>, Padr, Irpt, Filt>;
 
-    fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
+    unsafe fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
         Ok(self)
     }
 
@@ -955,14 +1541,15 @@ where
     }
 
     #[cfg(feature = "2fn")]
-    fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
-        unsafe {
-            let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
-            }
-            Ok(self.peripheral_b_unchecked())
+    unsafe fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
+        let pioreg = &*Pio::PTR;
+        if Pio::Rb::writeprotect_enabled(pioreg) {
+            return Err((self, PioError::WriteProtected));
         }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
+        }
+        Ok(self.peripheral_b_unchecked())
     }
 
     #[cfg(feature = "2fn")]
@@ -973,14 +1560,15 @@ where
     }
 
     #[cfg(any(feature = "3fn", feature = "4fn"))]
-    fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
-        unsafe {
-            let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
-            }
-            Ok(self.peripheral_b_unchecked())
+    unsafe fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
+        let pioreg = &*Pio::PTR;
+        if Pio::Rb::writeprotect_enabled(pioreg) {
+            return Err((self, PioError::WriteProtected));
         }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
+        }
+        Ok(self.peripheral_b_unchecked())
     }
 
     #[cfg(any(feature = "3fn", feature = "4fn"))]
@@ -996,14 +1584,15 @@ where
     }
 
     #[cfg(any(feature = "3fn", feature = "4fn"))]
-    fn peripheral_c(self) -> Result<Self::C, (Self, PioError)> {
-        unsafe {
-            let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
-            }
-            Ok(self.peripheral_c_unchecked())
+    unsafe fn peripheral_c(self) -> Result<Self::C, (Self, PioError)> {
+        let pioreg = &*Pio::PTR;
+        if Pio::Rb::writeprotect_enabled(pioreg) {
+            return Err((self, PioError::WriteProtected));
         }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
+        }
+        Ok(self.peripheral_c_unchecked())
     }
 
     #[cfg(any(feature = "3fn", feature = "4fn"))]
@@ -1023,6 +1612,9 @@ where
         let pioreg = &*Pio::PTR;
         if Pio::Rb::writeprotect_enabled(pioreg) {
             return Err((self, PioError::WriteProtected));
+        }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
         }
         Ok(self.peripheral_d_unchecked())
     }
@@ -1055,18 +1647,19 @@ where
     type B = Self;
     #[cfg(any(feature = "3fn", feature = "4fn"))]
     type C = Pin<Pio, Pid, Mdvr, PeripheralControlled<PeripheralC>, Padr, Irpt, Filt>;
-    #[cfg(any(feature = "4fn"))]
+    #[cfg(feature = "4fn")]
     type D = Pin<Pio, Pid, Mdvr, PeripheralControlled<PeripheralD>, Padr, Irpt, Filt>;
 
     #[cfg(feature = "2fn")]
-    fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
-        unsafe {
-            let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
-            }
-            Ok(self.peripheral_a_unchecked())
+    unsafe fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
+        let pioreg = &*Pio::PTR;
+        if Pio::Rb::writeprotect_enabled(pioreg) {
+            return Err((self, PioError::WriteProtected));
         }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
+        }
+        Ok(self.peripheral_a_unchecked())
     }
 
     #[cfg(feature = "2fn")]
@@ -1076,7 +1669,7 @@ where
         Pin::new()
     }
 
-    fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
+    unsafe fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
         Ok(self)
     }
 
@@ -1085,14 +1678,15 @@ where
     }
 
     #[cfg(any(feature = "3fn", feature = "4fn"))]
-    fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
-        unsafe {
-            let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
-            }
-            Ok(self.peripheral_a_unchecked())
+    unsafe fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
+        let pioreg = &*Pio::PTR;
+        if Pio::Rb::writeprotect_enabled(pioreg) {
+            return Err((self, PioError::WriteProtected));
         }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
+        }
+        Ok(self.peripheral_a_unchecked())
     }
 
     #[cfg(any(feature = "3fn", feature = "4fn"))]
@@ -1108,14 +1702,15 @@ where
     }
 
     #[cfg(any(feature = "3fn", feature = "4fn"))]
-    fn peripheral_c(self) -> Result<Self::C, (Self, PioError)> {
-        unsafe {
-            let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
-            }
-            Ok(self.peripheral_c_unchecked())
+    unsafe fn peripheral_c(self) -> Result<Self::C, (Self, PioError)> {
+        let pioreg = &*Pio::PTR;
+        if Pio::Rb::writeprotect_enabled(pioreg) {
+            return Err((self, PioError::WriteProtected));
         }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
+        }
+        Ok(self.peripheral_c_unchecked())
     }
 
     #[cfg(any(feature = "3fn", feature = "4fn"))]
@@ -1135,6 +1730,9 @@ where
         let pioreg = &*Pio::PTR;
         if Pio::Rb::writeprotect_enabled(pioreg) {
             return Err((self, PioError::WriteProtected));
+        }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
         }
         Ok(self.peripheral_d_unchecked())
     }
@@ -1170,14 +1768,15 @@ where
     #[cfg(feature = "4fn")]
     type D = Pin<Pio, Pid, Mdvr, PeripheralControlled<PeripheralD>, Padr, Irpt, Filt>;
 
-    fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
-        unsafe {
-            let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
-            }
-            Ok(self.peripheral_a_unchecked())
+    unsafe fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
+        let pioreg = &*Pio::PTR;
+        if Pio::Rb::writeprotect_enabled(pioreg) {
+            return Err((self, PioError::WriteProtected));
         }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
+        }
+        Ok(self.peripheral_a_unchecked())
     }
 
     unsafe fn peripheral_a_unchecked(self) -> Self::A {
@@ -1191,14 +1790,15 @@ where
         Pin::new()
     }
 
-    fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
-        unsafe {
-            let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
-            }
-            Ok(self.peripheral_b_unchecked())
+    unsafe fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
+        let pioreg = &*Pio::PTR;
+        if Pio::Rb::writeprotect_enabled(pioreg) {
+            return Err((self, PioError::WriteProtected));
         }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
+        }
+        Ok(self.peripheral_b_unchecked())
     }
 
     unsafe fn peripheral_b_unchecked(self) -> Self::B {
@@ -1212,7 +1812,7 @@ where
         Pin::new()
     }
 
-    fn peripheral_c(self) -> Result<Self::C, (Self, PioError)> {
+    unsafe fn peripheral_c(self) -> Result<Self::C, (Self, PioError)> {
         Ok(self)
     }
 
@@ -1225,6 +1825,9 @@ where
         let pioreg = &*Pio::PTR;
         if Pio::Rb::writeprotect_enabled(pioreg) {
             return Err((self, PioError::WriteProtected));
+        }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
         }
         Ok(self.peripheral_d_unchecked())
     }
@@ -1259,14 +1862,15 @@ where
     type C = Pin<Pio, Pid, Mdvr, PeripheralControlled<PeripheralC>, Padr, Irpt, Filt>;
     type D = Self;
 
-    fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
-        unsafe {
-            let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
-            }
-            Ok(self.peripheral_a_unchecked())
+    unsafe fn peripheral_a(self) -> Result<Self::A, (Self, PioError)> {
+        let pioreg = &*Pio::PTR;
+        if Pio::Rb::writeprotect_enabled(pioreg) {
+            return Err((self, PioError::WriteProtected));
         }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
+        }
+        Ok(self.peripheral_a_unchecked())
     }
 
     unsafe fn peripheral_a_unchecked(self) -> Self::A {
@@ -1280,14 +1884,15 @@ where
         Pin::new()
     }
 
-    fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
-        unsafe {
-            let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
-            }
-            Ok(self.peripheral_b_unchecked())
+    unsafe fn peripheral_b(self) -> Result<Self::B, (Self, PioError)> {
+        let pioreg = &*Pio::PTR;
+        if Pio::Rb::writeprotect_enabled(pioreg) {
+            return Err((self, PioError::WriteProtected));
         }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
+        }
+        Ok(self.peripheral_b_unchecked())
     }
 
     unsafe fn peripheral_b_unchecked(self) -> Self::B {
@@ -1301,14 +1906,15 @@ where
         Pin::new()
     }
 
-    fn peripheral_c(self) -> Result<Self::C, (Self, PioError)> {
-        unsafe {
-            let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
-            }
-            Ok(self.peripheral_c_unchecked())
+    unsafe fn peripheral_c(self) -> Result<Self::C, (Self, PioError)> {
+        let pioreg = &*Pio::PTR;
+        if Pio::Rb::writeprotect_enabled(pioreg) {
+            return Err((self, PioError::WriteProtected));
         }
+        if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+            return Err((self, PioError::LineLocked));
+        }
+        Ok(self.peripheral_c_unchecked())
     }
 
     unsafe fn peripheral_c_unchecked(self) -> Self::C {
@@ -1331,152 +1937,458 @@ where
     }
 }
 
-impl<Pio, Pid, Mdvr, Padr, Irpt, Filt> ConfigurePioOutput
-    for Pin<Pio, Pid, Mdvr, PioControlled<Unconfigured>, Padr, Irpt, Filt>
-where
-    Pio: PioRegisters,
-    Pio::Rb: WriteProtect,
-    Pid: PinId<Controller = Pio>,
-    Mdvr: MultiDriverCfg,
-    Padr: PadResistorCfg,
-    Irpt: InterruptCfg,
-    Filt: InputFilterCfg,
-{
-    type Disabled = Pin<
-        Pio,
-        Pid,
-        Mdvr,
-        PioControlled<OutputEnabled<Unconfigured, Unconfigured>>,
-        Padr,
-        Irpt,
-        Filt,
-    >;
-    type Enabled = Pin<Pio, Pid, Mdvr, PioControlled<OutputDisabled>, Padr, Irpt, Filt>;
+#[cfg(not(feature = "schmitt"))]
+const _: () = {
+    impl<Pio, Pid, Mdvr, Padr, Irpt, Filt> ConfigurePioOutput
+        for Pin<Pio, Pid, Mdvr, PioControlled<Unconfigured>, Padr, Irpt, Filt>
+    where
+        Pio: PioRegisters,
+        Pio::Rb: WriteProtect,
+        Pid: PinId<Controller = Pio>,
+        Mdvr: MultiDriverCfg,
+        Padr: PadResistorCfg,
+        Irpt: InterruptCfg,
+        Filt: InputFilterCfg,
+    {
+        type Disabled = Pin<Pio, Pid, Mdvr, PioControlled<OutputDisabled>, Padr, Irpt, Filt>;
+        type Enabled = Pin<
+            Pio,
+            Pid,
+            Mdvr,
+            PioControlled<OutputEnabled<Unconfigured, Unconfigured>>,
+            Padr,
+            Irpt,
+            Filt,
+        >;
 
-    fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
-        unsafe {
+        fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
+            unsafe {
+                let pioreg = &*Pio::PTR;
+                if Pio::Rb::writeprotect_enabled(pioreg) {
+                    return Err((self, PioError::WriteProtected));
+                }
+                if pioreg._osr().read().bits() & Pid::MASK != 0 {
+                    let _ = self.disable_pio_output_unchecked();
+                    while pioreg._osr().read().bits() & Pid::MASK != 0 {}
+                }
+                Ok(Pin::new())
+            }
+        }
+
+        unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
             let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
+            pioreg._odr().write_with_zero(|w| w.bits(Pid::MASK));
+            Pin::new()
+        }
+
+        fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
+            unsafe {
+                let pioreg = &*Pio::PTR;
+                if Pio::Rb::writeprotect_enabled(pioreg) {
+                    return Err((self, PioError::WriteProtected));
+                }
+                if pioreg._osr().read().bits() & Pid::MASK == 0 {
+                    let _ = self.enable_pio_output_unchecked();
+                    while pioreg._osr().read().bits() & Pid::MASK == 0 {}
+                }
+                Ok(Pin::new())
             }
-            if pioreg._osr().read().bits() & Pid::MASK != 0 {
-                let _ = self.disable_pio_output_unchecked();
-                while pioreg._osr().read().bits() & Pid::MASK != 0 {}
-            }
-            Ok(Pin::new())
+        }
+
+        unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
+            let pioreg = &*Pio::PTR;
+            pioreg._oer().write_with_zero(|w| w.bits(Pid::MASK));
+            Pin::new()
         }
     }
 
-    unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
-        let pioreg = &*Pio::PTR;
-        pioreg._odr().write_with_zero(|w| w.bits(Pid::MASK));
-        Pin::new()
-    }
+    impl<Pio, Pid, Mdvr, Padr, Irpt, Filt> ConfigurePioOutput
+        for Pin<Pio, Pid, Mdvr, PioControlled<OutputDisabled>, Padr, Irpt, Filt>
+    where
+        Pio: PioRegisters,
+        Pio::Rb: WriteProtect,
+        Pid: PinId<Controller = Pio>,
+        Mdvr: MultiDriverCfg,
+        Padr: PadResistorCfg,
+        Irpt: InterruptCfg,
+        Filt: InputFilterCfg,
+    {
+        type Disabled = Self;
+        type Enabled = Pin<
+            Pio,
+            Pid,
+            Mdvr,
+            PioControlled<OutputEnabled<Unconfigured, Unconfigured>>,
+            Padr,
+            Irpt,
+            Filt,
+        >;
 
-    fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
-        unsafe {
-            let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
-            }
-            if pioreg._osr().read().bits() & Pid::MASK == 0 {
+        fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
+            Ok(self)
+        }
+
+        unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
+            self
+        }
+
+        fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
+            unsafe {
+                let pioreg = &*Pio::PTR;
+                if Pio::Rb::writeprotect_enabled(pioreg) {
+                    return Err((self, PioError::WriteProtected));
+                }
                 let _ = self.enable_pio_output_unchecked();
                 while pioreg._osr().read().bits() & Pid::MASK == 0 {}
+                Ok(Pin::new())
             }
-            Ok(Pin::new())
         }
-    }
 
-    unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
-        let pioreg = &*Pio::PTR;
-        pioreg._oer().write_with_zero(|w| w.bits(Pid::MASK));
-        Pin::new()
-    }
-}
-
-impl<Pio, Pid, Mdvr, Padr, Irpt, Filt> ConfigurePioOutput
-    for Pin<Pio, Pid, Mdvr, PioControlled<OutputDisabled>, Padr, Irpt, Filt>
-where
-    Pio: PioRegisters,
-    Pio::Rb: WriteProtect,
-    Pid: PinId<Controller = Pio>,
-    Mdvr: MultiDriverCfg,
-    Padr: PadResistorCfg,
-    Irpt: InterruptCfg,
-    Filt: InputFilterCfg,
-{
-    type Disabled = Self;
-    type Enabled = Pin<Pio, Pid, Mdvr, PioControlled<OutputDisabled>, Padr, Irpt, Filt>;
-
-    fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
-        Ok(self)
-    }
-
-    unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
-        self
-    }
-
-    fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
-        unsafe {
+        unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
             let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
-            }
-            let _ = self.enable_pio_output_unchecked();
-            while pioreg._osr().read().bits() & Pid::MASK == 0 {}
-            Ok(Pin::new())
+            pioreg._oer().write_with_zero(|w| w.bits(Pid::MASK));
+            Pin::new()
         }
     }
 
-    unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
-        let pioreg = &*Pio::PTR;
-        pioreg._oer().write_with_zero(|w| w.bits(Pid::MASK));
-        Pin::new()
-    }
-}
+    impl<Pio, Pid, Mdvr, Sync, Outw, Padr, Irpt, Filt> ConfigurePioOutput
+        for Pin<Pio, Pid, Mdvr, PioControlled<OutputEnabled<Sync, Outw>>, Padr, Irpt, Filt>
+    where
+        Pio: PioRegisters,
+        Pio::Rb: WriteProtect,
+        Pid: PinId<Controller = Pio>,
+        Mdvr: MultiDriverCfg,
+        Sync: OutputSyncWriteCfg,
+        Outw: OutputWriteCfg,
+        Padr: PadResistorCfg,
+        Irpt: InterruptCfg,
+        Filt: InputFilterCfg,
+    {
+        type Disabled = Pin<Pio, Pid, Mdvr, PioControlled<OutputDisabled>, Padr, Irpt, Filt>;
+        type Enabled = Self;
 
-impl<Pio, Pid, Mdvr, Sync, Outw, Padr, Irpt, Filt> ConfigurePioOutput
-    for Pin<Pio, Pid, Mdvr, PioControlled<OutputEnabled<Sync, Outw>>, Padr, Irpt, Filt>
-where
-    Pio: PioRegisters,
-    Pio::Rb: WriteProtect,
-    Pid: PinId<Controller = Pio>,
-    Mdvr: MultiDriverCfg,
-    Sync: OutputSyncWriteCfg,
-    Outw: OutputWriteCfg,
-    Padr: PadResistorCfg,
-    Irpt: InterruptCfg,
-    Filt: InputFilterCfg,
-{
-    type Disabled = Pin<Pio, Pid, Mdvr, PioControlled<OutputDisabled>, Padr, Irpt, Filt>;
-    type Enabled = Self;
+        fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
+            unsafe {
+                let pioreg = &*Pio::PTR;
+                if Pio::Rb::writeprotect_enabled(pioreg) {
+                    return Err((self, PioError::WriteProtected));
+                }
+                let _ = self.disable_pio_output_unchecked();
+                while pioreg._osr().read().bits() & Pid::MASK != 0 {}
+                Ok(Pin::new())
+            }
+        }
 
-    fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
-        unsafe {
+        unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
             let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(pioreg) {
-                return Err((self, PioError::WriteProtected));
+            pioreg._odr().write_with_zero(|w| w.bits(Pid::MASK));
+            Pin::new()
+        }
+
+        fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
+            Ok(self)
+        }
+
+        unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
+            self
+        }
+    }
+};
+
+#[cfg(feature = "schmitt")]
+const _: () = {
+    impl<Pio, Pid, Mdvr, Padr, Irpt, Filt> ConfigurePioOutput
+        for Pin<Pio, Pid, Mdvr, PioControlled<Unconfigured>, Padr, Irpt, Filt>
+    where
+        Pio: PioRegisters,
+        Pio::Rb: WriteProtect,
+        Pid: PinId<Controller = Pio>,
+        Mdvr: MultiDriverCfg,
+        Padr: PadResistorCfg,
+        Irpt: InterruptCfg,
+        Filt: InputFilterCfg,
+    {
+        type Disabled =
+            Pin<Pio, Pid, Mdvr, PioControlled<OutputDisabled<Unconfigured>>, Padr, Irpt, Filt>;
+        type Enabled = Pin<
+            Pio,
+            Pid,
+            Mdvr,
+            PioControlled<OutputEnabled<Unconfigured, Unconfigured>>,
+            Padr,
+            Irpt,
+            Filt,
+        >;
+
+        fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
+            unsafe {
+                let pioreg = &*Pio::PTR;
+                if Pio::Rb::writeprotect_enabled(pioreg) {
+                    return Err((self, PioError::WriteProtected));
+                }
+                if pioreg._osr().read().bits() & Pid::MASK != 0 {
+                    let _ = self.disable_pio_output_unchecked();
+                    while pioreg._osr().read().bits() & Pid::MASK != 0 {}
+                }
+                Ok(Pin::new())
             }
-            let _ = self.disable_pio_output_unchecked();
-            while pioreg._osr().read().bits() & Pid::MASK != 0 {}
-            Ok(Pin::new())
+        }
+
+        unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
+            let pioreg = &*Pio::PTR;
+            pioreg._odr().write_with_zero(|w| w.bits(Pid::MASK));
+            Pin::new()
+        }
+
+        fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
+            unsafe {
+                let pioreg = &*Pio::PTR;
+                if Pio::Rb::writeprotect_enabled(pioreg) {
+                    return Err((self, PioError::WriteProtected));
+                }
+                if pioreg._osr().read().bits() & Pid::MASK == 0 {
+                    let _ = self.enable_pio_output_unchecked();
+                    while pioreg._osr().read().bits() & Pid::MASK == 0 {}
+                }
+                Ok(Pin::new())
+            }
+        }
+
+        unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
+            let pioreg = &*Pio::PTR;
+            pioreg._oer().write_with_zero(|w| w.bits(Pid::MASK));
+            Pin::new()
         }
     }
 
-    unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
-        let pioreg = &*Pio::PTR;
-        pioreg._odr().write_with_zero(|w| w.bits(Pid::MASK));
-        Pin::new()
+    impl<Pio, Pid, Mdvr, Schm, Padr, Irpt, Filt> ConfigurePioOutput
+        for Pin<Pio, Pid, Mdvr, PioControlled<OutputDisabled<Schm>>, Padr, Irpt, Filt>
+    where
+        Pio: PioRegisters,
+        Pio::Rb: WriteProtect,
+        Pid: PinId<Controller = Pio>,
+        Mdvr: MultiDriverCfg,
+        Schm: SchmittTriggerCfg,
+        Padr: PadResistorCfg,
+        Irpt: InterruptCfg,
+        Filt: InputFilterCfg,
+    {
+        type Disabled = Self;
+        type Enabled = Pin<
+            Pio,
+            Pid,
+            Mdvr,
+            PioControlled<OutputEnabled<Unconfigured, Unconfigured>>,
+            Padr,
+            Irpt,
+            Filt,
+        >;
+
+        fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
+            Ok(self)
+        }
+
+        unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
+            self
+        }
+
+        fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
+            unsafe {
+                let pioreg = &*Pio::PTR;
+                if Pio::Rb::writeprotect_enabled(pioreg) {
+                    return Err((self, PioError::WriteProtected));
+                }
+                let _ = self.enable_pio_output_unchecked();
+                while pioreg._osr().read().bits() & Pid::MASK == 0 {}
+                Ok(Pin::new())
+            }
+        }
+
+        unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
+            let pioreg = &*Pio::PTR;
+            pioreg._oer().write_with_zero(|w| w.bits(Pid::MASK));
+            Pin::new()
+        }
     }
 
-    fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
-        Ok(self)
+    impl<Pio, Pid, Mdvr, Sync, Outw, Padr, Irpt, Filt> ConfigurePioOutput
+        for Pin<Pio, Pid, Mdvr, PioControlled<OutputEnabled<Sync, Outw>>, Padr, Irpt, Filt>
+    where
+        Pio: PioRegisters,
+        Pio::Rb: WriteProtect,
+        Pid: PinId<Controller = Pio>,
+        Mdvr: MultiDriverCfg,
+        Sync: OutputSyncWriteCfg,
+        Outw: OutputWriteCfg,
+        Padr: PadResistorCfg,
+        Irpt: InterruptCfg,
+        Filt: InputFilterCfg,
+    {
+        type Disabled =
+            Pin<Pio, Pid, Mdvr, PioControlled<OutputDisabled<Unconfigured>>, Padr, Irpt, Filt>;
+        type Enabled = Self;
+
+        fn disable_pio_output(self) -> Result<Self::Disabled, (Self, PioError)> {
+            unsafe {
+                let pioreg = &*Pio::PTR;
+                if Pio::Rb::writeprotect_enabled(pioreg) {
+                    return Err((self, PioError::WriteProtected));
+                }
+                let _ = self.disable_pio_output_unchecked();
+                while pioreg._osr().read().bits() & Pid::MASK != 0 {}
+                Ok(Pin::new())
+            }
+        }
+
+        unsafe fn disable_pio_output_unchecked(self) -> Self::Disabled {
+            let pioreg = &*Pio::PTR;
+            pioreg._odr().write_with_zero(|w| w.bits(Pid::MASK));
+            Pin::new()
+        }
+
+        fn enable_pio_output(self) -> Result<Self::Enabled, (Self, PioError)> {
+            Ok(self)
+        }
+
+        unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
+            self
+        }
     }
 
-    unsafe fn enable_pio_output_unchecked(self) -> Self::Enabled {
-        self
+    impl<Pio, Pid, Mdvr, Padr, Irpt, Filt> ConfigureSchmittTrigger
+        for Pin<Pio, Pid, Mdvr, PioControlled<OutputDisabled<Unconfigured>>, Padr, Irpt, Filt>
+    where
+        Pio: PioRegisters,
+        Pid: PinId<Controller = Pio>,
+        Mdvr: MultiDriverCfg,
+        Padr: PadResistorCfg,
+        Irpt: InterruptCfg,
+        Filt: InputFilterCfg,
+    {
+        type Disabled =
+            Pin<Pio, Pid, Mdvr, PioControlled<OutputDisabled<SchmittDisabled>>, Padr, Irpt, Filt>;
+        type Enabled =
+            Pin<Pio, Pid, Mdvr, PioControlled<OutputDisabled<SchmittEnabled>>, Padr, Irpt, Filt>;
+
+        fn disable_schmitt_trigger(self) -> Self::Disabled {
+            unsafe {
+                let pioreg = &*Pio::PTR;
+                if pioreg._schmitt().read().bits() & Pid::MASK == 0 {
+                    let _ = self.disable_schmitt_trigger_unchecked();
+                    while pioreg._schmitt().read().bits() & Pid::MASK == 0 {}
+                }
+                Pin::new()
+            }
+        }
+
+        unsafe fn disable_schmitt_trigger_unchecked(self) -> Self::Disabled {
+            let pioreg = &*Pio::PTR;
+            pioreg
+                ._schmitt()
+                .modify(|r, w| w.bits(r.bits() | Pid::MASK));
+            Pin::new()
+        }
+
+        fn enable_schmitt_trigger(self) -> Self::Enabled {
+            unsafe {
+                let pioreg = &*Pio::PTR;
+                if pioreg._schmitt().read().bits() & Pid::MASK != 0 {
+                    let _ = self.enable_schmitt_trigger_unchecked();
+                    while pioreg._schmitt().read().bits() & Pid::MASK != 0 {}
+                }
+                Pin::new()
+            }
+        }
+
+        unsafe fn enable_schmitt_trigger_unchecked(self) -> Self::Enabled {
+            let pioreg = &*Pio::PTR;
+            pioreg
+                ._schmitt()
+                .modify(|r, w| w.bits(r.bits() & !Pid::MASK));
+            Pin::new()
+        }
     }
-}
+
+    impl<Pio, Pid, Mdvr, Padr, Irpt, Filt> ConfigureSchmittTrigger
+        for Pin<Pio, Pid, Mdvr, PioControlled<OutputDisabled<SchmittDisabled>>, Padr, Irpt, Filt>
+    where
+        Pio: PioRegisters,
+        Pid: PinId<Controller = Pio>,
+        Mdvr: MultiDriverCfg,
+        Padr: PadResistorCfg,
+        Irpt: InterruptCfg,
+        Filt: InputFilterCfg,
+    {
+        type Disabled = Self;
+        type Enabled =
+            Pin<Pio, Pid, Mdvr, PioControlled<OutputDisabled<SchmittEnabled>>, Padr, Irpt, Filt>;
+
+        fn disable_schmitt_trigger(self) -> Self::Disabled {
+            self
+        }
+
+        unsafe fn disable_schmitt_trigger_unchecked(self) -> Self::Disabled {
+            self
+        }
+
+        fn enable_schmitt_trigger(self) -> Self::Enabled {
+            unsafe {
+                let pioreg = &*Pio::PTR;
+                let _ = self.enable_schmitt_trigger_unchecked();
+                while pioreg._schmitt().read().bits() & Pid::MASK != 0 {}
+                Pin::new()
+            }
+        }
+
+        unsafe fn enable_schmitt_trigger_unchecked(self) -> Self::Enabled {
+            let pioreg = &*Pio::PTR;
+            pioreg
+                ._schmitt()
+                .modify(|r, w| w.bits(r.bits() & !Pid::MASK));
+            Pin::new()
+        }
+    }
+
+    impl<Pio, Pid, Mdvr, Padr, Irpt, Filt> ConfigureSchmittTrigger
+        for Pin<Pio, Pid, Mdvr, PioControlled<OutputDisabled<SchmittEnabled>>, Padr, Irpt, Filt>
+    where
+        Pio: PioRegisters,
+        Pid: PinId<Controller = Pio>,
+        Mdvr: MultiDriverCfg,
+        Padr: PadResistorCfg,
+        Irpt: InterruptCfg,
+        Filt: InputFilterCfg,
+    {
+        type Disabled =
+            Pin<Pio, Pid, Mdvr, PioControlled<OutputDisabled<SchmittDisabled>>, Padr, Irpt, Filt>;
+        type Enabled = Self;
+
+        fn disable_schmitt_trigger(self) -> Self::Disabled {
+            unsafe {
+                let pioreg = &*Pio::PTR;
+                let _ = self.disable_schmitt_trigger_unchecked();
+                while pioreg._schmitt().read().bits() & Pid::MASK == 0 {}
+                Pin::new()
+            }
+        }
+
+        unsafe fn disable_schmitt_trigger_unchecked(self) -> Self::Disabled {
+            let pioreg = &*Pio::PTR;
+            pioreg
+                ._schmitt()
+                .modify(|r, w| w.bits(r.bits() | Pid::MASK));
+            Pin::new()
+        }
+
+        fn enable_schmitt_trigger(self) -> Self::Enabled {
+            self
+        }
+
+        unsafe fn enable_schmitt_trigger_unchecked(self) -> Self::Enabled {
+            self
+        }
+    }
+};
 
 impl<Pio, Pid, Mdvr, Outw, Padr, Irpt, Filt> ConfigureOutputSyncWrite
     for Pin<Pio, Pid, Mdvr, PioControlled<OutputEnabled<Unconfigured, Outw>>, Padr, Irpt, Filt>
