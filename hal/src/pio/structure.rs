@@ -1,3 +1,6 @@
+//! Mirrors the structure of the register blocks for each PIO controller with traits to allow pins
+//! to be generic over PIO types.
+
 #[allow(clippy::wildcard_imports)]
 use crate::{structure::*, write_protect::*};
 
@@ -20,6 +23,8 @@ macro_rules! def_pio_regs {
     (
         @defregs [$($opts:tt),+$(,)?]
     ) => {
+        /// PIO register methods as a trait. Each is prefixed with an underscore because Ferris got
+        /// upset if they weren't.
         pub trait PioRegisters {
             type Rb: PioRegisters;
             const PTR: *const Self::Rb;
@@ -514,6 +519,11 @@ def_pio_regs! {
         [Aimer, wwz],
         [Aimmr, r],
         [Codr, wwz],
+        [
+            #[cfg(any(feature = "sam3a", feature = "sam3u", feature = "sam3x"))]
+            Difsr,
+            wwz
+        ],
         [Elsr, r],
         [Esr, wwz],
         [Fellsr, wwz],
@@ -586,22 +596,30 @@ def_pio_regs! {
             Schmitt,
             SchmittModify
         ],
+        [
+            #[cfg(any(feature = "sam3a", feature = "sam3u", feature = "sam3x"))]
+            Scifsr,
+            wwz
+        ],
         [Sodr, wwz],
         [Wpmr, WpmrModify],
         [Wpsr, WpsrRead],
     ],
 }
 
+/// `Reg<ScdrSpec>::read` as a trait.
 pub trait ScdrRead {
     type R: ScdrReadFields;
     fn read(&self) -> Self::R;
 }
 
+/// `R<ScdrSpec>::div` as a trait.
 pub trait ScdrReadFields {
     type Div: FRead<u16>;
     fn div(&self) -> Self::Div;
 }
 
+/// `Reg<ScdrSpec>::reset` and `Reg<ScdrSpec>::write` as a trait.
 pub trait ScdrWrite {
     fn reset(&self);
     type W: ScdrWriteFields;
@@ -610,13 +628,17 @@ pub trait ScdrWrite {
         F: FnOnce(&mut Self::W) -> &mut Self::W;
 }
 
+/// `Reg<ScdrSpec>::write_with_zero` as a trait.
 pub trait ScdrWriteWithZero {
     type W: ScdrWriteFields;
+    #[allow(clippy::missing_safety_doc)]
+    /// See [`Reg::write_with_zero`](crate::pac::generic::Reg::write_with_zero).
     unsafe fn write_with_zero<F>(&self, f: F)
     where
         F: FnOnce(&mut Self::W) -> &mut Self::W;
 }
 
+/// `W<ScdrSpec>::div` as a trait.
 pub trait ScdrWriteFields: Sized {
     type Div<'a>: FWrite<'a, 14, u16, Self>
     where
@@ -624,6 +646,7 @@ pub trait ScdrWriteFields: Sized {
     fn div(&mut self) -> Self::Div<'_>;
 }
 
+/// `Reg<ScdrSpec>::modify` as a trait.
 pub trait ScdrModify: ScdrRead + ScdrWrite + ScdrWriteWithZero {
     fn modify<F>(&self, f: F)
     where
@@ -634,6 +657,7 @@ pub trait ScdrModify: ScdrRead + ScdrWrite + ScdrWriteWithZero {
 }
 
 #[cfg(feature = "schmitt")]
+/// `Reg<SchmittSpec>::read` as a trait.
 pub trait SchmittRead {
     type R: SchmittReadFields;
     fn read(&self) -> Self::R;
@@ -642,16 +666,37 @@ pub trait SchmittRead {
 #[cfg(feature = "schmitt")]
 seq_macro::seq! {N in 0..32 {
     paste::paste! {
+        /// Trait providing `.schmitt0()`, `.schmitt1()`, ..., `.schmitt31()`, and [`.bits()`][bits]
+        /// methods as readers.
+        ///
+        /// [bits]: crate::pac::generic::R#method.bits
         pub trait SchmittReadFields {
             #(
                 type [<Schmitt~N R>]: BRead;
                 fn schmitt~N(&self) -> Self::[<Schmitt~N R>];
             )*
+            fn bits(&self) -> u32;
+        }
+
+        /// Trait providing `.schmitt0()`, `.schmitt1()`, ..., `.schmitt31()`, and
+        /// [`.bits(bits)`][bits] methods as writers.
+        ///
+        /// [bits]: crate::pac::generic::W#method.bits
+        pub trait SchmittWriteFields: Sized {
+            #(
+                type [<Schmitt~N W>]<'a>: BWrite<'a, Self>
+                where
+                    Self: 'a + Sized;
+                fn schmitt~N(&mut self) -> Self::[<Schmitt~N W>]<'_>;
+            )*
+            #[allow(clippy::missing_safety_doc)]
+            unsafe fn bits(&mut self, bits: u32) -> &mut Self;
         }
     }
 }}
 
 #[cfg(feature = "schmitt")]
+/// `Reg<SchmittSpec>::reset` and `Reg<SchmittSpec>::write` as a trait.
 pub trait SchmittWrite {
     fn reset(&self);
     type W: SchmittWriteFields;
@@ -661,28 +706,17 @@ pub trait SchmittWrite {
 }
 
 #[cfg(feature = "schmitt")]
+/// `Reg<SchmittSpec>::write_with_zero` as a trait.
 pub trait SchmittWriteWithZero {
     type W: SchmittWriteFields;
+    #[allow(clippy::missing_safety_doc)]
     unsafe fn write_with_zero<F>(&self, f: F)
     where
         F: FnOnce(&mut Self::W) -> &mut Self::W;
 }
 
 #[cfg(feature = "schmitt")]
-seq_macro::seq! {N in 0..32 {
-    paste::paste! {
-        pub trait SchmittWriteFields: Sized {
-            #(
-                type [<Schmitt~N W>]<'a>: BWrite<'a, Self>
-                where
-                    Self: 'a + Sized;
-                fn schmitt~N(&mut self) -> Self::[<Schmitt~N W>]<'_>;
-            )*
-        }
-    }
-}}
-
-#[cfg(feature = "schmitt")]
+/// `Reg<SchmittSpec>::modify` as a trait.
 pub trait SchmittModify: SchmittRead + SchmittWrite + SchmittWriteWithZero {
     fn modify<F>(&self, f: F)
     where
@@ -906,6 +940,9 @@ macro_rules! other_impls {
                                     self.schmitt~N()
                                 }
                             )*
+                            fn bits(&self) -> u32 {
+                                self.bits()
+                            }
                         }
 
                         impl SchmittWriteFields for crate::pac::[<$pio:lower>]::schmitt::W {
@@ -919,6 +956,9 @@ macro_rules! other_impls {
                                     self.schmitt~N()
                                 }
                             )*
+                            unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+                                self.bits(bits)
+                            }
                         }
 
                         crate::structure::bwrite_impl! {
