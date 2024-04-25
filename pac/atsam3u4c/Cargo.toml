@@ -7,7 +7,6 @@ keywords = ["no-std", "arm", "cortex-m", "sam3", "atsam3u4c"]
 categories = ["embedded", "hardware-support", "no-std"]
 license = "EUPL-1.2"
 repository = "https://github.com/AuroransSolis/sam3"
-readme = "README.md"
 
 [package.metadata.docs.rs]
 features = ["rt"]
