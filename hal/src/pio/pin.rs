@@ -1,3 +1,32 @@
+//! PIO pin definition + multi-drive and pad resistor configuration traits
+//!
+//! This module contains the definition of the `Pin` type, which is generic over all of the lines
+//! and PIO controllers. It also contains the traits for configuring multi-drive and pad resistors
+//! for each pin.
+//!
+//! Relevant manual sections:
+//! - SAM3A, SAM3X: [manual][ax]
+//!   - Multi-drive: page 623 (31.5.6)
+//!   - Pad resistor: page 622 (31.5.1)
+//! - SAM3N: [manual][n]
+//!   - Multi-drive: page 381 (27.5.6)
+//!   - Pad resistor: page 380 (27.5.1)
+//! - SAM3S1, SAM3S2, SAM3S4: [manual][s124]
+//!   - Multi-drive: page 472 (29.5.6)
+//!   - Pad resistor: page 471 (29.5.1)
+//! - SAM3S8, SAM3SD8: [manual][sd8]
+//!   - Multi-drive: page 481 (28.5.6)
+//!   - Pad resistor: page 480 (28.5.1)
+//! - SAM3U: [manual][u]
+//!   - Multi-drive: page 499 (29.5.6)
+//!   - Pad resistor: page 497 (29.5.1)
+//!
+//! [ax]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-11057-32-bit-Cortex-M3-Microcontroller-SAM3X-SAM3A_Datasheet.pdf
+//! [n]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-11011-32-bit-Cortex-M3-Microcontroller-SAM3N_Datasheet.pdf
+//! [s124]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-6500-32-bit-Cortex-M3-Microcontroller-SAM3S4-SAM3S2-SAM3S1_Datasheet.pdf
+//! [sd8]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-11090-32-bit%20Cortex-M3-Microcontroller-SAM-3S8-SD8_Datasheet.pdf
+//! [u]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-6430-32-bit-Cortex-M3-Microcontroller-SAM3U4-SAM3U2-SAM3U1_Datasheet.pdf
+
 use crate::{
     pio::{
         filter::InputFilterCfg, interrupt::InterruptCfg, peripheral::PioControlCfg, structure::*,
@@ -9,11 +38,49 @@ use crate::{
 use core::marker::PhantomData;
 
 #[allow(clippy::module_name_repetitions)]
+/// Trait implemented on all `Pin` types denoting which PIO controlls the pin and what its mask is
+/// for various configuration options.
 pub trait PinId {
     type Controller: PioRegisters;
     const MASK: u32;
 }
 
+/// A type representing an individual pin controlled by a given PIO controller.
+///
+/// # Configuration
+///
+/// Each pin has the following configurable parameters:
+/// - Pad resistor (pull-up or pull-up/pull-down depending on chip): [`ConfigurePadResistor`]
+/// - PIO or peripheral control: [`ConfigurePioControl`][cpc]
+/// - Peripheral selection (A/B, A/B/C, or A/B/C/D depending on chip and PIO controller):
+///   [`ConfigureFunctionSelect`][cfs], [`Pin::select_peripheral`][psp]
+/// - Synchronous data output: [`ConfigureOutputSyncWrite`][cosw]
+/// - Multi-drive control: [`ConfigureMultiDrive`][cmd]
+/// - PIO output: [`ConfigurePioOutput`][cpo]
+/// - Output write control: [`ConfigureOutputWrite`][cow]
+/// - Input glitch and debouncing filters: [`ConfigureInputFilter`][cif]
+/// - Input filter clock: [`ConfigureInputFilterClock`][cifc]
+/// - Interrupts: [`ConfigureInterrupt`][ci]
+/// - Additional interrupt modes: [`ConfigureAdditionalInterruptModes`][caim]
+/// - Input edge/level interrupt: [`ConfigureEdgeLevel`][cel]
+/// - Fall/Rise - Low/High interrupt: [`ConfigureFallRiseLowHigh`][cfrlh]
+///
+/// [cpc]: crate::pio::peripheral::ConfigurePioControl
+/// [cfs]: crate::pio::peripheral::ConfigureFunctionSelect
+/// [psp]: crate::pio::pin::Pin::select_peripheral
+/// [cosw]: crate::pio::peripheral::ConfigureOutputSyncWrite
+/// [cmd]: crate::pio::pin::ConfigureMultiDriver
+/// [cpo]: crate::pio::peripheral::ConfigurePioOutput
+/// [cow]: crate::pio::peripheral::ConfigureOutputWrite
+/// [cif]: crate::pio::filter::ConfigureInputFilter
+/// [cifc]: crate::pio::filter::ConfigureInputFilterClock
+/// [ci]: crate::pio::interrupt::ConfigureInterrupt
+/// [caim]: crate::pio::interrupt::ConfigureAdditionalInterruptModes
+/// [cel]: crate::pio::interrupt::ConfigureEdgeLevel
+/// [cfrlh]: crate::pio::interrupt::ConfigureFallRiseLowHigh
+///
+/// Please refer to the relevant modules for additional information on each of the traits listed
+/// above and their methods.
 pub struct Pin<Pio, Pid, Mdvr, Pioc, Padr, Irpt, Filt>
 where
     Pio: PioRegisters,
@@ -56,9 +123,9 @@ where
     }
 }
 
+/// Marker trait denoting that a pin's configuration is complete.
 pub trait Configured {}
 
-// #[rustfmt::skip]
 impl<Pio, Pid, Mdvr, Pioc, Padr, Irpt, Filt> Configured
     for Pin<Pio, Pid, Mdvr, Pioc, Padr, Irpt, Filt>
 where
@@ -72,8 +139,10 @@ where
 {
 }
 
+/// Type marking an option for a pin as unconfigured.
 pub struct Unconfigured;
 
+/// Marker trait for multidrive configuration options.
 pub trait MultiDriverCfg {}
 
 impl MultiDriverCfg for Unconfigured {}
@@ -88,6 +157,7 @@ impl MultiDriverCfg for MultiDriverDisabled {}
 pub struct MultiDriverEnabled;
 impl MultiDriverCfg for MultiDriverEnabled {}
 
+/// Marker trait for pad resistor configuration options.
 pub trait PadResistorCfg {}
 
 impl PadResistorCfg for Unconfigured {}
@@ -98,6 +168,7 @@ pub struct PullupEnabled;
 impl PadResistorCfg for PullupEnabled {}
 
 #[cfg(feature = "ppd")]
+/// Enable the pull-down resistor on an I/O line.
 pub struct PulldownEnabled;
 
 #[cfg(feature = "ppd")]
@@ -118,27 +189,147 @@ pub struct PullupDisabled;
 impl PadResistorCfg for PullupDisabled {}
 
 #[cfg(not(feature = "ppd"))]
+/// Pull-up Resistor Control
+///
+/// Each I/O line is designed with an embedded pull-up resistor. The pull-up resistor can be enabled
+/// or disabled by writing respectively `PIO_PUER` (Pull-up Enable Register) and `PIO_PUDR` (Pull-up
+/// Disable Register). Writing in these registers results in setting or clearing the corresponding
+/// bit in `PIO_PUSR` (Pull-up Status Register). Reading a 1 in `PIO_PUSR` means the pull-up is
+/// disabled and reading a 0 means the pull-up is enabled.
+///
+/// Control of the pull-up resistor is possible regardless of the configuration of the I/O line.
+///
+/// After reset, all of the pull-ups are enabled, i.e. `PIO_PUSR` resets at the value `0x0`.
 pub trait ConfigurePadResistor: Sized {
     type Disabled;
     type Enabled;
 
+    /// Disables the pull-up resistor on this pin.
+    ///
+    /// # Errors
+    ///
+    /// This function can fail if:
+    /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
+    ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
+    ///   controller.
+    /// - Write protection is enabled on the PIO controller. Write protection must first be
+    ///   disabled for any pins within the controller to have their configurations modified.
     fn disable_pullup_resistor(self) -> Result<Self::Disabled, (Self, PioError)>;
+    /// Disables the pull-up resistor on this pin without checking `PIO_LOCKSR` or `PIO_WPMR`.
+    ///
+    /// # Safety
+    ///
+    /// This function returns a type showing that this pin has its pull-up resistor disabled, but
+    /// this may be at odds with the actual configuration state of the PIO controller. Writes to
+    /// the configuration may fail silently if the PIO line is locked or write protection is
+    /// enabled.
     unsafe fn disable_pullup_resistor_unchecked(self) -> Self::Disabled;
+    /// Enables the pull-up resistor on this pin.
+    ///
+    /// # Errors
+    ///
+    /// This function can fail if:
+    /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
+    ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
+    ///   controller.
+    /// - Write protection is enabled on the PIO controller. Write protection must first be
+    ///   disabled for any pins within the controller to have their configurations modified.
     fn enable_pullup_resistor(self) -> Result<Self::Enabled, (Self, PioError)>;
+    /// Enables the pull-up resistor on this pin without checking `PIO_LOCKSR` or `PIO_WPMR`.
+    ///
+    /// # Safety
+    ///
+    /// This function returns a type showing that this pin has its pull-up resistor disabled, but
+    /// this may be at odds with the actual configuration state of the PIO controller. Writes to
+    /// the configuration may fail silently if the PIO line is locked or write protection is
+    /// enabled.
     unsafe fn enable_pullup_resistor_unchecked(self) -> Self::Enabled;
 }
 
 #[cfg(feature = "ppd")]
+/// # Pull-up and Pull-down Resistor Control
+///
+/// Each I/O line is designed with an embedded pull-up resistor and an embedded pull-down resistor.
+/// The pull-up resistor can be enabled or disabled by writing respectively `PIO_PUER` (Pull-up
+/// Enable Register) and `PIO_PUDR` (Pull-up Disable Register). Writing in these registers results
+/// in setting or clearing the corresponding bit in `PIO_PUSR` (Pull-up Status Register). Reading a
+/// 1 in `PIO_PUSR` means the pull-up is disabled and reading a 0 means the pull-up is enabled. The
+/// pull-down resistor can be enabled or disabled by writing respectively `PIO_PPDER` (Pull-down
+/// enable register) and `PIO_PPDDR` (Pull-down Disable Register). Writing in these registers
+/// results in setting or clearing the corresponding bit in `PIO_PPDSR` (Pull-down Status Register).
+/// Reading a 1 in `PIO_PPDSR` means the pull-up is disabled and reading a 0 means the pull-down is
+/// enabled.
+///
+/// Enabling the pull-down resistor while the pull-up resistor is still enabled is not possible. In
+/// this case, the write of `PIO_PPDER` for the concerned I/O line is discarded. Likewise, enabling
+/// the pull-up resistor while the pull-down resistor is still enabled is not possible. In this
+/// case, the write of `PIO_PUER` for the concerned I/O line is discarded.
+///
+/// Control of the pull-up resistor is possible regardless of the configuration of the I/O line.
+///
+/// After reset, all of the pull-ups are enabled, i.e. `PIO_PUSR` resets at the value `0x0`, and all
+/// the pull-downs are disabled, i.e. `PIO_PPDSR` resets at the value `0xFFFF_FFFF`.
 pub trait ConfigurePadResistor: Sized {
     type Disabled;
     type Pulldown;
     type Pullup;
 
+    /// Disables the pull-up or pull-down resistor on this pin, whichever is active.
+    ///
+    /// # Errors
+    ///
+    /// This function can fail if:
+    /// - This pin's pull-up resistor is enabled and its bit is set in `PIO_LOCKSR`, denoting that a
+    ///   peripheral has locked its configuration, and it cannot be changed until a hardware reset
+    ///   is given to the PIO controller.
+    /// - Write protection is enabled on the PIO controller. Write protection must first be
+    ///   disabled for any pins within the controller to have their configurations modified.
     fn disable_pdpu_resistors(self) -> Result<Self::Disabled, (Self, PioError)>;
+    /// Disables the pull-up or pull-down resistor (whichever is active) on this pin without
+    /// checking `PIO_LOCKSR` or `PIO_WPMR`.
+    ///
+    /// # Safety
+    ///
+    /// This function returns a type showing that this pin has its pull-up and pull-down resistors
+    /// are disabled, but this may be at odds with the actual configuration state of the PIO
+    /// controller. Writes to the configuration may fail silently if the PIO line is locked or write
+    /// protection is enabled.
     unsafe fn disable_pdpu_resistors_unchecked(self) -> Self::Disabled;
+    /// Enables the pull-down resistor on this pin.
+    ///
+    /// # Errors
+    ///
+    /// This function can fail if write protection is enabled on the PIO controller. Write
+    /// protection must first be disabled for any pins within the controller to have their
+    /// configurations modified.
     fn enable_pulldown_resistor(self) -> Result<Self::Pulldown, (Self, PioError)>;
+    /// Enables the pull-down resistor on this pin without checking `PIO_WPMR`.
+    ///
+    /// # Safety
+    ///
+    /// This function returns a type showing that this pin has its pull-up and pull-down resistors
+    /// are disabled, but this may be at odds with the actual configuration state of the PIO
+    /// controller. Writes to the configuration may fail silently if write protection is enabled.
     unsafe fn enable_pulldown_resistor_unchecked(self) -> Self::Pulldown;
+    /// Enables the pull-up resistor on this pin.
+    ///
+    /// # Errors
+    ///
+    /// This function can fail if:
+    /// - This pin's bit is set in `PIO_LOCKSR`, denoting that a peripheral has locked its
+    ///   configuration, and it cannot be changed until a hardware reset is given to the PIO
+    ///   controller.
+    /// - Write protection is enabled on the PIO controller. Write protection must first be
+    ///   disabled for any pins within the controller to have their configurations modified.
     fn enable_pullup_resistor(self) -> Result<Self::Pullup, (Self, PioError)>;
+    /// Enables the pull-up resistor on this pin without checking `PIO_LOCKSR` or `PIO_WPMR`.
+    ///
+    /// # Safety
+    ///
+    /// This function returns a type showing that this pin has its pull-up and pull-down resistors
+    /// are disabled, but this may be at odds with the actual configuration state of the PIO
+    /// controller. Writes to the configuration may fail silently if the PIO line is locked or write
+    /// protection is enabled.
     unsafe fn enable_pullup_resistor_unchecked(self) -> Self::Pullup;
 }
 
@@ -202,7 +393,10 @@ const _: () = {
             unsafe {
                 let pioreg = &*Pio::PTR;
                 if Pio::Rb::writeprotect_enabled(pioreg) {
-                    return Err((self, PioError::WriteProtected))
+                    return Err((self, PioError::WriteProtected));
+                }
+                if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                    return Err((self, PioError::LineLocked));
                 }
                 if pioreg._pusr().read().bits() & Pid::MASK != 0 {
                     let _ = self.disable_pullup_resistor_unchecked();
@@ -222,7 +416,10 @@ const _: () = {
             unsafe {
                 let pioreg = &*Pio::PTR;
                 if Pio::Rb::writeprotect_enabled(pioreg) {
-                    return Err((self, PioError::WriteProtected))
+                    return Err((self, PioError::WriteProtected));
+                }
+                if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                    return Err((self, PioError::LineLocked));
                 }
                 if pioreg._pusr().read().bits() & Pid::MASK == 0 {
                     let _ = self.enable_pullup_resistor_unchecked();
@@ -265,7 +462,10 @@ const _: () = {
             unsafe {
                 let pioreg = &*Pio::PTR;
                 if Pio::Rb::writeprotect_enabled(pioreg) {
-                    return Err((self, PioError::WriteProtected))
+                    return Err((self, PioError::WriteProtected));
+                }
+                if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                    return Err((self, PioError::LineLocked));
                 }
                 let _ = self.enable_pullup_resistor_unchecked();
                 while pioreg._pusr().read().bits() & Pid::MASK == 0 {}
@@ -298,10 +498,13 @@ const _: () = {
             unsafe {
                 let pioreg = &*Pio::PTR;
                 if Pio::Rb::writeprotect_enabled(pioreg) {
-                    return Err((self, PioError::WriteProtected))
+                    return Err((self, PioError::WriteProtected));
+                }
+                if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                    return Err((self, PioError::LineLocked));
                 }
                 let _ = self.disable_pullup_resistor_unchecked();
-                while pioreg._pusr().read().bits() & Pid::MASK != 0 {}
+                while pioreg._pusr().read().bits() & Pid::MASK == 0 {}
                 Ok(Pin::new())
             }
         }
@@ -343,11 +546,17 @@ const _: () = {
             unsafe {
                 let pioreg = &*Pio::PTR;
                 if Pio::Rb::writeprotect_enabled(pioreg) {
-                    return Err((self, PioError::WriteProtected))
+                    return Err((self, PioError::WriteProtected));
                 }
-                if pioreg._pusr().read().bits() & Pid::MASK != 0 {
-                    let _ = self.disable_pdpu_resistors_unchecked();
-                    while pioreg._pusr().read().bits() & Pid::MASK != 0 {}
+                if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                    return Err((self, PioError::LineLocked));
+                }
+                if pioreg._pusr().read().bits() & Pid::MASK == 0 {
+                    pioreg._pudr().write_with_zero(|w| w.bits(Pid::MASK));
+                    while pioreg._pusr().read().bits() & Pid::MASK == 0 {}
+                } else if pioreg._ppdsr().read().bits() & Pid::MASK == 0 {
+                    pioreg._ppddr().write_with_zero(|w| w.bits(Pid::MASK));
+                    while pioreg._ppdsr().read().bits() & Pid::MASK == 0 {}
                 }
                 Ok(Pin::new())
             }
@@ -356,6 +565,7 @@ const _: () = {
         unsafe fn disable_pdpu_resistors_unchecked(self) -> Self::Disabled {
             let pioreg = &*Pio::PTR;
             pioreg._pudr().write_with_zero(|w| w.bits(Pid::MASK));
+            pioreg._ppddr().write_with_zero(|w| w.bits(Pid::MASK));
             Pin::new()
         }
 
@@ -363,16 +573,18 @@ const _: () = {
             unsafe {
                 let pioreg = &*Pio::PTR;
                 if Pio::Rb::writeprotect_enabled(pioreg) {
-                    return Err((self, PioError::WriteProtected))
+                    return Err((self, PioError::WriteProtected));
                 }
-                if pioreg._pusr().read().bits() & Pid::MASK != 0 {
-                    let self_copy: Self = Pin::new();
-                    let _ = self_copy.disable_pdpu_resistors_unchecked();
-                    while pioreg._pusr().read().bits() & Pid::MASK != 0 {}
+                if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                    return Err((self, PioError::LineLocked));
                 }
-                if pioreg._ppdsr().read().bits() & Pid::MASK == 0 {
+                if pioreg._pusr().read().bits() & Pid::MASK == 0 {
+                    pioreg._pudr().write_with_zero(|w| w.bits(Pid::MASK));
+                    while pioreg._pusr().read().bits() & Pid::MASK == 0 {}
+                }
+                if pioreg._ppdsr().read().bits() & Pid::MASK != 0 {
                     let _ = self.enable_pulldown_resistor_unchecked();
-                    while pioreg._ppdsr().read().bits() & Pid::MASK == 0 {}
+                    while pioreg._ppdsr().read().bits() & Pid::MASK != 0 {}
                 }
                 Ok(Pin::new())
             }
@@ -388,16 +600,18 @@ const _: () = {
             unsafe {
                 let pioreg = &*Pio::PTR;
                 if Pio::Rb::writeprotect_enabled(pioreg) {
-                    return Err((self, PioError::WriteProtected))
+                    return Err((self, PioError::WriteProtected));
                 }
-                if pioreg._ppdsr().read().bits() & Pid::MASK != 0 {
-                    let self_copy: Self = Pin::new();
-                    let _ = self_copy.disable_pdpu_resistors_unchecked();
-                    while pioreg._ppdsr().read().bits() & Pid::MASK != 0 {}
+                if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                    return Err((self, PioError::LineLocked));
                 }
-                if pioreg._pusr().read().bits() & Pid::MASK == 0 {
+                if pioreg._ppdsr().read().bits() & Pid::MASK == 0 {
+                    pioreg._ppddr().write_with_zero(|w| w.bits(Pid::MASK));
+                    while pioreg._ppdsr().read().bits() & Pid::MASK == 0 {}
+                }
+                if pioreg._pusr().read().bits() & Pid::MASK != 0 {
                     let _ = self.enable_pullup_resistor_unchecked();
-                    while pioreg._pusr().read().bits() & Pid::MASK == 0 {}
+                    while pioreg._pusr().read().bits() & Pid::MASK != 0 {}
                 }
                 Ok(Pin::new())
             }
@@ -437,7 +651,10 @@ const _: () = {
             unsafe {
                 let pioreg = &*Pio::PTR;
                 if Pio::Rb::writeprotect_enabled(pioreg) {
-                    return Err((self, PioError::WriteProtected))
+                    return Err((self, PioError::WriteProtected));
+                }
+                if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                    return Err((self, PioError::LineLocked));
                 }
                 let _ = self.enable_pulldown_resistor_unchecked();
                 while pioreg._ppdsr().read().bits() & Pid::MASK != 0 {}
@@ -455,10 +672,13 @@ const _: () = {
             unsafe {
                 let pioreg = &*Pio::PTR;
                 if Pio::Rb::writeprotect_enabled(pioreg) {
-                    return Err((self, PioError::WriteProtected))
+                    return Err((self, PioError::WriteProtected));
+                }
+                if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                    return Err((self, PioError::LineLocked));
                 }
                 let _ = self.enable_pullup_resistor_unchecked();
-                while pioreg._pusr().read().bits() & Pid::MASK == 0 {}
+                while pioreg._pusr().read().bits() & Pid::MASK != 0 {}
                 Ok(Pin::new())
             }
         }
@@ -484,15 +704,18 @@ const _: () = {
         type Disabled = Pin<Pio, Pid, Mdvr, Pioc, PdPuDisabled, Irpt, Filt>;
         type Pulldown = Self;
         type Pullup = Pin<Pio, Pid, Mdvr, Pioc, PullupEnabled, Irpt, Filt>;
-        
+
         fn disable_pdpu_resistors(self) -> Result<Self::Disabled, (Self, PioError)> {
             unsafe {
                 let pioreg = &*Pio::PTR;
                 if Pio::Rb::writeprotect_enabled(pioreg) {
-                    return Err((self, PioError::WriteProtected))
+                    return Err((self, PioError::WriteProtected));
+                }
+                if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                    return Err((self, PioError::LineLocked));
                 }
                 let _ = self.disable_pdpu_resistors_unchecked();
-                while pioreg._ppdsr().read().bits() & Pid::MASK != 0 {}
+                while pioreg._ppdsr().read().bits() & Pid::MASK == 0 {}
                 Ok(Pin::new())
             }
         }
@@ -515,13 +738,16 @@ const _: () = {
             unsafe {
                 let pioreg = &*Pio::PTR;
                 if Pio::Rb::writeprotect_enabled(pioreg) {
-                    return Err((self, PioError::WriteProtected))
+                    return Err((self, PioError::WriteProtected));
+                }
+                if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                    return Err((self, PioError::LineLocked));
                 }
                 let self_copy: Self = Pin::new();
                 let _ = self_copy.disable_pdpu_resistors_unchecked();
-                while pioreg._ppdsr().read().bits() & Pid::MASK != 0 {}
+                while pioreg._ppdsr().read().bits() & Pid::MASK == 0 {}
                 let _ = self.enable_pullup_resistor_unchecked();
-                while pioreg._pusr().read().bits() & Pid::MASK == 0 {}
+                while pioreg._pusr().read().bits() & Pid::MASK != 0 {}
                 Ok(Pin::new())
             }
         }
@@ -553,10 +779,13 @@ const _: () = {
             unsafe {
                 let pioreg = &*Pio::PTR;
                 if Pio::Rb::writeprotect_enabled(pioreg) {
-                    return Err((self, PioError::WriteProtected))
+                    return Err((self, PioError::WriteProtected));
+                }
+                if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                    return Err((self, PioError::LineLocked));
                 }
                 let _ = self.disable_pdpu_resistors_unchecked();
-                while pioreg._pusr().read().bits() & Pid::MASK != 0 {}
+                while pioreg._pusr().read().bits() & Pid::MASK == 0 {}
                 Ok(Pin::new())
             }
         }
@@ -571,13 +800,16 @@ const _: () = {
             unsafe {
                 let pioreg = &*Pio::PTR;
                 if Pio::Rb::writeprotect_enabled(pioreg) {
-                    return Err((self, PioError::WriteProtected))
+                    return Err((self, PioError::WriteProtected));
+                }
+                if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                    return Err((self, PioError::LineLocked));
                 }
                 let self_copy: Self = Pin::new();
                 let _ = self_copy.disable_pdpu_resistors_unchecked();
-                while pioreg._pusr().read().bits() & Pid::MASK != 0 {}
+                while pioreg._pusr().read().bits() & Pid::MASK == 0 {}
                 let _ = self.enable_pulldown_resistor_unchecked();
-                while pioreg._ppdsr().read().bits() & Pid::MASK == 0 {}
+                while pioreg._ppdsr().read().bits() & Pid::MASK != 0 {}
                 Ok(Pin::new())
             }
         }
@@ -615,8 +847,11 @@ where
     fn disable_multi_driver(self) -> Result<Self::Disabled, (Self, PioError)> {
         unsafe {
             let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(&pioreg) {
+            if Pio::Rb::writeprotect_enabled(pioreg) {
                 return Err((self, PioError::WriteProtected));
+            }
+            if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                return Err((self, PioError::LineLocked));
             }
             if pioreg._mdsr().read().bits() & Pid::MASK != 0 {
                 let _ = self.disable_multi_driver_unchecked();
@@ -635,8 +870,11 @@ where
     fn enable_multi_driver(self) -> Result<Self::Enabled, (Self, PioError)> {
         unsafe {
             let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(&pioreg) {
+            if Pio::Rb::writeprotect_enabled(pioreg) {
                 return Err((self, PioError::WriteProtected));
+            }
+            if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                return Err((self, PioError::LineLocked));
             }
             if pioreg._mdsr().read().bits() & Pid::MASK == 0 {
                 let _ = self.enable_multi_driver_unchecked();
@@ -670,8 +908,11 @@ where
     fn disable_multi_driver(self) -> Result<Self::Disabled, (Self, PioError)> {
         unsafe {
             let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(&pioreg) {
+            if Pio::Rb::writeprotect_enabled(pioreg) {
                 return Err((self, PioError::WriteProtected));
+            }
+            if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                return Err((self, PioError::LineLocked));
             }
             let _ = self.disable_multi_driver_unchecked();
             while pioreg._mdsr().read().bits() & Pid::MASK != 0 {}
@@ -719,8 +960,11 @@ where
     fn enable_multi_driver(self) -> Result<Self::Enabled, (Self, PioError)> {
         unsafe {
             let pioreg = &*Pio::PTR;
-            if Pio::Rb::writeprotect_enabled(&pioreg) {
+            if Pio::Rb::writeprotect_enabled(pioreg) {
                 return Err((self, PioError::WriteProtected));
+            }
+            if pioreg._locksr().read().bits() & Pid::MASK == 0 {
+                return Err((self, PioError::LineLocked));
             }
             let _ = self.enable_multi_driver_unchecked();
             while pioreg._mdsr().read().bits() & Pid::MASK == 0 {}
@@ -732,6 +976,30 @@ where
         let pioreg = &*Pio::PTR;
         pioreg._mder().write_with_zero(|w| w.bits(Pid::MASK));
         Pin::new()
+    }
+}
+
+/// Make a digital reading of the pin from `PIO_PDSR`.
+pub trait DigitalRead {
+    fn digital_read(&self) -> bool;
+}
+
+impl<Pio, Pid, Mdvr, Pioc, Padr, Irpt, Filt> DigitalRead
+    for Pin<Pio, Pid, Mdvr, Pioc, Padr, Irpt, Filt>
+where
+    Pio: PioRegisters,
+    Pid: PinId<Controller = Pio>,
+    Mdvr: MultiDriverCfg,
+    Pioc: PioControlCfg,
+    Padr: PadResistorCfg,
+    Irpt: InterruptCfg,
+    Filt: InputFilterCfg,
+{
+    fn digital_read(&self) -> bool {
+        unsafe {
+            let pioreg = &*Pio::PTR;
+            pioreg._pdsr().read().bits() & Pid::MASK != 0
+        }
     }
 }
 
