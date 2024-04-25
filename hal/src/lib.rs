@@ -14,10 +14,10 @@
 //!   - **ATSAM3U** (ATSAM3U1C, ATSAM3U1E, ATSAM3U2C, ATSAM3U2E, ATSAM3U4C, ATSAM3U4E)
 //!
 //! This project relies on some outside information under a different license (Apache), retrieved
-//! from [Atmel][atmel-src]. The SVD files for each of the families listed above are depended on for
-//! generating the PAC (peripheral access control) crates, and the linker scripts are used to create
-//! the `memory.x` and `device.x` files that the [`cortex-m-rt`][cortex-m-rt] depends on to compile
-//! device binaries.
+//! from [the Atmel/Microchip pack repository][atmel-src]. The SVD files for each of the families
+//! listed above are depended on for generating the PAC (peripheral access control) crates, and the
+//! linker scripts are used to create the `memory.x` and `device.x` files that the
+//! [`cortex-m-rt`][cortex-m-rt] depends on to compile device binaries.
 //!
 //! Additionally, documentation for each peripheral, register, and on-chip function has been copied
 //! over (excluding diagrams) from the device manuals. Extra sections with per-family or per-chip
@@ -38,6 +38,38 @@
 //! [atsam3s124-manual]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-6500-32-bit-Cortex-M3-Microcontroller-SAM3S4-SAM3S2-SAM3S1_Datasheet.pdf
 //! [atsam3sd8-manual]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-11090-32-bit%20Cortex-M3-Microcontroller-SAM-3S8-SD8_Datasheet.pdf
 //! [atsam3u-manual]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-6430-32-bit-Cortex-M3-Microcontroller-SAM3U4-SAM3U2-SAM3U1_Datasheet.pdf
+//!
+//! # Important notes!
+//!
+//! #### Doc feature flags
+//!
+//! The docs were generated with the feature flags `sam3x8e-rt` and `unproven`. However, parts of
+//! the HAL are conditionally compiled and can change depending on your chip version, e.g.
+//! ```ignore
+//! #[cfg(not(feature = "schmitt"))]
+//! /// Disable PIO control of the output.
+//! pub struct OutputDisabled;
+//!
+//! #[cfg(feature = "schmitt")]
+//! /// Disable PIO control of the output.
+//! pub struct OutputDisabled<Schm: SchmittTriggerCfg> {
+//!     _schm: PhantomData<Schm>,
+//! }
+//! ```
+//! It's highly recommended that you build docs locally for your chip if you're not using a SAM3A,
+//! SAM3U, or SAM3X chip.
+//!
+//! #### Feature flags
+//!
+//! The only feature flags that crate users should specify are:
+//! - A device feature (such as `sam3a4c`)
+//! - A device feature with runtime (such as `sam3a4c-rt`)
+//! - The `unproven` flag
+//!
+//! All the other features are marker features used as shorthands throughout the rest of the crate
+//! so it wouldn't be necessary to have large, hard to document `#[cfg()]` blocks in far too many
+//! places. You may attempt to enable other features if you wish, however, no guarantees are made
+//! about whether this crate will compile, much less function correctly.
 
 #[cfg(not(feature = "device"))]
 compile_error! {
