@@ -11,6 +11,19 @@
 //!
 //! Please note that the PIO interrupt signal for the entire PIO bank is fired if the interrupt
 //! condition for any of the individual lines in that PIO bank is met.
+//!
+//! Relevant manual sections:
+//! - SAM3A, SAM3X: [manual][ax], pages 620, 625-628 (31.4.3, 31.5.9, 31.5.10)
+//! - SAM3N: [manual][n], pages 378, 382-385 (27.4.3, 27.5.9, 27.5.10)
+//! - SAM3S1, SAM3S2, SAM3S4: [manual][s124], pages 469, 473-476 (29.4.3, 29.5.9, 29.5.10)
+//! - SAM3S8, SAM3SD8: [manual][sd8], pages 478, 482-485 (28.4.3, 28.5.9, 28.5.11)
+//! - SAM3U: [manual][u], pages 496, 500-503 (29.4.3, 29.5.9, 29.5.10)
+//!
+//! [ax]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-11057-32-bit-Cortex-M3-Microcontroller-SAM3X-SAM3A_Datasheet.pdf
+//! [n]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-11011-32-bit-Cortex-M3-Microcontroller-SAM3N_Datasheet.pdf
+//! [s124]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-6500-32-bit-Cortex-M3-Microcontroller-SAM3S4-SAM3S2-SAM3S1_Datasheet.pdf
+//! [sd8]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-11090-32-bit%20Cortex-M3-Microcontroller-SAM-3S8-SD8_Datasheet.pdf
+//! [u]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-6430-32-bit-Cortex-M3-Microcontroller-SAM3U4-SAM3U2-SAM3U1_Datasheet.pdf
 #[allow(clippy::wildcard_imports)]
 use crate::{
     pio::{

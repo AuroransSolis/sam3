@@ -1,3 +1,18 @@
+//! Pin and configuration definitions and peripheral mappings
+//!
+//! Relevant manual pages:
+//! - SAM3A, SAM3X: [manual][ax], pages 618-675
+//! - SAM3N: [manual][n] pages 376-437
+//! - SAM3S1, SAM3S2, SAM3S4: [manual][s124] pages 467-538
+//! - SAM3S8, SAM3SD8: [manual][sd8] pages 474-550
+//! - SAM3U: [manual][u] pages 494-550
+//!
+//! [ax]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-11057-32-bit-Cortex-M3-Microcontroller-SAM3X-SAM3A_Datasheet.pdf
+//! [n]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-11011-32-bit-Cortex-M3-Microcontroller-SAM3N_Datasheet.pdf
+//! [s124]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-6500-32-bit-Cortex-M3-Microcontroller-SAM3S4-SAM3S2-SAM3S1_Datasheet.pdf
+//! [sd8]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-11090-32-bit%20Cortex-M3-Microcontroller-SAM-3S8-SD8_Datasheet.pdf
+//! [u]: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-6430-32-bit-Cortex-M3-Microcontroller-SAM3U4-SAM3U2-SAM3U1_Datasheet.pdf
+
 // pub mod dynpin;
 pub mod filter;
 pub mod interrupt;
@@ -16,16 +31,6 @@ pub mod piof;
 pub mod structure;
 
 use crate::write_protect::{WpmrWpsrRegs, WriteProtect, WriteProtectKey};
-use pioa::PioA;
-use piob::PioB;
-#[cfg(feature = "pioc")]
-use pioc::PioC;
-#[cfg(feature = "piod")]
-use piod::PioD;
-#[cfg(feature = "pioe")]
-use pioe::PioE;
-#[cfg(feature = "piof")]
-use piof::PioF;
 #[allow(clippy::wildcard_imports)]
 use structure::*;
 
@@ -75,26 +80,12 @@ impl<Pio: PioRegisters> WpmrWpsrRegs for Pio {
 ///   - Output Write Disable Register (`PIO_OWDR`)
 impl<Pio: PioRegisters> WriteProtect for Pio {}
 
-#[allow(clippy::module_name_repetitions)]
-pub struct PioControllers {
-    pioa: PioA,
-    piob: PioB,
-    #[cfg(feature = "pioc")]
-    pioc: PioC,
-    #[cfg(feature = "piod")]
-    piod: PioD,
-    #[cfg(feature = "pioe")]
-    piof: PioF,
-    #[cfg(feature = "piof")]
-    pioe: PioE,
-}
-
 macro_rules! def_pioc {
     ($(
         $pio:ident($inner:ty) => {
             $(
                 $(#[$meta:meta])*
-                $pio_abbv:tt: $num:literal
+                $pio_abbv:ident: $num:literal
             ),+$(,)?
         }
     ),+$(,)?) => {$(
@@ -109,22 +100,54 @@ macro_rules! def_pioc {
             )+
 
             pub struct $pio {
-                [<$pio:lower>]: $inner,
                 $(
                     $(#[$meta])*
-                    [<$pio_abbv:snake $num:snake>]: [<$pio_abbv:camel $num:camel>],
+                    pub [<$pio_abbv:snake $num:snake>]: crate::pio::pin::Pin<
+                        crate::pac::[<$pio:upper>],
+                        [<$pio_abbv:camel $num:camel>],
+                        crate::pio::pin::Unconfigured,
+                        crate::pio::pin::Unconfigured,
+                        crate::pio::pin::Unconfigured,
+                        crate::pio::pin::Unconfigured,
+                        crate::pio::pin::Unconfigured,
+                    >,
                 )+
-
             }
 
-            impl crate::write_protect::WriteProtectKey for $pio {
-                const WPKEY: u32 = 0x50494F;
+            impl $pio {
+                pub fn [<from_ $pio:lower>](_pio: crate::pac::[<$pio:upper>]) -> Self {
+                    $pio {
+                        $(
+                            [<$pio_abbv:snake $num:snake>]: unsafe { crate::pio::pin::Pin::new() },
+                        )+
+                    }
+                }
+
+                pub(crate) const fn inner(&self) -> &crate::pac::[<$pio:lower>]::RegisterBlock {
+                    unsafe { &*crate::pac::[<$pio:upper>]::PTR }
+                }
             }
 
-            // impl crate::pio::IsPio for $pio {
-            //     type RegType = crate::pac::[<$pio:lower>]::RegisterBlock;
-            //     const PTR: *const Self::RegType = crate::pac::[<$pio:upper>]::PTR;
-            // }
+            const _: () = {
+                use crate::write_protect::{WriteProtect, WriteProtectKey, WpmrWpsrRegs};
+
+                impl WriteProtectKey for $pio {
+                    const WPKEY: u32 = crate::pac::[<$pio:upper>]::WPKEY;
+                }
+
+                impl WpmrWpsrRegs for $pio {
+                    type Wpmr = <crate::pac::[<$pio:upper>] as WpmrWpsrRegs>::Wpmr;
+                    fn _wpmr(&self) -> &Self::Wpmr {
+                        self.inner()._wpmr()
+                    }
+                    type Wpsr = <crate::pac::[<$pio:upper>] as WpmrWpsrRegs>::Wpsr;
+                    fn _wpsr(&self) -> &Self::Wpsr {
+                        self.inner()._wpsr()
+                    }
+                }
+
+                impl WriteProtect for $pio {}
+            };
         }
     )+};
 }
@@ -132,11 +155,57 @@ macro_rules! def_pioc {
 pub(crate) use def_pioc;
 
 #[allow(clippy::module_name_repetitions)]
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, Debug)]
+/// Type returned in case a configuration change fails.
 pub enum PioError {
     LineLocked,
     WriteProtected,
 }
+
+macro_rules! pin_peripherals {
+    (
+        pio: $pio:ty,
+        pinopts: [$($pinopts:tt),+$(,)?],
+    ) => {
+        $(
+            crate::pio::pin_peripherals! {
+                @pin
+                pio: $pio,
+                pinopts: $pinopts,
+            }
+        )+
+    };
+    (
+        @pin
+        pio: $pio:ty,
+        pinopts: [
+            pin: $pin:ty,
+            peripherals: [$($peripheral:ident),+]$(,)?
+        ],
+    ) => {
+        $(
+            crate::pio::pin_peripherals! {
+                @impl
+                pio: $pio,
+                pin: $pin,
+                peripheral: $peripheral,
+            }
+        )+
+    };
+    (
+        @impl
+        pio: $pio:ty,
+        pin: $pin:ty,
+        peripheral: $peripheral:ident,
+    ) => {
+        paste::paste! {
+            impl crate::pio::peripheral::PeripheralExistsFor<$pio, $pin>
+                for [<Peripheral $peripheral>] {}
+        }
+    };
+}
+
+pub(crate) use pin_peripherals;
 
 // impl<Pio: IsPio> Pio {
 //     pub fn status_reg(&self) -> u32 {
