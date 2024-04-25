@@ -66,6 +66,7 @@ pub trait WriteProtect: WriteProtectKey + WpmrWpsrRegs {
 
 pub trait WpmrRead {
     type R: WpmrReadFields;
+    /// See [`Reg::read`](crate::pac::generic::Reg::read)
     fn read(&self) -> Self::R;
 }
 
@@ -77,8 +78,10 @@ pub trait WpmrReadFields {
 }
 
 pub trait WpmrWrite {
+    /// See [`Reg::reset`](crate::pac::generic::Reg::reset).
     fn reset(&self);
     type W: WpmrWriteFields;
+    /// See [`Reg::write`](crate::pac::generic::Reg::write).
     fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut Self::W) -> &mut Self::W;
@@ -86,6 +89,8 @@ pub trait WpmrWrite {
 
 pub trait WpmrWriteWithZero {
     type W: WpmrWriteFields;
+    #[allow(clippy::missing_safety_doc)]
+    /// See [`Reg::write_with_zero`](crate::pac::generic::Reg::write_with_zero).
     unsafe fn write_with_zero<F>(&self, f: F)
     where
         F: FnOnce(&mut Self::W) -> &mut Self::W;
@@ -103,6 +108,7 @@ pub trait WpmrWriteFields: Sized {
 }
 
 pub trait WpmrModify: WpmrRead + WpmrWrite + WpmrWriteWithZero {
+    /// See [`Reg::modify`](crate::pac::generic::Reg::modify).
     fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(
@@ -113,6 +119,7 @@ pub trait WpmrModify: WpmrRead + WpmrWrite + WpmrWriteWithZero {
 
 pub trait WpsrRead {
     type R: WpsrReadFields;
+    /// See [`Reg::read`](crate::pac::generic::Reg::read).
     fn read(&self) -> Self::R;
 }
 
@@ -135,44 +142,66 @@ macro_rules! wpmr_wpsr_impl {
     ) => {
         paste::paste! {
             const _: () = {
-                impl crate::write_protect::WriteProtectKey for $ty {
+                use crate::{
+                    pac::[<$ty:lower>]::{
+                        wpmr::{self, WpenR, WpenW, WpkeyR, WpkeyW, WpmrSpec},
+                        wpsr,
+                        Wpmr,
+                        Wpsr,
+                    },
+                    structure::FWrite,
+                    write_protect::{
+                        WriteProtectKey,
+                        WpmrModify,
+                        WpmrRead,
+                        WpmrReadFields,
+                        WpmrWpsrRegs,
+                        WpmrWrite,
+                        WpmrWriteFields,
+                        WpmrWriteWithZero,
+                        WpsrRead,
+                        WpsrReadFields,
+                    },
+                };
+
+                impl WriteProtectKey for $ty {
                     const WPKEY: u32 = $key;
                 }
 
-                impl crate::write_protect::WpmrWpsrRegs for $ty {
-                    type Wpmr = crate::pac::[<$ty:lower>]::Wpmr;
+                impl WpmrWpsrRegs for $ty {
+                    type Wpmr = Wpmr;
                     fn _wpmr(&self) -> &Self::Wpmr {
                         self.wpmr()
                     }
-                    type Wpsr = crate::pac::[<$ty:lower>]::Wpsr;
+                    type Wpsr = Wpsr;
                     fn _wpsr(&self) -> &Self::Wpsr {
                         self.wpsr()
                     }
                 }
 
-                impl crate::write_protect::WpmrRead for crate::pac::[<$ty:lower>]::Wpmr {
-                    type R = crate::pac::[<$ty:lower>]::wpmr::R;
+                impl WpmrRead for Wpmr {
+                    type R = wpmr::R;
                     fn read(&self) -> Self::R {
                         self.read()
                     }
                 }
 
-                impl crate::write_protect::WpmrReadFields for crate::pac::[<$ty:lower>]::wpmr::R {
-                    type Wpen = crate::pac::[<$ty:lower>]::wpmr::WpenR;
+                impl WpmrReadFields for wpmr::R {
+                    type Wpen = WpenR;
                     fn wpen(&self) -> Self::Wpen {
                         self.wpen()
                     }
-                    type Wpkey = crate::pac::[<$ty:lower>]::wpmr::WpkeyR;
+                    type Wpkey = WpkeyR;
                     fn wpkey(&self) -> Self::Wpkey {
                         self.wpkey()
                     }
                 }
 
-                impl crate::write_protect::WpmrWrite for crate::pac::[<$ty:lower>]::Wpmr {
+                impl WpmrWrite for Wpmr {
                     fn reset(&self) {
                         self.reset()
                     }
-                    type W = crate::pac::[<$ty:lower>]::wpmr::W;
+                    type W = wpmr::W;
                     fn write<F>(&self, f: F)
                     where
                         F: FnOnce(&mut Self::W) -> &mut Self::W
@@ -181,8 +210,8 @@ macro_rules! wpmr_wpsr_impl {
                     }
                 }
 
-                impl crate::write_protect::WpmrWriteWithZero for crate::pac::[<$ty:lower>]::Wpmr {
-                    type W = crate::pac::[<$ty:lower>]::wpmr::W;
+                impl WpmrWriteWithZero for Wpmr {
+                    type W = wpmr::W;
                     unsafe fn write_with_zero<F>(&self, f: F)
                     where
                         F: FnOnce(&mut Self::W) -> &mut Self::W,
@@ -191,18 +220,12 @@ macro_rules! wpmr_wpsr_impl {
                     }
                 }
 
-                impl crate::write_protect::WpmrWriteFields for crate::pac::[<$ty:lower>]::wpmr::W {
-                    type Wpen<'a> = crate::pac::[<$ty:lower>]::wpmr::WpenW<
-                        'a,
-                        crate::pac::[<$ty:lower>]::wpmr::WpmrSpec,
-                    >;
+                impl WpmrWriteFields for wpmr::W {
+                    type Wpen<'a> = WpenW<'a, WpmrSpec>;
                     fn wpen(&mut self) -> Self::Wpen<'_> {
                         self.wpen()
                     }
-                    type Wpkey<'a> = crate::pac::[<$ty:lower>]::wpmr::WpkeyW<
-                        'a,
-                        crate::pac::[<$ty:lower>]::wpmr::WpmrSpec,
-                    >;
+                    type Wpkey<'a> = WpkeyW<'a, WpmrSpec>;
                     fn wpkey(&mut self) -> Self::Wpkey<'_> {
                         self.wpkey()
                     }
@@ -213,12 +236,7 @@ macro_rules! wpmr_wpsr_impl {
                     reg: Wpmr,
                 }
 
-                impl<'a> crate::structure::FWrite<'a, 24, u32, crate::pac::[<$ty:lower>]::wpmr::W>
-                    for crate::pac::[<$ty:lower>]::wpmr::WpkeyW<
-                        'a,
-                        crate::pac::[<$ty:lower>]::wpmr::WpmrSpec,
-                    >
-                {
+                impl<'a> FWrite<'a, 24, u32, wpmr::W> for WpkeyW<'a, WpmrSpec> {
                     const WIDTH: u8 = Self::WIDTH;
                     fn width(&self) -> u8 {
                         self.width()
@@ -226,39 +244,37 @@ macro_rules! wpmr_wpsr_impl {
                     fn offset(&self) -> u8 {
                         self.offset()
                     }
-                    unsafe fn bits(self, value: u32)
-                        -> &'a mut crate::pac::[<$ty:lower>]::wpmr::W
-                    {
+                    unsafe fn bits(self, value: u32) -> &'a mut wpmr::W {
                         self.bits(value)
                     }
                 }
 
-                impl crate::write_protect::WpmrModify for crate::pac::[<$ty:lower>]::Wpmr {
+                impl WpmrModify for Wpmr {
                     fn modify<F>(&self, f: F)
                     where
                         for<'w> F: FnOnce(
-                            &<Self as crate::write_protect::WpmrRead>::R,
-                            &'w mut <Self as crate::write_protect::WpmrWrite>::W,
-                        ) -> &'w mut <Self as crate::write_protect::WpmrWrite>::W,
+                            &<Self as WpmrRead>::R,
+                            &'w mut <Self as WpmrWrite>::W,
+                        ) -> &'w mut <Self as WpmrWrite>::W,
                     {
                         self.modify(f)
                     }
                 }
 
-                impl crate::write_protect::WpsrRead for crate::pac::[<$ty:lower>]::Wpsr {
-                    type R = crate::pac::[<$ty:lower>]::wpsr::R;
+                impl WpsrRead for Wpsr {
+                    type R = wpsr::R;
                     fn read(&self) -> Self::R {
                         self.read()
                     }
                 }
 
-                impl crate::write_protect::WpsrReadFields for crate::pac::[<$ty:lower>]::wpsr::R {
-                    type Wpvs = crate::pac::[<$ty:lower>]::wpsr::[<$wpvs R>];
+                impl WpsrReadFields for wpsr::R {
+                    type Wpvs = wpsr::[<$wpvs R>];
                     fn wpvs(&self) -> Self::Wpvs {
                         self.[<$wpvs:lower>]()
                     }
                     type Addr = $addr;
-                    type Wpvsrc = crate::pac::[<$ty:lower>]::wpsr::[<$wpvsrc R>];
+                    type Wpvsrc = wpsr::[<$wpvsrc R>];
                     fn wpvsrc(&self) -> Self::Wpvsrc {
                         self.[<$wpvsrc:lower>]()
                     }

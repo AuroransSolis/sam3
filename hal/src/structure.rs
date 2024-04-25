@@ -1,5 +1,8 @@
 use crate::pac::generic::{BitReader, FieldReader, FieldSpec, IsEnum};
 
+/// [`Reg::read`][rr] as a trait.
+///
+/// [rr]: crate::pac::generic::Reg::read
 pub trait BReader {
     type R: BReaderFields;
     fn read(&self) -> Self::R;
@@ -7,6 +10,10 @@ pub trait BReader {
 
 seq_macro::seq! {N in 0..32 {
     paste::paste! {
+        /// Trait providing `.p0()`, `.p1()`, ..., `.p31()`, and [`.bits()`][bits] methods as
+        /// readers as found on most PIO registers.
+        ///
+        /// [bits]: crate::pac::generic::R#method.bits
         pub trait BReaderFields {
             #(
                 type [<P~N R>]: BRead;
@@ -17,6 +24,7 @@ seq_macro::seq! {N in 0..32 {
     }
 }}
 
+/// [`BitReader`] methods as a trait.
 pub trait BRead {
     fn bit(&self) -> bool;
     fn bit_is_clear(&self) -> bool;
@@ -37,6 +45,10 @@ impl BRead for BitReader {
     }
 }
 
+/// [`Reg::reset`][rr] and [`Reg::write`][rw] as a trait.
+///
+/// [rr]: crate::pac::generic::Reg::reset
+/// [rw]: crate::pac::generic::Reg::write
 pub trait BWriter {
     fn reset(&self);
     type W: BWriterFields;
@@ -47,6 +59,10 @@ pub trait BWriter {
 
 seq_macro::seq! {N in 0..32 {
     paste::paste! {
+        /// Trait providing `.p0()`, `.p1()`, ..., `.p31()`, and [`.bits(bits)`][bits] methods as
+        /// writers as found on most PIO registers.
+        ///
+        /// [bits]: crate::pac::generic::W#method.bits
         pub trait BWriterFields: Sized {
             #(
                 type [<P~N W>]<'a>: BWrite<'a, Self>
@@ -54,11 +70,18 @@ seq_macro::seq! {N in 0..32 {
                     Self: 'a + Sized;
                 fn p~N(&mut self) -> Self::[<P~N W>]<'_>;
             )*
+            #[allow(clippy::missing_safety_doc)]
+            /// See [`W::bits`][bits].
+            ///
+            /// [bits]: crate::pac::generic::W#method.bits
             unsafe fn bits(&mut self, bits: u32) -> &mut Self;
         }
     }
 }}
 
+/// [`BitWriter`][bw] methods as a trait.
+///
+/// [bw]: crate::pac::generic::BitWriter
 pub trait BWrite<'a, W> {
     const WIDTH: u8 = 1u8;
     fn width(&self) -> u8;
@@ -69,13 +92,21 @@ pub trait BWrite<'a, W> {
     fn clear_bit(self) -> &'a mut W;
 }
 
+/// [`Reg::write_with_zero`][rwwz] as a trait.
+///
+/// [rwwz]: crate::pac::generic::Reg::write_with_zero
 pub trait BWriterWithZero {
     type W: BWriterFields;
+    #[allow(clippy::missing_safety_doc)]
+    /// See [`Reg::write_with_zero`](crate::pac::generic::Reg::write_with_zero).
     unsafe fn write_with_zero<F>(&self, f: F)
     where
         F: FnOnce(&mut Self::W) -> &mut Self::W;
 }
 
+/// [`Reg::modify`][rm] as a trait.
+///
+/// [rm]: crate::pac::generic::Reg::modify
 pub trait BModify: BReader + BWriterWithZero {
     fn modify<F>(&self, f: F)
     where
@@ -85,21 +116,46 @@ pub trait BModify: BReader + BWriterWithZero {
         ) -> &'w mut <Self as BWriterWithZero>::W;
 }
 
+/// [`FieldReader::bits`][frb] as a trait.
+///
+/// [frb]: crate::pac::generic::FieldReader#method.bits
 pub trait FRead<FI: FieldSpec> {
     fn bits(&self) -> FI::Ux;
 }
 
+/// [`FieldWriter`][fw] methods as a trait.
+///
+/// [fw]: crate::pac::generic::FieldWriter
 pub trait FWrite<'a, const WI: u8, FI: FieldSpec, W> {
+    /// See [`FieldWriter::WIDTH`][width].
+    ///
+    /// [width]: crate::pac::generic::FieldWriter#associatedconstant.WIDTH
     const WIDTH: u8 = WI;
+    /// See [`FieldWriter::width`][width].
+    ///
+    /// [width]: crate::pac::generic::FieldWriter#method.width
     fn width(&self) -> u8;
+    /// See [`FieldWriter::offset`][offset].
+    ///
+    /// [offset]: crate::pac::generic::FieldWriter#method.offset
     fn offset(&self) -> u8;
+    #[allow(clippy::missing_safety_doc)]
+    /// See [`FieldWriter::bits`][bits].
+    ///
+    /// [bits]: crate::pac::generic::FieldWriter#method.bits
     unsafe fn bits(self, value: FI::Ux) -> &'a mut W;
 }
 
+/// [`FieldWriter::variant`][fwv] as a trait.
+///
+/// [fwv]: crate::pac::generic::FieldWriter#method.variant
 pub trait FWriteVariant<'a, const WI: u8, FI: IsEnum, W>: FWrite<'a, WI, FI, W> {
     fn variant(self, variant: FI) -> &'a mut W;
 }
 
+/// [`FieldWriter::set`][fws] as a trait.
+///
+/// [fws]: crate::pac::generic::FieldWriter#method.set
 pub trait FWriteSafe<'a, const WI: u8, FI: FieldSpec, W>: FWrite<'a, WI, FI, W> {
     fn set(self, value: FI::Ux) -> &'a mut W;
 }
