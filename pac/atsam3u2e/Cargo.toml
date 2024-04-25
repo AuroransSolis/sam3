@@ -3,12 +3,14 @@ name = "atsam3u2e"
 description = "Peripheral access API for ATSAM3U2E microcontrollers (generated using svd2rust)"
 version = "0.1.0"
 authors = ["Aurorans Solis <primalucegd@gmail.com>"]
-keywords = ["no-std", "arm", "cortex-m"]
+keywords = ["no-std", "arm", "cortex-m", "sam3", "atsam3u2e"]
 categories = ["embedded", "hardware-support", "no-std"]
 license = "EUPL-1.2"
 repository = "https://github.com/AuroransSolis/sam3"
 readme = "README.md"
-edition = "2021"
+
+[package.metadata.docs.rs]
+features = ["rt"]
 
 [dependencies]
 vcell = "0.1"

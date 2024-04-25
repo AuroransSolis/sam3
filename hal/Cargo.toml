@@ -12,8 +12,8 @@ readme = "README.md"
 # documentation = ""
 edition = "2021"
 
-# [package.metadata.docs.rs]
-# features = []
+[package.metadata.docs.rs]
+features = ["sam3x8e-rt", "unproven"]
 
 [dev-dependencies.embedded-test]
 version = "0.3"
