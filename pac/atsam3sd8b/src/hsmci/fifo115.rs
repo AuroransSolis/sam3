@@ -7,11 +7,6 @@ impl core::fmt::Debug for R {
         write!(f, "{}", self.bits())
     }
 }
-impl core::fmt::Debug for crate::generic::Reg<Fifo115Spec> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        core::fmt::Debug::fmt(&self.read(), f)
-    }
-}
 impl W {}
 #[doc = "FIFO Memory Aperture0 115\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fifo115::R`](R).  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fifo115::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Fifo115Spec;
