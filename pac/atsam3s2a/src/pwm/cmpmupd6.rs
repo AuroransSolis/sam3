@@ -34,7 +34,7 @@ impl W {
         CuprupdW::new(self, 16)
     }
 }
-#[doc = "PWM Comparison 6 Mode Update Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmpmupd6::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PWM Comparison 6 Mode Update Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmpmupd6::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Cmpmupd6Spec;
 impl crate::RegisterSpec for Cmpmupd6Spec {
     type Ux = u32;

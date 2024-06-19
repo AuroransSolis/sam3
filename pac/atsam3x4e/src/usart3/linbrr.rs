@@ -16,7 +16,7 @@ impl R {
         LinfpR::new(((self.bits >> 16) & 7) as u8)
     }
 }
-#[doc = "LIN Baud Rate Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`linbrr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "LIN Baud Rate Register\n\nYou can [`read`](crate::Reg::read) this register and get [`linbrr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LinbrrSpec;
 impl crate::RegisterSpec for LinbrrSpec {
     type Ux = u32;

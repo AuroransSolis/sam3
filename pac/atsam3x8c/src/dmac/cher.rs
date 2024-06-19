@@ -146,7 +146,7 @@ impl W {
         Keep5W::new(self, 29)
     }
 }
-#[doc = "DMAC Channel Handler Enable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cher::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DMAC Channel Handler Enable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cher::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CherSpec;
 impl crate::RegisterSpec for CherSpec {
     type Ux = u32;

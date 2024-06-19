@@ -36,7 +36,7 @@ impl W {
         InmodeW::new(self, 8)
     }
 }
-#[doc = "Host Pipe IN Request Register (n = 0) 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hstpipinrq1::R`](R).  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hstpipinrq1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Host Pipe IN Request Register (n = 0) 1\n\nYou can [`read`](crate::Reg::read) this register and get [`hstpipinrq1::R`](R). You can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hstpipinrq1::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Hstpipinrq1Spec;
 impl crate::RegisterSpec for Hstpipinrq1Spec {
     type Ux = u32;

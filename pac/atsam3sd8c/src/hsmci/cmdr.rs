@@ -472,7 +472,7 @@ impl W {
         BootAckW::new(self, 27)
     }
 }
-#[doc = "Command Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmdr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Command Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CmdrSpec;
 impl crate::RegisterSpec for CmdrSpec {
     type Ux = u32;

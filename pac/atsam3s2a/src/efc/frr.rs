@@ -9,7 +9,7 @@ impl R {
         FvalueR::new(self.bits)
     }
 }
-#[doc = "EEFC Flash Result Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`frr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "EEFC Flash Result Register\n\nYou can [`read`](crate::Reg::read) this register and get [`frr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FrrSpec;
 impl crate::RegisterSpec for FrrSpec {
     type Ux = u32;

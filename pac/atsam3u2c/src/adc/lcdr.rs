@@ -9,7 +9,7 @@ impl R {
         LdataR::new((self.bits & 0x03ff) as u16)
     }
 }
-#[doc = "Last Converted Data Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lcdr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Last Converted Data Register\n\nYou can [`read`](crate::Reg::read) this register and get [`lcdr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LcdrSpec;
 impl crate::RegisterSpec for LcdrSpec {
     type Ux = u32;

@@ -66,7 +66,7 @@ impl W {
         Ch7W::new(self, 7)
     }
 }
-#[doc = "Channel Disable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`chdr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Channel Disable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`chdr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ChdrSpec;
 impl crate::RegisterSpec for ChdrSpec {
     type Ux = u32;

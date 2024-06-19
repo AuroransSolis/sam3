@@ -9,7 +9,7 @@ impl R {
         CvR::new(self.bits)
     }
 }
-#[doc = "Counter Value (channel = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cv2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Counter Value (channel = 2)\n\nYou can [`read`](crate::Reg::read) this register and get [`cv2::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Cv2Spec;
 impl crate::RegisterSpec for Cv2Spec {
     type Ux = u32;

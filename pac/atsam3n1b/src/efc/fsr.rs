@@ -23,7 +23,7 @@ impl R {
         FlockeR::new(((self.bits >> 2) & 1) != 0)
     }
 }
-#[doc = "EEFC Flash Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "EEFC Flash Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`fsr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FsrSpec;
 impl crate::RegisterSpec for FsrSpec {
     type Ux = u32;

@@ -469,7 +469,7 @@ impl W {
         BintervalW::new(self, 24)
     }
 }
-#[doc = "Host Pipe Configuration Register (n = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hsbohscp_hstpipcfg0_hsbohscp::R`](R).  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hsbohscp_hstpipcfg0_hsbohscp::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Host Pipe Configuration Register (n = 0)\n\nYou can [`read`](crate::Reg::read) this register and get [`hsbohscp_hstpipcfg0_hsbohscp::R`](R). You can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hsbohscp_hstpipcfg0_hsbohscp::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HsbohscpHstpipcfg0HsbohscpSpec;
 impl crate::RegisterSpec for HsbohscpHstpipcfg0HsbohscpSpec {
     type Ux = u32;

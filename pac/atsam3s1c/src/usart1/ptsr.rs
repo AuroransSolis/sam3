@@ -16,7 +16,7 @@ impl R {
         TxtenR::new(((self.bits >> 8) & 1) != 0)
     }
 }
-#[doc = "Transfer Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ptsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Transfer Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ptsr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PtsrSpec;
 impl crate::RegisterSpec for PtsrSpec {
     type Ux = u32;

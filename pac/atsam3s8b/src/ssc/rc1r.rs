@@ -21,7 +21,7 @@ impl W {
         Cp1W::new(self, 0)
     }
 }
-#[doc = "Receive Compare 1 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rc1r::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rc1r::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive Compare 1 Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rc1r::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rc1r::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Rc1rSpec;
 impl crate::RegisterSpec for Rc1rSpec {
     type Ux = u32;

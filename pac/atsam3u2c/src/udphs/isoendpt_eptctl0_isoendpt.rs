@@ -100,7 +100,7 @@ impl R {
         ShrtPcktR::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "UDPHS Endpoint Control Register (endpoint = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`isoendpt_eptctl0_isoendpt::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "UDPHS Endpoint Control Register (endpoint = 0)\n\nYou can [`read`](crate::Reg::read) this register and get [`isoendpt_eptctl0_isoendpt::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IsoendptEptctl0IsoendptSpec;
 impl crate::RegisterSpec for IsoendptEptctl0IsoendptSpec {
     type Ux = u32;

@@ -135,7 +135,7 @@ impl R {
         Eccerr15R::new(((self.bits >> 29) & 3) as u8)
     }
 }
-#[doc = "SMC ECC status 2 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_sr2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "SMC ECC status 2 Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ecc_sr2::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EccSr2Spec;
 impl crate::RegisterSpec for EccSr2Spec {
     type Ux = u32;

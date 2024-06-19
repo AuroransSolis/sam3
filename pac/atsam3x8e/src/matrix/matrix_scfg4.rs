@@ -66,7 +66,7 @@ impl W {
         ArbtW::new(self, 24)
     }
 }
-#[doc = "Slave Configuration Register 4\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`matrix_scfg4::R`](R).  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`matrix_scfg4::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Slave Configuration Register 4\n\nYou can [`read`](crate::Reg::read) this register and get [`matrix_scfg4::R`](R). You can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`matrix_scfg4::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MatrixScfg4Spec;
 impl crate::RegisterSpec for MatrixScfg4Spec {
     type Ux = u32;

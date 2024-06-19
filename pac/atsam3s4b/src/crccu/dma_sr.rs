@@ -9,7 +9,7 @@ impl R {
         DmasrR::new((self.bits & 1) != 0)
     }
 }
-#[doc = "CRCCU DMA Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dma_sr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CRCCU DMA Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dma_sr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DmaSrSpec;
 impl crate::RegisterSpec for DmaSrSpec {
     type Ux = u32;

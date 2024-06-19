@@ -42,7 +42,7 @@ impl W {
         CalclrW::new(self, 4)
     }
 }
-#[doc = "Status Clear Command Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sccr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Status Clear Command Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sccr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SccrSpec;
 impl crate::RegisterSpec for SccrSpec {
     type Ux = u32;

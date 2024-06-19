@@ -9,7 +9,7 @@ impl R {
         RsdatR::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "Receive Sync. Holding Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rshr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive Sync. Holding Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rshr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RshrSpec;
 impl crate::RegisterSpec for RshrSpec {
     type Ux = u32;

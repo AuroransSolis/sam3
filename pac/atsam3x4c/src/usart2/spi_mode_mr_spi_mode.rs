@@ -264,7 +264,7 @@ impl W {
         WrdbtW::new(self, 20)
     }
 }
-#[doc = "Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_mode_mr_spi_mode::R`](R).  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_mode_mr_spi_mode::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Mode Register\n\nYou can [`read`](crate::Reg::read) this register and get [`spi_mode_mr_spi_mode::R`](R). You can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`spi_mode_mr_spi_mode::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SpiModeMrSpiModeSpec;
 impl crate::RegisterSpec for SpiModeMrSpiModeSpec {
     type Ux = u32;

@@ -96,91 +96,91 @@ impl RegisterBlock {
         &self.isr
     }
 }
-#[doc = "DSCR (rw) register accessor: CRCCU Descriptor Base Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dscr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dscr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dscr`]
+#[doc = "DSCR (rw) register accessor: CRCCU Descriptor Base Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dscr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dscr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dscr`]
 module"]
 #[doc(alias = "DSCR")]
 pub type Dscr = crate::Reg<dscr::DscrSpec>;
 #[doc = "CRCCU Descriptor Base Register"]
 pub mod dscr;
-#[doc = "DMA_EN (w) register accessor: CRCCU DMA Enable Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dma_en::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dma_en`]
+#[doc = "DMA_EN (w) register accessor: CRCCU DMA Enable Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dma_en::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dma_en`]
 module"]
 #[doc(alias = "DMA_EN")]
 pub type DmaEn = crate::Reg<dma_en::DmaEnSpec>;
 #[doc = "CRCCU DMA Enable Register"]
 pub mod dma_en;
-#[doc = "DMA_DIS (w) register accessor: CRCCU DMA Disable Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dma_dis::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dma_dis`]
+#[doc = "DMA_DIS (w) register accessor: CRCCU DMA Disable Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dma_dis::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dma_dis`]
 module"]
 #[doc(alias = "DMA_DIS")]
 pub type DmaDis = crate::Reg<dma_dis::DmaDisSpec>;
 #[doc = "CRCCU DMA Disable Register"]
 pub mod dma_dis;
-#[doc = "DMA_SR (r) register accessor: CRCCU DMA Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dma_sr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dma_sr`]
+#[doc = "DMA_SR (r) register accessor: CRCCU DMA Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dma_sr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dma_sr`]
 module"]
 #[doc(alias = "DMA_SR")]
 pub type DmaSr = crate::Reg<dma_sr::DmaSrSpec>;
 #[doc = "CRCCU DMA Status Register"]
 pub mod dma_sr;
-#[doc = "DMA_IER (w) register accessor: CRCCU DMA Interrupt Enable Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dma_ier::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dma_ier`]
+#[doc = "DMA_IER (w) register accessor: CRCCU DMA Interrupt Enable Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dma_ier::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dma_ier`]
 module"]
 #[doc(alias = "DMA_IER")]
 pub type DmaIer = crate::Reg<dma_ier::DmaIerSpec>;
 #[doc = "CRCCU DMA Interrupt Enable Register"]
 pub mod dma_ier;
-#[doc = "DMA_IDR (w) register accessor: CRCCU DMA Interrupt Disable Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dma_idr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dma_idr`]
+#[doc = "DMA_IDR (w) register accessor: CRCCU DMA Interrupt Disable Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dma_idr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dma_idr`]
 module"]
 #[doc(alias = "DMA_IDR")]
 pub type DmaIdr = crate::Reg<dma_idr::DmaIdrSpec>;
 #[doc = "CRCCU DMA Interrupt Disable Register"]
 pub mod dma_idr;
-#[doc = "DMA_IMR (r) register accessor: CRCCU DMA Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dma_imr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dma_imr`]
+#[doc = "DMA_IMR (r) register accessor: CRCCU DMA Interrupt Mask Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dma_imr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dma_imr`]
 module"]
 #[doc(alias = "DMA_IMR")]
 pub type DmaImr = crate::Reg<dma_imr::DmaImrSpec>;
 #[doc = "CRCCU DMA Interrupt Mask Register"]
 pub mod dma_imr;
-#[doc = "DMA_ISR (r) register accessor: CRCCU DMA Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dma_isr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dma_isr`]
+#[doc = "DMA_ISR (r) register accessor: CRCCU DMA Interrupt Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dma_isr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dma_isr`]
 module"]
 #[doc(alias = "DMA_ISR")]
 pub type DmaIsr = crate::Reg<dma_isr::DmaIsrSpec>;
 #[doc = "CRCCU DMA Interrupt Status Register"]
 pub mod dma_isr;
-#[doc = "CR (w) register accessor: CRCCU Control Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
+#[doc = "CR (w) register accessor: CRCCU Control Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
 module"]
 #[doc(alias = "CR")]
 pub type Cr = crate::Reg<cr::CrSpec>;
 #[doc = "CRCCU Control Register"]
 pub mod cr;
-#[doc = "MR (rw) register accessor: CRCCU Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mr`]
+#[doc = "MR (rw) register accessor: CRCCU Mode Register\n\nYou can [`read`](crate::Reg::read) this register and get [`mr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mr`]
 module"]
 #[doc(alias = "MR")]
 pub type Mr = crate::Reg<mr::MrSpec>;
 #[doc = "CRCCU Mode Register"]
 pub mod mr;
-#[doc = "SR (r) register accessor: CRCCU Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sr`]
+#[doc = "SR (r) register accessor: CRCCU Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sr`]
 module"]
 #[doc(alias = "SR")]
 pub type Sr = crate::Reg<sr::SrSpec>;
 #[doc = "CRCCU Status Register"]
 pub mod sr;
-#[doc = "IER (w) register accessor: CRCCU Interrupt Enable Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ier::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ier`]
+#[doc = "IER (w) register accessor: CRCCU Interrupt Enable Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ier::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ier`]
 module"]
 #[doc(alias = "IER")]
 pub type Ier = crate::Reg<ier::IerSpec>;
 #[doc = "CRCCU Interrupt Enable Register"]
 pub mod ier;
-#[doc = "IDR (w) register accessor: CRCCU Interrupt Disable Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`idr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@idr`]
+#[doc = "IDR (w) register accessor: CRCCU Interrupt Disable Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`idr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@idr`]
 module"]
 #[doc(alias = "IDR")]
 pub type Idr = crate::Reg<idr::IdrSpec>;
 #[doc = "CRCCU Interrupt Disable Register"]
 pub mod idr;
-#[doc = "IMR (r) register accessor: CRCCU Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`imr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@imr`]
+#[doc = "IMR (r) register accessor: CRCCU Interrupt Mask Register\n\nYou can [`read`](crate::Reg::read) this register and get [`imr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@imr`]
 module"]
 #[doc(alias = "IMR")]
 pub type Imr = crate::Reg<imr::ImrSpec>;
 #[doc = "CRCCU Interrupt Mask Register"]
 pub mod imr;
-#[doc = "ISR (r) register accessor: CRCCU Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`isr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@isr`]
+#[doc = "ISR (r) register accessor: CRCCU Interrupt Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`isr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@isr`]
 module"]
 #[doc(alias = "ISR")]
 pub type Isr = crate::Reg<isr::IsrSpec>;

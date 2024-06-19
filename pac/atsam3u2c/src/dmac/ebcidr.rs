@@ -98,7 +98,7 @@ impl W {
         Err3W::new(self, 19)
     }
 }
-#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Disable register.\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ebcidr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Disable register.\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ebcidr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EbcidrSpec;
 impl crate::RegisterSpec for EbcidrSpec {
     type Ux = u32;

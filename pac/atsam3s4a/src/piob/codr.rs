@@ -258,7 +258,7 @@ impl W {
         P31W::new(self, 31)
     }
 }
-#[doc = "Clear Output Data Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`codr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Clear Output Data Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`codr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CodrSpec;
 impl crate::RegisterSpec for CodrSpec {
     type Ux = u32;

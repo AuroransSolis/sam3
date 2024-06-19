@@ -9,7 +9,7 @@ impl R {
         CrtvR::new(self.bits)
     }
 }
-#[doc = "Value Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`vr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Value Register\n\nYou can [`read`](crate::Reg::read) this register and get [`vr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct VrSpec;
 impl crate::RegisterSpec for VrSpec {
     type Ux = u32;

@@ -114,7 +114,7 @@ impl R {
         Fchid7R::new(((self.bits >> 23) & 1) != 0)
     }
 }
-#[doc = "PWM Interrupt Mask Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`imr1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PWM Interrupt Mask Register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`imr1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Imr1Spec;
 impl crate::RegisterSpec for Imr1Spec {
     type Ux = u32;

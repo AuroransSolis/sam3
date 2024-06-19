@@ -258,7 +258,7 @@ impl W {
         P31W::new(self, 31)
     }
 }
-#[doc = "Input Filter Slow Clock Disable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ifscdr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Input Filter Slow Clock Disable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ifscdr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IfscdrSpec;
 impl crate::RegisterSpec for IfscdrSpec {
     type Ux = u32;

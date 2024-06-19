@@ -74,7 +74,7 @@ impl W {
         RcsW::new(self, 19)
     }
 }
-#[doc = "Control Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_mode_cr_spi_mode::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Control Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`spi_mode_cr_spi_mode::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SpiModeCrSpiModeSpec;
 impl crate::RegisterSpec for SpiModeCrSpiModeSpec {
     type Ux = u32;

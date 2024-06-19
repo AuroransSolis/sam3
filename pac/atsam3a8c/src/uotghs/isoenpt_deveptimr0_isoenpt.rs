@@ -114,7 +114,7 @@ impl R {
         RstdtR::new(((self.bits >> 18) & 1) != 0)
     }
 }
-#[doc = "Device Endpoint Mask Register (n = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`isoenpt_deveptimr0_isoenpt::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Device Endpoint Mask Register (n = 0)\n\nYou can [`read`](crate::Reg::read) this register and get [`isoenpt_deveptimr0_isoenpt::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IsoenptDeveptimr0IsoenptSpec;
 impl crate::RegisterSpec for IsoenptDeveptimr0IsoenptSpec {
     type Ux = u32;

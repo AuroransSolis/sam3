@@ -154,7 +154,7 @@ impl W {
         LinsnreW::new(self, 29)
     }
 }
-#[doc = "Interrupt Disable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lin_mode_idr_lin_mode::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Disable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`lin_mode_idr_lin_mode::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LinModeIdrLinModeSpec;
 impl crate::RegisterSpec for LinModeIdrLinModeSpec {
     type Ux = u32;

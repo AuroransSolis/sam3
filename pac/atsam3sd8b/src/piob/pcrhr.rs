@@ -9,7 +9,7 @@ impl R {
         RdataR::new(self.bits)
     }
 }
-#[doc = "Parallel Capture Reception Holding Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcrhr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Parallel Capture Reception Holding Register\n\nYou can [`read`](crate::Reg::read) this register and get [`pcrhr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PcrhrSpec;
 impl crate::RegisterSpec for PcrhrSpec {
     type Ux = u32;

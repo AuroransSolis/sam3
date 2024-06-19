@@ -66,7 +66,7 @@ impl W {
         WpkeyW::new(self, 8)
     }
 }
-#[doc = "PWM Write Protect Control Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wpcr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PWM Write Protect Control Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`wpcr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct WpcrSpec;
 impl crate::RegisterSpec for WpcrSpec {
     type Ux = u32;

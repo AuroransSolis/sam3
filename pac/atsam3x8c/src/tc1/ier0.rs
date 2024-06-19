@@ -66,7 +66,7 @@ impl W {
         EtrgsW::new(self, 7)
     }
 }
-#[doc = "Interrupt Enable Register (channel = 0)\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ier0::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Enable Register (channel = 0)\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ier0::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Ier0Spec;
 impl crate::RegisterSpec for Ier0Spec {
     type Ux = u32;

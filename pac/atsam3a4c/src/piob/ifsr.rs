@@ -226,7 +226,7 @@ impl R {
         P31R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Glitch Input Filter Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ifsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Glitch Input Filter Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ifsr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IfsrSpec;
 impl crate::RegisterSpec for IfsrSpec {
     type Ux = u32;

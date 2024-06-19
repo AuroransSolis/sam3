@@ -74,7 +74,7 @@ impl W {
         VbusrqcW::new(self, 9)
     }
 }
-#[doc = "General Status Clear Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "General Status Clear Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ScrSpec;
 impl crate::RegisterSpec for ScrSpec {
     type Ux = u32;

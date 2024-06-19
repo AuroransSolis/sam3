@@ -66,7 +66,7 @@ impl W {
         NakOutW::new(self, 15)
     }
 }
-#[doc = "UDPHS Endpoint Clear Status Register (endpoint = 1)\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`eptclrsta1::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "UDPHS Endpoint Clear Status Register (endpoint = 1)\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`eptclrsta1::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Eptclrsta1Spec;
 impl crate::RegisterSpec for Eptclrsta1Spec {
     type Ux = u32;

@@ -226,7 +226,7 @@ impl R {
         P31R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Pad Pull-up Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pusr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Pad Pull-up Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`pusr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PusrSpec;
 impl crate::RegisterSpec for PusrSpec {
     type Ux = u32;

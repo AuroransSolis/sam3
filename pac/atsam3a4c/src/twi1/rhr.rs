@@ -9,7 +9,7 @@ impl R {
         RxdataR::new((self.bits & 0xff) as u8)
     }
 }
-#[doc = "Receive Holding Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rhr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive Holding Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rhr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RhrSpec;
 impl crate::RegisterSpec for RhrSpec {
     type Ux = u32;

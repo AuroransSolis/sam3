@@ -9,7 +9,7 @@ impl R {
         RspR::new(self.bits)
     }
 }
-#[doc = "Response Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rspr2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Response Register 2\n\nYou can [`read`](crate::Reg::read) this register and get [`rspr2::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Rspr2Spec;
 impl crate::RegisterSpec for Rspr2Spec {
     type Ux = u32;

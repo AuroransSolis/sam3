@@ -226,7 +226,7 @@ impl R {
         P31R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Input Filter Slow Clock Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ifscsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Input Filter Slow Clock Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ifscsr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IfscsrSpec;
 impl crate::RegisterSpec for IfscsrSpec {
     type Ux = u32;

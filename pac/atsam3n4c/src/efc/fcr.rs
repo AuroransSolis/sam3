@@ -180,7 +180,7 @@ impl W {
         FkeyW::new(self, 24)
     }
 }
-#[doc = "EEFC Flash Command Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fcr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "EEFC Flash Command Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fcr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcrSpec;
 impl crate::RegisterSpec for FcrSpec {
     type Ux = u32;

@@ -74,7 +74,7 @@ impl W {
         TimrstW::new(self, 31)
     }
 }
-#[doc = "Transfer Command Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tcr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Transfer Command Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tcr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TcrSpec;
 impl crate::RegisterSpec for TcrSpec {
     type Ux = u32;

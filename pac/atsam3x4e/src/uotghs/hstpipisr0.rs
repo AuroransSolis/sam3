@@ -244,7 +244,7 @@ impl R {
         PbyctR::new(((self.bits >> 20) & 0x07ff) as u16)
     }
 }
-#[doc = "Host Pipe Status Register (n = 0) 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hstpipisr0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Host Pipe Status Register (n = 0) 0\n\nYou can [`read`](crate::Reg::read) this register and get [`hstpipisr0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Hstpipisr0Spec;
 impl crate::RegisterSpec for Hstpipisr0Spec {
     type Ux = u32;

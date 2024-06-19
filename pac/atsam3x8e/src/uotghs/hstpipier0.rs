@@ -98,7 +98,7 @@ impl W {
         RstdtsW::new(self, 18)
     }
 }
-#[doc = "Host Pipe Enable Register (n = 0) 0\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hstpipier0::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Host Pipe Enable Register (n = 0) 0\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hstpipier0::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Hstpipier0Spec;
 impl crate::RegisterSpec for Hstpipier0Spec {
     type Ux = u32;

@@ -74,7 +74,7 @@ impl W {
         RxbuffW::new(self, 12)
     }
 }
-#[doc = "Interrupt Disable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_mode_idr_spi_mode::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Disable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`spi_mode_idr_spi_mode::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SpiModeIdrSpiModeSpec;
 impl crate::RegisterSpec for SpiModeIdrSpiModeSpec {
     type Ux = u32;

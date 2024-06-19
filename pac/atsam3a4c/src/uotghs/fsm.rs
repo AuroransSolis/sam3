@@ -161,7 +161,7 @@ impl R {
         DrdstateR::new((self.bits & 0x0f) as u8)
     }
 }
-#[doc = "General Finite State Machine Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fsm::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "General Finite State Machine Register\n\nYou can [`read`](crate::Reg::read) this register and get [`fsm::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FsmSpec;
 impl crate::RegisterSpec for FsmSpec {
     type Ux = u32;

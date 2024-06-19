@@ -128,7 +128,7 @@ impl R {
         Err5R::new(((self.bits >> 21) & 1) != 0)
     }
 }
-#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Mask Register.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ebcimr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Mask Register.\n\nYou can [`read`](crate::Reg::read) this register and get [`ebcimr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EbcimrSpec;
 impl crate::RegisterSpec for EbcimrSpec {
     type Ux = u32;

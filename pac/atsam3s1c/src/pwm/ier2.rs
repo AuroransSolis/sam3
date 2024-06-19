@@ -162,7 +162,7 @@ impl W {
         Cmpu7W::new(self, 23)
     }
 }
-#[doc = "PWM Interrupt Enable Register 2\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ier2::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PWM Interrupt Enable Register 2\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ier2::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Ier2Spec;
 impl crate::RegisterSpec for Ier2Spec {
     type Ux = u32;

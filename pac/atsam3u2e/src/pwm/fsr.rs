@@ -16,7 +16,7 @@ impl R {
         FsR::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
-#[doc = "PWM Fault Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PWM Fault Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`fsr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FsrSpec;
 impl crate::RegisterSpec for FsrSpec {
     type Ux = u32;

@@ -258,7 +258,7 @@ impl W {
         P31W::new(self, 31)
     }
 }
-#[doc = "Pad Pull-down Disable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ppddr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Pad Pull-down Disable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ppddr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PpddrSpec;
 impl crate::RegisterSpec for PpddrSpec {
     type Ux = u32;

@@ -34,7 +34,7 @@ impl W {
         Pck2W::new(self, 10)
     }
 }
-#[doc = "System Clock Disable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmc_scdr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "System Clock Disable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pmc_scdr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PmcScdrSpec;
 impl crate::RegisterSpec for PmcScdrSpec {
     type Ux = u32;

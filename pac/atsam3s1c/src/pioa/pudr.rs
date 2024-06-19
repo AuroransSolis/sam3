@@ -258,7 +258,7 @@ impl W {
         P31W::new(self, 31)
     }
 }
-#[doc = "Pull-up Disable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pudr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Pull-up Disable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pudr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PudrSpec;
 impl crate::RegisterSpec for PudrSpec {
     type Ux = u32;

@@ -98,7 +98,7 @@ impl W {
         PfreezecW::new(self, 17)
     }
 }
-#[doc = "Host Pipe Disable Register (n = 0)\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`isopipes_hstpipidr0_isopipes::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Host Pipe Disable Register (n = 0)\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`isopipes_hstpipidr0_isopipes::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IsopipesHstpipidr0IsopipesSpec;
 impl crate::RegisterSpec for IsopipesHstpipidr0IsopipesSpec {
     type Ux = u32;

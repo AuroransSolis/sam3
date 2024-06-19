@@ -9,7 +9,7 @@ impl R {
         MtimestampR::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "Timestamp Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timestp::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Timestamp Register\n\nYou can [`read`](crate::Reg::read) this register and get [`timestp::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TimestpSpec;
 impl crate::RegisterSpec for TimestpSpec {
     type Ux = u32;

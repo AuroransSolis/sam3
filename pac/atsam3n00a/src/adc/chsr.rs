@@ -114,7 +114,7 @@ impl R {
         Ch15R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Channel Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`chsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Channel Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`chsr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ChsrSpec;
 impl crate::RegisterSpec for ChsrSpec {
     type Ux = u32;

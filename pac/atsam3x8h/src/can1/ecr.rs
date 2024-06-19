@@ -16,7 +16,7 @@ impl R {
         TecR::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
-#[doc = "Error Counter Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Error Counter Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ecr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EcrSpec;
 impl crate::RegisterSpec for EcrSpec {
     type Ux = u32;

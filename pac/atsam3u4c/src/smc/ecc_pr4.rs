@@ -23,7 +23,7 @@ impl R {
         NparityR::new(((self.bits >> 12) & 0x0fff) as u16)
     }
 }
-#[doc = "SMC ECC parity 4 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr4::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "SMC ECC parity 4 Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ecc_pr4::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EccPr4Spec;
 impl crate::RegisterSpec for EccPr4Spec {
     type Ux = u32;

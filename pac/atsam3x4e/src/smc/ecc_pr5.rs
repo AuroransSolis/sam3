@@ -23,7 +23,7 @@ impl R {
         NparityR::new(((self.bits >> 12) & 0x0fff) as u16)
     }
 }
-#[doc = "SMC ECC parity 5 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr5::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "SMC ECC parity 5 Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ecc_pr5::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EccPr5Spec;
 impl crate::RegisterSpec for EccPr5Spec {
     type Ux = u32;

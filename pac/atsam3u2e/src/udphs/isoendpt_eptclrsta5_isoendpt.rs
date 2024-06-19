@@ -50,7 +50,7 @@ impl W {
         ErrFlushW::new(self, 14)
     }
 }
-#[doc = "UDPHS Endpoint Clear Status Register (endpoint = 5)\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`isoendpt_eptclrsta5_isoendpt::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "UDPHS Endpoint Clear Status Register (endpoint = 5)\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`isoendpt_eptclrsta5_isoendpt::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IsoendptEptclrsta5IsoendptSpec;
 impl crate::RegisterSpec for IsoendptEptclrsta5IsoendptSpec {
     type Ux = u32;

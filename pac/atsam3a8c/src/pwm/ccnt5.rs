@@ -9,7 +9,7 @@ impl R {
         CntR::new(self.bits & 0x00ff_ffff)
     }
 }
-#[doc = "PWM Channel Counter Register (ch_num = 5)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ccnt5::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PWM Channel Counter Register (ch_num = 5)\n\nYou can [`read`](crate::Reg::read) this register and get [`ccnt5::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Ccnt5Spec;
 impl crate::RegisterSpec for Ccnt5Spec {
     type Ux = u32;

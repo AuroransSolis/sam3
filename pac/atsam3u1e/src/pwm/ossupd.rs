@@ -66,7 +66,7 @@ impl W {
         Ossupl3W::new(self, 19)
     }
 }
-#[doc = "PWM Output Selection Set Update Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ossupd::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PWM Output Selection Set Update Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ossupd::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OssupdSpec;
 impl crate::RegisterSpec for OssupdSpec {
     type Ux = u32;

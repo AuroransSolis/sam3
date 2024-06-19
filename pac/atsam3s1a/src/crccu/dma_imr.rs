@@ -9,7 +9,7 @@ impl R {
         DmaimrR::new((self.bits & 1) != 0)
     }
 }
-#[doc = "CRCCU DMA Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dma_imr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CRCCU DMA Interrupt Mask Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dma_imr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DmaImrSpec;
 impl crate::RegisterSpec for DmaImrSpec {
     type Ux = u32;

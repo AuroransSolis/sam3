@@ -21,7 +21,7 @@ impl W {
         GpbrValueW::new(self, 0)
     }
 }
-#[doc = "General Purpose Backup Register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpbr3::R`](R).  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpbr3::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "General Purpose Backup Register 3\n\nYou can [`read`](crate::Reg::read) this register and get [`gpbr3::R`](R). You can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`gpbr3::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Gpbr3Spec;
 impl crate::RegisterSpec for Gpbr3Spec {
     type Ux = u32;

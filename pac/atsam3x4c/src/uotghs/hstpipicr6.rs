@@ -58,7 +58,7 @@ impl W {
         ShortpacketicW::new(self, 7)
     }
 }
-#[doc = "Host Pipe Clear Register (n = 0) 6\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hstpipicr6::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Host Pipe Clear Register (n = 0) 6\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hstpipicr6::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Hstpipicr6Spec;
 impl crate::RegisterSpec for Hstpipicr6Spec {
     type Ux = u32;

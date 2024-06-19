@@ -107,7 +107,7 @@ impl R {
         TxbufeR::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SrSpec;
 impl crate::RegisterSpec for SrSpec {
     type Ux = u32;

@@ -30,7 +30,7 @@ impl R {
         RxbuffR::new(((self.bits >> 3) & 1) != 0)
     }
 }
-#[doc = "Parallel Capture Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcisr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Parallel Capture Interrupt Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`pcisr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PcisrSpec;
 impl crate::RegisterSpec for PcisrSpec {
     type Ux = u32;

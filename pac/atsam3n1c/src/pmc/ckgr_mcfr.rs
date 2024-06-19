@@ -16,7 +16,7 @@ impl R {
         MainfrdyR::new(((self.bits >> 16) & 1) != 0)
     }
 }
-#[doc = "Main Clock Frequency Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ckgr_mcfr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Main Clock Frequency Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ckgr_mcfr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CkgrMcfrSpec;
 impl crate::RegisterSpec for CkgrMcfrSpec {
     type Ux = u32;

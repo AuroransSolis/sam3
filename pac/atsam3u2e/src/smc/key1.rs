@@ -10,7 +10,7 @@ impl W {
         Key1W::new(self, 0)
     }
 }
-#[doc = "SMC OCMS KEY1 Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`key1::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "SMC OCMS KEY1 Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`key1::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Key1Spec;
 impl crate::RegisterSpec for Key1Spec {
     type Ux = u32;

@@ -58,7 +58,7 @@ impl W {
         HwupicW::new(self, 6)
     }
 }
-#[doc = "Host Global Interrupt Clear Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hsticr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Host Global Interrupt Clear Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hsticr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HsticrSpec;
 impl crate::RegisterSpec for HsticrSpec {
     type Ux = u32;

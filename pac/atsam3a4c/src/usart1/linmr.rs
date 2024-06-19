@@ -210,7 +210,7 @@ impl W {
         PdcmW::new(self, 16)
     }
 }
-#[doc = "LIN Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`linmr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`linmr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "LIN Mode Register\n\nYou can [`read`](crate::Reg::read) this register and get [`linmr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`linmr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LinmrSpec;
 impl crate::RegisterSpec for LinmrSpec {
     type Ux = u32;

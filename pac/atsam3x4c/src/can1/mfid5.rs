@@ -9,7 +9,7 @@ impl R {
         MfidR::new(self.bits & 0x1fff_ffff)
     }
 }
-#[doc = "Mailbox Family ID Register (MB = 5)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mfid5::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Mailbox Family ID Register (MB = 5)\n\nYou can [`read`](crate::Reg::read) this register and get [`mfid5::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Mfid5Spec;
 impl crate::RegisterSpec for Mfid5Spec {
     type Ux = u32;

@@ -21,7 +21,7 @@ impl W {
         BuffAddW::new(self, 0)
     }
 }
-#[doc = "Host DMA Channel Address Register (n = 4)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hstdmaaddress4::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hstdmaaddress4::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Host DMA Channel Address Register (n = 4)\n\nYou can [`read`](crate::Reg::read) this register and get [`hstdmaaddress4::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hstdmaaddress4::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Hstdmaaddress4Spec;
 impl crate::RegisterSpec for Hstdmaaddress4Spec {
     type Ux = u32;

@@ -58,7 +58,7 @@ impl R {
         EtrgsR::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "Interrupt Mask Register (channel = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`imr0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Mask Register (channel = 0)\n\nYou can [`read`](crate::Reg::read) this register and get [`imr0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Imr0Spec;
 impl crate::RegisterSpec for Imr0Spec {
     type Ux = u32;

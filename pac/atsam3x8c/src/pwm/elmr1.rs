@@ -126,7 +126,7 @@ impl W {
         Csel7W::new(self, 7)
     }
 }
-#[doc = "PWM Event Line 0 Mode Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`elmr1::R`](R).  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`elmr1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PWM Event Line 0 Mode Register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`elmr1::R`](R). You can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`elmr1::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Elmr1Spec;
 impl crate::RegisterSpec for Elmr1Spec {
     type Ux = u32;

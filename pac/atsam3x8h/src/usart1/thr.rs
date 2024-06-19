@@ -18,7 +18,7 @@ impl W {
         TxsynhW::new(self, 15)
     }
 }
-#[doc = "Transmit Holding Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`thr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Transmit Holding Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`thr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ThrSpec;
 impl crate::RegisterSpec for ThrSpec {
     type Ux = u32;

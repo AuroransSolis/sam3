@@ -8,7 +8,7 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {}
-#[doc = "FIFO Memory Aperture0 111\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fifo111::R`](R).  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fifo111::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "FIFO Memory Aperture0 111\n\nYou can [`read`](crate::Reg::read) this register and get [`fifo111::R`](R). You can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fifo111::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Fifo111Spec;
 impl crate::RegisterSpec for Fifo111Spec {
     type Ux = u32;

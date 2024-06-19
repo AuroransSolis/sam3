@@ -44,7 +44,7 @@ impl R {
         MmiR::new(((self.bits >> 24) & 1) != 0)
     }
 }
-#[doc = "Mailbox Status Register (MB = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`msr0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Mailbox Status Register (MB = 0)\n\nYou can [`read`](crate::Reg::read) this register and get [`msr0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Msr0Spec;
 impl crate::RegisterSpec for Msr0Spec {
     type Ux = u32;

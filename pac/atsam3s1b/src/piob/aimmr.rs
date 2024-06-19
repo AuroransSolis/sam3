@@ -226,7 +226,7 @@ impl R {
         P31R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Additional Interrupt Modes Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aimmr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Additional Interrupt Modes Mask Register\n\nYou can [`read`](crate::Reg::read) this register and get [`aimmr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AimmrSpec;
 impl crate::RegisterSpec for AimmrSpec {
     type Ux = u32;

@@ -23,7 +23,7 @@ impl R {
         Pid34R::new(((self.bits >> 2) & 1) != 0)
     }
 }
-#[doc = "Peripheral Clock Status Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmc_pcsr1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Peripheral Clock Status Register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`pmc_pcsr1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PmcPcsr1Spec;
 impl crate::RegisterSpec for PmcPcsr1Spec {
     type Ux = u32;

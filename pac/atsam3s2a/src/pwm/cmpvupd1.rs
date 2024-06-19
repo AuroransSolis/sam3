@@ -18,7 +18,7 @@ impl W {
         CvmupdW::new(self, 24)
     }
 }
-#[doc = "PWM Comparison 1 Value Update Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmpvupd1::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PWM Comparison 1 Value Update Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmpvupd1::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Cmpvupd1Spec;
 impl crate::RegisterSpec for Cmpvupd1Spec {
     type Ux = u32;

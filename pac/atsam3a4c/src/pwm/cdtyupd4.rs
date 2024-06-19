@@ -10,7 +10,7 @@ impl W {
         CdtyupdW::new(self, 0)
     }
 }
-#[doc = "PWM Channel Duty Cycle Update Register (ch_num = 4)\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cdtyupd4::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PWM Channel Duty Cycle Update Register (ch_num = 4)\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cdtyupd4::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Cdtyupd4Spec;
 impl crate::RegisterSpec for Cdtyupd4Spec {
     type Ux = u32;

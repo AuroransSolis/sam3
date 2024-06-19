@@ -122,7 +122,7 @@ impl W {
         StallrqsW::new(self, 19)
     }
 }
-#[doc = "Device Endpoint Enable Register (n = 0) 1\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`deveptier1::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Device Endpoint Enable Register (n = 0) 1\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`deveptier1::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Deveptier1Spec;
 impl crate::RegisterSpec for Deveptier1Spec {
     type Ux = u32;

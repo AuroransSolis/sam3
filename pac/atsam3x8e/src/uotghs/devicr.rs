@@ -58,7 +58,7 @@ impl W {
         UprsmcW::new(self, 6)
     }
 }
-#[doc = "Device Global Interrupt Clear Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`devicr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Device Global Interrupt Clear Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`devicr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DevicrSpec;
 impl crate::RegisterSpec for DevicrSpec {
     type Ux = u32;

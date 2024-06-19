@@ -226,7 +226,7 @@ impl R {
         P31R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Output Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`osr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Output Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`osr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OsrSpec;
 impl crate::RegisterSpec for OsrSpec {
     type Ux = u32;

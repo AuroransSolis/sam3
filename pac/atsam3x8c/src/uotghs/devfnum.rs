@@ -23,7 +23,7 @@ impl R {
         FncerrR::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Device Frame Number Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`devfnum::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Device Frame Number Register\n\nYou can [`read`](crate::Reg::read) this register and get [`devfnum::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DevfnumSpec;
 impl crate::RegisterSpec for DevfnumSpec {
     type Ux = u32;

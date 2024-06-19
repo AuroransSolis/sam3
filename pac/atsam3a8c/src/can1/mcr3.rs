@@ -34,7 +34,7 @@ impl W {
         MtcrW::new(self, 23)
     }
 }
-#[doc = "Mailbox Control Register (MB = 3)\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mcr3::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Mailbox Control Register (MB = 3)\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mcr3::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Mcr3Spec;
 impl crate::RegisterSpec for Mcr3Spec {
     type Ux = u32;

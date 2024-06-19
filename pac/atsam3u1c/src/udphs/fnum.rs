@@ -23,7 +23,7 @@ impl R {
         FnumErrR::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "UDPHS Frame Number Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fnum::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "UDPHS Frame Number Register\n\nYou can [`read`](crate::Reg::read) this register and get [`fnum::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FnumSpec;
 impl crate::RegisterSpec for FnumSpec {
     type Ux = u32;

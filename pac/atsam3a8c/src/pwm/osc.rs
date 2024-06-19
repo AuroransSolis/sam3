@@ -130,7 +130,7 @@ impl W {
         Oscl7W::new(self, 23)
     }
 }
-#[doc = "PWM Output Selection Clear Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`osc::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PWM Output Selection Clear Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`osc::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OscSpec;
 impl crate::RegisterSpec for OscSpec {
     type Ux = u32;

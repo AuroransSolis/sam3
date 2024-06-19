@@ -149,7 +149,7 @@ impl R {
         Dma6R::new(((self.bits >> 30) & 1) != 0)
     }
 }
-#[doc = "UDPHS Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intsta::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "UDPHS Interrupt Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`intsta::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IntstaSpec;
 impl crate::RegisterSpec for IntstaSpec {
     type Ux = u32;

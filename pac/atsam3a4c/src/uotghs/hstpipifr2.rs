@@ -74,7 +74,7 @@ impl W {
         NbusybksW::new(self, 12)
     }
 }
-#[doc = "Host Pipe Set Register (n = 0) 2\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hstpipifr2::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Host Pipe Set Register (n = 0) 2\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hstpipifr2::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Hstpipifr2Spec;
 impl crate::RegisterSpec for Hstpipifr2Spec {
     type Ux = u32;

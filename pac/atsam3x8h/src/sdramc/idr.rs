@@ -10,7 +10,7 @@ impl W {
         ResW::new(self, 0)
     }
 }
-#[doc = "SDRAMC Interrupt Disable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`idr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "SDRAMC Interrupt Disable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`idr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IdrSpec;
 impl crate::RegisterSpec for IdrSpec {
     type Ux = u32;

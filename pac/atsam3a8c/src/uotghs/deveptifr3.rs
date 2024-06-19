@@ -74,7 +74,7 @@ impl W {
         NbusybksW::new(self, 12)
     }
 }
-#[doc = "Device Endpoint Set Register (n = 0) 3\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`deveptifr3::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Device Endpoint Set Register (n = 0) 3\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`deveptifr3::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Deveptifr3Spec;
 impl crate::RegisterSpec for Deveptifr3Spec {
     type Ux = u32;

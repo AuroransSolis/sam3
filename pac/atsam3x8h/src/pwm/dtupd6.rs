@@ -18,7 +18,7 @@ impl W {
         DtlupdW::new(self, 16)
     }
 }
-#[doc = "PWM Channel Dead Time Update Register (ch_num = 6)\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dtupd6::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PWM Channel Dead Time Update Register (ch_num = 6)\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dtupd6::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Dtupd6Spec;
 impl crate::RegisterSpec for Dtupd6Spec {
     type Ux = u32;

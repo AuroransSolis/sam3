@@ -10,7 +10,7 @@ impl W {
         FoclrW::new(self, 0)
     }
 }
-#[doc = "Fault Output Clear Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmc_focr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Fault Output Clear Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pmc_focr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PmcFocrSpec;
 impl crate::RegisterSpec for PmcFocrSpec {
     type Ux = u32;

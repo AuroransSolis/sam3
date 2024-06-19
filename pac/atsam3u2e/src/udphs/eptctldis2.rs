@@ -114,7 +114,7 @@ impl W {
         ShrtPcktW::new(self, 31)
     }
 }
-#[doc = "UDPHS Endpoint Control Disable Register (endpoint = 2)\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`eptctldis2::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "UDPHS Endpoint Control Disable Register (endpoint = 2)\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`eptctldis2::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Eptctldis2Spec;
 impl crate::RegisterSpec for Eptctldis2Spec {
     type Ux = u32;

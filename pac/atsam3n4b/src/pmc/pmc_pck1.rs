@@ -239,7 +239,7 @@ impl W {
         PresW::new(self, 4)
     }
 }
-#[doc = "Programmable Clock 0 Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmc_pck1::R`](R).  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmc_pck1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Programmable Clock 0 Register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`pmc_pck1::R`](R). You can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pmc_pck1::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PmcPck1Spec;
 impl crate::RegisterSpec for PmcPck1Spec {
     type Ux = u32;

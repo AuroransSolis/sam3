@@ -8,7 +8,7 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {}
-#[doc = "Channel Sequence Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`seqr0::R`](R).  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`seqr0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Channel Sequence Register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`seqr0::R`](R). You can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`seqr0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Seqr0Spec;
 impl crate::RegisterSpec for Seqr0Spec {
     type Ux = u32;

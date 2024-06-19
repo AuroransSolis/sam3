@@ -307,7 +307,7 @@ impl W {
         RxbytecntW::new(self, 16)
     }
 }
-#[doc = "Endpoint Control and Status Register 6\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr6::R`](R).  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csr6::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Endpoint Control and Status Register 6\n\nYou can [`read`](crate::Reg::read) this register and get [`csr6::R`](R). You can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`csr6::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Csr6Spec;
 impl crate::RegisterSpec for Csr6Spec {
     type Ux = u32;

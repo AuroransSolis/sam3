@@ -226,7 +226,7 @@ impl R {
         P31R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Fall/Rise - Low/High Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`frlhsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Fall/Rise - Low/High Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`frlhsr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FrlhsrSpec;
 impl crate::RegisterSpec for FrlhsrSpec {
     type Ux = u32;

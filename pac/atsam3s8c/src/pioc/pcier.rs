@@ -34,7 +34,7 @@ impl W {
         RxbuffW::new(self, 3)
     }
 }
-#[doc = "Parallel Capture Interrupt Enable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcier::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Parallel Capture Interrupt Enable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pcier::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PcierSpec;
 impl crate::RegisterSpec for PcierSpec {
     type Ux = u32;

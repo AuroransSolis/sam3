@@ -74,7 +74,7 @@ impl W {
         CfdevW::new(self, 18)
     }
 }
-#[doc = "Interrupt Disable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmc_idr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Disable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pmc_idr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PmcIdrSpec;
 impl crate::RegisterSpec for PmcIdrSpec {
     type Ux = u32;

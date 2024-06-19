@@ -107,7 +107,7 @@ impl R {
         StallrqR::new(((self.bits >> 19) & 1) != 0)
     }
 }
-#[doc = "Device Endpoint Mask Register (n = 0) 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`deveptimr0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Device Endpoint Mask Register (n = 0) 0\n\nYou can [`read`](crate::Reg::read) this register and get [`deveptimr0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Deveptimr0Spec;
 impl crate::RegisterSpec for Deveptimr0Spec {
     type Ux = u32;

@@ -93,7 +93,7 @@ impl R {
         RstdtR::new(((self.bits >> 18) & 1) != 0)
     }
 }
-#[doc = "Host Pipe Mask Register (n = 0) 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hstpipimr2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Host Pipe Mask Register (n = 0) 2\n\nYou can [`read`](crate::Reg::read) this register and get [`hstpipimr2::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Hstpipimr2Spec;
 impl crate::RegisterSpec for Hstpipimr2Spec {
     type Ux = u32;

@@ -204,7 +204,7 @@ impl R {
         ShrtPcktR::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "UDPHS Endpoint Status Register (endpoint = 2)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`eptsta2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "UDPHS Endpoint Status Register (endpoint = 2)\n\nYou can [`read`](crate::Reg::read) this register and get [`eptsta2::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Eptsta2Spec;
 impl crate::RegisterSpec for Eptsta2Spec {
     type Ux = u32;

@@ -10,7 +10,7 @@ impl W {
         CupdW::new(self, 0)
     }
 }
-#[doc = "PWM Channel Update Register (ch_num = 0)\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cupd0::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PWM Channel Update Register (ch_num = 0)\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cupd0::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Cupd0Spec;
 impl crate::RegisterSpec for Cupd0Spec {
     type Ux = u32;

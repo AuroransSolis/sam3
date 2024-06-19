@@ -9,7 +9,7 @@ impl R {
         NbErrorsR::new((self.bits & 0xff) as u8)
     }
 }
-#[doc = "Number of Errors Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ner::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Number of Errors Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ner::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct NerSpec;
 impl crate::RegisterSpec for NerSpec {
     type Ux = u32;

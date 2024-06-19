@@ -307,7 +307,7 @@ impl W {
         RxbytecntW::new(self, 16)
     }
 }
-#[doc = "Endpoint Control and Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`isoendpt_csr0_isoendpt::R`](R).  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`isoendpt_csr0_isoendpt::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Endpoint Control and Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`isoendpt_csr0_isoendpt::R`](R). You can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`isoendpt_csr0_isoendpt::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IsoendptCsr0IsoendptSpec;
 impl crate::RegisterSpec for IsoendptCsr0IsoendptSpec {
     type Ux = u32;

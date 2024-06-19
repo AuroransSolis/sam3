@@ -58,7 +58,7 @@ impl W {
         Ept6W::new(self, 6)
     }
 }
-#[doc = "UDPHS Endpoints Reset Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`eptrst::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "UDPHS Endpoints Reset Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`eptrst::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EptrstSpec;
 impl crate::RegisterSpec for EptrstSpec {
     type Ux = u32;

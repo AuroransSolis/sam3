@@ -21,7 +21,7 @@ impl W {
         UlbtW::new(self, 0)
     }
 }
-#[doc = "Master Configuration Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`matrix_mcfg2::R`](R).  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`matrix_mcfg2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Master Configuration Register 2\n\nYou can [`read`](crate::Reg::read) this register and get [`matrix_mcfg2::R`](R). You can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`matrix_mcfg2::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MatrixMcfg2Spec;
 impl crate::RegisterSpec for MatrixMcfg2Spec {
     type Ux = u32;

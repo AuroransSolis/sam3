@@ -141,7 +141,7 @@ impl R {
         ClkusableR::new(((self.bits >> 14) & 1) != 0)
     }
 }
-#[doc = "General Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "General Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SrSpec;
 impl crate::RegisterSpec for SrSpec {
     type Ux = u32;

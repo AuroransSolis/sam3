@@ -163,7 +163,7 @@ impl R {
         Dma6R::new(((self.bits >> 30) & 1) != 0)
     }
 }
-#[doc = "Device Global Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`devisr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Device Global Interrupt Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`devisr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DevisrSpec;
 impl crate::RegisterSpec for DevisrSpec {
     type Ux = u32;

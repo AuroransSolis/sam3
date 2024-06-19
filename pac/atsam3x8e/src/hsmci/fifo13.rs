@@ -21,7 +21,7 @@ impl W {
         DataW::new(self, 0)
     }
 }
-#[doc = "FIFO Memory Aperture0 13\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fifo13::R`](R).  You can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fifo13::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "FIFO Memory Aperture0 13\n\nYou can [`read`](crate::Reg::read) this register and get [`fifo13::R`](R). You can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fifo13::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Fifo13Spec;
 impl crate::RegisterSpec for Fifo13Spec {
     type Ux = u32;

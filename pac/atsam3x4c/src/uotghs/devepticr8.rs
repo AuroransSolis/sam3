@@ -66,7 +66,7 @@ impl W {
         ShortpacketcW::new(self, 7)
     }
 }
-#[doc = "Device Endpoint Clear Register (n = 0) 8\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`devepticr8::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Device Endpoint Clear Register (n = 0) 8\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`devepticr8::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Devepticr8Spec;
 impl crate::RegisterSpec for Devepticr8Spec {
     type Ux = u32;

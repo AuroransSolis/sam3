@@ -9,7 +9,7 @@ impl R {
         OdataR::new(self.bits)
     }
 }
-#[doc = "Output Data Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`odata::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Output Data Register\n\nYou can [`read`](crate::Reg::read) this register and get [`odata::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OdataSpec;
 impl crate::RegisterSpec for OdataSpec {
     type Ux = u32;

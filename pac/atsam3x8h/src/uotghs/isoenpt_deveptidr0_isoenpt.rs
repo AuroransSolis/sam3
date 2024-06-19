@@ -114,7 +114,7 @@ impl W {
         EpdishdmacW::new(self, 16)
     }
 }
-#[doc = "Device Endpoint Disable Register (n = 0)\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`isoenpt_deveptidr0_isoenpt::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Device Endpoint Disable Register (n = 0)\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`isoenpt_deveptidr0_isoenpt::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IsoenptDeveptidr0IsoenptSpec;
 impl crate::RegisterSpec for IsoenptDeveptidr0IsoenptSpec {
     type Ux = u32;

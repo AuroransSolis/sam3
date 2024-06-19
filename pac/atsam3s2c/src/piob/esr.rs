@@ -258,7 +258,7 @@ impl W {
         P31W::new(self, 31)
     }
 }
-#[doc = "Edge Select Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`esr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Edge Select Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`esr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EsrSpec;
 impl crate::RegisterSpec for EsrSpec {
     type Ux = u32;

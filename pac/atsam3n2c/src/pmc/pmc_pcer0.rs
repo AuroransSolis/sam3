@@ -154,7 +154,7 @@ impl W {
         Pid31W::new(self, 31)
     }
 }
-#[doc = "Peripheral Clock Enable Register 0\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmc_pcer0::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Peripheral Clock Enable Register 0\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pmc_pcer0::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PmcPcer0Spec;
 impl crate::RegisterSpec for PmcPcer0Spec {
     type Ux = u32;

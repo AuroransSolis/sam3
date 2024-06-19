@@ -16,7 +16,7 @@ impl R {
         WordaddrR::new(((self.bits >> 4) & 0x0fff) as u16)
     }
 }
-#[doc = "SMC ECC Parity 0 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_pr0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "SMC ECC Parity 0 Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ecc_pr0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EccPr0Spec;
 impl crate::RegisterSpec for EccPr0Spec {
     type Ux = u32;

@@ -9,7 +9,7 @@ impl R {
         ExidR::new(self.bits)
     }
 }
-#[doc = "Chip ID Extension Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`exid::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Chip ID Extension Register\n\nYou can [`read`](crate::Reg::read) this register and get [`exid::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ExidSpec;
 impl crate::RegisterSpec for ExidSpec {
     type Ux = u32;

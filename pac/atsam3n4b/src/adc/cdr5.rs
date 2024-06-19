@@ -9,7 +9,7 @@ impl R {
         DataR::new((self.bits & 0x0fff) as u16)
     }
 }
-#[doc = "Channel Data Register 5\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cdr5::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Channel Data Register 5\n\nYou can [`read`](crate::Reg::read) this register and get [`cdr5::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Cdr5Spec;
 impl crate::RegisterSpec for Cdr5Spec {
     type Ux = u32;

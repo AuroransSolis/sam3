@@ -34,7 +34,7 @@ impl W {
         Chid3W::new(self, 3)
     }
 }
-#[doc = "PWM Enable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ena::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PWM Enable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ena::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EnaSpec;
 impl crate::RegisterSpec for EnaSpec {
     type Ux = u32;

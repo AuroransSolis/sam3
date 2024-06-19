@@ -26,7 +26,7 @@ impl W {
         QerrW::new(self, 2)
     }
 }
-#[doc = "QDEC Interrupt Enable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`qier::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "QDEC Interrupt Enable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`qier::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct QierSpec;
 impl crate::RegisterSpec for QierSpec {
     type Ux = u32;

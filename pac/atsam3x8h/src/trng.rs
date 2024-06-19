@@ -42,37 +42,37 @@ impl RegisterBlock {
         &self.odata
     }
 }
-#[doc = "CR (w) register accessor: Control Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
+#[doc = "CR (w) register accessor: Control Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
 module"]
 #[doc(alias = "CR")]
 pub type Cr = crate::Reg<cr::CrSpec>;
 #[doc = "Control Register"]
 pub mod cr;
-#[doc = "IER (w) register accessor: Interrupt Enable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ier::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ier`]
+#[doc = "IER (w) register accessor: Interrupt Enable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ier::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ier`]
 module"]
 #[doc(alias = "IER")]
 pub type Ier = crate::Reg<ier::IerSpec>;
 #[doc = "Interrupt Enable Register"]
 pub mod ier;
-#[doc = "IDR (w) register accessor: Interrupt Disable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`idr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@idr`]
+#[doc = "IDR (w) register accessor: Interrupt Disable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`idr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@idr`]
 module"]
 #[doc(alias = "IDR")]
 pub type Idr = crate::Reg<idr::IdrSpec>;
 #[doc = "Interrupt Disable Register"]
 pub mod idr;
-#[doc = "IMR (r) register accessor: Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`imr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@imr`]
+#[doc = "IMR (r) register accessor: Interrupt Mask Register\n\nYou can [`read`](crate::Reg::read) this register and get [`imr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@imr`]
 module"]
 #[doc(alias = "IMR")]
 pub type Imr = crate::Reg<imr::ImrSpec>;
 #[doc = "Interrupt Mask Register"]
 pub mod imr;
-#[doc = "ISR (r) register accessor: Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`isr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@isr`]
+#[doc = "ISR (r) register accessor: Interrupt Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`isr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@isr`]
 module"]
 #[doc(alias = "ISR")]
 pub type Isr = crate::Reg<isr::IsrSpec>;
 #[doc = "Interrupt Status Register"]
 pub mod isr;
-#[doc = "ODATA (r) register accessor: Output Data Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`odata::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@odata`]
+#[doc = "ODATA (r) register accessor: Output Data Register\n\nYou can [`read`](crate::Reg::read) this register and get [`odata::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@odata`]
 module"]
 #[doc(alias = "ODATA")]
 pub type Odata = crate::Reg<odata::OdataSpec>;

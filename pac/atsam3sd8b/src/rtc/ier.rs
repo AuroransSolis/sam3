@@ -50,7 +50,7 @@ impl W {
         TderrenW::new(self, 5)
     }
 }
-#[doc = "Interrupt Enable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ier::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Enable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ier::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IerSpec;
 impl crate::RegisterSpec for IerSpec {
     type Ux = u32;

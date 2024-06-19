@@ -58,7 +58,7 @@ impl W {
         UpstrResW::new(self, 7)
     }
 }
-#[doc = "UDPHS Clear Interrupt Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clrint::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "UDPHS Clear Interrupt Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clrint::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ClrintSpec;
 impl crate::RegisterSpec for ClrintSpec {
     type Ux = u32;

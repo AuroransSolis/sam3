@@ -66,7 +66,7 @@ impl W {
         Mb7W::new(self, 7)
     }
 }
-#[doc = "Abort Command Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`acr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Abort Command Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`acr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AcrSpec;
 impl crate::RegisterSpec for AcrSpec {
     type Ux = u32;

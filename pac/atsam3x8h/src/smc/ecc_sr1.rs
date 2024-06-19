@@ -170,7 +170,7 @@ impl R {
         Mulerr7R::new(((self.bits >> 30) & 1) != 0)
     }
 }
-#[doc = "SMC ECC Status 1 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecc_sr1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "SMC ECC Status 1 Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ecc_sr1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EccSr1Spec;
 impl crate::RegisterSpec for EccSr1Spec {
     type Ux = u32;

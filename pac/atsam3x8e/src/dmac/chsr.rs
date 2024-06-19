@@ -170,7 +170,7 @@ impl R {
         Stal5R::new(((self.bits >> 29) & 1) != 0)
     }
 }
-#[doc = "DMAC Channel Handler Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`chsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DMAC Channel Handler Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`chsr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ChsrSpec;
 impl crate::RegisterSpec for ChsrSpec {
     type Ux = u32;

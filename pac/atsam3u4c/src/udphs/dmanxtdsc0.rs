@@ -21,7 +21,7 @@ impl W {
         NxtDscAddW::new(self, 0)
     }
 }
-#[doc = "UDPHS DMA Next Descriptor Address Register (channel = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmanxtdsc0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmanxtdsc0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "UDPHS DMA Next Descriptor Address Register (channel = 0)\n\nYou can [`read`](crate::Reg::read) this register and get [`dmanxtdsc0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmanxtdsc0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Dmanxtdsc0Spec;
 impl crate::RegisterSpec for Dmanxtdsc0Spec {
     type Ux = u32;

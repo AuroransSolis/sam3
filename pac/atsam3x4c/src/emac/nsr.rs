@@ -16,7 +16,7 @@ impl R {
         IdleR::new(((self.bits >> 2) & 1) != 0)
     }
 }
-#[doc = "Network Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`nsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Network Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`nsr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct NsrSpec;
 impl crate::RegisterSpec for NsrSpec {
     type Ux = u32;

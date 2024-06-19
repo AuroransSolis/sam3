@@ -30,7 +30,7 @@ impl R {
         Chid3R::new(((self.bits >> 3) & 1) != 0)
     }
 }
-#[doc = "PWM Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PWM Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SrSpec;
 impl crate::RegisterSpec for SrSpec {
     type Ux = u32;

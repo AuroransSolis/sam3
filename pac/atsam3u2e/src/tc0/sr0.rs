@@ -79,7 +79,7 @@ impl R {
         MtiobR::new(((self.bits >> 18) & 1) != 0)
     }
 }
-#[doc = "Status Register (channel = 0)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sr0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Status Register (channel = 0)\n\nYou can [`read`](crate::Reg::read) this register and get [`sr0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Sr0Spec;
 impl crate::RegisterSpec for Sr0Spec {
     type Ux = u32;

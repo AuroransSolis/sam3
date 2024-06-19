@@ -10,7 +10,7 @@ impl W {
         CprdupdW::new(self, 0)
     }
 }
-#[doc = "PWM Channel Period Update Register (ch_num = 6)\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cprdupd6::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PWM Channel Period Update Register (ch_num = 6)\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cprdupd6::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Cprdupd6Spec;
 impl crate::RegisterSpec for Cprdupd6Spec {
     type Ux = u32;

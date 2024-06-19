@@ -226,7 +226,7 @@ impl R {
         P31R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "PIO Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`psr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PIO Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`psr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PsrSpec;
 impl crate::RegisterSpec for PsrSpec {
     type Ux = u32;

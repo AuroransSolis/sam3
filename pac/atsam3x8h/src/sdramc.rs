@@ -71,67 +71,67 @@ impl RegisterBlock {
         &self.ocms
     }
 }
-#[doc = "MR (rw) register accessor: SDRAMC Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mr`]
+#[doc = "MR (rw) register accessor: SDRAMC Mode Register\n\nYou can [`read`](crate::Reg::read) this register and get [`mr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mr`]
 module"]
 #[doc(alias = "MR")]
 pub type Mr = crate::Reg<mr::MrSpec>;
 #[doc = "SDRAMC Mode Register"]
 pub mod mr;
-#[doc = "TR (rw) register accessor: SDRAMC Refresh Timer Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tr`]
+#[doc = "TR (rw) register accessor: SDRAMC Refresh Timer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`tr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tr`]
 module"]
 #[doc(alias = "TR")]
 pub type Tr = crate::Reg<tr::TrSpec>;
 #[doc = "SDRAMC Refresh Timer Register"]
 pub mod tr;
-#[doc = "CR (rw) register accessor: SDRAMC Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
+#[doc = "CR (rw) register accessor: SDRAMC Configuration Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
 module"]
 #[doc(alias = "CR")]
 pub type Cr = crate::Reg<cr::CrSpec>;
 #[doc = "SDRAMC Configuration Register"]
 pub mod cr;
-#[doc = "LPR (rw) register accessor: SDRAMC Low Power Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lpr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lpr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@lpr`]
+#[doc = "LPR (rw) register accessor: SDRAMC Low Power Register\n\nYou can [`read`](crate::Reg::read) this register and get [`lpr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`lpr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@lpr`]
 module"]
 #[doc(alias = "LPR")]
 pub type Lpr = crate::Reg<lpr::LprSpec>;
 #[doc = "SDRAMC Low Power Register"]
 pub mod lpr;
-#[doc = "IER (w) register accessor: SDRAMC Interrupt Enable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ier::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ier`]
+#[doc = "IER (w) register accessor: SDRAMC Interrupt Enable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ier::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ier`]
 module"]
 #[doc(alias = "IER")]
 pub type Ier = crate::Reg<ier::IerSpec>;
 #[doc = "SDRAMC Interrupt Enable Register"]
 pub mod ier;
-#[doc = "IDR (w) register accessor: SDRAMC Interrupt Disable Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`idr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@idr`]
+#[doc = "IDR (w) register accessor: SDRAMC Interrupt Disable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`idr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@idr`]
 module"]
 #[doc(alias = "IDR")]
 pub type Idr = crate::Reg<idr::IdrSpec>;
 #[doc = "SDRAMC Interrupt Disable Register"]
 pub mod idr;
-#[doc = "IMR (r) register accessor: SDRAMC Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`imr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@imr`]
+#[doc = "IMR (r) register accessor: SDRAMC Interrupt Mask Register\n\nYou can [`read`](crate::Reg::read) this register and get [`imr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@imr`]
 module"]
 #[doc(alias = "IMR")]
 pub type Imr = crate::Reg<imr::ImrSpec>;
 #[doc = "SDRAMC Interrupt Mask Register"]
 pub mod imr;
-#[doc = "ISR (r) register accessor: SDRAMC Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`isr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@isr`]
+#[doc = "ISR (r) register accessor: SDRAMC Interrupt Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`isr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@isr`]
 module"]
 #[doc(alias = "ISR")]
 pub type Isr = crate::Reg<isr::IsrSpec>;
 #[doc = "SDRAMC Interrupt Status Register"]
 pub mod isr;
-#[doc = "MDR (rw) register accessor: SDRAMC Memory Device Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mdr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mdr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mdr`]
+#[doc = "MDR (rw) register accessor: SDRAMC Memory Device Register\n\nYou can [`read`](crate::Reg::read) this register and get [`mdr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mdr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mdr`]
 module"]
 #[doc(alias = "MDR")]
 pub type Mdr = crate::Reg<mdr::MdrSpec>;
 #[doc = "SDRAMC Memory Device Register"]
 pub mod mdr;
-#[doc = "CR1 (rw) register accessor: SDRAMC Configuration Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cr1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr1`]
+#[doc = "CR1 (rw) register accessor: SDRAMC Configuration Register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`cr1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cr1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr1`]
 module"]
 #[doc(alias = "CR1")]
 pub type Cr1 = crate::Reg<cr1::Cr1Spec>;
 #[doc = "SDRAMC Configuration Register 1"]
 pub mod cr1;
-#[doc = "OCMS (rw) register accessor: SDRAMC OCMS Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ocms::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ocms::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ocms`]
+#[doc = "OCMS (rw) register accessor: SDRAMC OCMS Register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`ocms::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ocms::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ocms`]
 module"]
 #[doc(alias = "OCMS")]
 pub type Ocms = crate::Reg<ocms::OcmsSpec>;

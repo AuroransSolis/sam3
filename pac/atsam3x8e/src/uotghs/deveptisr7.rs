@@ -267,7 +267,7 @@ impl R {
         ByctR::new(((self.bits >> 20) & 0x07ff) as u16)
     }
 }
-#[doc = "Device Endpoint Status Register (n = 0) 7\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`deveptisr7::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Device Endpoint Status Register (n = 0) 7\n\nYou can [`read`](crate::Reg::read) this register and get [`deveptisr7::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Deveptisr7Spec;
 impl crate::RegisterSpec for Deveptisr7Spec {
     type Ux = u32;

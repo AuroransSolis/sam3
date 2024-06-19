@@ -16,7 +16,7 @@ impl R {
         WpvsrcR::new(((self.bits >> 8) & 0xffff) as u16)
     }
 }
-#[doc = "Write Protect Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmc_wpsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Write Protect Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`pmc_wpsr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PmcWpsrSpec;
 impl crate::RegisterSpec for PmcWpsrSpec {
     type Ux = u32;

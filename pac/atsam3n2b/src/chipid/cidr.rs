@@ -626,7 +626,7 @@ impl R {
         ExtR::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Chip ID Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cidr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Chip ID Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cidr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CidrSpec;
 impl crate::RegisterSpec for CidrSpec {
     type Ux = u32;

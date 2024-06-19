@@ -46,7 +46,7 @@ impl W {
         KeyW::new(self, 24)
     }
 }
-#[doc = "Control Register\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Control Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CrSpec;
 impl crate::RegisterSpec for CrSpec {
     type Ux = u32;

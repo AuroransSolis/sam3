@@ -9,7 +9,7 @@ impl R {
         DataR::new(self.bits)
     }
 }
-#[doc = "Receive Data Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rdr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive Data Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rdr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RdrSpec;
 impl crate::RegisterSpec for RdrSpec {
     type Ux = u32;

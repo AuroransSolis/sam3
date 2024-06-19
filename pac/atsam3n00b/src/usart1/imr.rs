@@ -107,7 +107,7 @@ impl R {
         CtsicR::new(((self.bits >> 19) & 1) != 0)
     }
 }
-#[doc = "Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`imr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Mask Register\n\nYou can [`read`](crate::Reg::read) this register and get [`imr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ImrSpec;
 impl crate::RegisterSpec for ImrSpec {
     type Ux = u32;

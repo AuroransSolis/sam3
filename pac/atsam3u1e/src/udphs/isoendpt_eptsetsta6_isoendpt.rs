@@ -18,7 +18,7 @@ impl W {
         TxrdyTrerW::new(self, 11)
     }
 }
-#[doc = "UDPHS Endpoint Set Status Register (endpoint = 6)\n\nYou can [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`isoendpt_eptsetsta6_isoendpt::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "UDPHS Endpoint Set Status Register (endpoint = 6)\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`isoendpt_eptsetsta6_isoendpt::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IsoendptEptsetsta6IsoendptSpec;
 impl crate::RegisterSpec for IsoendptEptsetsta6IsoendptSpec {
     type Ux = u32;
